@@ -1,11 +1,11 @@
 {
   "status": "passed",
-  "recorded_at_utc": "2026-10-31T17:17:23.397585+00:00",
-  "scope": "Package consistency and visual review after the equation-by-equation expository revision; not independent mathematical verification.",
+  "recorded_at_utc": "2026-10-31T20:13:47.045965+00:00",
+  "scope": "Package consistency and visual review after the expository revision and removal of one redundant introductory sentence; not independent mathematical verification.",
   "source_files_match_build_record": 1,
-  "build_record_sha256": "255bda738ba776883c07cc72f56a498ea74c77351e689546d91df042804b32f5",
+  "build_record_sha256": "53507a4253b4b42f9958c965bce7cb22beeb94d64ebe14f6d7be21eed28b5f26",
   "pdf": "output/pdf/beta4-determinant-obstructions.pdf",
-  "pdf_sha256": "61e52f4c1da98bc2e61d1ac411d22162db6cc14e8062d0cd8ef461e92640fe2a",
+  "pdf_sha256": "12c2eacd1fa4e618e0ebf53f96539d3c993e5437e39d624ef148c6473ca4f29c",
   "pages": 18,
   "visual_inspection": {
     "pages_inspected": [
@@ -28,9 +28,9 @@
       17,
       18
     ],
-    "rendering": "Poppler, 100 dpi; all pages inspected. Final link-color changes were rendered again and compared with the inspected pages.",
+    "rendering": "Poppler, 100 dpi. Page 2 re-inspected after the sentence deletion; the other 17 pages match the previously inspected render pixel-for-pixel.",
     "final_changed_pages_reinspected": [
-      16
+      2
     ],
     "other_final_pages_match_inspected_render": true,
     "result": "No clipping, overlap, broken formulas or illegible layout observed."
@@ -227,7 +227,8 @@
     "formal_statements_unchanged_across_both_documents": 21,
     "comparison_record": "planning/expository-review.json",
     "comparison_sha256": "70059eb11e25338a7026030bd7688041ca5a2c810ecac8238594c989659d7b84",
-    "proof_text": "Expanded and reorganized; no claim of verbatim proof preservation in this revision."
+    "proof_text": "Expanded and reorganized; no claim of verbatim proof preservation in this revision.",
+    "comparison_record_scope": "Preceding full expository revision; source hashes in that historical record precede the sentence deletion recorded below."
   },
   "editorial_review": {
     "record": "planning/expository-review.txt",
@@ -276,5 +277,15 @@
   "independent_audit_of_assembled_draft": false,
   "formal_verification": false,
   "source": "paper/beta4-determinant-obstructions.tex",
-  "source_sha256": "8cbd8c7a9b0569f6c11fd4f95ab489a7034c20cb333e8108163bf20d51f4c15b"
+  "source_sha256": "45ad659b758aec3bf4732f39194f7bdccf3f0dc1e69f42f1cf08d7753760380f",
+  "editorial_followup": {
+    "change": "Remove the entire redundant sentence beginning We use these works to situate the question.",
+    "baseline_commit": "local-prepublication-revision",
+    "existing_statement_and_proof_blocks_unchanged": 20,
+    "calculation_suites_rerun_for_this_sentence_deletion": false,
+    "changed_pages_reinspected": [
+      2
+    ],
+    "other_pages_identical": 17
+  }
 }
