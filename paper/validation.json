@@ -1,11 +1,11 @@
 {
   "status": "passed",
-  "recorded_at_utc": "2026-10-31T23:01:17.015973+00:00",
+  "recorded_at_utc": "2026-10-31T23:19:15.193502+00:00",
   "scope": "Structural revision and subsequent Section 1.2 explanation: text preservation, compilation, cross-references, artifact consistency and visual review; not independent mathematical verification.",
   "source_files_match_build_record": 1,
-  "build_record_sha256": "01a3b816f0bda76af89d1c42d02a0cc19770075dba433465884ae83d9bbf26fc",
+  "build_record_sha256": "f4ff208a2348802ec8081aec1de6ebc7c99d79024184a3174856aa97f14664dc",
   "pdf": "output/pdf/beta4-determinant-obstructions.pdf",
-  "pdf_sha256": "d52d3508a101f71a4d70727925bc3db26d5022fa4635eaaa0f17b3bf8fcfc8aa",
+  "pdf_sha256": "04ad62f037f4dc0ebcd14c8328b8acccb1282f6caf4b157dbd5aecc514662aa4",
   "pages": 19,
   "visual_inspection": {
     "pages_inspected": [
@@ -29,9 +29,9 @@
       18,
       19
     ],
-    "rendering": "Poppler, 100 dpi. Every page inspected after the Section 1.2 expansion. The final bibliography layout adjustment changed only page 19, which was reinspected; pages 1-18 match the inspected render pixel-for-pixel.",
+    "rendering": "Poppler, 100 dpi. Page 2 reinspected after the row-vector wording clarification; the other eighteen pages match the previously inspected PDF render pixel-for-pixel.",
     "final_changed_pages_reinspected": [
-      19
+      2
     ],
     "other_final_pages_match_inspected_render": true,
     "result": "No clipping, overlap, broken formulas or illegible layout observed."
@@ -260,7 +260,8 @@
   },
   "editorial_review": {
     "record": "planning/narrative-review.txt",
-    "sha256": "cf0aab3f2e5c628ffe6cc5a3be5ba968fec47ad62f20c3dd917236aad549d625"
+    "sha256": "cf0aab3f2e5c628ffe6cc5a3be5ba968fec47ad62f20c3dd917236aad549d625",
+    "record_scope": "Structural revision and explanatory expansion; subsequent wording changes are recorded in editorial_followups."
   },
   "historical_reviews": [
     {
@@ -311,7 +312,7 @@
   "independent_audit_of_assembled_draft": false,
   "formal_verification": false,
   "source": "paper/beta4-determinant-obstructions.tex",
-  "source_sha256": "3bbe14a491b21ccb02eefef630f9a69de08b9be117201b5061170e3803fbebe4",
+  "source_sha256": "f42f782f0e9a969dedb2945b5b7afdaa438eb341e05ff0cc9ce5ecc9385d314b",
   "historical_statement_preservation": {
     "baseline_commit": "local-prepublication-revision",
     "formal_statements_unchanged_in_document": 11,
@@ -358,6 +359,16 @@
       "new_explanation_checked": "The determinant product after row orthogonalization, the finite arithmetic sum in its exponent, and the comparison with b^(-n) were checked directly. The text explicitly requires integer coefficients before applying the irrationality test.",
       "calculation_suites_rerun": false,
       "independent_mathematical_audit": false
+    },
+    {
+      "baseline_commit": "local-prepublication-revision",
+      "change": "Replace the resulting row lengths with the lengths of the orthogonalized row vectors in Section 1.2.",
+      "only_change_after_whitespace_normalization": true,
+      "changed_pages_reinspected": [
+        2
+      ],
+      "other_pages_identical": 18,
+      "calculation_suites_rerun": false
     }
   ]
 }
