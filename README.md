@@ -12,10 +12,12 @@ Start with the focused paper; use the supplement for the broader investigation.
 
 | Document | Contents | Source and review |
 | --- | --- | --- |
-| **[Main paper (18 pages)](output/pdf/beta4-determinant-obstructions.pdf)** | Complete proofs of the two determinant obstructions, with a shared proof outline, derived constructions and worked arithmetic example. | [LaTeX](paper/beta4-determinant-obstructions.tex) · [Assembly audit](paper/audit.txt) |
+| **[Main paper (19 pages)](output/pdf/beta4-determinant-obstructions.pdf)** | An introduction to the irrationality strategy and what the two theorems establish, followed by the constructions, complete proofs and a worked arithmetic example. | [LaTeX](paper/beta4-determinant-obstructions.tex) · [Current editorial review](planning/narrative-review.txt) |
 | **[Technical supplement (34 pages)](output/pdf/beta4-investigations.pdf)** | A guide to the constructions, selected complete proofs, exact reductions, unresolved arithmetic, and all 57 grouped records. | [Source guide](supplement/README.md) · [Assembly audit](supplement/audit.txt) |
 
-Both abstracts and introductions start from the irrationality criterion and explain the comparison between approximation error and arithmetic cost. A further [equation-by-equation expository review](planning/expository-review.txt) expands the derivations, explains the choices behind the constructions, and separates the stages of longer proofs. All 21 formal statements are unchanged; proofs have been expanded or reorganized. The [earlier accessibility revision](planning/accessibility-review.txt) is retained as a historical record.
+The main paper now explains the strategy before introducing the technical formulas: what would contradict rationality, why determinants might help, and what happens when their coefficients are made integral. Each main theorem is followed by a plain-language interpretation of its quantitative conclusion and scope. The exact matrix entries appear with their derivations in Sections 3 and 5; the large-prime formula formerly included in Theorem 1.2 is now Proposition 6.1, beside its proof. This [structural revision](planning/narrative-review.txt) preserves the mathematical content and all nine existing proof blocks. The supplement retains its broader introductory guide.
+
+The [earlier equation-by-equation review](planning/expository-review.txt), [accessibility review](planning/accessibility-review.txt) and [main-paper assembly audit](paper/audit.txt) record their respective revisions. Their preservation and checking statements apply to those historical versions.
 
 The [reproduction instructions and results](checks/README.md) distinguish main-paper exact/interval checks from the supplement's certificate replays and exact reconstructions. The supporting documents are:
 

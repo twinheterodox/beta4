@@ -1,0 +1,72 @@
+Main-paper structural and explanatory revision
+31 October 2026
+
+Purpose
+
+The reader should understand what Theorems 1.1 and 1.2 establish and why
+one would try these constructions before encountering their full matrix
+formulas. The intended starting background is rational arithmetic and
+linear algebra. The detailed proofs still use calculus, elementary complex
+integration, Stirling's formula and the prime number theorem; these inputs
+are stated explicitly.
+
+Reading order
+
+The introduction now develops the rational-denominator contradiction,
+extends it from linear forms to polynomials using a two-by-two determinant,
+and explains primitive normalization with a numerical example. It then
+describes each family, states its growth theorem, and interprets the
+inequality and its scope in ordinary language. The common proof outline
+and exponent table explain the comparison before the technical work.
+
+The first matrix construction has moved from the introduction to Section
+3.1, before its integral representation and real estimates. Section 4
+treats its arithmetic obstruction. The second construction and moment
+coefficients now appear together in Section 5.1; Section 6 treats its
+arithmetic obstruction. The paired section titles make this organization
+visible. The exact prime-valuation clause formerly in Theorem 1.2 is now
+Proposition 6.1, beside its proof. Its content and formula are unchanged.
+
+Section 2 proves why primitive normalization gives the least absolute
+value among nonzero rational scalar rescalings with integer coefficients,
+and explains how a coefficient valuation forces a prime power. Duplicate
+examples and the repeated irrationality criterion were removed. The
+matrix-rescaling observation now describes its matrices directly, before
+the term matrix pencil is introduced, and explicitly assumes a nonzero
+determinant polynomial. Standard terminology such as nodes is retained.
+
+Preservation and checks
+
+The baseline is commit local-prepublication-revision. The
+machine-readable comparison is planning/narrative-review.json.
+
+- All nine existing proof environments are unchanged verbatim.
+- Of eleven existing theorem, proposition, lemma, corollary and definition
+  environments, ten are unchanged verbatim. The remaining one, Theorem
+  1.2, has been split as described above; its assertions are preserved.
+  There are now twelve such environments. Both remarks are unchanged.
+- All seventy existing labeled equations remain. Sixty-eight have unchanged
+  display text; the other two changes remove a
+  terminal period and put the already stated condition kappa_n > 0 into
+  a display. The new labeled display states the elementary polynomial
+  lower bound at a rational argument.
+- The full Section 4 argument, apart from its title, is unchanged. The
+  scope section, appendix and bibliography are unchanged. Citations were
+  relocated with the relevant discussion, without adding sources.
+- The new two-by-two example, rational-denominator calculation, primitive
+  minimality argument and interpretations of the asymptotic inequalities
+  were checked directly in this editorial pass.
+- The main paper compiles to nineteen pages without unresolved references
+  or box warnings. Every page was rendered with Poppler at 100 dpi and
+  visually inspected. Final edits changed only page 5, which was inspected
+  again; the other pages match the inspected render pixel-for-pixel. No
+  clipping, overlap, broken formulas or illegible layout was observed.
+- The calculation suites were not rerun for this structural revision.
+  Their scripts and recorded outputs remain unchanged; their hashes were
+  checked against the existing reproduction report. The supplement and
+  research evidence were not edited.
+
+This is a same-model editorial review and preservation check, not a fresh
+independent mathematical audit or formal verification. The revision is
+local and unpublished. Earlier audit and editorial records describe the
+versions reviewed at those times.

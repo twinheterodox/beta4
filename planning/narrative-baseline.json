@@ -1,0 +1,7 @@
+{
+  "baseline_commit": "local-prepublication-revision",
+  "source": "paper/beta4-determinant-obstructions.tex",
+  "source_sha256": "6ba8631ff9ff840061d3692a7aaaba79c8f09dd88839be5275a16ab27446ff53",
+  "pdf_sha256": "887a03bc6c01f88423a4c2bdbb807c25b7fb231cd5993389715e022064ebf044",
+  "scope": "Restructure the main paper for readers without specialist background; mathematical results are retained but statements and definitions may move."
+}

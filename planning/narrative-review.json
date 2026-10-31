@@ -1,0 +1,35 @@
+{
+  "scope": "Text-preservation and structural checks for the main-paper narrative revision; not independent mathematical verification.",
+  "recorded_at_utc": "2026-10-31T21:58:24.089843+00:00",
+  "baseline_commit": "local-prepublication-revision",
+  "baseline_source_sha256": "6ba8631ff9ff840061d3692a7aaaba79c8f09dd88839be5275a16ab27446ff53",
+  "current_source_sha256": "7eb08c603ccc4d42e06b85f2734b21a5e15a752d158406a1054cbbe06286b93b",
+  "formal_environments_counted": [
+    "theorem",
+    "proposition",
+    "lemma",
+    "corollary",
+    "definition"
+  ],
+  "baseline_formal_environments": 11,
+  "current_formal_environments": 12,
+  "existing_formal_environments_verbatim_preserved": 10,
+  "formal_statement_reorganization": "Theorem 1.2 retains degree, leading coefficient, positivity and growth; its exact large-prime valuation clause is now Proposition 6.1. The two statements together retain the original assertions.",
+  "existing_remarks_verbatim_preserved": 2,
+  "existing_proof_blocks_verbatim_preserved": 9,
+  "labeled_equations_baseline": 70,
+  "labeled_equations_current": 71,
+  "existing_labeled_equation_blocks_verbatim_preserved": 68,
+  "labeled_equation_text_changes": {
+    "eq:theta": "Removed terminal period to continue the surrounding sentence.",
+    "eq:budget": "Put the already stated positivity condition kappa_n > 0 into the display."
+  },
+  "new_labeled_equation": "eq:integer-test: the elementary lower bound |Z(a/b)| >= b^(-n) for a nonzero value and integer polynomial of degree at most n.",
+  "exact_prime_valuation_formula_preserved": true,
+  "first_family_arithmetic_section_body_preserved": true,
+  "scope_appendix_and_bibliography_preserved": true,
+  "supplement_modified": false,
+  "calculation_suites_rerun": false,
+  "calculation_scope": "No changed determinant formulas or proof calculations; existing checks and evidence files are retained. New introductory examples and implications were checked directly during the editorial pass.",
+  "labeled_equation_comparison_unit": "Each label is compared through its containing display; a shared align block can be associated with more than one label."
+}

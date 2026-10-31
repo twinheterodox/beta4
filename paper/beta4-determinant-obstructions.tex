@@ -44,103 +44,332 @@ approximations to $\beta(4)$}
 \maketitle
 
 \begin{abstract}
-A standard route to irrationality is to construct nonzero values of
-integer polynomials that are sufficiently small relative to their degrees.
-Positive integral representations offer a way to ensure nonvanishing,
-and determinants built from them can become very small. We examine two
-such constructions for $\beta(4)=1-3^{-4}+5^{-4}-\cdots$ and prove that
-the arithmetic cost defeats the real decay: after clearing denominators
-and removing every common coefficient factor, the polynomial values grow.
-For the first family this holds for every choice of consecutive positive integer
-nodes, even when their starting point grows arbitrarily with the matrix
-size. For the second we calculate exactly the unavoidable power of each
-sufficiently large prime in the normalization. The respective lower
-growth exponents are $2-2\log 2$ and $6-\log 4$, on the scale of the square
-of the matrix size. These results identify why the two specified families
-fail as irrationality constructions. The proofs develop their positive
-integral representations, real estimates and prime-divisibility arguments;
-other determinant families remain outside the conclusions.
+Small positive determinants offer a possible route to proving that
+$\beta(4)=1-3^{-4}+5^{-4}-\cdots$ is irrational. The determinant must
+be the value of an integer polynomial, and it must be sufficiently
+small relative to the polynomial's degree. We examine two explicit
+constructions and prove that clearing denominators necessarily destroys
+the required smallness, even after all common coefficient factors are
+removed. The resulting primitive integer-polynomial values
+grow at least exponentially in the square of the matrix size, with
+lower exponents $2-2\log2$ and $6-\log4$. The first conclusion covers
+every consecutive block of positive integer nodes, regardless of how
+its starting point varies with the size. For the second construction,
+we determine the exact contribution of every sufficiently large prime
+to the primitive multiplier. These are failure theorems for the two
+specified families. We explain the irrationality criterion and the
+constructions before developing their positive integral representations,
+real estimates and prime-divisibility arguments.
 \end{abstract}
 
 \section{Introduction}
 
-Put
+We study two attempts to prove that
 \begin{equation}\label{eq:theta}
- \theta=\beta(4)=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k+1)^4}.
+ \theta=\beta(4)=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k+1)^4}
 \end{equation}
-Positive integral representations provide nonzero quantities involving a
-constant. To see how this can help with irrationality, suppose that
-$\theta=a/b$ were rational, with $b>0$. Every nonzero integer linear form
-$B\theta-A$ would then have absolute value at least $1/b$.
-Thus a sequence of nonzero integer linear forms tending to zero would
-contradict rationality. An accurate rational approximation $A/B$ is useful
-for this purpose only when its error remains small after multiplication
-by $B$.
+is irrational. Both attempts produce positive determinants that become
+very small. The question is whether these small numbers can be turned
+into a contradiction to rationality. We prove that, for these two
+constructions, the conversion to integer coefficients necessarily
+destroys the smallness. Theorems~\ref{thm:principal} and~\ref{thm:delta}
+are thus results about the limitations of particular proof strategies.
 
-Determinant constructions extend this idea to polynomials. A determinant
-whose entries are rational linear forms in $\theta$ is the value
-$Q_n(\theta)$ of a rational polynomial, usually of degree $n$. If
-$Z_n\in\Z[X]$ has degree at most $n$, rationality would imply
-$b^nZ_n(\theta)\in\Z$. Consequently nonzero values with
-$|Z_n(\theta)|^{1/n}\to0$ would suffice. Determinants can decay as
-$\exp(-c n^2)$, fast enough to overcome this degree cost, provided the
-passage from rational to integer coefficients does not consume the gain.
+\subsection{What would prove irrationality?}
 
-There are therefore two sizes to compare: the value of the rational
-determinant, and the multiplier needed to make its coefficients primitive
-integers. Here \emph{primitive} means that their greatest common divisor
-is one. Write
+Suppose that $\theta=a/b$ were rational, with integers $a,b$ and $b>0$.
+For any integers $A,B$,
+\[
+ B\theta-A=\frac{Ba-Ab}{b}.
+\]
+If this is nonzero, its numerator is a nonzero integer, so its absolute
+value is at least $1/b$. Consequently, a sequence of nonzero integer
+linear forms $B_n\theta-A_n$ tending to zero would prove irrationality:
+no fixed denominator $b$ could accommodate the whole sequence.
+
+This is stronger than finding accurate rational approximations.
+If $A_n/B_n$ approximates $\theta$, the relevant quantity is
+\[
+ |B_n\theta-A_n|=|B_n|\left|\theta-\frac{A_n}{B_n}\right|.
+\]
+The approximation error must remain small after multiplication by its
+denominator. Every real number has arbitrarily accurate rational
+approximations; the integer-form requirement is what makes this an
+irrationality test.
+
+\subsection{Why use determinants?}
+
+A determinant combines many entries into one expression. If the entries
+are rational linear forms in $\theta$, the determinant is a rational
+polynomial evaluated at $\theta$. For example, with $r,s,t\in\Q$,
+\[
+ \det\begin{pmatrix}X+r&s\\s&X+t\end{pmatrix}
+       =X^2+(r+t)X+rt-s^2.
+\]
+An $n\times n$ matrix of linear entries similarly gives a polynomial
+of degree at most $n$. This allows more elaborate combinations than a
+single linear form. Determinants can be especially small when their
+rows are almost linearly dependent; the challenge is to make them
+small enough while ensuring that they are not exactly zero.
+
+The integer test extends to these polynomials. If $Z\in\Z[X]$ has
+degree at most $n$, then $b^nZ(a/b)$ is an integer. Thus
+\begin{equation}\label{eq:integer-test}
+ Z(\theta)\ne0\quad\Longrightarrow\quad
+ |Z(\theta)|\geq b^{-n}\qquad\text{if }\theta=a/b.
+\end{equation}
+To contradict every possible fixed $b$, it is enough to construct
+nonzero integer-polynomial values with
+$|Z_n(\theta)|^{1/n}\to0$.
+Values of size $e^{-c n^2}$, with $c>0$, would do this, since their
+$n$th roots are $e^{-cn}$. Merely tending to zero is insufficient:
+$Z_n(X)=X^n$ has value $2^{-n}$ at the rational number $1/2$.
+
+Positive determinant constructions are attractive because they can
+meet two requirements at once: rapid decay and nonvanishing. A
+\emph{Gram matrix} consists of the pairwise inner products of a list
+of functions. If those functions are linearly independent, the matrix
+is positive definite and its determinant is positive, although it may
+be very small. Integral representations of this kind let us establish
+nonvanishing without knowing whether $\theta$ is rational.
+Zudilin~\cite{Zudilin} develops this approach systematically.
+The determinant strategy for the related value $\beta(2)$, Catalan's
+constant, described by OpenAI~\cite[Section~1.2]{OpenAI}, is a motivation
+for testing such constructions at $\beta(4)$.
+
+\subsection{The cost of integer coefficients}
+
+The determinant initially gives $Q_n\in\Q[X]$, whereas the test
+\eqref{eq:integer-test} requires integer coefficients. We therefore
+clear denominators and then divide out the greatest common divisor of
+all coefficients. The resulting integer polynomial is called
+\emph{primitive}. Write
 \begin{equation}\label{eq:budget}
  Z_n=\kappa_n Q_n=\PP(Q_n),\qquad
- \log|Z_n(\theta)|=\log\kappa_n+\log|Q_n(\theta)|.
+ \log|Z_n(\theta)|=\log\kappa_n+\log|Q_n(\theta)|,
+ \quad \kappa_n>0.
 \end{equation}
-The multiplier $\kappa_n$ is positive and rational. Its determination
-includes both clearing denominators and cancelling common numerator
-factors. Ignoring the latter can give a false obstruction: an expensive
-chosen denominator need not be an unavoidable cost.
+Every integer polynomial proportional to $Q_n$ is an integer multiple
+of $Z_n$. Thus $Z_n$ has the smallest nonzero absolute value obtainable
+by rationally rescaling this same polynomial.
 
-We prove that the actual cost is unavoidable in two explicit families.
-Their determinants are positive and become small, but their primitive
-integer-polynomial values grow exponentially on the $n^2$ scale.
-This answers a construction-level question: these families cannot supply
-the small values required above. It makes no assertion that $\theta$ is
-rational, or that other determinant designs must fail.
+Removing common factors matters. For example,
+$Q(X)=(6X+12)/5$ becomes integral after multiplication by $5$, but its
+primitive representative is only $X+2$: the actual multiplier is $5/6$.
+A large denominator chosen to clear the entries of a matrix could
+therefore be a poor estimate of the cost of its determinant.
+Brown~\cite[Section~7.4]{Brown} discusses the role of common divisors
+and congruences in this arithmetic comparison.
 
-The relation between positive moments, determinant decay and irrationality
-criteria is developed systematically by Zudilin~\cite{Zudilin}.
-One motivation for studying $\beta(4)$ determinants is the mixed
-determinant strategy for Catalan's constant described by
-OpenAI~\cite[Section~1.2]{OpenAI}, which treats nonvanishing, the real
-estimate and prime valuations separately. The positive families considered
-here examine only part of the much wider space of determinant designs.
-Pr\'evost~\cite{Prevost} constructs positive-weight representations and
-Pad\'e approximants for Hurwitz zeta values. Rational modifications of
-moment functionals belong to the classical orthogonal-polynomial framework;
-Krattenthaler~\cite{Krattenthaler} gives determinant formulas that include
-such modifications and repeated parameters. More directly,
-Carreira~\cite{Carreira} investigates determinant constructions for
-$\beta(4)$, including positive functionals, primitive polynomial
-calculations and the competing real and arithmetic costs. Brown's
-discussion~\cite[Section~7.4]{Brown} of denominator clearing, common
-divisors and congruences further emphasizes that the full coefficient
-content must be accounted for.
+To prove that a construction fails, we must bound the actual primitive
+value from below. An upper bound that fails to tend to zero establishes
+only that the estimate is inadequate. Our proofs instead show that
+the determinants cannot be smaller, or their primitive multipliers
+cheaper, by enough to make the construction work.
 
-The contributions here are specific uniform estimates and exact local
-arithmetic for the two families defined below. In each case we identify
-a coefficient that retains a large prime-power denominator after all
-cancellation. Combining these costs over many primes proves the
-obstruction. The first proof also shows that moving the entire block of
-consecutive nodes cannot repair that family. The second determines the
-cost at each large prime exactly.
+\subsection{The two results and what they mean}
 
-\subsection{Consecutive kernel determinants}
+The exact matrix entries are given in
+Sections~\ref{sec:kernel-construction} and~\ref{sec:gram-construction}.
+Here we describe the two designs and state the conclusions.
+Carreira~\cite{Carreira} also investigates $\beta(4)$ determinant
+constructions and their primitive arithmetic. The results below give
+proofs of failure for the specified infinite families, including all
+common coefficient cancellation.
+
+\paragraph{First construction: consecutive nodes.}
+We build a symmetric matrix with rational off-diagonal entries and
+$\theta$ plus a rational on each diagonal entry. The same nodes are
+used for its rows and columns; this is the meaning of \emph{principal}.
+We choose consecutive integer nodes
+\[
+ m+1,m+2,\ldots,m+n.
+\]
+The parameter $n$ is the matrix size and $m$ is its offset. Replacing
+$\theta$ by $X$ and taking the determinant defines $Q_{n,m}(X)$;
+write $Z_{n,m}=\PP(Q_{n,m})$. The construction is made explicit in
+\eqref{eq:R}--\eqref{eq:principal-Q}.
+
+\begin{theorem}[Consecutive principal determinants]\label{thm:principal}
+For every sequence of nonnegative integer offsets $m_n$,
+$Q_{n,m_n}(\theta)>0$ and
+\begin{equation}\label{eq:principal-result}
+ \liminf_{n\to\infty}\frac{\log Z_{n,m_n}(\theta)}{n^2}
+ \geq 2-2\log 2>0.
+\end{equation}
+\end{theorem}
+
+The positive constant $2-2\log2$ is approximately $0.614$.
+The inequality says that, for any chosen offset sequence $m_n$ and
+any $\varepsilon>0$, eventually
+\[
+ Z_{n,m_n}(\theta)\geq
+       e^{(2-2\log2-\varepsilon)n^2}.
+\]
+These integer-polynomial values grow instead of becoming small.
+The offset may depend on $n$ in any way, even growing much faster
+than $n$. Thus moving the consecutive block farther out cannot repair
+this family. The theorem concerns consecutive blocks, not arbitrary
+selections of nodes.
+
+\paragraph{Second construction: moments of a positive weight.}
+We use integrals of powers of $y=(u-v)^2$, with $u,v\in[0,1]$, against
+a positive weight. Such integrals are called \emph{moments}. Write
+them as $\mu_0,\mu_1,\ldots$ and form the matrix
+$[\mu_{i+j}]_{0\leq i,j<n}$, the Gram matrix of
+$1,y,\ldots,y^{n-1}$. Each moment turns out to be a rational multiple
+of $\theta$ plus a rational. Replacing $\theta$ by $X$ gives a
+determinant polynomial $Q_n^\Delta(X)$ and its primitive representative
+$Z_n^\Delta=\PP(Q_n^\Delta)$. Formula~\eqref{eq:delta-Q} gives their
+precise definitions; the superscript $\Delta$ denotes this
+difference-variable construction.
+
+\begin{theorem}[Difference-variable Gram determinants]\label{thm:delta}
+The polynomial $Q_n^{\Delta}$ has degree $n$ and leading coefficient
+$2^{n-1}$, and $Q_n^{\Delta}(\theta)>0$. Moreover,
+\begin{equation}\label{eq:delta-result}
+ \log Z_n^{\Delta}(\theta)\geq (6-\log 4)n^2+o(n^2).
+\end{equation}
+\end{theorem}
+
+Here $o(n^2)$ denotes a term whose ratio to $n^2$ tends to zero.
+Since $6-\log4\approx4.614>0$, these primitive values also grow
+exponentially in $n^2$. In this family we can say more about the
+reason: Proposition~\ref{prop:gram-prime-cost} determines exactly
+how many powers of every prime $p>4n$ remain in the primitive
+multiplier. That arithmetic result is stated alongside its proof
+in Section~\ref{sec:delta-arithmetic}.
+
+These conclusions go beyond observing that a list of examples fails.
+They rule out the required small values at all sufficiently large
+sizes, with every offset schedule included in the first family.
+They also account for all rational scalar rescalings, because the
+primitive polynomial already gives the smallest such value.
+The contribution is a precise explanation of failure for these two
+natural constructions. It does not decide whether $\theta$ is rational,
+or exclude different determinants, polynomial factors or combinations
+of the constructed expressions.
+
+\subsection{How the proofs work}
+
+The two proofs compare the gain from a small real determinant with
+the cost of making its coefficients primitive integers. Both use
+the same three steps:
+\begin{enumerate}
+\item Express the determinant through a positive integral, so its
+      value cannot be zero.
+\item Bound that value both above and below, determining its rate
+      of decay. A lower bound is essential for a failure theorem.
+\item Find prime powers that must occur in the primitive multiplier,
+      even after every common coefficient factor has been removed.
+\end{enumerate}
+
+The comparison is particularly simple at the leading quadratic scale.
+In the table, each entry is the coefficient of $n^2$ in the indicated
+logarithm; terms $o(n^2)$ are omitted. The first row uses offset $m=0$.
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Family & $\log Q_n(\theta)$ & $\log\kappa_n$ (lower)
+       & $\log Z_n(\theta)$ (lower)\\
+\midrule
+Consecutive, $m=0$ & $-2\log2$ & $2$ & $2-2\log2$\\
+Difference Gram & $-\log4$ & $6$ & $6-\log4$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The negative second column describes the small determinants. Adding
+the arithmetic cost in the third column gives a positive fourth
+column: the best integer-coefficient values become large.
+The proof of Theorem~\ref{thm:principal} also checks that changing
+the offset cannot reverse this comparison.
+
+Section~\ref{sec:normalization} gives the arithmetic conventions.
+Sections~\ref{sec:kernel}--\ref{sec:principal} construct and analyze
+the first family; Sections~\ref{sec:gram}--\ref{sec:delta-arithmetic}
+do so for the second. Each construction is introduced before its
+technical proof begins, and the two arguments can be read separately.
+Section~\ref{sec:scope} describes the scope and evidence; Appendix~\ref{app:zero}
+includes a zero node in the first construction.
+
+The introductory argument uses rational arithmetic and linear algebra.
+The detailed proofs also use calculus, elementary complex integration,
+Stirling's formula and the prime number theorem in the form
+\begin{equation}\label{eq:PNT}
+ \vartheta(x):=\sum_{p\leq x}\log p=x+o(x).
+\end{equation}
+The latter counts the total logarithmic contribution of the primes
+whose powers the arithmetic arguments force. No numerical optimization
+or finite enumeration is an input to either asymptotic obstruction.
+
+\section{Primitive normalization and prime powers}\label{sec:normalization}
+
+\begin{definition}
+For $0\ne Q\in\Q[X]$, its primitive representative $\PP(Q)$ is the
+unique positive rational multiple $\kappa Q\in\Z[X]$ whose coefficients
+have gcd one. This convention preserves the sign of $Q$.
+\end{definition}
+
+We write $[X^j]Q$ for the coefficient of $X^j$ in $Q$.
+For a nonzero rational number, $\vp$ counts powers of $p$ in its
+numerator minus those in its denominator; set $\vp(0)=+\infty$.
+For example $v_p(p^{-3})=-3$. Saying that a rational
+number is $p$-integral means that its denominator in lowest terms is not
+divisible by $p$. Reduction modulo $p$ below is always performed on
+$p$-integral quantities, by inverting the denominator modulo $p$.
+A $p$-unit has valuation zero, so its reduction is nonzero.
+
+\begin{lemma}\label{lem:primitive}
+If $Q(X)=\sum_j q_jX^j\ne0$ and $\PP(Q)=\kappa Q$, then
+\begin{equation}\label{eq:min-valuation}
+ \vp(\kappa)=-\min_j\vp(q_j)
+\end{equation}
+for every prime $p$. If $Q$ is monic, $\kappa$ is a positive integer.
+If the leading coefficient of $Q$ is $2^e$ with $e\geq0$, then
+$\vp(\kappa)\geq0$ for odd $p$ and $v_2(\kappa)\geq-e$.
+\end{lemma}
+
+\begin{proof}
+Integral primitive coefficients have minimum valuation zero at every
+prime, which proves~\eqref{eq:min-valuation}. A monic polynomial has a
+coefficient of valuation zero at every prime. A leading coefficient $2^e$
+has valuation zero at odd primes and valuation $e$ at 2.
+\end{proof}
+
+If $Z=\PP(Q)$ and $\lambda Q$ has integer coefficients, then
+$(\lambda/\kappa)Z$ has integer coefficients. The denominator of
+$\lambda/\kappa$ in lowest terms must divide every coefficient of $Z$,
+so it is one. Thus every integral rational rescaling is an integer
+multiple of $Z$, as asserted in the introduction.
+
+Formula~\eqref{eq:min-valuation} tells us how to prove that a prime
+power is unavoidable: to show $v_p(\kappa)\geq r$, it suffices to find
+one coefficient of $Q$ with valuation at most $-r$. To establish equality,
+we must also show that no coefficient has a lower valuation.
+The first construction uses the lower bound; the second obtains
+equality for every sufficiently large prime.
+
+If $M(X)$ has rational polynomial entries, $\det M(X)\ne0$, and $U,V$
+are invertible rational matrices of the same size, then
+$\det(U M(X)V)=\det U\det V\det M(X)$. Consequently the primitive
+representative of $\det M(X)$ is unchanged up to sign by rational invertible
+row and column operations. Passing to a different subspace or a different
+matrix is a different construction and is not covered by this observation.
+
+\section{First construction: a positive kernel}\label{sec:kernel}
+
+This section constructs the first family from a shifted beta-series
+tail. We then prove positivity and estimate the real determinant.
+Section~\ref{sec:principal} will determine the arithmetic cost.
+
+\subsection{Choosing the matrix entries}\label{sec:kernel-construction}
 
 The first construction seeks a symmetric matrix with rational
 off-diagonal entries and $\theta$ plus a rational on each
 diagonal entry. We also want the matrix to be positive definite, so
 that its determinant cannot vanish. The following calculation explains
-the entries; positive definiteness is established separately in
-Section~\ref{sec:kernel}.
+the entries; the integral representation in the next subsection will
+establish positive definiteness.
 
 For integers $a\geq 0$ and $\ell\geq 2$, write
 \begin{equation}\label{eq:S}
@@ -186,7 +415,7 @@ symmetric matrix
  R(a)_{ii}=-S_4(a_i)+\frac{S_3(a_i)}{12a_i},\qquad
  R(a)_{ij}=\frac{a_jS_3(a_j)-a_iS_3(a_i)}{6(a_j^2-a_i^2)}\quad(i\ne j).
 \end{equation}
-The representation in Section~\ref{sec:kernel} proves that $K$ is a
+The integral representation below proves that $K$ is a
 positive kernel: its matrices at distinct positive nodes are positive
 definite. This does not follow from the divided-difference formula
 alone. Replacing $\theta$ by $X$ gives a \emph{matrix pencil} $XI_n+R(a)$,
@@ -198,199 +427,16 @@ For consecutive nodes $a_i=m+i$, $1\leq i\leq n$, set
 \end{equation}
 where $H_{n,m}>0$ and $Z_{n,m}\in\Z[X]$ has coefficient gcd one.
 
-\begin{theorem}[Consecutive principal determinants]\label{thm:principal}
-For every sequence of nonnegative integer offsets $m_n$,
-$Q_{n,m_n}(\theta)>0$ and
-\begin{equation}\label{eq:principal-result}
- \liminf_{n\to\infty}\frac{\log Z_{n,m_n}(\theta)}{n^2}
- \geq 2-2\log 2>0.
-\end{equation}
-\end{theorem}
-
-The theorem allows arbitrary growth of $m_n$, including $m_n/n\to\infty$.
-The underlying kernel admits a uniform comparison for arbitrary positive
-integer row and column nodes (Theorem~\ref{thm:comparison}); the arithmetic
-conclusion above is restricted to consecutive principal nodes.
-
-\subsection{Difference-variable Gram determinants}
-
-The second construction builds positivity into the moments themselves:
-\[
- \mu_m=\frac1{96}\int_0^1\int_0^1
- \frac{(u-v)^{2m}\log^2(uv)}{\sqrt{uv}(1+uv)}\dd u\dd v.
-\]
-The weight is positive, and $y=(u-v)^2$ lies in $[0,1]$.
-Thus these are moments of a positive measure on that interval, and
-$[\mu_{i+j}]$ is the Gram matrix of $1,y,\ldots,y^{n-1}$.
-Its determinant is positive because a nonzero polynomial cannot vanish
-throughout the interval.
-
-Why does this produce a polynomial in $\theta$? Expand $(u-v)^{2m}$
-and integrate its monomials. The middle term $u^mv^m$ contributes
-$\binom{2m}{m}(\theta-T_4(m))$; paired off-diagonal terms have
-rational values because their cubic beta tails cancel. The factor
-$1/96$ normalizes $\mu_0=\theta$. Section~\ref{sec:gram} carries out
-this calculation and gives $\mu_m=C_m\theta+B_m$, with the explicit
-rational coefficients
-\begin{align}
- T_\ell(j)&=\sum_{k=0}^{j-1}\frac{(-1)^k}{(2k+1)^\ell},
- &C_m&=\binom{2m}{m},\label{eq:T}\\
- B_m&=-C_mT_4(m)+\frac16
- \sum_{\substack{0\leq j\leq 2m\\j\ne m}}
-       \binom{2m}{j}\frac{T_3(j)}{j-m},\label{eq:B}\\
- Q_n^{\Delta}(X)&=\det[C_{i+j}X+B_{i+j}]_{0\leq i,j<n},
- &Z_n^{\Delta}&=\kappa_n Q_n^{\Delta}=\PP(Q_n^{\Delta}),\quad \kappa_n>0.
- \label{eq:delta-Q}
-\end{align}
-Here $T_\ell(j)$ truncates the beta series after $j$ individual terms,
-so $S_\ell(a)=T_\ell(2a)$. The central binomial coefficient $C_m$
-comes from the middle term just described; $B_m$ collects the finite
-tail corrections and the off-diagonal terms. Empty sums are zero.
-In particular $B_0=0$ and $B_1=-149/81$.
-
-\begin{theorem}[Difference-variable Gram determinants]\label{thm:delta}
-The polynomial $Q_n^{\Delta}$ has degree $n$ and leading coefficient
-$2^{n-1}$, and $Q_n^{\Delta}(\theta)>0$. For every prime $p>4n$,
-\begin{equation}\label{eq:delta-valuation}
- \vp(\kappa_n)=3\max\left\{0,\,2n-2-\left\lfloor\frac p4\right\rfloor\right\}.
-\end{equation}
-Moreover,
-\begin{equation}\label{eq:delta-result}
- \log Z_n^{\Delta}(\theta)\geq (6-\log 4)n^2+o(n^2).
-\end{equation}
-\end{theorem}
-
-Both theorems imply that the corresponding primitive values eventually
-exceed one and that their $n$th roots tend to infinity. They exclude the
-specified sequences as small primitive values; they are not statements
-against all determinant methods for $\theta$.
-
-\subsection{Proof organization and background}
-
-Both proofs follow the same three steps.
-\begin{enumerate}
-\item \emph{Prove nonvanishing by positivity.} Write the determinant as
-an integral with positive integrand, or as the determinant of inner
-products for a positive measure. This avoids having to assume anything
-about the arithmetic nature of $\theta$.
-\item \emph{Determine the scale of real decay.} Compare the determinant
-with an explicit Cauchy or moment determinant. An obstruction requires
-a lower bound: we must exclude the possibility that the real value is
-even smaller than an upper estimate suggests. The two-sided estimates
-give its logarithm to leading order.
-\item \emph{Prove an unavoidable arithmetic cost.} For selected primes,
-multiply by suitable powers of $p$ and reduce the coefficients modulo
-$p$. A nonzero residue identifies a denominator that cannot cancel.
-Sum these costs using the prime number theorem, then use
-\eqref{eq:budget}.
-\end{enumerate}
-
-The following comparison shows the outcome before the details. The
-entries are coefficients of $n^2$, with errors $o(n^2)$ omitted. In the
-first row the nodes are $1,\ldots,n$; the proof then treats every offset.
-\begin{center}
-\begin{tabular}{lccc}
-\toprule
-Family & $\log Q_n(\theta)$ & $\log\kappa_n$ (lower)
-       & $\log Z_n(\theta)$ (lower)\\
-\midrule
-Consecutive, $m=0$ & $-2\log2$ & $2$ & $2-2\log2$\\
-Difference Gram & $-\log4$ & $6$ & $6-\log4$\\
-\bottomrule
-\end{tabular}
-\end{center}
-The positive final column is the obstruction. The estimates also explain
-why the arithmetic calculation must account for all common coefficient
-factors: otherwise that column would describe only one normalization.
-
-Section~\ref{sec:normalization} gives the elementary normalization facts.
-Sections~\ref{sec:kernel}--\ref{sec:principal} carry out the three steps
-for the consecutive family; Sections~\ref{sec:gram}--\ref{sec:delta-arithmetic}
-do so for the difference Gram family. Their arguments can be read
-separately after the normalization section. Section~\ref{sec:scope}
-describes the scope and evidence, and Appendix~\ref{app:zero} extends
-the first construction to include a zero node.
-
-We use elementary complex integration, linear algebra, Stirling's formula
-and the prime number theorem in the form
-\begin{equation}\label{eq:PNT}
- \vartheta(x):=\sum_{p\leq x}\log p=x+o(x).
-\end{equation}
-The latter is the only theorem on prime distribution used. The specific
-kernel identities, determinant comparisons, moment formulas and local
-valuation arguments are proved below. No numerical optimization or finite
-enumeration is an input to either asymptotic obstruction.
-
-\section{Primitive normalization and small polynomial values}\label{sec:normalization}
-
-\begin{definition}
-For $0\ne Q\in\Q[X]$, its primitive representative $\PP(Q)$ is the
-unique positive rational multiple $\kappa Q\in\Z[X]$ whose coefficients
-have gcd one. This convention preserves the sign of $Q$.
-\end{definition}
-
-We write $[X^j]Q$ for the coefficient of $X^j$ in $Q$.
-For a nonzero rational number, $\vp$ counts powers of $p$ in its
-numerator minus those in its denominator; set $\vp(0)=+\infty$.
-For example $v_p(p^{-3})=-3$. Saying that a rational
-number is $p$-integral means that its denominator in lowest terms is not
-divisible by $p$. Reduction modulo $p$ below is always performed on
-$p$-integral quantities, by inverting the denominator modulo $p$.
-A $p$-unit has valuation zero, so its reduction is nonzero.
-
-\begin{lemma}\label{lem:primitive}
-If $Q(X)=\sum_j q_jX^j\ne0$ and $\PP(Q)=\kappa Q$, then
-\begin{equation}\label{eq:min-valuation}
- \vp(\kappa)=-\min_j\vp(q_j)
-\end{equation}
-for every prime $p$. If $Q$ is monic, $\kappa$ is a positive integer.
-If the leading coefficient of $Q$ is $2^e$ with $e\geq0$, then
-$\vp(\kappa)\geq0$ for odd $p$ and $v_2(\kappa)\geq-e$.
-\end{lemma}
-
-\begin{proof}
-Integral primitive coefficients have minimum valuation zero at every
-prime, which proves~\eqref{eq:min-valuation}. A monic polynomial has a
-coefficient of valuation zero at every prime. A leading coefficient $2^e$
-has valuation zero at odd primes and valuation $e$ at 2.
-\end{proof}
-
-A sufficient common denominator can overstate the primitive multiplier.
-For example, $Q(X)=(6X+12)/5$ becomes integral after multiplication by 5,
-but $\PP(Q)=X+2$ and its primitive multiplier is $5/6$.
-A lower bound on a selected denominator-clearing integer therefore need
-not be a lower bound on the primitive multiplier. Formula
-\eqref{eq:min-valuation} is the distinction used in both main proofs.
-
-If $U,V$ are invertible rational matrices, then
-$\det(U M(X)V)=\det U\det V\det M(X)$. Consequently the primitive
-polynomial of a full pencil is unchanged up to sign by rational invertible
-row and column operations. Passing to a different subspace or a different
-pencil is a different construction and is not covered by this observation.
-
-For completeness, if $\theta=a/b\in\Q$ with $b\geq1$ and
-$Z\in\Z[X]$ has degree at most $n$, then $b^nZ(\theta)\in\Z$.
-Thus nonzero values with $|Z_n(\theta)|^{1/n}\to0$ would contradict
-rationality. The degree factor is essential: merely having
-$Z_n(\theta)\to0$ with increasing degree need not do so. For example,
-$Z_n(X)=X^n$ has value $2^{-n}$ at the rational number $1/2$.
-The main theorems give growth in the opposite direction for their two
-specified families.
-
-\section{The positive cubic-tail kernel}\label{sec:kernel}
-
-The introduction explains the rational entries of the kernel matrix.
-The remaining task is to prove positivity and estimate its determinant.
-We first express $K(x,y)$ as an integral of
-$(x+s^2)^{-1}(y+s^2)^{-1}$ against a positive density. These factors
-make a Gram representation when the two node lists agree, and an
-explicit determinant integral handles different row and column lists.
-We then compare that density with simpler ones that yield Cauchy
-determinants. This separates the positivity argument from the size estimate.
+To obtain positivity and the size estimate, we express $K(x,y)$ as
+an integral of $(x+s^2)^{-1}(y+s^2)^{-1}$ against a positive density.
+These factors give a Gram representation when the row and column nodes
+agree. An explicit determinant integral handles different node lists.
+We then compare the density with simpler ones that yield Cauchy
+determinants.
 
 \subsection{A direct integral representation}
 
-For $\Ree z\geq0$, define
+Extend the preceding real-variable function to $\Ree z\geq0$ by
 \begin{equation}\label{eq:f}
  f(z)=\sum_{j=0}^{\infty}
  \left((4j+1+4z)^{-3}-(4j+3+4z)^{-3}\right).
@@ -629,7 +675,7 @@ $(1+\tau_0)^{-2n}$ and the last factor is at least one.
 This proves~\eqref{eq:comparison} and~\eqref{eq:uniform-log}.
 \end{proof}
 
-\section{The consecutive principal obstruction}\label{sec:principal}
+\section{First construction: the arithmetic obstruction}\label{sec:principal}
 
 We now determine part of the arithmetic cost in~\eqref{eq:budget}.
 For each prime in a suitable interval, the fourth-power tails contribute
@@ -833,7 +879,7 @@ would have a further subsequence with such a limit. Equations
 possible limit. Positivity follows from Proposition~\ref{prop:kernel}.
 This completes the proof of Theorem~\ref{thm:principal}.
 
-\section{Difference-variable Gram determinants}\label{sec:gram}
+\section{Second construction: a moment determinant}\label{sec:gram}
 
 The second design begins with a positive double integral. Its monomial
 integrals involve fourth-power beta tails on the diagonal and cubic
@@ -843,7 +889,7 @@ $\theta$. Moreover $y=(u-v)^2$ lies in $[0,1]$, so its powers form a
 positive moment sequence on a short interval. This gives both a
 nonvanishing Gram determinant and an effective estimate of its real size.
 
-\subsection{Moment formula and target isolation}
+\subsection{The moments and their determinant}\label{sec:gram-construction}
 
 For a polynomial $P(u,v)$, define the finite integral
 \begin{equation}\label{eq:J}
@@ -852,6 +898,37 @@ For a polynomial $P(u,v)$, define the finite integral
  \qquad \mu_m=\frac1{96}J((u-v)^{2m}).
 \end{equation}
 The weight is integrable and strictly positive on the open square.
+Since $y=(u-v)^2$ lies in $[0,1]$, the $\mu_m$ are moments of a
+positive measure on that interval. The matrix $[\mu_{i+j}]$ is the
+Gram matrix of $1,y,\ldots,y^{n-1}$; its determinant is positive
+because no nonzero polynomial vanishes throughout the interval.
+Positive-weight representations and Pad\'e approximants for Hurwitz zeta
+values are developed by Pr\'evost~\cite{Prevost}. Rational modifications
+of moment functionals are part of the classical orthogonal-polynomial
+framework; Krattenthaler~\cite{Krattenthaler} gives determinant formulas
+including such modifications and repeated parameters.
+
+To identify the polynomial in $\theta$, expand $(u-v)^{2m}$.
+The middle term contributes
+$\binom{2m}{m}(\theta-T_4(m))$; paired off-diagonal terms have
+rational values because their cubic beta tails cancel. The factor
+$1/96$ normalizes $\mu_0=\theta$. The calculation below proves
+$\mu_m=C_m\theta+B_m$, with the following rational coefficients:
+\begin{align}
+ T_\ell(j)&=\sum_{k=0}^{j-1}\frac{(-1)^k}{(2k+1)^\ell},
+ &C_m&=\binom{2m}{m},\label{eq:T}\\
+ B_m&=-C_mT_4(m)+\frac16
+ \sum_{\substack{0\leq j\leq 2m\\j\ne m}}
+       \binom{2m}{j}\frac{T_3(j)}{j-m},\label{eq:B}\\
+ Q_n^{\Delta}(X)&=\det[C_{i+j}X+B_{i+j}]_{0\leq i,j<n},
+ &Z_n^{\Delta}&=\kappa_n Q_n^{\Delta}=\PP(Q_n^{\Delta}),\quad \kappa_n>0.
+ \label{eq:delta-Q}
+\end{align}
+Here $T_\ell(j)$ truncates the beta series after $j$ individual terms,
+so $S_\ell(a)=T_\ell(2a)$. The central binomial coefficient $C_m$
+comes from the middle term just described; $B_m$ collects the finite
+tail corrections and the off-diagonal terms. Empty sums are zero.
+In particular $B_0=0$ and $B_1=-149/81$.
 
 \begin{lemma}\label{lem:moment-formula}
 With $C_m,B_m$ defined in~\eqref{eq:T}--\eqref{eq:B},
@@ -1018,7 +1095,7 @@ gives the lower bound in~\eqref{eq:gram-bounds}. Taking logarithms,
 using $0<\theta<1$ and Stirling's formula, proves~\eqref{eq:gram-rate}.
 \end{proof}
 
-\section{Exact primitive arithmetic of the difference Gram}\label{sec:delta-arithmetic}
+\section{Second construction: the arithmetic obstruction}\label{sec:delta-arithmetic}
 
 Here the prime-denominator contributions first appear at a specific
 moment index. Because a moment matrix has entry index $i+j$, their
@@ -1078,6 +1155,14 @@ More strongly, every entry outside it is $p$-integral before multiplication
 by $p^3$: its moment index is below $m_0$.
 
 \subsection{The exact primitive exponent}
+
+\begin{proposition}[Exact large-prime cost]\label{prop:gram-prime-cost}
+For every $n\geq1$ and every prime $p>4n$, the primitive multiplier
+$\kappa_n$ of $Q_n^\Delta$ satisfies
+\begin{equation}\label{eq:delta-valuation}
+ \vp(\kappa_n)=3\max\left\{0,\,2n-2-\left\lfloor\frac p4\right\rfloor\right\}.
+\end{equation}
+\end{proposition}
 
 \begin{proof}[Proof of \eqref{eq:delta-valuation}]
 At most $r$ entries of a permutation term can have negative valuation,

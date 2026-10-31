@@ -1,12 +1,12 @@
 {
   "status": "passed",
-  "recorded_at_utc": "2026-10-31T21:36:52.213290+00:00",
-  "scope": "Package consistency and visual review after the expository revision and subsequent introductory wording edits; not independent mathematical verification.",
+  "recorded_at_utc": "2026-10-31T21:58:24.089843+00:00",
+  "scope": "Main-paper structural revision: text preservation, compilation, cross-references, artifact consistency and visual review; not independent mathematical verification.",
   "source_files_match_build_record": 1,
-  "build_record_sha256": "c58d96952163d4a6dba3a8f1da169669494c4ce7a2abecb03e440b1564a1d33f",
+  "build_record_sha256": "1a21dc69bc28a3e0c4b3b2a3607a7ceba7a913e9d55ae21869d3eae8e49ad712",
   "pdf": "output/pdf/beta4-determinant-obstructions.pdf",
-  "pdf_sha256": "887a03bc6c01f88423a4c2bdbb807c25b7fb231cd5993389715e022064ebf044",
-  "pages": 18,
+  "pdf_sha256": "53328b1921ddbe742fe3ea41e4f3218778a1280dab5cc072ae3e5af348e59142",
+  "pages": 19,
   "visual_inspection": {
     "pages_inspected": [
       1,
@@ -26,18 +26,19 @@
       15,
       16,
       17,
-      18
+      18,
+      19
     ],
-    "rendering": "Poppler, 100 dpi. Page 2 re-inspected after shortening a rational number to a rational; the other 17 pages match the previously inspected render pixel-for-pixel.",
+    "rendering": "Poppler, 100 dpi; all nineteen pages inspected. The final wording edits changed only page 5, which was reinspected; every other final page matches the inspected PNG pixel-for-pixel.",
     "final_changed_pages_reinspected": [
-      2
+      5
     ],
     "other_final_pages_match_inspected_render": true,
     "result": "No clipping, overlap, broken formulas or illegible layout observed."
   },
   "latex": {
-    "unique_labels": 88,
-    "reference_occurrences": 82,
+    "unique_labels": 92,
+    "reference_occurrences": 89,
     "unresolved_references": [],
     "bibliography_keys": [
       "Brown",
@@ -49,6 +50,11 @@
     ],
     "citation_occurrences": 8,
     "all_citations_resolved": true,
+    "main_results_numbering": {
+      "thm:principal": "1.1",
+      "thm:delta": "1.2",
+      "prop:gram-prime-cost": "6.1"
+    },
     "overfull_or_underfull_boxes": false,
     "control_characters": false
   },
@@ -63,7 +69,7 @@
     },
     {
       "from": "README.md",
-      "target": "paper/audit.txt"
+      "target": "planning/narrative-review.txt"
     },
     {
       "from": "README.md",
@@ -79,11 +85,19 @@
     },
     {
       "from": "README.md",
+      "target": "planning/narrative-review.txt"
+    },
+    {
+      "from": "README.md",
       "target": "planning/expository-review.txt"
     },
     {
       "from": "README.md",
       "target": "planning/accessibility-review.txt"
+    },
+    {
+      "from": "README.md",
+      "target": "paper/audit.txt"
     },
     {
       "from": "README.md",
@@ -124,6 +138,10 @@
     {
       "from": "paper/README.md",
       "target": "beta4-determinant-obstructions.tex"
+    },
+    {
+      "from": "paper/README.md",
+      "target": "../planning/narrative-review.txt"
     },
     {
       "from": "paper/README.md",
@@ -220,19 +238,28 @@
   "reproduction_report": "checks/reproduction.json",
   "reproduction_report_sha256": "15a3c47b6dfa90123057abaf7182eaf7541af51e63e0874e1f5d35a466bef6ec",
   "reproduction_input_and_output_hashes_checked": 9,
-  "reproduction_suite_rerun": true,
+  "reproduction_suite_rerun": false,
   "statement_preservation": {
     "baseline_commit": "local-prepublication-revision",
-    "formal_statements_unchanged_in_document": 11,
-    "formal_statements_unchanged_across_both_documents": 21,
-    "comparison_record": "planning/expository-review.json",
-    "comparison_sha256": "70059eb11e25338a7026030bd7688041ca5a2c810ecac8238594c989659d7b84",
-    "proof_text": "Expanded and reorganized; no claim of verbatim proof preservation in this revision.",
-    "comparison_record_scope": "Preceding full expository revision; source hashes in that historical record precede the wording edits recorded below."
+    "formal_environments_counted": [
+      "theorem",
+      "proposition",
+      "lemma",
+      "corollary",
+      "definition"
+    ],
+    "baseline_formal_environments": 11,
+    "current_formal_environments": 12,
+    "existing_formal_environments_verbatim_preserved": 10,
+    "existing_remarks_verbatim_preserved": 2,
+    "existing_proof_blocks_verbatim_preserved": 9,
+    "statement_reorganization": "Theorem 1.2 retains degree, leading coefficient, positivity and growth; its exact large-prime valuation clause is now Proposition 6.1. The two statements together retain the original assertions.",
+    "comparison_record": "planning/narrative-review.json",
+    "comparison_sha256": "e97ff4c272054b8aa1dd6b7ea2c9e60625977f0b2049f5fda5e0455b27592054"
   },
   "editorial_review": {
-    "record": "planning/expository-review.txt",
-    "sha256": "9702d3873e8867d1e51b1aeb4626cad9bb2da196d1df31fec10a0ed0783b95c6"
+    "record": "planning/narrative-review.txt",
+    "sha256": "22d78e9ee1210c2cadde1af6270b23d75a3e99a082afd3a1dea09a4fb59058df"
   },
   "historical_reviews": [
     {
@@ -244,6 +271,11 @@
       "record": "planning/accessibility-review.txt",
       "sha256": "5d94bd8c530ba28103351672be2be0dc1cf0cf915f2bfc11db29e360d47e0c17",
       "scope": "Earlier revision, before the present proof expansions."
+    },
+    {
+      "record": "planning/expository-review.txt",
+      "sha256": "9702d3873e8867d1e51b1aeb4626cad9bb2da196d1df31fec10a0ed0783b95c6",
+      "scope": "Earlier equation-by-equation revision, before the structural revision; its statement-preservation counts apply to that version."
     }
   ],
   "packet_consistency": {
@@ -272,13 +304,23 @@
       "structural_obstruction": 7,
       "attributed_identity": 3,
       "equivalence": 2
-    }
+    },
+    "record_scope": "Retained packet check from the preceding revision. No inventory, evidence, source-ledger or source-PDF changes in this structural revision."
   },
   "independent_audit_of_assembled_draft": false,
   "formal_verification": false,
   "source": "paper/beta4-determinant-obstructions.tex",
-  "source_sha256": "6ba8631ff9ff840061d3692a7aaaba79c8f09dd88839be5275a16ab27446ff53",
-  "editorial_followups": [
+  "source_sha256": "7eb08c603ccc4d42e06b85f2734b21a5e15a752d158406a1054cbbe06286b93b",
+  "historical_statement_preservation": {
+    "baseline_commit": "local-prepublication-revision",
+    "formal_statements_unchanged_in_document": 11,
+    "formal_statements_unchanged_across_both_documents": 21,
+    "comparison_record": "planning/expository-review.json",
+    "comparison_sha256": "70059eb11e25338a7026030bd7688041ca5a2c810ecac8238594c989659d7b84",
+    "proof_text": "Expanded and reorganized; no claim of verbatim proof preservation in this revision.",
+    "comparison_record_scope": "Preceding full expository revision; source hashes in that historical record precede the wording edits recorded below."
+  },
+  "historical_editorial_followups": [
     {
       "change": "Remove the entire redundant sentence beginning We use these works to situate the question.",
       "baseline_commit": "local-prepublication-revision",
@@ -299,5 +341,6 @@
       ],
       "other_pages_identical": 17
     }
-  ]
+  ],
+  "reproduction_scope": "Existing report retained; all nine recorded input/output hashes checked. Calculations were not rerun because this pass changes exposition and placement, with the determinant formulas and proof calculations preserved."
 }
