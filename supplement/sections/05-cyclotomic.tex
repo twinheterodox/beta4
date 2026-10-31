@@ -14,7 +14,10 @@ an even-power integrality theorem and is not used below.
 The following algebraic and analytic claims are derived directly for
 one specified normalization.
 
-For an odd prime $p$, set $h=\pi/(2p)$, $w=e^{2\pi i/(4p)}$, and
+For an odd prime $p$, set $h=\pi/(2p)$ and $w=e^{2\pi i/(4p)}$.
+The ratio $\sin^4h/\sin^4(nh)$ tends to $n^{-4}$ for fixed $n$,
+while $\cos^3(nh)$ tends to one. Thus the following trigonometric
+sum is a natural candidate approximation to the beta series:
 \begin{equation}\label{eq:alpha}
  \alpha_p=\sin^4h\sum_{\substack{1\leq n<p\\n\ {m odd}}}
              \chi_4(n)\frac{\cos^3(nh)}{\sin^4(nh)}.
@@ -33,6 +36,11 @@ and its primitive minimal polynomial $P_p$ satisfies
 In particular these primitive evaluations grow along the odd primes.
 \end{theorem}
 \begin{proof}
+We first control denominators and the principal approximation, then
+bound every conjugate and form their product. The latter step is
+essential: a small factor at one embedding does not make a small norm.
+
+\emph{Integrality.}
 The identity
 \[
  8\alpha_p=\sum_{\substack{n<p\\n\ {m odd}}}\chi_4(n)
@@ -40,11 +48,12 @@ The identity
 \]
 proves integrality. Indeed $z=w^2$ is a primitive $2p$th root and
 $1-z^n$ is a cyclotomic unit for odd $0<n<p$, since
-$\Phi_{2p}(1)=1$. Polynomial division of
+$\Phi_{2p}(1)=1$. Here a cyclotomic unit means an algebraic integer
+whose inverse is also integral. Polynomial division of
 $\Phi_{2p}(x)-\Phi_{2p}(1)$ by $x-1$ proves the unit assertion.
 The displayed expression is real and belongs to $F_p$.
 
-The principal approximation has the signed expansion
+\emph{The principal approximation.} The signed expansion is
 \begin{equation}\label{eq:alpha-error}
  \alpha_p=\theta-
  \frac{\pi^2(4\theta+5\beta(2))}{24p^2}+O(p^{-4}).
@@ -57,7 +66,9 @@ and $n^{-2}$ are bounded by $p^{-4}$ and $p^{-2}$. Multiply by
 $\sin^4h$ and use $(\sin h/h)^4=1-(2/3)h^2+O(h^4)$.
 The coefficient of $p^{-2}$ is strictly positive.
 
-Represent the real embeddings by odd $1\leq k<2p$, $k\ne p$.
+\emph{The other embeddings.} An embedding sends $w+w^{-1}$ to
+$w^k+w^{-k}$; $k$ and $-k$ give the same real embedding.
+Represent them by odd $1\leq k<2p$, $k\ne p$.
 The conjugate $\alpha_{p,k}$ is given by~\eqref{eq:alpha} with each
 angle multiplied by $k$. Let
 \[
@@ -89,7 +100,9 @@ its negative. Hence it is the unique conjugate in $(0,2)$ and its
 stabilizer is trivial. The degree is $d$. For $p=3$, directly
 $\alpha_3=3\sqrt3/8$ has degree two.
 
-The odd sine product is
+\emph{The full norm and primitive normalization.} Individual
+conjugates have very different sizes, but their sine factors have an
+exact product. The odd sine product is
 \[
  \prod_{\substack{1\leq k<2p\\k\ {m odd},\ k\ne p}}\sin(kh)
        =2^{1-p}=2^{-d}.
@@ -102,7 +115,7 @@ implies
  \leq\prod_k|\alpha_{p,k}|\leq
  \left(\frac{C\cos^3h}{16\sin^4h}\right)^d.
 \]
-For nonprincipal conjugates, replacing $|\alpha_{p,k}|$ by
+For $k\notin\{1,2p-1\}$, replacing $|\alpha_{p,k}|$ by
 $|\theta-\alpha_{p,k}|$ changes the product logarithm by $O(d)$,
 since $0<\theta<1$ and their magnitudes exceed $10$.
 For the two remaining conjugates,~\eqref{eq:alpha-error} gives a

@@ -1,0 +1,116 @@
+{
+  "baseline_commit": "local-prepublication-revision",
+  "scope": "Equation-by-equation expository review. Formal statements are preserved; proofs may be expanded or reorganized.",
+  "files": [
+    {
+      "path": "paper/beta4-determinant-obstructions.tex",
+      "sha256": "39dbe604a0342f6a53bdd7a231d6aaa49bcf3587da5f80ccfa7718fd27a349ac",
+      "formal_statements": [
+        "b806215ed69cc75fb2ce2d4bcd4713fdcd90e1f442c6fb4041383b322b3fb4bc",
+        "eac01b892576e674a84bf51e9e43e6039f340dcd32dda5dad6c82fcaef061537",
+        "c34b2b76344d2aaf7b299ca449d7935836a7061b6273f1621e199d2c13ca9a3a",
+        "46e0f4db82abe9abe140028a1252d057b3574437052b96044c7481e7c5096dac",
+        "e5706114fb7f16c0c68fe0bd194131712da0b78a11ad1290aa81a516db336734",
+        "9d4987d2094f16b878bdf825b74c5e383c6207b3ef5a793f84f498e1afb08a85",
+        "57ba0a687de644af11c353d6aac4d5acf595d36ad97e1583bf01dd849e15d255",
+        "a571614d47d6c251844345b0a1198f1632b7ad3f4a87c63b0b9e3e4ac77aae49",
+        "c6b8958e0573b35487fe5642f29aa4887e8feb18f37785ddd5faca713442c6f4",
+        "461305d093419b4705e62752b6dc611a1475990032237f7a92345b3492c2c3e5",
+        "09362dccb283b08f2862d10e78c0d73680e86cf24ec4fb314a85a502d2ee8d7b"
+      ]
+    },
+    {
+      "path": "supplement/beta4-investigations.tex",
+      "sha256": "d9fab097de59b852033c6fd87d91cb3f301f8b7fa62c938cca22721672b2302b",
+      "formal_statements": []
+    },
+    {
+      "path": "supplement/claim-register.tex",
+      "sha256": "b231ca9f4d7c200e5863b1bcc1466a680c509620da1136c62c5223e4b173c77f",
+      "formal_statements": []
+    },
+    {
+      "path": "supplement/references.tex",
+      "sha256": "abd7ed377fe212fe5f2b4ba2b0a6598e85543919100997164c63c2c5e49bc749",
+      "formal_statements": []
+    },
+    {
+      "path": "supplement/sections/01-conventions-cone.tex",
+      "sha256": "ee91d52d3c0c1a975fc7f69709f9659a2b043615d9dc39a77d2e9e992978232f",
+      "formal_statements": [
+        "4473395d2f17cd408ffbc73ea920b18e37269f9857f3a1587227f681f972bff1",
+        "99ad2cac8a64f50cfc0a93475a7d619cd177e26fc9cffda6f0b96634de84e156"
+      ]
+    },
+    {
+      "path": "supplement/sections/02-euler-quadratic.tex",
+      "sha256": "033a9055ac0edaff00e46a93f1f770f1cc97f25a8485afbfced04860ce858064",
+      "formal_statements": [
+        "b0e6ad0d6f25bbd353c109bfff578074220aa14b3f0e0664f5fa023c6083130e"
+      ]
+    },
+    {
+      "path": "supplement/sections/03-boole.tex",
+      "sha256": "db122edb2ebd587b32b066673d3e9126ef8e04ddd55f30e774981526afdfe3a8",
+      "formal_statements": [
+        "f969acf149ee5571fd065b6d1636e24bf29d3c8731395bfde157bb50821b84ed"
+      ]
+    },
+    {
+      "path": "supplement/sections/04-continuants.tex",
+      "sha256": "c3457d44be49ce7cb015a672b83b7cec1620341429d04686b21e187b03bcfc0a",
+      "formal_statements": [
+        "b53c44201688d8dae4711bd01955fc1984a74086f3b9eb77d12041beb5ce99c7",
+        "1efc379a73998652bd09cd0dfe2ee20289666a1efa57dbcb6e6888da8ce73c47"
+      ]
+    },
+    {
+      "path": "supplement/sections/05-cyclotomic.tex",
+      "sha256": "2081c3673051137a7caa52efd5d2824000dbc1716d7244cc7b2a5d54bde23c51",
+      "formal_statements": [
+        "c011d85cd3c1b2a5368b6b99e7a110bb4f25122bda4aee36f6234ce3a6ca43ab"
+      ]
+    },
+    {
+      "path": "supplement/sections/06-completed-mellin.tex",
+      "sha256": "4dd5bc665aa7a80d70a626daef50fe3d8940c4fb7c7138fa6e4b2e00e825cac8",
+      "formal_statements": [
+        "6ec01af9b0ac78b91eb527da8cace1916fb6e966ab8181a9e71bd8ab27fd75c4"
+      ]
+    },
+    {
+      "path": "supplement/sections/07-monodromy.tex",
+      "sha256": "baf58f7228ff451dcf2f42d7331ce8d78229fe461371e6cb0880222a2e0ff129",
+      "formal_statements": [
+        "88e683e0ccf40d334ec427e4f06870bb27fc81bb8d8df175c62af41f9990baac"
+      ]
+    },
+    {
+      "path": "supplement/sections/08-first-variation.tex",
+      "sha256": "49106324253b38140196e8d53067da64558028e11e6c813f7930e1969849bedb",
+      "formal_statements": [
+        "b69cb8aa6f1b709bfbd078ab364aa9528890f1e366789d5f8afa2e956bda00bd"
+      ]
+    },
+    {
+      "path": "supplement/sections/09-method-record.tex",
+      "sha256": "30adfe5e08e3dff8077195a69a447edffb237180ae2ea96f663dec661b6cf14c",
+      "formal_statements": []
+    },
+    {
+      "path": "supplement/sections/10-evidence.tex",
+      "sha256": "ed33eb898507b9deb12e01f48e6a8b36da619325c413c2906404dbe3860f813a",
+      "formal_statements": []
+    }
+  ],
+  "pdfs": [
+    {
+      "path": "output/pdf/beta4-determinant-obstructions.pdf",
+      "sha256": "901936eb9cdd8d8fdf8c1144e6e3cd7da64314bf12a46328528fac51137e44c4"
+    },
+    {
+      "path": "output/pdf/beta4-investigations.pdf",
+      "sha256": "5c7ccd5a80a55f84a072363c310d7ff322e30f762a90f9b08fd9c5fccb23409b"
+    }
+  ]
+}

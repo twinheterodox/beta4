@@ -1,0 +1,162 @@
+Equation-by-equation expository review, 31 October 2026
+
+Scope and standard
+This pass reviews the main paper and technical supplement for an expert
+mathematical reader who does not already know these constructions. For
+each displayed equation and argument, the review asks whether its objects
+have been defined, its hypotheses are visible, its purpose is explained,
+and the transition from the preceding step is reasonably recoverable.
+Compressed derivations and proof organization are revised where needed.
+This is work by the assembling model, not an independent mathematical
+audit, human review, priority assessment or formal verification. Both
+drafts remain local and unpublished.
+
+The baseline is commit local-prepublication-revision.
+planning/expository-baseline.json records its source and artifact hashes.
+Unlike the preceding accessibility pass, this revision edits proofs.
+All 21 theorem, lemma, proposition, corollary and definition environments
+are preserved verbatim; their surrounding derivations and proof text
+have been expanded or reorganized. The comparison does not certify the
+mathematical truth of those statements.
+
+Main-paper review
+1. Introduction and constructions. Separate subsections introduce the
+   two families. The first retains the preceding revision's derivation
+   of the divided-difference entries, squared nodes and constants. The
+   second now starts with the positive double integral, explains its
+   Gram interpretation, and describes the middle-term contribution and
+   cancellation of the cubic tails before presenting the coefficients.
+   The two partial-sum conventions are related explicitly. The existing
+   irrationality criterion, degree cost, common proof outline and growth
+   table were checked against the results they describe.
+2. Primitive normalization. Define coefficient extraction, valuations,
+   p-integrality, p-units and reduction modulo p. Retain the concrete
+   common-content example and the warning about increasing degrees.
+3. Positive kernel. Explain the purpose of the two transforms; insert
+   the nonnegative double integral and the divided-difference identity.
+   Separate identifying the density from passing to determinant minors.
+   Link the sign of the Cauchy factors to their explicit product formula.
+   Explain the roles of the comparison constants and show the row/column
+   factorization before invoking the rank-one determinant identity.
+4. Consecutive arithmetic. Explain the selected prime interval, high
+   nodes, and the principal-minor coefficient formula. Retain the worked
+   prime-seven example. Introduce the competing real and arithmetic
+   exponents before computing them, explain the two offset regimes,
+   derive the Vandermonde factorial product, and identify the mn scale
+   for offsets larger than the matrix. Check the final subsequence step.
+5. Difference-variable moments. Show how parameter derivatives insert
+   log-squared weights, then write the off-diagonal binomial sum before
+   its reindexing. Give the half-square substitution and its Jacobian.
+   Explain why monic basis changes preserve the determinant and why
+   different orthogonal polynomial families serve the two real bounds.
+   Review the arcsine leading-coefficient and Rodrigues norm arguments.
+6. Exact primitive arithmetic. Explain the first possible residue index
+   and derive the size and position of its supported block, including
+   the empty-block case. Replace the compressed permutation argument
+   by an explicit block-triangular reduction after scaling bottom rows
+   by p^3. Explain how this attains the coefficient valuation. Review
+   the leading-coefficient control and final prime summation.
+7. Scope and appendix. Check that the statements distinguish full pencils,
+   basis changes and different subspaces. Review the common-zero row
+   operation, regularized density comparison, and its arithmetic factor
+   two. The bibliography and attribution remain unchanged.
+
+Supplement review
+1. Conventions and positive cone. Define the arithmetic terminology;
+   derive the measure normalization and formal pair by polynomial
+   division, with examples. Explain the two-stage positive witness
+   construction. Motivate the exterior Chebyshev point before choosing
+   the test polynomial; explain the derivative-to-integral lower bound
+   and the final degree asymptotic.
+2. Euler sources and repeated quadratics. Derive the Euler identity by
+   logarithmic substitution and integration by parts. Explain Taylor
+   cancellation and the reversed polynomial term by term. Give the
+   prime-cost/minimax proof plan and spell out why gcd removal can save
+   at most the target coefficient. Review the moving-parameter bound.
+3. Euler--Boole. Derive the correction coefficients from the tail integral.
+   Divide the proof into real error/sign, reduced denominators and the
+   remaining parameter regime. Explain the primes that corrections
+   cannot cancel and the scale of optimal truncation. Review the Fourier
+   partial fractions, uniformity quantifiers and product conclusion.
+4. Continued fractions. Give initial approximants and distinguish the
+   normalized coefficients from integer continuants. Derive the two
+   generating-function differential equations and the beta integral
+   behind the error asymptotic. Motivate the valuation-eight calculation
+   before defining its auxiliary polynomials. Separate unit factors,
+   denominator order and survival under differentiation; explain the
+   characteristic-polynomial congruence and the exceptional-prime bound.
+   Retain the fixed-endpoint/even-depth scope and complex-uniformity step.
+5. Cyclotomic family. Motivate the trigonometric approximation, define
+   the unit property used, and separate integrality, principal error,
+   conjugates and full norm. Explain embedding indices and sine-product
+   normalization. Clarify that the conjugates of magnitude greater than
+   ten exclude both the principal conjugate and its negative.
+6. Completed Mellin source. Derive the common weight through its geometric
+   term integral, explain the factor m^4 and shared quadratic denominator,
+   and motivate P=A+DV before imposing the two moment constraints. Give
+   the sign-correction strategy before the theorem and organize its proof
+   by root location, constrained moments and constants. Preserve the
+   explicit external Broadhurst input and exact-certificate distinction.
+7. Monodromy. Explain the telescoping choice, rational Taylor germ and
+   failure of constant shifting to remove the branch. Spell out why
+   differential operators commute with continuation and how a residue
+   produces an additive constant. Explain the symmetry coordinate and
+   the field over which the subsequent span has dimension five.
+8. Moment variation. Begin with the Laplace identity motivating the
+   parameter. Define the determinant before use and explain the rational
+   basis, positive lower block and Schur complement. Work out the n=2
+   example. Derive the constrained minimum and explain why stationarity
+   removes the derivative of the minimizer. Separate positivity from
+   the rate proof and explain the need for an interior evaluation bound
+   rather than a direct density comparison. Preserve the unresolved
+   denominator question and finite-data limits.
+9. Method catalog. Review every displayed formula and every method's
+   claimed scope. Supply missing definitions for the scalar ladder,
+   bordered matrices, interleaved energy, quarter projection and Euler
+   functional. Make the error and coefficient exponents in the paired
+   quarter construction explicit. Explain exactly what a rational scalar
+   removes in the dimensional rediscovery. Link record IDs to the source
+   register; link its primary paths to files in the local checkout. Point
+   Q04 to the corrected complete-deformation account. Summaries remain
+   summaries: archived proofs are not presented as newly re-audited.
+10. Evidence and references. Preserve the distinctions among selected
+    complete proofs, archived claims, finite certificates and numerical
+    diagnostics. No new source or attribution claim was introduced.
+
+Local source consultations
+To expand definitions faithfully, relevant passages were checked in the
+frozen round-02 fresh ladder account, round-08 dimensional-ladder gate,
+round-10 adelic Euler-functional account, and round-15 complete-deformation
+account, as well as the inventory entries and coverage generator.
+Other original arguments had already been read during assembly. This
+pass did not undertake a new external literature search or claim fresh
+reading of every cited third-party paper.
+
+Verification
+Both existing reproduction suites were rerun and passed. The main suite
+uses exact rational and Arb interval checks; the supplement replays the
+Mellin, Euler--Boole and cyclotomic checks and reconstructs the existing
+scalar, continuant and ordinary-moment examples. The scripts and their
+exact structural results are unchanged. The cyclotomic mpmath diagnostics
+remain numerical diagnostics, not interval certificates. These are finite
+checks, not proofs of the asymptotic claims or an independent audit.
+
+All 127 evidence snapshots were checked against their hashes and original
+archive files. All 12 source-ledger PDFs still match their recorded hashes.
+The 57 claim classifications are unchanged. Internal references, citations,
+claim destinations, local source links and manuscript build hashes were
+checked. planning/expository-review.json and the two validation.json files
+record the final comparison and artifact checks.
+
+Both PDFs compile without undefined references, duplicate labels or box
+warnings. The main paper has 18 pages and the supplement has 34. All pages
+were rendered with Poppler at 100 dpi and inspected for readable formulas,
+spacing, tables, clipping and overlap. File-link text was darkened to match
+other links; final renders were compared with the inspected pages and the
+changed pages inspected again.
+
+The earlier assembly audits and accessibility review remain historical
+records of their respective drafts. In particular, their statement that
+proof text was unchanged does not describe this later revision. The
+pre-existing untracked PDF in paper/ was left untouched. The deliverables
+are the two PDFs under output/pdf/.

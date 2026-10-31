@@ -1,0 +1,114 @@
+{
+  "recorded_at_utc": "2026-10-31T17:17:23.397585+00:00",
+  "scope": "Expository review by the assembling model, not independent mathematical verification.",
+  "baseline_commit": "local-prepublication-revision",
+  "baseline_record": "planning/expository-baseline.json",
+  "baseline_record_sha256": "450739d7bc76ccfbf1775b77359e36af8c02e414518bd3361c52be6a4721411c",
+  "formal_statements_unchanged": 21,
+  "proof_environments_with_text_changes": 14,
+  "files": [
+    {
+      "path": "paper/beta4-determinant-obstructions.tex",
+      "source_sha256": "8cbd8c7a9b0569f6c11fd4f95ab489a7034c20cb333e8108163bf20d51f4c15b",
+      "formal_statements_unchanged": 11,
+      "proof_environments": 9,
+      "proof_environments_with_text_changes": 5
+    },
+    {
+      "path": "supplement/beta4-investigations.tex",
+      "source_sha256": "d41e0f334deb0db3a5523c6ef5da94602b06c465399f7ed339311eb6bfc996ee",
+      "formal_statements_unchanged": 0,
+      "proof_environments": 0,
+      "proof_environments_with_text_changes": 0
+    },
+    {
+      "path": "supplement/claim-register.tex",
+      "source_sha256": "e3cecb89833c2f9fddf54fc8ed6e01a7e337849aa3b6ea42bbdd47c0116c9d8c",
+      "formal_statements_unchanged": 0,
+      "proof_environments": 0,
+      "proof_environments_with_text_changes": 0
+    },
+    {
+      "path": "supplement/references.tex",
+      "source_sha256": "abd7ed377fe212fe5f2b4ba2b0a6598e85543919100997164c63c2c5e49bc749",
+      "formal_statements_unchanged": 0,
+      "proof_environments": 0,
+      "proof_environments_with_text_changes": 0
+    },
+    {
+      "path": "supplement/sections/01-conventions-cone.tex",
+      "source_sha256": "7f8d8c72d24564e84b49fa0485ac4774b4ab31ab84e969d796f399ffcbe0bac4",
+      "formal_statements_unchanged": 2,
+      "proof_environments": 2,
+      "proof_environments_with_text_changes": 2
+    },
+    {
+      "path": "supplement/sections/02-euler-quadratic.tex",
+      "source_sha256": "ada0f9b0cb21cc5214d7f6df6e2434bd99437bd0ccdb672a6592343191a4b7cc",
+      "formal_statements_unchanged": 1,
+      "proof_environments": 1,
+      "proof_environments_with_text_changes": 1
+    },
+    {
+      "path": "supplement/sections/03-boole.tex",
+      "source_sha256": "3e91a1c008277c63cab28621e213416d9c815ed588da7d4331b40a2ca8cf09fb",
+      "formal_statements_unchanged": 1,
+      "proof_environments": 1,
+      "proof_environments_with_text_changes": 1
+    },
+    {
+      "path": "supplement/sections/04-continuants.tex",
+      "source_sha256": "c059df82ec19aa67b8d1c74b7fe2bf86845f77cbec1ddbced73adf61860a3c9f",
+      "formal_statements_unchanged": 2,
+      "proof_environments": 1,
+      "proof_environments_with_text_changes": 1
+    },
+    {
+      "path": "supplement/sections/05-cyclotomic.tex",
+      "source_sha256": "bdbd0548ee57d6a87e13cfbe84cb7270c8207cf030745e1297499d09ef5a02ae",
+      "formal_statements_unchanged": 1,
+      "proof_environments": 1,
+      "proof_environments_with_text_changes": 1
+    },
+    {
+      "path": "supplement/sections/06-completed-mellin.tex",
+      "source_sha256": "2ffc585e826c67a6f09a257e501573fd5fa7dcb218487d711c4d898468128223",
+      "formal_statements_unchanged": 1,
+      "proof_environments": 1,
+      "proof_environments_with_text_changes": 1
+    },
+    {
+      "path": "supplement/sections/07-monodromy.tex",
+      "source_sha256": "70ee6586155da02f3a168f6aee3da4fa61d65641d678b29bb35b6b25b1b01dcd",
+      "formal_statements_unchanged": 1,
+      "proof_environments": 1,
+      "proof_environments_with_text_changes": 1
+    },
+    {
+      "path": "supplement/sections/08-first-variation.tex",
+      "source_sha256": "803a819ef6a067e9523d815e03c4de49d05b163c13ca1d82deb85156f81fef69",
+      "formal_statements_unchanged": 1,
+      "proof_environments": 1,
+      "proof_environments_with_text_changes": 1
+    },
+    {
+      "path": "supplement/sections/09-method-record.tex",
+      "source_sha256": "a1b35009d65ea9924758b2a60f846c3dbecd20fe215a48a3007d1443c8a4fe85",
+      "formal_statements_unchanged": 0,
+      "proof_environments": 0,
+      "proof_environments_with_text_changes": 0
+    },
+    {
+      "path": "supplement/sections/10-evidence.tex",
+      "source_sha256": "ed33eb898507b9deb12e01f48e6a8b36da619325c413c2906404dbe3860f813a",
+      "formal_statements_unchanged": 0,
+      "proof_environments": 0,
+      "proof_environments_with_text_changes": 0
+    }
+  ],
+  "review_record": "planning/expository-review.txt",
+  "review_record_sha256": "9702d3873e8867d1e51b1aeb4626cad9bb2da196d1df31fec10a0ed0783b95c6",
+  "reproduction_suites_rerun": true,
+  "fresh_independent_audit": false,
+  "formal_verification": false
+}

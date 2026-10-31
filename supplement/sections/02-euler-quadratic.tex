@@ -13,7 +13,11 @@ Let $E=t\,\mathrm d/\mathrm dt$, $g(t)=t/(1+t^2)$, and
  J(R)=\frac16\int_0^1(-\log t)^3R(t)\frac{\dd t}{t}.
 \]
 If $H$ is rational, regular on $[0,1]$, and $H(t)=O(t)$ at zero,
-four integrations by parts, after $t=e^{-z}$, give
+put $h(z)=H(e^{-z})$. Then $E=-\mathrm d/\mathrm dz$, and
+$J(E^4H)=\frac16\int_0^\infty z^3h^{(4)}(z)\dd z$.
+Four integrations by parts leave $h(0)=H(1)$; the other boundary
+terms at zero contain $z^3$, $z^2$ or $z$, and those at infinity
+vanish by exponential decay. Since $J(g)=\theta$, this gives
 \begin{equation}\label{eq:euler-exact}
  J(E^4H)=H(1),\qquad J(Ag+E^4H)=A\theta+H(1).
 \end{equation}
@@ -24,13 +28,17 @@ Put $F(y)=\sum_{k\geq0}(-1)^ky^k/(2k+1)^4$. Let
 $Q(y)=\sum_{j=0}^d q_jy^j$ have no zero on $[0,1]$, and let $C_m$
 be the Taylor polynomial of $QF$ through degree $m-1$. The choice
 $H(t)=-AtC_m(t^2)/Q(t^2)$ cancels the first $m$ odd coefficients
-of $Ag+E^4H$. Define
+of $Ag+E^4H$: indeed $E^4(tF(t^2))=g(t)$, and
+$t(F(t^2)-C_m(t^2)/Q(t^2))$ vanishes to order at least $2m+1$.
+To see what remains at $t=1$, define
 \[
  W_{Q,m}(y)=\sum_{j=m}^d q_j+
                  \sum_{j=0}^{\min(m-1,d)}q_j(-y)^{m-j}.
 \]
-The finite geometric remainder for each monomial proves the exact
-formal-pair identity
+For a term $q_jy^j$ with $j<m$, the factor $F$ contributes the
+omitted tail $I((-t)^{m-j})$ at $y=1$; for $j\geq m$, the
+whole factor $F$ contributes $I(1)$. Weighting by $q_j$ and summing gives
+$Q(1)\theta-C_m(1)=I(W_{Q,m})$, hence the exact formal-pair identity
 \begin{equation}\label{eq:reversal}
  \theta-\frac{C_m(1)}{Q(1)}=\frac{I(W_{Q,m})}{Q(1)}.
 \end{equation}
@@ -51,6 +59,9 @@ primitive formal pair under~\eqref{eq:formal-pair}. Then
 \]
 \end{theorem}
 \begin{proof}
+The proof has two parts: primes in $(4n/3,2n)$ force a denominator
+even after gcd removal, and a minimax estimate limits how small the
+normalized positive integral can be.
 Write $A=P_n(-1)=(u+v)^n$ and $I(P_n)=A\theta+N/D$ in lowest
 terms. The first $n$ coefficients of $(P_n-A)/(1+y)$ are
 $(-1)^{j+1}A$. For a prime
@@ -66,6 +77,9 @@ $v_p(N/D)=-4$, exactly. If $g=\gcd(DA,N)$, then $g\mid A$, so
                   \frac{I(P_n)}A.
 \end{equation}
 This controls the actual primitive value, including all common content.
+The gcd step uses $\gcd(D,N)=1$, which implies $g\mid A$ and
+$D/g\geq D/A$. The selected prime factors are unavoidable factors
+of $D$, whereas $A$ accounts for the most that gcd removal could save.
 
 Let $r=v/(u+v)$ and $f_r(y)=y(1-r-ry)$. With
 $\dd\mu=\dd\nu/(1+y)$,

@@ -11,7 +11,12 @@ increasing number of correction terms.
 The Euler--Boole method is classical; the point here is the uniform
 arithmetic conclusion for this particular family. Define integers
 $E_{2j}$ by $\sech t=\sum_{j\geq0}E_{2j}t^{2j}/(2j)!$ near zero.
-Multiplication by $\cosh t$ gives their integral recurrence. For $N\geq1$
+Multiplication by $\cosh t$ gives their integral recurrence.
+The exact tail is an integral of $t^3e^{-2Nt}\sech t/12$, as shown
+in~\eqref{eq:boole-tail} below. Inserting the first $m$ Taylor terms
+of $\sech t$ into that integral gives the proposed correction;
+$\int_0^\infty t^{2j+3}e^{-2Nt}\dd t=(2j+3)!/(2N)^{2j+4}$
+explains its coefficients. For $N\geq1$
 and $m\geq0$ put
 \begin{align}
  S_N&=\sum_{k<N}\frac{(-1)^k}{(2k+1)^4},\notag\\
@@ -38,6 +43,7 @@ Moreover
 The primitive absolute values tend to infinity whenever $N+m\to\infty$.
 \end{theorem}
 \begin{proof}
+\emph{Real error and its sign.}
 Laplace integration of the alternating tail gives
 \begin{equation}\label{eq:boole-tail}
  \theta-S_N=\frac{(-1)^N}{12}
@@ -73,7 +79,11 @@ $\epsilon_{N,m}\geq(\pi/18)(a/2)e^{-2Na}/(2N)$, proving
 \eqref{eq:boole-error}. For $m=0$, $\sech t\geq e^{-t}$ gives
 $|\theta-S_N|\geq1/[2(2N+1)^4]$.
 
-For the arithmetic, let $p$ be odd, $p^2>2N$ and $p<2N$, and let
+\emph{Unavoidable reduced denominators.}
+The correction terms have denominators supported only on primes
+dividing $6N$. Primes elsewhere that survive in the partial sum
+therefore cannot be cancelled by taking more correction terms.
+Let $p$ be odd, $p^2>2N$ and $p<2N$, and let
 $J$ count the positive odd $r$ with $pr<2N$. Reduction yields
 \begin{equation}\label{eq:boole-residue}
  p^4S_N\equiv\chi_4(p)S_J\pmod p,\qquad
@@ -93,14 +103,19 @@ First take the lower limit in $N$, then let $K\to\infty$; no uniformity
 in $K$ is required. This gives the rate $8$, and combining with the
 error estimates gives $8-\pi$.
 
-For bounded $N$ and $m\to\infty$, restrict the positive remainder
+\emph{The remaining parameter regime.}
+The estimates above handle every sequence with $N\to\infty$,
+uniformly in $m$. For bounded $N$ and $m\to\infty$, restrict the positive remainder
 integral to $[b,b+1]$, where $b>a$. Its lower bound is
 $c_{N,b}(b/a)^{2m}\to\infty$, uniformly over a finite set of $N$.
 Since $q\geq1$, this also proves divergence on every escaping
 parameter sequence.
 \end{proof}
 
-The raw exponential constant is sharp: for $m=\pi N/2+O(1)$,
+The best number of corrections balances the factor $t^{2m}$ against
+the Laplace decay near the first pole scale $a=\pi/2$. This suggests
+$m\sim aN$. The raw exponential constant is indeed sharp: for
+$m=\pi N/2+O(1)$,
 \begin{equation}\label{eq:boole-sharp}
  |\theta-A_{N,m}|\sim
        \frac{\pi^3}{48\sqrt{2N}}e^{-\pi N}.

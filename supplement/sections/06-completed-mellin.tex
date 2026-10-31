@@ -18,7 +18,7 @@ For $|z|<1$, the polylogarithm is
 $\Li_s(z)=\sum_{k\geq1}z^k/k^s$. Its relation to the integrals here is
 \[
  \int_0^1 x^{j-1}\frac{(-\log x)^{s-1}}{(s-1)!}\dd x=j^{-s}
- \qquad(j,s\geq1),
+ \qquad(j,s\text{ positive integers}),
 \]
 obtained by $x=e^{-t}$ and integration by parts. A \emph{completion}
 adds lower-order polylogarithms with logarithmic coefficients to obtain
@@ -54,7 +54,11 @@ inequality below is a direct theorem about $U$ and $W$ and does not
 depend on accepting~\eqref{eq:ladder}; its interpretation as a
 $\theta$-form uses this explicitly declared input.
 
-Let $r=-\log x$, $L=\log2$, and
+The three arguments in~\eqref{eq:ladder} have absolute values
+$2^{-m/2}$ with $m=2,3,5$. Using $x^m$ in their geometric series
+therefore puts all three completions under the same logarithmic
+weight: the factor $m^4$ compensates for the fourth-power moment
+denominator. Let $r=-\log x$, $L=\log2$, and
 \begin{align}
  W(r)&=r^3/6+Lr^2/4+L^2r/12,\notag\\
  U(x)&=\frac{900x^2}{17(x^4+4)}
@@ -66,8 +70,14 @@ For $m=2,3,5$, respectively, put
  (z_m)=(i/2,(1+i)/4,(1-i)/8),\qquad
  (c_m)=(225/136,-25/34,9/68).
 \]
-Then $U=\sum c_m m^4\Im[z_mx^m/(1-z_mx^m)]$. Geometric expansion
-and the logarithmic moments show that
+Then $U=\sum c_m m^4\Im[z_mx^m/(1-z_mx^m)]$. For the $k$th
+geometric term, integration of the common weight gives
+\[
+ m^4\int_0^1 x^{mk}W(-\log x)\frac{\dd x}{x}
+ =\frac1{k^4}+\frac{mL}{2k^3}+\frac{m^2L^2}{12k^2}.
+\]
+Because $-\log|z_m|=mL/2$, these are exactly the three coefficients
+in $D_4(z_m)$. Thus geometric expansion shows that
 \begin{equation}\label{eq:Theta}
  \Theta:=\int_0^1 U(x)W(-\log x)\frac{\dd x}{x}
        =\sum_m c_mD_4(z_m)=\theta,
@@ -78,8 +88,15 @@ Write $p_2=x^4+4$, $p_3=x^6-4x^3+8$, $p_5=x^{10}-8x^5+32$ and
 \[
  D=\frac{p_2p_3p_5}{(x^2+2x+2)^2},\qquad N=DU.
 \]
-Exact division gives a monic degree-16 denominator $D$, positive on
-$[0,1]$. For $P=A+DV$, with $A\in\Q$, $V\in\Q[x]$, write
+The three denominators share the factor $x^2+2x+2$; removing its
+two repeated copies gives the common denominator $D$ of degree 16.
+Exact division shows that $N$ is a polynomial and $D$ is monic and
+positive on $[0,1]$.
+
+We seek polynomial weights whose contribution is a multiple of
+$\Theta$ plus a rational correction. Choosing $P=A+DV$ gives
+$UP=AU+NV$, so the correction is a polynomial integral. With
+$A\in\Q$, $V\in\Q[x]$, write
 $NV=\sum_{j\geq1}a_jx^j$ and impose
 \begin{equation}\label{eq:constraints}
  \sum_j\frac{a_j}{j^3}=0,\qquad \sum_j\frac{a_j}{j^2}=0.
@@ -93,6 +110,12 @@ Without both constraints, there are extra $L/2$ and $L^2/12$ times
 the two sums; congruence modulo $D$ alone does not isolate $\theta$.
 
 \subsection{A positive-source lower bound}
+The difficulty is that $U$ is not everywhere positive. It has exactly
+one sign change. The two moment constraints allow us to subtract
+linear and quadratic terms from $W$ until the remainder has the same
+sign as $U$. Their product is then positive, producing a lower bound
+that no choice of the nonnegative weight $P$ can evade.
+
 \begin{theorem}[Constrained positive sources; S09]\label{thm:mellin}
 If $P=A+DV$ is nonzero, rational and nonnegative on $[0,1]$, and
 satisfies~\eqref{eq:constraints}, then $A>0$ and
@@ -101,6 +124,7 @@ normalization making $A$ a nonzero integer gives a value greater
 than $1/2$. This includes primitive normalization of~\eqref{eq:mellin-pair}.
 \end{theorem}
 \begin{proof}
+\emph{Locate the sign change.}
 One has $U=225x^2f(x)/(17D(x))$, with
 \begin{align*}
  f(x)={}&4x^{12}-25x^{11}+68x^{10}-145x^9+220x^8-232x^7
@@ -116,6 +140,7 @@ $f(5/8)=-31248983321/17179869184<0$.
 Thus $U$ changes sign exactly once, at $3/5<x_0<5/8$, and its sign
 is the sign of $r-r_0$ with $r_0=-\log x_0$.
 
+\emph{Use the constrained moments.}
 Let $M_j=\int_0^1U(x)r^j\dd x/x$, $j=1,2$.
 The constraints give $\int UPr^j\dd x/x=AM_j$. Hence
 \[
@@ -130,6 +155,7 @@ Now
 Multiplication by $UP$ and integration gives the strict bound
 $I_U(P)>A[(L/4+r_0/6)M_2+(L^2/12)M_1]$.
 
+\emph{Bound the numerical constants.}
 The exact rational tail estimates described below prove
 $M_1>9/10$ and $M_2>193/100$.
 The elementary inequality $\log a>2(a-1)/(a+1)$ for $a>1$ gives

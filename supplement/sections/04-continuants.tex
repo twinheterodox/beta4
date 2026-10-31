@@ -13,13 +13,18 @@ The numerator and denominator polynomials of the approximants,
 called continuants, are defined by
 \[
  q_0=1,\ q_1=a,\quad r_0=0,\ r_1=1,\qquad
- (n+1)y_{n+1}=ay_n+ny_{n-1}.
+ (n+1)y_{n+1}=ay_n+ny_{n-1}\quad(n\geq1).
 \]
-The integer polynomials $Q_n=n!q_n$, $R_n=n!r_n$ satisfy
+For example, $r_1/q_1=1/a$ and $r_2/q_2=a/(a^2+1)$.
+We use $q_n,r_n$ for analytic generating functions and the integer
+polynomials $Q_n=n!q_n$, $R_n=n!r_n$ for prime divisibility. They satisfy
 $Y_{n+1}=aY_n+n^2Y_{n-1}$. Their quotient is the finite continued
 fraction with successive numerators $1^2,2^2,\ldots$. Its convergence
 will follow from an explicit error, rather than an imported convergence
-theorem. Put
+theorem. Since three derivatives of $S(a)$ insert $-t^3$, the exact
+tail identity~\eqref{eq:boole-tail} reads
+$\theta=S_N+(-1)^{N+1}S'''(2N)/12$.
+Replacing $S$ by its rational approximant therefore gives
 \begin{equation}\label{eq:cf-approx}
  \alpha_{n,N}=S_N+\frac{(-1)^{N+1}}{12}
       \left.\frac{\mathrm d^3}{\mathrm da^3}\frac{r_n(a)}{q_n(a)}
@@ -45,14 +50,21 @@ is part of this theorem.
 \end{theorem}
 
 \subsection{The exact error and its derivative}
-The generating functions of the normalized continuants are
+Define the ordinary generating functions
+$\mathcal Q(a,z)=\sum_{n\geq0}q_n(a)z^n$ and
+$\mathcal R(a,z)=\sum_{n\geq0}r_n(a)z^n$.
+Summing the recurrence gives
+\[
+ (1-z^2)\partial_z\mathcal Q=(a+z)\mathcal Q,\qquad
+ (1-z^2)\partial_z\mathcal R=(a+z)\mathcal R+1.
+\]
+Their initial values are $1$ and $0$. Solving these equations gives
 \begin{align*}
  \mathcal Q(a,z)&=(1+z)^{(a-1)/2}(1-z)^{-(a+1)/2},\\
  \mathcal R(a,z)&=\mathcal Q(a,z)
        \int_0^z\frac{\dd t}{(1-t^2)\mathcal Q(a,t)}.
 \end{align*}
-They follow by multiplying the recurrence by $z^n$ and integrating
-the resulting first-order equation. Substitution $z=\tanh u$ and
+Substitution $z=\tanh u$ and
 translation of the tail integral give
 \[
  \mathcal Q(a,z)S(a)-\mathcal R(a,z)
@@ -84,7 +96,9 @@ put $y=\tanh t$ and expand $(1+y)^{-(a+1)/2}$ at $y=1$ in
 \[
  I_n(a)=\int_0^1 y^n(1-y)^{(a-1)/2}(1+y)^{-(a+1)/2}\dd y.
 \]
-The beta integral and gamma-ratio estimate give the stated constants.
+The beta integral
+$\int_0^1y^n(1-y)^{b-1}\dd y=\Gamma(n+1)\Gamma(b)/\Gamma(n+b+1)$
+and the gamma-ratio estimate give the stated constants.
 The remainders are holomorphic and uniform on a slightly larger disk;
 the leading factor of $q_n$ is nonzero there for large $n$.
 Cauchy's derivative formula therefore justifies three derivatives of
@@ -96,6 +110,17 @@ Pointwise real asymptotics without this complex uniformity would not
 justify the differentiation.
 
 \subsection{An exact reduced-denominator law}
+For even depth $2m$, primes in $(m,2m)$ contribute one factor to
+$(2m)!$ and one to the central binomial factor below. A third
+derivative of a quotient can raise the denominator to its fourth
+power, suggesting an exponent of at least eight. To prove that
+those factors survive reduction, we must also show that the relevant
+numerator and first derivative are $p$-units.
+
+The following polynomials separate the dependence on the fixed endpoint
+$N$ from the growing depth $m$. The polynomial $C_N(m)$ will identify
+the exceptional primes; its fixed degree makes their total contribution
+negligible in the prime sum.
 Write $X^{\underline j}=X(X-1)\cdots(X-j+1)$ and $h_N=(2N-1)!!$.
 Define integer polynomials
 \begin{align*}
@@ -116,7 +141,8 @@ and of fixed degree $N$. With $c_m=\binom{2m}{m}/4^m$,
 \end{equation}
 To check these, write
 $\mathcal Q(2N,z)=(1+z)^{2N}(1-z^2)^{-N-1/2}$ and separate
-even and odd coefficients. The coefficient ratio used is
+even and odd coefficients. With $(u)_j=u(u+1)\cdots(u+j-1)$
+denoting the rising factorial, the coefficient ratio used is
 \[
  \frac{(N+\tfrac12)_{m-j}/(m-j)!}{c_m}
  =\frac{m^{\underline j}(m+\tfrac12)_{N-j}}{(\tfrac12)_N}.
@@ -129,13 +155,20 @@ If $m<p<2m$, $2N<p$, $p$ is prime and $p\nmid C_N(m)$, then
 \]
 \end{lemma}
 \begin{proof}
-First $Q_p(a)\equiv a^p-a\pmod p$. One direct proof uses
+\emph{Unit factors.} We first establish
+$Q_p(a)\equiv a^p-a\pmod p$. To make this congruence transparent,
+realize $Q_p$ as a characteristic polynomial. Use
 $D=(1-z^2)\mathrm d/\mathrm dz+(p-1)z$ on polynomials of degree
-at most $p-1$ over $\mathbb F_p$. Adjacent off-diagonal products in
-its matrix are $j(p-j)$, so its characteristic determinants obey the
-continuant recurrence modulo $p$. Its eigenvectors
+at most $p-1$ over $\mathbb F_p$. Since
+$D(z^j)=jz^{j-1}+(p-1-j)z^{j+1}$, its matrix is tridiagonal.
+Adjacent off-diagonal products are $j(p-j)$; expanding characteristic
+determinants gives the continuant recurrence modulo $p$.
+Its eigenvectors
 $(1+z)^j(1-z)^{p-1-j}$ have distinct eigenvalues $2j-(p-1)$,
-which run through $\mathbb F_p$. The recurrence then gives
+which run through $\mathbb F_p$. Thus its characteristic polynomial
+is $\prod_{c\in\mathbb F_p}(a-c)=a^p-a$.
+Starting again at index $p$, the recurrence reduces to the same
+recurrence as at zero, because $(p+j)^2\equiv j^2$. It gives
 \[
  Q_{p+j}(a)\equiv(a^p-a)Q_j(a)\pmod p\quad(0\leq j<p).
 \]
@@ -149,14 +182,18 @@ Recurrence after $p$ and differentiation of the last congruence give
 \]
 Here $j=2m-p$ is odd, and~\eqref{eq:cf-parity} shows that $Q_j(2N)$
 is a unit precisely when $B_N(m-(p+1)/2)\equiv C_N(m)$ is.
-Thus $R_{2m}(2N)$ and $Q'_{2m}(2N)$ are units. Meanwhile
+Thus $R_{2m}(2N)$ and $Q'_{2m}(2N)$ are units.
+
+\emph{Order of the denominator.} Meanwhile
 \eqref{eq:cf-parity} gives
 \[
  e:=v_p(Q_{2m}(2N))=2+v_p(A_N(m)),
 \]
 because both $(2m)!$ and $c_m$ have valuation one.
 
-Expand the integer polynomials as $Q(2N+x)=\sum u_ix^i$ and
+\emph{Survival under differentiation.} Write $Q=Q_{2m}$ and
+$R=R_{2m}$, and expand the integer polynomials as
+$Q(2N+x)=\sum u_ix^i$ and
 $R(2N+x)=\sum v_ix^i$. The coefficient of $x^3$ in $R/Q$ is
 \[
  \frac{v_3u_0^3-v_2u_1u_0^2+
@@ -169,8 +206,10 @@ coefficient by $\pm1/2$; $S_N$ is $p$-integral. It follows that the
 reduced denominator has valuation $4e$, as asserted.
 \end{proof}
 
-For fixed $N$, primes in $(m,2m)$ excluded by $C_N(m)$ have total
-logarithm $O_N(\log m)$. The lemma and the prime number theorem imply
+For fixed $N$, $C_N(m)$ is a positive integer of polynomial size
+for all sufficiently large $m$, so $\log C_N(m)=O_N(\log m)$.
+The primes in $(m,2m)$ dividing it have at most this total logarithm.
+The lemma and the prime number theorem imply
 $\log d_{2m,N}\geq8m+o(m)$. Equation~\eqref{eq:cf-error} supplies
 an eventually nonzero error with logarithm $O_N(\log m)$, completing
 Theorem~\ref{thm:cf}. The exception condition is material: four

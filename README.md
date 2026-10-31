@@ -12,10 +12,10 @@ Start with the focused paper; use the supplement for the broader investigation.
 
 | Document | Contents | Source and review |
 | --- | --- | --- |
-| **[Main paper (17 pages)](output/pdf/beta4-determinant-obstructions.pdf)** | Complete proofs of the two determinant obstructions, with a shared proof outline and worked arithmetic example. | [LaTeX](paper/beta4-determinant-obstructions.tex) · [Assembly audit](paper/audit.txt) |
-| **[Technical supplement (31 pages)](output/pdf/beta4-investigations.pdf)** | A guide to the constructions, selected complete proofs, exact reductions, unresolved arithmetic, and all 57 grouped records. | [Source guide](supplement/README.md) · [Assembly audit](supplement/audit.txt) |
+| **[Main paper (18 pages)](output/pdf/beta4-determinant-obstructions.pdf)** | Complete proofs of the two determinant obstructions, with a shared proof outline, derived constructions and worked arithmetic example. | [LaTeX](paper/beta4-determinant-obstructions.tex) · [Assembly audit](paper/audit.txt) |
+| **[Technical supplement (34 pages)](output/pdf/beta4-investigations.pdf)** | A guide to the constructions, selected complete proofs, exact reductions, unresolved arithmetic, and all 57 grouped records. | [Source guide](supplement/README.md) · [Assembly audit](supplement/audit.txt) |
 
-Both abstracts and introductions now start from the irrationality criterion and explain the comparison between approximation error and arithmetic cost. The [accessibility revision record](planning/accessibility-review.txt) describes the added explanations and layout checks; the existing statements and proofs are unchanged.
+Both abstracts and introductions start from the irrationality criterion and explain the comparison between approximation error and arithmetic cost. A further [equation-by-equation expository review](planning/expository-review.txt) expands the derivations, explains the choices behind the constructions, and separates the stages of longer proofs. All 21 formal statements are unchanged; proofs have been expanded or reorganized. The [earlier accessibility revision](planning/accessibility-review.txt) is retained as a historical record.
 
 The [reproduction instructions and results](checks/README.md) distinguish main-paper exact/interval checks from the supplement's certificate replays and exact reconstructions. The supporting documents are:
 
@@ -55,4 +55,4 @@ python3 tools/render_supplement_register.py
 python3 tools/build_supplement.py
 ```
 
-The assembly audits describe their respective writing passes; the later accessibility revision is recorded separately. This checkout is under `beta4/obstructions/`, with its own Git history. The original working archive is in the enclosing `beta4/` directory, and third-party PDFs are in `../literature/papers/`. To compare the evidence with that local archive and check the literature files, run `python3 tools/validate_packet.py --archive-root .. --check-local-pdfs`. Earlier audit records describe the directory layout at the time of their review. The original material in this repository is licensed under Apache 2.0; cited works retain their own terms.
+The assembly audits describe their respective writing passes; later editorial reviews are recorded separately. This checkout is under `beta4/obstructions/`, with its own Git history. The original working archive is in the enclosing `beta4/` directory, and third-party PDFs are in `../literature/papers/`. To compare the evidence with that local archive and check the literature files, run `python3 tools/validate_packet.py --archive-root .. --check-local-pdfs`. Earlier audit records describe the directory layout at the time of their review. The original material in this repository is licensed under Apache 2.0; cited works retain their own terms.

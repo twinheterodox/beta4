@@ -4,7 +4,7 @@ Suppose a construction gives a rational approximation $a_n/q_n$ in
 lowest terms, with error $e_n=\theta-a_n/q_n$. The associated integer
 linear form is $q_n\theta-a_n=q_ne_n$. To prove irrationality by this
 route, one needs these forms to be nonzero and tend to zero.
-Indeed, if $\theta=a/b$ were rational, every such nonzero form would
+Indeed, if $\theta=a/b$ were rational with $b>0$, every such nonzero form would
 have absolute value at least $1/b$. Thus the central comparison is
 between the decay of $e_n$ and the growth of its reduced denominator.
 
@@ -42,7 +42,11 @@ $\kappa>0$ and the resulting integer coefficients have gcd one. Then
 \end{equation}
 Here $v_p$ counts powers of the prime $p$ in the numerator minus those
 in the denominator of a nonzero rational number; $v_p(0)=+\infty$.
-For example, $v_p(p^{-3})=-3$. The identity follows because the minimum valuation of a primitive
+For example, $v_p(p^{-3})=-3$. A rational number is $p$-integral
+when its valuation is nonnegative and a $p$-unit when it is zero.
+Reduction modulo $p$ means inverting a denominator not divisible by $p$.
+The notation $[X^j]Q$ denotes a polynomial coefficient.
+The identity follows because the minimum valuation of a primitive
 integer coefficient list is zero at every prime. Multiplying $Q$ by a
 nonzero rational scalar preserves its primitive representative up to
 sign. A lower bound on a convenient clearing integer is therefore not
@@ -140,15 +144,25 @@ Define
  \dd\nu(t)=\frac{(-\log t)^3}{96\sqrt t}\dd t,
  \qquad I(P)=\int_0^1\frac{P(t)}{1+t}\dd\nu(t).
 \end{equation}
-Here $\nu_j=\int t^j\dd\nu=(2j+1)^{-4}$ and $I(1)=\theta$.
-For a rational polynomial define its \emph{formal pair} by
+The density is chosen to reproduce the beta denominators:
+\[
+ \int_0^1t^{j-1/2}(-\log t)^3\dd t
+       =\frac{6}{(j+1/2)^4}=\frac{96}{(2j+1)^4}.
+\]
+Hence $\nu_j=\int t^j\dd\nu=(2j+1)^{-4}$, and expansion of
+$1/(1+t)$ gives $I(1)=\theta$. Polynomial division by $1+t$
+now separates any integral into a multiple of $\theta$ and a rational
+term. For a rational polynomial define its \emph{formal pair} by
 \begin{equation}\label{eq:formal-pair}
  A(P)=P(-1),\qquad
  B(P)=\int_0^1\frac{P(t)-P(-1)}{1+t}\dd\nu(t).
 \end{equation}
 The quotient is a polynomial, so $B(P)\in\Q$ and
 $I(P)=A(P)\theta+B(P)$. This defines the coefficients without assuming
-that $1$ and $\theta$ are linearly independent.
+that $1$ and $\theta$ are linearly independent. For example, $P=1$
+gives $(A,B)=(1,0)$ and $P=1+t$ gives $(0,1)$.
+The word ``formal'' records the coefficients produced by this division,
+rather than assuming uniqueness of a numerical expression for $I(P)$.
 
 \begin{theorem}[The unrestricted positive cone; S01]\label{thm:cone}
 The formal-pair image of $P\in\Q[t]$ nonnegative on $[0,1]$ is
@@ -161,6 +175,9 @@ polynomials are required to have integer coefficients.
 \begin{proof}
 Nonzero nonnegative polynomials have strictly positive integrals. Conversely
 let $L=A\theta+B>0$. If $A=0$, use $P=B(1+t)$, since $\nu_0=1$.
+For $A\ne0$, first choose a nonnegative polynomial with the required
+value at $-1$ but with integral smaller than $L$. Then add a positive
+multiple of $1+t$: this increases only the rational coefficient.
 For $A>0$ use $P_n=A((1-t)/2)^{2n}$; for $A<0$ use
 $P_n=(-A)t((1-t)/2)^{2n}$. Both have $A(P_n)=A$, are nonnegative,
 and satisfy $I(P_n)\leq |A|\theta4^{-n}$. Choose $n$ making this less
@@ -193,14 +210,22 @@ degree $d(A,B)$ of a nonnegative rational witness satisfies
 \]
 \end{proposition}
 \begin{proof}
+The point $t=-1$, where the coefficient $A$ is fixed, lies outside
+the integration interval; $t\mapsto2t-1$ sends it to $-3$.
+The exterior growth of Chebyshev polynomials lets us fix this value
+while keeping the polynomial small on $[0,1]$.
 Let $q_n(t)=T_n(2t-1)/T_n(-3)$, where $T_n$ is the Chebyshev
 polynomial. Then $q_n(-1)=1$ and
+the identity $|T_n(-3)|=(\rho^n+\rho^{-n})/2$ gives
 $\|q_n\|_{[0,1]}\leq 2\rho^{-n}$. Replace $P_n$ in the preceding
 proof by $Aq_n^2$ or $(-A)tq_n^2$. Its integral is at most
 $4|A|\rho^{-2n}$ and its degree at most $2n+1$. This gives the upper
 bound, with an absolute additive constant.
 
-For a degree-$D$ nonnegative $P$ set $M=\max_{[0,1]}P$.
+For the converse, a polynomial cannot have a large maximum on an
+arbitrarily narrow region. We use a derivative bound to turn that
+maximum into an integral lower bound. For a degree-$D$ nonnegative
+$P$ set $M=\max_{[0,1]}P$.
 Its Chebyshev expansion has constant coefficient at most $M$ in absolute
 value and other coefficients at most $2M$, by the cosine coefficient
 integrals. The identity $T_k(\cos u)=\cos(ku)$ gives
@@ -219,7 +244,11 @@ Therefore
 \begin{equation}\label{eq:cone-lower}
  I(P)\geq\frac{|P(-1)|}{3\cdot2^{26}D^{12}\rho^D}.
 \end{equation}
-Combining this with the upper construction proves the assertion.
+Taking logarithms gives
+$\log(|A|/L)\leq D\log\rho+12\log D+O(1)$.
+The upper construction already gives $D=O(\log(|A|/L))$ for a
+least-degree witness, so the logarithmic correction is
+$O(\log\log(|A|/L))$. This proves the assertion.
 \end{proof}
 
 The archived bounded-degree extremizers and a degree-16 witness for

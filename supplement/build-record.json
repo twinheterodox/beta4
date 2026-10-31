@@ -1,14 +1,14 @@
 {
   "status": "compiled",
-  "pages": 31,
+  "pages": 34,
   "source_files": [
     {
       "path": "supplement/beta4-investigations.tex",
-      "sha256": "d9fab097de59b852033c6fd87d91cb3f301f8b7fa62c938cca22721672b2302b"
+      "sha256": "d41e0f334deb0db3a5523c6ef5da94602b06c465399f7ed339311eb6bfc996ee"
     },
     {
       "path": "supplement/claim-register.tex",
-      "sha256": "b231ca9f4d7c200e5863b1bcc1466a680c509620da1136c62c5223e4b173c77f"
+      "sha256": "e3cecb89833c2f9fddf54fc8ed6e01a7e337849aa3b6ea42bbdd47c0116c9d8c"
     },
     {
       "path": "supplement/references.tex",
@@ -16,39 +16,39 @@
     },
     {
       "path": "supplement/sections/01-conventions-cone.tex",
-      "sha256": "ee91d52d3c0c1a975fc7f69709f9659a2b043615d9dc39a77d2e9e992978232f"
+      "sha256": "7f8d8c72d24564e84b49fa0485ac4774b4ab31ab84e969d796f399ffcbe0bac4"
     },
     {
       "path": "supplement/sections/02-euler-quadratic.tex",
-      "sha256": "033a9055ac0edaff00e46a93f1f770f1cc97f25a8485afbfced04860ce858064"
+      "sha256": "ada0f9b0cb21cc5214d7f6df6e2434bd99437bd0ccdb672a6592343191a4b7cc"
     },
     {
       "path": "supplement/sections/03-boole.tex",
-      "sha256": "db122edb2ebd587b32b066673d3e9126ef8e04ddd55f30e774981526afdfe3a8"
+      "sha256": "3e91a1c008277c63cab28621e213416d9c815ed588da7d4331b40a2ca8cf09fb"
     },
     {
       "path": "supplement/sections/04-continuants.tex",
-      "sha256": "c3457d44be49ce7cb015a672b83b7cec1620341429d04686b21e187b03bcfc0a"
+      "sha256": "c059df82ec19aa67b8d1c74b7fe2bf86845f77cbec1ddbced73adf61860a3c9f"
     },
     {
       "path": "supplement/sections/05-cyclotomic.tex",
-      "sha256": "2081c3673051137a7caa52efd5d2824000dbc1716d7244cc7b2a5d54bde23c51"
+      "sha256": "bdbd0548ee57d6a87e13cfbe84cb7270c8207cf030745e1297499d09ef5a02ae"
     },
     {
       "path": "supplement/sections/06-completed-mellin.tex",
-      "sha256": "4dd5bc665aa7a80d70a626daef50fe3d8940c4fb7c7138fa6e4b2e00e825cac8"
+      "sha256": "2ffc585e826c67a6f09a257e501573fd5fa7dcb218487d711c4d898468128223"
     },
     {
       "path": "supplement/sections/07-monodromy.tex",
-      "sha256": "baf58f7228ff451dcf2f42d7331ce8d78229fe461371e6cb0880222a2e0ff129"
+      "sha256": "70ee6586155da02f3a168f6aee3da4fa61d65641d678b29bb35b6b25b1b01dcd"
     },
     {
       "path": "supplement/sections/08-first-variation.tex",
-      "sha256": "49106324253b38140196e8d53067da64558028e11e6c813f7930e1969849bedb"
+      "sha256": "803a819ef6a067e9523d815e03c4de49d05b163c13ca1d82deb85156f81fef69"
     },
     {
       "path": "supplement/sections/09-method-record.tex",
-      "sha256": "30adfe5e08e3dff8077195a69a447edffb237180ae2ea96f663dec661b6cf14c"
+      "sha256": "a1b35009d65ea9924758b2a60f846c3dbecd20fe215a48a3007d1443c8a4fe85"
     },
     {
       "path": "supplement/sections/10-evidence.tex",
@@ -56,7 +56,7 @@
     }
   ],
   "pdf": "output/pdf/beta4-investigations.pdf",
-  "pdf_sha256": "5c7ccd5a80a55f84a072363c310d7ff322e30f762a90f9b08fd9c5fccb23409b",
+  "pdf_sha256": "77e065ce8cf9751d3296651f27d9e43da0aea76a46aa40c9973b449f20c752f5",
   "tex_engine": "pdfTeX 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian)",
   "unresolved_references": false,
   "overfull_or_underfull_boxes": false,

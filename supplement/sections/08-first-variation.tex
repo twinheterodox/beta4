@@ -14,7 +14,13 @@ its analytic conclusions are stronger than a negative summary of the
 project might suggest. It has all-index positivity and a sharp scalar
 error rate. The remaining issue is primitive arithmetic.
 
-For $|u|<1$ let
+The elementary Laplace identity
+\[
+ \int_0^\infty e^{-at}\frac{\sinh(\sqrt u\,t)}{\sqrt u}\dd t
+       =\frac1{a^2-u}\qquad(a\geq1,\ |u|<1)
+\]
+suggests a parameter whose derivative raises the beta denominator
+from the second to the fourth power. For $|u|<1$ let
 \[
  F(u)=\sum_{k\geq0}\frac{(-1)^k}{(2k+1)^2-u},\qquad
  q_j(u)=\frac1{(2j+1)^2-u},\qquad
@@ -27,14 +33,23 @@ $m_j+m_{j+1}=q_j$, with $m_0=F$, $F(0)=\beta(2)$ and $F'(0)=\theta$.
 These identities follow by expansion and Laplace integration, locally
 uniformly in $u$.
 
-For $d=n-1$ set $c_j=q_j$ and $B_{ij}=q_{i+j}+q_{i+j+1}$,
-$0\leq i,j<d$. Put $a_n=\det B$ and $r_n=c^TB^{-1}c$; for $n=1$
+Define $H_n(u)=\det[m_{i+j}(u)]_{0\leq i,j<n}$.
+The identity $m_j+m_{j+1}=q_j$ suggests using multiples of $1+t$
+as basis elements: their inner products with monomials are rational
+functions of $u$. For $d=n-1$ set $c_j=q_j$ and
+$B_{ij}=q_{i+j}+q_{i+j+1}$,
+$0\leq i,j<d$. The same moment identities give
+$B_{ij}=\int_0^1x^{2(i+j)}(1+x^2)^2w_u(x)\dd x$.
+Thus $B(0)$ is positive definite and $B^{-1}$ is analytic near zero.
+Put $a_n=\det B$ and $r_n=c^TB^{-1}c$; for $n=1$
 use $a_1=1,r_1=0$. In the basis
 $1,(1+t),(1+t)t,\ldots$, $t=x^2$, the moment matrix is
 \[
  \begin{pmatrix}F&c^T\\c&B\end{pmatrix},\qquad
  H_n=a_n(F-r_n).
 \]
+The change of basis has determinant one; the formula for $H_n$
+is the Schur-complement identity for the displayed block matrix.
 The functions $a_n(u)$ and $r_n(u)$ are rational functions with rational
 coefficients, regular at zero; their values and derivatives there are
 rational. The following antisymmetric combination of the determinant
@@ -44,6 +59,9 @@ and its derivative eliminates $\beta(2)$ exactly:
        =a_n(0)^2(\theta-r_n'(0)).
 \end{equation}
 This is a formal identity, with no independence assumption about periods.
+For example, at $n=2$ one obtains
+$r_2(u)=q_0(u)^2/(q_0(u)+q_1(u))$ and $r_2'(0)=49/50$.
+The resulting primitive form is $50\theta-49$.
 
 \begin{proposition}[Positivity and the scalar rate; P07]\label{prop:variation}
 Let $E_n=\theta-r_n'(0)$ and $\rho=3+\sqrt8$. Then $E_n>0$ for
@@ -53,21 +71,35 @@ every $n$, and
 \]
 \end{proposition}
 \begin{proof}
-Completing the square in the block matrix gives
+\emph{Positivity of the differentiated error.}
+For $0\leq u<1$, completing the square in the block matrix gives
 \[
  F(u)-r_n(u)=
  \min_{\substack{\deg P<n\\P(-1)=1}}
                    \int_0^1P(x^2)^2w_u(x)\dd x.
 \]
-The unique minimizing polynomial is
+Every polynomial of degree less than $n$ with $P(-1)=1$ has the
+form $1+(1+t)Q(t)$, $\deg Q<n-1$. Minimizing this quadratic form
+in the coefficients of $Q$ gives the same $B^{-1}c$ as the block
+determinant. The unique minimizing polynomial is
 $P_{n,u}(t)=1-(1+t)\sum_{j<d}(B^{-1}c)_jt^j$ and is analytic
-near zero. Differentiation of the minimum contributes no derivative
-of $P$: that term vanishes by stationarity under the constraint.
+near zero. Differentiate from $u\geq0$ at zero. The derivative of
+the minimizing polynomial satisfies $\dot P(-1)=0$, and stationarity
+gives $\int P\dot P w_0\dd x=0$. Thus only the derivative of the
+weight contributes. Expansion of $\sinh(\sqrt u(-\log x))/\sqrt u$
+shows that this derivative is $(-\log x)^3/6$ divided by $1+x^2$.
 Thus
 \begin{equation}\label{eq:variation-positive}
  E_n=\int_0^1P_{n,0}(x^2)^2
                          \frac{(-\log x)^3}{6(1+x^2)}\dd x>0.
 \end{equation}
+
+\emph{The exponential rate.} The same polynomial minimizes the
+weight-two norm, but its weight-four norm is the error we need.
+A lower bound follows from the weight-four minimum. For an upper
+bound we must control its supremum norm from its weight-two norm;
+the ratio of the two densities is unbounded near zero, so a direct
+pointwise comparison would not suffice.
 
 Let $\lambda_{n,s}$ be the analogous constrained minimum for the
 weight $(-\log x)^{s-1}/[(s-1)!(1+x^2)]$, $s=2,4$.
@@ -80,7 +112,8 @@ weight-two norm. In the variable $t=x^2$ the densities are
 The test polynomial $T_{n-1}(2t-1)/T_{n-1}(-3)$ gives
 $\limsup n^{-1}\log\lambda_{n,s}\leq-2\log\rho$.
 
-For the opposite bound restrict to $I_\epsilon=[\epsilon,1-\epsilon]$.
+For the opposite bound, restrict to a fixed interior interval
+$I_\epsilon=[\epsilon,1-\epsilon]$.
 Each density has a positive minimum there. An elementary Legendre
 evaluation estimate for an interval $I=[a,b]$ of length $\ell$ is
 \begin{equation}\label{eq:legendre}
@@ -99,7 +132,9 @@ $|L_j(z)|\leq(|z|+\sqrt{z^2-1})^j$ outside follow from
 \]
 using the imaginary square root inside the interval and parity for
 negative $z$. The formula is a polynomial identity by expansion.
-At $t_*=-1$, $z_*=-3/(1-2\epsilon)$. First letting $n\to\infty$
+At $t_*=-1$, the constraint $P(-1)=1$ turns~\eqref{eq:legendre}
+into a lower bound on the integral. Here
+$z_*=-3/(1-2\epsilon)$. First letting $n\to\infty$
 and then $\epsilon\downarrow0$ gives the matching lower exponent
 for both $\lambda_{n,s}$.
 

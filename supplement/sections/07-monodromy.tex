@@ -15,6 +15,8 @@ the conclusion. No general holonomy bound is applied.
 
 Let $E=x\,\mathrm d/\mathrm dx$ and
 $F(x)=\sum_{m\geq1}\chi_4(m)x^m/m^4$. Put $F_j=E^jF$ and
+choose the logarithmic coefficients below so that differentiating
+successive terms cancels all but $F_4$:
 \begin{equation}\label{eq:regularized}
  C(x)=F_0-\log x\,F_1+\frac{\log^2x}{2}F_2
                               -\frac{\log^3x}{6}F_3.
@@ -24,10 +26,14 @@ Since $E^4F=x/(1+x^2)$, differentiation telescopes:
  C'(x)=-\frac{\log^3x}{6(1+x^2)},\quad
  C(x)=\int_0^x\frac{-\log^3t}{6(1+t^2)}\dd t,\quad C(1)=\theta.
 \]
-For any rational $q$, $C_q=C+q-\theta$ has a rational Taylor germ at
-$x=1$, including its constant term. This is a full rational-jet repair,
-not just a rational value. It does not remove the logarithmic branch
-at zero.
+The derivative $C'$ has rational Taylor coefficients at $x=1$,
+because both $\log x$ and $(1+x^2)^{-1}$ do. Thus the only
+potentially irrational coefficient of the Taylor expansion of $C$
+there is its constant term $C(1)=\theta$. For any rational $q$,
+$C_q=C+q-\theta$ has an entirely rational Taylor expansion (a
+rational germ) at $1$. This change does not remove the logarithmic
+branch at zero. The question is whether a linear differential
+operation can remove that branch without also erasing $q-\theta$.
 
 \begin{proposition}[Scoped monodromy obstruction; E04]\label{prop:mono}
 Let $L$ be a linear differential operator with rational-function
@@ -41,21 +47,29 @@ $\Delta=(M_0-1)C_q$. All $F_j$ are holomorphic at zero, and
 \[
  \Delta'(x)=-\frac{(\log x+2\pi i)^3-\log^3x}{6(1+x^2)}.
 \]
-Meromorphicity implies $L(\Delta)=0$. Continue to $x=i$ on the
+Because the rational-function coefficients of $L$ are single-valued,
+$L$ commutes with continuation. If $L(C_q)$ is meromorphic near
+zero, a loop about zero leaves it unchanged; hence
+$L(\Delta)=(M_0-1)L(C_q)=0$. Continue to $x=i$ on the
 branch with $\log i=\pi i/2$. Then
 \[
  \Res_{x=i}\Delta'
  =-\frac{(5\pi i/2)^3-(\pi i/2)^3}{12i}
  =\frac{31\pi^3}{24}\ne0.
 \]
-A small circuit about $i$ adds $31i\pi^4/12$ to $\Delta$.
+A primitive of a function with residue $r$ acquires the constant
+$2\pi i r$ after a loop. Thus a small circuit about $i$ adds
+$31i\pi^4/12$ to $\Delta$.
 The coefficients of $L$ are single-valued. Continuing $L(\Delta)=0$
 and subtracting thus gives $(31i\pi^4/12)L(1)=0$.
 Paths can avoid the finite set of poles of $L$.
 \end{proof}
 
-The symmetry $C(1/x)=C(x)$ follows by differentiation and equality at
-$x=1$. With $x=(1-z)/(1+z)$ and $y=z^2$ it yields
+One might instead change coordinates to exploit symmetry. Near $x=1$,
+$C(1/x)=C(x)$ follows by differentiation and equality at $1$.
+The coordinate $x=(1-z)/(1+z)$ turns $x\mapsto1/x$ into
+$z\mapsto-z$, so the resulting function is even in $z$ and can
+be written using $y=z^2$. It yields
 \[
  C(x)=\theta+J(y),\qquad
  J'(y)=-\frac23\frac{yA(y)^3}{1+y},\qquad
@@ -66,11 +80,13 @@ Writing $B=yA$ gives the rational system
  (B^k)'=\frac{kB^k}{2y}+\frac{kB^{k-1}}{2(1-y)}\ (k=1,2,3),
  \qquad J'=-\frac{2B^3}{3y^2(1+y)}.
 \]
-The span of $1,B,B^2,B^3,J$ is unchanged by replacing $J$ with
+The span over $\C(y)$ of $1,B,B^2,B^3,J$ is unchanged by replacing $J$ with
 $q+J$. It has dimension five: $B$ has infinitely many monodromy
 values about $1$, so is transcendental over $\C(y)$, while $J'$
 has nonzero residue $\pi^3/96$ at $y=-1$, where the first four
-functions are locally meromorphic. Adding a rational constant changes
+functions are locally meromorphic. That residue gives $J$ a
+logarithmic branch there, so it cannot be their rational-function
+linear combination. Adding a rational constant changes
 neither this module nor its continuation domains. These observations
 explain this proposed shortcut's failure; they do not exclude
 nonlinear expressions, extra functions or different differential systems.

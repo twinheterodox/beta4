@@ -1,12 +1,12 @@
 {
   "status": "passed",
-  "recorded_at_utc": "2026-10-31T16:15:43.952499+00:00",
-  "scope": "Final package consistency and visual review after the accessibility revision; not independent mathematical verification.",
+  "recorded_at_utc": "2026-10-31T17:17:23.397585+00:00",
+  "scope": "Package consistency and visual review after the equation-by-equation expository revision; not independent mathematical verification.",
   "source_files_match_build_record": 13,
-  "build_record_sha256": "98d92557afdc212b4d69fae8d8ee795916c016d0b8ba0a4c84026cb68a4f0c50",
+  "build_record_sha256": "82dd8bc2a42863b681fcf2df7d0325ca782f598f5dc74e94a484fa62f36e411e",
   "pdf": "output/pdf/beta4-investigations.pdf",
-  "pdf_sha256": "5c7ccd5a80a55f84a072363c310d7ff322e30f762a90f9b08fd9c5fccb23409b",
-  "pages": 31,
+  "pdf_sha256": "77e065ce8cf9751d3296651f27d9e43da0aea76a46aa40c9973b449f20c752f5",
+  "pages": 34,
   "visual_inspection": {
     "pages_inspected": [
       1,
@@ -39,14 +39,27 @@
       28,
       29,
       30,
-      31
+      31,
+      32,
+      33,
+      34
     ],
-    "rendering": "Poppler, 100 dpi; all pages inspected, with changed pages re-inspected after final builds.",
-    "result": "No clipping, overlap, broken formulas or illegible layout observed in the final render."
+    "rendering": "Poppler, 100 dpi; all pages inspected. Final link-color changes were rendered again and compared with the inspected pages.",
+    "final_changed_pages_reinspected": [
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34
+    ],
+    "other_final_pages_match_inspected_render": true,
+    "result": "No clipping, overlap, broken formulas or illegible layout observed."
   },
   "latex": {
-    "unique_labels": 53,
-    "reference_occurrences": 50,
+    "unique_labels": 110,
+    "reference_occurrences": 55,
     "unresolved_references": [],
     "bibliography_keys": [
       "Broadhurst",
@@ -66,23 +79,7 @@
     "citation_occurrences": 15,
     "all_citations_resolved": true,
     "overfull_or_underfull_boxes": false,
-    "control_characters_or_placeholders": false
-  },
-  "coverage": {
-    "claims": 57,
-    "method_groups": 12,
-    "all_paths_in_manifests": true,
-    "coverage_sha256": "51369839d54295e06a057e3390fca98c982fb1faf7ef66dd69ed5d9d3a506343"
-  },
-  "evidence": {
-    "original_snapshots_unchanged": 120,
-    "additional_verbatim_files": 7,
-    "all_compared_with_original_archive": true
-  },
-  "external_pdfs": {
-    "cumulative_hashes_checked": 12,
-    "supplement_cited_hashes_checked": 11,
-    "source_ledger_sha256": "ed779e8c287c0a6c813f0c23f11383baa23599aa1358c83562650a37015bd260"
+    "control_characters": false
   },
   "checked_local_links": [
     {
@@ -108,6 +105,10 @@
     {
       "from": "README.md",
       "target": "supplement/audit.txt"
+    },
+    {
+      "from": "README.md",
+      "target": "planning/expository-review.txt"
     },
     {
       "from": "README.md",
@@ -155,6 +156,10 @@
     },
     {
       "from": "paper/README.md",
+      "target": "../planning/expository-review.txt"
+    },
+    {
+      "from": "paper/README.md",
       "target": "../planning/accessibility-review.txt"
     },
     {
@@ -188,6 +193,10 @@
     {
       "from": "supplement/README.md",
       "target": "../paper/README.md"
+    },
+    {
+      "from": "supplement/README.md",
+      "target": "../planning/expository-review.txt"
     },
     {
       "from": "supplement/README.md",
@@ -226,35 +235,102 @@
       "target": "../planning/accessibility-review.txt"
     },
     {
+      "from": "checks/README.md",
+      "target": "../planning/expository-review.txt"
+    },
+    {
       "from": "checks/SUPPLEMENT.md",
       "target": "supplement-reproduction.json"
     }
   ],
-  "reproduction_report_sha256": "791e624eb4e80ae6d8afc734fdae8b3b68c834fd20ab05bc65bd54b7c119585d",
-  "reproduction_inputs_and_outputs_match_recorded_hashes": true,
-  "audit_record_sha256": "7e04a4ffd9bd5ec92a5a1bd764b101a1dd6c4e5c2aba56c787ff0e501e25fab8",
-  "independent_audit_of_assembled_draft": false,
-  "formal_verification": false,
-  "proof_preservation": {
+  "local_pdf_source_links_checked": [
+    "../../evidence/research/dilations-and-positive-kernels.txt",
+    "../../evidence/research/collaboration/round-01/construction/findings.txt",
+    "../../evidence/research/collaboration/round-01/construction/findings.txt",
+    "../../evidence/research/collaboration/round-06/fresh/findings.txt",
+    "../../evidence/research/collaboration/round-06/fresh/findings.txt",
+    "../../evidence/research/collaboration/round-06/fresh/findings.txt",
+    "../../evidence/research/collaboration/round-06/fresh/findings.txt",
+    "../../evidence/research/collaboration/round-01/construction/findings.txt",
+    "../../evidence/research/collaboration/round-01/fresh/findings.txt",
+    "../../evidence/research/collaboration/round-01/fresh/findings.txt",
+    "../../evidence/research/collaboration/round-03/fresh/findings.txt",
+    "../../evidence/research/collaboration/round-05/fresh/findings.txt",
+    "../../evidence/research/collaboration/round-07/fresh/findings.txt",
+    "../../evidence/research/collaboration/round-11/norms/findings.txt",
+    "../../evidence/research/collaboration/round-09/orbifold/findings.txt",
+    "../../evidence/research/collaboration/round-04/coordinator/loewner_shift.txt",
+    "../../evidence/research/collaboration/round-03/fresh/mellin_positive_obstruction.txt",
+    "../../evidence/research/collaboration/round-01/arithmetic/findings.txt",
+    "../../evidence/research/collaboration/round-02/arithmetic/findings.txt",
+    "../../evidence/research/collaboration/round-02/analysis/findings.txt",
+    "../../evidence/research/collaboration/round-04/arithmetic/findings.txt",
+    "../../evidence/research/collaboration/round-04/construction/findings.txt",
+    "../../evidence/research/collaboration/round-01/construction/findings.txt",
+    "../../evidence/research/collaboration/round-03/fresh/findings.txt",
+    "../../evidence/research/collaboration/round-01/arithmetic/findings.txt",
+    "../../evidence/research/collaboration/round-07/analysis/rank_asymptotic.txt",
+    "../../evidence/research/collaboration/round-02/fresh/findings.txt",
+    "../../evidence/research/collaboration/round-02/fresh/findings.txt",
+    "../../evidence/research/collaboration/round-03/analysis/findings.txt",
+    "../../evidence/research/collaboration/round-02/fresh/simultaneous.txt",
+    "../../evidence/research/collaboration/round-06/identities/findings.txt",
+    "../../evidence/research/modular-detour.txt",
+    "../../evidence/research/collaboration/round-05/arithmetic/findings.txt",
+    "../../evidence/research/collaboration/round-06/fresh/pole_annihilator_review.txt",
+    "../../evidence/research/collaboration/round-13/findings.txt",
+    "../../evidence/research/collaboration/round-04/fresh/findings.txt",
+    "../../evidence/research/collaboration/round-10/symmetry/findings.txt",
+    "../../evidence/research/collaboration/round-14/findings.txt",
+    "../../evidence/research/collaboration/round-15/coordinator/complete-deformation.txt",
+    "../../evidence/research/collaboration/round-15/coordinator/arithmetic-gate.txt",
+    "../../evidence/research/structural-followup.txt",
+    "../../evidence/research/collaboration/round-08/coordinator/dimensional-ladder-gate.txt",
+    "../../evidence/research/collaboration/round-09/internal_graph/general-period-space.txt",
+    "../../evidence/research/collaboration/round-10/coordinator/dense-quarter-gate.txt",
+    "../../evidence/research/collaboration/round-11/fresh/findings.txt",
+    "../../evidence/research/collaboration/round-16/archive-audit.txt",
+    "../../evidence/research/collaboration/round-18/findings.txt",
+    "../../evidence/research/collaboration/round-10/adelic/findings.txt",
+    "../../evidence/research/collaboration/round-08/discrete/findings.txt",
+    "../../evidence/research/coordinated-round-08.txt",
+    "../../evidence/research/collaboration/round-12/geometry/findings.txt",
+    "../../evidence/research/collaboration/round-12/fresh/tail_gauge_gate.txt",
+    "../../evidence/research/collaboration/round-12/arithmetic/findings.txt",
+    "../../evidence/research/collaboration/round-11/rationality/findings.txt",
+    "../../evidence/research/collaboration/round-10/fresh/findings.txt",
+    "../../evidence/research/collaboration/round-09/independent/multiplicative_gate.txt",
+    "../../evidence/research/coupled-holonomy.txt",
+    "beta4-determinant-obstructions.pdf"
+  ],
+  "reproduction_report": "checks/supplement-reproduction.json",
+  "reproduction_report_sha256": "90fbab7a3f50029fc34ea9f012778f7c1ee71e7ba45dc9f3169f7bbf6ff8af77",
+  "reproduction_input_and_output_hashes_checked": 0,
+  "reproduction_suite_rerun": true,
+  "statement_preservation": {
     "baseline_commit": "local-prepublication-revision",
-    "existing_statement_and_proof_blocks_unchanged": 39,
-    "comparison_record": "planning/accessibility-proof-comparison.json",
-    "comparison_sha256": "eb9792b051b6a020e72410a24351c4a21fe720c6c22fa2a0fa764a48ae44ff8a"
+    "formal_statements_unchanged_in_document": 10,
+    "formal_statements_unchanged_across_both_documents": 21,
+    "comparison_record": "planning/expository-review.json",
+    "comparison_sha256": "70059eb11e25338a7026030bd7688041ca5a2c810ecac8238594c989659d7b84",
+    "proof_text": "Expanded and reorganized; no claim of verbatim proof preservation in this revision."
   },
   "editorial_review": {
-    "record": "planning/accessibility-review.txt",
-    "sha256": "5d94bd8c530ba28103351672be2be0dc1cf0cf915f2bfc11db29e360d47e0c17",
-    "scope": "Accessibility revision by the assembling model; no independent mathematical audit."
+    "record": "planning/expository-review.txt",
+    "sha256": "9702d3873e8867d1e51b1aeb4626cad9bb2da196d1df31fec10a0ed0783b95c6"
   },
-  "new_expository_example_check": {
-    "script": "checks/expository_example.py",
-    "script_sha256": "572fceb0b3cdffbd9f22a268c9d6db077f29ad405da754ee288f421afbc54568",
-    "result": "checks/expository-example.json",
-    "result_sha256": "0418a20d73176d99424dc3a16bd342846b26601a36717a0b46e2faab8941ff86",
-    "status": "passed",
-    "arithmetic": "exact rational arithmetic",
-    "scope": "One worked example, not an asymptotic proof."
-  },
+  "historical_reviews": [
+    {
+      "record": "supplement/audit.txt",
+      "sha256": "7e04a4ffd9bd5ec92a5a1bd764b101a1dd6c4e5c2aba56c787ff0e501e25fab8",
+      "scope": "Historical assembly audit."
+    },
+    {
+      "record": "planning/accessibility-review.txt",
+      "sha256": "5d94bd8c530ba28103351672be2be0dc1cf0cf915f2bfc11db29e360d47e0c17",
+      "scope": "Earlier revision, before the present proof expansions."
+    }
+  ],
   "packet_consistency": {
     "status": "passed",
     "scope": "Writing-packet consistency, references and byte hashes only; not mathematical verification.",
@@ -283,6 +359,16 @@
       "equivalence": 2
     }
   },
-  "reproduction_suites_rerun_for_accessibility_revision": false,
-  "audit_record_scope": "Historical assembly audit; current editorial review recorded separately."
+  "independent_audit_of_assembled_draft": false,
+  "formal_verification": false,
+  "claim_navigation": {
+    "claims": 57,
+    "distinct_compiled_destinations": 57,
+    "record_label_occurrences": 50,
+    "all_record_labels_resolve": true,
+    "all_paths_in_manifests": true,
+    "classifications_unchanged": true,
+    "coverage_sha256": "e48430ef4a83ee33d62b8366c7cbdeefd5b2f6b5acafc9b4ed3d801418763a3c",
+    "primary_source_correction": "Q04 now links to round-15 complete-deformation.txt."
+  }
 }

@@ -25,7 +25,9 @@ def tex(s):
 
 parts = [r'\section{Claim and source register}\label{app:register}',
     'Each entry gives the archived classification, the scope of this writing pass,',
-    'and one primary navigation source. All paths are relative to the repository root.',
+    'and one primary navigation source. Record labels elsewhere link here;',
+    'the source links open files in the local checkout. All displayed paths',
+    'are relative to the repository root.',
     'The complete proof and calculation path lists, limitations and literature links',
     r'are in \path{planning/theorem-inventory.json}. The frozen archive classification',
     'does not mean every claim has been independently re-audited.']
@@ -35,12 +37,17 @@ for c in inventory['claims']:
     status = ('Companion-paper proof; not repeated here.' if cid.startswith('C') else
               rewritten.get(cid, 'Catalogued with its archived scope; not promoted to a newly audited theorem.'))
     sources = c['proof_sources']
-    # Prefer the later pole review for M03; both original notes remain linked.
-    primary = sources[-1] if cid == 'M03' else sources[0]
+    # Lead with the current corrected account; earlier records remain listed.
+    if cid == 'M03':
+        primary = sources[-1]
+    elif cid == 'Q04':
+        primary = next(p for p in sources if p.endswith('/complete-deformation.txt'))
+    else:
+        primary = sources[0]
     assert (ROOT / primary).is_file(), primary
-    parts += [r'\paragraph{'+cid+' -- '+tex(c['title'])+'}',
+    parts += [r'\paragraph{'+cid+' -- '+tex(c['title'])+r'}\label{record-'+cid+'}',
               tex(c['classification'].replace('_',' '))+'. '+tex(status),
-              r'\par\smallskip\noindent{\footnotesize\path{'+primary+r'}}\par']
+              r'\par\smallskip\noindent{\footnotesize\href{run:../../'+primary+r'}{\nolinkurl{'+primary+r'}}}\par']
     coverage.append({'id':cid,'archived_classification':c['classification'],
                      'supplement_scope':status,'primary_path':primary,
                      'all_proof_paths':sources,'all_check_paths':c['check_sources']})

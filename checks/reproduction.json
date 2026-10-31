@@ -1,10 +1,10 @@
 {
   "status": "passed",
-  "run_at_utc": "2026-10-31T14:01:43.966295+00:00",
+  "run_at_utc": "2026-10-31T17:10:52.886772+00:00",
   "scope": "Finite exact and Arb interval checks of the main-paper formulas; not an asymptotic proof, independent model audit, human audit, priority check, or formal verification.",
   "python_version": "3.14.4",
   "python_flint_version": "0.9.0",
-  "seconds": 0.28909157199814217,
+  "seconds": 0.30290783700183965,
   "source_scripts": [
     {
       "path": "evidence/research/collaboration/round-01/construction/checks.py",

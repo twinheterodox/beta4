@@ -31,4 +31,6 @@ The later accessibility revision added one worked example: the three-node princi
 python3 checks/expository_example.py
 ```
 
-The [result](expository-example.json) records the scaled matrix, the three principal-minor residues and the coefficient valuation. The earlier calculation suites were not rerun for this editorial revision: their scripts and reports are unchanged, and all existing statement and proof blocks match the previous draft. The [revision record](../planning/accessibility-review.txt) separates these checks from mathematical verification.
+The [result](expository-example.json) records the scaled matrix, the three principal-minor residues and the coefficient valuation. The [initial accessibility revision](../planning/accessibility-review.txt) preserved all statement and proof blocks and did not rerun the earlier suites.
+
+The subsequent [expository review](../planning/expository-review.txt) expands proofs while preserving all formal statements. Both calculation suites were rerun for that pass and passed; their scripts, exact structural results and frozen evidence are unchanged. These replays support the expanded exposition without constituting a fresh independent mathematical audit.

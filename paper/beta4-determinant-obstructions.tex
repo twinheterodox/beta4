@@ -9,7 +9,7 @@
 \usepackage{enumitem}
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,
- urlcolor=blue!45!black,
+ urlcolor=blue!45!black,filecolor=blue!45!black,
  pdftitle={Arithmetic obstructions in positive determinant approximations to beta(4)},
  pdfauthor={Research note prepared with Codex}}
 \urlstyle{same}
@@ -135,7 +135,7 @@ obstruction. The first proof also shows that moving the entire block of
 consecutive nodes cannot repair that family. The second determines the
 cost at each large prime exactly.
 
-\subsection{The two families and main results}
+\subsection{Consecutive kernel determinants}
 
 The first construction seeks a symmetric matrix with rational
 off-diagonal entries and $\theta$ plus a rational number on each
@@ -214,13 +214,26 @@ The underlying kernel admits a uniform comparison for arbitrary positive
 integer row and column nodes (Theorem~\ref{thm:comparison}); the arithmetic
 conclusion above is restricted to consecutive principal nodes.
 
-The second construction starts from moments $\mu_m$ of a positive measure
-on $[0,1]$. Each moment has the form $C_m\theta+B_m$, with rational
-$C_m,B_m$. The matrix $[\mu_{i+j}]$ is a Gram matrix: its entries are
-inner products of the monomials $1,y,y^2,\ldots$. This supplies positivity
-of its determinant. The measure is obtained from the difference variable
-$y=(u-v)^2$ in a double integral, which explains the family's name.
-Section~\ref{sec:gram} derives the following coefficients:
+\subsection{Difference-variable Gram determinants}
+
+The second construction builds positivity into the moments themselves:
+\[
+ \mu_m=\frac1{96}\int_0^1\int_0^1
+ \frac{(u-v)^{2m}\log^2(uv)}{\sqrt{uv}(1+uv)}\dd u\dd v.
+\]
+The weight is positive, and $y=(u-v)^2$ lies in $[0,1]$.
+Thus these are moments of a positive measure on that interval, and
+$[\mu_{i+j}]$ is the Gram matrix of $1,y,\ldots,y^{n-1}$.
+Its determinant is positive because a nonzero polynomial cannot vanish
+throughout the interval.
+
+Why does this produce a polynomial in $\theta$? Expand $(u-v)^{2m}$
+and integrate its monomials. The middle term $u^mv^m$ contributes
+$\binom{2m}{m}(\theta-T_4(m))$; paired off-diagonal terms have
+rational values because their cubic beta tails cancel. The factor
+$1/96$ normalizes $\mu_0=\theta$. Section~\ref{sec:gram} carries out
+this calculation and gives $\mu_m=C_m\theta+B_m$, with the explicit
+rational coefficients
 \begin{align}
  T_\ell(j)&=\sum_{k=0}^{j-1}\frac{(-1)^k}{(2k+1)^\ell},
  &C_m&=\binom{2m}{m},\label{eq:T}\\
@@ -231,7 +244,11 @@ Section~\ref{sec:gram} derives the following coefficients:
  &Z_n^{\Delta}&=\kappa_n Q_n^{\Delta}=\PP(Q_n^{\Delta}),\quad \kappa_n>0.
  \label{eq:delta-Q}
 \end{align}
-Empty sums are zero. In particular $B_0=0$ and $B_1=-149/81$.
+Here $T_\ell(j)$ truncates the beta series after $j$ individual terms,
+so $S_\ell(a)=T_\ell(2a)$. The central binomial coefficient $C_m$
+comes from the middle term just described; $B_m$ collects the finite
+tail corrections and the off-diagonal terms. Empty sums are zero.
+In particular $B_0=0$ and $B_1=-149/81$.
 
 \begin{theorem}[Difference-variable Gram determinants]\label{thm:delta}
 The polynomial $Q_n^{\Delta}$ has degree $n$ and leading coefficient
@@ -314,11 +331,14 @@ unique positive rational multiple $\kappa Q\in\Z[X]$ whose coefficients
 have gcd one. This convention preserves the sign of $Q$.
 \end{definition}
 
-For a nonzero rational number, $\vp$ denotes its usual $p$-adic valuation,
-normalized by $\vp(p)=1$; set $\vp(0)=+\infty$. Saying that a rational
+We write $[X^j]Q$ for the coefficient of $X^j$ in $Q$.
+For a nonzero rational number, $\vp$ counts powers of $p$ in its
+numerator minus those in its denominator; set $\vp(0)=+\infty$.
+For example $v_p(p^{-3})=-3$. Saying that a rational
 number is $p$-integral means that its denominator in lowest terms is not
 divisible by $p$. Reduction modulo $p$ below is always performed on
-$p$-integral quantities.
+$p$-integral quantities, by inverting the denominator modulo $p$.
+A $p$-unit has valuation zero, so its reduction is nonzero.
 
 \begin{lemma}\label{lem:primitive}
 If $Q(X)=\sum_j q_jX^j\ne0$ and $\PP(Q)=\kappa Q$, then
@@ -361,15 +381,14 @@ specified families.
 
 \section{The positive cubic-tail kernel}\label{sec:kernel}
 
-The design problem is to put $\theta$ on the diagonal of a positive
-matrix while keeping the off-diagonal entries rational. A divided
-difference $(g(y)-g(x))/(y-x)$ is a natural candidate: it uses differences
-of function values off the diagonal and a derivative on the diagonal.
-We choose $g$ to be rational at squared integer nodes, with a derivative
-that introduces fourth-power beta tails. The cubic tail below is useful
-because differentiation raises its denominator power from three to four.
-The integral calculation then proves the required positivity; that
-property does not follow from the divided-difference form alone.
+The introduction explains the rational entries of the kernel matrix.
+The remaining task is to prove positivity and estimate its determinant.
+We first express $K(x,y)$ as an integral of
+$(x+s^2)^{-1}(y+s^2)^{-1}$ against a positive density. These factors
+make a Gram representation when the two node lists agree, and an
+explicit determinant integral handles different row and column lists.
+We then compare that density with simpler ones that yield Cauchy
+determinants. This separates the positivity argument from the size estimate.
 
 \subsection{A direct integral representation}
 
@@ -387,8 +406,11 @@ gives
 at nonnegative integer $a$. The integrated series is absolutely summable,
 which justifies the expansion and differentiation used here.
 
-We recall two elementary transforms, including their proofs to fix the
-normalization:
+The next two transforms convert the exponential in this Laplace
+integral into the rational factors needed for the kernel. The cosine
+transform evaluates the resulting density explicitly; the second
+identity replaces $\sqrt{x}(1-e^{-t\sqrt{x}})$ by an integral
+containing $x/(x+s^2)$. We include their proofs to fix the normalization:
 \begin{align}
  \int_0^\infty\sech(u)\cos(tu)\dd u
    &=\frac\pi2\sech\frac{\pi t}{2},\label{eq:sech-transform}\\
@@ -441,15 +463,25 @@ strictly increasing nonnegative column nodes is positive.
 \end{proposition}
 
 \begin{proof}
-Use~\eqref{eq:cos-transform} with $t=4u$ in~\eqref{eq:f-laplace}.
-The integrands before interchange are nonnegative, so Tonelli's theorem
-gives
+First identify the density. Equations~\eqref{eq:f-laplace} and
+\eqref{eq:cos-transform}, with $t=4u$, give
+\[
+ g(x)=\frac1{12\pi}\int_0^\infty\int_0^\infty
+ u^2\sech u\,\frac{x(1-\cos(4us))}{x+s^2}\dd s\dd u.
+\]
+The integrand is nonnegative, so Tonelli's theorem permits interchange.
+The inner $u$-integral is $4(f(0)-\Ree f(is))$. Hence
 \begin{equation}\label{eq:g-stieltjes}
  g(x)=\int_0^\infty\frac{x}{x+s^2}\sigma(s)\dd s,
  \qquad \sigma(s)=\frac{f(0)-\Ree f(is)}{3\pi}
                 =\frac{\pi^2}{96}q(s).
 \end{equation}
-Taking a divided difference yields~\eqref{eq:K-integral}. Here
+Taking a divided difference uses the elementary identity
+\[
+ \frac{y/(y+s^2)-x/(x+s^2)}{y-x}
+       =\frac{s^2}{(x+s^2)(y+s^2)},
+\]
+which gives~\eqref{eq:K-integral}. Positivity is now explicit:
 \begin{equation}\label{eq:q-positive}
  q=(1-A)(2A^2+2A+1)>0\qquad(s>0).
 \end{equation}
@@ -459,7 +491,8 @@ justifies the diagonal and zero limits. The identities
 \eqref{eq:K-off}--\eqref{eq:K-diag} follow from~\eqref{eq:f-laplace};
 at zero, $g(x)=-f'(0)x/6+O(x^{3/2})=2\theta x+O(x^{3/2})$.
 
-For increasing nodes $x_i,y_j$, expanding the two determinants and
+It remains to pass from the kernel to its minors. For increasing
+nodes $x_i,y_j$, expanding the two determinants and
 integrating termwise gives the determinant integration identity
 \begin{equation}\label{eq:andreief}
  \det[K(x_i,y_j)]_{i,j=1}^n
@@ -473,7 +506,8 @@ of the finite one-variable integrals. This is the usual
 Andr\'eief--Heine identity used in positive determinant arguments
 \cite[Section~2]{Zudilin}, with its elementary expansion proof here.
 For $0<s_1<\cdots<s_n$, both Cauchy determinants are positive by the
-Cauchy product formula. Their product is unchanged by permuting the
+Cauchy product formula~\eqref{eq:Cauchy}, applied to $x_i,s_j^2$
+and $y_i,s_j^2$. Their product is unchanged by permuting the
 $s_\ell$ and is strictly positive away from coincidences. This proves
 the last assertion. It also proves that increasing the density increases
 these determinants, even for different row and column nodes.
@@ -509,7 +543,10 @@ The product formula follows, for example, by multiplying the determinant
 by its displayed denominator: the numerator is alternating separately in
 the two node sets, hence contains their Vandermonde factors, and comparison
 of degrees and one residue fixes the remaining constant to one.
-Set
+The constants below have three roles: $M$ bounds the density factor
+$q$, $\tau_0$ fixes a lower comparison that vanishes quadratically at
+zero, and $c_0$ includes the factor $\pi/2$ from integrating the
+comparison kernel. Set
 \begin{equation}\label{eq:constants}
  c_0=\frac{\pi^3}{192},\qquad M=1+\frac{2}{3\sqrt6},\qquad
  \tau_0=\frac1{\sqrt2\pi}.
@@ -569,8 +606,16 @@ We now evaluate the regularized determinant exactly:
  &\times\left(1+\tau\sum_i\frac1{a_i}+\tau\sum_j\frac1{b_j}\right).
  \end{split}
 \end{equation}
-Let $u_i=1/a_i$, $v_j=1/b_j$. Factoring rows and columns in
-\eqref{eq:Rtau} leaves $C+\tau u v^t$. If $w=C^{-1}u$ and
+Let $u_i=1/a_i$, $v_j=1/b_j$. The entrywise factorization
+\[
+ R_\tau(a_i,b_j)=\frac{a_i}{a_i+\tau}
+  \left(\frac1{a_i+b_j}+\frac{\tau}{a_i b_j}\right)
+  \frac{b_j}{b_j+\tau}
+\]
+reduces the calculation to $\det(C+\tau uv^t)$.
+The rank-one identity
+$\det(C+\tau uv^t)=\det C(1+\tau v^tC^{-1}u)$ leaves one scalar
+to compute. If $w=C^{-1}u$ and
 $F(x)=\sum_jw_j/(x+b_j)$, then $F(a_i)=1/a_i$. Therefore
 \[
  \frac1x-F(x)=\frac1x\,
@@ -597,6 +642,12 @@ is enough for a lower bound on the actual primitive multiplier.
 \subsection{A coefficient with forced valuation}
 
 For an odd prime $p$ put $\chi_4(p)=(-1)^{(p-1)/2}$.
+Writing $M_0$ for the largest node, the interval $2M_0<p<4M_0$
+below is chosen to isolate a single
+denominator $p$ in each beta partial sum, while keeping all factors
+from differences of nodes invertible modulo $p$. Multiplication by
+$p^4$ then kills the cubic terms and detects only the fourth-power
+diagonal terms. We call $a_i$ a high node when $4a_i>p$.
 
 \begin{lemma}\label{lem:principal-local}
 Let $a_1<\cdots<a_n$ be positive integers with maximum $M_0$, and set
@@ -622,8 +673,10 @@ and its reduction is diagonal:
  0,&\text{otherwise}
  \end{cases}\pmod p.
 \end{equation}
-The coefficient of $X^{n-r_p}$ is the sum of all principal minors of $R$
-of size $r_p$. After multiplication by $p^{4r_p}$, exactly one such
+Expanding $\det(XI+R)$ by the set of diagonal entries from which $X$
+is selected shows that the coefficient of $X^{n-r_p}$ is the sum
+of all principal minors of $R$ of size $r_p$.
+After multiplication by $p^{4r_p}$, exactly one such
 minor survives modulo $p$: that using all the high nodes. Its residue is
 $(-\chi_4(p))^{r_p}\ne0$. For $r_p=0$ this is the leading coefficient
 one. This proves the equality in~\eqref{eq:principal-local};
@@ -663,6 +716,13 @@ content has been removed.
 
 \subsection{Proportional offsets}
 
+We now compare two functions of the relative offset $m/n$:
+$\mathcal A$ measures the forced denominator cost, and $\mathcal D$
+measures the real decay. Their difference will be the lower bound
+for the primitive value. This subsection treats finite limiting
+offsets; the next handles $m/n\to\infty$ separately so that no
+uniformity in an unbounded parameter is assumed.
+
 Take $a_i=m+i$, $M_0=m+n$, and suppose first that $m/n\to\rho<\infty$.
 Reverse the finite sum in~\eqref{eq:principal-sum}. Since the endpoints
 $2M_0$ and $4a_i$ are even and exceed two, endpoint conventions for primes
@@ -681,13 +741,19 @@ where
  \begin{cases}2(1+\rho)^2,&0\leq\rho\leq1,\\8\rho,&\rho\geq1.
  \end{cases}
 \end{equation}
-For example, the Riemann sum giving this formula is
-$16\int_0^1(\rho+t-(\rho+1)/2)_+\dd t$.
+Reversing the prime sum counts, for each node $a_i$, the primes from
+$2M_0$ up to $4a_i$. With $a_i/n\to\rho+t$, the resulting
+Riemann sum is $16\int_0^1(\rho+t-(\rho+1)/2)_+\dd t$, where
+$u_+=\max(u,0)$. When $\rho\leq1$, only the upper part of the node
+interval contributes; when $\rho\geq1$, every node contributes.
+These are the two cases in~\eqref{eq:A-def}.
 Uniformity of the prime-number-theorem error follows from
 $\sup_{2M_0\leq x\leq4M_0}|\vartheta(x)-x|=o(M_0)$ and
 $M_0=O(n)$.
 
-For these nodes the Cauchy product is
+For the real estimate, the differences $a_j-a_i=j-i$ do not depend
+on the offset. The Vandermonde product is
+$\prod_{i<j}(j-i)=\prod_{j=1}^{n-1}j!$, so the Cauchy product is
 \begin{equation}\label{eq:C-shift}
  \det C(a,a)=\frac{\prod_{j=1}^{n-1}(j!)^2}
                     {\prod_{i,j=1}^n(2m+i+j)}.
@@ -715,7 +781,9 @@ Integrating explicitly yields
 \end{equation}
 where $0^2\log0=0$.
 
-The derivative of $\mathcal D$ is decreasing, and
+It remains to show that shifting cannot make real decay overtake
+the arithmetic cost. Differentiating the integral formula shows
+that the derivative of $\mathcal D$ is decreasing, and
 \begin{equation}\label{eq:D-derivative}
  \mathcal D'(\rho)=2\int_0^1\int_0^1
        \frac{\dd x\dd y}{2\rho+x+y}
@@ -738,6 +806,9 @@ proportional-offset statement
 \subsection{Offsets larger than the matrix size}
 
 Suppose now that $m/n\to\infty$. All nodes exceed $M_0/2$ eventually.
+The relevant scale is now $mn$: the prime cost is of this order,
+whereas the logarithm of the real determinant has size at most
+$O(n^2\log(1+m/n))=o(mn)$.
 The same reversal of sums gives
 \begin{align}
  \log H_{n,m}
@@ -792,9 +863,16 @@ With $C_m,B_m$ defined in~\eqref{eq:T}--\eqref{eq:B},
 \end{lemma}
 
 \begin{proof}
-Expand $(1+uv)^{-1}$ as a geometric series. For $a,b>0$, the log-squared
-integral in each term is the second common-parameter derivative of
-$((a+t)(b+t))^{-1}$ at $t=0$. For $a\ne b$ this derivative is
+First compute the integral of one monomial; then expand $(u-v)^{2m}$.
+The identity
+\[
+ \int_0^1\int_0^1u^{a+t-1}v^{b+t-1}\dd u\dd v
+          =\frac1{(a+t)(b+t)}
+\]
+shows why two common-parameter derivatives insert $\log^2(uv)$.
+Expand $(1+uv)^{-1}$ as a geometric series. For $a,b>0$, the
+log-squared integral in each term is therefore the second derivative
+of the right side at $t=0$. For $a\ne b$ this derivative is
 \[
  \frac2{b-a}\left(\frac1{a^3}-\frac1{b^3}\right),
 \]
@@ -809,10 +887,18 @@ integration. Substitution of $a=k+i+1/2$, $b=k+j+1/2$ gives
 \end{align}
 In~\eqref{eq:mono-off}, the two cubic tails have the same sign
 $(-1)^i=(-1)^j$, so their $\beta(3)$ terms cancel.
-Expand $(u-v)^{2m}$. Its diagonal term contributes
+Now expand
+$\mu_m=\sum_{j=0}^{2m}(-1)^j\binom{2m}{j}J(u^jv^{2m-j})/96$.
+Its diagonal term contributes
 $\binom{2m}{m}(\theta-T_4(m))$ by~\eqref{eq:mono-diag}.
-Pairing indices $j$ and $2m-j$ in~\eqref{eq:mono-off} gives exactly the
-sum in~\eqref{eq:B}. This proves~\eqref{eq:mu}.
+For $j\ne m$, the sign $(-1)^j$ cancels the corresponding sign
+in~\eqref{eq:mono-off}. The off-diagonal sum becomes
+\[
+ -\frac1{12}\sum_{\substack{0\leq j\leq2m\\j\ne m}}\binom{2m}{j}
+       \frac{T_3(j)-T_3(2m-j)}{m-j}.
+\]
+Changing $j$ to $2m-j$ in the second part makes the two parts equal.
+The result is the sum in~\eqref{eq:B}, proving~\eqref{eq:mu}.
 \end{proof}
 
 All coefficient statements use the explicitly defined polynomial
@@ -821,8 +907,9 @@ identify its coefficients.
 
 \subsection{Positive measure and full degree}
 
-Under $y=(u-v)^2$, symmetry between the two halves of the square and the
-Jacobian $\dd y=2s\dd s$, $s=\sqrt y$, show that $\mu_m$ is the $m$th
+On the half-square $u>v$, set $u=v+s$. The ranges are
+$0<s<1$ and $0<v<1-s$. Symmetry doubles this integral, and then
+$y=s^2$ gives $2\dd s=\dd y/s$. Thus $\mu_m$ is the $m$th
 moment of a measure on $[0,1]$ with density
 \begin{equation}\label{eq:rho}
  \rho(y)=\frac1{96s}\int_0^{1-s}
@@ -862,6 +949,13 @@ product of these norms, giving~\eqref{eq:binomial-det}.
 \end{proof}
 
 \subsection{Matching upper and lower real exponents}
+
+The upper estimate needs monic polynomials uniformly small on $[0,1]$;
+Chebyshev polynomials supply them. For the lower estimate we compare
+the measure with $(1-y)\dd y$, whose monic orthogonal norms can be
+computed exactly. Changing from monomials to any monic polynomial
+basis uses a triangular matrix with determinant one, so it preserves
+the Gram determinant in both calculations.
 
 \begin{proposition}\label{prop:gram-real}
 For all $n\geq1$,
@@ -957,6 +1051,9 @@ denominator occurs. Put
  m_0=\left\lfloor\frac p4\right\rfloor+1,\qquad
  r=\max\{0,2n-1-m_0\}.
 \end{equation}
+Here $m_0$ is the first moment index for which the sum in
+\eqref{eq:Bm-residue} can be nonempty: $2m\geq(p+1)/2$ is
+equivalent to $m\geq\lfloor p/4\rfloor+1$.
 For $m<m_0$ no cubic tail contains $p$, so $B_m$ is actually $p$-integral.
 If $m_0\leq2n-2$, the first nonzero residue in~\eqref{eq:Bm-residue},
 apart from its factor $\chi_4(p)/6$, is
@@ -972,8 +1069,12 @@ These residues are nonzero modulo $p$. Indeed, in the nonempty case
 $m_0\geq3$, and all the displayed positive numerator and denominator
 factors are less than $p$.
 
-The residue matrix $[p^3B_{i+j}\bmod p]_{i,j<n}$ is supported in the
-bottom-right $r\times r$ block. That block is anti-triangular with the
+If $r=0$, every residue vanishes. Otherwise, row $i$ can contain
+a nonzero residue only if $i+j\geq m_0$ for some $j\leq n-1$,
+hence $i\geq m_0-(n-1)=n-r$; the same applies to columns.
+The residue matrix $[p^3B_{i+j}\bmod p]_{i,j<n}$ is therefore
+supported in the bottom-right $r\times r$ block.
+That block is anti-triangular with the
 nonzero first residue on its anti-diagonal, so it has rank $r$.
 More strongly, every entry outside it is $p$-integral before multiplication
 by $p^3$: its moment index is below $m_0$.
@@ -986,11 +1087,20 @@ because only the bottom $r$ rows have such entries. Each entry has
 coefficient valuations at least $-3$, so every coefficient of
 $Q_n^{\Delta}$ has valuation at least $-3r$.
 
-If $r>0$, let $L$ be the $r\times r$ leading residue block just described,
-and let $s=n-r$. To survive reduction after multiplication by $p^{3r}$,
-a term must use all $r$ bottom rows and all $r$ bottom columns from that
-block. Its complementary factor is the upper-left pencil. Consequently,
-as a polynomial congruence,
+To see that the bound is attained, suppose $r>0$, let $L$ be the
+$r\times r$ residue block just described, and put $s=n-r$.
+Multiply the bottom $r$ rows of the pencil by $p^3$. The new matrix
+has $p$-integral polynomial entries, and its reduction has the form
+\[
+ \begin{pmatrix}
+ [C_{i+j}X+B_{i+j}]_{0\leq i,j<s}& *\\
+ 0&L
+ \end{pmatrix}.
+\]
+The lower-left block vanishes because those entries were already
+$p$-integral. In the lower-right block the integral $X$-coefficients
+also vanish after multiplication by $p^3$. Taking this block-triangular
+determinant proves the polynomial congruence
 \begin{equation}\label{eq:block-factor}
  p^{3r}Q_n^{\Delta}(X)
  \equiv \det(L)\det[C_{i+j}X+B_{i+j}]_{0\leq i,j<s}\pmod p.

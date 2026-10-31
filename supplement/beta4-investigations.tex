@@ -6,7 +6,8 @@
 \usepackage{microtype,booktabs,longtable,array,enumitem,xcolor}
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,
- urlcolor=blue!45!black,pdftitle={Investigations of irrationality constructions for beta(4)},
+ urlcolor=blue!45!black,filecolor=blue!45!black,
+ pdftitle={Investigations of irrationality constructions for beta(4)},
  pdfauthor={Research note prepared with Codex}}
 \urlstyle{same}
 \setlength{\emergencystretch}{2em}
@@ -28,7 +29,8 @@
 \DeclareMathOperator{\sech}{sech}
 \DeclareMathOperator{\atanh}{atanh}
 \DeclareMathOperator{\Res}{Res}
-\newcommand{\record}[1]{\textnormal{[record #1]}}
+\newcommand{\recordid}[1]{\hyperref[record-#1]{#1}}
+\newcommand{\record}[1]{\textnormal{[record \recordid{#1}]}}
 \title{Investigations of irrationality constructions for $\beta(4)$\\
 \large Technical supplement: obstructions, reductions, and unresolved arithmetic}
 \author{\normalsize Research note prepared with Codex}
