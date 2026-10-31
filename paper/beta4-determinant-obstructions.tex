@@ -107,22 +107,41 @@ polynomial evaluated at $\theta$. For example, with $r,s,t\in\Q$,
        =X^2+(r+t)X+rt-s^2.
 \]
 An $n\times n$ matrix of linear entries similarly gives a polynomial
-of degree at most $n$. This allows more elaborate combinations than a
-single linear form. Determinants can be especially small when their
-rows are almost linearly dependent; the challenge is to make them
-small enough while ensuring that they are not exactly zero.
+of degree at most $n$, and exactly $n$ in our two constructions.
+Increasing the dimension can help make the determinant small, but
+increasing the degree makes the irrationality test harder. We explain
+both effects.
 
-The integer test extends to these polynomials. If $Z\in\Z[X]$ has
-degree at most $n$, then $b^nZ(a/b)$ is an integer. Thus
+On the real side, determinants can be especially small when their
+rows are almost linearly dependent. Orthogonalizing the rows of a real
+square matrix by subtracting combinations of earlier rows preserves
+the determinant. Its absolute value is the product of the resulting
+row lengths. Thus small components in successive new directions can
+multiply together. For illustration, lengths
+$e^{-c},e^{-2c},\ldots,e^{-nc}$, with $c>0$, would give
+\[
+ |\det M_n|=\prod_{j=1}^n e^{-cj}
+          =e^{-cn(n+1)/2}.
+\]
+This explains how decay on the $n^2$ scale can arise. It is an
+illustrative mechanism; the rate for each actual construction requires
+proof, as does nonvanishing.
+
+On the arithmetic side, the degree determines the lower bound under
+rationality. If $Z\in\Z[X]$ has degree at most $n$, then $b^nZ(a/b)$
+is an integer. Thus
 \begin{equation}\label{eq:integer-test}
  Z(\theta)\ne0\quad\Longrightarrow\quad
  |Z(\theta)|\geq b^{-n}\qquad\text{if }\theta=a/b.
 \end{equation}
-To contradict every possible fixed $b$, it is enough to construct
-nonzero integer-polynomial values with
-$|Z_n(\theta)|^{1/n}\to0$.
-Values of size $e^{-c n^2}$, with $c>0$, would do this, since their
-$n$th roots are $e^{-cn}$. Merely tending to zero is insufficient:
+Larger degree permits smaller nonzero values at rational arguments;
+this is a cost of the construction. The potential gain is that the
+determinant can shrink on the $n^2$ scale while the degree grows only
+linearly. If, after conversion to integer coefficients, its nonzero
+value is at most $e^{-cn^2}$ for some fixed $c>0$, then it is eventually
+smaller than $b^{-n}$ for every fixed $b$, contradicting rationality.
+More generally, it suffices that $|Z_n(\theta)|^{1/n}\to0$.
+Merely tending to zero is insufficient:
 $Z_n(X)=X^n$ has value $2^{-n}$ at the rational number $1/2$.
 
 Positive determinant constructions are attractive because they can
@@ -292,12 +311,14 @@ technical proof begins, and the two arguments can be read separately.
 Section~\ref{sec:scope} describes the scope and evidence; Appendix~\ref{app:zero}
 includes a zero node in the first construction.
 
+\begin{samepage}
 The introductory argument uses rational arithmetic and linear algebra.
 The detailed proofs also use calculus, elementary complex integration,
 Stirling's formula and the prime number theorem in the form
 \begin{equation}\label{eq:PNT}
  \vartheta(x):=\sum_{p\leq x}\log p=x+o(x).
 \end{equation}
+\end{samepage}
 The latter counts the total logarithmic contribution of the primes
 whose powers the arithmetic arguments force. No numerical optimization
 or finite enumeration is an input to either asymptotic obstruction.
@@ -1334,7 +1355,6 @@ real determinant has logarithm $-2\log2\,(n-1)^2+o(n^2)$. Adding proves
 the assertion.
 \end{proof}
 
-\clearpage
 \begin{thebibliography}{9}
 
 \bibitem{Brown}

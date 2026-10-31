@@ -70,3 +70,25 @@ This is a same-model editorial review and preservation check, not a fresh
 independent mathematical audit or formal verification. The revision is
 local and unpublished. Earlier audit and editorial records describe the
 versions reviewed at those times.
+
+Follow-up: determinant size versus polynomial degree
+31 October 2026
+
+Section 1.2 now explains the two effects of increasing matrix dimension.
+Orthogonalization expresses the absolute determinant as a product of row
+lengths; an explicitly illustrative exponential product explains decay
+on the n^2 scale. Increasing polynomial degree, meanwhile, weakens the
+lower bound imposed by rationality. The text compares these effects and
+states that the rapid decay must survive conversion to integer
+coefficients. The complete explanation is on page 2.
+
+Relative to commit local-prepublication-revision, all 23 existing statement, remark and proof
+blocks, and every numbered display, are unchanged. Prose edits are
+confined to Section 1.2. Two layout adjustments keep the prerequisite
+paragraph with its formula and let the bibliography follow the final
+proof without a forced page break. The PDF remains nineteen pages; all
+pages were rendered and inspected, with the final page reinspected after
+the bibliography adjustment. Compilation and cross-reference checks pass.
+The new elementary explanation was checked directly; the calculation
+suites were not rerun. This remains an editorial check, not a fresh
+independent mathematical audit.

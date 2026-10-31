@@ -1,11 +1,11 @@
 {
   "status": "passed",
-  "recorded_at_utc": "2026-10-31T21:58:24.089843+00:00",
-  "scope": "Main-paper structural revision: text preservation, compilation, cross-references, artifact consistency and visual review; not independent mathematical verification.",
+  "recorded_at_utc": "2026-10-31T23:01:17.015973+00:00",
+  "scope": "Structural revision and subsequent Section 1.2 explanation: text preservation, compilation, cross-references, artifact consistency and visual review; not independent mathematical verification.",
   "source_files_match_build_record": 1,
-  "build_record_sha256": "1a21dc69bc28a3e0c4b3b2a3607a7ceba7a913e9d55ae21869d3eae8e49ad712",
+  "build_record_sha256": "01a3b816f0bda76af89d1c42d02a0cc19770075dba433465884ae83d9bbf26fc",
   "pdf": "output/pdf/beta4-determinant-obstructions.pdf",
-  "pdf_sha256": "53328b1921ddbe742fe3ea41e4f3218778a1280dab5cc072ae3e5af348e59142",
+  "pdf_sha256": "d52d3508a101f71a4d70727925bc3db26d5022fa4635eaaa0f17b3bf8fcfc8aa",
   "pages": 19,
   "visual_inspection": {
     "pages_inspected": [
@@ -29,9 +29,9 @@
       18,
       19
     ],
-    "rendering": "Poppler, 100 dpi; all nineteen pages inspected. The final wording edits changed only page 5, which was reinspected; every other final page matches the inspected PNG pixel-for-pixel.",
+    "rendering": "Poppler, 100 dpi. Every page inspected after the Section 1.2 expansion. The final bibliography layout adjustment changed only page 19, which was reinspected; pages 1-18 match the inspected render pixel-for-pixel.",
     "final_changed_pages_reinspected": [
-      5
+      19
     ],
     "other_final_pages_match_inspected_render": true,
     "result": "No clipping, overlap, broken formulas or illegible layout observed."
@@ -255,11 +255,12 @@
     "existing_proof_blocks_verbatim_preserved": 9,
     "statement_reorganization": "Theorem 1.2 retains degree, leading coefficient, positivity and growth; its exact large-prime valuation clause is now Proposition 6.1. The two statements together retain the original assertions.",
     "comparison_record": "planning/narrative-review.json",
-    "comparison_sha256": "e97ff4c272054b8aa1dd6b7ea2c9e60625977f0b2049f5fda5e0455b27592054"
+    "comparison_sha256": "e97ff4c272054b8aa1dd6b7ea2c9e60625977f0b2049f5fda5e0455b27592054",
+    "record_scope": "The comparison record describes the preceding structural revision. Preservation for the current Section 1.2 follow-up is recorded separately below."
   },
   "editorial_review": {
     "record": "planning/narrative-review.txt",
-    "sha256": "22d78e9ee1210c2cadde1af6270b23d75a3e99a082afd3a1dea09a4fb59058df"
+    "sha256": "cf0aab3f2e5c628ffe6cc5a3be5ba968fec47ad62f20c3dd917236aad549d625"
   },
   "historical_reviews": [
     {
@@ -310,7 +311,7 @@
   "independent_audit_of_assembled_draft": false,
   "formal_verification": false,
   "source": "paper/beta4-determinant-obstructions.tex",
-  "source_sha256": "7eb08c603ccc4d42e06b85f2734b21a5e15a752d158406a1054cbbe06286b93b",
+  "source_sha256": "3bbe14a491b21ccb02eefef630f9a69de08b9be117201b5061170e3803fbebe4",
   "historical_statement_preservation": {
     "baseline_commit": "local-prepublication-revision",
     "formal_statements_unchanged_in_document": 11,
@@ -342,5 +343,21 @@
       "other_pages_identical": 17
     }
   ],
-  "reproduction_scope": "Existing report retained; all nine recorded input/output hashes checked. Calculations were not rerun because this pass changes exposition and placement, with the determinant formulas and proof calculations preserved."
+  "reproduction_scope": "Existing report retained; all nine recorded input/output hashes checked. Calculations were not rerun because this pass changes exposition and placement, with the determinant formulas and proof calculations preserved.",
+  "editorial_followups": [
+    {
+      "baseline_commit": "local-prepublication-revision",
+      "change": "Explain the potential gain from determinant decay on the n^2 scale and the cost of polynomial degree n in Section 1.2, with an illustrative orthogonalization product.",
+      "existing_statement_remark_and_proof_blocks_unchanged": 23,
+      "every_existing_numbered_display_unchanged": true,
+      "prose_changes_confined_to_section": "1.2",
+      "layout_changes": [
+        "Keep the prerequisite paragraph with its prime-number-theorem display.",
+        "Remove the forced page break before the bibliography."
+      ],
+      "new_explanation_checked": "The determinant product after row orthogonalization, the finite arithmetic sum in its exponent, and the comparison with b^(-n) were checked directly. The text explicitly requires integer coefficients before applying the irrationality test.",
+      "calculation_suites_rerun": false,
+      "independent_mathematical_audit": false
+    }
+  ]
 }
