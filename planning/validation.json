@@ -6,9 +6,9 @@
   "evidence_bytes": 1683173,
   "method_groups": 12,
   "research_rounds": 18,
-  "paper_sources": 8,
+  "paper_sources": 9,
   "original_archive_compared": true,
-  "local_pdfs_checked": 8,
+  "local_pdfs_checked": 9,
   "classification_counts": {
     "positive_construction": 5,
     "analytic_theorem": 2,

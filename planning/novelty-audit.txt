@@ -107,7 +107,11 @@ C01-C02: specific positive cubic-tail representation and uniform comparison.
 The general integral/determinant identities are standard. The candidate
 claim is the exact representation and its uniform comparison for these
 nodes, including nonprincipal row/column sets. A formula-level comparison
-with Carreira and related Stieltjes specializations remains appropriate.
+with Carreira is now given in the remark following the main manuscript's
+kernel proposition: our product-resolvent density grows quadratically,
+whereas Carreira's csch-derived functional has exponential decay and finite
+polynomial moments. This distinguishes the displayed representations; it
+does not settle every possible transformed equivalence or priority question.
 
 C03: actual primitive growth for every consecutive principal offset.
 The strong point is the unique surviving coefficient after reduction,
@@ -176,3 +180,12 @@ an unqualified description of a model cross-check.
 A public draft can make a useful, modest contribution without establishing
 that no one has ever derived a related special case. The priority question
 should remain explicit while the precise theorem statements are circulated.
+
+Main-draft attribution update
+============================
+
+The assembled manuscript also credits OpenAI's Catalan determinant strategy
+as motivation, citing the introduction of the pinned September 24 manuscript
+[OPENAI2026]. Its existing local PDF was reused. No global irrationality
+claim or certificate from that manuscript is an input to our theorems.
+The exact new reading scope is in sources/manuscript-reading.json.

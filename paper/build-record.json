@@ -1,0 +1,12 @@
+{
+  "status": "compiled",
+  "pages": 14,
+  "source": "paper/beta4-determinant-obstructions.tex",
+  "source_sha256": "3275b54ec0249b29f6b680df30429c85be9227808139e218f9649c91293d227a",
+  "pdf": "output/pdf/beta4-determinant-obstructions.pdf",
+  "pdf_sha256": "888c81d33cf2d73ec13393e379d592ef4b638069fd513f368e533a66ce53bcde",
+  "tex_engine": "pdfTeX 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian)",
+  "unresolved_references": false,
+  "overfull_or_underfull_boxes": false,
+  "scope": "Compilation and log checks only; visual inspection and mathematics are recorded separately."
+}

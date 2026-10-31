@@ -146,6 +146,23 @@
       "authors": "Marc Prévost",
       "writing_pass_read_scope": "Text lines 1-600: Sections 1-4 and the opening of Section 5, including Padé/orthogonal-polynomial remainder formulas, positive-weight representation, and the displayed proofs of the main representation/convergence results.",
       "unread_dependencies_and_limits": "The imported Stieltjes convergence theorem and primary Hermite/Plana references were not independently read in this pass. Later s=2,3 explicit examples are not used. The comparison concerns the prior positive-weight/Padé framework, not a new application of its convergence theorem."
+    },
+    {
+      "id": "OPENAI2026",
+      "title": "Catalans constant is irrational - OpenAI",
+      "authors": "OpenAI",
+      "version": "September 24 2026 PDF; Git commit adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "source_url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Catalans-constant-is-irrational-September-24-2026/paper.pdf",
+      "download_url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Catalans-constant-is-irrational-September-24-2026/paper.pdf",
+      "local_path": "/home/research/Chat/Math/beta4/literature/papers/Catalans-constant-is-irrational-OpenAI_openai-catalan-2026.pdf",
+      "text_path": "/home/research/Chat/Math/beta4/literature/text/openai-catalan-2026.txt",
+      "sha256": "4023d0344abceb79dc46a16380dac3a662193f9d4f23e6c340b2162068b04c0e",
+      "retrieved_at_utc": "2026-10-30T17:11:44.759270+00:00",
+      "archive_reading_status": "full_text_read_not_independently_verified",
+      "archive_read_scope": "All 44 pages read, including finite-place elimination, Frobenius nonvanishing, Hardy-space interpolation, uniform energy bound, and rational certificates. Certificate recipes read but not rerun; no independent audit of all imported facts.",
+      "writing_pass_read_scope": "Main-draft pass: extracted text lines 1-155, introduction and determinant strategy, read to credit the motivating construction. No global theorem or proof certificate is an input to this paper.",
+      "unread_dependencies_and_limits": "The proof and certificate suite were not re-audited in this draft pass. The earlier full-text reading is not independent verification.",
+      "status": "Read for attribution and context only; no irrationality theorem imported."
     }
   ],
   "auxiliary_leads": [

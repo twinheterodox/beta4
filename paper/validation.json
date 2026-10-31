@@ -1,0 +1,119 @@
+{
+  "status": "passed",
+  "recorded_at_utc": "2026-10-31T14:08:44.298239+00:00",
+  "scope": "Final package consistency and recorded visual review; not independent mathematical verification.",
+  "source": "paper/beta4-determinant-obstructions.tex",
+  "source_sha256": "3275b54ec0249b29f6b680df30429c85be9227808139e218f9649c91293d227a",
+  "pdf": "output/pdf/beta4-determinant-obstructions.pdf",
+  "pdf_sha256": "888c81d33cf2d73ec13393e379d592ef4b638069fd513f368e533a66ce53bcde",
+  "pages": 14,
+  "visual_inspection": {
+    "pages_inspected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "result": "No clipping, overlap, broken formulas or illegible layout observed in the final render."
+  },
+  "latex": {
+    "unique_labels": 86,
+    "reference_occurrences": 76,
+    "unresolved_references": [],
+    "bibliography_keys": [
+      "Brown",
+      "Carreira",
+      "Krattenthaler",
+      "OpenAI",
+      "Prevost",
+      "Zudilin"
+    ],
+    "citation_occurrences": 8,
+    "all_cited_sources_in_reading_record": true
+  },
+  "checked_local_links": [
+    {
+      "from": "README.md",
+      "target": "output/pdf/beta4-determinant-obstructions.pdf"
+    },
+    {
+      "from": "README.md",
+      "target": "paper/beta4-determinant-obstructions.tex"
+    },
+    {
+      "from": "README.md",
+      "target": "paper/audit.txt"
+    },
+    {
+      "from": "README.md",
+      "target": "checks/README.md"
+    },
+    {
+      "from": "README.md",
+      "target": "planning/theorem-inventory.txt"
+    },
+    {
+      "from": "README.md",
+      "target": "planning/novelty-audit.txt"
+    },
+    {
+      "from": "README.md",
+      "target": "planning/method-catalog.txt"
+    },
+    {
+      "from": "README.md",
+      "target": "evidence/README.txt"
+    },
+    {
+      "from": "README.md",
+      "target": "sources/reading-record.json"
+    },
+    {
+      "from": "README.md",
+      "target": "planning/paper-plan.txt"
+    },
+    {
+      "from": "README.md",
+      "target": "planning/draft-opening.txt"
+    },
+    {
+      "from": "paper/README.md",
+      "target": "../output/pdf/beta4-determinant-obstructions.pdf"
+    },
+    {
+      "from": "paper/README.md",
+      "target": "beta4-determinant-obstructions.tex"
+    },
+    {
+      "from": "paper/README.md",
+      "target": "audit.txt"
+    },
+    {
+      "from": "paper/README.md",
+      "target": "../planning/theorem-inventory.txt"
+    },
+    {
+      "from": "paper/README.md",
+      "target": "../planning/method-catalog.txt"
+    },
+    {
+      "from": "checks/README.md",
+      "target": "reproduction.json"
+    }
+  ],
+  "reproduction_report_sha256": "d069d29f1a43f89353f317839d3067983b0f20b402adbd85631bda3f89ad2db6",
+  "reproduction_inputs_and_outputs_match_recorded_hashes": true,
+  "audit_record_sha256": "0589b97db3324d8c8d73999a69b1d80b1cd3014181d33114043a7d40bfdf88c2",
+  "independent_audit_of_assembled_draft": false,
+  "formal_verification": false
+}

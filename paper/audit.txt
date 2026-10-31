@@ -1,0 +1,110 @@
+MAIN-MANUSCRIPT REVIEW RECORD
+Date: 31 October 2026
+
+Status and scope
+----------------
+The first complete main-paper draft is 14 pages, including references.
+It contains proofs of the two stated primitive-value obstructions and the
+common-zero-node extension. This is a review by the model that assembled
+the manuscript, supported by finite exact and interval calculations. It is
+not a new independent model audit, a human mathematical audit, or formal
+verification. Archived cross-checks retain their original, narrower scope.
+
+The review found no substantive gap in the assembled proofs. That is a
+draft-review judgment, not a claim that independent verification has taken
+place. The two theorems concern the explicit polynomial families defined
+in the paper; they do not establish a general obstruction to proving the
+irrationality of beta(4).
+
+Mathematical review
+-------------------
+1. Primitive normalization. The multiplier is determined by the minimum
+   valuation of all coefficients, after removal of coefficient content.
+   Monicity in the first family and the power-of-two leading coefficient
+   in the second control contributions from primes omitted from the
+   lower-bound sums. The degree factor in the irrationality criterion is
+   explicit; decay alone for polynomials of growing degree is insufficient.
+
+2. Cubic-tail kernel. The Laplace and Fourier normalizations, including the
+   factor 4 in the exponential, were checked. The product-resolvent measure
+   is positive, has infinite total mass, and nevertheless gives finite
+   entries, including the zero-node limit. The determinant comparison uses
+   a nonnegative determinant integrand, not entrywise matrix comparison.
+
+3. Cauchy comparison. The rational interpolation identity, its numerator
+   degree, residue at zero, and rank-one determinant factor are explicit.
+   The resulting constants are uniform in integer node positions and gaps.
+   The appendix uses a regularized comparison finite at a common zero.
+
+4. Principal arithmetic and offsets. A unique high-node principal minor
+   forces the stated coefficient valuation for 2M < p < 4M, p >= 5.
+   The prime-number-theorem error is uniform on that interval. The proof
+   treats finite limiting offset ratios, the logarithmic corner at zero,
+   and ratios tending to infinity, then handles arbitrary sequences by a
+   subsequence argument. There is no unmentioned upper bound on the offset.
+
+5. Difference moments. The log-squared integral and parity cancellation of
+   the cubic beta tails give the displayed rational coefficient formula.
+   The coefficient matrix has determinant 2^(n-1). The positive measure,
+   elementary lower density bound, Rodrigues formula and squared norms
+   supply both real determinant exponents.
+
+6. Difference arithmetic. For p > 4n, the first nonzero cubic residue and
+   the anti-triangular block give the exact primitive multiplier valuation.
+   Entries outside that block are already p-integral, a stronger fact than
+   their scaled residues vanishing. The complementary pencil has a p-unit
+   leading coefficient. The possible negative contribution at 2 is retained
+   before summing the prime cost.
+
+7. Scope. Rational invertible changes of basis preserve the primitive
+   polynomial up to sign. Other subspaces, weights, sparse designs and
+   factors are not covered by the two obstruction theorems. Incomplete
+   archived constructions have not been promoted to impossibility results.
+
+Computational evidence
+----------------------
+The reproducible run is recorded in checks/reproduction.json. It passed:
+  - 21 regularized identities and 25 principal frames;
+  - 130 coefficient-prime and 9,572 entry-prime checks;
+  - 144 further exact regularized Cauchy identities;
+  - five interval checks of the common-zero bounds;
+  - 23 difference-moment identities, 36 rational determinant evaluations,
+    1,100 residue checks and 74 rank/primitive-exponent checks;
+  - 13 monic Rodrigues polynomials, 78 orthogonality equalities, 13 squared
+    norms and nine direct Gram-product checks, plus the primitive example.
+
+Interval calculations used Arb at 4,096-bit precision. Exact structural
+records reproduced the archived values. The runner executed scratch copies
+of archived scripts. All 120 verbatim evidence snapshots remain unchanged.
+These finite calculations support identities and local arithmetic; the
+asymptotic theorems are proved in the manuscript, not inferred from samples.
+
+Sources and attribution
+-----------------------
+The six cited sources have versioned records and local PDF hashes in
+sources/reading-record.json and sources/manuscript-reading.json. The OpenAI
+determinant strategy is credited as motivation. The comparisons with
+Zudilin, Prevost, Krattenthaler, Carreira and Brown are contextual and do not
+import an unverified global irrationality claim. The particular formulas
+used in the proofs are derived in the paper. Standard background inputs,
+including the prime number theorem, are stated explicitly.
+
+Reading scope is recorded rather than equated with verification. The
+specific claims' priority remains provisional; the paper makes no claim
+that a literature search establishes originality.
+
+Artifact review
+---------------
+paper/build-record.json records the final source and PDF SHA-256 hashes.
+The build has no unresolved or multiply defined references and no overfull
+or underfull boxes. All 14 final PDF pages were visually inspected after
+the final edits. Equations, section breaks, citations, margins and page
+numbers are readable without clipping or overlap. The bibliography is on
+its own final page. paper/validation.json records final package consistency.
+
+Remaining work
+--------------
+A fresh independent mathematical cross-check of this assembled draft,
+further scrutiny of the precise novelty claims, and the broader technical
+supplement remain outstanding. The claim inventory and method catalog
+organize that supplement. This local draft has not been published.

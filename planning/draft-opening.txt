@@ -2,6 +2,9 @@ ARITHMETIC OBSTRUCTIONS IN POSITIVE DETERMINANT APPROXIMATIONS TO beta(4)
 Proposed opening; wording remains subject to the priority audit
 Research note prepared with Codex
 
+Historical opening proposal. The assembled manuscript in paper/ now
+supersedes this draft, including its expanded attribution to OpenAI.
+
 Abstract
 
 We study two explicit positive determinant constructions for the Dirichlet

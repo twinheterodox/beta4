@@ -1,0 +1,95 @@
+{
+  "status": "passed",
+  "run_at_utc": "2026-10-31T14:01:43.966295+00:00",
+  "scope": "Finite exact and Arb interval checks of the main-paper formulas; not an asymptotic proof, independent model audit, human audit, priority check, or formal verification.",
+  "python_version": "3.14.4",
+  "python_flint_version": "0.9.0",
+  "seconds": 0.28909157199814217,
+  "source_scripts": [
+    {
+      "path": "evidence/research/collaboration/round-01/construction/checks.py",
+      "sha256": "64ef5ebcedf8d3115532556338b028470905b2e7b7984c9ed6bf99ee3aa3d1ab"
+    },
+    {
+      "path": "evidence/research/collaboration/round-01/coordinator/kernel_identity_checks.py",
+      "sha256": "a1d17cb0b73422d4faeedad8c0134ae56dc0ad657301dc3ebe7116a2026616df"
+    },
+    {
+      "path": "evidence/research/collaboration/round-06/fresh/gram_checks.py",
+      "sha256": "3d9b2e9bc6868378c1ecdd3cf330dfe2ede2295ee1b61fcf809b220a664f55ff"
+    }
+  ],
+  "new_identity_script": {
+    "path": "checks/manuscript_identities.py",
+    "sha256": "be751fec1fc8d1d6f2907242be278e075e0b39b135a54ac2bf4230d30ed656d0"
+  },
+  "all_120_archived_snapshots_unchanged": true,
+  "reports": {
+    "principal": {
+      "rank_one_identities": 21,
+      "principal_cases": 25,
+      "coefficient_prime_checks": 130,
+      "entry_prime_checks": 9572,
+      "arb_precision_bits": 4096,
+      "exact_archived_records_match": true
+    },
+    "zero_node_appendix": {
+      "interval_checks": 5,
+      "arb_precision_bits": 4096
+    },
+    "regularized_cauchy": {
+      "exact_cases": 144,
+      "exact_archived_records_match": true
+    },
+    "difference_gram": {
+      "moment_formula_checks": 23,
+      "determinant_evaluation_checks": 36,
+      "residue_checks": 1100,
+      "rank_checks": 74,
+      "matrix_sizes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "exact_archived_records_match": true
+    },
+    "manuscript_identities": {
+      "monic_polynomials": 13,
+      "orthogonality_equalities": 78,
+      "norm_checks": 13,
+      "gram_product_checks": 9,
+      "primitive_example": "passed"
+    }
+  },
+  "artifacts": [
+    {
+      "path": "checks/results/principal.json",
+      "sha256": "494f45f78e641de1a74cfb7b129a2d21c0c6faafd6acea323690fcec447e06c3"
+    },
+    {
+      "path": "checks/results/zero-node-bounds.json",
+      "sha256": "d2d78207aad936148a09d66e18d1298e7e479046df10ba777f49ae2f614cddf9"
+    },
+    {
+      "path": "checks/results/regularized-cauchy.json",
+      "sha256": "28598208caf3be05e87baaacb060fc3c4946e3889a7a9790509e1a71c315e1ad"
+    },
+    {
+      "path": "checks/results/difference-gram.json",
+      "sha256": "a6cbd9e3ef6dbaa8ebce5cd4b238c7da6f76326f72f681e45cf606670850ebe2"
+    },
+    {
+      "path": "checks/results/manuscript-identities.json",
+      "sha256": "0f8428c7e89b6d9c7207a7a136ad732881133daff5298b3a96b79de9d7c47e1b"
+    }
+  ]
+}

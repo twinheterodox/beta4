@@ -1,0 +1,1008 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,
+ urlcolor=blue!45!black,
+ pdftitle={Arithmetic obstructions in positive determinant approximations to beta(4)},
+ pdfauthor={Research note prepared with Codex}}
+\urlstyle{same}
+\setlist{nosep}
+\setlength{\emergencystretch}{1em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\vp}{v_p}
+\newcommand{\coeff}[2]{[X^{#1}]#2}
+\newcommand{\PP}{\operatorname{Prim}}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\Ree}{Re}
+\title{Arithmetic obstructions in positive determinant\newline
+approximations to $\beta(4)$}
+\author{\normalsize Research note prepared with Codex}
+\date{31 October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We study two explicit positive determinant constructions for the Dirichlet
+beta value $\beta(4)$. Their real determinants become small, but their
+primitive integer polynomials have values that grow. For a cubic-tail
+kernel, we prove a uniform two-sided comparison with a Cauchy determinant
+and show that every sequence of consecutive principal offsets has
+primitive-value lower exponent at least $2-2\log 2$ on the quadratic scale.
+For a difference-variable Gram construction, we determine the exact
+primitive multiplier valuation at every prime $p>4n$ and obtain the lower
+exponent $6-\log 4$. The arithmetic bounds apply after removal of every
+common coefficient factor. They therefore exclude these specified
+determinant sequences as sources of small primitive values, without
+excluding other weights, subspaces or determinant constructions. All
+arguments particular to the two families are given in the paper.
+\end{abstract}
+
+\section{Introduction}
+
+Put
+\begin{equation}\label{eq:theta}
+ \theta=\beta(4)=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k+1)^4}.
+\end{equation}
+Positive integral representations provide nonzero quantities involving a
+constant, and their determinants can decay exponentially in the square of
+the matrix size. Such real decay is useful in an irrationality argument
+only if the necessary arithmetic normalization is sufficiently inexpensive.
+For a rational polynomial $Q$, clearing denominators and then removing the
+common factor of its integer coefficients gives its \emph{primitive
+integer representative}. This paper proves that this final representative,
+not just a particular denominator-clearing multiple, has a growing value at
+$\theta$ in two determinant families.
+
+The relation between positive moments, determinant decay and irrationality
+criteria is developed systematically by Zudilin~\cite{Zudilin}.
+One motivation for studying $\beta(4)$ determinants is the mixed
+determinant strategy for Catalan's constant described by
+OpenAI~\cite[Section~1.2]{OpenAI}, which treats nonvanishing, the real
+estimate and prime valuations separately. The positive families considered
+here examine only part of the much wider space of determinant designs.
+Pr\'evost~\cite{Prevost} constructs positive-weight representations and
+Pad\'e approximants for Hurwitz zeta values. Rational modifications of
+moment functionals belong to the classical orthogonal-polynomial framework;
+Krattenthaler~\cite{Krattenthaler} gives determinant formulas that include
+such modifications and repeated parameters. More directly,
+Carreira~\cite{Carreira} investigates determinant constructions for
+$\beta(4)$, including positive functionals, primitive polynomial
+calculations and the competing real and arithmetic costs. Brown's
+discussion~\cite[Section~7.4]{Brown} of denominator clearing, common
+divisors and congruences further emphasizes that the full coefficient
+content must be accounted for. We use these works to situate the question;
+no claimed global irrationality result in a recent manuscript is an input
+to our proofs.
+
+The contributions here are specific uniform estimates and exact local
+arithmetic for the two families defined below. The first combines a
+two-sided Cauchy comparison with a coefficient whose prime valuation is
+forced by a unique surviving principal minor. The second has a full-rank
+coefficient of $\theta$ and a leading residue block whose determinant
+determines the primitive multiplier exactly at large primes.
+
+\subsection{The two families and main results}
+
+For integers $a\geq 0$ and $\ell\geq 2$, write
+\begin{equation}\label{eq:S}
+ S_\ell(a)=\sum_{j=0}^{a-1}
+ \left(\frac1{(4j+1)^\ell}-\frac1{(4j+3)^\ell}\right),
+ \qquad S_\ell(0)=0.
+\end{equation}
+For distinct positive integer nodes $a_1,\ldots,a_n$, let $R(a)$ be the rational
+symmetric matrix
+\begin{equation}\label{eq:R}
+ R(a)_{ii}=-S_4(a_i)+\frac{S_3(a_i)}{12a_i},\qquad
+ R(a)_{ij}=\frac{a_jS_3(a_j)-a_iS_3(a_i)}{6(a_j^2-a_i^2)}\quad(i\ne j).
+\end{equation}
+For consecutive nodes $a_i=m+i$, $1\leq i\leq n$, set
+\begin{equation}\label{eq:principal-Q}
+ Q_{n,m}(X)=\det(XI_n+R(a)),\qquad
+ Z_{n,m}(X)=H_{n,m}Q_{n,m}(X)=\PP(Q_{n,m})(X),
+\end{equation}
+where $H_{n,m}>0$ and $Z_{n,m}\in\Z[X]$ has coefficient gcd one.
+
+\begin{theorem}[Consecutive principal determinants]\label{thm:principal}
+For every sequence of nonnegative integer offsets $m_n$,
+$Q_{n,m_n}(\theta)>0$ and
+\begin{equation}\label{eq:principal-result}
+ \liminf_{n\to\infty}\frac{\log Z_{n,m_n}(\theta)}{n^2}
+ \geq 2-2\log 2>0.
+\end{equation}
+\end{theorem}
+
+The theorem allows arbitrary growth of $m_n$, including $m_n/n\to\infty$.
+The underlying kernel admits a uniform comparison for arbitrary positive
+integer row and column nodes (Theorem~\ref{thm:comparison}); the arithmetic
+conclusion above is restricted to consecutive principal nodes.
+
+For the second family, define
+\begin{align}
+ T_\ell(j)&=\sum_{k=0}^{j-1}\frac{(-1)^k}{(2k+1)^\ell},
+ &C_m&=\binom{2m}{m},\label{eq:T}\\
+ B_m&=-C_mT_4(m)+\frac16
+ \sum_{\substack{0\leq j\leq 2m\\j\ne m}}
+       \binom{2m}{j}\frac{T_3(j)}{j-m},\label{eq:B}\\
+ Q_n^{\Delta}(X)&=\det[C_{i+j}X+B_{i+j}]_{0\leq i,j<n},
+ &Z_n^{\Delta}&=\kappa_n Q_n^{\Delta}=\PP(Q_n^{\Delta}),\quad \kappa_n>0.
+ \label{eq:delta-Q}
+\end{align}
+Empty sums are zero. In particular $B_0=0$ and $B_1=-149/81$.
+
+\begin{theorem}[Difference-variable Gram determinants]\label{thm:delta}
+The polynomial $Q_n^{\Delta}$ has degree $n$ and leading coefficient
+$2^{n-1}$, and $Q_n^{\Delta}(\theta)>0$. For every prime $p>4n$,
+\begin{equation}\label{eq:delta-valuation}
+ \vp(\kappa_n)=3\max\left\{0,\,2n-2-\left\lfloor\frac p4\right\rfloor\right\}.
+\end{equation}
+Moreover,
+\begin{equation}\label{eq:delta-result}
+ \log Z_n^{\Delta}(\theta)\geq (6-\log 4)n^2+o(n^2).
+\end{equation}
+\end{theorem}
+
+Both theorems imply that the corresponding primitive values eventually
+exceed one and that their $n$th roots tend to infinity. They exclude the
+specified sequences as small primitive values; they are not statements
+against all determinant methods for $\theta$.
+
+\subsection{Proof organization and background}
+
+Section~\ref{sec:normalization} fixes primitive normalization and the
+degree-sensitive small-value criterion. Section~\ref{sec:kernel} derives
+the positive cubic-tail kernel and its Cauchy comparison.
+Section~\ref{sec:principal} proves Theorem~\ref{thm:principal}.
+Sections~\ref{sec:gram} and~\ref{sec:delta-arithmetic} construct the positive
+Gram measure and prove Theorem~\ref{thm:delta}.
+Section~\ref{sec:scope} states the scope and verification status.
+Appendix~\ref{app:zero} treats the additional zero node.
+
+We use elementary complex integration, linear algebra, Stirling's formula
+and the prime number theorem in the form
+\begin{equation}\label{eq:PNT}
+ \vartheta(x):=\sum_{p\leq x}\log p=x+o(x).
+\end{equation}
+The latter is the only theorem on prime distribution used. The specific
+kernel identities, determinant comparisons, moment formulas and local
+valuation arguments are proved below. No numerical optimization or finite
+enumeration is an input to either asymptotic obstruction.
+
+\section{Primitive normalization and small polynomial values}\label{sec:normalization}
+
+\begin{definition}
+For $0\ne Q\in\Q[X]$, its primitive representative $\PP(Q)$ is the
+unique positive rational multiple $\kappa Q\in\Z[X]$ whose coefficients
+have gcd one. This convention preserves the sign of $Q$.
+\end{definition}
+
+For a nonzero rational number, $\vp$ denotes its usual $p$-adic valuation,
+normalized by $\vp(p)=1$; set $\vp(0)=+\infty$. Saying that a rational
+number is $p$-integral means that its denominator in lowest terms is not
+divisible by $p$. Reduction modulo $p$ below is always performed on
+$p$-integral quantities.
+
+\begin{lemma}\label{lem:primitive}
+If $Q(X)=\sum_j q_jX^j\ne0$ and $\PP(Q)=\kappa Q$, then
+\begin{equation}\label{eq:min-valuation}
+ \vp(\kappa)=-\min_j\vp(q_j)
+\end{equation}
+for every prime $p$. If $Q$ is monic, $\kappa$ is a positive integer.
+If the leading coefficient of $Q$ is $2^e$ with $e\geq0$, then
+$\vp(\kappa)\geq0$ for odd $p$ and $v_2(\kappa)\geq-e$.
+\end{lemma}
+
+\begin{proof}
+Integral primitive coefficients have minimum valuation zero at every
+prime, which proves~\eqref{eq:min-valuation}. A monic polynomial has a
+coefficient of valuation zero at every prime. A leading coefficient $2^e$
+has valuation zero at odd primes and valuation $e$ at 2.
+\end{proof}
+
+A sufficient common denominator can overstate the primitive multiplier.
+For example, $Q(X)=(6X+12)/5$ becomes integral after multiplication by 5,
+but $\PP(Q)=X+2$ and its primitive multiplier is $5/6$.
+A lower bound on a selected denominator-clearing integer therefore need
+not be a lower bound on the primitive multiplier. Formula
+\eqref{eq:min-valuation} is the distinction used in both main proofs.
+
+If $U,V$ are invertible rational matrices, then
+$\det(U M(X)V)=\det U\det V\det M(X)$. Consequently the primitive
+polynomial of a full pencil is unchanged up to sign by rational invertible
+row and column operations. Passing to a different subspace or a different
+pencil is a different construction and is not covered by this observation.
+
+For completeness, if $\theta=a/b\in\Q$ with $b\geq1$ and
+$Z\in\Z[X]$ has degree at most $n$, then $b^nZ(\theta)\in\Z$.
+Thus nonzero values with $|Z_n(\theta)|^{1/n}\to0$ would contradict
+rationality. The degree factor is essential: merely having
+$Z_n(\theta)\to0$ with increasing degree need not do so. For example,
+$Z_n(X)=X^n$ has value $2^{-n}$ at the rational number $1/2$.
+The main theorems give growth in the opposite direction for their two
+specified families.
+
+\section{The positive cubic-tail kernel}\label{sec:kernel}
+
+\subsection{A direct integral representation}
+
+For $\Ree z\geq0$, define
+\begin{equation}\label{eq:f}
+ f(z)=\sum_{j=0}^{\infty}
+ \left((4j+1+4z)^{-3}-(4j+3+4z)^{-3}\right).
+\end{equation}
+Expanding $\sech u=2\sum_{k\geq0}(-1)^ke^{-(2k+1)u}$ and integrating
+gives
+\begin{equation}\label{eq:f-laplace}
+ f(z)=\frac14\int_0^\infty u^2\sech(u)e^{-4zu}\dd u,
+ \quad f(a)=f(0)-S_3(a),\quad f'(a)=-12(\theta-S_4(a))
+\end{equation}
+at nonnegative integer $a$. The integrated series is absolutely summable,
+which justifies the expansion and differentiation used here.
+
+We recall two elementary transforms, including their proofs to fix the
+normalization:
+\begin{align}
+ \int_0^\infty\sech(u)\cos(tu)\dd u
+   &=\frac\pi2\sech\frac{\pi t}{2},\label{eq:sech-transform}\\
+ \int_0^\infty\frac{x(1-\cos(ts))}{x+s^2}\dd s
+   &=\frac{\pi\sqrt{x}}2(1-e^{-t\sqrt{x}}),
+       \qquad x>0,\ t\geq0.\label{eq:cos-transform}
+\end{align}
+For~\eqref{eq:sech-transform}, integrate $e^{itz}/\cosh z$ around the
+rectangle with vertices $\pm R,\pm R+i\pi$. The top edge contributes
+$e^{-\pi t}$ times the bottom edge, and the pole at $i\pi/2$ has residue
+$e^{-\pi t/2}/i$. The vertical edges tend to zero. Hence the full-line
+transform is $\pi\sech(\pi t/2)$; symmetry gives the displayed formula.
+For~\eqref{eq:cos-transform}, the upper-half-plane pole at $i\sqrt{x}$
+gives
+$\int_0^\infty\cos(ts)/(s^2+x)\dd s
+ =\pi e^{-t\sqrt{x}}/(2\sqrt{x})$ for $t>0$, and the value at $t=0$
+follows by continuity. Subtract the latter transforms and multiply by $x$.
+
+Differentiating~\eqref{eq:sech-transform} twice under the integral gives
+\begin{equation}\label{eq:f-fourier}
+ f(0)=\frac{\pi^3}{32},\qquad
+ \Ree f(is)=\frac{\pi^3}{32}A(s)(2A(s)^2-1),
+ \quad A(s)=\sech(2\pi s).
+\end{equation}
+Define
+\begin{equation}\label{eq:gK}
+ g(x)=\frac{\sqrt{x}}6\bigl(f(0)-f(\sqrt{x})\bigr),\quad g(0)=0,
+ \qquad K(x,y)=\frac{g(y)-g(x)}{y-x},
+\end{equation}
+with the derivative value when $x=y$.
+
+\begin{proposition}\label{prop:kernel}
+For $x,y\geq0$,
+\begin{equation}\label{eq:K-integral}
+ K(x,y)=\int_0^\infty
+ \frac{\omega(s)}{(x+s^2)(y+s^2)}\dd s,
+ \quad
+ \omega(s)=\frac{\pi^2}{96}s^2q(s),\quad
+ q(s)=1+A(s)-2A(s)^3.
+\end{equation}
+The density $\omega$ is strictly positive for $s>0$. On squared integer
+nodes the kernel equals
+\begin{align}
+ K(a^2,b^2)&=\frac{bS_3(b)-aS_3(a)}{6(b^2-a^2)}&& (a\ne b),\label{eq:K-off}\\
+ K(a^2,a^2)&=\theta-S_4(a)+\frac{S_3(a)}{12a}&& (a>0),\label{eq:K-diag}\\
+ K(0,0)&=2\theta.\label{eq:K-zero}
+\end{align}
+Every square minor with strictly increasing nonnegative row nodes and
+strictly increasing nonnegative column nodes is positive.
+\end{proposition}
+
+\begin{proof}
+Use~\eqref{eq:cos-transform} with $t=4u$ in~\eqref{eq:f-laplace}.
+The integrands before interchange are nonnegative, so Tonelli's theorem
+gives
+\begin{equation}\label{eq:g-stieltjes}
+ g(x)=\int_0^\infty\frac{x}{x+s^2}\sigma(s)\dd s,
+ \qquad \sigma(s)=\frac{f(0)-\Ree f(is)}{3\pi}
+                =\frac{\pi^2}{96}q(s).
+\end{equation}
+Taking a divided difference yields~\eqref{eq:K-integral}. Here
+\begin{equation}\label{eq:q-positive}
+ q=(1-A)(2A^2+2A+1)>0\qquad(s>0).
+\end{equation}
+Since $\omega(s)=O(s^4)$ at zero and $O(s^2)$ at infinity, the integral
+is finite even when $x=y=0$. Differentiation or dominated convergence
+justifies the diagonal and zero limits. The identities
+\eqref{eq:K-off}--\eqref{eq:K-diag} follow from~\eqref{eq:f-laplace};
+at zero, $g(x)=-f'(0)x/6+O(x^{3/2})=2\theta x+O(x^{3/2})$.
+
+For increasing nodes $x_i,y_j$, expanding the two determinants and
+integrating termwise gives the determinant integration identity
+\begin{equation}\label{eq:andreief}
+ \det[K(x_i,y_j)]_{i,j=1}^n
+ =\frac1{n!}\int_{(0,\infty)^n}
+ \det\left[\frac1{x_i+s_\ell^2}\right]_{i,\ell}
+ \det\left[\frac1{y_j+s_\ell^2}\right]_{j,\ell}
+ \prod_{\ell=1}^n\omega(s_\ell)\dd s_1\cdots\dd s_n.
+\end{equation}
+Absolute integrability follows by expanding into finitely many products
+of the finite one-variable integrals. This is the usual
+Andr\'eief--Heine identity used in positive determinant arguments
+\cite[Section~2]{Zudilin}, with its elementary expansion proof here.
+For $0<s_1<\cdots<s_n$, both Cauchy determinants are positive by the
+Cauchy product formula. Their product is unchanged by permuting the
+$s_\ell$ and is strictly positive away from coincidences. This proves
+the last assertion. It also proves that increasing the density increases
+these determinants, even for different row and column nodes.
+\end{proof}
+
+\begin{remark}
+The density in~\eqref{eq:K-integral} satisfies
+$\omega(s)\sim\pi^2s^2/96$ at infinity; it has infinite total mass,
+but the two resolvent factors make every kernel entry integrable.
+Carreira's functional~\cite[Definition~24(B) and Lemma~25]{Carreira}
+uses a positive density obtained from derivatives of $1/\sinh(\pi s)$,
+with exponential decay and finite polynomial moments. The representation
+used here is derived directly, and assumes no polynomial moments of
+$\omega(s)\dd s$.
+\end{remark}
+
+\subsection{A uniform comparison with Cauchy determinants}
+
+For positive nodes $a_i,b_j$, write
+\begin{equation}\label{eq:Cauchy}
+ C(a,b)_{ij}=\frac1{a_i+b_j},\qquad
+ \det C(a,b)=
+ \frac{\prod_{i<j}(a_j-a_i)(b_j-b_i)}{\prod_{i,j}(a_i+b_j)}.
+\end{equation}
+The product formula follows, for example, by multiplying the determinant
+by its displayed denominator: the numerator is alternating separately in
+the two node sets, hence contains their Vandermonde factors, and comparison
+of degrees and one residue fixes the remaining constant to one.
+Set
+\begin{equation}\label{eq:constants}
+ c_0=\frac{\pi^3}{192},\qquad M=1+\frac{2}{3\sqrt6},\qquad
+ \tau_0=\frac1{\sqrt2\pi}.
+\end{equation}
+
+\begin{theorem}[Uniform Cauchy comparison]\label{thm:comparison}
+For any two strictly increasing lists of positive integers $a_i,b_j$,
+\begin{equation}\label{eq:comparison}
+ \left(\frac{c_0}{(1+\tau_0)^2}\right)^n\det C(a,b)
+ \leq\det[K(a_i^2,b_j^2)]
+ \leq (Mc_0)^n\det C(a,b).
+\end{equation}
+In particular,
+\begin{equation}\label{eq:uniform-log}
+ \log\det[K(a_i^2,b_j^2)]=\log\det C(a,b)+O(n),
+\end{equation}
+with an absolute constant independent of all node positions and gaps.
+\end{theorem}
+
+\begin{proof}
+The maximum of $1+A-2A^3$ for $0\leq A\leq1$ is $M$. Also
+$\cosh v\geq1+v^2/2$ and~\eqref{eq:q-positive} imply
+\begin{equation}\label{eq:density-comparison}
+ \frac{s^2}{s^2+\tau_0^2}\leq1-\sech(2\pi s)\leq q(s)\leq M.
+\end{equation}
+The elementary rational integrals needed for the comparison are
+\begin{align}
+ \int_0^\infty\frac{s^2\dd s}{(s^2+a^2)(s^2+b^2)}
+   &=\frac\pi{2(a+b)},\label{eq:rational-integral1}\\
+ \int_0^\infty\frac{s^4\dd s}
+ {(s^2+\tau^2)(s^2+a^2)(s^2+b^2)}
+   &=\frac\pi2 R_\tau(a,b),\label{eq:rational-integral2}\\
+ R_\tau(a,b)&=\frac{ab+\tau(a+b)}{(a+b)(a+\tau)(b+\tau)}.
+ \label{eq:Rtau}
+\end{align}
+To check the second formula, first divide
+$s^4/((s^2+a^2)(s^2+b^2))$ into
+$[a^2s^2/(s^2+a^2)-b^2s^2/(s^2+b^2)]/(a^2-b^2)$,
+and then use the first formula with the extra factor $s^2+\tau^2$.
+Coincident parameters follow by continuity. The first formula follows
+by partial fractions and $\int_0^\infty(s^2+a^2)^{-1}\dd s=\pi/(2a)$.
+
+Applying the positive determinant integral~\eqref{eq:andreief} to the
+density bounds gives
+\begin{equation}\label{eq:regularized-bounds}
+ c_0^n\det[R_{\tau_0}(a_i,b_j)]
+ \leq\det[K(a_i^2,b_j^2)]\leq(Mc_0)^n\det C(a,b).
+\end{equation}
+This uses the sign of the determinant integrand; an entrywise matrix
+comparison alone would not suffice.
+
+We now evaluate the regularized determinant exactly:
+\begin{equation}\label{eq:Rtau-det}
+ \begin{split}
+ \det[R_\tau(a_i,b_j)]={}&\det C(a,b)
+ \prod_i\frac{a_i}{a_i+\tau}\prod_j\frac{b_j}{b_j+\tau}\\
+ &\times\left(1+\tau\sum_i\frac1{a_i}+\tau\sum_j\frac1{b_j}\right).
+ \end{split}
+\end{equation}
+Let $u_i=1/a_i$, $v_j=1/b_j$. Factoring rows and columns in
+\eqref{eq:Rtau} leaves $C+\tau u v^t$. If $w=C^{-1}u$ and
+$F(x)=\sum_jw_j/(x+b_j)$, then $F(a_i)=1/a_i$. Therefore
+\[
+ \frac1x-F(x)=\frac1x\,
+ \frac{\prod_i(1-x/a_i)}{\prod_j(1+x/b_j)}.
+\]
+Indeed, after multiplication by $x\prod_j(x+b_j)$, the numerator has
+degree at most $n$ and vanishes at every $a_i$; its factor is fixed by
+the residue one at zero. Comparing constant terms at zero gives
+$v^tC^{-1}u=F(0)=\sum_i1/a_i+\sum_j1/b_j$.
+The rank-one determinant identity proves~\eqref{eq:Rtau-det}.
+Finally each integer node is at least one, so the products are at least
+$(1+\tau_0)^{-2n}$ and the last factor is at least one.
+This proves~\eqref{eq:comparison} and~\eqref{eq:uniform-log}.
+\end{proof}
+
+\section{The consecutive principal obstruction}\label{sec:principal}
+
+\subsection{A coefficient with forced valuation}
+
+For an odd prime $p$ put $\chi_4(p)=(-1)^{(p-1)/2}$.
+
+\begin{lemma}\label{lem:principal-local}
+Let $a_1<\cdots<a_n$ be positive integers with maximum $M_0$, and set
+$Q(X)=\det(XI_n+R(a))$. If $p\geq5$ and $2M_0<p<4M_0$, put
+$r_p=\#\{i:4a_i>p\}$. Then
+\begin{equation}\label{eq:principal-local}
+ \vp\bigl(\coeff{n-r_p}{Q}\bigr)=-4r_p,
+ \qquad \vp\bigl(\kappa(Q)\bigr)\geq4r_p,
+\end{equation}
+where $\PP(Q)=\kappa(Q)Q$.
+\end{lemma}
+
+\begin{proof}
+The quantities $a_i$, $a_i+a_j$ and $a_i-a_j$ for $i\ne j$ are $p$-units.
+Among odd denominators below $4M_0$, the only possible multiple of $p$
+is $p$ itself, since $3p>4M_0$. It appears in $S_\ell(a_i)$ exactly when
+$4a_i>p$, with sign $\chi_4(p)$. Consequently $p^4R(a)$ is $p$-integral
+and its reduction is diagonal:
+\begin{equation}\label{eq:principal-residue}
+ p^4R(a)_{ij}\equiv
+ \begin{cases}
+ -\chi_4(p),&i=j,\ 4a_i>p,\\
+ 0,&\text{otherwise}
+ \end{cases}\pmod p.
+\end{equation}
+The coefficient of $X^{n-r_p}$ is the sum of all principal minors of $R$
+of size $r_p$. After multiplication by $p^{4r_p}$, exactly one such
+minor survives modulo $p$: that using all the high nodes. Its residue is
+$(-\chi_4(p))^{r_p}\ne0$. For $r_p=0$ this is the leading coefficient
+one. This proves the equality in~\eqref{eq:principal-local};
+Lemma~\ref{lem:primitive} proves the inequality for the actual primitive
+multiplier.
+\end{proof}
+
+Since $Q$ is monic, the primitive multiplier is integral. Thus the local
+inequalities can be summed without any negative contribution from omitted
+primes:
+\begin{equation}\label{eq:principal-sum}
+ \log\kappa(Q)\geq
+ 4\sum_{2M_0<p<4M_0}r_p\log p
+\end{equation}
+for $M_0$ sufficiently large. This is a lower bound after all coefficient
+content has been removed.
+
+\subsection{Proportional offsets}
+
+Take $a_i=m+i$, $M_0=m+n$, and suppose first that $m/n\to\rho<\infty$.
+Reverse the finite sum in~\eqref{eq:principal-sum}. Since the endpoints
+$2M_0$ and $4a_i$ are even and exceed two, endpoint conventions for primes
+have no effect. The prime number theorem, uniformly for
+$2M_0\leq x\leq4M_0$, gives
+\begin{align}
+ 4\sum_{2M_0<p<4M_0}r_p\log p
+ &=4\sum_{a_i>M_0/2}
+       \bigl(\vartheta(4a_i)-\vartheta(2M_0)\bigr)\notag\\
+ &=16\sum_{a_i>M_0/2}(a_i-M_0/2)+o(n^2)\notag\\
+ &=\mathcal A(\rho)n^2+o(n^2),\label{eq:A-rho}
+\end{align}
+where
+\begin{equation}\label{eq:A-def}
+ \mathcal A(\rho)=
+ \begin{cases}2(1+\rho)^2,&0\leq\rho\leq1,\\8\rho,&\rho\geq1.
+ \end{cases}
+\end{equation}
+For example, the Riemann sum giving this formula is
+$16\int_0^1(\rho+t-(\rho+1)/2)_+\dd t$.
+Uniformity of the prime-number-theorem error follows from
+$\sup_{2M_0\leq x\leq4M_0}|\vartheta(x)-x|=o(M_0)$ and
+$M_0=O(n)$.
+
+For these nodes the Cauchy product is
+\begin{equation}\label{eq:C-shift}
+ \det C(a,a)=\frac{\prod_{j=1}^{n-1}(j!)^2}
+                    {\prod_{i,j=1}^n(2m+i+j)}.
+\end{equation}
+Stirling's formula, followed by a Riemann sum for the denominator, gives
+\begin{equation}\label{eq:D-rho}
+ \log\det C(a,a)=-\mathcal D(\rho)n^2+o(n^2),\qquad
+ \mathcal D(\rho)=\frac32+\int_0^1\int_0^1\log(2\rho+x+y)\dd x\dd y.
+\end{equation}
+For clarity,
+$2\sum_{j<n}\log(j!)=n^2\log n-\frac32n^2+O(n\log(n+1))$.
+At $\rho=0$ the logarithmic corner singularity is integrable and its
+Riemann sums converge. Indeed, counting at most $k$ grid points with
+$i+j=k$ bounds the contribution from $i+j\leq\varepsilon n$ by
+$O(\varepsilon^2(1+|\log\varepsilon|))+O(\log(n+1)/n)$.
+A positive offset tending to zero is handled by
+monotonicity between offsets zero and any fixed $\varepsilon>0$.
+Integrating explicitly yields
+\begin{equation}\label{eq:D-explicit}
+ \begin{split}
+ \mathcal D(\rho)=\frac12\bigl(& (2\rho+2)^2\log(2\rho+2)
+ -2(2\rho+1)^2\log(2\rho+1)\\
+ &+(2\rho)^2\log(2\rho)\bigr),
+ \end{split}
+\end{equation}
+where $0^2\log0=0$.
+
+The derivative of $\mathcal D$ is decreasing, and
+\begin{equation}\label{eq:D-derivative}
+ \mathcal D'(\rho)=2\int_0^1\int_0^1
+       \frac{\dd x\dd y}{2\rho+x+y}
+ \leq\mathcal D'(0)=4\log2<4.
+\end{equation}
+On both pieces of~\eqref{eq:A-def}, $\mathcal A'(\rho)\geq4$.
+It follows that
+\begin{equation}\label{eq:A-minus-D}
+ \mathcal A(\rho)-\mathcal D(\rho)
+ \geq\mathcal A(0)-\mathcal D(0)=2-2\log2.
+\end{equation}
+Combining~\eqref{eq:principal-sum}, \eqref{eq:A-rho},
+\eqref{eq:D-rho} and Theorem~\ref{thm:comparison} proves the stronger
+proportional-offset statement
+\begin{equation}\label{eq:proportional-result}
+ \log Z_{n,m}(\theta)
+ \geq\bigl(\mathcal A(\rho)-\mathcal D(\rho)\bigr)n^2+o(n^2).
+\end{equation}
+
+\subsection{Offsets larger than the matrix size}
+
+Suppose now that $m/n\to\infty$. All nodes exceed $M_0/2$ eventually.
+The same reversal of sums gives
+\begin{align}
+ \log H_{n,m}
+ &\geq16\sum_{i=1}^n\bigl(m+i-(m+n)/2\bigr)+o(nM_0)\notag\\
+ &=8mn+8n+o(mn).\label{eq:large-m-arithmetic}
+\end{align}
+The relative prime-number-theorem error is still uniform on
+$[2M_0,4M_0]$, so this argument imposes no upper bound on $m$.
+By~\eqref{eq:C-shift} and the numerator estimate just used,
+\begin{equation}\label{eq:large-m-real}
+ \log\det C(a,a)
+ \geq-n^2\bigl(\tfrac32+\log(2(1+m/n))\bigr)-O(n\log(n+1))
+ =-o(mn).
+\end{equation}
+The Cauchy comparison costs only $O(n)$, whence
+\begin{equation}\label{eq:large-m-result}
+ \log Z_{n,m}(\theta)\geq(8-o(1))mn.
+\end{equation}
+Every sequence of ratios $m_n/n$ has subsequences converging in the
+compactified interval $[0,\infty]$. If the liminf asserted in
+Theorem~\ref{thm:principal} failed, a subsequence witnessing that failure
+would have a further subsequence with such a limit. Equations
+\eqref{eq:proportional-result}--\eqref{eq:large-m-result} exclude every
+possible limit. Positivity follows from Proposition~\ref{prop:kernel}.
+This completes the proof of Theorem~\ref{thm:principal}.
+
+\section{Difference-variable Gram determinants}\label{sec:gram}
+
+\subsection{Moment formula and target isolation}
+
+For a polynomial $P(u,v)$, define the finite integral
+\begin{equation}\label{eq:J}
+ J(P)=\int_0^1\int_0^1
+       \frac{P(u,v)\log^2(uv)}{\sqrt{uv}(1+uv)}\dd u\dd v,
+ \qquad \mu_m=\frac1{96}J((u-v)^{2m}).
+\end{equation}
+The weight is integrable and strictly positive on the open square.
+
+\begin{lemma}\label{lem:moment-formula}
+With $C_m,B_m$ defined in~\eqref{eq:T}--\eqref{eq:B},
+\begin{equation}\label{eq:mu}
+ \mu_m=C_m\theta+B_m.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Expand $(1+uv)^{-1}$ as a geometric series. For $a,b>0$, the log-squared
+integral in each term is the second common-parameter derivative of
+$((a+t)(b+t))^{-1}$ at $t=0$. For $a\ne b$ this derivative is
+\[
+ \frac2{b-a}\left(\frac1{a^3}-\frac1{b^3}\right),
+\]
+and for $a=b$ it is $6/a^4$. The sum of the absolute integrals of the
+terms is finite (their tails are $O(k^{-4})$), justifying termwise
+integration. Substitution of $a=k+i+1/2$, $b=k+j+1/2$ gives
+\begin{align}
+ \frac{J(u^iv^i)}{96}&=(-1)^i(\theta-T_4(i)),\label{eq:mono-diag}\\
+ \frac{J(u^iv^j)}{96}&=-\frac{(-1)^i}{6}
+                 \frac{T_3(i)-T_3(j)}{j-i}\quad
+                 (i\ne j,\ i+j\text{ even}).\label{eq:mono-off}
+\end{align}
+In~\eqref{eq:mono-off}, the two cubic tails have the same sign
+$(-1)^i=(-1)^j$, so their $\beta(3)$ terms cancel.
+Expand $(u-v)^{2m}$. Its diagonal term contributes
+$\binom{2m}{m}(\theta-T_4(m))$ by~\eqref{eq:mono-diag}.
+Pairing indices $j$ and $2m-j$ in~\eqref{eq:mono-off} gives exactly the
+sum in~\eqref{eq:B}. This proves~\eqref{eq:mu}.
+\end{proof}
+
+All coefficient statements use the explicitly defined polynomial
+$C_mX+B_m$. No independence or irrationality of $\theta$ is assumed to
+identify its coefficients.
+
+\subsection{Positive measure and full degree}
+
+Under $y=(u-v)^2$, symmetry between the two halves of the square and the
+Jacobian $\dd y=2s\dd s$, $s=\sqrt y$, show that $\mu_m$ is the $m$th
+moment of a measure on $[0,1]$ with density
+\begin{equation}\label{eq:rho}
+ \rho(y)=\frac1{96s}\int_0^{1-s}
+ \frac{\log^2(v(v+s))}{\sqrt{v(v+s)}(1+v(v+s))}\dd v,
+ \qquad 0<y<1.
+\end{equation}
+This density is positive throughout $(0,1)$ and has total mass
+$\mu_0=\theta$. Consequently
+\begin{equation}\label{eq:Dpositive}
+ D_n:=Q_n^{\Delta}(\theta)=\det[\mu_{i+j}]_{0\leq i,j<n}>0
+\end{equation}
+for every $n$: a nonzero polynomial has positive squared norm.
+
+\begin{lemma}\label{lem:binomial-det}
+For $n\geq1$,
+\begin{equation}\label{eq:binomial-det}
+ \det[C_{i+j}]_{0\leq i,j<n}=2^{n-1}.
+\end{equation}
+Thus $Q_n^{\Delta}$ has exact degree $n$ and leading coefficient $2^{n-1}$.
+\end{lemma}
+
+\begin{proof}
+The $C_m$ are the moments of the probability arcsine measure
+$\dd y/(\pi\sqrt{y(4-y)})$ on $[0,4]$. This follows either by the beta
+integral or by the substitution $y=2+2\cos t$, $0<t<\pi$, and the
+binomial expansion of $(2+2\cos t)^m$.
+Let $\mathsf T_j$ denote the Chebyshev polynomial satisfying
+$\mathsf T_j(\cos t)=\cos(jt)$. The monic integer polynomials
+\[
+ c_0(y)=1,\qquad c_j(y)=2\mathsf T_j((y-2)/2)\quad(j\geq1)
+\]
+are orthogonal for this measure, with squared norms $1,2,2,\ldots$.
+Monicity and integrality follow from $c_1=y-2$, $c_2=(y-2)^2-2$ and
+the Chebyshev recurrence for $j\geq2$. The coefficient change from
+monomials has determinant one. The moment determinant is therefore the
+product of these norms, giving~\eqref{eq:binomial-det}.
+\end{proof}
+
+\subsection{Matching upper and lower real exponents}
+
+\begin{proposition}\label{prop:gram-real}
+For all $n\geq1$,
+\begin{equation}\label{eq:gram-bounds}
+ \frac1{6144^n n!\,2^{2n^2+n}}
+ \leq D_n\leq \theta^n4^{-(n-1)^2}.
+\end{equation}
+In particular,
+\begin{equation}\label{eq:gram-rate}
+ \log D_n=-(\log4)n^2+O(n\log(n+1)).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For $j\geq1$ the monic shifted Chebyshev polynomial on $[0,1]$ has
+supremum norm $2/4^j$. Change the monomial basis of the Gram matrix
+to these monic polynomials and apply Hadamard's inequality. Since the
+measure has total mass $\theta$,
+\[
+ D_n\leq\theta^n\prod_{j=1}^{n-1}(2/4^j)^2
+       =\theta^n4^{-(n-1)^2}.
+\]
+
+For the lower bound restrict the integral in~\eqref{eq:rho} to
+$v\in[(1-s)/4,(1-s)/2]$. There $v(v+s)\leq1/2$, so
+$-\log(v(v+s))\geq\log2\geq1/2$, and the denominator of the
+integrand is at most 2. The integrand is at least $1/8$, giving
+\begin{equation}\label{eq:rho-lower}
+ \rho(y)\geq\frac{1-s}{3072s}\geq\frac{1-y}{6144}
+ \quad(0<s<1).
+\end{equation}
+The second inequality is $2\geq s+s^2$. Ordering the positive definite
+Gram matrices therefore gives
+\begin{equation}\label{eq:Jacobi-det}
+ D_n\geq6144^{-n}
+ \det\left[\frac1{(i+j+1)(i+j+2)}\right]_{0\leq i,j<n}
+ =6144^{-n}\prod_{j=0}^{n-1}
+    \frac1{(2j+2)\binom{2j+1}{j}^2}.
+\end{equation}
+Here determinant monotonicity follows by conjugating the matrix
+inequality by the inverse square root of the smaller positive matrix.
+
+We include the norm calculation in the last equality. For weight $1-y$
+on $[0,1]$, the monic orthogonal polynomial of degree $j$ is
+\[
+ p_j(y)=\frac{(-1)^j(j+1)!}{(2j+1)!(1-y)}
+         \frac{\mathrm d^j}{\mathrm dy^j}
+             \bigl(y^j(1-y)^{j+1}\bigr).
+\]
+The numerator is divisible by $1-y$. Integration by parts $j$ times
+shows orthogonality to degrees below $j$; every boundary term vanishes.
+The same calculation with $p_j$ gives its squared norm
+\[
+ \frac{j!(j+1)!}{(2j+1)!}
+       \int_0^1 y^j(1-y)^{j+1}\dd y
+ =\frac{j!^2(j+1)!^2}{(2j+1)!(2j+2)!}
+ =\frac1{(2j+2)\binom{2j+1}{j}^2}.
+\]
+The Gram determinant is the product of these monic norms.
+Finally $\binom{2j+1}{j}\leq2^{2j+1}$ in~\eqref{eq:Jacobi-det}
+gives the lower bound in~\eqref{eq:gram-bounds}. Taking logarithms,
+using $0<\theta<1$ and Stirling's formula, proves~\eqref{eq:gram-rate}.
+\end{proof}
+
+\section{Exact primitive arithmetic of the difference Gram}\label{sec:delta-arithmetic}
+
+Fix $n\geq1$ and a prime $p>4n$. All moment indices used in
+$Q_n^{\Delta}$ satisfy $0\leq m\leq2n-2$. In particular $2m<p$,
+$|j-m|<p$ for the indices in~\eqref{eq:B}, and $T_4(m)$ is $p$-integral.
+In $T_3(j)$ the only possible odd denominator divisible by $p$ is $p$
+itself: the largest odd denominator is at most $8n-9<2p$, whereas the
+next odd multiple is $3p$. It appears when $j\geq(p+1)/2$.
+
+\subsection{The first residue and its block}
+
+It follows that $p^3B_m$ is $p$-integral and
+\begin{equation}\label{eq:Bm-residue}
+ p^3B_m\equiv\frac{\chi_4(p)}6
+  \sum_{j=h}^{2m}\binom{2m}{j}\frac1{j-m}\pmod p,
+ \qquad h=\frac{p+1}{2}.
+\end{equation}
+An empty sum is zero; in the range of this sum $j>m$, so no zero
+denominator occurs. Put
+\begin{equation}\label{eq:m0-r}
+ m_0=\left\lfloor\frac p4\right\rfloor+1,\qquad
+ r=\max\{0,2n-1-m_0\}.
+\end{equation}
+For $m<m_0$ no cubic tail contains $p$, so $B_m$ is actually $p$-integral.
+If $m_0\leq2n-2$, the first nonzero residue in~\eqref{eq:Bm-residue},
+apart from its factor $\chi_4(p)/6$, is
+\begin{equation}\label{eq:first-residue}
+ \begin{cases}
+ 1/m_0,&p=4m_0-1,\\[2pt]
+ (2m_0-1)(m_0+1)/(m_0(m_0-1)),&p=4m_0-3.
+ \end{cases}
+\end{equation}
+In the first case the sum has only $j=2m_0$; in the second it has
+$j=2m_0-1,2m_0$, giving $2m_0/(m_0-1)+1/m_0$.
+These residues are nonzero modulo $p$. Indeed, in the nonempty case
+$m_0\geq3$, and all the displayed positive numerator and denominator
+factors are less than $p$.
+
+The residue matrix $[p^3B_{i+j}\bmod p]_{i,j<n}$ is supported in the
+bottom-right $r\times r$ block. That block is anti-triangular with the
+nonzero first residue on its anti-diagonal, so it has rank $r$.
+More strongly, every entry outside it is $p$-integral before multiplication
+by $p^3$: its moment index is below $m_0$.
+
+\subsection{The exact primitive exponent}
+
+\begin{proof}[Proof of \eqref{eq:delta-valuation}]
+At most $r$ entries of a permutation term can have negative valuation,
+because only the bottom $r$ rows have such entries. Each entry has
+coefficient valuations at least $-3$, so every coefficient of
+$Q_n^{\Delta}$ has valuation at least $-3r$.
+
+If $r>0$, let $L$ be the $r\times r$ leading residue block just described,
+and let $s=n-r$. To survive reduction after multiplication by $p^{3r}$,
+a term must use all $r$ bottom rows and all $r$ bottom columns from that
+block. Its complementary factor is the upper-left pencil. Consequently,
+as a polynomial congruence,
+\begin{equation}\label{eq:block-factor}
+ p^{3r}Q_n^{\Delta}(X)
+ \equiv \det(L)\det[C_{i+j}X+B_{i+j}]_{0\leq i,j<s}\pmod p.
+\end{equation}
+The right-hand coefficient of $X^s$ is $\det(L)2^{s-1}$ by
+Lemma~\ref{lem:binomial-det}, and is a $p$-unit. Here $s\geq1$,
+since $p>4n$. Thus the minimum coefficient valuation is exactly $-3r$.
+If $r=0$, all entries are $p$-integral and the leading coefficient
+$2^{n-1}$ is already a $p$-unit. Lemma~\ref{lem:primitive} now proves
+\eqref{eq:delta-valuation} in all cases.
+\end{proof}
+
+This argument controls the actual primitive multiplier. Any coefficient
+gcd is already included in the minimum-valuation calculation; it cannot
+remove the forced exponent.
+
+\subsection{Summing the prime cost}
+
+By Lemma~\ref{lem:primitive} and the leading coefficient $2^{n-1}$,
+$\vp(\kappa_n)\geq0$ at every odd prime, while
+$v_2(\kappa_n)\geq-(n-1)$. Hence
+\begin{equation}\label{eq:kappa-sum}
+ \log\kappa_n\geq
+ 3\sum_{4n<p<8n-8}\left(2n-2-\left\lfloor\frac p4\right\rfloor\right)
+                   \log p-(n-1)\log2.
+\end{equation}
+Changing the endpoints by a bounded amount and removing floors costs
+$O(n\log(n+1))$, which is negligible on the quadratic scale. Partial
+summation and~\eqref{eq:PNT} give
+\begin{align}
+ 3\sum_{4n<p<8n-8}\left(2n-2-\left\lfloor\frac p4\right\rfloor\right)
+                   \log p
+ &=3\int_{4n}^{8n}(2n-t/4)\dd\vartheta(t)+O(n\log(n+1))\notag\\
+ &=3\int_{4n}^{8n}(2n-t/4)\dd t+o(n^2)
+  =6n^2+o(n^2).\label{eq:six}
+\end{align}
+For the replacement of $\dd\vartheta$ by $\dd t$, integration by parts
+bounds the error using $\sup_{4n\leq t\leq8n}|\vartheta(t)-t|=o(n)$,
+the $O(n)$ endpoint weight and its bounded derivative.
+Thus $\log\kappa_n\geq6n^2+o(n^2)$. Combining with
+Proposition~\ref{prop:gram-real} proves~\eqref{eq:delta-result} and
+completes the proof of Theorem~\ref{thm:delta}.
+
+\section{Scope, evidence and the wider investigation}\label{sec:scope}
+
+The two proofs establish actual primitive-value obstructions. The first
+uses a monic pencil and a unique surviving principal minor; the second
+uses a power-of-two leading coefficient and a full anti-triangular
+residue block. In both cases the leading coefficient controls possible
+negative valuations of the primitive multiplier at the primes not used
+in the lower-bound sum. Without that control, a large denominator cost
+alone would not prove the same conclusion.
+
+These results concern the full pencils defined in
+\eqref{eq:principal-Q} and~\eqref{eq:delta-Q}. Invertible rational basis
+changes preserve their primitive polynomials, but different subspaces,
+sparse designs, nonprincipal minors, polynomial weights, factors and
+combinations of determinants are outside the two obstruction theorems.
+The uniform real comparison in Theorem~\ref{thm:comparison} does apply
+to nonprincipal designs; an arithmetic obstruction for such a design
+would require additional information.
+
+The accompanying research catalog separates proved limitations of defined
+families from failed estimates, exact reductions to existing constructions,
+finite experiments and incomplete constructions. In particular, some
+nonprincipal designs have unfavorable proved denominator bounds without
+an all-index bound on numerator content. An ordinary-moment first-variation
+construction has a positive error and a proved real exponent, but no
+all-index primitive arithmetic conclusion. Neither status is upgraded
+to an impossibility statement by the present theorems. The catalog and
+source snapshots provide the basis for a separate technical supplement;
+they are not substitutes for proofs in this paper.
+
+\subsection*{Computational checks and authorship}
+
+This note was prepared with Codex. The archived record includes model
+mathematical cross-checks, exact rational calculations and Arb interval
+calculations. A reproducibility record accompanies this draft and states
+which checks were rerun and how the archived outputs were preserved.
+Such checks are finite evidence for identities and arithmetic formulas;
+the asymptotic results are proved in the text. No proof-assistant
+verification or human mathematical audit is claimed. The comparison with
+prior work is recorded by source and version; no exhaustive priority claim
+is made.
+
+\appendix
+\section{Including a common zero node}\label{app:zero}
+
+The unregularized Cauchy matrix is unsuitable when both node lists contain
+zero, but the regularized matrix in~\eqref{eq:Rtau} remains finite. For
+$a_0=b_0=0$ and increasing positive remaining nodes, write $a_+,b_+$ for
+the lists with zero removed. Continuity gives $R_\tau(0,0)=1/\tau$ and
+\begin{equation}\label{eq:zero-Rdet}
+ \det[R_\tau(a_i,b_j)]_{0\leq i,j<n}
+ =\frac1\tau\prod_{i>0}\frac{a_i}{a_i+\tau}
+              \prod_{j>0}\frac{b_j}{b_j+\tau}\det C(a_+,b_+).
+\end{equation}
+To prove it, multiply row $i$ by $a_i+\tau$ and column $j$ by $b_j+\tau$.
+The resulting entry is $\tau+ab/(a+b)$, with continuous value $\tau$
+in the zero row and column. Subtract the zero row from every other row
+and expand at the zero column. Undoing the scalings gives
+\eqref{eq:zero-Rdet}; an empty determinant is one.
+
+The lower density bound~\eqref{eq:density-comparison} still applies.
+For an upper bound finite at zero, note that
+$1-\sech v\leq v^2/2$ for $v\geq0$: integrate
+$\sech v\tanh v\leq v$. Therefore
+\[
+ q(s)\leq5(1-\sech(2\pi s))\leq10\pi^2s^2,
+ \qquad q(s)\leq M.
+\]
+Combining the bounds gives
+$q(s)\leq(M+10\pi^2\tau^2)s^2/(s^2+\tau^2)$ for every $\tau>0$.
+Choose $\tau=\tau_0$; then
+\begin{equation}\label{eq:zero-comparison}
+ c_0^n\det R_{\tau_0}
+ \leq\det[K(a_i^2,b_j^2)]
+ \leq[c_0(M+5)]^n\det R_{\tau_0}.
+\end{equation}
+For positive integer remaining nodes,~\eqref{eq:zero-Rdet} gives
+\begin{equation}\label{eq:zero-log}
+ \log\det[K(a_i^2,b_j^2)]
+ =\log\det C(a_+,b_+)+O(n),
+\end{equation}
+uniformly in the remaining node lists.
+
+\begin{corollary}\label{cor:zero}
+For the principal nodes $0,1,\ldots,n-1$, replace $\theta$ by $X$ in
+\eqref{eq:K-off}--\eqref{eq:K-zero}, take the determinant, and let
+$Z_n^0$ be its primitive representative. Then
+\[
+ \liminf_{n\to\infty}\frac{\log Z_n^0(\theta)}{n^2}
+ \geq2-2\log2.
+\]
+\end{corollary}
+
+\begin{proof}
+The coefficient matrix of $X$ is $\diag(2,1,\ldots,1)$, so the leading
+coefficient of the determinant is 2. For primes $2(n-1)<p<4(n-1)$,
+the unique high-node minor from Lemma~\ref{lem:principal-local} is
+unchanged; its complementary diagonal coefficient contributes a factor
+2, a $p$-unit. Thus the same coefficient valuation $-4r_p$ is attained.
+All odd prime valuations of the primitive multiplier are nonnegative,
+and the only possible negative contribution is at least $-\log2$.
+The prime sum is $2(n-1)^2+o(n^2)$. By~\eqref{eq:zero-log}, its positive
+real determinant has logarithm $-2\log2\,(n-1)^2+o(n^2)$. Adding proves
+the assertion.
+\end{proof}
+
+\clearpage
+\begin{thebibliography}{9}
+
+\bibitem{Brown}
+F.~Brown,
+\emph{Mellin transforms, transfinite diameter and rational approximations
+of integrals}, preprint,
+\href{https://arxiv.org/abs/2604.20741v1}{arXiv:2604.20741v1} (2026).
+
+\bibitem{Carreira}
+M.~C.~S.~Carreira,
+\emph{Determinant constructions for the Dirichlet beta value at four},
+preprint (2026),
+\href{https://github.com/MarcosCarreira/catalan-designs/blob/974a6e6c7b4bce67538aa1b9bf5883b931789d1f/paper/beta4_determinants.pdf}{pinned PDF in the catalan-designs repository},
+commit \texttt{974a6e6c7b4b} (full identifier in the accompanying source ledger).
+
+\bibitem{Krattenthaler}
+C.~Krattenthaler,
+\emph{A determinant identity for moments of orthogonal polynomials that
+implies Uvarov's formula for the orthogonal polynomials of rationally
+related densities},
+\href{https://arxiv.org/abs/2103.03969v1}{arXiv:2103.03969v1} (2021).
+
+\bibitem{OpenAI}
+OpenAI,
+\emph{Catalan's constant is irrational}, manuscript dated
+24 September 2026,
+\href{https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Catalans-constant-is-irrational-September-24-2026/paper.pdf}{pinned PDF in the OpenAI math repository},
+commit \texttt{adc7f1241b42} (full identifier in the source ledger).
+
+\bibitem{Prevost}
+M.~Pr\'evost,
+\emph{Remainder Pad\'e approximants for the Hurwitz zeta function},
+\href{https://arxiv.org/abs/1709.05389v1}{arXiv:1709.05389v1} (2017).
+
+\bibitem{Zudilin}
+W.~Zudilin,
+\emph{A determinantal approach to irrationality},
+\href{https://arxiv.org/abs/1507.05697v2}{arXiv:1507.05697v2} (2015).
+
+\end{thebibliography}
+\end{document}

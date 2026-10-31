@@ -1,0 +1,56 @@
+{
+  "recorded_at_utc": "2026-10-31T13:55:54.756667+00:00",
+  "phase": "main manuscript draft",
+  "new_paper_downloads": 0,
+  "sources_reused": [
+    {
+      "id": "ZUDILIN2015",
+      "sha256": "5b9ce0da2370473eff453a436dcf2901ed886e58fd9521db01e5c1818166788c",
+      "local_path": "/home/research/Chat/Math/beta4/literature/papers/A-determinantal-approach-to-irrationality_1507.05697v2.pdf",
+      "version": "1507.05697v2",
+      "source_url": "https://arxiv.org/abs/1507.05697"
+    },
+    {
+      "id": "CARREIRA2026",
+      "sha256": "a2e673cf9243fdb578ec7f2798a50da1ef004fd6059df49210ded5c004edb163",
+      "local_path": "/home/research/Chat/Math/beta4/literature/papers/Determinant-constructions-for-the-Dirichlet-beta-value-at-four_carreira-beta4-2026.pdf",
+      "version": "Git commit 974a6e6c7b4bce67538aa1b9bf5883b931789d1f",
+      "source_url": "https://raw.githubusercontent.com/MarcosCarreira/catalan-designs/974a6e6c7b4bce67538aa1b9bf5883b931789d1f/paper/beta4_determinants.pdf"
+    },
+    {
+      "id": "BROWN2026",
+      "sha256": "fcbcc22ee7504b9e057c534c0e5fae3f3812af8548d132cd2018ce4857a20bef",
+      "local_path": "/home/research/Chat/Math/beta4/literature/papers/Mellin-transforms-transfinite-diameter-and-rational-approximations-of-integrals_2604.20741v1.pdf",
+      "version": "2604.20741v1",
+      "source_url": "https://arxiv.org/abs/2604.20741"
+    },
+    {
+      "id": "KRATTENTHALER2021",
+      "sha256": "9257216e0cfef032a4ab8f4799ef3251fe18027a053fade8f93e1e36c152001b",
+      "local_path": "/home/research/Chat/Math/beta4/literature/papers/Determinant-identity-for-rationally-modified-moments_Krattenthaler_2103.03969v1.pdf",
+      "version": "2103.03969v1",
+      "source_url": "https://arxiv.org/abs/2103.03969v1"
+    },
+    {
+      "id": "PREVOST2017",
+      "sha256": "5861d99061460d253ba17cdac081f9ce9fb5bfcdaf4ab131a04a456d65b58038",
+      "local_path": "/home/research/Chat/Math/beta4/literature/papers/Remainder-Pade-approximants-for-the-Hurwitz-zeta-function_Prevost_1709.05389v1.pdf",
+      "version": "1709.05389v1",
+      "source_url": "https://arxiv.org/abs/1709.05389v1"
+    },
+    {
+      "id": "OPENAI2026",
+      "sha256": "4023d0344abceb79dc46a16380dac3a662193f9d4f23e6c340b2162068b04c0e",
+      "local_path": "/home/research/Chat/Math/beta4/literature/papers/Catalans-constant-is-irrational-OpenAI_openai-catalan-2026.pdf",
+      "version": "September 24 2026 PDF; Git commit adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "source_url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Catalans-constant-is-irrational-September-24-2026/paper.pdf"
+    }
+  ],
+  "actual_new_reading": {
+    "OPENAI2026": "Main-draft pass: extracted text lines 1-155, introduction and determinant strategy, read to credit the motivating construction. No global theorem or proof certificate is an input to this paper.",
+    "CARREIRA2026": "Text lines 650-910 reread: Sections 10-12; the specific csch-derived positive density in Definition 24(B)/Lemma 25 compared with the cubic-tail measure.",
+    "BROWN2026": "Text lines 1480-1580 reread: Sections 7.3-7.5 and the Section 8 opening; cite Section 7.4 for context only.",
+    "other_sources": "Relevant scopes from the immediately preceding writing-selection pass retained; no new reading or fresh verification claimed."
+  },
+  "proof_inputs": "All kernel, norm and local arithmetic formulas used in the manuscript are proved there. PNT, Stirling, elementary complex integration and linear algebra are standard background. No global recent irrationality claim is used."
+}

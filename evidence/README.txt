@@ -28,19 +28,20 @@ deliberately preserve historical statements such as 'next target', 'paused',
 and old conjectures or mismatches. Those are evidence of their original
 stage, not current instructions or final mathematical conclusions.
 
-The two selected mathematical proofs were read in the current writing pass.
-Their archived calculations were not rerun in this pass. Checks of manifest
-hashes and inventory references are checks of this writing packet, not new
-mathematical verification. Existing model cross-checks and exact finite
-calculations remain labeled as such. Nothing here is proof-assistant
-verification or a priority certificate.
+The two selected mathematical proofs were read in the initial selection
+pass. Their archived calculations were not rerun at that stage. The later
+main-paper drafting pass reran the relevant checks in scratch copies and
+recorded the results in checks/reproduction.json. All 120 snapshots remain
+unchanged. Hash and reference checks are packet checks; model cross-checks,
+exact finite calculations and interval computations retain their separate
+statuses. Nothing here is proof-assistant verification or a priority certificate.
 
 Selected scripts use python-flint/Arb and sometimes mpmath or SymPy. Several
 write their output beside the script. To rerun one, copy it and any inputs
 to a scratch directory first; do not overwrite these immutable snapshots.
-The original environment is outside this repository. A pinned portable
-reproduction harness is a drafting/release task, not a completed deliverable
-of this selection stage.
+The original environment is outside this repository. The main-paper draft
+now supplies a pinned dependency and scratch-copy reproduction harness in
+checks/. Use that harness for the selected main-paper computations.
 
 Core check pairs preserved:
 
