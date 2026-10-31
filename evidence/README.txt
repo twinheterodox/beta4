@@ -53,3 +53,13 @@ Core check pairs preserved:
 The ordinary-variation correction is preserved in round-18/primitive-check.json
 and primitive_check.py, together with its exact coefficient input. It must
 not be replaced by values from an earlier incomplete content reduction.
+
+Supplement additions (31 October 2026)
+-------------------------------------
+Seven additional verbatim files are separately inventoried in
+supplement-manifest.json, under supplement-source/. They supply three
+selected calculation scripts and their original outputs, plus the actual
+modular-prefactor pole note. The M03 inventory link previously pointed to
+the separate Euler--Boole report and has been corrected. The original
+120-file manifest and all of its snapshots remain unchanged. The supplement
+runner uses temporary copies; fresh outputs are in checks/supplement-results/.

@@ -1,0 +1,178 @@
+\section{Differentiated continued fractions at fixed endpoints}\label{sec:cf}
+For $\Re a>0$ let $S(a)=\int_0^\infty e^{-at}\sech t\dd t$.
+Define polynomial continuants by
+\[
+ q_0=1,\ q_1=a,\quad r_0=0,\ r_1=1,\qquad
+ (n+1)y_{n+1}=ay_n+ny_{n-1}.
+\]
+The integer polynomials $Q_n=n!q_n$, $R_n=n!r_n$ satisfy
+$Y_{n+1}=aY_n+n^2Y_{n-1}$. Their quotient is the finite continued
+fraction with successive numerators $1^2,2^2,\ldots$. Its convergence
+will follow from an explicit error, rather than an imported convergence
+theorem. Put
+\begin{equation}\label{eq:cf-approx}
+ \alpha_{n,N}=S_N+\frac{(-1)^{N+1}}{12}
+      \left.\frac{\mathrm d^3}{\mathrm da^3}\frac{r_n(a)}{q_n(a)}
+      \right|_{a=2N}=\frac{b_{n,N}}{d_{n,N}},
+\end{equation}
+in lowest terms, $d_{n,N}>0$. Here $S_N$ is the finite sum in
+\eqref{eq:boole-def}. The entire quotient is differentiated.
+
+\begin{theorem}[Fixed-endpoint obstruction; S05]\label{thm:cf}
+For each fixed integer $N\geq1$,
+\begin{equation}\label{eq:cf-error}
+ \theta-\alpha_{n,N}\sim(-1)^{N+n}
+ \frac{2^{-2N}\Gamma(N+\tfrac12)^2}{12}
+          n^{-2N}(\log n)^3.
+\end{equation}
+Along even depth $n=2m$,
+\[
+ \liminf_{m\to\infty}\frac{
+       \log|d_{2m,N}\theta-b_{2m,N}|}{2m}\geq4.
+\]
+No uniformity for growing $N$, or arithmetic conclusion at odd depth,
+is part of this theorem.
+\end{theorem}
+
+\subsection{The exact error and its derivative}
+The generating functions of the normalized continuants are
+\begin{align*}
+ \mathcal Q(a,z)&=(1+z)^{(a-1)/2}(1-z)^{-(a+1)/2},\\
+ \mathcal R(a,z)&=\mathcal Q(a,z)
+       \int_0^z\frac{\dd t}{(1-t^2)\mathcal Q(a,t)}.
+\end{align*}
+They follow by multiplying the recurrence by $z^n$ and integrating
+the resulting first-order equation. Substitution $z=\tanh u$ and
+translation of the tail integral give
+\[
+ \mathcal Q(a,z)S(a)-\mathcal R(a,z)
+       =\int_0^\infty\frac{e^{-av}}{\cosh v+z\sinh v}\dd v.
+\]
+Expanding on compact subdisks $|z|<1$ proves
+\begin{equation}\label{eq:cf-integral}
+ q_n(a)S(a)-r_n(a)=(-1)^n I_n(a),\qquad
+ I_n(a)=\int_0^\infty e^{-at}\sech t\tanh^n t\dd t.
+\end{equation}
+Since $\theta=S_N+(-1)^{N+1}S'''(2N)/12$,
+\[
+ \theta-\alpha_{n,N}=
+ \frac{(-1)^{N+n+1}}{12}
+ \left.\frac{\mathrm d^3}{\mathrm da^3}\frac{I_n(a)}{q_n(a)}
+                                                        \right|_{a=2N}.
+\]
+Uniformly on a small fixed complex disk about $2N$ with $\Re a>1$,
+\begin{align*}
+ q_n(a)&=\frac{2^{(a-1)/2}n^{(a-1)/2}}{\Gamma((a+1)/2)}
+                                      (1+O_N(n^{-1})),\\
+ I_n(a)&=2^{-(a+1)/2}\Gamma((a+1)/2)n^{-(a+1)/2}
+                                      (1+O_N(n^{-1})).
+\end{align*}
+For the first formula, expand the displayed generating function at
+$z=1$ and use the coefficient formula for $(1-z)^{-b}$; the second
+singularity $z=-1$ has relative size $O(n^{-\Re a})$. For the second,
+put $y=\tanh t$ and expand $(1+y)^{-(a+1)/2}$ at $y=1$ in
+\[
+ I_n(a)=\int_0^1 y^n(1-y)^{(a-1)/2}(1+y)^{-(a+1)/2}\dd y.
+\]
+The beta integral and gamma-ratio estimate give the stated constants.
+The remainders are holomorphic and uniform on a slightly larger disk;
+the leading factor of $q_n$ is nonzero there for large $n$.
+Cauchy's derivative formula therefore justifies three derivatives of
+$2^{-a}\Gamma((a+1)/2)^2n^{-a}(1+O_N(n^{-1}))$.
+Its leading third derivative is the negative of its leading term times
+$(\log n)^3$, proving~\eqref{eq:cf-error}. The standard gamma-ratio
+expansion is also recorded in DLMF~\cite[Section 5.11(iii)]{DLMF}.
+Pointwise real asymptotics without this complex uniformity would not
+justify the differentiation.
+
+\subsection{An exact reduced-denominator law}
+Write $X^{\underline j}=X(X-1)\cdots(X-j+1)$ and $h_N=(2N-1)!!$.
+Define integer polynomials
+\begin{align*}
+ A_N(X)&=\sum_{j=0}^N\binom{2N}{2j}2^jX^{\underline j}
+                    \prod_{\ell=0}^{N-j-1}(2X+2\ell+1),\\
+ B_N(X)&=\sum_{j=0}^{N-1}\binom{2N}{2j+1}2^jX^{\underline j}
+                    \prod_{\ell=0}^{N-j-1}(2X+2\ell+1),\\
+ C_N(m)&=B_N(m-\tfrac12)\\
+ &=\sum_{j=0}^{N-1}\binom{2N}{2j+1}
+       \prod_{s=0}^{j-1}(2m-1-2s)
+       \prod_{\ell=0}^{N-j-1}(2m+2\ell).
+\end{align*}
+The last expression is integral for integer $m$, positive for $m\geq N$,
+and of fixed degree $N$. With $c_m=\binom{2m}{m}/4^m$,
+\begin{equation}\label{eq:cf-parity}
+ q_{2m}(2N)=c_m A_N(m)/h_N,\qquad
+ q_{2r+1}(2N)=c_r B_N(r)/h_N.
+\end{equation}
+To check these, write
+$\mathcal Q(2N,z)=(1+z)^{2N}(1-z^2)^{-N-1/2}$ and separate
+even and odd coefficients. The coefficient ratio used is
+\[
+ \frac{(N+\tfrac12)_{m-j}/(m-j)!}{c_m}
+ =\frac{m^{\underline j}(m+\tfrac12)_{N-j}}{(\tfrac12)_N}.
+\]
+
+\begin{lemma}\label{lem:cf-prime}
+If $m<p<2m$, $2N<p$, $p$ is prime and $p\nmid C_N(m)$, then
+\[
+ v_p(d_{2m,N})=8+4v_p(A_N(m)).
+\]
+\end{lemma}
+\begin{proof}
+First $Q_p(a)\equiv a^p-a\pmod p$. One direct proof uses
+$D=(1-z^2)\mathrm d/\mathrm dz+(p-1)z$ on polynomials of degree
+at most $p-1$ over $\mathbb F_p$. Adjacent off-diagonal products in
+its matrix are $j(p-j)$, so its characteristic determinants obey the
+continuant recurrence modulo $p$. Its eigenvectors
+$(1+z)^j(1-z)^{p-1-j}$ have distinct eigenvalues $2j-(p-1)$,
+which run through $\mathbb F_p$. The recurrence then gives
+\[
+ Q_{p+j}(a)\equiv(a^p-a)Q_j(a)\pmod p\quad(0\leq j<p).
+\]
+The continuant Wronskian is
+$Q_kR_{k+1}-Q_{k+1}R_k=(-1)^k(k!)^2$.
+At $k=p-1$, $a=2N$, it shows that $R_p(2N)$ is a unit.
+Recurrence after $p$ and differentiation of the last congruence give
+\[
+ R_{p+j}(2N)\equiv R_p(2N)Q_j(2N),\qquad
+ Q'_{p+j}(2N)\equiv-Q_j(2N)\pmod p.
+\]
+Here $j=2m-p$ is odd, and~\eqref{eq:cf-parity} shows that $Q_j(2N)$
+is a unit precisely when $B_N(m-(p+1)/2)\equiv C_N(m)$ is.
+Thus $R_{2m}(2N)$ and $Q'_{2m}(2N)$ are units. Meanwhile
+\eqref{eq:cf-parity} gives
+\[
+ e:=v_p(Q_{2m}(2N))=2+v_p(A_N(m)),
+\]
+because both $(2m)!$ and $c_m$ have valuation one.
+
+Expand the integer polynomials as $Q(2N+x)=\sum u_ix^i$ and
+$R(2N+x)=\sum v_ix^i$. The coefficient of $x^3$ in $R/Q$ is
+\[
+ \frac{v_3u_0^3-v_2u_1u_0^2+
+ v_1(u_1^2u_0-u_2u_0^2)+
+ v_0(-u_1^3+2u_1u_2u_0-u_3u_0^2)}{u_0^4}.
+\]
+Its numerator has the unique unit term $-v_0u_1^3$, so its valuation
+is $-4e$. Formula~\eqref{eq:cf-approx} multiplies this Taylor
+coefficient by $\pm1/2$; $S_N$ is $p$-integral. It follows that the
+reduced denominator has valuation $4e$, as asserted.
+\end{proof}
+
+For fixed $N$, primes in $(m,2m)$ excluded by $C_N(m)$ have total
+logarithm $O_N(\log m)$. The lemma and the prime number theorem imply
+$\log d_{2m,N}\geq8m+o(m)$. Equation~\eqref{eq:cf-error} supplies
+an eventually nonzero error with logarithm $O_N(\log m)$, completing
+Theorem~\ref{thm:cf}. The exception condition is material: four
+archived cases excluded by $C_N(m)$ have denominator exponent four,
+not eight. None of this extends automatically to $N$ growing with $m$.
+
+A shift-and-binomial repair has an exact reduction: combining the error
+integrals at $a=2(L+j)$ uses
+\[
+ e^{-2Lt}\tanh^n t(1+e^{-2t})^n
+        =e^{-2Lt}(1-e^{-2t})^n.
+\]
+After $x=e^{-t}$ this is the scalar Mellin weight
+$x^{2L}(1-x^2)^n$. The proposed repair is therefore an old scalar
+family in a different presentation, not an additional approximation.

@@ -20,6 +20,10 @@ def require(condition, message):
 
 inventory = json.loads((ROOT / 'planning/theorem-inventory.json').read_text())
 manifest = json.loads((ROOT / 'evidence/manifest.json').read_text())
+original_file_count = len(manifest['files'])
+extra_manifest = ROOT / 'evidence/supplement-manifest.json'
+if extra_manifest.exists():
+    manifest['files'] += json.loads(extra_manifest.read_text())['files']
 reading = json.loads((ROOT / 'sources/reading-record.json').read_text())
 claims = inventory['claims']
 ids = [c['id'] for c in claims]
@@ -83,6 +87,8 @@ if args.check_local_pdfs:
 
 report = dict(status='passed', scope='Writing-packet consistency, references and byte hashes only; not mathematical verification.',
               claims=len(claims), evidence_files=len(paths), evidence_bytes=total_bytes,
+              original_evidence_files=original_file_count,
+              supplemental_evidence_files=len(paths)-original_file_count,
               method_groups=12, research_rounds=18, paper_sources=len(source_ids),
               original_archive_compared=bool(args.archive_root), local_pdfs_checked=pdfs_checked,
               classification_counts=dict(Counter(c['classification'] for c in claims)))

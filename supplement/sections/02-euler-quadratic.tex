@@ -1,0 +1,98 @@
+\section{Rational Euler sources and repeated quadratics}\label{sec:quadratic}
+Let $E=t\,\mathrm d/\mathrm dt$, $g(t)=t/(1+t^2)$, and
+\[
+ J(R)=\frac16\int_0^1(-\log t)^3R(t)\frac{\dd t}{t}.
+\]
+If $H$ is rational, regular on $[0,1]$, and $H(t)=O(t)$ at zero,
+four integrations by parts, after $t=e^{-z}$, give
+\begin{equation}\label{eq:euler-exact}
+ J(E^4H)=H(1),\qquad J(Ag+E^4H)=A\theta+H(1).
+\end{equation}
+This isolates the target exactly, but imposes no favorable arithmetic
+bound on the coefficient $A$.
+
+Put $F(y)=\sum_{k\geq0}(-1)^ky^k/(2k+1)^4$. Let
+$Q(y)=\sum_{j=0}^d q_jy^j$ have no zero on $[0,1]$, and let $C_m$
+be the Taylor polynomial of $QF$ through degree $m-1$. The choice
+$H(t)=-AtC_m(t^2)/Q(t^2)$ cancels the first $m$ odd coefficients
+of $Ag+E^4H$. Define
+\[
+ W_{Q,m}(y)=\sum_{j=m}^d q_j+
+                 \sum_{j=0}^{\min(m-1,d)}q_j(-y)^{m-j}.
+\]
+The finite geometric remainder for each monomial proves the exact
+formal-pair identity
+\begin{equation}\label{eq:reversal}
+ \theta-\frac{C_m(1)}{Q(1)}=\frac{I(W_{Q,m})}{Q(1)}.
+\end{equation}
+This reduction includes $m<d$ and introduces no period-independence
+assumption. For $Q=(v+uy)^n$ and $m=2n$,
+$W_{Q,2n}=(-y)^n(u-vy)^n$. The rational Euler source therefore has
+the same primitive pair, up to sign, as the following scalar source.
+
+\begin{theorem}[Repeated-quadratic sources; S03]\label{thm:quadratic}
+For even $n$, let $u_n,v_n$ be positive integers with
+$\log(u_n+v_n)=o(n)$. Set
+$P_n(y)=y^n(u_n-v_ny)^n$ and let $L_n>0$ be the value of its
+primitive formal pair under~\eqref{eq:formal-pair}. Then
+\[
+ \liminf_{\substack{n\to\infty\\n\ {m even}}}
+ \frac{\log L_n}{n}
+ \geq\frac83-\log(5+4\sqrt2)>0.
+\]
+\end{theorem}
+\begin{proof}
+Write $A=P_n(-1)=(u+v)^n$ and $I(P_n)=A\theta+N/D$ in lowest
+terms. The first $n$ coefficients of $(P_n-A)/(1+y)$ are
+$(-1)^{j+1}A$. For a prime
+\[
+ \frac{4n}{3}<p<2n,\qquad p\nmid(u+v),
+\]
+only the denominator $p$ among $1,3,\ldots,4n-1$ is divisible by $p$.
+Its index $(p-1)/2<n$ has a $p$-unit coefficient. Consequently
+$v_p(N/D)=-4$, exactly. If $g=\gcd(DA,N)$, then $g\mid A$, so
+\begin{equation}\label{eq:quadratic-primitive}
+ L_n=\frac Dg I(P_n)
+ \geq\prod_{\substack{4n/3<p<2n\\p\nmid(u+v)}}p^4\,
+                  \frac{I(P_n)}A.
+\end{equation}
+This controls the actual primitive value, including all common content.
+
+Let $r=v/(u+v)$ and $f_r(y)=y(1-r-ry)$. With
+$\dd\mu=\dd\nu/(1+y)$,
+$I(P_n)/A=\int|f_r(y)|^n\dd\mu(y)$. An elementary minimax calculation gives
+\[
+ M_*:=\min_{0\leq r\leq1}\max_{0\leq y\leq1}|f_r(y)|
+       =\frac1{5+4\sqrt2}.
+\]
+Indeed for $r\geq1/3$ the interior positive maximum is
+$(1-r)^2/(4r)$; for $r\geq1/2$ the negative endpoint has magnitude
+$2r-1$. They are equal at $r=(1+2\sqrt2)/7$.
+For $r<1/3$ the maximum is at least $1/3$.
+
+Uniformity for moving $r$ follows from $|f_r'|\leq2$. In an interval
+of length $\ell=M_*/(4n)$ adjacent to a maximizer,
+$|f_r|\geq M(r)(1-1/(2n))$. On its central half,
+$1-y\geq\ell/4$ and $\dd\mu\geq(1-y)^3\dd y/192$.
+Since $(1-1/(2n))^n\geq1/2$,
+\[
+ \frac{I(P_n)}A\geq\frac{M_*^{n+4}}{3\cdot2^{22}n^4}.
+\]
+The prime number theorem in~\eqref{eq:quadratic-primitive} now gives
+\[
+ \log L_n\geq
+ \left(\frac83-\log(5+4\sqrt2)\right)n
+ -4\sum_{\substack{4n/3<p<2n\\p\mid u+v}}\log p+o(n).
+\]
+The exceptional sum is at most $\log(u+v)=o(n)$.
+\end{proof}
+
+It suffices more generally that the displayed exceptional prime sum
+be $o(n)$. The theorem does not cover odd $n$, different osculation
+lengths, general denominator polynomials, or sums of these forms.
+The source-level statement is weaker: if $H=P/Q$ has integer
+coefficients and $p\nmid Q(0)$, cancellation of the first $m$ odd
+coefficients forces
+$v_p(A)\geq4\max_{k<m}v_p(2k+1)$. This follows coefficientwise from
+$A(-1)^k+(2k+1)^4[t^{2k+1}]H=0$. It does not by itself control
+primitive endpoint content; that was the purpose of the prime argument.

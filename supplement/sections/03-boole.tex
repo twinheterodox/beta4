@@ -1,0 +1,113 @@
+\section{Euler--Boole truncations at every endpoint}\label{sec:boole}
+The Euler--Boole method is classical; the point here is the uniform
+arithmetic conclusion for this particular family. Define integers
+$E_{2j}$ by $\sech t=\sum_{j\geq0}E_{2j}t^{2j}/(2j)!$ near zero.
+Multiplication by $\cosh t$ gives their integral recurrence. For $N\geq1$
+and $m\geq0$ put
+\begin{align}
+ S_N&=\sum_{k<N}\frac{(-1)^k}{(2k+1)^4},\notag\\
+ T_{N,m}&=\frac1{12}\sum_{j<m}
+ \frac{E_{2j}(2j+1)(2j+2)(2j+3)}{(2N)^{2j+4}},\notag\\
+ A_{N,m}&=S_N+(-1)^NT_{N,m}=a_{N,m}/q_{N,m},\label{eq:boole-def}
+\end{align}
+in lowest terms with $q_{N,m}>0$. The Euler-number convention and
+classical summation formula are recorded in DLMF~\cite[Sections 24.2,
+24.17]{DLMF}; the needed remainder is derived below.
+
+\begin{theorem}[Uniform primitive obstruction; S04]\label{thm:boole}
+Every $q_{N,m}\theta-a_{N,m}$ is nonzero. Uniformly in $m\geq1$,
+\begin{equation}\label{eq:boole-error}
+ |\theta-A_{N,m}|\geq\frac{\pi^2e^{-\pi N}}{144N}.
+\end{equation}
+Moreover
+\[
+ \liminf_{N\to\infty}\inf_{m\geq0}\frac{\log q_{N,m}}N\geq8,
+ \qquad
+ \liminf_{N\to\infty}\inf_{m\geq0}
+ \frac{\log|q_{N,m}\theta-a_{N,m}|}N\geq8-\pi>0.
+\]
+The primitive absolute values tend to infinity whenever $N+m\to\infty$.
+\end{theorem}
+\begin{proof}
+Laplace integration of the alternating tail gives
+\begin{equation}\label{eq:boole-tail}
+ \theta-S_N=\frac{(-1)^N}{12}
+       \int_0^\infty t^3e^{-2Nt}\sech t\dd t.
+\end{equation}
+Let $a=\pi/2$ and $a_k=(2k+1)a$. The partial fractions formula
+\[
+ \sech t=2\sum_{k\geq0}\frac{(-1)^k a_k}{a_k^2+t^2}
+\]
+follows by expanding $\cosh(tx)/\cosh t$ on $[0,1]$ in the mixed
+cosine basis $\cos(a_kx)$: twice integrating its differential equation
+gives coefficient $2a_k(-1)^k/(t^2+a_k^2)$, and Fourier convergence
+at $x=0$ gives the formula.
+Applying the finite geometric identity to each term gives, for $m\geq1$,
+\begin{align}
+ \sech t-\sum_{j<m}\frac{E_{2j}t^{2j}}{(2j)!}
+   &=(-1)^m t^{2m}C_m(t),\notag\\
+ C_m(t)&=2\sum_{k\geq0}
+               \frac{(-1)^k a_k^{1-2m}}{t^2+a_k^2}.\label{eq:boole-rem}
+\end{align}
+This remainder series is absolutely convergent. Its positive terms
+decrease, and the ratio of the second to the first is at most
+$3^{1-2m}\leq1/3$. Hence
+\begin{equation}\label{eq:boole-sandwich}
+ (1-3^{1-2m})\frac{2a^{1-2m}}{t^2+a^2}
+ \leq C_m(t)\leq\frac{2a^{1-2m}}{t^2+a^2},\qquad C_m(t)>0.
+\end{equation}
+Thus $\theta-A_{N,m}=(-1)^{N+m}\epsilon_{N,m}$ with
+$\epsilon_{N,m}=\int_0^\infty t^{2m+3}e^{-2Nt}C_m(t)\dd t/12>0$.
+On $t\geq a$, use $(t/a)^{2m}\geq1$ and
+$t^3/(t^2+a^2)\geq a/2$. The lower bound becomes
+$\epsilon_{N,m}\geq(\pi/18)(a/2)e^{-2Na}/(2N)$, proving
+\eqref{eq:boole-error}. For $m=0$, $\sech t\geq e^{-t}$ gives
+$|\theta-S_N|\geq1/[2(2N+1)^4]$.
+
+For the arithmetic, let $p$ be odd, $p^2>2N$ and $p<2N$, and let
+$J$ count the positive odd $r$ with $pr<2N$. Reduction yields
+\begin{equation}\label{eq:boole-residue}
+ p^4S_N\equiv\chi_4(p)S_J\pmod p,\qquad
+ \chi_4(p)=(-1)^{(p-1)/2}.
+\end{equation}
+If $p\nmid6N$, the correction $T_{N,m}$ is $p$-integral for every
+$m$. Whenever $S_J$ is a nonzero residue, therefore,
+$v_p(q_{N,m})=4$ exactly. Fix $K\geq1$. For all sufficiently large
+$N$, primes in $(2N/(2K+1),2N)$ have $1\leq J\leq K$, satisfy
+$p^2>2N$, and avoid the finitely many numerator and denominator prime
+divisors of the positive rationals $S_1,\ldots,S_K$. Uniformly in $m$,
+\[
+ \log q_{N,m}\geq4\{\vartheta(2N)-\vartheta(2N/(2K+1))
+                           -\log(6N)\}-O_K(\log N).
+\]
+First take the lower limit in $N$, then let $K\to\infty$; no uniformity
+in $K$ is required. This gives the rate $8$, and combining with the
+error estimates gives $8-\pi$.
+
+For bounded $N$ and $m\to\infty$, restrict the positive remainder
+integral to $[b,b+1]$, where $b>a$. Its lower bound is
+$c_{N,b}(b/a)^{2m}\to\infty$, uniformly over a finite set of $N$.
+Since $q\geq1$, this also proves divergence on every escaping
+parameter sequence.
+\end{proof}
+
+The raw exponential constant is sharp: for $m=\pi N/2+O(1)$,
+\begin{equation}\label{eq:boole-sharp}
+ |\theta-A_{N,m}|\sim
+       \frac{\pi^3}{48\sqrt{2N}}e^{-\pi N}.
+\end{equation}
+Indeed~\eqref{eq:boole-sandwich} reduces the integral to its first
+pole with relative error $O(3^{1-2m})$. The exponent is
+$N(2a\log(t/a)-2t)$, with unique maximum at $t=a$, second derivative
+$-2/a$, and remaining factor $(\pi/12)t^3/(t^2+a^2)$ there equal
+to $\pi a/24$. Gaussian localization gives~\eqref{eq:boole-sharp},
+uniformly for the bounded rounding error in $m$.
+
+There are finitely many small primitive values, for example those of
+$X-1$, $81X-80$ and $32X-31$. They do not contradict divergence.
+Nonvanishing and divergence off finite parameter sets give
+$c:=\inf_{N,m}|q_{N,m}\theta-a_{N,m}|>0$. By Gauss's lemma a product
+of $d$ of these primitive linear polynomials is primitive, and its
+$d$th-root absolute value is at least $c$. Products alone therefore
+cannot supply the degree-normalized smallness criterion. Sums,
+resultants and general determinant combinations are outside this result.

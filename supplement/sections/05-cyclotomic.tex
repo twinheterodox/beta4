@@ -1,0 +1,113 @@
+\section{A sine-normalized cyclotomic family}\label{sec:cyclotomic}
+The topological-signature motivation came from the cubic cotangent
+formula recorded by March\'e and Masbaum~\cite[Corollary 3.2]{MarcheMasbaum},
+who credit its simplification to Murakami. That signature formula is not
+an even-power integrality theorem and is not used below.
+The following algebraic and analytic claims are derived directly for
+one specified normalization.
+
+For an odd prime $p$, set $h=\pi/(2p)$, $w=e^{2\pi i/(4p)}$, and
+\begin{equation}\label{eq:alpha}
+ \alpha_p=\sin^4h\sum_{\substack{1\leq n<p\\n\ {m odd}}}
+             \chi_4(n)\frac{\cos^3(nh)}{\sin^4(nh)}.
+\end{equation}
+Let $F_p=\Q(w+w^{-1})$, of degree $d=p-1$, and
+$M_p(X)=\operatorname{Norm}_{F_p/\Q}(X-\alpha_p)$.
+
+\begin{theorem}[One cyclotomic norm obstruction; S06]\label{thm:norm}
+The number $8\alpha_p$ is integral, $\alpha_p$ has degree $p-1$,
+and its primitive minimal polynomial $P_p$ satisfies
+\[
+ \log|P_p(\theta)|=4(p-1)\log p+O(p).
+\]
+In particular these primitive evaluations grow along the odd primes.
+\end{theorem}
+\begin{proof}
+The identity
+\[
+ 8\alpha_p=\sum_{\substack{n<p\\n\ {m odd}}}\chi_4(n)
+ \left(\frac{w-w^{-1}}{w^n-w^{-n}}\right)^4(w^n+w^{-n})^3
+\]
+proves integrality. Indeed $z=w^2$ is a primitive $2p$th root and
+$1-z^n$ is a cyclotomic unit for odd $0<n<p$, since
+$\Phi_{2p}(1)=1$. Polynomial division of
+$\Phi_{2p}(x)-\Phi_{2p}(1)$ by $x-1$ proves the unit assertion.
+The displayed expression is real and belongs to $F_p$.
+
+The principal approximation has the signed expansion
+\begin{equation}\label{eq:alpha-error}
+ \alpha_p=\theta-
+ \frac{\pi^2(4\theta+5\beta(2))}{24p^2}+O(p^{-4}).
+\end{equation}
+To prove it, write
+$\cos^3x/\sin^4x=x^{-4}-(5/6)x^{-2}+R(x)$, where $R$ is smooth
+on $[0,\pi/2]$. Alternating samples of $R$ have uniformly bounded
+sum by its total variation, and the alternating tails of $n^{-4}$
+and $n^{-2}$ are bounded by $p^{-4}$ and $p^{-2}$. Multiply by
+$\sin^4h$ and use $(\sin h/h)^4=1-(2/3)h^2+O(h^4)$.
+The coefficient of $p^{-2}$ is strictly positive.
+
+Represent the real embeddings by odd $1\leq k<2p$, $k\ne p$.
+The conjugate $\alpha_{p,k}$ is given by~\eqref{eq:alpha} with each
+angle multiplied by $k$. Let
+\[
+ f(x)=\frac{\cos^3x}{\sin^4x},\qquad
+ C=\sum_{n\geq1,\ n\ {m odd}}n^{-4}=\frac{\pi^4}{96},
+ \qquad\delta=2-C>0.
+\]
+The function $x^4f(x)$ strictly decreases on $(0,\pi/2)$.
+The sign of its logarithmic derivative reduces to positivity of
+$H(x)=x(3+\cos^2x)-4\sin x\cos x$; indeed $H(0)=0$ and
+$H'(x)=7\sin^2x-2x\sin x\cos x\geq5\sin^2x$.
+Thus $f(mh)\leq f(h)/m^4$ for odd $1\leq m<p$.
+
+Multiplication by $k$ permutes the pairs of odd nonzero residues
+$\{n,2p-n\}$ modulo $2p$. The inner conjugate sum is therefore
+$\sum_m\eta_m f(mh)$, where each $\eta_m=\pm1$ and each odd
+$0<m<p$ occurs once. Its first term exceeds the sum of the absolute
+values of the rest. Uniformly in $k$,
+\begin{equation}\label{eq:conjugate-bounds}
+ \delta\cos^3h\left(\frac{\sin(kh)}{\sin h}\right)^4
+ \leq|\alpha_{p,k}|\leq
+ C\cos^3h\left(\frac{\sin(kh)}{\sin h}\right)^4.
+\end{equation}
+For $p\geq5$ and $k\notin\{1,2p-1\}$, the sine ratio is at least
+$\sin(3h)/\sin h\geq2$, so these conjugates have absolute value
+greater than $10$ (use $\delta>0.98$, $\cos^3h\geq3\sqrt3/8$).
+The principal conjugate is in $(0,C)$ and the $2p-1$ conjugate is
+its negative. Hence it is the unique conjugate in $(0,2)$ and its
+stabilizer is trivial. The degree is $d$. For $p=3$, directly
+$\alpha_3=3\sqrt3/8$ has degree two.
+
+The odd sine product is
+\[
+ \prod_{\substack{1\leq k<2p\\k\ {m odd},\ k\ne p}}\sin(kh)
+       =2^{1-p}=2^{-d}.
+\]
+It follows by evaluating $x^p+1$ at $x=1$ in its root factorization
+and removing the sine-one factor. Therefore~\eqref{eq:conjugate-bounds}
+implies
+\[
+ \left(\frac{\delta\cos^3h}{16\sin^4h}\right)^d
+ \leq\prod_k|\alpha_{p,k}|\leq
+ \left(\frac{C\cos^3h}{16\sin^4h}\right)^d.
+\]
+For nonprincipal conjugates, replacing $|\alpha_{p,k}|$ by
+$|\theta-\alpha_{p,k}|$ changes the product logarithm by $O(d)$,
+since $0<\theta<1$ and their magnitudes exceed $10$.
+For the two remaining conjugates,~\eqref{eq:alpha-error} gives a
+total change $-2\log p+O(1)$. Since $\sin h\sim\pi/(2p)$,
+$\log|M_p(\theta)|=4d\log p+O(p)$.
+
+Finally $J_p(X)=\operatorname{Norm}(8X-8\alpha_p)=8^dM_p(X)$
+is integral, and its content $g_p$ divides its leading coefficient
+$8^d$. Thus $P_p=J_p/g_p$ is the actual primitive minimal polynomial
+and $|M_p(\theta)|\leq|P_p(\theta)|\leq8^d|M_p(\theta)|$.
+This proves the theorem after all content is removed.
+\end{proof}
+
+The norm polynomial is evaluated at the real number $\theta$; no
+assertion that $\theta-\alpha_p\in F_p$ is made without first
+assuming $\theta$ rational. Under $\theta=a/b$, the integer test is
+$b^dP_p(a/b)\in\Z\setminus\{0\}$. Its degree cost cannot be omitted.
+Neither other normalizations nor other nonlinear norms are excluded.

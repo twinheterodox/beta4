@@ -189,3 +189,25 @@ as motivation, citing the introduction of the pinned September 24 manuscript
 [OPENAI2026]. Its existing local PDF was reused. No global irrationality
 claim or certificate from that manuscript is an input to our theorems.
 The exact new reading scope is in sources/manuscript-reading.json.
+
+Supplement attribution update
+=============================
+
+The companion supplement now supplies selected complete statements for
+S01, S03-S06, S09, E04 and P07, plus partial reductions from H01-H02. This
+expands the written proof record, not the scope of the original priority
+search. The other claims retain their explicit archived status.
+
+The supplement places the Broadhurst, Gangl, Leibtag, Litsey, Carreira and
+OpenAI citations at the relevant constructions. The cubic cotangent formula
+is credited to Marche and Masbaum's account, which attributes its
+simplification to Murakami; no topological theorem is imported into the
+cyclotomic calculation. Classical Euler--Boole and gamma-ratio conventions
+are linked to DLMF. The full derivation behind the Broadhurst ladder remains
+a declared external dependency of the beta(4) interpretation, separate
+from the directly proved rational-kernel inequality.
+
+sources/supplement-reading.json records the selected reading performed for
+this pass and the dependencies not independently audited. No supplemental
+statement should inherit a global originality claim from the main-paper
+comparison. The complete supplement still needs a fresh independent audit.

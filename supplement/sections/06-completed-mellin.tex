@@ -1,0 +1,157 @@
+\section{A constrained completed Mellin source}\label{sec:mellin}
+This section separates an analytic inequality for an explicit rational
+kernel from its polylogarithmic identification with $\theta$. The latter
+uses a published identity; it is not a newly discovered functional
+equation.
+
+\subsection{The external identity and the rational kernel}
+For $|z|<1$ set
+\[
+ D_4(z)=\Im\left(\Li_4(z)-\log|z|\Li_3(z)
+                         +\frac{\log^2|z|}{3}\Li_2(z)\right).
+\]
+The weight-two, three and four ladder identities of
+Broadhurst~\cite[equations (39)--(46), (54)--(55)]{Broadhurst} give
+\begin{equation}\label{eq:ladder}
+ \theta=\frac{225}{136}D_4(i/2)
+       -\frac{25}{34}D_4((1+i)/4)
+       +\frac9{68}D_4((1-i)/8).
+\end{equation}
+For clarity about completion, write $P_s,Q_s,R_s$ for the raw ladders
+\[
+ 2^{s-1}\Im\Li_s((1+i)/2),\quad
+ (2/3)^{s-1}\Im\Li_s((1+i)/4)+\Im\Li_s(i/2),\quad
+ (2/5)^{s-1}\Im\Li_s((1-i)/8)+2\Im\Li_s(i/2).
+\]
+With $\ell=\log2$ and
+$\widehat X=X_4+\ell X_3+(\ell^2/3)X_2$, those source identities
+give
+$\widehat Q-(2/3)\widehat P=-(80/27)\theta$ and
+$\widehat R-(4/5)\widehat P=-(384/125)\theta$.
+Their linear combination eliminating $\widehat P$ yields
+\eqref{eq:ladder}. The $\beta(3)\ell$ and $\beta(1)\ell^3$ terms
+cancel only after this completion. Broadhurst derives the source
+identities by specializing Kummer's functional equations. That external
+derivation is not reproduced or independently certified here. The
+inequality below is a direct theorem about $U$ and $W$ and does not
+depend on accepting~\eqref{eq:ladder}; its interpretation as a
+$\theta$-form uses this explicitly declared input.
+
+Let $r=-\log x$, $L=\log2$, and
+\begin{align}
+ W(r)&=r^3/6+Lr^2/4+L^2r/12,\notag\\
+ U(x)&=\frac{900x^2}{17(x^4+4)}
+       -\frac{2025x^3}{17(x^6-4x^3+8)}
+       -\frac{5625x^5}{17(x^{10}-8x^5+32)}.\label{eq:U}
+\end{align}
+For $m=2,3,5$, respectively, put
+\[
+ (z_m)=(i/2,(1+i)/4,(1-i)/8),\qquad
+ (c_m)=(225/136,-25/34,9/68).
+\]
+Then $U=\sum c_m m^4\Im[z_mx^m/(1-z_mx^m)]$. Geometric expansion
+and the logarithmic moments show that
+\begin{equation}\label{eq:Theta}
+ \Theta:=\int_0^1 U(x)W(-\log x)\frac{\dd x}{x}
+       =\sum_m c_mD_4(z_m)=\theta,
+\end{equation}
+where only the final equality uses~\eqref{eq:ladder}.
+
+Write $p_2=x^4+4$, $p_3=x^6-4x^3+8$, $p_5=x^{10}-8x^5+32$ and
+\[
+ D=\frac{p_2p_3p_5}{(x^2+2x+2)^2},\qquad N=DU.
+\]
+Exact division gives a monic degree-16 denominator $D$, positive on
+$[0,1]$. For $P=A+DV$, with $A\in\Q$, $V\in\Q[x]$, write
+$NV=\sum_{j\geq1}a_jx^j$ and impose
+\begin{equation}\label{eq:constraints}
+ \sum_j\frac{a_j}{j^3}=0,\qquad \sum_j\frac{a_j}{j^2}=0.
+\end{equation}
+Termwise integration proves
+\begin{equation}\label{eq:mellin-pair}
+ I_U(P):=\int_0^1UPW\frac{\dd x}{x}
+       =A\Theta+\sum_j\frac{a_j}{j^4}.
+\end{equation}
+Without both constraints, there are extra $L/2$ and $L^2/12$ times
+the two sums; congruence modulo $D$ alone does not isolate $\theta$.
+
+\subsection{A positive-source lower bound}
+\begin{theorem}[Constrained positive sources; S09]\label{thm:mellin}
+If $P=A+DV$ is nonzero, rational and nonnegative on $[0,1]$, and
+satisfies~\eqref{eq:constraints}, then $A>0$ and
+$I_U(P)>1309A/2600$. Consequently every positive rational
+normalization making $A$ a nonzero integer gives a value greater
+than $1/2$. This includes primitive normalization of~\eqref{eq:mellin-pair}.
+\end{theorem}
+\begin{proof}
+One has $U=225x^2f(x)/(17D(x))$, with
+\begin{align*}
+ f(x)={}&4x^{12}-25x^{11}+68x^{10}-145x^9+220x^8-232x^7
+       +260x^6\\
+       &-464x^5+880x^4-1160x^3+1088x^2-800x+256.
+\end{align*}
+A rational Sturm sequence has degrees $12,11,\ldots,0$ and
+variation counts $7,7,6,6$ at $0,3/5,5/8,1$. The rational certificate
+accompanying this supplement recomputes the sequence. Also
+$f(0)=256$, $f(1)=-50$,
+$f(3/5)=802361314/244140625>0$, and
+$f(5/8)=-31248983321/17179869184<0$.
+Thus $U$ changes sign exactly once, at $3/5<x_0<5/8$, and its sign
+is the sign of $r-r_0$ with $r_0=-\log x_0$.
+
+Let $M_j=\int_0^1U(x)r^j\dd x/x$, $j=1,2$.
+The constraints give $\int UPr^j\dd x/x=AM_j$. Hence
+\[
+ \int_0^1 UP\,r(r-r_0)\frac{\dd x}{x}
+       =A(M_2-r_0M_1)>0.
+\]
+The same integral with $P=1$ proves $M_2-r_0M_1>0$, so $A>0$.
+Now
+\[
+ W(r)-(L/4+r_0/6)r^2-(L^2/12)r=r^2(r-r_0)/6.
+\]
+Multiplication by $UP$ and integration gives the strict bound
+$I_U(P)>A[(L/4+r_0/6)M_2+(L^2/12)M_1]$.
+
+The exact rational tail estimates described below prove
+$M_1>9/10$ and $M_2>193/100$.
+The elementary inequality $\log a>2(a-1)/(a+1)$ for $a>1$ gives
+$L>2/3$ and $r_0>\log(8/5)>6/13$. Therefore the bracket exceeds
+\[
+ (1/6+1/13)(193/100)+(1/27)(9/10)=1309/2600>1/2.
+\]
+If $\kappa A$ is a nonzero integer and $\kappa>0$, it is at least one.
+This proves the normalization conclusion.
+\end{proof}
+
+Here the finite certificate has a precise mathematical role. The moment
+formulas are
+\[
+ M_1=\sum_m c_mm^2\Im\Li_2(z_m),\qquad
+ M_2=2\sum_m c_mm\Im\Li_3(z_m).
+\]
+Use $\rho_m=1/2,3/8,3/16$, respectively. For $s=2,3$, the remainder
+after $K=32$ Gaussian-rational terms is at most
+\[
+ \frac{\rho_m^{K+1}}{(K+1)^s(1-\rho_m)}.
+\]
+All endpoints are rational. Their resulting intervals are contained in
+\[
+ (0.9006560116125,0.9006560116154),\qquad
+ (1.9321066776805,1.9321066776807),
+\]
+respectively; the exact fractions, not those
+decimal displays, are used in the checks. Together with the Sturm
+sequence, this is a finite exact certificate for the theorem's constants.
+
+For signed $P$, the proof no longer bounds the actual integral.
+It still gives a limitation on the absolute-integrand estimate:
+\[
+ \int_0^1|UP|W\frac{\dd x}{x}\geq
+       \frac{L^2}{12}|A|M_1.
+\]
+After $\kappa A$ is a nonzero integer, the right side exceeds $1/30$.
+Signed cancellation is not excluded. In fact the archived Rodrigues
+subspace \record{L03} reduces the rational moment denominator to a
+single lcm, but also contains explicit nonzero sources with zero formal
+pair. Small source coefficients alone do not settle endpoint nonvanishing.

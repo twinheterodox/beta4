@@ -14,4 +14,4 @@ python3 tools/build_paper.py
 
 This requires `pdflatex` with the listed standard LaTeX packages, and `pdfinfo` for the build record. The script places the PDF under `output/pdf/` and rejects unresolved references and box warnings. The [audit record](audit.txt) distinguishes the mathematical review, computational checks and PDF inspection.
 
-The broader technical supplement remains a separate drafting task, organized by the existing [claim inventory](../planning/theorem-inventory.txt) and [method catalog](../planning/method-catalog.txt). The original research snapshots remain unchanged. This manuscript has not been published or submitted for a new independent cross-check.
+The [broader technical supplement](../supplement/README.md) now has a complete first draft, organized from the existing [claim inventory](../planning/theorem-inventory.txt) and [method catalog](../planning/method-catalog.txt). The main-paper assembly audit records the earlier writing pass; its reference to the then-pending supplement is historical. The original research snapshots remain unchanged. Neither assembled manuscript has been published or submitted for a new independent cross-check.

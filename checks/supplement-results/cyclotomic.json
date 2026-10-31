@@ -1,0 +1,69 @@
+{
+  "scope": "Four prescribed exact cases; three all-conjugate diagnostic checks. No parameter scan.",
+  "exact": [
+    {
+      "p": 3,
+      "real_degree": 2,
+      "eight_alpha_polynomial_in_w": "-3*w**3 + 6*w",
+      "minimal_polynomial_eight_alpha": "X**2 - 27",
+      "primitive_norm_polynomial": "64*X**2 - 27",
+      "norm_content": 1,
+      "constant_term_odd": true,
+      "log_abs_primitive_at_theta": "3.5721412599736468545788103718203483"
+    },
+    {
+      "p": 5,
+      "real_degree": 4,
+      "eight_alpha_polynomial_in_w": "43*w**7 + 79*w**5 - 201*w**3 + 158*w",
+      "minimal_polynomial_eight_alpha": "X**4 - 105625*X**2 + 4950125",
+      "primitive_norm_polynomial": "4096*X**4 - 6760000*X**2 + 4950125",
+      "norm_content": 1,
+      "constant_term_odd": true,
+      "log_abs_primitive_at_theta": "14.320708607021349452972027865874378"
+    },
+    {
+      "p": 7,
+      "real_degree": 6,
+      "eight_alpha_polynomial_in_w": "352*w**11 - 426*w**9 - 150*w**7 + 726*w**5 - 652*w**3 + 300*w",
+      "minimal_polynomial_eight_alpha": "X**6 - 4243960*X**4 + 828826674704*X**2 - 44807150084032",
+      "primitive_norm_polynomial": "4096*X**6 - 271613440*X**4 + 828826674704*X**2 - 700111720063",
+      "norm_content": 64,
+      "constant_term_odd": false,
+      "log_abs_primitive_at_theta": "25.425838188826436387412827600913595"
+    },
+    {
+      "p": 11,
+      "real_degree": 10,
+      "eight_alpha_polynomial_in_w": "1902*w**19 - 454*w**17 - 999*w**15 + 1732*w**13 - 2320*w**11 + 2908*w**9 - 3641*w**7 + 5094*w**5 - 6542*w**3 + 4640*w",
+      "minimal_polynomial_eight_alpha": "X**10 - 362928995*X**8 + 27342903369588972*X**6 - 282504813562077503984081*X**4 + 88510122554201604061545161191*X**2 - 5222284792698100938642882013139",
+      "primitive_norm_polynomial": "1073741824*X**10 - 6088938141777920*X**8 + 7167778060917531475968*X**6 - 1157139716350269456318795776*X**4 + 5664647843468902659938890316224*X**2 - 5222284792698100938642882013139",
+      "norm_content": 1,
+      "constant_term_odd": true,
+      "log_abs_primitive_at_theta": "67.927746634973019421826608716781561"
+    }
+  ],
+  "diagnostics": [
+    {
+      "p": 11,
+      "principal_error_times_p2": "3.4719318722864032990283252000700456",
+      "smallest_other_abs_conjugate": "71.076780405136753445168904629296429",
+      "log_monic_norm_at_theta": "47.133331218174660139309645073036264",
+      "log_norm_over_d_log_p": "1.9656125833706464000777841772793759"
+    },
+    {
+      "p": 31,
+      "principal_error_times_p2": "3.50527695072596807807421260355108",
+      "smallest_other_abs_conjugate": "78.488429022014111995118337917028338",
+      "log_monic_norm_at_theta": "269.62661087119636400949899776381371",
+      "log_norm_over_d_log_p": "2.6172356390751429899544777238769611"
+    },
+    {
+      "p": 101,
+      "principal_error_times_p2": "3.5096699940026850930236229706480012",
+      "smallest_other_abs_conjugate": "81.696918186312880317071377412747802",
+      "log_monic_norm_at_theta": "1380.4905722316467613799247493676569",
+      "log_norm_over_d_log_p": "2.9912340689566650708634836834291614"
+    }
+  ],
+  "diagnostic_status": "mpmath100-digit values; not certified intervals."
+}

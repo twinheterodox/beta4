@@ -1,0 +1,142 @@
+SUPPLEMENT ASSEMBLY REVIEW RECORD
+Date: 31 October 2026
+
+Status and scope
+----------------
+The first complete companion supplement is 29 pages, including its claim
+register and references. It complements the 14-page determinant paper.
+Both remain local and unpublished.
+
+This is a review by the model that assembled the supplement, supported by
+exact calculations and selected certificate replays. It is not a fresh
+independent model audit, a human mathematical audit, or proof-assistant
+verification. The archived reviews retain their own recorded scopes.
+
+Eight claim groups have selected complete statements rewritten here:
+S01, S03, S04, S05, S06, S09, E04 and P07. Two further groups, H01 and H02,
+have partial source-level results rewritten. The eight C records belong
+to the companion paper. The remaining 39 records are catalogued with their
+archived status, not certified as newly audited theorems. Even within a
+rewritten group, assertions outside the selected statement retain their
+archived status; coverage.json gives the distinction entry by entry.
+
+Mathematical review
+-------------------
+1. Normalization. Actual primitive pairs and primitive polynomials are
+   distinguished from a chosen sufficient denominator. The irrationality
+   criterion retains the polynomial-degree cost. Formal coefficient
+   identities do not assume independence of the periods involved.
+
+2. Positive cone. The unrestricted rational nonnegative-polynomial cone
+   and its degree law are proved. They are not obstructions to all positive
+   sources. The fixed-degree boundary formulas remain archived, and the
+   degree-16 witness is retained only as finite evidence.
+
+3. Repeated quadratics. The exact Euler-source reversal, surviving fourth
+   prime layers and real minimax bound apply to the specified even powers
+   and subexponential coefficient schedules. They do not exclude arbitrary
+   rational Euler sources or the separate two-endpoint construction.
+
+4. Euler--Boole. The remainder lower bound is uniform in truncation order,
+   and the reduced-denominator argument is uniform in that order while
+   the endpoint grows. Bounded endpoints with increasing truncation are
+   treated separately. The partial-fraction remainder is used on the whole
+   integration ray; a local Taylor series is not integrated past its disk.
+
+5. Differentiated continuants. The error asymptotic is justified on a
+   complex neighborhood before differentiating. The prime valuation uses
+   the actual reduced quotient and retains the excluded-prime polynomial.
+   The obstruction fixes the endpoint and uses even depth. Growing
+   endpoints and arithmetic at odd depth are outside the theorem.
+
+6. Cyclotomic norm. Integrality, the principal error, all conjugates, the
+   algebraic degree and coefficient content are handled for one specified
+   sine normalization at odd prime levels. No assertion places beta(4)
+   in a cyclotomic field without first assuming it rational. The primitive
+   minimal polynomial and its degree factor are both retained.
+
+7. Completed Mellin kernel. The rational-kernel lower bound uses exact
+   polynomial division, a Sturm certificate and rational tail enclosures.
+   Identification of its completed integral with beta(4) explicitly uses
+   Broadhurst's printed ladder identities. The external Kummer/Lewin
+   derivation was not independently re-audited. The rational-kernel theorem
+   itself does not require that identification. Signed cancellation is
+   outside its positive-source conclusion.
+
+8. Monodromy. The nonzero residue after continuation forces a specified
+   rational-coefficient linear operator to annihilate constants. This is
+   a scoped obstruction to the proposed regularization, not a failure
+   theorem for arithmetic holonomy or nonlinear constructions.
+
+9. Ordinary first variation. The full common numerator gcd is removed.
+   Positivity and the sharp scalar exponential rate have all-index proofs;
+   the finite primitive pairs do not prove denominator growth. The weight
+   is used as positive for 0 <= u < 1, not for all real |u| < 1. The weak
+   arithmetic threshold is necessary and the strict threshold sufficient;
+   equality is not settled.
+
+10. Wider record. The repaired forward/dual identity is retained. The
+    interleaved-frame result remains a limitation of a specified arithmetic
+    estimate, with a narrower integer-clearing obstruction at one width.
+    Neither is promoted to a general primitive-content theorem. Exact
+    rediscoveries are identified instead of counted as additional families.
+
+Computation and preservation
+----------------------------
+checks/supplement-reproduction.json records the successful run with Python
+3.14.4, SymPy 1.14.0 and mpmath 1.3.0. Three archived scripts ran in temporary
+copies and reproduced their complete stored JSON outputs:
+
+  - the rational Mellin kernel, Sturm and 32-term tail certificates;
+  - 160 Euler coefficients by three methods, 13 symbolic sech coefficients,
+    eight geometric identities, 652 prime valuations, 43 reduced fractions
+    and four primitive-product checks;
+  - exact cyclotomic calculations at primes 3, 5, 7 and 11, alongside
+    100-digit diagnostics at 11, 31 and 101.
+
+The cyclotomic floating-point diagnostics are not interval certificates.
+The additional exact implementation checked 28 reversal identities,
+57 surviving quadratic prime valuations, 36 cone formal pairs,
+80 continuant cases, 203 reduced prime exponents, all 24 already archived
+ordinary-moment primitive pairs, twelve associated integral identities,
+and the monodromy residue coefficient 31/24. No new ordinary-moment index
+or interval evaluation was computed. These are finite checks, not proofs
+of the asymptotic statements by extrapolation.
+
+All 120 original frozen snapshots are unchanged. Seven verbatim source
+files were added under a separate manifest, so all 127 can be checked
+against the sibling research archive. The M03 navigation entry was repaired:
+its original link pointed to the Euler--Boole report, rather than the
+separate modular-pole note. No historical report was rewritten.
+
+Sources and priority
+--------------------
+The cumulative ledger has twelve locally stored, hash-checked external
+PDFs. Eleven are cited in the supplement, alongside the companion paper
+and three sections of DLMF under one bibliography entry. The supplement
+ledger records actual reading scopes, including the declared Broadhurst
+dependency and the limits of contextual readings. This writing pass does
+not apply a recent global irrationality theorem.
+
+The general positivity, interpolation, orthogonal-polynomial,
+continued-fraction and coefficient-content mechanisms remain classical.
+Selected explicit obstruction statements are candidates for external
+scrutiny; assembling their proofs is not a certificate of priority.
+
+Artifact and package review
+---------------------------
+All 29 final PDF pages were visually inspected after the final layout
+changes. Equations, references, the contents page and the claim-register
+paths are readable without clipping or overlap. The LaTeX log has no
+unresolved or multiply defined references and no overfull/underfull boxes.
+The source and PDF hashes are in build-record.json. validation.json records
+the final package consistency checks, including unchanged main-paper source
+and PDF hashes. The main-paper calculation suite was not rerun in this
+supplement pass; its earlier report remains intact.
+
+Remaining review
+----------------
+Fresh independent mathematical review of the assembled documents and
+further source-level priority scrutiny remain outstanding. No blanket
+verification claim is made for the wider archive. The package is ready
+for that review; it has not been published.

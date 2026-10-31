@@ -1,0 +1,68 @@
+\section{A linear regularization that erases its endpoint constant}\label{sec:mono}
+Arithmetic holonomy suggests studying a rational germ that gains
+arithmetic information if its endpoint period is rational; see the
+framework described by Calegari, Dimitrov and Tang~\cite{CDT}.
+No holonomy bound is applied here. The following obstruction is an
+elementary monodromy statement about one specified primitive.
+
+Let $E=x\,\mathrm d/\mathrm dx$ and
+$F(x)=\sum_{m\geq1}\chi_4(m)x^m/m^4$. Put $F_j=E^jF$ and
+\begin{equation}\label{eq:regularized}
+ C(x)=F_0-\log x\,F_1+\frac{\log^2x}{2}F_2
+                              -\frac{\log^3x}{6}F_3.
+\end{equation}
+Since $E^4F=x/(1+x^2)$, differentiation telescopes:
+\[
+ C'(x)=-\frac{\log^3x}{6(1+x^2)},\quad
+ C(x)=\int_0^x\frac{-\log^3t}{6(1+t^2)}\dd t,\quad C(1)=\theta.
+\]
+For any rational $q$, $C_q=C+q-\theta$ has a rational Taylor germ at
+$x=1$, including its constant term. This is a full rational-jet repair,
+not just a rational value. It does not remove the logarithmic branch
+at zero.
+
+\begin{proposition}[Scoped monodromy obstruction; E04]\label{prop:mono}
+Let $L$ be a linear differential operator with rational-function
+coefficients in $x$, even over $\C$. If $L(C_q)$ is meromorphic near
+zero, then $L(1)=0$. In particular $L(C_q)=L(C)$ is independent of
+the additive constant $q-\theta$.
+\end{proposition}
+\begin{proof}
+Let $M_0$ denote continuation once positively about zero and
+$\Delta=(M_0-1)C_q$. All $F_j$ are holomorphic at zero, and
+\[
+ \Delta'(x)=-\frac{(\log x+2\pi i)^3-\log^3x}{6(1+x^2)}.
+\]
+Meromorphicity implies $L(\Delta)=0$. Continue to $x=i$ on the
+branch with $\log i=\pi i/2$. Then
+\[
+ \Res_{x=i}\Delta'
+ =-\frac{(5\pi i/2)^3-(\pi i/2)^3}{12i}
+ =\frac{31\pi^3}{24}\ne0.
+\]
+A small circuit about $i$ adds $31i\pi^4/12$ to $\Delta$.
+The coefficients of $L$ are single-valued. Continuing $L(\Delta)=0$
+and subtracting thus gives $(31i\pi^4/12)L(1)=0$.
+Paths can avoid the finite set of poles of $L$.
+\end{proof}
+
+The symmetry $C(1/x)=C(x)$ follows by differentiation and equality at
+$x=1$. With $x=(1-z)/(1+z)$ and $y=z^2$ it yields
+\[
+ C(x)=\theta+J(y),\qquad
+ J'(y)=-\frac23\frac{yA(y)^3}{1+y},\qquad
+ A(y)=\frac{\atanh\sqrt y}{\sqrt y},\quad J(0)=0.
+\]
+Writing $B=yA$ gives the rational system
+\[
+ (B^k)'=\frac{kB^k}{2y}+\frac{kB^{k-1}}{2(1-y)}\ (k=1,2,3),
+ \qquad J'=-\frac{2B^3}{3y^2(1+y)}.
+\]
+The span of $1,B,B^2,B^3,J$ is unchanged by replacing $J$ with
+$q+J$. It has dimension five: $B$ has infinitely many monodromy
+values about $1$, so is transcendental over $\C(y)$, while $J'$
+has nonzero residue $\pi^3/96$ at $y=-1$, where the first four
+functions are locally meromorphic. Adding a rational constant changes
+neither this module nor its continuation domains. These observations
+explain this proposed shortcut's failure; they do not exclude
+nonlinear expressions, extra functions or different differential systems.

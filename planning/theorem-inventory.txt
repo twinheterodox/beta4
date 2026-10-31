@@ -729,7 +729,7 @@ Reading in this pass: Integrated reports read in this writing pass; underlying p
 Verification status: Archived model mathematical reasoning and any listed
   computations; not formal verification.
 Proof/navigation sources:
-  evidence/research/collaboration/round-05/fresh/findings.txt
+  evidence/supplement-source/collaboration/round-05/fresh/alternative_prefactor.txt
   evidence/research/collaboration/round-06/fresh/pole_annihilator_review.txt
 
 M04 — A bounded level-32 rational-system comparison

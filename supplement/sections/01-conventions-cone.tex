@@ -1,0 +1,151 @@
+\section{Purpose, normalization, and evidence}
+Put $\theta=\beta(4)=\sum_{k\geq0}(-1)^k/(2k+1)^4$.
+The companion paper~\cite{Main} proves two primitive-value obstructions
+for positive determinant families. The present supplement supplies the
+broader mathematical record behind that selection. It organizes the
+investigation by construction, rather than by the chronology of eighteen
+research rounds. Stable record identifiers, such as S03 or P07, refer to
+the source register in Appendix~\ref{app:register} and the repository's
+57-entry inventory. They are navigation labels, not theorem numbers.
+
+The motivating determinant work of OpenAI~\cite[Section~1.2]{OpenAI}
+separates nonvanishing, real size and arithmetic normalization.
+Zudilin~\cite{Zudilin} gives the broader positive-moment determinant
+framework. The distinction between real decay and primitive arithmetic
+remained decisive in this investigation. Carreira's work~\cite{Carreira}
+provides directly related $\beta(4)$ constructions and tests; the general
+positive-weight and rationally modified moment frameworks also appear in
+Pr\'evost~\cite{Prevost} and Krattenthaler~\cite{Krattenthaler}.
+These are sources of context and specific attributed constructions,
+not inputs asserting a global irrationality theorem.
+
+For a nonzero $Q\in\Q[X]$, write $\Prim(Q)=\kappa Q$, where
+$\kappa>0$ and the resulting integer coefficients have gcd one. Then
+\begin{equation}\label{eq:primitive}
+ v_p(\kappa)=-\min_j v_p([X^j]Q).
+\end{equation}
+This identity follows because the minimum valuation of a primitive
+integer coefficient list is zero at every prime. Multiplying $Q$ by a
+nonzero rational scalar preserves its primitive representative up to
+sign. A lower bound on a convenient clearing integer is therefore not
+automatically a lower bound on $\kappa$. For example, $5$ clears
+$(6X+12)/5$, whose primitive multiplier is $5/6$.
+
+If $\theta=a/b$ and $Z\in\Z[X]$ has degree at most $d$, then
+$b^d Z(\theta)\in\Z$. Thus nonzero values satisfying
+$|Z_n(\theta)|^{1/d_n}\to0$ would prove irrationality. Merely having
+$Z_n(\theta)\to0$ with unbounded degrees is insufficient: $X^n$ at
+$1/2$ is a counterexample. For linear forms this reduces to the usual
+nonzero integer-form criterion.
+
+Four conclusions must be kept separate. A \emph{primitive obstruction}
+bounds actual primitive values. An \emph{estimate limitation} says only
+that a specified bound or normalization is inadequate. A \emph{structural
+obstruction} disproves a particular proposed implication or transformation.
+\emph{Finite evidence} concerns only the enumerated instances. The method
+record preserves these distinctions, including where a later correction
+weakened an earlier interpretation. No statement about all possible
+irrationality arguments follows from these results.
+
+Standard background includes the prime number theorem
+$\vartheta(x)=\sum_{p\leq x}\log p=x+o(x)$, elementary complex integration,
+Fourier convergence and the stated elementary polynomial identities.
+The completed Mellin application has an additional, explicitly identified
+polylogarithmic input in Section~\ref{sec:mellin}. The source register
+distinguishes proofs rewritten here from results retained as archived
+claims. No new independent audit of this assembled supplement is asserted.
+
+\section{Positive polynomial sources: a scope boundary}\label{sec:cone}
+Define
+\begin{equation}\label{eq:scalar}
+ \dd\nu(t)=\frac{(-\log t)^3}{96\sqrt t}\dd t,
+ \qquad I(P)=\int_0^1\frac{P(t)}{1+t}\dd\nu(t).
+\end{equation}
+Here $\nu_j=\int t^j\dd\nu=(2j+1)^{-4}$ and $I(1)=\theta$.
+For a rational polynomial define its \emph{formal pair} by
+\begin{equation}\label{eq:formal-pair}
+ A(P)=P(-1),\qquad
+ B(P)=\int_0^1\frac{P(t)-P(-1)}{1+t}\dd\nu(t).
+\end{equation}
+The quotient is a polynomial, so $B(P)\in\Q$ and
+$I(P)=A(P)\theta+B(P)$. This defines the coefficients without assuming
+that $1$ and $\theta$ are linearly independent.
+
+\begin{theorem}[The unrestricted positive cone; S01]\label{thm:cone}
+The formal-pair image of $P\in\Q[t]$ nonnegative on $[0,1]$ is
+\[
+ \{(0,0)\}\ \cup\ \{(A,B)\in\Q^2:A\theta+B>0\}.
+\]
+The same positive primitive integer pairs are obtained if the source
+polynomials are required to have integer coefficients.
+\end{theorem}
+\begin{proof}
+Nonzero nonnegative polynomials have strictly positive integrals. Conversely
+let $L=A\theta+B>0$. If $A=0$, use $P=B(1+t)$, since $\nu_0=1$.
+For $A>0$ use $P_n=A((1-t)/2)^{2n}$; for $A<0$ use
+$P_n=(-A)t((1-t)/2)^{2n}$. Both have $A(P_n)=A$, are nonnegative,
+and satisfy $I(P_n)\leq |A|\theta4^{-n}$. Choose $n$ making this less
+than $L$. Then
+\[
+ P=P_n+(B-B(P_n))(1+t)
+\]
+is nonnegative and has exactly the desired pair; the added coefficient
+is rational and equals $L-I(P_n)>0$. Clearing the rational coefficients
+of $P$ multiplies its pair by a positive integer. Primitive normalization
+returns the original primitive pair.
+\end{proof}
+
+This construction encodes an already specified approximation; it does
+not produce a new one. In particular, shrinking positive primitive
+integer forms in this unrestricted cone exist if and only if $\theta$
+is irrational. Necessity follows from the rational lower bound $1/b$;
+sufficiency follows from rational approximation to an irrational real
+number and Theorem~\ref{thm:cone}. A negative theorem for all such sources
+would therefore be a rationality theorem, not a consequence of failures
+of a few prescribed weights.
+
+\begin{proposition}[Cost in degree; S01]\label{prop:degree}
+Let $\rho=3+2\sqrt2$. For $A\ne0$ and $L=A\theta+B>0$, the least
+degree $d(A,B)$ of a nonnegative rational witness satisfies
+\[
+ d(A,B)=\frac{\log(|A|/L)}{\log\rho}
+             +O\bigl(\log\log(|A|/L)\bigr)
+ \qquad (|A|/L\longrightarrow\infty).
+\]
+\end{proposition}
+\begin{proof}
+Let $q_n(t)=T_n(2t-1)/T_n(-3)$, where $T_n$ is the Chebyshev
+polynomial. Then $q_n(-1)=1$ and
+$\|q_n\|_{[0,1]}\leq 2\rho^{-n}$. Replace $P_n$ in the preceding
+proof by $Aq_n^2$ or $(-A)tq_n^2$. Its integral is at most
+$4|A|\rho^{-2n}$ and its degree at most $2n+1$. This gives the upper
+bound, with an absolute additive constant.
+
+For a degree-$D$ nonnegative $P$ set $M=\max_{[0,1]}P$.
+Its Chebyshev expansion has constant coefficient at most $M$ in absolute
+value and other coefficients at most $2M$, by the cosine coefficient
+integrals. The identity $T_k(\cos u)=\cos(ku)$ gives
+$\|T_k'\|_{[-1,1]}\leq k^2$, hence
+$\|P'\|_{[0,1]}\leq4MD^3$. On an interval of length
+$\ell=1/(8D^3)$ adjoining a maximizer, $P\geq M/2$.
+On its central half, $1-t\geq\ell/4$, and
+$\dd\nu/(1+t)\geq(1-t)^3\dd t/192$. Thus
+\[
+ I(P)\geq\frac{M}{3\cdot2^{26}D^{12}}.
+\]
+Interpolation at the $D+1$ Chebyshev extrema gives
+$|P(-1)|\leq M T_D(3)\leq M\rho^D$: the exterior Lagrange
+coefficients alternate in sign, and their absolute sum is $T_D(3)$.
+Therefore
+\begin{equation}\label{eq:cone-lower}
+ I(P)\geq\frac{|P(-1)|}{3\cdot2^{26}D^{12}\rho^D}.
+\end{equation}
+Combining this with the upper construction proves the assertion.
+\end{proof}
+
+The archived bounded-degree extremizers and a degree-16 witness for
+$5719097-5783031\theta>0$ are finite evidence
+\record{S02}. Their role is to check scope: unfavorable boundary
+examples do not exclude favorable interior forms. The complete
+bounded-degree boundary formulas are retained in the source record;
+they are not needed for either proof above.

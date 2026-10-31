@@ -1,0 +1,304 @@
+\section{The wider investigation, by method}\label{sec:atlas}
+This section reconciles the remaining records. Unless a result is proved
+above or in the companion paper, its status here is an \emph{archived
+claim with the stated scope}, not a newly audited theorem. The register
+gives its definitions, original written arguments and recorded checks.
+It is deliberately more comprehensive than the selection of theorems.
+
+\subsection{Rational Euler and two-endpoint Hermite sources}
+Records H01--H03 extend~\eqref{eq:euler-exact} to two-endpoint sources.
+The rational source conditions reduce to a four-by-five linear system,
+with singular cases and the constant coefficient retained. The circular
+Hermite specialization has an archived eventual rank result and a signed
+error asymptotic proportional to
+$(-1)^n n^{5/2}\log^2 n\,((\sqrt2-1)/2)^n$.
+Its actual primitive height remains uncontrolled. Factorial rescaling
+of the entire pair does not change that question.
+
+One arithmetic ingredient, H02, can be stated independently of that
+source. Products of $r$ distinct integers in $[1,N]$, $N\geq r$,
+are all divisors of
+\[
+ W_r(N)=\prod_{j=1}^r\operatorname{lcm}(1,\ldots,\lfloor N/j\rfloor).
+\]
+At a prime $p$ the maximum possible product valuation is
+$\sum_{k\geq1}\min(r,\lfloor N/p^k\rfloor)$; this is exactly
+$v_p(W_r(N))$. The maximum is attained by choosing the $r$ integers
+with highest valuations, since the sets of multiples of $p^k$ are nested.
+For the strict integration indices of the archived source this gives
+a sufficient coefficient denominator. In particular
+$\log W_4(N)\sim(1+1/2+1/3+1/4)N=25N/12$ by the prime number
+theorem. It is not an endpoint primitive-value bound.
+
+\subsection{Continued fractions, derivatives and asymptotic summation}
+S04 and S05 are Theorems~\ref{thm:boole} and~\ref{thm:cf}; their
+different quantifiers matter. Euler--Boole covers all endpoint and
+truncation schedules, whereas the continued-fraction theorem fixes the
+endpoint and restricts arithmetic to even depth. E05 concerns rational
+gauges of a particular ordinary two-state tail: the archived argument
+excludes its desired polynomial unimodular transfer. It says nothing
+about factorial gauges, higher-rank systems or unrelated recurrences.
+The binomial-shift reduction at the end of Section~\ref{sec:cf}
+also prevents counting an old scalar source as a new continued-fraction
+construction.
+
+\subsection{Modular and Eichler sources}
+M01 cancels an auxiliary Eichler period polynomial to produce a
+level-32 $\theta$-only source. M02 constructs quadratic prime filters
+compatible with the Fricke transformation, obtaining selected savings
+in both endpoint germs. Neither transformation identities nor local
+savings alone establish favorable primitive arithmetic for growing
+filters. M03 records uncancelled interior poles in proposed higher-level
+coordinates and prefactors. A later annihilator removes ordinary and
+shifted pole families but leaves six fixed-point poles. These are
+limitations of those coordinates and raw coefficient estimates.
+
+M04 compares three specified rational-system templates of ranks
+$9,17,18$. Its optimized displayed logarithmic derivative bound is
+below $1.3$, against a required threshold above $4$ in that test.
+This closes the prescribed comparison, not all modular coordinates.
+The exact template and source choices are retained in the record;
+they are essential hypotheses, not an incidental implementation detail.
+
+\subsection{Polylogarithm ladders and functional equations}
+L01 is the completed Broadhurst identity used in
+Section~\ref{sec:mellin}; its attribution is part of the statement.
+L02 studies equal-speed scalar Taylor truncations of one rational
+realization. For its partial-sum denominator $q_N$, the archived exact
+dyadic exponents are
+\[
+ v_2(q_{4m})=10m+4,\quad v_2(q_{4m+1})=10m+5,\quad
+ v_2(q_{4m+2})=10m+11,\quad v_2(q_{4m+3})=10m+12,
+\]
+with the first formula restricted to $m\geq1$. Combined with the
+signed error estimate, these give a primitive obstruction for that
+scalar truncation, not for other uses of the ladder.
+
+L03 uses the common base $(1-i)/2$, moving arguments at powers
+$2,3,5$, rather than approximating the three endpoint values separately.
+The archived determinant has infinitely many nonzero evaluations and
+real decay compatible with its proved dyadic cost, leaving the margin
+$(\log2)n^2/60$. Odd-prime arithmetic remains unresolved. Being
+small and 2-integral is not being a small integer form. The constrained
+positive source in Theorem~\ref{thm:mellin} is a separate use of the
+same kernel and does not exclude this determinant.
+
+L04 uses simultaneous pole multipliers sharing endpoint value $25^n$.
+Its rational error has a nonzero asymptotic proportional to
+$(-1)^n27^{-n}/\sqrt n$, but full primitive arithmetic is missing.
+L05 specializes Gangl's weight-four functional equation~\cite{Gangl}
+to a 21-argument algebraic presentation. The archive checks the symbol
+identity and tracks completion terms. A naive trace after separate
+inversions fails; no theorem of numerical period independence follows
+from a symbol computation.
+
+\subsection{Slow dilations, prime deletion and sparse Pad\'e}
+A01 studies a fixed odd dilation parameter $k$ and finds coefficient
+denominator rates between $3/2+1/(k+2)$ and
+$3/2+1/k+1/(2k+4)$ in the normalization defined in its record.
+These are fixed-$k$ coefficient statements, not primitive determinant
+rates or estimates uniform in a jointly growing $k$.
+A02 relates a bordered determinant's content to maximal-minor gcds
+and modular Pad\'e defects. In its notation $T=DH$, $u=Db$,
+$d=\det T$, $m=\operatorname{adj}(T)u$, and
+$Q=u^T\operatorname{adj}(T)u$, the specialized gcds obey
+$\Delta\mid g\mid6D\Delta^2$, where
+$g=\gcd(6Dd,Q)$ and $\Delta=\gcd(d,m_i)$.
+An example contains prime $23$ absent from the coefficient denominator.
+The determinant identities are classical; the bounds do not settle
+all asymptotic primitive content.
+
+A03 concerns failed fixed-cut absolute-contour estimates for $k=3,5$.
+It is not a lower bound on actual determinant size. A06 explains why
+a proposed same-variable positivity repair fails: the slow filter has
+genuine nonreal branch points satisfying
+$z^k=-(\sqrt2-1)^2$, inconsistent with the proposed compact
+real-supported Cauchy transform after the analyzed algebraic repairs.
+Different changes of variable are outside that statement.
+
+A04 deletes selected prime layers by Euler factors and can achieve
+subquadratic \emph{sufficient} arithmetic cost for certain growing
+cutoffs. Required real decay and all-index nonvanishing are absent.
+A05 identifies a keep-prime-$3$ sparse family with a simpler Pad\'e
+sequence and proves a primitive obstruction only in an explicitly
+oversieved regime, whose cutoff prime is at least the fourth power
+of its size parameter. The natural cutoff was not excluded.
+
+\subsection{Positive determinants and interleaved frames}\label{sec:interleaved}
+C01--C08 are the companion paper's positive cubic-tail kernel, uniform
+Cauchy comparison, consecutive-principal obstruction, difference-Gram
+construction and exact large-prime primitive arithmetic. Its two
+primitive lower exponents are $2-2\log2$ and $6-\log4$ on the $n^2$
+scale. S08 is a separate archived obstruction for an overshifted dense
+grid with $m\geq768r^4$; it does not address proportional shifts.
+The unrestricted source cone is covered in Section~\ref{sec:cone}.
+
+The nonprincipal experiment P06 was motivated by the interleaving and
+local pairing in Litsey's trigamma work~\cite{Litsey}. For fixed
+$0<c\leq1$, let $m=\lfloor cr/2\rfloor$, common nodes
+$C=\{1,\ldots,r\}$, row nodes
+$C\cup\{r+1,r+3,\ldots,r+2m-1\}$, and column nodes
+$C\cup\{r+2,r+4,\ldots,r+2m\}$. Use the companion paper's kernel,
+replacing $\theta$ in the common diagonals by $X$. Its determinant
+$P_{r,c}(X)$ has degree $r$ and positive evaluation at $\theta$.
+The Cauchy comparison gives
+\[
+ \log P_{r,c}(\theta)=-E(c)r^2+o(r^2),\quad
+ E(c)=\iint\rho_c(x)\rho_c(y)
+                      \log\frac{x+y}{|x-y|}\dd x\dd y,
+\]
+where $\rho_c=(\mathbf1_{[0,1]}+\mathbf1_{[0,1+c]})/2$.
+The archived four-layer local Smith calculation contributes
+$3(1+c^2)r^2+o(r^2)$ to its sufficient arithmetic bound. It cannot
+beat the real exponent: positivity of the energy integrand and
+$\rho_c\leq1$ imply
+\[
+ E(c)\leq2(1+c)^2\log2
+       \leq4(1+c^2)\log2<3(1+c^2).
+\]
+This is a limitation of that four-layer calculation throughout the
+width range, not an all-index primitive obstruction.
+
+At $c=1/5$ an actual coefficient valuation gives a narrower statement:
+every positive \emph{integer} multiplier clearing coefficients produces
+growing values. Its lower clearing exponent is $2-c-c^2=1.76$,
+whereas $E(1/5)=1.652307\ldots$. Rational primitive normalization
+can still divide common numerator content. The leading coefficient
+is a nonconstant rational border determinant, so the monic argument
+from the principal family cannot be transferred. The nine prescribed
+primitive examples fail after complete gcd removal, but no all-index
+bound on that content was proved. P07, developed in
+Section~\ref{sec:variation}, is another open arithmetic problem rather
+than a consequence of P06.
+
+\subsection{Hypergeometric and quarter-pole constructions}
+Q01 differentiates an integer-pole tail to isolate $\theta$, with
+signed error proportional to
+\[
+ (-1)^{n+1}n^{-5/2}\log^2n(27/256)^n.
+\]
+Its displayed clearing multiplier retains fifth odd-prime layers;
+the resulting unfavorable bound is not a theorem about full primitive
+content. Q02 tests three nonsymmetric half-parameter jets and a
+120-element Thomae orbit at one fixture. Its six primitive eliminations
+are finite evidence, not a classification of transformations.
+
+Q03 supplies an all-index moved-base Whipple identity, a positive
+terminating coefficient expression, dyadic valuations and eventual
+signed nonvanishing. Its proved multipliers obey a divisibility relation,
+and integer clearing of the selected cofactor fails even before
+odd-prime costs. Unbounded odd common content remains outside the result.
+The symmetric candidate was exactly an earlier archived family.
+
+The paired forward/dual mechanism in Leibtag et al.~\cite[Section 6.2]{Leibtag}
+motivated Q04--Q05. An initial quarter-sampling change produced unequal
+numerators. The later construction deforms the pole grid, both parameter
+trajectories, initial states, readouts and normalization together,
+repairing that mismatch. For $\alpha=-3/4,-1/4$ its forward denominator is
+\[
+ Q_n=\sum_{k=0}^{14n}
+ \binom{k+12n+\alpha}{10n}\binom{k+13n+\alpha}{10n}
+ \binom{k+14n+\alpha}{10n}\binom{15n}{n+k}\binom{15n}{k}.
+\]
+The full numerator formulas and dual coefficient rows are retained in
+the exact deformation record. The corrected all-index identities and
+ten telescoping certificates are archived mathematical and computational
+results; they were not rebuilt in this supplement pass.
+
+The two arguments $a=1/4$, $b=3/4$ give the projected form
+\[
+ W_n=Q_n^aQ_n^b\theta
+       -\frac{P_{4,n}^aQ_n^b-P_{4,n}^bQ_n^a}{256}.
+\]
+The factor $256$ comes from the difference of the quarter Hurwitz
+zeta values. The established relative rate and coefficient rate are
+$112.807539\ldots$ and $65.451536\ldots$. The specified termwise
+arithmetic bounds can certify at most $88.207529\ldots$ of the
+odd-prime content density, versus $142.862026\ldots$ required by
+that decay estimate. This ceiling does not bound all actual gcds,
+cancellation inside sums, or possible faster decay after projection.
+Projected nonvanishing was checked at only five indices. The repaired
+identity is retained; the earlier numerator mismatch is not a current
+reason to reject it.
+
+\subsection{Coupled integrals, geometry, and exact rediscoveries}
+P01 and O01 navigate the earlier lower-period cancellations, coupled
+holonomy, lattice, radial and orthogonal constructions. They are umbrella
+records, not single consolidated theorems. Some fitted recurrences were
+conjectural before later certification; those stages remain distinct.
+
+P02 identifies the positive dimensional family exactly as
+$J_n=(n!)^4 4^{-n}L_{n+1,n+1}$ in the archived balanced-ladder
+notation. It is a rediscovery. P03 is a different nonuniform internal
+graph with $D=8n+4$, outer powers $n+1$ and central Green power $4n+1$.
+It has positive decay $256^{-n}$ and a terminating reduction to a
+five-period space for each fixed $n$. Its four tested pure-$\theta$
+cofactors fail; no all-index primitive-height result follows.
+
+P04 uses dense quarter poles $(2j+1)/4$ and interpolation to cancel
+$\zeta(4)$, obtaining a positive Gram pencil with full target degree.
+Its analytic comparison with a single-pole kernel is not a primitive
+polynomial equivalence. P05 uses unsquared quarter poles. For
+$h=2n$, $K=8n+4$ and prime $p=8n+5$, its valuation $-8n$ under
+hypothetical $p$-integral rational $\theta$ proves conditional
+nonvanishing along admissible primes. Neither construction has a useful
+all-index primitive bound. Three and seven finite primitive cases,
+respectively, are not substitutes for it.
+
+S07 is a quarter-Gamma fourth-cumulant extraction from the weighted
+projective data $(1,3,4,4,4,4,4)$. Its scalar sequence uses finite
+Hurwitz fourth-power sums, with weights $1,3,4,4,4,4,4$ and total $24$,
+at the two quarter arguments. The fourth logarithmic coefficient is
+formed with all lower products retained. Its archived arithmetic proof
+gives reduced-denominator logarithm at least $24n+o(n)$, whereas
+the error is of order $n^{-5}$. That scalar obstruction does not certify
+the larger geometric interpretation or exclude the separate nonconstant
+deformation. No geometric theorem is needed for the finite-sum obstruction.
+
+E09 records other exact collapses: signed divisibility/LCM Gram
+determinants become linear approximants by rank one, and complete Boolean
+bases reproduce an Euler product. Polynomial Dirichlet convolution retains
+the fourth denominator layer but also pays the hypothetical rational
+denominator to the polynomial degree. Untested bases are not excluded.
+
+\subsection{Euler functionals and proposed analytic bridges}
+E01 computes a norm on integer-valued polynomials, rather than a Gauss
+coefficient norm. For the archived functional $\tau=-E_0D^3/12$ and
+$p\geq5$, the exact layer-onset function is
+$m_p(3q+r)=(3-r)p^q+rp^{q+1}$, $0\leq r<3$; its first three
+positive layers start at $p+2,2p+1,3p$. This says nothing by itself
+about rational poles or primitive determinant content.
+
+E02 applies Euler distribution to the whole polynomial-plus-pole
+functional, with the affine target change
+$Y=\chi_4(p)p^4X+C_p$. The positive csch functional was already
+present in Carreira~\cite[Section 11]{Carreira}. Neither the distribution
+identity nor a formal target change equates real and $p$-adic limits.
+E03 supplies countermodels to particular proposed analytic implications,
+including an E-function Stokes inference, a compact-support inference
+from rational moments, and a spectral-raising bridge. Each countermodel
+has its stated hypotheses; none excludes the entire surrounding subject.
+
+\subsection{Cyclotomic parity and rationality-dependent constructions}
+The direct even-power signature extension E08 lies in a cyclotomic
+component negated by an involution fixing $\Q$, so its prescribed
+rational traces vanish. This parity statement does not apply to the
+nonlinear norm of Section~\ref{sec:cyclotomic}; that family needed its
+own all-conjugate argument.
+
+E07 assumes $\theta=u/v$ and tests the Niven-type source
+$[vF(u-vF)]^n/n!$, where $F(x)=\sum_{m\geq1}\chi_4(m)x^m/m^4$.
+Its endpoint values vanish, but a derivative of
+order $p+n-1$ at zero has valuation $-3$ for odd $p>n$ outside the
+fixed numerator factors. Thus the proposed universal endpoint-integrality
+step is false. Changing the integration variable to $F$ gives a rational
+beta integral, not an irrationality proof. Selected finite jets or
+larger constructions are not covered.
+
+E06 subtracts the prescribed polar terms of a rationality-dependent
+$q$-series. At $q=(p-1)/p$, its $p^2$ truncation has exact denominator
+$p^{p^2}$ and growing numerator. This is a result for that rational
+sampling and truncation, not for all $q$-series. E04 is the different
+monodromy theorem proved in Section~\ref{sec:mono}. In both cases the
+hypothesis of rationality supplies no unspecified extra geometric or
+$p$-adic relation.

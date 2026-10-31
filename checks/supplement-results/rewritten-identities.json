@@ -1,0 +1,20 @@
+{
+  "quadratic": {
+    "reversal_identities": 28,
+    "exact_surviving_prime_valuations": 57
+  },
+  "cone_formal_pairs": 36,
+  "continuants": {
+    "closed_coefficient_and_quotient_cases": 80,
+    "exact_reduced_prime_exponents": 203
+  },
+  "ordinary_moments": {
+    "exact_primitive_pairs_reconstructed": 24,
+    "positive_integral_formal_identities": 12,
+    "new_indices": 0,
+    "new_interval_checks": 0
+  },
+  "monodromy_residue_over_pi_cubed": "31/24",
+  "status": "passed",
+  "scope": "Finite exact identities and already selected forms; not an asymptotic proof or independent model audit."
+}

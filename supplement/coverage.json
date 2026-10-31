@@ -1,0 +1,666 @@
+{
+  "claims": 57,
+  "method_groups": 12,
+  "scope": "Coverage and review scope, not a certification of every archived claim.",
+  "entries": [
+    {
+      "id": "C01",
+      "archived_classification": "positive_construction",
+      "supplement_scope": "Companion-paper proof; not repeated here.",
+      "primary_path": "evidence/research/dilations-and-positive-kernels.txt",
+      "all_proof_paths": [
+        "evidence/research/dilations-and-positive-kernels.txt",
+        "evidence/research/collaboration/round-01/construction/findings.txt"
+      ],
+      "all_check_paths": [
+        "evidence/research/collaboration/round-01/construction/checks.py",
+        "evidence/research/collaboration/round-01/construction/checks.json"
+      ]
+    },
+    {
+      "id": "C02",
+      "archived_classification": "analytic_theorem",
+      "supplement_scope": "Companion-paper proof; not repeated here.",
+      "primary_path": "evidence/research/collaboration/round-01/construction/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-01/construction/findings.txt"
+      ],
+      "all_check_paths": [
+        "evidence/research/collaboration/round-01/coordinator/kernel_identity_checks.py",
+        "evidence/research/collaboration/round-01/coordinator/kernel_identity_checks.json"
+      ]
+    },
+    {
+      "id": "C03",
+      "archived_classification": "primitive_value_obstruction",
+      "supplement_scope": "Companion-paper proof; not repeated here.",
+      "primary_path": "evidence/research/collaboration/round-01/construction/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-01/construction/findings.txt",
+        "evidence/research/collaboration/round-01/construction/arithmetic-review.txt",
+        "evidence/research/collaboration/round-01/fresh/construction_review.txt"
+      ],
+      "all_check_paths": [
+        "evidence/research/collaboration/round-01/construction/checks.py",
+        "evidence/research/collaboration/round-01/construction/checks.json"
+      ]
+    },
+    {
+      "id": "C04",
+      "archived_classification": "positive_construction",
+      "supplement_scope": "Companion-paper proof; not repeated here.",
+      "primary_path": "evidence/research/collaboration/round-06/fresh/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-06/fresh/findings.txt",
+        "evidence/research/collaboration/round-06/coordinator/gram_review.txt"
+      ],
+      "all_check_paths": [
+        "evidence/research/collaboration/round-06/fresh/gram_checks.py",
+        "evidence/research/collaboration/round-06/fresh/gram_checks.json"
+      ]
+    },
+    {
+      "id": "C05",
+      "archived_classification": "analytic_theorem",
+      "supplement_scope": "Companion-paper proof; not repeated here.",
+      "primary_path": "evidence/research/collaboration/round-06/fresh/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-06/fresh/findings.txt",
+        "evidence/research/collaboration/round-06/coordinator/gram_review.txt"
+      ],
+      "all_check_paths": [
+        "evidence/research/collaboration/round-06/fresh/gram_checks.py",
+        "evidence/research/collaboration/round-06/fresh/gram_checks.json"
+      ]
+    },
+    {
+      "id": "C06",
+      "archived_classification": "arithmetic_theorem",
+      "supplement_scope": "Companion-paper proof; not repeated here.",
+      "primary_path": "evidence/research/collaboration/round-06/fresh/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-06/fresh/findings.txt",
+        "evidence/research/collaboration/round-06/coordinator/gram_review.txt"
+      ],
+      "all_check_paths": [
+        "evidence/research/collaboration/round-06/fresh/gram_checks.py",
+        "evidence/research/collaboration/round-06/fresh/gram_checks.json"
+      ]
+    },
+    {
+      "id": "C07",
+      "archived_classification": "primitive_value_obstruction",
+      "supplement_scope": "Companion-paper proof; not repeated here.",
+      "primary_path": "evidence/research/collaboration/round-06/fresh/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-06/fresh/findings.txt",
+        "evidence/research/collaboration/round-06/coordinator/gram_review.txt"
+      ],
+      "all_check_paths": [
+        "evidence/research/collaboration/round-06/fresh/gram_checks.py",
+        "evidence/research/collaboration/round-06/fresh/gram_checks.json"
+      ]
+    },
+    {
+      "id": "C08",
+      "archived_classification": "standard_fact",
+      "supplement_scope": "Companion-paper proof; not repeated here.",
+      "primary_path": "evidence/research/collaboration/round-01/construction/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-01/construction/findings.txt",
+        "evidence/research/collaboration/round-07/arithmetic/findings.txt",
+        "evidence/research/collaboration/round-10/adelic/findings.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "S01",
+      "archived_classification": "structural_theorem",
+      "supplement_scope": "Unrestricted cone and degree law proved here; fixed-degree boundary formulas remain in the archive.",
+      "primary_path": "evidence/research/collaboration/round-01/fresh/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-01/fresh/findings.txt"
+      ],
+      "all_check_paths": [
+        "evidence/research/collaboration/round-01/fresh/cone_checks.py",
+        "evidence/research/collaboration/round-01/fresh/cone_checks.json"
+      ]
+    },
+    {
+      "id": "S02",
+      "archived_classification": "finite_evidence",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-01/fresh/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-01/fresh/findings.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "S03",
+      "archived_classification": "primitive_value_obstruction",
+      "supplement_scope": "Repeated-quadratic obstruction proved here.",
+      "primary_path": "evidence/research/collaboration/round-03/fresh/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-03/fresh/findings.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "S04",
+      "archived_classification": "primitive_value_obstruction",
+      "supplement_scope": "Uniform Euler--Boole obstruction proved here.",
+      "primary_path": "evidence/research/collaboration/round-05/fresh/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-05/fresh/findings.txt",
+        "evidence/research/collaboration/round-05/coordinator/boole_review.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "S05",
+      "archived_classification": "primitive_value_obstruction",
+      "supplement_scope": "Fixed-endpoint even-depth obstruction proved here.",
+      "primary_path": "evidence/research/collaboration/round-07/fresh/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-07/fresh/findings.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "S06",
+      "archived_classification": "primitive_value_obstruction",
+      "supplement_scope": "Prime-level sine-normalized obstruction proved here.",
+      "primary_path": "evidence/research/collaboration/round-11/norms/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-11/norms/findings.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "S07",
+      "archived_classification": "primitive_value_obstruction",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-09/orbifold/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-09/orbifold/findings.txt",
+        "evidence/research/collaboration/round-09/orbifold/deformation.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "S08",
+      "archived_classification": "primitive_value_obstruction",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-04/coordinator/loewner_shift.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-04/coordinator/loewner_shift.txt",
+        "evidence/research/collaboration/round-04/fresh/findings.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "S09",
+      "archived_classification": "primitive_value_obstruction",
+      "supplement_scope": "Rational-kernel inequality proved here with exact certificates; beta identification uses the declared Broadhurst input.",
+      "primary_path": "evidence/research/collaboration/round-03/fresh/mellin_positive_obstruction.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-03/fresh/mellin_positive_obstruction.txt",
+        "evidence/research/coordinated-round-03.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "A01",
+      "archived_classification": "arithmetic_theorem",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-01/arithmetic/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-01/arithmetic/findings.txt",
+        "evidence/research/collaboration/round-02/arithmetic/findings.txt",
+        "evidence/research/collaboration/round-03/arithmetic/findings.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "A02",
+      "archived_classification": "arithmetic_theorem",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-02/arithmetic/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-02/arithmetic/findings.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "A03",
+      "archived_classification": "estimate_limitation",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-02/analysis/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-02/analysis/findings.txt",
+        "evidence/research/collaboration/round-02/arithmetic/analysis-review.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "A04",
+      "archived_classification": "partial_construction",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-04/arithmetic/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-04/arithmetic/findings.txt",
+        "evidence/research/collaboration/round-04/construction/findings.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "A05",
+      "archived_classification": "primitive_value_obstruction",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-04/construction/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-04/construction/findings.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "A06",
+      "archived_classification": "structural_obstruction",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-01/construction/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-01/construction/findings.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "H01",
+      "archived_classification": "positive_construction",
+      "supplement_scope": "Euler identity and one-endpoint reduction proved here; two-endpoint system retained as an archived claim.",
+      "primary_path": "evidence/research/collaboration/round-03/fresh/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-03/fresh/findings.txt",
+        "evidence/research/collaboration/round-06/arithmetic/findings.txt",
+        "evidence/research/collaboration/round-07/arithmetic/findings.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "H02",
+      "archived_classification": "arithmetic_theorem",
+      "supplement_scope": "Strict-index denominator word proved here; source-specific sharpness retained as an archived claim.",
+      "primary_path": "evidence/research/collaboration/round-01/arithmetic/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-01/arithmetic/findings.txt",
+        "evidence/research/collaboration/round-07/arithmetic/findings.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "H03",
+      "archived_classification": "partial_construction",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-07/analysis/rank_asymptotic.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-07/analysis/rank_asymptotic.txt",
+        "evidence/research/collaboration/round-07/analysis/residual_asymptotic.txt",
+        "evidence/research/collaboration/round-07/arithmetic/findings.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "L01",
+      "archived_classification": "attributed_identity",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-02/fresh/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-02/fresh/findings.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "L02",
+      "archived_classification": "primitive_value_obstruction",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-02/fresh/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-02/fresh/findings.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "L03",
+      "archived_classification": "partial_construction",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-03/analysis/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-03/analysis/findings.txt",
+        "evidence/research/collaboration/round-03/arithmetic/findings.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "L04",
+      "archived_classification": "partial_construction",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-02/fresh/simultaneous.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-02/fresh/simultaneous.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "L05",
+      "archived_classification": "attributed_identity",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-06/identities/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-06/identities/findings.txt",
+        "evidence/research/collaboration/round-06/identities/arithmetic_review.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "M01",
+      "archived_classification": "positive_construction",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/modular-detour.txt",
+      "all_proof_paths": [
+        "evidence/research/modular-detour.txt",
+        "evidence/research/collaboration/round-05/analysis/findings.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "M02",
+      "archived_classification": "arithmetic_theorem",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-05/arithmetic/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-05/arithmetic/findings.txt",
+        "evidence/research/collaboration/round-05/analysis/findings.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "M03",
+      "archived_classification": "structural_obstruction",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-06/fresh/pole_annihilator_review.txt",
+      "all_proof_paths": [
+        "evidence/supplement-source/collaboration/round-05/fresh/alternative_prefactor.txt",
+        "evidence/research/collaboration/round-06/fresh/pole_annihilator_review.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "M04",
+      "archived_classification": "estimate_limitation",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-13/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-13/findings.txt",
+        "evidence/research/collaboration/round-13/coordinator/core-claims.txt",
+        "evidence/research/collaboration/round-13/independent/optimized-comparison-audit.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "Q01",
+      "archived_classification": "partial_construction",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-04/fresh/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-04/fresh/findings.txt",
+        "evidence/research/half-pole-arithmetic.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "Q02",
+      "archived_classification": "finite_evidence",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-10/symmetry/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-10/symmetry/findings.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "Q03",
+      "archived_classification": "estimate_limitation",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-14/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-14/findings.txt",
+        "evidence/research/half-pole-arithmetic.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "Q04",
+      "archived_classification": "positive_construction",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-12/fresh/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-12/fresh/findings.txt",
+        "evidence/research/collaboration/round-15/coordinator/complete-deformation.txt",
+        "evidence/research/collaboration/round-15/findings.txt",
+        "evidence/research/collaboration/round-15/independent/final-audit.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "Q05",
+      "archived_classification": "estimate_limitation",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-15/coordinator/arithmetic-gate.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-15/coordinator/arithmetic-gate.txt",
+        "evidence/research/collaboration/round-15/independent/final-audit.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "P01",
+      "archived_classification": "partial_construction",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/structural-followup.txt",
+      "all_proof_paths": [
+        "evidence/research/structural-followup.txt",
+        "evidence/research/arithmetic-followup.txt",
+        "evidence/research/arcsine-contact.txt",
+        "evidence/research/orthogonal-cancellation.txt",
+        "evidence/research/radial-cancellation.txt",
+        "evidence/research/two-loop-numerators.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "P02",
+      "archived_classification": "equivalence",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-08/coordinator/dimensional-ladder-gate.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-08/coordinator/dimensional-ladder-gate.txt",
+        "evidence/research/ladder-integrals.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "P03",
+      "archived_classification": "partial_construction",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-09/internal_graph/general-period-space.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-09/internal_graph/general-period-space.txt",
+        "evidence/research/collaboration/round-09/internal_graph/bounded-gate.txt",
+        "evidence/research/collaboration/round-09/independent/internal_graph_review.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "P04",
+      "archived_classification": "partial_construction",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-10/coordinator/dense-quarter-gate.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-10/coordinator/dense-quarter-gate.txt",
+        "evidence/research/collaboration/round-11/coordinator/dense-grid-comparison.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "P05",
+      "archived_classification": "partial_construction",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-11/fresh/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-11/fresh/findings.txt",
+        "evidence/research/collaboration/round-11/coordinator/unsquared-nonvanishing.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "P06",
+      "archived_classification": "estimate_limitation",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-16/archive-audit.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-16/archive-audit.txt",
+        "evidence/research/collaboration/round-16/findings.txt",
+        "evidence/research/collaboration/round-17/local-structure.txt",
+        "evidence/research/collaboration/round-17/findings.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "P07",
+      "archived_classification": "partial_construction",
+      "supplement_scope": "Analytic sign and rate proved here; primitive arithmetic remains open.",
+      "primary_path": "evidence/research/collaboration/round-18/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-18/findings.txt",
+        "evidence/research/collaboration/round-18/adversarial/assessment.txt",
+        "evidence/research/collaboration/round-18/archive-comparison.txt"
+      ],
+      "all_check_paths": [
+        "evidence/research/collaboration/round-18/primitive_check.py",
+        "evidence/research/collaboration/round-18/primitive-check.json",
+        "evidence/research/collaboration/round-18/explorer/exact-model-coefficients.json",
+        "evidence/research/collaboration/round-18/adversarial/checks.json"
+      ]
+    },
+    {
+      "id": "E01",
+      "archived_classification": "arithmetic_theorem",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-10/adelic/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-10/adelic/findings.txt",
+        "evidence/research/collaboration/round-10/symmetry/adelic_review.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "E02",
+      "archived_classification": "attributed_identity",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-08/discrete/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-08/discrete/findings.txt",
+        "evidence/research/coordinated-round-08.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "E03",
+      "archived_classification": "structural_obstruction",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/coordinated-round-08.txt",
+      "all_proof_paths": [
+        "evidence/research/coordinated-round-08.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "E04",
+      "archived_classification": "structural_obstruction",
+      "supplement_scope": "Scoped monodromy statement proved here.",
+      "primary_path": "evidence/research/collaboration/round-12/geometry/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-12/geometry/findings.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "E05",
+      "archived_classification": "structural_obstruction",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-12/fresh/tail_gauge_gate.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-12/fresh/tail_gauge_gate.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "E06",
+      "archived_classification": "primitive_value_obstruction",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-12/arithmetic/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-12/arithmetic/findings.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "E07",
+      "archived_classification": "structural_obstruction",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-11/rationality/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-11/rationality/findings.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "E08",
+      "archived_classification": "structural_obstruction",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-10/fresh/findings.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-10/fresh/findings.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "E09",
+      "archived_classification": "equivalence",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/collaboration/round-09/independent/multiplicative_gate.txt",
+      "all_proof_paths": [
+        "evidence/research/collaboration/round-09/independent/multiplicative_gate.txt"
+      ],
+      "all_check_paths": []
+    },
+    {
+      "id": "O01",
+      "archived_classification": "partial_construction",
+      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "primary_path": "evidence/research/coupled-holonomy.txt",
+      "all_proof_paths": [
+        "evidence/research/coupled-holonomy.txt",
+        "evidence/research/block-arithmetic.txt",
+        "evidence/research/deep-investigation.txt",
+        "evidence/research/new-constructions.txt",
+        "evidence/research/cyclotomic-integrals.txt",
+        "evidence/research/quotient-investigation.txt",
+        "evidence/research/quotient-circle.txt",
+        "evidence/research/new-avenues.txt",
+        "evidence/research/next-proof-avenues.txt"
+      ],
+      "all_check_paths": []
+    }
+  ]
+}

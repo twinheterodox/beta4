@@ -1,0 +1,64 @@
+{
+  "status": "compiled",
+  "pages": 29,
+  "source_files": [
+    {
+      "path": "supplement/beta4-investigations.tex",
+      "sha256": "d990608714f7f25a49d6ed6a0f535499d40753d7f188015d8edf2c7ad6d5a6f2"
+    },
+    {
+      "path": "supplement/claim-register.tex",
+      "sha256": "b231ca9f4d7c200e5863b1bcc1466a680c509620da1136c62c5223e4b173c77f"
+    },
+    {
+      "path": "supplement/references.tex",
+      "sha256": "abd7ed377fe212fe5f2b4ba2b0a6598e85543919100997164c63c2c5e49bc749"
+    },
+    {
+      "path": "supplement/sections/01-conventions-cone.tex",
+      "sha256": "2aa73f6750c4925aaaf47b1e01bc92b24436ea3ca183beab02f614a6390635bf"
+    },
+    {
+      "path": "supplement/sections/02-euler-quadratic.tex",
+      "sha256": "5aa7117b2d6dfaf78b3a5ebf82f83c7ad2858151bd3f4d2c02228035242dec19"
+    },
+    {
+      "path": "supplement/sections/03-boole.tex",
+      "sha256": "b7afeab965fe571b465632e82676ac3ea47642d893078e2399819abf7d827014"
+    },
+    {
+      "path": "supplement/sections/04-continuants.tex",
+      "sha256": "89f2117581d9df17014324d36197fe33f5f1e74db810d1e5d19dd3c79d60ce52"
+    },
+    {
+      "path": "supplement/sections/05-cyclotomic.tex",
+      "sha256": "ba11958bf1049dc3b6e1f98ab1272d44a976c76f0bcc99eb256569b65c57ca35"
+    },
+    {
+      "path": "supplement/sections/06-completed-mellin.tex",
+      "sha256": "dada75775bce7d0805f1a8d67c1cfcdc812f398f78368c90c5507de8a2a9ca4a"
+    },
+    {
+      "path": "supplement/sections/07-monodromy.tex",
+      "sha256": "9d09eb32670029b50642875343e5acc4a16183738790ed860f9128a80dfcb4e0"
+    },
+    {
+      "path": "supplement/sections/08-first-variation.tex",
+      "sha256": "328aafba8cbe7628da244560bbae4e6a851bbe25c7c7f79cb353c9f819168333"
+    },
+    {
+      "path": "supplement/sections/09-method-record.tex",
+      "sha256": "74c89f02b7b295c9dabc54c9dbc20b05dc537b2c56438717dcadf54ab752ae8c"
+    },
+    {
+      "path": "supplement/sections/10-evidence.tex",
+      "sha256": "ed33eb898507b9deb12e01f48e6a8b36da619325c413c2906404dbe3860f813a"
+    }
+  ],
+  "pdf": "output/pdf/beta4-investigations.pdf",
+  "pdf_sha256": "ee87cebd9bbf1b9c03be51986b9a88198d99955cd98852fe5f96fddc9c1eac6e",
+  "tex_engine": "pdfTeX 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian)",
+  "unresolved_references": false,
+  "overfull_or_underfull_boxes": false,
+  "scope": "Build and log checks only; visual and mathematical reviews recorded separately."
+}

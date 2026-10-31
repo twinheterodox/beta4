@@ -1,0 +1,72 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype,booktabs,longtable,array,enumitem,xcolor}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,
+ urlcolor=blue!45!black,pdftitle={Investigations of irrationality constructions for beta(4)},
+ pdfauthor={Research note prepared with Codex}}
+\urlstyle{same}
+\setlength{\emergencystretch}{2em}
+\setlist{nosep}
+\makeatletter
+\renewcommand*\l@subsection{\@dottedtocline{2}{1.5em}{3em}}
+\makeatother
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+\newcommand{\Q}{\mathbb Q}\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\Prim}{\operatorname{Prim}}
+\newcommand{\Li}{\operatorname{Li}}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\atanh}{atanh}
+\DeclareMathOperator{\Res}{Res}
+\newcommand{\record}[1]{\textnormal{[record #1]}}
+\title{Investigations of irrationality constructions for $\beta(4)$\\
+\large Technical supplement: obstructions, reductions, and unresolved arithmetic}
+\author{\normalsize Research note prepared with Codex}
+\date{31 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+This supplement records an investigation of rational approximation and
+related constructions for $\beta(4)$. It proves scoped obstructions for
+repeated-quadratic Mellin sources, Euler--Boole truncations,
+fixed-endpoint differentiated continued fractions, and one cyclotomic
+minimal-polynomial family. It also gives a positive-source inequality for
+a completed Mellin kernel and a monodromy obstruction to a specified
+linear regularization. Two complementary results delimit these failures:
+unrestricted positive polynomial sources encode every positive rational
+linear form, while an ordinary-moment first variation has a positive error
+with a sharp exponential rate but unresolved primitive arithmetic.
+A method-by-method record covers the other constructions, finite tests,
+exact rediscoveries and repaired claims. The two determinant obstructions
+of the companion paper are referenced rather than reproved. Nothing here
+proves rationality or irrationality of $\beta(4)$, or rules out an entire
+method such as determinants, modular forms or arithmetic holonomy.
+\end{abstract}
+\clearpage
+\tableofcontents
+\clearpage
+\input{supplement/sections/01-conventions-cone.tex}
+\input{supplement/sections/02-euler-quadratic.tex}
+\input{supplement/sections/03-boole.tex}
+\input{supplement/sections/04-continuants.tex}
+\input{supplement/sections/05-cyclotomic.tex}
+\input{supplement/sections/06-completed-mellin.tex}
+\input{supplement/sections/07-monodromy.tex}
+\input{supplement/sections/08-first-variation.tex}
+\input{supplement/sections/09-method-record.tex}
+\input{supplement/sections/10-evidence.tex}
+\appendix
+\input{supplement/claim-register.tex}
+\clearpage
+\input{supplement/references.tex}
+\end{document}

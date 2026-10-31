@@ -1,0 +1,345 @@
+An antisymmetric Fricke prefactor: the next pair of poles does not cancel
+======================================================================
+29 October 2026. Local and unpublished. No irrationality proof.
+
+This note develops the precise proposal recorded in
+02_alternative_prefactor_initial.txt. It preserves the Euler--Boole
+investigation in findings.txt as a separate branch.
+
+The replacement prefactor DOES avoid the trace derivative's earlier
+positive-real pole, has integral q coefficients in Z[sqrt(2)], and
+cancels its nearest pole at the intended Fricke point. However, its
+next pair of denominator zeros is explicit. Their beta(4) periods do
+not cancel for all sufficiently large primes, and are rigorously
+certified not to cancel for p=3,5,7,11,17,31,101. For each such fixed p,
+the raw Taylor coefficient values in the chosen real embedding grow
+exponentially in absolute value for EVERY sufficiently large index.
+
+This is an obstruction to raw coefficient decay of this prefactor.
+It is NOT a primitive-value theorem, and says nothing decisive about
+splitting the two Q(sqrt(2)) components, their contents, selected linear
+combinations, or more general determinants.
+
+The coordinator independently proposed the shifted denominator zeros,
+their derivative-limit noncancellation, and the residue-phase mechanism
+for the all-index coefficient bound. I independently checked those
+arguments and supplied the complete nearest-zero ordering and interval
+certificates below. The analysis worker warned explicitly that repairing
+the q-prefactor does not automatically repair the old trace inverse
+branch. This note retains q throughout; no such repair is claimed.
+
+
+1. Definitions and the new prefactor
+-------------------------------------
+
+Use the archived level-32 eta quotient
+
+ t(tau)=eta(tau)^2 eta(4tau)eta(8tau)eta(32tau)^2 /
+                         [eta(2tau)^3 eta(16tau)^3],
+ q=exp(2pi i tau),
+ J(tau)=theta3(2tau)^2+2sqrt(2)theta3(16tau)^2.
+
+The relevant established inputs from modular-detour.txt, sections 3--4,
+are: t has degree two on X0(32), is a degree-one coordinate on its
+Fricke quotient, satisfies t(W32 tau)=t(tau), and
+
+ J(W32 tau)=-i sqrt(32)tau J(tau), W32 tau=-1/(32tau).
+
+Let p>=3 be an odd prime, chi=chi_4(p), L=32p^2, and
+
+ T=t(tau)+t(p^2 tau),       D=t(tau)-t(p^2 tau),
+ J_p=J(tau)+pJ(p^2 tau),
+ Atilde_p=J_p^3 T/D.                                      (1)
+
+For the Lambert series
+
+ F(q)=sum_(d odd) chi_4(d)q^d/[d^4(1+q^d)],
+ G(q)=sum_(d odd) q^d/[d^4(1+q^(2d))],
+ U=16F(q)-10F(q^2)+F(q^4),
+ V=(sqrt(2)/2)[4G(q)-5G(q^2)+G(q^4)], H32=U+V,
+
+put C=(7/2)theta and use the balanced filter
+
+ H_p=U+chi V-(p+chi/p^4)H32(p tau)
+                     +p^(-3)[chi U(p^2 tau)+V(p^2 tau)],
+ C_p=C(1-p)(1-chi/p^4).
+
+The proposed remainder is
+
+                    R_p=Atilde_p(H_p-C_p).               (2)
+
+The new Fricke map W_L exchanges the two t terms, so T is invariant
+and D is anti-invariant. Also
+
+ J_p(W_L tau)=-i sqrt(L)tau J_p(tau),
+ Atilde_p(W_L tau)=-i L^(3/2)tau^3 Atilde_p(tau).
+
+The established balanced-filter identity transforms H_p-C_p by
+i/(L^(3/2)tau^3), so R_p is Fricke invariant.
+
+The apparent zero of D at q=0 causes no pole: s=t(q^(p^2))/t(q)
+belongs to q^(p^2-1) Z[[q]], and
+
+                     T/D=(1+s)/(1-s) in Z[[q]].          (3)
+
+Thus Atilde_p belongs to Z[sqrt(2)][[q]]. This is exact coefficient
+integrality, not a bound on primitive content of the final linear forms.
+
+
+2. The positive-real pole is in the intended location
+-----------------------------------------------------
+
+Write q0=exp(-pi/(2sqrt(2))) and q_p=q0^(1/p). On 0<q<q0 both
+t(q) and t(q^(p^2)) are increasing, and the former is larger. For
+q0<q<q_p, old Fricke reflection sends q to q*=exp(-a^2/(-log q)),
+where a=pi/(2sqrt(2)), with
+
+                  q^(p^2)<q*<q0,  t(q)=t(q*).
+
+Hence D(q)>0 for every 0<q<q_p. At q_p the terms agree. The derivative
+formula in Section 4 shows this zero is simple. The balanced endpoint
+identity H_p(q_p)=C_p cancels it. Therefore R_p is holomorphic there.
+Invariance also makes that cancellation holomorphic in a local Fricke
+quotient coordinate, though not necessarily in the global trace T.
+
+
+3. Classification and ordering of ALL denominator zeros in the q disk
+---------------------------------------------------------------------
+
+The degree-two quotient property implies that t(tau)=t(p^2 tau) if and
+only if, for some gamma in Gamma0(32), either
+
+              p^2 tau=gamma tau,
+       or     p^2 tau=gamma W32 tau.                    (4)
+
+Write gamma=(a b;32c d), ad-32bc=1. These two alternatives give exact
+quadratic equations. The formulas below use the root in the upper
+half-plane and identify tau modulo integer translation for the q disk.
+
+In the first case,
+
+ 32cp^2 tau^2+(dp^2-a)tau-b=0,
+ discriminant=(a+dp^2)^2-4p^2.
+
+There is no upper-half-plane solution with c=0. Consequently
+
+                   Im tau <= 1/(32p).                  (5)
+
+In the second case set r=p^2c-b. Then
+
+ dp^2 tau^2-(p^2c+b)tau+a/32=0,
+ Im tau = sqrt(p^2-8r^2)/(sqrt(32)|d|p^2),
+                   |r|<p/sqrt(8).                     (6)
+
+The determinant equation implies a and d are odd; in particular d is
+nonzero. Formula (6) has maximum 1/(sqrt(32)p), attained only when
+|d|=1,r=0. The corresponding real part is an integer, so the unique
+smallest-modulus nonzero q zero is q_p itself.
+
+The next maximum height is obtained at |d|=1,|r|=1. The resulting pair
+is
+
+ tau_+ = 1/(2p^2)+i sqrt(p^2-8)/(sqrt(32)p^2),
+ tau_- =-1/(2p^2)+i sqrt(p^2-8)/(sqrt(32)p^2),
+ q_+ = rho_p exp(pi i/p^2), q_-=conjugate(q_+),
+ rho_p = exp[-pi sqrt(p^2-8)/(2sqrt(2)p^2)] <1.          (7)
+
+These are actual zeros, not just bounds: for b=+/-1,
+
+           p^2 tau_b=b-1/(32tau_b),                    (8)
+
+and integer translation plus W32 invariance gives equality of the t's.
+
+To verify strict ordering: for p>=5, sqrt(1-8/p^2)>1/3, while every
+|d|>=3 in (6) has height at most one third of the maximum. The ordinary
+case (5) has relative height at most 1/sqrt(32)<1/3. For p=3 the pair
+in (7) has exactly one-third height, but |d|=3,r=0 is impossible:
+then b=9c and ad=1+288c^2, which cannot be divisible by 3. Every other
+case is strictly lower. The cases |d|=1,|r|>=2 are also strictly lower.
+
+Thus q_p is the unique nearest zero, and q_+,q_- are the unique next
+pair, for EVERY odd p>=3. Equations (4)--(6) classify further zeros,
+but their individual H_p periods are not classified in this note.
+
+
+4. Simplicity and numerator factors at the pair
+----------------------------------------------
+
+Differentiate old Fricke invariance at a point (8). Since t is periodic,
+
+ (d/dtau)D(tau_b)
+    =t'(tau_b)[1-32p^2 tau_b^2],
+ t'(p^2 tau_b)=32tau_b^2 t'(tau_b).                     (9)
+
+The bracket in (9) is nonzero because p tau_b is nonreal. At b=+/-1,
+q(p^2 tau_b)=-exp[-a sqrt(p^2-8)], a=pi/(2sqrt(2)). For p>=7 its
+modulus is below 1/100. The eta-product logarithmic derivative has
+|Dlog t-1|<1/10 there, by the same absolute small-q bound used in the
+trace review. Therefore t'(p^2 tau_b) and D'(tau_b) are nonzero.
+
+Similarly J(p^2 tau_b) is nonzero: its constant term is 1+2sqrt(2),
+and the elementary theta-series tail for |q|<=1/100 bounds its
+deviation from that constant by less than 1/10. Moreover
+
+ J_p(tau_b)=J(tau_b)[1-i sqrt(32)p tau_b],
+ J(tau_b)=J(p^2 tau_b)/[-i sqrt(32)tau_b].              (10)
+
+The real part of the bracket in (10) is
+1+sqrt(1-8/p^2)>1, so J_p(tau_b) is nonzero. Finally T(tau_b)=
+2t(p^2 tau_b) is nonzero because the eta quotient has no zero in the
+upper half-plane. Hence noncancellation of H_p-C_p produces a genuine
+simple pole of R_p at this pair for p>=7. Separate interval checks also
+certify simplicity and nonzero factors for p=3 and p=5.
+
+
+5. Exact shifted-period residual and its nonzero limit
+------------------------------------------------------
+
+The two base components obey separate identities
+
+ U(W32 tau)=C+K(tau)V(tau),
+ V(W32 tau)=K(tau)[U(tau)-C],
+ K(tau)=i/[32^(3/2)tau^3].                              (11)
+
+To derive the first, apply archived equation (1) of modular-detour.txt
+to F at the three dilations. The moment sums 16-20+4=0 and
+16-80+64=0 remove its pi^4 terms. The second follows by applying the
+first twice; K(W32 tau)K(tau)=1. Thus no new period identity is being
+assumed at a general CM point.
+
+At the explicit point (8), put z=p tau_b, w=p^2 tau_b and
+k=1/K(tau_b)=-i32^(3/2)tau_b^3. Since W32 tau_b=w-b and U,V are
+periodic, (11) gives
+
+             U(tau_b)=C+k V(w),
+             V(tau_b)=k[U(w)-C].
+
+Substitution into the balanced filter yields the exact identity
+
+ H_p(tau_b)-C_p
+   =-(p+chi/p^4)[H32(z)-C]
+     +(k+p^(-3))[chi(U(w)-C)+V(w)].                    (12)
+
+For fixed nonzero b and p tending to infinity through odd primes,
+
+ z=tau0+b/(2p)+O(p^(-2)), tau0=i/sqrt(32),
+ k+p^(-3)=O(p^(-4)),
+ U(w),V(w)=O(exp(-a p)).
+
+Since H32(tau0)=C, Taylor expansion of the analytic H32 function gives
+
+ H_p(tau_b)-C_p --> -(b/2) H32'(tau0).                 (13)
+
+The difference from the first term displayed in (12) is O(p^(-4));
+the total convergence error in (13) is generally O(p^(-1)).
+
+The derivative is rigorously nonzero. The interval program, using the
+absolutely convergent differentiated F,G series with explicit tails,
+certifies the imaginary-part enclosure below. Its exact imaginary
+direction follows from the real q coefficients of H32 and
+d/dtau=2pi i q*d/dq at the positive real point q0:
+
+  H32'(tau0)=i*[7.64268690420189696909250738525019...],
+                       7 < Im H32'(tau0) < 8.          (14)
+
+Consequently the b=+/-1 periods do not cancel for ALL SUFFICIENTLY LARGE
+primes. An explicit threshold is not claimed. The same program directly
+certifies noncancellation for p=3,5,7,11,17,31,101. For p<=11 it also
+checks (12) against a separate direct evaluation of H_p at tau_b and
+checks the eta equality directly. In particular p=3 has a different
+imaginary sign from the large-p limit; the argument does not assume
+one uniform sign across all small primes.
+
+For example at p=7,b=1, the actual residual is enclosed near
+
+             -2.66960008578608 - 3.70852022190437 i,
+
+which is far from zero. These finite certificates supplement (13);
+they do not prove a claim for every untested prime below an unspecified
+threshold. No assertion is made that all later denominator zeros fail
+to cancel.
+
+
+6. The exact raw radius and an eventual all-index lower bound
+-------------------------------------------------------------
+
+Fix a prime covered by the noncancellation and simplicity statements.
+All functions in (2), apart from the denominator D, are holomorphic
+for |q|<1. The q=0 apparent singularity and the q_p pole are removable.
+The ordering in Section 3 and the two genuine poles in Section 5 show
+that the Taylor series of R_p has radius EXACTLY rho_p from (7).
+
+One can strengthen the usual limsup conclusion. Let c_+ and c_- be
+the tau-variable residues of R_p at tau_+,tau_-. Fricke invariance and
+reality of its q coefficients imply
+
+ c_-=W_L'(tau_+)c_+=-conjugate(c_+).
+
+Since |tau_+|^2=1/L and W_L'(tau_+)=conjugate(tau_+)/tau_+, this gives
+
+                      c_+=i lambda tau_+, lambda real, lambda!=0.
+
+The q-variable pole amplitude in a term A/(1-q/q_+) is
+A=-2pi i c_+=2pi lambda tau_+. Therefore the pair contributes to
+the n-th Taylor coefficient
+
+       4pi lambda Re[tau_+ exp(-pi i n/p^2)] rho_p^(-n). (15)
+
+The periodic real factor in (15) never vanishes for an integer n.
+Indeed a zero, using (7), would imply
+
+                    cos(2pi n/p^2)=1-16/p^2.           (16)
+
+If a rational cosine of a rational multiple of pi is rational, twice
+that cosine is a rational algebraic integer (a sum of roots of unity),
+and therefore is one of -2,-1,0,1,2. None of the corresponding cosine
+values equals 1-16/p^2 for an odd prime p. This proves the assertion.
+
+For fixed p the periodic factor has only 2p^2 values, so its absolute
+value has a strictly positive minimum. The next singularity is at
+strictly larger modulus: D is analytic and its zeros are isolated, and
+Section 3 shows no further zero on |q|=rho_p. Subtract the two simple
+pole terms and use Cauchy's estimate on an intermediate circle. The
+remainder coefficients are exponentially smaller than (15). Thus there
+are constants c(p)>0 and n0(p) such that
+
+       |[q^n]R_p| >= c(p) rho_p^(-n), n>=n0(p).        (17)
+
+This is an ACTUAL all-index lower bound for the unnormalized real
+coefficient values in this fixed embedding. It is not merely a failure
+of an upper estimate. However (17) does NOT become a primitive bound:
+splitting Q(sqrt(2)) components and removing integer content can change
+the arithmetic scale, and (15) does not assert a separate bound for
+both components. Those arithmetic questions remain open here.
+The constants in (17) depend on the fixed prime p. No uniform statement
+for a prime p growing with the coefficient index n is asserted.
+
+
+7. Checks and remaining scope
+-----------------------------
+
+Reproduce with
+
+ .venv/bin/python collaboration/round-05/fresh/alternative_prefactor_checks.py
+
+The program contains explicit tails for F,G, their logarithmic
+derivatives, the eta product, its derivative, and the theta series.
+It certifies the derivative (14), seven nonzero shifted residuals,
+simple denominator zeros, and nonzero J factors. The exact statement
+that c_+/tau_+ is purely imaginary follows from Section 6; the program
+checks that its real-part interval contains zero and certifies a nonzero
+imaginary part. Likewise the exact imaginary direction of (14) follows
+from real q coefficients, while its imaginary-part bounds are certified
+numerically. For four primes the program separately
+evaluates the original functions at tau_b to check the transformed
+identity and denominator zero. All checks passed at 320-bit precision.
+Theorems about all sufficiently large primes and all Taylor indices
+come from the proofs above, not from expanding this finite check set.
+
+The next geometric problem, if this branch is pursued, is to arrange
+period cancellation at the entire shifted leading orbit while preserving
+the exact integrality (3). A scalar Fricke endpoint condition alone
+does not impose that cancellation. I have not constructed such a filter
+or obtained a favorable primitive estimate.
+
+No publication, priority claim, human audit, or formal verification.

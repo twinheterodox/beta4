@@ -1,9 +1,11 @@
 ARITHMETIC OBSTRUCTIONS IN POSITIVE DETERMINANT APPROXIMATIONS TO beta(4)
 Writing plan and proposed theorem statements — 31 October 2026
 
-Status update: the first complete main-paper draft is now in paper/ and
-output/pdf/. This document preserves the selection-stage plan. The full
-technical supplement and a new independent manuscript audit remain pending.
+Status update: complete first drafts of the main paper and companion
+supplement are now in paper/, supplement/ and output/pdf/. This document
+preserves the selection-stage plan. A new independent audit of the
+assembled manuscripts remains pending. The supplement distinguishes
+rewritten proofs from claims retained with their original archived status.
 
 Decision
 ========

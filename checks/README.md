@@ -2,6 +2,8 @@
 
 The paper's asymptotic results are proved in the text. These scripts check finite instances of its identities, coefficient valuations, primitive normalization and real bounds.
 
+The companion supplement has [separate reproduction instructions](SUPPLEMENT.md), dependencies and results. The instructions below concern the main paper.
+
 Install the single pinned dependency into a Python environment, then run:
 
 ```sh

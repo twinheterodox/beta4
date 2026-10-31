@@ -1,0 +1,43 @@
+\section{Computations, corrections, and review status}\label{sec:evidence}
+The repository separates three layers: the mathematical exposition,
+the inventory and method catalog, and verbatim research snapshots.
+The latter are historical evidence. A tentative conclusion inside an old
+note is not a current theorem if its later review corrected it.
+The register covers all 57 grouped entries and all twelve method groups;
+this is coverage of the selected archive, not a claim that every idea
+ever proposed for $\beta(4)$ has been investigated.
+
+The companion paper's core exact and Arb checks have their own runner.
+For this supplement, a separate runner executes preserved scripts in a
+temporary directory, records fresh results, and checks the frozen source
+hashes. It includes the rational Sturm and tail certificate used in
+Theorem~\ref{thm:mellin}. Additional finite algebra checks cover the
+rewritten scalar, Euler--Boole, continuant and monodromy formulas.
+The precise cases, counts, dependencies and results are in
+\path{checks/supplement-reproduction.json}. No large parameter search
+is part of this writing pass. Archived tests outside that runner retain
+their original status and are not described as rerun.
+
+Three corrections are particularly consequential. The quarter
+forward/dual identity mismatch was repaired in the later deformation
+record. The ordinary first-variation examples require removal of the
+\emph{full} common numerator gcd; their original clearing-only table
+is superseded. Finally, the interleaved-frame negative Smith layers and
+integer-clearing obstruction do not bound every rational primitive
+rescaling. The final method record preserves these distinctions.
+
+All work was prepared with Codex. The historical record contains separate
+model cross-checks as well as calculations. This supplement pass is a
+review by its assembling model, not a new independent model audit,
+human mathematical audit or proof-assistant verification. Finite exact
+calculations check identities and specified instances; they do not
+prove asymptotic statements by extrapolation. The Sturm and tail
+calculation is explicitly distinguished because it certifies finite
+inequalities used in one proof.
+
+The source ledger records versions, local PDFs, hashes, actual reading
+scope and unchecked dependencies. The specific obstruction statements
+are candidates for external scrutiny, not priority claims inferred from
+a failed literature search. Classical positivity, interpolation,
+orthogonal-polynomial, continued-fraction and content-removal mechanisms
+remain classical even when applied in a new experiment.

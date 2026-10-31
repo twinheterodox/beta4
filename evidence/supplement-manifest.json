@@ -1,0 +1,49 @@
+{
+  "snapshot_date": "2026-10-31T14:34:44.861871+00:00",
+  "archive_root": "/home/research/Chat/Math/beta4",
+  "scope": "Additional verbatim computation sources and one corrected proof navigation target for the supplement.",
+  "files": [
+    {
+      "path": "evidence/supplement-source/collaboration/round-03/fresh/mellin_obstruction_checks.py",
+      "archive_relative_path": "collaboration/round-03/fresh/mellin_obstruction_checks.py",
+      "bytes": 4109,
+      "sha256": "3e183bc907dd31eaf99286d4892f2791bd8e1a3c570dbf086a5a9f74fad3af6e"
+    },
+    {
+      "path": "evidence/supplement-source/collaboration/round-03/fresh/mellin_obstruction_checks.json",
+      "archive_relative_path": "collaboration/round-03/fresh/mellin_obstruction_checks.json",
+      "bytes": 3047,
+      "sha256": "d8e70ec8868e97cfea6d65c601de7b1f36cf96cab6a0b8a524f6a5ed92191894"
+    },
+    {
+      "path": "evidence/supplement-source/collaboration/round-05/fresh/exact_checks.py",
+      "archive_relative_path": "collaboration/round-05/fresh/exact_checks.py",
+      "bytes": 4932,
+      "sha256": "4505078e1d4fe8b2d1dccb2e0bb6dee4eef22f318820b2b8e79ae3c759f0a7b2"
+    },
+    {
+      "path": "evidence/supplement-source/collaboration/round-05/fresh/exact_checks.json",
+      "archive_relative_path": "collaboration/round-05/fresh/exact_checks.json",
+      "bytes": 91152,
+      "sha256": "c2341cc6ebf78477d449dec5ee5dccdf6c32478e37bc3cab72508af8c566ae77"
+    },
+    {
+      "path": "evidence/supplement-source/collaboration/round-11/norms/check_sine_norms.py",
+      "archive_relative_path": "collaboration/round-11/norms/check_sine_norms.py",
+      "bytes": 3485,
+      "sha256": "cdfc7b9dbdf50825d6781649a07bbb44b777e2118893bcbd0e72a7b3936c0d8d"
+    },
+    {
+      "path": "evidence/supplement-source/collaboration/round-11/norms/checks.json",
+      "archive_relative_path": "collaboration/round-11/norms/checks.json",
+      "bytes": 3179,
+      "sha256": "b18f0018f089a900f2c047f275380afca7292dc15ecdea79e15104f9e9748922"
+    },
+    {
+      "path": "evidence/supplement-source/collaboration/round-05/fresh/alternative_prefactor.txt",
+      "archive_relative_path": "collaboration/round-05/fresh/alternative_prefactor.txt",
+      "bytes": 14327,
+      "sha256": "6651823a09ba690b513424aff0f3a4e5905b3eaf72a781ead48cde164ba636e4"
+    }
+  ]
+}
