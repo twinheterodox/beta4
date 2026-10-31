@@ -1,0 +1,77 @@
+{
+  "baseline_commit": "local-prepublication-revision",
+  "status": "passed",
+  "scope": "Exact text comparison of existing theorem, lemma, proposition, corollary, definition and proof environments; new explanatory prose and example are reviewed separately.",
+  "files": [
+    {
+      "path": "paper/beta4-determinant-obstructions.tex",
+      "protected_statement_and_proof_blocks": 20,
+      "unchanged": true
+    },
+    {
+      "path": "supplement/beta4-investigations.tex",
+      "protected_statement_and_proof_blocks": 0,
+      "unchanged": true
+    },
+    {
+      "path": "supplement/claim-register.tex",
+      "protected_statement_and_proof_blocks": 0,
+      "unchanged": true
+    },
+    {
+      "path": "supplement/references.tex",
+      "protected_statement_and_proof_blocks": 0,
+      "unchanged": true
+    },
+    {
+      "path": "supplement/sections/01-conventions-cone.tex",
+      "protected_statement_and_proof_blocks": 4,
+      "unchanged": true
+    },
+    {
+      "path": "supplement/sections/02-euler-quadratic.tex",
+      "protected_statement_and_proof_blocks": 2,
+      "unchanged": true
+    },
+    {
+      "path": "supplement/sections/03-boole.tex",
+      "protected_statement_and_proof_blocks": 2,
+      "unchanged": true
+    },
+    {
+      "path": "supplement/sections/04-continuants.tex",
+      "protected_statement_and_proof_blocks": 3,
+      "unchanged": true
+    },
+    {
+      "path": "supplement/sections/05-cyclotomic.tex",
+      "protected_statement_and_proof_blocks": 2,
+      "unchanged": true
+    },
+    {
+      "path": "supplement/sections/06-completed-mellin.tex",
+      "protected_statement_and_proof_blocks": 2,
+      "unchanged": true
+    },
+    {
+      "path": "supplement/sections/07-monodromy.tex",
+      "protected_statement_and_proof_blocks": 2,
+      "unchanged": true
+    },
+    {
+      "path": "supplement/sections/08-first-variation.tex",
+      "protected_statement_and_proof_blocks": 2,
+      "unchanged": true
+    },
+    {
+      "path": "supplement/sections/09-method-record.tex",
+      "protected_statement_and_proof_blocks": 0,
+      "unchanged": true
+    },
+    {
+      "path": "supplement/sections/10-evidence.tex",
+      "protected_statement_and_proof_blocks": 0,
+      "unchanged": true
+    }
+  ]
+}

@@ -24,3 +24,11 @@ The rerun covered:
 The exact structural records match the archived results. Numerical interval strings are not required to match byte-for-byte; their inequalities are checked afresh. The unrelated slow-filter branch diagnostics are not part of this paper and are not rerun.
 
 These are model-authored calculations and a replay of existing checks, with an additional rational-polynomial implementation for the norm formulas. They are not a fresh independent model audit, a human audit or formal verification.
+
+The later accessibility revision added one worked example: the three-node principal matrix at the prime seven. Its standalone exact rational-arithmetic check needs only the Python standard library:
+
+```sh
+python3 checks/expository_example.py
+```
+
+The [result](expository-example.json) records the scaled matrix, the three principal-minor residues and the coefficient valuation. The earlier calculation suites were not rerun for this editorial revision: their scripts and reports are unchanged, and all existing statement and proof blocks match the previous draft. The [revision record](../planning/accessibility-review.txt) separates these checks from mathematical verification.

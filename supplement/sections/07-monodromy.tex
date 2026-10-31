@@ -1,9 +1,17 @@
 \section{A linear regularization that erases its endpoint constant}\label{sec:mono}
-Arithmetic holonomy suggests studying a rational germ that gains
-arithmetic information if its endpoint period is rational; see the
-framework described by Calegari, Dimitrov and Tang~\cite{CDT}.
-No holonomy bound is applied here. The following obstruction is an
-elementary monodromy statement about one specified primitive.
+The arithmetic-holonomy framework of Calegari, Dimitrov and
+Tang~\cite{CDT} motivates trying to turn rationality of a constant into
+a restriction on analytic continuation. Here we examine one preliminary
+step of such a proposal. Adding a constant makes all Taylor coefficients
+at one point rational, but leaves a logarithmic branch at another point.
+Could a linear differential operation remove that branch while retaining
+the constant we want to test?
+
+The answer for this particular function is no: any such operation also
+annihilates constants. The proof uses \emph{monodromy}, the change in a
+function after analytic continuation around a singularity. One circuit
+followed by a second produces a nonzero additive constant, forcing
+the conclusion. No general holonomy bound is applied.
 
 Let $E=x\,\mathrm d/\mathrm dx$ and
 $F(x)=\sum_{m\geq1}\chi_4(m)x^m/m^4$. Put $F_j=E^jF$ and

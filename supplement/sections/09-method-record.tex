@@ -6,6 +6,12 @@ gives its definitions, original written arguments and recorded checks.
 It is deliberately more comprehensive than the selection of theorems.
 
 \subsection{Rational Euler and two-endpoint Hermite sources}
+These constructions cancel Taylor coefficients at one or two points.
+The aim is to force a small remainder while keeping its coefficients
+arithmetically manageable. Solving the interpolation equations is only
+the first step; their endpoint values still need nonvanishing and
+primitive-size estimates.
+
 Records H01--H03 extend~\eqref{eq:euler-exact} to two-endpoint sources.
 The rational source conditions reduce to a four-by-five linear system,
 with singular cases and the constant coefficient retained. The circular
@@ -31,6 +37,11 @@ $\log W_4(N)\sim(1+1/2+1/3+1/4)N=25N/12$ by the prime number
 theorem. It is not an endpoint primitive-value bound.
 
 \subsection{Continued fractions, derivatives and asymptotic summation}
+These methods improve a series tail by a rational approximation or an
+asymptotic correction. Differentiation can change the target constant,
+but also changes the denominator cost. It is essential to specify which
+endpoint and truncation parameters are allowed to grow together.
+
 S04 and S05 are Theorems~\ref{thm:boole} and~\ref{thm:cf}; their
 different quantifiers matter. Euler--Boole covers all endpoint and
 truncation schedules, whereas the continued-fraction theorem fixes the
@@ -43,6 +54,12 @@ also prevents counting an old scalar source as a new continued-fraction
 construction.
 
 \subsection{Modular and Eichler sources}
+Modular transformations relate expansions of a function at different
+points. The hope is to combine arithmetic information from those
+expansions with an analytic estimate improved by the symmetry.
+The experiments below test cancellation of unwanted constants, removal
+of selected prime denominators, and the singularities that remain.
+
 M01 cancels an auxiliary Eichler period polynomial to produce a
 level-32 $\theta$-only source. M02 constructs quadratic prime filters
 compatible with the Fricke transformation, obtaining selected savings
@@ -61,6 +78,11 @@ The exact template and source choices are retained in the record;
 they are essential hypotheses, not an incidental implementation detail.
 
 \subsection{Polylogarithm ladders and functional equations}
+Functional identities replace one special value by combinations at
+other arguments. Small arguments improve series convergence, and shared
+arguments can permit joint cancellation. The remaining task is to
+control all coefficients and auxiliary logarithms in the resulting form.
+
 L01 is the completed Broadhurst identity used in
 Section~\ref{sec:mellin}; its attribution is part of the statement.
 L02 studies equal-speed scalar Taylor truncations of one rational
@@ -93,6 +115,12 @@ inversions fails; no theorem of numerical period independence follows
 from a symbol computation.
 
 \subsection{Slow dilations, prime deletion and sparse Pad\'e}
+These attempts modify the generating series to reduce its arithmetic
+cost: spread out its exponents, remove contributions from selected
+primes, or retain a sparse set of terms. Such changes also alter the
+singularities and the available approximation estimates, so an arithmetic
+saving alone does not settle the construction.
+
 A01 studies a fixed odd dilation parameter $k$ and finds coefficient
 denominator rates between $3/2+1/(k+2)$ and
 $3/2+1/k+1/(2k+4)$ in the normalization defined in its record.
@@ -125,6 +153,12 @@ oversieved regime, whose cutoff prime is at least the fourth power
 of its size parameter. The natural cutoff was not excluded.
 
 \subsection{Positive determinants and interleaved frames}\label{sec:interleaved}
+Changing the row and column nodes of a determinant may improve the
+balance between its real size and its prime denominators. The key
+distinction is between changing a basis within the same polynomial
+pencil, which preserves its primitive polynomial, and choosing a
+different set of rows, columns or moments, which can change the problem.
+
 C01--C08 are the companion paper's positive cubic-tail kernel, uniform
 Cauchy comparison, consecutive-principal obstruction, difference-Gram
 construction and exact large-prime primitive arithmetic. Its two
@@ -172,6 +206,12 @@ Section~\ref{sec:variation}, is another open arithmetic problem rather
 than a consequence of P06.
 
 \subsection{Hypergeometric and quarter-pole constructions}
+Factorial ratios and hypergeometric identities can provide rational
+coefficients together with exact remainder formulas. Shifting or
+differentiating their parameters changes the special values that occur.
+The tests here seek a combination containing only $\theta$ and a
+rational term, then examine the denominator powers and common factors.
+
 Q01 differentiates an integer-pole tail to isolate $\theta$, with
 signed error proportional to
 \[
@@ -222,6 +262,11 @@ identity is retained; the earlier numerator mismatch is not a current
 reason to reject it.
 
 \subsection{Coupled integrals, geometry, and exact rediscoveries}
+Coupling several integrals or introducing extra parameters can cancel
+unwanted constants while retaining a positive expression. One must then
+check both the resulting arithmetic and whether the apparent new
+construction is actually a reparametrization of an earlier one.
+
 P01 and O01 navigate the earlier lower-period cancellations, coupled
 holonomy, lattice, radial and orthogonal constructions. They are umbrella
 records, not single consolidated theorems. Some fitted recurrences were
@@ -262,6 +307,12 @@ the fourth denominator layer but also pays the hypothetical rational
 denominator to the polynomial degree. Untested bases are not excluded.
 
 \subsection{Euler functionals and proposed analytic bridges}
+Here the main issue is whether a proposed connection between two kinds
+of information is valid: for example, whether a $p$-adic functional
+estimate controls the relevant coefficients, or whether an analytic
+property supplies the arithmetic conclusion needed for irrationality.
+A counterexample to such a connection closes only the stated implication.
+
 E01 computes a norm on integer-valued polynomials, rather than a Gauss
 coefficient norm. For the archived functional $\tau=-E_0D^3/12$ and
 $p\geq5$, the exact layer-onset function is
@@ -280,6 +331,12 @@ from rational moments, and a spectral-raising bridge. Each countermodel
 has its stated hypotheses; none excludes the entire surrounding subject.
 
 \subsection{Cyclotomic parity and rationality-dependent constructions}
+The remaining tests use algebraic conjugation or begin by supposing
+$\theta$ rational. In the first case a trace can vanish by symmetry;
+in the second, an integrality claim or a differential construction must
+actually distinguish the hypothetical rational value. Neither property
+follows merely from writing down the corresponding formal expression.
+
 The direct even-power signature extension E08 lies in a cyclotomic
 component negated by an involution fixing $\Q$, so its prescribed
 rational traces vanish. This parity statement does not apply to the

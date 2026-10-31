@@ -6,14 +6,16 @@ This repository contains a focused paper and a companion investigation record on
 
 The paper studies two positive determinant families. In each, the real determinant becomes very small, but the **actual primitive integer polynomial**, after removing all common coefficient factors, has a value that grows. These are mathematical obstructions for the specified families. They do not exclude other proofs of irrationality.
 
-**Status:** complete first drafts of the main paper and technical supplement, kept local and intended for `twinheterodox/beta4-obstructions`. No remote repository or release has been created. The assembled drafts have not received a fresh independent audit.
+**Status:** complete drafts of the main paper and technical supplement, revised for readers unfamiliar with the constructions, kept local and intended for `twinheterodox/beta4-obstructions`. No remote repository or release has been created. The assembled drafts have not received a fresh independent audit.
 
 Start with the focused paper; use the supplement for the broader investigation.
 
 | Document | Contents | Source and review |
 | --- | --- | --- |
-| **[Main paper (14 pages)](output/pdf/beta4-determinant-obstructions.pdf)** | Complete proofs of the two determinant obstructions. | [LaTeX](paper/beta4-determinant-obstructions.tex) · [Assembly audit](paper/audit.txt) |
-| **[Technical supplement (29 pages)](output/pdf/beta4-investigations.pdf)** | Selected complete proofs, exact reductions, unresolved constructions, and a register covering all 57 grouped records. | [Source guide](supplement/README.md) · [Assembly audit](supplement/audit.txt) |
+| **[Main paper (16 pages)](output/pdf/beta4-determinant-obstructions.pdf)** | Complete proofs of the two determinant obstructions, with a shared proof outline and worked arithmetic example. | [LaTeX](paper/beta4-determinant-obstructions.tex) · [Assembly audit](paper/audit.txt) |
+| **[Technical supplement (31 pages)](output/pdf/beta4-investigations.pdf)** | A guide to the constructions, selected complete proofs, exact reductions, unresolved arithmetic, and all 57 grouped records. | [Source guide](supplement/README.md) · [Assembly audit](supplement/audit.txt) |
+
+Both abstracts and introductions now start from the irrationality criterion and explain the comparison between approximation error and arithmetic cost. The [accessibility revision record](planning/accessibility-review.txt) describes the added explanations and layout checks; the existing statements and proofs are unchanged.
 
 The [reproduction instructions and results](checks/README.md) distinguish main-paper exact/interval checks from the supplement's certificate replays and exact reconstructions. The supporting documents are:
 
@@ -53,4 +55,4 @@ python3 tools/render_supplement_register.py
 python3 tools/build_supplement.py
 ```
 
-The assembly audits describe their respective writing passes; later status updates are recorded here and in the supplement guide. This checkout is under `beta4/obstructions/`, with its own Git history. The original working archive is in the enclosing `beta4/` directory, and third-party PDFs are in `../literature/papers/`. To compare the evidence with that local archive and check the literature files, run `python3 tools/validate_packet.py --archive-root .. --check-local-pdfs`. Earlier audit records describe the directory layout at the time of their review. The original material in this repository is licensed under Apache 2.0; cited works retain their own terms.
+The assembly audits describe their respective writing passes; the later accessibility revision is recorded separately. This checkout is under `beta4/obstructions/`, with its own Git history. The original working archive is in the enclosing `beta4/` directory, and third-party PDFs are in `../literature/papers/`. To compare the evidence with that local archive and check the literature files, run `python3 tools/validate_packet.py --archive-root .. --check-local-pdfs`. Earlier audit records describe the directory layout at the time of their review. The original material in this repository is licensed under Apache 2.0; cited works retain their own terms.

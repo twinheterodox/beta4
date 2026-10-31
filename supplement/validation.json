@@ -1,12 +1,12 @@
 {
   "status": "passed",
-  "recorded_at_utc": "2026-10-31T14:48:00.975217+00:00",
-  "scope": "Final package consistency and recorded visual inspection; not independent mathematical verification.",
+  "recorded_at_utc": "2026-10-31T16:15:43.952499+00:00",
+  "scope": "Final package consistency and visual review after the accessibility revision; not independent mathematical verification.",
   "source_files_match_build_record": 13,
-  "build_record_sha256": "09d326505ab69c2380ee8e2e58471186d15d8c940d477d05264e8b55405a1dbf",
+  "build_record_sha256": "98d92557afdc212b4d69fae8d8ee795916c016d0b8ba0a4c84026cb68a4f0c50",
   "pdf": "output/pdf/beta4-investigations.pdf",
-  "pdf_sha256": "ee87cebd9bbf1b9c03be51986b9a88198d99955cd98852fe5f96fddc9c1eac6e",
-  "pages": 29,
+  "pdf_sha256": "5c7ccd5a80a55f84a072363c310d7ff322e30f762a90f9b08fd9c5fccb23409b",
+  "pages": 31,
   "visual_inspection": {
     "pages_inspected": [
       1,
@@ -37,14 +37,16 @@
       26,
       27,
       28,
-      29
+      29,
+      30,
+      31
     ],
-    "result": "All final pages inspected; no clipping, overlap or broken formula layout observed.",
-    "final_whitespace_cleanup": "All 29 rebuilt pages were compared pixel-for-pixel with the inspected render and are identical."
+    "rendering": "Poppler, 100 dpi; all pages inspected, with changed pages re-inspected after final builds.",
+    "result": "No clipping, overlap, broken formulas or illegible layout observed in the final render."
   },
   "latex": {
     "unique_labels": 53,
-    "reference_occurrences": 34,
+    "reference_occurrences": 50,
     "unresolved_references": [],
     "bibliography_keys": [
       "Broadhurst",
@@ -109,6 +111,10 @@
     },
     {
       "from": "README.md",
+      "target": "planning/accessibility-review.txt"
+    },
+    {
+      "from": "README.md",
       "target": "checks/README.md"
     },
     {
@@ -149,6 +155,10 @@
     },
     {
       "from": "paper/README.md",
+      "target": "../planning/accessibility-review.txt"
+    },
+    {
+      "from": "paper/README.md",
       "target": "audit.txt"
     },
     {
@@ -181,6 +191,10 @@
     },
     {
       "from": "supplement/README.md",
+      "target": "../planning/accessibility-review.txt"
+    },
+    {
+      "from": "supplement/README.md",
       "target": "../checks/supplement-requirements.txt"
     },
     {
@@ -204,6 +218,14 @@
       "target": "reproduction.json"
     },
     {
+      "from": "checks/README.md",
+      "target": "expository-example.json"
+    },
+    {
+      "from": "checks/README.md",
+      "target": "../planning/accessibility-review.txt"
+    },
+    {
       "from": "checks/SUPPLEMENT.md",
       "target": "supplement-reproduction.json"
     }
@@ -211,10 +233,56 @@
   "reproduction_report_sha256": "791e624eb4e80ae6d8afc734fdae8b3b68c834fd20ab05bc65bd54b7c119585d",
   "reproduction_inputs_and_outputs_match_recorded_hashes": true,
   "audit_record_sha256": "7e04a4ffd9bd5ec92a5a1bd764b101a1dd6c4e5c2aba56c787ff0e501e25fab8",
-  "unchanged_main_paper": {
-    "paper/beta4-determinant-obstructions.tex": "3275b54ec0249b29f6b680df30429c85be9227808139e218f9649c91293d227a",
-    "output/pdf/beta4-determinant-obstructions.pdf": "888c81d33cf2d73ec13393e379d592ef4b638069fd513f368e533a66ce53bcde"
-  },
   "independent_audit_of_assembled_draft": false,
-  "formal_verification": false
+  "formal_verification": false,
+  "proof_preservation": {
+    "baseline_commit": "local-prepublication-revision",
+    "existing_statement_and_proof_blocks_unchanged": 39,
+    "comparison_record": "planning/accessibility-proof-comparison.json",
+    "comparison_sha256": "eb9792b051b6a020e72410a24351c4a21fe720c6c22fa2a0fa764a48ae44ff8a"
+  },
+  "editorial_review": {
+    "record": "planning/accessibility-review.txt",
+    "sha256": "083300b1890e08b43b1ccd3bd19474470aa963f1dc90eefd220474d49e91c0fa",
+    "scope": "Accessibility revision by the assembling model; no independent mathematical audit."
+  },
+  "new_expository_example_check": {
+    "script": "checks/expository_example.py",
+    "script_sha256": "572fceb0b3cdffbd9f22a268c9d6db077f29ad405da754ee288f421afbc54568",
+    "result": "checks/expository-example.json",
+    "result_sha256": "0418a20d73176d99424dc3a16bd342846b26601a36717a0b46e2faab8941ff86",
+    "status": "passed",
+    "arithmetic": "exact rational arithmetic",
+    "scope": "One worked example, not an asymptotic proof."
+  },
+  "packet_consistency": {
+    "status": "passed",
+    "scope": "Writing-packet consistency, references and byte hashes only; not mathematical verification.",
+    "claims": 57,
+    "evidence_files": 127,
+    "evidence_bytes": 1807404,
+    "original_evidence_files": 120,
+    "supplemental_evidence_files": 7,
+    "method_groups": 12,
+    "research_rounds": 18,
+    "paper_sources": 12,
+    "original_archive_compared": true,
+    "local_pdfs_checked": 12,
+    "classification_counts": {
+      "positive_construction": 5,
+      "analytic_theorem": 2,
+      "primitive_value_obstruction": 12,
+      "arithmetic_theorem": 6,
+      "standard_fact": 1,
+      "structural_theorem": 1,
+      "finite_evidence": 2,
+      "estimate_limitation": 5,
+      "partial_construction": 11,
+      "structural_obstruction": 7,
+      "attributed_identity": 3,
+      "equivalence": 2
+    }
+  },
+  "reproduction_suites_rerun_for_accessibility_revision": false,
+  "audit_record_scope": "Historical assembly audit; current editorial review recorded separately."
 }

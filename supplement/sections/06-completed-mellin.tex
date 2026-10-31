@@ -1,11 +1,28 @@
 \section{A constrained completed Mellin source}\label{sec:mellin}
+Functional identities can express $\theta$ through polylogarithms at
+arguments strictly inside the unit disk, where their series converge
+geometrically. This suggests a source of accurate approximations.
+Turning such identities into polynomially weighted integrals, however,
+introduces lower-order logarithmic terms. Cancelling those terms imposes
+two moment constraints. For the resulting kernel, these constraints
+force a positive lower bound whenever the multiplier polynomial is
+nonnegative; the hoped-for small positive forms cannot arise in that class.
+
 This section separates an analytic inequality for an explicit rational
 kernel from its polylogarithmic identification with $\theta$. The latter
 uses a published identity; it is not a newly discovered functional
 equation.
 
 \subsection{The external identity and the rational kernel}
-For $|z|<1$ set
+For $|z|<1$, the polylogarithm is
+$\Li_s(z)=\sum_{k\geq1}z^k/k^s$. Its relation to the integrals here is
+\[
+ \int_0^1 x^{j-1}\frac{(-\log x)^{s-1}}{(s-1)!}\dd x=j^{-s}
+ \qquad(j,s\geq1),
+\]
+obtained by $x=e^{-t}$ and integration by parts. A \emph{completion}
+adds lower-order polylogarithms with logarithmic coefficients to obtain
+the cancellation required by the identity. In this case set
 \[
  D_4(z)=\Im\left(\Li_4(z)-\log|z|\Li_3(z)
                          +\frac{\log^2|z|}{3}\Li_2(z)\right).

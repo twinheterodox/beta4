@@ -1,12 +1,28 @@
-\section{Purpose, normalization, and evidence}
+\section{Introduction and guide to the results}
 Put $\theta=\beta(4)=\sum_{k\geq0}(-1)^k/(2k+1)^4$.
-The companion paper~\cite{Main} proves two primitive-value obstructions
-for positive determinant families. The present supplement supplies the
-broader mathematical record behind that selection. It organizes the
-investigation by construction, rather than by the chronology of eighteen
-research rounds. Stable record identifiers, such as S03 or P07, refer to
-the source register in Appendix~\ref{app:register} and the repository's
-57-entry inventory. They are navigation labels, not theorem numbers.
+Suppose a construction gives a rational approximation $a_n/q_n$ in
+lowest terms, with error $e_n=\theta-a_n/q_n$. The associated integer
+linear form is $q_n\theta-a_n=q_ne_n$. To prove irrationality by this
+route, one needs these forms to be nonzero and tend to zero.
+Indeed, if $\theta=a/b$ were rational, every such nonzero form would
+have absolute value at least $1/b$. Thus the central comparison is
+between the decay of $e_n$ and the growth of its reduced denominator.
+
+This supplement asks how that comparison works in several explicit
+constructions. Some start from integrals, some improve the alternating
+series by tail corrections or continued fractions, and some use
+algebraic approximations or differential equations. The companion
+paper~\cite{Main} treats two determinant families in detail. Here we
+give selected further proofs and retain the other attempts with their
+precise mathematical status.
+
+The results are organized around three questions: what makes the
+constructed value nonzero, how small is it as a real number, and what
+arithmetic normalization is unavoidable? To prove failure by comparing
+sizes, one must show that the last cost defeats the real decay.
+A large convenient
+denominator, or a finite run of unfavorable examples, is insufficient
+for such a conclusion.
 
 The motivating determinant work of OpenAI~\cite[Section~1.2]{OpenAI}
 separates nonvanishing, real size and arithmetic normalization.
@@ -24,7 +40,9 @@ $\kappa>0$ and the resulting integer coefficients have gcd one. Then
 \begin{equation}\label{eq:primitive}
  v_p(\kappa)=-\min_j v_p([X^j]Q).
 \end{equation}
-This identity follows because the minimum valuation of a primitive
+Here $v_p$ counts powers of the prime $p$ in the numerator minus those
+in the denominator of a nonzero rational number; $v_p(0)=+\infty$.
+For example, $v_p(p^{-3})=-3$. The identity follows because the minimum valuation of a primitive
 integer coefficient list is zero at every prime. Multiplying $Q$ by a
 nonzero rational scalar preserves its primitive representative up to
 sign. A lower bound on a convenient clearing integer is therefore not
@@ -38,24 +56,85 @@ $Z_n(\theta)\to0$ with unbounded degrees is insufficient: $X^n$ at
 $1/2$ is a counterexample. For linear forms this reduces to the usual
 nonzero integer-form criterion.
 
+\paragraph{A guide to the proved results.}
+The table summarizes the selected statements proved in
+Sections~\ref{sec:cone}--\ref{sec:variation}. Each section introduces
+its construction and states its hypotheses. In particular, the
+continued-fraction conclusion fixes the endpoint and uses even depth,
+and the Mellin inequality concerns constrained nonnegative sources.
+\begin{center}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{.25\linewidth}
+                  >{\raggedright\arraybackslash}p{.59\linewidth}r@{}}
+\toprule
+Construction & What is proved here & Section\\
+\midrule
+Positive polynomial integrals
+ & Every positive form $A\theta+B$, $A,B\in\Q$, is representable;
+   an obstruction requires restrictions on the sources. & \ref{sec:cone}\\[3pt]
+Repeated quadratics
+ & Unavoidable prime denominators defeat the best real decay
+   within the stated family. & \ref{sec:quadratic}\\[3pt]
+Euler--Boole corrections
+ & Reduced integer forms grow for every escaping endpoint and
+   truncation schedule. & \ref{sec:boole}\\[3pt]
+Differentiated continued fractions
+ & A fixed-endpoint, even-depth family has growing reduced forms.
+   & \ref{sec:cf}\\[3pt]
+Roots of unity
+ & Large conjugates defeat the accuracy of one algebraic approximation.
+   & \ref{sec:cyclotomic}\\[3pt]
+Completed Mellin source
+ & Positivity and two moment constraints force a lower bound
+   after normalization. & \ref{sec:mellin}\\[3pt]
+Linear regularization
+ & Removing a prescribed branch also removes the constant to
+   be tested. & \ref{sec:mono}\\[3pt]
+Moment differentiation
+ & The error is positive with a sharp decay rate;
+   the denominator question remains open. & \ref{sec:variation}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+For a first reading, Sections~\ref{sec:quadratic}--\ref{sec:boole}
+give direct examples of the real-size versus denominator comparison.
+Section~\ref{sec:variation} shows what remains when the analytic part
+succeeds but the arithmetic part is unresolved. The other sections can
+then be read by method; the integral notation in Section~\ref{sec:cone}
+is also used in Section~\ref{sec:quadratic}.
+
 Four conclusions must be kept separate. A \emph{primitive obstruction}
 bounds actual primitive values. An \emph{estimate limitation} says only
 that a specified bound or normalization is inadequate. A \emph{structural
 obstruction} disproves a particular proposed implication or transformation.
-\emph{Finite evidence} concerns only the enumerated instances. The method
-record preserves these distinctions, including where a later correction
-weakened an earlier interpretation. No statement about all possible
-irrationality arguments follows from these results.
+\emph{Finite evidence} concerns only the enumerated instances. The guide
+to the wider investigation in Section~\ref{sec:atlas} preserves these
+distinctions, including where a later correction weakened an earlier
+interpretation. Stable labels such as S03 or P07 point to the source
+register in Appendix~\ref{app:register} and the 57-entry repository
+inventory. They identify records, not additional theorems proved here.
+The organization is by construction, rather than by the chronology of
+eighteen research rounds.
 
 Standard background includes the prime number theorem
 $\vartheta(x)=\sum_{p\leq x}\log p=x+o(x)$, elementary complex integration,
 Fourier convergence and the stated elementary polynomial identities.
+Throughout, $\chi_4(m)$ is zero for even $m$ and
+$(-1)^{(m-1)/2}$ for odd $m$.
 The completed Mellin application has an additional, explicitly identified
 polylogarithmic input in Section~\ref{sec:mellin}. The source register
 distinguishes proofs rewritten here from results retained as archived
 claims. No new independent audit of this assembled supplement is asserted.
 
 \section{Positive polynomial sources: a scope boundary}\label{sec:cone}
+Multiplying an integral representation of $\theta$ by a nonnegative
+polynomial is a natural way to preserve the sign while reducing the
+integral's size. Before restricting to a particular sequence of
+polynomials, we ask how large a class of rational linear forms this
+procedure can represent. The answer is every positive one. Thus
+positivity alone cannot explain failure of this approach; the
+restrictions on a chosen polynomial family matter.
+
 Define
 \begin{equation}\label{eq:scalar}
  \dd\nu(t)=\frac{(-\log t)^3}{96\sqrt t}\dd t,

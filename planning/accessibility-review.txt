@@ -1,0 +1,75 @@
+Accessibility revision, 31 October 2026
+
+Scope
+This is an editorial review by the assembling model, undertaken to make
+both drafts accessible to expert mathematicians unfamiliar with these
+constructions. It is not a fresh independent mathematical audit, a human
+review, a priority assessment or formal verification. The drafts remain
+local and unpublished.
+
+Changes
+Both abstracts and introductions now begin with the irrationality
+criterion and the comparison between approximation error and arithmetic
+normalization. The main paper explains the degree cost, primitive
+normalization and the need for lower bounds, then gives a shared
+three-step proof outline and a table of the two growth comparisons.
+Each family and major proof stage has an explanation of its purpose.
+A three-node, prime-seven example illustrates why a surviving principal
+minor forces a denominator even after coefficient cancellation.
+
+The supplement adds a table of its proved results and a suggested
+reading order. Its sections explain the motivation and mechanism of
+each construction before introducing the formulas. Definitions include
+continuants, norm polynomials, polylogarithms and monodromy. The moment
+variation is explicitly distinguished from the failure results: its
+analytic estimates succeed, but its reduced-denominator growth remains
+unresolved. The wider method guide retains the distinctions between
+proofs, insufficient estimates, finite evidence and archived claims.
+
+Mathematical preservation and checks
+The baseline is commit local-prepublication-revision;
+planning/accessibility-baseline.json records the earlier source/PDF
+hashes. Exact comparison finds all 39 existing theorem, lemma,
+proposition, corollary, definition and proof environments unchanged.
+The comparison is in planning/accessibility-proof-comparison.json.
+This protects the original proof text; it does not independently
+certify its correctness.
+
+The added explanations were checked against the hypotheses and scope
+of the statements they describe. In particular, the first kernel's
+diagonal description uses positive integer nodes; the continued-fraction
+summary specifies fixed endpoints and even depth; and its error is
+described as an asymptotic, not an all-index nonvanishing assertion.
+The Mellin interpretation retains its declared external identity input.
+
+The new arithmetic example was recomputed with exact Python fractions
+using checks/expository_example.py. It verifies the scaled matrix, all
+three principal-minor residues, and valuation -8 of the coefficient of
+X at the prime seven. It proves a lower bound of 8 for the multiplier
+valuation, not an equality for the full multiplier. The result is in
+checks/expository-example.json.
+
+The earlier main-paper and supplement calculation suites were not
+rerun for these editorial changes. Their inputs, outputs and report
+hashes were rechecked and remain unchanged. All 127 evidence files
+were also compared with the original archive, and all 12 local PDFs
+in the source ledger were checked against their recorded hashes.
+No new literature search, mathematical parameter scan or independent
+model audit was commissioned.
+
+Build and visual review
+Both drafts compile without unresolved references or overfull/underfull
+box warnings. The final main paper has 16 pages; the supplement has 31.
+All pages were rendered with Poppler at 100 dpi and visually inspected
+for legible mathematics, spacing, table layout, clipping and overlap.
+After the last wording/layout edits, fresh renders were compared with
+the inspected pages; changed pages were inspected again. An unnecessary
+page break before the supplement's bibliography was removed to avoid
+leaving a page with only the final register entry.
+
+The current build records and validation.json files give the final
+artifact hashes, reference/link checks and review status. The original
+paper/audit.txt and supplement/audit.txt remain unchanged as historical
+records of the assembly passes; their page counts describe those drafts.
+The pre-existing untracked PDF in paper/ was left untouched. The
+deliverables remain the two PDFs in output/pdf/.

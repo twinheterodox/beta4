@@ -1,4 +1,12 @@
 \section{A sine-normalized cyclotomic family}\label{sec:cyclotomic}
+Algebraic approximations offer another route: choose an algebraic number
+$\alpha$ close to $\theta$ and evaluate its integer minimal polynomial
+at $\theta$. This evaluation contains a factor $\theta-\alpha$, but
+also a factor for every other conjugate of $\alpha$. A good approximation
+at one real embedding can therefore be defeated by large conjugates.
+The roots-of-unity family below exhibits this explicitly, including
+the removal of common factors from the polynomial coefficients.
+
 The topological-signature motivation came from the cubic cotangent
 formula recorded by March\'e and Masbaum~\cite[Corollary 3.2]{MarcheMasbaum},
 who credit its simplification to Murakami. That signature formula is not
@@ -13,6 +21,8 @@ For an odd prime $p$, set $h=\pi/(2p)$, $w=e^{2\pi i/(4p)}$, and
 \end{equation}
 Let $F_p=\Q(w+w^{-1})$, of degree $d=p-1$, and
 $M_p(X)=\operatorname{Norm}_{F_p/\Q}(X-\alpha_p)$.
+Here the norm polynomial is the product of $X-\sigma(\alpha_p)$
+over all embeddings $\sigma:F_p\hookrightarrow\R$.
 
 \begin{theorem}[One cyclotomic norm obstruction; S06]\label{thm:norm}
 The number $8\alpha_p$ is integral, $\alpha_p$ has degree $p-1$,

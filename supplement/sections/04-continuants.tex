@@ -1,6 +1,16 @@
 \section{Differentiated continued fractions at fixed endpoints}\label{sec:cf}
+Continued fractions give rational approximations to a tail integral
+without truncating its asymptotic series. Here three derivatives with
+respect to the Laplace parameter introduce the factor $t^3$ needed for
+the fourth-power beta tail. The resulting approximation has an explicit
+error asymptotic, but differentiating a quotient also raises powers of its
+denominator. For a fixed tail endpoint and increasing even depth,
+the error decays only polynomially while the reduced denominator grows
+exponentially. The proof checks this cost after all cancellation.
+
 For $\Re a>0$ let $S(a)=\int_0^\infty e^{-at}\sech t\dd t$.
-Define polynomial continuants by
+The numerator and denominator polynomials of the approximants,
+called continuants, are defined by
 \[
  q_0=1,\ q_1=a,\quad r_0=0,\ r_1=1,\qquad
  (n+1)y_{n+1}=ay_n+ny_{n-1}.

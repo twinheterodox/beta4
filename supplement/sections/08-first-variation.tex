@@ -1,4 +1,14 @@
 \section{An unresolved model with complete analytic control}\label{sec:variation}
+Differentiating a parameter-dependent approximation to $\beta(2)$ can
+produce one for $\beta(4)$: differentiation raises the denominator
+power in the defining series. The difficulty is to cancel the remaining
+$\beta(2)$ term and control the sign of the new error. A moment matrix
+does both here. Its block determinant isolates a rational approximation,
+and a variational formula shows that the differentiated error is positive.
+This section therefore reaches the final arithmetic question rather
+than proving another failure theorem: how quickly do the reduced
+denominators of these rational approximations grow?
+
 The ordinary-moment first variation \record{P07} is retained because
 its analytic conclusions are stronger than a negative summary of the
 project might suggest. It has all-index positivity and a sharp scalar
@@ -25,8 +35,10 @@ $1,(1+t),(1+t)t,\ldots$, $t=x^2$, the moment matrix is
  \begin{pmatrix}F&c^T\\c&B\end{pmatrix},\qquad
  H_n=a_n(F-r_n).
 \]
-All entries of $a_n,r_n$ and their derivatives at zero are rational.
-The exterior derivative eliminates $\beta(2)$ exactly:
+The functions $a_n(u)$ and $r_n(u)$ are rational functions with rational
+coefficients, regular at zero; their values and derivatives there are
+rational. The following antisymmetric combination of the determinant
+and its derivative eliminates $\beta(2)$ exactly:
 \begin{equation}\label{eq:variation}
  W_n=a_n(0)H_n'(0)-a_n'(0)H_n(0)
        =a_n(0)^2(\theta-r_n'(0)).

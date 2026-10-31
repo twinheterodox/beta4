@@ -1,4 +1,13 @@
 \section{Euler--Boole truncations at every endpoint}\label{sec:boole}
+The alternating partial sums can be improved by adding an asymptotic
+expansion of their tails. There are two choices: where to stop the
+original series and how many correction terms to retain. The best real
+error in this family is exponentially small, on the scale
+$e^{-\pi N}$. However, the reduced denominators grow at rate at least
+$e^{8N+o(N)}$, uniformly in the number of corrections. The theorem below
+compares these quantities and also handles a fixed endpoint with an
+increasing number of correction terms.
+
 The Euler--Boole method is classical; the point here is the uniform
 arithmetic conclusion for this particular family. Define integers
 $E_{2j}$ by $\sech t=\sum_{j\geq0}E_{2j}t^{2j}/(2j)!$ near zero.

@@ -44,19 +44,22 @@ approximations to $\beta(4)$}
 \maketitle
 
 \begin{abstract}
-We study two explicit positive determinant constructions for the Dirichlet
-beta value $\beta(4)$. Their real determinants become small, but their
-primitive integer polynomials have values that grow. For a cubic-tail
-kernel, we prove a uniform two-sided comparison with a Cauchy determinant
-and show that every sequence of consecutive principal offsets has
-primitive-value lower exponent at least $2-2\log 2$ on the quadratic scale.
-For a difference-variable Gram construction, we determine the exact
-primitive multiplier valuation at every prime $p>4n$ and obtain the lower
-exponent $6-\log 4$. The arithmetic bounds apply after removal of every
-common coefficient factor. They therefore exclude these specified
-determinant sequences as sources of small primitive values, without
-excluding other weights, subspaces or determinant constructions. All
-arguments particular to the two families are given in the paper.
+A standard route to irrationality is to construct nonzero values of
+integer polynomials that are sufficiently small relative to their degrees.
+Positive integral representations offer a way to ensure nonvanishing,
+and determinants built from them can become very small. We examine two
+such constructions for $\beta(4)=1-3^{-4}+5^{-4}-\cdots$ and prove that
+the arithmetic cost defeats the real decay: after clearing denominators
+and removing every common coefficient factor, the polynomial values grow.
+For the first family this holds for every choice of consecutive positive integer
+nodes, even when their starting point grows arbitrarily with the matrix
+size. For the second we calculate exactly the unavoidable power of each
+sufficiently large prime in the normalization. The respective lower
+growth exponents are $2-2\log 2$ and $6-\log 4$, on the scale of the square
+of the matrix size. These results identify why the two specified families
+fail as irrationality constructions. The proofs develop their positive
+integral representations, real estimates and prime-divisibility arguments;
+other determinant families remain outside the conclusions.
 \end{abstract}
 
 \section{Introduction}
@@ -66,14 +69,42 @@ Put
  \theta=\beta(4)=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k+1)^4}.
 \end{equation}
 Positive integral representations provide nonzero quantities involving a
-constant, and their determinants can decay exponentially in the square of
-the matrix size. Such real decay is useful in an irrationality argument
-only if the necessary arithmetic normalization is sufficiently inexpensive.
-For a rational polynomial $Q$, clearing denominators and then removing the
-common factor of its integer coefficients gives its \emph{primitive
-integer representative}. This paper proves that this final representative,
-not just a particular denominator-clearing multiple, has a growing value at
-$\theta$ in two determinant families.
+constant. To see how this can help with irrationality, suppose that
+$\theta=a/b$ were rational. Every nonzero integer linear form
+$A\theta-B$ would then have absolute value at least $1/b$.
+Thus a sequence of nonzero integer linear forms tending to zero would
+contradict rationality. An accurate rational approximation $B/A$ is useful
+for this purpose only when its error remains small after multiplication
+by $A$.
+
+Determinant constructions extend this idea to polynomials. A determinant
+whose entries are rational linear forms in $\theta$ is the value
+$Q_n(\theta)$ of a rational polynomial, usually of degree $n$. If
+$Z_n\in\Z[X]$ has degree at most $n$, rationality would imply
+$b^nZ_n(\theta)\in\Z$. Consequently nonzero values with
+$|Z_n(\theta)|^{1/n}\to0$ would suffice. Determinants can decay as
+$\exp(-c n^2)$, fast enough to overcome this degree cost, provided the
+passage from rational to integer coefficients does not consume the gain.
+
+There are therefore two sizes to compare: the value of the rational
+determinant, and the multiplier needed to make its coefficients primitive
+integers. Here \emph{primitive} means that their greatest common divisor
+is one. Write
+\begin{equation}\label{eq:budget}
+ Z_n=\kappa_n Q_n=\PP(Q_n),\qquad
+ \log|Z_n(\theta)|=\log\kappa_n+\log|Q_n(\theta)|.
+\end{equation}
+The multiplier $\kappa_n$ is positive and rational. Its determination
+includes both clearing denominators and cancelling common numerator
+factors. Ignoring the latter can give a false obstruction: an expensive
+chosen denominator need not be an unavoidable cost.
+
+We prove that the actual cost is unavoidable in two explicit families.
+Their determinants are positive and become small, but their primitive
+integer-polynomial values grow exponentially on the $n^2$ scale.
+This answers a construction-level question: these families cannot supply
+the small values required above. It makes no assertion that $\theta$ is
+rational, or that other determinant designs must fail.
 
 The relation between positive moments, determinant decay and irrationality
 criteria is developed systematically by Zudilin~\cite{Zudilin}.
@@ -97,13 +128,23 @@ no claimed global irrationality result in a recent manuscript is an input
 to our proofs.
 
 The contributions here are specific uniform estimates and exact local
-arithmetic for the two families defined below. The first combines a
-two-sided Cauchy comparison with a coefficient whose prime valuation is
-forced by a unique surviving principal minor. The second has a full-rank
-coefficient of $\theta$ and a leading residue block whose determinant
-determines the primitive multiplier exactly at large primes.
+arithmetic for the two families defined below. In each case we identify
+a coefficient that retains a large prime-power denominator after all
+cancellation. Combining these costs over many primes proves the
+obstruction. The first proof also shows that moving the entire block of
+consecutive nodes cannot repair that family. The second determines the
+cost at each large prime exactly.
 
 \subsection{The two families and main results}
+
+The first construction starts from a positive kernel: a function $K(x,y)$
+whose matrices $[K(x_i,x_j)]$ at distinct nodes are positive definite.
+At positive integer squares its off-diagonal entries are rational;
+each diagonal entry is $\theta$ plus a rational number. The determinant
+is therefore a monic polynomial in $\theta$. The formulas below define
+that polynomial directly; Section~\ref{sec:kernel} explains the kernel
+and proves its positivity. A matrix of the form $XI+R$ is a
+\emph{matrix pencil}, meaning that its entries depend linearly on $X$.
 
 For integers $a\geq 0$ and $\ell\geq 2$, write
 \begin{equation}\label{eq:S}
@@ -138,7 +179,13 @@ The underlying kernel admits a uniform comparison for arbitrary positive
 integer row and column nodes (Theorem~\ref{thm:comparison}); the arithmetic
 conclusion above is restricted to consecutive principal nodes.
 
-For the second family, define
+The second construction starts from moments $\mu_m$ of a positive measure
+on $[0,1]$. Each moment has the form $C_m\theta+B_m$, with rational
+$C_m,B_m$. The matrix $[\mu_{i+j}]$ is a Gram matrix: its entries are
+inner products of the monomials $1,y,y^2,\ldots$. This supplies positivity
+of its determinant. The measure is obtained from the difference variable
+$y=(u-v)^2$ in a double integral, which explains the family's name.
+Section~\ref{sec:gram} derives the following coefficients:
 \begin{align}
  T_\ell(j)&=\sum_{k=0}^{j-1}\frac{(-1)^k}{(2k+1)^\ell},
  &C_m&=\binom{2m}{m},\label{eq:T}\\
@@ -170,14 +217,49 @@ against all determinant methods for $\theta$.
 
 \subsection{Proof organization and background}
 
-Section~\ref{sec:normalization} fixes primitive normalization and the
-degree-sensitive small-value criterion. Section~\ref{sec:kernel} derives
-the positive cubic-tail kernel and its Cauchy comparison.
-Section~\ref{sec:principal} proves Theorem~\ref{thm:principal}.
-Sections~\ref{sec:gram} and~\ref{sec:delta-arithmetic} construct the positive
-Gram measure and prove Theorem~\ref{thm:delta}.
-Section~\ref{sec:scope} states the scope and verification status.
-Appendix~\ref{app:zero} treats the additional zero node.
+Both proofs follow the same three steps.
+\begin{enumerate}
+\item \emph{Prove nonvanishing by positivity.} Write the determinant as
+an integral with positive integrand, or as the determinant of inner
+products for a positive measure. This avoids having to assume anything
+about the arithmetic nature of $\theta$.
+\item \emph{Determine the scale of real decay.} Compare the determinant
+with an explicit Cauchy or moment determinant. An obstruction requires
+a lower bound: we must exclude the possibility that the real value is
+even smaller than an upper estimate suggests. The two-sided estimates
+give its logarithm to leading order.
+\item \emph{Prove an unavoidable arithmetic cost.} For selected primes,
+multiply by suitable powers of $p$ and reduce the coefficients modulo
+$p$. A nonzero residue identifies a denominator that cannot cancel.
+Sum these costs using the prime number theorem, then use
+\eqref{eq:budget}.
+\end{enumerate}
+
+The following comparison shows the outcome before the details. The
+entries are coefficients of $n^2$, with errors $o(n^2)$ omitted. In the
+first row the nodes are $1,\ldots,n$; the proof then treats every offset.
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Family & $\log Q_n(\theta)$ & $\log\kappa_n$ (lower)
+       & $\log Z_n(\theta)$ (lower)\\
+\midrule
+Consecutive, $m=0$ & $-2\log2$ & $2$ & $2-2\log2$\\
+Difference Gram & $-\log4$ & $6$ & $6-\log4$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The positive final column is the obstruction. The estimates also explain
+why the arithmetic calculation must account for all common coefficient
+factors: otherwise that column would describe only one normalization.
+
+Section~\ref{sec:normalization} gives the elementary normalization facts.
+Sections~\ref{sec:kernel}--\ref{sec:principal} carry out the three steps
+for the consecutive family; Sections~\ref{sec:gram}--\ref{sec:delta-arithmetic}
+do so for the difference Gram family. Their arguments can be read
+separately after the normalization section. Section~\ref{sec:scope}
+describes the scope and evidence, and Appendix~\ref{app:zero} extends
+the first construction to include a zero node.
 
 We use elementary complex integration, linear algebra, Stirling's formula
 and the prime number theorem in the form
@@ -243,6 +325,16 @@ The main theorems give growth in the opposite direction for their two
 specified families.
 
 \section{The positive cubic-tail kernel}\label{sec:kernel}
+
+The design problem is to put $\theta$ on the diagonal of a positive
+matrix while keeping the off-diagonal entries rational. A divided
+difference $(g(y)-g(x))/(y-x)$ is a natural candidate: it uses differences
+of function values off the diagonal and a derivative on the diagonal.
+We choose $g$ to be rational at squared integer nodes, with a derivative
+that introduces fourth-power beta tails. The cubic tail below is useful
+because differentiation raises its denominator power from three to four.
+The integral calculation then proves the required positivity; that
+property does not follow from the divided-difference form alone.
 
 \subsection{A direct integral representation}
 
@@ -365,6 +457,13 @@ $\omega(s)\dd s$.
 
 \subsection{A uniform comparison with Cauchy determinants}
 
+The positive representation makes nonvanishing transparent, but its
+density is inconvenient for estimating a large determinant. We compare
+that density with simpler ones whose determinants have explicit product
+formulas. The comparison changes the logarithm by only $O(n)$, so it
+preserves the $n^2$ scale relevant to the obstruction. Positivity of the
+determinant integrand is what makes this comparison legitimate.
+
 For positive nodes $a_i,b_j$, write
 \begin{equation}\label{eq:Cauchy}
  C(a,b)_{ij}=\frac1{a_i+b_j},\qquad
@@ -454,6 +553,12 @@ This proves~\eqref{eq:comparison} and~\eqref{eq:uniform-log}.
 
 \section{The consecutive principal obstruction}\label{sec:principal}
 
+We now determine part of the arithmetic cost in~\eqref{eq:budget}.
+For each prime in a suitable interval, the fourth-power tails contribute
+a diagonal residue that the cubic tails cannot cancel. A coefficient
+of the determinant records this residue. One such coefficient per prime
+is enough for a lower bound on the actual primitive multiplier.
+
 \subsection{A coefficient with forced valuation}
 
 For an odd prime $p$ put $\chi_4(p)=(-1)^{(p-1)/2}$.
@@ -490,6 +595,26 @@ one. This proves the equality in~\eqref{eq:principal-local};
 Lemma~\ref{lem:primitive} proves the inequality for the actual primitive
 multiplier.
 \end{proof}
+
+\begin{remark}[A three-node example]\label{rem:prime-example}
+Take nodes $1,2,3$ and $p=7$. The high nodes in the lemma are $2,3$,
+and $\chi_4(7)=-1$, so
+\[
+ 7^4 R\equiv\begin{pmatrix}0&0&0\\0&1&0\\0&0&1\end{pmatrix}\pmod7.
+\]
+The coefficient of $X$ in $\det(XI_3+R)$ is the sum of the three
+principal $2\times2$ minors:
+\[
+ [X]Q=(R_{11}R_{22}-R_{12}^2)
+       +(R_{11}R_{33}-R_{13}^2)
+       +(R_{22}R_{33}-R_{23}^2).
+\]
+After multiplication by $7^8$, only the final minor survives modulo
+$7$, with residue $1$. Thus $v_7([X]Q)=-8$, and the primitive multiplier
+must contain at least $7^8$. This is the role of the uniquely surviving
+minor: it rules out cancellation in the sum defining that coefficient.
+Other coefficients may force additional powers; a lower bound is enough.
+\end{remark}
 
 Since $Q$ is monic, the primitive multiplier is integral. Thus the local
 inequalities can be summed without any negative contribution from omitted
@@ -605,6 +730,14 @@ possible limit. Positivity follows from Proposition~\ref{prop:kernel}.
 This completes the proof of Theorem~\ref{thm:principal}.
 
 \section{Difference-variable Gram determinants}\label{sec:gram}
+
+The second design begins with a positive double integral. Its monomial
+integrals involve fourth-power beta tails on the diagonal and cubic
+tails off the diagonal. Expanding an even power of $u-v$ makes the
+unwanted $\beta(3)$ terms cancel, leaving rational linear forms in
+$\theta$. Moreover $y=(u-v)^2$ lies in $[0,1]$, so its powers form a
+positive moment sequence on a short interval. This gives both a
+nonvanishing Gram determinant and an effective estimate of its real size.
 
 \subsection{Moment formula and target isolation}
 
@@ -760,6 +893,14 @@ using $0<\theta<1$ and Stirling's formula, proves~\eqref{eq:gram-rate}.
 
 \section{Exact primitive arithmetic of the difference Gram}\label{sec:delta-arithmetic}
 
+Here the prime-denominator contributions first appear at a specific
+moment index. Because a moment matrix has entry index $i+j$, their
+residues occupy a corner block with a nonzero anti-diagonal. Its
+determinant supplies the noncancelling coefficient, just as the single
+surviving minor did in Remark~\ref{rem:prime-example}. In this family
+we also bound every coefficient's denominator at the same prime, which
+turns a lower bound into an exact formula.
+
 Fix $n\geq1$ and a prime $p>4n$. All moment indices used in
 $Q_n^{\Delta}$ satisfy $0\leq m\leq2n-2$. In particular $2m<p$,
 $|j-m|<p$ for the indices in~\eqref{eq:B}, and $T_4(m)$ is $p$-integral.
@@ -884,9 +1025,10 @@ nonprincipal designs have unfavorable proved denominator bounds without
 an all-index bound on numerator content. An ordinary-moment first-variation
 construction has a positive error and a proved real exponent, but no
 all-index primitive arithmetic conclusion. Neither status is upgraded
-to an impossibility statement by the present theorems. The catalog and
-source snapshots provide the basis for a separate technical supplement;
-they are not substitutes for proofs in this paper.
+to an impossibility statement by the present theorems.
+The accompanying \href{run:beta4-investigations.pdf}{technical supplement}
+develops selected further proofs and guides the reader through the
+remaining constructions, with links to the catalog and source snapshots.
 
 \subsection*{Computational checks and authorship}
 

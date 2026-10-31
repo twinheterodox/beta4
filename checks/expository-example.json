@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "nodes": [
+    1,
+    2,
+    3
+  ],
+  "prime": 7,
+  "scaled_matrix_mod_7": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      1
+    ]
+  ],
+  "scaled_principal_minor_residues": [
+    0,
+    0,
+    1
+  ],
+  "coefficient_of_X": "4478463248170910277269003/1696076783358448187812500",
+  "coefficient_valuation": -8,
+  "primitive_multiplier_valuation_lower_bound": 8,
+  "scope": "One exact explanatory example, not a new asymptotic check or independent audit."
+}
