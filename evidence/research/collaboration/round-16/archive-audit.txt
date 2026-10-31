@@ -1,0 +1,122 @@
+BETA(4) LANDSCAPE REVIEW: WHAT THE ARCHIVE DOES AND DOES NOT RULE OUT
+Local and unpublished. Review phase; no new construction campaign.
+
+Evidence basis
+Read the current handover, archive index, all fifteen coordinated-round
+reports, method-map.txt, next-proof-avenues.txt and arcsine-contact.txt.
+The integrated reports are evidence of the project's recorded conclusions,
+not a fresh independent audit of every underlying proof or computation.
+Decisive underlying proofs for a proposed next step are read separately.
+Earlier navigation entries are chronological; round 15 supersedes the
+round 12 assertion that the quarter pairing is still unconstructed.
+
+Classification
+
+1. Actual primitive-value obstructions, with narrow hypotheses
+
+ - Round 1: the positive cubic-tail kernel on shifted consecutive
+   PRINCIPAL nodes has primitive values growing at least
+   exp((2-2 log 2-o(1))n^2). Arbitrary different row and column sets are
+   explicitly excluded from that conclusion. The analytic comparison
+   with a Cauchy determinant DOES cover those other ordered sets.
+ - Round 3: the specified positive repeated-quadratic-pole sources,
+   with even index and subexponential rational pole height, fail after
+   primitive reduction. This is not a general rational-kernel theorem.
+ - Round 5: the specified Euler--Boole approximants fail uniformly in
+   endpoint/truncation schedules; products of those factors do not fix
+   the problem. General sums or nonfactoring determinants are not covered.
+ - Round 6: the full principal difference-Gram family has lower rate
+   6-log 4. Other subspaces and frames are not covered.
+ - Round 7: fixed-endpoint, EVEN-depth third-derivative continued
+   fractions fail. Growing endpoint and odd depth are not included.
+ - Round 9: the particular quarter-Gamma cumulant sequence has only
+   polynomial error and an exponential actual denominator lower bound.
+ - Round 11: the specific sine-normalized cyclotomic norm family fails
+   after the complete conjugate product and primitive content are paid.
+
+2. Genuine structural obstructions to particular attempted implications
+
+ - Same-variable algebraic repairs do not remove the slow filter's
+   nonreal logarithmic branch points (round 1).
+ - Certain higher-level modular coordinates and prefactors have actual
+   uncancelled poles (rounds 5-6). Raw pole growth is generally not a
+   primitive-value impossibility theorem.
+ - Ordinary rational gauges of the two-state beta4 tail do not give
+   the proposed polynomial unimodular transfer (round 12).
+ - The direct even-power integer-signature construction lies in the
+   wrong cyclotomic component (round 10); its rational trace vanishes.
+ - An operator removing the endpoint logarithms from the specified
+   regularized primitive also removes its additive constant (round 12).
+   This does not exclude all global or nonlinear rationality arguments.
+ - Full-rank changes of a complete Gram lattice change the determinant
+   only by a rational scalar. They cannot improve its primitive
+   polynomial (round 10 and earlier explicit comparisons).
+
+3. Limitations of estimates or normalizations, not family impossibilities
+
+ - Round 2: the fixed-cut absolute-contour estimate for the k=3,5 slow
+   filters cannot beat the supplied arithmetic cost. It is not a lower
+   bound for actual determinant values.
+ - Round 13: the specified level-32 functions, coordinate and holonomy
+   coefficient templates have incompatible bounds (<1.3 versus >4).
+   This does not cover different modules, coordinates or meromorphic maps.
+ - Round 14: the two displayed integer multipliers are nested and give
+   no complementary saving. Integer clearing of that fixed cofactor
+   fails even without odd-prime cost. Extra primitive numerator content
+   remains uncontrolled, so arbitrary rational rescaling is not excluded.
+ - Round 15: the specified source-style term/row estimates can certify
+   at most 88.207529... odd-prime saving against 142.862026... required
+   by the established decay. Neither actual primitive content nor a
+   faster projected-error exponent is bounded by this comparison.
+
+4. Finite failures or missing theorems
+
+ - The circular Hermite family has proved signed nonvanishing and a
+   complete endpoint system; useful primitive height remains unproved.
+   The large values through n=80 are evidence, not a family theorem.
+ - Common-base ladder determinants shrink after dyadic clearing. Odd
+   content is unresolved; no justified uniform odd-prime saving exists.
+ - Prime-depleted determinants have a proved arithmetic advantage, but
+   uniform smallness/nonvanishing when the depletion set grows is missing.
+   The one-surviving-prime oversieved family is a separate proved failure.
+ - The internal-edge graph has exact period reduction and small positive
+   integrals. Four-index elimination is a finite failure; higher-index
+   primitive asymptotics were not proved.
+ - Dense-quarter, unsquared-pole, Whipple-jet and arcsine constructions
+   have exact identities and finite unfavorable tests. Do not convert
+   those into general determinant or hypergeometric exclusions.
+ - The unsquared-pole family has conditional nonvanishing at infinitely
+   many prime scales; that resolves neither its size nor its content.
+
+Recurring assumptions worth changing
+
+ a. Construct accurate real approximations first and pay arithmetic later.
+ b. Eliminate auxiliary periods by scalar cofactors, thereby multiplying
+    growing coefficients, before checking a common integral structure.
+ c. Use identical row and column nodes in a positive determinant.
+ d. Bound valuations term by term rather than through relations between
+    rows, columns and successive prime layers.
+ e. Treat a basis change, rational gauge, geometric interpretation or
+    exact identity as a primitive arithmetic improvement by itself.
+ f. Use a rationality hypothesis only to replace an initial constant,
+    without identifying any new global arithmetic or analytic constraint.
+ g. Infer all-index behavior from a finite pattern, or ignore the
+    rationality denominator raised to a growing polynomial degree.
+
+An explicit repetition avoided
+
+The parameter-dependent arcsine proposal in next-proof-avenues.txt was
+subsequently developed in arcsine-contact.txt. That record includes the
+full boundary recurrences, the odd-period identity, two prime layers,
+full-parity rows and 202 primitive tests. Recommending those same tasks
+again would be rediscovery. The remaining mixed-frame/local-rank issue
+would need a specific different construction, not another row-basis change.
+
+Promising gap for further source review
+
+Round 1 already proves positivity and an essentially exact real estimate
+for nonprincipal minors of a beta4-only kernel. Its arithmetic obstruction
+was proved for principal frames. Litsey's later rectangular-border work
+suggests a concrete different node geometry and a local-kernel pairing
+mechanism. The geometry and its valuation theorem must be transferred
+separately; the trigamma theorem itself is not a beta4 theorem.

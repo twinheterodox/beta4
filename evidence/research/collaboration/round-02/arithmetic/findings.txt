@@ -1,0 +1,468 @@
+Round 02: primitive endpoint arithmetic, content, and determinant clearing
+28 October 2026. Local and unpublished.
+
+Status and main results
+
+This is a mathematical derivation with exact computational checks, not an
+irrationality proof, a general no-go theorem, independent human verification,
+or a priority claim. The worker wrote only in this arithmetic directory.
+No external literature was needed for the new elementary arguments below.
+The inherited coefficient results are from round 01; the nonvanishing input
+is the separate kronecker-nonvanishing.txt, which was read in this round.
+
+The work gives three structural results for the fixed-k endpoint forms.
+
+* A maximal-minor gcd controls the ENTIRE common numerator content, including
+  higher nullity and prime powers. If D clears the coefficient prefix,
+  T=DH, u=Db, and Delta is the maximal-minor gcd of [T|u], then the gcd g of
+  the corresponding integer endpoint pair satisfies
+
+                     Delta | g | 6D Delta^2.                 (A)
+
+  Thus D^n/(6 Delta^2) <= kappa_n <= D^(n+1)/Delta. Away from 6D,
+  a prime occurs in the common content exactly when a rectangular Hankel
+  matrix loses rank. This is equivalent to a specific modular Pade defect.
+
+* The tempting assertion that there are no new common numerator primes is
+  FALSE when "new" means outside the ACTUAL coefficient denominator.
+  At k=3,n=6, the actual D is 4729725 and the minimally cleared pair has
+  content 2^14*23. The prime 23 does not divide D. An explicit degree-five
+  Pade defect over F_23 proves this without relying on factorization data.
+
+* Using the proved first occurrences of the denominator layers inside
+  individual determinant entries gives a uniform UPPER bound for kappa:
+
+  limsup_(n, L_n != 0) log(kappa_n)/n^2 <= C_k,
+  C_k=13/3+3/k+1/(k+2)+4/(3k+8)-1/(k+4).                    (B)
+
+  In particular C_3=10042/1785=5.6257703081... and
+  C_5=37232/7245=5.1389924086.... These replace the previous sufficient
+  raw-clearing rates 7.7333333333... and 7.0857142857.... The bound does
+  not assume favorable numerator content.
+
+There is also an exact reduction in the one-layer prime band. If p>2n,
+s=(p+2k+3)/2, R=2n-s+1>0, and m=n-R, then
+
+ p^R L_n(X) = (-1)^[R(R-1)/2] (-32/3)^R L_m(X) mod p.         (C)
+
+Both sides are coefficientwise p-integral. Consequently the upper bound
+v_p(kappa_n)<=R is exact unless the smaller pencil has a modular Pade
+defect at p. This links a positive denominator exponent at one index to
+common numerator content at a smaller index.
+
+None of these results bounds the actual real value of L_n(beta(4)) from
+below. A lower bound on a multiplier together with an upper bound on a
+real determinant would not prove a no-go. The analytic worker is using
+exactly the normalization below; its real estimates must be combined
+with (B) in the appropriate direction.
+
+1. Conventions and scaling
+
+Fix an odd k>=3 and write
+
+ R_k(z)=r_k(sqrt(z))=sum_(j>=1) a_j z^j,  a_0=0,
+ b_i=a_i,  H_ij=a_(i+j)-a_(i+j-1),  1<=i,j<=n.
+
+The raw endpoint polynomial is
+
+ L_n(X)=det [[6X,b^T],[b,H]]=A_n X+C_n,
+ A_n=6 det H,  C_n=-b^T adj(H)b.                             (1.1)
+
+The definitions make sense when H is singular. A nonzero polynomial can
+be a rational constant. If both coefficients vanish, the polynomial is
+zero and its primitive multiplier is not defined; put P_n=0 separately.
+
+For a nonzero polynomial, let
+
+ M=lcm(den A_n,den C_n),
+ g_min=gcd(M A_n,M C_n)>0,
+ kappa_n=M/g_min,  P_n=kappa_n L_n.
+
+Then P_n has primitive integer coefficients. No assumption about beta(4)
+is involved. In particular kappa_n can be rational and can have negative
+prime valuations.
+
+Let D be ANY positive integer clearing a_0,...,a_(2n). In the computations
+D is the actual coefficient LCM, not a sufficient theoretical multiple.
+Put
+
+ T=DH, u=Db, d=det T, m=adj(T)u, Q=u^T adj(T)u.
+
+The scaled integer endpoint pair is
+
+                   (6D d,-Q),                              (1.2)
+
+and, for g=gcd(6D d,Q)>0,
+
+                   kappa_n=D^(n+1)/g.                       (1.3)
+
+Although g and g_min can differ by a large factor, they have identical
+prime parts away from D. Formula (1.3) is used to check the normalization
+against the minimally cleared rational pair.
+
+2. Content versus a rectangular Hankel determinantal divisor
+
+Define
+
+ Delta=gcd(d,m_1,...,m_n)>=0,
+ F=(D a_(i+j))_(0<=i<=n, 1<=j<=n).                           (2.1)
+
+Delta is the gcd of all n-by-n minors of [T|u], and also of F. Indeed,
+the maximal minors of [T|u] are d and the entries of adj(T)u, up to sign.
+The lower bidiagonal row operation on F which retains its first row and
+replaces each later row by its difference with its predecessor gives
+[u^T;T]. This is unimodular over the integers, so maximal-minor ideals
+are preserved. Symmetry of T identifies the transpose of this matrix
+with [u|T].
+
+The following result applies to EVERY symmetric integer matrix T and
+integer vector u, not just the present coefficients.
+
+Lemma. Put g0=gcd(d,Q). If the bordered pencil is nonzero, then
+
+                       Delta | g0 | Delta^2.                (2.2)
+
+Proof. Delta divides d and every m_i, hence divides Q=sum u_i m_i.
+For each i, the elementary bordered-minor identity is
+
+ m_i^2-Q adj(T)_(ii) = -d Q_i,                              (2.3)
+
+where Q_i is the quadratic adjugate expression after deleting coordinate
+i from T and u. For n=1 take Q_i=0. This is the Desnanot--Jacobi identity
+on the symmetric bordered matrix; alternatively it follows by expansion
+when det T is nonzero and then, as a polynomial identity, for all T.
+All quantities on the right are integers. Thus g0 divides m_i^2 for
+every i. At each prime, v_p(g0)<=v_p(d)<=2v_p(d), and also
+v_p(g0)<=2v_p(m_i). Taking the minimum gives
+v_p(g0)<=2v_p(Delta). This proves (2.2).
+
+The zero case is exact: Delta=0 implies d=m=Q=0. Conversely d=Q=0
+forces m_i^2=0 by (2.3), hence Delta=0. Thus Delta=0 if and only if
+the bordered polynomial is identically zero over Q. No invertibility
+assumption or odd-prime diagonalization is needed.
+
+Since g0 divides g and gcd(a d,Q) divides a*gcd(d,Q), (2.2) gives
+
+                      Delta | g | 6D Delta^2.               (2.4)
+
+This proves (A), including primes dividing 6D. More precisely,
+
+ v_p(Delta) <= v_p(g) <= v_p(6D)+2v_p(Delta).                 (2.5)
+
+The factors 1 and 2 are sharp even in dimension one. T=[p],u=[p]
+gives v_p(Delta)=v_p(g0)=1; T=[p^2],u=[p] gives exponents 1 and 2.
+Singular T is allowed: T=diag(1,0),u=(0,p) has Delta=p and g0=p^2.
+
+For p not dividing 6D, (2.4) yields the equivalence
+
+ p divides the common integer content
+   iff rank_Fp(F mod p)<n.                                  (2.6)
+
+This includes every nullity. When rank(T mod p)=n-1 it specializes to
+the initially proposed condition u perpendicular to ker T. At larger
+nullity the rank criterion remains valid without a separate case split.
+
+3. Exact Pade interpretation and a new-prime counterexample
+
+For a field in which D is invertible, a nonzero kernel vector
+(x_1,...,x_n) of F is equivalent to a nonzero polynomial
+
+ q(z)=sum_(j=1)^n x_j z^(n-j),  deg q<=n-1,
+
+and a polynomial p(z) of degree at most n-1 such that
+
+                  q(z) R_k(z)-p(z)=O(z^(2n+1)).             (3.1)
+
+Indeed the coefficient at z^(n+i), 0<=i<=n, is
+sum_j x_j a_(i+j). Thus the common numerator question is an EXACT modular
+Pade defect question, rather than a generic probabilistic rank assertion.
+The constant coefficient of q need not be nonzero; (3.1) deliberately
+allows this, so it remains equivalent in degenerate cases.
+
+At k=3,n=6,p=23, the coefficient residues a_0,...,a_12 are
+
+            0,0,0,0,0,19,8,6,19,13,22,17,18.
+
+The rectangular matrix F over F_23 has rank five and nullvector
+
+                        (5,1,13,17,2,1).
+
+In polynomial form,
+
+ (1+2z+17z^2+13z^3+z^4+5z^5) R_3(z)
+                         =19z^5+O(z^13) mod 23.             (3.2)
+
+The coefficient denominator through a_12 is D=4729725, prime to 23.
+The exact raw endpoint coefficients are
+
+ A_6=3170597854812063115968512/111190552238390625,
+ C_6=12154765979998928896/4189282972875.
+
+Both have 23-valuation exactly 1. The minimally cleared content is
+376832=2^14*23 and
+
+ kappa_6=333571656715171875/376832,
+ P_6(X)=25241469844482924348 X+2568314902018445125.             (3.3)
+
+This is a counterexample to absence of common content outside the actual
+coefficient denominator, not a good approximation. It does NOT show that
+content primes can exceed 4n: here 23<24. The stronger proposed support
+restriction to primes <=4n is neither proved nor disproved by this example.
+
+The eight larger targeted cases in section 7 happen to have no common
+prime outside 6D. The explicit counterexample shows why those observations
+cannot be elevated into a uniform theorem. The finite-field normality
+checks in the script are likewise checks, not a proof of normality.
+
+4. An exact one-layer reduction and its exceptional set
+
+Fix k and let p>2n be prime. Suppose
+
+ s=(p+2k+3)/2 <=2n,  R=2n-s+1>0,  m=s-n-1=n-R.              (4.1)
+
+The first-layer theorem of round 01 gives
+
+ a_j is p-integral for j<s,
+ p a_s=-32/3 mod p.                                        (4.2)
+
+All a_j through j=2n have valuation at least -1: the second layer begins
+only at p+k+delta_p>2n, where delta_p=1 for p=1 mod4 and 0 otherwise.
+The hypotheses of that onset theorem hold automatically in the nonempty
+range (4.1). In particular p>=5 and 2p+2k+2<kp there.
+
+Separate the indices 0,...,n of the endpoint matrix into
+0,...,m and m+1,...,n. Every entry involving a row in the first group is
+p-integral, since its largest sum index is m+n=s-1. The lower-right
+R-by-R block W has pW integral. In pW mod p the entries before the
+anti-diagonal vanish, and the anti-diagonal has the constant unit -32/3.
+Multiplying just the last R rows of the full endpoint matrix by p gives
+a block upper-triangular reduction modulo p. Its upper-left block is
+exactly the smaller endpoint matrix for L_m(X). Therefore
+
+ p^R L_n(X)=epsilon_R (-32/3)^R L_m(X) mod p,
+ epsilon_R=(-1)^[R(R-1)/2].                                 (4.3)
+
+This proves (C), as a coefficientwise polynomial congruence, not merely
+a rank bound. The actual coefficient denominator D_m is prime to p.
+Consequently
+
+ v_p(kappa_n)=R  iff  L_m(X) is nonzero modulo p
+                 iff  p does not divide Delta_m.           (4.4)
+
+If the smaller polynomial vanishes modulo p, the exponent is at most
+R-1. The precise further loss depends on higher p-adic terms; (4.3) does
+not claim to determine those terms.
+
+The same block argument works slightly beyond p>2n whenever s>n,
+the second layer has not yet appeared by 2n, and all entries have
+valuation at least -1. This explains boundary losses caused by the
+identically zero very small pencils. In the main band p>2n, m>=k+1,
+so those forced zero pencils no longer occur, although modular defects
+still can.
+
+For example k=3,n=9,p=23 gives s=16,R=3,m=6. The defect (3.2) forces
+the exponent below 3; its exact value is 2. This was the sole main-band
+exception in the 544 polynomial congruence checks in the script. Its
+location was found from (4.3), not by presuming that an anti-triangular
+residue block always gives the full determinant valuation.
+
+5. A determinant assignment bound using coefficient layer onsets
+
+Let N=n+1. If nonnegative integers e_p(j) bound the possible denominator
+exponents of a_j, and are nondecreasing in j, then every endpoint matrix
+entry at indices i,j in {0,...,n} has denominator exponent at most
+e_p(i+j). The (0,0) entry has exponent zero. Consequently
+
+ v_p(kappa_n) <= max_permutation pi sum_(i=0)^n e_p(i+pi(i)), (5.1)
+
+with the (0,0) cost set to zero. This follows term by term in the
+determinant expansion; cancellation can only improve the bound. A
+coefficient that vanishes identically may safely be assigned cost zero.
+
+The finite script uses the strongest round-01 prefix bound, then caps
+it by zero before the first onset and by one before the second onset.
+It computes (5.1) by an exact Hungarian algorithm and checks its integer
+dual certificate. The following closed form yields an explicit uniform
+asymptotic theorem without invoking an unproved optimization conjecture.
+
+Two-layer matching lemma. On indices 1,...,N, give edge (i,j) weight
+1_(i+j>=s)+1_(i+j>=t), where s<t. Put
+
+ R=min(N,max(0,2N-t+1)),  m=N-R.
+
+The maximum perfect-matching weight is exactly
+
+             M_N(s,t)=2R+min(m,max(0,2m-s+1)).               (5.2)
+
+Proof. There are at most R edges of weight two. For a matching attaining
+the displayed lower bound, reverse the last R indices, giving R edges
+of weight two; within the remaining 1,...,m use a maximum matching in
+the threshold graph i+j>=s. Its size is min(m,max(0,2m-s+1)).
+
+For the upper bound, R=0 and R=N are immediate. Otherwise t=N+m+1.
+If s<=m+1, the elementary bound N+R applies. If m+1<s<=2m+1, choose
+integers a,b in [0,m] with a+b=s-1. Assign weight one to each row index
+>a and each column index >b, and zero to the other vertices. Every
+positive edge has at least one selected end; every weight-two edge has
+both ends selected, since both its indices exceed m. This dual cover
+has total weight 2N-s+1. If s>2m+1, select just the last R row and column
+vertices. It covers every positive edge at least once and every
+weight-two edge twice, with total weight 2R. These three bounds agree
+with (5.2). This proves optimality over all permutations.
+
+For the endpoint indices 0,...,n, replace N by n+1 and both thresholds
+by s+2,t+2. This accounts for the target row and column explicitly.
+
+6. Uniform multiplier upper rates for fixed k=3 and k=5
+
+For sufficiently large p with p^2>4n, the four proved possible layers
+of a_j, j<=2n, have lower cutoffs
+
+ s1=(p+2k+3)/2,
+ s2=p+k+delta_p,
+ s3=ceil(kp/2),
+ s4=(k+2)p.                                                 (6.1)
+
+The first two are the round-01 onset theorems. Before s3 the slow-variable
+argument permits at most two layers. Before s4 the Frobenius congruence
+permits at most three layers. Regular length-four words give at most
+four layers throughout this prime range. Hence an admissible entry cost
+is the sum of the four threshold indicators in (6.1).
+
+Maximizing the sum is bounded above by the sum of the maxima for the
+pairs (s1,s2) and (s3,s4). This is an UPPER bound; it does not assert
+that the two optimal permutations coincide. Thus the finite exponent
+
+ B_(n,k,p)=M_(n+1)(s1+2,s2+2)+M_(n+1)(s3+2,s4+2)            (6.2)
+
+clears every polynomial coefficient locally in this prime range. At
+the excluded small primes use (n+1) times the round-01 coefficient
+exponent. These finite bounds are checked in the script, including
+the strict cutoff and onset hypotheses.
+
+Here is the weighted prime integral for (6.2). For thresholds alpha*p,
+beta*p with beta>=2alpha>0, let x=p/n. Up to O(1) in the matching weight,
+M/n is the following continuous piecewise-linear function:
+
+ 2                 for 0<=x<=1/beta;
+ 4-2beta*x         for 1/beta<=x<=2/(2beta-alpha);
+ 2-alpha*x         for 2/(2beta-alpha)<=x<=1/(beta-alpha);
+ 3-beta*x          for 1/(beta-alpha)<=x<=2/beta;
+ 1                 for 2/beta<=x<=1/alpha;
+ 2-alpha*x         for 1/alpha<=x<=2/alpha;
+ 0                 afterwards.
+
+Intervals of length zero are harmless. Integration gives
+
+ I(alpha,beta)=3/(2alpha)+1/beta+2/(2beta-alpha)
+                                      -1/(2(beta-alpha)).  (6.3)
+
+For the first pair, (alpha,beta)=(1/2,1), this is 13/3. For the second,
+(alpha,beta)=(k/2,k+2), it is
+
+                  3/k+1/(k+2)+4/(3k+8)-1/(k+4).
+
+The prime number theorem and partial summation turn the weighted sums
+into these integrals. The omitted primes p<=sqrt(4n), plus finitely many
+k-dependent primes, cost only O_k(n^(3/2) log n)=o(n^2), even using the
+crude four-word bound. The shifts O_k(1) in the cutoffs and the one extra
+matrix row change the prime sum by o(n^2). Therefore
+
+                 log kappa_n <= C_k n^2+o_k(n^2)            (6.4)
+
+for every nonzero endpoint polynomial at each FIXED k. Numerator content
+only lowers kappa and was not discarded with an incorrect sign. This
+is not a jointly varying-k statement and does not assert the existence
+of a limit for log kappa_n/n^2.
+
+7. Targeted finite checks
+
+Natural logarithms. "Paired" is the finite bound (6.2), with the stated
+small-prime fallback. "Assignment" uses the full coefficient-onset cost
+and an exact optimal assignment. Both are upper bounds, not estimates
+of the real determinant.
+
+ k   n       log kappa       paired upper    assignment upper
+ 3  12        339.051856       745.252130       663.307406
+ 3  20       1251.691884      2207.301721      1978.921150
+ 3  30       3127.101407      4934.820645      4551.905780
+ 3  40       5997.818978      8983.131973      8199.525906
+ 5  12        266.789564       643.066686       564.820637
+ 5  20       1124.798377      1942.013485      1741.218078
+ 5  30       2929.547152      4440.352906      4117.497184
+ 5  40       5676.671514      8139.876395      7543.364179
+
+These eight cases have content coprime to 6D equal to 1. They were
+chosen to check exact normalization and the structural bounds, not to
+seek a reversal of the old primitive-value failures. No beta(4) value
+is evaluated by the script.
+
+Additional checks:
+
+* 398 nonzero generic symmetric integer cases, including singular T,
+  for Delta|g0|Delta^2 and Delta|g|6D Delta^2;
+* 1990 generic modular rank/content equivalences, including primes 2,3;
+* 615 exact threshold-matching optima, with independent brute-force
+  permutation checks through size five and dual certificates throughout;
+* 3386 coefficient/prime valuation checks of the finite onset profile;
+* 366 rectangular-Hankel rank checks at the fixed primes
+  101,127,151,181,211,251, in ranges with 4n<p; none lost rank;
+* 544 main-band polynomial congruences (4.3), with the one exception
+  (k,n,p)=(3,9,23), plus the slightly wider one-layer boundary cases;
+* the explicit new-prime defect (3.2), its nullvector, exact raw content,
+  and p-adic exponents.
+
+The generic and special data validate implementations and illustrate the
+proved statements. They are not used to infer an unproved asymptotic
+content estimate or absence of exceptional primes.
+
+8. What remains unknown and what this round changes
+
+The content support has been reduced exactly to modular Pade defects,
+but the iterated-integral/differential structure has not yet yielded a
+uniform bound on the maximal-minor gcd Delta beyond the inequalities
+above. The explicit F_23 defect prevents replacing that missing argument
+by an assertion of universal modular normality. There is no proof here
+that common primes beyond 4n are absent, that the total content is
+subquadratic, or that the primitive height has a specific asymptotic rate.
+
+The new matching theorem does give a stronger uniform upper bound on the
+actual primitive multiplier, independent of those unknowns. The exact
+one-layer factorization identifies precisely what must be proved to turn
+many local upper exponents into equalities; it does not suppress the
+exceptional smaller Hankel pencils.
+
+The same-family Kronecker result supplies infinitely many nonzero values
+at beta(4) for each fixed k. To prove irrationality from this family,
+one still needs a uniform real estimate compatible with the primitive
+normalization, including all sufficiently large indices or another proved
+nonvanishing-compatible choice. Neither the finite primitive heights nor
+the positive upper constants in (B) are a no-go theorem.
+
+The useful next analytic/arithmetic compatibility test therefore concerns
+the exact L_n and kappa_n above. Enlarging a raw coefficient-denominator
+scan, or assuming the observed lack of new content persists, would miss
+the structural issue exposed by (3.2) and (4.3).
+
+9. Files and reproduction
+
+  endpoint_content.py
+  endpoint_content.json
+  findings.txt
+
+From /home/research/Chat/Math/beta4 run
+
+  PYTHONDONTWRITEBYTECODE=1 .venv/bin/python \
+      collaboration/round-02/arithmetic/endpoint_content.py
+
+The script rebuilds the rational coefficients from x', sech(x), and
+h=(3x I2-x^2 I1-2I3)/8. It does not import the old endpoint solver or
+saved coefficients. It writes only endpoint_content.json in this
+directory. Runtime on this workspace was about two seconds. Exact
+primitive pairs, raw normalization data, all local bounds, and the
+exceptional modular certificate are retained in the JSON.
+
+The coordinator independently derived the global content-divisibility
+argument and reviewed the matching profile; that is a model cross-check,
+not independent mathematical verification. All remaining limitations
+above should be preserved when integrating these results.

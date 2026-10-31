@@ -1,0 +1,341 @@
+ROUND 06 FRESH — A FULL-RANK DIFFERENCE-VARIABLE GRAM CONSTRUCTION
+2026-10-29. Local and unpublished.
+
+There is no irrationality proof here. A concrete positive determinant has
+exact degree n in theta=beta(4), an unusually simple leading coefficient,
+and a genuine real support gap. However, an exact large-prime calculation
+proves that its ACTUAL primitive integer values grow at least as
+
+  exp((6-log 4)n^2+o(n^2)).
+
+This retires the specified unshifted principal Gram family. It is not an
+obstruction to other frames, moment combinations, weights, determinants,
+or beta(4) constructions. In particular, it does not convert the failure
+of a sufficient upper denominator bound into an impossibility assertion.
+
+1. Independent start, overlap, and the constructive change
+
+The independent candidate list is 00_initial_ideas.txt. It was saved before
+reading the README or archive. The initial ordinary orthogonal-polynomial
+proposal for moments (2k+1)^-4 turned out to be exactly the canonical lower
+boundary ray in collaboration/round-01/fresh/findings.txt. It was therefore
+not pursued again. The elementary translated-Mellin rank-one determinant
+was not pursued either.
+
+01_pivot.txt records a move to explicit multiple orthogonality. For
+
+  Q_n(x)=sum_(k=0)^(4n) (-1)^k binom(4n,k)
+                       ((k+1/2)_n/n!)^4 x^k,
+
+partial fractions give the exact Mellin formula
+
+  integral_0^1 x^(s-1/2)Q_n(x)dx
+    = (4n)!/(n!)^4 * product_(j=0)^(n-1)(s-j)^4
+                         / product_(k=0)^(4n)(s+k+1/2).       (1.1)
+
+Consequently Q_n is simultaneously orthogonal to x^j log^l x with
+0<=j<n and 0<=l<=3, against x^(-1/2)dx. This formula and 144 exact
+orthogonality conditions at n=1,...,8 were checked. All eight primitive
+beta(4) scalar forms evaluated in this small diagnostic exceed one in
+absolute value. No general sign, arithmetic obstruction, or new advantage
+is claimed for this multiple-orthogonal scalar family. It remains a
+separate explicitly defined construction, not an irrationality sequence.
+
+The more useful constructive change was to use the archive's cyclotomic
+period-isolation kernel with a new DIFFERENCE-VARIABLE Gram frame. Its
+period coefficient is full rank, unlike an elementary translated Mellin
+Hankel. The kernel itself and its scalar moments are credited to
+cyclotomic-integrals.txt; the new work below is the determinant construction,
+its exact real rate, and its actual primitive prime law.
+
+2. Positive moments and the exact theta-only formula
+
+For a polynomial P(u,v), put
+
+  J(P)=integral_[0,1]^2
+       P(u,v) log^2(uv)/(sqrt(uv)(1+uv)) du dv.
+
+The kernel is integrable and strictly positive in the open square. Define
+
+  mu_m=J((u-v)^(2m))/96,    m>=0,
+  T_s(j)=sum_(0<=k<j) (-1)^k/(2k+1)^s,
+  C_m=binom(2m,m).
+
+Then
+
+  mu_m=C_m theta+B_m,                                      (2.1)
+
+  B_m= -C_m T_4(m)
+        +(1/6) sum_(0<=j<=2m, j!=m)
+                         binom(2m,j) T_3(j)/(j-m).           (2.2)
+
+In particular mu_0=theta, B_0=0, and
+mu_1=2theta-149/81. All coefficient statements use this FORMAL map;
+none assumes theta irrational.
+
+For a self-contained derivation, expansion of 1/(1+uv) and integration
+of monomials give
+
+  J(u^i v^i)/96=(-1)^i(theta-T_4(i)),
+
+  J(u^i v^j)/96=-(1/6)(-1)^i
+                    (T_3(i)-T_3(j))/(j-i),  i!=j, i+j even.
+
+The log^2 integral is the second common-parameter derivative of
+1/((t+i+1/2)(t+j+1/2)). The possible beta(3) terms cancel because
+(-1)^i=(-1)^j. Expanding (u-v)^(2m), the diagonal term yields the first
+term of (2.2). Pairing j with 2m-j in the off-diagonal terms yields the
+second term. Absolute convergence after the two derivatives justifies
+the termwise integrations.
+
+3. The full-rank positive determinant
+
+For n>=1 define the rational polynomial
+
+  P_n(X)=det[ C_(i+j) X+B_(i+j) ]_(0<=i,j<n),
+  D_n=P_n(theta)=det[mu_(i+j)].                              (3.1)
+
+Under y=(u-v)^2, the mu_m are the moments of a positive measure rho on
+[0,1]. Its density, for s=sqrt(y), is
+
+  rho(y)=1/(96s) integral_0^(1-s)
+          log^2(v(v+s))/(sqrt(v(v+s))(1+v(v+s))) dv.          (3.2)
+
+It is strictly positive throughout (0,1), so every nonzero polynomial
+has positive squared norm. Thus D_n>0 for EVERY n, without an
+irrationality assumption.
+
+In contrast, C_m is the moment sequence of the probability arcsine
+measure on [0,4]:
+
+  C_m=integral_0^4 y^m/(pi sqrt(y(4-y)))dy.
+
+The monic integer polynomials
+
+  c_0(y)=1,   c_j(y)=2 T_j((y-2)/2), j>=1,
+
+have squared norms 1,2,2,... for this measure and are orthogonal.
+Their coefficient change from monomials is unit lower triangular over Z.
+Therefore
+
+  det[C_(i+j)]_(i,j<n)=2^(n-1),                             (3.3)
+
+and P_n has EXACT degree n, with leading coefficient 2^(n-1).
+The same integral basis change transforms the pencil to
+
+  X diag(1,2,...,2)+R_n,   R_n rational symmetric.
+
+It does not alter P_n or its primitive normalization. This is a genuine
+full-rank theta coefficient, not a scalar power or a rank-one determinant.
+
+4. A two-sided real estimate
+
+The support difference [0,1] versus [0,4] produces
+
+  log D_n=-(log 4)n^2+O(n log(n+1)).                        (4.1)
+
+Both sides follow by elementary estimates, rather than an unverified
+strong asymptotic theorem.
+
+Upper bound. The monic shifted Chebyshev polynomial of degree j>=1 on
+[0,1] has sup norm 2/4^j. Apply the determinant-preserving monic basis
+change and Hadamard's Gram inequality. Since rho([0,1])=theta<1,
+
+  D_n<=theta^n 4^(-(n-1)^2)<=4^(-(n-1)^2).                 (4.2)
+
+Lower bound. In (3.2), restrict v to [(1-s)/4,(1-s)/2]. On this interval
+v(v+s)<=1/2; hence -log(v(v+s))>=log 2>=1/2, and the denominator of the
+integrand is at most 2. The integrand is therefore at least 1/8. It follows
+that
+
+  rho(y)>=(1-y)/6144,   0<y<1.                             (4.3)
+
+Gram-matrix ordering, followed by the determinant monotonicity of positive
+definite matrices, gives
+
+  D_n>=6144^(-n) det[1/((i+j+1)(i+j+2))]_(i,j<n)
+     =6144^(-n) product_(j=0)^(n-1)
+                  1/[(2j+2)binom(2j+1,j)^2]
+     >=1/[6144^n n! 2^(2n^2+n)].                           (4.4)
+
+The product formula follows from the monic shifted Jacobi polynomials for
+weight 1-y. It may also be checked directly by Rodrigues integration by
+parts: their squared norms are
+j!^2(j+1)!^2/((2j+1)!(2j+2)!). The last inequality uses
+binom(2j+1,j)<=2^(2j+1). Equations (4.2) and (4.4) prove (4.1).
+
+5. Exact large-prime residues and ranks
+
+Fix n>=1 and a prime p>4n. All moments used have 0<=m<=2n-2. In this
+range m<p/2, 2m<p, and |j-m|<p. The T_4(m) term is p-integral. A T_3(j)
+term contains at most one odd denominator divisible by p, namely p itself.
+Thus p^3 B_m is p-integral and
+
+  p^3 B_m = chi_4(p)/6 * sum_(j=h)^(2m)
+                           binom(2m,j)/(j-m)       (mod p), (5.1)
+  h=(p+1)/2,    chi_4(p)=(-1)^((p-1)/2).
+
+The sum is empty if 2m<h. Put
+
+  m0=floor(p/4)+1.
+
+Consequently the leading residues vanish for m<m0. At m=m0 they are
+NONZERO whenever m0<=2n-2. Indeed, without the nonzero chi_4(p)/6 factor,
+the first residue is
+
+  1/m0,                                  p=4m0-1,
+  (2m0-1)(m0+1)/(m0(m0-1)),               p=4m0-3.          (5.2)
+
+The first case has only j=2m0. The second has j=2m0-1,2m0, giving
+2m0/(m0-1)+1/m0. None of the displayed numerator or denominator factors
+vanishes modulo p in the stated prime range (the potentially small p=5
+case is excluded by p>4n and m0<=2n-2).
+
+Let
+
+  r=max(0,2n-1-m0).
+
+The matrix of residues [p^3B_(i+j) mod p] has exactly r nonzero rows and
+columns, in its bottom-right r-by-r block. That block is anti-triangular:
+entries before its anti-diagonal vanish and the anti-diagonal is the
+nonzero first residue (5.2). It therefore has EXACT rank r.
+
+More precisely, every entry outside this bottom-right block is actually
+p-integral, not merely of zero leading residue: its index m<m0, so no
+T_3 tail in (2.2) contains p. This stronger fact is needed in Section 6.
+
+6. Exact primitive exponent; no unproved content assumption
+
+Let kappa_n be the unique positive rational number for which
+
+  Z_n(X)=kappa_n P_n(X) in Z[X]
+
+has gcd of coefficients one. Since the leading coefficient of P_n is
+2^(n-1), for every odd prime p,
+
+  v_p(kappa_n)=-min_j v_p([X^j]P_n).                       (6.1)
+
+The minimum is nonpositive because the leading coefficient is a p-unit.
+
+Theorem. For every prime p>4n,
+
+  v_p(kappa_n)=3 max(0,2n-2-floor(p/4)).                   (6.2)
+
+Proof. In each determinant term at most r entries can have valuation -3,
+because only the bottom r rows have nonintegral entries. Therefore every
+coefficient of P_n has valuation at least -3r.
+
+After multiplying by p^(3r), the reduction modulo p can receive a
+nonzero contribution only by selecting all r bottom rows against all r
+bottom columns from the leading residue block. Its complement is the
+upper-left pencil of size s=n-r. Thus
+
+  p^(3r)P_n(X) = det(B_lead)*det[X A_top+B_top] (mod p).     (6.3)
+
+For r>0, det(B_lead) is nonzero by (5.2). The coefficient of X^s on the
+right is det(B_lead)*2^(s-1), by (3.3), and is nonzero modulo p. Here
+s>=1 because p>4n. Hence the valuation -3r is attained by an actual
+coefficient. If r=0, all entries are integral and the leading coefficient
+already has valuation zero. Equation (6.1) proves (6.2). QED.
+
+This exact formula accounts for full global primitive normalization.
+It cannot be removed by an unrecorded coefficient gcd or rational
+rescaling. A change to the monic Chebyshev frame likewise leaves it intact.
+
+7. The actual primitive-value obstruction
+
+Sum (6.2) over 4n<p<8n-8. Partial summation and the prime number theorem
+give
+
+  sum_(4n<p<8n-8) 3(2n-2-floor(p/4)) log p
+       =6n^2+o(n^2).                                     (7.1)
+
+For example, write the sum as
+3 integral_(4n)^(8n)(2n-t/4) d vartheta(t)+O(n log n);
+its main term is 3 integral_(4n)^(8n)(2n-t/4)dt=6n^2.
+
+At every other odd prime, v_p(kappa_n)>=0 because of the p-unit leading
+coefficient. The ONLY possible negative valuation of kappa_n is at 2,
+and integrality of the leading coefficient bounds it below by -(n-1).
+Consequently
+
+  log kappa_n>=6n^2+o(n^2).                                (7.2)
+
+Combining this ACTUAL primitive multiplier lower bound with the ACTUAL
+positive determinant lower bound (4.4) proves
+
+  log Z_n(theta)>=(6-log 4)n^2+o(n^2).                     (7.3)
+
+In particular Z_n(theta)>1 for all sufficiently large n and
+Z_n(theta)^(1/n) tends to infinity. The degree-sensitive irrationality
+criterion would need small nonzero values relative to degree n; these
+values go in the opposite direction. This conclusion is confined to
+(3.1), not to arbitrary weights, projections, sparse frames, or filters.
+
+8. A narrow constraint on full-layer positive measure filters
+
+The arithmetic worker pointed out a triangular consequence of the exact
+onset in Section 5; the following includes the necessary shifted-moment
+integrality restriction. Suppose W(y)=sum_(j=0)^d w_j y^j has p-integral
+coefficients, not all zero modulo p, and d<=m0-2 with m0<=2n-2. Then W
+cannot make the p^-3 leading residue of EVERY weighted moment
+integral y^k W(y)d rho(y), 0<=k<=2n-2, vanish.
+
+To prove this, use successively k=m0-d,m0-d+1,...,m0. All moment indices
+in these equations are at most m0+d<=2m0-2<p/2. Thus every one of these
+moments has valuation at least -3, and reduction after multiplication by
+p^3 is legitimate even when a higher coefficient of W is divisible by p.
+The first equation gives w_d=0 mod p because all earlier residues vanish.
+The subsequent equations give w_(d-1)=0,...,w_0=0, a contradiction.
+
+If the ACTUAL leading coefficient of W is a p-unit, the first equation
+alone gives the stronger obstruction for degree d<=m0. In general the
+naive version with d<=m0 and arbitrary p-divisible higher coefficients
+would need additional bookkeeping: such coefficients may multiply
+shifted moments of valuation -4 and still affect the third layer. That
+stronger version is NOT asserted.
+
+Thus a p-primitive weight deleting the full moment layer needs degree
+at least m0-1, approximately p/4, in this scoped setting. This says
+nothing by itself about partial content savings or selected determinant
+subspaces. Positivity of W, including the case W is a square, is allowed
+but not needed in this algebraic argument. This result is not used in
+the proof of (7.3).
+
+9. Exact checks and reproducibility
+
+Run from beta4/:
+
+  .venv/bin/python collaboration/round-06/fresh/gram_checks.py
+
+The script writes gram_checks.json, retaining every primitive polynomial,
+its exact rational multiplier, logarithmic Arb enclosures, and every prime
+certificate. It uses FLINT exact rational matrices for characteristic
+polynomials, then an independent Fraction Gaussian elimination for
+three polynomial evaluations per n. It checks:
+
+  * 23 moments by both (2.2) and direct two-variable monomial expansion;
+  * 12 exact leading determinants 2^(n-1);
+  * 36 separate Fraction determinant evaluations;
+  * 1,100 exact leading residue calculations;
+  * 74 residue-matrix rank and actual primitive-exponent certificates;
+  * the positive real bounds and primitive values for n=1,...,12.
+
+For n=1 the primitive polynomial is X. All eleven nontrivial tested
+primitive values exceed one. For example their natural logarithms at
+n=4,8,12 are approximately 157.9533, 835.2268, 2148.8092. These finite
+values are illustrations; the proof of eventual growth is Sections 4-7.
+
+The initial multiple-orthogonal diagnostic is separately reproducible by
+  .venv/bin/python collaboration/round-06/fresh/explore_confluent.py
+and writes confluent_initial.json. It is not evidence for an asymptotic
+claim about that different scalar family.
+
+All derivations and implementations in this packet were produced by the
+same research worker; a separate implementation is not an independent
+mathematical audit. No human audit, formal verification, or priority claim
+is made. The only external search used for the initial multiple-orthogonal
+context found the classical paper by Aptekarev, Branquinho, Van Assche,
+'Some classical multiple orthogonal polynomials',
+https://arxiv.org/abs/math/0103131 . Its abstract and introduction-level
+summary were consulted; no unverified theorem from it is needed above.

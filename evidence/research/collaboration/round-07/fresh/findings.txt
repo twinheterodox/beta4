@@ -1,0 +1,420 @@
+Third derivatives of continued-fraction convergents: exact eighth prime layers
+============================================================================
+29 October 2026. Local and unpublished. Bounded closing packet for round 07.
+
+STATUS AND SCOPE
+
+No irrationality proof of theta=beta(4) is obtained. This packet constructs
+rational approximants from third parameter derivatives of a continued
+fraction, proves an exact local law for their ACTUAL reduced denominators,
+and excludes every fixed-tail-endpoint subfamily at even depth by an eventual
+lower bound on actual primitive values. It does not exclude growing endpoints
+N=N(n), other combinations of the convergents, or other continued fractions.
+
+The result is not inferred from a large sufficient clearing multiplier.
+For each admissible prime below, the exact exponent in the reduced rational
+approximant is proved. The real error has a proved nonzero asymptotic; it is
+not replaced by an absolute contour upper bound. No formal verification,
+human mathematical audit, or claim of priority is made. The requested
+bounded model cross-review is separate from this author's proof.
+
+For each fixed integer N>=1, let alpha_(n,N) be defined in (5) below, and
+write it uniquely as b_(n,N)/d_(n,N) with gcd(b,d)=1 and d>0. Then
+
+ theta-alpha_(n,N)
+   ~ (-1)^(N+n) K_N n^(-2N)(log n)^3,
+
+ K_N=2^(-2N) Gamma(N+1/2)^2/12
+    =pi (2N)!^2/[12*64^N*(N!)^2] >0.                    (T1)
+
+Along even n=2m, its actual primitive polynomial is
+
+ P_(2m,N)(X)=d_(2m,N)X-b_(2m,N),
+
+and
+
+ liminf_(m->infinity) log|P_(2m,N)(theta)|/(2m) >= 4.   (T2)
+
+In particular every fixed-N even-depth family has eventually nonzero,
+exponentially growing primitive values. The rational approximants themselves
+still converge to theta. The theorem does not assert that all finite-depth
+errors have the asymptotic sign, or give an explicit eventual-sign threshold.
+
+
+1. Independent start, pivot, and overlap
+
+00_initial_ideas.txt was written before archive reading. The first modular
+idea overlaps the existing Fricke/Eichler work, so 01_pivot.txt selected the
+continued-fraction/difference-equation architecture. The relevant archive
+checks were README.txt, modular-detour.txt, structural-followup.txt,
+round-03/fresh/findings.txt, and round-05/fresh/findings.txt.
+
+The ordinary Meixner--Pollaczek recurrence is already used in the archive
+as a change of matrix rows. Here the new prescribed object is a third
+parameter derivative of a quotient of continuants. The Euler--Boole note
+studies Taylor truncations of sech; its theorem does not cover this quotient.
+The construction and arithmetic below are derived directly. There was no
+external literature survey, so no novelty assertion is justified.
+
+Indexing throughout is
+
+ theta=[psi^(3)(1/4)-psi^(3)(3/4)]/1536.
+
+It is the third polygamma derivative, of weight four.
+
+
+2. Exact recurrence and an elementary error identity
+
+For Re(a)>0 put
+
+ S(a)=integral_0^infinity exp(-a t)sech(t) dt.
+
+Define normalized polynomial continuants q_n(a),r_n(a) by
+
+ q_0=1, q_1=a, r_0=0, r_1=1,
+ (n+1)q_(n+1)=a q_n+n q_(n-1),
+ (n+1)r_(n+1)=a r_n+n r_(n-1),  n>=1.                 (1)
+
+Thus Q_n=n!q_n and R_n=n!r_n are integer polynomials satisfying
+
+ Q_(n+1)=a Q_n+n^2 Q_(n-1),
+ R_(n+1)=a R_n+n^2 R_(n-1).
+
+Their quotient r_n/q_n=R_n/Q_n is the n-th convergent of
+1/(a+1^2/(a+2^2/(a+3^2/(...)))). The construction does not rely on a
+separate continued-fraction convergence theorem. All coefficients of Q_n
+are nonnegative, and Q_n(a)>0 for real a>0.
+
+The exact identity is
+
+ q_n(a)S(a)-r_n(a)=(-1)^n I_n(a),
+ I_n(a)=integral_0^infinity exp(-a t)sech(t)tanh(t)^n dt. (2)
+
+Proof. The recurrence gives the ordinary generating functions
+
+ Q(a,z)=sum_(n>=0)q_n(a)z^n
+       =(1-z^2)^(-1/2) exp(a atanh z)
+       =(1+z)^((a-1)/2)(1-z)^(-(a+1)/2),
+
+ V(a,z)=sum_(n>=0)r_n(a)z^n
+       =Q(a,z) integral_0^z [dt/((1-t^2)Q(a,t))].
+
+For real 0<=z<1, substitution t=tanh(u) gives
+
+ S(a)=integral_0^1 [dt/((1-t^2)Q(a,t))].
+
+Writing z=tanh(u), translating the remaining integral by u, and simplifying
+cosh(u)/cosh(u+v) gives
+
+ Q(a,z)S(a)-V(a,z)
+   =integral_0^infinity exp(-a v)/[cosh(v)+z sinh(v)] dv.
+
+Expansion in z, justified on compact subdisks |z|<1, gives (2). These
+identities extend holomorphically in a to Re(a)>0. QED.
+
+Let
+
+ T_N=sum_(k=0)^(N-1) (-1)^k/(2k+1)^4.
+
+The Laplace representation of the alternating tail gives
+
+ theta=T_N+(-1)^(N+1) S'''(2N)/12.                     (3)
+
+Indeed -S'''(2N)/12 is the positive integral
+(1/12) integral t^3 exp(-2Nt)sech(t)dt. Differentiating (2) three times
+is legitimate on a complex neighborhood of each positive a. Therefore
+
+ theta-alpha_(n,N)
+   =(-1)^(N+n+1)/12 * (d/da)^3[I_n(a)/q_n(a)]_(a=2N), (4)
+
+where the rational approximant is
+
+ alpha_(n,N)=T_N+(-1)^(N+1)/12
+                       * (d/da)^3[r_n(a)/q_n(a)]_(a=2N). (5)
+
+No Catalan constant, powers of pi, or other auxiliary periods occur in (5).
+The complete rational quotient is differentiated, rather than differentiating
+only its numerator or treating q_n as constant.
+
+
+3. Fixed-N actual error, constant, and sign
+
+Uniformly on a sufficiently small fixed complex disk about a=2N, ordinary
+endpoint asymptotics give
+
+ q_n(a)=2^((a-1)/2) n^((a-1)/2)/Gamma((a+1)/2)
+                * [1+O_N(1/n)],
+
+ I_n(a)=2^(-(a+1)/2) Gamma((a+1)/2) n^(-(a+1)/2)
+                * [1+O_N(1/n)].                       (6)
+
+Here the disk can be chosen with Re(a)>1. For q_n, expand its displayed
+generating function at z=1. The next local term has relative order 1/n;
+the contribution at z=-1 has relative size O(n^(-Re(a))) and is smaller.
+The standard coefficient formula for (1-z)^(-b), equivalently the gamma
+ratio formula, establishes the leading constant. The resulting error is
+holomorphic and uniformly O(1/n) on a slightly larger disk.
+
+For I_n, put y=tanh(t) to obtain the real beta-type integral
+
+ I_n(a)=integral_0^1 y^n(1-y)^((a-1)/2)
+                           (1+y)^(-(a+1)/2) dy.
+
+Expand the last factor about y=1. Its first omitted term contributes an
+extra 1/n relative to the leading beta integral, uniformly on the same
+complex disk. Gamma-ratio asymptotics yield the second formula in (6).
+This also supplies a holomorphic uniform remainder. The leading q_n factor
+is nonzero on the disk, so its uniform asymptotic makes q_n zero-free there
+for all sufficiently large n. These standard local arguments justify
+differentiating the asymptotics by Cauchy's formula;
+pointwise real asymptotics alone would not suffice. The standard gamma-ratio
+expansions are recorded in NIST DLMF 5.11(iii), equations 5.11.12--13:
+https://dlmf.nist.gov/5.11#iii . The compact complex-disk argument above
+supplies the local uniformity used here; no growing-N uniformity is claimed.
+
+Consequently, with C(a)=2^(-a)Gamma((a+1)/2)^2,
+
+ I_n(a)/q_n(a)=C(a)n^(-a)[1+O_N(1/n)],
+
+ (d/da)^3[I_n(a)/q_n(a)]_(a=2N)
+   =-C(2N)n^(-2N)(log n)^3[1+O_N(1/log n)].             (7)
+
+Substitution in (4) proves (T1), including the factor 1/12 and sign
+(-1)^(N+n). This proves nonvanishing for all sufficiently large n for
+each fixed N. No uniformity for growing N is asserted.
+
+
+4. Two explicit integer polynomials
+
+For an integer N>=1 define, using empty products equal to one,
+
+ A_N(X)=sum_(j=0)^N binom(2N,2j) 2^j X_(falling j)
+                          product_(ell=0)^(N-j-1)(2X+2ell+1),
+
+ B_N(X)=sum_(j=0)^(N-1) binom(2N,2j+1) 2^j X_(falling j)
+                          product_(ell=0)^(N-j-1)(2X+2ell+1),
+
+ C_N(m)=B_N(m-1/2)
+       =sum_(j=0)^(N-1) binom(2N,2j+1)
+          product_(s=0)^(j-1)(2m-1-2s)
+          product_(ell=0)^(N-j-1)(2m+2ell).              (8)
+
+A_N and B_N are integer polynomials. The second expression proves that
+C_N(m) is an integer for integer m despite its half-integer argument.
+They have degree N. For fixed N and m>=N, C_N(m)>0 and
+log C_N(m)=O_N(log m).
+
+Writing c_m=binom(2m,m)/4^m and h_N=(2N-1)!!, one has
+
+ q_(2m)(2N)=c_m A_N(m)/h_N,
+ q_(2r+1)(2N)=c_r B_N(r)/h_N.                           (9)
+
+Proof. At a=2N the generating function becomes
+
+ Q(2N,z)=(1+z)^(2N)(1-z^2)^(-N-1/2).
+
+Separate the even and odd coefficients and use
+
+ [(N+1/2)_(m-j)/(m-j)!]/c_m
+       =m_(falling j)(m+1/2)_(N-j)/(1/2)_N.
+
+Terms with m<j vanish by the falling factorial. This yields (9). QED.
+
+For example A_1(m)=4m+1, C_1(m)=4m, and
+A_2(m)=(32m^2+16m+3), C_2(m)=8m(4m+1).
+The factor h_2=3 remains outside A_2 in (9).
+
+
+5. Exact denominator theorem
+
+THEOREM. Let m,N>=1 and let p be an odd prime satisfying
+
+ m<p<2m,   2N<p,   p does not divide C_N(m).             (10)
+
+For alpha_(2m,N)=b/d reduced as above,
+
+ v_p(d)=8+4 v_p(A_N(m)).                                (11)
+
+This is an equality for the actual reduced denominator. Primes excluded
+by C_N(m) are not claimed to have this exponent. No assertion is made for
+p outside (10), including p dividing h_N or a finite-tail denominator.
+
+Proof step 1: the continuant polynomial modulo p.
+For every odd prime p,
+
+ Q_p(a)=a^p-a modulo p.                                (12)
+
+An elementary proof uses the operator
+
+ D=(1-z^2)d/dz+(p-1)z
+
+on polynomials of degree at most p-1 over F_p. Its tridiagonal matrix has
+adjacent off-diagonal products j(p-j). Leading principal characteristic
+determinants therefore obey the recurrence with +j^2 modulo p, so its
+characteristic polynomial is Q_p(a). The p polynomials
+
+ (1+z)^j(1-z)^(p-1-j),  0<=j<p,
+
+are eigenvectors with distinct eigenvalues 2j-(p-1), which run through F_p.
+Thus its characteristic polynomial is product_(u in F_p)(a-u)=a^p-a.
+This proves (12) without guessing a finite sequence of congruences.
+
+For 0<=j<p, the same recurrence then gives
+
+ Q_(p+j)(a)=(a^p-a)Q_j(a) modulo p.                     (13)
+
+At a=2N, differentiation yields
+
+ Q'_(p+j)(2N)=-Q_j(2N) modulo p.                       (14)
+
+Proof step 2: units in the numerator and derivative.
+The exact continuant Wronskian is
+
+ Q_k R_(k+1)-Q_(k+1)R_k=(-1)^k(k!)^2.                 (15)
+
+At k=p-1 and a=2N, (12) and Wilson's theorem give
+Q_(p-1)(2N) R_p(2N)=1 modulo p. Thus R_p(2N) is a unit.
+The recurrence after index p gives
+
+ R_(p+j)(2N)=R_p(2N)Q_j(2N) modulo p.                   (16)
+
+Now j=2m-p is odd and 0<j<p. Put r=(j-1)/2. By (9),
+Q_j(2N) is a p-unit precisely when B_N(r) is, because j!, c_r, and h_N
+are all p-units under (10). Since r=m-(p+1)/2,
+
+ B_N(r)=B_N(m-1/2)=C_N(m) modulo p.
+
+Therefore (10), (14), and (16) imply
+
+ v_p(Q'_(2m)(2N))=v_p(R_(2m)(2N))=0.                  (17)
+
+Proof step 3: the exact zero depth of the denominator.
+In (9), v_p((2m)!)=1 and v_p(c_m)=1 for m<p<2m. Also h_N is a unit.
+Consequently
+
+ e:=v_p(Q_(2m)(2N))=2+v_p(A_N(m)).                     (18)
+
+In particular e>=2; A_N(m)>0 in the range (10).
+
+Proof step 4: third quotient derivatives and primitive normalization.
+Expand the INTEGER polynomials at a=2N as
+
+ Q_(2m)(2N+x)=u_0+u_1 x+u_2 x^2+u_3 x^3+...,
+ R_(2m)(2N+x)=v_0+v_1 x+v_2 x^2+v_3 x^3+....
+
+The coefficient of x^3 in R/Q is
+
+ [v_3 u_0^3-v_2 u_1 u_0^2
+   +v_1(u_1^2 u_0-u_2 u_0^2)
+   +v_0(-u_1^3+2u_1u_2u_0-u_3u_0^2)]/u_0^4.           (19)
+
+By (17)-(18), the unique p-unit term of its numerator is -v_0 u_1^3.
+Thus this Taylor coefficient has valuation exactly -4e. Formula (5)
+multiplies the coefficient by (-1)^(N+1)/2, a p-unit, since its third
+derivative is 6 times its third Taylor coefficient. The finite sum T_N
+is p-integral because p>2N. It cannot cancel a negative valuation.
+Therefore v_p(alpha_(2m,N))=-4e. Reducing the rational alpha gives
+v_p(d)=4e, proving (11). QED.
+
+This calculation tracks true content: any common factors of a displayed
+source numerator and denominator have already been removed by the unique
+valuation of (19). It does not merely show that Q^4 clears a denominator.
+
+
+6. Actual primitive growth at every fixed endpoint
+
+Fix N. For sufficiently large m, p>m implies p>2N. The product of all
+primes in (m,2m) that divide the nonzero integer C_N(m) divides C_N(m).
+Its total logarithm is therefore at most log C_N(m)=O_N(log m).
+By (11),
+
+ log d_(2m,N)
+   >=8 sum_(m<p<2m, p not dividing C_N(m)) log p
+   >=8[theta_cheb(2m)-theta_cheb(m)]-O_N(log m)
+   =8m+o(m),                                           (20)
+
+using the prime number theorem in its Chebyshev-theta form. A primary
+author source is D. Zagier, "Newman's short proof of the prime number
+theorem" (1997), p.707, step VI, which proves theta_cheb(x)~x:
+https://people.mpim-bonn.mpg.de/zagier/files/doi/10.2307/2975232/fulltext.pdf .
+The omission of endpoints affects only O(log m). Additional factors A_N(m) in (11)
+can only increase this lower bound.
+
+Equation (T1) gives log|theta-alpha_(2m,N)|=O_N(log m), with a nonzero
+error for all sufficiently large m. Since P=dX-b is primitive,
+
+ log|P_(2m,N)(theta)|
+   =log d_(2m,N)+log|theta-alpha_(2m,N)|
+   >=8m+o(m).
+
+This proves (T2). It is an obstruction to the specified fixed-N even-depth
+families. It uses neither an assumed irrationality of theta nor a merely
+sufficient arithmetic multiplier.
+
+
+7. A cancellation repair that collapses to an archived scalar family
+
+A tempting repair is to avoid differentiating a quotient by combining
+third derivatives of (2) at the shifts a=2(L+j), 0<=j<=n, with positive
+binomial weights binom(n,j). The shift identity
+
+ S(a+2N)=(-1)^N S(a)
+          +2 sum_(k=0)^(N-1)(-1)^(N-1-k)/(a+2k+1)
+
+reduces the period coefficients to finite differences of q_n and its
+first three derivatives. Because q_n has degree n and leading coefficient
+1/n!, the n-th difference kills every lower derivative and leaves the
+nonzero theta coefficient. However the error integral simplifies exactly:
+
+ tanh(t)^n exp(-2Lt)(1+exp(-2t))^n
+       =exp(-2Lt)(1-exp(-2t))^n.
+
+After x=exp(-t), this is the familiar scalar Mellin polynomial weight
+x^(2L)(1-x^2)^n. Thus this repair supplies no distinct construction; it is
+recorded to prevent counting a rational rescaling of old forms as progress.
+
+
+8. Bounded checks, files, and reproduction
+
+The original continuants.py scan produced 68 exact rational pairs, with
+n in {2,4,6,8,10,12,16,20,24,32,40,60,80} and the endpoint choices stored
+in continuants.json. The closing pass did not enlarge that scan.
+
+arithmetic_checks.py reuses exactly those pairs and verifies:
+  * all 68 exact reduced approximants and their stored Taylor jets;
+  * all 68 closed formulas (9) for q_(2m)(2N);
+  * 116 admissible prime cases of the exact theorem (11).
+
+Four tested prime cases fall into the explicitly excluded C_N(m) set:
+(n,N,p)=(10,2,7),(16,2,11),(16,4,11),(32,8,29).
+Their actual denominator exponent is 4 in every case. Thus the exception
+condition is material; claiming exponent eight without it would be false.
+
+identity_checks.py uses six already recorded pairs and 100-digit numerical
+quadrature to check (2) and the full third-derivative identity (4), and
+checks the two expressions for K_N. These are numerical consistency
+checks, not interval certificates or substitutes for the proofs above.
+The existing 250-digit numerical values of the 68 primitive forms all
+exceed one (smallest recorded log value about 3.03588). The coordinator
+also independently reconstructed all 68 pairs from full integer continuant
+polynomials and enclosed their evaluations with 4096-bit Arb arithmetic,
+confirming every recorded sign and absolute value >1; see the separate
+coordinator/closure_crosschecks.py and closure_crosschecks.json. Those
+finite data are not used to extend (T2) to growing endpoints.
+
+Run from /home/research/Chat/Math/beta4:
+
+ .venv/bin/python collaboration/round-07/fresh/continuants.py
+ .venv/bin/python collaboration/round-07/fresh/arithmetic_checks.py
+ .venv/bin/python collaboration/round-07/fresh/identity_checks.py
+
+Files written only under collaboration/round-07/fresh/:
+  00_initial_ideas.txt, 01_pivot.txt, findings.txt,
+  continuants.py, continuants.json,
+  arithmetic_checks.py, arithmetic_checks.json,
+  identity_checks.py, identity_checks.json.
+
+The unresolved arithmetic/analytic regime is N growing with n, particularly
+N proportional to n. The fixed-N asymptotic and polynomial exceptional-
+prime bound were not claimed uniform in that regime. No additional search
+or construction is proposed in this bounded closing packet.

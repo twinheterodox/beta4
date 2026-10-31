@@ -1,0 +1,200 @@
+ROUND17: INTERLEAVED BORDERS -- BOUNDED ARITHMETIC ASSESSMENT
+31 October 2026. Local and unpublished. No irrationality proof.
+
+Verdict
+
+Do not continue this frame by enlarging the determinant computations or
+optimizing the border width. The proposed four-layer cancellation mechanism
+has a rigorous quantitative obstruction for all three prescribed widths.
+One would need a substantially stronger theorem about the remaining
+integral determinant or primitive content. No saving sufficient to close
+the budget is supported by the prescribed tests.
+
+This is NOT a theorem that every primitive use of this determinant family
+fails. The result closes the proposed first-four-layer transfer, proves a
+narrower integer-normalization obstruction at c=1/5, and identifies the
+remaining all-index primitive-content question precisely.
+
+1. What was proved
+
+The complete derivation is local-structure.txt. It reuses the round-1
+positivity and round-16 Cauchy energy without altering the family.
+
+For p>3, p^2>4M, split each finite harmonic sum into its p-multiple and
+p-unit terms. A character cancellation proves that the regular part of the
+WHOLE divided-difference matrix is p-integral, including a==-b mod p and
+the zero fibre. Thus the first four negative prime layers are determined
+exactly by the singular part. The initially possible third-layer regular
+term disappears; the preliminary note is superseded on that point.
+
+The local blocks were derived for same-sign and opposite-sign lifts of a
+squared residue, zero fibres and diagonal entries. The first pairing
+depends on the two moments (sum y, sum y*a*H3(a)), and its second component
+generally varies with the node. In a positive-length range for every width,
+the one-dimensional surplus kernels have moments (7,-5 chi4(p)t).
+Their cross-pairing, divided by p, is
+
+                    -35 chi4(p)/[6(t+s)].
+
+It is a Cauchy matrix of maximal possible rank for p>7. The hoped-for
+proportional-moment transport therefore does not apply to these windows.
+This is a systematic local effect, not a small exceptional prime.
+
+More decisively, all four truncated Smith layers can be proved explicitly
+for 2M+4<p<4M. Let h=max(0,r-floor(p/4)), N=r+m, M=r+2m.
+
+ * If p<4r, the capped exponents of p^4 Phi are
+       0 (h times), 1 (2m times), 2 (h times),
+       4 (N-2h-2m times).
+   The corresponding sufficient denominator exponent is 6h+6m.
+ * If p>4r, let H=M-floor(p/4). The capped exponents are
+       1 (H times), 4 (N-H times),
+   giving sufficient exponent 3H.
+
+The proof uses unit Cauchy minors, two successive Schur layers and the
+exact rank of the singular matrix. It does not assume that finite rank
+patterns continue, nor import Litsey's trigamma constants or certificates.
+
+2. The quantitative comparison
+
+The prime number theorem sums this large-prime contribution to
+       (3+3c^2)r^2+o(r^2).
+The established real determinant has logarithm -E(c)r^2+o(r^2).
+
+  c        real decay E(c)    large-prime bound alone    shortfall
+  1/5      1.6523070663       3.12                       1.4676929337
+  1/2      2.0585984916       3.75                       1.6914015084
+  1        2.8184512398       6                          3.1815487602
+
+Even assigning zero cost to every OTHER prime leaves this four-layer
+method without a favorable comparison. These are costs in a sufficient
+bound, not lower bounds for the actual primitive multiplier. No sharpening
+of the same four negative layers at these large primes can remove them:
+the truncated Smith lists themselves are proved, not merely estimated.
+
+There is also a uniform reason not to optimize the width inside 0<c<=1:
+the nonnegative energy integrand and rho_c<=1 imply
+ E(c)<=2(1+c)^2 log 2<=4(1+c^2)log 2<3(1+c^2).
+Thus the same four-layer method misses the budget throughout this width
+range. This analytical corollary required no additional parameter tests.
+
+An all-primes sufficient denominator bound, including the cruder smaller
+prime estimate, is (11+12c+7c^2)r^2+o(r^2): constants 13.68, 18.75, 30.
+Primes p<=sqrt(4M), including 2 and 3 and their higher powers, cost only
+O(r^(3/2) log r). They have not been silently omitted.
+
+The polynomial degree is exactly r and its value at theta is strictly
+positive by the inherited proof. If theta=u/v, the rationality denominator
+cost is r log v=O(r); it neither changes the r^2 comparison nor supplies
+an extra saving. The kernel real estimate is two-sided, so an undiscovered
+extra order-r^2 analytic decay cannot rescue these fixed frames.
+
+budgets.py evaluates the exact logarithmic formulas with 192-bit Arb
+intervals. budgets.json contains the enclosures and the comparison.
+
+3. An additional genuine integer-clearing obstruction
+
+For 2M+4<p<4r, a specific coefficient of P has valuation exactly
+-4h-3m. The proof isolates a unique high-node minor with a unit border
+Cauchy determinant. It follows that
+  log den P >= (2-c-c^2)r^2+o(r^2).
+
+At c=1/5 this lower coefficient is 1.76>E(1/5), by more than 0.1076.
+Consequently EVERY positive integer multiplier clearing the coefficients
+produces growing values, using the inherited lower real bound.
+
+This theorem allows no rescue by replacing a sufficient integer LCM with
+a smaller integer denominator. It still allows rational primitive
+rescaling, because a growing common numerator factor has not been bounded.
+The lower comparison does not obstruct the other two widths by itself.
+
+4. Exact finite evidence -- complete primitive normalization
+
+The nine preselected cases were r=8,16,24 with c=1/5,1/2,1. No broader
+parameter scan followed. At r=8,c=1/5 the floor gives m=0, so that case
+is explicitly a principal-frame control; it is not evidence for a border.
+
+For each case, the complete rational polynomial was computed as
+  det Z * charpoly[-(U-V Z^(-1)W)],
+where Z is the rational border block and U,V,W are the other blocks.
+Z is invertible by the existing positivity theorem. Direct full-matrix
+determinants at X=0,1,-1 check the construction (27 exact equalities).
+
+Writing D=den P and g=gcd of the coefficients of D P, the primitive
+multiplier is kappa=D/g. The full integer gcd was removed, including
+all possible large factors; no numerical gcd guess or convenient LCM
+was substituted. The saved records contain all rational and primitive
+coefficients, D, g, primewise valuations and exact construction checks.
+
+At r=24 the results are:
+
+  c       m    log D/r^2   log g/r^2   log kappa/r^2
+  1/5     2    11.454776    0           11.454776
+  1/2     6    15.911382    0.334540    15.576842
+  1       12   25.056399    1.665479    23.390921
+
+The floor makes the first finite effective width 1/6, rather than exactly
+1/5. All finite value comparisons use the ACTUAL node sets, not an
+asymptotic E(c) substituted into a finite calculation.
+
+The exact Cauchy comparison and Arb logs prove that the logarithms of
+the three primitive values at r=24 exceed respectively 5624, 7730 and
+11780. All nine prescribed primitive values exceed one. These are finite
+failures, not an asymptotic primitive obstruction.
+
+For all 187 tested prime/frame cases with p>3 and p^2>4M, the four-layer
+bound equals the exact coefficient Gauss denominator valuation: no extra
+residual saving was observed. The 88 large-prime patterns in the theorem's
+range all match its exact lists. Numerator content in these examples is
+supported only at 2; after removing primes <=4M, no content factor remains.
+At r=24 the nontrivial contents are 2^278 and 2^1384 for c=1/2 and c=1.
+These factors have already been fully removed in the primitive comparisons.
+This observation is NOT an all-index content theorem. The small-prime
+DENOMINATOR estimate does not bound possible positive numerator content;
+even one fixed prime can in principle supply an order-r^2 saving.
+
+Additional exact checks cover 122,280 regular-entry decompositions and
+122,280 fibre reductions, 242 nonzero first pairings, 29 maximal-rank
+pairing matrices, and 29 instances of the isolated coefficient valuation.
+They check the symbolic claims against the full original rational kernel.
+
+5. The precise remaining lemma, and why not to chase it here
+
+After removing the negative local Smith factors, the determinant has
+  P=p^(-tau_p) u_p(X) det T_p(X),
+with u_p a Gauss unit and T_p integral. Therefore
+  v_G(P)=-tau_p+t_p, t_p=v_G(det T_p)>=0.
+
+A rescue needs a NEW uniform divisibility theorem making the weighted
+sum of these t_p, or actual positive Gauss valuations at other primes
+(including a proved sufficient asymptotic dyadic content), large enough
+to beat the complete real/arithmetic budget. The displayed
+shortfalls already arise before charging the other negative costs. A
+theorem about further basis changes in the same four-layer calculation
+would not change its Smith invariants.
+
+This is a sharper missing lemma than 'find more cancellation': it concerns
+the residual integral determinant, after the attempted mechanism is
+exhausted. All 187 exact prime/frame tests give t_p=0 in the tested large-
+prime regime. Nothing presently singles out a systematic arithmetic
+identity capable of supplying the necessary saving.
+
+Recommendation: stop this bordered-frame implementation here. Do not turn
+the unresolved logical possibility of huge residual content into a reason
+for an open-ended scan. Revisit it only with a concrete new divisibility
+mechanism. No wider construction campaign is started in this phase.
+
+6. Reproduction, provenance and limits
+
+From beta4:
+  .venv/bin/python collaboration/round-17/exact_frames.py
+  .venv/bin/python collaboration/round-17/check_local.py
+  .venv/bin/python collaboration/round-17/budgets.py
+
+Sources and reading scope: sources.txt and literature/reading-round-17.json.
+The positive kernel and its real estimate are inherited; the interleaved
+design and pairing idea are credited to the read Litsey trigamma paper.
+The beta4 local formulas, obstruction and computations above are this
+phase's deductions. No source formal project was built and no new
+independent model audit occurred. Exact computation and Arb enclosures
+are not formal verification. Everything remains local and unpublished.

@@ -1,0 +1,247 @@
+Beta(4): first coordinated research round
+28 October 2026. Local and unpublished.
+
+The user requested multiple coordinated instances after the investigation
+in dilations-and-positive-kernels.txt. Three workers started with separate
+contexts and the parent model's inherited configuration. The coordinator
+assigned arithmetic, construction/analysis, and a fresh approach, with
+separate write directories. Initial findings were developed separately;
+specific arguments were then exchanged for adversarial cross-review.
+
+This is a record of mathematical derivations and model cross-checks.
+It is not independent mathematical verification, formal verification,
+a priority claim, or an irrationality proof. The first round produced
+sharper bounds and several uniform reductions/obstructions. It did not
+produce a compatible construction proving beta(4) irrational.
+
+Full proofs, scripts, data and individual reviews are under
+collaboration/round-01/. The record below explains what changes the
+research assessment. Write theta=beta(4).
+
+1. The coefficient-denominator benchmark is substantially sharper
+
+The arithmetic worker independently confirmed the earlier slow-filter
+denominator bound and found a better baseline. For regular integer
+power-series differential letters, a word of length r has coefficient
+denominators through degree N dividing
+
+             W_r(N)=product_(j=1)^r lcm(1,...,floor(N/j)).
+
+The reason is that its integration indices are strictly increasing.
+This replaces the crude four-word rate 4N by (25/12)N. The earlier bound
+was valid; comparisons with it overstated the saving relative to this
+sharper baseline.
+
+For the slow filter r_k from the preceding note, combine this lemma with
+the two-word bound at p>N/k and the Frobenius congruence. If Q_(N,k) is
+the ACTUAL common denominator of its rational Taylor coefficients through
+original t-degree N, then for each fixed odd k>=3,
+
+ 3/2+1/(k+2) <= liminf_N log Q_(N,k)/N
+              <= limsup_N log Q_(N,k)/N
+              <= 3/2+1/k+1/(2k+4).                           (1)
+
+A limit is not asserted. No uniform statement for jointly varying k,N
+is inferred from these fixed-k asymptotics. The exact finite bounds and
+their hypotheses are in arithmetic/findings.txt.
+
+The lower estimate is supported by proved first occurrences of the
+first two prime layers and a surviving fourth layer, not extrapolation
+from finite data. Thus the base rate approaching 3/2 as k increases
+is an actual feature of these coefficients.
+
+The worker also obtained an explicit residue-rank lemma for an endpoint
+Pade determinant. It improves a raw clearing bound but does not control
+the primitive height or prove nonvanishing. This distinction matters:
+the multiplier kappa in P(theta)=kappa L(theta) still costs real size,
+even when its primes divide neither final primitive coefficient.
+
+The construction worker cross-reviewed the word argument, Frobenius cap,
+both onset proofs, and the degree normalization and found no gap. The
+coordinator separately reviewed those arguments.
+
+2. The positive kernel's real estimate is already sharp at the main scale
+
+For the cubic-tail kernel K from the preceding note and ANY increasing
+positive integer row/column nodes a_i,b_j, the construction worker proved
+
+ log det K(a_i^2,b_j^2)
+     =log det[1/(a_i+b_j)]+O(n),                             (2)
+
+with absolute constants independent of node positions, gaps, or
+intersections. A common zero node has the analogous statement using
+the Cauchy determinant on the remaining positive nodes.
+
+The proof adds a lower density comparison to the earlier upper bound.
+Its regularized Cauchy determinant has an explicit rank-one formula,
+proved by rational interpolation. This is a two-sided theorem, so a
+better real estimate cannot hide an additional n^2-scale gain for a
+fixed node design.
+
+Combining that lower bound with exact prime valuations gives a complete
+obstruction for consecutive principal nodes. Let P_(n,m)(X) be the
+primitive integer polynomial obtained from the kernel determinant on
+m+1,...,m+n, with positive normalization. Then for EVERY sequence of
+nonnegative integer offsets m=m_n,
+
+ liminf_(n->infinity) log P_(n,m_n)(theta)/n^2
+                           >=2-2 log 2 >0.                  (3)
+
+The same leading lower bound holds for nodes 0,...,n-1. These primitive
+values grow; larger scans of these complete families are unwarranted.
+Invertible rational row/column changes do not evade (3), because they
+only multiply the unnormalized determinant by a rational scalar.
+
+The proof does not exclude different subspaces, nonprincipal frames,
+sparse node designs, or another kernel. Its full scope is recorded in
+construction/findings.txt. The coordinator independently checked the
+key determinant identity on 144 rational frames and reviewed the
+prime-valuation and offset arguments.
+
+3. A direct real-moment bridge for the slow filter is obstructed
+
+Put R_k(z)=r_k(sqrt(z)) and q=sqrt(2)-1. For odd k>=3, every root of
+
+                         z^k=-q^2                           (4)
+
+is a genuine logarithmic branch point of R_k. In particular k-1 of
+them are nonreal. The source is the -2h(2v) summand: at t^k=iq,
+2v=i pi/2 is a sech pole, and the other summands are locally regular.
+
+This logarithmic monodromy survives removing the initial zero
+coefficients, multiplying by any nonzero algebraic function, and adding
+an algebraic function. A Cauchy transform of a measure supported on a
+compact real set has no nonreal singularity. Consequently these
+same-variable modifications cannot provide the desired real-support
+moment representation. Merely inserting an arcsine-type algebraic
+factor does not repair this problem.
+
+This is stronger than noticing that the initial zero moments prevent a
+direct positive Hankel realization. It still leaves nonlinear changes
+of independent variable, complex contours, bivariate kernels, and other
+nonvanishing mechanisms open. No successful such replacement was found.
+
+4. The scalar positive-polynomial search has an exact two-dimensional form
+
+The fresh worker independently considered
+
+ I(P)=(1/6) integral_0^1 (-log x)^3 P(x^2)/(1+x^2) dx.
+
+The underlying identity overlaps earlier cyclotomic/tail work. The new
+result in this investigation is a complete description of its positive
+polynomial image, rather than another fixed-family scan.
+
+Define FORMAL coefficients, without assuming theta irrational,
+
+ A(P)=P(-1),
+ B(P)=integral [P(t)-P(-1)]/(1+t) dnu(t),
+ dnu(t)=(-log t)^3/(96 sqrt(t)) dt.
+
+Then I(P)=A(P)theta+B(P), and the moments of nu are the rationals
+nu_j=(2j+1)^(-4).
+
+For every degree bound D>=1 there are explicit rationals l_D<theta<u_D
+such that the entire image of polynomials nonnegative on [0,1] is the
+cone generated by
+
+                     (1,-l_D),  (-1,u_D).                   (5)
+
+The rational points of this cone have explicit rational polynomial
+witnesses. The endpoints are rational Gram-matrix solves, and the
+boundary witnesses are rational weighted squares. A self-contained
+interval sum-of-squares argument proves that no other nonnegative
+polynomial of that degree enlarges the cone. For example
+
+ l_1=1/2,  u_1=1;
+ l_2=81/82, u_2=161/162.
+
+Thus, for an integer final coefficient-height bound H, the exact least
+positive represented value is
+
+ min(1,
+     min_(1<=q<=H)[q theta-floor(q l_D)],
+     min_(1<=q<=H)[ceil(q u_D)-q theta]).                     (6)
+
+This includes primitive normalization: if a minimizing pair has a
+common divisor, dividing by it remains in the cone and reduces the
+value and height. A high-dimensional polynomial search can therefore
+be replaced by this two-dimensional integer problem.
+
+There is a useful warning. With degree and source coefficient heights
+unrestricted, these polynomials represent EVERY positive rational
+linear form in theta. Clearing their source coefficients also represents
+every primitive positive integer form after primitive normalization.
+The least witness degree for a prescribed L=A theta+B>0, A!=0, satisfies
+
+ degree =log(|A|/L)/log(3+2sqrt(2))
+                            +O(log log(|A|/L))              (7)
+
+as |A|/L tends to infinity. The proof uses explicit Chebyshev witnesses
+and a lower bound for every positive polynomial.
+
+Neither (6) nor (7) creates the needed small integer form. In particular,
+choosing an ordinary continued-fraction form first and encoding it as
+a positive polynomial is circular as an irrationality argument. Large
+primitive values on the two canonical rays also do not exclude small
+primitive integer directions between them. The worker gives an exact
+example of that distinction, explicitly labeled as an encoding of an
+ordinary continued-fraction approximation.
+
+Full proofs, boundary cases, integer lifts, and limitations are in
+fresh/findings.txt. The coordinator separately derived the four parity
+Gram formulas and verified all nine recorded endpoint pairs and the
+formal coefficients of their extremizers.
+
+5. Consequences for the next round
+
+The arithmetic improvement remains valid, with a more realistic and
+stronger denominator benchmark. Two proposed easy routes for exploiting
+it are now excluded: the consecutive principal positive kernels, and
+same-variable real-moment repairs of the slow filter using algebraic
+multipliers. These exclusions should remain in the shared research
+record so future workers do not repeat their finite scans.
+
+A subsequent construction must address compatibility explicitly. A
+complex-contour or genuinely bivariate nonvanishing mechanism could
+avoid the branch obstruction, but no viable one has been constructed.
+Nonprincipal kernel frames remain open, with their real determinant
+energy now known to O(n); their arithmetic must justify any further
+search. The scalar cone theorem gives a complete reduction for its
+particular family, but another pass over unrestricted positive scalar
+weights would merely re-encode the approximation problem.
+
+The first coordinated round has therefore narrowed the search and
+improved its exact arithmetic inputs. It has not supplied a shrinking
+sequence of nonzero primitive integer forms.
+
+6. Evidence and integration
+
+Individual findings and reproduction commands:
+  collaboration/round-01/arithmetic/findings.txt
+  collaboration/round-01/construction/findings.txt
+  collaboration/round-01/fresh/findings.txt
+
+The arithmetic implementation rebuilt the coefficients from rational
+kernels, independently of the old logarithmic/Euler implementations.
+Recorded checks include 54,532 coefficient-prime bounds, 12,558 direct
+Frobenius coefficients, 18 fourth-layer residues, 25 endpoint residue
+ranks, and six exact matches with the previous Pade solver.
+
+The construction implementation rebuilt the finite-sum kernel and used
+exact characteristic polynomials. It checked 21 regularized Cauchy
+identities, 9,572 entry-prime residues, 130 coefficient valuations, and
+25 primitive determinant values and two-sided bounds with Arb. Its
+26 branch-location calculations are numerical diagnostics; the branch
+and asymptotic statements have written proofs.
+
+The fresh worker recorded 18 canonical endpoint forms at nine degrees,
+240 exact SOS/cone checks, 13 integer lifts, and a separate Fraction
+implementation of 18 bordered-determinant endpoint checks. The
+coordinator added the 144 rational kernel identities and nine endpoint
+formula/extremizer comparisons noted above.
+
+Targeted cross-reviews are stored alongside the individual findings.
+All agreement is described as model cross-checking. The pre-round
+integrity record verified 462 manifest-listed files. Original research
+sources were kept intact; new work was confined to this round until
+the coordinator integrated this note and the index updates.

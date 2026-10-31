@@ -1,0 +1,404 @@
+Coupled ladder numerators, a circle coefficient, and their arithmetic cost
+28 October 2026. Local research record; unpublished.
+
+Status
+======
+There is no irrationality proof here. The new construction does give
+positive integral linear forms in 1 and B=beta(4), with a proved exponential
+rate for the resulting rational approximations. It escapes the particular
+positive-weight obstruction in ladder-integrals.txt. Clearing denominators
+still destroys the required smallness in the tested examples.
+
+The useful structural results are a coupled four-cube integral, exact
+five-period bivariate moments, a circle formula for the B coefficient,
+and a positive disk formula for the Catalan coefficient after multiplication
+by a polynomial T. Two Euler derivative identities give auxiliary Gram
+matrices with integer inverses. Full two-variable bases can also make the
+B coefficient rank much smaller than the matrix dimension.
+
+The arithmetic test is unfavorable. In a 24-by-24 projected matrix the
+fourth denominator layer has full rank modulo 11 and 13. Consequently
+the primitive polynomial's leading coefficient contains 11^96 and 13^96.
+This is an exact finite certificate, not an asymptotic impossibility theorem.
+
+There are 217 recorded primitive evaluations, including repeated or
+overlapping cases. Of these, 214 have absolute value greater than one.
+The three exceptions are X twice and 2X-1 once; evaluated at B, these are
+B and 0.977889..., respectively. No tested family exhibits the needed
+decay of nonzero integer forms. All checks are same-agent work, not an
+independent mathematical audit or formal verification. No priority claim
+is made for these identities or constructions.
+
+1. Source and normalization
+===========================
+The input is the classical two-loop ladder evaluation, presented in the
+normalization of F. Loebbert and S. Stawinski, arXiv:2408.15331v1 (2024),
+equations (2.3), (2.5), (2.8)-(2.9), and (2.73):
+  https://arxiv.org/abs/2408.15331v1
+  literature/papers/2408.15331v1.pdf
+
+Their reference [8] credits Usyukina and Davydychev's 1993 ladder formulas.
+The underlying beta-value evaluation is therefore an existing input.
+The source was read selectively; no full review or new literature survey
+is claimed. The previous pass recorded its PDF, hash, and reading scope.
+
+For u=z*zbar and v=(1-z)(1-zbar), write
+
+ F(u,v) = [6(Li4(z)-Li4(zbar))
+           -3 log(u)(Li3(z)-Li3(zbar))
+           +(log(u)^2/2)(Li2(z)-Li2(zbar))]/(z-zbar).
+
+At u=1,v=2, take z=i,zbar=-i; then F(1,2)=6B.
+To check the integral normalization, set the external points in (2.5)
+to a,0,b,infinity, with |b|=1, |a|^2=u and |a-b|^2=v. For two loops
+and unit powers the prefactor is 1/(x14^2*x23^2*x24^2). Multiplication
+by the fourth power of the point tending to infinity leaves
+
+ F(u,v) = integral_R4 integral_R4
+   d^4y d^4z / [pi^4 y^2(y-a)^2(y-z)^2 z^2(z-b)^2].
+
+This formula initially uses Euclidean kinematics near (u,v)=(1,2).
+Only its analytic germ there is needed below.
+
+2. A positive four-cube integral
+================================
+Put Schwinger parameters alpha1,alpha2,e,alpha4,alpha5 on the five
+propagators in the displayed order. Let
+
+ A=alpha1+alpha2+e,  C=alpha4+alpha5+e,  U=AC-e^2,
+ F_S=(u alpha2+alpha5)U-u C alpha2^2-A alpha5^2
+       -e alpha2 alpha5(u+1-v).
+
+Gaussian integration and projectivization give the integrand 1/(U F_S).
+Use the projective gauge alpha1+alpha2+alpha4+alpha5=1 and substitute
+
+ alpha1=r(1-x), alpha2=rx,
+ alpha4=(1-r)(1-y), alpha5=(1-r)y,
+ e=t r(1-r)/(1-t).
+
+The projective Jacobian is r(1-r), de/dt=r(1-r)/(1-t)^2, and
+U=r(1-r)/(1-t). Thus the Jacobians cancel U^2, giving
+
+ F(u,v)=integral_[0,1]^4 dr dx dy dt / D_(u,v),
+
+ D_(u,v)=u r x(1-x)+(1-r)y(1-y)
+          +t r(1-r)[u x^2+y^2-(u+1-v)xy].                 (1)
+
+At (u,v)=(1,2), abbreviate this denominator to D and define
+
+ Nu=r x(1-x)+t r(1-r)x(x-y),
+ Nv=t r(1-r)xy,
+ N0=(1-r)y[1-(1-tr)y-trx].
+
+Then D=N0+Nu+2Nv. All three numerators are nonnegative: for example
+Nu=rx[1-(1-t(1-r))x-t(1-r)y], and the two coefficients subtracted
+from 1 are nonnegative and sum to 1. Set
+
+ X=Nu/D, Y=Nv/D, dnu=dr dx dy dt/D.
+
+The measure is positive, has total mass 6B, and satisfies
+X>=0, Y>=0, X+2Y<=1. Its moments obey
+
+ F(1+s,2+t)=sum_ij (-1)^(i+j) binom(i+j,i) mu(X^i Y^j) s^i t^j,
+
+where mu(P)=integral P dnu. The symbol t in this Taylor formula is
+an external perturbation, separate from the cube coordinate in (1).
+
+The Schwinger identities and the Jacobians are checked separately with
+SymPy. Direct Gauss-Legendre quadrature, after integrating the cube's
+t coordinate analytically, also converges towards 6B. This numerical
+convergence is diagnostic only, not a certified proof of the evaluation.
+
+3. Symmetric coordinates and the five periods
+============================================
+Use
+
+ Z=2(X+Y)-1, W=2Y, T=(1-Z^2-W^2)/4.
+
+The physical support is contained in W>=0, |Z|+W<=1. In particular
+T>=0 and T<=1/4. The cube symmetry r -> 1-r, x <-> y sends Z to -Z
+and fixes W, so all odd Z moments vanish. The image contains an open
+set: at r=x=y=t=1/2 the (x,y) Jacobian of (Z,W) is 32/125.
+
+Let C(z,w)=mu(1/(1-zZ-wW)). Substitution in the source formula gives
+the following analytic germ at (z,w)=(0,0):
+
+ rho=-atanh(z),
+ delta=-asin(w/sqrt(1-z^2)),
+ K=(1-z^2-w^2)^(-1/2), h=rho+i delta,
+
+ C=K[6B-(rho^2+3delta^2)G-(9/16)delta*zeta(3)
+       +(delta/2)(rho^2+delta^2)log(2)+R(rho,delta)],       (2)
+
+where G=beta(2). The Taylor coefficients of R are rational. Explicitly,
+
+ H_k=6h^k/k! -6rho*h^(k-1)/(k-1)!
+                       +2rho^2*h^(k-2)/(k-2)!,
+ R=sum_(k>=4) Im[H_k Li_(4-k)(i)].                       (3)
+
+Every nonpositive polylogarithm in (3) is a rational function at i,
+hence a Gaussian rational. The four preceding terms follow from
+Im Li4(i)=B, Re Li3(i)=-3 zeta(3)/32, Im Li2(i)=G and
+Re Li1(i)=-log(2)/2. The potential pi contributions cancel algebraically.
+
+For polynomials even in Z and W, (2) gives a decomposition
+
+                 mu(P)=r(P)+a(P)B+g(P)G,                (4)
+
+with r,a,g rational linear functionals. These are the coefficients
+specified by (2)-(3); their definition does NOT assume linear independence
+of the constants. The zeta(3) and log(2) germs are odd in w and therefore
+drop out. For the full polynomial space the five periods are
+1, B, G, zeta(3), log(2).
+
+The W-only edge is exactly the previous hyperbolic family:
+mu(W^(2k))=6I_k with I_k as in ladder-integrals.txt. The mixed Z,W
+weights extend it; the entire construction should not be described as
+unrelated to the previous family.
+
+4. The circle and the Catalan disk identity
+==========================================
+The B generating function is 6/sqrt(1-z^2-w^2), so
+
+ a(P)=6/(2pi) integral_0^(2pi) P(cos theta,sin theta) dtheta.  (5)
+
+In particular a(TP)=0 for every polynomial P. For nonnegative integers
+i,j define
+
+ c_ij=(2i)!(2j)!/[4^(i+j) i! j! (i+j)!].
+
+Then a(Z^(2i)W^(2j))=6c_ij. These numbers are dyadic: expand the
+circle coordinates as Laurent polynomials in exp(i theta).
+
+There is also an exact positive formula for the Catalan functional:
+
+ g(TP)=h(P):=(1/pi) integral_(xi^2+eta^2<=1) integral_0^1
+                          P(xi,t eta) dt dxi deta.       (6)
+
+Consequently
+
+ h(Z^(2i)W^(2j))=c_ij/[(i+j+1)(2j+1)],                  (7)
+
+and odd moments are zero. Equivalently, h has density
+pi^(-1) log(sqrt(1-Z^2)/|W|) on the unit disk, with the density
+understood almost everywhere. Its total mass is one.
+
+Here is a proof of (6), not just recognition of numerical moments.
+Homogenize the G germ to
+
+ Gcal(a,z,w)=-[atanh(z/a)^2
+              +3asin(w/sqrt(a^2-z^2))^2]
+                         /sqrt(a^2-z^2-w^2).
+
+Direct differentiation yields
+
+ (partial_a^2-partial_z^2-partial_w^2)Gcal
+       =8/[(a^2-z^2)sqrt(a^2-z^2-w^2)].                  (8)
+
+The left side equals 8g(T/(a-zZ-wW)^3). On the other hand, the
+normalized uniform disk integral of (a-z xi-w t eta)^(-3) is
+(a^2-z^2-t^2 w^2)^(-3/2). Integrating t from zero to one produces
+the right side of (8), divided by 8. Comparing Taylor coefficients
+proves (6). The differentiation in (8) was also checked with SymPy.
+
+5. Positive rational approximations with exponential convergence
+================================================================
+For i+j>0, the coefficients of the negative of the G germ in (2)
+are positive at all even bidegrees. Thus g(Z^(2i)W^(2j))<0. Let
+
+ P_ij=Z^(2i)W^(2j),
+ kappa_ij=-g(P_ij)/h(P_ij)>0,
+ L_ij=mu(P_ij(1+kappa_ij T)).
+
+Equations (4)-(7) cancel Catalan exactly and give
+
+       L_ij=6c_ij B+b_ij>0,  b_ij in Q.                 (9)
+
+Strict positivity follows from the open image of the cube map and the
+nonzero nonnegative polynomial weight. Thus these forms have a uniform
+nonvanishing proof, without any assumption about B.
+
+For i=j=n write c_n=binom(2n,n)/16^n, kappa_n=kappa_nn, and
+q_n=-b_nn/(6c_n). Since |ZW|<=1/4 on the physical diamond,
+
+  0<B-q_n <= B(1+kappa_n/4)16^(-n)/c_n.                 (10)
+
+For completeness, kappa_n grows at most polynomially. Evaluate the
+positive-coefficient G germ at z=w=sqrt(n/(2n+1)). Its numerator is
+at most 9 and its denominator is (2n+1)^(-1/2). Coefficientwise
+positivity and binom(4n,2n)>=16^n/(4n+1) imply
+
+ -g(P_nn) <=9e(4n+1)sqrt(2n+1)/4^n.
+
+By (7), h(P_nn)=c_n/(2n+1)^2, while
+c_n>=1/[4^n(2n+1)]. Hence
+
+ kappa_n <=9e(4n+1)(2n+1)^(7/2),
+ 0<B-q_n <=(2n+1)(1+kappa_n/4)4^(-n)
+                         =O(n^(11/2)4^(-n)).            (11)
+
+These bounds are deliberately loose but prove exponential convergence.
+They also explain why the old positive-weight obstruction does not
+extend to this whole two-variable family: the physical diamond and
+the coefficient circle are different supports. No claim is made that
+the approximations or this proof are new to the literature.
+
+The arithmetic failure is large. For n=1 the primitive form is
+18B-13. For n=20 the approximation error is about 1.71931e-12,
+but its reduced numerator and denominator each have 95 digits. The
+corresponding primitive integer form is about 3.38997e82. Thus accurate
+rational approximation is emphatically not the required small integer
+linear form. The table tests n=1,...,20 and 56 off-diagonal choices.
+
+6. Derivative companions and determinants
+=========================================
+Define E_W=1+W partial_W and E_R=1+(Z partial_Z+W partial_W)/2.
+The scaled-coordinate integral in (6) gives, by the fundamental theorem
+of calculus,
+
+ g(T E_W P)=d(P),  normalized uniform disk average of P,
+ g(T E_W E_R P)=c(P), normalized circle average of P.      (12)
+
+For the second identity integrate radially, or check homogeneous
+polynomials. Both Euler operators commute. These are identities of
+polynomial functionals, with no asymptotic or numerical qualification.
+
+Let C_k=Re(Z+iW)^(2k). On the disk their Gram matrix is diagonal:
+d(C_0^2)=1 and d(C_k^2)=1/[2(2k+1)] for k>0. Its inverse is the
+integer diagonal matrix diag(1,6,10,14,...). On the circle the inverse
+is diag(1,2,2,...). This removes the large extra primes introduced by
+inverting the logarithm-weighted disk Gram in the first prototype.
+
+For a chosen basis define the main matrix
+
+ M_ij=mu(P_i P_j)=A_ij B+D_ij G+R_ij.
+
+The auxiliary matrix from either operator in (12) is H_ij G+U_ij,
+with no B coefficient. Consequently
+
+           M-D H^(-1)(H G+U)=A B+R-D H^(-1)U             (13)
+
+contains only B and rationals. Its determinant supplies a polynomial
+in B. This equality includes the full arithmetic cost; division by H
+is not being ignored. The projected entries are not in general a
+positive Gram matrix. Uniform nonvanishing for these determinant
+families remains unproved; each recorded nonzero value is checked by Arb.
+
+For a genuinely two-variable basis use the integer Zernike polynomials
+
+ Q_kl=Re(Z+iW)^(2l) * sum_(s=0)^k
+       (-1)^s (2k+2l-s)!/[s!(k+2l-s)!(k-s)!]
+                            * (Z^2+W^2)^(k-s).
+
+Their disk Gram inverse is diagonal with entry 2(k+l)+1 for l=0,
+and 2[2(k+l)+1] for l>0. On the circle Q_kl=C_l, so the basis k+l<=d
+has matrix size (d+1)(d+2)/2 but B rank d+1. Rectangular index sets
+can retain B rank two while the matrix dimension grows. The circle
+auxiliary Gram itself is singular on these full bases; the disk
+operator is used for them.
+
+Tests include 54 original T-companion matrices; 66 harmonic disk/circle
+companion matrices through size 24; and 21 Zernike configurations through
+size 45 and B degree nine, plus rectangular variants. All their primitive
+values exceed one, apart from the two trivial X cases already counted.
+
+One useful coefficient check is
+g(C_k)=2/k * sum_(j=0)^(k-1) 1/(2j+1), k>=1.
+It follows by restricting (2) to the holomorphic line (z,w)=(t,it):
+K=1, delta=i rho, and the G germ becomes 2 atanh(t)^2.
+
+7. Why coefficient-circle geometry does not settle the arithmetic
+==================================================================
+The identity a(TP)=0 might suggest that multiplication by T also removes
+the highest denominator terms. Exact counterexamples disprove that
+unqualified assertion. For each p=11,13,17,19,23,29, set
+
+             P=Z^(p-1)W^(3p-1).
+
+The saved rational coefficients satisfy
+
+ a(TP)=0,   v_p(g(TP))=-2,   v_p(r(TP))=-4.              (14)
+
+These are six exact examples, not a proved all-prime congruence. Here
+E_W E_R P=6p^2 P, so the circle companion lowers the rational valuation
+from -4 to -2. However, multiplication by D in (13) can restore the
+fourth-power loss: D itself has second-power denominators.
+
+This is visible in the size-24, offset-zero harmonic circle companion.
+Its B matrix is A=diag(6,3,...,3). Let V=R-D H^(-1)U. The exact data are
+
+ p    worst pole order of V    rank(p^4 V mod p)   v_p(primitive lead)
+ 11             4                      24                   96
+ 13             4                      24                   96
+ 17             4                      23                   95
+ 29             4                      18                   72
+
+For p=29 the raw R only has pole order three; the projection introduces
+fourth-order entries. For p=11,13 the rank statement proves the exponent
+96 without relying on numerical determinant evaluation. Indeed, if
+p^4 V is integral and invertible modulo p while A is a p-adic unit
+matrix, det(V) has valuation -4n, all coefficients of det(xA+V) have
+valuation at least -4n, and its leading coefficient is a unit. Clearing
+and taking the primitive polynomial therefore leaves valuation 4n in
+the leading coefficient. This argument is conditional in general and
+fully instantiated by the saved matrices here.
+
+There are 27 recorded matrix-prime checks. They do not establish a
+uniform barrier for all numerator choices. They do show why the tested
+cheap-inverse projection has not solved the arithmetic problem.
+
+8. Checks, scope, and reproduction
+==================================
+The previous manifest's 411 recorded files matched their hashes before
+old research records were edited. The baseline is saved in
+results/two_loop_integrity_baseline.json. No source paper was modified,
+and no new PDF was added in this pass.
+
+Exact coefficient checks cover 153 coordinate transformations, 3,486
+circle coefficients, 3,486 parity instances, 3,321 scaled-disk moments,
+42 old hyperbolic edge moments, and 30 harmonic Catalan coefficients.
+The separate symbolic script checks the Schwinger substitutions, support
+Jacobian, and wave identity (8). Three direct polylog/Taylor comparisons
+and five quadrature orders are explicitly numerical diagnostics.
+
+The primitive determinants are formed over the rationals, cleared of
+denominators, and divided by their integer coefficient gcd. Evaluations
+use Arb balls at precision determined by coefficient size, and exclude
+zero in every saved case. These are checks of finite instances, not
+proofs of asymptotic decay, novelty, or a general nonvanishing theorem.
+
+Commands from this directory:
+
+ .venv/bin/python experiments/two_loop_moments.py
+ .venv/bin/python experiments/two_loop_symmetric.py
+ .venv/bin/python experiments/two_loop_projection.py
+ .venv/bin/python experiments/two_loop_disk_companion.py
+ .venv/bin/python experiments/two_loop_zernike.py
+ .venv/bin/python experiments/two_loop_arithmetic.py
+ .venv/bin/python experiments/two_loop_checks.py
+ python3 experiments/two_loop_symbolic_checks.py
+ python3 experiments/two_loop_quadrature.py
+
+The last two use the system SymPy/NumPy installations; the others use
+the existing FLINT/mpmath virtual environment. All results are local.
+
+9. Consequence for the next attempt
+===================================
+The present formulas supply an analytic construction with exact lower-
+period cancellation and uniform scalar nonvanishing. Improving its real
+decay alone is not the most promising next step. The tested projection
+can multiply two second-order denominator layers into a fourth-order
+layer of full rank. An effective successor must prevent that multiplication
+arithmetically, rather than just invert the auxiliary Gram more cheaply.
+
+The concrete target is a numerator or coupled period construction whose
+Catalan elimination preserves prescribed congruences at the bulk primes.
+The circle and disk identities give exact functionals on which to impose
+those congruences, but no uniform, low-height source construction with
+the required properties has been obtained. Arbitrary prime-by-prime
+interpolation would merely move the cost elsewhere. The existing coupled
+holonomy and lattice approaches also retain their previously documented
+gaps; nothing in this pass repairs them.
+
+This is progress in constructing and diagnosing a different family,
+not evidence that an irrationality proof is close.

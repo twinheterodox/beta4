@@ -1,0 +1,103 @@
+DIMENSIONAL LADDER GATE: POSITIVE BOUND, THEN ARCHIVE IDENTIFICATION
+29 October 2026. Local and unpublished. No irrationality proof.
+
+Outcome: the proposed dimensional family is already in the archive.
+The real bound below is correct, but the apparent new parameter ray came
+from conflating two angular indices. It does not escape the recorded
+primitive arithmetic failures. No enlarged optimization is justified by it.
+
+1. A concrete positive family
+
+In the five-edge two-loop graph recorded in two-loop-numerators.txt,
+put every propagator exponent equal to b=n+1 and the real integration
+dimension equal to Dspace=4b. Let U,F be its Symanzik polynomials at
+u=1,v=2. Schwinger integration gives
+
+  I_b = pi^(-Dspace) integral_(R^Dspace)^2 product_e q_e^(-b)
+      = Gamma(b)^(-4) J_(b-1),
+  J_n = integral_projective (product_e alpha_e)^n/(U F)^(n+1).
+
+Here the q_e are the squared edge distances. This normalization comes
+from Gamma(sum a_e-L Dspace/2)/product Gamma(a_e)=Gamma(b)^(-4).
+
+In the previously derived outer-parameter gauge, the Jacobian is U^2,
+F=U Dcube, and
+
+  Dcube=r x(1-x)+(1-r)y(1-y)+t r(1-r)(x^2+y^2),
+  A=t(1-t)r(1-r)x(1-x)y(1-y).
+
+Consequently
+
+  J_n=integral_[0,1]^4 A^n/Dcube^(n+1) dr dx dy dt.
+
+All integrands are positive in the interior. Arithmetic-geometric mean
+on the first two terms of Dcube gives
+
+  Dcube >= 2 sqrt[r(1-r)x(1-x)y(1-y)],
+  A/Dcube <= t(1-t)/2 * sqrt[r(1-r)x(1-x)y(1-y)] <= 1/64.
+
+The same bound gives an integrable majorant for1/Dcube with integral
+pi^3/2. Thus endpoints cause no convergence problem, independently of
+the period evaluation J_0=6 beta(4). In particular
+
+                    0 < J_n <= 6 beta(4) 64^(-n).
+
+Root derived this inequality and the geometry worker independently
+checked both the Schwinger normalization and the cube Jacobian.
+
+2. The indexing error and its correction
+
+The source is Derkachov--Isaev--Shumilov, arXiv2510.04235v1. Its
+lambda=Dspace/2-1 is the ANGULAR DERIVATIVE ORDER. In ladder-integrals.txt
+Section6, the archived angular polynomial P_h arises from derivative
+order2h-1, not order h. Therefore Dspace=4b corresponds to h=b.
+
+Root initially proposed h=2b-1. Adversarial initially agreed, then caught
+and corrected the error while checking the actual source operator.
+The discrete worker independently identified the same correction.
+No claim based on the erroneous mapping is retained.
+
+The source prefactor, derived by adversarial from equations(2.31),(3.34),
+(3.43) and R_d=(1/2)d/dcos(angle) at unit radius, is
+
+                 J_n=(n!)^4 4^(-n) L_(n+1,n+1),
+
+where L_(b,h) is EXACTLY the archived ladder-integrals.txt family.
+The first values are
+
+  J_0=6 beta(4),
+  J_1=[-6+24 beta(2)-12 beta(4)-(9/2)eta(3)]/4,
+  J_2=309/64-(1281/32)beta(2)+(579/16)beta(4)
+                     -(27/2)log(2)+6eta(3).
+
+Here eta(3)=3 zeta(3)/4. The lower periods do not disappear automatically.
+A nonzero rational scalar leaves the primitive coefficient vector and
+any subsequently primitive period-elimination result unchanged.
+Thus the old balanced-family arithmetic tests apply to this proposal.
+
+3. A separate convergence observation, not the above graph family
+
+The mistakenly proposed angular ray h=2b-1 is nevertheless a well-defined
+rational series. Put F_b(z)=product_(j=0)^(b-1)(z-j)^(-3). The old S_b is
+
+       S_b(m)=sum_(j=0)^(b-1) Res_(z=j) F_b(z) F_b(z+m).
+
+Expand F_b(z+m) in1/m. Its coefficient at order m^(-3b-k) is a polynomial
+in z of degree k. For k<3b-1, the sum of its finite residues against
+F_b is zero because the product is O(z^-2) at infinity. At k=3b-1, its
+leading coefficient is (-1)^(b-1)binom(6b-2,3b-1), and the coefficient
+of1/z is precisely this number. Hence
+
+  S_b(m) ~ (-1)^(b-1)binom(6b-2,3b-1)m^(-(6b-1)).
+
+Since deg P_h=2h-1, P_(2b-1)S_b decays as m^(-(2b+2)). This proves
+absolute convergence of the corresponding odd-grid angular series,
+beyond the conservative sufficient cutoff2h<3b of the old implementation.
+Root and discrete independently derived the residue argument. Discrete
+checked exact rational functions for b1..4 and found orders5,11,17,23.
+
+This is NOT the Dspace=4b all-propagator-b family. In the source convention
+it would have Dspace=8b-4 and other propagator powers. No favorable
+primitive arithmetic or new positive integral estimate follows from the
+convergence observation alone. It remains a scoped extension of an old
+family, not evidence that irrationality is close.

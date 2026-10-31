@@ -1,0 +1,42 @@
+ROUND13: MODULAR ARITHMETIC HOLONOMY -- COMPLETED ASSESSMENT
+30 October 2026. Local and unpublished. No irrationality proof.
+
+The bounded phase has assessed the original filtered level32 remainder,
+its homogeneous-companion extension, and a first-primitive extension.
+The detailed report is collaboration/round-13/findings.txt.
+
+Main result: in the specified t coordinate, every permitted holomorphic
+uniformizing map has log|phi'(0)|<1.3 because of two unavoidable fourth
+logarithms at cusps. The published holonomy coefficient-type bounds,
+including the checked weighted-metric refinement, cannot yield a
+contradiction by adding these remainder directions to integral or
+certified first-primitive companions: comparison with the unconditional
+companion bound would require log|phi'(0)|>4.
+
+The rational differential ranks are9,17,18 for the three explicit
+families. A prime-prefix congruence proves the four-layer arithmetic
+lower bound for every fixed noncheap direction in the stated templates.
+One independent model checker reviewed the proofs and implemented
+separate exact computations. This is not formal verification.
+
+Read the report's scope qualifications before applying this obstruction.
+It does not rule out new modular constructions, different coordinates,
+meromorphic-map versions, or arithmetic outside the specified templates.
+It makes no priority claim.
+
+Record map:
+ collaboration/round-13/findings.txt                   final assessment
+ collaboration/round-13/coordinator/rational-system.txt explicit systems
+ collaboration/round-13/coordinator/core-claims.txt    original audit draft
+ collaboration/round-13/coordinator/companion-comparison.txt
+ collaboration/round-13/coordinator/optimized-comparison.txt
+ collaboration/round-13/coordinator/sources.txt        reading/dependencies
+ collaboration/round-13/independent/audit-report.txt
+ collaboration/round-13/independent/optimized-comparison-audit.txt
+ collaboration/round-13/completion-audit.txt           requirements/evidence
+
+Recommendation: the next bounded task should seek an exact identity of
+complete parameterized beta4 families with complementary arithmetic.
+That next phase has not been started. The separately drafted successor
+goal is a proposal; the active goal file still specified this modular
+assessment during closeout.

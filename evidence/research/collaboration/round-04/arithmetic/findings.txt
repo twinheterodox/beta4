@@ -1,0 +1,383 @@
+ROUND 04 — EXACT EULER DELETION, A SPARSE PADE FAMILY, AND OVERSIEVING
+29 October 2026. Arithmetic worker. Local, unpublished research packet.
+
+Outcome and scope
+=================
+
+There is a genuine mechanism forcing away the repeated fourth odd-prime
+layers: apply exact Euler depletion to the ORIGINAL cyclotomic beta(4)
+germ before taking the endpoint determinant. Every selected prime then
+has exponent at most FOUR in the ACTUAL primitive multiplier, independent
+of determinant order. The scalar endpoint factor is included in this
+claim. An exact example changes v_11(kappa) from 24 to 4 at order n=8.
+
+Selecting every prime above a slowly growing cutoff gives a uniform
+subquadratic upper bound log^+(kappa)=o(n^2). This is an arithmetic theorem,
+not a small-integer-form theorem. The price is a changing germ with many
+new singularities and possible exact rank defects.
+
+A fully prescribed nonzero polynomial-pencil family is developed below.
+Keep only powers of 3 in the relevant coefficient prefix and take
+n=3^k-1. Its diagonal Pade approximation and endpoint determinant are
+explicit. Primitive normalization removes the entire apparently tiny
+determinant scalar. The remaining form is an Euler-product tail plus a
+known term of size 3^(-4k). At the natural prime cutoff 2n, neither a
+uniform lower bound nor a useful real upper bound is proved.
+
+For a precisely specified larger cutoff, however, there IS an actual
+failure theorem: k>=2 and prime cutoff p congruent 3 mod 4, p>=3^(4k),
+give primitive absolute values >1. The proof combines a real LOWER bound
+with an isolated prime in the ACTUAL multiplier. It does not infer a
+no-go result by multiplying two upper bounds.
+
+This round does not prove beta(4) irrational and does not rule out all
+Euler-depleted, hypergeometric, or varying-cutoff constructions.
+
+1. Choices made before discussion
+=================================
+
+The initial record 00_initial_choices.txt compares three distinct designs:
+
+* Factorial coefficient multipliers, such as binom(j,n)^4, force local
+  prime divisibility but do not automatically preserve a beta(4)-only
+  endpoint. Recovering the endpoint through integration may restore the
+  denominators. No completed endpoint construction was obtained here.
+* Explicit Frobenius/Euler depletion changes the endpoint by a known
+  rational scalar. On the original cyclotomic germ the deletion is exact.
+  This is the selected construction, developed in this packet.
+* Constrained Mellin numerators/Euler derivatives retain the previous
+  one-LCM Rodrigues subspace, but its free coefficient and free polynomial
+  do not supply an approximation rule. This round does not repackage
+  arbitrary rational approximation as a new construction.
+
+The coordinator independently suggested exact Euler deletion while this
+initial record was being prepared. That input is explicitly acknowledged
+there. Other workers' round-04 constructions were not read before the
+choice was recorded. No external literature was needed or browsed for
+the elementary arguments below.
+
+2. Exact deletion and endpoint normalization
+===========================================
+
+Let chi=chi_4, theta=beta(4), and
+
+  F(t) = sum_(j>=1) chi(j)t^j/j^4.
+
+For an odd prime p and T_p f(t)=f(t^p), unique factorization gives the
+EXACT identity
+
+  F(t) - chi(p)F(t^p)/p^4
+       = sum_(p not dividing j) chi(j)t^j/j^4.                 (2.1)
+
+Thus for a finite set S of odd primes, P=product_(p in S) p,
+
+  G_S(t) = product_(p in S)(1-chi(p)T_p/p^4) F(t)
+         = sum_(gcd(j,P)=1) chi(j)t^j/j^4,
+  alpha_S = product_(p in S)(1-chi(p)/p^4),
+  G_S(1)=alpha_S theta.                                      (2.2)
+
+The identities converge absolutely at 1. They are NOT asserted for the
+completed Broadhurst common-base germ of round 03.
+
+The change of germ has a concrete analytic cost. For nonempty S, every
+primitive (4P)-th root of unity is a genuine singularity of G_S. In the
+divisor expansion of (2.2), only the term with d=P can be singular at
+such a root. Indeed, with E=t*d/dt, E^4 F(t^d)=d^4 t^d/(1+t^(2d));
+at a primitive (4P)-th root its denominator vanishes only for d=P.
+That term has a nonzero coefficient, so cancellation with the other
+divisors is impossible. This fact prevents silently reusing the fixed
+two-branch analytic bound of the original F. It is not, by itself, a
+capacity or actual-value no-go theorem for varying S.
+
+Write G_S(t)=sum h_j t^j. Use exactly the endpoint normalization
+
+  b_i=h_i,
+  T_ij=h_(i+j)-h_(i+j-1),       1<=i,j<=n,
+  J_(n,S)(X)=det [[X,-b^T],[b,T]]
+           =det(T) X+b^T adj(T)b.
+
+The beta(4)-only form is J_(n,S)(alpha_S theta), not J_(n,S)(theta).
+For a nonzero rational pencil aX+c, its positive primitive multiplier is
+
+  kappa = lcm(den(a),den(c)) /
+          gcd(lcm(den(a),den(c))*a, lcm(den(a),den(c))*c).
+
+Its valuation is exactly -min(v_p(a),v_p(c)); kappa may be rational.
+The zero pencil has no primitive multiplier.
+
+3. Forced prime-layer saving
+============================
+
+THEOREM 3.1. For every p in S and every nonzero endpoint pencil
+J_(n,S)(alpha_S X),
+
+  v_p(kappa) <= 4.                                           (3.1)
+
+Proof. All h_j are p-integral by exact deletion. Therefore det(T) and
+b^T adj(T)b are p-integral. Writing alpha_S=E/P^4 with integral E gives
+v_p(alpha_S)>=-4, including every possible cross-cancellation between
+different Euler factors. Both endpoint coefficients have valuation >=-4.
+This proves the statement about the actual primitive multiplier. It
+does not require any normality or common-content conjecture. QED.
+
+Now put N=2n, choose a real cutoff y>=2, and delete
+
+  S_n={odd primes p: y<p<=N}.
+
+Every surviving j<=N has only prime factors <=y. The exact common
+denominator of the coefficient prefix divides (indeed equals, apart
+from empty factors)
+
+  D_(y,N)=product_(odd primes p<=min(y,N)) p^(4 floor(log_p N)).
+
+Write T_0=D T, u=D b, d=det(T_0), Q=u^T adj(T_0)u. An explicit integral
+pair for J_(n,S)(alpha_S X) is
+
+  (E D d, P^4 Q),                                            (3.2)
+
+with common scalar denominator P^4 D^(n+1). Consequently
+
+  kappa <= P^4 D^(n+1),
+  log(kappa) <= 4 log(P)+4(n+1) pi(y) log(2n).                 (3.3)
+
+This is a sufficient upper bound on an actual primitive multiplier;
+common numerator content can make it much smaller. The elementary
+bound log(P)<=2n log(2n) already suffices to deduce
+
+  log^+(kappa)=o(n^2) if pi(y_n) log n=o(n),                  (3.4)
+
+where log^+(x)=max(0,log x). No matching lower bound is asserted.
+
+For example y_n=sqrt(n) works using only pi(y)<=y. Fixed y gives
+O(n log n). No prime number theorem is needed for these conclusions.
+
+The saving is real in a small exact comparison. For the original F,
+n=8 and p=11 give v_11(kappa)=24. Deleting just p=11, with its endpoint
+alpha included, gives v_11(kappa)=4. Both were computed from exact
+rational pairs and their full integer gcd, not entrywise estimates.
+
+4. A prescribed family and its exact determinant collapse
+=========================================================
+
+Fix k>=1, M=3^k, n=M-1. Choose ANY integer B>=2n and delete
+
+  S_B={odd primes p<=B: p != 3}.
+
+Through degree 2n the surviving series is exactly
+
+  g(t)=r(t)+c t^M,
+  r(t)=sum_(0<=a<k) (-1)^a t^(3^a)/3^(4a),
+  c=(-1)^k/M^4,
+  deg r=M/3 < M/2.
+
+Let r=r(1). The polynomials
+
+  q(t)=r(t)/t-c t^(M-1),
+  p(t)=r(t)^2/t
+
+have degrees <=n and satisfy the EXACT identity
+
+  q(t)g(t)-p(t)=-c^2 t^(2M-1).                               (4.1)
+
+Since q(0)=1 and 2M-1=2n+1, these form a genuine ordinary [n/n] Pade
+pair for G_(S_B), with no free approximation choice. Its endpoint is
+
+  L_(k,B)(theta)=(r-c) alpha_(S_B) theta-r^2.                  (4.2)
+
+THEOREM 4.1. With epsilon=(-1)^(n(n-1)/2+1),
+
+  J_(n,S_B)(X)=epsilon c^(M-2) [(r-c)X-r^2].                 (4.3)
+
+In particular the polynomial pencil is nonzero. Its primitive integer
+pair agrees, up to an overall sign, with the primitive pair of (4.2).
+The factor |c|^(M-2) disappears COMPLETELY in primitive normalization.
+
+Proof of the determinant identity. The following argument applies to
+any polynomial g=r(t)+ct^M with r(0)=0 and deg(r)<M/2.
+Let R reverse the n columns, L=I-shift_down, and delta=det(R).
+The matrix TR has entries h_(M+i-j)-h_(M+i-j-1). The contribution of
+c is cL. Multiplication by L^(-1) makes the lower-degree contribution
+
+  K_ij=r_(M+i-j)-r_(M-j)=N_ij-1_i v_j,
+  v_j=r_(M-j).
+
+N is supported in its upper-right corner, with row indices <=deg(r)
+and column indices >=M-deg(r). Hence N^2=0 and v^T N=0. The determinant
+lemma gives
+
+  det(T)=delta c^n det(I+c^(-1)N-c^(-1)1 v^T)
+        =delta c^(n-1)(c-r).
+
+The (1,1) cofactor is delta c^(n-1): after reversing its columns the
+minor is upper triangular with diagonal -c. Also T1=ce_1-b. The
+adjugate identities, valid without an inversion assumption, imply
+
+  b^T adj(T)b=c^2 adj(T)_(1,1)-(c+r)det(T)
+             =delta c^(n-1)r^2.
+
+Combining these two identities proves (4.3). QED.
+
+This also explains a systematic rank hazard. If instead M=3^k<n<3M/2,
+the prefix through 2n is a polynomial of degree M. Its cumulative
+sequence is constant from index M onward, so the last two rows of
+the (n+1)-square cumulative Hankel matrix coincide. The endpoint
+pencil is IDENTICALLY ZERO. Depletion must not be accompanied by a
+blanket claim of determinant normality.
+
+5. Exact primitive normalization and the real target
+====================================================
+
+Put s=81/82 and sigma=(-1)^k. Then
+
+  c=sigma/M^4,
+  r=s(1-c),
+  R_k=(M^4-sigma)/82 is an integer,
+  r=R_k/81^(k-1),
+  Q_k=81R_k-sigma,
+  r-c=Q_k/81^k,
+  gcd(R_k,Q_k)=gcd(R_k,3)=gcd(Q_k,3)=1.                      (5.1)
+
+Write alpha=E/P^4 without assuming this fraction is reduced. For k>=2,
+an exact integral pair for L is
+
+  (Q_k E 81^(k-2), -R_k^2 P^4),                             (5.2)
+
+with scalar denominator 81^(2k-2)P^4. The gcd of this displayed pair
+gives the EXACT primitive multiplier; all cross-prime Euler-factor
+cancellation is thereby included. Formula (5.2) is a normalization
+identity, not an assumption that its gcd is small.
+
+Absolute Euler-product convergence gives
+
+  alpha_(S_B) theta
+    =s product_(odd primes p>B)(1-chi(p)/p^4)^(-1).
+
+For B>=3, an elementary bound is
+
+  |alpha_(S_B) theta-s| <= 1/B^3.                            (5.3)
+
+Indeed the absolute logarithm of the product is at most
+sum_(j>B) 1/(j^4-1) <= 1/(2B^3), and exp(u)-1<=2u here.
+
+The exact endpoint decomposition is
+
+  L_(k,B)(theta)
+   =(r-c)(alpha_(S_B)theta-s)+s(s-1)c-s^2c^2.                (5.4)
+
+At the NATURAL cutoff B=2M-2, (5.3) supplies only O(M^(-3)) control.
+It does not prove that the actual error has polynomial size, and does
+not rule out cancellations with the explicit M^(-4) term. This packet
+makes NO asymptotic no-go claim for that natural-cutoff family.
+
+Exact finite diagnostics at the prescribed k=1,2,3 give:
+
+  k  n   B    log |primitive L(theta)|
+  1  2   4       -2.3702940450872444
+  2  8  16       14.081186415438562
+  3 26  52      121.29455964540273
+
+For k=1 the primitive pair is 82*theta-81. These are finite diagnostics
+of this specified family, not a larger parameter search or a proof of
+eventual failure.
+
+6. A genuine actual-value obstruction for an oversieved subfamily
+================================================================
+
+THEOREM 6.1. Let k>=2, M=3^k, and let p be ANY prime congruent 3 mod 4
+with p>=M^4. Set B=p and S=S_B. Let kappa_L be the exact positive
+primitive multiplier of L_(k,p). Then
+
+  |L_(k,p)(theta)| >= 1/(200 M^4),
+  kappa_L >= p^4/R_k^2,
+  |kappa_L L_(k,p)(theta)|
+       >= p^4/(200 M^4 R_k^2)
+       > (6561/200) M^4 > 1.                                (6.1)
+
+In particular these forms are nonzero and cannot prove irrationality
+by tending to zero. No prime-distribution theorem is used: the result
+holds for every prime satisfying the displayed hypothesis. There are
+arbitrarily large primes 3 mod 4 by the elementary Euclid argument.
+
+Proof of the real lower bound. For k>=2, |c|<=1/6561 and
+
+  1-r=(1+81c)/82 >=80/(81*82),
+  |(r-c)s-r^2|=s|c|(1-r)
+               >=(20/1681)/M^4 >1/(100M^4).
+
+Also 0<r-c<2, so (5.3) changes this value by at most 2/p^3.
+Since p>=M^4 and M>=9, this is <=1/(200M^4). The error cannot cancel
+the displayed main term. Its sign is -sign(c).
+
+Proof of the multiplier lower bound. The largest selected prime p
+cannot divide ANY Euler numerator q^4-chi(q), q<=p. For q=p the
+numerator is 1 modulo p. For q<p with chi(q)=-1, q^4=-1 modulo p
+would make -1 a square, impossible for p=3 mod 4. For chi(q)=1,
+q^4=1 forces q=+/-1 modulo p; the only possibilities below p are
+1 and the even integer p-1, neither an odd prime. Thus
+
+  v_p(alpha_S)=-4.
+
+By (5.1), 0<Q_k<M^4<=p and 0<R_k<p, so
+
+  v_p(kappa_L)=4 EXACTLY.                                   (6.2)
+
+At any other prime, a negative valuation of kappa_L can be no larger
+in magnitude than the corresponding valuation of the numerator
+R_k^2 of the constant coefficient. (At 3 that coefficient has a
+denominator, so no negative valuation occurs.) Therefore the entire
+negative part of kappa_L divides R_k^2, and kappa_L>=p^4/R_k^2.
+Finally R_k<M^4/81 gives (6.1). QED.
+
+The small checked instance k=2, M=9, p=6563 has the exact certified
+lower bound
+
+  |primitive L(theta)| >=1855280658474961/8398080000 >220000.
+
+The script also computes its full rational alpha, full primitive pair,
+and actual Arb value; the theorem itself does not need that computation.
+
+7. What this construction contributes, and what remains
+=======================================================
+
+The useful transferable result is Theorem 3.1: exact prime deletion
+forces the fourth layer to occur once per selected prime, with its
+endpoint factor accounted for. It is not an accidental modular defect.
+The local example v_11(kappa):24->4 verifies that the saving can survive
+global primitive normalization.
+
+The sparse family is a noncircular construction: its prime set, order,
+Pade pair, and beta(4)-only endpoint are all prescribed. It also makes
+the main risk precise. Keeping too few coefficient indices causes
+exact zero pencils or collapse of the determinant to a low-complexity
+Euler-product approximation. Increasing the deletion cutoff enough
+to dominate the explicit term causes a provable primitive-value failure.
+
+No argument here excludes a less sparse cutoff y_n tending to infinity,
+a different Pade type, or a way to control weighted varying cuts. For
+the natural y=3 cutoff, uniform nonvanishing of the evaluated form and
+the actual error asymptotic remain open. The coefficient/primitive
+arithmetic saving is therefore a construction tool, not yet an
+irrationality argument.
+
+8. Reproduction and exact reading scope
+=======================================
+
+Run from /home/research/Chat/Math/beta4:
+
+  .venv/bin/python collaboration/round-04/arithmetic/euler_depletion.py
+
+The script writes only euler_depletion.json in this directory. It checks:
+360 exact coefficient identities for Euler operators; four generic
+sparse-polynomial determinant/Pade identities; the n=8,p=11 primitive
+valuation comparison; the three prescribed natural-cutoff cases;
+two forced zero windows; and the isolated-prime oversieve example.
+Numerical values use Arb at 256 bits. No uncontrolled floating-point
+test is used for a mathematical assertion.
+
+Files read for implementation context were round-03/arithmetic/
+dyadic_joint.py and relevant normalization/evaluation lines of
+round-03/coordinator/joint_pade.py and round-04/construction/
+derivative_tail.py. The latter was read only after the initial choices
+were recorded, to match exact-value reporting conventions. No new
+arithmetic scans of the old common-base family were run. No old files
+were changed, no subagents were spawned, and nothing was published.

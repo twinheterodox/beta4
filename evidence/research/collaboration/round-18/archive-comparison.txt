@@ -1,0 +1,145 @@
+ROUND18 STAGE2: ARCHIVE COMPARISON AND COORDINATOR CHECKS
+31 October 2026. Stage1 completed before this comparison began.
+
+Scope and evidence
+
+The explorer used a fork with no parent context, recorded three unaided
+seeds, read four primary sources selectively and returned no credible
+survivor. Its initial-record hash matches the precomparison record.
+The complete current archive index (all 12 method groups and round13-17
+addenda) has now been read, followed by the relevant proofs below.
+This is a comparison with the full archive map, not a fresh audit of every
+old proof or computation. Old results retain their stated narrow scope.
+
+1. Positive rank-one moment model and its first variation
+
+The direct model has moments
+ m_j=integral_0^1 x^(2j)(-log x)^3/[6(1+x^2)] dx,
+and coefficient matrix (-1)^(i+j) for beta4. Its affine degree follows
+exactly from rank one. Reducing the rationality denominator from b^n to b
+is real for this model, but it is not a new principle in the project.
+
+arithmetic-followup.txt Sections2.1-2.2 already develop positive rank-one
+Gram/Hankel factors and show why raw capacity decay does not determine the
+primitive form. deep-investigation.txt Section5.4 has a different inverse-
+moment rank-one construction. These weights and grids are NOT identified
+with the explorer's precise ordinary moment matrix. Their family-specific
+obstructions must not be transplanted to it. The overlap is the mechanism;
+the explorer supplied no new all-index arithmetic improvement for its variant.
+
+The purportedly more interesting arcsine parameter family IS exactly in
+the archive. In arcsine-contact.txt Section1 substitute u=a^2. Since
+arcsin|t|-pi/2=-arccos|t| and cosine is even, the measures agree identically.
+The rational moment recurrence, its first jet, and the boundary period
+4 sum chi4(r)/(r^2-a^2) are identical. The archive additionally proves
+the full boundary recurrences and a dilogarithm companion, and records
+202 finite primitive determinant tests. This is an exact rediscovery,
+not a conclusion from similar terminology.
+
+The explorer's separate ordinary-moment Wronskian model has exact target
+support. Its elimination aH'-a'H is the standard first-jet/cofactor
+mechanism, also present with other coefficient families in round14.
+I have NOT proved equality of its full coefficient sequence with any
+archived sequence. Round14's particular multiplier obstruction and the
+arcsine high-column prime theorem do not automatically cover it.
+
+The one-row derivative observation does not by itself preserve the
+divisibility of an undifferentiated determinant. The explorer provides
+no arithmetic identity repairing that loss or an unpriced elimination
+from a higher-degree polynomial in beta2.
+
+Important correction to the assessment evidence
+
+The explorer's numerical tables clear the least coefficient denominator D,
+but do NOT remove the common integer numerator factor g. Therefore those
+tables alone cannot support a statement about primitive forms. This was
+checked rather than silently accepting the negative conclusion.
+
+primitive_check.py reads the existing exact coefficients, clears D, removes
+the full gcd, and evaluates the resulting A beta4+B with Arb at precision
+chosen from coefficient height. No matrix size or family was added.
+At n=12 the corrected normalized logarithms are
+
+  model              before gcd       after full gcd
+  direct Hankel       7.036743          6.016276
+  first variation     6.271803          4.303072
+
+The content corrections are substantial but do not reverse these finite
+failures. At n=3,6,9,12 both primitive values are >1 by interval arithmetic.
+All 24 existing forms have certified nonzero values. The full record also
+retains n=1,2, which must not be misrepresented as irrationality evidence.
+No general primitive-growth theorem follows from these examples.
+
+A small structural observation for adversarial checking
+
+There may be a clean all-index nonvanishing argument for the Wronskian,
+so lack of such a theorem should not be used carelessly as the decisive
+reason to reject it. The moment deformation has the positive weight
+ w_u(x)=sinh(sqrt(u)*(-log x))/[sqrt(u)(1+x^2)],
+with its analytic value at u=0. Its first derivative at zero is exactly
+the positive weight-four density. For P of degree<n in x^2 with P(-1)=1,
+the constrained minimum is H_n(u)/a_n(u). Differentiating the finite
+positive quadratic minimization at zero should give
+ W_n/a_n(0)^2=integral P_(n,0)(x^2)^2 w_0'(x) dx>0.
+The minimizer is unique, and the derivative of its constraint is zero.
+It also gives an error at least the direct weight-four constrained minimum.
+This is an elementary proof candidate to check, not an arithmetic saving.
+It explains why a smaller raw Wronskian determinant is not itself evidence
+of a smaller scalar approximation error. The reviewer may verify or refute
+this observation; it is not needed for the existing finite Arb enclosures.
+
+2. Holonomy/top-extension jet
+
+The proposed parameter functions J(a) and F(u) have infinitely many genuine
+finite poles; they are not rational-coefficient linear-holonomic inputs in
+those variables. This is a scoped elementary objection, not an objection
+to finding another geometric variable or to arithmetic holonomy itself.
+
+The raw x-system retains lower beta jets. However, the archive already has
+a repair of the rational-jet problem: round12/geometry/findings.txt gives
+C(x)=F0-log(x)F1+log(x)^2 F2/2-log(x)^3 F3/6, with C(1)=beta4 and
+C'(x)=-log(x)^3/[6(1+x^2)]. Under beta4 rational its whole local jet at 1
+is rational. Thus the diagnosis must go beyond saying lower jets cannot
+be removed. The same record proves that changing the rational constant
+does not improve the module/continuation data, and that the specified
+linear differential removal of endpoint branching erases that constant.
+
+Round13's level32 rank/cost comparison is a separate, narrowly scoped
+failure of given functions, coordinates and estimates. None closes all
+holonomy methods. The fresh seed supplies no new rationality-sensitive
+module, geometric quotient or arithmetic/analytic comparison beyond these
+known missing objects. No concrete proposal survives from this seed.
+
+3. Cyclotomic distribution or period projector
+
+The odd projector Li4(i)-Li4(-i)=2i beta4 is already the defining germ
+F(x)=sum chi4(m)x^m/m^4 used throughout the archive (for example round12
+geometry). The fresh seed does not specify an additional correspondence
+or a new integral lattice. Earlier functional-equation, ladder, topological
+parity and norm work in archive groups4,8,9,10 has specific results and
+obstructions; these do not prove that every possible projector fails.
+The present rejection is absence of a new specified mechanism or saving,
+not an illegitimate use of those narrower no-go results.
+
+Provisional verdict for stage3
+
+No proposal currently justifies another construction campaign. The closest
+candidate is the first-variation mechanism, whose exact calibration works
+but whose arcsine family is already developed and whose explicit ordinary-
+moment arithmetic test remains poor even after the normalization correction.
+The fresh reviewer should attack this verdict and the comparison, including
+the nonvanishing observation above, rather than merely endorse it. Any
+retained proposal needs a concrete new arithmetic mechanism and cheap test;
+an unquantified hope of additional gcds does not meet that threshold.
+
+Files read for this comparison
+ archive-index.txt (complete, including current addenda)
+ explorer/initial-unaided.txt, assessed-report.txt, computations.txt,
+ source-ledger.json and sanity_checks.py (complete)
+ arithmetic-followup.txt Sections1-2
+ arcsine-contact.txt Sections1-2 opening and Sections5-6 opening
+ deep-investigation.txt Sections5.3-5.5
+ collaboration/round-12/geometry/findings.txt Sections1-4
+ Other current round13-17 scope statements are in the complete archive index
+ and previously read current handover. No claims of rereading all their
+ underlying proofs in this pass are made.

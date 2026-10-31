@@ -1,0 +1,255 @@
+ADVERSARIAL REVIEW OF THE COORDINATOR'S INTEGRAL POLE MULTIPLIER
+2026-10-29. Local and unpublished.
+
+Reviewed:
+  collaboration/round-06/coordinator/pole_annihilator.txt
+  collaboration/round-06/coordinator/pole_annihilator_check.py
+  collaboration/round-06/coordinator/remaining_fixed_points_check.py/json
+  modular-detour.txt, Sections 3-4
+  collaboration/round-05/fresh/alternative_prefactor.txt, relevant sections
+  collaboration/round-05/fresh/alternative_prefactor_checks.py
+
+Verdict: the refined pole-cancellation construction, its multiplicity
+argument, the exact integral normalization, the weight-zero theta-unit
+normalization, and the selected remaining-pole claims all pass this
+review. I found no substantive mathematical gap. The remaining-pole
+result has exactly the stated scope: raw coefficients for six FIXED primes,
+not primitive coefficient pairs, not every index, and not a growing-prime
+irrationality sequence. The construction is not an irrationality proof.
+
+This review includes the final ordinary-trace optimization
+j^2=p^2 mod 16, as well as the theta-unit normalization U_p. Earlier
+larger factor sets are no longer the preferred construction.
+
+1. Orbit classification and the rational trace invariant
+
+The reviewed input that t is a degree-one coordinate on the Fricke
+quotient implies the full orbit dichotomy, not merely one direction:
+t(tau)=t(p^2 tau) iff p^2 tau=gamma tau or gamma W32 tau for some
+gamma in Gamma0(32). The index-two extension is a group because W32
+normalizes Gamma0(32).
+
+For a real Mobius matrix M with positive determinant Delta and an
+interior fixed point tau, its derivative rho satisfies
+
+  rho+rho^(-1)=(tr M)^2/Delta-2.                            (1.1)
+
+This follows algebraically from the fixed-point quadratic, and does not
+require a choice of an angle or a complex conjugation heuristic.
+Our separate symbolic script proves the generic identity before any
+specialization to the coordinator's two orbit cases.
+
+For the ordinary case, M=gamma^(-1) diag(p^2,1) has determinant p^2
+and trace a+dp^2. For the Fricke case it may be represented by
+
+  M=[[-cp^2,a/32],[-dp^2,b]],
+
+with determinant p^2/32 and trace b-p^2c. Differentiating t invariance
+at the orbit equality gives rho=delta_2/delta_1 in both cases. Therefore
+
+  R+R^(-1)=h^2/p^2-2,   h=a+dp^2,
+  R+R^(-1)=32r^2/p^2-2, r=p^2c-b,
+
+exactly as stated. The interior fixed-point condition gives
+|h|<2p and |r|<p/sqrt(8). Because a,d are odd, h is even. The h=0
+case would require (pd)^2=-1 mod 32 and is impossible.
+
+At an unbranched zero, these identities give
+
+  B_c=delta_1^2[(1+R)^2-(c/p^2)R]=0
+
+for c=h^2 or c=32r^2. The Fricke expression is independent of d;
+therefore the factor cancels the entire shifted family, not only the
+representative with d=1. The two positive label sets are disjoint.
+
+2. The refined ordinary trace set is necessary AND sufficient
+
+Write h=2j. From ad=1 mod 32, odd d, and odd p, one has
+
+  a= d^(-1)=d mod 8,       p^2=1 mod 8,
+  a-dp^2=0 mod 8.
+
+Hence
+
+  h^2-4p^2=(a-dp^2)^2+4p^2(ad-1)=0 mod 64,
+
+which is equivalent to j^2=p^2 mod 16. Thus impossible labels can be
+removed exactly; this is not a heuristic density reduction.
+
+For completeness, every j with 1<=j<p and this congruence is realized.
+The number j^2-p^2 is either 0 or 16 modulo 32. Choose k with
+k^2=j^2-p^2 mod 32 (take k=0 or 4), and choose the odd residue
+
+  d=p^(-2)(j+k) mod 32.
+
+Then (p^2d-j)^2=j^2-p^2 mod 32, so
+(p^2d^2-2jd+1)=0 mod 32. Set
+
+  a=2j-dp^2,   c=1,   b=(ad-1)/32.
+
+This is an integral Gamma0(32) matrix with h=2j. Its fixed-point
+quadratic has discriminant 4(j^2-p^2)<0, so it has an upper-half-plane
+solution. Therefore the refined set loses no ordinary family. Its
+ordinary factor count is p/4+O(1), and the total count is
+(1/4+1/sqrt(8))p+O(1).
+
+The independent checker compares congruence eligibility with direct
+realizability over all odd d modulo 32, for every odd p from 3 to 101
+and every 1<=j<p: 2,550 exact checks. This finite check is supplementary;
+the argument above proves the assertion in full.
+
+3. Integrality and local multiplicities
+
+The coefficient identity delta_2=p^2 v with v integral is exact. Thus
+
+  B_c=(delta_1+p^2v)^2-c delta_1 v
+
+has integer q-coefficients and leading term q^2. The product W_p has
+leading coefficient one and exact order 2b_p. It is not a common scalar
+rescaling, and the initial vanishing coefficients supply no witnesses.
+
+The branch-point argument is valid. Gamma0(32) has no elliptic elements:
+trace zero would give a^2=-1 mod 32; trace +/-1 would give
+ a^2+/-a+1=0 mod 2. Both are impossible. A finite stabilizer in the
+index-two Fricke extension therefore has order at most two. Since t
+is a coordinate on the quotient, its ramification order e is precisely
+1 or 2 at an interior point.
+
+At a denominator zero choose h in the Fricke extension with
+h(tau0)=p^2 tau0, and set g=h^(-1) composed with the dilation. Invariance
+makes the denominator exactly t(tau)-t(g(tau)) locally. If g'(tau0)=1,
+g is the identity (an interior fixed-point automorphism is conjugate to
+a rotation), putting the dilation in the group. This contradicts the
+q-leading terms t(q)=q+... and t(q^(p^2))=q^(p^2)+.... If e=2 and
+g'(tau0)=-1, uniqueness of the real Mobius half-turn makes g the old
+order-two stabilizer; the same contradiction follows. Thus
+
+  ord_(tau0)(t(tau)-t(p^2 tau))=e<=2.
+
+If e=2, both derivatives vanish because p^2 tau0 is in the same orbit,
+and every B_c vanishes to order at least two. If e=1 the relevant factor
+already vanishes and the denominator is simple. These observations cover
+the cases excluded from the derivative ratio calculation.
+
+4. Remaining fixed points and the character cancellation
+
+For r=0 the matrix gamma_new=(a c;N c d), N=32p^2, has determinant one
+and fixes tau after W_N. Conversely, if an element gamma_new W_N has an
+interior fixed point, its normalized trace is sqrt(N)(b-c). The bound
+on an elliptic trace forces b=c, giving r=0. Thus the description as the
+new Fricke fixed-point orbit is exact.
+
+At an unbranched r=0 point, R=-1, and
+B_c=(c/p^2)delta_1^2 is nonzero for every retained positive label. These
+points are in fact always unbranched for the old quotient. Writing
+
+  tau=c/d+i/(sqrt(32)p d),    ad=1+32p^2c^2, d>0,
+
+an old Fricke fixed-point representation would force d_old=pd and
+c_old=pc. Its determinant condition fails modulo p. This independently
+proves the simple-denominator claim without numerical derivatives.
+
+The weight-one character is essential and is correctly included. Both
+Theta_1=theta3(2tau)^2 and Theta_8=theta3(16tau)^2 transform by chi_4(d)
+on Gamma0(32). Applying that law to gamma W32 gives
+
+  J(p^2 tau)=-i sqrt(32) chi_4(d)(d tau-c)J(tau)
+           =chi_4(d)J(tau)/p.
+
+Thus J_p=(1+chi_4(d))J, and d=3 mod 4 really cancels the pole through
+J_p^3. This is an exact cancellation, not a small numerical value.
+For d=1 mod 4, nonvanishing of the residual period is an additional
+condition and cannot be inferred from the pure Fricke endpoint identity.
+
+All six stated examples have d=1 mod 4. Our independently implemented
+Lambert sums, with 5,000 terms and explicit absolute tails, enclose all
+six H_p-C_p(theta) residuals away from zero. Independently evaluated
+theta sums at p^2 tau prove J_p!=0. The eta quotient t is zero-free in
+the upper half-plane; together with the branch argument this gives
+T=2t!=0 and D'!=0. No numerical fit to a residue is being assumed.
+
+5. Weight and its removal by a zero-free integral unit
+
+Before normalization, W_p has weight 4b_p, and the differentiated
+Fricke invariance of t gives
+
+  delta_1(W_N tau)=N tau^2 delta_2(tau),
+  delta_2(W_N tau)=N tau^2 delta_1(tau).
+
+Therefore W_p(W_N tau)=N^(2b_p)tau^(4b_p)W_p(tau). The warning that an
+old weight-zero residue phase formula cannot be reused was necessary.
+
+The new normalization fully repairs that weight issue. The Jacobi
+product proves that Theta_a=theta3(2a tau)^2 has no zeros in H. It is
+an integer unit series. The theta transformation gives
+
+  Theta_a(W_N tau)=-i N tau/(2a) Theta_(N/(4a))(tau).
+
+For a=1 and a=8p^2, the partners are exchanged, and the two factors
+multiply to -N tau^2. Thus
+
+  F_p=Theta_1 Theta_(8p^2),
+  F_p(W_N tau)=-N tau^2 F_p(tau).
+
+Both theta factors have character chi_4; their product has trivial
+character on Gamma0(N). So F_p is weight two on that group, and
+
+  U_p=W_p/F_p^(2b_p)
+
+has weight zero and is Fricke invariant. The exponent 2b_p correctly
+kills both the weight and the negative Fricke sign. The reciprocal of
+an integer series with constant term one is integral at every order,
+while zero-freeness ensures holomorphy of the reciprocal in H. Hence
+U_p is integral, introduces no interior pole, and has exactly the same
+interior zero divisor as W_p.
+
+The normalized remainder retains all canceled and surviving pole claims.
+This normalization is a convolution of coefficient pairs, so its height
+and primitive content still need a separate estimate. Integrality by
+itself establishes neither favorable height nor small primitive values.
+
+6. Audit of the interval tails and independent code
+
+The coordinator's reused Lambert routine has a safe tail: after the
+last included odd d, bound d^-4 by one and sum the remaining r^d over
+odd d; use |1+q^d|>=1-r^d and |1+q^(2d)|>=1-r^(2d). Its derivative
+bounds have sufficient factors of two. The eta routine bounds omitted
+logarithms and logarithmic derivatives by geometric tails and then
+converts the logarithm error through exp(error)-1. The theta tail uses
+the first omitted square and the minimum subsequent square gap. These
+are valid bounds for the input radii, including the examples near the
+unit circle.
+
+The coordinator's direct wide theta interval at q can serve only as a
+consistency check. Its actual nonvanishing test uses the small transformed
+q and the exact character identity; that is valid and is what the proof
+states. Equality of two interval enclosures containing zero is not itself
+an identity proof; the orbit and character arguments supply that proof.
+
+Independent reproduction, from beta4/:
+
+  python3 collaboration/round-06/fresh/pole_annihilator_review_symbolic.py
+  .venv/bin/python collaboration/round-06/fresh/pole_annihilator_review_checks.py
+
+The output is pole_annihilator_review_checks.json. No coordinator code is
+imported. Checks include the abstract trace identity; 2,550 trace-label
+realizability tests; direct eta-product integer prefixes for p=3,5,7,11,17;
+formal reciprocal/unit normalization and leading order; five complex
+Fricke theta transformations; and all six independently enclosed remaining
+period residuals. The eta prefixes extend beyond q^(p^2), so the shifted
+term is actually present in the check rather than hidden beyond the
+truncation. All tests passed.
+
+7. Scope of the accepted conclusion
+
+A genuine interior pole gives a Taylor-series convergence radius below
+one, hence a raw coefficient limsup obstruction. It does not prove growth
+at every index, nor control primitive pair rescaling, nor give a uniform
+obstruction when p grows with the index. The coordinator's final note
+keeps those distinctions. The integral orbit-wise multiplier and the
+weight-zero unit normalization are positive constructions, while the
+remaining fixed-point periods are a concrete unresolved analytic problem.
+
+This is a separate model-worker review, not an independent human audit or
+formal verification. No publication, priority, or irrationality claim is
+made.

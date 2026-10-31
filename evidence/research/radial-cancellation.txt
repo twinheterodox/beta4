@@ -1,0 +1,373 @@
+Direct Catalan cancellation and a uniform fourth-denominator congruence
+28 October 2026. Local research record; unpublished.
+
+Status
+======
+There is still no irrationality proof for B=beta(4).
+
+This pass replaces the previous matrix projection by a direct identity
+between harmonic and radial moments. The source coefficients have only
+a fixed factor 1/2: Catalan cancellation itself introduces no large
+odd-prime denominator. Nevertheless, fourth-power denominators survive.
+We now prove a uniform formula for that layer, rather than just exhibit
+individual primes in a finite matrix.
+
+The resulting rational sequence s_n satisfies, for every prime p>=5,
+
+                   p^4 s_(2p) = -chi_4(p)/6  (mod p).     (A)
+
+Thus v_p(s_(2p))=-4 exactly. More generally, p^4 s_(mp)=chi_4(p)s_m
+modulo p when 1<=2m<p. The formula comes from a Frobenius congruence
+for the entire rational Taylor germ of the ladder integral.
+
+We also prove that a fixed polynomial in the Euler derivative cannot
+remove the fourth layer of the harmonic rational coefficients while
+retaining their constant B coefficient. This is a restricted obstruction,
+not a theorem excluding arbitrary differential or numerator constructions.
+
+The direct Hankel and filtered variants have unfavorable finite results:
+179 of 192 primitive evaluations exceed one in absolute value, and the
+remaining 13 are the trivial polynomial -X. These evaluations include
+overlapping cases. No asymptotic impossibility theorem for their
+determinants, nor a uniform determinant nonvanishing theorem, is claimed.
+
+The proofs and checks are same-agent work. There has been no independent
+audit or formal verification, and no priority claim is made.
+
+1. Input and notation
+======================
+The source is the classical two-loop ladder evaluation, in the
+normalization of Loebbert and Stawinski, arXiv:2408.15331v1, equation
+(2.73). The cube substitution, positivity, moment normalization and
+source attribution are proved in two-loop-numerators.txt. This pass
+does not add a new literature survey or another source PDF.
+  https://arxiv.org/abs/2408.15331v1
+  literature/papers/2408.15331v1.pdf
+
+Recall the positive measure nu of mass 6B, supported inside
+W>=0, |Z|+W<=1. Write mu(P)=integral P dnu, and set
+
+ Q=1-Z^2-W^2, T=Q/4, C_n=Re(Z+iW)^(2n).
+
+For polynomials even in Z and W, the specified ladder evaluation gives
+
+ mu(P)=r(P)+a(P)B+g(P)G,  G=beta(2),                    (1)
+
+with rational coefficient functionals. This is a chosen exact
+decomposition, not an assumption that the periods are linearly independent.
+
+The previous note proves
+
+ a(P)=6 times the normalized unit-circle average of P,
+ g(TP)=(1/pi) integral_(xi^2+eta^2<=1) integral_0^1
+                                     P(xi,t eta) dt dxi deta.   (2)
+
+Denote the second functional by h(P). The analytic Cauchy germ is
+
+ C(z,w)=mu(1/(1-zZ-wW))
+       =sum_ij binom(i+j,i)mu(Z^i W^j)z^i w^j.
+
+Let Rcal(z,w) be its rational coefficient and Gcal(z,w) its G coefficient.
+The binomial factor in this definition matters for denominator arguments.
+With K=(1-z^2-w^2)^(-1/2),
+
+ Gcal=-K[atanh(z)^2+3asin(w/sqrt(1-z^2))^2],              (3)
+
+and the first nonzero homogeneous term of Rcal is
+
+                  Rcal_4=(z^2+w^2)^2/8.                 (4)
+
+The full germ also contains B, zeta(3), and log(2). On even Z,W moments
+the last two coefficients vanish. Its rational part is explicitly
+computed from the known polylogarithmic ladder formula.
+
+2. Cancellation without a matrix inverse
+=========================================
+Put H_n=sum_(j=0)^(n-1)1/(2j+1). For n>=1,
+
+             g(C_n)=2H_n/n,  g(Q^n)=4H_n/n.              (5)
+
+For the first formula, restrict (3) to (z,w)=(t,it). Then K=1 and
+Gcal(t,it)=2atanh(t)^2. Its coefficient of t^(2n) is 2H_n/n.
+
+For the second formula, (2) gives g(Q^n)=4h(Q^(n-1)). To evaluate h,
+write xi=x and eta=sqrt(1-x^2)y in the disk integral. If
+b_n=binom(2n,n)/4^n, the x integral is pi*b_n, while
+
+ integral_0^1 integral_0^1 (1-t^2 y^2)^(n-1) dt dy
+     =integral_0^1 (-log u)(1-u^2)^(n-1) du
+     =H_n/(2n b_n).
+
+The last equality follows by differentiating the beta integral at its
+first parameter 1/2, or by integrating its finite binomial expansion.
+The factor two from y in [-1,1] proves h(Q^(n-1))=H_n/n.
+
+Define
+
+                 s_n=mu(C_n-Q^n/2).                     (6)
+
+At n=0 this is 3B. At every positive n its B coefficient vanishes by
+the circle formula in (2), and its G coefficient vanishes by (5).
+Therefore s_n is rational for n>=1. In particular,
+
+ s_0=3B,
+ s_1=0, s_2=-1/6, s_3=-4/15, s_4=-9/35,
+ s_5=-3793/14175, s_6=-117176/467775.
+
+This cancellation does not multiply a rational Catalan coefficient by
+another rational approximation to Catalan. It is an exact identity of
+source polynomials with a fixed denominator two. The integrand in (6)
+is signed, so the positive scalar nonvanishing proof from the previous
+pass does not apply to it or to its Hankel determinants.
+
+3. The uniform Taylor-germ congruence
+====================================
+For a prime p>=5 put chi=chi_4(p)=(-1)^((p-1)/2) and
+
+                  A_p(z,w)=(1-z^2-w^2)^((p-1)/2).
+
+Proposition. Coefficientwise through total degree strictly below p^2,
+
+ p^4 Rcal(z,w) = chi A_p(z,w) Rcal(z^p,w^p)  (mod p),    (7)
+ p^2 Gcal(z,w) =     A_p(z,w) Gcal(z^p,w^p)  (mod p).    (8)
+
+The left sides have p-integral coefficients in the stated range.
+On the right, only original coefficients of degree below p occur;
+these are p-integral. Thus the displayed reductions are well-defined.
+
+Proof of the logarithmic-word mechanism.
+First let f(t) be a formal power series with p-integral coefficients
+and invertible constant coefficient. If
+f'(t)/f(t)=sum_(j>=0)b_j t^j, then
+
+                      b_(mp-1)=b_(m-1)^p  (mod p).       (9)
+
+One elementary proof factors f/f(0) formally as product_(n>=1)(1-a_n t^n).
+The coefficient of t^(m-1) in its logarithmic derivative is
+-sum_(n|m)n a_n^(m/n). For mp, terms with p dividing n vanish modulo p;
+the remaining terms are precisely the pth powers of the preceding sum.
+This works over a characteristic-p coefficient ring, including Gaussian
+coefficients and polynomial parameters. Formal factorization is obtained
+recursively by matching one coefficient at a time.
+
+Consider an r-fold iterated integral of logarithmic differentials, all
+integrals based at t=0. A coefficient of degree N is a sum over strictly
+increasing positive integration indices k_1<...<k_r=N, with denominator
+k_1...k_r and p-integral differential coefficients. If N<p^2, each
+index contributes at most one factor p. Multiplying by p^r and reducing
+modulo p leaves only terms in which every index is a multiple of p.
+Dividing those indices by p and applying (9) gives the Frobenius copy
+of the original iterated word, now in t^p. The reduced indices are
+less than p, so their remaining denominators are units.
+
+Products of words can be treated by the shuffle identity, which has
+integer coefficients. Multiplication by an algebraic p-integral
+prefactor is then handled separately.
+
+Application to the ladder germ.
+Insert z=alpha*t,w=beta*t and write
+
+ zeta_+(t)=[beta*t+i sqrt(1-(alpha^2+beta^2)t^2)]/(1+alpha*t),
+ zeta_-(t)=[beta*t-i sqrt(1-(alpha^2+beta^2)t^2)]/(1+alpha*t),
+ u(t)=(1-alpha*t)/(1+alpha*t).
+
+These are the two polylogarithm arguments of the ladder formula. Define
+omega0=dlog(zeta_+), omega1=-dlog(1-zeta_+), and their conjugates.
+Their coefficients are p-integral for odd p: all initial denominators
+are powers of two or units 1+i and 1-i, and the square-root series has
+only powers of two in its denominators.
+
+Let I_k^+ be the word with k-1 copies of omega0 followed by omega1,
+and let I_k^- be its conjugate. Subtracting the initial polylogarithm
+values leaves these words as the rational remainders of Li_k.
+Consequently
+
+ Rcal(alpha*t,beta*t)=K(alpha*t,beta*t)/(2i) times
+   [6(I_4^+-I_4^-)-3log(u)(I_3^+-I_3^-)
+                         +(log(u)^2/2)(I_2^+-I_2^-)].   (10)
+
+The bracket is a sum of words of length four. The other terms of the
+ladder formula have the initial constants B,G,zeta(3),log(2), or pi
+powers; the pi contributions cancel as in the previous note. This
+separation is also checked by an independent implementation of (10).
+
+Apply the word mechanism. Frobenius sends i to i^p=chi*i, so the
+outside factor 1/(2i) contributes chi relative to the Frobenius copy
+of the full rational germ. The remaining prefactor ratio is
+
+ K(z,w)/K(z^p,w^p)=(1-z^2-w^2)^((p-1)/2)  (mod p).
+
+This proves (7). Formula (3) is a rational combination of products of
+two logarithms, with the squared 1/i factor rational. The same argument
+therefore gives (8), without chi. Using indeterminates alpha,beta proves
+the bivariate coefficient statements, not just a statement along one line.
+
+Formula (4) can be checked by expanding (10) to degree four. Equivalently,
+put rho=-atanh(z) and delta=-asin(w/sqrt(1-z^2)). The fourth Taylor
+combination in these log coordinates is (rho^2+delta^2)^2/4, and
+Im Li_0(i)=1/2.
+
+4. Passing from Taylor coefficients to rational moments
+========================================================
+Because C includes binomially weighted moments, (7) must not simply be
+read as an entrywise moment congruence. The following argument accounts
+for that normalization.
+
+Proposition. If p>=5 and 1<=2m<p, then
+
+                    p^4 s_(mp)=chi_4(p)s_m  (mod p).     (11)
+
+For the harmonic term, substitute (z,w)=(t,it) in (7) and take real
+parts. The multiplier A_p becomes 1. Changing i^p from i to -i leaves
+the real even coefficients unchanged. Hence the rational harmonic
+coefficients h_n=r(C_n) satisfy
+
+                    p^4 h_(mp)=chi h_m  (mod p).         (12)
+
+For the radial term expand Q^(mp). Its rational moment is a sum of
+Taylor coefficients Rcal_(2j,2k-2j) with multipliers
+
+ W_(k,j)=(-1)^k binom(mp,k) binom(k,j)/binom(2k,2j),
+                       0<=j<=k<=mp.                    (13)
+
+These multipliers are p-integral. Indeed,
+binom(k,j)/binom(2k,2j) is the normalized circle moment
+of cos^(2j)theta*sin^(2k-2j)theta divided by
+b_k=binom(2k,k)/4^k. The circle moment is dyadic. Since 2mp<p^2,
+v_p(b_k) is at most one, and is zero when k is a multiple of p.
+When k is not a multiple of p, v_p(binom(mp,k))=1, covering that
+possible denominator. This also proves integrality when a circle
+moment happens to have additional p divisibility.
+
+In the product on the right side of (7), a contribution to an even
+radial coefficient has
+
+ k=l*p+d, j=a*p+d_1, d=d_1+d_2, 0<=d<=(p-1)/2.
+
+Here the original germ coefficient has bidegree (2a,2l-2a), while
+the multiplier A_p supplies bidegree (2d_1,2d_2). If d>0, b_k is
+a p-adic unit, whereas binom(mp,k) is divisible by p, so (13) kills
+the contribution modulo p. Only d=0 survives. Lucas reduction of
+the remaining binomial factors gives exactly the multipliers for Q^m.
+The bound 2m<p ensures all binomial factors at those reduced indices
+are units. The sign (-1)^(lp)=(-1)^l is also preserved.
+
+Thus p^4 r(Q^(mp))=chi r(Q^m) modulo p. Combine this with (12) and
+(6) to prove (11).
+
+Taking m=2 and s_2=-1/6 proves (A). The residue is nonzero for p>=5,
+so the denominator exponent is exactly four. In particular, if
+L_N=lcm(1,...,N), then L_(2n)^3 s_n is not integral at n=2p for
+every prime p>=5: p occurs only once in L_(4p), and its third power
+does not clear s_(2p). This is an infinite family of failures of that
+specific denominator bound, not an obstruction to determinant content
+or to other combinations of moments.
+
+5. A restricted obstruction to fixed derivative filters
+========================================================
+The harmonic rational coefficients begin h_1=h_2=0, h_3=-1/15.
+By (12), for every prime p>=7,
+
+                    p^4 h_(3p)=-chi_4(p)/15  (mod p).    (14)
+
+Let A be a fixed integer polynomial and multiply the nth harmonic
+coefficient by A(n). This is the effect of A(theta), theta=x*d/dx,
+on the generating series indexed by n. If A(0)!=0, the constant B
+coefficient is retained. But for all sufficiently large primes,
+
+ p^4 A(3p)h_(3p)=-A(0)chi_4(p)/15  (mod p)
+
+is nonzero. Hence this fixed Euler filter cannot lower the uniform
+fourth denominator layer. The same conclusion holds for the already
+cancelled sequence: (A) gives p^4 A(2p)s_(2p)=-A(0)chi/6 modulo p.
+This statement does not cover p-dependent
+filters, general shifted recurrences, rational-function substitutions,
+or arbitrary families whose order grows with their index.
+
+6. Finite determinant and filtering experiments
+================================================
+The simplest determinant uses the moments (6):
+
+                  det(s_(i+j))_(0<=i,j<n).
+
+Only its upper-left entry contains B, so its polynomial degree in B
+is at most one. We also tested the weight (1-x)^h, which replaces
+s_k by sum_j(-1)^j binom(h,j)s_(k+j), preserving the B coefficient
+in the zeroth moment. These give 24 configurations through n=24.
+
+Further tests replace s_k by w_k*s_(d*k), with stride d=1,2,3.
+The weights were Euler beta moments
+
+ w_k=[(ak)!(bk)!/((a+b)k+1)!]^r,
+
+and multinomial weights [(ak)!/(k!)^a]^r. The former correspond to
+adding positive beta-integral variables; the latter test factorial
+divisibility directly. Twelve weight choices and the available matrix
+sizes give 168 further configurations.
+
+Every nontrivial primitive evaluation is larger than one. The 13
+exceptions are -X, arising at size two from s_1=0. The raw unfiltered
+rational approximation also remains poor: at n=24 its value is about
+0.5990753, compared with B about 0.9889446. Thus this direct cancellation
+has not retained the strong approximation behavior of the positive
+scalar construction in the preceding note. No convergence rate for
+these Hankel approximants is asserted.
+
+The uniform moment congruence does not by itself explain every determinant
+failure: taking primitive coefficient content can cancel large common
+denominators. Conversely, determinants can introduce large new factors
+into their coefficient ratios. The finite determinant results and the
+uniform moment theorem are separate conclusions.
+
+A modular search of 65 low-order polynomial-coefficient recurrence
+templates found no recurrence for the sampled rational sequence. This
+is not a non-holonomicity result and does not exclude larger recurrences.
+
+7. Checks and reproducibility
+=============================
+Before any previous record was edited, all 431 hashes from the previous
+manifest matched. See results/radial_integrity_baseline.json.
+
+The exact checks cover 70 harmonic/radial Catalan cancellations, 88,780
+Taylor coefficients in (7)-(8), nine instances of (A), 29 instances
+of (11), and five instances of (14). A separate iterated-integral
+implementation verifies 488 rational/G coefficients through degree 60
+in four directions, without using the earlier negative-polylogarithm
+and Eulerian-number computation. This is computational independence of
+an implementation, not an independent human or model audit.
+
+All primitive determinant coefficients are computed exactly, reduced
+by their integer gcd, and evaluated with Arb at coefficient-dependent
+precision. The 192 recorded values exclude zero. No uniform determinant
+nonvanishing argument follows from these finite checks.
+
+Commands from this directory:
+
+ .venv/bin/python experiments/radial_harmonic.py
+ .venv/bin/python experiments/radial_filters.py
+ .venv/bin/python experiments/radial_cartier.py
+ .venv/bin/python experiments/radial_word_checks.py
+
+The recurrence search parameters and its negative result are saved in
+results/radial_recurrence_search.json. All work remains local.
+
+8. What has changed in the research target
+==========================================
+We have removed one avoidable source of arithmetic loss: Catalan can
+be cancelled without multiplying two second-order denominator layers.
+But the resulting sequence still has its own fourth layer, with the
+explicit Frobenius multiplier A_p in (7). That layer is not merely an
+artifact of the old matrix inverse.
+
+The useful target is now a family of source rows whose leading residues
+under (7) have controlled rank, while retaining a usable real integral
+and nonvanishing argument. The congruence specifies what has to be
+cancelled. No family satisfying all three requirements has been found.
+The fixed Euler filters in section 5 cannot do it; the direct Hankel
+and beta-filter prototypes in section 6 do not show favorable finite
+evidence. Neither statement excludes new variable-dependent rows or
+a different representation of beta(4).
+
+This pass strengthens the arithmetic diagnosis and gives a direct
+period-cancellation construction. It does not establish that an
+irrationality proof is close.

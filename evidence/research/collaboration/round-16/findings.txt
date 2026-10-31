@@ -1,0 +1,317 @@
+BETA(4): LANDSCAPE REVIEW AND ONE RECOMMENDED NEXT INVESTIGATION
+30 October 2026. Local and unpublished. Review completed; no new campaign.
+
+Verdict
+
+Recommend a bounded arithmetic feasibility study of nonprincipal,
+interleaved-border minors of the positive cubic-tail kernel from round 1.
+The new ingredient to test is the border geometry and local pairing
+mechanism used in Litsey's trigamma work [L], applied to the beta(4)-only
+kernel whose positivity and real size we already understand.
+
+This is a recommendation about the value of the next test, not a claim
+of favorable arithmetic, novelty relative to all literature, or proximity
+to an irrationality proof. No construction presently has a proved favorable
+complete budget. I retain only ONE developed proposal. The alternative
+ideas considered below do not presently justify separate campaigns.
+
+1. What this review covered and what it changes
+
+Read all fifteen integrated round reports, the handover and archive index,
+the complete method map and next-proof-avenues record, and the arcsine
+investigation. Re-read underlying proofs where they determine the proposed
+next step. Source scopes and unchecked dependencies are in sources.txt and
+literature/reading-round-16.json; broad coverage is in landscape-coverage.txt.
+This is not a new audit of every proof or computation in the archive, nor
+an exhaustive reading of all relevant mathematics.
+
+The distinction that most changes the research decision is between:
+
+  (a) a lower bound for the ACTUAL primitive value of a specified family;
+  (b) a structural obstruction under stated hypotheses;
+  (c) failure of available upper estimates or of one normalization;
+  (d) finite unfavorable examples or an unproved required step.
+
+archive-audit.txt assigns the previous results to these categories.
+In particular, rounds 14-15 did not prove that all primitive forms in their
+families fail. The principal positive kernel, in contrast, has an actual
+primitive-value obstruction. That theorem explicitly excludes different
+row and column sets, while its positivity and Cauchy comparison cover them.
+This is a substantive gap in the obstruction's hypotheses, not merely
+another choice of scalar normalization for the same polynomial.
+
+The repeated losses have come from isolating the period before examining
+its integral structure, multiplying growing coefficients to eliminate
+other periods, using principal frames, and estimating prime valuations
+entry by entry. A new identity, gauge or interpretation alone repairs none
+of those losses. The proposed frame changes the determinant polynomial
+and its finite-prime rank structure while preserving target support and
+nonvanishing.
+
+2. The proposed family, completely specified
+
+Write theta=beta(4), and for positive integers a set
+
+  S_l(a)=sum_(j=0)^(a-1) [(4j+1)^(-l)-(4j+3)^(-l)].
+
+The round-1 construction [A1] gives
+
+  K(a^2,b^2)=[b S_3(b)-a S_3(a)]/[6(b^2-a^2)]   (a != b),
+  K(a^2,a^2)=theta-S_4(a)+S_3(a)/(12a).
+
+It also gives a positive integral representation
+
+  K(x,y)=integral_0^infinity omega(s)/[(x+s^2)(y+s^2)] ds,
+  omega(s)=(pi^2/96)s^2[1+A(s)-2A(s)^3],
+  A(s)=sech(2 pi s).
+
+The bracket is (1-A)(2A^2+2A+1)>0 for s>0. Andreief's identity and the
+Cauchy determinant formula show that EVERY ordered square minor is
+strictly positive, including nonsymmetric minors. The proof uses the
+positive product of the two Cauchy determinants, not entrywise comparison.
+
+Fix 0<c<=1, let m=floor(cr/2), and choose
+
+  C={1,...,r},
+  R=C union {r+1,r+3,...,r+2m-1},
+  Q=C union {r+2,r+4,...,r+2m}.
+
+Rows and columns are in increasing order. The matrix has size N=r+m.
+Replace theta in the r common diagonal entries by X and call the resulting
+rational matrix Phi_r,c(X). Put P_r,c(X)=det Phi_r,c(X).
+
+Three facts already follow from [A1], with no new nonvanishing assumption:
+
+  * P_r,c lies in Q[X] and P_r,c(theta)>0 for every r.
+  * Its degree is exactly r. Its X^r coefficient is the disjoint-border
+    minor, a strictly positive rational number (or 1 when m=0).
+  * Uniformly over positive integer node sets,
+      log det K(a_i^2,b_j^2)=log det[1/(a_i+b_j)]+O(N).
+
+For the last fact the explicit lower and upper factors are
+
+  [c0/(1+tau0)^2]^N det Cauchy <= det K <= (M c0)^N det Cauchy,
+  c0=pi^3/192, tau0=1/(sqrt(2)pi), M=1+2/(3sqrt(6)).
+
+Thus the real estimate has no hidden order-r^2 loss to recover. The
+prospective gain must come from the arithmetic of a genuinely new frame.
+
+3. Exact real-size benchmark
+
+The empirical row and column measures, with mass normalized by r, both
+tend to the density rho_c which is 1 on [0,1] and 1/2 on [1,1+c].
+Equivalently rho_c=(1_[0,1]+1_[0,1+c])/2. The Cauchy product gives
+
+  log P_r,c(theta)=-E(c)r^2+o(r^2),
+  E(c)=integral integral rho_c(x)rho_c(y)
+                         log((x+y)/|x-y|) dx dy.
+
+Justification: the two within-node Vandermonde sums contribute one copy
+of the log|x-y| double integral in total; the cross denominator contributes
+the log(x+y) integral. The log r terms leave only -N log r=o(r^2).
+Log singularities are integrable. Truncating them within distance epsilon,
+using the bounded spacing/density of these grids, and then letting epsilon
+tend to zero justifies the Riemann-sum limit. The O(N) kernel comparison
+does not affect it.
+
+For a,b>0 set
+
+  I(a,b)=[(a+b)^2 log(a+b)+(a-b)^2 log|a-b|
+                        -2a^2 log a-2b^2 log b]/2,
+
+where 0^2 log 0=0. Two elementary integrations show that I is the same
+log-ratio integral over [0,a] x [0,b]. Therefore
+
+  E(c)=[I(1,1)+2I(1,1+c)+I(1+c,1+c)]/4.
+
+  c          N/r          degree/r          E(c)
+  0          1            1                 1.386294361120
+  1/5        1.1          1                 1.652307066308
+  1/2        1.25         1                 2.058598491557
+  1          1.5          1                 2.818451239783
+
+E(0)=2 log 2; E(1)=(log 2)/2+(9 log 3)/4. benchmarks.py independently
+checks the closed expression against one-dimensional quadrature after
+integrating in the other variable. The decimals are checks, not interval
+certificates. This evaluates an existing determinant formula; it is not a
+new beta(4) determinant or parameter scan.
+
+4. Decisive missing lemma and the exact quantitative target
+
+Let D_r,c=den(P_r,c), the least positive INTEGER clearing its coefficients.
+It would suffice to prove, for one fixed c>0 and some delta>0,
+
+  log D_r,c <= [E(c)-delta]r^2+o(r^2).                         (T)
+
+Indeed, theta=u/v would make v^r D_r,c P_r,c(theta) a positive integer
+whose logarithm tends to minus infinity. The v^r cost is O(r), whereas
+the strict margin is of order r^2. A rational primitive normalization might
+do still better; (T) is a sufficient target, not a necessary condition for
+all ways of using the frame.
+
+A useful local form of the missing lemma is a collection of valid
+primewise upper bounds
+
+  e_p(r,c)=v_p(D_r,c) <= r w_(c,j)(p/r)+O(1), p= j mod 4,
+
+with a finite piecewise-integrable envelope and all its ranges justified,
+such that
+
+  A(c)=(1/2)sum_(j=1,3) integral_0^infinity w_(c,j)(x) dx < E(c).
+
+PNT in progressions would then sum these bounds. Here x=p/r; an x^-2
+Jacobian belongs to the different variable r/p and must NOT be inserted.
+No candidate w satisfying this inequality has yet been proved or observed.
+
+All denominator primes are <=4(r+2m), apart from fixed constants already
+in that range for large r. For p^2>4(r+2m), p>3, every entry has valuation
+at least -4. If p divides both nodes, the two factors in b^2-a^2 cost p^2,
+but the numerator also has a factor p. Other cases cost at most one extra
+p beyond S_3. Small primes contribute o(r^2) by the crude O(N log r) bound
+per prime and at most O(sqrt(r)) such primes. Fixed primes are included.
+
+This identifies the needed theorem as a finite-prime determinant problem,
+not a missing real-size or nonvanishing theorem.
+
+5. What transfers from Litsey, and what definitely does not
+
+Litsey [L, Sections 2-4] uses a common block and interleaved disjoint
+borders for trigamma kernels. His finite-prime method combines assignment
+bounds, rank deficiencies, and pairings of row and column kernel vectors
+through successive prime layers. These are the source of the proposed
+geometry and arithmetic test, not a beta(4) theorem.
+
+For the Gauss valuation v on Q(X), if B=diag(p^u)Phi diag(p^v) is integral,
+tau=sum u+sum v, then elementary determinant/Smith arguments give
+
+  v(det Phi)>=-tau+corank(B mod p),
+  e_p<=max(0,tau-corank(B mod p)).
+
+The max with zero must be retained when using this abstract statement.
+If n1 rows and n2 columns can be made divisible by p with their common
+corner divisible by p^2, then v(det B)>=n1+n2. These elementary facts
+do not depend on Litsey's final theorem or computational certificates.
+
+There is an explicit first-order bridge for OUR kernel. For p>3 and
+p^2>4(r+2m), set B=p^4 Phi and
+
+  V(a)=a p^3 S_3(a) mod p.
+
+When a^2 and b^2 are different modulo p, direct substitution gives
+
+  B_ab = p [V(b)-V(a)]/[6(b^2-a^2)]  mod p^2.                (B)
+
+Thus B mod p is block diagonal on the squared-node fibres. If p-integral
+vectors y and z are supported in two distinct fibres with residues s and t,
+respectively (with reductions over F_p(X)), then
+
+  y^T B z = p/[6(t-s)] det[[sum y, sum y V],
+                           [sum z, sum z V]]  mod p^2.
+
+This congruence is an immediate algebraic consequence of the displayed
+kernel, not a claim of a full content bound. It gives the same two-moment
+pairing shape as [L, Lemma 4.3]. Proportional pairs kill this pairing.
+
+The unresolved issue is obtaining suitable local null vectors, transporting
+their moments across the border, and lifting enough cancellations through
+ALL relevant layers. Fibres now merge a and -a modulo p; the zero fibre
+can have two denominator factors; the partial sums are cubic; common
+diagonal entries are quartic. Litsey's cut-free translation lemma, his
+profile constants and his positivity/selection machinery CANNOT simply
+be imported. Only the matrix design and elementary local ideas are used.
+
+6. A modest first test, with an explicit stopping rule
+
+For a subsequent bounded investigation, preselect c=1/5,1/2,1. Do not
+begin with a broad search over kernels or nodes.
+
+  (i) Derive the local fibre blocks and the next prime layers beyond (B),
+      including the zero fibre and the a versus -a interaction. Determine
+      whether border kernel vectors have transportable moment data and
+      whether this yields a saving of order r for a nonzero interval of p/r.
+      Without such a systematic mechanism there is no reason to run a
+      large determinant scan.
+
+ (ii) Use a small predetermined check, for example r=8,16,24 at those
+      widths, to compare exact coefficient Gauss valuations with the
+      proposed local rule, keeping all layers and recording any numerator
+      content separately. Computations can falsify a rule; they do not
+      establish an asymptotic saving. These checks have NOT been run here.
+
+(iii) Before building an all-primes certificate, compare the most favorable
+      justified/explicitly conjectural local profile with the E(c) values.
+      Separate proved from conjectural pieces. Continue only if there is
+      a plausible strict margin and a specific remaining lemma to certify.
+
+If the transport fails, or even the mechanism's optimistic profile misses
+the budget, stop this implementation. A failed sufficient denominator
+estimate is not a theorem that primitive numerator content cannot help.
+Conversely, finite gcd savings must not justify an indefinite new campaign.
+
+7. Why this is preferable to the other ideas considered
+
+The alternating half-grid common-denominator idea was initially a second
+candidate. The archive check removed it. Round 12 already computes the
+extra beta(2) coordinate introduced by naive alternating half-grid sampling;
+round 14 retains a complete alternating Whipple family at -1, including
+its polynomial Abel part, and prices its scalar projection. Dilating the
+grid can just return the quarter construction. No new complete identity
+or cheaper integral module was specified by the renewed suggestion.
+
+A common denominator is a classical principle, not a new mechanism in
+itself. Van Assche's 2024 lecture [V] explicitly constructs a shared
+denominator at i using symmetry, yet its supplied sufficient LCM estimate
+does not prove shrinking integer forms. This is a warning about a bound,
+not an actual primitive-value impossibility theorem. It supports checking
+the FULL numerator and projection budget before importing round-15 rates
+into a hypothetical different construction.
+
+The generic arcsine parameter-jet idea is also already developed in
+arcsine-contact.txt, with boundary recurrences, prime layers and 202 finite
+tests. Its remaining mixed-frame questions need a new design. The present
+positive kernel avoids its extra-period projection issue.
+
+Prime-depleted germs remain a genuinely different reserve possibility.
+Round 4 [A4] proves log^+ primitive multiplier=o(n^2) for a growing sieve.
+The missing uniform real decay/nonvanishing is serious: the moving germ
+has many new singularities, and one explicit oversieved family loses its
+apparently small factor under primitive reduction. No new moving-cut
+analytic mechanism was found in this review. It is less ready for a short
+decisive test than the frame whose complete real estimate is available.
+
+Holonomy, modular and geometric methods remain conceptually open. The
+archive closes particular functions, coordinates and modules; it does not
+close those theories. But we do not have a new calibrated beta(4) module
+whose rationality hypothesis improves continuation enough to beat its
+arithmetic dimension cost, nor a new geometry meeting a usable criterion's
+full hypotheses. Structural E-value and p-adic ideas likewise lack a proved
+bridge to this real constant. They are research aspirations, not yet
+quantitatively grounded alternatives to the recommended test.
+
+8. Limits, provenance and stopping point
+
+This review does not establish that the bordered frame succeeds, that it
+is globally optimal, or that no better idea exists. It identifies a local
+problem with more of its surrounding proof already in place. Reopening
+some old obstruction's complement is not evidence of a favorable margin.
+
+One agent performed this review sequentially. No new independent model
+cross-check or formal verification occurred. The benchmark computation is
+labelled separately from the elementary derivations and the source reading.
+
+All work remains local. Prior research and paper bytes are preserved;
+navigation/index additions retain the complete earlier records. The next
+investigation described in Section 6 has not begun. Stop here for review.
+
+Sources used in context above
+
+[A1] collaboration/round-01/construction/findings.txt, Sections 1-3.
+[A4] collaboration/round-04/arithmetic/findings.txt, Sections 2-4.
+[L]  Sean Litsey, Irrationality measures for differences of trigamma values,
+     pinned commit aa2a42f4f3835347ad46608779e22dd52c2dc7bf.
+[V]  Walter Van Assche, Hermite-Pade approximation to Catalan's constant,
+     HOPE lecture, Nijmegen, 3 May 2024, 39 slides.
+
+Exact local PDF paths, URLs, checksums and reading limits: sources.txt and
+literature/reading-round-16.json. The literature's verification claims have
+not been independently promoted to verification verdicts here.

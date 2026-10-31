@@ -1,0 +1,116 @@
+INDEPENDENT REVIEW OF THE ROUND10 ADELIC GATE
+29 October2026. Local and unpublished. No irrationality proof.
+
+Reviewed: adelic/findings.txt, archive-comparison.txt, gate.py,
+gate-exact.json, evaluate.py and gate-arb.json; the archived
+round08/geometry/euler_distribution.txt; and the csch positivity proof
+in sources/carreira/beta4_determinants.tex, Section10. I did not use
+the adelic worker's Python functions in my independent implementation.
+
+Verdict: the all-degree Mahler norm theorem is correct as stated for
+p>=5, and the full-rank lattice qualification is essential and correct.
+The four proper-subspace exact polynomials independently reproduce.
+I found no normalization or nonvanishing gap. The finite adverse values
+do not prove an asymptotic obstruction, and the polynomial norm does not
+by itself estimate the extended rational functional at its poles.
+
+1. The norm theorem
+
+The finite Newton expansion gives ||P||_Int=max|Delta^j P(0)|_p:
+finite differences cannot enlarge the sup norm, and every binomial
+polynomial has sup norm1 on Z_p. Thus the functional norm is exactly
+the maximum of |tau(binomial(x,j))|_p through degree n. This argument
+does not identify the integer-valued norm with the monomial Gauss norm.
+
+The generating function -log(1+z)^3/[12(1+z/2)] follows with the
+displayed derivative normalization. If a,b,c are the valuations of
+three positive log indices, their total degree is at least
+p^a+p^b+p^c. When a>=b+2, replacing(a,b) by(a-1,b+1) decreases this
+cost by (p-1)(p^(a-1)-p^b)>0. The minimum for total valuation h is
+therefore exactly m_p(h). It is strictly increasing with h.
+
+At the threshold m_p(h), a term of valuation -h must have the three
+indices equal to the minimizing powers themselves; it cannot have a
+nonconstant geometric-series index. Every other term has valuation at
+least-h+1. The number of leading terms is1 or3. The threshold degree
+is odd, so the log-cube leading sign is positive. Consequently
+
+ p^h a_(m_p(h)) == -c_h/12 mod p,
+ c_h=1 when h=0 mod3, and3 otherwise.
+
+For p>=5 this is a unit, proving sharpness and excluding cancellation.
+The claim includes h0: a3=-1/12 and m_p(0)=3. Primes2,3 are properly
+excluded. The stated globally integer-valued denominator consequence
+follows because the threshold binomial polynomials are also globally
+integer-valued, so each individual prime exponent is attained.
+
+Independent exact reproduction used unsigned Stirling numbers:
+ log(1+z)^3=6 sum_(n>=3)(-1)^(n-3)c(n,3)z^n/n!.
+This differs from both the Euler-moment and direct log-convolution
+implementations in gate.py. It verifies282 norm instances through
+degree96 for p5,7,11 and13 sharp residue assertions. The all-degree
+claim rests on the argument above, not these finite checks.
+
+2. Full rank versus proper subspaces
+
+For a basis change T, the polynomial Gram determinant multiplies by
+(det T)^2. Primitive reduction removes that rational scalar exactly.
+Finite homogeneous congruences retain a full rational span since they
+contain an integer multiple of the original lattice. Therefore they
+cannot change the complete determinant's primitive polynomial.
+This does not apply to an intentionally lower-dimensional source,
+different poles, or a changed multiplier. The worker keeps these cases
+separate and does not infer a general lattice obstruction.
+
+3. Proper-source gate, checked independently
+
+The identity
+ F_p(-x^2)=-x^2(x^(p-1)-1)^2
+is exact. It proves p^2 divisibility for all x in Z_p by separating
+units and nonunits. The source F_p*span{1,t} differs from the control
+D_p*span{1,t}; the source normalization is a common scalar only.
+
+All three entries of the2x2 Gram matrix have numerator degree at most
+2p+2, below K=2p+3, so their polynomial quotient is zero. This allows
+a particularly short independent computation using
+
+ D_K'(-(j+1/2)^2)=(-1)^j (K-1-j)!(K+j)!/(2j+1).
+
+Write z_j=-(j+1/2)^2, o_j=2j+1, T_j=sum_(r<j)(-1)^r/(2r+1)^4.
+For source P divided by N, the entry with power t^ell is exactly
+
+ sum_(j=0)^(K-1) P(z_j)^2 z_j^ell
+       /[N^2 (K-1-j)!(K+j)!]
+       *[2 o_j^4(X-T_j)-(-1)^j].
+
+Taking ell0,1,2 and the2x2 determinant reproduces every rational
+coefficient, every primitive integer quadratic, every primitive
+multiplier, and min coefficient valuation-16, for both p5,7 and both
+Fermat and central sources. No polynomial-division implementation or
+Euler recurrence from the producer was imported.
+
+At theta, the archived weight is strictly positive on y>0, D_K(y^2)
+is positive, and a nonzero member of either source space has finitely
+many real zeros. The Gram matrices are consequently positive definite.
+All integrals are finite: the weight is bounded near0 and decays
+exponentially at infinity. Thus nonvanishing is analytic, independent
+of any period independence assumption. The saved1600-bit Arb intervals
+also certify the four actual primitive values as positive and >1.
+
+The matched source normalizations have the same p-valuation since
+v_p((2p)!)=2. The shared raw valuation-16 is therefore a legitimate
+local comparison. It gives no new target-prime saving in these tests.
+It does not imply an asymptotic growth theorem for other source choices.
+
+The added leading-coefficient comparison is also correct: the top Newton
+coefficient of a degree2p integer-valued polynomial is (2p)! times its
+leading monomial coefficient. Both sources attain the permitted p^2
+denominator. For the old source, its integer-valued property follows
+directly from D_p(-x^2)/(2p)!=(-1)^p binomial(x+p-1/2,2p), since
+x+p-1/2 is in Z_p for odd p. Thus changed root placement, rather than a
+stronger leading-coefficient denominator bound, is the tested difference.
+
+Reproduce the independent exact review from beta4:
+ PYTHONDONTWRITEBYTECODE=1 python3 collaboration/round-10/symmetry/adelic_review.py
+The result is adelic_review.json. This is an independent model review
+and implementation, not a formal proof-assistant check or human audit.

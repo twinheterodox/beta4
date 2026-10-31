@@ -1,0 +1,465 @@
+MODULAR DETOUR: A FALSE PREMISE, A PERIOD FILTER, AND AN APERY LIMIT
+27 October 2026. Local and unpublished research record.
+
+Status
+------
+There is no irrationality proof here. This investigation began by deliberately
+pretending that beta(4) might inherit the arithmetic of a weight-two problem.
+That premise fails for the direct modular change of coordinates: fourth powers
+of odd primes remain in the denominators. Pursuing it nevertheless produced
+an explicit filter that cancels the unwanted pi^4 period polynomial identically,
+and a different pair of rational approximation sequences.
+
+The construction is an application of classical modular/Eichler methods, not
+a claim of priority. The exact period filter and the resulting sequences are
+new to this investigation. The literature check in Section 8 identifies the
+classical starting identity and approximation mechanism; no exact match for
+the level-32 sequences was found, but their novelty has not been established.
+The first 160 terms do not give shrinking primitive integer
+linear forms. No independent audit or formal verification is claimed.
+
+1. Definitions and the classical input
+--------------------------------------
+Write chi(n)=0 for even n and chi(n)=(-1)^((n-1)/2) for odd n. Set
+q=exp(2 pi i tau), with Im(tau)>0, and define
+
+  LF(tau) = sum_{n>=1} chi(n) q^n / (n^4(1-q^n)),
+  LG(tau) = sum_{n>=1} q^n / (n^4(1+q^(2n))),
+  F(tau)  = LF(tau)-2 LF(2 tau),
+  G(tau)  = LG(tau)-LG(2 tau)/16.
+
+Equivalently,
+
+  F(tau) = sum chi(n) q^n / (n^4(1+q^n)),
+  G(tau) = sum_{n odd} q^n / (n^4(1+q^(2n))).
+
+All these series converge absolutely in the upper half-plane. The factor
+1/16 in G is essential: four q-derivatives of LG(2 tau)/16 give the
+unscaled Fourier series at 2 tau.
+
+With D=q d/dq, put
+
+  EF = D^4 LF,             EG = 5/4 + D^4 LG,
+  f  = EF(tau)-32 EF(2 tau),
+  g  = EG(tau)-EG(2 tau).
+
+Then D^4 F=f and D^4 G=g. EF and EG are the two weight-five Eisenstein
+series whose nonconstant Dirichlet series are beta(s) zeta(s-4) and
+zeta(s) beta(s-4), respectively.
+
+The general setting is classical: Berndt--Straub [BS, Sections 4--6,
+especially Example 6.4] treats the relevant level-four Eisenstein series,
+their Eichler integrals, and the resulting L-value identities. Yang [Y]
+explains the modular construction of Apéry limits through cancellation of
+singularities. Neither source is evidence that the particular sequences
+below are new, or that their irrationality estimates work.
+
+The normalizations used here give
+
+  f(-1/(8 tau)) = 64 i tau^5 g(tau),
+  g(-1/(8 tau)) = 512 i tau^5 f(tau).
+
+Bol's fourth-derivative identity shows that
+
+  tau^3 F(-1/(8 tau)) - i G(tau)/64
+
+is a polynomial of degree at most three. Its constants can be determined
+without numerical fitting. The Mellin transform of LF(is/(2 pi)) is
+Gamma(z) zeta(z) beta(z+4), and its small-s algebraic part is
+
+  beta(5)/s - beta(4)/2 + beta(3)s/12 - beta(1)s^3/720.
+
+All subsequent algebraic terms disappear through the trivial zeros. Hence
+
+  F(is/(2 pi)) = beta(4)/2 - pi^3 s/128 + pi s^3/192
+                 + a remainder smaller than any fixed power of s.
+
+Substitution at s=pi i/(4 tau) determines the exact period identity
+
+  tau^3 F(-1/(8 tau)) - i G(tau)/64
+    = beta(4) tau^3/2 - i pi^4 (tau^2/512 + 1/12288).       (1)
+
+The Fourier/theta identities behind the transformation laws, the
+normalizations, and numerical enclosures of (1) are checked in the scripts.
+Those enclosures are consistency checks, not the proof of (1).
+
+2. First cancellation: a special point
+--------------------------------------
+At tau0=i/sqrt(24), the pi^4 term in (1) vanishes and -1/(8 tau0)=3 tau0.
+Consequently
+
+  beta(4) = 2 F(3 tau0) + (3 sqrt(6)/2) G(tau0).            (2)
+
+For a completely real form, set alpha=pi/sqrt(6). Then F(3 tau0) is
+sum chi(n)/(n^4(exp(3 alpha n)+1)), while
+
+  G(tau0) = sum_{n>=1} [1/(2 cosh(alpha n))
+                         -1/(32 cosh(2 alpha n))]/n^4.
+
+Equation (2) is a rapidly convergent identity at a transcendental q. It
+does not by itself provide rational approximations with controlled height.
+
+There is a useful extra cancellation. If
+
+  H24(tau) = F(3 tau) + (3 sqrt(6)/4) G(tau),
+
+its Fricke transformation has pi^4 correction
+
+  (sqrt(24) tau-i)^2 (sqrt(24) tau+i) / (12288 tau^3).
+
+This has a double zero at tau0. A double zero is not the same as the
+absence of a period polynomial: it does not automatically remove an entire
+branch singularity. That distinction prompted the next construction.
+
+3. Cancelling the period polynomial identically
+-----------------------------------------------
+Let M be a positive integer and let a_r, indexed by divisors r of M, obey
+
+  sum a_r r = 0,       sum a_r r^3 = 0.
+
+Put S=sum a_r, K=sqrt(M^3/8), and
+
+  b_s = K a_(M/s)/s^3,
+  H(tau) = sum a_r F(r tau) + sum b_s G(s tau).
+
+Applying (1) and its inverse to the individual summands gives
+
+  H(-1/(8 M tau))-S beta(4)/2
+    = i/((8M)^(3/2) tau^3) [H(tau)-S beta(4)/2].           (3)
+
+This is an identity for every tau in the upper half-plane, with no pi^4
+correction. The two moment conditions cancel all four coefficients of
+that correction; the two conditions on the b_s follow from those on a_r.
+At the Fricke fixed point, the multiplier in (3) is -1, so
+
+  H(i/sqrt(8M)) = S beta(4)/2.
+
+The small choice a_1=16, a_2=-10, a_4=1 has S=7. Its two moment conditions
+are 16-20+4=0 and 16-80+64=0. For M=4 this gives
+
+  H32 = 16F(tau)-10F(2tau)+F(4tau)
+        +(sqrt(2)/2)[4G(tau)-5G(2tau)+G(4tau)].
+
+For M=8 it gives a version with rational Fourier coefficients:
+
+  H64 = 16F(tau)-10F(2tau)+F(4tau)
+        +G(2tau)-(5/4)G(4tau)+(1/4)G(8tau).
+
+The transformation identities for both are checked symbolically and by
+interval arithmetic. A pure Fricke transformation does NOT imply that
+H-S beta(4)/2 is a modular form for the whole congruence group. Periods
+associated with other transformations have not disappeared automatically.
+
+4. A concrete level-32 approximation construction
+-------------------------------------------------
+Use the usual theta convention theta3(z)=sum exp(pi i z n^2). Define
+
+  t = eta(tau)^2 eta(4tau) eta(8tau) eta(32tau)^2
+      /[eta(2tau)^3 eta(16tau)^3],
+  E = eta(4tau)^2 eta(8tau)^2,
+  Y = D log t,
+  J_+ = theta3(2tau)^2 + 2 sqrt(2) theta3(16tau)^2,
+  A_+ = J_+^5/Y,             B_+ = A_+ H32.
+
+Here t=q-2q^2+2q^3-4q^4+..., so its inverse q(t) has integer
+coefficients. Expressing A_+, B_+ in powers of t gives
+
+  A_+ = sum (a_(n,0)+sqrt(2) a_(n,1)) t^n,
+  B_+ = sum (b_(n,0)+sqrt(2) b_(n,1)) t^n.
+
+The a_(n,j) are integers. If d_n=lcm(1,...,n), then
+
+  2 d_n^4 b_(n,j) is an integer.                            (4)
+
+This follows directly from the product/Fourier series: Y is an integer
+power series with constant term 1; J has integral coefficients in
+Z[sqrt(2)]; and 2d_n^4 clears the coefficients of H32 through degree n.
+Integer series inversion and multiplication preserve this bound.
+
+The geometry and local cancellation can be made explicit. The eta cusp
+orders of t at denominators 1,2,4,8,16,32 are respectively
+
+  1, -1, 0, 0, -1, 1.
+
+Thus t has degree two on X0(32), is invariant under its Fricke involution,
+and is a coordinate on the quotient. The eta form E is the nonzero
+holomorphic differential on this genus-one curve, up to d tau. One has
+
+  (Dt/E)^2 = P(t),
+  P(t)=1-8t+12t^2-16t^3+4t^4.                              (5)
+
+There is a short finite proof of (5): both sides are meromorphic modular
+functions; their difference has poles of total degree at most eight,
+at the two poles of t. Matching through q^8 gives a zero of order at least
+nine at infinity and forces equality. The program checks through degree
+160 instead. The eta modularity conditions and cusp orders are checked
+separately with exact rational arithmetic.
+
+For another explicit description, write J_-=theta3(2tau)^2-
+2sqrt(2)theta3(16tau)^2. Then
+
+  t J_+^2/E = R0(t)+sqrt(2) R1(t),
+  R0(t)=(4t^4-24t^3+44t^2-28t+9)/(2t^2-2t+1),
+  R1(t)=4/(2t^2-2t+1),                                     (6)
+
+with the conjugate identity for J_-. After multiplication by the displayed
+denominator, the possible pole degree is at most twelve, so agreement
+through q^12 proves (6) by the same argument. These identities identify
+the other finite cusp values as (1+i)/2 and (1-i)/2.
+
+The four branch values, numerically, are
+
+  t0 = 0.153332807156510...,
+       3.26088075521659...,
+       0.292893218813452... +/- 0.643594252905583... i.
+
+The positive smallest one is t(i/sqrt(32)). The last two and the two
+finite nonzero cusp values have modulus 1/sqrt(2).
+
+The modular transformation laws give
+
+  A_+(-1/(32tau)) = -i 32^(3/2) tau^3 A_+(tau),
+  [B_+-(7/2)beta(4) A_+](-1/(32tau))
+       = B_+-(7/2)beta(4) A_+.
+
+At tau=i/sqrt(32), A_+ has a simple pole in the local coordinate before
+taking the quotient, while H32-(7/2)beta(4) vanishes. Their product is
+holomorphic and invariant under the local involution, and therefore
+holomorphic in t at t0. For the conjugate construction, J_- vanishes
+there, and the conjugate product is holomorphic and invariant as well.
+Consequently both rational components B_j-(7/2)beta(4) A_j extend across
+the first branch point.
+
+These observations give the Apéry limits
+
+  2 b_(n,j)/(7 a_(n,j)) --> beta(4),  j=0,1.                (7)
+
+For completeness, the analytic justification is as follows. The only
+finite obstructions to continuation are branch points or cusp values of
+the modular parameter. The first has just been removed in B_j-c A_j.
+For every r<1/sqrt(2), these two remainders are holomorphic on |t|<r.
+Meanwhile A_+ has a nonzero inverse-square-root singularity at t0, and
+A_- has no such leading term. Thus each rational component A_j has
+coefficients asymptotic to a nonzero constant times t0^(-n)/sqrt(n).
+Cauchy's estimate for the remainder proves (7), with relative error
+O(sqrt(n)*(t0/r)^n) for each t0<r<1/sqrt(2). This is a limit argument,
+not an estimate that proves irrationality.
+
+The alternative level-64 filter is recorded in Section 3. A corresponding
+level-64 coefficient construction has not been carried out here.
+
+5. What fails arithmetically
+----------------------------
+The fast relative convergence in (7) is insufficient. Irrationality needs
+small nonzero INTEGER linear forms after all denominators are cleared.
+For each component, reduce
+
+  7 a_(n,j) beta(4)-2 b_(n,j)
+
+to primitive integer coefficients A beta(4)-B. The exact finite results
+include the following natural logarithms of their absolute values:
+
+       n       component 0       component 1
+      20          77.0629            74.6052
+      80         334.5580           336.4585
+     160         667.7496           668.7483
+
+They grow, rather than shrink, in the tested range. At n=160 even the
+uncleared forms have logarithms 66.7717 and 66.3728. All reported values
+are evaluated with rigorous real enclosures, which exclude zero.
+This finite test is not a theorem ruling out all modifications or every
+possible asymptotic phenomenon in the construction.
+
+There is also an exact obstruction to the original cheap-denominator
+premise. In the coordinate
+
+  u=theta2(4tau)^2/theta3(4tau)^2=4q-16q^3+56q^5-...,
+  H(u)={}_2F_1(1/2,1/2;1;u^2),
+
+form BF=H(u)^3 F(tau(u)) and BG=H(u)^3 G(tau(u)). For every odd prime p,
+
+  v_p([u^p]BF)=v_p([u^p]BG)=-4.                            (8)
+
+Indeed, coefficients below q^p are p-integral, while the coefficient
+at q^p is chi(p)/p^4 plus a p-integral number for F, and 1/p^4 plus a
+p-integral number for G. The inverse q(u) is p-integral, with leading
+term u/4, and H(u)^3 is a p-integral unit series. Thus the residues after
+multiplication by p^4 are chi(p)4^(-p) and 4^(-p), respectively, modulo p.
+
+The same argument applies to the level-32 coefficients. Since
+A_+(0)=401+298sqrt(2), one has
+
+  p^4 b_(p,0) = 6416chi(p)+1192 (mod p),
+  p^4 b_(p,1) = 4768chi(p)+802  (mod p).                    (9)
+
+The congruences are in the p-integral local ring. Each right side is
+nonzero for all but finitely many primes, so the fourth-power cost also
+persists here. Combined with (4), this shows that the least COMMON
+denominator for the coefficients through degree n has logarithm
+4n+o(n). It does NOT supply that lower bound for each individual reduced
+coefficient, or for every more sophisticated linear combination.
+
+6. The direct fourth-order recurrence
+-------------------------------------
+To make the initial modular experiment independently reproducible, let
+theta=u d/du and define
+
+  L = theta^4
+      -u^2(3theta^4+12theta^3+26theta^2+28theta+12)
+      +u^4(3theta^4+24theta^3+80theta^2+128theta+81)
+      -u^6(theta+3)^4.
+
+This is the symmetric cube of the differential equation for H(u), in a
+polynomial normalization. It gives
+
+  L(H^3)=0,
+  L(BF)=u(u^2-3u+1)/(4(u+1)),
+  L(BG)=(u-5u^3)/4.
+
+The coefficient recurrences are obtained by equating powers of u. A
+separate Sympy implementation derives L by differentiating the basis
+y^3,y^2y',y(y')^2,(y')^3 and using the second-order equation for y.
+Exact coefficients through degree 100 agree with independent Fourier
+composition in the Flint implementation. The first 24 odd primes obey
+(8); the level-32 experiment checks (9) through degree 160.
+
+7. Interpretation and next mathematical issue
+---------------------------------------------
+The false premise was productive because it led to a construction that
+was not simply another adjustment of the earlier determinant families.
+The useful surviving fact is the global period cancellation (3), and
+its exact removal of the first branch singularity in Section 4.
+
+The cheap-arithmetic conclusion did not survive. The direct recurrence
+keeps its fourth-power prime denominators, and the first complete
+modular approximation family fails the tested integer-form budget.
+
+A further attempt would need additional arithmetic cancellation or
+control of the remaining cusp/branch contributions. Merely optimizing
+the point in (2), observing many matching decimals in (7), or repeating
+the same construction at larger n would not address that deficiency.
+No proof that all modular approaches fail is asserted. Nor is a pure
+Fricke symmetry being confused with vanishing of all other periods.
+
+8. Literature and novelty check
+--------------------------------
+Checked 27 October 2026. The appropriate description is a possibly
+unrecorded explicit specialization of an established method. The search
+does not establish priority, and this record makes no such claim.
+
+The starting transformation is classical, not a new identity. Bradley
+[B, Corollary 4 and the following remarks] gives the even-beta formula and
+attributes it to Ramanujan, with the first published proof due to Chowla.
+Setting his integer parameter to 2 and writing his positive parameter as
+-i pi tau gives, in our normalization,
+
+  LF(tau)+beta(4)/2
+    = i tau^3 LG(-1/(4tau))/2
+      +i pi^4 [5/(3072tau)-tau/192-tau^3/360].             (10)
+
+Initially this substitution is on the positive imaginary axis; holomorphic
+continuation extends it to the upper half-plane. Subtract twice (10) at
+2u from (10) at u, and set u=-1/(8tau). This gives exactly (1), including
+its 1/64, 1/512 and 1/12288 constants. The polynomial reduction was also
+checked with exact symbolic arithmetic. Thus (1) is a dilation consequence
+of the classical beta transformation, rather than merely an analogy to it.
+
+Berndt--Straub [BS, Example 6.4] gives the general character version through
+Eisenstein Eichler integrals, recovering Katayama's 1974 formulas. Their
+Example 7.7 also uses roots of a period polynomial to remove the explicit
+pi-power contribution in special-value identities. This is a precedent
+for the special-point cancellation in Section 2; it is not a claim that
+their displayed special point is identical to ours.
+
+The global filter also has an elementary explanation. Let T act by
+Th(tau)=h(2tau). Then
+
+  16-10T+T^2=(T-2)(T-8).
+
+On the monomials tau and tau^3, T has eigenvalues 2 and 8. The filter
+therefore kills precisely these two powers, while multiplying a constant
+by 7. This explains the moment equations in Section 3. Combining the
+paired F and G transformations then gives (3). The particular formula
+was not located in the sources searched, but this algebra alone is not
+a new cancellation principle.
+
+The approximation mechanism is likewise established. Yang [Y, Section 2,
+especially equation (8), and Section 3] develops Beukers's modular method:
+a transformation law for an Eichler integral makes B-cA invariant at an
+elliptic point, removes its dominant singularity, and identifies the limit
+of coefficient ratios with an L-value. This is the mechanism used in
+Section 4. It does not identify our specific level-32 parameter, theta
+prefactor, or two rational component sequences as previously published.
+
+Searches covered beta(4) and L(4,chi_{-4}) in connection with Eichler
+integrals, Lambert series, Apéry limits, level 32, period cancellation,
+and the initial coefficient strings. No exact match for H32, H64, or the
+two level-32 sequences was found. Searches of indexed coefficient strings
+are incomplete; changed normalizations or modular coordinates can conceal
+equivalent constructions.
+
+Additional comparisons included the Apéry-limit catalog of Almkvist,
+van Straten and Zudilin [AVZ], the Chamberland--Straub survey [CS], and
+the recent level-8 rederivation [S]. None supplied an identified exact
+match. These comparisons support a cautious classification, not proof
+of absence from the literature. Fast beta-value series are also already
+available by other methods [HP], so rational approximation to beta(4)
+by itself is not a novelty claim.
+
+Assessment: the exact specialization might be worth recording as an
+example, but it is not presently evidence of a new irrationality method.
+The arithmetic deficiency in Section 5 remains the substantive obstacle.
+
+Reproduction
+------------
+From /home/research/Chat/Math/beta4:
+
+  .venv/bin/python experiments/modular_eichler.py
+  .venv/bin/python experiments/modular_apery.py
+  python3 experiments/modular_symbolic_audit.py
+
+Results are in the correspondingly named JSON files under results/.
+The numerical checks use Arb with explicit geometric tail bounds, not
+bare high-precision subtraction. For a sum cut after n=N, both relevant
+Lambert summands have tail bounded by
+
+  exp(-(N+1)s)/((N+1)^4(1-exp(-s))),  s>0.
+
+The symmetry checks use 400-bit arithmetic; integer-form evaluations
+use 2000 bits. The separate symbolic implementation was written in the
+same research session and is not an independent model or human audit.
+
+References
+----------
+[B]  David M. Bradley, Series acceleration formulas for Dirichlet series
+     with periodic coefficients, Ramanujan J. 6 (2002), 331--346.
+     Corollary 4 and its following historical remarks.
+     https://arxiv.org/abs/math/0505078
+     https://arxiv.org/pdf/math/0505078
+
+[BS] Bruce C. Berndt and Armin Straub, On a secant Dirichlet series and
+     Eichler integrals of Eisenstein series, arXiv:1406.2273.
+     https://arxiv.org/abs/1406.2273
+     https://arxiv.org/html/1406.2273
+
+[Y]  Yifan Yang, Apéry limits and special values of L-functions,
+     arXiv:0709.1968; J. Math. Anal. Appl. 343 (2008), 492--513.
+     https://arxiv.org/abs/0709.1968
+
+[AVZ] Gert Almkvist, Duco van Straten and Wadim Zudilin,
+      Apéry limits of differential equations of order 4 and 5,
+      Fields Institute Communications 54 (2008).
+      https://www.math.ru.nl/~zudilin/PS/AperyLimits-FIC54.pdf
+
+[CS] Marc Chamberland and Armin Straub, Apéry Limits: Experiments
+     and Proofs, 2020 preprint.
+     https://arminstraub.com/downloads/pub/aperylimits.pdf
+
+[S]  Alex Shvets, Eta-products, Eichler integrals, and the level-8
+     Apéry limit, arXiv:2604.14219v2 (24 April 2026).
+     https://arxiv.org/abs/2604.14219v2
+
+[HP] Khodabakhsh Hessami Pilehrood and Tatiana Hessami Pilehrood,
+     Series acceleration formulas for beta values,
+     Discrete Mathematics & Theoretical Computer Science 12:2 (2010).
+     https://dmtcs.episciences.org/articles/504

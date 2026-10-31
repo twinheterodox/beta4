@@ -1,0 +1,409 @@
+Beta(4): cyclotomic polynomial integrals and a prime-denominator obstruction
+27 October 2026. Local research record; unpublished.
+
+There is still no irrationality proof for beta(4).
+
+This investigation constructs positive four-dimensional rational periods
+whose only nonrational term is a rational multiple of beta(4). Their
+coefficients are explicit, including a factorial formula for a broader
+polynomial family. All 222 recorded finite evaluations of primitive integer
+linear forms exceed one. More substantially, a two-parameter subfamily has
+a proved obstruction: its primitive integer linear forms grow exponentially
+as either parameter increases. This is a theorem about those linear forms,
+not about all cyclotomic periods or determinants made from them.
+
+The tractable constructions reduce to differentiated rational sums. They
+therefore do not provide the change of arithmetic mechanism we sought.
+Ordinary mathematical derivations and exact computations are supplied;
+no independent audit, formal verification, or priority claim is made.
+
+
+1. Source check and what was actually transferred
+
+Tosi's thesis [T] supplies a framework for expressing periods of suitable
+hyperplane arrangements in multiple polylogarithms at roots of unity.
+Theorem 3.10 bounds the period space, not coefficient denominators. Its
+worked beta-value example in Section 3.2.1 recovers Zudilin's existing
+hypergeometric integrals. Tosi's separate paper [T2] treats ordinary
+multiple zeta values; the four-dimensional member in its introduction is
+3*pi^4/40, not a beta(4) approximation.
+
+Eskandari--Murty--Nemoto [E], especially Section 8, illustrates how symmetry
+and a constant-term computation isolate a Catalan period and determine
+its coefficient. It does not supply a beta(4) version. The construction
+below uses an elementary constant-term calculation of its own. No motivic
+projection on numerical periods is assumed.
+
+Selberg's integral, in the form recorded in [S, (1.1)], evaluates the
+two-variable moments in Section 3. The factorial prefactor in that
+evaluation is a common scalar; by itself it cannot improve primitive
+integer linear forms.
+
+
+2. An elementary period-isolation identity
+
+For a polynomial P with rational coefficients define
+
+  J(P) = integral_[0,1]^2
+         P(u,v) log^2(uv) / (sqrt(uv)(1+uv)) du dv.              (1)
+
+The integral is absolutely convergent. Put
+
+  T_s(m) = sum_{0<=k<m} (-1)^k/(2k+1)^s.
+
+For a monomial u^i v^j, expanding 1/(1+uv) gives the alternating
+sum of second derivatives, at nonnegative integers t, of
+
+                  1/((t+i+1/2)(t+j+1/2)).
+
+Interchanging sum and integral is justified even with absolute values:
+the logarithmic factor makes the corresponding sum O(sum (k+1)^-4).
+If i=j the answer is
+
+  J(u^i v^i) = 96 (-1)^i [beta(4)-T_4(i)].                    (2)
+
+If i!=j it is
+
+  16/(j-i) { (-1)^i [beta(3)-T_3(i)]
+                   -(-1)^j [beta(3)-T_3(j)] }.                (3)
+
+Indeed, the second derivative of 1/((t+x)(t+y)) is
+2((t+x)^-3-(t+y)^-3)/(y-x), and on the diagonal it is
+6(t+x)^-4. The factors 16 and 96 include the half-integer scaling.
+
+Consequently, if P(-u,-v)=P(u,v), each monomial has i+j even and
+the beta(3) term in (3) vanishes. Thus
+
+  J(P) = A(P) beta(4) + B(P),
+  A(P) = 96 sum_i (-1)^i [u^i v^i]P
+       = 96 CT_z P(z,-1/z),                                  (4)
+
+with B(P) rational and explicitly given by (2)-(3). Here CT denotes
+the constant Laurent coefficient. This proves isolation of beta(4)
+without cancelling a separately constructed Catalan coefficient.
+
+If P is integral and its exponents in each variable are at most M, then
+
+                  A(P) in Z,       L_(2M)^4 B(P) in Z,        (5)
+
+where L_n=lcm(1,...,n), L_0=1. In (3), |j-i| divides L_(2M)
+and the cubed odd denominators divide L_(2M)^3; (2) uses fourth
+powers. This is a uniform upper bound, not an optimal denominator claim.
+
+Positivity and nonvanishing of J(P) follow whenever P is nonnegative
+and not identically zero on the square. For arbitrary invariant P,
+A(P) can vanish: invariance alone does not guarantee a useful beta(4)
+coefficient. The explicit families below have nonzero A.
+
+2.1 A genuine rational fourfold integral, but a restricted pole geometry
+
+The logarithms in (1) can be replaced by algebraic integrations. With
+u=x^2, v=y^2, U=xy, V=y, and two auxiliary variables S,T, one obtains
+
+  J(P) = 32 integral_D
+       P(U^2/V^2,V^2) / ((1+U^2) V S T) dU dV dS dT,
+
+  D = { 0<U<V<1, U<S<T<1 }.                                  (6)
+
+For example, integrating S,T produces (log U)^2/2; the Jacobian
+and the square substitutions give the factor 32. The domain is a
+union of three ordered simplices, according to the position of V
+relative to S,T. The poles are coordinate hyperplanes and U=+i,-i.
+This locates the construction explicitly in a level-four cyclotomic
+setting. It also exposes its limitation: there is only one nontrivial
+pole variable. Integrating the other variables returns the rational
+sums (2)-(3), not a new multivariable divisibility principle.
+
+
+3. A Selberg family and its exact arithmetic
+
+For nonnegative integers a,b,c put
+
+  J_(a,b,c) = J((uv)^a (1-u)^b (1-v)^b (u-v)^(2c)).
+
+This is positive. Let N=b+c+1, M=b+2c, and define
+
+  R_(a,b,c)(t) = ((N-1)!)^2 /
+         ((t+a+1/2)_N (t+a+c+1/2)_N),                         (7)
+
+where (x)_N is the rising factorial. The n=2 Selberg formula gives
+
+  I_(a,b,c) := (b+c)! c!/(b! (2c)!) J_(a,b,c)
+             = sum_{k>=0} (-1)^k R_(a,b,c)''(k).              (8)
+
+For clarity, the unnormalized moment before differentiating has
+numerator b! (b+c)! (2c)!/c!, rather than ((b+c)!)^2. The ratio
+in (8) accounts for this difference.
+
+If b is even, reflection of the pole set cancels the order-three
+period. Specifically, write
+
+  R(t)=sum_{j=0}^M [r_(j,2)/(t+a+j+1/2)^2
+                         +r_(j,1)/(t+a+j+1/2)].
+
+The substitution t -> -(2a+1+M)-t fixes R, so r_(M-j,1)=-r_(j,1).
+Since M is even, sum_j (-1)^j r_(j,1)=0. Differentiating twice
+therefore gives
+
+  I_(a,b,c)=A_(a,b,c) beta(4)+B_(a,b,c),
+  A_(a,b,c)=96(-1)^(a+b/2) binom(b+c,b/2).                    (9)
+
+One way to evaluate A is to note that, on the overlap c<=j<=b+c,
+
+  r_(j,2)=(-1)^c binom(b+c,j) binom(b+c,j-c).
+
+Its alternating sum is a coefficient of (1-z)^(b+c)(1+z)^(b+c).
+
+The normalized partial fractions of (N-1)!/(x)_N have integer
+numerators. Multiplying two such expressions proves
+
+      r_(j,2) in Z,       L_M r_(j,1) in Z.
+
+Equations (2)-(3) then give
+
+                  L_(2(a+M))^4 B_(a,b,c) in Z.                (10)
+
+The exact primitive forms in the experiments remove the full common
+factor, rather than treating (10) as the actual denominator.
+
+
+4. A proved obstruction for the entire b=0 subfamily
+
+The statement concerns single linear forms. It does not rule out new
+linear combinations or determinants constructed from this subfamily.
+
+Theorem. Set b=0. For each a,c>=0, multiply I_(a,0,c) by the unique
+positive rational number kappa_(a,c) for which its two integer
+coefficients have greatest common divisor one. Then, uniformly as
+a+c tends to infinity,
+
+  log(kappa_(a,c) I_(a,0,c))
+       >= (16/3-log 4) a + (8/3+2 log(3/8)) c + o(a+c).
+
+The two displayed coefficients are approximately 3.9470389722 and
+0.7050081606. In particular these positive primitive integer linear
+forms tend to infinity exponentially. No choice of growing a,c in
+this subfamily can give shrinking integer linear forms.
+
+4.1 The surviving fourth powers
+
+Write C=binom(2c,c), and B=B_(a,0,c). By (9), A=96(-1)^a.
+The unique double pole is at j=c. The simple-pole coefficients are
+
+  r_(j,1)=(-1)^(j+1) binom(2c,j)/((j-c) C)       (j!=c),
+  r_(c,1)=0,             r_(c,2)=(-1)^c.
+
+Thus
+
+  B = -96(-1)^a T_4(a+c)
+      +16(-1)^a/C sum_{0<=j<=2c, j!=c}
+                    binom(2c,j) T_3(a+j)/(j-c).              (11)
+
+Claim. For every prime p>=5 with
+
+                2(a+2c)/3 < p < 2(a+c),                     (12)
+
+one has v_p(B)=-4. In particular p^4 survives in the primitive
+denominator. This is an exact assertion, not an average-prime heuristic.
+
+Proof. The tail T_4(a+c) contains the denominator p exactly once;
+3p>2(a+2c) excludes higher odd multiples of p in every tail in (11).
+The first term in (11) consequently has valuation -4.
+
+If p>2c, C and all j-c are p-units. The second term has valuation
+at least -3 and cannot cancel that contribution.
+
+Otherwise, (12) implies c<p<=2c and v_p(C)=1. The factors j-c
+remain p-units. Put d=2c-p and h=(p+1)/2-a. The inequalities
+in (12) imply d<h<=c. Only indices j>=h have a p term in T_3(a+j).
+Modulo p, binom(2c,j) vanishes except when j<=d or j>=p. Since
+h>d, the possible contribution of valuation -4 from the second
+term is controlled by
+
+  sum_{j=h,j!=c}^{2c} binom(2c,j)/(j-c)
+       = sum_{l=0}^d binom(d,l)/(l+p-c)           (mod p).     (13)
+
+The equality uses Lucas' congruence. Pair l with d-l. Their
+binomial coefficients agree, and their denominators are negatives
+modulo p because d=2c-p. The denominators are nonzero. Hence (13)
+vanishes modulo p. After division by C, the p^-3 tail contribution
+still has valuation at least -3; all other tail terms have valuation
+at least -1. The first term's valuation -4 therefore survives.
+This also covers the endpoints c=0 through the case p>2c. QED.
+
+Because A=96(-1)^a is a p-unit for every p>=5, primitivity forces
+v_p(kappa)=4 at the primes in (12). Negative valuations of kappa
+can occur only at divisors of 96, and their total contribution is
+bounded by 1/96. The prime number theorem now gives
+
+  log kappa >= 4[theta(2(a+c))-theta(2(a+2c)/3)]-O(log(a+c+2))
+            = (16/3)a+(8/3)c+o(a+c).                         (14)
+
+Changing strict endpoints affects only O(log(a+c+2)). Both
+endpoints are comparable to a+c, so the error is uniform in the
+ratio of a and c.
+
+4.2 The analytic decay is too slow
+
+The factor 1/(1+uv) lies strictly between 1/2 and 1 on the
+interior of the square. The positive Mellin representation gives
+
+             R''(0)/2 < I_(a,0,c) < R''(0).                  (15)
+
+Moreover,
+
+  R(0)=(c!)^2 Gamma(a+1/2)/
+                   ((a+c+1/2) Gamma(a+2c+3/2)).
+
+The logarithm of R''(0)/R(0) is O(log(a+c+2)): the logarithmic
+derivatives are positive sums of reciprocal first and second
+powers of the pole distances, bounded above and below by
+polynomial factors. Stirling's formula, including a=0 or c=0
+by direct treatment of the fixed gamma factors, therefore yields
+
+  log I = E(a,c)+O(log(a+c+2)),
+  E(a,c)=2c log c+a log a-(a+2c) log(a+2c),                   (16)
+
+with 0 log 0=0. For a=0 this is -c log 4+O(log(c+2)).
+
+The elementary log-sum inequality, with weights 1/4 and 3/4,
+implies
+
+            E(a,c) >= -a log 4+2c log(3/8).                 (17)
+
+Adding (14) and (17) proves the theorem. Notice that the proof
+only uses one interval of primes. It does not need an exact
+formula for the whole primitive denominator.
+
+
+5. Broader polynomial weights: a closed coefficient, but no successful forms
+
+To leave the single Selberg product, also consider
+
+  P_(a,b,c,h)=(uv)^a(1-uv)^h(1-u^2)^b(1-v^2)^b(u-v)^(2c),
+                                                       a,b,c,h>=0. (18)
+
+These polynomials are nonnegative and invariant under (u,v)->(-u,-v).
+By (4), J(P)=A beta(4)+B, and a constant-term evaluation gives
+
+  A=96(-1)^a 2^h (2b)!(2c)!/(b!c!(b+c)!).                   (19)
+
+For a direct proof put z=exp(i theta) in the constant-term integral.
+After substituting (u,v)=(z,-1/z), the factors are
+
+  (-1)^a 2^h 4^(b+c) sin^(2b)(theta) cos^(2c)(theta).
+
+The elementary beta integral evaluates their average to (19).
+The factorial ratio is also an integer, since it is a Laurent
+coefficient of an integral polynomial. It is the familiar super
+Catalan ratio; no new factorial identity is claimed. Formula (19)
+in particular proves A!=0 for every member of (18).
+
+This is a uniform elimination of unwanted periods, with no division
+by a large Catalan coefficient. But it is not a proof of an extra
+common factor in A and B. Exchanging b and c preserves (19), while
+generally changing B; that coefficient symmetry does not establish
+equality of the full integrals or a Rhin--Viola denominator gain.
+
+For example, with a=h=0, the pairs (b,c)=(0,1) and (1,0) give
+respectively
+
+       192 beta(4)-4768/27,       192 beta(4)-992/9.
+
+Their equal leading coefficients plainly do not make them the same form.
+
+
+6. Exact tests and their interpretation
+
+First family: 132 distinct parameter triples from
+  a in {0,n,2n}, b in {0,2n,4n}, c in {0,n,2n},
+  n in {1,2,4,8,16,32,64}, with b+c>0 and repeated triples removed.
+Second family: 90 evaluations, comprising 15 specified parameter rays
+at n=1,2,4,8,16,32. The exact rays are in the script and result file.
+These are 222 evaluations across two families, not a claim of 222
+inequivalent constructions. None has a primitive form below one.
+
+Every case uses the exact rational coefficients, clears their least
+common denominator, and removes their greatest common integer factor.
+Arb then encloses the resulting primitive value. The precision is
+increased until nonvanishing and at least 120 relative accuracy bits
+are certified. All recorded intervals are positive and above one.
+
+A representative first-family case is a=b=0,c=64. Its rational
+approximation error is about 10^-40.265, but its primitive leading
+coefficient has 373 digits and the positive integer form has size
+about 10^331.883. Removing all actual common factors does not rescue it.
+
+The broader case (a,b,c,h)=(32,32,32,32) has approximation error
+about 10^-87.782, a 643-digit primitive leading coefficient, and
+integer-form size about 10^554.733. The theorem of Section 4 is
+not being asserted for this broader family; these are finite data.
+
+Checks reproduced:
+  * 23,664 partial-coefficient integrality checks;
+  * 222 common-denominator and leading-coefficient checks;
+  * 132 positive-integral enclosures (15);
+  * 1,997 exact fourth-power prime-valuation checks for 0<=a<=16,
+    0<=c<=24, and 437 instances of the paired congruence (13);
+  * 36 coefficient triples compared between polynomial expansion
+    and Selberg partial fractions;
+  * a separate Fraction/Sympy implementation reproduced those
+    36 triples, checked six symbolic Selberg identities and 21
+    derivative identities, and checked 441 constant-term identities.
+
+These computations support the derivations; finite prime checks are
+not the proof of Section 4. The separate implementation is by the
+same agent and is not independent mathematical verification.
+
+Reproduction, from beta4/:
+  .venv/bin/python experiments/cyclotomic_selberg.py
+  .venv/bin/python experiments/cyclotomic_polynomial.py
+  .venv/bin/python experiments/cyclotomic_checks.py
+  python3 experiments/cyclotomic_symbolic.py
+
+Results have matching stems under results/. Source versions and hashes
+are recorded in literature/cyclotomic-sources.json and manifest.json.
+
+
+7. Assessment
+
+This pass solves a period-isolation problem, supplies exact arithmetic,
+and excludes one whole two-parameter approximation family. It supplies
+no favorable irrationality margin. The examples obtained from the
+geometric viewpoint remain within differentiated rational-sum methods.
+
+Consequently, neither the source framework nor these calculations justify
+presenting cyclotomic geometry as a near-proof. More parameter tuning in
+these families is a low priority. A genuinely different construction
+would have to provide arithmetic information beyond these moment
+reductions; merely expressing beta(4) as another rational period will
+not do so. No such additional divisibility mechanism was found here.
+
+
+References and reading scope
+
+[T] Riccardo Tosi, Periods of hyperplane arrangements and multiple
+    polylogarithms, doctoral thesis, Duisburg-Essen, 2025.
+    https://doi.org/10.17185/duepublico/84492
+    PDF: https://duepublico2.uni-due.de/servlets/MCRFileNodeServlet/duepublico_derivate_00083946/Diss_Tosi.pdf
+    Read selected introduction passages and printed pp.79-84
+    (Theorem 3.10, Section 3.2, and the opening of Chapter 4).
+    Theorem 3.10 on PDF p.87 was visually inspected. The full
+    compactification/period theorem proof was not audited.
+
+[T2] Riccardo Tosi, An explicit study of a family of cellular integrals,
+     arXiv:2601.00346v2, 19 March 2026.
+     https://arxiv.org/abs/2601.00346v2
+     Read the introduction and Theorem 1, not all 37 PDF pages.
+
+[E] Payman Eskandari, Kumar Murty, Yusuke Nemoto, Mixed motives and
+    linear forms in the Catalan constant, arXiv:2510.20648v3.
+    https://arxiv.org/abs/2510.20648v3
+    Added a reading of Sections 8.1-8.2 to the previously recorded
+    selected sections. No complete motivic audit is claimed.
+
+[S] Peter J. Forrester, S. Ole Warnaar, The importance of the Selberg
+    integral, arXiv:0710.3981v1; Bulletin AMS 45 (2008), 489-534.
+    https://arxiv.org/abs/0710.3981
+    Read the opening formula, convergence conditions, and beginning
+    of the polynomial-expansion discussion. Not a full-paper review.

@@ -1,0 +1,329 @@
+Orthogonal cancellation, positive forms, and determinant tests for beta(4)
+28 October 2026. Local and unpublished.
+
+Outcome and scope
+
+This investigation constructs positive rational linear forms in beta(4),
+and strictly positive determinants of growing degree in beta(4), by
+discrete orthogonality. It removes Catalan's constant without dividing by
+one of its large approximation coefficients. The relevant polynomials
+are classical dual Hahn polynomials, with a symmetric Krawtchouk special
+case. These names describe existing orthogonal-polynomial families; no
+priority claim is made for the applications below.
+
+The tested primitive integer forms and determinants still fail the size
+test. All 35 initial scalar cases, all 384 cases in the expanded scalar
+scan, and all 84 cross-parity determinants exceed one. These counts
+include overlaps between scans. A separate matrix cancellation in the
+older coupled family also fails in its 54 nontrivial tests. Thus neither
+uniform positivity nor cheap removal of an auxiliary period is enough.
+
+The proofs and checks here are work by the same agent, not independent
+verification or formal verification. This is not an irrationality proof.
+The recommended next construction, and a proved explanation of one of
+the denominator failures, are in next-proof-avenues.txt.
+
+1. A positive weight with rational polynomial moments
+
+Put t=y^2 and f(y)=sech(pi y), and define
+
+  C2(R) = integral_0^infinity R(y^2) [-y f'(y)] dy,
+  C4(R) = integral_0^infinity R(y^2) [-y^3 f'''(y)/6] dy.
+
+C4 is the signed functional used in the previous research notes. Write
+w2=-y f', w4=-y^3 f'''/6. For x=pi y and u=x^2,
+
+  w4/w2 = x^2(6 tanh^2(x)-5)/6.
+
+Since sinh(x)>=x, tanh^2(x)>=u/(1+u). Consequently
+
+  w4/w2+1/2 >= ((u-1)^2+2)/(6(1+u)) > 0.
+
+The functional
+
+                        W=C4+C2/2                         (1)
+
+therefore has a strictly positive density on y>0. Unlike adding a multiple
+of pi times another weight, (1) preserves rational polynomial moments.
+If E_(2k) are the Euler numbers, integrations by parts give
+
+  C2(t^k)=(2k+1)|E_(2k)|/2^(2k+1),
+  C4(t^k)=binom(2k+3,3)|E_(2k)|/2^(2k+1).                 (2)
+
+The base moment is integral y^(2k) sech(pi y)dy
+=|E_(2k)|/2^(2k+1). All boundary terms vanish for polynomial or
+negative-square-pole rational functions.
+
+Let T_s(j)=sum_(0<=k<j)(-1)^k/(2k+1)^s and G=beta(2). For integer j>=1,
+
+  C2(1/(t+j^2))=4(-1)^j(G-T_2(j)),
+  C4(1/(t+j^2))=16j^2(-1)^j(beta(4)-T_4(j)).              (3)
+
+For completeness, integral_0^infinity f(y)cos(vy)dy=1/(2cosh(v/2)).
+After one integration by parts, the first resolvent becomes the integral
+of f(y)(j^2-y^2)/(j^2+y^2)^2. Use
+
+  (j^2-y^2)/(j^2+y^2)^2=integral_0^infinity v e^(-jv)cos(yv)dv.
+
+Expanding 1/(2cosh(v/2)) gives the first sum in (3). For the second,
+three integrations by parts and
+y^3/(y^2+j^2)=y-j^2 y/(y^2+j^2) give j^2/6 times the same Laplace
+integral with v^3. Its evaluation is the second sum in (3).
+
+2. A variance construction using every integer pole
+
+Fix h>=0 and N>=2 integers. Write
+
+  Q(t)=product_(j=h+1)^(h+N)(t+j^2),
+  w_j=1/|Q'(-j^2)|
+     =2j(j+h)!/[(j-h-1)!(h+N-j)!(h+N+j)!].               (4)
+
+All weights are positive, and sign Q'(-j^2)=(-1)^(j-h-1).
+Choose a nonzero rational polynomial F with 2 deg(F)+1<N and put
+
+  S_k=sum_j w_j j^(2k) F(-j^2)^2,
+  mu=S_1/S_0,
+  R(t)=(t+mu)F(t)^2/Q(t).                               (5)
+
+Then mu>0, and R is nonnegative on t>=0 and not identically zero.
+Its residue at -j^2 is (-1)^(j-h-1)w_j(mu-j^2)F(-j^2)^2.
+By (3), the coefficient of G in C2(R) is
+
+                    4(-1)^(h+1)(mu S_0-S_1)=0.
+
+The beta(4) coefficient of C4(R) is
+
+              A=16(-1)^h(S_2-S_1^2/S_0).                (6)
+
+The bracket is a strictly positive weighted variance: a polynomial of
+degree less than (N-1)/2 cannot vanish at all but one of the N nodes.
+Hence
+
+                 W(R)=A beta(4)+B>0,
+                 A,B rational, A nonzero.              (7)
+
+This gives a uniform nonvanishing proof and exact Catalan cancellation.
+It does not bound the size of the primitive integer form obtained from
+(7). For general F, even the rational number mu may be expensive.
+
+3. Classical dual Hahn polynomials make (5) explicit
+
+Define monic polynomials q_m by q_0=1, q_(-1)=0, and
+
+  q_(m+1)(t)=(t+alpha_m)q_m(t)-beta_m q_(m-1)(t),
+
+  alpha_m=((2h+3)N+2h(h+1)-1)/2+2m(N-m-1),
+  beta_m=m(2m+2h+1)(N-m)(2N+2h+1-2m)/4.                 (8)
+
+For 0<=m<N these are the dual Hahn polynomials on the squared nodes in
+(4), after the change of variable x=j-h-1. The usual parameters are
+gamma=delta=h+1/2 and M=N-1, with spectral variable
+x(x+gamma+delta+1)=j^2-(h+1)^2. See [DLMF, 18.26.4 and Section 18.25]
+for the classical family. The proof below also verifies the particular
+normalization without relying on a table of weights.
+
+Put gamma=h+1/2, M=N-1, and
+
+  B_k(t)=product_(l=0)^(k-1)(t+(h+1+l)^2).
+
+An explicit positive Newton expansion is
+
+  q_m(t)=(gamma+1)_m/(M-m)!
+       *sum_(k=0)^m binom(m,k)(M-k)!/(gamma+1)_k B_k(t).  (9)
+
+Here (a)_k denotes a rising factorial. Comparing successive coefficients
+in (9) gives (8); in particular 2^m q_m has integer coefficients.
+
+One direct orthogonality proof uses the finite difference operator
+
+  (Lf)(j)=b_j(f(j+1)-f(j))+d_j(f(j-1)-f(j)),
+  b_j=(j+h+1)(h+N-j)/(4j),
+  d_j=(j-h-1)(j+h+N)/(4j).                              (10)
+
+At the two endpoints the outward rate is zero. The weights in (4)
+satisfy w_j b_j=w_(j+1)d_(j+1), so L is self-adjoint for their inner
+product. On the monic Newton polynomials
+f_k(x)=product_(l<k)(x-(h+1+l)^2), regarded as functions of x=j^2,
+
+  Lf_k=-k f_k+k(N-k)(gamma+k) f_(k-1).                  (11)
+
+To see (11), the leading term of Lf_k is -k x^k, while Lf_k+k f_k
+vanishes at the first k-1 squared nodes. Its remaining multiplier is
+obtained at j=h+k. Substituting (9) now gives
+L[q_m(-j^2)]=-m q_m(-j^2). Distinct eigenvalues and self-adjointness prove
+
+  sum_j w_j q_m(-j^2)q_l(-j^2)=H_m [m=l],
+  H_m=H_0 product_(r=1)^m beta_r,
+  H_0=1/[(N-1)!(h+3/2)_(N-1)].                         (12)
+
+The norm recursion follows by multiplying (8) in the two orders and
+using orthogonality. Here is a finite-sum verification of H_0. Set
+a=2h+2 and M=N-1. The first weight is a!/[M!(a+M)!], and its relative
+weight sum is
+
+  sum_(x=0)^M (1+2x/a)(a)_x(-M)_x(-1)^x
+                           /[x!(a+M+1)_x]
+                  =(a+1)_M/((a+1)/2)_M.
+
+For M>=1, apply the beta-integral representation of
+F(z)=2F1(a,-M;a+M+1;z) to F(-1)+(2/a)zF'(z)|_(z=-1).
+Integration by parts replaces the first integral
+integral t^(a-1)(1-t^2)^M dt by (2M/a)integral t^(a+1)(1-t^2)^(M-1)dt.
+The remaining sum is (2M/a) times the same normalization factor times
+integral t^a(1-t^2)^(M-1)dt. Its beta evaluation is the displayed ratio.
+The case M=0 is immediate.
+
+For F=q_m, (8)--(12) give
+
+  S_0=H_m, mu=alpha_m,
+  S_2-S_1^2/S_0=H_m(beta_m+beta_(m+1)).                 (13)
+
+Thus the cancellation parameter is only a half-integer. At h=0 this is
+also the odd sector of the symmetric Krawtchouk system: up to sign,
+j q_m(-j^2) is its monic polynomial of degree 2m+1. The new application
+here is to the positive functional (1), not a new orthogonal system.
+
+4. Cross-parity determinants retain growing beta(4) degree
+
+For N>=2r form the r by r matrix
+
+  M_(i,j)=W(q_(2i)(t)q_(2j+1)(t)/Q(t)), 0<=i,j<r.       (14)
+
+If a numerator has degree >=N, divide it by Q first. The polynomial
+quotient contributes the rational moments (2); it is NOT discarded.
+Orthogonality (12) makes the G coefficient of every entry zero.
+Using (8) to multiply by t shows
+
+  M=A beta(4)+B, with A,B rational matrices,
+
+  A_(i,j)=16(-1)^h H_max(2i,2j+1) if i=j or i=j+1,
+           0 otherwise.                                (15)
+
+Thus A is lower bidiagonal with nonzero diagonal, and det(M) is a
+polynomial of EXACT degree r in beta(4).
+
+4.1 Strict positivity for every r
+
+The Newton coefficient matrix in (9) is a positive row scaling and
+column scaling of the Pascal matrix binom(m,k), hence totally
+nonnegative. The coefficient matrix taking B_k to monomials is also
+totally nonnegative. A short proof of the latter statement works for
+any nonnegative sequence c_l in product_(l<k)(t+c_l). Separate the first
+factor t+c_0: the finite coefficient matrix factors as blockdiag(1,T')
+times the unit lower-bidiagonal matrix with subdiagonal c_0, where T'
+is the coefficient matrix for c_1,c_2,... . Induction proves the claim.
+
+Consequently the monomial coefficient matrix of q_m is totally
+nonnegative, lower triangular, and has diagonal 1. For any increasing
+degree indices m_1<...<m_r and 0<t_1<...<t_r, Cauchy--Binet and the
+strict positivity of generalized monomial Vandermonde determinants give
+
+                       det[q_(m_i)(t_j)]>0.
+
+There is a strictly positive term from the selected leading degrees.
+Apply this both to the even and to the odd degrees in (14). Andreief's
+identity expresses det(M) as the integral of their product against r
+copies of the positive measure W/Q, divided by r!. The ordered region
+has positive measure, and the two determinants there are positive.
+Hence
+
+                         det(M)>0                      (16)
+
+for all N>=2r and h>=0. Exponential decay still has to beat the exact
+primitive coefficient size; (16) alone supplies no such inequality.
+
+5. Exact arithmetic and size tests
+
+The scalar tests clear the rational A,B and remove their full integer
+gcd. The determinant tests interpolate the exact rational polynomial,
+check its leading coefficient and an additional evaluation, then clear
+all denominators and remove the full coefficient content. Arb evaluates
+the resulting primitive polynomial at beta(4), with precision scaled to
+coefficient size. Thus the failures below cannot be repaired by merely
+proving a smaller generic clearing multiplier for those same examples.
+
+  family                       scope                         result
+  h=0 orthogonal scalar        35 cases, N through 128        all >1
+  shifted scalar families      384 cases, N through 96        all >1
+  cross-parity determinant      84 cases, r through 12        all >1
+
+The shifted scan includes h=0,N/4,N/2,N,2N,4N, several polynomial
+degrees, and five choices of F: q_m(t), q_m(-t), t^m, and products with
+roots at the positive or negative integer squares. The test code uses
+2deg(F)+1<=N-2, a slightly smaller range than the theorem permits.
+Shifting poles sometimes improves the rational approximation error but
+does not improve the tested primitive balance enough.
+
+For illustration, the h=0,N=128,m=62 scalar example has
+log(primitive form)/N about +6.689. The cross determinant with
+r=12,N=24,h=0 has log(primitive value)/r^2 about +9.081.
+These are finite measurements, not asymptotic impossibility theorems.
+
+6. A separate coupled block determinant
+
+For the previously constructed coefficient sequences, make Hankel
+matrices A,B,C,D out of a_(2m),b_(2m),c_(2m),d_(2m). With G=beta(2),
+
+  R=G A+B, S=16 beta(4) A+G C+D,
+
+  det[[A,R],[C,S]]=det[[A,B],[C,D+16 beta(4) A]].         (17)
+
+Subtracting G times the first block of columns proves the identity
+without any division or assumption on independence of periods. If A is
+invertible, the polynomial in (17) has degree r and leading coefficient
+16^r(det A)^2. The Schur complement is used only for efficient exact
+computation, not to define (17).
+
+The 56 tests use r=1,2,3,4,6,8,12; block shifts 0,r,2r,4r; and both
+original and moment-normalized sequences. The two r=1,shift=0 cases
+give the uninformative primitive polynomial X. All other 54 primitive
+absolute values exceed one. No uniform nonvanishing theorem for (17)
+has been proved here. The large-prime explanation of this failure is
+in next-proof-avenues.txt, Section 2.
+
+7. Why a faster-decaying weight does not immediately solve the problem
+
+There is an exact alternative cancellation:
+
+  C4(R)-(pi^2/6)C2(tR)
+    =-pi^2 integral_0^infinity t R(t) sech^2(pi y) w2(y)dy,
+       t=y^2.                                         (18)
+
+The density now decays like a polynomial times exp(-3pi y), rather than
+exp(-pi y). This is an attractive real-place improvement. But if the
+coefficient of beta(4) in C4(R) is A, then the coefficient of G in
+C2(tR) is -A/4, by (3). Thus (18) carries
+
+                   A(beta(4)+pi^2 G/24),               (19)
+
+together with a rational number and pi^2 times a rational number.
+The improved decay has changed the period being approximated. It does
+not give a pure beta(4) form. This is an exact limitation of (18), not
+a general theorem forbidding faster-decaying beta(4) constructions.
+
+8. Files, checks, and sources
+
+  .venv/bin/python experiments/krawtchouk_positive_forms.py
+  .venv/bin/python experiments/dual_hahn_positive_forms.py
+  .venv/bin/python experiments/dual_hahn_cross_determinants.py
+  .venv/bin/python experiments/coupled_block_determinants.py
+  python3 experiments/orthogonal_cancellation_checks.py
+
+The correspondingly named JSON files in results/ retain exact primitive
+coefficients, interval evaluations, and parameters. The last script is a
+separate Fraction/Sympy implementation: it checks 231 polynomials and
+norms, 1947 discrete operator identities, 1947 orthogonal pairings,
+231 variance identities, 438 cross-parity coefficients, and two weight
+identities. The uniform claims rest on the arguments above, not on these
+finite counts. This second implementation is by the same agent.
+
+[DLMF] NIST Digital Library of Mathematical Functions, dual Hahn definition
+18.26.4 and Section 18.25 (orthogonality and normalization):
+https://dlmf.nist.gov/18.26#E4
+https://dlmf.nist.gov/18.25
+
+The positive-measure and negative-square-pole context, including earlier
+failed beta(4) transfers, is attributed in research-notes.txt and
+structural-followup.txt. The present signed C4 functional was already
+used there. The constructions in this note are not claimed to resolve
+the arithmetic obstacle found in those sources or in Carreira's note.

@@ -1,0 +1,176 @@
+REGULARIZED PRIMITIVE: A SCOPED ARITHMETIC-HOLONOMY GATE
+29 October 2026. Local and unpublished. No irrationality proof.
+
+Outcome
+
+Canceling the lower endpoint periods really does give a full rational
+G-function germ if theta=beta(4) is rational. It does not improve its
+meromorphic continuation. More strongly, every rational linear
+differential operator that removes its logarithmic endpoint branching
+also kills the constant carrying theta. This closes this particular
+regularization shortcut, not arithmetic holonomy or geometric methods.
+
+1. The exact arithmetic germ
+
+Put E=x*d/dx and F_j=E^j F, where
+ F(x)=sum_(m>=1) chi4(m)x^m/m^4,
+ E^4 F=x/(1+x^2), F(1)=theta.
+On the positive real axis define
+
+ C(x)=F_0-log(x)F_1+log(x)^2 F_2/2-log(x)^3 F_3/6.       (1)
+
+Differentiating telescopes, and the limit at0 is zero, so
+
+ C'(x)=-log(x)^3/[6(1+x^2)],
+ C(x)=integral_0^x -log(t)^3/[6(1+t^2)]dt,
+ C(1)=theta.                                           (2)
+
+Thus C_q(x):=C(x)+q-theta has rational Taylor coefficients at x=1
+for every rational q. Its entire local jet, not merely its value, is
+arithmetic. This is a valid repair of the inverse-germ objection in
+round11, but (2) is the old log-cube beta4 integral.
+
+The derivative in (2) also proves C(1/x)=C(x): both sides have the same
+derivative and agree at x=1. Set
+
+ x=(1-z)/(1+z), y=z^2,
+ A(y)=atanh(sqrt(y))/sqrt(y)=sum_(n>=0)y^n/(2n+1).
+
+The inversion symmetry makes C even in z. Exactly,
+
+ C(x)=theta+J(y), J(0)=0,
+ J'(y)=-(2/3)*y*A(y)^3/(1+y).                           (3)
+
+Here J is an unconditional rational-coefficient G-function. Under the
+hypothesis theta=q in Q, the actual period primitive is simply q+J.
+The rationality hypothesis only changes its constant coefficient.
+
+2. An exact rank-five module and why the basic holonomy test is blind
+
+Let B=yA. Then
+
+ B'=B/(2y)+1/[2(1-y)],
+ (B^k)'=k B^k/(2y)+k B^(k-1)/[2(1-y)] (k=1,2,3),
+ J'=-2B^3/[3y^2(1+y)].                                (4)
+
+Consequently the rational differential span of 1,J is
+
+ V=span_(Q(y)){1,B,B^2,B^3,J}.                          (5)
+
+Its dimension is exactly5. B is transcendental over C(y), since its
+continuation around y=1 has infinitely many distinct values. Hence
+1,B,B^2,B^3 are independent. On the branch from0 to y=-1, A(-1)=pi/4,
+and the residue of J' there is pi^3/96. Thus J has a genuine logarithmic
+singularity at -1, whereas rational combinations of the first four
+functions are meromorphic there. J is independent of them.
+
+For EVERY rational q,
+
+ span_(Q(y)){1,B,B^2,B^3,q+J}=V.                        (6)
+
+Adding the constant q also leaves all meromorphic pullback domains
+unchanged. It changes common-denominator bounds by at most a fixed
+integer. Thus the basic CDT holonomy theorem cannot detect theta=q
+from this module: all of those hypotheses already hold for q=0.
+This is an exact normalization observation, not a numerical capacity
+obstruction and not a theorem against adding genuinely new functions.
+
+For a concrete diagnostic, let L_n=lcm(1,...,n). For every n>=1,
+
+ L_(2n)^k [y^n]B^k is integral (k=1,2,3),
+ 3 L_(2n)^3 L_n [y^n]J is integral.                     (7)
+
+These elementary sufficient bounds follow from the power series in
+(3): each A denominator used in [y^n]J is at most2n, and integration
+adds the divisor n. They are not optimal denominator claims.
+Using the basis 1,B,B^2,B^3,3J gives CDT row costs0,2,4,6,7 and
+tau=(3*2+5*4+7*6+9*7)/25=131/25. The standard two-slit domain
+C minus ((-infinity,-1] union [1,infinity)) has conformal radius2,
+via phi(w)=2w/(1+w^2). Hence this prescribed sufficient-bound test
+has log2-tau<0 and does not even enter the theorem's useful range.
+No conclusion about optimized arithmetic or other uniformizations is
+drawn from that negative numerical margin. Equation(6) is the more
+fundamental limitation of this particular proposal.
+
+3. Linear differential regularization erases the assumed rational value
+
+PROPOSITION. Let L be a linear differential operator with rational
+functions of x as coefficients (even C(x) is allowed). If L(C_q) is
+meromorphic near x=0, then L(1)=0. Consequently L(C_q)=L(C), independent
+of q and of the additive connection constant theta.
+
+Proof. Start on the branch with log(x) real for x>0. Let M_0 denote
+positive continuation around0 and write c=2pi i. The F_j in (1) are
+holomorphic at0, so Delta=(M_0-1)C_q is independent of q and theta.
+Its derivative is
+
+ Delta'(x)=-[(log(x)+c)^3-log(x)^3]/[6(1+x^2)].          (8)
+
+Meromorphicity of L(C_q) at0 implies L(Delta)=0. Continue Delta
+from the positive axis to a neighborhood of x=i with log(i)=pi i/2.
+Its derivative has the nonzero residue
+
+ Res_(x=i) Delta'
+   =-[(5pi i/2)^3-(pi i/2)^3]/(12i)
+   =31pi^3/24.                                        (9)
+
+A small positive circuit about i, not winding around0, therefore adds
+the nonzero constant 2pi i*(31pi^3/24)=31i pi^4/12 to Delta.
+Rational coefficients of L are single-valued. Continuing L(Delta)=0
+along that circuit and subtracting gives (31i pi^4/12)L(1)=0.
+Therefore L(1)=0, proving the proposition. Possible poles of L cause
+no difficulty: continuation paths avoid their finite set. QED.
+
+The proposition also applies to rational differential operators in y:
+y=((1-x)/(1+x))^2 is rational, and dy/dx is nonzero at x=0.
+It therefore rules out retaining q while differentially removing the
+y=1 logarithmic branch of q+J. Multiplication by rational functions
+can be absorbed into L, so it does not evade the conclusion.
+
+One can see the surviving branch directly. With s=1-y tending to0+
+and x=s/4+O(s^2),
+
+ C(x)=x[-log^3x+3log^2x-6log x+6]/6
+                                      +O(x^3(1+|log x|^3)).        (10)
+
+It contains -s log^3(s/4)/24 with nonzero coefficient. Choosing
+q=theta changes the limiting value at y=1 to zero, but cannot remove
+this branch. The proposition explains why a linear differential
+cleanup cannot retain that favorable normalization.
+
+4. What would suffice, and what is missing
+
+A concrete sufficient arithmetic-holonomy construction would provide,
+under theta in Q, rational holonomic germs f_1,...,f_m that are proved
+Q(t)-independent, have a denominator array b satisfying CDT's column
+condition, and share a meromorphic pullback phi for which
+
+ |phi'(0)|>exp(tau(b)),
+ integral_(T^2)log|phi(z)-phi(w)| dmu(z)dmu(w)
+                    < m*(log|phi'(0)|-tau(b)).          (11)
+
+Those inequalities contradict the cited theorem and prove irrationality.
+They are a concrete sufficient theorem application, not a result proved
+here. The missing new mechanism is a rationality-dependent gain in
+actual continuation or in an independently justified arithmetic module.
+The displayed C_q provides neither: (6) blocks extra rank, the genuine
+logarithms block continuation across the endpoint, and the proposition
+blocks a linear differential repair retaining its connection constant.
+
+This does NOT address nonlinear rational expressions, extra integrations,
+new geometric variations, nonsolvable local systems, or a construction
+with different denominator structure. It makes no motivic inference from
+a numerical rationality hypothesis and identifies no real and p-adic
+periods. No credible full irrationality route emerged from this gate.
+
+5. Checks and review
+
+python3 checks.py verifies the telescoping identity with a symbolic
+exponent, the coordinate change, the rank-five differential-system
+identities on rational series, sufficient bounds(7), and residues(9)
+and pi^3/96. These are exact finite checks supplementing the proofs;
+they are not formal verification. No numerical theta is used.
+The coordinator independently checked the residue and the logical
+scope of the proposition before this packet was finalized.
+
+Primary theorem source and exact usage are in source-scope.txt.

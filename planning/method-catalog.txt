@@ -1,0 +1,214 @@
+METHOD CATALOG AND COVERAGE
+Prepared 2026-10-31
+
+This catalog covers all twelve method groups and eighteen coordinated
+rounds. It includes older exploratory work through P01 and O01; those
+are navigation entries, not collections of newly certified theorems.
+
+The original archive remains the complete research record. The present
+snapshot is selected evidence for writing, not an exhaustive copy.
+
+BY METHOD
+=========
+
+1. Rational Euler/Hermite sources and two-endpoint interpolation
+  S03 Repeated quadratic positive Mellin sources [primitive_value_obstruction]
+  H01 Rational Euler/Hermite source reduction [positive_construction]
+  H02 Strict integration denominator word [arithmetic_theorem]
+  H03 Circular Hermite sources: eventual nonvanishing and real error
+     [partial_construction]
+
+2. Continued fractions, recurrence derivatives and Euler-Boole
+  S04 Uniform failure of the Euler-Boole truncation family
+     [primitive_value_obstruction]
+  S05 Third-derivative continued fractions at fixed endpoints
+     [primitive_value_obstruction]
+  E05 Rational gauges of the ordinary two-state tail [structural_obstruction]
+
+3. Modular/Eichler transformations, prime filters and higher-level coordinates
+  M01 Eichler period cancellation and the level-32 source [positive_construction]
+  M02 Fricke-compatible prime filters [arithmetic_theorem]
+  M03 Interior poles in higher-level coordinate repairs [structural_obstruction]
+  M04 A bounded level-32 rational-system comparison [estimate_limitation]
+
+4. Polylogarithm ladders, common-base determinants and functional equations
+  S09 A positive-source obstruction for the common-base Mellin kernel
+     [primitive_value_obstruction]
+  L01 Completed Broadhurst weight-four ladder [attributed_identity]
+  L02 Scalar Taylor truncations of the ladder [primitive_value_obstruction]
+  L03 Common-base ladder determinant [partial_construction]
+  L04 Matched simultaneous multipliers [partial_construction]
+  L05 Gangl specialization and completion/trace limitations [attributed_identity]
+
+5. Prime deletion, slowly varying dilations and sparse Pade
+  A01 Delayed prime layers in slowly varying dilations [arithmetic_theorem]
+  A02 Bordered determinant content and modular defects [arithmetic_theorem]
+  A03 Fixed-cut capacity limitations [estimate_limitation]
+  A04 Prime deletion with subquadratic sufficient arithmetic cost
+     [partial_construction]
+  A05 Sparse collapse and an oversieved primitive obstruction
+     [primitive_value_obstruction]
+  A06 Nonreal branch points obstruct a particular positivity repair
+     [structural_obstruction]
+
+6. Positive moments, Gram/Cauchy/Loewner determinants and projections
+  C01 A positive cubic-tail kernel isolating beta(4) [positive_construction]
+  C02 Uniform two-sided comparison with a Cauchy determinant [analytic_theorem]
+  C03 Primitive growth for every consecutive principal offset
+     [primitive_value_obstruction]
+  C04 Difference-variable Gram moments with full target rank [positive_construction]
+  C05 Matching real upper and lower rates for the difference Gram [analytic_theorem]
+  C06 Exact large-prime primitive exponent for the difference Gram
+     [arithmetic_theorem]
+  C07 Primitive growth for the difference-variable Gram family
+     [primitive_value_obstruction]
+  C08 Primitive invariance under full rational basis changes [standard_fact]
+  S01 The complete cone of scalar positive polynomial forms [structural_theorem]
+  S02 Finite positive-cone extremizers do not exclude interior forms [finite_evidence]
+  S03 Repeated quadratic positive Mellin sources [primitive_value_obstruction]
+  S08 Overshifted dense grids [primitive_value_obstruction]
+  S09 A positive-source obstruction for the common-base Mellin kernel
+     [primitive_value_obstruction]
+  P01 Lower-period cancellation in earlier positive/coupled integrals
+     [partial_construction]
+  P02 Dimensional ladder equals an archived balanced ladder [equivalence]
+  P03 Nonuniform internal graph: fixed-period space and positive decay
+     [partial_construction]
+  P04 Positive dense-quarter interpolation [partial_construction]
+  P05 Unsquared quarter poles: conditional nonvanishing [partial_construction]
+  P06 Interleaved nonprincipal frames: exact local layers, insufficient bound
+     [estimate_limitation]
+  P07 Ordinary-moment first variation: positivity but open arithmetic
+     [partial_construction]
+
+7. Hypergeometric and quarter-pole constructions and differentiated tails
+  Q01 Differentiated integer-pole tail [partial_construction]
+  Q02 Nonsymmetric Whipple jets and one Thomae orbit [finite_evidence]
+  Q03 Moved-base Whipple pairing [estimate_limitation]
+  Q04 Repaired paired forward/dual quarter identity [positive_construction]
+  Q05 Arithmetic ceiling for the proved paired-identity estimates
+     [estimate_limitation]
+
+8. Coupled holonomy, block cancellation, lattice and geometric constructions
+  C08 Primitive invariance under full rational basis changes [standard_fact]
+  S07 Quarter-Gamma cumulant sequence [primitive_value_obstruction]
+  P01 Lower-period cancellation in earlier positive/coupled integrals
+     [partial_construction]
+  E09 Multiplicative and divisibility-Gram rediscoveries [equivalence]
+  O01 Earlier coupled holonomy and lattice explorations [partial_construction]
+
+9. Structural analytic gates and whole-functional Euler arithmetic
+  E01 Sharp Euler functional norm on integer-valued polynomials [arithmetic_theorem]
+  E02 Whole-functional Euler distribution [attributed_identity]
+  E03 Scoped countermodels for proposed analytic bridges [structural_obstruction]
+  E09 Multiplicative and divisibility-Gram rediscoveries [equivalence]
+
+10. Topological signatures and cyclotomic parity/norms
+  S06 Cyclotomic minimal-polynomial obstruction [primitive_value_obstruction]
+  E08 Direct even-power signature transfer has zero rational trace
+     [structural_obstruction]
+
+11. Assumption-dependent Niven constructions
+  E07 Endpoint integrality fails for a particular Niven source
+     [structural_obstruction]
+
+12. Rationality-dependent geometry and q-series gates
+  E04 Monodromy obstruction to a linear endpoint regularization
+     [structural_obstruction]
+  E05 Rational gauges of the ordinary two-state tail [structural_obstruction]
+  E06 A rationality-dependent q-series truncation [primitive_value_obstruction]
+
+BY RESEARCH ROUND
+=================
+
+Round 01: C01, C02, C03, C08, S01, S02, A01, A06, H02
+  evidence/research/coordinated-round-01.txt
+
+Round 02: A01, A02, A03, L01, L02, L04
+  evidence/research/coordinated-round-02.txt
+
+Round 03: S03, S09, A01, H01, L03
+  evidence/research/coordinated-round-03.txt
+
+Round 04: S08, A04, A05, Q01
+  evidence/research/coordinated-round-04.txt
+
+Round 05: S04, M01, M02, M03
+  evidence/research/coordinated-round-05.txt
+
+Round 06: C04, C05, C06, C07, H01, L05, M03
+  evidence/research/coordinated-round-06.txt
+
+Round 07: C08, S05, H01, H02, H03
+  evidence/research/coordinated-round-07.txt
+
+Round 08: P02, E02, E03
+  evidence/research/coordinated-round-08.txt
+
+Round 09: S07, P03, E09
+  evidence/research/coordinated-round-09.txt
+
+Round 10: C08, Q02, P04, E01, E08
+  evidence/research/coordinated-round-10.txt
+
+Round 11: S06, P04, P05, E07
+  evidence/research/coordinated-round-11.txt
+
+Round 12: Q04, E04, E05, E06
+  evidence/research/coordinated-round-12.txt
+
+Round 13: M04
+  evidence/research/coordinated-round-13.txt
+
+Round 14: Q03
+  evidence/research/coordinated-round-14.txt
+
+Round 15: Q04, Q05
+  evidence/research/coordinated-round-15.txt
+
+Round 16: P06
+  evidence/research/coordinated-round-16.txt
+
+Round 17: P06
+  evidence/research/coordinated-round-17.txt
+
+Round 18: P07
+  evidence/research/coordinated-round-18.txt
+
+SUPERSESSIONS AND SCOPE CORRECTIONS
+==================================
+
+Historical issue: Round-12 paired forward/dual numerator mismatch
+Current statement: Q04 repairs the full identities; Q05 states the remaining
+  arithmetic limitation.
+
+Historical issue: Round-18 raw clearing without complete common numerator gcd
+Current statement: P07 uses all 24 fully primitive pairs in primitive-check.json.
+
+Historical issue: Reading the round-17 negative Smith-layer budget as a primitive
+  obstruction
+Current statement: P06 is only an estimate/integer-clearing limitation; positive
+  numerator content is uncontrolled.
+
+Historical issue: Broad failure claims for positive determinants
+Current statement: C03 and C07 apply only to their exact families; S01 and P07
+  preserve the scope boundary.
+
+COUNTS
+======
+analytic_theorem: 2
+arithmetic_theorem: 6
+attributed_identity: 3
+equivalence: 2
+estimate_limitation: 5
+finite_evidence: 2
+partial_construction: 11
+positive_construction: 5
+primitive_value_obstruction: 12
+standard_fact: 1
+structural_obstruction: 7
+structural_theorem: 1
+
+Main paper: C01-C08. Context appendix: S01-S02 and P06-P07.
+Other items are supplemental candidates or catalog-only records.
+A class count is not a count of proved original publishable theorems.

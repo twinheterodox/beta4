@@ -1,0 +1,167 @@
+EVENTUAL FULL RANK OF THE CIRCULAR HERMITE SOURCE
+2026-10-29. Round07 analytic work. Local and unpublished.
+
+Theorem. Put L_m(x)=product_(j=1)^m(x-j), let a=n-2B with
+B~Binomial(n,1/2), and define the 4-by-4 rational matrix
+
+  K_n(r,k)=[t^k] E[(a+t)^r L_n(a+t)],  0<=r,k<=3.
+
+As n tends to infinity,
+
+  det K_n ~ product_(r=0)^3 (n+r)! * (1+sqrt(2))^(4n+10)
+             / [(2*pi)^2 (2+sqrt(2))^8 n^8].             (T)
+
+In particular det K_n is positive and nonzero for all sufficiently
+large n. By the exact nullity theorem in round06/fresh/
+hermite_analysis.txt, the symmetric circular Hermite source space is
+then one-dimensional and every nonzero source has A!=0. This establishes
+eventual uniqueness with a genuine target coefficient. It does NOT by
+itself establish nonvanishing or smallness of A*beta(4)+G(1).
+
+The determinant is not always positive: n=3 has negative determinant.
+The asymptotic conclusion is deliberately eventual. No numerical rank
+threshold is needed for (T).
+
+1. Exact generating function and normalization
+
+Replace the row polynomial x^r L_n(x) by L_(n+r)(x). Since
+L_(n+r)/L_n is monic of degree r, this is a unit triangular row change.
+It therefore preserves the determinant. The falling-factorial identity
+
+  L_m(x)/m! = [z^m] (1+z)^(x-1)
+
+and the binomial theorem give, for every m>=0,
+
+  E[L_m(a+t)]/m!
+    =[z^m](1+z)^(t-n-1)(1+z+z^2/2)^n.                  (1)
+
+It follows that det K_n=product_(r=0)^3(n+r)! det C_n, where
+
+  C_n(r,k)=1/(2*pi*i*k!) integral
+        z^(-r-1) (1+z)^(-1) log(1+z)^k Phi(z)^n dz,
+
+  Phi(z)=(1+z+z^2/2)/(z(1+z)).                          (2)
+
+The contour in (2) is any counterclockwise circle about 0 of radius
+less than 1. The logarithm is its Taylor branch, so there is no
+continuation or logarithm-sheet ambiguity.
+
+Arithmetic's uncentered matrix with D(x)^n=(1+x^2)^n is 2^n times a
+unit triangular row transform of K_n. Its determinant is consequently
+2^(4n) det K_n. Formula (T) is for the centered expectation matrix,
+not for that integer matrix.
+
+2. One strictly dominant saddle on an admissible circle
+
+Write s=sqrt(2)-1, r0=2-sqrt(2), z0=-r0, and
+kappa=2+sqrt(2). Direct differentiation gives
+
+  1+z0=s,  Phi(z0)=-(1+sqrt(2))=-1/s,  Phi'(z0)=0,
+  z0^2 Phi''(z0)/Phi(z0)=kappa.                          (3)
+
+Parametrize the contour by z(theta)=z0 exp(i theta), -pi<=theta<=pi.
+This parametrization is counterclockwise. There is a logarithm of
+Phi(z(theta))/Phi(z0) near 0 with value 0, and
+
+  log(Phi(z(theta))/Phi(z0))=-kappa theta^2/2+O(theta^3). (4)
+
+The point theta=0 is the unique maximum of |Phi| on this whole circle.
+Here is a direct global verification. For z=r exp(i psi), u=cos psi,
+
+  |Phi(z)|^2 =
+   [2r^2u^2+(2r+r^3)u+1+r^4/4]/[r^2(1+r^2+2ru)].      (5)
+
+The second derivative of (5) with respect to u is
+
+  2(2-2r^2+r^4)/(1+r^2+2ru)^3 > 0    (0<r<1).
+
+Hence its maximum is at u=-1 or 1. Both real numerators are positive,
+and
+
+  |Phi(-r)|-Phi(r)=r^2/(1-r^2)>0.
+
+Thus the negative real point is the unique maximum. In particular,
+outside any fixed neighborhood of theta=0 the modulus ratio in (4)
+is bounded by a constant strictly less than 1. In a sufficiently small
+neighborhood it is bounded by exp(-c theta^2), c>0. The zeros -1+/-i
+of the numerator of Phi lie outside this circle.
+
+3. Determinant integral and its actual leading term
+
+On this contour (2) becomes
+
+  C_n(r,k)=1/(2*pi*k!) integral_(-pi)^pi
+       z(theta)^(-r)/(1+z(theta))
+       log(1+z(theta))^k Phi(z(theta))^n dtheta.           (6)
+
+The elementary determinant integration identity (obtained just by
+expanding both determinants and relabeling four integration variables)
+gives
+
+  det C_n = 1/[4! (2*pi)^4 product_(k=0)^3 k!]
+    integral_[-pi,pi]^4 product_(j=1)^4
+       [Phi(z_j)^n/(1+z_j)]
+       Delta(1/z_1,...,1/z_4)
+       Delta(log(1+z_1),...,log(1+z_4)) dtheta_1...dtheta_4,
+                                                               (7)
+
+where Delta(v)=product_(i<j)(v_j-v_i). Both Vandermondes have the
+same orientation; their product introduces no minus sign.
+
+Let y(theta)=1/z(theta) and ell(theta)=log(1+z(theta)). Then
+
+  y'(0)=-i/z0,  ell'(0)=i*z0/s,  y'(0)ell'(0)=1/s.
+
+There are six pairs in each Vandermonde. Thus, after setting
+theta_j=u_j/sqrt(n*kappa),
+
+  Delta(y(theta_j))Delta(ell(theta_j))
+      ~ s^(-6) (n*kappa)^(-6) Delta(u)^2.
+
+The four ordinary amplitudes tend to s^(-4), the four measures give
+(n*kappa)^(-2), and the fourth power removes the sign of Phi(z0)^n:
+
+  product_(j=1)^4 Phi(z_j)^n
+      / Phi(z0)^(4n) -> exp(-sum_j u_j^2/2).
+
+These limits can be integrated. On a fixed small saddle neighborhood,
+analyticity bounds every difference y(theta_j)-y(theta_i) and
+ell(theta_j)-ell(theta_i) by a constant times |theta_j-theta_i|.
+Together with the Gaussian modulus bound following (5), this provides
+an integrable polynomial times Gaussian majorant after scaling. If any
+variable leaves that neighborhood, (5) bounds the whole contribution
+by an exponentially small factor times |Phi(z0)|^(4n); the amplitudes
+and Vandermondes are bounded on the compact contour. Dominated
+convergence therefore applies to (7), including its complex phases.
+This is a leading asymptotic, not an absolute-value upper estimate.
+
+Finally,
+
+  integral_R^4 exp(-sum_j u_j^2/2) Delta(u)^2 du
+       =(2*pi)^2 product_(j=1)^4 j! = (2*pi)^2 * 288.
+
+For completeness this is another instance of the elementary determinant
+integration identity: replace the monomials in Delta by the monic
+Gaussian-orthogonal polynomials 1,u,u^2-1,u^3-3u. Their squared norms
+are sqrt(2*pi) times 1,1,2,6. Multiplication by 4! gives 288*(2*pi)^2.
+The denominator 4! product_(k=0)^3 k! in (7) is also 288. Consequently
+
+  det C_n ~ Phi(z0)^(4n) s^(-10)
+               / [(2*pi)^2 kappa^8 n^8].                (8)
+
+Substitution of (3) and the row factorials proves (T), with a strictly
+positive constant.
+
+4. Exact and interval checks
+
+rank_checks.py rebuilds the centered matrix using integer Taylor
+products, checks the row replacement exactly at selected small n, and
+uses Arb only to compare the exact determinant with the asymptotic.
+These checks do not enter the proof. At n=20,40,80 the ratio to the
+right side of (T) is respectively approximately
+
+  0.5662605455, 0.7482090644, 0.8636923692.
+
+The same calculation records n=1 degeneracy and the negative n=3 sign.
+The checks are finite evidence for normalization and sign; the proof
+above supplies the eventual conclusion independently.

@@ -1,0 +1,355 @@
+OPTIMIZED SAME-MAP COMPARISON: INDEPENDENT AUDIT
+30 October 2026. Local and unpublished. No irrationality proof.
+
+Verdict
+-------
+The proposed clipped-envelope inequality is correct under the inherited
+CDT hypotheses, with independently known holonomicity. No assumption
+beta_l<=d is required. There is no missing endpoint term when the integral
+of the actual lower envelope is used. A closed, un-clipped version of
+(7.6.2) WOULD generally miss an endpoint correction when beta_l>d.
+
+For the same fixed weights and radii, B_c(s)<=B_m(s) for c<m. Consequently
+the companion comparison is valid at the full family's chosen weights
+s_m. At the weights furnished by CDT (7.6.5), with r_l=1, B_m(s_m) is
+exactly the numerator in (7.6.6) and (8.0.5). This extends the previously
+audited no-gain comparison to those numerators for the stated flat
+denominator profiles. It does not require comparing separately optimized
+weights for the two dimensions.
+
+The explicit primitive I(t)=integral_0^t A0(u)du is also valid: it gives
+one genuinely new unconditional companion, a conditional rank18 family,
+and the stated total cost 931/324.
+
+1. Exact reading scope and imported inputs
+-----------------------------------------
+Primary source, already saved locally:
+F. Calegari, V. Dimitrov, Y. Tang, The linear independence of 1, zeta(2),
+and L(2,chi_-3), arXiv:2408.15403v2, 16 September2024.
+
+  literature/papers/The-linear-independence-of-1-zeta-2-and-L-2-chi-3_2408.15403v2.pdf
+  literature/text/2408.15403.txt
+  https://arxiv.org/abs/2408.15403v2
+
+For this follow-up I read the local extracted text of:
+
+* Theorem3.2.13 and its surrounding statements of the holonomic
+  vanishing-order estimates;
+* Theorem7.0.1 and its hypotheses;
+* Definition7.1.2 and Lemma7.1.4, including the convexity argument;
+* Section7.2 through the slopes inequality (7.2.14);
+* Sections7.3.1-7.3.3, the module and degree formulas (7.3.6)-(7.3.9),
+  the finite-height inequalities (7.3.11)-(7.3.15), their summation
+  justification, and the use of slopes in (7.3.16);
+* Lemmas7.4.1 and7.4.5 with their proofs, and the following proof of
+  Theorems7.1.6/7.1.10;
+* Section7.6 from its setup through Remark7.6.7, particularly the full
+  derivation of (7.6.2), system (7.6.5), and formula (7.6.6);
+* Theorem8.0.1, including (8.0.5), the proof of Remark8.0.6 for the flat
+  profiles, and the conclusion of its proof in Section8.2 that explains
+  the substitution of the Section7.6 metric.
+
+I did not independently reprove the imported arithmetic Hilbert--Samuel
+theorem, the Chudnovsky--Osgood zero estimate, or the external Bost--Charles
+regularity results. The argument below is an independent derivation from
+those precise inputs as stated and used by CDT. No new paper was fetched
+and no web search was needed. This is not a whole-paper audit.
+
+2. Precise statement, including hypotheses
+-----------------------------------------
+Let f1,...,fd be Q(t)-linearly independent elements of Q[[t]], each
+independently known to be holonomic. Give them certified denominator
+types satisfying the flat cap-column hypotheses of CDT Sections6-7,
+with the allowed fixed initial factors/offsets treated as in Remark6.0.12.
+Let tau_d=tau_flat(b)+tau_sharp(e) for that family.
+
+Let phi:(D,0)->(C,0) be holomorphic with phi'(0) nonzero and suppose all
+fi(phi(z)) are germs of meromorphic functions throughout D. Set
+
+  a=log|phi'(0)|.
+
+Fix FINITELY MANY positive radii 0<r0<...<r_l<=1 and a fixed vector
+s_h>=0, sum s_h=1. These choices are independent of the auxiliary
+polynomial degree D used in the slopes proof. Write
+
+  G_hk = L_(r_h) . L_(r_k)
+       = integral_T^2 log|phi(r_h z)-phi(r_k w)| dmu(z)dmu(w),
+  u_k  = (G s)_k,
+  Q_s  = s^T G s,
+  E_s(x)=min_k [u_k-x log r_k],
+  B_d(s)=-Q_s+(2/d) integral_0^d E_s(x) dx.
+
+The intersection numbers must be well-defined and finite for a finite
+numerical bound. The inherited limiting interpretation at radius1 is
+the one in Lemma7.4.1: first work on compact subdiscs, then pass to the
+outer-radius limit. If needed, impose the usual neighborhood regularity
+first and use that limit. No boundary regularity stronger than the
+source's limiting setup is being asserted here.
+
+Then the UNDIVIDED inequality
+
+  d(a-tau_d) <= B_d(s)                                      (A)
+
+holds. It does not need beta_l<=d. With holonomicity supplied independently,
+it also does not need a>tau_d: positivity of this denominator is needed
+only to express (A) as a quotient upper bound on d.
+
+For the identification with the exact printed numerator of (7.6.6),
+the final radius must be r_l=1, as it is in CDT. Positive radii are
+essential: r=0 cannot be included in the logarithms or covering metric.
+Nonnegative weights are essential to the inherited metric/convexity
+setup. No positive-semidefinite matrix assumption on G is used.
+
+3. Proof of the clipped inequality and sign check
+------------------------------------------------
+Use CDT's evaluation lattice E_D for the d-function family, but equip
+its archimedean summands with the weighted metric
+
+  L_s=product_h L_(r_h)^(s_h).
+
+It is still the underlying bundle O(1); its curvature is a convex
+combination of the nonnegative curvatures. The mixed intersections are
+L_s.L_(r_k)=u_k and L_s.L_s=Q_s. The finite-place lattice construction
+and finite-height estimates do not depend on this change of metric.
+
+The proof of Lemma7.4.1, as explicitly invoked in Section7.6, gives for
+each fixed k and every filtration jump n:
+
+  h_infinity(psi_D^(n))
+    <= -n a -n log r_k +D u_k +o(D+n).
+
+Because there are finitely many radii, the errors may be bounded
+uniformly over k. Choose the best k separately for each n. Then
+
+  h_infinity(psi_D^(n))
+    <= D[-a(n/D)+E_s(n/D)] +o(D+n).                        (B)
+
+This is the direct lower-envelope estimate; it is valid regardless of
+where the envelope's breakpoints fall relative to d.
+
+The jump-set point is important. Linear independence gives
+#V_D=d(D+1). Independent holonomicity and Theorem3.2.13 give, for every
+epsilon>0 and large D,
+
+  V_D subset [0,(d+epsilon)(D+1)+C(epsilon)].
+
+Hence its difference from the integer interval [0,dD] has at most
+O(epsilon D)+O_epsilon(1) elements. The function
+
+  F(x)=-a x+E_s(x)
+
+is a finite lower envelope of affine functions plus an affine function;
+it is continuous and bounded on each [0,d+epsilon]. In particular,
+both positive and negative omitted terms are controlled. One must not
+silently assume the height main terms are nonnegative. Bounding their
+absolute value on this compact interval shows that replacing the
+jump-set sum of D F(n/D) by the full interval sum costs only
+O(epsilon D^2)+o_epsilon(D^2). The endpoint D versus D+1 also contributes
+only O(D). First take D->infinity and then epsilon->0. Thus (B) yields
+
+  limsup D^(-2) sum_(n in V_D) h_infinity(psi_D^(n))
+    <= -d^2 a/2 + integral_0^d E_s(x) dx.                  (C)
+
+There is no surviving term from n>dD, nor from clipped slope intervals.
+
+For completeness, retain the arithmetic parameters y_h and xi used in
+Section7.3. The degree and finite-height terms are
+
+  deg(E_D)/D^2
+    = (d/2)Q_s +sum_h u_h^cap y_h -xi sum_i e_i +o(1),
+
+  limsup D^(-2) sum_(n in V_D) h_fin(psi_D^(n))
+    <= (max_i e_i) I_xi^d(xi)
+       +(1/2)[sigma_d d^2+sum_h y_h^2/b_h].
+
+Here u_h^cap is the number of initial zero rows in denominator column h;
+it is unrelated to the notation u_k=(Gs)_k. Combining these inequalities
+with deg(E_D)<=sum h_infinity+sum h_fin gives
+
+  d^2(a-sigma_d)
+    <= -d Q_s+2 integral_0^d E_s
+       +sum_h(y_h^2/b_h-2u_h^cap y_h)
+       +2[xi sum_i e_i+(max_i e_i)I_xi^d(xi)].
+
+Take y_h=b_h u_h^cap and optimize xi exactly as in CDT. This is
+
+  d^2(a-tau_d)<=-d Q_s+2 integral_0^d E_s,
+
+which is (A). In particular the minus sign in front of Q_s and the
+factor 2/d in the definition of B_d are correct.
+
+An equivalent explicitly clipped formula is available. For r_l=1 set
+beta_k=(u_k-u_(k-1))/(log r_k-log r_(k-1)), beta_0=0. Convexity gives
+0<=beta_1<=...<=beta_l. Set b_0=0, b_k=min(beta_k,d), b_(l+1)=d.
+Then
+
+  B_d=-Q_s+(2/d)sum_(k=0)^l [
+       (b_(k+1)-b_k)u_k
+       -(b_(k+1)^2-b_k^2)log r_k/2].                     (D)
+
+Intervals whose left endpoint is beyond d have zero length. Formula(D)
+or the envelope integral should be used for the companion dimension;
+one cannot automatically reuse the un-clipped square-savings formula
+from (7.6.2).
+
+4. Monotonicity and the selected full-family weights
+--------------------------------------------------
+Each function u_k-x log r_k is nondecreasing in x because r_k<=1.
+Their minimum E_s is therefore nondecreasing. This requires no sign
+assumption on u_k or E_s. The average of a nondecreasing function on
+[0,d] is nondecreasing in d; equivalently, where differentiable,
+
+  d/dd [(1/d)integral_0^d E_s]
+    =[d E_s(d)-integral_0^d E_s]/d^2 >=0.
+
+Since Q_s is fixed,
+
+  B_c(s)<=B_m(s),             0<c<m.                      (E)
+
+Now take r_l=1 and let s_m be the actual nonnegative solution of CDT
+(7.6.5) for dimension m, under that theorem's existence/uniqueness
+hypothesis. Its equations say
+
+  beta_k=m sum_(h<k) s_h,
+  beta_(k+1)-beta_k=m s_k,
+
+where beta_0=0 and beta_(l+1)=m. Thus beta_l<=m automatically.
+Writing u=Gs_m and Q_s=s_m^T G s_m, the integral formula and a telescoping
+sum give
+
+  B_m(s_m)
+    =u_l-Q_s+(1/m)sum_k(beta_(k+1)-beta_k)u_k
+    =u_l-Q_s+sum_k s_k u_k
+    =u_l
+    =sum_h s_h G_hl.                                      (F)
+
+This is precisely the numerator of (7.6.6). It is also the numerator
+of (8.0.5), because that numerator is
+
+  G_ll-sum_(h<l)s_h(G_ll-G_hl)=sum_h s_h G_hl.
+
+If r_l<1, the analogous identity is B_m=u_l-m log r_l, so the condition
+r_l=1 must be retained for the literal identification (F).
+
+The word 'optimized' should here mean the weights selected by (7.6.5).
+Remark7.6.7 presents a stationary-action motivation and explicitly says
+the general existence/positivity property is not known. The comparison
+does not need a claim that these weights are a global minimizer. It
+actually works for every fixed admissible s through (A) and(E).
+
+5. Consequence for the companion comparison
+-------------------------------------------
+Use the SAME phi, SAME radii, and SAME weights s_m for the c-function
+unconditional companion and m=c+r function full family. Applying (A)
+to the companion, then(E), gives
+
+  c(a-tau_c)<=B_c(s_m)<=B_m(s_m).                          (G)
+
+A contradiction from the full-family optimized bound would require
+
+  B_m(s_m)<m(a-tau_m),       with a>tau_m.
+
+Together with(G), this would force
+
+  r a>m tau_m-c tau_c.                                    (H)
+
+For the audited profiles with c cheap companions, r functions requiring
+four LCM layers, and a certified fixed collection of first primitives,
+
+  tau_m>=4(1-c^2/m^2)+tau_sharp(m,k),
+  tau_c=tau_sharp(c,k),
+  m tau_sharp(m,k)>=c tau_sharp(c,k).
+
+The last relation, including k=c, was proved in the first audit. Thus
+the right-hand side of(H) is at least
+
+  4r(1+c/m)>4r.
+
+It follows that this contradiction would need a>4. The mandatory-cusp
+bound a<=log Rstar<13/10 excludes it. Since the base inequality(G) is
+undivided and its family is independently holonomic, there is no need
+to add a separate a>tau_c hypothesis in this argument.
+
+For the flat cap-column profiles, Remark8.0.6 proves
+tau_flatflat(b)=tau_flat(b). Therefore (8.0.5) uses the same arithmetic
+cost in this comparison and is covered as well. This audit does not
+extend that conclusion to arbitrary denominator arrays or new types.
+
+6. Exact algebra checks and the explicit primitive
+-------------------------------------------------
+Run from /home/research/Chat/Math:
+
+  python3 beta4/collaboration/round-13/independent/optimized_audit_checks.py
+
+Output is optimized-audit-checks.json in this directory. The script
+checks the lower-envelope integration with rational arithmetic and
+independently checks the primitive constants symbolically. Its small
+matrix example is an algebra check, not an assertion that the chosen
+matrix is realized by a particular holomorphic map.
+
+In that example
+
+  G=[[3,6],[6,8]], log radii=(-1,0), s=(1/2,1/2), m=5.
+
+The chosen weights satisfy beta=5/2=m s0. For c=1 the condition
+beta<=c fails. The actual clipped value is B_1=17/4, whereas an
+un-clipped square-savings formula would incorrectly give2; the missing
+endpoint correction is9/4. The correctly clipped values increase up
+to B_5=7, which equals the selected numerator (Gs)_1. This illustrates
+why the proposed clipping is substantive and why it fixes the issue.
+
+For the additional requested example, set
+
+  I(t)=integral_0^t A0(u)du
+      =sum_(n>=1) a_(n-1,0) t^n/n.
+
+The A coefficients are integral, so this is a certified b=0,e=1
+primitive, with a fixed zero integration constant. At a nonzero mandatory
+cusp zeta, the previously audited theta asymptotics give
+
+  average[(2i+sqrt(2))^5,(2i-sqrt(2))^5]=-88i.
+
+Using log(t-zeta)~-pi^2/(8s) with the negative sign retained, one obtains
+
+  A0(t)~-(352 i zeta/pi^3) log^3(t-zeta)/(t-zeta),
+  I(t)~-(88 i zeta/pi^3) log^4(t-zeta).
+
+The displayed coefficients are nonzero. Every element of the Q(t)-span
+of 1 and the eight A0 derivatives has log degree at most3 there.
+Therefore I is not in that span. The ten companion functions
+
+  1, A0,A0',...,A0^(7), I
+
+are unconditionally independent. They form a differential space because
+I'=A0 and the previous homogeneous-plus-constant space was closed under
+differentiation.
+
+Under the rationality assumption on beta(4), add
+
+  R0,R0',...,R0^(7).
+
+In the <2p prefix, the coefficients of I have at most p^-1 denominators
+outside a fixed bad-prime set, whereas the nonzero remainder projection
+has the previously proved p^-4 witness. Fixed rational-function
+combinations preserve the at-most-p^-1 bound in this band. Thus the
+eight added functions remain independent modulo the ten companions.
+The full differential space has rank18. Its certified profile has
+c=10, k=1, r=8, and
+
+  tau_flat=4(18^2-10^2)/18^2=224/81,
+  tau_sharp=(2*18-1)/18^2=35/324,
+  tau_total=931/324.
+
+The companion integration cost is tau_sharp(10,1)=19/100. This example
+does not rely on any bound on the number of possible primitive classes.
+
+Remaining scope
+---------------
+The analytic extension just proved is a consequence of the identified
+CDT slope, height, and zero-estimate inputs. The finite algebra checks
+illustrate it but are not its proof. The same-map, same-weight, certified
+denominator-type, and independent-holonomicity hypotheses are substantive.
+The earlier qualification about arbitrary rational combinations of
+primitives remains in force: such combinations do not automatically
+retain the sufficient b=0,e=1 type. No claim is made about meromorphic
+base maps, alternative coefficient types, or unrelated constructions.

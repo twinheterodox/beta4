@@ -1,0 +1,230 @@
+UNSQUARED DENSE-QUARTER POLES: EXACT PERIOD GATE, FAILED BOUNDED TEST
+29 October 2026. Local and unpublished. No irrationality proof.
+
+Outcome
+
+Lifting the round10 positive Bernoulli functional from y^2 to the imaginary
+line turns its unwanted zeta(4) coefficient into a polynomial of degree four
+in the pole. Ordinary Lagrange interpolation then removes that coefficient
+without the high-degree positive numerator of round10. The beta(4)
+coefficient matrix is positive definite. The matrix evaluated at beta(4)
+is not asserted positive or uniformly nonsingular.
+
+All seven prescribed primitive determinant values are large. Adding
+fourth-order zeros at positive integers makes these four comparisons worse,
+despite smaller raw values. This bounded gate is closed without further
+index scans. There is no asymptotic primitive-growth theorem, universal
+obstruction, or credible complete proof mechanism here.
+
+An exact dilation places this functional inside ordinary-plus-alternating
+half-pole derivative sums. The ordinary sum is rational but generally
+nonzero; retaining it is essential. The source has zeros at EVEN integers
+after dilation, which distinguishes it from the previously specified
+all-integer-zero ray. This is a concrete change of source geometry and
+rational correction, not discovery of a wholly independent functional.
+
+1. The functional and its polynomial arithmetic
+
+Use the archived Bernoulli functional
+
+  nu(R)=integral_0^infinity R(y^2) w(y)dy,
+  w(y)=-(y^4/3) (d/dy)^3 [1/(exp(2pi y)-1)] >0.
+
+The already established formulas are
+
+  nu(t^e)=(2e+4)! |B_(2e+2)|/[6(2e+2)!],
+  nu(1/(t+a^2))=a^3 zeta(4,a)-1/(2a)-1/3,    a>0.
+
+Define
+
+  Lambda(R)=integral_0^infinity [R(i y)+R(-i y)]w(y)dy/2.
+
+It is defined here on real rational functions having only negative real
+poles, and on polynomials. Their integrals converge because w decays
+exponentially at infinity and is bounded near zero. In particular,
+
+  Lambda(x^(2e))=(-1)^e nu(t^e),
+  Lambda(x^(2e+1))=0,
+  Lambda(1/(x+a))=a^4 zeta(4,a)-1/2-a/3.                 (1)
+
+The last equality is simply
+  (1/(a+iy)+1/(a-iy))/2 = a/(a^2+y^2).
+
+For every m>=0 the polynomial moments also equal
+
+  Lambda(x^m)=(m+4)(m+3) B_(m+2)/6.                    (2)
+
+Thus the polynomial functional is B((x^4 P)'')/6, where B(x^m)=B_m
+and B_1=-1/2. This observation was independently supplied by the
+coordinator. No arithmetic identification with a p-adic L-value is made.
+
+2. The exact period cancellation
+
+Let a_j=(2j+1)/4, j=0,...,K-1, and
+  D_K(x)=product_j(x+a_j),
+  T_j=sum_(k=0)^(floor(j/2)-1) 4^4/(4k+1+2(j mod2))^4.
+The empty sum is zero. Then
+
+  zeta(4,a_j)=120 zeta(4)+128(-1)^j theta-T_j,
+  theta=beta(4).
+
+Consequently the three coefficients of the pole value (1) are
+  zeta4: 120 a_j^4,
+  theta: 128(-1)^j a_j^4,
+  rational: -a_j^4 T_j-1/2-a_j/3.                       (3)
+
+For any polynomial P of degree <=K-6, P/D_K is proper and
+
+  Lambda(P/D_K)
+   =sum_j P(-a_j)/D_K'(-a_j) Lambda(1/(x+a_j)).
+
+Its zeta4 coefficient vanishes, since
+  sum_j a_j^4 P(-a_j)/D_K'(-a_j)=0.                    (4)
+This is the Lagrange identity for the polynomial x^4P(x), of degree
+at most K-2. No numerical identity or period-independence assumption
+is used. The rational part of (3), including both elementary corrections,
+is retained in every calculation.
+
+For h>=1 and K>=2h+4 define H_ik(X) by replacing theta by X in
+Lambda(x^(i+k)/D_K), 0<=i,k<h. Then H(X)=B+XA with rational matrices.
+Because
+  D_K'(-a_j)=(-1)^j j!(K-1-j)!/2^(K-1),
+
+  A=128 sum_j [(-1)^j a_j^4/D_K'(-a_j)] v_j v_j^t,
+  v_j=(1,-a_j,...,(-a_j)^(h-1))^t,                    (5)
+
+is positive definite. All weights are positive, and a polynomial of
+degree<h cannot vanish at the K>=h distinct nodes. Hence det H(X)
+has exact degree h and positive leading coefficient. This is polynomial
+nonvanishing, not yet nonvanishing of det H(theta).
+
+3. Fourth-order integer zeros and derivative sums
+
+Prescribe M>=0 and
+  V_M(x)=product_(n=1)^M (x-n)^4,
+  H_ik=Lambda(V_M(x)x^(i+k)/D_K(x)),
+  K>=4M+2h+4.                                        (6)
+
+Equation (4) still holds, and (5) gains the positive weight V_M(-a_j).
+No polynomial quotient occurs in these fixtures: deg(V_M x^(i+k))<=K-6.
+The general functional includes polynomial quotients through (2); they
+are not discarded where present.
+
+Put F(x)=x^4 P(x)/D_K(x), where deg P<=K-6. Then F=O(x^-2), and
+
+  Lambda(P/D_K)=-(1/6) sum_(n>=0) F'''(n).             (7)
+
+Proof: decompose F=sum_j c_j/(x+a_j), which is proper and has
+sum_j c_j=0. Here c_j=a_j^4 P(-a_j)/D'_K(-a_j). Differentiating three
+times and summing gives sum_j c_j zeta(4,a_j). The elementary rational
+terms in (1) vanish after weighting by P(-a_j)/D'(-a_j), again by
+Lagrange interpolation (degrees deg P and deg P+1 are <K-1).
+This proves (7) directly without assuming a summation formula for
+arbitrary Bernoulli-series functions. Absolute convergence is immediate
+from F'''(n)=O(n^-5).
+
+For P=V_M x^m, F has fourth-order zeros at 0,1,...,M. Thus the first
+M+1 summands of (7) vanish. This was the specific proposed arithmetic
+repair. It is not a claim that the remaining derivative summands have
+one sign, or that a matrix of them is positive.
+
+4. Exact relationship to the old Euler functional
+
+Let d=m+4+4M and put
+
+  U(u)=u^(m+4) product_(n=1)^M (u-2n)^4
+                      /product_(j=0)^(K-1)(u+j+1/2).
+
+Then F(u/2)=2^(K-d) U(u). Define
+
+  O(U)=-(1/6)sum_(n>=0) U'''(n),
+  A(U)=-(1/6)sum_(n>=0)(-1)^n U'''(n).
+
+Splitting the even lattice gives exactly
+
+  Lambda(V_M x^m/D_K)=2^(K-d+2)[O(U)+A(U)].           (8)
+
+If U=sum_j c_j/(u+j+1/2), then sum_j c_j=0. Write
+  b_j=j+1/2,
+  H_j=sum_(k<j) b_k^(-4),
+  T'_j=sum_(k<j) (-1)^k b_k^(-4).
+The two contributions are
+
+  O(U)=-sum_j c_j H_j,
+  A(U)=16 theta sum_j(-1)^j c_j
+                      -sum_j(-1)^j c_j T'_j.         (9)
+
+Indeed zeta(4,1/2)=15 zeta4, so the ordinary zeta4 term is multiplied
+by sum c_j=0. The ordinary contribution remains a rational number;
+setting it to zero would alter the primitive polynomials. Equations
+(8)-(9) independently reproduce every matrix entry in all seven tests.
+
+5. Bounded exact outcomes
+
+Each tuple below was prescribed before numerical theta evaluation.
+Primitive integer polynomials have positive leading coefficient and
+complete rational content removed. Values and logarithms are certified
+Arb balls; displayed logarithms are rounded for readability.
+
+ M   h   K    log|raw det H(theta)|    log|primitive Q(theta)|
+ 0   1   6         -8.108895                    8.139823
+ 0   2   8        -16.836635                   32.914497
+ 0   3  10        -38.235739                   57.474829
+ 1   1  10        -12.280727                   36.738980
+ 1   2  12        -32.731669                   85.797646
+ 1   3  14        -62.188018                  144.782031
+ 2   2  16        -49.324251                  140.908903
+
+The first three signed values have signs +,-,+. All seven intervals
+exclude zero, which is a finite analytic certificate only. The first
+primitive polynomial, for example, is
+  118682030250 X-117369943777,
+and its value is about3428.31.
+
+The root coordinator separately found a conditional auxiliary-prime
+nonvanishing argument for a growing ray of (6). Its proof and checks
+belong to the coordinator's packet; this note makes no additional claim
+for its arithmetic margin. Nonvanishing alone does not change these
+primitive values or provide shrinking values asymptotically.
+
+6. Missing theorem and decision
+
+A sufficient target remains an unbounded prescribed family with degree
+O(K), nonzero Q_K(theta), and -log|Q_K(theta)|/K tending to infinity.
+Under theta=u/v, the value v^deg Q_K Q_K(theta) would then be a nonzero
+integer tending to zero. There is currently no primitive-content estimate
+or actual signed-error estimate meeting that condition here.
+
+The finite results do not establish a family impossibility theorem.
+They do establish that removing S_K and adding these integer zeros do
+not by themselves supply a convincing numerical margin in the prescribed
+fixtures. Further scans require a specific arithmetic or analytic change.
+
+7. Files and reproduction
+
+  .venv/bin/python collaboration/round-11/fresh/unsquared_gate.py
+  .venv/bin/python collaboration/round-11/fresh/unsquared_gate.py --zeros
+  python3 collaboration/round-11/fresh/reduction_checks.py
+
+unsquared_gate.py uses rational coefficients and a fraction-free
+determinant over Q[X], then Arb only for final evaluation.
+unsquared_gate.json and unsquared_zeros.json preserve exact primitive
+coefficients, rational scalars and full signed balls.
+reduction_checks.py independently uses Fraction and SymPy, checks the
+ordinary-plus-alternating formula and reproduces all primitive polynomials.
+Its 106 exact checks are recorded in reduction_checks.json. This is
+same-agent independent implementation, not formal verification.
+
+The independent-agent review is now complete in
+  ../norms/unsquared_review.txt
+with reproduction code ../norms/review_unsquared.py. It checked all 21
+exact moment pairs, all seven primitive polynomials and rational scalars,
+and ten independent imaginary-axis quadratures, without importing this
+lane's code. It also reviewed the degree-bound cancellation, positive
+theta coefficient, derivative identity and the exact dilation correction.
+That review does not cover the coordinator's separate auxiliary-prime
+nonvanishing theorem.
+
+The analytic Bernoulli/Hurwitz identities used as inputs were already
+proved and independently reviewed in round10. No recent claimed
+irrationality theorem is used in this construction or its checks.

@@ -1,0 +1,456 @@
+Beta(4): logarithmic finite differences and a positive cubic-tail kernel
+28 October 2026. Local research record; unpublished.
+
+Status: mathematical derivations with exact computational checks by the
+same agent. No irrationality proof, independent audit, formal verification,
+or priority claim is made. B=beta(4), G=beta(2), C3=beta(3)=pi^3/32.
+
+1. Outcome and next research target
+
+Two constructions give different parts of what a proof needs.
+
+The first uses a fixed finite difference in two logarithmic variables.
+One variable is evaluated at t and the other at t^k, with k odd. It gives
+a positive function J_k(t) on 0<t<1, tending to zero at 1, whose Taylor
+series is 6B plus rational coefficients. For k>=3 the rational part starts
+at -4 t^(2k+4). More significantly, through degree N its odd-prime
+denominators have at most two layers when p>N/k. Only the smaller primes
+need the general four-layer allowance. The resulting explicit denominator
+bound has logarithmic growth (2+2/k)N+o(N) for fixed k, instead of 4N+o(N).
+
+This is a coefficient bound, not a bound for primitive determinant
+polynomials. All 62 tested diagonal Pade constructions from this filter
+still have primitive integer value above one. Function positivity does
+not prove nonvanishing of those Pade linear forms. Increasing k also
+moves the change from 6B to zero into a narrower neighborhood of t=1.
+There is consequently no demonstrated improvement in the final
+arithmetic-versus-decay inequality.
+
+The second construction is a positive Cauchy-integral kernel at squared
+integer nodes. Its entries contain only B and rational numbers, and every
+ordered square minor is strictly positive. Explicit Cauchy determinant
+bounds control the real size. Thus period isolation, determinant
+nonvanishing, and a usable real upper bound are all available for this
+family. Its arithmetic remains bad in the tested frames: 47 of 48
+primitive values exceed one; the other is the polynomial X itself.
+A local calculation explains one cost: the positive transform can turn
+vanishing residue blocks into full-rank cubic-denominator Cauchy blocks.
+
+The leading new arithmetic question is whether the two-layer saving of
+the first construction can survive in a determinant with sufficient real
+decay and a uniform nonvanishing proof. The positive kernel is a concrete
+comparison family and a separate controlled test of node designs. These
+properties have NOT been combined into one construction. Broadly enlarging
+the same Pade or consecutive-node scans is not supported by the results.
+
+2. A logarithmic form of the ladder restriction
+
+Put b_j(w)=Im Li_j(i exp(w)) for real w, continued along this real path.
+The harmonic restriction of the two-loop ladder from
+two-loop-numerators.txt and radial-cancellation.txt can be written
+
+ F(w)=3[B+b_4(w)]-(3/2)w[C3+b_3(w)]+(w^2/4)[G+b_2(w)].             (2.1)
+
+It is even and satisfies
+
+ F(w)=6B+(G/2)w^2+h(w),
+ h'''(w)=w^2 sech'(w)/8,   h(0)=h'(0)=h''(0)=0.                  (2.2)
+
+These identities follow by differentiating (2.1), or from the inversion
+identities for the polylogarithms. In particular h is a rational Taylor
+series. If E_j are the Euler numbers in sech(w)=sum E_j w^j/j!, then
+
+ [w^j]h(w)=(j-3)(j-4) E_(j-4)/(8 j!)     (even j>=6),
+
+and all other coefficients are zero. Thus h(w)=-w^6/960+O(w^8).
+
+There is a useful positive tail for w>=0:
+
+ T(w)=3b_4(-w)+(3/2)w b_3(-w)+(w^2/4)b_2(-w)
+     =(1/8) integral_w^infinity (2u^3-3wu^2+w^2u) sech(u) du,
+
+ F(w)=3B+(3/2)C3 w+(G/4)w^2+T(w).                              (2.3)
+
+Indeed the integral follows by the Laplace representations of b_j(-w).
+It has the same third derivative as F; checking the first three values
+at zero gives the polynomial in (2.3). The integrand is
+u(u-w)(2u-w), so T>0. Differentiating under the integral gives T'<0,
+T''>0, and T'''=w^2 sech'(w)/8. Also T(w)=O((1+w^2)exp(-w)).
+
+Integrating (2.2) by parts gives two formulas used below:
+
+ h(x)=(1/8) integral_0^x u(x-u)(2u-x) sech(u) du,                 (2.4)
+ h''(x)=x^2 sech(x)/8-(1/4) integral_0^x u sech(u) du.            (2.5)
+
+3. Ordinary dilations: useful identities, poor finite Pade forms
+
+For an integer m>=3 define
+
+ J_m(w)=2 sum_(j=1)^m (-1)^(j-1) binom(m,j) F(jw/m)-F(0).
+
+The elementary finite-difference identities for powers 0,1,2 show that
+its beta coefficient is 6, its Catalan coefficient is zero, and its
+polynomial part at positive infinity vanishes. Thus J_m(w)->0. For m=3,
+
+ J_3(w)=6T(w/3)-6T(2w/3)+2T(w)>0.
+
+Writing w=2 atanh(t) gives rational Taylor coefficients except for the
+constant 6B. The rational part starts in degree max(6,2 ceil(m/2)).
+The power-sum multiplier on w^j is
+2(-1)^(m+1)m! S(j,m)/m^j, with S(j,m) a Stirling number of the second kind.
+Using jw instead of jw/m also gives a valid filter.
+
+Rational dilations introduce denominators at primes dividing m; integer
+dilations move complex singularities inward. Among 112 diagonal Pade
+tests (m=3,4,5,6,7,8,10,12; both scalings; orders through 32), four systems
+were singular and all 108 nondegenerate primitive integer forms exceeded
+one. These outcomes motivated the next construction rather than a larger
+scan of the same filters.
+
+4. A slow logarithmic variable and a reduced denominator bound
+
+Let k>=1 be odd and set
+
+ u=log((1+t)/(1-t)),    v=log((1+t^k)/(1-t^k)),
+
+ J_k(t)=-F(0)+2F(u)+4F(v)-4F(u+v)-2F(2v)+2F(u+2v).             (4.1)
+
+This is F(0)-2(1-E_u)(1-E_v)^2 F(0), where E denotes translation.
+It is a new construction in this investigation, not an asserted new
+identity in the literature. The coefficient of G vanishes because the
+third finite difference annihilates quadratics. The constant coefficient
+of B is 6. Hence
+
+ J_k(t)=6B+r_k(t),   r_k(t) in Q[[t]],
+
+with r_k even. For k>=3,
+
+ r_k(t)=-4 t^(2k+4)+O(t^(2k+6)).                               (4.2)
+
+To see the leading term, the rational part of (4.1) is
+
+ r_k=2[Delta_v^2 h(u)-Delta_v^2 h(0)]
+    =2 sum_(j>=2) ((2^j-2)/j!) v^j [h^(j)(u)-h^(j)(0)].         (4.3)
+
+The first term is 2v^2 h''(u)=-u^4 v^2/16+... . Since u=2t+...
+and v=2t^k+..., this gives (4.2). For k=1 the leading term is -72t^6.
+
+Applying (2.3) to (4.1), all polynomial terms cancel and
+
+ J_k=2T(u)+4T(v)-4T(u+v)-2T(2v)+2T(u+2v).
+
+This is the sum of
+2[T(u)-T(u+v)], 2[T(v)-T(u+v)], 2[T(v)-T(2v)], 2T(u+2v).
+Every summand is positive for 0<t<1. All tend to zero as t->1, proving
+
+                         J_k(t)>0,   J_k(1-)=0.              (4.4)
+
+Here is an arithmetic benefit beyond delayed contact. Let L_N=lcm(1,...,N)
+and e_p(N)=floor(log N/log p). Then all coefficients through degree N of
+r_k have denominators dividing
+
+ D_(N,k)=8 L_N^2 product_(p prime, p<=N/k) p^(2 e_p(N)).         (4.5)
+
+Proof of the general four-layer bound. For x=a u+b v, with the nonnegative
+integer a,b occurring in (4.1), write exp(x)=A(t)/A(-t), where
+A(t)=(1+t)^a(1+t^k)^b. The series x' has integer coefficients and
+
+ sech(x)=A(t)A(-t) / ((A(t)^2+A(-t)^2)/2)
+
+also has integer coefficients, since its denominator has integer
+coefficients and constant term one. Put Omega=sech(x)x' dt and
+I_j=integral_0^t x(s)^j Omega(s). Formula (2.4) becomes
+
+ h(x)=(3x I_2-x^2 I_1-2I_3)/8.
+
+Through degree N, x has denominator dividing L_N; I_j has denominator
+dividing L_N^(j+1). Consequently 8 L_N^4 clears h(x), hence r_k.
+
+Proof of the sharper large-prime bound. Fix an odd p>N/k. In (4.3), only
+j<=N/k can contribute through degree N, so j! is p-integral. The
+coefficients of v through degree N are also p-integral: their possible
+denominators are odd integers at most N/k. For j=2, formula (2.5) shows
+that h''(u(t)) is a two-iterated-integral expression, plus u(t)^2 times
+a p-integral rational series. Its coefficients have valuation at least
+-2 e_p(N). More explicitly u'=2/(1-t^2) and sech(u)u'=2/(1+t^2), both
+integer series. For j>=3, differentiating h'''(x)=x^2 sech'(x)/8 shows
+that h^(j)(u(t)) is a polynomial of degree at most two in u(t), with
+coefficients in Z[1/2][[t]]. It has the same valuation bound. The
+constants h^(j)(0) have no odd denominators. Thus (4.3) proves the
+two-layer bound for every odd p>N/k. At smaller primes use the general
+four-layer bound. If any coefficient in question is nonzero then
+N>=2k+4 (or N>=6 for k=1), so 2<=N/k and the four-layer allowance already
+covers p=2. This proves (4.5).
+
+Using the prime number theorem, for each fixed k,
+
+ log D_(N,k)=(2+2/k)N+o(N).                                   (4.6)
+
+Indeed log L_N=N+o(N), and sum_(p<=N/k)e_p(N)log p=N/k+o(N);
+the contributions from prime powers of exponent at least two are o(N).
+The exact finite formula (4.5) does not require the prime number theorem.
+
+What this does NOT show. The saving is per Taylor degree, before solving
+a Pade system or clearing a determinant's coefficients. Reindexing a
+series can itself change such rates, so (4.6) must not be advertised as a
+halving of the cost of an irrationality proof. This construction is not
+just r(t^k): after its first term it has the fast u-variable as well.
+Nevertheless its analytic behavior changes with k. For every fixed
+0<=t<1, J_k(t)->6B as k->infinity, while J_k(1-)=0 for every k. A direct
+calculation at t=1-c/k, c>0 fixed, gives the limiting boundary profile
+
+ 4T(2 atanh(exp(-c)))-2T(4 atanh(exp(-c))).
+
+Thus the arithmetic saving has an analytic tradeoff that a proof must
+quantify. All 62 tested [n/n] Pade forms (odd k through 45, n through 48)
+remain above one after exact primitive normalization. Their uniform
+nonvanishing has not been proved.
+
+5. Frobenius explains what is postponed, not abolished
+
+The logarithmic-word argument proved in radial-cancellation.txt applies
+to these germs. For p>=5 and degrees <p^2,
+
+ p^4 r_k(t) = chi_4(p) r_k(t^p) mod p.                         (5.1)
+
+For the rational-dilation filters in section 3, the same statement holds
+when p does not divide m, with r replaced by that filter's rational part.
+In each case the right side uses only original coefficients of degree <p.
+
+For completeness, formula (2.4) is a sum of length-four logarithmic
+iterated integrals. There are three letters dx and one letter
+
+ sech(x) dx = -i d log((1+i exp(x))/(1-i exp(x))).
+
+The logarithmic derivative Cartier identity from the preceding note
+applies to these p-integral units. The dx letters are fixed by Frobenius;
+the last letter acquires chi_4(p). In the rational-dilation case the
+power-series units remain p-integral for p not dividing 2m. The leading
+four-fold denominator term therefore gives (5.1). Equivalently one can
+apply the earlier word proof to the formula for h in terms of I_j.
+
+In particular, when k>=3 and p>2k+4,
+
+ v_p([t^((2k+4)p)] r_k)=-4,
+ p^4 [t^((2k+4)p)] r_k = -4 chi_4(p) mod p.
+
+The fourth layer survives at higher degrees. This is consistent with
+(4.5): at N=(2k+4)p, that prime is among the smaller primes p<=N/k.
+
+6. A positive kernel with only beta(4) in its integer-node entries
+
+The divided-difference direction was prompted by the rectangular digamma
+Loewner frames in S. Litsey's working repository:
+https://github.com/slitsey/catalan-irrationality-measure
+The introduction and selected frame definitions were consulted, not the
+whole manuscript or its Lean development. An attributed TeX snapshot and
+its hash are recorded in literature/dilation-source.json. The following
+cubic-tail transform and its proofs were developed here; no claim that
+Litsey's arithmetic estimates transfer to it is made.
+
+Define, for Re z>=0,
+
+ f(z)=sum_(j>=0)[(4j+1+4z)^(-3)-(4j+3+4z)^(-3)]
+     =(1/4) integral_0^infinity u^2 sech(u) exp(-4zu) du.
+
+Then f(0)=C3 and f'(0)=-12B. Let
+
+ S_l(a)=sum_(j=0)^(a-1)[(4j+1)^(-l)-(4j+3)^(-l)].
+
+For a nonnegative integer, f(a)=C3-S_3(a), f'(a)=-12[B-S_4(a)].
+The ordinary normalized Loewner kernel -f[a,b]/12 therefore has rational
+off-diagonal entries and diagonal B-S_4(a), with no Catalan elimination.
+It is not a positive Gram kernel. Its 48 finite tests gave 46 values above
+one, plus X and 81X-80; no uniform nonvanishing theorem was obtained.
+
+To obtain positivity instead put, for x>=0,
+
+ g(x)=sqrt(x)[f(0)-f(sqrt(x))]/6,   g(0)=0,
+ K(x,y)=(g(y)-g(x))/(y-x),   K(x,x)=g'(x).                      (6.1)
+
+The elementary cosine integral
+
+ sqrt(x)(1-exp(-a sqrt(x)))
+      =(2/pi) integral_0^infinity x(1-cos(as))/(x+s^2) ds
+
+and the positive Laplace representation of f give, by Tonelli,
+
+ g(x)=(1/(3pi)) integral_0^infinity x[f(0)-Re f(is)]/(x+s^2) ds.
+
+Differentiating the Fourier transform of sech twice gives, with
+A(s)=sech(2pi s),
+
+ Re f(is)=C3 A(s)(2A(s)^2-1),
+ f(0)-Re f(is)=C3 (1-A(s))(2A(s)^2+2A(s)+1)>0   (s>0).
+
+Consequently
+
+ K(x,y)=integral_0^infinity omega(s)/((x+s^2)(y+s^2)) ds,
+ omega(s)=pi^2 s^2/96 [1+A(s)-2A(s)^3]>0.                      (6.2)
+
+Near zero omega(s)=O(s^4), and at infinity omega(s)=O(s^2), so all
+entries with x,y>=0 are finite, including K(0,0)=2B.
+
+At integer squared nodes there are no periods other than B:
+
+ K(a^2,b^2)=[b S_3(b)-a S_3(a)]/[6(b^2-a^2)]       (a!=b),
+ K(a^2,a^2)=B-S_4(a)+S_3(a)/(12a)                 (a>0),
+ K(0,0)=2B.                                                    (6.3)
+
+Uniform nonvanishing. For any increasing distinct nonnegative x_i and
+y_j, with the same number n of each, the integral determinant identity
+gives
+
+ det K(x_i,y_j)=(1/n!) integral product_k omega(s_k)
+     det[1/(x_i+s_k^2)] det[1/(y_j+s_k^2)] product_k ds_k.
+
+On ordered distinct positive s_k, both Cauchy determinants have the same
+strict sign (indeed the standard positive sign with these orderings).
+Their product is positive on a set of positive measure. All terms in
+the expanded integral are absolutely integrable, being products of
+finite entries from (6.2). Thus every such determinant is strictly
+positive. This proof does not assume B irrational and includes
+rectangular row/column configurations and nodes equal to zero.
+
+For integer node sets with r common nodes, the determinant is a polynomial
+in B of degree exactly r. The top coefficient is, up to nonzero factors
+1 or 2 and a permutation sign, the determinant left after deleting the
+common rows and columns. That remaining matrix has disjoint node sets,
+so it is rational and its determinant is strictly positive by the same
+integral proof. With no common nodes the polynomial is a positive
+rational constant, whose primitive normalization is 1.
+
+7. Explicit real bounds, including the node zero
+
+Let M=1+2/(3 sqrt(6)). For 0<=A<=1,
+
+ 0<=1+A-2A^3<=M.
+
+Comparing the density in the preceding determinant integral with
+(pi^2 M/96)s^2 gives, for positive integer node sets a_i,b_j,
+
+ 0<det K(a_i^2,b_j^2)<=C^n V(a)V(b)/product_(i,j)(a_i+b_j),
+ C=pi^3 M/192,   V(a)=product_(i<j)(a_j-a_i).                   (7.1)
+
+Here integral_0^infinity s^2/((s^2+a^2)(s^2+b^2)) ds
+=pi/(2(a+b)), and the remaining determinant is the usual Cauchy
+determinant. Density comparison is legitimate for these nonsymmetric
+minors because the product of the two Cauchy determinants is positive.
+
+For a common node zero, regularize the comparison. Since
+1-sech(v)<=v^2/2, the same density factor is at most 10pi^2 s^2.
+For any tau>0 this implies
+
+ omega(s)<=(pi^2/96)(M+10pi^2 tau^2) s^4/(s^2+tau^2).
+
+The comparison kernel integrates explicitly to a constant times
+
+ [ab+tau(a+b)]/[(a+b)(a+tau)(b+tau)],
+
+with value 1/tau at a=b=0 by continuity. If a_0=b_0=0 and all other
+nodes are positive, its determinant, with the common constant removed,
+is
+
+ (1/tau) product_(i>0) a_i/(a_i+tau)
+         product_(j>0) b_j/(b_j+tau)
+         V(a_+)V(b_+)/product_(i,j>0)(a_i+b_j).                 (7.2)
+
+This follows by multiplying rows and columns by a_i+tau,b_j+tau:
+the matrix becomes tau+ab/(a+b); subtracting the zero row leaves a
+Cauchy determinant on the positive nodes. The full upper bound is
+(7.2) times C_tau^n, where C_tau=pi^3(M+10pi^2 tau^2)/192.
+The checks use the rational choice tau=1/8.
+
+These give a precise sufficient arithmetic target. Write P_n(X)=H_n
+det K_n(X) in primitive integer coefficients, with H_n>0, degree r_n>=1.
+Let U_n denote either explicit determinant upper bound. A node family
+satisfying
+
+                   log(H_n U_n)/r_n -> -infinity              (7.3)
+
+would prove irrationality: if B=a/b, positivity and integrality force
+P_n(B)>=b^(-r_n). No family meeting (7.3) has been found.
+
+8. What the local arithmetic of the positive kernel costs
+
+Let all integer nodes lie in [0,M0] and let p>M0, p>=5. Set
+
+ D_l(a)=sum_(ell in {1,3}, ell*p<4a) chi_4(ell)/ell^l.
+
+For the rational coefficient matrix R in (6.3), direct reduction of the
+prefix sums gives
+
+ p^4 R_(a,b) = -chi_4(p) D_4(a)                    if a=b,
+              chi_4(p)[D_3(a)+D_3(b)]/12          if a+b=p,
+              0                                  otherwise, mod p.  (8.1)
+
+For the off-diagonal exceptional case use b=-a mod p in (6.3).
+No other denominator can introduce a fourth layer in this prime range.
+
+There is also a simple full-rank cubic block. Take disjoint row nodes
+a_i and column nodes b_j all in (p/4,p/2). Then
+
+ p^3 R_(a_i,b_j) = chi_4(p)/(6(a_i+b_j)) mod p.                  (8.2)
+
+The Cauchy determinant is nonzero modulo p: all node differences and
+all sums in its formula are nonzero. An n-by-n block therefore has
+determinant valuation exactly -3n. If it is the auxiliary block left
+after deleting common nodes, the leading coefficient of the B-polynomial
+has this valuation, so its integer multiplier H must have v_p(H)>=3n.
+
+This matters because the ordinary Loewner kernel of f has zero leading
+cubic residue when both prefix sums are in this same constant region.
+The positive transform replaces that cancellation with a full Cauchy
+block. It is therefore not safe to import favorable rank counts from
+the digamma or ordinary cubic-tail frames. Equations (8.1)-(8.2) are
+local statements, not a no-go theorem for every positive-kernel design.
+
+9. Computations, provenance, and reproduction
+
+All determinant polynomials were cleared to primitive integer
+coefficients, including their full coefficient gcd. The recorded size
+tests are Arb interval evaluations, not floating-point sign guesses.
+Quadratures below are high-precision diagnostics, separately identified.
+
+Ordinary logarithmic dilations:
+  112 Pade tests: 108 nondegenerate values above one, four singular.
+  325 coefficients matched a separate Euler-number expansion;
+  37 matched the earlier bivariate ladder implementation;
+  9,114 coefficients checked the logarithmic Frobenius relation.
+
+Slow-variable filters:
+  62 nondegenerate primitive Pade values, all above one;
+  195 coefficients matched a separate Euler-number expansion;
+  1,136 nonzero coefficients checked against (4.5);
+  42,859 coefficient-prime checks of the two-layer bound;
+  13,631 Frobenius coefficient checks, plus surviving fourth-layer cases;
+  numerical checks of the positive-tail identity at twelve (k,t) pairs.
+
+Divided-difference families:
+  48 ordinary cubic-tail frames: 46 above one, plus X and 81X-80;
+  48 positive-kernel frames: 47 above one, plus X;
+  121 entries reproduced with a separate Python Fraction implementation;
+  seven Cauchy-integral quadratures and four Fourier identities checked
+    numerically to better than 10^(-58);
+  25,915 entry-prime checks of (8.1);
+  27 exact full-rank cubic blocks checking (8.2);
+  all 48 positive-frame values certified positive and below (7.1)/(7.2).
+
+For example, the primitive degree-eight determinant on common nodes
+0,...,7 has log value about 388.8323. The explicit regularized Cauchy
+upper bound has log about 396.4051. The upper bound is therefore already
+reasonably close in that case; a hidden enormous improvement in the
+real estimate is not indicated by this example.
+
+Reproduce from this directory:
+  .venv/bin/python experiments/log_dilations.py
+  .venv/bin/python experiments/log_dilation_checks.py
+  .venv/bin/python experiments/lacunary_log_filters.py
+  .venv/bin/python experiments/lacunary_log_checks.py
+  .venv/bin/python experiments/loewner_beta4.py
+  .venv/bin/python experiments/positive_loewner_beta4.py
+  .venv/bin/python experiments/positive_loewner_checks.py
+
+Results are the corresponding JSON files under results/. The source
+and data hashes are recorded in manifest.json. The existing historical
+research records are retained. This remains a local investigation.

@@ -1,0 +1,504 @@
+Beta(4), coordinated round 01: construction investigator
+28 October 2026. Local and unpublished.
+
+Status and scope
+
+This is a derivation and a separate implementation of checks by the same
+construction agent. It is not independent mathematical verification,
+formal verification, an irrationality proof, or a priority claim. B=beta(4).
+The prior starting point is ../../../dilations-and-positive-kernels.txt
+relative to this file. No prior files have been changed.
+
+The main outcomes are negative but uniform:
+
+  1. The positive cubic-tail kernel's Cauchy upper determinant bound is
+     sharp up to exp(O(n)) for EVERY positive integer row/column node
+     design. This also holds after a common zero node is included, with
+     the positive-node Cauchy determinant as comparison. Thus a better
+     real estimate cannot supply a missing n^2-scale gain in a fixed
+     node design.
+
+  2. For the principal matrices on ANY shifted consecutive positive
+     integer nodes m+1,...,m+n, primitive integer determinant values
+     grow at least exp((2-2 log 2-o(1)) n^2), uniformly over sequences
+     of nonnegative integer offsets m=m_n. The same lower exponent
+     holds for principal nodes 0,...,n-1. This rules out these complete
+     families, not only the previously tested small examples.
+
+  3. For every odd slow-filter parameter k>=3, the rational germ in
+     z=t^2 has explicit nonreal logarithmic branch points. They survive
+     removal of its initial zero coefficients and even multiplication
+     by a nonzero algebraic function plus algebraic addition. Consequently
+     this entire class of same-variable repairs cannot turn the germ
+     into a Cauchy/moment transform of a real compactly supported measure.
+     In particular, an arcsine-type algebraic factor alone cannot supply
+     the desired positive real moment representation.
+
+These results do NOT rule out nonprincipal node designs, compression to
+a genuinely different row/column space, a bivariate kernel, nonlinear
+reparametrization, a different period representation, or a non-moment
+nonvanishing mechanism. The slow filter and positive kernel have not
+been combined.
+
+1. Independent reconstruction of the positive kernel
+
+Let
+
+ f(z)=sum_{j>=0}[(4j+1+4z)^(-3)-(4j+3+4z)^(-3)].
+
+Expanding sech(u)=2 sum_{j>=0}(-1)^j exp(-(2j+1)u), or summing the
+two geometric progressions, gives
+
+ f(z)=(1/4) integral_0^infinity u^2 sech(u) exp(-4zu) du,
+ f(0)=pi^3/32,                 f'(0)=-12B.
+
+For nonnegative integers a let
+
+ S_l(a)=sum_{j=0}^{a-1}[(4j+1)^(-l)-(4j+3)^(-l)].
+
+Then f(a)=f(0)-S_3(a), f'(a)=-12[B-S_4(a)]. Define
+
+ g(x)=sqrt(x)[f(0)-f(sqrt(x))]/6,
+ K(x,y)=(g(y)-g(x))/(y-x), with its diagonal derivative.
+
+The cosine integral
+
+ integral_0^infinity x[1-cos(us)]/(x+s^2) ds
+       = (pi sqrt(x)/2)[1-exp(-u sqrt(x))]
+
+and Tonelli's theorem yield
+
+ K(x,y)=integral_0^infinity omega(s)/[(x+s^2)(y+s^2)] ds,
+ omega(s)=(pi^2/96)s^2 q(s),
+ q(s)=1+A(s)-2A(s)^3,
+ A(s)=sech(2pi s).
+
+Here the Fourier calculation is
+
+ Re f(is)=(pi^3/32) A(s)[2A(s)^2-1].
+
+It follows by differentiating twice the cosine transform
+integral_0^infinity sech(u)cos(tu)du=(pi/2)sech(pi t/2).
+The density is strictly positive for s>0 because
+
+ q=(1-A)(2A^2+2A+1)>0.
+
+It is O(s^4) at zero after multiplication by s^2, and O(s^2) at
+infinity. The integral is finite even at x=y=0. Direct differentiation
+and the finite-sum identities reproduce
+
+ K(a^2,b^2)=[b S_3(b)-a S_3(a)]/[6(b^2-a^2)]       (a!=b),
+ K(a^2,a^2)=B-S_4(a)+S_3(a)/(12a)                  (a>0),
+ K(0,0)=2B.                                                    (1.1)
+
+For increasing distinct nonnegative x_i and y_j, Andreief's expansion
+of the determinant is a multiple integral of
+
+ product_l omega(s_l)
+ det[1/(x_i+s_l^2)] det[1/(y_j+s_l^2)] / n!.
+
+On ordered positive s_l both Cauchy determinants have the same strict
+sign. Absolute integrability follows term by term from the finite
+entries. Thus every ordered square minor is strictly positive. This
+also justifies density comparisons for nonsymmetric minors: the product
+of determinants has a fixed positive sign. An entrywise comparison
+alone would NOT be sufficient for a determinant comparison.
+
+2. A two-sided determinant comparison
+
+Put
+
+ c0=pi^3/192,  M=1+2/(3 sqrt(6)),  tau0=1/(sqrt(2) pi).
+
+The upper density bound q<=M is attained at A=1/sqrt(6). For the lower
+bound, cosh(v)>=1+v^2/2 implies
+
+ q(s)>=1-A(s)>=s^2/(s^2+tau0^2).                              (2.1)
+
+For tau>0 the elementary rational integral is
+
+ integral_0^infinity s^4/[(s^2+tau^2)(s^2+a^2)(s^2+b^2)] ds
+   =(pi/2) R_tau(a,b),
+
+ R_tau(a,b)=[ab+tau(a+b)]/[(a+b)(a+tau)(b+tau)].                (2.2)
+
+This extends continuously to a=0 or b=0, with R_tau(0,0)=1/tau.
+Let C(a,b) denote the n-by-n Cauchy matrix C_ij=1/(a_i+b_j).
+For strictly positive distinct nodes, density comparison gives
+
+ c0^n det R_tau0(a,b) <= det K(a_i^2,b_j^2)
+                         <= (M c0)^n det C(a,b).              (2.3)
+
+The determinant of the regularized matrix has an exact formula:
+
+ det R_tau(a,b)=det C(a,b)
+   * product_i a_i/(a_i+tau) * product_j b_j/(b_j+tau)
+   * [1+tau(sum_i 1/a_i + sum_j 1/b_j)].                       (2.4)
+
+Proof of (2.4), including the interpolation identity.
+Write u_i=1/a_i, v_j=1/b_j. Factoring rows and columns gives
+
+ R_tau = diag(a_i/(a_i+tau)) [C+tau u v^T]
+                                  diag(b_j/(b_j+tau)).
+
+It remains to show v^T C^(-1)u=sum_i 1/a_i+sum_j 1/b_j. Let
+w=C^(-1)u and F(x)=sum_j w_j/(x+b_j). Then F(a_i)=1/a_i.
+The rational function E(x)=1/x-F(x) consequently has the form
+
+ E(x)=c product_i(x-a_i)/[x product_j(x+b_j)],
+
+because its numerator has degree at most n and vanishes at all a_i.
+The residue at zero fixes c. Its expansion at zero is therefore
+
+ E(x)=(1/x) product_i(1-x/a_i)/product_j(1+x/b_j)
+     =1/x-sum_i1/a_i-sum_j1/b_j+O(x).
+
+On the other hand E(x)=1/x-F(0)+O(x). Hence
+v^T C^(-1)u=F(0) has the required value. The determinant lemma proves
+(2.4). This proof requires no symmetry between the row and column sets.
+
+For positive INTEGER nodes, (2.3)-(2.4) imply the uniform bounds
+
+ [c0/(1+tau0)^2]^n det C <= det K <= (M c0)^n det C.           (2.5)
+
+In particular
+
+                  log det K = log det C + O(n),              (2.6)
+
+where the implied constants are absolute and independent of the node
+positions, gaps, intersections, and maximum node. The Cauchy determinant
+is explicit:
+
+ det C = product_{i<j}(a_j-a_i)(b_j-b_i)
+                                 / product_{i,j}(a_i+b_j).
+
+2.1 A common zero node
+
+Suppose a_0=b_0=0 and all remaining nodes are positive. Then
+
+ det R_tau(a,b)=tau^(-1)
+   * product_{i>0} a_i/(a_i+tau)
+   * product_{j>0} b_j/(b_j+tau) * det C(a_+,b_+).             (2.7)
+
+For a direct proof, multiply row i by a_i+tau and column j by b_j+tau.
+The matrix becomes tau+ab/(a+b), with continuous value tau in its zero
+row and zero column. Subtract the zero row from every other row. The
+remaining nonzero block is a_i b_j/(a_i+b_j). Expanding at the first
+column and undoing the scalings proves (2.7), including n=1.
+
+The lower comparison is still c0^n det R_tau0. To get an upper bound
+finite at the zero node, note
+
+ q(s)<=5[1-sech(2pi s)]<=10pi^2 s^2,
+ q(s)<=(M+10pi^2 tau^2)s^2/(s^2+tau^2)     for every tau>0.
+
+The second inequality follows by multiplying by s^2+tau^2 and using
+both separate bounds q<=M and q<=10pi^2s^2. Consequently
+
+ c0^n det R_tau0 <= det K
+       <= [c0(M+10pi^2 tau^2)]^n det R_tau.                   (2.8)
+
+Choose any fixed tau, for example 1/8. For integer positive remaining
+nodes, each product in (2.7) lies between (1+tau)^(-2(n-1)) and one.
+Thus
+
+              log det K = log det C(a_+,b_+) + O(n),          (2.9)
+
+uniformly over these frames. This completes the zero-node case that
+the unregularized Cauchy comparison cannot handle.
+
+3. An arithmetic obstruction for every consecutive principal family
+
+Let nodes a_i=m+i, 1<=i<=n, where m>=0 is any integer, and let
+
+ Q_{n,m}(X)=det(X I+R),
+ R_ii=-S_4(a_i)+S_3(a_i)/(12a_i),
+ R_ij=[a_j S_3(a_j)-a_i S_3(a_i)]/[6(a_j^2-a_i^2)].
+
+At X=B this is the strictly positive kernel determinant. Let
+P_{n,m}=H_{n,m} Q_{n,m} have primitive integer coefficients, with H>0.
+Since Q is monic, H is a positive integer. This is the primitive
+normalization, not an arbitrary sufficient common denominator.
+
+3.1 Exact coefficient valuations
+
+More generally take ANY principal positive integer node set with maximum
+M0, and let p be a prime with 2M0<p<4M0, p>=5. Set
+
+        r_p=#{i:4a_i>p}.
+
+Among the odd denominators below 4a_i, the only possible multiple of p
+is p itself; 3p>4M0. Every a_i, a_i-a_j, a_i+a_j is a p-adic unit.
+Hence all entries p^4 R_ij are p-integral, and their reductions are
+
+ p^4 R_ij == -chi_4(p) if i=j and 4a_i>p,
+              0       otherwise,                         mod p. (3.1)
+
+The coefficient of X^(n-r_p) in det(XI+R) is the sum of all principal
+r_p-by-r_p minors of R. Multiplying by p^(4r_p), every such minor
+vanishes modulo p except the unique minor using ALL r_p high nodes.
+That minor reduces to (-chi_4(p))^(r_p), a unit. Therefore
+
+ v_p([X^(n-r_p)] Q)=-4r_p,
+                         v_p(H)>=4r_p.                      (3.2)
+
+This is an exact valuation statement, with a unique nonzero term after
+reduction; no generic rank or absence-of-cancellation assumption is used.
+It yields
+
+ log H >= 4 sum_{2M0<p<4M0} r_p log p.                        (3.3)
+
+For principal nodes 0,...,n-1 the beta coefficient matrix has A_00=2
+and all other diagonal entries one. The coefficient in (3.2) acquires
+the unit factor 2 modulo these odd primes, since the high nodes never
+include zero. Its valuation is unchanged. The leading coefficient is
+2, so 2H is an integer and (3.3) holds with an additional -log 2.
+
+3.2 The unshifted asymptotic inequality
+
+For a_i=i, M0=n and r_p=n-floor(p/4). The prime number theorem gives
+
+ 4 sum_{2n<p<4n} [n-floor(p/4)] log p
+        = 4 integral_{2n}^{4n} (n-x/4) dx + o(n^2)
+        = 2n^2+o(n^2).                                      (3.4)
+
+Floors contribute O(n), and partial summation justifies replacing
+the weighted prime sum by the integral.
+
+The exact Cauchy product is
+
+ det[1/(i+j)]_{i,j=1}^n
+       = product_{j=1}^{n-1}(j!)^2 / product_{i,j=1}^n(i+j),
+
+and standard sum-to-integral estimates, or Stirling's formula, give
+
+                   log det C=-2 log(2) n^2+o(n^2).           (3.5)
+
+Combining the LOWER real bound (2.5), primitive arithmetic (3.4), and
+strict positivity proves
+
+ log P_{n,0}(B)>=(2-2log 2)n^2+o(n^2).                       (3.6)
+
+The coefficient 2-2log 2 is approximately 0.6137056389, strictly
+positive. These primitive values grow, so this family cannot prove
+irrationality through shrinking integer polynomial values. For nodes
+0,...,n-1 use (2.9), M0=n-1, and the final observation of section 3.1;
+the same leading lower exponent follows.
+
+3.3 All nonnegative consecutive offsets
+
+Suppose first m/n->rho, 0<=rho<infinity. Reversing the order of the sum
+in (3.3), and using theta(x)=x+o(x) uniformly on [2M0,4M0], gives
+
+ 4 sum_p r_p log p
+   =16 sum_{a_i>M0/2}(a_i-M0/2)+o(n^2)
+   =A(rho)n^2+o(n^2),
+
+ A(rho)=2(1+rho)^2 for 0<=rho<=1,
+         8rho         for rho>=1.                            (3.7)
+
+The numerator Vandermonde product is unchanged by the shift. Thus
+
+ log det C=-D(rho)n^2+o(n^2),
+ D(rho)=3/2 + integral_0^1 integral_0^1 log(2rho+x+y) dxdy
+       =(1/2)[(2rho+2)^2 log(2rho+2)
+              -2(2rho+1)^2 log(2rho+1)
+              +(2rho)^2 log(2rho)],                         (3.8)
+
+where 0^2 log 0 means zero. The double integral is finite at rho=0.
+Its derivative is decreasing and
+
+ D'(rho)=2 integral_0^1 integral_0^1 1/(2rho+x+y) dxdy
+        <=D'(0)=4log 2<4.
+
+On both pieces A'(rho)>=4. Therefore A-D is strictly increasing and
+
+                 A(rho)-D(rho)>=2-2log 2>0.                 (3.9)
+
+For every finite proportional offset the primitive values satisfy
+
+ log P_{n,m}(B)>=[A(rho)-D(rho)]n^2+o(n^2).                  (3.10)
+
+If m/n->infinity, all nodes are high for the relevant initial prime
+intervals. The same reversed sum and the prime number theorem give
+
+ log H >= 8mn+o(mn).
+
+The exact Cauchy product and Stirling give the sufficient bound
+
+ log det C >= -O(n^2[1+log(1+m/n)]) = -o(mn).
+
+The real comparison still costs only O(n). Hence
+
+                  log P_{n,m}(B)>=(8-o(1))mn.                (3.11)
+
+Every sequence of offsets has subsequences for which m/n tends to a
+finite rho or to infinity. Combining (3.9)-(3.11) consequently proves
+the uniform statement
+
+ for EVERY sequence m_n>=0 of integer offsets,
+
+ liminf_{n->infinity} log P_{n,m_n}(B)/n^2 >= 2-2log 2.       (3.12)
+
+This is the specified-family impossibility theorem. It does not address
+arbitrary sparse node sets or rectangular row/column configurations.
+
+3.4 Changes of basis do not evade this result
+
+Multiplying a full pencil on the left and right by invertible rational
+matrices changes its determinant by a nonzero rational scalar. Its
+primitive integer polynomial is unchanged up to sign. Therefore rational
+row operations, column operations, rational congruences, diagonal
+rescaling, and preconditioning of these FULL principal pencils cannot
+evade (3.12). Selecting a different subspace is a different construction
+and is not excluded by this observation.
+
+4. Nonreal branch points of the slow filter
+
+Use the analytic germ h defined by
+
+ h'''(x)=x^2 sech'(x)/8,  h(0)=h'(0)=h''(0)=0.
+
+For odd k>=3 let
+
+ u(t)=2 atanh(t),       v(t)=2 atanh(t^k),
+ r_k(t)=2h(u)+4h(v)-4h(u+v)-2h(2v)+2h(u+2v).
+
+The slow filter is J_k(t)=6B+r_k(t). Its germ r_k is even and
+r_k(t)=-4t^(2k+4)+O(t^(2k+6)). Set z=t^2 and R_k(z)=r_k(sqrt(z)).
+Let q=sqrt(2)-1=tan(pi/8).
+
+Claim. Every point z0 satisfying
+
+                         z0^k=-q^2                          (4.1)
+
+is a genuine logarithmic branch point of analytic continuation of
+R_k. In particular k-1 of these k points are nonreal, and all are
+inside |z|<1.
+
+Proof. Since k is odd, choose the square root t0 of z0 for which
+t0^k=iq. It lies in |t|<1 and is nonzero. Then
+
+             v(t0)=i pi/4,          2v(t0)=i pi/2=:x0.
+
+Near x0, writing epsilon=x-x0, the Laurent expansion is
+
+ h'''(x)=-i pi^2/(32 epsilon^2)+O(1/epsilon).
+
+Integrating three times locally shows
+
+ h(x)=(i pi^2/32) epsilon log epsilon
+                         +O(epsilon^2 log epsilon)+analytic. (4.2)
+
+The coefficient displayed is nonzero. Also
+
+ (2v)'(t0)=4k t0^(k-1)/(1+q^2) !=0.
+
+Thus the -2h(2v) summand has a nonzero first-order logarithmic branch
+at t0. The other summands cannot cancel it. To check this precisely,
+u maps |t|<1 into the strip |Im u|<pi/2, and the poles of sech(x)
+are x=i pi/2+i pi Z.
+
+  * h(u) is locally analytic because u lies in that open strip.
+  * h(v) is regular at v=i pi/4.
+  * h(u+v) could be singular here only if u=i pi/4, hence t0=iq.
+    But |(iq)^k|=q^k !=q for k>=3, contradicting t0^k=iq.
+  * h(u+2v) could be singular here only if u=0, hence t0=0,
+    another contradiction.
+
+One can continue from the original germ along paths avoiding the
+isolated preimages of the poles; at a regular argument every branch
+of h is locally analytic. No choice of continuation changes the
+nonzero logarithmic coefficient in (4.2). Finally z=t^2 has nonzero
+derivative at t0, so the branch is also genuine at z0. This proves
+the claim.
+
+4.1 Why removing the initial zeros or inserting an algebraic weight fails
+
+The normalized nonconstant germ R_k(z)/z^(k+2) has the same nonreal
+branch points, since none is zero. More generally, let a(z) be any
+nonzero algebraic germ and b(z) any algebraic germ, and consider
+
+                         a(z) R_k(z)+b(z).                   (4.3)
+
+This includes nonzero rational prefactors, rational additions, removing
+the initial zeros, and arcsine-type algebraic factors. It also applies
+to a(z)J_k(sqrt(z))+b(z), since 6B a(z) is an algebraic function of z
+over C(z) and can be absorbed in b.
+
+Locally at a point (4.1), R_k has the form A(z)log(z-z0)+B0(z),
+where A,B0 are analytic and A has a nonzero first-order term. Algebraic
+functions have finite local monodromy (equivalently Puiseux expansions).
+After a common positive number d of small turns around z0, a and b
+return to their starting branches, whereas R_k changes by 2pi i d A.
+Thus (4.3) changes by 2pi i d a A, not identically zero. A zero or pole
+of finite algebraic order in a does not remove this monodromy. The
+nonreal singularity survives.
+
+For a finite real measure supported on a compact real set, the function
+
+                       integral dmu(s)/(1-zs)                (4.4)
+
+is holomorphic away from the reciprocal real support and has no
+nonreal singularity. The same analytic conclusion holds for finite
+signed or complex measures on a compact real support. Consequently
+none of the germs (4.3), when nontrivial, can equal such a transform.
+This rules out the usual same-variable real-support moment/Hankel
+route even after the elementary contact-normalization repair.
+
+The statement does not rule out transformations of the INDEPENDENT
+VARIABLE, higher-dimensional integral representations, non-algebraic
+operations that remove the logarithmic monodromy, complex contours,
+or a matrix kernel that does not have (4.3) as a scalar moment germ.
+It is not a universal obstruction to combining arithmetic and
+nonvanishing in some other construction.
+
+4.2 A simpler direct Loewner warning
+
+For completeness, if F(z)=J_k(sqrt(z))=c-4z^d+O(z^(d+1)), with
+c=6B>0 and d=k+2>=5, then the ordinary divided-difference kernel of F
+has a zero (0,0) entry and nonzero (0,z) entries, so its two-by-two
+principal minor is negative. Multiplying by z to retain the beta
+constant in the divided difference does not fix this: for g(z)=zF(z),
+
+ det[[g'(0),g(z)/z],[g(z)/z,g'(z)]]
+       = -4c(d-1)z^d+O(z^(d+1)) <0
+
+for sufficiently small positive z. These direct Loewner realizations
+therefore fail positivity before arithmetic is considered. Section 4.1
+is stronger because it also excludes first factoring out the long
+zero prefix and then seeking a standard real moment representation.
+
+5. Checks and reproduction
+
+Run from /home/research/Chat/Math/beta4:
+
+  .venv/bin/python collaboration/round-01/construction/checks.py
+
+The script writes only checks.json beside itself. It reconstructs (1.1)
+with Python Fraction, obtains determinant polynomials by exact FLINT
+characteristic polynomials, and computes their complete primitive
+content. It imports none of the prior experiment implementations.
+
+Current checks:
+
+  * 21 exact regularized Cauchy determinant identities, including
+    nonsymmetric frames and common-zero frames.
+  * 25 principal frames: n=2,4,6,8,12; offsets 0,n/2,n,2n; and
+    the common-zero consecutive frame at each n.
+  * 9,572 exact entry-prime residue checks for (3.1).
+  * 130 exact determinant-coefficient valuations and primitive
+    multiplier checks for (3.2).
+  * Arb interval verification at 4,096 bits that every tested
+    primitive value is above one and that each real determinant
+    lies strictly between its proved lower and upper comparisons.
+  * 26 high-precision branch-location diagnostics for k=3,5,7,11,
+    confirming that only the h(2v) argument reaches a sech pole at
+    the listed points. These last checks are numerical diagnostics;
+    the uniform logarithmic branch proof is in section 4.
+
+Finite checks support the formulas but do not prove the asymptotic
+statements. The prime number theorem, explicit Cauchy product, density
+comparison, and exact coefficient-valuation argument supply those
+proofs. Same-model agreement with the coordinator is not an independent
+audit, and no assertion of formal correctness is made.

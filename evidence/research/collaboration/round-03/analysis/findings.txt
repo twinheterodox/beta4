@@ -1,0 +1,533 @@
+Round 03: a common-base completed ladder, its real bound, and source limits
+28 October 2026. Local and unpublished.
+
+Status
+
+There is a substantive compatibility improvement for a genuinely joint
+germ. The same exact endpoint determinants have infinitely many nonzero
+values and obey
+
+  limsup log|J_n(beta(4))|/n^2 <= -(31/60) log 2.
+
+The arithmetic worker proves limsup v_2(kappa_n)/n^2 <= 1/2 for their
+ACTUAL primitive multipliers. Consequently the dyadic-only normalized
+values tend to zero with a strict margin (log 2)/60 at the n^2 scale.
+This does not make them integer forms. Odd-prime costs and common content
+remain uncontrolled at the required scale. No irrationality proof or
+actual-value obstruction for the joint determinants is obtained.
+
+The three completed polylogarithm blocks also collapse to one rational
+Mellin kernel and one four-step Euler differential tower. The minimal
+kernel denominator has degree 16, not the degree 20 of its unreduced
+product. An explicit signed Rodrigues subspace lowers the rational
+remainder's denominator from a fourth LCM power to one LCM. This is an
+exact algebraic reduction, not yet an approximation family: no choice of
+its free parameters has both proved small error and nonvanishing.
+
+There are useful rigorous limits on this source approach. The fresh
+worker proves every nonzero nonnegative source in the constrained family
+has normalized value greater than 1/2. Even for signed sources, EVERY
+absolute-value bound on the defining weighted integral is bounded below
+by a positive constant after integer normalization with a nonzero target
+coefficient. A successful signed construction must exploit cancellation
+in that integral. A large explicit exact-zero subspace also prevents a
+bare dimension or small-vector argument from supplying nonvanishing.
+
+All writes by this worker remain in this directory. This is coordinated
+model derivation and checking, not external verification or a priority
+claim. The completed Broadhurst identity is an inherited classical input.
+
+1. The new germ preserves the common powers of the arguments
+
+Write theta=beta(4), and set
+
+ q=(1-i)/2,  m=2,3,5,
+ z_2=i/2, z_3=(1+i)/4, z_5=(1-i)/8,
+ (c_2,c_3,c_5)=(225/136,-25/34,9/68).
+
+Exactly z_m=-q^m. For an analytic variable t, use the notation
+
+ I_s(z_m t^m)=[Li_s(z_m t^m)-Li_s(conjugate(z_m)t^m)]/(2i).
+
+This is an analytic germ with rational Taylor coefficients; it is not
+the operation of taking the imaginary part of a function at complex t.
+Put L(t)=-log(1-t^2/2), with L(0)=0, and define
+
+ H(t)=sum_(m=2,3,5) c_m [I_4(z_m t^m)
+          +(m/2)L(t) I_3(z_m t^m)
+          +(m^2/12)L(t)^2 I_2(z_m t^m)].                 (1.1)
+
+Then H(0)=0 and H(1)=theta by the completed ladder identity already
+established in round-02/fresh/findings.txt. Its coefficients h_j are
+rational. The different powers 2,3,5 mean (1.1) is not a common change
+of variable in the previous equal-speed germ. It retains the relation
+z_m t^m=-(qt)^m throughout the germ, while using a logarithm with the
+same boundary modulus as every polylogarithm block.
+
+The old equal-speed family and the coordinator's secondary classical-Q
+identity were tested separately. They are not silently substituted for
+(1.1) in any theorem below. The common-base family is the primary one.
+
+2. One Euler tower and one rational source
+
+Let E=t*d/dt. Define
+
+ U(t)=900t^2/[17(t^4+4)]
+      -2025t^3/[17(t^6-4t^3+8)]
+      -5625t^5/[17(t^10-8t^5+32)].                       (2.1)
+
+It is exactly sum_m c_m m^4 I_0(z_m t^m), where Li_0(z)=z/(1-z).
+Let Y_0=U, and choose Y_r by
+
+             E Y_r=Y_(r-1),  Y_r(0)=0,  1<=r<=4.
+
+Coefficientwise or by differentiation of polylogarithms,
+
+ Y_r(t)=sum_m c_m m^(4-r) I_r(z_m t^m),
+ H(t)=Y_4(t)+(L(t)/2)Y_3(t)+(L(t)^2/12)Y_2(t).            (2.2)
+
+These relations give an explicit unipotent rational differential system.
+For example a closed list of 12 coordinates is
+
+ 1,L,L^2,Y_1,LY_1,L^2Y_1,Y_2,LY_2,L^2Y_2,Y_3,LY_3,Y_4.
+
+Use E L=2t^2/(2-t^2), E Y_r=Y_(r-1), and the product rule. For Y_1,
+the right side is the rational coefficient U times the coordinate 1.
+Thus every derivative is a rational linear combination of this list.
+No minimal differential order is claimed. Its only possible finite
+singularities away from the removable initial point 0 are the poles of
+U and t=+sqrt(2),-sqrt(2).
+
+For r>=1, repeated Euler integration gives
+
+ Y_r(t)=1/(r-1)! int_0^1 U(tx)(-log x)^(r-1) dx/x.
+
+Consequently, writing rho=-log x,
+
+ H(t)=int_0^1 U(tx)[rho^3/6+L(t)rho^2/4
+                                  +L(t)^2 rho/12] dx/x. (2.3)
+
+The formula initially holds for |t|<sqrt(2), by absolutely convergent
+series, and elsewhere on the radial cut domain of section 5 by analytic
+continuation. Equivalently it is the coefficient of s^3 in
+
+ [sL(t)/(1-exp(-sL(t)))] int_0^1 x^(-s-1) U(tx) dx.        (2.4)
+
+Only the expansion 1+sL/2+s^2L^2/12+0*s^3 is used in (2.4).
+This common completion is the specific compatibility among the blocks;
+it is lost if their endpoint values are approximated independently.
+
+3. The minimal denominator and the exact endpoint normalization
+
+Put p_2=t^4+4, p_3=t^6-4t^3+8, p_5=t^10-8t^5+32, and
+g=t^2+2t+2. Each pair of p's has gcd g. Their monic LCM is
+
+                 D(t)=p_2 p_3 p_5/g^2.                  (3.1)
+
+It is squarefree, has degree 16, D(0)=256, and D(1)=25. In particular
+the degree-20 product is an unnecessarily large source denominator.
+The reduced numerator is
+
+ U(t)=225t^2 f(t)/(17D(t)),
+
+ f(t)=4t^12-25t^11+68t^10-145t^9+220t^8-232t^7+260t^6
+             -464t^5+880t^4-1160t^3+1088t^2-800t+256.      (3.2)
+
+The numerator and D are coprime. Exact division also gives
+
+                   (2-t^2)D(t) | t^120-2^60.              (3.3)
+
+There are 16 distinct U poles and two additional logarithm points; all
+lie on |t|=sqrt(2), on rays of angle 2*pi*j/120. Equation (3.3) is a
+simple certificate for their complete containment, without root numerics.
+Some possible points might have cancellation in H; no assertion that
+all 18 are genuine is needed for the upper estimate.
+
+Write H(t)=sum_(j>=1) h_j t^j, h_0=0. The exact raw endpoint form used
+by the coordinator and arithmetic worker is
+
+ b_i=h_i,  T_ij=h_(i+j)-h_(i+j-1), 1<=i,j<=n,
+ J_n(X)=det [[X,-b^T],[b,T]]
+       =X det T+b^T adj(T)b.                             (3.4)
+
+For n=0 set J_0(X)=X. Define
+
+ c_j(X)=X-sum_(l=1)^j h_l,
+ C_X(t)=(X-H(t))/(1-t)=sum_(j>=0)c_j(X)t^j.
+
+Adjacent row and column differences in [c_(i+j)] give
+[[X,-b^T],[-b,-T]]. Thus
+
+       det[c_(i+j)(X)]_(0<=i,j<=n)=(-1)^n J_n(X).          (3.5)
+
+This holds without normality or invertibility. It is a polynomial of
+degree at most one because X originally enters by a rank-one matrix.
+When the ordinary diagonal Pade system is normal it is proportional to
+q_n(1)X-p_n(1), with the exact primitive pair checked independently by
+the coordinator. There is no factor 6 in (3.4).
+
+For nonzero J_n=A_n X+B_n, let kappa_n>0 be the rational scalar making
+kappa_n J_n primitive integral. Then
+
+       v_p(kappa_n)=-min(v_p(A_n),v_p(B_n)).               (3.6)
+
+The scalar need not be an integer. Define the normalized form to be
+zero separately when J_n is the zero polynomial. All bounds below use
+this actual primitive multiplier, not an arbitrary raw clearing LCM.
+
+4. A genuine logarithmic branch gives exactly the needed nonvanishing
+
+Approach t_+=sqrt(2) along the real interval from below. The three
+polylogarithm arguments in (1.1) tend to
+
+                   i, exp(i*pi/4), exp(-i*pi/4).
+
+None is 1, so the polylogarithm factors are locally analytic on this
+continuation. The coefficient of L(t)^2 at t_+ is
+
+ A_+=(75/272)[2 beta(2)-3 Cl_2(pi/4)],                    (4.1)
+
+where Cl_2(phi)=sum_(j>=1) sin(j phi)/j^2. It is strictly negative by
+a rational certificate. The alternating series gives beta(2)<1. The
+first three terms of Cl_2(pi/4), followed by an absolute tail bound,
+give
+
+ Cl_2(pi/4) > 5sqrt(2)/9+1/4-1/3 > 25/36,
+
+using sqrt(2)>7/5 and sum_(j>=4)1/j^2<1/3. Therefore
+
+                    A_+ < -25/1088 <0.                  (4.2)
+
+It follows that H has a genuine log-squared branch at t_+. No constant
+X and division by 1-t can remove it. Hence C_X is nonrational for every
+fixed complex X, including X=theta, without assuming irrationality.
+
+Kronecker's criterion in the leading-Hankel indexing says a series is
+rational if and only if all sufficiently large leading Hankel
+determinants vanish. Applying it to (3.5) yields
+
+        J_n(X) != 0 for infinitely many n, for every fixed X.       (4.3)
+
+In particular the actual theta evaluations and their primitive
+normalizations are nonzero infinitely often. We have not proved
+nonvanishing at every size or on an independently selected subsequence.
+No positive measure or positive-definite matrix is needed for (4.3).
+
+5. A fully explicit admissible cut and its capacity
+
+Use reciprocal coordinate w=1/t, and set
+
+ G_theta(w)=(theta-H(1/w))/(w-1)
+           =sum_(j>=0)c_j(theta) w^(-j-1) near infinity.
+
+Define the filled compact star
+
+               K={w: w^120 in [0,2^(-60)]}.               (5.1)
+
+It consists of 120 radial segments of length 1/sqrt(2), with common
+endpoint 0. Its spherical complement is simply connected and contains
+infinity. It has no bounded complementary components, so K is
+polynomially convex as required by the one-variable Polya theorem.
+
+For completeness the continuation can be constructed directly, without
+assuming arbitrary branch cuts are admissible. Inverting the complement
+gives the t-plane with the 120 closed radial rays
+
+ {r exp(2*pi*i*j/120): r>=sqrt(2)}, j=0,...,119,
+
+removed. This open domain contains 0 and is star-shaped with respect to
+0. Every pole in (3.3) lies on its boundary. The radial integrals defining
+Y_r, and the branch L(0)=0, consequently give single-valued holomorphic
+functions throughout this domain. The apparent dt/t singularity at 0
+is removable because U=O(t^2), and all Y_r vanish there. There is no
+uncontrolled logarithm-sheet choice in this construction.
+
+In the w-plane the possible singular behavior at w=0 belongs to K.
+At infinity G_theta is holomorphic and O(1/w). At w=1 the numerator
+vanishes, since H(1)=theta and H is analytic near 1. This apparent pole
+is REMOVABLE. For a general X different from theta it is a genuine
+pole; the same small-star estimate is not asserted for G_X.
+
+The elementary polynomial-preimage capacity formula gives
+
+ cap(K)=[cap([0,2^(-60)])]^(1/120)
+       =[2^(-60)/4]^(1/120)=2^(-31/60).                   (5.2)
+
+One proof is to compose the interval's Green function with w^120 and
+divide by 120. Its logarithmic asymptotic at infinity gives (5.2).
+No extremal-cut or hedgehog theorem is needed; this is one explicit
+admissible cut and an upper bound on the optimal capacity, not a claim
+that the star minimizes it.
+
+Applying the one-variable Polya inequality in precisely the coefficient
+normalization (3.5), with matrix size n+1, proves
+
+      limsup_(n->infinity) |J_n(theta)|^(1/n^2)
+                             <= 2^(-31/60),              (5.3)
+
+or, with log 0=-infinity,
+
+      log|J_n(theta)| <= -(31/60)log(2)n^2+o(n^2).         (5.4)
+
+The shift from size n+1 to exponent n^2 changes no leading constant.
+To see the normalization directly, coefficient extraction gives the
+Hankel determinant as
+
+  1/[(n+1)!(2*pi*i)^(n+1)] int_(Gamma^(n+1))
+       product_j G_theta(w_j) product_(i<j)(w_j-w_i)^2 dw.
+
+Taking absolute values, using the Vandermonde definition of transfinite
+diameter, and shrinking contour neighborhoods of K yields (5.3).
+There is one capacity power at the n^2 scale, not twice that power.
+
+This is a real upper bound on exactly the raw determinant in (3.4).
+It is not a determinant asymptotic equality, a lower bound, or a bound
+on every alternative numerator construction. No estimate on a failed
+contour is promoted to an actual-value obstruction.
+
+6. Pairing with the proved dyadic primitive-multiplier bound
+
+The arithmetic worker's findings.txt, sections 4--6, proves the following
+for the SAME H and J_n. If n>=8, r=floor(log_2 n), delta=2r-2, and
+R=max(0,2n-2^(r+1)-9), then every nonzero J_n satisfies
+
+ v_2(kappa_n) <= n(n+1)/2+(6+delta)(n+1)
+                                  -ceil((n+1-R)/2).       (6.1)
+
+The proof uses integral depleted Gaussian-polylogarithm blocks and the
+exact rank R of the scaled bordered residue matrix. In particular it
+controls the actual multiplier's valuation and gives the uniform rate
+
+             v_2(kappa_n) <= (1/2)n^2+O(n log n).          (6.2)
+
+For nonzero J_n put d_n=2^max(0,v_2(kappa_n)); put d_n=1 if J_n is the
+zero polynomial. Combining (5.4) and (6.2) gives the proved strict
+compatibility statement
+
+ log|d_n J_n(theta)| <= -(log 2)/60 * n^2+o(n^2),          (6.3)
+
+so d_n J_n(theta) tends to zero, with infinitely many nonzero values by
+(4.3). The coefficients of d_n J_n are 2-integral. They generally still
+have odd-prime denominators. This is a DYADIC-ONLY shrinking theorem,
+not a sequence of shrinking integer linear forms.
+
+For example, sufficient additional arithmetic would be a bound on
+log(kappa_n/d_n) with leading rate strictly less than (log 2)/60, or a
+stronger real estimate paired with its correct full multiplier. None
+is available here. The arithmetic packet proves that a fourth layer at
+large odd primes survives except for explicitly characterized smaller
+modular defects, including an actual exception. That does not by itself
+give a global multiplier lower bound or a lower bound on J_n(theta).
+
+The coordinator's prescribed finite tests give the following diagnostics
+for this common-base family, with exact primitive pairs and Arb values:
+
+ n    log|J_n(theta)|    v_2(kappa_n)    log|kappa_n J_n(theta)|
+12        -84.592             160                 275.49
+16       -140.136             262                 566.69
+20       -213.326             388                 962.42
+
+The figures are rounded displays from alternative_germs.json, not fitted
+asymptotic rates. They do not contradict (6.3), whose n log n term can
+dominate the small margin at these sizes. No broad new Pade scan was
+performed in this analysis workstream.
+
+7. The exact shared Mellin numerator constraints
+
+At the endpoint put L=log 2, rho=-log x, and
+
+ W(rho)=rho^3/6+L rho^2/4+L^2 rho/12,
+ I(P)=int_0^1 P(x)U(x)W(-log x) dx/x.
+
+Let N=D U, a polynomial with rational denominator 17 and a zero of
+order two at 0. Take a constant A in Q and a polynomial V in Q[x],
+
+                  P=A+D V,  NV=sum_(j>=1)b_j x^j.
+
+Termwise integration gives the exact formal identity
+
+ I(P)=A theta+sum_j b_j/j^4
+             +(L/2)sum_j b_j/j^3+(L^2/12)sum_j b_j/j^2.   (7.1)
+
+The two rational conditions
+
+                    sum b_j/j^3=sum b_j/j^2=0            (7.2)
+
+remove the log 2 products, leaving a rational linear form in theta.
+They are essential; simply imposing congruence P=A mod D does not give
+a beta(4)-only form. The generic denominator of the rational remainder
+in (7.1) divides a fourth power of an LCM, which is too costly for the
+usual interval polynomial smallness estimate. A more structured
+subspace improves this denominator, as the next section proves.
+
+8. A concrete signed Rodrigues subspace and its exact-zero directions
+
+This construction was supplied by the arithmetic worker during review.
+Let N0=17N=17D U=225x^2 f(x) in Z[x]. For ANY S in Z[x] set
+
+ F=x(1-x)^2 N0^4 S,
+ V=17 E^3 F/N0,     E=x*d/dx,
+ P=A+D V.                                                (8.1)
+
+Then V is an integer polynomial. Indeed at most three differentiations
+can remove at most three of the four N0 factors; the product rule for
+E preserves integrality. Exactly NV=E^3F. If F=sum f_j x^j, it has no
+constant term, and F(1)=E F(1)=0. Thus
+
+ sum b_j/j^3=F(1)=0,
+ sum b_j/j^2=E F(1)=0,
+ sum b_j/j^4=sum f_j/j=int_0^1 F(x) dx/x.                 (8.2)
+
+For integer A, the form is therefore
+
+            I(P)=A theta+sum f_j/j,                      (8.3)
+
+and multiplication by lcm(1,...,deg F) makes both coefficients
+integers. This is a genuine reduction from four denominator layers to
+one. It is not an estimate on the size or common content of the final
+primitive pair, and it does not yet choose S or A.
+
+There is also a large exact-zero subspace inside (8.1). For any nonzero
+Z in Z[x], put
+
+ R0=N0^5(1-x)^3 Z,
+ F=E R0,
+ S=[5N0'(1-x)-3N0]Z+N0(1-x)Z'.                           (8.4)
+
+The F in (8.4) is exactly x(1-x)^2 N0^4 S. Since R0(0)=R0(1)=0,
+the rational remainder in (8.3) is integral F/x=R0(1)-R0(0)=0.
+Taking A=0 gives a nonzero source polynomial P with the exact pair
+(A,B)=(0,0). It is nonzero because E^4 is injective on polynomials with
+zero constant term, and NV=E^4R0. This supplies infinitely many exact
+zero sources, with explicit integer formulas.
+
+Consequently a dimension count or a short nonzero coefficient vector
+does not certify a nonzero endpoint form. A Siegel-lemma or lattice
+argument must work in the quotient by the exact (A,B) kernel, or supply
+another nonvanishing certificate. Choosing the free A and S only after
+finding a rational number close to theta would just restate the desired
+approximation and is not a construction. No noncircular parameter
+choice with a proved shrinking error has been found in this packet.
+
+9. Rigorous limits on positive and signed source smallness
+
+Define the preserved moments
+
+ M1=int_0^1 U(x)rho dx/x,
+ M2=int_0^1 U(x)rho^2 dx/x.
+
+The fresh worker's separate exact certificate proves M1>9/10 and
+M2>193/100. It also proves U has exactly one zero x0 in (0,1), with
+3/5<x0<5/8, U positive below x0 and negative above it. These statements
+use rational Sturm signs and rational polylogarithm tail bounds, not
+decimal sampling. Their complete proof and reproduction are in
+../fresh/mellin_positive_obstruction.txt and its checks.py/json files.
+
+Conditions (7.2) imply, for every signed P in the family,
+
+ int P U rho dx/x=A M1,
+ int P U rho^2 dx/x=A M2.                                (9.1)
+
+Two consequences must be distinguished.
+
+(a) ACTUAL values for NONNEGATIVE P. Put rho0=-log x0. The fresh
+worker observes that U and rho-rho0 have the same sign, so a nonzero
+P>=0 forces A>0 by integrating PU rho(rho-rho0). Moreover
+
+ W(rho)-(L/4+rho0/6)rho^2-(L^2/12)rho
+                                  =rho^2(rho-rho0)/6.
+
+It follows that I(P)>A C with
+
+ C=(L/4+rho0/6)M2+(L^2/12)M1>1309/2600>1/2.
+
+After any positive normalization making the target coefficient a
+nonzero integer, the actual form is therefore greater than 1/2. This
+excludes every nonzero nonnegative polynomial source in (7.2), not just
+one localized or Rodrigues family. It is not asserted for signed P.
+
+(b) ABSOLUTE estimates for ALL signed P. Let
+
+             B_abs(P)=int_0^1 |P(x)U(x)|W(rho) dx/x.
+
+Since W(rho)>=(L^2/12)rho, equation (9.1) gives
+
+ B_abs(P)>=(L^2/12) int |PU|rho dx/x
+         >=(L^2/12)|A|M1.                               (9.2)
+
+If a positive normalization kappa makes kappa*A a nonzero integer,
+then kappa B_abs(P)>1/30, using L>2/3 and M1>9/10.
+Thus even a signed source cannot prove shrinking integer values by
+bounding the defining integral with its absolute integrand. This is
+an obstruction to THAT proof method, not to the signed actual integral:
+cancellation can make |I(P)| much smaller than B_abs(P).
+
+The related uniform-norm obstruction is
+
+ ||P||_[0,1] >= |A|M1 / int_0^1 |U(x)|rho dx/x.            (9.3)
+
+In particular ||P||/|A| cannot tend to zero. The integral in the
+denominator is finite and positive. This rules out designs whose only
+real estimate is uniform smallness of a congruent numerator. If A=0,
+the endpoint form in (7.1) is rational; after integer normalization any
+nonzero value has absolute value at least one. Its exact zeros do not
+help an irrationality argument.
+
+The first-LCM arithmetic of section 8 survives these observations, but
+it is not by itself a real approximation mechanism. A future signed
+family must specify its parameters without using theta, prove a
+cancellation estimate for (8.3) or (7.1), and separately ensure a
+nonzero formal pair and nonzero endpoint values. No such family is
+claimed here. Further generic polynomial or LLL scans have been stopped
+at this structural boundary.
+
+10. Reproduction, sources, and remaining scope
+
+Run from beta4/:
+
+  python3 collaboration/round-03/analysis/checks.py
+
+The script writes checks.json beside itself. It verifies the exact
+common powers; the rational kernel; its gcd, minimal denominator, and
+120-ray divisor; two independent coefficient reconstructions through
+degree 40 against the coordinator's saved coefficients; the exact
+bidiagonal Hankel identity; and concrete instances of the Rodrigues
+one-LCM and exact-zero formulas. It records hashes of read inputs.
+These finite checks supplement the displayed uniform arguments.
+
+The arithmetic rate and residue-rank proof are read from
+../arithmetic/findings.txt, sections 4--6, with exact independent checks
+in its dyadic_joint.py/json. The coefficient comparison and numerical
+primitive examples are from ../coordinator/alternative_germs.json.
+The fresh worker separately reviewed the cut admissibility, capacity
+normalization, log-squared branch sign, and the Mellin representation.
+Root independently checked the rational source and phase count.
+
+[P] O. Gunyuz and V. Zakharyuta, On Polya's Theorem in Several Complex
+Variables, arXiv:1609.00218v1, Theorem 2.1, pp. 2--3:
+https://arxiv.org/pdf/1609.00218
+Read the one-variable statement and its exact Hankel indexing. Its
+hypotheses are verified in section 5. No multivariate sharpness result
+or determinant converse is being invoked.
+
+[K] A. Iribar Lopez, The Carlson-Polya theorem on rational functions,
+Theorem 1 and proof, pp. 2--3:
+https://people.math.ethz.ch/~airibar/Polya_Carlson.pdf
+Read the leading-Hankel rationality criterion, including eventual rather
+than all-size vanishing. Applied in section 4 without integrality or
+normality assumptions. This is a proof source for the classical result,
+not a claim that it originates in this note.
+
+[B] D. Broadhurst, Polylogarithmic ladders, hypergeometric series and
+the ten millionth digits of zeta(3) and zeta(5), arXiv:math/9803067.
+The completed identity is inherited from the round-02 fresh packet,
+which cites and verifies the relevant source equations. This worker
+has not independently rederived the classical ladder identity here.
+
+The proved output is joint real decay, matching dyadic compatibility,
+and infinitely-often nonvanishing for exactly the same determinant.
+The unresolved step is total primitive arithmetic, not a new positivity
+theorem. The shared Mellin reduction identifies a second precise route
+whose arithmetic is better but whose real cancellation and nonvanishing
+have not been established. Neither finite failures nor upper-bound
+failures are used to claim a general impossibility theorem.

@@ -1,0 +1,140 @@
+ROUND08: FRESH STRUCTURAL TESTS AND EXACT ARCHIVE GATES
+29 October 2026. Local and unpublished.
+
+Status: no irrationality proof and no credible complete construction
+whose arithmetic and analytic estimates reach one. This round clarifies
+several proposed mechanisms and retains an exact local tool. It does not
+establish that the proof is closer. The persistent goal remains active.
+
+Three fresh workers explored structural, geometric and discrete mechanisms,
+with archive comparisons and cross-reviews. Root reviewed retained
+arguments and independently reproduced selected identities. These are
+model mathematical checks, not formal verification or a human audit.
+No novelty claim or publication is made.
+
+1. A local arithmetic tool retained
+
+The positive csch functional for beta(4) is prior work of Carreira,
+already recorded in sources/carreira/beta4_determinants.tex Section10.
+For the Euler functional E(x^d)=E_d(0), put tau=-E o D^3/12. Its
+analytic norm at every odd prime is at most1, because its monomial
+values are dyadic. Extending tau_X to simple half-integer poles gives
+
+ mu_X(R)=tau_X[x^4 R(-x^2)],
+ tau_X(g)=p^(-3)sum_(a=0)^(p-1)(-1)^a tau_Y^ext(g(a+px)),
+ Y=chi_(-4)(p)p^4 X+C_p,   C_p in p^4 Z_p.
+
+The proof treats polynomial quotients and principal parts together.
+C_p is p-adic; it is not identified with a real L-value. See
+collaboration/round-08/geometry/euler_distribution.txt and the
+adversarial independent review. Exact and finite p-adic checks passed.
+
+This identity is not a favorable denominator/decay estimate. It leaves
+actual primitive polynomials of existing designs unchanged. Carreira's
+tested positive csch designs have large primitive values. His finite
+tests do not exclude every design, but a sharper sufficient clearing
+bound alone cannot change already computed values.
+
+Direct Fauzan and Lai PDFs were added and read selectively. Describing
+them initially as a fresh lead overlooked their explicit discussion
+and audits in Carreira's archived source. This was corrected before a
+new determinant scan. The source-reading log records what was read.
+
+2. Structural routes tested without general impossibility claims
+
+The beta4 tail moments admit an E-function formulation: rationality of
+theta would choose a rational initial value that cancels an exponential
+growth term. Explicit rational countermodels have the same cancellation,
+positive compact support and an exterior density pole. These features
+alone cannot supply the required rigidity theorem. The specific
+logarithmic beta4 density is not excluded by a general result here.
+
+The square-torus Epstein value is E(i,4)=4 zeta(4)theta. Four Maass
+raising operators give a holomorphic CM Eisenstein period. However a
+nonzero local function with the same Laplace eigenvalue and fixed-point
+symmetry lies in their kernel. The differentiated CM value does not by
+itself recover theta; an arithmetic reconstruction theorem is missing.
+
+An independent monodromy check found central shears preserving the
+local monodromy matrices while changing the highest polylogarithm
+coordinate. They do not preserve the boundary normalization. Also,
+theta rational does not make theta/(2pi i)^4 a rational coordinate.
+The proposed monodromy-to-irrationality implication does not follow.
+
+These conclusions concern the stated arguments. They do not rule out
+E-functions, spectral methods, monodromy or period geometry in general.
+
+3. Discrete routes and rational controls
+
+The rational-tail recurrence generates rational states for every rational
+initial value; denominators do not become bounded. Ordinary real
+convergence does not identify a real Euler product with its p-adic limits.
+A nested positive Euler fraction reduces exactly to ordinary beta4
+partial sums, including after primitive normalization.
+
+Rational-limit controls preserve positive integer partial coefficients,
+the same degree pattern, square numerators, and coprimality through any
+prescribed finite index window. Those features cannot establish descent.
+The exact repeated fourth powers of the target remain outside the controls;
+no theorem exploiting that distinction was found.
+
+See round-08/discrete/findings.txt. Adversarial checked the controls;
+root independently rebuilt nested fractions and five window constructions.
+
+4. Ladder integral: a real bound but exact old-family identification
+
+A proposed dimensional deformation has
+
+ J_n=integral_[0,1]^4 A^n/Dcube^(n+1),
+ A=t(1-t)r(1-r)x(1-x)y(1-y),
+ Dcube=r x(1-x)+(1-r)y(1-y)+tr(1-r)(x^2+y^2).
+
+An elementary bound proves0<J_n<=6theta*64^(-n), with endpoints
+controlled by an integrable majorant. This appeared to be an untested
+source-parameter ray. Checking the angular derivative indices exposed
+the error: the source lambda equals2h-1, not h. The exact factor is
+
+                 J_n=(n!)^4 4^(-n) L_(n+1,n+1),
+
+where L is the previously tested balanced ladder family. Independent
+quadrature checks the first two nontrivial cases. Rational scaling cannot
+improve primitive arithmetic. The earlier balanced-family tests apply.
+
+A separate residue calculation extends convergence of the old S_b series:
+
+ S_b(m)~(-1)^(b-1)binom(6b-2,3b-1)m^(-(6b-1)).
+
+The unweighted angular range extends to b<2h<6b. In particular h=2b-1
+converges, but corresponds to a different dimension and is not J_n above.
+Lower periods remain. The sole prescribed cofactor block b2..5 gives
+
+ 1360645139563699526527482 theta-1365344717261304522665065,
+
+whose Arb-certified value is about-1.9742*10^22. This is one finite
+test, not an asymptotic no-go. No larger scan was performed.
+
+5. Records, checks and continuation
+
+Proofs and source gates:
+ collaboration/round-08/geometry/checkpoint.txt
+ collaboration/round-08/discrete/findings.txt
+ collaboration/round-08/discrete/dimensional_ladder.txt
+ collaboration/round-08/adversarial/checkpoint.md
+ collaboration/round-08/coordinator/archive-comparison.txt
+ collaboration/round-08/coordinator/dimensional-ladder-gate.txt
+
+Root's independent script imports no worker implementation:
+ python3 collaboration/round-08/coordinator/independent_checks.py
+It passes76 polynomial distribution checks,15 moment checks,9 first
+p-adic correction checks,63 nested fractions,247 coprimality checks,
+5 symbolic rational controls and4 spectral-kernel identities.
+Larger worker checks are summarized in their checkpoints. Integration
+and archive preservation are recorded separately.
+
+Next work must change the construction or supply an actual arithmetic
+rigidity theorem. One proposed finite gate is a nonuniform internal-edge
+deformation beyond the source's uniform-index family; its exact period
+decomposition is not yet known. A separate exploration should test whether
+an integral geometric realization of the quarter-Gamma filter can actually
+be supplied, rather than repeat its formal identity. These are hypotheses
+for investigation, not claimed routes to a proof.

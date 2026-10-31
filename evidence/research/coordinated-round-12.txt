@@ -1,0 +1,98 @@
+COORDINATED BETA(4) RESEARCH: ROUND12
+29 October 2026. Local and unpublished. Closed for the user's review.
+
+Outcome
+
+There is no irrationality proof and no credible complete route. Three
+fresh workers tested different implications of rationality and a recent
+recurrence framework. The useful outcome is an exact distinction between
+two calibrated beta4 constructions and identification of why the desired
+two-formula arithmetic argument does not yet apply. The other gates close
+specific shortcuts. These are advances in family understanding, not evidence
+that a proof is near.
+
+1. A new paired-formula transfer test
+
+Leibtag et al., New Directions in Irrationality, arXiv:2610.27799v1,
+https://arxiv.org/html/2610.27799v1, use two exact presentations of the
+same approximants to obtain complementary prime divisibility estimates.
+We selectively read that mechanism; we did not audit the whole paper.
+
+The quarter-grid adaptation has an exact period space Q+Q beta3+Q beta4,
+and a rational projective coordinate calibrated to beta4. Its coefficient
+denominator inherits the original positive integer binomial sum. But the
+proposed forward and dual numerators are different, already at n=1.
+Both nevertheless define exact pure-beta4 forms; they are two sequences,
+not two presentations of one sequence. Their first prescribed primitive
+errors are negative, with log absolute values 166.9597 and 224.0707.
+These finite failures are not an asymptotic impossibility theorem.
+
+This differs from Carreira's archived recurrence scan, whose chosen
+quotients mostly approached pi-expressions and did not target beta4.
+It also differs from simply rescaling earlier hypergeometric forms.
+The missing ingredient is an exact paired identity with useful arithmetic.
+
+Details: collaboration/round-12/fresh/findings.txt. Root independently
+reconstructed both kernels and both rational numerators, including their
+nonzero mismatch. The finite signs/sizes are certified with Arb; no formal
+verification or human audit is claimed.
+
+2. A rationality-dependent Lambert series
+
+The integer-coefficient source is the classical Jouhet--Mosaki beta_q(4).
+Assuming theta=u/v, subtracting the rational polar part produces an
+integer-coefficient function tending positively to zero as q approaches1.
+This is a valid shrinking source, but its values are not integers.
+At q=(p-1)/p with truncation p^2, its exact reduced denominator is p^(p^2),
+and its numerator grows like c p^(p^2-2). An independent worker checked
+the argument and complete finite denominators.
+
+The all-roots average reduces by an exact divisor recurrence to other
+q-values, supplying no algebraicity or integer bridge. The raw counting
+sequence also fails the proposed polynomial-plus-o(1) remainder test.
+These statements concern the displayed constructions only.
+Details: arithmetic/findings.txt and geometry/lambert-review.txt.
+
+3. A regularized arithmetic germ
+
+Canceling lower endpoint periods gives the log-cube primitive
+C'(x)=-log^3(x)/[6(1+x^2)]. Under rational theta its entire germ at1 is
+rational. But adding any rational constant to the same G-function gives
+the same differential module, so the basic holonomy test detects no gain.
+More precisely, every rational linear differential operator making this
+primitive meromorphic at0 also kills its additive constant. Its local
+monodromy, continued around i, supplies the proof. This does not close
+nonlinear constructions, other modules or arithmetic holonomy in general.
+Details: geometry/findings.txt; root reviewed the monodromy argument.
+
+A separate elementary argument closes rational gauges of the ordinary
+two-state beta4 tail as a way to obtain polynomial unimodular transfers.
+Its precise scope is in fresh/tail_gauge_gate.txt.
+
+Checks and status
+
+Root independently checked 148 finite rational identities in the CMF
+fixtures, their shared forward denominator and their distinct numerators.
+Separate worker implementations check the symbolic kernels and signed
+768-bit Arb values. The Lambert source has exact divisor, root-average and
+denominator checks plus an independent model review. The differential
+module and its residues have symbolic checks and root analytic review.
+All scripts, data, source scope and reproduction commands are preserved.
+
+coordinator/integration_check.json verifies earlier hashes and worker
+packets. The arithmetic worker hit a usage limit during a manifest-only
+follow-up after finishing its work; root froze the unchanged five-file
+packet. No mathematical result was lost or inferred from that failure.
+Everything remains local and unpublished.
+
+Possible next experiment, not yet started
+
+Deform the entire forward/dual parameter identity, including its initial
+state and residue rows, instead of changing only the evaluation points.
+First determine whether a reflection-symmetric quarter specialization can
+preserve equality and proportional denominators without a new growing
+cofactor. Only after that gate should arithmetic or parameter scans begin.
+This is a concrete unresolved construction problem, not a likely-proof claim.
+
+The user requested a stopping point to review the whole program. Research
+is paused here; see review-before-pause.txt for the overall assessment.

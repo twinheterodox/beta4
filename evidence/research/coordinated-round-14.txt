@@ -1,0 +1,33 @@
+ROUND14: COMPLETE-FAMILY IDENTITIES -- BOUNDED ASSESSMENT
+30 October2026. Local and unpublished. No irrationality proof.
+
+Detailed report: collaboration/round-14/findings.txt.
+
+Two candidates were assessed. The symmetric quadratic deformation was
+identified exactly with the already archived half/quarter-pole family;
+its cross-check is not a new identity or arithmetic improvement.
+
+A moved-base Whipple identity, retaining its polynomial Abel part,
+gives a positive terminating coefficient formula and eventual signed
+nonvanishing of a beta4-only cofactor form. However, the first proved
+integer multiplier divides the second for every n, so their primewise
+combination saves nothing. Even ignoring every odd-prime denominator,
+integer clearing of the fixed cofactor normalization still grows.
+
+These are scoped statements about the supplied construction/bounds.
+A large odd numerator gcd after primitive reduction is NOT excluded.
+The six prescribed exact primitive examples are unfavorable. There is
+no favorable irrationality margin and no general hypergeometric no-go.
+
+Main derivations:
+ collaboration/round-14/coordinator/moved-whipple.txt
+ collaboration/round-14/coordinator/primewise-comparison.txt
+ collaboration/round-14/coordinator/moved_whipple.py
+ collaboration/round-14/coordinator/sources.txt
+Independent audit files are in collaboration/round-14/independent/.
+They are model cross-checks with exact computations, not formal proofs.
+
+Stop this bounded phase for review. Do not restart either tested ray
+without a specific new content/divisibility mechanism. Other complete
+identities and the full CMF deformation remain unassessed; the phase
+does not authorize automatically launching another campaign.

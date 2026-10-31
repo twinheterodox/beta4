@@ -1,0 +1,178 @@
+FOCUSED NOVELTY AND ATTRIBUTION AUDIT
+31 October 2026 — writing stage, local and unpublished
+
+Verdict
+-------
+
+There is a plausible focused paper in the exact arithmetic of the two
+selected determinant families. The present source comparison does not
+establish priority. The defensible provisional claim is:
+
+  For the two explicitly defined families, we prove lower bounds for
+  actual primitive polynomial values, including every common coefficient
+  factor, by locating coefficients with forced prime valuations.
+
+The paper should not claim the first investigation of beta(4) determinants,
+the first positive representation of beta(4), the invention of rational
+moment modifications, or a general barrier to proving irrationality.
+
+Scope of this audit
+===================
+
+All eighteen integrated research reports and the archive's twelve method
+groups were reviewed for selection. The underlying proofs of C01-C08 were
+read, with particular attention to coefficient content, uniformity in the
+offset, exact prime ranges and lower real bounds. Other entries preserve
+their own reading status; many have not been independently re-audited here.
+
+The primary-source comparison is concentrated on the proposed main paper.
+It is not a complete priority audit of all 57 inventory entries or a new
+reading of the whole literature library. The local library has broader
+historical reading records, whose scopes are not silently credited to this
+pass. Each cited PDF exists locally and has a recorded version and hash.
+
+1. Established ingredients and closest primary comparisons
+=========================================================
+
+Zudilin, A determinantal approach to irrationality, 1507.05697v2
+[ZUDILIN2015; https://arxiv.org/abs/1507.05697v2].
+
+Sections 1-2 develop the positive determinant criterion and its integral
+identity; later sections explicitly discuss the competing arithmetic and
+real-size budgets. This is direct precedent for the organizing framework.
+It also cautions against treating smaller real determinants as an automatic
+arithmetic gain. Cite it in the introduction and where the general
+determinant viewpoint is introduced. Its quantitative integer-Chebyshev
+input is not needed for the selected proofs.
+
+Prévost, Remainder Padé approximants for the Hurwitz zeta function,
+1709.05389v1 [PREVOST2017; https://arxiv.org/abs/1709.05389v1].
+
+The paper gives orthogonal-polynomial Padé remainder formulas and positive
+weights derived from Hurwitz zeta representations. The displayed integral
+proofs and the positive-weight framework predate our scalar/variation
+constructions. This comparison rules out a broad originality claim for
+positive remainders obtained from rational moments. It does not identify
+either selected arithmetic theorem with a theorem in that paper.
+
+Krattenthaler, A determinant identity for moments of orthogonal polynomials
+that implies Uvarov's formula for the orthogonal polynomials of rationally
+related densities, 2103.03969v1
+[KRATTENTHALER2021; https://arxiv.org/abs/2103.03969v1].
+
+Theorem 1 treats rationally modified moment determinants. Proposition 13
+handles repeated parameters, and Section 6 connects the formula to Uvarov.
+Thus rational weight changes, determinant formulas in orthogonal polynomials
+and confluence should not be presented as new general machinery. The
+selected Cauchy comparison has its own short proof and specific uniform
+constants. Its exact match, if any, to earlier specializations remains a
+separate priority question. The k=0 proof dependency and some confluence
+details refer to another paper, not independently audited in this pass.
+
+Carreira, Determinant constructions for the Dirichlet beta value at four,
+source commit 974a6e6c7b4bce67538aa1b9bf5883b931789d1f [CARREIRA2026].
+https://github.com/MarcosCarreira/catalan-designs/blob/974a6e6c7b4bce67538aa1b9bf5883b931789d1f/paper/beta4_determinants.pdf
+
+This is the closest beta(4)-specific comparison. Its positive/signed
+functionals, full primitive polynomial computations and discussion of the
+cost of denominator clearing must be acknowledged. Sections 10-12 were
+reread for this audit, alongside the Section 6 reading from round 18.
+The GitHub API tree check on 31 October matches the locally pinned commit.
+Neither first use of positive beta(4) functionals nor first observation of
+unfavorable primitive examples belongs to our proposed contribution.
+
+The selected proofs go beyond finite numerical failure for their own
+families: C03 treats every consecutive offset schedule, and C06 determines
+an exact local primitive exponent for every prime p>4n. The comparison
+performed here has not located those precise statements in Carreira's
+paper. That observation does not establish worldwide priority. The final
+draft should explicitly compare the kernel formulas, rather than relying
+on names such as 'positive kernel' to distinguish constructions.
+
+Brown, Mellin transforms, transfinite diameter and rational approximations
+of integrals, 2604.20741v1
+[BROWN2026; https://arxiv.org/abs/2604.20741v1].
+
+Section 7.4 expressly treats denominator clearing, common divisors and
+congruences. Removing numerator content is therefore part of the known
+method, not a new principle introduced by this investigation. Cite that
+discussion for context. The library records a degree-versus-decay issue
+with the stated Lemma 7.8; none of our proofs relies on it. The elementary
+rationality test in the paper plan keeps the degree factor explicit.
+
+2. What may be original, and what still needs checking
+=====================================================
+
+C01-C02: specific positive cubic-tail representation and uniform comparison.
+The general integral/determinant identities are standard. The candidate
+claim is the exact representation and its uniform comparison for these
+nodes, including nonprincipal row/column sets. A formula-level comparison
+with Carreira and related Stieltjes specializations remains appropriate.
+
+C03: actual primitive growth for every consecutive principal offset.
+The strong point is the unique surviving coefficient after reduction,
+combined with a lower real bound and a proof covering arbitrary offset
+schedules. Neither a large chosen denominator nor a finite scan would be
+enough. This is a main-theorem candidate with a relatively short proof.
+
+C04-C07: the difference-variable Gram construction and exact prime law.
+Moment positivity and central-binomial Hankel determinants are classical.
+The candidate contribution is their use in this specified beta(4) pencil,
+the exact third-layer exponent after primitive normalization, and the
+resulting all-index asymptotic obstruction. The leading coefficient being
+a power of two is essential to controlling all omitted primes.
+
+C08: rational basis invariance is elementary algebra. State it clearly as
+a convention/lemma, without treating it as an original theorem.
+
+S01 and P07: positive-polynomial extremality, Schur complements, Padé error
+integrals and differentiation of a minimizing quadratic form are established
+mechanisms. Their beta(4) specializations can be useful exposition, but the
+arithmetic of the ordinary first-variation family is unresolved. These are
+scope/context material, not an additional primitive obstruction.
+
+Other supplemental entries: the exact formulas, local arithmetic or
+structural arguments may deserve separate statements. This pass has not
+completed their source-level priority checks. In particular the scalar
+Euler-Boole, fixed-endpoint continued-fraction, cyclotomic norm, constrained
+Mellin and monodromy results should not inherit a novelty verdict from the
+determinant audit.
+
+3. Attribution and corrections in the wider archive
+==================================================
+
+The completed ladder is an attributed Broadhurst input [BROADHURST1998];
+Gangl's functional equation is attributed in L05 [GANGL2002]. Their use and
+specialization are separate from inventing an identity. The paired-identity
+work must cite the source of that architecture [LEIBTAG2026] at the point
+where the forward/dual construction is introduced, then distinguish our
+quarter-argument deformation and its proved arithmetic limitation.
+
+The round-12 numerator mismatch is no longer the final conclusion: Q04
+records its repair. The round-18 values must use the complete gcd reduction,
+not a raw common denominator. The dimensional ladder and arcsine parameter
+family were identified with earlier archive constructions; they must not
+be counted as new families. Round 17 is an estimate limitation, because
+possible positive numerator content was not bounded.
+
+No rationality or linear independence of the periods is assumed to justify
+formal coefficient manipulations. A coefficient map that produces a
+rational polynomial remains an explicitly defined map, even if theta's
+arithmetic nature is unknown.
+
+4. Search limits and publication language
+========================================
+
+The exact-phrase and topic queries are recorded in sources/search-log.json.
+Most results were noisy or silent. The Calegari blog supplied a bibliography
+lead to primary sources; its global irrationality or verification claims
+were not used as mathematical inputs. No Google Scholar requests were made.
+
+Use 'we prove the following obstruction for this family' after the proof
+has been assembled and checked. Do not write 'the first', 'all determinant
+methods fail', 'no known method can work', or 'independently verified' as
+an unqualified description of a model cross-check.
+
+A public draft can make a useful, modest contribution without establishing
+that no one has ever derived a related special case. The priority question
+should remain explicit while the precise theorem statements are circulated.

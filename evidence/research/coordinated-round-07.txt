@@ -1,0 +1,245 @@
+COORDINATED BETA(4) INVESTIGATION, ROUND 07: CLOSED RECORD
+29 October 2026. Local and unpublished. No irrationality proof.
+
+The interrupted round has been documented and checked. The circular
+Hermite construction now has a proved eventual rank and an actual signed
+error asymptotic. Its primitive coefficient height remains uncontrolled.
+A separate continued-fraction construction has an exact reduced-denominator
+law and fails at every fixed tail endpoint along even depths. These are
+results about specified families, not a general obstruction to beta(4).
+
+The closing pass finished proofs already under development, reproduced
+the prescribed calculations, and corrected scope/provenance statements.
+It did not enlarge the searches or begin another extension of these
+families. Separate model derivations and computational implementations
+support this record; no human audit, formal verification, or priority
+claim is made. All earlier proof packets remain preserved.
+
+The strategic handover is research-handover.txt. The concise map for
+fresh workers is archive-index.txt. Historical suggestions in older
+notes are not the current research priorities.
+
+1. The complete fixed-size endpoint system
+
+Let N>=1, a,b>=0, a+b=2N, and let D be an integer quadratic with
+D(0)=1 and no zero on [0,1]. Set E=x*d/dx and prescribe
+
+ G=R/D^N, deg R<=2N, R(0)=0,
+ f=A/(1+x^2)+E^4G/x,
+ f=O(x^a) at0 and O((x-1)^b) at1.
+
+Four integrations by parts give exactly
+
+ integral_0^1 f(x)(-log x)^3 dx/6=A*theta+G(1), theta=beta(4).
+
+The entire rational source space is isomorphic to a four-by-five
+kernel [-v|K], with Kg=Av and g_k=E^kG(1), k=0,1,2,3.
+All entries are constructed from rational data, without fitting theta.
+The proof includes the converse, singular K, and the b=0 Taylor boundary.
+
+Explicitly, put F(x)=sum_(j odd>=1)chi4(j)x^j/j^4,
+R_low=-trunc_(degree<=a)(D^N F), L(z)=product_(j=a+1)^(2N)(z-j),
+and D^N=sum d_ell x^ell. Then
+
+ K_(r,k)=sum_ell d_ell [t^k](ell+t)^r L(ell+t), r,k=0,...,3.
+
+The inhomogeneous column is the endpoint jet of R_low minus the local
+particular solution of E^4V=-x/(1+x^2). Its full formula and proof are
+in arithmetic/findings.txt, Section1, under collaboration/round-07/.
+
+Let O_a=lcm(odd positive integers<=a), C=2 O_a^4. Then K and Cv are
+integral. At augmented rank4 the endpoint pair is
+
+ (C det K, det K[column0 replaced by Cv]).
+
+Its exact two-integer gcd gives the actual primitive pair. A zero pair
+is not a witness, and deficient augmented rank requires the full kernel.
+The n=1 circular case has A=0 and gives the primitive constant1.
+
+Proofs: arithmetic/findings.txt Sections1-2; coordinator/endpoint_system.txt.
+Independent full boundary-system reconstruction: coordinator/closure_crosschecks.*.
+
+2. The arithmetic improvement and its limits
+
+With d_b=lcm(1,...,b), the matrix
+
+ Khat=K diag(1,d_b,d_b^2,d_b^3)/b!
+
+is integral. Both endpoint determinants acquire the same factor
+d_b^6/(b!)^4, so their primitive pair is unchanged. The exact common
+scalar yields a proved divisor of the raw pair's content; the remaining
+gcd is not discarded.
+
+For the local solution V at x=1, four ordinary integrations have strict
+increasing integration indices. Consequently, if
+
+ W4(m)=product_(r=1)^4 lcm(1,...,floor(m/r)),
+
+then 2^ceil((m-3)/2) W4(m) clears [z^m]V(1+z). For b>0 this gives
+
+ Z_b=gcd(2 b!, 2^ceil(b/2) W4(b+3)),
+ Chat=lcm(O_a^4,Z_b),
+
+and Chat*v/b! is integral. For b=0 take Z_0=1.
+
+The local postponement is sharp: for every prime p>=5, no coefficient
+below degree4p has denominator divisible by p^4, whereas
+
+ p^4 [z^(4p)]V(1+z) == -chi4(p)/48 mod p.
+
+This is a theorem about the local germ. It does not prove that the final
+primitive endpoint pair retains or eliminates any particular fourth layer.
+The low-endpoint data still have their separate O_a^4 cost.
+
+The best leading growth of this sufficient column bound occurs at
+a/N=1/2, b/N=3/2, with rate13/4+(3/4)log2, compared with
+4+(1/2)log2 at symmetry. This is not an optimization of the complete
+primitive pair or of its actual error. No useful uniform primitive-height
+upper or lower bound follows from the column bound alone.
+
+Proof: arithmetic/findings.txt Sections3-8.
+Separate review: analysis/arithmetic_review.txt.
+
+3. Eventual rank and the actual signed Hermite error
+
+For D=1+x^2 and a=b=N=n, the centered four-by-four rank matrix has
+
+ det K_centered ~ product_(r=0)^3(n+r)! * (1+sqrt2)^(4n+10)
+                     /[(2*pi)^2(2+sqrt2)^8 n^8].
+
+It is therefore positive and invertible eventually. The source space is
+then one-dimensional with A!=0. Small-index exceptions are retained.
+The uncentered integer matrix in Section1 has determinant2^(4n) times
+this determinant; the normalization is explicit throughout the packet.
+
+Normalize the source to A=1 and put epsilon_n=theta+G(1). A separate
+residue calculation and contour argument give the ACTUAL signed error:
+
+ epsilon_n ~ (-1)^n C0 n^(5/2)(log n)^2 rho^n,
+ rho=(sqrt2-1)/2,
+ C0=pi*sqrt(pi)/48 * (2+sqrt2)^(7/2)
+                         *(sqrt2-1)*log(1+sqrt2)^3
+   =2.4193871616202196119... >0.
+
+The proof eliminates the lower periods by determinant multilinearity.
+It controls the complex phases, rather than substituting an absolute
+upper bound. It proves eventual alternating sign and nonvanishing;
+it does not give an explicit threshold for every finite index.
+
+For the primitive pair a_n X+b_n with a_n>0, the conclusion is exactly
+
+ log|a_n theta+b_n|=log a_n+n log rho
+                 +(5/2)log n+2loglog n+log C0+o(1).
+
+The remaining arithmetic threshold is log[2(1+sqrt2)] per n. A limsup
+of log a_n/n strictly below it would suffice for irrationality by these
+forms. No such bound is proved. A poor sufficient clearing bound does
+not prove the opposite assertion.
+
+The six prescribed finite measurements still give large primitive values.
+At n=80 the relative error is roughly10^-48, but the primitive integer
+form has size roughly10^320. This is finite evidence of the arithmetic
+problem, not an asymptotic impossibility theorem for this family.
+
+Proofs: analysis/rank_asymptotic.txt and residual_asymptotic.txt.
+Separate derivations/reviews: coordinator/rank_review.txt,
+coordinator/error_asymptotic_check.txt and coordinator/closing_review.txt.
+
+4. Third derivatives of continued-fraction quotients
+
+The separate construction starts from
+
+ S(a)=integral_0^infinity exp(-at)sech(t)dt,
+ q_0=1, q_1=a, r_0=0, r_1=1,
+ (n+1)q_(n+1)=a q_n+n q_(n-1),
+
+and the same recurrence for r_n. Its exact error is
+
+ q_n S-r_n=(-1)^n integral exp(-at)sech(t)tanh(t)^n dt.
+
+For N>=1 and T_N=sum_(k=0)^(N-1)(-1)^k/(2k+1)^4, define
+
+ alpha_(n,N)=T_N+(-1)^(N+1)/12
+                         * (d/da)^3(r_n/q_n)|_(a=2N).
+
+These are rational theta-only approximants. For each FIXED N,
+
+ theta-alpha_(n,N) ~ (-1)^(N+n) K_N n^(-2N)(log n)^3,
+ K_N=2^(-2N)Gamma(N+1/2)^2/12 >0.
+
+At even depth n=2m, let d_(2m,N) be the actual reduced denominator.
+Explicit integer polynomials A_N and C_N of degree N satisfy
+
+ v_p(d_(2m,N))=8+4v_p(A_N(m))
+
+whenever m<p<2m, p>2N and p does not divide C_N(m). This equality
+comes from a unique p-unit term in the third quotient derivative. It
+already accounts for common numerator content.
+
+The exception is necessary: four saved excluded cases have exponent4.
+For fixed N, the total log size of excluded primes is only O_N(log m).
+The prime number theorem and the actual error asymptotic therefore give
+
+ liminf_(m->infinity) log|d_(2m,N)theta-b_(2m,N)|/(2m) >=4,
+
+where alpha=b/d is reduced. This closes each fixed-N EVEN-depth
+subfamily. It does not close odd depths, growing N, other combinations,
+or continued fractions generally. No growing-N extension was attempted
+in the closing pass.
+
+Proof and explicit polynomials: fresh/findings.txt.
+Separate mathematical review: analysis/fresh_review.txt.
+Independent reconstruction of all saved pairs: coordinator/closure_crosschecks.*.
+
+5. Reproductions and corrections during closure
+
+Arithmetic packet:11 archived primitive pairs and full source vectors,
+six Taylor boundaries,61 local coefficients through degree64, and four
+sharp p^4 checks. Root separately rebuilt all17 full boundary systems.
+
+Analysis packet: four exact row-replacement checks, three rank-asymptotic
+ratios,16 exact rational-kernel residue identities, and a separately
+rebuilt error determinant for all four prescribed symmetric large cases.
+
+Continued-fraction packet:68 original exact pairs,116 admissible prime
+cases, four material exceptions, and six numerical error-identity checks.
+Root independently reconstructed all68 pairs from full INTEGER continuant
+polynomials and explicit quotient derivatives. Arb enclosures confirm
+their saved signs and primitive absolute values greater than one.
+
+The six Hermite diagnostics were rerun. Their mathematical case data
+are unchanged; only the imported-code hash was refreshed. The previous
+JSON is retained as coordinator/endpoint_diagnostic_before_closure.json.
+Review tightened the continued-fraction opening statement to even depths
+and added explicit standard-input references. No substantive mathematical
+gap was found in the claims retained above.
+
+All finite numerical checks remain finite checks. The asymptotic
+conclusions depend on the written proofs and their stated hypotheses.
+
+Reproduction commands, from /home/research/Chat/Math/beta4:
+
+ .venv/bin/python collaboration/round-07/arithmetic/endpoint_arithmetic.py
+ .venv/bin/python collaboration/round-07/analysis/rank_checks.py
+ .venv/bin/python collaboration/round-07/coordinator/endpoint_diagnostic.py
+ .venv/bin/python collaboration/round-07/analysis/residual_checks.py
+ .venv/bin/python collaboration/round-07/fresh/continuants.py
+ .venv/bin/python collaboration/round-07/fresh/arithmetic_checks.py
+ .venv/bin/python collaboration/round-07/fresh/identity_checks.py
+ .venv/bin/python collaboration/round-07/coordinator/closure_crosschecks.py
+
+The integration record verifies the previous archive and records final
+proof/review hashes. README.txt and manifest.json are the only modified
+files from the frozen pre-round baseline. All new work is local.
+
+6. What remains open, without converting gaps into new assignments
+
+Hermite: useful bounds on the actual primitive target coefficient and
+common gcd; corresponding analysis for other endpoints/denominators.
+Continued fractions: growing N and odd-depth primitive behavior.
+These are unproved, and finite large values do not close them.
+
+No new mechanism was found in this closing pass that makes a successful
+irrationality proof credible. The work improves our understanding of
+these families. The revised search should seek fundamentally different
+mechanisms and use this record to avoid expensive rediscovery.

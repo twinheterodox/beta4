@@ -1,0 +1,281 @@
+INDEPENDENT ANALYTIC REVIEW OF THE NONUNIFORM INTERNAL GRAPH
+29 October2026. Local and unpublished. No irrationality proof.
+
+Reviewed sources: internal_graph/first-period.txt and coordinator/
+internal-weight-analysis.txt. The derivation below was worked out without
+reading either worker's code. The separate script uses rational point
+certificates with degree bounds, rather than their symbolic reconstruction.
+
+Outcome
+
+The n1 identity is correct. I found no normalization, radial-endpoint,
+angular-projection, or interchange gap. In particular,
+
+ J1=301/384-503 beta2/64+243 beta4/32
+                         -73 log2/24+27 zeta3/32.           (A)
+
+The primitive displayed vector is(301,-3018,2916,-1168,324). This is a
+five-period form. Its positivity and its value below1 do not prove the
+irrationality of beta4. Independence of these periods is not assumed.
+
+The review supplies a direct convergence bound independent of the printed
+rational function's asymptotics. It also proves the fixed period space
+Q+Q beta2+Q beta4+Q log2+Q zeta3 for EVERY fixed integer n>=0 in the
+prescribed family. This latter claim concerns the exact decomposition,
+not an arithmetic estimate or nonvanishing after auxiliary elimination.
+
+1. Graph and projective normalization
+
+Let the two external vectors A,B be orthogonal and have norm1. At n1,
+the outer propagator powers are2 and the central power is5 in dimension12.
+The Schwinger Gaussian matrix is
+
+ [[a1+a2+e,-e],[-e,a4+a5+e]],
+
+with determinant U. Put a1+a2+a4+a5=1 and set a1=r(1-x),a2=rx,
+a4=(1-r)(1-y),a5=(1-r)y. Then U=r(1-r)+e. Completing the square gives
+
+ F=U(a2+a5)-a2^2(a4+a5+e)-a5^2(a1+a2+e),
+
+because A dot B=0. With e=t r(1-r)/(1-t), direct substitution gives
+F=U D with precisely the printed D. The absolute outer Jacobian is
+r(1-r); multiplied by de/dt it is U^2. In the coordinate order
+(a1,a2,a4) versus(r,x,y) the signed Jacobian is negative; the measure uses
+its absolute value. This is an orientation convention, not an error.
+
+For two loops, sum(alpha)=13 and dimension12, the scale integral gives
+Gamma(1) U^-5/F. The Schwinger denominator is Gamma(2)^4 Gamma(5)=24.
+Thus a1 a2 a4 a5 e^4 U^2 U^-6 is exactly the cube numerator, and
+
+       normalized graph K=J1/24.
+
+More generally, b=2n+1,q=n gives dimension8n+4, outer power n+1 and
+central power4n+1. The corresponding normalized graph is
+J_n/[(n!)^4(4n)!]. All uses of Schwinger integration have nonnegative
+integrands; Tonelli is applicable even before finiteness is established.
+The cube bound by[2sqrt(r(1-r)x(1-x)y(1-y))]^-1 proves finiteness.
+
+2. Spherical expansion and angular normalization
+
+DLMF18.12.4 is the Gegenbauer generating function. Substitute mu=2,
+lambda=5 into DLMF18.18.16, and in the connection sum write its original
+degree as k+2j. The coefficient becomes
+
+ (k+5)/5 * (2)_(k+j)/(6)_(k+j) * (-3)_j/j!
+   =24/[(k+2)(k+3)(k+4)]
+          * (k+2)_j(-3)_j/[(k+6)_j j!].
+
+The sum stops at j3. This proves the printed d_k,P_k and the two radial
+expressions for f_k. No angular dimension is being continued: it is12.
+
+The degree-k spherical harmonic space in dimension12 has dimension
+ h_k=(k+5) C_k^5(1)/5.
+Its orthogonal projector kernel is consequently
+ (k+5)C_k^5(u dot v)/(5 Omega_12).
+Composing projectors gives the printed convolution identity. Since
+Omega_12=pi^6/60, the two angular integrations, together with pi^-12,
+give exactly1/[144(k+5)^2]. The Gegenbauer generating function at0 gives
+C_(2ell)^5(0)=(-1)^ell binom(ell+4,4) and zero in odd degree. These checks
+confirm both the angular constant and the alternating sign.
+
+3. All radial regions, including the logarithm
+
+For r<s<1, the r exponent is2k+7+2j. The inner integral gives
+s^[2(k+4+j)]/[2(k+4+j)]. The remaining s exponent is2k+5+2j+2l.
+This yields1/(L_j T_jl).
+
+For r<1<s, the same inner integral ends at1. The outer exponent is
+-2k-7-2l, giving1/(L_j M_l).
+
+For1<r<s, the r exponent is3-2j, so its integral is
+(s^(4-2j)-1)/(4-2j), with log(s) when j2. The outer exponent remains
+-M_l-1. For M>0 and M-N>0,
+
+ integral_1^infinity s^(-M-1)(s^N-1)/N ds
+       =1/[M(M-N)].
+
+At N0, differentiating integral s^(-M-1)=1/M gives the same value1/M^2.
+Here N=4-2j and M-N=V_jl>0 for every k>=0,j,l in{0,1,2,3}.
+This verifies the third term. Symmetry of the original r,s integral
+supplies the factor2. There is no omitted endpoint contribution.
+
+4. Independent justification of the integrated series
+
+Euler's hypergeometric integral gives
+
+ P_k(s)=E[(1-sT)^3], T~Beta(k+2,4), 0<=s<=1.
+
+Hence P_k>=0, and using(a+b)^3<=4(a^3+b^3) gives
+
+ P_k(s)<=4[(1-s)^3+120/((k+6)(k+7)(k+8))].              (B)
+
+Set r=e^x,s=e^y. Direct substitution into the complete radial integral
+gives, before any finite expansion of P,
+
+ I_k=d_k^2 integral_(R^2)
+   exp[x+y-(k+2)(|x|+|y|)-(k+5)|x-y|]
+   P_k(e^(-2|x|)) P_k(e^(-2|y|)) dx dy.                 (C)
+
+Bound exp(x+y)<=exp(|x|+|y|), drop exp[-(k+5)|x-y|]<=1,
+and use1-exp(-2|x|)<=2|x| in(B). Then
+
+ integral_R e^(-(k+1)|x|) P_k(e^(-2|x|)) dx=O(k^-4).
+
+Since d_k=O(k^-3), (C) yields I_k=O(k^-14). Projector Cauchy--Schwarz
+gives |C_k^5(z)|<=C_k^5(1)=binom(k+9,9). The absolute integrated terms
+after angular projection are therefore O(k^-14 k^-2 k^9)=O(k^-7).
+Their sum converges. This estimate uses no cancellation in the j,l sum
+and no prior use of the claimed rational function R.
+
+For fixed r,s away from r1,s1,r=s, all generating series converge
+absolutely and uniformly in the angular variables. Their finite-radius
+angular identity can thus first be obtained there. The nonnegative
+majorant just proved allows its radial integration by Tonelli/Fubini.
+The excluded radial equalities have measure0. This validates the exchange
+through the potentially singular loci as well.
+
+5. Exact rational certificates and period reduction
+
+The script independently computes the radial sum at k0,...,30 using
+fractions and compares it with the printed R(k). This is a rational-
+identity proof, not numerical sampling: the common polynomial
+
+ Q(k)=product_(q=1)^9(k+q)^4
+
+clears both expressions. In each uncombined radial term, d_k^2 contributes
+at most double poles at2,3,4; the p_j p_l factors contribute at most double
+poles at6,7,8. Each radial denominator contributes two simple linear
+factors, and the angular denominator has a double pole only at5. Thus no
+pole exceeds order4. Each uncombined expression for R is O(k^-6), so
+Q times their difference is a polynomial of degree at most30. Its31
+distinct zero values certify that it is zero identically.
+
+Likewise the printed partial-fraction table is checked at36 values.
+After multiplication by Q, its difference from R has degree at most35.
+These are exact equality certificates with explicit degree costs.
+
+The separate period aggregation gives
+
+ rational301/384, beta2 -503/64, beta4 243/32,
+ eta1 -73/24, eta3 9/8,
+
+and zero for beta1,beta3,eta2,eta4. All partial-fraction alternating sums
+converge, including the s1 terms, so a finite sum of their limits is valid.
+Using eta1=log2 and eta3=3zeta3/4 proves(A). No PSLQ, numerical integral,
+or fitted coefficient was used in this review.
+
+6. General fixed-n period-space theorem
+
+This is an analytic extension of the review, not a claim of a useful
+arithmetic sequence. Fix n>=0 and put a=n+1,lambda=4n+1, Dspace=8n+4.
+The outer expansion has
+
+ d_(n,k)=(k+lambda)/lambda * (n+1)_k/(4n+2)_k,
+ P_(n,k)(s)=2F1(k+n+1,-3n;k+4n+2;s).
+
+The same connection formula proves it. Write a_j(k)=[s^j]dP,0<=j<=3n.
+Cancelling the initial Pochhammer factors gives the useful exact form
+
+ a_j(k)= [(4n)!/n!] (-1)^j binom(3n,j)
+  /[product_(q=n+j+1)^(4n)(k+q)
+    product_(q=4n+2)^(4n+j+1)(k+q)].                    (D)
+
+Empty products mean1. In particular each pole of a_j is simple, and
+k+lambda is absent from its denominator.
+
+The radial sum is2 sum_(j,l)a_j a_l times the same three fractions,
+now with
+
+ L_j=2(k+3n+1+j),       M_l=2(k+2n+1+l),
+ T_jl=2(k+2n+1+j+l),    V_jl=2(k+1+j+l).                (E)
+
+For the outer region the logarithmic case is j2n. The same limiting
+identity used above applies. Define this complete radial sum as I_n(k),
+and put
+
+ C_n(k)=product_(r=1)^(4n)(k+2r)/(2^(4n)(4n)!),
+ R_n(k)=4(n!)^4 C_n(k) I_n(k)/[(4n)! (k+lambda)^2].       (F)
+
+The angular and Schwinger constants derived above give exactly
+
+                 J_n=sum_(ell>=0)(-1)^ell R_n(2ell).
+
+The n0 specialization is R_0(k)=6/(k+1)^4, independently confirming
+J_0=6 beta4 and the full normalization.
+
+Absolute convergence for fixed n is proved as follows. Euler's integral
+writes P_(n,k)(s)=E[(1-sT)^(3n)] with
+T~Beta(k+n+1,3n+1). For n>=1,
+P_(n,k)(s)<=C(n)[(1-s)^(3n)+k^(-3n)] for k>=1.
+The log-coordinate version of(C) has exponent
+
+ n(x+y)-(k+n+1)(|x|+|y|)-(k+4n+1)|x-y|.
+
+The first term is bounded by n(|x|+|y|). Thus its one-variable bound is
+O_n(k^(-3n-1)), and d_(n,k)=O_n(k^-3n). Consequently
+
+ I_n(k)=O_n(k^(-12n-2)).
+
+Since C_k^lambda(1)=O_n(k^(8n+1)), the absolute angular terms are
+O_n(k^(-4n-3)). For n0 the same estimate follows with P=d=1 directly.
+These estimates are for each fixed n; no uniform-in-n conclusion follows.
+
+By(D)--(F), R_n has only poles k=-q for integers1<=q<=8n+1, and every
+pole has order at most4. Away from the angular pole, a_j a_l supplies
+at most2 orders and the radial fraction at most2. At the angular pole
+the a_j factors are regular, leaving at most2+2. Polynomial factors can
+only cancel poles. Also R_n is proper: even the uncombined summands are
+O_n(k^(-2n-4)). Thus its partial fractions use only orders1,...,4.
+
+There is an exact reflection. Put k'=-2lambda-k and j'=3n-j. Formula(D)
+gives a_j(k')=a_j'(k): reflection permutes its3n denominator factors,
+and its sign is compensated by(-1)^j binom(3n,j). Formula(E) gives
+
+ L_j(k')=-M_j'(k),  M_l(k')=-L_l'(k),
+ T_jl(k')=-V_j'l'(k),  V_jl(k')=-T_j'l'(k).
+
+The first and third radial terms exchange after swapping the two summation
+indices; the middle one is preserved. Therefore I_n(k')=I_n(k).
+The polynomial C_n and the squared angular factor are also invariant,
+so R_n(k')=R_n(k).
+
+If c_(q,s) denotes a partial-fraction coefficient, this reflection says
+c_(2lambda-q,s)=(-1)^s c_(q,s). For paired odd q, the beta-shift signs
+are equal; hence odd beta orders cancel. For paired even q, the eta-shift
+signs are opposite; hence even eta orders cancel. The middle pole q=lambda
+is odd and has no odd-order coefficient. Consequently only beta2,beta4,
+eta1,eta3 and rational finite-tail terms remain. This proves the stated
+five-period space for every fixed n.
+
+7. Coordinator's auxiliary analytic claims
+
+The maximum of P is uniquely at r=x=y=1/2,t1, with value1/256. The printed
+expansion log(256P)=-8u^2-4v^2-4w^2-4s+O(u^4+v^4+w^4+s^2) is correct.
+The Gaussian factor pi^(3/2)/(8sqrt2), endpoint factor1/4 and denominator
+value8/3 give exactly pi^(3/2)/(12sqrt2). The integrable1/D majorant controls
+the complement of a fixed neighborhood, so the stated Laplace argument is
+valid. The beta-integral normalization K_n also simplifies to the printed
+factorial expression. These give nonzero signed decay of J_n itself, not
+of a signed combination chosen to eliminate auxiliary periods.
+
+I did not review the three-coordinate Jacobian used to compare with the
+old external moments; that is separate from the identity reviewed here.
+
+8. Primary sources and verification scope
+
+Official DLMF18.12.4, read for the Gegenbauer generating function:
+https://dlmf.nist.gov/18.12.E4
+Official DLMF18.18.16, read for the parameter connection formula:
+https://dlmf.nist.gov/18.18.E16
+Official DLMF15.6.1, read for Euler's integral with its gamma normalization:
+https://dlmf.nist.gov/15.6.E1
+DLMF15.6.1 uses the regularized/Olver hypergeometric function; multiplying
+by Gamma(c) gives the ordinary2F1 used here. In the terminating case the
+positive beta expectation follows also by integrating its polynomial termwise.
+
+internal_graph_review.py and .json preserve the exact independent checks.
+They include31+36 bounded-degree rational-identity certificates,4 Gaussian/
+projective identities,16 finite connection coefficients, and the complete
+period coefficient vector. The general fixed-n reasoning above is a written
+proof, not formal verification. It does not estimate primitive coefficient
+growth, prove independence of periods, or establish an irrationality result.

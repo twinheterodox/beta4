@@ -1,0 +1,30 @@
+[
+  {
+    "title": "A determinant identity for moments of orthogonal polynomials that implies Uvarov's formula for the orthogonal polynomials of rationally related densities",
+    "version": "2103.03969v1",
+    "source_url": "https://arxiv.org/abs/2103.03969v1",
+    "download_url": "https://arxiv.org/pdf/2103.03969v1",
+    "resolved_url": "https://arxiv.org/pdf/2103.03969v1",
+    "local_path": "/home/research/Chat/Math/beta4/literature/papers/Determinant-identity-for-rationally-modified-moments_Krattenthaler_2103.03969v1.pdf",
+    "sha256": "9257216e0cfef032a4ab8f4799ef3251fe18027a053fade8f93e1e36c152001b",
+    "retrieved_at_utc": "2026-10-31T13:13:14.882219+00:00",
+    "status": "Read to the scope in reading-record.json; not a complete independent proof audit.",
+    "text_path": "/home/research/Chat/Math/beta4/literature/text/Determinant-identity-for-rationally-modified-moments_Krattenthaler_2103.03969v1.txt",
+    "actual_read_scope": "Text lines 1-830: Sections 1-6, including the main determinant statement, the displayed auxiliary and condensation arguments, repeated-parameter formula and Uvarov connection. Later application examples not read.",
+    "unread_dependencies": "The k=0 base case and part of the confluence argument refer to arXiv:2101.04225, not downloaded or read in this pass. Other orthogonal-polynomial references were not separately audited. No quantitative theorem from the paper is applied; the comparison establishes that the general rational-weight determinant framework predates this work."
+  },
+  {
+    "title": "Remainder Pade approximants for the Hurwitz zeta function",
+    "version": "1709.05389v1",
+    "source_url": "https://arxiv.org/abs/1709.05389v1",
+    "download_url": "https://arxiv.org/pdf/1709.05389v1",
+    "resolved_url": "https://arxiv.org/pdf/1709.05389v1",
+    "local_path": "/home/research/Chat/Math/beta4/literature/papers/Remainder-Pade-approximants-for-the-Hurwitz-zeta-function_Prevost_1709.05389v1.pdf",
+    "sha256": "5861d99061460d253ba17cdac081f9ce9fb5bfcdaf4ab131a04a456d65b58038",
+    "retrieved_at_utc": "2026-10-31T13:13:15.325131+00:00",
+    "status": "Read to the scope in reading-record.json; not a complete independent proof audit.",
+    "text_path": "/home/research/Chat/Math/beta4/literature/text/Remainder-Pade-approximants-for-the-Hurwitz-zeta-function_Prevost_1709.05389v1.txt",
+    "actual_read_scope": "Text lines 1-600: Sections 1-4 and the opening of Section 5, including Padé/orthogonal-polynomial remainder formulas, positive-weight representation, and the displayed proofs of the main representation/convergence results.",
+    "unread_dependencies": "The imported Stieltjes convergence theorem and primary Hermite/Plana references were not independently read in this pass. Later s=2,3 explicit examples are not used. The comparison concerns the prior positive-weight/Padé framework, not a new application of its convergence theorem."
+  }
+]

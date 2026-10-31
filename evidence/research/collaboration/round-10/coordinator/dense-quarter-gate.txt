@@ -1,0 +1,61 @@
+DENSE QUARTER GRID: CLOSED BOUNDED GATE, NO IRRATIONALITY PROOF
+29 October 2026. Local and unpublished.
+
+Closure: the analytic construction below is correct and independently
+reviewed. Its K3,5,7 primitive determinants have logarithmic values
+4.72051,23.30580,61.97903, respectively. No larger scan was run. See
+review.txt, dense_quarter_checks.json, dense_quarter_independent.json
+and ../fresh/dense_quarter_review.txt. The opening reasoning follows,
+including the refinement from a finite-difference proof to interpolation.
+
+Archive comparison. Read research-handover.txt, archive-index.txt,
+Carreira beta4_determinants.tex Section10, new-avenues.txt Section2,
+orthogonal-cancellation.txt Sections1-4, new-constructions.txt Section4,
+round08 Euler distribution and Lai-transfer notes. Existing constructions
+already include isotropic cancellation, interlaced csch/sech grids and a
+positive matrix completion. The present proposed ingredient is a SINGLE
+Bernoulli/Hurwitz functional on all quarter-grid poles, eliminating its
+zeta4 coefficient by a positive interpolation polynomial. It is not claimed
+to be new in the literature or inequivalent to all archived families.
+
+Let f(y)=1/(exp(2pi y)-1), w(y)=-y^4 f'''(y)/3>0, and
+nu(R)=integral_0^infinity R(y^2)w(y)dy. Integration by parts and Hermite's
+formula give
+ nu(t^e)=(2e+4)! |B_(2e+2)|/[6(2e+2)!],
+ nu(1/(t+a^2))=a^3 zeta(4,a)-1/(2a)-1/3.
+The imported formulas being checked are DLMF25.11.E29 and E3. No theorem
+from the recent claimed irrationality proofs is required for this gate.
+
+Put a_j=(2j+1)/4, 0<=j<K, D_K(t)=product_j(t+a_j^2). Then
+ zeta(4,a_j)=120 zeta4+128(-1)^j theta - finite rational tail.
+Let S_K be the degree<K interpolation polynomial satisfying
+ S_K(-a_j^2)=1/a_j.
+All divided differences of (-t)^(-1/2) at negative nodes are positive.
+Its Newton expansion therefore gives S_K(t)>0 for t>=0.
+
+Candidate cancellation identity:
+ sum_j a_j^2 (-a_j^2)^m / D_K'(-a_j^2)=0, 0<=m<=K-3.
+Reason: D' introduces a factor (2j+1); after extending the sum to the
+negative mirror nodes, this is an odd polynomial of degree2m+3 against
+an alternating binomial coefficient of order2K-1. The full finite
+difference vanishes when2m+3<2K-1, and the two halves agree.
+
+If checked, H_ij=nu(S_K(t)t^(i+j)/D_K(t)) for 0<=i,j<r,
+2r-2<=K-3, is a positive Gram matrix in Q+Q theta. Its theta coefficient
+is itself definite: (-1)^j/D'_K(-a_j^2)>0. Thus det H has exact degree r
+and is positive at theta. This is a structural gate, not an arithmetic
+estimate; S_K has high degree and may destroy any presumed analytic gain.
+
+Decisive first test: independently verify the finite-difference identity,
+build S_K and COMPLETE rational functional including polynomial quotients,
+then inspect actual primitive determinants at K3,5,7 (r1,2,3). Do not
+optimize parameters or infer an asymptotic obstruction from those values.
+If primitive values are unfavorable and no specific arithmetic repair is
+visible, retain the short construction and close the gate.
+
+Opening refinement before the determinant test: the cancellation above is
+just Lagrange interpolation, not a special binomial identity! At the nodes
+t_j=-a_j^2, a_j^2 t_j^m=-t_j^(m+1), and sum t_j^d/D'(t_j)=0 for d<K-1.
+Thus it holds for ANY distinct positive rational a_j when the nuisance
+period coefficient is a_j^3. The dense quarter grid is used to have exactly
+the two periods zeta4 and theta, not to establish the cancellation itself.

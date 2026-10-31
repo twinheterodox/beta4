@@ -1,0 +1,263 @@
+ROUND 12 FRESH LANE: A QUARTER-GRID CMF TRANSFER GATE
+29 October 2026. Local and unpublished. No irrationality proof.
+
+OUTCOME
+
+There is an exact quarter-grid construction in Q+Q beta(3)+Q beta(4)
+with a rational projective coordinate for unnormalized beta(4). Its
+beta(4) denominator is the same positive integer binomial sum as in
+Leibtag et al., arXiv:2610.27799v1, Section 6.2. However, the two natural
+extensions of that paper's numerator identity give DIFFERENT rational
+numbers. Equality already fails exactly at n=1. The two prescribed n=1
+primitive beta(4) forms are negative and have logarithmic absolute
+values 166.95969... and 224.07073..., respectively, certified by Arb.
+
+This does not prove an asymptotic obstruction, and no such claim is made.
+The missing ingredient remains a second exact arithmetic presentation of
+the SAME beta(4) approximants. Replacing harmonic numbers by quarter-grid
+harmonic sums does not supply it. No direction or parameter scan was run.
+
+1. Archive comparison and the proposed new ingredient
+
+00_comparison.txt records the independent starting idea and the initial
+archive reading. The integral-transfer proposal for the ordinary tail
+was closed by tail_gauge_gate.txt: no rational gauge of that two-state
+tail produces a polynomial matrix. This is a scoped extension of the
+archived nonsummability check, and not a new proof direction.
+
+Before the CMF calculation, also read:
+  sources/carreira/beta4_determinants.tex, Section sec:cmf, lines 421--431;
+  hypergeometric-arithmetic.txt, Sections 1--3;
+  collaboration/round-10/symmetry/findings.txt.
+
+Carreira's old CMF quotient scan did not target beta(4) itself. The old
+Barnes/quarter-pole identities already isolate beta(4) by differentiation
+and reflection. None of these archive facts is an obstruction to all CMF
+or quarter-pole methods. The attempted NEW ingredient here was to inherit
+two exact presentations of one approximation sequence, allowing primewise
+divisibility information from both presentations to be combined. This is
+different from rescanning old rational sources or removing a common scalar.
+
+The primary source is:
+  E. Leibtag et al., New Directions in Irrationality,
+  arXiv:2610.27799v1, 20 October 2026,
+  https://arxiv.org/html/2610.27799v1 .
+Sections 2--3, 6.1--6.2 and the relevant part of Appendix B.1 were read
+selectively. The full paper and supplementary certificates were NOT audited.
+We import the source's binomial/minor identity (Lemmas 6.9 and 6.13) below;
+its n=0,1 instances were independently reconstructed exactly. No new result
+in this packet depends on accepting the source's final irrationality claim.
+
+2. The quarter-grid period identity, for every n>=0
+
+Use rising factorials, and define the source rational function
+
+ R_n(s)=(-1)^n (1+2n-s)_(14n) (1+n-s)_(16n)
+              /[(s)_(11n+1)(s+n)_(11n+1)(s+2n)_(8n+2)].             (1)
+
+For k=0,1,2 write its exact partial fractions as
+
+ (-s)^k R_n(s)=sum_(j,i) c_(n,j,i)^(k)/(s+j)^i, 1<=i<=3.           (2)
+
+Define row vectors, with coordinates k=0,1,2,
+
+ a_(n,k)=3 sum_j c_(n,j,3)^(k),
+ b_(n,k)=2 sum_j c_(n,j,2)^(k),
+ d_(n,k)(alpha)=-sum_(j,i) i c_(n,j,i)^(k)
+                                  H_(2n+j)^(i+1)(alpha),
+ H_m^(r)(alpha)=sum_(ell=0)^(m-1) (ell+alpha)^(-r).                 (3)
+
+Let L_n(alpha) be the row vector with coordinate
+
+ L_(n,k)(alpha)=-sum_(m>=0) [d/ds ((-s)^k R_n(s))]
+                                          evaluated at s=m+2n+alpha.
+
+For alpha>0 all these sums converge absolutely. Since (2) is O(s^-2)
+or smaller at infinity, sum_j c_(n,j,1)^(k)=0. Summing the differentiated
+partial fractions therefore gives exactly
+
+ L_n(alpha)=a_n zeta(4,alpha)+b_n zeta(3,alpha)+d_n(alpha).           (4)
+
+No numerical period independence is used. Subtract alpha=3/4 from 1/4:
+
+ V_n:=L_n(1/4)-L_n(3/4)
+     =256 a_n beta(4)+64 b_n beta(3)+d_n^chi,
+ d_n^chi=d_n(1/4)-d_n(3/4).                                      (5)
+
+The identity zeta(r,1/4)-zeta(r,3/4)=4^r beta(r) follows directly by
+splitting the absolutely convergent defining series into residues 1,3 mod4.
+
+At n=0, R_0(s)=1/[s^3(s+1)], so the exact state is
+
+ V_0=(768 beta(4)-128 beta(3)+128/9,
+      -128 beta(3)+128/9,
+      128/9).                                                    (6)
+
+In particular (V_(0,0)-V_(0,1))/V_(0,2)=54 beta(4). This is a calibrated
+rational projective coordinate, not a numerical identification of a limit.
+
+By contrast, directly putting alternating signs on consecutive half-grid
+samples of R_0 gives
+
+ (48 beta(4)-16 beta(3)+8 beta(2)-4,
+  -16 beta(3)+8 beta(2)-4,
+  8 beta(2)-4).
+
+Thus the source's formal rational last coordinate is lost in that naive
+alternating transfer. The quarter difference repairs exactly this problem.
+Equivalently, one can dilate the pole grid by two before alternating.
+
+3. The denominator identity survives, but the numerator identity does not
+
+Put u_n=(1,10n+1,(10n+1)^2) and
+
+ Lambda_n=(8n)!(9n)!^2(11n)!^3(12n)!^3(13n)!^2
+           /[6(16n)!^2(17n)!^2(18n)!^2(19n)!].                    (7)
+
+The source identity is
+
+ Q_n=Lambda_n det[b_n;a_n;u_n]=sum_(k=0)^(14n) B_(n,k),             (8)
+
+where the B_(n,k) are positive integers and
+
+ B_n(x)= (15n)!^2/(10n)!^3
+         * Gamma(12n+x+1)Gamma(13n+x+1)Gamma(14n+x+1)
+         /[Gamma(x+1)Gamma(n+x+1)Gamma(2n+x+1)
+           Gamma(3n+x+1)Gamma(4n+x+1)
+           Gamma(14n-x+1)Gamma(15n-x+1)].                         (9)
+
+Use the holomorphic continuation at each integer -n<=k<=15n to define
+B_(n,k)=B_n(k) and B'_(n,k)=B_n'(k). The endpoint extensions outside
+0<=k<=14n have B_(n,k)=0, with potentially nonzero derivatives.
+
+Because the rows a_n,b_n in (5) are unchanged, (8) is inherited exactly.
+It supplies Q_n>0 for every n. Define the rational quarter dual numerator
+
+ P_n^D=(Lambda_n/256) det[d_n^chi;b_n;u_n].                          (10)
+
+Taking the determinant of (5) with b_n,u_n proves the actual error identity
+
+ Q_n beta(4)-P_n^D=-(Lambda_n/256) det[V_n;b_n;u_n].                 (11)
+
+This is a pure beta(4) form. It does not prove that the actual signed error
+is eventually nonzero or sufficiently small after primitive reduction.
+
+The tempting forward replacement is
+
+ F_n(alpha)=sum_(k=-n)^(15n)
+       [B_(n,k) H_(4n+k)^(4)(alpha)
+        -(1/3)B'_(n,k) H_(4n+k)^(3)(alpha)],
+ P_n^F=[F_n(1/4)-F_n(3/4)]/256.                                  (12)
+
+The source numerator at alpha=1 equals Lambda_n det[d_n(1);b_n;u_n].
+For quarter differences, P_n^D=P_n^F is FALSE: it fails exactly at n=1.
+The reduced nonzero rational defect P_1^D-P_1^F is stored in
+cmf_quarter_gate.json. Its approximate value is 0.0000016797244123165156.
+Thus the source's two arithmetic presentations cannot simply be carried
+over by replacing all harmonic numbers with quarter harmonic numbers.
+
+4. The forward replacement is a separate exact scalar construction
+
+The failure in Section 3 is not a failure of (12) to define an approximation
+identity. In fact put
+
+ T_n(z)=(-1)^n (15n)!^2/(10n)!^3
+        * (z-8n)_(10n)(z-9n)_(10n)(z-10n)_(10n)
+        /[(z+4n)_(14n+1)(z+3n)_(16n+1)].                          (13)
+
+Then the full exact partial fraction decomposition is
+
+ T_n(z)=sum_(k=-n)^(15n)
+       [B_(n,k)/(z+4n+k)^2-B'_(n,k)/(z+4n+k)].                   (14)
+
+Proof. Substitute x=-z-4n in (9). Twice applying Gamma reflection yields
+B_n(x)=(sin(pi x)/pi)^2 T_n(-x-4n). At each integer k, the quadratic
+zero of sine shows that the double-pole coefficient is B_n(k) and the
+simple-pole coefficient is -B_n'(k) after changing coordinates to z.
+There are no other poles, and both sides of (14) tend to zero at infinity.
+This proves the rational identity. Alternatively, cancellation of the
+displayed finite factorial products proves the same local coefficients.
+Since T_n(z)=O(z^-2), sum_k B'_(n,k)=0. QED.
+
+Differentiating (14) twice, summing, and using this zero residue sum gives
+
+ (1/6)sum_(m>=0) T_n''(m+alpha)=Q_n zeta(4,alpha)-F_n(alpha).
+
+Consequently
+
+ Q_n beta(4)-P_n^F
+   =(1/1536)sum_(m>=0)[T_n''(m+1/4)-T_n''(m+3/4)].                (15)
+
+Thus P^F and P^D define two different exact beta(4) form sequences. The
+forward source is a scalar double-pole construction, overlapping the
+archived general mechanism. A second paired arithmetic presentation of
+this precise sequence would be a new ingredient; (10) is not that pairing.
+
+5. Actual primitive arithmetic and signed values at the prescribed gate
+
+At n=1, Q_1=17922919673131438881235320. Rational P^D and P^F are computed
+exactly from (10),(12). For each, clear denominators and divide by the
+full gcd, obtaining A beta(4)-B with A>0 and gcd(A,B)=1.
+
+The exact integers A,B are in cmf_quarter_gate.json. At 768-bit precision,
+Arb certifies:
+
+  construction     sign     log|A beta(4)-B|
+  quarter dual      -       166.95969655625934022985...
+  quarter forward   -       224.07073352222812688706...
+
+Both absolute values exceed one. Before primitive integer normalization,
+the corresponding errors Q_1 beta(4)-P_1 are approximately
+  -1.6797244134381753e-6  (dual),
+  -1.1216596554425937e-15 (forward).
+These small rational forms do not become small integer forms.
+
+Neither example is a theorem against its whole sequence. In particular,
+the loss of exact numerator zeros on quarter samples is not by itself
+proof that the actual signed sums fail to decay. No tail was dropped,
+no later starting index was substituted, and all rational corrections
+in (3), (12) were retained. The n=0 form is beta(4) itself; its size below
+one has no irrationality consequence.
+
+If beta(4)=u/v were rational, every nonzero primitive form would have
+absolute value at least 1/v. A proof still needs infinitely many nonzero
+forms tending to zero. This gate establishes neither requirement for
+the growing sequences. There are no growing-degree polynomial claims.
+
+6. Reproducibility, review, and closure
+
+cmf_quarter_gate.py uses exact Fraction arithmetic for n=0,1 only. It
+reproduces the source's q,p3,p4 identities at alpha=1 before evaluating
+the quarter transfer. The log-derivative residue implementation is checked
+by independent_checks.py using expanded SymPy rational identities for
+all six R rows and both T kernels. verify_arb.py checks the full gcd and
+rigorously encloses both signed primitive values.
+
+Commands from /home/research/Chat/Math:
+  python3 beta4/collaboration/round-12/fresh/cmf_quarter_gate.py
+  PYTHONDONTWRITEBYTECODE=1 python3 beta4/collaboration/round-12/fresh/independent_checks.py
+  beta4/.venv/bin/python beta4/collaboration/round-12/fresh/verify_arb.py
+
+The coordinator separately reconstructed the original quarter dual gate
+using truncated products rather than the author's log derivatives. See
+../coordinator/check_cmf_quarter.py and cmf_quarter_independent.json.
+That review matched the n=0,1 residue rows, shared denominator and complete
+primitive pairs. It does not constitute a review of the whole cited
+preprint or a formal proof-assistant verification.
+
+The bounded gate is closed. Retain the calibrated period identity and
+the exact distinction between the two sequences. Do not describe the
+failed numerator transfer, or the two finite large primitive values, as
+a general CMF or quarter-grid impossibility theorem. No further scan is
+proposed without a new exact paired identity.
+
+FOCUSED UNPROVED TARGET FOR A LATER ROUND
+
+Deform the ENTIRE forward/dual parameter identity, including residue rows
+and its initial state, rather than replacing only the harmonic tails.
+Can a reflection-symmetric quarter deformation preserve equality of the
+two formulas and make the quarter values of its denominator rationally
+proportional without introducing an extra growing cofactor? Such an exact
+identity could restore complementary primewise arithmetic. No identity,
+favorable estimate, or answer to this question is asserted here. It is
+a construction target, not an authorized continuation of this frozen gate.

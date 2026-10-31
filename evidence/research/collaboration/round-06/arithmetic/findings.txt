@@ -1,0 +1,374 @@
+Prescribed Hermite sources and the arithmetic cost of their coefficient height
+29 October 2026. Local and unpublished.
+
+There is no irrationality proof. The new prescribed construction is a
+two-endpoint rational Hermite family, with no coefficient selected by
+evaluating theta=beta(4). Its rational endpoint contribution is dyadic for
+one denominator choice and integral for another. Its exact primitive
+arithmetic is given by two augmented determinants. Uniform control of
+their common content and of the source height is still missing.
+
+The first independent construction, a binomial polynomial with fourfold
+Mellin zeros, does not force the desired fourth-prime cancellation. An
+infinite prime subsequence retains the full fourth power after primitive
+normalization. This is a theorem about its arithmetic, not a theorem that
+its actual values cannot shrink.
+
+The Hermite pivot has been specified and checked exactly at eleven small,
+prescribed indices. Ten have a nonzero theta coefficient; all ten primitive
+values exceed one. The remaining circular n=1 form has A=0 and primitive
+value one. These finite facts do not prove asymptotic failure. In particular,
+neither a lower bound on the source coefficient A nor a large available
+absolute upper bound is an actual-value no-go theorem.
+
+
+1. Independent choices and the archive distinction
+
+00_initial_choices.txt was recorded before reading any round06 work or
+exchanging proposals. It lists four concrete mechanisms: a confluent
+multiple-orthogonal polynomial, a prescribed Hermite divisibility module,
+a differentiated double-pole kernel, and cumulative fourth-pole residues.
+The first was selected. Its failure to cancel the intended prime powers
+led to the recorded Hermite pivot, rather than a larger parameter scan.
+
+Archive searches found no earlier copy of the particular confluent
+polynomial below. They did find the free polynomial E^3F subspace in
+round03/arithmetic and the rational E^4 identity in round03/fresh.
+Consequently those identities and the local fourth-power divisibility
+lemma are explicitly reused here; they are not claimed as new findings.
+
+The difference in the present rational construction is the prescription
+of zeros at BOTH 0 and 1. The old round03/fresh family prescribed only
+Taylor osculation at 0, and reduced its particular repeated-pole choices
+to positive scalar polynomial forms. That exact reduction does not
+automatically apply to the present two-endpoint interpolation conditions.
+No assertion that the broader rational architecture is new is intended.
+
+
+2. A binomial construction with fourfold moment cancellation
+
+For n>=1 put
+
+ P_n(x)=sum_(j=0)^(4n) (-1)^j binom(4n,j)binom(n+j,n)^4 x^j.
+
+Its coefficients are integers. Its exact Mellin transform is
+
+ integral_0^1 P_n(x)x^(t-1) dx
+   = (4n)!/(n!)^4 * product_(k=1)^n(t-k)^4
+                         / product_(j=0)^(4n)(t+j).             (2.1)
+
+This holds for Re(t)>0 and then as a rational identity. To prove it,
+take the residues of the right side at t=-j. They are exactly the
+coefficients of P_n. Both sides tend to zero as t tends to infinity,
+so the partial fractions agree. Differentiation at t=1,...,n gives
+
+ integral_0^1 P_n(x)x^k(log x)^r dx=0,
+                  0<=k<n, 0<=r<4.                            (2.2)
+
+Thus the fourth powers in the binomial numerator have a real cancellation
+purpose as well as an arithmetic one.
+
+Write P_n(i)=a_n+i b_n and N_n=a_n^2+b_n^2. Then
+
+ Q_n(x)=(a_n-b_n x)P_n(x)=N_n+(1+x^2)V_n(x),
+                         V_n in Z[x].                         (2.3)
+
+The prescribed theta-only form is
+
+ I_n=(1/6)integral_0^1 Q_n(x)(-log x)^3/(1+x^2) dx
+    =N_n theta+sum_j [x^j]V_n/(j+1)^4.                         (2.4)
+
+No decimal approximation to theta occurs in these definitions. Although
+N_n is a sum of squares, no uniform statement about N_n!=0 is needed for
+the prime subsequence below.
+
+
+3. The quotient loses the intended fourth-power cancellation
+
+Theorem. Let p be any prime congruent to 3 modulo 4, and n=(p+1)/4.
+For the formal rational pair in (2.4), the actual primitive multiplier
+kappa has v_p(kappa)=4.
+
+Here, for any nonzero rational pair (A,B), kappa is the positive rational
+number such that (kappa A,kappa B) is its primitive integer pair.
+
+Proof. Since 4n=p+1, the elementary Lucas binomial congruence gives
+
+ P_n(x) == (1-x^p)(1-r x) mod p,
+                         r=(5/4)^4 in F_p.                    (3.1)
+
+Indeed only the four indices j=0,1,p,p+1 survive modulo p. Their second
+binomial factors reduce to 1,n+1,1,n+1 respectively. The fourth power
+then gives r, and the signs are as displayed.
+
+Work in F_p[i], where i^2=-1. As p=3 mod4, this is a field and i^p=-i.
+Equation (3.1) gives
+
+ a_n+i b_n=(1+i)(1-r i),
+             N_n=2(1+r^2) != 0 mod p.                         (3.2)
+
+The last inequality uses that -1 is not a square modulo p.
+For any Q with Q(i)=N, the coefficient of x^(p-1) in (Q-N)/(1+x^2)
+is the alternating sum of the coefficients of Q above that index.
+In (3.1) the upper part of Q is -x^p(a_n-b_n x)(1-rx). Its contribution
+to this alternating sum is minus the imaginary part of
+(a_n-b_n i)(1-r i). Since
+
+ (1-r i)=(a_n+i b_n)/(1+i),
+
+that imaginary part is -N_n/2. Therefore
+
+                  [x^(p-1)]V_n == N_n/2 != 0 mod p.           (3.3)
+
+Now deg V_n<=4n-1=p, so the rational sum in (2.4) has exactly one term
+whose denominator is divisible by p: the term with j=p-1. Its valuation
+is exactly -4. N_n is a p-unit. Consequently primitive normalization
+must supply exactly p^4. QED.
+
+There are infinitely many primes 3 mod4, so this is an infinite failure
+of the proposed forced-cancellation mechanism. It neither estimates
+I_n(theta) from below nor rules out every use of this moment family.
+
+
+4. Why merely imposing an integral E^3F polynomial does not suffice
+
+Let E=x*d/dx and F(0)=0. For polynomial F,
+
+ Q=A+(1+x^2)E^3F/x
+
+has the exact form
+
+ (1/6)integral Q(-log x)^3/(1+x^2) dx
+          =A theta+integral_0^1 F(x)dx/x.                     (4.1)
+
+If F is integral, the last expression needs only one coefficient-LCM
+layer. But every rational polynomial V is E^3F/x for a unique rational
+F with F(0)=0: its coefficient f_(j+1) is v_j/(j+1)^3. Thus this condition
+does not change the rational source space.
+
+In particular, if additional homogeneous orthogonality conditions have
+already selected a one-dimensional rational source space, requiring F
+to be integral can only rescale that same ray. A global rational scalar
+does not change the primitive endpoint pair. This is a scoped obstruction
+to regarding a fully prescribed polynomial orthogonality ray as an
+arithmetic improvement merely because it is rewritten using E^3F.
+
+
+5. The prescribed two-endpoint rational Hermite construction
+
+Fix one of the two integer polynomials
+
+ D_c(x)=1+x^2,             D_u(x)=1+x-x^2=1+x(1-x).             (5.1)
+
+Both are positive on [0,1] and have D(0)=1. The second also has D(1)=1.
+For each n, seek A and R with
+
+ deg R<=2n, R(0)=0, G=R/D^n,
+ f=A/(1+x^2)+E^4G/x,                                      (5.2)
+
+such that f has zeros of order at least n at both 0 and 1. These are
+linear homogeneous conditions involving only rational functions with
+integer coefficients. They do not involve theta or a fitted target.
+
+Here is the complete deterministic prescription. Set
+
+ C_0=D^(n+4),
+ C_j=(1+x^2)D^(n+4)E^4(x^j/D^n)/x,       1<=j<=2n.          (5.3)
+
+These are integer polynomials. Their integrality follows recursively:
+if the current rational function is U/D^k, applying E replaces its
+numerator by x(D U'-k D' U) and increments k. After four steps the
+numerator is divisible by x.
+
+Let M_n be the 2n by (2n+1) integer matrix whose first n rows are the
+coefficients [x^k]C_j, 0<=k<n, and whose next n rows are the coefficients
+[z^k]C_j(1+z), 0<=k<n. At a full-row-rank index take the signed maximal
+minors of M_n, divide by their gcd, and choose the sign with A positive
+(or first nonzero coordinate positive if A=0). The resulting vector is
+
+                         (A,R_1,...,R_(2n)).                 (5.4)
+
+For completeness the family can be prescribed at a rank-defective
+index too: compute the canonical rational RREF nullspace basis in
+increasing free-column order, take the first basis vector with nonzero
+A if one exists, otherwise the first basis vector, clear denominators
+and divide its coordinate gcd, and use the same sign convention.
+This fallback was not used in any of the archived finite checks.
+
+Dimension ensures a nonzero source vector always exists. The rational
+source map itself is injective. Indeed E^4G/x=(E^3G)' has zero residues
+at every finite pole, whereas A/(1+x^2) has nonzero residues at +/-i
+if A!=0. Thus an identically zero f forces A=0. Then E^4G=0 forces a
+rational G to be constant; G(0)=0 forces G=0. In particular a nonzero
+selected vector gives a nonzero rational source f.
+
+This does NOT prove that its endpoint form is nonzero, or that A is
+nonzero. Those are separate questions. At circular n=1 the construction
+gives A=0, G=x^2/(1+x^2), and endpoint form 1/2; its primitive form is 1.
+
+Writing S=sum_j v_j C_j, the endpoint conditions give
+
+ S=x^n(1-x)^n P_n(x),
+ f=x^n(1-x)^n P_n(x)/[(1+x^2)D(x)^(n+4)],  deg P_n<=8.        (5.5)
+
+To see the degree bound, G is bounded at infinity and E^4G=O(1/x),
+so E^4G/x=O(1/x^2). Multiplication by (1+x^2)D^(n+4) gives degree at
+most 2n+8, as does the A term. In the circular case every C_j has a
+factor 1+x^2. Cancelling it gives the sharper expression
+
+ f=x^n(1-x)^n P_n(x)/(1+x^2)^(n+4),        deg P_n<=6.         (5.6)
+
+Thus the increasing number of endpoint conditions leaves a numerator
+of fixed degree, rather than an unspecified polynomial chosen afterward.
+
+
+6. Exact period cancellation and actual primitive arithmetic
+
+Four integrations by parts, using G(0)=0 and regularity on [0,1], give
+
+ (1/6)integral_0^1 f(x)(-log x)^3 dx
+                    =A theta+G(1)=A theta+R(1)/D(1)^n.       (6.1)
+
+The identity is already proved in round03/fresh, Section 2. One direct
+check substitutes x=exp(-z): the E^4 term becomes the fourth derivative
+of G(exp(-z)); integration against z^3 leaves its endpoint value.
+
+The pair in (6.1) has no auxiliary period. For the circular source its
+rational coefficient is dyadic. For D_u its pair (A,R(1)) is already
+integral. This is exact, but is not an invariant improvement by itself:
+the integer source vector can be very large. Its selection cost must
+be kept when comparing primitive values.
+
+There is a simple exact determinantal content formula. At a full-rank
+index let c_j be the signed maximal minors and Delta=gcd(c_j). Put
+
+ u=(1,0,...,0), w=(0,1,...,1), d=D(1)^n,
+ a=det([M_n;u]), b=det([M_n;w]).
+
+Expansion in the last row gives a=c_0 and b=sum_(j>0)c_j. Consequently
+
+ g = gcd(d A,R(1)) = gcd(d a,b)/Delta,
+ primitive pair = (d A/g, R(1)/g),
+                       kappa=d/g.                           (6.2)
+
+These are actual primitive formulas, not sufficient entrywise clearing.
+For D_u, d=1 and kappa=1/g<=1. For D_c, d=2^n and kappa=2^n/g.
+The formula retains both the common content Delta of the source minors
+and the additional content of their two endpoint combinations.
+
+If both endpoint coefficients vanish at some untested index, its formal
+pair is zero and has no useful primitive normalization; no claim excludes
+that possibility. The script rejects such a case rather than calling it
+a small nonzero form.
+
+
+7. The remaining source-height cost and a precise real target
+
+The local fourth-power integrality lemma from round03/fresh still applies.
+Since D(0)=1 and R is integral, the Taylor coefficients of G are integral.
+The zero of order n at 0 in (5.2) gives, for odd 1<=j<=n,
+
+                 j^4 [x^j]G=-A*(-1)^((j-1)/2).
+
+Therefore
+
+             lcm(1,3,...,largest odd<=n)^4 divides A.          (7.1)
+
+This proves that deleting odd endpoint denominators can move substantial
+arithmetic size into the target coefficient. It is a source-level height
+statement, not a bound on actual primitive values: g in (6.2) can remove
+common factors, and real cancellations can be stronger than an absolute
+estimate. No conclusion of asymptotic failure follows from (7.1).
+
+There is an explicit, uniform sufficient real budget. Let H_n be the sum
+of the absolute coefficients of the fixed-degree P_n in (5.5), or its
+cancelled version (5.6). On [0,1],
+
+ max x(1-x)/(1+x^2)=(sqrt(2)-1)/2=:rho_c,
+ max x(1-x)/(1+x-x^2)=1/5=:rho_u.
+
+The remaining denominator factors are at least one. Since
+(1/6)integral_0^1(-log x)^3 dx=1, (6.1) gives
+
+        |primitive form at theta| <= kappa H_n rho_D^n.      (7.2)
+
+Thus a fully usable theorem for this particular construction would be
+uniform nonvanishing together with kappa H_n rho_D^n -> 0, or a stronger
+signed estimate that replaces (7.2). At full rank kappa is given exactly
+by (6.2). Neither the required content/height bound nor the required
+nonvanishing theorem has been proved. A large right side in (7.2) is not
+a lower bound for the actual form.
+
+The surviving new question is sharply defined: can the two-endpoint
+Hermite constraints give controlled primitive source height H_n/g, or a
+signed real estimate strong enough to compensate for its growth? The
+eleven small cases are not evidence for an affirmative answer. They do
+not settle it in the negative either.
+
+
+8. Exact finite checks and reproduction
+
+From beta4/ run
+
+ .venv/bin/python collaboration/round-06/arithmetic/hermite_sources.py
+
+The script writes only hermite_sources.json in this directory. It uses
+integer and rational FLINT/Python arithmetic for all source construction,
+cofactors, common content, polynomial division, Mellin identities, and
+prime valuations. Arb at 1200 bits evaluates already-prescribed pairs;
+it never chooses their coefficients.
+
+The binomial checks use n=1,2,3,5,6,8,11, with p=3,7,11,19,23,31,43.
+They verify all 4n Mellin zeros, three rational instances of (2.1), the
+full Lucas polynomial congruence (3.1), and actual v_p(kappa)=4.
+
+The Hermite checks are:
+
+ denominator       n       kappa        log |primitive form(theta)|
+ 1+x^2             1       2            0 (A=0; primitive form 1)
+ 1+x^2             2       4            5.5163297977...
+ 1+x^2             3       4/3          8.7255841101...
+ 1+x^2             4       2           18.5936361072...
+ 1+x^2             6       2           33.4596324887...
+ 1+x^2             8       2           48.7281801134...
+ 1+x-x^2           1       1            6.7045606269...
+ 1+x-x^2           2       1           14.6615156378...
+ 1+x-x^2           3       1/3         24.4307198889...
+ 1+x-x^2           4       1           33.2337728169...
+ 1+x-x^2           6       1           55.2588518183...
+
+All eleven matrices have full row rank. The exact saved data contain the
+primitive source vector, both augmented determinants, their content,
+the primitive endpoint pair, P_n, and the absolute bound (7.2). Source
+Bernstein coefficients are also saved when they give a finite sign
+certificate. Their finite signs are not extrapolated.
+
+For example the circular n=2 primitive endpoint pair is (568,-313),
+whereas the endpoint-unit n=1 pair is (1346,-515). Every tested pair
+with nonzero theta coefficient has absolute value above one. No larger
+scan was used to seek a reversal.
+
+
+9. Scope and reading record
+
+All new files are in this arithmetic directory. No older packet was
+edited. The initial-choice record precedes collaboration on round06.
+Relevant archive reading consisted of the round03 rational-Euler note,
+the recorded free Rodrigues construction, initial ideas from round04,
+and targeted searches of new-avenues.txt and rounds01--05. No external
+literature was consulted for the elementary arguments in this note.
+
+A brief exchange with the fresh worker supplied an abstract triangular
+filter observation for their separate Gram measure: a leading-residue
+sequence with a first nonzero term cannot be annihilated throughout a
+prefix by a low-degree p-primitive multiplier, provided all moments used
+remain p^3-integral. Their degree shift can reach a fourth layer, so that
+hypothesis must not be dropped. This observation is not part of the
+Hermite theorem and is not used for any claim here.
+
+The positive result of the pivot is an explicit target-independent
+two-endpoint source family, fixed-degree residual numerators, and exact
+primitive formulas with endpoint denominators supported only at 2 or
+at no primes at all. The unresolved cost is the size and common content
+of the coefficients required to obtain those sources. This packet does
+not establish an arithmetic gain sufficient for irrationality.

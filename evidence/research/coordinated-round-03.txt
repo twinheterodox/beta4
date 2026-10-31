@@ -1,0 +1,295 @@
+Beta(4): coordinated round 03
+28 October 2026. Local and unpublished.
+
+Status and the main change
+
+This round obtains a proved improvement in the arithmetic/analytic balance:
+a new common-base determinant family has infinitely many nonzero values
+and tends to zero even after ALL powers of 2 in its rational coefficients
+are cleared. Odd-prime denominators remain. This is not an irrationality
+proof, a bound for the whole primitive multiplier, or evidence that a
+complete proof is close.
+
+The arithmetic and analysis workers continued their contexts. A newly
+created fresh worker selected an independent construction before reading
+the archive, then cross-reviewed the joint results. Root separately
+reconstructed coefficients, primitive pairs, residue ranks, prime-power
+congruences, and analytic certificates. These are model cross-checks,
+not a human audit or formal verification. No priority claim is made.
+
+1. Preserve the common powers of the arguments
+
+The completed identity inherited from the classical Broadhurst ladders is
+
+ theta=beta(4)=225/136 D4(i/2)-25/34 D4((1+i)/4)
+                                      +9/68 D4((1-i)/8),
+ D4(z)=Im[Li4(z)-log|z| Li3(z)+(log|z|)^2 Li2(z)/3].
+
+Its source equations and algebraic derivation are recorded in
+collaboration/round-02/fresh/findings.txt, with the primary reference
+https://arxiv.org/abs/math/9803067. It is not a new functional identity.
+
+The crucial observation is that, with q=(1-i)/2,
+
+ z_2=i/2=-q^2, z_3=(1+i)/4=-q^3, z_5=(1-i)/8=-q^5.
+
+Instead of replacing every z_m by z_m*t, preserve those different powers.
+Write (c_2,c_3,c_5)=(225/136,-25/34,9/68), L(t)=-log(1-t^2/2), and
+
+ H(t)=sum_(m=2,3,5) c_m [I4(z_m*t^m)+(m/2)L(t)I3(z_m*t^m)
+                                  +(m^2/12)L(t)^2 I2(z_m*t^m)]
+     =sum_(j>=1) h_j t^j.                                  (1)
+
+Here I_s is the analytic imaginary-part germ, obtained by subtracting
+the conjugate-argument polylogarithm and dividing by 2i; t itself is
+not conjugated. All h_j are rational and H(1)=theta. This is a different
+parametrization, not a uniform reindexing of the old Taylor series.
+
+Define h_0=0 and, for 1<=i,j<=n,
+
+ T_ij=h_(i+j)-h_(i+j-1), b_i=h_i,
+ J_n(X)=det [[X,-b^T],[b,T]]=A_n X+C_n,
+ A_n=det T, C_n=b^T adj(T)b, J_0(X)=X.                      (2)
+
+For nonzero J_n let kappa_n>0 make kappa_n J_n primitive integral.
+Then v_p(kappa_n)=-min(v_p(A_n),v_p(C_n)). This multiplier is rational,
+and its valuation can be negative. Zero polynomials are handled separately.
+There is no factor 6 in this round's normalization.
+
+2. An elementary contour bound and infinitely many nonzero determinants
+
+The possible polylogarithm singularities of (1) are the roots of
+
+ t^4+4, t^6-4t^3+8, t^10-8t^5+32.
+
+They share the quadratic t^2+2t+2, giving 16 distinct points. The two
+logarithm points are +/-sqrt(2). All 18 points have modulus sqrt(2),
+and all their arguments lie in pi*Z/60.
+
+Put G_X(w)=(X-H(1/w))/(w-1). Its Laurent coefficients at infinity are
+c_j(X)=X-sum_(l<=j)h_l. Their leading (n+1)-Hankel determinant equals
+(-1)^n J_n(X), by elementary row and column differences.
+
+At X=theta the apparent pole at w=1 is removable: H is analytic near
+t=1 and H(1)=theta. Every remaining possible finite singularity lies in
+
+ K={w : w^120 belongs to [0,2^(-60)]},
+
+the 120-ray star of radius 1/sqrt(2), including its center. Its complement
+on the sphere is simply connected, so it is an admissible cut for the
+germ from infinity. Polynomial inverse-image capacity gives
+
+ cap(K)=(2^(-60)/4)^(1/120)=2^(-31/60).
+
+The classical Polya Hankel estimate, in the same normalization as (2),
+therefore yields
+
+ limsup log|J_n(theta)|/n^2 <= -(31/60)log 2.                (3)
+
+This is an upper bound, not a two-sided asymptotic. Exact polynomial
+division independently verifies that the full branch divisor divides
+t^120-2^60 and that its reciprocal divides w^120-2^(-60).
+
+Nonvanishing does not require positivity. At t=sqrt(2), all polylogarithm
+blocks are analytic, while the coefficient of L(t)^2 is
+
+ (75/272)[2G-3 Cl2(pi/4)]<0,
+
+where G=beta(2). The inequality follows directly from G<1 and a rational
+lower bound for the first positive eight-term block of the Clausen series.
+Thus H has a genuine logarithmic branch. G_X is nonrational for EVERY
+fixed X, and Kronecker's rationality criterion gives infinitely many
+nonzero J_n(X). This does not assert nonvanishing at every index.
+
+3. Dyadic normalization now fits inside the analytic decay
+
+The arithmetic proof uses Q_2(i), with uniformizer pi=1-i, only as a
+valuation tool. The final determinant coefficients remain rational.
+Set x=q*t. After multiplication by -64, the three completed blocks have
+the form
+
+ -64 H(x/q)=C(x)+L_0(x)B(x)+L_0(x)^2 A(x),
+ L_0(x)=-log(1-i*x^2),
+ A(x)=B(x)=C(x)=x^10/(1-x^20) mod pi.                       (4)
+
+All coefficients of A,B,C are integral at pi. The difference between
+the two polylogarithms kills the high powers of 2 in their summation
+indices. The remaining logarithms have only logarithmic denominator
+depth. This is proved coefficientwise, not inferred from scalar data.
+
+For n>=8 put r=floor(log_2 n), delta=2r-2, and
+
+ R=max(0,2n-2^(r+1)-9).
+
+After the natural q row/column scaling and multiplication by
+-64*2^delta, the full bordered matrix in (2) has EXACT residue rank R.
+The resulting bound for the actual primitive multiplier is
+
+ v_2(kappa_n) <= n(n+1)/2+(6+delta)(n+1)
+                                -ceil((n+1-R)/2).          (5)
+
+In particular limsup v_2(kappa_n)/n^2<=1/2. The improvement from the
+old sufficient leading rate 5/2 comes mainly from the common-power
+parametrization. The residue-rank theorem supplies the additional
+explicit divisibility saving in (5); these are distinct improvements.
+
+Let d_n=2^max(0,v_2(kappa_n)), or d_n=1 for a zero polynomial. Combining
+(3) and (5) gives the genuine positive result of the round:
+
+ limsup log|d_n J_n(theta)|/n^2 <= -(log 2)/60 <0.           (6)
+
+Every coefficient of d_n J_n has ODD denominator, and infinitely many
+of its values at theta are nonzero. The forms shrink faster than any
+fixed exponential in n. They are still rational forms, not integer
+forms. Odd denominators permit nonzero arbitrarily small values even
+when theta is rational, so (6) supplies no irrationality contradiction.
+
+4. Exactly where large odd primes remain
+
+Let p satisfy n/2<p<=n, p^2>2n and p not dividing 2*3*5*17. The
+coefficients before h_(2p) are p-integral, all coefficients through
+h_(2n) have valuation at least -4, and
+
+ p^4 h_(2p)=chi_4(p)*225/272 mod p.                         (7)
+
+Only the pure m=2 Li4 term supplies the first fourth-power denominator.
+Let R=2n-2p+1 and m=2p-n-1. Scaling the last R rows of (2) gives
+
+ p^(4R)J_n(X)=(-1)^[R(R-1)/2](chi_4(p)*225/272)^R
+                                           J_m(X) mod p. (8)
+
+The fresh review sharpened this to a coefficientwise congruence modulo
+p^4: if S is p^4 times the lower-right R-by-R block of T, then det S
+is a p-unit and
+
+                    p^(4R)J_n=det(S)J_m mod p^4.           (9)
+
+Both cross-blocks were p-integral before row scaling, so the Schur
+complement differs from the smaller pencil by a p^4-integral matrix.
+
+Writing mu_m=min(v_p(A_m),v_p(C_m)), if mu_m<4 then
+
+                    v_p(kappa_n)=4R-mu_m.                 (10)
+
+When mu_m>=4, only the upper bound 4R-4 follows. Thus common content in
+a smaller pencil can cancel part of the expected fourth layer.
+For n=10,p=7, m=3 and mu_3=1, the actual exponent is 27, not 28.
+At n=2p-1 the smaller pencil is J_0=X, giving the unconditional local
+exponent v_p(kappa_(2p-1))=4(2p-1).
+
+These are local statements. They do not supply a uniform normality
+theorem, a lower bound for the whole multiplier, or a lower bound for
+actual determinant values. Large positive valuations can coexist with
+negative valuations at other primes. The root checks 94 recursions
+modulo both p and p^4, including the actual defect.
+
+5. A shared Mellin kernel and a more structured numerator problem
+
+The same common powers combine all three blocks into ONE rational kernel:
+
+ U(x)=900*x^2/[17*(x^4+4)]
+       -2025*x^3/[17*(x^6-4*x^3+8)]
+       -5625*x^5/[17*(x^10-8*x^5+32)].
+
+With l=log 2, r=-log x and W(r)=r^3/6+l*r^2/4+l^2*r/12,
+
+                    theta=integral_0^1 U(x)W(r) dx/x.     (11)
+
+Let D be the monic least common multiple of the three denominators of U,
+without 17. It has degree 16. Put N=D*U. For P=A+D*V, define
+N*V=sum b_j*x^j and impose
+
+                  sum b_j/j^3=sum b_j/j^2=0.              (12)
+
+These are exact rational linear constraints, and they give
+
+ I(P):=integral U(x)P(x)W(r) dx/x
+                         =A*theta+sum b_j/j^4.            (13)
+
+There is a signed Rodrigues subspace with genuinely cheaper arithmetic.
+Write N0=17N in Z[x], E=x*d/dx, and choose any S in Z[x]. Set
+
+ F=x(1-x)^2 N0^4 S, V=17 E^3F/N0.
+
+V is an integer polynomial: three Euler derivatives retain at least
+one factor N0. Conditions (12) follow from F(1)=E F(1)=0. The rational
+remainder in (13) becomes
+
+                    sum f_j/j=integral_0^1 F(x) dx/x,
+
+whose denominator divides lcm(1,...,deg F), rather than its fourth
+power. This is an exact structural saving for this subspace. However,
+A remains free, and no choice of S and A producing small nonzero forms
+has been proved. Selecting them by already knowing approximations to
+theta would not solve the problem.
+
+Two review results prevent easy shortcuts in (13):
+
+* U has exactly one zero x0 in (3/5,5/8), with sign positive then
+  negative. The preserved moments M1=integral U*r and M2=integral U*r^2
+  are positive. For every nonzero P>=0 satisfying (12), a dual quadratic
+  polynomial gives I(P)>A*(1309/2600), with A>0. After any positive
+  normalization making the theta coefficient an integer, I(P)>1/2.
+  Thus these nonnegative source forms cannot shrink at all.
+
+* For EVERY signed P satisfying (12),
+  integral |P U| W >= (log 2)^2 |A| M1/12.
+  Consequently an absolute-source estimate cannot establish shrinking
+  normalized forms with nonzero theta coefficient. Signed designs must
+  control actual cancellation, not merely uniform smallness of P.
+
+Neither result excludes signed source values themselves or the
+common-base Pade determinants. A dimension count or short lattice
+vector is also insufficient: it can lie in the exact A=B=0 kernel.
+
+6. The independent construction: a uniform obstruction after a pivot
+
+The fresh agent first proposed integer polynomial Mellin weights, then
+recognized their overlap with round 01 and pivoted to rational Euler
+kernels. Four integrations by parts give J(E^4 H)=H(1), with
+J(R)=integral (-log t)^3 R(t)dt/(6t). This cancels unwanted periods
+exactly, but Taylor osculation of a rational H reduces at the endpoint
+to a scalar polynomial weight.
+
+For repeated quadratic poles the weight is
+P_n(y)=y^n(u_n-v_n*y)^n. For even n and positive integers u_n,v_n with
+log(u_n+v_n)=o(n), its ACTUAL primitive positive form L_n satisfies
+
+ liminf log(L_n)/n >= 8/3-log(5+4sqrt(2))
+                    =0.3004633900...>0.                   (14)
+
+Primes in (4n/3,2n) not dividing u_n+v_n retain their fourth powers
+after primitive normalization. An exact minimax calculation over ALL
+real pole ratios, plus a uniform integral lower bound, proves (14).
+It is an actual obstruction for this family, including moving rational
+poles of subexponential height; it is not a statement about all rational
+kernels. The proof uses the prime number theorem for the interval sum.
+
+7. Finite diagnostics, review, and what has not been achieved
+
+Root checked 14 prescribed indices for each of the old equal-speed
+germ, an alternative classical ladder, and the common-base germ.
+All nontrivial primitive forms tested exceed one. For the common-base
+germ the n=1 exception is merely X. At n=20 the log absolute primitive
+value falls from about 2305 for the old germ to 962 for the new germ;
+neither is remotely small. Those numbers are diagnostics, not asymptotics.
+
+The substantive positive theorem is (6), despite the unfavorable finite
+values. Odd-prime integrality is unresolved. The shared Mellin kernel
+and one-LCM signed subspace give a more concrete design problem, but no
+small, nonzero integer family has emerged from them. Merely extending
+the existing scans or improving the star constant is not the missing
+mathematical mechanism.
+
+Full proofs and reproduction scripts are under collaboration/round-03/:
+arithmetic/findings.txt, analysis/findings.txt, fresh/findings.txt,
+fresh/mellin_positive_obstruction.txt, and fresh/cross_review.txt.
+The coordinator's review records exact hashes and scope. Separate root
+checks include 6,497 coefficient residues, 73 bordered ranks, 94 prime
+recursions modulo p and p^4, all 90 fresh primitive pairs and 291 prime
+valuations, the exact star divisor, an independent Sturm calculation,
+two rational moment bounds, and seven signed Rodrigues identities.
+
+Before integration all 520 baseline files were unchanged. Among those
+old files, only README.txt and manifest.json are updated. The round-03
+packet and this note are added; nothing is published.

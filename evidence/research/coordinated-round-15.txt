@@ -1,0 +1,44 @@
+ROUND 15: COMPLETE QUARTER-ARGUMENT PAIRING, INADEQUATE ARITHMETIC ESTIMATES
+30 October 2026. Local and unpublished. No irrationality proof.
+
+Main report: collaboration/round-15/findings.txt.
+Exact objective: collaboration/round-15/objective.txt.
+
+The forward/dual mismatch from round 12 has been repaired by deforming
+the pole grid, parameter trajectories, initial data and normalization
+together. At both quarter arguments, the forward sums and dual minors
+give the same rational coefficients for all indices. Auxiliary periods
+are retained until this identification is proved, without assuming their
+independence. The exact beta(4) projection includes the product of the
+two quarter denominators.
+
+The transferred primewise estimates give complementary savings, but
+they are quantitatively inadequate. Even an optimistic calculation
+discarding every numerator cost caps their odd-prime content saving at
+88.2075294973 per index. The established decay estimate requires
+142.8620263851, a shortfall of 54.6544968878.
+
+This is a ceiling on the specified termwise/rowwise valuation estimates,
+not on actual gcds or primitive height. Stronger content, a cheaper
+character projection, or faster projected decay is not excluded. None
+has been established. Eventual nonvanishing of the beta(4) forms remains
+unproved. Five finite primitive pairs are nonzero and unfavorable.
+
+One independent model checker completed two successive scoped audits,
+including all ten exact certificate substitutions and an independently
+rebuilt arithmetic integral. No correction was found. The 442 finite
+prime cases and five primitive Arb calculations were main-agent checks,
+not independently duplicated. No proof-assistant verification was run.
+
+Detailed records under collaboration/round-15/:
+ - coordinator/source-audit.txt and coordinator/sources.json;
+ - coordinator/complete-deformation.txt;
+ - coordinator/arithmetic-gate.txt;
+ - independent/audit.txt and independent/final-audit.txt;
+ - verification-record.json and completion-audit.txt;
+ - preservation-check.json and artifact-manifest.json;
+ - completion-usage.json (goal-tool accounting after completion).
+
+Stop here for review. This bounded assessment does not authorize another
+campaign. Reopening this construction needs a specific new arithmetic
+or analytic mechanism, rather than finer optimization of these bounds.

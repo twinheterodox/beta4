@@ -1,0 +1,214 @@
+COMPLETE QUARTER-SHIFTED FORWARD/DUAL CONSTRUCTION
+30 October2026. Local and unpublished. All-index claims below concern
+alpha=-3/4,-1/4 unless explicitly described as generic algebra.
+
+1. The two presentations
+
+Put a=1+alpha. Use the R, A, B, D, Q, P3, P4 definitions in
+deformation-working.txt. Here B is a dual row; B^alpha(n,k) is the forward
+binomial summand. Independent/audit.txt supplies the complete rational
+kernel and initial-state derivations, including all simple-zero tails.
+
+Explicitly, the forward coefficient is
+
+ B^alpha(n,k)=prod_(j=12,13,14) binom(k+jn+alpha,10n)
+                    binom(15n,n+k)binom(15n,k),
+ C_n=B^alpha(n,0),
+ Q_n=sum_(k=0)^(14n) B^alpha(n,k),
+ P_(r,n)=sum_(k=-n)^(15n) [B^alpha(n,k) H_(4n+k)^r(a)
+               -(B^alpha)'(n,k) H_(4n+k)^(r-1)(a)/(r-1)], r=3,4.
+
+The derivative is of the full Gamma interpolation. It is not a derivative
+of the piecewise-zero discrete summand. H_m^r(a)=sum_(l=0)^(m-1)(l+a)^-r.
+
+The dual rational kernel is
+
+ R_n^alpha(s)=(-1)^n (1+2n-s)_(14n)(1+n-s)_(16n) /
+  [(s+alpha)_(11n+1)(s+n+alpha)_(11n+1)(s+2n+alpha)_(8n+2)].
+
+Its pole coefficient rows A,B,D give the exact state
+
+ G_n=A_n zeta(4,a)+B_n zeta(3,a)+D_n
+    =(-sum_(m>2n) d/dm[(-m)^k R_n^alpha(m)])_(k=0,1,2).
+
+The sum of simple-pole coefficients is zero because each rational kernel
+is O(s^-2) or smaller; zeta(2,a) is absent. At n=0,
+
+ A0=3(1,alpha,alpha^2),
+ B0=-2(1,1+alpha,alpha^2+2alpha),
+ D0=(a^-2,a^-1,1).
+
+The complete identities are
+
+ Q_n= Lambda_n det[B_n;A_n;u_n],
+ P3_n=-Lambda_n det[D_n;A_n;u_n],
+ P4_n= Lambda_n det[D_n;B_n;u_n],                     (1)
+ u_n=(1,10n+a,(10n+a)^2),
+
+ Lambda_n= (8n)!(9n)!^2(11n)!^2(12n)! /
+                [6(14n)!(16n)!]
+       * (a)_(11n)(a)_(12n)^2(a)_(13n)^2(a)_(14n) /
+         [(a)_(16n)(a)_(17n)^2(a)_(18n)^2(a)_(19n)].   (2)
+
+At alpha=0, (2) reduces to the source scalar. The quarter formulas are
+not obtained by replacing just the harmonic tails of the source. Both
+rational kernels, all trajectories, the readouts and Lambda change.
+
+2. Exact all-index algebra and certificates
+
+The forward and G parameter trajectories are stated in the working note.
+deform_matrices.py constructs their rational matrices M_alpha(n),G_alpha(n).
+For both quarters, the bottom row of G is (0,0,0,-1); write Q_alpha for
+its top-left3x3 block. Avoid confusing this matrix with the scalar Q_n.
+
+adjoint_pairing.py derives K(n,alpha) from the Euler Lagrange concomitant,
+including the contiguous map (theta+12n+a)/(12n+a) and gauge z^(2n).
+The independent checker rederived the whole concomitant with symbolic
+n,alpha. At z=1 the extra G-jet columns vanish; no jet is discarded by
+assumption. It proves the generic endpoint identity
+
+ K u_n=-E_n e0,
+ E_n=(8n+1)(9n+1)(10n+1)(11n+a).
+
+verify_deformation.py checks, as rational-function identities in n,
+
+ M_alpha(n) K(n+1,alpha) Q_alpha(n)^T=c_alpha(n) K(n,alpha). (3)
+
+It constructs rank-three forward and dual companions, checks their
+coboundaries, and proves regularity and invertibility at all n>=0 by
+the nonzero constant/shifted one-sign polynomial test. These are
+symbolic certificates, not extrapolation from a finite index range.
+
+The readout rows before multiplication by C_n are
+ rho_q=(1,0,0,0),
+ rho_p3=(0,0,-1/2,(2alpha+1)/4),
+ rho_p4=(0,0,0,-1/6).
+Initial cross products, checked generically by the independent checker,
+are -(a/6)(B0 x A0), +(a/6)(D0 x A0), -(a/6)(D0 x B0).
+
+deformed_certificates.py rebuilds the hypergeometric forcing polynomials
+with the new alpha in every affected Gamma argument. It does NOT reuse
+the source's undeformed recurrence. For each quarter it regenerates and
+substitutes FIVE exact identities: forward scalar, dual scalar, and
+three separate dual-coordinate certificates. The polynomial degrees are:
+
+ alpha=-3/4: (553,114), (448,107), (125,35), (126,35), (127,35);
+ alpha=-1/4: (553,114), (446,107), (124,35), (125,35), (126,35).
+
+Each pair is (degree in n, degree in summation variable). The output
+JSON retains the exact coefficients and recurrences. The solver's final
+full polynomial substitution is separate from its construction steps.
+
+3. Boundary transfer and formal coefficients
+
+For the forward sum, the factorial continuation has the same terminating
+endpoints k=0 and k=14n+43 as the source certificate. The shifted positive
+Gamma factors are finite at those boundaries. Hence the forward scalar
+certificate sums to the recurrence for Q_n.
+
+Use the UNcentered rational kernel
+
+ H_n^alpha(s)=(-1)^n (15n)!^2/(10n)!^3
+   *prod_(j=12,13,14)(s-jn-alpha)_(10n)
+   /[(s)_(14n+1)(s-n)_(16n+1)].
+
+Its partial fractions are B/(s+k)^2-B'/(s+k). Its derivative tails
+are sampled at s=m+alpha, m>4n. This shift is essential. For n>=2,
+all four shifted tails n,...,n+3 can be started at m=12n: omitted first
+and second derivatives lie inside the common triple-zero interval.
+The transferred certificate has lower value O(t^3) at s=12n+alpha+t.
+Its denominator there is proved nonzero by the exact polynomial test.
+At infinity the certificate is constant+O(1/s), so neither its first
+nor its second derivative contributes. Absolute locally uniform tail
+convergence justifies differentiation. The two exceptional recurrence
+indices n=0,1 are checked exactly for both numerators. The first three
+values are checked against the matrix readouts.
+
+For the dual, write its Gamma summand at the pole coordinate k=-s-alpha.
+Gamma reflection gives a 1-periodic multiplier times R_n^alpha(s).
+The three rebuilt row certificates therefore give rational identities
+
+ (-s)^j R_(n+1)^alpha(s)-sum_i Q_alpha(n)_(ij)(-s)^i R_n^alpha(s)
+                        =V_j(n,s+1)-V_j(n,s).
+
+For n>=1, all finite poles of V_j lie in -alpha+Z. The extra positive
+integer factors in its denominator cancel against the numerator zeros
+of R_n^alpha(s-1). Translation preserves the total Laurent coefficients
+of each pole order. Thus A and B transport SEPARATELY by Q_alpha.
+
+For the derivative tails, n and n+1 can both start at integer m=16n.
+The omitted terms lie inside the common double-zero interval. The lower
+certificate derivative vanishes; its denominator is checked nonzero.
+At infinity its derivative is O(s^-2). Subtracting the already established
+A,B recurrences proves the D recurrence, without numerical period
+independence. The exceptional n=0 step checks all nine row coordinates
+exactly, retaining the initial simple pole.
+
+This proves the separate coefficient transport and the forward readout
+identification needed for (1), for every n>=0 at both quarters.
+
+4. Normalization and exterior identity
+
+Telescoping (3), then using the endpoint and initial cross products, gives
+
+ Lambda_n=C_n a prod_(j<n)c_alpha(j) /
+                       [6 E_n det(Phi_Qalpha(n))].                 (4)
+
+deformed_rates.py verifies that the one-step ratio of (4) equals that
+of (2), by exact rational-function arithmetic, at each quarter. Both
+start at1/6. Thus the closed normalization (2) is proved. The elementary
+cross-product transport identity now proves all three identities (1).
+
+5. Decay that the construction supplies
+
+Under the same diagonal scaling as the source, BOTH Q_alpha limit matrices
+are exactly the source matrix. deformed_rates.py checks equality entry by
+entry. Its recessive eigenvalue is about7.20272e-24 and its growing pair
+has log modulus59.51995..., giving the same gap
+
+ g=112.80753924745468... .
+
+The explicit shifted residue state is recessive. The source's elementary
+finite/tail bound carries over: replacing t by t+alpha in denominator
+blocks changes only bounded/polynomial factors for fixed alpha. On
+2n<=t<=17n its exponential bound remains
+ c0=14log15+16log16-11log2-11log3-8log4=51.4744...,
+strictly below59.51995. Beyond17n the rational tail and its derivatives
+have the same polynomial bounds, up to fixed constants. The initial
+coefficient matrix is invertible, so the state is nonzero. The source's
+invariant-cone argument identifies its recessive mode. This uses fixed
+quarter shifts, not a parameter varying with n.
+
+The normalized endpoint still tends to (1,10,100), whose required
+eigenprojection is nonzero by the source's checked resultant. Initial
+denominator pairing is -1/a, also nonzero. Therefore
+
+ |zeta(r,a)-P_(r,n)/Q_n| <= exp(-(g-o(1))n), r=3,4.                 (5)
+
+The positive binomial sum has unchanged growth
+ log Q_n/n -> sigma=65.45153656586513... .                         (6)
+Fixed quarter shifts change Stirling estimates only by polynomial factors.
+
+These are an upper error bound and an exact positive coefficient growth
+rate. No optimal error exponent for the final character difference is
+claimed. A further exponential cancellation is not excluded by (5).
+
+6. Exact beta4 projection and nonvanishing scope
+
+Use superscripts a,b for quarter parameters1/4,3/4. Then
+
+ W_n=Q_n^a Q_n^b beta4-(P4_n^a Q_n^b-P4_n^b Q_n^a)/256             (7)
+and log|W_n|/n has upper limit at most2sigma-g=18.09553... .
+The rational approximation to beta4 has relative error bounded by (5).
+Every auxiliary period has canceled exactly. The price is the product
+of the two Q coefficients, not a single common denominator.
+
+The exact modest primitive pairs, including all their common content,
+are in primitive-gate.json and have nonzero Arb-certified signed errors.
+No eventual or bounded-gap nonvanishing theorem for (7) has been proved.
+Single-quarter three-readout independence is a different statement and
+does not automatically survive this cross-family projection.
+
+The arithmetic assessment and its deliberately limited obstruction are
+in arithmetic-gate.txt. Neither (1) nor the successful coefficient
+certificates by themselves constitute an irrationality result.

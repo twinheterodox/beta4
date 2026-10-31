@@ -1,0 +1,407 @@
+Next proof avenues: build the period cancellation and arithmetic together
+28 October 2026. Local and unpublished.
+
+Research decision
+
+The highest-priority next attempt is a parameter-dependent arcsine row
+construction, with its Taylor contact and its prime-denominator layers
+designed together. There is an explicit starting family below. The
+missing object is a sequence of rows with a favorable combined real and
+arithmetic estimate, not another way to write down beta(4).
+
+This recommendation is a research judgment. The experiments and local
+theorems below do not show that this construction exists, nor that a
+proof is close. A second, more radical direction is to change the
+integral geometry rather than continue differentiating the Catalan
+construction. Neither direction is an irrationality theorem.
+
+The companion orthogonal-cancellation.txt records the substantial work
+behind this decision: positive variance forms, a dual Hahn determinant
+with a uniform nonvanishing proof, and exact failures of their primitive
+arithmetic. Here we explain a sharper denominator obstruction in the
+older coupled family and an explicit parameter-level input for the
+next attempt. All checks are by the same agent; no independent audit,
+formal verification, or priority claim is made.
+
+1. The criterion that must actually change
+
+For a determinant strategy it would suffice to construct nonzero
+P_N(beta(4)), with P_N in Z[X], degree O(N), and
+
+                   log|P_N(beta(4))| <= -eta N^2         (1)
+
+for some fixed eta>0 and all sufficiently large N (or an unbounded
+subsequence). If beta(4)=a/b were rational, b^deg(P_N) P_N(a/b) would
+be a nonzero integer, contradicting (1). A linear-form construction can
+instead use nonzero integer A_N beta(4)-B_N tending to zero.
+
+The latest families solve two real problems: they remove G=beta(2)
+exactly, and some give uniform positivity. But their primitive values
+are large. Improved bounds for a redundant common denominator do not
+improve a primitive polynomial whose full content was already removed.
+
+The present objective is to change the mechanism that pays for the
+fourth powers of primes. The next section makes this much more precise
+for one family; it is not a universal obstruction for beta(4).
+
+2. A proved large-prime relation for the coupled family
+
+Use the original EVEN source index n, with the conventions of
+half-pole-arithmetic.txt:
+
+  E_n(e)=a_n(e) T(e)/16+b_n(e),
+  a_n(e)=a_n+c_n e^2+...,
+  b_n(e)=b_n+d_n e^2+...,
+  T(e)/16=sum_(r>=1 odd) chi(r)/(r^2-16e^2),
+  chi(r)=(-1)^((r-1)/2).
+
+Thus r_n=a_n G+b_n and s_n=16a_n beta(4)+c_n G+d_n.
+
+Proposition. If p is an odd prime with n<p<2n, then, coefficientwise
+as a Taylor series at e=0,
+
+       b_n(e)+chi(p)a_n(e)/(p^2-16e^2) in Z_p[[e]].      (2)
+
+In particular a_n,c_n are p-integral, and
+
+  b_n+chi(p)a_n/p^2 in Z_p,
+  d_n+chi(p)(16a_n/p^4+c_n/p^2) in Z_p.                 (3)
+
+Proof. The terminating coefficient formula already proved in
+half-pole-arithmetic.txt is
+
+  a_n(e)=8 sum_(j=0)^n U_(n,j)
+                 product_(k=1)^j(1-4e^2/k^2)^(-1),
+  U_(n,j)=binom(n,j)binom(n-1/2,j)binom(n+j-1/2,j).
+
+For p>n, every displayed coefficient is p-integral, and a_n(e) is a
+rational function whose denominator is a unit at e=0 and at e=+/-p/4.
+
+Now use the half-pole representation
+
+  F_n(t,e)=n!(2t+n+1)
+    product_(l=0)^(n-1)(t-l) product_(l=n+1)^(2n)(t+l)
+    /product_(j=0)^n[(t+j+1/2)((t+j+1/2)^2-4e^2)].
+
+Let D_(j,s)(e) be its residue at -j-1/2+2se, with s=-1,0,1.
+The rational term is explicitly
+
+  b_n(e)=-sum_(j=0)^n sum_(s=-1)^1 (-1)^j D_(j,s)(e)
+                   *sum_(u=0)^(j-1) (-1)^u/(u+1/2-2se).
+
+Before removable powers of e are cancelled, the residue denominators
+have only powers of e and the factors h-j, h-j+/-2e, h-j+/-4e, with
+0<|h-j|<=n. All nonzero constant terms of these differences are units
+at p. A moving tail contributes only odd integers r+/-4e with
+1<=r<=2n-1. The only nonunit pair is p+/-4e, each occurring simply.
+
+There is one extra detail for the fixed tails (s=0): a factor 1/p is
+possible. It occurs only when j>=(p+1)/2. At the fixed pole x=-j-1/2,
+choose l=j+(p+1)/2. Then n+1<=l<=2n, since n<p<2n and j<=n, and
+
+                              x+l=p/2.
+
+This is one of the numerator factors of F_n. Its p divides the fixed
+residue numerator and cancels the 1/p from the tail. Thus there is no
+remaining constant p denominator from a fixed tail.
+
+It follows that b_n(e) has a representation
+
+                    b_n(e)=N(e)/[(p^2-16e^2)U(e)],
+             N,U in Z_p[e], U(0) a p-adic unit.          (2a)
+
+To justify removing the intermediate powers of e integrally, first
+take a common denominator e^k(p^2-16e^2)U(e). Since b_n is regular at
+e=0, its numerator is divisible by e^k as a polynomial over Q_p.
+Division by this monomial preserves Z_p coefficients, proving (2a).
+
+Next, E_n(e) is regular at e=+/-p/4: its quarter-pole sum has zero
+terms before t=n/2, and its first possible positive parameter pole is
+e=n/2+1/4>p/4. The remaining sum is locally uniformly convergent.
+The only pole pair of T(e)/16 at those points is
+chi(p)/(p^2-16e^2). Thus the rational function
+
+                  b_n(e)+chi(p)a_n(e)/(p^2-16e^2)
+
+is regular at both points. Write a_n=A/V with A,V in Z_p[e] and V(0)
+a unit. In (2a) its combined numerator is NV+chi(p)AU. Regularity at
+e=+/-p/4 says this polynomial is divisible by p^2-16e^2 over Q_p.
+The divisor's leading coefficient -16 is a p-adic unit, so polynomial
+division preserves Z_p coefficients. The remaining denominator UV
+has unit constant term. This proves (2), including the integrality
+that analytic pole cancellation by itself would not establish.
+
+For every k>=0, if a_(n,l) and b_(n,k) denote the e^(2l) and e^(2k)
+coefficients, respectively, the same proof gives
+
+  b_(n,k)+chi(p)sum_(l=0)^k
+               16^(k-l)a_(n,l)/p^(2(k-l+1)) in Z_p.     (2b)
+
+2.1 Consequences of the local relation
+
+The scalar elimination satisfies
+
+  a_n d_n-b_n c_n+16chi(p)a_n^2/p^4 in Z_p.              (4)
+
+If a_n is a p-adic unit, (4) implies the EXACT valuation
+v_p(a_n d_n-b_n c_n)=-4. This is not a loose clearing bound.
+The 19614 exact pairs in the current table satisfy (3) and (4);
+19580 have a_n a unit and satisfy this sharp valuation.
+
+More generally, suppose every source index in a block lies strictly
+between p/2 and p, and source weights u_n,v_n are p-integral. If
+
+  sum_n(u_n a_n+v_n c_n)=0,
+  A=16sum_n v_n a_n,
+  B=sum_n(u_n b_n+v_n d_n),
+
+then (3) implies
+
+                         B+chi(p)A/p^4 in Z_p.           (5)
+
+In particular, if A and B are both p-integral, p^4 divides A in Z_p.
+For a matrix of such forms M(X)=A X+B, if det(A) is a p-adic unit,
+then for every p-integral rational X,
+
+                        v_p(det M(X))=-4r,              (6)
+
+where r is the matrix size. Multiply the matrix by p^4 and reduce
+modulo p to see (6). The same conclusion applies to the coupled block
+determinant when its Hankel matrix A is invertible modulo p: its Schur
+complement has exactly this form, and det(A) itself is a unit.
+
+We tested 141 coefficient Hankel matrices over the admissible prime
+windows, at sizes 2,4,8,12,20 and several shifts. Exactly 140 were full
+rank. The one deficiency was size 2, source indices 8--12, p=13.
+This finite observation is not a uniform theorem on their ranks. It
+does show that low rank cannot simply be assumed from the appearance
+of the same a_n in two denominator layers.
+
+This local result explains why ordinary coupled Hankel determinants
+are a poor next target. It does not rule out
+designed rank loss, source weights with controlled p-denominators,
+different index geometry, or a different period representation.
+
+3. A concrete parameter family for the next construction
+
+Carreira's weighted arcsine construction [C, Section 6] has moment
+weight q(theta)=theta^2-pi theta. Its two triangular auxiliary arrays
+already remove the unwanted constants. Repeating that elimination is
+not a new proposal. The proposed change is to retain a parameter while
+choosing the rows, and derive its arithmetic layers before specializing.
+
+For |a|<1 near zero, put
+
+  dmu_a(t)=|t|/sqrt(1-t^2)
+          *cos(a arccos|t|)/cos(pi a/2) dt, -1<t<1.
+
+Its odd moments vanish and its even moments are exactly
+
+  m_(2k)(a)=2(2k+1)!/
+                 product_(j=0)^k((2j+1)^2-a^2).         (7)
+
+Indeed, after t=cos(phi), integrate cos^(2k+1)(phi)cos(a phi).
+Two integrations by parts give the ratio
+(2k)(2k+1)/((2k+1)^2-a^2); the initial integral gives 2/(1-a^2).
+
+For the Cauchy kernel, the starting period is
+
+  integral_(-1)^1 integral_0^1 dmu_a(t) ds/(1-ts)
+      =4 B(a),
+  B(a)=sum_(r>=1 odd) chi(r)/(r^2-a^2)
+      =G+beta(4)a^2+beta(6)a^4+... .                    (8)
+
+For a derivation, the left side is
+2/cos(pi a/2) integral_0^(pi/2) cos(a phi)log cot(phi/2)dphi.
+Expand log cot(phi/2)=2sum_(r odd)cos(r phi)/r and integrate; the
+result is (8). The identity may first be justified with Abel damping
+and then by dominated convergence.
+
+At a=0 the measure is the original arcsine-type measure. Its a^2
+coefficient is -q(theta)/2 times that measure, with theta=arcsin|t|.
+Thus (7)--(8) contain Carreira's weighted moment formula and boundary
+value. They repackage known ingredients for the proposed construction;
+no claim of a new special-function identity is made.
+
+3.1 All local Taylor layers come from one product
+
+For an odd z=2k+1 define
+
+  J_z(a)=m_(z-1)(a)/m_(z-1)(0)
+        =product_(1<=r<=z, r odd)(1-a^2/r^2)^(-1).
+
+Take an odd prime p with p<=z<p^2, and put
+
+  J_red(a)=product_(1<=v<=floor(z/p), v odd)
+                                      (1-a^2/v^2)^(-1),
+  H_2^*(z;p)=sum_(1<=r<=z, r odd, p not dividing r) 1/r^2.
+
+Separating the multiples of p in the product gives, coefficientwise,
+
+  J_z(pa) = J_red(a)
+           product_(r odd<=z, p not dividing r)
+                                      (1-p^2 a^2/r^2)^(-1),
+
+  J_z(pa) == J_red(a)                         (mod p^2),
+  J_z(pa) == J_red(a)(1+p^2 a^2 H_2^*(z;p))   (mod p^4). (9)
+
+These ARE proved identities and congruences: all v in J_red are less
+than p, and the omitted coefficients in each unit factor are divisible
+by p^4. The congruences are valid at every Taylor order, not just at a^2.
+The script checks coefficients through a^6 at 946 (z,p) pairs, giving
+3784 checks for each modulus.
+
+Equation (9) exposes a concrete extra harmonic kernel at the next
+layer. The unresolved problem is to propagate these moment reductions
+through the Cauchy boundary arrays and choose rows for which the
+resulting pole layers have suitably small rank. A moment congruence
+alone does not establish that matrix-rank claim.
+
+4. The proposed construction and its first milestones
+
+The source comparison is the OpenAI Catalan determinant [O]: its
+Chebyshev rows have integral coefficients, their Taylor contact removes
+an unwanted period, and column relations modulo primes save denominator
+powers. The weighted beta(4) transfer needs all three effects together.
+
+The proposed work is:
+
+  (a) Derive the Cauchy arrays for mu_a and retain their Taylor data
+      through a^2, with exact formal coefficients of every period.
+      Use (9) to derive the leading and next local layers of these
+      complete entries, including their boundary terms.
+
+  (b) Construct polynomial rows approximating several of the resulting
+      functions together (Hermite--Pade contact). Impose auxiliary-period
+      cancellation and useful relations in the local layers as part
+      of the row construction. Look for a closed Chebyshev, Jacobi,
+      or terminating-hypergeometric formula that controls coefficient
+      size and works uniformly in N.
+
+  (c) Test exact primitive determinants at increasing sizes. Their
+      coefficient matrix must retain sufficiently many beta(4)
+      directions, while its bad denominator layers lose rank modulo
+      a positive range of primes. A real estimate and nonvanishing
+      proof must use these same rows.
+
+The critical new lemma would bound the total local cost AFTER all layers
+are accounted for. Saving the p^-4 layer but paying the same amount in
+p^-3, p^-2, or p^-1 would not suffice. Likewise a construction that forces
+congruences using exponentially larger coefficients may lose the saving
+at the real place. The combined inequality (1) is the acceptance test.
+
+This is more specific than asking for better approximations: (7)--(9)
+specify the family, parameter, and initial congruences, and (a)--(c)
+specify the missing construction. The actual uniformly controlled rows
+have NOT yet been found. This remains the main research risk.
+
+5. A more radical second direction: change the integral geometry
+
+Most tested weight-four constructions add two derivatives or two
+logarithms to a weight-two system. This naturally introduces the extra
+prime powers. A more fundamental escape would make beta(4) the intrinsic
+period of a rational four-variable construction whose extra variables
+also supply stronger determinant decay.
+
+The earlier product-variable Mellin families do not accomplish this.
+Their positive projections often reduce to rank-one endpoint
+approximation, and arithmetic-followup.txt proves polynomial error
+barriers for the resulting Schur complements and denominator growth
+for specified broader families. Simply tensoring that same kernel or
+adding another squared polynomial would repeat those failures.
+
+The proposed search is therefore in rational integrals with genuinely
+overlapping variables, using the fourth-root-of-unity period geometry
+as a guide. Before testing large sizes, a candidate must pass three
+symbolic checks: its exact period reduction contains beta(4) alone
+apart from rationals; its construction has a nonvanishing mechanism;
+and its arithmetic exploits the coupled variables instead of paying
+four unrelated least-common-multiple factors. One should not infer
+the first condition from a numerical relation or merely from the
+presence of i in a denominator.
+
+There is no explicit successful integral of this kind in the present
+work. This direction has less immediate structure than Section 4, but
+could change the real/arithmetic balance more substantially. It is
+worth a bounded conceptual search, not an unrestricted enumeration of
+fourfold integrals.
+
+6. What should not be the next large computation
+
+Increasing the sizes of the failed dual Hahn or coupled Hankel families
+has little support from the current evidence. Their failures are not
+small numerical margins. The faster-decaying hyperbolic kernel in
+orthogonal-cancellation.txt gives beta(4)+pi^2 G/24, rather than beta(4)
+alone; its better real estimate cannot be imported without that cost.
+The quotient metric's qualitative degeneration is already equivalent to
+irrationality, so another finite small lattice vector would not supply
+the missing theorem. These are reasons to change the construction,
+not general impossibility statements about the corresponding methods.
+
+6.1 Rational sampling of the parameter period was also tested
+
+There is an initially attractive alternative to Taylor differentiation:
+the period B(a) in (8) has rational values at every nonzero even integer,
+
+  B(2j)=(-1)^j/(2j) sum_(k=0)^(j-1) (-1)^k/(2k+1), j>=1.
+
+Partial fractions into 1/(r-2j) and 1/(r+2j), followed by shifts of the
+alternating series, prove this identity. The two beta(1) terms cancel.
+
+To test it, take n<m and
+
+  A(z)=product_(k=1)^n(z-(2k-1)^2)
+                      /product_(j=1)^m(z-4j^2),
+  b(z)=-sum_(j=1)^m Res_(z=4j^2)A(z) *B(2j)/(z-4j^2).
+
+Then E(z)=A(z)B(sqrt(z))+b(z) has no even-integer parameter poles, and
+
+  E(z)=sum_(r>=1 odd) chi(r)A(r^2)/(r^2-z).
+
+The first n terms vanish. Writing A_0=A(0), A_1=A'(0), b_0=b(0),
+b_1=b'(0), the exact Catalan cancellation is
+
+  A_0 E'(0)-A_1 E(0)=A_0^2 beta(4)+A_0 b_1-A_1 b_0.
+
+The residues and all four coefficients are rational. The script tests
+24 combinations, with m=4,8,16,32,64 and several n/m ratios, checking
+A_0 and A_1 independently from the product formula. All primitive
+absolute values exceed one. In most nontrivial zero configurations
+even the rational approximation error becomes large. Thus access to
+rational samples does not by itself supply favorable interpolation
+geometry; this particular elementary sampling family is not promoted
+as a third promising route.
+
+7. Reproducibility and attribution
+
+  .venv/bin/python experiments/prime_jet_layers.py
+  python3 experiments/prime_jet_symbolic.py
+  python3 experiments/arcsine_parameter_layers.py
+  .venv/bin/python experiments/parameter_sampling.py
+
+The JSON results record 19614 exact source-index/prime pairs, 19580
+sharp scalar valuations, 31 exact parameter specializations, 10
+quadruples rebuilt from half-pole Laurent coefficients, 141 coefficient
+matrix rank tests, and 7568 moment-layer congruence checks. A separate
+Sympy implementation rebuilds the full rational parameter functions
+for n=2,4,6 and verifies unit constant terms of the remaining denominator
+at all five admissible primes; each check covers every Taylor order at
+that selected (n,p). The sampling script saves its 24 exact primitive
+forms. The uniform local-integrality proof is in Section 2; testing is
+supplementary.
+
+[C] M. C. S. Carreira, Determinant constructions for the Dirichlet beta
+value at four, 9 October 2026, Section 6 and its surrounding comparisons.
+The supplied source is sources/carreira/beta4_determinants.tex.
+https://github.com/MarcosCarreira/catalan-designs
+
+[O] The OpenAI Catalan-irrationality source used throughout this project;
+in particular sources/openai/foundations.tex (integer Chebyshev rows and
+Taylor contact) and sources/openai/odd-primes.tex (two-layer prime
+reductions and local column elimination). Original source attribution
+is retained in research-notes.txt and the hashed source files.
+
+The hypergeometric transformations underlying the coupled parameter
+family are credited to Krattenthaler--Rivoal and Krattenthaler--Zudilin
+in half-pole-arithmetic.txt. No priority search for the precise local
+jet relation or these proposed applications has been completed.

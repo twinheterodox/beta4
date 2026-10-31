@@ -1,0 +1,113 @@
+ROUND 06 — REVIEW OF THE PRESCRIBED RATIONAL HERMITE CONSTRUCTION
+29 October 2026. Local and unpublished.
+
+Reviewed files:
+ arithmetic/findings.txt
+ SHA256 bd3bd578b0aa4fd767bd334a279a8ee216c2d60d3b2de3a4fd2c96bb40f48978
+ arithmetic/hermite_sources.py
+ SHA256 0f87e4a9a18c69dc5634035de2e4b85af10aed5bd7fecdcf85fecefee9f44bb4
+
+The full note and script were read. No substantive mathematical error was
+found in their stated scope. The construction is explicit and target
+independent; the missing uniform source-height/content and nonvanishing
+estimates are accurately identified. This is a model cross-check, not
+formal verification or an external audit.
+
+1. The preliminary moment family and surviving prime layer
+
+Taking residues at t=-j of the proposed Mellin rational function yields
+exactly (-1)^j binom(4n,j)binom(n+j,n)^4. Both sides are proper rational
+functions, so the Mellin identity and the fourfold moment zeros follow.
+The choice Q=(a-bx)P indeed has Q(i)=a^2+b^2 and gives an integer quotient
+by1+x^2 and a theta-only endpoint form.
+
+For p=4n-1=3 modulo4, Lucas leaves exactly j=0,1,p,p+1, giving
+P=(1-x^p)(1-rx) mod p with r=(5/4)^4. The displayed computation of
+a+ib=(1+i)(1-ri) gives a=1+r,b=1-r, N=2(1+r^2). Direct polynomial
+division gives the particularly simple check
+
+ [x^(p-1)]V=[x^(p+1)]Q=ar+b=1+r^2=N/2 mod p.
+
+There is exactly one p-divisible denominator in the rational endpoint
+sum, while N is a p-unit. Thus the exact primitive exponent is4. The
+note correctly interprets this as failure of forced arithmetic deletion,
+not as a lower bound for the real evaluations.
+
+2. Prescription and source injectivity
+
+For either denominator D, the common denominator of
+f=A/(1+x^2)+E^4(R/D^n)/x is(1+x^2)D^(n+4). The stated columns are its
+integer numerators. Their low-order coefficients at0 and1 impose the
+intended zeros, since the denominator is nonzero at both endpoints.
+Dimension always supplies a nonzero vector. At full row rank the signed
+maximal minors give the unique primitive source ray; the RREF fallback
+is a deterministic definition at other indices and was not silently
+used to choose successful finite values.
+
+The injectivity argument is correct: E^4G/x=(E^3G)' is a rational
+derivative and has zero residues, whereas A/(1+x^2) has nonzero residues
+at +/-i if A is nonzero. Once A=0, E^4G=0 and regularity at0 with G(0)=0
+force G=0. A nonzero source is therefore guaranteed. The note does not
+incorrectly promote this to a nonzero endpoint value or a nonzero A.
+
+Because G is bounded at infinity, E^4G/x=O(x^-2), so the cleared
+numerator has degree at most2n+8. Dividing by the endpoint factors
+leaves degree at most8. In the circular case the common1+x^2 cancels,
+leaving degree at most6. Both degree bounds retain the endpoint
+conditions and include the constant-G cancellation at infinity.
+
+3. Exact endpoint and normalization
+
+With x=exp(-z), the derivative contribution is integral_0^infinity
+g''''(z) z^3/6 dz, where g(z)=G(exp(-z)). Four integrations by parts
+give G(1): all intermediate terms at z=0 vanish by their powers of z,
+and g and its derivatives decay exponentially at infinity. Thus the
+endpoint A theta+R(1)/D(1)^n has no auxiliary period.
+
+The primitive pair is exactly (dA,R(1))/g with d=D(1)^n and
+g=gcd(dA,R(1)). At full rank, source content Delta divides the two
+augmented determinants, and their gcd divided by Delta is exactly g.
+The source sign convention changes neither gcd. These are actual
+content formulas, including the possibility kappa=d/g<1; they are
+not merely common-denominator upper estimates.
+
+The local coefficient identity j^4[x^j]G=-A(-1)^((j-1)/2) for odd
+j<=n follows directly from the zero at0. Since G has integral Taylor
+coefficients, the fourth power of the odd LCM divides A. This controls
+source height, not the primitive value after common content and real
+cancellation. That distinction is correctly preserved.
+
+4. Independent exact rebuild
+
+The companion arithmetic_review_checks.py reconstructs the source using
+LOCAL RATIONAL SERIES for f at0 and1, without the worker's clearing
+polynomials or cofactor method. At1 it applies E=(1+t)d/dt four times;
+at0 it uses the direct multiplier(k+1)^4 on coefficients of G. It solves
+the resulting rational nullspace and normalizes the source vector.
+
+At n=1,2,3,4 for BOTH denominators, all eight full primitive source
+vectors agree exactly with the saved packet. Their rational endpoint
+coefficients, complete primitive pairs and multipliers also agree.
+The circular n=1 exception A=0 and primitive form1 is independently
+reproduced; it is not a small nonzero theta form.
+
+Reproduce from beta4/:
+ python3 collaboration/round-06/identities/arithmetic_review_checks.py
+
+Its adjacent JSON records the reviewed findings hash and all exact pairs.
+This prescribed finite cross-check does not extrapolate matrix ranks,
+source signs or endpoint nonvanishing to untested n.
+
+5. Real budget and remaining scope
+
+The maximum of x(1-x)/(1+x^2) is(sqrt2-1)/2, attained at sqrt2-1.
+For D=1+x-x^2 the ratio is y/(1+y), y=x(1-x)<=1/4, and has maximum1/5.
+All remaining denominator factors in the source are at least1 on the
+integration interval. Bounding the fixed-degree P_n by its coefficient
+L1 norm gives the stated kappa H_n rho^n estimate with no missing
+exponent or integration factor, since integral(-log x)^3 dx/6=1.
+
+The available sufficient bound is not proved to tend to zero; its
+largeness is not an actual-value obstruction. Uniform evaluated
+nonvanishing and usable control of source height divided by endpoint
+content are still open. The packet's conclusion accurately stops there.

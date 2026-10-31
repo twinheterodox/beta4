@@ -1,0 +1,193 @@
+ROUND13 CORE CLAIMS -- DRAFT FOR INDEPENDENT CHECK
+30 October 2026. Local and unpublished. No irrationality proof.
+
+Definitions are those of modular-detour.txt. Put K=Q(sqrt(2)), c=7beta(4)/2,
+A_+=A0+sqrt(2)A1, B_+=B0+sqrt(2)B1, and use a minus sign for conjugates.
+Write R_j=B_j-cA_j. Let H_+=U+sqrt(2)V, where
+ U=16F(tau)-10F(2tau)+F(4tau),
+ V=(4G(tau)-5G(2tau)+G(4tau))/2.
+A_-=J_-^5/Y, B_-=A_- H_-; in particular the conjugation acts on BOTH
+factors. D=q d/dq. Primes below are odd and omit any stated fixed exceptions.
+
+1. Differential operators over the correct field
+
+Let C=2t^2-2t+1, P=4t^4-16t^3+12t^2-8t+1, and
+ Rplus=(4t^4-24t^3+44t^2-28t+9+4sqrt(2))/C.
+The inverse parameter tau(t) has rational Schwarzian
+
+ S={tau,t}=N/(2t^2 C^2 P^2),
+ N=64t^12-512t^11+1984t^10-3584t^9+3952t^8-3200t^7
+    +2208t^6-1600t^5+988t^4-448t^3+124t^2-16t+1.
+
+Indeed S=-(D^3t)/(Dt)^3+(3/2)(D^2t)^2/(Dt)^4. It is invariant under
+Gamma0(32)^+. Its finite poles have order at most two: at the four roots
+of P (elliptic order2), the cusps 0 and (1+/-i)/2; infinity is also a cusp
+and S=1/(2t^2)+O(t^-3). Thus the stated denominator and numerator-degree
+bound follow. Matching the Fourier series to a degree exceeding the total
+pole degree proves the identity. recover_modular_system.py checks through60.
+
+Set Q=S/2, y=(dt/dtau)^(1/2), ignoring a nonzero constant factor. Then
+y''+Qy=0 has solutions y and tau y. Its symmetric-cube operator is
+
+ Lsym = d^4 +10Q d^2 +10Q' d +9Q^2+3Q''.
+
+The identity J_+^2/(Dt)=Rplus/(t sqrt(P)) gives A_+=g y^3 with
+
+ g=t^(-3/2) Rplus^(5/2) P^(-5/4),
+ h=g'/g=-3/(2t)+(5/2)Rplus'/Rplus-(5/4)P'/P in K(t).
+
+Consequently Lplus=g Lsym g^-1 lies in K(t)[d] and annihilates the four
+functions A_+ tau^j, 0<=j<=3. It can be specified without fractional powers
+by replacing d with d-h in Lsym, preserving operator order. Conjugate to
+obtain Lminus.
+
+For f_+=D^4H_+, Bol's identity gives
+
+ Lplus(B_+)=Lplus(R_+)=r_+=t J_+^5 f_+/(Dt)^5 in K(t).
+
+The source is invariant under Gamma0(32)^+: the Fricke signs of J_+^5 and
+f_+ are opposite. It has pole order at most3 at t=0, at most5 at each
+nonzero finite cusp, at most2 at the roots of P, and vanishes to order at
+least4 at infinity. The last statements follow from holomorphy of the
+weight-five forms at cusps and from local Fricke parity at the elliptic
+points. Hence r_+=numerator/(t^3 C^5 P^2), numerator degree<=17.
+Both rational components of that numerator are saved in
+modular-system-coefficients.json and checked through degree60.
+
+2. Homogeneous rank and rational descent
+
+The monodromy of each Lplus/minus is a finite character twist of Sym^3
+of the modular rank-two representation. Gamma0(32) contains noncommuting
+opposite unipotents, so is Zariski dense in SL2; its symmetric cube is
+irreducible. The two representations restrict identically to Gamma0(32)
+but have opposite signs on the Fricke coset. They are not isomorphic on
+Gamma0(32)^+: an intertwiner on the dense subgroup is scalar by Schur,
+and a scalar cannot intertwine opposite Fricke signs.
+
+Their eight homogeneous solutions therefore form a direct sum. The
+least common left multiple L8 of Lplus,Lminus has order8 and lies in Q(t)[d]
+by conjugation. Both A0 and A1 have nonzero projections to both summands.
+Thus A0 has minimal order8, and A0,A0',...,A0^(7) are independent over Q(t).
+The same holds for C_epsilon=16 epsilon A0+4 A1, epsilon=+1,-1: its two
+coefficients are 8 epsilon+sqrt(2) and 8 epsilon-sqrt(2), both nonzero.
+No nonzero rational function belongs to this homogeneous differential module.
+
+L8 R0 is rational, since Lplus Rplus and Lminus Rminus are rational over K.
+This proves an upper bound9 for the differential rank of R0. The prime
+argument below proves that rank9 is attained under the rationality assumption.
+
+3. A prime-prefix congruence and independence
+
+In the coefficientwise p-integral local ring, through degrees below2p,
+
+ p^4 R0(t) == t^p [16 chi(p) A0(t)+4 A1(t)] mod p, t^(2p),
+
+assuming beta(4) rational and p outside its fixed denominator. Before
+substitution, only the outer divisor d=p contributes to p^4H in this
+range: p^4U ==16chi(p)q^p and p^4V==2q^p. The prefactors are integral.
+The inverse q(t) is integral and q(t)^p==t^p mod p,t^(2p). The rational
+theta*A term disappears modulo p after multiplying by p^4.
+
+Let O be a fixed nonzero rational differential operator of order<=7.
+Clear its finitely many bad coefficient primes; poles at t=0 only shift
+the truncation by a fixed amount. Characteristic-p differentiation kills
+t^p. Thus the corresponding congruence is t^p O C_chi(p).
+Neither O C_+ nor O C_- is zero, by the preceding rank8 result. Their
+first nonzero rational Laurent coefficients remain nonzero modulo all
+but finitely many primes. A coefficient of O R0 at index p+k_epsilon
+therefore has valuation exactly -4 for almost every prime in that class.
+
+Consequences to check:
+ (i) Under rationality of beta4, 1,R0,R0',...,R0^(7) are independent.
+     A relation O R0+r=0 contradicts the p^-4 coefficient above. Thus the
+     differential rank is exactly9, not the unfiltered rank4.
+ (ii) Adding the eight functions A0,A0',...,A0^(7) gives seventeen
+      independent functions. Rational-function combinations of the latter
+      are p-integral outside a fixed prime set and cannot cancel (i).
+ (iii) Every element outside the cheap span of 1 and those eight A-functions
+       has fourth-power common-prefix denominator growth, provided it is
+       formed in this seventeen-dimensional Q(t)-space.
+
+More precise denominator-template claim (needs particular scrutiny):
+O C_epsilon is not a polynomial, since the homogeneous differential module
+has no rational functions. It has infinitely many nonzero Taylor/Laurent
+coefficients. Consequently a fixed extra polynomial in the coefficient
+index cannot explain away this fourth layer: choose a nonzero coefficient
+at k outside its finite root set. In any template consisting of fixed LCM
+factors [1,...,b_h n+c_h] and a fixed polynomial in n, four LCM factors
+with b_h>=1 are necessary. This concerns fixed functions and fixed
+templates; it is not a theorem about arbitrary n-dependent bases.
+
+For the explicit basis the sufficient types are: one constant, eight
+R-derivatives of type d_(n+7)^4, and eight integral A-derivatives. Fixed
+initial denominators and the rationality denominator can be cleared once.
+
+4. Two mandatory logarithmic cusp singularities
+
+Approach tau=1/4 by q=i exp(-s), s->0+. Dominated convergence gives
+
+ s H_+(tau) -> beta(5)(5+i sqrt(2)),
+ s H_-(tau) -> beta(5)(5-i sqrt(2)).
+
+Only F(2tau) and G(tau) have the relevant pole. The theta Gaussian sums give
+
+ J_+ ~ pi(2i+sqrt(2))/(4s),  J_- ~ pi(2i-sqrt(2))/(4s).
+
+Let a be the finite cusp value of t here; a is one of (1+/-i)/2. The cusp
+has width2 on Gamma0(32), and t-a has a simple zero in its local parameter.
+Thus t-a ~ const exp(-pi^2/(8s)), and
+ Y ~ -(pi^2/8)(t-a)/(a s^2).
+The leading terms of R_j are nonzero multiples of (t-a)^-1 log^4(t-a).
+The algebraic factors giving nonzero leading coefficients are
+
+ [(2i+sqrt(2))^5(5+i sqrt(2))
+  +(2i-sqrt(2))^5(5-i sqrt(2))]/2 = -432i,
+
+ and the difference divided by2sqrt(2) is108.
+Using beta(5)=5pi^5/1536 gives coefficient45 i a for R0 and -45a/4
+for R1 on this local branch. Only nonzero coefficients are needed.
+Conjugation supplies the other finite nonzero cusp.
+
+Continuation changes R0 by a homogeneous solution of L8. At a cusp these
+homogeneous solutions have logarithm degree at most3. Thus continuation
+cannot cancel the leading logarithm degree4. Both cusps are logarithmic
+singularities on EVERY branch of R0, independently of rationality.
+
+It follows that any HOLomorphic map phi:D->C, phi(0)=0, for which
+R0(phi(z)) is meromorphic throughout D, must omit both (1+/-i)/2. A finite
+ramification does not remove a logarithm. No assertion about meromorphic
+maps hitting infinity or arbitrary changes of base coordinate is included.
+
+5. Universal derivative bound for those holomorphic maps
+
+Normalize the two omitted points to0,1. The basepoint becomes
+lambda0=(1+i)/2 (or its conjugate). The elliptic modular lambda covering
+and Schwarz--Pick give
+
+ |phi'(0)| <= Rstar = (4/pi) Re(K(lambda0)^2)
+                       =3.52992550073551475255...,
+ log Rstar =1.26127676611499713406... .
+
+Here K(m)=integral_0^(pi/2)(1-m sin^2u)^(-1/2)du. Equivalently
+tau0=iK(1-lambda0)/K(lambda0), and the covering derivative is
+2Im(tau0)|(4i/pi)lambda0(1-lambda0)K(lambda0)^2|.
+An exact power-series tail bound can certify Rstar<18/5 and log Rstar<13/10.
+The latter is already enough for the original and homogeneous-extension
+gates. Numerical values are currently diagnostics until that certificate
+and an independent implementation are saved.
+
+6. Immediate comparison; exact scope
+
+For the standard CDT LCM profiles, the dimension9 family has tau=320/81,
+and the dimension17 homogeneous extension has tau=832/289. Both exceed
+log Rstar, so no holomorphic uniformizing map for these full families can
+meet the necessary positivity condition of those holonomy bounds with
+these profiles. The stronger template claim in Section3 would show that
+a fixed rational change of basis inside these spaces does not lower the
+flat LCM cost below that profile.
+
+This does not exclude a new arithmetic normalization outside the stated
+templates, n-dependent constructions, other base coordinates, meromorphic
+map theorems, or new extensions. A first-primitive variant is being assessed
+separately and must use CDT's actual integration cost, not a whole extra
+LCM layer per primitive.

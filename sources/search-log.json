@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-31",
+  "search_service": "General web search; no Google Scholar queries",
+  "queries": [
+    "\"beta(4)\" \"Loewner\"",
+    "\"beta(4)\" determinant obstruction primitive",
+    "\"Dirichlet beta\" \"Cauchy\" determinant",
+    "\"beta(4)\" \"Christoffel\"",
+    "\"Dirichlet beta value at four\"",
+    "\"Dirichlet beta\" \"Hankel determinants\"",
+    "\"Dirichlet beta\" \"Euler-Boole\"",
+    "\"beta(4)\" \"primitive\" irrationality -random -quaternion",
+    "\"Dirichlet beta\" \"primitive\" determinants Carreira",
+    "\"beta(4)\" \"6-log\" determinant",
+    "\"beta(4)\" \"2 log 2\" determinant",
+    "\"Dirichlet beta\" \"positive\" \"Loewner\""
+  ],
+  "outcome": "Most exact-phrase results were irrelevant or silent. The Calegari bibliographic lead led to primary-source comparisons. No absence of results is treated as proof of novelty.",
+  "coverage_limit": "Focused comparison for the proposed main paper, not an exhaustive global priority search or a rereading of all 133 library records.",
+  "version_checks": [
+    {
+      "url": "https://api.github.com/repos/MarcosCarreira/catalan-designs/git/trees/HEAD?recursive=1",
+      "observed_tree_sha": "974a6e6c7b4bce67538aa1b9bf5883b931789d1f",
+      "truncated": false,
+      "relevant_pdf_path": "paper/beta4_determinants.pdf",
+      "pdf_git_blob_sha": "fd809801bb688a65b5f6e003c96d6a777d8746aa",
+      "conclusion": "The current tree matches the commit pinned by the local PDF. An earlier file-specific commits query alone was not used to infer latest-version status."
+    }
+  ],
+  "versions_policy": "Other sources are explicitly identified by the reviewed version; this log does not assert that every reviewed arXiv version is the latest."
+}

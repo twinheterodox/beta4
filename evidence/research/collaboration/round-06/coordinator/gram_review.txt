@@ -1,0 +1,57 @@
+INDEPENDENT COORDINATOR REVIEW OF THE ROUND06 DIFFERENCE GRAM
+29 October 2026. Local and unpublished; model cross-check, not formal verification.
+
+Reviewed fresh/findings.txt and gram_checks.py after their creation.
+The claimed positive full-rank construction and the scoped primitive
+growth obstruction are mathematically consistent.
+
+1. Period coefficient. The coefficient of u^m v^m in (u-v)^(2m) is
+(-1)^m binom(2m,m). Multiplying by the diagonal J coefficient (-1)^m
+gives the positive central binomial coefficient. Thus its Hankel pencil
+really has full degree n, with leading determinant 2^(n-1), rather than
+rank one. The monic Chebyshev basis used to evaluate that determinant
+is integral and unit triangular.
+
+2. Positive measure. The two halves of the square, and the Jacobian
+dy=2s ds, give exactly the factor 1/(96s) in the density. Restricting
+v to [(1-s)/4,(1-s)/2] gives rho >=(1-s)/(3072s), which indeed implies
+rho >=(1-s^2)/6144 since 2>=s(1+s). This verifies the slightly weakened
+rational density bound. The shifted Jacobi norm product gives the
+displayed lower bound, including the factor 2^(2n^2+n). Both real
+estimates therefore have the same n^2 rate, -log(4).
+
+3. Prime onset. For p>4n all T_4 terms and all j-m denominators are
+p-integral. Exactly the T_3 terms with j>=(p+1)/2 can contain p, only
+to its third power. At m0=floor(p/4)+1 the one- or two-term first
+residue is nonzero. Entries outside the final r-by-r block, with
+r=max(0,2n-1-m0), are actually p-integral. The final block is reverse
+triangular with nonzero anti-diagonal. It has determinant a p-unit
+after multiplication entrywise by p^3.
+
+4. Primitive exponent. Selecting that whole block leaves the upper-left
+theta pencil. The coefficient of X^(n-r) in the reduced maximal-pole
+part is the product of two p-units. It follows that some actual
+coefficient has valuation -3r; the bound is not merely an estimate
+on a chosen clearing denominator. The leading coefficient 2^(n-1)
+also bounds all possible negative valuations of kappa to the single
+prime2, with magnitude at most n-1. Therefore the prime range
+(4n,8n) supplies the asserted global lower rate 6n^2.
+
+5. Combining this true primitive lower bound with the true positive
+value lower bound is legitimate: log Z_n(theta)>=(6-log4)n^2+o(n^2).
+This closes this principal Gram sequence, not all determinants or
+alternative frames. The text makes that limitation clear.
+
+6. The optional polynomial-filter observation includes the necessary
+degree restriction d<=m0-2. It ensures m0+d<p/2 so fourth-power
+denominators in shifted T_4 moments cannot undermine the triangular
+third-layer reduction. Its stronger statement with p-unit actual
+leading coefficient uses only the first equation, whose largest moment
+index is m0, and is sound in the stated range.
+
+No substantive correction was needed. The exact script was rerun by
+the coordinator; the separate research-worker implementation and this
+mathematical review are model checks, not a human audit or proof-assistant
+verification. The new construction is useful for distinguishing a true
+rank improvement from sufficient primitive arithmetic; no novelty or
+irrationality claim follows.

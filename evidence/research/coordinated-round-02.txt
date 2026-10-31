@@ -1,0 +1,274 @@
+Beta(4): coordinated round 02
+28 October 2026. Local and unpublished.
+
+Status
+
+The target remains irrationality of the individual number theta=beta(4).
+This round gives structural arithmetic results, a limitation of a specified
+contour method, and a different family with a proved small rational error.
+It does not give shrinking integer linear forms or an irrationality proof.
+
+The arithmetic and analysis workers continued their respective contexts.
+A third worker began with a fresh context, selected its initial approach
+before reading the archive, and pursued a different construction. The
+coordinator reviewed the proofs and implemented separate exact checks.
+These are model cross-checks, not an independent human audit or formal
+verification. No novelty or priority claim is made.
+
+1. A precise description of the content we need to save
+
+For the fixed odd-k slow filter of dilations-and-positive-kernels.txt, put
+
+ R_k(z)=r_k(sqrt(z))=sum_(j>=1) a_j z^j, a_0=0,
+ b_i=a_i, H_ij=a_(i+j)-a_(i+j-1), 1<=i,j<=n,
+ L_n(X)=det [[6X,b^T],[b,H]].
+
+For a nonzero L_n let kappa_n>0 be the rational multiplier making
+P_n=kappa_n L_n a primitive integer polynomial. Zero polynomials are
+treated separately. In particular kappa_n need not be an integer.
+
+If D is any positive integer clearing a_0,...,a_(2n), define
+
+ T=DH, u=Db, d=det T, m=adj(T)u, Q=u^T adj(T)u,
+ g=gcd(6D d,Q), Delta=gcd(d,m_1,...,m_n).
+
+Then kappa_n=D^(n+1)/g, and the following exact bounds hold:
+
+ Delta | g | 6D Delta^2,
+ D^n/(6 Delta^2) <= kappa_n <= D^(n+1)/Delta.                 (1)
+
+The key identity is m_i^2-Q adj(T)_(ii)=-d Q_i, a bordered
+Desnanot--Jacobi identity. It gives
+Delta | gcd(d,Q) | Delta^2, including the prime 2 and singular T.
+Delta=0 is equivalent to the entire bordered pencil being zero.
+
+Delta is also the gcd of the maximal minors of the rectangular matrix
+F=(D a_(i+j))_(0<=i<=n,1<=j<=n). Consequently, away from primes dividing
+6D, common numerator content is exactly loss of column rank of F modulo
+the prime. Equivalently, there are polynomials q!=0 and p, both of degree
+at most n-1, for which qR_k-p=O(z^(2n+1)) over that finite field.
+This is an exact modular Pade condition, not a generic-rank heuristic.
+
+A small counterexample matters. At k=3,n=6 the actual coefficient
+denominator is D=4729725, but the minimally cleared endpoint pair has
+content 2^14*23. Although 23 does not divide D,
+
+ (1+2z+17z^2+13z^3+z^4+5z^5)R_3(z)=19z^5+O(z^13) mod 23.   (2)
+
+Thus new common numerator primes really occur. This disproves support
+restricted to the actual coefficient denominator; it says nothing about
+the stronger proposed restriction to primes <=4n, since 23<24 here.
+
+There is also a useful exact recursion. For a prime p>2n, let
+s=(p+2k+3)/2, R=2n-s+1>0, m=n-R. Then
+
+ p^R L_n(X)=(-1)^[R(R-1)/2](-32/3)^R L_m(X) mod p.           (3)
+
+Both sides are coefficientwise p-integral. The expected exponent
+v_p(kappa_n)=R holds exactly when the smaller pencil is nonzero modulo p.
+For example, (2) explains why k=3,n=9,p=23 gives exponent 2 rather than 3.
+The residue block alone would have missed this cancellation.
+
+Finally, using the positions where successive prime-denominator layers
+first appear, an exact two-layer matching lemma yields, for fixed odd k,
+
+ limsup_(n,L_n!=0) log(kappa_n)/n^2 <= C_k,
+ C_k=13/3+3/k+1/(k+2)+4/(3k+8)-1/(k+4).                    (4)
+
+In particular C_3=5.6257703081... and C_5=5.1389924086.... These improve
+the earlier sufficient rates 7.733333... and 7.085714.... They are upper
+bounds, not actual asymptotics. They do not assume favorable content.
+The elementary content and matching proofs are in arithmetic/findings.txt;
+the asymptotic summation in (4) also uses the prime number theorem.
+
+2. What a fixed-cut absolute contour estimate can and cannot do
+
+The previous Kronecker argument already gives infinitely many nonzero
+L_n(X) for every fixed X. Size, rather than all-size positivity, is the
+remaining issue for this family.
+
+The relevant generating functions are
+
+ C_X(z)=(6X+R_k(z))/(1-z),
+ G_X(w)=C_X(1/w)/w=(6X+R_k(1/w))/(w-1).
+
+For k=3 and k=5, the analysis establishes the following component theorem:
+in any compact filled admissible cut K for the chosen germ G_X, every
+component containing a branch point outside the unit disk meets the
+closed unit disk. Admissibility means single-valued continuation on the
+unbounded complementary domain. No connectedness assumption on K is made.
+
+The first draft had a substantive logarithm-sheet gap. Cross-review
+caught it. The repair uses a single enclosing Jordan loop and weighted
+pole counts N+4ell*S, where S=N mod 2. For 1<=N<=5 these cannot vanish
+on any logarithm sheet. This is why the proved scope is specifically
+k=3,5; the same argument has not been established for every odd k.
+
+Exact branch locations and projection inequalities then imply
+
+ k=3: cap(K)>6/5;
+ k=5: cap(K)>7/20.                                         (5)
+
+Sharper numerical enclosures are archived, but the rational bounds
+already resolve the comparison with (4). The fixed-cut absolute
+Cauchy--Vandermonde/Polya estimate has the form
+
+ limsup log|L_n(theta)|/n^2 <= log cap(K).
+
+For k=3 this cannot even supply a negative raw n^2 exponent. For k=5,
+(5) limits the decay exponent obtainable this way to less than
+log(20/7)<1.050, far short of the current multiplier bound 5.139.
+
+This is a limitation of that estimate together with our arithmetic
+bound. It is NOT a lower bound for actual determinant values, nor an
+impossibility theorem for beta(4), weighted contours, size-dependent
+contours, or other determinant constructions. Cancellation not seen by
+an absolute contour bound could matter.
+
+For completeness, explicitly containing ellipses give rigorous raw
+upper exponents log(13/6) for k=3 and log(19/10) for k=5. Both are
+positive. Eight paired examples at n=12,20,30,40 show growing raw and
+primitive values; those are finite diagnostics only.
+
+Separate fourth-order sign counterexamples also exclude global sign
+regularity for the ordinary cubic Loewner kernel. They do not settle
+special restrictions to particular integer frames. Full proofs and
+the scope of the cited Polya theorem are in analysis/findings.txt.
+
+3. A different approach through a classical polylogarithm ladder
+
+The fresh worker first tried a Cayley substitution at sqrt(2)-1. An
+exact splitting identity leaves a mixed integral, and a quadratic-field
+trace reintroduces growth at the conjugate embedding. Neither operation
+by itself produces the needed arithmetic saving.
+
+It then derived the following consequence of Broadhurst's 1998 ladder
+identities (source equations and the derivation are given in
+fresh/findings.txt; https://arxiv.org/abs/math/9803067): define
+
+ D4(z)=Im[Li4(z)-log|z| Li3(z)+(log|z|)^2 Li2(z)/3].
+
+Then
+
+ beta(4)=225/136 D4(i/2)-25/34 D4((1+i)/4)
+                              +9/68 D4((1-i)/8).            (6)
+
+All three arguments have modulus at most 1/2. This is an exact
+consequence of classical identities, not a numerical recognition
+claim or a claimed new functional equation. The logarithmic terms
+remain important; (6) is not a pure Li4 digit-extraction formula.
+
+For the natural rational Taylor germ H(t) obtained by replacing log 2
+with ell(t)=-log(1-t/2) and each argument z by zt, H(1)=beta(4).
+Writing H=sum h_N t^N and S_N=sum_(j<=N)h_j=p_N/q_N in lowest terms,
+the worker proves the exact dyadic denominator law
+
+ v_2(h_N)=-E_N,  v_2(q_N)=E_N,
+ E_(4m)=10m+4, E_(4m+1)=10m+5,
+ E_(4m+2)=10m+11, E_(4m+3)=10m+12.                         (7)
+
+Here N>=1, and the first formula has m>=1. Also
+
+ beta(4)-S_N ~ 2A(2) 2^(-N) log(N)/N,
+ A(2)=(75/272)[pi log(2)/4-Im Li2((1+i)/4)]>15/272.         (8)
+
+Together (7)--(8) prove that this scalar truncation family's primitive
+forms tend to positive infinity, at least at the scale
+2^(3N/2) log(N)/N. Unlike the contour comparison, this IS an actual
+obstruction theorem for the specified family. It does not transfer
+automatically to determinants or simultaneous approximants.
+
+4. Matched polynomial multipliers: a small source error, not yet integers
+
+A different construction uses
+
+ P1(t)=t^2+4, P3(t)=t^2-4t+8, P5(t)=t^2-8t+32.
+
+Their values at t=1 are 5,5,25. Thus the powers (2n,2n,n) have the
+SAME value 25^n. Each polylogarithm block can be approximated separately
+without multiplying three unrelated leading coefficients.
+
+Multiply the respective blocks by these powers and truncate at degrees
+(6n,6n,4n). Approximate ell and ell^2 using the common multiplier
+(2-t)^(4n) and degree 8n. The resulting rational number R_n is defined
+explicitly in fresh/simultaneous.txt. It satisfies
+
+ Lambda_n=25^n beta(4)-R_n
+          ~ (-1)^n K 27^(-n)/sqrt(n), K>0,                 (9)
+
+where, with u=log(3)/2 and l=log(2),
+
+ K=(225/884)sqrt(pi)[u^3/6+l u^2/2+l^2 u/3].
+
+The proof uses an exact integral for each block's error. The dominant
+positive integral has exponential factor x^2(1-x^2)^2, maximized at
+x=1/sqrt(3). The other two blocks and the logarithm errors are
+exponentially smaller. Thus (9) proves eventual nonvanishing and
+exponential decay of these RATIONAL forms, not of integer forms.
+
+The proved sufficient clearing factor is
+
+ D_n=17*2^(9n+4)*lcm(1,...,6n)^2*lcm(1,...,8n)^2.            (10)
+
+Its logarithmic rate 28+9log(2) exceeds the decay rate log(27) by a
+large margin. All twelve tested primitive forms have absolute value
+above one. The estimate (10) is not a lower bound for primitive
+normalization, so these observations do not prove asymptotic failure
+of this second family. No favorable primitive bound is presently known.
+
+5. Assessment and next mathematical requirement
+
+The round sharpens the diagnosis rather than establishing proximity to
+a proof. The slow-filter family now has a concrete modular description
+of its common content; the straightforward fixed-cut analytic estimate
+is inadequate. The classical ladder gives an alternative whose source
+error and nonvanishing can be proved, but the known arithmetic is poor.
+
+There is no present reason to enlarge the same numerical scans or to
+spend another round merely improving constants. A useful next step
+must demonstrate structural common divisibility or low residue rank
+inside a genuinely simultaneous construction, while retaining a
+controlled real error. The content theorem (1) is a way to test such a
+claim. The simultaneous family (9) is an explicit test case, not a
+promised successful route. No such arithmetic mechanism was found here.
+
+6. Evidence, reproduction, and integrity
+
+All worker paths below are relative to collaboration/round-02/.
+The coordinator's hash-specific review is coordinator/review.txt.
+
+Arithmetic checks: 398 generic content cases; 1,990 rank checks;
+615 exact matching instances; 3,386 coefficient-prime bounds;
+366 finite-field cases; 544 one-layer polynomial congruences.
+Analysis checks: exact branch factorizations and rational root bounds,
+18 pole checks, the monodromy matrix, containing ellipses, and Arb
+sign certificates. Fresh checks include 200 exact Taylor valuations,
+200 Arb primitive-value checks, and 12 simultaneous forms.
+
+The coordinator separately reconstructed 350 symmetric pencils,
+1,400 bordered-minor identities, 2,512 content divisibilities, and
+1,750 rank checks; it also checked 201 ladder coefficients, 400 dyadic
+valuations, the prime-23 defect from the original series, branch
+factorizations, and all 12 simultaneous integer pairs. These checks
+support the written proofs; numerical identity residuals do not prove
+the cited functional identities or infinite assertions.
+
+From beta4/, the principal reproduction commands are:
+
+ .venv/bin/python -B collaboration/round-02/arithmetic/endpoint_content.py
+ .venv/bin/python -B collaboration/round-02/analysis/checks.py
+ .venv/bin/python -B collaboration/round-02/analysis/paired_values.py
+ .venv/bin/python -B collaboration/round-02/fresh/checks.py
+ .venv/bin/python -B collaboration/round-02/fresh/simultaneous.py
+ .venv/bin/python -B collaboration/round-02/coordinator/content_check.py
+ .venv/bin/python -B collaboration/round-02/coordinator/independent_checks.py
+
+Run paired_values.py after endpoint_content.py: the former records the
+latter's output hash, including its elapsed-time field. Regenerating
+outputs can change archive hashes even when all mathematical results
+are identical. The root manifest records the integrated snapshot.
+
+Before integration all 487 files in the round's baseline were unchanged.
+Integration updates only the root README and manifest among those old
+files, and adds this note and the round-02 packet. Everything remains
+local and unpublished.

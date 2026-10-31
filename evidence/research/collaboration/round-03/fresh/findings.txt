@@ -1,0 +1,351 @@
+Rational Euler kernels: exact scalar reduction and a uniform pole-position obstruction
+28 October 2026. Local, unpublished research note.
+
+No irrationality proof has been found. This pass supplies an exact reduction
+for a rational differential-kernel construction and excludes one complete
+family, including moving pole positions of subexponential arithmetic size.
+It does not exclude arbitrary rational kernels or arbitrary positive weights.
+
+The principal theorem is: for even n, positive integers u_n,v_n satisfying
+log(u_n+v_n)=o(n), the primitive positive integer form obtained from
+
+  I_n = (1/6) integral_0^1
+          [x^2(u_n-v_n*x^2)]^n (-log x)^3/(1+x^2) dx
+
+satisfies
+
+  liminf_(n even) log(primitive I_n)/n
+       >= 8/3-log(5+4sqrt(2))
+        = 0.3004633900257932778784442723... > 0.              (T)
+
+Thus even an optimally chosen rational pole location cannot make this
+specific construction yield shrinking primitive integer forms. The bound
+uses actual primitive normalization, not just a sufficient denominator.
+
+All 90 finite examples tested have primitive values above one. The theorem
+is proved below; those finite examples are checks, not its proof. A separate
+symbolic implementation checks the main identities. Both implementations
+are by the same investigator, not an independent audit or formal verification.
+No novelty or priority claim is made.
+
+
+1. Independent starting point and the prescribed pivot
+
+00_initial_idea.txt was saved before reading prior notes. It proposed
+integer polynomial weights in the elementary scalar Mellin integral,
+starting with P_n(y)=y^n(1-y)^n. Reading README.txt and the round-01 fresh
+note then showed that the broad scalar construction had already been
+analyzed: unrestricted nonnegative polynomial weights encode all positive
+rational beta(4) forms. Positivity alone cannot provide missing arithmetic.
+The cyclotomic-integrals and ladder-integrals notes also explain why their
+particular positive polynomial and hyperbolic constructions fail.
+
+The starting binomial family itself has an immediate large-prime obstruction.
+Instead of tuning that family, the prescribed pivot was to rational kernels
+with conjugate imaginary poles and an Euler differential operator. Applying
+the fourth power of that operator makes every auxiliary period disappear
+exactly. At first this seems to offer rational endpoint denominators supported
+on a small set of primes. The construction is set up in Section 2.
+
+The pivot led to two precise findings:
+
+  * Local Taylor cancellation still forces the fourth odd-prime denominator
+    layer before primitive normalization (Section 3).
+  * At the endpoint, every such Taylor-osculating rational kernel reduces
+    to an explicit scalar polynomial weight (Section 4). For a repeated
+    quadratic pole, this gives the uniform obstruction (T), even after
+    optimizing the pole position (Sections 5-6).
+
+This is a reduction of the proposed rational family, not a claim that all
+rational-integral proofs reduce to the same family.
+
+
+2. Differential exactness builds period cancellation into the kernel
+
+Put E=t*d/dt, g(t)=t/(1+t^2), and
+
+  J(R)=(1/6) integral_0^1 (-log t)^3 R(t) dt/t.
+
+Then J(g)=theta=beta(4). Let H be a rational function regular on [0,1],
+with H(t)=O(t) at zero. Four integrations by parts give
+
+                         J(E^4 H)=H(1).                    (1)
+
+For a direct justification put h(z)=H(exp(-z)). Its derivatives decay
+exponentially as z tends to infinity. Since E^4H(exp(-z))=h''''(z),
+
+  integral_0^infinity z^3 h''''(z) dz=6h(0).
+
+The endpoint terms at zero vanish during the first three integrations;
+the fourth gives 6h(0). Thus any rational A and H give the exact form
+
+          J(A*g+E^4 H)=A*theta+H(1).                       (2)
+
+There are no Catalan or other auxiliary periods to eliminate afterward.
+For example, if H has an integer numerator and denominator
+(v+u*t^2)^n, then H(1) has denominator dividing (u+v)^n. This observation
+alone says nothing about the size of the A needed to make the kernel small.
+
+For the concrete construction define
+
+  F(y)=sum_(k>=0) (-1)^k y^k/(2k+1)^4,
+  F4(t)=t*F(t^2),                         E^4 F4=g.
+
+Let Q(y) in Q[y] satisfy Q(0)!=0, Q(1)!=0, with no zero on [0,1].
+For an integer m>=0 let C_m(y) be the Taylor polynomial of Q(y)F(y)
+through degree m-1 (zero when m=0). Set
+
+                 H(t)=-A*t*C_m(t^2)/Q(t^2).               (3)
+
+Then H=-A*F4+O(t^(2m+1)), and A*g+E^4H=O(t^(2m+1)).
+The resulting endpoint form is
+
+                 A*(theta-C_m(1)/Q(1)).                  (4)
+
+The experiment uses Q(y)=(v+u*y)^n and m=2n. The kernel has poles
+at the conjugate points +/-i*sqrt(v/u), of orders increased by E^4.
+The reciprocal polynomial of Q determines the scalar error below.
+
+
+3. A local integrality lemma: poles do not automatically save primes
+
+Lemma. Suppose A is an integer, H=P/Q with P,Q integer polynomials,
+Q(0)!=0, and the first m odd Taylor coefficients of A*g+E^4H vanish.
+For every odd prime p not dividing Q(0),
+
+  v_p(A) >= 4 max_(0<=k<m) v_p(2k+1).                      (5)
+
+Proof. H has p-integral Taylor coefficients because Q(0) is a p-unit.
+The coefficient of t^(2k+1) in the cancellation equation is
+
+  A*(-1)^k+(2k+1)^4*[t^(2k+1)]H=0.
+
+Its second term is divisible by p^(4 v_p(2k+1)), proving (5).
+No beta irrationality assumption is involved. QED.
+
+In particular, if Q(0)=1 or -1, the fourth power of
+lcm(1,3,...,2m-1) divides A. For the explicit numerator construction,
+when Q(0)=1 this is also the exact common denominator of the first m
+Taylor coefficients of QF: multiplication by Q is an integral triangular
+transformation with an integral triangular inverse. There is no loss or
+gain in their common denominator.
+
+This lemma concerns the integral SOURCE kernel. It is not by itself an
+obstruction for the PRIMITIVE endpoint form: the endpoint rational number
+can have common factors with A. Sections 5-6 track surviving primes after
+that common content is removed.
+
+
+4. Every Taylor-osculating rational kernel has an exact polynomial error
+
+Use the formal coefficient map
+
+  I(P)=(1/6) integral_0^1 (-log x)^3 P(x^2)/(1+x^2) dx
+      =P(-1)*theta+B(P),
+
+  B(P)=sum_j q_j/(2j+1)^4,
+  sum_j q_j*y^j=(P(y)-P(-1))/(1+y).                         (6)
+
+This is an explicitly defined map into Q^2; no assertion of independence
+of 1 and theta is needed to speak about its coefficient pair.
+
+Write Q(y)=sum_(j=0)^d q_j*y^j. Define
+
+  W_(Q,m)(y)=sum_(j=m)^d q_j
+               +sum_(j=0)^min(m-1,d) q_j*(-y)^(m-j).      (7)
+
+Then the exact identity of formal pairs is
+
+          theta-C_m(1)/Q(1)=I(W_(Q,m))/Q(1).               (8)
+
+Proof. Write F(y) as the integral of 1/(1+y*x^2) against
+(-log x)^3 dx/6. For each monomial q_j*y^j, subtract the terms of
+QF with total y-degree below m and then set y=1. If j>=m this leaves
+q_j/(1+x^2). If j<m, the geometric remainder is
+q_j*(-x^2)^(m-j)/(1+x^2). Summing proves (7)-(8). Alternatively,
+W(-1)=Q(1), and polynomial division in (6) directly gives the rational
+coefficient -C_m(1). This proves the identity formally as well. QED.
+
+For m>=d, (7) is the ordinary reversed polynomial times (-y)^(m-d).
+In the repeated-pole example Q=(v+u*y)^n, m=2n,
+
+  W_(Q,2n)(y)=(-y)^n*(u-v*y)^n.                            (9)
+
+Consequently, putting P_n=y^n(u-v*y)^n and A_n=(-1)^n(u+v)^n,
+
+                 theta-C_(2n)(1)/Q(1)=I(P_n)/A_n.         (10)
+
+Multiplying a rational coefficient pair by a nonzero rational number
+does not change its primitive pair, up to sign. Thus the rational Euler
+kernel and P_n have exactly the same primitive arithmetic. For even n,
+P_n>=0 on [0,1], and I(P_n)>0. This gives nonvanishing for every even n,
+without imposing a pointwise sign on the differential kernel itself.
+
+Identity (8) does NOT imply a universal obstruction. General polynomial
+weights already encode all positive rational forms, as the round-01 note
+proves. It only prevents us from treating the extra denominator poles in
+(3) as a new endpoint approximation mechanism without further arithmetic.
+
+
+5. Surviving fourth-power primes after primitive normalization
+
+Fix even n and positive integers u,v. Put P=y^n(u-v*y)^n and
+A=P(-1)=(u+v)^n. Write
+
+             I(P)=A*theta+N/D,   gcd(N,D)=1, D>0.
+
+Let q(y)=(P(y)-A)/(1+y), of degree 2n-1. Because P has a zero of
+order n at y=0, its first n quotient coefficients satisfy
+
+                  q_j=(-1)^(j+1)*A,     0<=j<n.           (11)
+
+Take an odd prime p in the strict interval
+
+                       4n/3 < p < 2n,                    (12)
+
+and suppose p does not divide u+v. Among the odd denominators
+1,3,...,4n-1 in (6), the only multiple of p is p itself: 3p>4n.
+Its index j=(p-1)/2 is less than n, and (11) is a p-unit. Therefore
+
+                         v_p(N/D)=-4.                    (13)
+
+No other summand can cancel that valuation. In particular p^4 exactly
+divides D and p does not divide N.
+
+The primitive integer pair is
+
+  (A_prim,B_prim)=(D*A/g,N/g),   g=gcd(D*A,N).
+
+Since gcd(D,N)=1, g divides A. Its positive evaluation is
+
+          L_n=(D/g)*I(P) >= D*I(P)/A.                     (14)
+
+At every prime in (12) not dividing u+v, the primitive leading
+coefficient still has valuation exactly four. Thus (14) gives
+
+  L_n >= product_(4n/3<p<2n, p not dividing u+v) p^4
+                      * I(P)/A.                          (15)
+
+This is a lower bound for the ACTUAL primitive form, not an upper
+bound obtained by choosing an unnecessarily large clearing factor.
+
+
+6. Optimizing the real decay cannot overcome those primes
+
+Put r=v/(u+v), so 0<r<1, and f_r(y)=y*(1-r-r*y). For even n,
+
+  I(P)/A = integral_0^1 |f_r(y)|^n dmu(y),
+  dmu(y)=(-log y)^3/[96*sqrt(y)*(1+y)] dy.                 (16)
+
+For fixed r, the elementary Laplace principle gives exponential rate
+M(r)=max_(0<=y<=1)|f_r(y)|. The best possible M(r), even with r real,
+is exactly
+
+  M_* = min_(0<=r<=1) M(r) = 1/(5+4sqrt(2)).              (17)
+
+Indeed, for r>=1/3 the positive interior maximum is
+(1-r)^2/(4r). For r>=1/2 there is also the negative endpoint magnitude
+2r-1. Their unique equality occurs at r_*=(1+2sqrt(2))/7, and gives
+M_*=(4sqrt(2)-5)/7. For r<1/3, M(r)>=1/3, so it cannot improve this.
+This is an exact minimax calculation, not a numerical optimization.
+
+A uniform lower bound is needed when r depends on n. Since |f'_r|<=2,
+choose an interval of length ell=M_*/(4n), lying within ell of a
+maximizer. On it,
+
+  |f_r| >= M(r)*(1-1/(2n)).
+
+On the central half of that interval, 1-y>=ell/4. Also
+
+                dmu(y) >= (1-y)^3/192 dy.
+
+Using (1-1/(2n))^n>=1/2 therefore proves, uniformly in r,
+
+  I(P)/A >= M_*^(n+4)/(3*2^22*n^4).                       (18)
+
+For clarity, the constant follows from central-half measure at least
+ell^4/24576 and ell^4=M_*^4/(256*n^4). Its exact value is immaterial
+for the exponential comparison.
+
+Let
+
+  S_n=sum_(4n/3<p<2n, p divides u_n+v_n) log p.
+
+The prime number theorem and (15),(18) give
+
+  log L_n >= [8/3-log(5+4sqrt(2))]*n-4*S_n+o(n).           (19)
+
+The o(n) comes only from the prime number theorem and polynomial factors;
+the real estimate is uniform in u_n,v_n. Since S_n<=log(u_n+v_n),
+condition log(u_n+v_n)=o(n) proves theorem (T). More generally S_n=o(n)
+is enough, including some sequences with very large powers of fixed primes.
+
+For the initial choice u=v=1, M=1/8, giving the stronger lower exponent
+8/3-log 8 = 0.587225125... . The optimized general bound is weaker but
+still positive, and rules out repairing this family by moving the poles.
+The theorem makes no claim about odd n, different osculation lengths,
+arbitrary denominator polynomials, or combinations of different kernels.
+
+
+7. Exact checks and reproduction
+
+From beta4/:
+
+  .venv/bin/python collaboration/round-03/fresh/rational_kernel.py
+  python3 collaboration/round-03/fresh/symbolic_checks.py
+
+rational_kernel.py uses Python Fraction for coefficients, polynomial
+operations, Taylor truncation, primitive normalization, and prime valuations.
+Arb is used only for certified evaluations at theta and the displayed
+positive constant. Precision exceeds the largest primitive coefficient's
+bit length by 512 bits.
+
+The saved checks comprise:
+
+  * 96 exact formal reductions (8), including m below the degree of Q;
+  * 90 forms, using nine pole ratios and even n=2,4,6,8,10,16,24,32,48,64;
+  * 291 surviving prime-valuation checks, including primitive content;
+  * 90 certified positive evaluations, all above one;
+  * 15 separate SymPy rational differential-kernel cancellations;
+  * 15 separate SymPy endpoint coefficient-pair identities;
+  * 72 exact common-denominator checks for Q(0)=1;
+  * the two exact equations giving the optimized constant in (17).
+
+For example, (u,v,n)=(5,6,64), close to the optimal real pole ratio,
+has a primitive value about 7.1255*10^415. Its log divided by n is
+about 14.9615. The proved bound is deliberately much smaller: a single
+interval of unavoidable primes already establishes failure.
+
+Results are rational_kernel_results.json and symbolic_checks.json.
+They contain the exact primitive integer pairs, so every finite example
+can be recomputed without reconstructing the polynomial source.
+
+
+8. Scope, sources, and what remains missing
+
+The source-level differential identity and endpoint reduction are elementary.
+The scalar moment map, the broader cone warning, and related positive-weight
+obstructions overlap earlier local work. Files consulted after recording the
+initial idea include README.txt, collaboration/round-01/fresh/findings.txt,
+cyclotomic-integrals.txt, ladder-integrals.txt, structural-followup.txt,
+and selected text searches in research-notes.txt, hypergeometric-arithmetic.txt,
+and orthogonal-cancellation.txt.
+
+A limited primary-source web check consulted the indexed opening of
+T. Rivoal and W. Zudilin, "Diophantine properties of numbers related to
+Catalan's constant": https://rivoal.perso.math.cnrs.fr/articles/betacatalan.pdf .
+Its historical method context was checked, not its full proofs. No current
+claim of Catalan irrationality, nor any alleged consequence for beta(4),
+is assumed or used. No exhaustive priority search has been performed.
+
+The useful negative conclusion is narrow and concrete: exact period
+cancellation by E^4 plus repeated quadratic poles and 2n Taylor conditions
+still leaves an arithmetic cost larger than its best real decay. Improving
+the real estimate or optimizing these pole positions cannot fix that family.
+
+The general reduction (8) leaves open constructions with denominator
+polynomials whose reversed coefficients create genuinely different prime
+cancellation. Establishing enough such cancellation AFTER primitive
+normalization, together with nonvanishing and a shrinking bound, is still
+missing. The present work provides no successful candidate satisfying those
+conditions, and no irrationality proof.

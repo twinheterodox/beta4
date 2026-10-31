@@ -1,0 +1,1185 @@
+THEOREM AND CLAIM INVENTORY
+Prepared 2026-10-31; 57 grouped entries.
+
+Writing-stage inventory, not a completed paper or a global impossibility theorem.
+
+The classifications describe the strength claimed in the archived proof.
+They do not certify that every underlying proof has been re-audited.
+Read the individual scope, reading status and novelty assessment.
+Paths below are relative to the repository root.
+
+CLASSIFICATIONS
+===============
+primitive_value_obstruction: An archived proof bounds the actual primitive integer
+  value or reduced denominator in the specified family; reading status is separate.
+
+arithmetic_theorem: A local valuation, denominator or content statement; not
+  necessarily a global primitive-value obstruction.
+
+analytic_theorem: A real-size theorem; arithmetic may still be missing.
+
+structural_obstruction: A proved limitation of a particular construction or
+  implication.
+
+structural_theorem: An exact structural description, not necessarily an obstruction.
+
+estimate_limitation: The stated bound or normalization fails; actual primitive values
+  may remain unsettled.
+
+finite_evidence: Exact or interval calculations at finitely many prescribed instances.
+
+positive_construction: An identity or positive/nonzero family; this alone does not
+  prove irrationality.
+
+partial_construction: Some proof ingredients are available, with an explicit missing
+  ingredient.
+
+attributed_identity: Prior published or externally attributed input.
+
+equivalence: An exact reduction to a known or previously archived construction.
+
+standard_fact: General established algebra, not an originality claim.
+
+C01 — A positive cubic-tail kernel isolating beta(4)
+====================================================
+Class: positive_construction
+Placement: main
+Statement: Write theta=beta(4) and S_l(a)=sum_{j=0}^{a-1}((4j+1)^(-l)-(4j+3)^(-l)).
+  For positive integer a,b, K(a^2,b^2)=[b S_3(b)-a S_3(a)]/[6(b^2-a^2)] off the
+  diagonal and K(a^2,a^2)=theta-S_4(a)+S_3(a)/(12a). It has the Stieltjes product
+  representation with density omega(s)=pi^2 s^2(1+A-2A^3)/96, A=sech(2pi s), and every
+  ordered square minor is strictly positive. K(0,0)=2theta gives a continuous
+  zero-node extension.
+Limits: This is an explicitly defined kernel. It does not classify all positive
+  representations of beta(4). The general positivity mechanism is classical.
+Novelty: Candidate specific contribution. Closest sources compared; priority not
+  established by this audit.
+Reading in this pass: Underlying proof read in this writing pass, in addition to the
+  integrated report. No new independent model audit.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Literature: ZUDILIN2015, PREVOST2017, CARREIRA2026
+Proof/navigation sources:
+  evidence/research/dilations-and-positive-kernels.txt
+  evidence/research/collaboration/round-01/construction/findings.txt
+Preserved calculation sources/results:
+  evidence/research/collaboration/round-01/construction/checks.py
+  evidence/research/collaboration/round-01/construction/checks.json
+
+C02 — Uniform two-sided comparison with a Cauchy determinant
+============================================================
+Class: analytic_theorem
+Placement: main
+Statement: For increasing positive integer row nodes a_i and column nodes b_j, let
+  C_ij=1/(a_i+b_j), c0=pi^3/192, M=1+2/(3sqrt(6)), tau=1/(sqrt(2)pi). Then
+  [c0/(1+tau)^2]^n det C <= det K <= (M c0)^n det C. Thus log det K=log det C+O(n)
+  uniformly in the node locations. The proof evaluates the regularized Cauchy
+  determinant exactly by a rank-one update.
+Limits: The constants and uniform comparison concern C01; an entrywise comparison
+  alone would not establish this statement. The common-zero case has a separate
+  formula in the proof.
+Novelty: Candidate specific contribution. Closest sources compared; priority not
+  established by this audit.
+Reading in this pass: Underlying proof read in this writing pass, in addition to the
+  integrated report. No new independent model audit.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Dependencies: C01
+Literature: ZUDILIN2015, KRATTENTHALER2021
+Proof/navigation sources:
+  evidence/research/collaboration/round-01/construction/findings.txt
+Preserved calculation sources/results:
+  evidence/research/collaboration/round-01/coordinator/kernel_identity_checks.py
+  evidence/research/collaboration/round-01/coordinator/kernel_identity_checks.json
+
+C03 — Primitive growth for every consecutive principal offset
+=============================================================
+Class: primitive_value_obstruction
+Placement: main
+Statement: Let Q_{n,m}(X)=det(XI+R) be C01 on a_i=m+i, 1<=i<=n, with theta replaced by
+  X, and let Z_{n,m}=H_{n,m}Q_{n,m} be primitive in Z[X] with H>0. For every sequence
+  of integers m_n>=0, liminf n^(-2)log Z_{n,m_n}(theta)>=2-2log 2>0. For any principal
+  positive node set with maximum M0 and prime 2M0<p<4M0, p>=5, the coefficient of
+  X^(n-r_p), r_p=#{i:4a_i>p}, has valuation -4r_p. This is a valuation of an actual
+  coefficient. The nodes 0,...,n-1 have the same limiting lower bound.
+Limits: Excludes these full principal pencils, including rational invertible changes
+  of their bases. Does not exclude sparse nodes, nonprincipal minors, different
+  subspaces, weights or combinations of determinants.
+Novelty: Candidate specific contribution. Closest sources compared; priority not
+  established by this audit.
+Reading in this pass: Underlying proof read in this writing pass, in addition to the
+  integrated report. No new independent model audit.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Dependencies: C01, C02
+Literature: CARREIRA2026, BROWN2026
+Proof/navigation sources:
+  evidence/research/collaboration/round-01/construction/findings.txt
+  evidence/research/collaboration/round-01/construction/arithmetic-review.txt
+  evidence/research/collaboration/round-01/fresh/construction_review.txt
+Preserved calculation sources/results:
+  evidence/research/collaboration/round-01/construction/checks.py
+  evidence/research/collaboration/round-01/construction/checks.json
+
+C04 — Difference-variable Gram moments with full target rank
+============================================================
+Class: positive_construction
+Placement: main
+Statement: Let J(P)=integral_[0,1]^2 P(u,v)log^2(uv)/(sqrt(uv)(1+uv))du dv and
+  mu_m=J((u-v)^(2m))/96. With C_m=binom(2m,m), T_s(j)=sum_{k<j}(-1)^k/(2k+1)^s,
+  mu_m=C_m theta+B_m, where B_m=-C_m
+  T_4(m)+(1/6)sum_{j=0,j!=m}^{2m}binom(2m,j)T_3(j)/(j-m). The Hankel polynomial
+  Q_n(X)=det[C_{i+j}X+B_{i+j}]_{i,j<n} has degree n, leading coefficient 2^(n-1), and
+  Q_n(theta)>0.
+Limits: Formal coefficient identity; it assumes no independence or irrationality of
+  theta. The full-rank coefficient is specific to the difference-variable
+  construction.
+Novelty: Candidate specific contribution. Closest sources compared; priority not
+  established by this audit.
+Reading in this pass: Underlying proof read in this writing pass, in addition to the
+  integrated report. No new independent model audit.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Literature: ZUDILIN2015, CARREIRA2026
+Proof/navigation sources:
+  evidence/research/collaboration/round-06/fresh/findings.txt
+  evidence/research/collaboration/round-06/coordinator/gram_review.txt
+Preserved calculation sources/results:
+  evidence/research/collaboration/round-06/fresh/gram_checks.py
+  evidence/research/collaboration/round-06/fresh/gram_checks.json
+
+C05 — Matching real upper and lower rates for the difference Gram
+=================================================================
+Class: analytic_theorem
+Placement: main
+Statement: For Q_n in C04, log Q_n(theta)=-(log 4)n^2+O(n log n). The pushforward
+  y=(u-v)^2 has positive density rho(y)>=(1-y)/6144; comparison with explicit Jacobi
+  norms supplies the lower bound, and monic Chebyshev trial polynomials supply the
+  upper bound.
+Limits: A bound on real size only. It cannot itself imply irrationality or a primitive
+  obstruction.
+Novelty: Candidate specific contribution. Closest sources compared; priority not
+  established by this audit.
+Reading in this pass: Underlying proof read in this writing pass, in addition to the
+  integrated report. No new independent model audit.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Dependencies: C04
+Literature: ZUDILIN2015
+Proof/navigation sources:
+  evidence/research/collaboration/round-06/fresh/findings.txt
+  evidence/research/collaboration/round-06/coordinator/gram_review.txt
+Preserved calculation sources/results:
+  evidence/research/collaboration/round-06/fresh/gram_checks.py
+  evidence/research/collaboration/round-06/fresh/gram_checks.json
+
+C06 — Exact large-prime primitive exponent for the difference Gram
+==================================================================
+Class: arithmetic_theorem
+Placement: main
+Statement: Let Z_n=kappa_n Q_n be primitive in Z[X], kappa_n>0 rational. For every
+  prime p>4n, v_p(kappa_n)=3 max(0,2n-2-floor(p/4)). The leading residue block is
+  anti-triangular with nonzero anti-diagonal; its complementary theta coefficient is a
+  p-unit. The only possible negative valuation of kappa_n is at 2 and is at least
+  -(n-1).
+Limits: The exact formula covers p>4n; it is not a formula for every prime. It already
+  includes the full coefficient content, rather than just a sufficient denominator.
+Novelty: Candidate specific contribution. Closest sources compared; priority not
+  established by this audit.
+Reading in this pass: Underlying proof read in this writing pass, in addition to the
+  integrated report. No new independent model audit.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Dependencies: C04
+Literature: CARREIRA2026, BROWN2026
+Proof/navigation sources:
+  evidence/research/collaboration/round-06/fresh/findings.txt
+  evidence/research/collaboration/round-06/coordinator/gram_review.txt
+Preserved calculation sources/results:
+  evidence/research/collaboration/round-06/fresh/gram_checks.py
+  evidence/research/collaboration/round-06/fresh/gram_checks.json
+
+C07 — Primitive growth for the difference-variable Gram family
+==============================================================
+Class: primitive_value_obstruction
+Placement: main
+Statement: For C04-C06, log kappa_n>=6n^2+o(n^2), so log Z_n(theta)>=(6-log
+  4)n^2+o(n^2). In particular the actual primitive values eventually exceed one and
+  their nth roots tend to infinity.
+Limits: A theorem about one specified principal Gram sequence. It does not rule out
+  all positive Gram determinants or arbitrary polynomial filters.
+Novelty: Candidate specific contribution. Closest sources compared; priority not
+  established by this audit.
+Reading in this pass: Underlying proof read in this writing pass, in addition to the
+  integrated report. No new independent model audit.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Dependencies: C04, C05, C06
+Literature: CARREIRA2026, BROWN2026
+Proof/navigation sources:
+  evidence/research/collaboration/round-06/fresh/findings.txt
+  evidence/research/collaboration/round-06/coordinator/gram_review.txt
+Preserved calculation sources/results:
+  evidence/research/collaboration/round-06/fresh/gram_checks.py
+  evidence/research/collaboration/round-06/fresh/gram_checks.json
+
+C08 — Primitive invariance under full rational basis changes
+============================================================
+Class: standard_fact
+Placement: main
+Statement: Multiplying a full rational matrix pencil on either side by an invertible
+  rational matrix multiplies its determinant by a nonzero rational scalar. Its
+  primitive integer polynomial is therefore unchanged up to sign. Multiplying a
+  rational linear form by a common nonzero rational scalar likewise leaves its
+  primitive pair unchanged.
+Limits: Selecting a proper subspace, changing the measure or changing the pencil is
+  not such a basis change.
+Novelty: Standard framework or elementary consequence; do not present as an original
+  general theorem.
+Reading in this pass: Underlying proof read in this writing pass, in addition to the
+  integrated report. No new independent model audit.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-01/construction/findings.txt
+  evidence/research/collaboration/round-07/arithmetic/findings.txt
+  evidence/research/collaboration/round-10/adelic/findings.txt
+
+S01 — The complete cone of scalar positive polynomial forms
+===========================================================
+Class: structural_theorem
+Placement: context_appendix
+Statement: For I(P)=(1/6)integral_0^1 (-log x)^3 P(x^2)/(1+x^2)dx, rational P
+  nonnegative on [0,1] yields A=P(-1), B=nu((P-P(-1))/(1+t)), dnu=(-log
+  t)^3dt/(96sqrt(t)). Its image is {0} union {(A,B) in Q^2:A theta+B>0}. At each fixed
+  degree the image is the rational cone between two explicitly computed extremal rays;
+  the least witness degree for a small positive form L is
+  log(|A|/L)/log(3+2sqrt(2))+O(log log(|A|/L)).
+Limits: Representation of an already specified positive rational form is not a way to
+  produce small integral forms. Classical interval sum-of-squares and Schur-complement
+  ingredients require attribution.
+Novelty: The general extremal framework is classical; novelty of this precise beta(4)
+  specialization has not been checked fully.
+Reading in this pass: Underlying proof read in this writing pass, in addition to the
+  integrated report. No new independent model audit.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Literature: KRATTENTHALER2021, PREVOST2017
+Proof/navigation sources:
+  evidence/research/collaboration/round-01/fresh/findings.txt
+Preserved calculation sources/results:
+  evidence/research/collaboration/round-01/fresh/cone_checks.py
+  evidence/research/collaboration/round-01/fresh/cone_checks.json
+
+S02 — Finite positive-cone extremizers do not exclude interior forms
+====================================================================
+Class: finite_evidence
+Placement: context_appendix
+Statement: The prescribed canonical rational boundary forms have unfavorable tested
+  primitive values, whereas the positive continued-fraction form 5719097-5783031 theta
+  has a degree-16 nonnegative-polynomial witness.
+Limits: This is an explicit scope check and finite evidence, not a family
+  impossibility theorem.
+Novelty: Standard framework or elementary consequence; do not present as an original
+  general theorem.
+Reading in this pass: Underlying proof read in this writing pass, in addition to the
+  integrated report. No new independent model audit.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Dependencies: S01
+Proof/navigation sources:
+  evidence/research/collaboration/round-01/fresh/findings.txt
+
+S03 — Repeated quadratic positive Mellin sources
+================================================
+Class: primitive_value_obstruction
+Placement: supplement
+Statement: For the specified source P=y^n(u-vy)^n, along even n and the
+  positive-integer parameter schedules in the proof with log(u+v)=o(n), the actual
+  primitive value L_n satisfies liminf log L_n/n >=8/3-log(5+4sqrt(2))>0.
+Limits: Only this repeated-quadratic source and its stated parameter/sign hypotheses.
+  Not all positive polynomial sources.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-03/fresh/findings.txt
+
+S04 — Uniform failure of the Euler-Boole truncation family
+==========================================================
+Class: primitive_value_obstruction
+Placement: supplement
+Statement: For the archived Euler-Boole approximants with endpoint N and any
+  truncation schedule, the error lower bound is pi^2 exp(-pi N)/(144N), while reduced
+  denominators satisfy liminf log q/N>=8. The resulting primitive error has lower
+  exponential rate 8-pi>0. The proof separately treats bounded N and growing
+  truncation order, and products of the prescribed forms.
+Limits: Does not cover sums, general nonlinear combinations, arbitrary continued
+  fractions, or every asymptotic summation method.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-05/fresh/findings.txt
+  evidence/research/collaboration/round-05/coordinator/boole_review.txt
+
+S05 — Third-derivative continued fractions at fixed endpoints
+=============================================================
+Class: primitive_value_obstruction
+Placement: supplement
+Statement: For the specified continued fraction differentiated three times at a=2N,
+  fixed N>=1 and even depth n=2m, the reduced denominator has v_p=8+4v_p(A_N(m)) for
+  m<p<2m, p>2N, away from the explicit C_N(m) exceptions. For its actual primitive
+  polynomial Z_{n,N}, liminf log|Z_{2m,N}(theta)|/(2m)>=4.
+Limits: The fixed-N, even-depth hypotheses are essential to the archived proof. Odd
+  depths and growing N were not settled.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-07/fresh/findings.txt
+
+S06 — Cyclotomic minimal-polynomial obstruction
+===============================================
+Class: primitive_value_obstruction
+Placement: supplement
+Statement: The sine-normalized cyclotomic candidate alpha_p of the proof has degree
+  p-1, 8alpha_p is integral, and alpha_p-theta has a signed error of order p^(-2). For
+  its actual primitive minimal polynomial M_p, log|M_p(theta)|=4(p-1)log p+O(p), along
+  the stated prime levels.
+Limits: One particular normalization and prime-level norm family, not all cyclotomic
+  norms.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Underlying proof read in this writing pass, in addition to the
+  integrated report. No new independent model audit.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-11/norms/findings.txt
+
+S07 — Quarter-Gamma cumulant sequence
+=====================================
+Class: primitive_value_obstruction
+Placement: supplement
+Statement: The specified fourth-cumulant coefficient limit has error of order n^(-5),
+  but reduced denominator logarithm at least 24n; its primitive error grows. The
+  arithmetic statement can be separated from the proposed orbifold interpretation.
+Limits: Does not obstruct all geometric periods, Gamma-class constructions or the
+  uncalibrated nonconstant deformation.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-09/orbifold/findings.txt
+  evidence/research/collaboration/round-09/orbifold/deformation.txt
+
+S08 — Overshifted dense grids
+=============================
+Class: primitive_value_obstruction
+Placement: supplement
+Statement: The specified dense-grid family has an actual primitive obstruction in the
+  overshifted range m>=768r^4, using the prime interval and normalization given in its
+  proof.
+Limits: Does not cover proportional shifts or arbitrary grids.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-04/coordinator/loewner_shift.txt
+  evidence/research/collaboration/round-04/fresh/findings.txt
+
+S09 — A positive-source obstruction for the common-base Mellin kernel
+=====================================================================
+Class: primitive_value_obstruction
+Placement: supplement
+Statement: For the rational kernel U and weight W of the completed ladder, let D be
+  the degree-16 denominator, N=DU, and P=A+DV be a nonzero rational polynomial
+  nonnegative on [0,1]. Write NV=sum a_j x^j and impose sum a_j/j^3=sum a_j/j^2=0. The
+  resulting theta-only Mellin form I(P) has A>0. Every positive rational multiplier
+  kappa for which kappa A is a nonzero integer satisfies kappa I(P)>1/2; in particular
+  its primitive integer forms cannot tend to zero.
+Limits: The two linear constraints and this particular signed rational kernel are
+  essential. It does not exclude signed P, joint Pade determinants or arbitrary Mellin
+  integrals.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated report and theorem/definitions plus the
+  dual-polynomial lower-bound proof read in this writing pass; the complete
+  Sturm/tail-certificate derivation has not been re-audited.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Dependencies: L01
+Literature: BROADHURST1998
+Proof/navigation sources:
+  evidence/research/collaboration/round-03/fresh/mellin_positive_obstruction.txt
+  evidence/research/coordinated-round-03.txt
+
+A01 — Delayed prime layers in slowly varying dilations
+======================================================
+Class: arithmetic_theorem
+Placement: supplement
+Statement: For each fixed odd filter parameter k in the archived range, actual
+  coefficient-denominator growth lies between 3/2+1/(k+2) and 3/2+1/k+1/(2k+4). Later
+  recursive congruences analyze local determinant content.
+Limits: Coefficient denominators are not primitive determinant multipliers. No uniform
+  joint k,N theorem follows.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-01/arithmetic/findings.txt
+  evidence/research/collaboration/round-02/arithmetic/findings.txt
+  evidence/research/collaboration/round-03/arithmetic/findings.txt
+
+A02 — Bordered determinant content and modular defects
+======================================================
+Class: arithmetic_theorem
+Placement: supplement
+Statement: For T=DH, u=Db, d=det T, m=adj(T)u, Q=u^t adj(T)u, the specified bordered
+  form has g=gcd(6Dd,Q), Delta=gcd(d,m_i), and Delta|g|6D Delta^2. The maximal-minor
+  gcd records a modular Pade defect; an example contains the additional prime 23
+  absent from D.
+Limits: The determinant identity is classical. The divisibility bounds do not control
+  every primitive gcd asymptotically.
+Novelty: Standard determinant identity specialized to the construction; particular
+  arithmetic consequences need a priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-02/arithmetic/findings.txt
+
+A03 — Fixed-cut capacity limitations
+====================================
+Class: estimate_limitation
+Placement: supplement
+Statement: For the prescribed k=3 and k=5 slow filters, the fixed-cut
+  absolute-contour/capacity comparison cannot beat the displayed denominator budget.
+Limits: Failure of that bound does not prove that actual determinants fail. Signed
+  estimates and different contours remain outside the statement.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-02/analysis/findings.txt
+  evidence/research/collaboration/round-02/arithmetic/analysis-review.txt
+
+A04 — Prime deletion with subquadratic sufficient arithmetic cost
+=================================================================
+Class: partial_construction
+Placement: supplement
+Statement: The Euler prime-deletion construction pays a selected fourth-power prime
+  layer at most once, including its endpoint. Some growing cutoffs have log^+
+  kappa=o(n^2) for a sufficient multiplier.
+Limits: Real decay and suitable all-index nonvanishing for the size-dependent filters
+  are missing. This is not a successful irrationality construction.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-04/arithmetic/findings.txt
+  evidence/research/collaboration/round-04/construction/findings.txt
+
+A05 — Sparse collapse and an oversieved primitive obstruction
+=============================================================
+Class: primitive_value_obstruction
+Placement: supplement
+Statement: The keep-prime-3 sparse family collapses by an exact Pade/determinant
+  identity. An explicitly oversieved subfamily with the stated cutoff p congruent 3
+  mod 4 at least M^4 has actual primitive value above one.
+Limits: The natural sieve cutoff and other sparse families were not excluded.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-04/construction/findings.txt
+
+A06 — Nonreal branch points obstruct a particular positivity repair
+===================================================================
+Class: structural_obstruction
+Placement: supplement
+Statement: The slow filter has genuine nonreal branch points satisfying
+  z^k=-(sqrt(2)-1)^2. The same-variable algebraic multiplication/addition repairs
+  analyzed in the proof cannot turn it into a Cauchy transform supported on a compact
+  real interval.
+Limits: A statement about these transformations, not arbitrary changes of variables or
+  all positive integral representations.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Underlying proof read in this writing pass, in addition to the
+  integrated report. No new independent model audit.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-01/construction/findings.txt
+
+H01 — Rational Euler/Hermite source reduction
+=============================================
+Class: positive_construction
+Placement: supplement
+Statement: Applying E^4 to the specified rational sources removes the auxiliary
+  periods; the two-endpoint rational source conditions reduce to an explicit 4-by-5
+  system, including the singular cases and b0. The later packet records the exact
+  primitive gcd.
+Limits: Target isolation and a finite-dimensional source description do not furnish a
+  useful primitive-height estimate.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-03/fresh/findings.txt
+  evidence/research/collaboration/round-06/arithmetic/findings.txt
+  evidence/research/collaboration/round-07/arithmetic/findings.txt
+
+H02 — Strict integration denominator word
+=========================================
+Class: arithmetic_theorem
+Placement: supplement
+Statement: For r strict integrations, W_r(N)=product_{j=1}^r lcm(1,...,floor(N/j)) is
+  a sufficient denominator. For r=4, log W_4(N)~25N/12. The fourth local layer is
+  sharp at degree 4p in the specified source setting.
+Limits: A local coefficient bound. It is not a lower bound for every resulting
+  primitive linear form.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-01/arithmetic/findings.txt
+  evidence/research/collaboration/round-07/arithmetic/findings.txt
+
+H03 — Circular Hermite sources: eventual nonvanishing and real error
+====================================================================
+Class: partial_construction
+Placement: supplement
+Statement: The symmetric circular source has eventual required rank and a signed error
+  asymptotic epsilon_n~(-1)^n C n^(5/2)log^2(n)((sqrt(2)-1)/2)^n, with C nonzero as
+  defined in the proof.
+Limits: Actual primitive height/content remains uncontrolled. Factorial rescaling does
+  not change the primitive pair.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-07/analysis/rank_asymptotic.txt
+  evidence/research/collaboration/round-07/analysis/residual_asymptotic.txt
+  evidence/research/collaboration/round-07/arithmetic/findings.txt
+
+L01 — Completed Broadhurst weight-four ladder
+=============================================
+Class: attributed_identity
+Placement: supplement
+Statement: An already published completed polylogarithmic ladder is specialized to a
+  common Gaussian base, isolating theta with the necessary lower-weight completion
+  terms retained.
+Limits: Attribute the ladder to Broadhurst. Its reuse is not a newly discovered
+  functional equation.
+Novelty: Attributed input, not an original identity.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Literature: BROADHURST1998
+Proof/navigation sources:
+  evidence/research/collaboration/round-02/fresh/findings.txt
+
+L02 — Scalar Taylor truncations of the ladder
+=============================================
+Class: primitive_value_obstruction
+Placement: supplement
+Statement: For the specified equal-speed scalar Taylor truncations, an exact dyadic
+  reduced-denominator exponent and a signed error estimate prove failure after
+  primitive reduction.
+Limits: Does not transfer to the common-base determinant or a general simultaneous
+  multiplier.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Dependencies: L01
+Proof/navigation sources:
+  evidence/research/collaboration/round-02/fresh/findings.txt
+
+L03 — Common-base ladder determinant
+====================================
+Class: partial_construction
+Placement: supplement
+Statement: At q=(1-i)/2 and arguments -q^2,-q^3,-q^5, the prescribed determinant is
+  nonzero infinitely often. Raw real decay pays the proved dyadic cost with margin
+  (log 2)n^2/60.
+Limits: Odd-prime denominators are unresolved. A favorable dyadic budget is not a full
+  arithmetic budget.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Dependencies: L01
+Proof/navigation sources:
+  evidence/research/collaboration/round-03/analysis/findings.txt
+  evidence/research/collaboration/round-03/arithmetic/findings.txt
+
+L04 — Matched simultaneous multipliers
+======================================
+Class: partial_construction
+Placement: supplement
+Statement: The prescribed simultaneous multiplier construction has rational error
+  asymptotic (-1)^n K 27^(-n)/sqrt(n), with nonzero K specified in the source.
+Limits: Full primitive arithmetic is missing; not ruled out by L02.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Dependencies: L01
+Proof/navigation sources:
+  evidence/research/collaboration/round-02/fresh/simultaneous.txt
+
+L05 — Gangl specialization and completion/trace limitations
+===========================================================
+Class: attributed_identity
+Placement: supplement
+Statement: An exact 21-argument algebraic tetralogarithm presentation is obtained from
+  Gangl and checked at symbol level. Completion terms and conjugate fields are
+  tracked; the proposed naive trace after individual inversions fails.
+Limits: No numerical period independence theorem; the functional equation is
+  attributed, and the failed trace is only one attempted use of it.
+Novelty: Published functional equation with a specialized audit; do not claim original
+  general identity.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Literature: GANGL2002
+Proof/navigation sources:
+  evidence/research/collaboration/round-06/identities/findings.txt
+  evidence/research/collaboration/round-06/identities/arithmetic_review.txt
+
+M01 — Eichler period cancellation and the level-32 source
+=========================================================
+Class: positive_construction
+Placement: supplement
+Statement: The archived modular/Eichler construction cancels the auxiliary period
+  polynomial and gives a level-32 theta-only source. A transformed cusp has a signed
+  error estimate.
+Limits: No complete primitive-growth theorem for all levels or coordinates;
+  transformation identities alone do not supply an arithmetic gain.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/modular-detour.txt
+  evidence/research/collaboration/round-05/analysis/findings.txt
+
+M02 — Fricke-compatible prime filters
+=====================================
+Class: arithmetic_theorem
+Placement: supplement
+Statement: Minimal quadratic Fricke-compatible filters save selected prime layers in
+  both endpoint germs; the fixed-filter germ has the documented
+  nonvanishing/natural-boundary properties.
+Limits: Size-dependent filters require additional real estimates and nonvanishing;
+  savings at selected primes are not a complete primitive budget.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-05/arithmetic/findings.txt
+  evidence/research/collaboration/round-05/analysis/findings.txt
+
+M03 — Interior poles in higher-level coordinate repairs
+=======================================================
+Class: structural_obstruction
+Placement: supplement
+Statement: The proposed higher-level coordinates and prefactors have certified
+  uncancelled interior poles. A later integral annihilator removes ordinary/shifted
+  pole families but leaves the stated six fixed-point poles.
+Limits: These establish raw coefficient/pole limitations, generally not
+  primitive-value impossibility after arbitrary normalization.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-05/fresh/findings.txt
+  evidence/research/collaboration/round-06/fresh/pole_annihilator_review.txt
+
+M04 — A bounded level-32 rational-system comparison
+===================================================
+Class: estimate_limitation
+Placement: supplement
+Statement: The three prescribed source families have ranks 9,17,18. The optimized
+  displayed logarithmic derivative bound is below 1.3 against the needed threshold
+  above 4, within the stated rational coefficient templates.
+Limits: A bound on this comparison/template, not all modular coordinates or a general
+  modular impossibility.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-13/findings.txt
+  evidence/research/collaboration/round-13/coordinator/core-claims.txt
+  evidence/research/collaboration/round-13/independent/optimized-comparison-audit.txt
+
+Q01 — Differentiated integer-pole tail
+======================================
+Class: partial_construction
+Placement: supplement
+Statement: The prescribed parameter derivative isolates theta and has signed error
+  proportional to (-1)^(n+1)n^(-5/2)log^2(n)(27/256)^n. Its displayed integer
+  multiplier retains fifth odd-prime layers and fails the required budget.
+Limits: No control of all primitive numerator content; failure of that multiplier is
+  not a primitive impossibility.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-04/fresh/findings.txt
+  evidence/research/half-pole-arithmetic.txt
+
+Q02 — Nonsymmetric Whipple jets and one Thomae orbit
+====================================================
+Class: finite_evidence
+Placement: supplement
+Statement: Three nonsymmetric half-parameter jets and the 120-element Thomae group at
+  one fixture yield no useful cross-branch stabilizer relation; six prescribed
+  primitive eliminations are unfavorable.
+Limits: Finite fixture, not a classification of all hypergeometric transformations or
+  parameter orbits.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-10/symmetry/findings.txt
+
+Q03 — Moved-base Whipple pairing
+================================
+Class: estimate_limitation
+Placement: supplement
+Statement: The moved-base Whipple construction has an all-index identity, positive
+  terminating coefficient expression, exact dyadic valuations and eventual signed
+  nonvanishing. Its proved multipliers satisfy M_U|M_D. Integer clearing of the fixed
+  cofactor fails even without odd-prime cost.
+Limits: Large odd primitive content is unbounded; not an actual primitive-value
+  obstruction. The symmetric candidate was exactly archived in
+  half-pole-arithmetic.txt.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-14/findings.txt
+  evidence/research/half-pole-arithmetic.txt
+
+Q04 — Repaired paired forward/dual quarter identity
+===================================================
+Class: positive_construction
+Placement: supplement
+Statement: The full forward/dual identities at both quarter arguments were completed,
+  with exact all-index coefficients, recurrences, initial data and normalizations.
+  This repairs the numerator mismatch found in round 12.
+Limits: Do not repeat the round-12 mismatch as an unrepaired final conclusion.
+  Nonvanishing of the projected theta form was only checked at five finite indices.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Literature: LEIBTAG2026
+Proof/navigation sources:
+  evidence/research/collaboration/round-12/fresh/findings.txt
+  evidence/research/collaboration/round-15/coordinator/complete-deformation.txt
+  evidence/research/collaboration/round-15/findings.txt
+  evidence/research/collaboration/round-15/independent/final-audit.txt
+
+Q05 — Arithmetic ceiling for the proved paired-identity estimates
+=================================================================
+Class: estimate_limitation
+Placement: supplement
+Statement: For Q04, the specified primewise estimates have content-density ceiling
+  88.2075294973 against required 142.8620263851, even before numerator costs.
+Limits: This is not a bound on every actual primitive gcd and does not exclude faster
+  projected decay.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Dependencies: Q04
+Proof/navigation sources:
+  evidence/research/collaboration/round-15/coordinator/arithmetic-gate.txt
+  evidence/research/collaboration/round-15/independent/final-audit.txt
+
+P01 — Lower-period cancellation in earlier positive/coupled integrals
+=====================================================================
+Class: partial_construction
+Placement: catalog_only
+Statement: The early packets give explicit positive moments, orthogonal and radial
+  cancellations of lower periods, mixed-minor identities and prescribed projections.
+  The archive contains several different formal target ranks.
+Limits: This umbrella entry is navigation, not a consolidated theorem. Individual
+  claims and early conjectural recurrences need separate promotion before manuscript
+  use.
+Novelty: Mixed original calculations, standard identities and rediscoveries; no
+  collective novelty claim.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/structural-followup.txt
+  evidence/research/arithmetic-followup.txt
+  evidence/research/arcsine-contact.txt
+  evidence/research/orthogonal-cancellation.txt
+  evidence/research/radial-cancellation.txt
+  evidence/research/two-loop-numerators.txt
+
+P02 — Dimensional ladder equals an archived balanced ladder
+===========================================================
+Class: equivalence
+Placement: supplement
+Statement: The positive all-index dimensional family is exactly J_n=(n!)^4
+  4^(-n)L_{n+1,n+1}; the source angular parameter is lambda=2h-1.
+Limits: This exact family is a rediscovery. It does not identify the later nonuniform
+  internal graph with the same sequence.
+Novelty: Archive equivalence; no new family.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-08/coordinator/dimensional-ladder-gate.txt
+  evidence/research/ladder-integrals.txt
+
+P03 — Nonuniform internal graph: fixed-period space and positive decay
+======================================================================
+Class: partial_construction
+Placement: supplement
+Statement: The different ray with D=8n+4, outer powers n+1 and central Green power
+  4n+1 has positive error decay 256^(-n). A terminating harmonic reduction places each
+  fixed n in a five-period space. Its prescribed n=1,...,4 pure-theta cofactors have
+  large primitive values.
+Limits: No all-index primitive-height theorem; finite cofactor failure does not
+  exclude the graph family.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-09/internal_graph/general-period-space.txt
+  evidence/research/collaboration/round-09/internal_graph/bounded-gate.txt
+  evidence/research/collaboration/round-09/independent/internal_graph_review.txt
+
+P04 — Positive dense-quarter interpolation
+==========================================
+Class: partial_construction
+Placement: supplement
+Statement: An interpolating polynomial at a_j=(2j+1)/4 cancels zeta(4), producing a
+  positive Gram pencil with full theta degree. Its normalized kernel is within
+  polynomial-in-K factors of a fixed single-pole kernel. Three prescribed primitive
+  examples fail.
+Limits: The analytic comparison is not primitive-polynomial equivalence; no all-index
+  arithmetic obstruction was proved.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-10/coordinator/dense-quarter-gate.txt
+  evidence/research/collaboration/round-11/coordinator/dense-grid-comparison.txt
+
+P05 — Unsquared quarter poles: conditional nonvanishing
+=======================================================
+Class: partial_construction
+Placement: supplement
+Statement: For h=2n, K=8n+4 and prime p=8n+5, the unsquared-quarter-pole determinant
+  has valuation -8n when theta is hypothetically p-integral rational. Infinitely many
+  admissible primes establish conditional nonvanishing. All seven prescribed primitive
+  values are large.
+Limits: Conditional nonvanishing has been proved; asymptotic smallness or a primitive
+  obstruction has not.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-11/fresh/findings.txt
+  evidence/research/collaboration/round-11/coordinator/unsquared-nonvanishing.txt
+
+P06 — Interleaved nonprincipal frames: exact local layers, insufficient bound
+=============================================================================
+Class: estimate_limitation
+Placement: context_appendix
+Statement: The interleaved family has exact Cauchy real energy E(c). Its first four
+  negative Smith layers cost 3+3c^2>E(c) for every fixed 0<c<=1 in the stated width
+  families. At c=1/5 a coefficient valuation rules out all positive integer
+  coefficient-clearing normalizations. Nine exact primitive examples fail.
+Limits: Not a primitive-value obstruction: rational primitive rescaling can remove
+  numerator content, which these negative layers do not bound. The leading coefficient
+  is not a fixed p-unit.
+Novelty: Specific local calculation; candidate contribution is the scoped estimate
+  limitation, not general impossibility.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-16/archive-audit.txt
+  evidence/research/collaboration/round-16/findings.txt
+  evidence/research/collaboration/round-17/local-structure.txt
+  evidence/research/collaboration/round-17/findings.txt
+
+P07 — Ordinary-moment first variation: positivity but open arithmetic
+=====================================================================
+Class: partial_construction
+Placement: context_appendix
+Statement: For F(u)=sum_{k>=0}(-1)^k/((2k+1)^2-u), H=a(F-r), the variation
+  W=aHprime-aprime H=a^2(theta-rprime) at u=0 isolates theta. The normalized error is
+  positive for every n and has log E_n/n -> -2log(3+sqrt(8)). Full gcd reduction of
+  all 24 existing direct/variation forms gives values above one at n=3,...,12 and
+  below one at n=1,2.
+Limits: No all-index bound on reduced denominators. The arcsine variation was exactly
+  archived; the ordinary-moment sequence was not identified with an archived sequence.
+  Generic Schur/Christoffel/envelope machinery is classical.
+Novelty: Specific analytic specialization, with classical construction machinery; no
+  claimed arithmetic breakthrough.
+Reading in this pass: Underlying proof read in this writing pass, in addition to the
+  integrated report. No new independent model audit.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Literature: PREVOST2017, KRATTENTHALER2021, CARREIRA2026
+Proof/navigation sources:
+  evidence/research/collaboration/round-18/findings.txt
+  evidence/research/collaboration/round-18/adversarial/assessment.txt
+  evidence/research/collaboration/round-18/archive-comparison.txt
+Preserved calculation sources/results:
+  evidence/research/collaboration/round-18/primitive_check.py
+  evidence/research/collaboration/round-18/primitive-check.json
+  evidence/research/collaboration/round-18/explorer/exact-model-coefficients.json
+  evidence/research/collaboration/round-18/adversarial/checks.json
+
+E01 — Sharp Euler functional norm on integer-valued polynomials
+===============================================================
+Class: arithmetic_theorem
+Placement: supplement
+Statement: For tau=-E_0 D^3/12 on Int(Z_p), p>=5, the exact norm has denominator-layer
+  onset m_p(3q+r)=(3-r)p^q+r p^(q+1). The first three positive layers begin at
+  p+2,2p+1,3p.
+Limits: A polynomial-functional norm, distinct from a Gauss coefficient norm. It does
+  not cover rational poles or primitive determinant content.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-10/adelic/findings.txt
+  evidence/research/collaboration/round-10/symmetry/adelic_review.txt
+
+E02 — Whole-functional Euler distribution
+=========================================
+Class: attributed_identity
+Placement: supplement
+Statement: The Euler distribution transforms the whole polynomial-plus-pole functional
+  using Y=chi(p)p^4X+C_p. The positive csch beta(4) functional and its transfer
+  mechanism were already present in Carreira.
+Limits: The distribution identity supplies no equality between a real rational value
+  and a p-adic limit, and no change of an existing primitive polynomial.
+Novelty: Standard Euler distribution and attributed Carreira functional; do not
+  present as a new beta(4) kernel.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Literature: CARREIRA2026
+Proof/navigation sources:
+  evidence/research/collaboration/round-08/discrete/findings.txt
+  evidence/research/coordinated-round-08.txt
+
+E03 — Scoped countermodels for proposed analytic bridges
+========================================================
+Class: structural_obstruction
+Placement: catalog_only
+Statement: The round-8 packets give countermodels to the proposed E-function Stokes
+  inference, rational positive-moment/compact-support inference and Maass/CM
+  spectral-raising bridge; local monodromy shears do not preserve the prescribed
+  boundary normalization.
+Limits: Each countermodel addresses a stated inference, not an entire subject or all
+  possible geometric constructions.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/coordinated-round-08.txt
+
+E04 — Monodromy obstruction to a linear endpoint regularization
+===============================================================
+Class: structural_obstruction
+Placement: supplement
+Statement: For the regularized primitive C with C(1)=theta and
+  Cprime=-log^3(x)/(6(1+x^2)), the proof shows that a rational linear differential
+  operator making C meromorphic at zero must annihilate the constant function.
+  Rationality of theta changes no differential module.
+Limits: Only rational linear differential operators on this specified primitive.
+  Nonlinear expressions, other modules and added geometric information are not
+  excluded.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Underlying proof sections 1-4 read during the immediately
+  preceding bounded review; integrated report reread for this writing step.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-12/geometry/findings.txt
+
+E05 — Rational gauges of the ordinary two-state tail
+====================================================
+Class: structural_obstruction
+Placement: supplement
+Statement: No rational gauge of the specified ordinary two-state beta(4) tail gives
+  the desired polynomial unimodular transfer matrix.
+Limits: Does not address factorial gauges, higher-rank systems or unrelated
+  recurrences.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-12/fresh/tail_gauge_gate.txt
+
+E06 — A rationality-dependent q-series truncation
+=================================================
+Class: primitive_value_obstruction
+Placement: supplement
+Statement: After subtracting the polar terms under theta=u/v, the prescribed
+  Jouhet-Mosaki q-series remainder shrinks, but at q=(p-1)/p its p^2 truncation has
+  exact denominator p^(p^2) and growing numerator. Complete root averaging reduces to
+  other q-values.
+Limits: Only that rational-point/truncation scheme. No general obstruction to q-series
+  or a real/p-adic algebraicity bridge.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-12/arithmetic/findings.txt
+
+E07 — Endpoint integrality fails for a particular Niven source
+==============================================================
+Class: structural_obstruction
+Placement: supplement
+Statement: Assuming theta=u/v, the proposed positive source [vF(u-vF)]^n/n! vanishes
+  at both endpoints, but its derivative of order p+n-1 at zero has valuation -3 at odd
+  p>n outside uv. Changing to F as coordinate gives a rational beta integral.
+Limits: Blocks the generic endpoint-integrality argument, not selected finite
+  constructions or enlarged jet methods.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-11/rationality/findings.txt
+
+E08 — Direct even-power signature transfer has zero rational trace
+==================================================================
+Class: structural_obstruction
+Placement: supplement
+Statement: The proposed direct even-power extension of the topological signature
+  expression lies in a cyclotomic component negated by an involution fixing Q, so its
+  rational traces vanish. Its half-cusp limit involves theta/pi^4 and a lower beta(2)
+  term.
+Limits: Finite rational combinations across the stated odd levels only; nonlinear
+  norms and different observables are not covered.
+Novelty: Specific claim awaiting a focused priority check.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-10/fresh/findings.txt
+
+E09 — Multiplicative and divisibility-Gram rediscoveries
+========================================================
+Class: equivalence
+Placement: supplement
+Statement: The specified signed divisibility/LCM Gram determinants collapse by rank
+  one to linear approximants; complete Boolean bases reproduce an Euler product.
+  Polynomial Dirichlet convolution retains denominator exponent four but pays the
+  hypothetical rational denominator to the degree.
+Limits: Other finite bases were tested without an all-index obstruction. No general
+  impossibility for multiplicative constructions.
+Novelty: Standard Euler-product/rank-one mechanisms; the archive equivalence prevents
+  duplicate claims.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/collaboration/round-09/independent/multiplicative_gate.txt
+
+O01 — Earlier coupled holonomy and lattice explorations
+=======================================================
+Class: partial_construction
+Placement: catalog_only
+Statement: Earlier notes contain exact recurrences, isotropic seeds, mixed-minor
+  conditions, zero/telescoping directions and saturated lower-period cancellation
+  lattices. Some early recurrence claims were conjectural before later certification.
+Limits: Navigation entry, not one theorem. An irrationality proof cannot be inferred
+  from a numerically fitted relation or from formal lower-period cancellation alone.
+Novelty: Mixed exploratory record; no collective novelty claim.
+Reading in this pass: Integrated reports read in this writing pass; underlying proof
+  not re-audited in full.
+Verification status: Archived model mathematical reasoning and any listed
+  computations; not formal verification.
+Proof/navigation sources:
+  evidence/research/coupled-holonomy.txt
+  evidence/research/block-arithmetic.txt
+  evidence/research/deep-investigation.txt
+  evidence/research/new-constructions.txt
+  evidence/research/cyclotomic-integrals.txt
+  evidence/research/quotient-investigation.txt
+  evidence/research/quotient-circle.txt
+  evidence/research/new-avenues.txt
+  evidence/research/next-proof-avenues.txt

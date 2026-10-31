@@ -1,0 +1,262 @@
+ROUND 18: BOUNDED CREATIVE RESET — RECOMMENDATION TO PARK BETA(4)
+31 October 2026. Local and unpublished. No irrationality proof.
+
+Verdict
+
+Park the project after this assessment. None of the three proposed
+mechanisms supplies a sufficiently concrete new ingredient to justify
+another construction campaign. The strongest candidate has acquired a
+complete analytic description, but no useful all-index arithmetic bound.
+This is a research decision based on the present evidence. It is not an
+impossibility theorem for these families, for determinant or holonomy
+methods, or for proving the irrationality of beta(4).
+
+The phase followed the specified order: a fresh explorer without the
+failed-construction archive; coordinator comparison with the complete
+archive map and the relevant underlying arguments; then a separate fresh
+adversarial reviewer. The reviewer was asked to overturn the provisional
+negative verdict if possible. Its mathematical derivations and independent
+exact arithmetic, rather than agreement with that verdict, are the useful
+evidence. The complete proof and reconstruction are in
+adversarial/assessment.txt and adversarial/checks.py.
+
+1. What the fresh exploration proposed
+
+The initial record contained three seeds. It was frozen before archive
+comparison and remains unchanged in explorer/initial-unaided.txt.
+
+  A. A positive rank-one moment determinant, subsequently developed into
+     a first parameter variation that eliminates beta(2) exactly.
+  B. A rationality-sensitive differential system for the top beta jet.
+  C. A cyclotomic period projector with a better arithmetic lattice.
+
+The explorer received a neutral catalog of 133 primary-source records,
+not our preferred approaches or detailed failure archive. It selectively
+read four existing papers. Bibliographic titles were available before its
+initial proposals, so 'fresh' describes the conversation and archive access,
+not independence from the mathematical literature or model training.
+
+Only the first seed yielded a concrete model worth exact calibration.
+The bounded calculation comprised its direct and first-variation forms
+at n=1,...,12, and 29 direct-model prime-valuation checks. No parameter
+search or larger-index construction was started. The subsequent checks
+corrected and independently reconstructed those same 24 forms.
+
+2. The closest candidate: exact target, sign, and analytic size
+
+Write theta=beta(4). For |u|<1 define
+
+ F(u)=sum_(k>=0) (-1)^k/((2k+1)^2-u),
+ q_j(u)=1/((2j+1)^2-u),
+ w_u(x)=sinh(sqrt(u)*(-log x))/(sqrt(u)*(1+x^2)).
+
+The quotient has its analytic value at u=0. Then F(0)=beta(2),
+F'(0)=theta, and the moments m_j(u)=integral x^(2j)w_u(x)dx satisfy
+m_j+m_(j+1)=q_j. The integrals are analytic near zero. Positivity of
+the density is used for 0<=u<1; it must not be asserted for negative u.
+
+For d=n-1, let c_j=q_j and B_ij=q_(i+j)+q_(i+j+1), with 0<=i,j<d.
+Put a=det B and r=c^T B^(-1)c, taking a=1,r=0 when n=1. In the basis
+1,(1+t),(1+t)t,..., with t=x^2, the moment Gram matrix is
+
+                         [ F  c^T ]
+                         [ c   B  ].
+
+Its determinant is therefore H_n=a(F-r). The first exterior derivative
+eliminates beta(2) identically:
+
+ W_n=a(0)H_n'(0)-a'(0)H_n(0)
+    =a(0)^2 (theta-r_n'(0)).                              (1)
+
+Here a,r and their derivatives are rational at zero. No independence
+assumption on any beta values is used. At n=2, for example,
+W_2=(2/81)(50 theta-49).
+
+The coordinator proposed a variational sign argument, which the reviewer
+checked and developed. For polynomials P of degree<n with P(-1)=1,
+
+ H_n(u)/a_n(u)=min_P integral_0^1 P(x^2)^2 w_u(x)dx.
+
+The unique minimizer P_(n,u) is analytic near zero. Differentiating the
+minimum makes the variation of P disappear by stationarity. Thus
+
+ E_n:=W_n/a_n(0)^2
+     =integral_0^1 P_(n,0)(x^2)^2 (-log x)^3/[6(1+x^2)]dx
+     >0                                                   (2)
+
+for EVERY n. Nonvanishing is settled for this ordinary-moment model.
+It is not a missing condition that may be invoked to reject the model.
+
+Let lambda_(n,s) denote the analogous constrained minimum with density
+(-log x)^(s-1)/[(s-1)!(1+x^2)], for s=2,4. The direct weight-four
+model has scalar error lambda_(n,4), and (2) gives E_n>=lambda_(n,4).
+The first variation is therefore no better analytically after its theta
+coefficient is normalized to one. Its advantage in the examples is
+arithmetic, not a smaller scalar error.
+
+The reviewer supplied, and the coordinator checked, the elementary limit
+
+ lim log(lambda_(n,2))/n = lim log(lambda_(n,4))/n
+                        = lim log(E_n)/n
+                        = -2 log(3+sqrt(8))
+                        = -3.525494348... .                (3)
+
+The proof uses a normalized shifted Chebyshev polynomial for the upper
+bound. For the lower bound, restrict either positive measure to
+[epsilon,1-epsilon] and apply the elementary Legendre evaluation bound
+at -1, then let epsilon decrease to zero. The same norm bound controls
+P_(n,0) on [0,1] from its weight-two norm on [0,1-epsilon], giving the
+upper bound for E_n. All constants and limit orders are in the review.
+No orthogonal-polynomial asymptotic theorem is imported.
+
+Consequently the quadratic logarithmic decay of the RAW determinant is
+not the scalar approximation budget: its rational theta coefficient
+carries the same leading determinant scale. After normalization, the
+available error is exponential in n. Older endpoint Christoffel bounds
+do not apply to this model, whose constraint is at -1 outside [0,1].
+
+3. The arithmetic correction and the precise unresolved condition
+
+Write r_n'(0)=p_n/A_n in lowest terms, with A_n>0. The primitive form is
+
+                   L_n=A_n theta-p_n=A_n E_n>0.            (4)
+
+If theta=h/b were rational, b L_n would be a positive integer. An infinite
+sequence with L_n tending to zero would therefore prove irrationality.
+Equations (3)-(4) give
+
+        log L_n=log A_n-2n log(3+sqrt(8))+o(n).             (5)
+
+On the proposed subsequence, a necessary exponential-scale condition for
+L_n->0 is limsup log A_n/n <= 2 log(3+sqrt(8)). A strict inequality is
+sufficient. Equality is unresolved by the exponential rate alone: the
+sublinear terms must also be controlled. No useful all-index reduced-
+denominator bound of either kind has been established.
+
+The explorer's first numerical table cleared the common coefficient
+denominator but did not divide the common integer numerator factor.
+That table was not primitive evidence. The coordinator removed the FULL
+gcd and evaluated the resulting forms with Arb at height-based precision.
+The reviewer then reconstructed a,b,a',b' and all primitive pairs from
+rational Schur complements using Fraction Gaussian elimination, separately
+from the explorer's determinant and row-replacement implementation.
+
+The corrected values are:
+
+ n    log(direct primitive value)/n^2    log(L_n)/n^2
+ 3                 1.467411                 1.427349
+ 6                 4.439663                 3.405164
+ 9                 5.512341                 4.003977
+12                 6.016276                 4.303072
+
+At n=12 the first variation has log A_n=660.303908 and
+log E_n=-40.661541. The original uncorrected log value per n^2 was
+6.271803; removing the full content changes it to 4.303072. That is a
+substantial improvement, and the first variation is substantially better
+than the direct primitive form. Nevertheless, all 20 forms at n=3,...,12
+are certified greater than one. The four values at n=1,2 below one say
+nothing decisive about the unknown rational denominator b.
+
+These are finite failures, not a proof of quadratic-exponential reduced
+denominator growth. The observed dyadic content and direct-model prime
+pole saturation are also only finite observations. No integer-multiplier
+obstruction, raw denominator bound, or statement from another coefficient
+family is being promoted to a theorem about all primitive rescalings here.
+The frozen explorer report is retained; this section supplies the needed
+normalization correction without rewriting its history.
+
+4. What was already in the archive, and what remains different
+
+The arcsine parameter realization is EXACTLY arcsine-contact.txt Section 1
+under u=a^2: arcsin|t|-pi/2=-arccos|t| and cosine is even. The measures,
+moment recurrence, and boundary 4F(u) coincide. That record already has
+further boundary identities and finite primitive tests. This is an exact
+rediscovery, not a new mechanism supported merely by different notation.
+
+The ordinary-moment first-variation sequence above is a distinct explicit
+model. Its rank-one/Schur structure and first-jet elimination have archived
+analogues, but no full coefficient-sequence identification was proved.
+The arcsine prime obstruction and round14's cofactor multiplier theorem
+have different hypotheses and do not dispose of this sequence. Its
+remaining arithmetic possibility is real but currently unsupported.
+
+Rank-one dependence improves a hypothetical rationality denominator from
+b^n to b. In a raw n^2-scale comparison both logarithmic costs are lower
+order, so that observation alone cannot repair the leading arithmetic
+deficit. Differentiating only one determinant row likewise does not prove
+that congruence divisibility survives target elimination.
+
+5. The other two seeds
+
+Holonomy: J(a)=integral x^(a-1)/(1+x^2)dx and F(u) have infinitely many
+genuine finite poles. They are not rational-coefficient linear-holonomic
+inputs in those parameter variables. This leaves other geometric variables
+open. Moreover, the archive already repairs the simple lower-jet objection:
+round12/geometry/findings.txt constructs C with C(1)=theta and
+C'(x)=-(log x)^3/[6(1+x^2)]. If theta is rational, its full jet at 1 is
+rational. Its differential span and continuation data, however, do not
+gain from adding that rational constant. The archive's monodromy argument
+also proves that its specified rational linear differential cleanup erases
+the constant carrying theta. Those are scoped results. The fresh proposal
+supplied no new rationality-sensitive system or quantitative advantage
+beyond them, so there is no concrete next object to test.
+
+Cyclotomic projection: Li_4(i)-Li_4(-i)=2i theta is the defining odd beta
+component, already used throughout the archive. The complementary sum
+is -7 zeta(4)/64. Removing that even component supplies neither a relation
+with 1 nor an improved integral lattice. No additional correspondence or
+arithmetic saving was specified. No general motivic or projector no-go
+theorem is claimed.
+
+6. Why stop, and what could justify reopening
+
+The strongest case for continuing is the ordinary first variation:
+exact target isolation, all-index positivity, sharp scalar decay, an
+external evaluation point, and improved finite primitive arithmetic.
+All of those favorable facts have been retained in this assessment.
+
+What is absent is a specific identity, congruence, or other mechanism
+controlling the REDUCED denominator in (4) at a plausible useful rate.
+Simply restating the needed height lemma, expecting a larger future gcd,
+changing rational basis, or computing larger determinants would repeat
+the central difficulty. No substantially new mechanism survived the
+fresh exploration and comparison. Thus no next investigation is retained.
+
+Reopening would be justified by a concrete arithmetic identity with a
+quantitative reason for favorable height, or a different construction in
+which assuming theta rational produces a new exploitable constraint.
+For the first variation, any proposed identity can first be checked
+against the existing 24 exact forms. This is a criterion for evaluating
+new information, not authorization for another search campaign.
+
+7. Sources, reproduction, and limits
+
+The coordinator compared against the COMPLETE current archive index,
+then read the relevant underlying sections. This is not a new audit of
+every historical calculation. archive-comparison.txt records the exact
+comparison scope. The final reviewer inspected the relevant source proofs
+and independently reconstructed the 24 finite forms. Its proof was read
+by the coordinator. None of this is formal verification or a priority claim.
+
+No new paper was downloaded. Existing PDFs of Zudilin's determinantal
+paper, Carreira's beta4 paper, the OpenAI Catalan manuscript, and the
+Calegari-Dimitrov-Tang holonomy paper were selectively read to the scopes
+recorded in the separate ledgers. No recent global irrationality theorem
+or unread external theorem proof is an input to the conclusions here.
+Versions, URLs, retrieval dates, hashes and unread dependencies are in
+../../literature/reading-round-18.json, relative to this report's directory
+(literature/reading-round-18.json from the beta4 project root).
+
+Reproduction from beta4/:
+  .venv/bin/python collaboration/round-18/primitive_check.py
+  .venv/bin/python collaboration/round-18/adversarial/checks.py
+
+These scripts write their corresponding JSON results. Copy the round18
+directory before rerunning if byte-for-byte frozen outputs must be retained.
+The explorer script is also archived; its original table deliberately
+remains the pre-gcd table. No further run is needed for this completed audit.
+
+The original 1678-file baseline and all frozen explorer artifacts are
+checked by the completion audit. Only dated navigation additions are made
+to earlier project files; earlier bytes remain intact. All research stays
+local and unpublished. This goal ends here for user review.

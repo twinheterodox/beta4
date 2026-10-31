@@ -1,0 +1,162 @@
+ROUND10 FRESH GATE: TOPOLOGICAL INTEGER TRACES AND THE EVEN-BETA COMPONENT
+29 October 2026. Local and unpublished. No irrationality proof.
+
+Outcome
+-------
+The integer-signature mechanism was worth an exact test: it starts with
+integers rather than a rational integral with a denominator estimate.
+Its direct even-power extension fails BEFORE an analytic/arithmetic
+balance: every nonzero value lies in a cyclotomic eigenspace disjoint
+from Q, and its rational trace is zero. Rational linear combinations
+across arbitrary odd levels do not repair this. The surviving limit is
+also beta4/pi^4, not beta4. This is a scoped obstruction to the explicit
+cotangent construction, not to TQFT, signatures or geometric methods.
+No novelty claim is made; character-parity obstructions are classical.
+
+1. The potentially useful arithmetic principle
+----------------------------------------------
+Suppose an explicitly integral sequence N_m had a proved expansion
+
+ N_m = A(m)*theta + B(m) + E_m,
+ A,B in Q[m],  E_m -> 0,  E_m != 0 eventually.
+
+Then theta is irrational: under theta=u/v, a FIXED integer D clears all
+coefficients of A*theta+B. Hence D*E_m is a nonzero integer tending to0.
+This requires no exponential height estimate. More generally the same
+argument works on an arithmetic progression if the coefficient functions
+are rational quasipolynomials. A limit N_m/m^d by itself is far weaker:
+floor(theta*m^d) supplies an integer sequence for every real theta.
+
+The hoped-for new input was a topological index/signature with a complete,
+calibrated beta4 expansion of this kind. No such input was found.
+
+2. Primary source and the explicit candidate
+-------------------------------------------
+Marché--Masbaum, Signatures in TQFT: asymptotics and modularity,
+manuscript dated21 February2026, Corollary3.2, proves for odd coprime
+0<q<p that the SU2 genus-two signature is
+
+ Sigma_3(p,q)=(2/p) sum_(1<=n<p,n odd)
+                 cot(pi*n/(2p))^3 / sin(pi*n*q/p).             (1)
+
+Thus (1) is an actual integer. Their asymptotic limit and modularity
+investigation concern this cubic expression; they do not assert the
+even-beta construction tested here. Sections5 and6 discuss extensions.
+
+Source: https://webusers.imj-prg.fr/~julien.marche/papiers/Sign_Mod.pdf
+Reading scope is in 00_archive_comparison.txt. The related papers
+arXiv:2511.13129 and2602.16159 were screened by abstract/bibliography only;
+no theorem from them is used below.
+
+Define Sigma_s by replacing power3 in (1) with integer s>=1.
+The first arithmetic test should precede any numerical optimization.
+
+3. Exact Galois parity gate, including mixed levels
+--------------------------------------------------
+Let p>1 be odd and gcd(p,q)=1. Set
+ w=exp(2*pi*i/(4p)), z=w^2=exp(pi*i/p), K=Q(z)=Q(zeta_p).
+For each summand, with t=z^n, the elementary identities are
+
+ cot(pi*n/(2p))=i*(t+1)/(t-1),
+ 1/sin(pi*n*q/p)=2*i/(t^q-t^(-q)).
+
+Therefore
+
+ Sigma_s(p,q)=(4/p)*i^(s+1)
+              sum_(n odd,0<n<p) ((z^n+1)/(z^n-1))^s
+                                  /(z^(nq)-z^(-nq))
+              belongs to i^(s+1)K.                           (2)
+
+All denominators are nonzero. The automorphism sigma of Q(w) given by
+ w -> w^(2p+1) fixes z and sends i=w^p to -i. It exists since2p+1 is
+coprime to4p. Thus
+
+              sigma(Sigma_s)=(-1)^(s+1) Sigma_s.             (3)
+
+When s is even, (3) proves that Sigma_s is rational only if it is zero.
+It also proves its relative trace to K, and hence its absolute rational
+trace, is zero. This is an exact all-level statement, not a sample.
+
+For a rational linear combination of even-power sums at finitely many
+odd levels p_j, put M=lcm(p_j). All terms lie in i*Q(zeta_M).
+The involution fixing Q(zeta_M) and negating i negates the combination.
+Consequently a rational linear combination cannot be a nonzero rational
+number. This covers different even powers and different q_j as well.
+It does NOT cover nonlinear combinations or other topological observables.
+
+4. The beta4 calibration really occurs, but in the wrong component
+-----------------------------------------------------------------
+For each odd p>=3 choose the prescribed odd integer
+ q=(p+1)/2 if p=1 mod4, and q=(p-1)/2 if p=3 mod4.
+Then gcd(p,q)=1 and for odd n,
+
+ sin(pi*n*q/p)=chi_(-4)(n)*cos(pi*n/(2p)).
+
+Thus, putting h=pi/(2p),
+
+ Sigma_s(p,q)=(2/p)sum_(n odd,0<n<p)
+                          chi_(-4)(n)*cos(nh)^(s-1)/sin(nh)^s. (4)
+
+For s>=2 the positive factor cos(x)^(s-1)/sin(x)^s is strictly
+decreasing on(0,pi/2). Pairing consecutive alternating terms proves
+Sigma_s>0, including when the number of terms is odd. Hence Sigma_4 is
+nonzero and IRRATIONAL for every p>=3. This is irrationality of the finite
+algebraic approximants, not of their limit.
+
+Since sin(x)>=2x/pi on[0,pi/2], dominated convergence gives
+
+       p^(1-s) Sigma_s(p,q) -> (2^(s+1)/pi^s)*beta(s).        (5)
+
+In particular Sigma_4/p^3 ->32*theta/pi^4. For comparison the cubic
+case has critical limit16*beta(3)/pi^3=1/2 and actual integer signatures.
+
+There is also a rigorously justified two-term refinement:
+
+ Sigma_4(p,q)=(32/pi^4)*theta*p^3
+                     -(20/(3*pi^2))*beta(2)*p + O(p^(-1)).  (6)
+
+Indeed cos(x)^3/sin(x)^4=x^(-4)-(5/6)x^(-2)+R(x), where R extends
+smoothly to[0,pi/2]. Its alternating samples have uniformly bounded
+sum by bounded total variation. The alternating infinite-series tails
+of n^(-4) and n^(-2) contribute O(p^(-1)) after their respective scalings.
+Formula(6) therefore follows without interchanging a divergent series.
+The small diagnostics suggest the next term43/(360p); it is not needed
+and is not claimed as a proved asymptotic here.
+
+5. Why the desired contradiction does not follow
+------------------------------------------------
+First, Sigma_4 is never an integer, and every rational linear trace
+projection described in Section3 destroys it. Second, rationality of
+theta would NOT make theta/pi^4 rational. The normalized coefficient in
+(5)-(6) cannot be substituted into the elementary principle of Section1.
+Third, (6) includes beta(2); it must be eliminated rather than ignored.
+The prescribed difference Sigma_4(3p)-3 Sigma_4(p) removes its p term,
+but it remains in the same anti-invariant component and retains pi^(-4).
+
+An algebraic approximant can instead normalize pi by sin(pi/(2p)), but
+then an algebraic norm argument needs control of ALL conjugates and the
+factor v^degree under theta=u/v. No favorable norm estimate is supplied
+by the signature construction. This is a missing ingredient, not a
+general impossibility theorem for algebraic approximants.
+
+A successful repair would need a different, explicitly integral global
+observable, a calibration to UNNORMALIZED theta, and a full small
+nonzero remainder. Merely proving more terms of (6), increasing genus,
+or changing the cotangent index does not supply these three inputs.
+
+6. Checks and provenance
+------------------------
+Run: python3 collaboration/round-10/fresh/check_trace_gate.py
+
+The script works in Q[w]/Phi_(4p), not floating-point trigonometry, and
+passed30 exact checks: the involution for powers3,4 at p3..17, the
+nonconstant/nonzero even-power elements, and integer cubic signatures
+for prescribed coprime q. At the half cusp it also checks the
+polynomial value Sigma_3=(p^2-1)/2 for those levels.
+Separate70-digit mpmath diagnostics check(5)-(6); they are not certified
+intervals, proof of any asymptotic, or formal verification.
+
+This worker derived the parity proof independently from elementary root
+of unity identities. Literature search confirmed the general connection
+between cotangent values, cyclotomic fields and character parity is
+classical; no claim that this short specialization is new is intended.

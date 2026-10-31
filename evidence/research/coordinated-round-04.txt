@@ -1,0 +1,248 @@
+COORDINATED ROUND 04: PRIME DELETION, DIFFERENTIATED TAILS, AND LOEWNER GRIDS
+29 October 2026. Local and unpublished.
+
+There is still no irrationality proof for beta(4) in this investigation.
+This round deliberately gave all three workers construction tasks before
+cross-review. It produced an exact way to remove repeated prime layers,+a prescribed family with proved real cancellation, and a denser nonlinear
+interpolation construction with quantitative nonvanishing information.
+None yet combines nonvanishing with shrinking primitive integer values.
+
+The arithmetic worker and coordinator independently considered exact
+Euler deletion. The construction worker developed differentiated rational
+tails. A newly created worker, initially without the previous history,
+recorded its own ideas and then pivoted after detecting a rank-one defect.
+The coordinator also proved a uniform obstruction for overshifted dense
+Loewner matrices. Complete proofs and separate computational checks are
+under collaboration/round-04/. This is coordinated model cross-review,
+not a human audit, formal verification, or priority assessment.
+
+1. Exact prime deletion gives a genuine arithmetic saving
+
+Let chi=chi_4, theta=beta(4), F(t)=sum chi(j)t^j/j^4, and let S be a
+finite set of odd primes. With T_p f(t)=f(t^p), define
+
+  G_S=product_(p in S)(1-chi(p)T_p/p^4)F,
+  alpha_S=product_(p in S)(1-chi(p)/p^4).
+
+The coefficient of t^j in G_S is exactly chi(j)/j^4 if no selected prime
+divides j, and zero otherwise. Also G_S(1)=alpha_S theta. These exact
+identities apply to the ORIGINAL cyclotomic germ, not automatically to
+the completed polylogarithm germ of round03.
+
+For h_j=[t^j]G_S, b_i=h_i, and T_ij=h_(i+j)-h_(i+j-1), use the endpoint
+pencil J_(n,S)(X)=X det T+b^T adj(T)b. Its actual target is
+J_(n,S)(alpha_S theta). Whenever the pencil is nonzero, its positive
+primitive multiplier kappa satisfies
+
+  v_p(kappa)<=4 for every p in S.
+
+This includes the endpoint scalar alpha_S and all common numerator
+content. The prime can no longer occur to an exponent proportional to
+determinant order. An exact n=8,p=11 comparison gives 24 before deletion
+and 4 after deletion.
+
+Deleting y<p<=2n gives the explicit upper bound
+
+  kappa <= P^4 D^(n+1),
+  P=product_(y<p<=2n, p odd) p,
+  D=product_(p<=y, p odd) p^(4 floor(log_p(2n))).
+
+Thus log^+(kappa)=o(n^2) if pi(y_n)log n=o(n). In particular y_n=sqrt(n)
+works without any prime number theorem. This is an upper bound only.
+
+The analytic cost is real: all primitive (4P)-th roots are genuine
+singularities, by applying four Euler derivatives to the divisor
+expansion. The fixed two-branch contour of F cannot simply be reused.
+This singularity statement is not itself a capacity or actual-value
+no-go theorem.
+
+2. A sparse family explains why the saving alone is insufficient
+
+Keep only the prime 3 in the coefficient prefix. Specifically, put
+M=3^k, n=M-1, delete every odd prime other than 3 up to B>=2n, and set
+
+  c=(-1)^k/M^4,
+  r(t)=sum_(0<=a<k) (-1)^a t^(3^a)/3^(4a),
+  r=r(1).
+
+The relevant prefix is r(t)+ct^M. An explicit [n/n] Pade pair is
+
+  q(t)=r(t)/t-ct^(M-1),   p(t)=r(t)^2/t,
+  q(t)(r(t)+ct^M)-p(t)=-c^2 t^(2M-1).
+
+More strongly, with epsilon=(-1)^(n(n-1)/2+1),
+
+  J_(n,S)(X)=epsilon c^(M-2)[(r-c)X-r^2].
+
+Primitive normalization removes the entire factor c^(M-2). The actual
+source is therefore the explicit Euler-product approximation
+
+  L_(k,B)(theta)=(r-c)alpha_S theta-r^2.
+
+With s=81/82, r=s(1-c), it decomposes as
+
+  L=(r-c)(alpha_S theta-s)+s(s-1)c-s^2c^2,
+  |alpha_S theta-s|<=B^(-3).
+
+For the natural B=2n the actual cancellation remains unresolved; an
+upper bound O(M^-3) is not a lower bound. Exact primitive logarithms at
+k=1,2,3 are approximately -2.37, 14.08, 121.29, respectively.
+
+For the deliberately larger cutoff B=p, where p=3 mod4 is prime and
+p>=M^4, there IS an actual obstruction. For k>=2,
+
+  |L|>=1/(200M^4),
+  kappa_L>=p^4/R_k^2,  R_k=(M^4-(-1)^k)/82,
+  |kappa_L L|> (6561/200)M^4>1.
+
+The real lower bound prevents the Euler tail from cancelling the
+explicit discrepancy. The largest selected prime p divides no Euler
+numerator q^4-chi(q), so it retains its fourth layer; negative multiplier
+valuations at other primes are bounded by the fixed numerator R_k^2.
+This is a fully primitive lower bound, not a product of upper estimates.
+Other sparse indices also give identically zero pencils, explicitly
+showing why normality cannot be assumed after depletion.
+
+Proofs and checks: arithmetic/findings.txt and euler_depletion.py/json.
+
+3. A differentiated kernel with proved nonzero real decay
+
+The construction worker's main family is
+
+  R_n(u)=n!(2u+n)(u-n)_n(u+n+1)_n/(u)_(n+1)^3,
+  S_n=sum_(k=n)^infinity (-1)^k R_n''(k+1/2).
+
+Reflection cancels the beta(3) and beta(5) terms, giving explicit rational
+A_n,B_n with S_n=A_n theta+B_n. No lower beta value or pi period remains.
+The coefficients are written as factorial/harmonic sums in the packet.
+
+The actual real asymptotic is proved, not fitted:
+
+  S_n ~ (-1)^(n+1) 3sqrt(pi)n^(-5/2)(log n)^2(27/256)^n.
+
+In particular the forms are eventually nonzero. The proof uses the
+kernel -pi sec(pi u), integration by parts twice, and a contour shift
+across u=n-1/2. Its remaining vertical integral is bounded by
+10|R_n'(n-1)|. Exact gamma products and Stirling's formula then give
+the displayed equivalence and eventual sign. A finite n=256 check
+also certifies nonvanishing directly from the residue/remainder bound.
+
+For O_m=lcm of the positive odd integers <=m, the explicit multiplier
+
+  M_n=2^max(0,2 floor(log_2(2n))-3) O_(4n-1)^5
+
+makes both coefficients integers. Dyadic cost is only polynomial, so
+clearing all powers of 2 still leaves shrinking nonzero forms. Odd
+denominators remain. For every prime p=4n-1>=7 the actual primitive
+multiplier has v_p(kappa_n)=5, with an explicit nonzero residue.
+
+The PARTICULAR sequence M_n S_n diverges: its exponential logarithmic
+rate is 20+log(27/256), approximately 17.75066. This follows from a
+two-sided real estimate and the prime number theorem. It does not
+settle the full primitive sequence. That would require control of
+gcd(M_n A_n,M_n B_n); no adequate uniform content theorem is obtained.
+All tested positive-index primitive values beyond the isolated n=1
+pair 1458X-1441 exceed one.
+
+The preceding half-integer-pole Catalan variant also has a proved real
+asymptotic. Its exact target-coefficient recurrence forces an exponential
+dyadic cost, and its dyadic-only normalized values diverge. This is a
+local normalization obstruction; negative valuations at other primes
+could affect a full primitive normalization. The integer-pole change
+removes that specific local obstruction, not the entire arithmetic issue.
+
+Proofs and checks: construction/findings.txt, derivative_tail.py/json,
+residue_checks.py/json; source-recursive audit in arithmetic/construction_review.txt.
+
+4. A denser Loewner pencil and quantitative nonvanishing
+
+Put S_j(a)=sum_(k<a)(-1)^k/(2k+1)^j. On integer nodes define
+
+  K_aa(X)=X-S_4(a),
+  K_ab(X)=(S_3(a)-S_3(b))/(6(a-b)),  a!=b.
+
+Its determinant is monic with degree equal to the number of nodes.
+It is the divided-difference matrix of cos(pi z)g_3(z), normalized
+by -1/6, where g_3(z)=sum_(k>=0)(-1)^k/(2k+1+2z)^3. The old pencil
+is precisely the even-node restriction. Multiplying instead by cos^3
+gives an ENTIRE function with the same values and first derivatives
+at the integers, hence the same matrix. This analytic pole cancellation
+does not remove the arithmetic denominators or the off-axis growth.
+
+An elementary Loewner lemma gives a useful nonvanishing mechanism.
+For N ordered nodes with nonzero alternating values, any symmetric
+divided-difference matrix (with arbitrary diagonal) has rank at least
+ceil((N-1)/2). A row dependence would otherwise produce a rational
+function of degree too small to match the alternating signs, even
+after allowing common zeros. Hence among the first N full-parity nodes
+there is some nonzero principal minor of order at least (N-1)/2.
+No favorable value bound or identified minor follows automatically.
+
+Exact large-prime coefficient valuations show that the actual monic
+primitive multiplier Q_N satisfies log Q_N>=N^2+o(N^2). The old even
+grid gives (9/2)n^2+o(n^2) from the analogous prime band. Thus the new
+grid reduces this arithmetic lower bound, but finite tests show a large
+loss in real decay at the same time.
+
+Binomial row projections U_(i,k)=binom(m,k-i) were also tested, always
+normalizing det(XUU^T+UK(0)U^T) by det(UU^T) to make it monic. Exact
+prime laws retain lower multiplier rates (1+rho)^2 for m/n->rho<=1,
+and 4 for rho>=1. These are genuine primitive coefficient lower bounds,
+not actual-value no-go theorems for all projected families. All 55
+nontrivial tested full-parity and projected polynomials exceed one
+after primitive normalization.
+
+Proofs and checks: fresh/findings.txt, loewner_probe.py, filter_probe.py,
+checks.py, and their JSON records. The rank lemma is proved in the note;
+the binomial determinant product is explicitly attributed as classical.
+
+5. A uniform actual obstruction to overshifting the dense grid
+
+The coordinator additionally treats N=2r consecutive full-parity nodes
+m,...,m+N-1. Integral estimates for g_3,g_4 give, after parity grouping,
+
+  m^3(-1)^m K(theta)=C+E,
+  C=[[0,-D/48],[-D^T/48,0]], D_ij=1/(2i-2j-1).
+
+The Cauchy inverse formula gives ||C^-1||_infinity<=192r^2, while
+||E||_infinity<=r^2/(4m). For m>=96r^4 this proves the actual bound
+
+  |det K(theta)|>=m^(-3N)(384r^2)^(-N)>0.
+
+If m+N<p<2m is prime, all diagonal prefixes contain p once and its
+contribution cancels from off-diagonal differences. The actual monic
+primitive multiplier has v_p(kappa)=4N, and monicity ensures kappa
+is an integer. Consequently, for m>=768r^4,
+
+  |kappa det K(theta)|> (m/(384r^2))^N>=2^N.
+
+These hypotheses hold for a prescribed prime-indexed family: choose
+p>768r^4+2r+1 and m=p-2r-1. No prime-distribution theorem is needed.
+This rules out that overshifting repair. It does not cover m comparable
+to N, arbitrary nodes, or projected pencils.
+
+Proof and checks: coordinator/loewner_shift.txt, loewner_shift_check.py/json;
+fresh/coordinator_review.txt and exact inverse cross-checks through order24.
+
+6. Verification and the next construction question
+
+The coordinator read the complete three worker proofs and independently
+reconstructed all 18 differentiated-tail pairs by local Taylor quotient
+division, three sparse Euler pairs by cumulative Hankel determinants,
+and the selected p=11 saving. Separate exact/Arb checks cover Cauchy
+inverses, the uniform real bounds, and isolated-prime coefficients.
+Workers cross-reviewed Euler depletion, differentiated tails, and the
+coordinator's overshift proof. File hashes and preservation checks are
+recorded in the round's coordinator review and integration records.
+
+The portable positive result here is exact Euler deletion with its
+endpoint scalar included. Its original-germ implementation also exposes
+the analytic danger: dense singularities and sparse determinant collapse.
+The next round will test whether the modular/Eichler setting offers a
+different balance, using exact Fourier identities and cusp transformations
+before attempting large computations. A fresh independent construction
+will be pursued alongside it. No further generic parameter scan of these
+failing tail or dense-grid families is proposed without a new mechanism.
+
+All files remain local. Previous investigations are preserved; nothing
+has been published or sent to another person.

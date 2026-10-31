@@ -1,0 +1,37 @@
+ROUND 16: LANDSCAPE REVIEW -- ONE RECOMMENDED NEXT TEST
+30 October 2026. Local and unpublished. No irrationality proof.
+
+Detailed synthesis: collaboration/round-16/findings.txt.
+Evidence classification: collaboration/round-16/archive-audit.txt.
+Whole-landscape coverage: collaboration/round-16/landscape-coverage.txt.
+
+Recommend a bounded arithmetic study of interleaved nonprincipal borders
+for the positive cubic-tail beta4 kernel from round 1, using the matrix
+design and local-pairing ideas in Litsey's trigamma work. The old principal
+primitive obstruction does not cover these frames. Their beta4-only support,
+strict positivity and sharp Cauchy real-size comparison are already proved.
+
+The exact real budget is exp(-E(c)r^2+o(r^2)), with E(1/5)=1.652307...,
+E(1/2)=2.058598... and E(1)=2.818451.... A first local pairing congruence
+transfers algebraically, but no sufficient higher-layer prime savings or
+favorable total arithmetic constant have been established. This is a
+concrete test worth doing, not evidence that an irrationality proof is near.
+
+The review separates actual primitive-value obstructions, scoped structural
+obstructions, inadequate estimates, and finite failures. It drops the
+provisional alternating-half-grid and generic arcsine-jet suggestions after
+finding their substantive ingredients already in the archive. Only one
+proposal is retained; the remaining methods lack a new quantitative bridge.
+
+All fifteen integrated reports and the complete method map were read;
+decisive source proofs were selectively reread. One new primary PDF,
+Van Assche's 2024 HOPE lecture, was downloaded and read. Exact versions,
+reading limits and hashes are in literature/reading-round-16.json and
+collaboration/round-16/sources.txt. No independent model check or formal
+verification occurred this round.
+
+The small computation only evaluates the known Cauchy-energy benchmark:
+  python3 collaboration/round-16/benchmarks.py
+
+No new beta4 determinant, prime-layer or recurrence campaign was launched.
+Stop for review before starting the investigation proposed in the report.

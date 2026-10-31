@@ -1,0 +1,444 @@
+ROUND18 ADDENDUM -- 31 OCTOBER 2026
+
+The bounded creative reset is complete. Read coordinated-round-18.txt and
+collaboration/round-18/findings.txt. The new complete analytic argument and
+independent exact reconstruction are in round-18/adversarial/assessment.txt
+and checks.py (under collaboration/).
+
+Recommendation: PARK BETA(4). Three fresh seeds were assessed; none supplies
+a justified new construction campaign. Do not automatically start another
+round. Reopen only for a concrete new mechanism with a quantitative reason
+to expect progress.
+
+The closest candidate, the ordinary-moment first variation, has exact
+target isolation, all-index positivity and normalized error rate
+-2 log(3+sqrt(8)). Its actual primitive reduced-denominator growth remains
+uncontrolled. Removing the full common numerator content improves the
+finite examples substantially, but both primitive forms exceed one at
+all n=3,...,12. All 24 existing pairs were independently reconstructed.
+No all-index arithmetic impossibility is claimed.
+
+The arcsine parameter family is exactly archived. The ordinary-moment
+sequence has not been identified with an archived sequence; different
+families' narrow obstructions are not applied to it. The holonomy and
+cyclotomic seeds supplied no new rationality-sensitive advantage.
+
+Source scopes, corrections, proofs and preservation checks are recorded.
+This is model mathematical analysis with exact cross-checks, not formal
+verification. Everything remains local and unpublished. Stop for review.
+
+The previous record is preserved verbatim below.
+
+ROUND17 ADDENDUM -- 31 OCTOBER 2026
+
+The bounded bordered-frame arithmetic study is complete. Read
+coordinated-round-17.txt and collaboration/round-17/findings.txt;
+local-structure.txt contains the detailed proofs.
+
+The exact large-prime Smith layers give a four-layer denominator bound
+that misses the real budget for all three widths and every fixed 0<c<=1.
+There are maximal-rank Cauchy pairings in the windows where proportional
+moments were hoped for. At c=1/5 a specific coefficient valuation also
+rules out every positive integer coefficient-clearing normalization.
+
+These statements DO NOT exclude all primitive rescalings. The remaining
+issue is an all-index residual-divisibility or numerator-content theorem.
+All nine exact primitive tests fail; observed powers of 2 were fully
+removed. The small-prime denominator estimate does not bound positive
+numerator content. The precise scope and missing lemma are in the report.
+
+Recommendation: stop this implementation, and return only with a new
+content mechanism. No larger parameter scan or new family was started.
+All work is local; no independent model check or formal verification
+occurred this round. Stop for user review.
+
+The previous record is preserved verbatim below.
+
+ROUND 16 ADDENDUM -- 30 OCTOBER 2026
+
+The completed bounded landscape review is coordinated-round-16.txt and
+collaboration/round-16/findings.txt. Its evidence audit distinguishes actual
+primitive obstructions from inadequate estimates and finite failures.
+
+One next investigation is recommended: interleaved nonprincipal borders
+for the positive cubic-tail beta4 kernel. Support, positivity and real size
+are already proved; sufficient primewise savings are not. The first local
+pairing congruence has the desired shape, but its higher-layer transport
+and a favorable arithmetic budget remain open. See the precise missing
+lemma and bounded first test in the report. This is not a proof forecast.
+
+The alternating half-grid and generic arcsine suggestions duplicate work
+already in the archive and are not proposed as new campaigns. Other methods
+remain conceptually open, with their missing bridges recorded.
+
+The review was sequential. Source reading and a Cauchy-energy benchmark
+are not an independent model audit or formal verification. All work is
+local and unpublished. No proposed construction campaign has begun.
+Stop for review before starting one.
+
+The previous record is preserved verbatim below.
+
+ROUND 15 ADDENDUM -- 30 OCTOBER 2026
+
+Latest bounded assessment: coordinated-round-15.txt and
+collaboration/round-15/findings.txt. The round 12 forward/dual mismatch
+has been repaired for both quarter arguments, with exact all-index
+coefficient identities, recurrences, initial data and normalization.
+
+The specified primewise estimates improve each other but are inadequate:
+even ignoring every numerator cost, their content-density ceiling is
+88.2075294973 against the required 142.8620263851. This does not bound
+actual primitive gcds or exclude faster projected decay. Nonvanishing
+of the projected beta(4) form is only checked at five finite indices.
+
+One independent model checker completed two scoped audits, including
+all ten certificate substitutions and the exact arithmetic integral.
+This is not formal verification or a proof of beta(4) irrationality.
+The source audit, complete derivation, arithmetic assessment and check
+records are linked in the report. All work remains local and unpublished.
+
+This phase ends for review. Do not automatically start another campaign
+or treat the failure of these estimates as a general impossibility.
+
+The previous record is preserved verbatim below.
+
+ROUND14 ADDENDUM --30 OCTOBER2026
+
+Latest bounded assessment: coordinated-round-14.txt and
+collaboration/round-14/findings.txt. Two complete-family candidates:
+
+A: the natural symmetric KZ deformation is already in
+half-pole-arithmetic.txt, including its meromorphic coefficient proof.
+Round14 independently checked the identification; it is not new work.
+
+B: a moved-base Whipple identity with a polynomial Abel partner,
+positive terminating coefficient formula, exact dyadic valuations,
+and eventual signed nonvanishing. Its proved arithmetic multipliers
+satisfy M_U | M_D for all n. Integer denominator clearing of its fixed
+cofactor form fails even with no odd-prime cost. Large odd primitive
+content is NOT bounded or excluded; the six finite primitive pairs
+are unfavorable. This is no general hypergeometric impossibility.
+
+Full statements, derivations, source limitations, and an independent
+model audit are in the round14 report. Do not resume scans of these
+families without an explicitly new arithmetic mechanism. This phase
+ends for review and does not automatically launch another campaign.
+
+The previous index is preserved verbatim below.
+
+ROUND13 ADDENDUM --30 OCTOBER2026
+
+The latest bounded assessment is coordinated-round-13.txt and
+collaboration/round-13/findings.txt. It establishes a scoped obstruction
+to using the fixed level32 modular family with the tested arithmetic
+holonomy bounds: available log derivative<1.3, whereas the same-map
+companion comparison requires>4. It includes rational ranks9,17,18,
+the four-LCM-layer lower bound, and an independent model check.
+
+Read its hypotheses before applying it. It is not a general modular
+impossibility theorem. Complete-family paired identities are recommended
+for a subsequent bounded phase; that phase has not started. New source
+records and the final requirement audit are linked from the report.
+
+The previous index is preserved verbatim below; its round12 pause and
+next-action language is historical.
+
+CONCISE ARCHIVE INDEX FOR FRESH BETA(4) WORKERS
+29 October 2026. Local and unpublished. No irrationality proof.
+
+Paused after round12 at the user's request. Read review-before-pause.txt
+and await resumption before starting research.
+
+Start with research-handover.txt. This is a navigation aid, not a complete
+substitute for the actual proofs. Read a family's hypotheses before
+treating an obstruction as applicable. Historical 'next target' paragraphs
+are superseded by the revised goal of finding fundamentally new mechanisms.
+
+1. Rational Euler/Hermite sources; two-endpoint interpolation
+
+Read coordinated-round-07.txt and collaboration/round-07/arithmetic/findings.txt,
+analysis/rank_asymptotic.txt and analysis/residual_asymptotic.txt.
+Earlier: coordinated-round-06.txt Section4; round-06/fresh/hermite_analysis.txt;
+round-06/coordinator/asymmetric_hermite.txt; round-03/fresh/.
+
+Known: E^4G removes auxiliary periods; full source spaces reduce to4x5
+kernels. Factorial normalization preserves primitive pairs. Four strict
+local integration indices give W4 denominator bounds, sharp at degree4p.
+Symmetric circular rank and actual alternating error are proved eventually.
+Missing: useful actual primitive height/common gcd. Large finite values and
+sufficient clearing bounds do not establish a general family obstruction.
+Do not rediscover the rational Euler identity or count removal of a common
+factorial scalar as a primitive saving.
+
+2. Continued fractions, recurrence derivatives, Euler--Boole
+
+Read round-07/fresh/findings.txt; coordinated-round-05.txt Section5 and
+round-05/fresh/findings.txt; structural-followup.txt for Pollaczek rows.
+
+Known: differentiating r_n(a)/q_n(a) three times at a=2N isolates theta.
+Exact reduced denominator exponents8+4v_p(A_N(m)) hold at even n=2m
+for m<p<2m, p>2N, outside explicit C_N(m) exceptions. Each fixed-N
+even-depth family has growing primitive values. Growing N and odd-depth
+arithmetic remain open. A binomial-shift repair collapses to old scalar
+Mellin weights.
+Separately, the Euler--Boole obstruction covers all its endpoint/truncation
+schedules and degree-growing products, not general nonlinear combinations
+or all continued fractions. Distinguish these theorems carefully.
+
+Round12/fresh/tail_gauge_gate.txt closes polynomial transfer matrices
+obtained by any rational gauge of the ordinary two-state beta4 tail.
+It does not cover factorial gauges, higher rank or unrelated recurrences.
+
+3. Modular/Eichler transformations, prime filters, higher-level coordinates
+
+Read modular-detour.txt; coordinated-round-05.txt Sections1-4;
+coordinated-round-06.txt Section1 and corresponding pole-annihilator packet.
+
+Known: exact period-polynomial cancellation and a level32 beta4-only
+construction. Minimal quadratic Fricke-compatible filters save selected
+prime layers in both germs. A transformed cusp has a true signed error.
+Several higher-level coordinates have genuine uncanceled interior poles.
+An integral multiplier cancels ordinary/shifted pole families, but six
+remaining fixed-point poles were certified.
+Scope: raw-coefficient pole/growth results generally do NOT prove a
+primitive-value obstruction for every normalization or growing level.
+Endpoint-fixing Mobius reparametrization can leave primitive pairs unchanged.
+Do not propose generic Eichler symmetry or deleting the same fixed prime
+layers as an unexplored route without a different arithmetic/analytic mechanism.
+
+4. Polylogarithm ladders, common-base determinants, functional equations
+
+Read coordinated-round-02.txt Sections3-4; coordinated-round-03.txt;
+coordinated-round-06.txt Section2 and round-06/identities/findings.txt.
+
+Known: completed Broadhurst ladder using a common Gaussian base. A determinant
+has infinitely many nonzero values and enough real decay to pay its dyadic
+cost, with margin(log2)n^2/60. ODD denominators remain. Scalar truncations
+and a different simultaneous multiplier construction have different scopes;
+failure of the former does not close the latter.
+An exact21-argument algebraic tetralogarithm presentation is symbol-checked.
+Printed normalization, completion logs and the conjugate field were audited.
+Naive trace after individual inversions fails analytically. Fixed-module
+branch/S-unit obstructions do not establish numerical period independence.
+Missing: a rational primitive construction exploiting these identities with
+favorable full arithmetic. Do not omit odd primes or completion terms.
+
+5. Prime deletion, slowly varying dilations, sparse Padé
+
+Read dilations-and-positive-kernels.txt; coordinated-round-01.txt Sections1,3;
+coordinated-round-02.txt Sections1-2; coordinated-round-04.txt Sections1-2;
+kronecker-nonvanishing.txt.
+
+Known: delayed fourth-prime layers; exact coefficient-denominator bounds;
+maximal-minor gcd bounds including modular defects; selective deletion pays
+each selected prime's fourth power only once in a specific determinant.
+Some growing cutoffs have subquadratic sufficient arithmetic cost.
+Sparse exact families show apparent savings can disappear after primitive
+reduction; an explicitly oversieved subfamily has a true obstruction.
+Fixed-cut capacity bounds limit that particular absolute-contour method.
+Scope: neither coefficient bounds nor contour limitations prove a general
+primitive-value obstruction. Natural cutoffs and other signed estimates
+remain unresolved; increasing sieve size has a real analytic cost.
+
+6. Positive moments, Gram/Cauchy/Loewner determinants, projections
+
+Read structural-followup.txt, arithmetic-followup.txt, arcsine-contact.txt,
+orthogonal-cancellation.txt, two-loop-numerators.txt, radial-cancellation.txt;
+coordinated-round-01.txt Sections2,4; round-04 Sections4-5; round-06 Section3.
+
+Known: many lower-period cancellations, positive moment identities and
+nonvanishing determinants; rational two-ray description of scalar positive
+weights; exact prime-layer ranks in several projected matrices. The
+full-rank difference-Gram principal family has actual primitive growth
+at least(6-log4)n^2. Other specified positive principal families and
+overshifted grids have their own proved primitive obstructions.
+Scope: these are not theorems against all weights, minors, sparse designs,
+signed determinants or all period-isolating projections. Some older local
+rank observations are finite certificates only. Check exact normalization.
+
+Explicit source keywords to prevent rediscovery: Usyukina--Davydychev,
+two-loop conformal/Feynman ladder, Schwinger parameters, Symanzik U,F,
+Loebbert--Stawinski2408.15331, Derkachov--Isaev--Shumilov2510.04235.
+Read ladder-integrals.txt and two-loop-numerators.txt before proposing a
+coupled four-cube graph. Its external moments are already developed.
+Round08/coordinator/dimensional-ladder-gate.txt proves the all-indices-b,
+Dspace4b positive family is exactly old balanced h=b, with rational factor
+J_n=(n!)^4*4^(-n)L_(n+1,n+1). The source angular index is lambda=2h-1.
+
+Round09 internal_graph/ is a DIFFERENT nonuniform ray: Dspace8n+4,
+four outer powers n+1, central Green power4n+1. Its cube numerator
+P^n=t^(4n)[r(1-r)]^(2n)[x(1-x)y(1-y)]^n is not pointwise a function
+of the old two external moments. A terminating Gegenbauer/harmonic
+reduction proves five-period space for every fixed n and positive256^-n
+decay. The exact n1..4 pure-beta4 cofactor has huge primitive value.
+No general height/no-go theorem. Read independent/internal_graph_review.txt
+in round09 before proposing this Green-kernel or dimensional construction.
+
+Round10/coordinator/dense-quarter-gate.txt and fresh/dense_quarter_review.txt
+give a single positive Bernoulli/Hurwitz functional at a_j=(2j+1)/4.
+The interpolation S_K(-a_j^2)=1/a_j is positive and cancels zeta4 by
+Lagrange identities. The resulting Gram has full beta4 degree and is
+nonzero. Its three prescribed primitive values are large. This is distinct
+from the B/C matrix completion; no favorable asymptotic arithmetic or
+complete equivalence classification was proved. Do not count the denser
+grid as a free gain: S_K has degree K-1. Round11/coordinator/dense-grid-
+comparison.txt proves its normalized kernel differs from a fixed single-
+pole kernel by polynomial-in-K factors only. This is an analytic comparison,
+not a primitive-polynomial equivalence or an arithmetic obstruction.
+
+Round11/fresh/findings.txt uses UNSQUARED quarter poles on the imaginary
+line. Polynomial interpolation cancels zeta4 without S_K; dilation gives
+ordinary-plus-alternating half-pole sums with an essential rational term
+and zeros at even integers. All seven prescribed primitive values are
+large. Root's unsquared-nonvanishing.txt proves valuation -8n on h=2n,
+K=8n+4 when p=8n+5 is prime and theta is hypothetically p-integral rational.
+There are infinitely many admissible p. This resolves conditional
+nonvanishing, not smallness; no asymptotic primitive obstruction is proved.
+
+7. Hypergeometric/quarter-pole constructions and differentiated tails
+
+Read hypergeometric-arithmetic.txt, half-pole-arithmetic.txt,
+coordinated-round-04.txt Section3; literature/weighted-tails.txt.
+
+Known: symmetry and parameter derivatives can isolate beta4 from lower
+beta values. Several deformations preserve integer zeros but incur extra
+arithmetic. The differentiated INTEGER-pole kernel has actual error
+proportional to(-1)^(n+1)n^(-5/2)log^2(n)(27/256)^n, with fifth odd-prime
+layers. Total primitive content is not controlled. Weighted-tail signed
+determinants were evaluated, not only absolute majorants; the tested
+budget remains unfavorable.
+Scope: finite scans and local retained layers are not a general
+hypergeometric impossibility result or a global primitive-growth theorem.
+
+Round10/symmetry/findings.txt tests three nonsymmetric half-parameter
+pair-split jets in the full Whipple family. The 120-element Thomae group
+provides no cross-branch stabilizer relation at that single fixture.
+Six prescribed primitive eliminations fail. This does not classify all
+orbits or exclude arithmetic from other transformed base points. Generic
+cofactors and normalization changes are not new divisibility mechanisms.
+
+Round12/fresh/findings.txt tests transfer of the paired forward/dual
+arithmetic identity in Leibtag et al.2610.27799v1 Section6.2. Quarter
+differences close in Q+Q beta3+Q beta4, with an exact beta4 projection
+and the same forward integer binomial denominator. The two candidate
+numerators are DIFFERENT already at n=1; the complementary arithmetic
+cannot simply be combined. Both prescribed primitive values are large.
+This is not an asymptotic obstruction. A deformation of the entire paired
+identity is an unstarted target. Carreira's older sec:cmf scan in
+sources/carreira/beta4_determinants.tex mostly targeted pi-expressions,
+not beta4; do not mistake it for a universal CMF obstruction.
+
+8. Coupled holonomy, block cancellation, lattice choices, early explorations
+
+Read coupled-holonomy.txt, block-arithmetic.txt, deep-investigation.txt,
+new-constructions.txt, cyclotomic-integrals.txt, quotient-investigation.txt,
+quotient-circle.txt, new-avenues.txt and next-proof-avenues.txt as relevant.
+
+Known: exact recurrences and isotropic seeds, coupled lower-period
+elimination, zero/telescoping directions, saturated cancellation lattices,
+and mixed-minor nonvanishing conditions. No successful functional-
+independence or irrationality theorem emerged. Some proposed recurrences
+were conjectural in early notes and only later certified; follow the chain.
+Numerically optimized or theta-fitted integer relations are not automatically
+prescribed irrationality constructions. Inspect parameter-selection rules.
+
+Quarter-Gamma geometry is now explicit in round09/orbifold/: weighted
+projective X=P(1,3,4^5), integral K-lattice, rank24 QDE and rank18
+regularization. Its specified fourth-cumulant coefficient limit has
+actual primitive exponential growth. The nonconstant toric box deformation
+changes critical values but lacks a calibrated beta4 extension. An integral
+monodromy/Gamma framing alone supplies neither that identity nor a useful
+primitive estimate. Read findings.txt and deformation.txt there.
+
+9. Fresh structural gates and whole-functional Euler arithmetic
+
+Read coordinated-round-08.txt and the geometry/discrete/adversarial packets.
+Euler functional tau=-E_0 o D^3/12 has odd-prime analytic norm at most1;
+its exact distribution uses Y=chi(p)p^4X+C_p. This treats quotients and
+residues together, but changes no existing primitive polynomial. The
+positive csch beta4 functional and Fauzan/Lai transfer are ALREADY in
+sources/carreira/beta4_determinants.tex Section10 and AppendixA.
+
+E-function Stokes cancellation, rational moment positivity/compact support,
+CM spectral raising and positive Euler continued fractions received scoped
+countermodels. Local monodromy shears do not preserve boundary normalization.
+Real rationality does not identify a p-adic limit. None of these gates is
+a general obstruction to the surrounding fields or a proof of irrationality.
+
+Round09/independent/multiplicative_gate.txt: polynomial Dirichlet convolution
+retains denominator exponent4 but pays rationality denominator^degree.
+Prime-power coefficients bound the elementary gap. Signed divisibility/LCM
+Gram determinants collapse by rank1 to linear approximants c_D; complete
+Boolean bases are exact Euler-product overlap. Other tested bases fail,
+with no general asymptotic no-go or positivity claim.
+
+Round10/adelic/findings.txt proves the sharp polynomial Euler norm on
+Int(Z_p), p>=5: its first three denominator layers start at p+2,2p+1,3p,
+with a formula for all layers. This differs from the Gauss coefficient
+norm and does not handle rational pole values or primitive content.
+Full-rank congruence lattices preserve a complete primitive Gram
+determinant. Proper Fermat multiplier spaces were separately tested
+and failed p5,p7; they have the same leading-coefficient local efficiency
+as the old central basis. Read symmetry/adelic_review.txt for review.
+
+10. Integer topological signatures and cyclotomic parity
+
+Read round10/fresh/findings.txt and source_scope.json. The cubic
+cotangent expression comes from actual TQFT signatures. Its direct
+even-power extension, including finite rational combinations across
+odd levels, lies in a component negated by an involution fixing Q.
+Its rational traces vanish. The half-cusp limit is beta4/pi^4 and has
+a beta2 lower term. This is a scoped obstruction to the proposed direct
+integer-signature transfer, not to nonlinear norms, other observables,
+or all topology. Round11/norms/findings.txt tests a nonlinear sine-
+normalized candidate alpha_p tending to unnormalized beta4. It has degree
+p-1, 8alpha_p integral, and a signed p^-2 error. The actual primitive
+minimal polynomial nevertheless has log absolute value
+4(p-1)log p+O(p) at beta4, including its complete content. This proves
+failure of this one prime-level norm family, not all nonlinear norms.
+
+11. Assumption-dependent Niven constructions
+
+Read round11/rationality/findings.txt. Under theta=u/v, the positive source
+[vF(u-vF)]^n/n! shrinks and vanishes at both endpoints, but its derivative
+of order p+n-1 at zero has valuation -3 for every odd p>n outside uv.
+The field C(x,F) does not close under the Euler derivative; the full jet
+field does. Changing to F as coordinate gives a rational beta integral.
+A positive rational-endpoint control retains rational forcing and log-cube
+monodromy. These facts block generic endpoint-integrality arguments only;
+they do not exclude selective finite constructions or enlarged jet methods.
+
+12. Rationality-dependent geometric and q-series gates
+
+Round12/geometry/findings.txt gives the regularized log-cube primitive,
+its exact rank-five differential module and a scoped monodromy theorem:
+a rational linear differential operator removing its endpoint logarithms
+must erase the additive constant. This blocks that linear regularization,
+not all arithmetic holonomy, nonlinear expressions or new geometric inputs.
+
+Round12/arithmetic/findings.txt subtracts the leading polar terms of the
+classical Jouhet--Mosaki beta_q(4) assuming theta=u/v. The resulting integer-
+coefficient function shrinks, but its prescribed rational-point truncation
+has exact denominator p^(p^2) and a growing numerator. Complete root
+averaging reduces to other q-values; it supplies no real/p-adic or
+algebraicity identification. The raw count also fails a degree-four
+polynomial-plus-o(1) test. These do not exclude different q-series bridges.
+
+LITERATURE AND EVIDENCE
+
+literature/README.txt, literature/reading-status.json and
+literature/review-2026-10-27.txt distinguish full readings from screening.
+The library contains many relevant papers, but it was not exhaustively read.
+sources/ and round-specific source packets contain further attributed inputs.
+Use primary sources, check dates/versions, and do not claim novelty from an
+archive search alone. Scholar queries, if used, should be spaced by at least
+a few seconds as the user requested.
+
+Chronological integrated records are coordinated-round-01.txt through
+coordinated-round-12.txt. Each points to proofs, model reviews, scripts and
+exact/interval results. manifest.json tracks file hashes; each round has a
+baseline. Consult round12/coordinator/integration_check.json for closure.
+
+Before investing substantially, save a short archive comparison: files
+read, equivalent constructions ruled out, applicable obstructions and their
+precise scope, genuinely new ingredient, and the first decisive test.

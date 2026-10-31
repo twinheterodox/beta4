@@ -1,0 +1,110 @@
+CONDITIONAL NONVANISHING FOR AN UNSQUARED QUARTER-POLE FAMILY
+29 October 2026. Local and unpublished. No favorable size estimate claimed.
+
+Archive and new input
+---------------------
+Read round08/adversarial/lai-transfer.md and Lai2610.06838v2 Sections2,
+3 (in particular Proposition3.1), and the contour beginning of Section6.
+The auxiliary-prime Vandermonde/Hermite mechanism is taken from this
+literature (primary source: https://arxiv.org/abs/2610.06838v2).
+The present simple quarter poles differ from Lai's double
+integer poles and from the archived failed alternating transfer.
+The new source was proposed by round11/fresh. Its small-index primitive values
+are unfavorable. This lemma supplies nonvanishing UNDER rationality,
+not a repair of that arithmetic/analytic balance.
+
+Setup
+-----
+Let n>=1, h=2n, K=8n+4, a_j=(2j+1)/4 for0<=j<K, and put
+
+ D(x)=product_(j=0)^(K-1)(x+a_j),
+ V(x)=product_(m=1)^n(x-m)^4.
+
+Let Lambda be the symmetric imaginary-line functional of fresh's note:
+Lambda(P)=integral_0^infinity [P(iy)+P(-iy)]w(y)dy/2,
+w(y)=-y^4 f'''(y)/3, f(y)=1/(exp(2pi y)-1). Its pole value is
+
+ Lambda(1/(x+a))=a^4 zeta(4,a)-1/2-a/3.
+
+For ell=0,...,2h-2, set R_ell=V(x)x^ell/D(x), and
+H_ij=Lambda(R_(i+j)). Its degree at infinity is at most-6.
+Thus the partial fractions of x^4 R have total residue zero; the
+zeta4 coefficient cancels, as do the rational boundary pieces above.
+Writing theta=beta4, every entry is B_ell+A_ell theta, with
+
+ r_(j,ell)=V(-a_j)(-a_j)^ell/D'(-a_j),
+ T_j=sum_(0<=s<floor(j/2))(s+(1 if j even else3)/4)^(-4),
+H_ij=sum_k r_(k,i+j) a_k^4 [128(-1)^k theta-T_k].        (1)
+
+All finite denominators in T_j are odd integers after multiplication
+by4; equivalently T_j=256 sum_(r<j,r=j mod2)(2r+1)^(-4).
+
+Theorem
+-------
+Assume theta=c is rational. Let p=8n+5 be prime and p not divide the
+denominator of c. Then
+
+                     v_p(det H(c))=-4h=-8n.             (2)
+
+Hence det H(theta) is nonzero for infinitely many n under the assumed
+rationality, using primes p=5 mod8 outside the finitely many denominator
+primes. This is sufficient nonvanishing for a possible irrationality
+contradiction if suitable size estimates were later proved.
+
+Proof
+-----
+Here K=p-1, so all factors in D'(-a_j) are p-units: the differences
+are (k-j)/2 with0<|k-j|<p. Also c is p-integral.
+
+Set j0=(p-1)/2=4n+2, which is even. Since all odd denominators in T_j
+are below2p, the only possible p-divisible one is p itself. It occurs
+exactly at
+
+                j=j0+2r, 1<=r<=h.
+
+At these nodes a_j=p/4+r, so a_j=r modp and
+p^4 T_j=256 modp; at all other nodes p^4 T_j=0 modp.
+Thus p^4 H(c) is integral and, modulo p, is the discrete Gram matrix
+
+     sum_(r=1)^h w_r v_r v_r^t,
+     v_r=(1,-r,(-r)^2,...,(-r)^(h-1))^t,
+     w_r=-256 r^4 V(-r)/D'(-a_(j0+2r)).                  (3)
+
+Each weight is nonzero modulo p. Indeed r and each r+m are between1
+and3n<p, and the denominator was already a unit. There are exactly h
+distinct nodes, hence (3) has determinant
+product_r w_r * product_(r<s)(s-r)^2, a p-unit. This proves (2).
+
+For an explicit residue check, the roots -a_j,0<=j<p-1, are all of
+F_p except1/4. Therefore D(x)=(x^p-x)/(x-1/4) modp and
+
+ 1/D'(-a_(j0+2r))=r+1/4 modp,
+ w_r=-64 r^4(4r+1) product_(m=1)^n(r+m)^4 modp.          (4)
+
+All factors in (4) are nonzero, since4r+1<=8n+1<p.
+
+Infinitely many admissible primes need no progression theorem. Given a
+finite set of forbidden odd primes, choose an odd A divisible by 5 and
+all of them. Every prime divisor of A^2+4 avoids that set and is 1 mod 4,
+since -1 is a square modulo it. As A^2+4 is 5 mod 8, at least one such
+prime is 5 mod 8. It is not 5, so it has n>=1. Include the odd denominator
+primes of c in the forbidden set. This gives infinitely many admissible n.
+
+Independent review and exact checks
+-----------------------------------
+The separate model review in ../norms/auxiliary_prime_review.txt verifies
+the node count, unit weights, missing root and valuation, and supplies
+the elementary infinitude argument just given. Root's direct rational-tail
+checks use p=13,29,37,53,61 and c=0,1,2/3; the separate implementation
+checks p=13,29,37 and builds the full rational matrix for p=13,c=2/3.
+Its determinant valuation is -8. These computations supplement the proof;
+they are not formal verification or a human audit.
+
+Scope
+-----
+No irrationality of theta is assumed to infer this; the proof begins
+with its hypothetical rationality. It does not prove unconditional
+nonvanishing at the actual unknown theta for every n, nor any estimate
+on the primitive integer polynomial's real value. The latter remains
+the central failure of the tested source. No larger index scan is
+justified merely by obtaining nonvanishing.

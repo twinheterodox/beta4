@@ -1,0 +1,570 @@
+Round 03: dyadic residue ranks for joint completed-ladder Pade forms
+28 October 2026. Local and unpublished.
+
+Status
+
+The arithmetic gate has a partial positive answer: the joint determinant
+does have provable dyadic cancellation, and preserving the common powers
+of the three arguments improves its sufficient dyadic multiplier rate
+from (5/2)n^2 to (1/2)n^2. A coefficient denominator statement alone would
+not establish this: the exact leading residue ranks of the bordered
+matrices are proved below.
+
+The fourth odd-prime layer nevertheless survives. A coordinator-derived
+recursion, independently checked here, determines its exact exponent
+unless a smaller endpoint pencil has a modular defect. There is an actual
+exception, so universal normality must not be assumed.
+
+These are local arithmetic theorems and upper bounds for one prime's part
+of the ACTUAL primitive multiplier. They are not an upper bound for the
+whole multiplier, an asymptotic formula for primitive height, an
+irrationality proof, or an actual-value no-go theorem. No larger generic
+Pade search was conducted. The old round-02 files were preserved.
+
+1. Families and the precise endpoint normalization
+
+The classical completed identity and the constants below are inherited
+from round-02/fresh/findings.txt, which was read together with its
+simultaneous.txt companion. Their Broadhurst source identity is not being
+claimed as a new result or independently reproved here.
+
+Write
+
+ z_2=i/2, z_3=(1+i)/4, z_5=(1-i)/8,
+ (c_2,c_3,c_5)=(225/136,-25/34,9/68),
+ alpha_m=m/2, theta=beta(4).
+
+I_s(z t) denotes the rational-coefficient imaginary-part germ, obtained
+by subtracting the conjugate-argument polylogarithm and dividing by 2i.
+
+The old equal-speed germ is
+
+ H_old(t)=sum_m c_m [I_4(z_m t)+alpha_m ell(t) I_3(z_m t)
+                       +(alpha_m^2/3)ell(t)^2 I_2(z_m t)],
+ ell(t)=-log(1-t/2).
+
+The PRIMARY new joint germ, proposed by the analysis worker, preserves
+the common-power relation. Put q=(1-i)/2; then z_m=-q^m for m=2,3,5.
+Define
+
+ H_new(t)=sum_m c_m [I_4(z_m t^m)+(m/2)L_0(t) I_3(z_m t^m)
+                       +(m^2/12)L_0(t)^2 I_2(z_m t^m)],
+ L_0(t)=-log(1-t^2/2).                                     (1.1)
+
+Both have rational Taylor coefficients, vanish at zero, and have value
+theta at t=1. The different powers 2,3,5 in (1.1) mean it is not a common
+reindexing of H_old. Its singularities all have modulus sqrt(2); the
+separate analytic packet treats its real approximation problem.
+
+For either series H(t)=sum_(j>=1) h_j t^j, put h_0=0 and
+
+ T_ij=h_(i+j)-h_(i+j-1),  b_i=h_i,  1<=i,j<=n,
+
+ J_n(X)=det [[X,-b^T],[b,T]]
+       =A_n X+C_n,
+ A_n=det T,  C_n=b^T adj(T)b.                               (1.2)
+
+For n=0 set J_0(X)=X. Up to the sign (-1)^n, (1.2) is the leading
+Hankel determinant of c_j(X)=X-sum_(l=1)^j h_l. Thus it is exactly the
+ordinary diagonal-Pade endpoint form q_n(1)X-p_n(1), up to a rational
+factor, whenever the usual normalized system is nonsingular. The
+coordinator checked that comparison through separate Pade equations.
+
+For a nonzero J_n define
+
+ M_n=lcm(den A_n,den C_n),
+ g_n=gcd(M_n A_n,M_n C_n)>0,
+ kappa_n=M_n/g_n,
+ P_n=kappa_n J_n primitive integral.                       (1.3)
+
+In particular
+
+             v_p(kappa_n)=-min(v_p(A_n),v_p(C_n)).           (1.4)
+
+The multiplier can be rational. Set P_n=0 separately when J_n is the
+zero polynomial; no multiplier is assigned in that case. There is no
+factor 6 in this round's normalization.
+
+2. The local quadratic extension is only a valuation tool
+
+Work temporarily in K=Q_2(i), with uniformizer pi=1-i. Its valuation
+nu is normalized by nu(pi)=1, so nu(2)=2 and nu(x)=2v_2(x) for rational
+x. The valuation ring has residue field F_2. Thus every unit reduces
+to 1. These algebraic row and column scalings are used to analyze the
+rational polynomial (1.2), not to substitute algebraic coefficients
+for the required integer forms.
+
+We use the elementary rank-divisibility fact: if an N-by-N integral
+matrix reduces to rank R over F_2, its determinant is divisible by
+pi^(N-R). It also holds coefficientwise for the bordered pencil here:
+the target entry reduces to zero, and a unit R-by-R minor of the
+constant block can be used to eliminate R rows and columns over the
+valuation ring. Every remaining entry is divisible by pi.
+
+In all scalings below the final polynomial scalar is a Gaussian unit
+times an integral power of 2. Its coefficient valuations are therefore
+even integers under nu. A lower bound nu>=d can consequently be rounded
+up to nu>=2ceil(d/2). This parity point supplies the ceilings in the
+primitive multiplier bounds.
+
+3. Old equal-speed H: a rank-four leading residue, not a scalar inference
+
+The prior exact coefficient theorem says v_2(h_j)=-E_j, where
+
+ E_(4a)=10a+4 (a>=1), E_(4a+1)=10a+5,
+ E_(4a+2)=10a+11,      E_(4a+3)=10a+12.
+
+Let z=z_5=pi/8, so nu(z)=-5, and define
+
+ f_j=-64 z^(-j)h_j=pi^12 z^(-j)h_j.
+
+These coefficients are integral, with valuations respectively
+
+ j mod4:        0   1   2   3
+ nu(f_j):       4   7   0   3.                              (3.1)
+
+Consequently
+
+               sum_j f_j x^j = x^2/(1-x^4) mod pi.          (3.2)
+
+The scaled T entry is
+
+ -64 z^(-i-j)T_ij=f_(i+j)-z^(-1)f_(i+j-1).
+
+Since nu(z^(-1))=5, it has the SAME leading residue as f_(i+j).
+Multiplying the full bordered matrix by -64 and scaling its row and
+column i by z^(-i), i=0,...,n, gives residue
+
+                 1_(i+j=2 mod4),  0<=i,j<=n.               (3.3)
+
+The target entry vanishes modulo pi and agrees with this pattern at
+(0,0). For n>=3 all four residue classes of indices occur. Rows in
+the same class agree, and the four different classes have disjoint
+nonempty column supports. Thus the rank is EXACTLY FOUR.
+
+The determinant scaling factor has dyadic valuation
+
+ B_old(n)=5n(n+1)/2+6(n+1).
+
+The rank theorem and the even-valuation observation give the proved
+primitive-multiplier bound
+
+ v_2(kappa_n) <= B_old(n)-ceil((n-3)/2),   n>=3, J_n!=0.      (3.4)
+
+Hence limsup v_2(kappa_n)/n^2<=5/2 for this old joint family.
+The rank-four result proves genuine determinant cancellation. Its first
+layer supplies only the displayed linear saving; it does NOT establish
+a further quadratic saving, an exact determinant valuation, or a
+primitive-value obstruction. In particular the scalar truncation
+failure theorem from round 02 does not transfer to these determinants.
+
+4. The common-base germ has three integral depleted polylog blocks
+
+Set x=q t, with q=pi/2 and nu(q)=-1. Then
+
+ I_s(z_m t^m) becomes
+ B_(m,s)(x)=[Li_s(-x^m)-Li_s(-i^m x^m)]/(2i),
+
+ [x^(mr)]B_(m,s)=(-1)^r(1-i^(mr))/(2i r^s).                 (4.1)
+
+For m=2 this coefficient vanishes when r is even; otherwise it is
+2-adically integral. For m=3,5 it vanishes when 4 divides r. At odd r
+its pi-valuation is -1. At r=2 mod4 its valuation is -2s. In particular
+the polylogarithmic denominators are UNIFORMLY bounded at 2; they do not
+cost s*log_2 N. This depletion is specific to the argument differences.
+
+Define the normalized blocks
+
+ C(x)=-64 sum_m c_m B_(m,4)(x),
+ B(x)=-64 sum_m c_m (m/2) B_(m,3)(x),
+ A(x)=-64 sum_m c_m (m^2/12) B_(m,2)(x).
+
+Also put L(x)=-log(1-i x^2). The exact identity is
+
+           -64 H_new(x/q)=C(x)+L(x)B(x)+L(x)^2 A(x).         (4.2)
+
+All three blocks A,B,C lie in the valuation ring coefficientwise.
+More precisely they all have the SAME reduction:
+
+                 A(x)=B(x)=C(x)=x^10/(1-x^20) mod pi.       (4.3)
+
+Proof of the constants and reduction. Before multiplication by -64,
+the worst pi-valuations for the three sources are bounded as follows:
+
+                m=2       m=3       m=5
+ pure Li4         -6        -10       -12
+ one-log block    -6        -10       -12
+ two-log block    -6        -10       -12.
+
+For m=3,5 the worst case is r=2 mod4. Thus only m=5,r=2 mod4 can
+survive after multiplication by pi^12=-64; these degrees are 10 mod20.
+Writing r=2u with u odd, the respective coefficients of C,B,A are
+
+             9i/(17u^4), 45i/(17u^3), 75i/(17u^2),
+
+all units with residue 1. All other nonzero coefficients have positive
+pi-valuation. This proves (4.3), not merely a lower denominator bound.
+
+5. The logarithm layer and exact bordered residue rank
+
+The coefficients at x^(2s) are
+
+ [x^(2s)]L=i^s/s,
+ [x^(2s)]L^2=2 i^s H_(s-1)/s,  s>=2.                       (5.1)
+
+The exact harmonic valuation is
+v_2(H_j)=-floor(log_2 j): among 1,...,j there is a unique denominator
+with maximal power of 2. Therefore
+
+ v_2(2 H_(s-1)/s)=1-v_2(s)-floor(log_2(s-1)).                (5.2)
+
+For n>=8 put
+
+ r=floor(log_2 n), delta=2r-2, N=n+1.
+
+Through x-degree 2n, 2^delta L^2 is integral. Its reduction has exactly
+the two possible terms
+
+       2^delta L^2 = x^(2^(r+1))+x^(3*2^r) mod pi,           (5.3)
+
+truncated at degree 2n. Indeed equality in the worst denominator
+exponent 2r-2 occurs only at s=2^r and s=3*2^(r-1). For s<2^r the
+maximum exponent is at most 2r-4; for 2^r<s<2^(r+1), the only integer
+with v_2(s)=r-1 is 3*2^(r-1). The two surviving coefficients are units.
+Since delta-r=r-2>=1, both 2^delta and 2^delta L vanish modulo pi.
+
+Combining (4.2)--(5.3), define
+
+ lambda=-64*2^delta,
+ f_j=lambda q^(-j)h_j.
+
+Then f_j is integral through degree 2n and its exact residue series is
+
+ sum_(j<=2n) f_j x^j
+   = x^10 [x^(2^(r+1))+x^(3*2^r)]/(1-x^20) mod pi.         (5.4)
+
+As before the scaled T entry is f_(i+j)-q^(-1)f_(i+j-1).
+Now nu(q^(-1))=1, so its residue is still f_(i+j). The first nonzero
+degree in (5.4) is
+
+                         d=2^(r+1)+10>n.                  (5.5)
+
+Thus the entire target row and column vanish modulo pi after scaling,
+and the n-by-n lower block has exact rank
+
+                     R=max(0,2n-d+1)
+                      =max(0,2n-2^(r+1)-9).                (5.6)
+
+For R>0 its last R rows and columns form an anti-triangular matrix with
+unit anti-diagonal; all preceding rows and columns vanish. Later terms
+of (5.4), including possible cancellations between the two progressions,
+cannot change that determinant. If d>2n the residue matrix is zero.
+This proves (5.6) for the bordered (n+1)-matrix as well as the lower
+block. It is an exact residue-rank theorem at every n>=8.
+
+6. What the rank proves for the ACTUAL primitive multiplier
+
+The normalized bordered determinant is
+
+ lambda^(n+1) q^(-n(n+1)) J_n(X)
+   =det [[lambda X,-f^T],[f,W]],                            (6.1)
+
+where W_ij=f_(i+j)-q^(-1)f_(i+j-1). Its scalar is a Gaussian unit times
+2^B, with
+
+               B=n(n+1)/2+(6+delta)(n+1).                  (6.2)
+
+The exact rank R in (5.6) makes every coefficient on the right divisible
+by pi^(n+1-R). As those coefficient valuations are even, (1.4) gives
+
+ v_2(kappa_n) <= n(n+1)/2+(6+delta)(n+1)
+                          -ceil((n+1-R)/2),                (6.3)
+
+for all n>=8 with J_n nonzero. In particular
+
+              limsup v_2(kappa_n)/n^2 <= 1/2.               (6.4)
+
+This is a bound on the actual primitive multiplier, not merely a
+statement that a particular entrywise denominator clears the matrix.
+The last term in (6.3) is a proved common divisibility of the determinant
+coefficients after the natural grading. It does not determine all higher
+elementary divisors or assert equality in (6.3).
+
+The main leading-rate improvement, from 5/2 to 1/2, comes from the new
+common-power construction and graded row/column normalization. The
+leading residue rank then gives the explicit additional saving in
+(6.3). These sources of improvement should not be conflated. No
+quadratic saving beyond the rate 1/2 has been established here.
+
+Neither (6.3) nor (6.4) bounds the whole kappa_n: its odd-prime factors
+can dominate. Multiplying the raw form by its dyadic part alone is not
+in general an integer form. Conversely, a large local denominator
+exponent does not automatically appear in the final primitive leading
+coefficient; it can cancel that coefficient's raw denominator.
+
+The universal content lemma from round 02 remains available with the
+factor 6 removed. If D clears the rational coefficient prefix, put
+T0=DT,u=Db, Delta=gcd(det T0, entries of adj(T0)u), and
+g=gcd(D det T0,u^T adj(T0)u). Then
+
+                   Delta | g | D Delta^2,
+                   kappa_n=D^(n+1)/g.                      (6.5)
+
+Thus unknown higher content is an exact determinantal-divisor problem.
+Nothing in the scalar coefficient law or the one-layer rank calculation
+proves its absence.
+
+6.1 A real bound compatible with the dyadic part
+
+During coordination the analysis worker supplied a constructive contour
+bound which can be paired with (6.4). I checked its elementary geometry.
+All reciprocal polylogarithm singularities have radius 1/sqrt(2) and
+angles on the 120th-root rays: the three pole classes use orders dividing
+8,24,40. The logarithm poles use the real rays, and the possible point
+at zero is included. The full 120-ray star is therefore an admissible
+cut for the theta-specific germ (theta-H_new(1/w))/(w-1). Its apparent
+pole at w=1 is removable because H_new(1)=theta and H_new is analytic
+near 1.
+
+The star is the inverse image of [0,2^(-60)] under w -> w^120. Its
+capacity is exactly 2^(-31/60). The same Pade/Hankel normalization and
+Polya inequality used in round 02 consequently give
+
+ log|J_n(theta)| <= -(31/60)log(2) n^2+o(n^2).
+
+For nonzero J_n put d_n=2^max(0,v_2(kappa_n)); for a zero polynomial set
+d_n=1. Combining with (6.4) yields the genuine dyadic-only success
+
+ log|d_n J_n(theta)| <= -(log(2)/60)n^2+o(n^2),               (6.6)
+
+with zero values allowed. This is an improvement in compatibility, not
+an integer-form theorem: d_n J_n still has its odd-prime denominators.
+The full arithmetic cost has not been bounded by the small margin in
+(6.6). Sharper cut geometries, if established by the analytic worker,
+are not needed for this particular conclusion.
+
+7. Odd primes: the fourth layer survives with an exact recursion
+
+The coordinator proposed this reduction; I checked its proof and
+independently reproduced it using the coefficient builder in this
+directory. Let p be prime with
+
+        n/2<p<=n, p^2>2n, p not dividing 2*3*5*17.
+
+Then h_j is p-integral for j<2p, and every h_j through j=2n has
+valuation at least -4. At the first possible degree,
+
+          p^4 h_(2p)=chi_4(p)*225/272 mod p.                 (7.1)
+
+Proof. Every summand has a polylogarithm index r and zero, one, or two
+logarithm indices s. Its degree is mr+2sum(s), and its total denominator
+weight is four. Below degree 2p all these indices are less than p. At
+degree 2p, only the pure m=2,r=p Li4 term contributes a fourth layer.
+Its residue is (225/136)*chi_4(p)/2^p, which reduces to (7.1). Through
+degree 2n all indices are below p^2, so the total denominator weight
+gives the asserted four-layer bound. The excluded fixed primes account
+for constants and for the unit numerator in (7.1).
+
+Set
+
+            R=2n-2p+1, m=2p-n-1, u=chi_4(p)*225/272.
+
+Scale the last R rows of the bordered matrix by p^4. Cross-block sums
+are at most m+n=2p-1, so those entries are integral before scaling.
+The lower-right block reduces to an anti-triangular matrix with unit
+anti-diagonal u, and the upper-left block is exactly J_m(X). Therefore
+
+       p^(4R) J_n(X)=(-1)^[R(R-1)/2] u^R J_m(X) mod p.       (7.2)
+
+This is coefficientwise. The smaller coefficient prefix is p-integral
+because 2m<=2p-2. Other fourth-layer entries, for example at degree 3p,
+are below the anti-diagonal and do not invalidate the determinant.
+Consequently
+
+       v_p(kappa_n)=4R iff J_m(X) is nonzero modulo p.       (7.3)
+
+For the unconditional indices n=2p-1, one has m=0,R=n,J_0(X)=X and
+
+                         v_p(kappa_(2p-1))=4(2p-1).         (7.4)
+
+The possible exception in (7.3) is real: n=10,p=7 gives R=7,m=3,
+but the actual exponent is 27 rather than 28. The smaller J_3 vanishes
+modulo 7. This was found by the coordinator and independently verified
+here. A uniform assertion of normality would be false even in these
+small cases.
+
+The fresh worker supplied a useful PRIME-POWER refinement during review.
+Let S be p^4 times the lower-right R-by-R block of the unscaled T. Its
+determinant is a p-unit. Both unscaled cross-blocks are p-integral, so
+after row scaling the Schur complement of S changes the smaller pencil
+by p^4 times an integral matrix. It follows coefficientwise that
+
+                 p^(4R) J_n = det(S) J_m mod p^4.           (7.5)
+
+Put mu_m=min(v_p(A_m),v_p(C_m))>=0, taking the minimum as infinity for
+the zero polynomial. If mu_m<4, (7.5) gives the EXACT exponent
+
+                       v_p(kappa_n)=4R-mu_m.               (7.6)
+
+If mu_m>=4 it gives only v_p(kappa_n)<=4R-4. For n=10,p=7 the smaller
+content valuation is mu_3=1, explaining precisely the exponent 27.
+This refinement has been checked directly modulo p^4 in every local
+case saved here, rather than inferred from a modulo-p residue.
+
+Equations (7.2)--(7.4) expose an arithmetic cost surviving the new dyadic
+parametrization. They are LOCAL statements. They do not prove a global
+lower bound on kappa_n, which may have negative valuations elsewhere,
+and they do not give a lower bound on J_n(theta). No actual-value
+obstruction follows merely by pairing them with a real upper estimate.
+
+8. A signed Rodrigues subspace with only one residual denominator layer
+
+The analysis worker derived a compatible rational Mellin kernel
+
+ U(x)=900x^2/[17(x^4+4)]-2025x^3/[17(x^6-4x^3+8)]
+                         -5625x^5/[17(x^10-8x^5+32)].
+
+With l=log2, r=-log x, W(r)=r^3/6+l*r^2/4+l^2*r/12, its source
+integral is I(P)=integral_0^1 P(x)U(x)W(-log x) dx/x and I(1)=theta.
+Ordinary monomial Mellin integration gives the moment denominators below.
+
+Let D0 be the least common multiple of the three monic denominators:
+
+ D0=(x^4+4)(x^6-4x^3+8)(x^10-8x^5+32)/(x^2+2x+2)^2.
+
+It has integer coefficients, degree16, D0(0)=256 and D0(1)=25. Put
+N0=17D0U, an integer polynomial of degree14, and N=N0/17. For the
+analysis worker's source integral I(P), a polynomial P=A+D0V gives
+
+ I(P)=A theta+sum_j b_j/j^4+(log2/2)sum_j b_j/j^3
+                          +((log2)^2/12)sum_j b_j/j^2,
+                    NV=sum_j b_j x^j.                       (8.1)
+
+Here is a specified INTEGER polynomial subspace satisfying both unwanted
+moment constraints. For any S in Z[x] and A in Z set
+
+ F=x(1-x)^2 N0^4 S,
+ E=x d/dx,
+ V=17 E^3 F/N0,
+ P=A+D0V.                                                  (8.2)
+
+Then V and P are integer polynomials. Each application of the derivation
+E removes at most one factor N0, so N0 divides E^3 F in Z[x]. Moreover
+
+ NV=E^3 F,
+ sum_j b_j/j^3=F(1)=0,
+ sum_j b_j/j^2=(EF)(1)=0,
+ sum_j b_j/j^4=sum_j f_j/j=integral_0^1 F(x) dx/x.            (8.3)
+
+The double zero at1 and the zero at0 justify the identities directly.
+Thus this signed source family has the exact target-only form
+
+                    I(P)=A theta+sum_j f_j/j,               (8.4)
+
+whose rational term has denominator dividing lcm(1,...,deg F). This
+is a genuine reduction from four residual integration layers to ONE
+for the specified source family. It uses no unproved numerator gcd.
+The program checks D0,N0, the integer division, both vanishing moments,
+and the one-layer denominator on the exact symbolic example S=1.
+The derivation above proves the result for arbitrary integer S.
+
+This is NOT yet an approximation family. A remains free, and S is
+unrestricted. No prescribed simultaneous rule for (A_n,S_n), no useful
+bound on I(P_n), and no nonvanishing theorem have been supplied. Choosing
+these coefficients by first approximating theta would merely encode
+the original problem. The coefficient height of F can also be large;
+a one-layer denominator is not a complete height estimate. The fresh
+reviewer independently confirmed these limitations and the algebra.
+
+The analytic worker additionally notes that the moment constraints
+prevent a triangle-inequality smallness argument even for signed P:
+one of the fixed lower moments forces an absolute-source lower bound
+proportional to |A|. Thus a useful signed choice would have to exploit
+actual cancellation in the integral. The precise real lemma is in the
+analytic/fresh packets; this arithmetic subspace does not bypass it.
+
+9. Exact checks, finite comparison, and scope of the result
+
+The coordinator selected the small ordinary-Pade endpoint cases before
+this worker's checks. I rebuilt both coefficient sequences independently
+from rational Gaussian powers and the defining log products, reconstructed
+(1.2), and obtained exactly the same primitive pairs and dyadic valuations.
+Source hashes are recorded in dyadic_joint.json. No beta(4) numerical
+evaluation is performed by this script.
+
+            old H                           common-base H
+ n     actual v2 kappa   proved upper    actual v2 kappa   proved upper
+ 8           217             231                82             121
+12           427             463               160             201
+16           710             775               262             331
+20          1064            1167               388             451
+
+These finite data are not being fit to an asymptotic law. The coordinator
+records the real primitive values separately; none of those values is
+used to prove a theorem here.
+
+Structural checks in this directory include:
+
+* 256 old normalized coefficient residues and eleven rank-four bordered
+  matrices, including matrices beyond the small endpoint-value tests;
+* 771 common-base block coefficient residues for A,B,C through degree256;
+* 236 exact leading logarithm-squared residues;
+* 1643 completed-series residues at seventeen chosen cutoffs, with all
+  seventeen bordered ranks checked through order128;
+* exact reconstruction of all coordinator endpoint pairs for the two
+  families, with the bounds checked wherever their hypotheses hold;
+* ten coefficientwise fourth-layer recursion checks at p=7,11,13,
+  including three unconditional m=0 cases and the n=10,p=7 defect;
+  all ten also check the stronger coefficientwise congruence modulo p^4;
+* an exact symbolic Mellin/Rodrigues certificate for integer polynomial
+  divisibility, both cancelled moments, and the remaining one-LCM layer.
+
+The larger matrix checks concern only the explicit residue/rank theorem;
+they do not compute larger rational Pade forms or search for a reversal
+of the known primitive-value failures.
+
+Independent coordinator checks are in
+  collaboration/round-03/coordinator/common_base_residue.py/json
+  collaboration/round-03/coordinator/common_base_primes.py/json.
+The coordinator reported 6497 coefficient residues, 73 bordered ranks,
+and 94 odd-prime polynomial recursions, including the exceptional case.
+These are model cross-checks, not independent human or formal verification.
+
+What remains open is now more specific. The new germ passes the narrow
+dyadic improvement gate, with a proved graded multiplier bound and exact
+first residue rank. It does not yet have a favorable total primitive
+budget. Higher dyadic determinantal divisors, large odd-prime exceptions,
+and nontrivial common content remain unbounded at the required scale.
+The scalar truncation no-go and the failure of separate matched blocks
+do not resolve these joint questions.
+
+10. Reproduction and provenance
+
+From /home/research/Chat/Math/beta4 run
+
+  PYTHONDONTWRITEBYTECODE=1 .venv/bin/python \
+      collaboration/round-03/arithmetic/dyadic_joint.py
+
+Files written here:
+  findings.txt
+  dyadic_joint.py
+  dyadic_joint.json
+
+The script uses python-flint for exact coefficients and determinants,
+binary elimination for residue ranks, and exact rational congruences.
+Its source-data comparison reads the coordinator files but writes only
+dyadic_joint.json beside itself. Runtime was less than one second in
+this workspace. No old source, result, or review file was modified.
+
+No external paper was consulted in this arithmetic derivation. The
+completed identity and old coefficient valuation theorem are explicit
+inherited inputs from round-02/fresh/findings.txt. The common-base germ
+was proposed by the analysis worker; the odd-prime recursion was proposed
+by the coordinator. The dyadic depletion, normalized series, residue
+ranks, and primitive-multiplier bounds were derived in this arithmetic
+workstream and checked with the coordinator. The fresh reviewer's
+prime-power refinement (7.5)--(7.6) is explicitly attributed above.
+The signed source subspace (8.2) was proposed by this arithmetic worker
+after receiving the analytic worker's rational Mellin identity and was
+cross-reviewed by the fresh and analytic workers.
+No novelty or priority claim is made.

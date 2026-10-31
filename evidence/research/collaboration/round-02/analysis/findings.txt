@@ -1,0 +1,680 @@
+Round 02: slow-filter monodromy and a limitation of absolute contour estimates
+28 October 2026. Local and unpublished.
+
+Status. These are mathematical derivations with exact rational and Arb
+checks by a model worker, subsequently discussed with the coordinator and
+the arithmetic worker. They are not an irrationality proof, a lower bound
+for the actual endpoint determinants, independent human verification, or a
+priority claim. Writes were confined to this analysis directory.
+
+The main result is an obstruction for a specified analytic METHOD, not
+for every use of the endpoint forms. For the SAME fixed-k determinants
+and primitive normalization used by the arithmetic worker, every
+admissible reciprocal-plane cut K satisfies
+
+          k=3: cap(K)>6/5;        k=5: cap(K)>7/20.           (A)
+
+More precise certified bounds are 1.2208991079... and 0.3586216225....
+The k=3 statement excludes any negative n^2 exponent supplied by the
+unweighted, absolute-value Cauchy--Vandermonde/capacity estimate. For k=5
+that method could supply at most an exponent about 1.02549 of decay.
+Neither can meet the available primitive-multiplier UPPER rates
+C_3=5.6257703... and C_5=5.1389924... from the arithmetic worker.
+
+These are not just failures of radial cuts. The proof controls EVERY
+compact filled cut supporting a single-valued continuation of the germ.
+It does NOT assert that the true determinants have those lower exponents.
+Complex cancellations in their integral are not bounded from below here.
+It also does not assume that the primitive multiplier is an integer or
+that numerator content has only coefficient-denominator primes.
+
+There are explicit upper estimates on the actual raw determinants:
+
+ limsup log|L_n(theta)|/n^2 <= log(13/6),      k=3,
+ limsup log|L_n(theta)|/n^2 <= log(19/10),     k=5,            (B)
+
+with log 0=-infinity. They come from containing ellipses; the constants
+are positive. No matching lower asymptotic is obtained.
+
+1. The exact determinant and the analytic germ
+
+Write theta=beta(4), fix odd k>=3, and put
+
+ u(t)=log((1+t)/(1-t)),  v(t)=log((1+t^k)/(1-t^k)),
+ h'''(x)=x^2 sech'(x)/8,  h(0)=h'(0)=h''(0)=0,
+
+ r_k(t)=2h(u)+4h(v)-4h(u+v)-2h(2v)+2h(u+2v),
+ R_k(z)=r_k(sqrt(z))=sum_(j>=1) a_j z^j,  a_0=0.
+
+For an arbitrary constant X,
+
+ C_X(z)=(6X+R_k(z))/(1-z),
+ c_j(X)=6X+sum_(l=1)^j a_l,
+ G_X(w)=C_X(1/w)/w=(6X+R_k(1/w))/(w-1)
+       =sum_(j>=0)c_j(X)w^(-j-1) near infinity.              (1.1)
+
+The raw polynomial is exactly
+
+ L_n(X)=det[c_(i+j)(X)]_(0<=i,j<=n)
+       =det [[6X,b^T],[b,H]],
+ b_i=a_i, H_ij=a_(i+j)-a_(i+j-1), 1<=i,j<=n.                (1.2)
+
+The unit lower-bidiagonal difference congruence proving (1.2), and
+Kronecker's consequence that L_n(theta) is nonzero infinitely often for
+each fixed k, are already recorded in kronecker-nonvanishing.txt. They
+are not rederived as a new result here.
+
+For a nonzero polynomial, P_n=kappa_n L_n is primitive integral with
+kappa_n>0. This is exactly the arithmetic worker's definition. In
+particular kappa_n may have negative prime valuations. The analytic
+monodromy below is independent of the constant X and hence applies to
+the actual theta without a rationality hypothesis.
+
+2. A finite possible branch divisor, and all the outer branches
+
+For (a,b) in {(1,0),(0,1),(0,2),(1,1),(1,2)}, let
+
+ A_(a,b)(t)=(1+t)^a(1+t^k)^b,
+ B_(a,b)(t)=(1-t)^a(1-t^k)^b.
+
+Since exp(au+bv)=A/B, the preimages of poles of sech(au+bv) are zeros
+of (A^2+B^2)/2. This polynomial is even in t. In z=t^2 it becomes
+
+ P10=1+z,
+ P01=1+z^k,
+ P02=1+6z^k+z^(2k),
+ P11=(1+z)(1+z^k)+4z^((k+1)/2),
+ P12=(1+z)(1+6z^k+z^(2k))+8z^((k+1)/2)(1+z^k).             (2.1)
+
+All these polynomials are reciprocal: their coefficient lists read the
+same in both directions. Thus their roots are also the reciprocal-plane
+w-roots. The logarithms u,v can have singularities only when z^k=1 or
+at infinity. It follows that G_X is continuable along paths avoiding
+the finite set
+
+ E_k={0} union {w:w^k=1} union zeros(P10 P01 P02 P11 P12).   (2.2)
+
+This gives a complete finite set of POSSIBLE singular locations on every
+sheet. It is enough for the explicit admissible ellipses in section 6.
+The proof does not mistake an infinite list of sech poles in the x-plane
+for infinitely many points in the w-plane: all have exp(x)=+i or -i,
+which is exactly the finite polynomial equation used above.
+
+The part outside |w|<=1 is fully identified as genuine. Indeed, for
+|t|<1 both u and v have imaginary parts strictly between -pi/2 and pi/2.
+Consequently h(u),h(v) are regular there. The only possible poles of
+the other three arguments are at x=+i*pi/2 and x=-i*pi/2. For k=3,5,
+the roots of P02,P11,P12 are simple, and these three polynomials have
+no common roots with one another. These assertions follow from exact
+polynomial gcds and are checked independently in checks.py. Thus every
+root of these three polynomials in |z|<1 produces a nonzero first-order
+logarithmic branch of r_k; no other summand is singular at that point.
+Squaring t, then reciprocating z, has nonzero derivative there, so the
+corresponding |w|>1 point is a genuine branch of G_X.
+
+These outer points belong to EVERY admissible cut, not just a cut of
+the principal sheet. On another logarithm sheet the unique singular
+argument at the same point is x0=(sigma+4ell)i*pi/2 for an integer ell
+and sigma=+1 or -1. It is never zero. Its double-pole coefficient in
+h''' is nonzero, so the resulting local (x-x0)log(x-x0) coefficient is
+nonzero too. Simplicity of the polynomial root makes the argument map
+locally invertible. All other summands remain regular there because
+their exponential arguments are unchanged by the logarithm shifts.
+Polynomial branch increments of h are locally analytic. Thus no sheet
+is meromorphic at this exclusive outer point. An admissible continuation
+domain cannot contain it. Section 3.1 makes the shifted-sheet calculation
+explicit for loops enclosing more than one point.
+
+The isolated-root counts, with exact squarefreeness and reciprocal
+symmetry and Arb enclosures, are:
+
+ k    polynomial       |w|<1       |w|=1       |w|>1
+ 3      P01               0           3           0
+ 3      P02               3           0           3
+ 3      P11               2           0           2
+ 3      P12               2           3           2
+ 5      P01               0           5           0
+ 5      P02               5           0           5
+ 5      P11               3           0           3
+ 5      P12               3           5           3
+
+P10 adds only -1, already a root of P01 and P12. The only pairwise
+common roots among all five polynomials are precisely this -1 in
+P10,P01,P12. Unit-circle classification in the script is not based on
+rounding a modulus to 1: it uses uniqueness of isolated roots under
+w -> 1/conjugate(w).
+
+For clarity, the remaining possible points are also well understood:
+
+* Nonshared roots in (2.1) have a genuine logarithmic branch by the
+  same local double-pole argument, on any sheet on which u,v are regular.
+* At z=-1 choose t=i from the disk. For k=3 the three singular arguments
+  are u=i*pi/2, v=-i*pi/2, u+2v=-i*pi/2. For k=5 they are u=v=i*pi/2
+  and u+2v=3i*pi/2. Their quadratic monodromy parts, in the normalization
+  of section 3, are respectively
+
+     2u^2+4v^2+2(u+2v)^2,
+     2u^2+4v^2-6(u+2v)^2.
+
+  Neither is zero, so the shared point is not cancelled.
+* At z^k=1, z!=1, choose the t-lift with t^k=1. Then v tends to
+  positive real infinity along a suitable local approach while u is
+  regular. With T(x)=[3+(3/2)x+x^2/4]e^(-x)+O(x^2 e^(-3x)), the
+  positive-tail identity for J=6theta+r gives the nonzero term
+  (1-e^(-u)) v^2 e^(-v). Since t!=0, its coefficient does not vanish.
+  It is a (t-t0)log^2(t-t0) branch. At t=1, v=u-log k+o(1), and
+
+          C_theta(t^2) ~ (2k+1)u^2/8,
+
+  which proves a logarithmic branch there too. Adding 6(X-theta)/(1-z)
+  cannot remove it.
+* At w=0 there is a square-root branch on an explicit continuation.
+  Take t to negative real infinity through the upper half-plane, so
+  u=i*pi+2/t+O(t^-3), v=i*pi+O(t^-k), approaching all arguments from
+  Re x<0. Differentiating the known polylogarithmic expression for h,
+  with G=beta(2) and C3=pi^3/32, gives
+
+  h'(i*pi*l)= -3C3+(i*pi*l/2)G+pi^3*l^2/16   for odd l,
+               -(3i*pi*l/2)G-pi^3*l^2/16       for even l.
+
+  Hence 2h'(i*pi)-4h'(2i*pi)+2h'(3i*pi)=15pi^3/8+16i*pi*G !=0.
+  The nonzero 1/t term in r gives a sqrt(w) term in G_X. This identifies
+  a genuine branch on that continuation; no claim that every sheet at
+  w=0 is ramified is needed below.
+
+Only the completely controlled |w|>1 branches are used in the lower
+capacity bounds. The extra discussion is not a shortcut around the
+monodromy calculation in the next two sections.
+
+3. Exact local monodromy and its noncancellation in the disk
+
+Let x_m=i*pi*(m+1/2), m any integer. The principal part is
+
+ h'''(x)= [i(-1)^m x_m^2/8]/(x-x_m)^2
+                +[i(-1)^m x_m/4]/(x-x_m)+analytic.
+
+Integrating three times shows that one positively oriented circuit
+around x_m changes h by the EXACT polynomial
+
+ M_m(x)=-pi*(-1)^m*x_m*(x-x_m)*(x-2x_m)/4.                  (3.1)
+
+Analytic terms have no monodromy. There is no unspecified polynomial
+in (3.1): the double and simple pole parts determine it. For x_m=+i*pi/2
+and -i*pi/2, respectively,
+
+ M_+(x)=-(i*pi^2/8)(x-i*pi/2)(x-i*pi),
+ M_-(x)=-(i*pi^2/8)(x+i*pi/2)(x+i*pi).                     (3.2)
+
+The coefficient of x^2 is the SAME, namely -i*pi^2/8, at both poles.
+This sign is essential. Opposite imaginary poles do not cancel their
+quadratic monodromy in the present argument.
+
+Consider a positively oriented boundary cycle in |t|<1, avoiding all
+poles, with winding number 1 on some collection of pole preimages and
+0 on the others. Let N02,N11,N12 count the enclosed preimages, with
+their positive multiplicities, for 2v,u+v,u+2v. The quadratic part of
+the resulting monodromy of r_k is -i*pi^2/8 times
+
+ Q(u,v)=-8N02 v^2-4N11(u+v)^2+2N12(u+2v)^2.               (3.3)
+
+No h(u) or h(v) singularities are available inside the disk to cancel
+these terms. Since u,v are single-valued there, continuation of a
+previous quadratic branch increment produces no additional increments.
+Thus boundary cycles add exactly as in (3.3).
+
+For k>=3, the six functions 1,u,u^2,v,uv,v^2 are linearly independent
+over the constants. Their initial degrees in t, successively, are
+0,1,2,k,k+1,2k; eliminating the least initial degree successively proves
+the claim. Consequently a nonzero quadratic polynomial in u,v cannot
+be cancelled identically by the lower-degree monodromy terms.
+
+The coefficient matrix of (u^2,uv,v^2) in (3.3), with columns ordered
+N02,N11,N12, is
+
+            [  0  -4   2 ]
+            [  0  -8   8 ],        determinant = 128.
+            [ -8  -4   8 ]
+
+In particular zero monodromy forces N02=N11=N12=0 on the principal
+logarithm sheet. This calculation alone is NOT enough for arbitrary
+admissible cuts: a continuation to their boundary can first leave the
+unit disk and shift the logarithms. That issue was identified by the
+arithmetic worker in adversarial review and is addressed explicitly next.
+
+3.1 The shifted-sheet repair for k=3 and k=5
+
+On any one closed loop lying in |t|<1, the continued logarithms have
+the form u+2pi*i*A and v+2pi*i*B for fixed integers A,B, where u,v
+denote the principal disk functions. Their shifts stay constant along
+that loop. For a term h(au+bv), put ell=aA+bB. Its pole corresponding
+to a principal value sigma*i*pi/2, sigma=+1 or -1, now has argument
+
+                   x0=sigma*i*pi/2+2pi*i*ell.
+
+The sech residue is still -sigma*i. Applying the same principal-part
+integration as in (3.1), the quadratic monodromy coefficient is
+
+                    -i*pi^2*(1+4sigma*ell)/8.              (3.4)
+
+Previous branches of h differ by quadratic polynomials in its argument;
+these are single-valued on the closed loop and do not alter (3.4).
+If N_ab is the number of enclosed pole preimages of a type and
+S_ab=N_ab,+ - N_ab,-, replace its count in (3.3) by
+
+                    W_ab=N_ab+4(aA+bB)S_ab.               (3.5)
+
+In particular the three weights are
+
+ W02=N02+8B S02,
+ W11=N11+4(A+B)S11,
+ W12=N12+4(A+2B)S12.
+
+The SAME invertible quadratic coefficient matrix forces all three W
+to vanish if the monodromy of r vanishes. But for 1<=N<=5 and
+S congruent to N modulo 2, N+4ell*S cannot vanish for an integer ell.
+It would first require N to be divisible by 4, hence N=4; then S is
+even and 4ell*S is divisible by 8, so it cannot equal -4.
+
+For k=3,5 an enclosing loop in the w-plane which does not surround 0
+counts at most five outer w-branches of any one type. The reciprocal
+polynomial P02 has k such roots. P11 has degree k+1, so has at most
+(k+1)/2 outer roots. P12 is reciprocal of degree 2k+1 and has the unit
+root -1, leaving at most k outer roots. These bounds count multiplicity;
+squarefreeness for k=3,5 is checked separately. A single conformal
+t-lift of that w-loop counts one preimage per w-root, not both lifts.
+
+Therefore for k=3,5, on EVERY logarithm sheet, a positively oriented
+single loop whose interior lies in |t|<1 and corresponds to such a
+w-loop cannot enclose any nonempty collection of these outer branches
+while leaving r single-valued. The single-loop condition matters:
+different boundary components could carry different shift pairs.
+No all-odd-k extension of this shifted-sheet argument is asserted.
+
+4. A cut component containing an outer branch must reach the unit disk
+
+Call a compact set K in the w-plane admissible if the germ G_X at
+infinity has a single-valued holomorphic continuation to the unbounded
+component of its complement. The same argument allows meromorphic
+continuation. Replace K by its filled hull, the complement of that
+unbounded component. This preserves logarithmic capacity and admissibility.
+From now on K is filled, so its complement is connected.
+
+Theorem (k=3 or k=5). Every connected component of such a K that contains
+a genuine branch point w0 with |w0|>1 intersects the closed unit disk.
+
+Proof. Suppose a component A containing w0 misses that disk. In a compact
+Hausdorff space a component is the intersection of its relatively clopen
+neighborhoods. Applying this fact to K and to the compact set K intersect
+the closed unit disk gives a relatively clopen compact subset K' of K
+which contains A and is disjoint from that disk. (If K has no points in
+the disk, take K'=K.) The two compact sets K', K\K' have positive distance,
+as do K' and the closed disk.
+
+The relatively clopen subset K' is itself filled. To see this, a bounded
+component O of its complement could contain no point of C\K: otherwise
+that point's path to infinity in the connected open set C\K would cross
+K'. Thus O would lie in K\K'. But its boundary lies in K', contradicting
+the positive separation of those two compact sets.
+
+It follows that K' has arbitrarily small filled polygonal neighborhoods,
+with finitely many components and Jordan outer boundaries. Here is a
+useful direct justification of the approximation step. Take decreasing
+finite square-grid neighborhoods of K' and fill their bounded holes.
+The filled sets decrease to K': any point outside the filled K' has a
+path to infinity avoiding K', and a sufficiently thin grid neighborhood
+also avoids a positive-clearance compact portion of that path. Compactness
+then ensures that, for a sufficiently fine grid, the filled neighborhood
+misses both the closed unit disk and K\K'. Small perturbations or rounded
+corners remove polygonal point contacts while preserving these separations.
+The boundary also misses K.
+
+Take the ONE positively oriented outer Jordan boundary gamma of a filled
+component of that neighborhood containing w0. Its whole closed interior
+lies in |w|>1, and gamma lies in C\K. Thus G_X has zero monodromy along
+gamma. Since its interior is simply connected and avoids 0, select one
+analytic branch t=1/sqrt(w) on a neighborhood of that closed interior.
+It maps gamma conformally to a closed Jordan loop in |t|<1. Its interior
+contains one t-preimage for each enclosed w-root, with positive winding
+number one. In particular it encloses a nonempty branch collection.
+
+Continue the original germ to the start of this lifted loop along any
+path corresponding to a path in C\K. Such a path need NOT stay in the
+unit disk. At its endpoint the logarithms are u+2pi*i*A,v+2pi*i*B, and
+the same shift pair persists around the whole lifted loop because the
+principal u,v are single-valued on the disk. The continued r is the sum
+of the five h compositions on their continued branches; polynomial
+branch increments of h have no new monodromy on this loop. Its zero
+monodromy therefore forces the three weighted counts (3.5) to vanish.
+The counts of each type are at most five. Section 3.1 shows that every
+actual count must then be zero, contradicting the enclosed w0.
+
+This proves the theorem for all compact filled K, including infinitely
+many components. The clopen and filled-neighborhood steps produce one
+enclosing Jordan curve; the proof does not sum monodromies from boundary
+components carrying possibly different logarithm shifts. Filledness also
+ensures that a boundary avoiding K lies in the chosen continuation domain.
+
+The theorem does NOT prove that all the symmetric branch orbit, or all
+branches, lie in one connected component. Components may reach different
+parts of the disk. No Chebotarev lower bound requiring a connected cut
+is being applied without proving its connectivity hypothesis. The weaker
+statement just proved is enough for the following projection argument.
+
+5. Capacity lower bounds valid for every admissible cut
+
+Two elementary capacity facts suffice, with no specialized extremal-cut
+theorem. Orthogonal projection cannot increase transfinite diameter:
+lift any finite set of projected points to K; every pairwise distance
+can only increase. Passing to maximal Vandermonde products and their
+limits gives cap(proj K)<=cap(K).
+
+A line interval of length d has capacity d/4. Also
+
+ cap([-b,-a] union [a,b])=sqrt(b^2-a^2)/2, 0<a<b.            (5.1)
+
+For (5.1), the polynomial w^2 maps this set onto [a^2,b^2]. Half the
+Green function of that interval evaluated at w^2 is its Green function;
+comparison at infinity gives the displayed capacity. These formulas
+could equally be obtained from Chebyshev polynomials.
+
+5.1 Exact k=3 certificate
+
+Here
+
+ P12(w)=(w+1)(w^6+8w^4-2w^3+8w^2+1).
+
+Putting x=w+1/w reduces the sextic to x^3+5x-2=0. Its unique real
+root r lies in (3/8,2/5): the endpoint signs are opposite and the
+derivative is positive. The other roots are
+
+                x=-r/2 +/- i sqrt(3r^2+20)/2.
+
+Choose the upper root and the reciprocal quadratic solution w=a+ib
+with |w|>1. Then b>0 and
+
+ a(1+1/|w|^2)=-r/2,     b(1-1/|w|^2)=sqrt(3r^2+20)/2>sqrt5.
+
+In particular |a|<1/5. If b<=13/5, then |w|^2<34/5 and the second
+left side is less than (13/5)(29/34)=377/170<sqrt5, contradiction.
+Thus b>13/5. The conjugate point a-ib is another genuine outer branch.
+This exact certificate was supplied by the coordinator and checked by
+this worker; it does not rely on the numerical root calculation.
+
+By section 4, the components containing these two points each meet
+|w|<=1. Their imaginary projections therefore contain [1,b] and [-b,-1].
+This holds whether the two components coincide or are distinct. Hence
+
+        cap K >=sqrt(b^2-1)/2 >sqrt((13/5)^2-1)/2=6/5.       (5.2)
+
+Arb isolation gives b=2.6386319423143175898... and the sharper bound
+cap K>=1.2208991079324929448.... The exact rational lower bound is
+already sufficient to rule out cap K<1.
+
+5.2 Exact k=5 certificate
+
+Here P12(w)=(w+1)Q(w), where
+
+ Q(w)=w^10+8w^7-8w^6+14w^5-8w^4+8w^3+1.
+
+Direct rational substitution gives
+
+ Q(-5/2)=918649/1024>0,
+ Q(-12/5)=-3392998151/9765625<0.
+
+There is a real root w0 in (-5/2,-12/5). It is an exclusive P12 root,
+so it is a genuine outer branch. Its cut component must meet the unit
+disk. Projecting onto the real line shows that the cut contains in
+projection [w0,-1]. Consequently
+
+                 cap K >=(-w0-1)/4 >7/20.                 (5.3)
+
+The isolated root is -2.4344864903484775549..., giving the improved
+lower bound 0.3586216225871193887.... This result does NOT settle whether
+the optimal admissible capacity for k=5 is above or below 1. It does
+settle the compatibility test with the available arithmetic rate.
+
+5.3 Why the earlier symmetric-star calculation was insufficient
+
+The known orbit w^k=-q^-2, q=sqrt2-1, has a radial-star capacity
+(q^-2/4)^(1/k)>1. That is an exact capacity of one chosen star. It
+cannot lower-bound every admissible cut without a connectivity or
+extremality argument. The new proof uses additional P12 branches and
+the component theorem; it does not promote the radial-star calculation
+into a general minimal-capacity theorem.
+
+6. An admissible contour estimate for these exact determinants
+
+If Gamma is a contour in a single-valued domain surrounding an
+admissible compact K, coefficient extraction and the determinant
+integral identity give, with N=n+1,
+
+ L_n(X)=1/[N!(2pi i)^N] int_(Gamma^N)
+           product_j G_X(w_j) product_(i<j)(w_j-w_i)^2 dw_1...dw_N.
+                                                                  (6.1)
+
+Taking absolute values bounds its n^2 rate by log cap(K), after
+approximating K by contour neighborhoods. More precisely,
+
+              limsup |L_n(X)|^(1/n^2) <= cap(K).             (6.2)
+
+Zeros cause no difficulty. The factor N rather than n changes no
+leading n^2 constant. Formula (6.2) is the one-variable Polya inequality
+in exactly the coefficient convention (1.1); a precise primary-paper
+statement is Gunyuz--Zakharyuta [P], Theorem 2.1, pp. 2-3. Our G_X is
+holomorphic at infinity and vanishes there, as required. K is filled,
+and isolated poles, if permitted in the definition of admissibility,
+can be added to K without changing capacity.
+
+For actual upper bounds take the filled ellipses
+
+ k=3: ((Re w+1/5)/(5/3))^2+(Im w/(8/3))^2 <=1;
+ k=5: ((Re w+2/5)/(41/20))^2+(Im w/(7/4))^2 <=1.             (6.3)
+
+Every point of (2.2) lies strictly inside the relevant ellipse. The
+script proves the polynomial part using certified root enclosures,
+also checks all w^k=1 roots and 0, and records every enclosure and
+quadratic-form bound. Thus the germ is holomorphic and single-valued
+outside each ellipse by the monodromy theorem. These are concrete
+admissible compacts, not numerically guessed extremal cuts.
+
+The capacity of an ellipse with semiaxes a,b is (a+b)/2, as seen from
+the coefficient of the exterior conformal map
+w=center+((a+b)/2)zeta+((a-b)/2)/zeta. Therefore their capacities are
+13/6 and 19/10. Applying (6.2) gives (B), with constants about
+0.7731898882 and 0.6418538862, respectively.
+
+This bounds the raw determinants, not their primitive polynomials.
+The bounds are uniform in n for each fixed k; the constant X affects
+only the subquadratic terms. No joint limit in k,n is claimed.
+
+7. Compatibility with actual primitive normalization
+
+The arithmetic worker's findings.txt, sections 1 and 6, proves
+
+ log kappa_n <= C_k n^2+o_k(n^2),
+ C_3=10042/1785=5.6257703081...,
+ C_5=37232/7245=5.1389924086....                              (7.1)
+
+The worker derives this directly as an upper bound on the multiplier
+in P_n=kappa_n L_n. It includes cancellation in the correct direction
+and makes no false claim that numerator primes are confined to those
+in the coefficient denominator. This analysis worker read that packet
+and coordinated the determinant indexing explicitly.
+
+Using (6.2) and (7.1), a sufficient capacity criterion for shrinking
+integer forms would be
+
+                         C_k+log cap(K)<0.                 (7.2)
+
+No admissible cut can satisfy (7.2) for these proved constants:
+
+ C_3+log(6/5) >0,        C_5+log(7/20) >0.                  (7.3)
+
+The latter positive gap is over 4.08; this is not a close numerical
+optimization issue. The refined all-cut lower bounds give possible
+analytic decay exponents at most -log(1.220899...)<0 for k=3 and
+-log(0.358621...) about 1.02549 for k=5. The explicit ellipses supply
+positive combined upper exponents C_3+log(13/6) and C_5+log(19/10).
+
+The precise conclusion is that this absolute contour-capacity strategy
+cannot prove shrinking forms when paired with the CURRENT rigorous
+multiplier upper bounds. A smaller actual multiplier, perhaps caused
+by a large maximal-minor gcd, could change the arithmetic side. A
+determinant estimate exploiting complex cancellation rather than the
+absolute Vandermonde envelope could change the analytic side. Neither
+possibility is ruled out by (A). In particular there is no inference
+from a multiplier lower bound plus a determinant upper bound, and no
+inference from an unsuccessful upper estimate to an actual-value no-go.
+
+More specifically, the excluded strategy combines the fixed-cut Polya
+bounds (6.2), or their infimum over admissible cuts, with (7.1). No claim
+is made here about n-dependent weighted contours or estimates below the
+absolute Vandermonde envelope. Constants attached to a fixed contour
+contribute only subquadratic terms; an n-dependent construction would
+have to account for its changing weights and constants separately.
+
+8. Eight finite evaluations on the arithmetic worker's exact cases
+
+The paired_values.py script reads precisely the eight integer pairs
+already selected in the arithmetic packet; it does not enlarge the
+parameter scan. It computes theta with Arb, evaluates the primitive
+pair, and divides by the exact kappa to evaluate the same raw L_n.
+The source JSON SHA256 is recorded. This is an independent real
+evaluation of the supplied pairs, not independent reconstruction of
+their arithmetic.
+
+ k   n       log|L_n(theta)|    log kappa_n     log|P_n(theta)|
+ 3  12          72.252496        339.051856        411.304352
+ 3  20         193.658561       1251.691884       1445.350445
+ 3  30         431.984756       3127.101407       3559.086163
+ 3  40         761.773964       5997.818978       6759.592943
+ 5  12          42.765215        266.789564        309.554778
+ 5  20         128.912275       1124.798377       1253.710651
+ 5  30         291.654409       2929.547152       3221.201561
+ 5  40         514.276830       5676.671514       6190.948344
+
+Thus the raw values themselves grow in these examples. At n=40 their
+logarithms divided by n^2 are about 0.47611 and 0.32142. This supports
+neither a lower asymptotic theorem nor a claim that all future indices
+are nonzero. The interval certificates, rather than the rounded table,
+are in paired_values.json.
+
+9. What was and was not obtained about two-sided asymptotics
+
+No two-sided determinant asymptotic, pointwise Padé error lower bound,
+or uniform lower bound for the primitive values was found in this
+round. The integral (6.1) is complex; there is no fixed-sign product
+as there was for the positive kernel in round 01. Capacity lower
+bounds on its integration geometry do not remove cancellation.
+
+The primary-paper Polya statement [P, Theorem 2.1] is explicitly an
+upper inequality. Its sharpness results concern existence of functions
+or functionals achieving a bound, not automatic equality for this G_X.
+Stahl's paper [S] was inspected for its admissibility framework, unique
+minimal-set theorem, and topology, not imported as a determinant theorem.
+Theorem 1 as stated there is a convergence-in-capacity theorem for the
+particular algebraic example (1.1). It does not supply a pointwise
+endpoint estimate for the present logarithmic functions, or a lower
+bound for their Hankel determinants. No unverified strong-asymptotic
+theorem for non-Hermitian orthogonality is being invoked.
+
+The symmetric branch orbit has therefore not been proved to force one
+connected extremal cut. The component-to-disk theorem is the precise
+connectivity conclusion obtained. For k=5 even whether the least
+admissible capacity exceeds one remains open in this packet. Neither
+uncertainty affects the proved incompatibility with (7.1).
+
+10. Ordinary cubic-tail Loewner sign counterexample
+
+This archives the earlier diagnostic, with exact and Arb certificates,
+to prevent a repeated assumption of sign regularity. Define
+
+ f(x)=sum_(j>=0)[(4j+1+4x)^(-3)-(4j+3+4x)^(-3)],
+ L(a,b)=-f[a,b]/12.
+
+The double-Laplace density is proportional to h0(u+v), with
+h0(t)=t^2 sech t. Its fourth confluent Hankel determinant satisfies
+
+ D4(0)=det[h0^(i+j)(0)]_(0<=i,j<=3)=-624,
+
+ D4(t)=8192(t^2-6t+15/2)e^(-6t)+O(t^8 e^(-8t))>0
+                                      for sufficiently large t.   (10.1)
+
+The value at zero uses derivatives (0,0,2,0,-12,0,150). For the second
+formula write h0=2t^2 e^(-t)-2t^2 e^(-3t)+O(t^2 e^(-5t)). The leading
+rank-three part has zero 4-by-4 determinant. Replacing one column by
+the next exponential term gives exactly the polynomial in (10.1).
+checks.py verifies this as a rational polynomial determinant identity.
+Continuity makes the sign negative for small positive t, so the density
+kernel fails sign regularity already at order four.
+
+Smoothing does not restore global sign regularity for L. Its Taylor
+coefficient at (x,x), with i+j=j0, is
+
+ [a^i b^j] L(x+a,x+b)
+   =(-1)^(i+j)/1536 * (i+j+2)(i+j+3)
+       *[zeta(i+j+4,x+1/4)-zeta(i+j+4,x+3/4)].             (10.2)
+
+For n=4 the row and column signs cancel in the determinant. If M_x is
+the matrix in (10.2) without the signs and the factor 1/1536, its Arb
+determinant is rigorously
+
+ x=0:  -2426864805998170.876257380707...,
+ x=1:        0.000231587931005586531800712287...,
+ x=10:      -7.810149160124735396674574380... *10^-34.       (10.3)
+
+The certified intervals at 256 bits have widths far smaller than the
+displayed values. A determinant on small ordered clustered row and
+column frames has the sign of this confluent determinant, since its
+leading coefficient is the product of two positive Vandermondes times
+det M_x/1536^4. Choosing one sufficiently small fixed spacing and moving
+the cluster from x=0 to x=1 therefore gives a zero determinant by
+continuity. There is no universal nonvanishing/sign-regularity theorem
+over all real increasing frames for this ordinary L.
+
+This does NOT exhibit a zero on integer frames and does not rule out a
+special separated integer-frame theorem. It does rule out the generic
+sign-regularity proof attempted through this kernel or its double-
+Laplace density. Arithmetic problems on shifted integer frames remain
+separate; no new integer-frame scan was performed here.
+
+11. Reproduction, references, and reading scope
+
+From /home/research/Chat/Math/beta4:
+
+  .venv/bin/python collaboration/round-02/analysis/checks.py
+  .venv/bin/python collaboration/round-02/analysis/paired_values.py
+
+The first script imports no earlier experiment code and writes only
+checks.json here. It checks 10 exact pole polynomials, all their isolated
+roots and two containing ellipses, 18 interior pole arguments, exact
+gcd and monodromy certificates, both exact lower-capacity root bounds,
+the density asymptotic polynomial, three Arb Loewner signs, and the
+arithmetic comparisons. The second reads the arithmetic worker's eight
+exact cases and writes only paired_values.json here. Both completed.
+Two interval-implementation edge cases were corrected during development:
+real generic powers of a ball crossing zero were replaced by products,
+and a square-root branch of a ball crossing the negative real axis was
+chosen as i*sqrt(-z). Neither correction changes a mathematical formula.
+
+[P] O. Gunyuz and V. Zakharyuta, On Polya's Theorem in Several Complex
+Variables, arXiv:1609.00218v1 (2016), Theorem 2.1, pp. 2-3.
+    https://arxiv.org/pdf/1609.00218
+Read the introductory scope and the precise one-variable theorem. Its
+normalization and hypotheses are verified in section 6. The multivariate
+results are not needed and are not claimed to solve this problem.
+
+[S] H. R. Stahl, Sets of Minimal Capacity and Extremal Domains,
+arXiv:1205.3811v1 (2012), Definition 1 and Theorem 2, pp. 4-5;
+Lemma 3, p. 33; also the explicitly specialized Theorem 1, p. 3.
+    https://arxiv.org/pdf/1205.3811
+Read those statements and the elementary separation discussion. This
+packet's component proof is written out rather than relying on an
+unverified application of the full extremal-domain machinery. No
+Chebotarev minimality or Padé strong asymptotics is asserted from it.
+
+The capacity formulas and projection monotonicity used above have direct
+derivations in section 5. The k=3 exact root certificate was proposed by
+the coordinator; the monodromy, cut-component, and projection argument
+were developed by this worker and discussed with the coordinator. This
+is coordinated model checking, not independent mathematical verification.

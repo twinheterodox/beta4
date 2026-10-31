@@ -1,0 +1,507 @@
+Hyperbolic moments, ladder periods, and the next construction problem
+28 October 2026. Local research record; unpublished.
+
+Status
+======
+This investigation does not prove the irrationality of beta(4). It derives
+several explicit families, proves a restricted positive-weight obstruction,
+and tests alternatives suggested by that obstruction. None of the tested
+nontrivial primitive integer forms or polynomials has absolute value below
+one. No novelty, independent audit, or formal verification is claimed.
+
+Write B=beta(4), G=beta(2), and chi(m)=(-1)^((m-1)/2) for positive odd m.
+The objective remains to construct nonzero integer expressions tending to
+zero, or integer polynomials small enough relative to their degrees to
+contradict an arbitrary hypothetical rational denominator of B.
+
+The main conclusions of this pass are:
+
+* A hyperbolic moment family has rational coefficients of B and G, and
+  permits exact cancellation of G using an integer inverse Gram matrix.
+* In this family, cancellation of G by a nonnegative polynomial weight
+  forces I(P)/c(P) >= pi^4/192. Thus this particular positive-weight route
+  cannot even provide relative approximations to B approaching B.
+* A separate auxiliary Gram matrix allows the B coefficient of a large
+  determinant to have rank one. This algebraic improvement is real, but
+  its tested primitive arithmetic still fails.
+* Polynomial biorthogonality cancels G inside a common signed integral.
+  Its tested forms also fail. The positive-weight obstruction does not
+  apply to these signed constructions.
+* Integer-power two-loop ladder formulas suggest a different rational
+  tail family. Its periods lie in Q+Q B+Q G+Q log(2)+Q zeta(3). Doubling
+  the pole spacing excludes the last two periods. Direct and internally
+  weighted cancellations are explicit, but again fail the primitive test.
+
+There are 210 nontrivial evaluated beta(4)-only cases across six experiment
+families, all rigorously above one in absolute value. Additionally, there
+are seven singular baseline Gram cases, the trivial polynomial X, and
+110 period decompositions. These are finite results, not asymptotic
+impossibility theorems. The six families count baseline hyperbolic
+projection, its low-rank extension, its biorthogonal extension, ordinary
+ladder elimination, parity-separated ladder elimination, and internal
+ladder polynomial filters.
+
+1. Sources and the actual change of direction
+===========================================
+The preceding arcsine-contact.txt isolated B but exposed third- and
+fourth-power prime costs. Carreira's beta4_determinants.tex had already
+examined closely related weight-four and hypergeometric obstructions.
+This pass additionally read its main Sections 1-5 and 7-11, following the
+earlier reading of the boundary identity and conclusion. This is source
+study, not a fresh independent audit of every claim in that manuscript.
+
+The alternative considered here is a coupled integral with a fixed
+weight-four period, rather than another derivative of one rational sum.
+Three primary sources were added:
+
+[LS24] F. Loebbert and S. F. Stawinski, Conformal Four-Point Integrals:
+       Recursive Structure, Toda Equations and Double Copy,
+       arXiv:2408.15331v1. https://arxiv.org/abs/2408.15331
+       Definition (2.5), conventions (2.3), (2.7)-(2.9), Section 2.3,
+       selected Fourier-Mellin and unit-propagator formulas in Section 2.6,
+       and Sections 4.1 and 4.4 were consulted. Not the whole paper.
+
+[P15]  E. Panzer, Feynman integrals and hyperlogarithms,
+       arXiv:1506.07243v1. https://arxiv.org/abs/1506.07243
+       Selected ladder recursion and evaluation formulas in Section 2.4.6,
+       especially (2.4.39)-(2.4.40), printed pp.57-58. Not a review of the
+       thesis or its general reduction algorithms.
+
+[DIS25] S. E. Derkachov, A. P. Isaev and L. A. Shumilov, Conformal
+        four-point ladder integrals in diverse dimensions and
+        polylogarithms, arXiv:2510.04235v1.
+        https://arxiv.org/abs/2510.04235
+        Introduction, initial graph definitions, and Sections 3.2-3.3,
+        particularly (3.33), (3.43), (3.44), were consulted. The general
+        operator formalism and analytic-continuation proof were not audited.
+
+The evaluation of the standard two-loop ladder at z=i, zbar=-i is known:
+in the convention of [LS24, (2.73)], it is 6B. This is not our discovery.
+The positive four- or higher-dimensional integral is motivation; the
+families tested below are defined directly by elementary integrals or
+rational sums. No unverified normalization or continuation convention is
+used to infer a Diophantine conclusion.
+
+At u=z*zbar=1, v=(1-z)(1-zbar), the standard two-loop function has the
+elementary representation
+
+ F(v) = integral_0^1 (-log t)^3 / ((1-t)^2+v*t) dt,    F(2)=6B.
+
+Expansion of the denominator or the classical polylogarithm series gives
+this identity. Its derivatives at v=2 are
+
+ (-1)^n F^(n)(2)/n! = integral_0^1 t^n(-log t)^3/(1+t^2)^(n+1) dt
+                   = 2^(-n-1) integral_0^infinity u^3 sech(u)^(n+1) du.
+
+Thus pure angular/dimension differentiation has already collapsed to one
+variable. It is not, by itself, a genuinely interacting new geometry.
+Also, the sign in [LS24, (2.32)] appears to require reconciliation with
+the unit-propagator convention; no result here depends on resolving that
+source-convention question. The displayed derivative identity is direct.
+
+2. Exact hyperbolic moments
+==========================
+For m>0 and Re(s)>-m put
+
+ F_m(s)=integral_0^infinity exp(-s*u) sech(u)^m du.
+
+If f=sech(u)^m, then f''=m^2 f-m(m+1)sech(u)^(m+2), f(0)=1, f'(0)=0.
+Two integrations by parts therefore give
+
+ F_(m+2)(s) = ((m^2-s^2) F_m(s)+s)/(m(m+1)).                 (2.1)
+
+For m=2k+1 this has the form
+
+ F_(2k+1)(s)=P_k(s^2)F_1(s)+s Q_k(s^2),
+ P_0=1, Q_0=0,
+ P_(k+1)(v)=(m^2-v)P_k(v)/(m(m+1)),
+ Q_(k+1)(v)=((m^2-v)Q_k(v)+1)/(m(m+1)),       m=2k+1.
+
+The base expansion is
+
+ F_1(s)=pi/2-2G*s+pi^3*s^2/16-2B*s^3+O(s^4).
+
+It follows either by integrating the exponential series for sech(u), or
+from the digamma formula. All derivatives used above are integrable near
+s=0. Set
+
+ c_k=P_k(0)=binomial(2k,k)/4^k,
+ d_k=-P'_k(0)=c_k sum_(j=0)^(k-1) 1/(2j+1)^2,
+ r_k=Q_k(0), e_k=Q'_k(0).
+
+Then
+
+ J_k=(1/2) integral_0^infinity u sech(u)^(2k+1) du
+     =c_k G-r_k/2,
+
+ I_k=(1/12) integral_0^infinity u^3 sech(u)^(2k+1) du
+     =c_k B-d_k G-e_k/2.                                    (2.2)
+
+All c_k,d_k,r_k,e_k are rational. Useful recurrences are
+
+ c_(k+1)=m*c_k/(m+1),
+ d_(k+1)=(m^2*d_k+c_k)/(m(m+1)),
+ r_(k+1)=(m^2*r_k+1)/(m(m+1)),
+ e_(k+1)=(m^2*e_k-r_k)/(m(m+1)).
+
+This family is algebraically related to the old deformed arcsine family,
+not an unrelated special-function miracle. If mu_(2k-2)(s) denotes that
+family's moment, then, for k>=1,
+
+ P_k(s^2) mu_(2k-2)(s)=1/k.
+
+Indeed P_k(v)=product_(j=0)^(k-1)((2j+1)^2-v)/(2k)!, whereas
+mu_(2k-2)(s)=2(2k-1)!/product_(j=0)^(k-1)((2j+1)^2-s^2).
+Here the deformation has polynomial zeros instead of the reciprocal poles.
+
+3. Cancelling G without an extra odd-prime matrix-inverse cost
+============================================================
+Extend the four rational sequences linearly to polynomial functionals
+c(P),d(P),r(P),e(P). For polynomial rows P_i and columns Q_j define the
+matrices C=(c(P_i Q_j)), D=(d(P_i Q_j)), R=(r(P_i Q_j)), E=(e(P_i Q_j)).
+Then the corresponding integral matrices satisfy
+
+ J=G C-R/2,     I=B C-G D-E/2.
+
+When C is invertible,
+
+ I+D C^(-1) J = B C-(E+D C^(-1)R)/2.                        (3.1)
+
+For the unweighted monomial Gram matrix C_ij=c_(i+j), C^(-1) is integral.
+Here is an exact proof. Under the probability measure
+
+ dmu(x)=dx/(pi sqrt(x(1-x))),    0<x<1,
+
+the shifted Chebyshev polynomials T_k(2x-1) have squared norms 1 for k=0
+and 1/2 otherwise. Their coefficient matrix T is integral. Consequently
+
+ T C T^t=diag(1,1/2,...,1/2),
+ C^(-1)=T^t diag(1,2,...,2) T,
+
+which is an integer matrix. This statement does not apply to arbitrary
+weighted Gram matrices. It also does not remove the intrinsic rational
+denominators of D,R,E, nor guarantee a favorable determinant bound.
+
+The baseline tests used n up to 32 and several polynomial endpoint
+weights. Of 45 configurations, seven had singular C; n=1 gives X; all
+37 remaining primitive determinant evaluations have absolute value >1.
+
+4. A proved obstruction for nonnegative cancellation
+====================================================
+The substitution x=sech(u)^2, with u(x)=atanh(sqrt(1-x)), gives
+
+ J(P)=pi/4 integral P(x)u(x) dmu(x),
+ I(P)=pi/24 integral P(x)u(x)^3 dmu(x).
+
+The even part of (2.1), or the second derivative at zero, also gives
+
+ d(P)=pi^2 c(P)/8-(1/2) integral P(x)u(x)^2 dmu(x).           (4.1)
+
+Proposition. Let P be a nonzero rational polynomial nonnegative on [0,1].
+If d(P)=0, so that I(P)=c(P)B-e(P)/2 contains no G, then
+
+ I(P) >= (pi^4/192)c(P),     pi^4/192=0.5073390158... .       (4.2)
+
+Proof. c(P)>0. Normalize P*dmu to a probability measure. Equation (4.1)
+and d(P)=0 give expectation(u^2)=pi^2/4. The power-mean inequality gives
+expectation(u^3)>=(expectation(u^2))^(3/2)=pi^3/8. Multiplication by
+pi*c(P)/24 proves (4.2).
+
+In particular, after any positive rational scaling that makes the B
+coefficient A a positive integer,
+
+ A B-C >= (pi^4/192) A >= pi^4/192.
+
+Such forms cannot tend to zero. In fact their proposed rational
+approximations C/A stay at least pi^4/192 below B. This is a uniform
+obstruction to this stated family of nonnegative weights, not merely a
+finite failed scan, and not an obstruction to arbitrary positive-integral
+proofs of irrationality.
+
+Matrix version. Let W(x) be a symmetric rational polynomial matrix that
+is positive semidefinite at every x in (0,1). Suppose C=integral W dmu
+is positive definite and d(W)=0 entrywise. Applying the scalar argument
+to v^t W v for every real vector v gives
+
+ I(W) >= (pi^4/192) C
+
+as quadratic forms. Hence
+
+ det I(W) >= (pi^4/192)^n det C.
+
+If an overall rational multiplier makes det(X C-E/2) a primitive integer
+polynomial p(X), then
+
+ |p(B)| >= (pi^4/192)^n |leading coefficient of p|
+        >= (pi^4/192)^n.                                    (4.3)
+
+Its degree is n. Thus this positive matrix class cannot supply the
+degree-normalized decay tending to minus infinity needed to deal with
+an arbitrary fixed rational denominator by this determinant criterion.
+It is not a theorem that B is rational or that every other criterion fails.
+
+The projection (3.1) need not be an integral with nonnegative weight, so
+(4.2)-(4.3) are not explanations of every finite failure in this note.
+
+5. Low rank and cancellation inside a signed common integral
+============================================================
+The singular cases in Section 3 need not be discarded. Take
+
+ P_i=T_(g+i)(2x-1), Q_j=T_j(2x-1), 0<=i,j<n, 0<g<n,
+
+and use separate auxiliary rows U_i=Q_i for J. Write C0,R0 for their
+Gram and rational matrices. Then
+
+ I(P,Q)+D(P,Q) C0^(-1) J(U,Q)
+     =B C(P,Q)-(E(P,Q)+D(P,Q)C0^(-1)R0)/2.                  (5.1)
+
+Only C0 needs to be invertible. Chebyshev orthogonality gives
+
+ rank C(P,Q)=n-g.
+
+For g=n-1 a large n-by-n determinant is therefore a polynomial of degree
+at most one in B. This is an exact low-rank construction, not an assertion
+that every denominator layer has correspondingly low rank. All 35 tested
+configurations through n=32 give primitive values >1, including rank-one
+examples. The unshifted inverse being integral is insufficient.
+
+A second construction removes G in the integrand itself. Choose columns
+Q_j=T_j(2x-1). Take auxiliary rows T_0,...,T_(n+g-1) and source rows
+T_(n+g),...,T_(2n+g-1). Subtract rational combinations of the auxiliary
+rows so that every new row P_i satisfies
+
+ d(P_i Q_j)=0 for all j<n,
+ c(P_i Q_j)=0 for j<g.                                    (5.2)
+
+This is a square rational linear system of n+g constraints. Whenever it
+is invertible, the actual common integral matrix is
+
+ I(P,Q)=B C(P,Q)-E(P,Q)/2,
+
+and rank C<=n-g. This integral is signed, because the row and column
+polynomials differ; the obstruction in Section 4 does not apply. It
+would need a separate nonvanishing theorem. All 23 tested configurations
+through n=24 have invertible constraints, full permitted B rank, and
+primitive determinant values >1. These tests do not justify enlarging
+this same canonical projection as the next research priority.
+
+For reference, the differential operator behind (2.1) is
+
+ T P=4x^2(1-x)P''+(8x-10x^2)P'+(1-2x)P.
+
+It satisfies (sech(u)P(sech(u)^2))''=sech(u)(T P)(sech(u)^2),
+and consequently
+
+ J(TP)=P(1)/2,    I(TP)=J(P),
+ c(TP)=0,        d(TP)=-c(P),
+ r(TP)=-P(1),    e(TP)=r(P).
+
+Thus integration by parts provides an exact period projection mechanism,
+but its existence alone provides neither small integer coefficients nor
+a suitable nonvanishing argument.
+
+6. An explicit family suggested by coupled two-loop ladders
+==========================================================
+The parameter called beta in [DIS25] will be denoted b here to avoid
+confusion with the Dirichlet beta function. For integer b>0 that paper's
+holomorphic factor at two loops contains
+
+ sum_(k>=0) z^k / product_(p=0)^(b-1)(k-p-epsilon)^3.
+
+Its singular part is a finite sum over k=0,...,b-1. The product of this
+part with the regular tail, followed by the second epsilon coefficient
+and angular differentiation, motivates the following directly defined
+rational functions. We do not need to identify their overall multiplier
+with the paper's normalized Feynman integral.
+
+For 0<=j<b, put
+
+ C_j=(-1)^(b-1-j)/(j! (b-1-j)!)^3,
+ H_j=sum_(p!=j)1/(j-p),   H2_j=sum_(p!=j)1/(j-p)^2,
+ K_j=(9H_j^2+3H2_j)/2,
+ B_j(m)=product_(p=0)^(b-1)(m+j-p)^(-3).
+
+Define
+
+ S_b(m)=sum_j C_j [K_j B_j(m)-3H_j B'_j(m)+B''_j(m)/2].    (6.1)
+
+Equivalently it is the coefficient of epsilon^2 in
+
+ sum_j product_(p!=j)(j-p-epsilon)^(-3)
+       product_p(m+j-p-epsilon)^(-3).
+
+For b<2h<3b, set
+
+ P_h(m)=m product_(r=1)^(h-1)(m^2-(2r-1)^2),
+ R_(b,h)(m)=P_h(m)S_b(m),
+ L_(b,h)=sum_(m>=2h-1, m odd) chi(m) R_(b,h)(m).            (6.2)
+
+The pole interval is [1-b,b-1], below the start of the sum. The rational
+function decays at least quadratically in this range of parameters, so
+the sum converges absolutely. The angular identity motivating P_h is
+
+ 2^(-(2h-1)) T_m^((2h-1))(0)
+       =(-1)^(h-1) chi(m) P_h(m)/2^(2h-1)       (m odd).
+
+This follows by taking the coefficient of x^(2h-1) in the Chebyshev
+polynomial T_m(x); it includes its zeros for smaller positive odd m.
+
+Exact period space. Reflection j -> b-1-j shows S_b(-m)=-S_b(m), hence
+R_(b,h) is even. Its poles have order at most five. At odd poles P_h has
+a zero, reducing the order to at most four. Summation on the odd grid
+then gives
+
+ L_(b,h) in Q + Q B + Q G + Q eta(1) + Q eta(3),            (6.3)
+
+where eta(1)=log(2), eta(3)=3 zeta(3)/4. For even poles, reflection
+cancels odd beta values; for odd poles it cancels even eta values.
+The starting-tail corrections are rational. In particular, there is no
+need for an unspecified list of higher polylogarithmic constants.
+
+For a direct check of (6.1), the Laurent coefficients contributed at
+m=p-j are C_j C_p times
+
+ order 5: 6,
+ order 4: 9(H_j-H_p),
+ order 3: K_j+K_p-18H_j H_p,
+ order 2: 3(H_j K_p-K_j H_p),
+ order 1: K_j K_p.
+
+Multiplying these principal parts by P_h gives the full partial fractions:
+there is no polynomial part, by the decay at infinity. This provides a
+fast exact evaluation without fitting numerical constants.
+
+Examples:
+
+ L_(1,1)=6B,
+ L_(2,2)=-6+24G-12B-(9/2)eta(3),
+ L_(3,3)=309/64-(1281/32)G+(579/16)B-(27/2)log(2)+6eta(3).
+
+The latter two are approximately 0.05889759119636 and 0.00007740088336.
+Their smallness before period elimination is not an irrationality result.
+
+7. Three ways of removing the extra ladder periods
+==================================================
+First, four prescribed tails can be combined using the cofactors of
+their G,eta(1),eta(3) coefficient matrix. This leaves a rational linear
+form in B. We tested neighboring h at fixed b, and neighboring balanced
+pairs (b,h)=(b,b). All 36 primitive forms, through b=67 in the latter
+configuration, have absolute value >1.
+
+Second, define a mathematical variant with spacing s=2: replace j-p by
+2(j-p) in both products in the epsilon-coefficient definition of S.
+Use h>=b and 2h<3b. All poles are then even, so (6.3) reduces to
+
+ L_(b,h;2) in Q + Q B + Q G.
+
+This is a parity-separated rational-sum construction, not a claimed
+Feynman-graph identity. Two neighboring forms cancel G. All 49 primitive
+forms tested have absolute value >1. The reduction in the period space
+does not improve the arithmetic enough.
+
+Third, keep spacing one but weight the internal j-sum by
+
+ w_j=(2j-b+1)^(2ell),    ell=0,1,2,3.
+
+These weights preserve reflection and the same period space. An integer
+linear combination of these four weights can cancel G,log(2),eta(3)
+before summing the tail, using a polynomial of degree at most six in j.
+This tests a projection inside the coupling, rather than only a change
+of the angular parameter h. All 30 resulting primitive forms, through
+b=64, again have absolute value >1. The weights are constructed from
+exact period coefficients, without fitting B or its continued fractions.
+
+These failures do not rule out all two-loop numerator insertions, other
+parameter directions, nonconsecutive pole sets, or determinant versions.
+They do rule out treating the existence of a coupled integral, a small
+uncleared integral, or an exact period projector as evidence of a working
+irrationality proof.
+
+8. Checks, data, and reproduction
+=================================
+Experiments and corresponding JSON results:
+
+ sech_moment_projection.py     45 cases: 37 nontrivial >1; 7 singular;
+                              one trivial polynomial X.
+ sech_low_rank.py              35 cases, all >1.
+ sech_biorthogonal.py          23 cases, all >1.
+ ladder_balanced.py            110 period decompositions; 550 exact
+                              partial-fraction evaluations.
+ ladder_elimination.py         36 beta(4)-only forms, all >1.
+ ladder_parity.py              49 forms, all >1; 105 partial-fraction checks.
+ ladder_internal_filter.py     30 forms, all >1.
+ sech_ladder_checks.py         Separate checks listed below.
+
+Commands, from the beta4 directory:
+
+ .venv/bin/python experiments/sech_moment_projection.py
+ .venv/bin/python experiments/sech_low_rank.py
+ .venv/bin/python experiments/sech_biorthogonal.py
+ .venv/bin/python experiments/ladder_balanced.py
+ .venv/bin/python experiments/ladder_elimination.py
+ .venv/bin/python experiments/ladder_parity.py
+ .venv/bin/python experiments/ladder_internal_filter.py
+ .venv/bin/python experiments/sech_ladder_checks.py
+
+The final check script verifies 202 closed moment coefficients, 404
+polynomial recurrence coefficients, 400 differential-operator coefficient
+identities, 24 integer Gram inverses, 276 cross-Gram ranks, and 77 further
+weighted partial fractions. Its 26 quadrature/finite-tail comparisons are
+explicitly numerical diagnostics, not certified enclosures of integrals.
+The primitive polynomial evaluations use Arb interval arithmetic and
+exact rational/integer coefficients. All arithmetic tests are same-agent
+work; none constitutes an independent mathematical audit.
+
+The previous manifest's 381 recorded files were checked before any old
+research record was updated; all hashes matched. See
+results/ladder_integrity_baseline.json. The new source registry records
+versions, bytes, hashes, URLs and actual reading scopes. The library now
+has 49 PDFs. No exhaustive literature survey or priority claim is implied.
+
+9. What to pursue next, and what not to repeat
+=============================================
+The positive-weight proposition is the strongest mathematical conclusion
+of this pass. The rest supplies explicit constructions and negative finite
+evidence. I would not describe this as being close to an irrationality proof.
+
+The priority should be a construction in which period projection and
+arithmetic cancellation are designed together. Neither a cheap Gram inverse,
+low B rank, positive integration, nor a low-dimensional period space suffices.
+
+The most concrete untested geometric target is a polynomial numerator
+insertion in the full two-loop ladder, depending on both internal variables.
+The desired reduction is
+
+ integral P_N(variables)*omega_N
+       =a_N B+b_N G+c_N zeta(3)+d_N log(2)+e_N,
+
+with b_N=c_N=d_N=0 enforced by a structured integration-by-parts identity.
+The coefficients of that identity must have controlled arithmetic height,
+and the retained signed integral needs a separate nonvanishing argument.
+Changing all propagator powers together or adding the degree-six internal
+filter tested above does not accomplish this. No such successful numerator
+family has been constructed here. The Feynman connection is a design source,
+not evidence that this target is attainable.
+
+An equally important arithmetic target is simultaneous control of the
+third- and fourth-power denominator layers, rather than just lowering the
+rank of the B coefficient. Before a large analytic optimization, compute
+the local denominator filtration of the proposed rational matrices at bulk
+primes. A useful new family must show savings there that persist in the
+primitive determinant. Arbitrary prime-by-prime interpolation is not a
+solution: the cost of combining congruences can erase the savings. A
+factorial or binomial identity supplying the congruences uniformly would
+be a meaningful advance.
+
+A longer-range alternative is an arithmetic-holonomy argument for the
+coupled G/B system that keeps G until the final rank comparison. The
+standard uniformizations already failed in coupled-holonomy.txt; they
+should not be renamed as a new proposal. A different singularity geometry
+or a sharper arithmetic filtration would be required before returning to
+that route.
+
+My practical choice for the next pass is the first target, with the local
+arithmetic test used early. This is a research judgment under substantial
+uncertainty, not a claim of favorable numerical evidence. If that target
+again collapses to one of the already tested rational sums, it should be
+identified as such and abandoned rather than enlarged mechanically.

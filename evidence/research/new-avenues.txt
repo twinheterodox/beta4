@@ -1,0 +1,447 @@
+New avenues: block arithmetic, a fixed auxiliary period, and matrix measures
+28 October 2026. Local and unpublished.
+
+Status and assessment
+---------------------
+There is no irrationality proof. The useful new direction from this pass is
+to combine a block of the coupled hypergeometric forms BEFORE clearing
+their denominators individually. Exact congruences can then cancel
+denominators across the block. This was motivated by retaining a fixed
+coefficient of Catalan's constant instead of eliminating it immediately.
+
+The experiments give both forms G+A beta(4)+B, with A,B integers, and pairs
+of independent integer forms in beta(4) alone. One checked pair has each
+absolute value less than 10^(-30), using a rational analytic error bound
+that does not evaluate beta(4). These are finite examples, not a uniform
+construction theorem. Their coefficients have about 130 decimal digits;
+numerical continued fractions give much smaller errors at comparable
+height. Smallness by itself is therefore not evidence of a breakthrough.
+
+The precise next problem is to bound the cost of two independent arithmetic
+directions in the block, including the cost of lifting them to combinations
+of the original forms. Most of the apparent high dimension consists of
+exact identities. A naive dimension or volume count would be misleading.
+
+A second construction completes two old scalar weights to a positive
+matrix weight. It gives nonvanishing determinants with both pole grids and
+only beta(4) remaining. Its tested primitive polynomials evaluate above one.
+This is a structural result, but the present version has poor arithmetic.
+
+A third, more speculative direction is to realize a gamma-function filter
+geometrically, with integral approximants built into the construction.
+The filter isolates beta(4) without Catalan or its square. No suitable
+geometric realization with the required arithmetic and convergence has
+been supplied. Ordinary truncated gamma products do not work.
+
+No priority claim, independent model check, or formal verification is made.
+
+1. A fixed auxiliary period changes the target
+----------------------------------------------
+Write G=beta(2). Suppose, using the irrationality of G as an external input,
+that one constructs
+
+    E_N = G + A_N beta(4) + B_N -> 0,     A_N,B_N in Z.             (1)
+
+Then beta(4) is irrational. Indeed, beta(4)=p/q would give
+
+    q E_N = qG + p A_N + q B_N,
+
+whose distance from zero is at least dist(qG,Z)>0. No upper bound on
+|A_N| is required, and there is no separate nonvanishing obligation.
+A nonzero G coefficient from any fixed finite set also suffices, by taking
+a subsequence. The external Catalan result used for this conditional
+criterion is [O]; this note does not reprove it.
+
+The distinction from the previous work is in the arithmetic task. Earlier
+we made the G coefficient zero separately at each index, often dividing
+by a large coefficient. Here it is allowed to remain equal to one, while
+all integrality conditions are solved jointly across a block. This still
+requires genuine arithmetic control; the criterion alone proves nothing
+about whether such a sequence exists.
+
+1.1 The exact block calculation
+
+Use the already proved coupled family from coupled-holonomy.txt. For even
+n>0,
+
+    r_n = a_n G + b_n,
+    s_n = 16 a_n beta(4) + c_n G + d_n,
+
+where all four coefficients are rational, and
+
+    0 < r_n < 8 phi^(-5n),
+    0 < s_n < (64/n) phi^(-5n),     phi=(1+sqrt(5))/2.              (2)
+
+The strict inequalities use G<1. Since phi^5>11, the simpler bounds
+8/11^n and 64/(n 11^n) are valid as well.
+
+For m=N,...,N+w-1, take both source forms at n=2m, with integer weights
+x_m,y_m. The desired affine arithmetic conditions are
+
+    sum (x_m a_(2m) + y_m c_(2m)) = 1,
+    A = sum 16 y_m a_(2m) in Z,
+    B = sum (x_m b_(2m) + y_m d_(2m)) in Z.                       (3)
+
+If (3) holds, the analytic certificate is simply
+
+    |G+A beta(4)+B|
+      < sum_m [8|x_m| + (64/(2m))|y_m|] / 11^(2m).              (4)
+
+This bound is rational. It does not use a numerical approximation to G
+or beta(4), except that their defining values enter the original analytic
+proof of (2). In particular, (4) does not select weights by looking at the
+decimal expansion of beta(4).
+
+Let V be the 2w by 3 rational matrix with source rows
+(a_n,0,b_n) and (c_n,16a_n,d_n), in the order (G,beta(4),1).
+Choose a common denominator D. Adjoin (0,D,0) and (0,0,D) to the integer
+row matrix DV. Hermite normal form determines whether (D,0,0) is in its
+row lattice, and supplies a lift when it is. The appended rows enforce
+the integrality of A and B. They are auxiliary arithmetic variables,
+not extra small analytic forms.
+
+The homogeneous kernel has 2w-1 source-coordinate directions. Weighted
+LLL, followed by exact projection and an integer lattice embedding, looks
+for a small representative of the affine target. The weights
+
+    W_m = 123^(N+w-1-m)
+
+approximate the relative analytic decay, since phi^10 is about 122.992.
+The integer 123 is only a search weight: the certificates use (2) or (4),
+and do not replace phi^10 by 123 in an inequality.
+
+All final coefficients are recomputed exactly. The floating-point Babai
+variant used in some exploratory runs is likewise only a search heuristic;
+it does not certify integrality or the analytic bound.
+
+1.2 Finite results and what they do not establish
+
+The following table uses the coarser, entirely rational certificate (4).
+The last two columns concern the direct beta(4) pairs explained below.
+Each entry k means a proved strict upper bound 10^(-k).
+
+   N     w       fixed-G form       first beta(4) form    second form
+   8    16            15                   17                 16
+   8    24            23                   26                 24
+  16    16            14                   15                 15
+  16    24            29                   30                 30
+
+Additional Arb calculations include N=16,w=32, with a fixed-G error bound
+less than 2.680*10^(-38), and N=32,w=32, with a bound less than
+3.740*10^(-35). These have exact coefficient and interval checks, but were
+not included in the separate Fraction recombination table above.
+
+There is no monotonicity theorem. The short block N=32,w=16 has a large
+error, despite the small errors of several earlier blocks. Allowing larger
+blocks matters, and a choice of block size cannot be justified from the
+successful examples alone.
+
+The finite solvability of (3) is also not a proof that coefficient one is
+always attainable. An asymptotic argument must prove both solvability and
+a sufficiently inexpensive lift, or use the homogeneous version below.
+
+1.3 A useful consequence: two independent pure beta(4) forms
+
+The same calculation gives the lattice
+
+    L_(N,w) = { z in Z^(2w): (zV)_G=0,
+                            (zV)_beta and (zV)_1 are integers }.
+
+Map z to its last two coefficients (A,B). The rational coefficient map V
+has rank three for a block containing two consecutive even source indices:
+the classical Catalan recurrence [Z] gives independent (a_n,b_n) and
+(a_(n+2),b_(n+2)), and s_n has nonzero beta coefficient 16a_n.
+Consequently the image of L_(N,w) has rank two. The exact-identity kernel
+has rank 2w-3.
+
+For completeness, the recurrence rank statement uses the classical
+second-order recurrence for u_n,v_n with u_0=1,u_1=7/4 and
+v_0=0,v_1=13/8. Its adjacent Casoratian is nonzero because both recurrence
+coefficients are nonzero. The two-step Casoratian is a nonzero multiple
+of the adjacent one. At even indices a_n=8u_n and b_n=-8v_n, as identified
+in the preceding coupled-family work. This uses the known classical
+identification, not a new inference from the finite coefficient table.
+
+For each reduced lattice row, compute (A,B) exactly, discard (0,0), and
+divide by gcd(A,B). Select two rows whose coefficient determinant is
+nonzero. The corresponding forms cannot both vanish at ANY real number.
+
+If their two certified bounds tend to zero for an unbounded sequence of
+blocks, beta(4) is irrational: for beta(4)=p/q, at least one of the two
+forms is a nonzero multiple of 1/q. This direct criterion does not use
+the irrationality of G at all.
+
+The selected pair for N=16,w=24 has coefficient bit lengths 428 and 430.
+Both errors are less than 10^(-30) by rational inequalities. A separate
+Fraction calculation verifies the three coefficient coordinates and the
+nonzero determinant. Numerical continued fractions, with no larger
+coefficient height, beat all eight selected homogeneous forms in the
+four-row table. That benchmark is not part of the construction or a proof.
+
+1.4 The mathematical hurdle worth investigating next
+
+Most short source vectors can be identities. For example, at N=16,w=24,
+41 of the 47 reduced homogeneous basis vectors have image (0,0); the
+remaining six span an image of rank two. Increasing the number of source
+vectors does not create that many independent useful approximations.
+
+A sufficient next theorem would give, for an explicit unbounded choice
+of N and w, two independent image directions with source lifts z_1,z_2
+such that
+
+    max_i sum_m [8|x_(i,m)|+(64/(2m))|y_(i,m)|]/11^(2m) -> 0.     (5)
+
+This must account for the saturated congruence lattice and the cost of
+integer lifts through the exact-identity kernel. Computing its index or
+invoking a high-dimensional volume bound alone does not prove (5).
+
+One route is to use contiguity/recurrence identities to give an explicit
+basis for the identity kernel, then compute the remaining arithmetic
+conditions and bound two independent lifts. Another is an inhomogeneous
+argument for the particular fixed-G target (3), which can succeed even
+when a bound on the entire lattice covering radius is too large.
+
+The experiments also save a deliberately loose universal covering bound.
+For a reduced weighted kernel basis B_i, let c be the vector of source G
+coefficients and W the diagonal weight matrix. The squared distance from
+zero to the real affine hyperplane c.x=1 is 1/||W^(-1)c||^2. Babai rounding
+gives a point with weighted squared norm at most
+
+    1/||W^(-1)c||^2 + (1/4) sum_i ||B_i||^2.                     (6)
+
+This replaces orthogonalized row norms by larger ordinary row norms.
+Cauchy--Schwarz converts (6) to an error bound using (2). The calculation
+is a finite bound for the stated lattice, not a theorem about its growth.
+For fixed N=8, these bounds stay around 10^(-15) as w increases from
+16 to 32, even though the particular affine errors get much smaller.
+This illustrates why the particular target and universal covering questions
+must be kept separate.
+
+2. Positive matrix completion of the two pole grids
+---------------------------------------------------
+The old interlaced determinant had useful half-integer and integer poles,
+but its second scalar weight was signed. Define t=y^2 and
+
+    b(y)=-(y^4/6) d^3/dy^3 csch(pi y),
+    c(y)=-(y^3/6) d^3/dy^3 sech(pi y),
+
+and let B,C be integration against b,c on y>0. We have b>0 and, with
+h=tanh(pi y),
+
+    c/b = h^5(6h^2-5) / [y(6-5h^2)].                            (7)
+
+Since |6h^2-5|<=6-5h^2 and h<=min(pi y,1), |c/b|/y<pi^2<10.
+Thus, for any rational m>=10,
+
+    W(y) = [[b(y), c(y)], [c(y), m^2 y^2 b(y)]]                 (8)
+
+is positive definite. A separate exact polynomial certificate improves
+this to m>=2. It uses atanh(h)>=h sum_(k=0)^12 h^(2k)/(2k+1), pi^2<10,
+and proves positivity on [0,1] of both polynomials
+
+    (6-5h^2)(sum_(k=0)^12 h^(2k)/(2k+1))^2
+                     +/- 5h^3(6h^2-5).
+
+All 3,264 Bernstein coefficients on 32 rational subintervals exceed 1/10.
+This establishes |c|<2yb. The elementary m=10 argument needs no such
+finite certificate.
+
+2.1 The pole identities
+
+Put F_4(a)=sum_(k>=0)(-1)^k/(a+k)^4. Integration by parts three times,
+followed by the elementary sine/cosine transforms of csch and sech, gives
+
+    B(1/(t+a^2)) = a^3 F_4(a) - 1/(2a),
+    C(1/(t+a^2)) = a^2 F_4(a+1/2).                              (9)
+
+At a half-integer, the first expression is rational+beta(4), and the
+second is rational+zeta(4). At an integer the roles reverse. All polynomial
+moments are rational; their formulas are in interlaced_determinants.py.
+
+2.2 Killing zeta(4) while preserving positivity
+
+For n>=1, put
+
+    D_h(t)=product_(j=0)^(n-1) (t+(j+1/2)^2),
+    D_i(t)=product_(j=1)^n (t+j^2),       D=D_h D_i.
+
+On polynomial vectors f=(f_1,f_2), use the positive form
+
+    <f,g> = B((f_1g_1+m^2 t f_2g_2)/D)
+                       + C((f_1g_2+f_2g_1)/D).                (10)
+
+Take components of degree <2n and impose, at the roots of D,
+
+    f_2(-(j+1/2)^2)=0,
+    f_1(-j^2)=epsilon_j m j f_2(-j^2),  epsilon_j in {1,-1}.
+
+This is a 2n-dimensional rational subspace. At each half-integer pole,
+the unwanted zeta(4) off-diagonal term vanishes. At integer poles, its
+diagonal form f_1g_1-m^2 j^2 f_2g_2 vanishes. Every Gram entry therefore
+belongs to Q+Q beta(4), and the Gram determinant is strictly positive.
+
+There is a particularly simple basis. For each pole a, let
+P_a=D/(t+a^2). Use (P_a,0) at a half-integer pole and
+(epsilon_a m a P_a,P_a) at an integer pole. Off-diagonal entries are
+rational because P_a P_b/D is a polynomial for a!=b. The beta(4)
+coefficient matrix is diagonal, with nonzero entries
+
+    16 a^3 (-1)^j D'(-a^2),           a=j+1/2,
+    32 epsilon_a m a^3 (-1)^a D'(-a^2), a integer.
+
+The determinant polynomial has degree exactly 2n. Its primitive integer
+multiple is nonzero at beta(4). This proves nonvanishing uniformly, but
+says nothing about the magnitude after primitive normalization.
+
+2.3 Arithmetic outcome
+
+All 58 distinct tested configurations fail the shrinking-value test
+(62 records include four repetitions). Tests include m=2 and m=10,
+constant and alternating signs, dimensions up to 24, and lower polynomial
+degree subspaces. For m=10 and the full constant-sign subspace,
+
+    dimension K        log |primitive P(beta(4))| / K^2
+          2                         1.38313
+          4                         1.75615
+          8                         2.21813
+         16                         2.49318
+         24                         2.58361
+
+The m=2, alternating-sign example at K=24 still gives about +2.51823.
+Arb encloses all evaluations, including the signs of the Gram determinants.
+Fifteen numerical integral comparisons check (9) and sample Gram entries;
+16 exact basis comparisons and three determinant-polynomial comparisons
+check the algebra by different calculations. These do not constitute an
+independent audit or a general asymptotic impossibility theorem.
+
+There are additional rational maximal isotropic subspaces for the unwanted
+zeta(4) coefficient form; the nodewise choice above does not exhaust them.
+A search over such subspaces is a genuine remaining freedom, but these
+poor first arithmetic results give it lower priority than block arithmetic.
+
+3. A gamma-function filter as an arithmetic design target
+--------------------------------------------------------
+Define, near s=0,
+
+    H(s)=Gamma(1/4+s) Gamma(1/4-s) Gamma(3/4)^2
+          /[Gamma(3/4+s) Gamma(3/4-s) Gamma(1/4)^2].
+
+The polygamma expansion gives the convergent identity
+
+    log H(s)=sum_(m>=1) [16^m/m] beta(2m) s^(2m)
+            =16G s^2+128 beta(4)s^4+O(s^6).
+
+Consequently the fixed multiplicative filter
+
+    K(s)=H(2s)/H(s)^4 = 1+1536 beta(4)s^4+O(s^6)               (11)
+
+removes both the G term and the decomposable G^2 contribution. This is a
+parameter identity, not an irrationality theorem. In particular, applying
+it to rational approximants may square their denominators. The fixed
+formula does NOT justify ignoring multiplication or normalization costs.
+
+The structural research target is a geometrically integral family of
+approximants K_N(s), regular on a fixed circle |s|=r<1/8, with a uniform
+error epsilon_N, such that an explicitly proved integer D_N clears
+[s^4]K_N(s), D_N epsilon_N ->0, and the extracted error is nonzero.
+The Cauchy coefficient estimate contributes only the fixed factor r^(-4).
+These conditions include the actual denominators AFTER applying the filter.
+
+Bloch--Vlasenko [BV] explain gamma quotients as hypergeometric Frobenius
+connection constants. Their Example 23 and Proposition 26 supply a natural
+setting for asking this question. They do not supply the required fast,
+arithmetically inexpensive approximants to (11).
+
+The simplest implementation is definitely unhelpful: replace H by the
+finite product
+
+    H_N(s)=product_(k=0)^(N-1)
+        [1-s^2/(k+3/4)^2]/[1-s^2/(k+1/4)^2].
+
+Then [s^4](H_N(2s)/H_N(s)^4) is exactly 1536 times the ordinary beta(4)
+series truncated after N positive-negative pairs. There is no new decay
+or denominator saving. A useful realization must exploit additional
+geometry or transformations, with parameter-uniform arithmetic control.
+
+Kerr's geometric framework [K] is another way to formulate an arithmetic-
+first search. His Theorem 3.2 has strong geometric and integrality hypotheses
+and a critical-value inequality; it does not assert irrationality for an
+arbitrary four-variable period. His extension in Proposition 3.3 suggests
+looking over Q(i). One must identify a calibrated REAL regulator equal
+to a rational multiple of beta(4): nonrationality of i beta(4), merely
+because it is imaginary, would say nothing about our target. No explicit
+Laurent polynomial meeting all the needed conditions has been found here.
+
+4. Shortcuts screened out in this pass
+--------------------------------------
+Fixed-divisor bonuses. If P is a primitive integer polynomial of degree d,
+gcd{P(m):m in Z} divides d!. Indeed, finite differences express P in the
+binomial basis; if every value is divisible by M, every coefficient of
+d!P is divisible by M. Primitivity then gives M|d!. Thus a universal
+fixed-divisor gain is only exp(O(d log d)). At degree O(N), it cannot
+repair a positive exp(cN^2) determinant gap. This does not exclude
+adaptively chosen rationality-dependent constructions or other degrees.
+
+Unrelated p-adic limits. Rationality of the real number beta(4) does not
+identify it with a p-adic L-value. A product-formula argument needs a
+proved common sequence of rational/algebraic objects and its local limits.
+Frobenius congruences could control coefficients in a construction such as
+(11); they cannot simply be asserted for the real period itself.
+
+Fast polylogarithmic ladders. Broadhurst [B], equations (54)--(55), gives
+fast combinations involving beta(4), pi^3 log 2, and pi log^3 2. Those
+formulas do not isolate a pure beta(4) BBP-type expansion with an adequate
+irrationality estimate. Fast computability is not the missing arithmetic
+argument. This is a statement about the displayed family, not a claim
+that every possible ladder has been excluded.
+
+5. Reproduction and sources
+---------------------------
+From beta4/:
+
+ .venv/bin/python experiments/matrix_measure.py --checks
+ .venv/bin/python experiments/matrix_measure_checks.py
+ .venv/bin/python experiments/fixed_catalan.py --starts 8 16 \
+     --widths 16 24 --embedding --output results/block_integral_forms.json
+ .venv/bin/python experiments/block_form_checks.py
+
+matrix_measure_variants.json records the larger matrix grid; the original
+fixed_catalan.json has 20 small-window runs. fixed_catalan_embedding.json
+has nine later runs. fixed_catalan_wide.json and fixed_catalan_wide_search.json
+retain completed examples from deliberately interrupted slower searches;
+their requested grids were not completed. No incomplete grid is counted
+as a completed experiment.
+
+block_form_checks.json gives exact rational error certificates, coefficient
+determinants, and numerical CF comparisons. Research records, scripts,
+JSON results and source hashes are included in manifest.json. Reading scope is recorded separately
+in literature/reading-status.json; none of the three newly downloaded papers
+was read or audited in full.
+
+[O] OpenAI, Catalan's constant is irrational, September 24, 2026.
+ https://github.com/openai/math/tree/main/preprints/Catalans-constant-is-irrational-September-24-2026
+ External input for the fixed-G criterion only; not needed for the direct pair.
+
+[Z] Wadim Zudilin, An Apery-like difference equation for Catalan's constant,
+ arXiv:math/0201024.
+ https://arxiv.org/abs/math/0201024
+ Source of the classical Catalan recurrence; the coupled deformation and
+ its normalization are developed in the preceding local research notes.
+
+[BV] Spencer Bloch and Masha Vlasenko, Gamma functions, monodromy and
+ Frobenius constants, arXiv:1908.07501v2.
+ https://arxiv.org/abs/1908.07501v2
+ Selected introduction, Example 23, Lemma 25 and Proposition 26 passages;
+ the long general theorem/proof was not audited. Example 23 visually checked.
+
+[K] Matt Kerr, Motivic irrationality proofs, arXiv:1708.03836v2.
+ https://arxiv.org/abs/1708.03836v2
+ Selected introduction, hypotheses and statement of Theorem 3.2, and
+ the scope/calibration discussion around Proposition 3.3. Theorem 3.2
+ visually checked; no complete geometric example verified.
+
+[B] D. J. Broadhurst, Polylogarithmic ladders, hypergeometric series and
+ the ten millionth digits of zeta(3) and zeta(5), arXiv:math/9803067v1.
+ https://arxiv.org/abs/math/9803067v1
+ Abstract, ladder definitions and weight-four section; equations (50)--(55)
+ visually checked. Functional-equation derivations were not audited.

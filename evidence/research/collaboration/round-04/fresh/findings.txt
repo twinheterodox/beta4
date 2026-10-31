@@ -1,0 +1,367 @@
+Character-compatible Loewner determinants for beta(4)
+=====================================================
+29 October 2026. Local and unpublished research record.
+
+No irrationality proof has been found.  This investigation produces a
+full-parity beta(4)-only determinant, a quantitative nonvanishing mechanism
+for selected principal minors, and exact large-prime denominator laws.  Its
+tested primitive values grow.  Pole cancellation by an entire multiplier
+does not remove the fourth prime-denominator layer.  A binomial projection
+restores some real decay in finite tests but also increases the arithmetic
+cost.  No asymptotic failure theorem for all these projections is claimed.
+
+The coordinator separately proves an actual primitive-value obstruction
+for a heavily shifted full-parity subfamily.  I reviewed that proof in
+coordinator_review.txt; it is not duplicated here.
+
+1. Initial choice and pivot
+----------------------------
+00_initial_ideas.txt was written before reading the archive.  The first
+choice was the elementary Mellin moment sequence
+
+  m_j=(1/6) integral_0^1 x^(2j)(-log x)^3/(1+x^2) dx
+      =(-1)^j[theta-sum_(k<j) (-1)^k/(2k+1)^4],
+  theta=beta(4).
+
+Its Hankel theta coefficient is the rank-one matrix [(-1)^i(-1)^j].
+Thus that first construction does not give growing-degree polynomials.
+The single recorded pivot was to cubic-tail divided differences.  The
+archive's ordinary integer-step Loewner pencil was only a tested prototype;
+its positive squared-node transform had already been analyzed separately.
+The present work concerns the ordinary pencil and a denser, character-
+compatible grid, not the already excluded positive transformation.
+
+2. A full-parity pencil with no auxiliary period
+------------------------------------------------
+For integers a>=0 put
+
+  S_j(a)=sum_(0<=k<a) (-1)^k/(2k+1)^j,
+  g_j(z)=sum_(k>=0) (-1)^k/(2k+1+2z)^j.
+
+Initially these series are used in Re z>-1/2.  For j>=2 they have the
+usual meromorphic continuation, with the displayed poles on negative
+half-integers.  Splitting off a finite prefix gives
+
+  (-1)^a g_j(a)=beta(j)-S_j(a).                         (2.1)
+
+Define F(z)=cos(pi z)g_3(z).  Then at every nonnegative integer,
+
+  F(a)=beta(3)-S_3(a),
+  F'(a)=-6[theta-S_4(a)].                              (2.2)
+
+The sine contribution to F' vanishes at integers, and g_3'=-6g_4.
+Consequently the normalized divided-difference matrix is
+
+  K_aa(X)=X-S_4(a),
+  K_ab(X)=(S_3(a)-S_3(b))/(6(a-b)), a!=b.              (2.3)
+
+At X=theta it equals -F[a,b]/6, using F' on the diagonal.  The constant
+beta(3)=pi^3/32 cancels from every off-diagonal entry.  No assumption
+about Catalan's constant is made or needed.  On n distinct common nodes,
+det K(X) is monic of degree n, so the beta coefficient has full rank.
+
+The old cubic-tail pencil is exactly the even-node restriction a=2b:
+S_j(2b)=sum_(k<b)[(4k+1)^(-j)-(4k+3)^(-j)], and the factor 6(a-b)
+becomes 12(b-c).  Thus this is a concrete enlargement of that construction,
+using every odd denominator rather than only complete positive-negative
+pairs as interpolation nodes.
+
+3. Pole cancellation is exact, but is not an arithmetic saving
+---------------------------------------------------------------
+At z0=-k-1/2 the principal part of g_3 is
+
+  (-1)^k/[8(z-z0)^3].
+
+The first derivative of cos(pi z) at z0 is pi(-1)^k.  Therefore F has
+the principal part pi/[8(z-z0)^2], with no simple-pole term.
+
+There is an even stronger completion:
+
+  E(z)=cos(pi z)^3 g_3(z).                              (3.1)
+
+All its apparent poles are removable, and E(z0)=pi^3/8.  Thus E is
+ENTIRE.  Nevertheless it gives exactly the same values and first
+derivatives as F at every integer, hence exactly the same matrix (2.3).
+The function E is not rational: E(a)=(-1)^a g_3(a) is nonzero, alternates
+in sign, and tends to zero as a tends to infinity.  A rational entire
+function is a polynomial and cannot have those values.
+
+These facts do not supply a determinant estimate.  In particular the
+cosine multiplier introduces substantial growth away from the real
+interpolation grid.  The exact prime laws below show directly that
+removing the analytic poles has not removed the arithmetic fourth layer.
+It would be incorrect to infer an inexpensive primitive normalization
+from the word 'entire'.
+
+The standard polygamma recurrence and pole description are recorded in
+NIST DLMF section 5.15, especially 5.15.1 and 5.15.5:
+https://dlmf.nist.gov/5.15
+The identities (2.1)--(3.1) above also follow directly from the displayed
+series and local Taylor expansion, without relying on a literature claim.
+
+4. Nonvanishing from alternating Loewner data
+---------------------------------------------
+The following elementary rank fact is useful and does not assume a fixed
+sign for determinants.
+
+LEMMA. Let x_0<...<x_(N-1) be real, let f_j be nonzero real numbers with
+alternating signs, and let L be any real symmetric matrix whose off-diagonal
+entries are (f_i-f_j)/(x_i-x_j).  Its diagonal may be arbitrary.  Then
+
+                       rank L >= ceil((N-1)/2).          (4.1)
+
+Proof. Suppose rank L=r<N.  Among its first r+1 rows choose a nonzero
+dependence v=(v_0,...,v_r).  Set
+
+  p(z)=product_(i=0)^r(z-x_i),
+  B(z)=sum_(i=0)^r v_i p(z)/(z-x_i),
+  A(z)=sum_(i=0)^r v_i f_i p(z)/(z-x_i).
+
+Both have degree <=r.  Neither is identically zero, by evaluation at
+the x_i and the facts v!=0 and f_i!=0.  At every column j>r, the row
+dependence gives A(x_j)=f_j B(x_j).  At j<=r this identity holds
+automatically; if v_j!=0 then B(x_j)!=0, while if v_j=0 both A and B
+vanish there.
+
+Let C=gcd(A,B) have degree c, and cancel it to obtain the real rational
+function R=(A/C)/(B/C).  Except at at most c of the N nodes, R(x_j)=f_j.
+At each retained node its denominator is nonzero, since the two reduced
+polynomials are coprime.  Deleting at most c entries from an alternating
+list leaves at least N-1-2c sign changes between consecutive retained
+entries.  Every such sign change requires a real zero or pole of R in
+the intervening open interval.  These intervals are disjoint, whereas
+the total number of real zeros and poles is at most 2(r-c).  Therefore
+N-1-2c<=2(r-c), which is (4.1).  QED.
+
+Apply the lemma to f_j=F(j)=(-1)^j g_3(j).  The alternating-series test
+gives g_3(j)>0.  Multiplying all entries by -6 does not change rank.
+Hence the actual N-by-N full-parity K(theta) has rank at least
+ceil((N-1)/2).
+
+This gives selected principal minors with a controlled node range.  If
+a real symmetric N-by-N matrix has rank r, the coefficient of t^(N-r)
+in its characteristic polynomial is the nonzero product, up to sign,
+of its r nonzero eigenvalues.  It is also, up to sign, the sum of all
+principal r-by-r minors.  Thus some such principal minor is nonzero.
+Combining this elementary identity with the specific Loewner rank lemma
+proves:
+
+  For every N, some principal minor of K(theta), using only nodes
+  0,...,N-1, is nonzero and has order r>=ceil((N-1)/2).       (4.2)
+
+Each chosen minor is a monic rational polynomial in theta of degree r.
+This is not a claim that the leading consecutive determinant is nonzero,
+nor that every size has a nonzero principal minor of exactly that size.
+It does not select a minor with a favorable primitive value.  Accordingly
+it supplies a nonvanishing mechanism, not an irrationality estimate.
+
+For contrast, the old EVEN-grid leading determinant of order 8 is
+negative at offset 0 and positive at offset 8, as certified independently
+by direct Hurwitz-tail Arb determinants.  Continuity in the real offset
+therefore gives an actual zero in between.  This excludes a universal
+sign-regularity or all-real-offset nonvanishing claim for that old family.
+
+5. Exact fourth layers for the unprojected full grid
+----------------------------------------------------
+Let P_N(X)=det K(X) on nodes 0,...,N-1.  Its primitive positive multiplier
+Q_N is the least common denominator of its coefficients.  It is an integer,
+and Q_N P_N has content one because P_N is monic.
+
+Fix an odd prime p>N, p>=5, and put
+
+  t=N-(p+1)/2,
+
+assuming t>0.  Only the odd denominator p can occur in the prefixes.
+Writing chi_4(p)=(-1)^((p-1)/2), direct reduction gives
+
+  p^4 K_aa(0) = -chi_4(p) if a>=(p+1)/2, and 0 otherwise,
+  p^4 K_ab(0) = 0 for a!=b,                         modulo p. (5.1)
+
+Off-diagonal entries have valuation at least -3 because p does not divide
+a-b.  The coefficient of X^(N-t) is a sum of principal t-minors.  The
+unique term of valuation -4t uses all t high diagonal entries.  Thus
+
+  v_p([X^(N-t)]P_N)=-4t,
+  p^(4t)[X^(N-t)]P_N=(-chi_4(p))^t mod p.                 (5.2)
+
+In particular v_p(Q_N)>=4t.  Summing just these large primes, the prime
+number theorem gives
+
+                       log Q_N >= N^2+o(N^2).           (5.3)
+
+Indeed the main weighted-prime sum is the integral of 4N-2x over
+N<x<2N.  This is a lower bound on the ACTUAL monic primitive multiplier,
+not merely a sufficient coefficient clearing factor.  It does not by
+itself lower-bound |Q_N P_N(theta)|.
+
+For comparison, on the old even grid with n nodes 0,...,n-1, primes p>n,
+p>=7 have a high diagonal residue
+
+  -chi_4(p)[1_(4a>p)-1_(4a>3p)/81].
+
+Every nonzero residue is a unit: its value is -chi_4(p) or
+-80chi_4(p)/81.  If r is the number of a with 4a>p, the coefficient
+of X^(n-r) has valuation exactly -4r.  The corresponding large-prime
+lower bound for its primitive multiplier is (9/2)n^2+o(n^2).
+The denser grid does reduce this particular arithmetic lower bound;
+the real determinant cost must be analyzed at the same time.
+
+6. Binomial projections and a second exact arithmetic law
+---------------------------------------------------------
+To suppress the real alternation, take n,m>=0 with n>=1, put N=n+m,
+and define the n-by-N integer matrix
+
+  U_(i,k)=binom(m,k-i), 0<=i<n, 0<=k<N,
+
+with out-of-range binomials zero.  This is a row filter with source
+polynomials z^i(1+z)^m.  Set
+
+  A=UU^T, B=U K(0) U^T,
+  R_(n,m)(X)=det(XA+B)/det A.                            (6.1)
+
+A is positive definite, because the shifted source polynomials are
+linearly independent.  Thus R is a well-defined monic degree-n rational
+polynomial.  The normalization is essential: raw determinant scaling
+must not be mistaken for an arithmetic improvement.
+
+Vandermonde convolution and the classical binomial Toeplitz determinant
+give
+
+  A_(i,j)=binom(2m,m+i-j),
+  D_(r,m):=det A_r
+    =product_(j=0)^(r-1) j!(2m+j)!/(m+j)!^2.              (6.2)
+
+This product is classical, not a novelty claim.  One primary exposition
+is Darij Grinberg, A hyperfactorial divisibility, Theorem 8, specialized
+to a=b=m,c=r:
+https://darijgrinberg.gitlab.io/hyperfactorialBRIEF.pdf
+Only that theorem/formula and its immediate context were consulted here.
+
+Let p>max(N,2m,3), p<2N-1, and t=N-(p+1)/2.  Then 0<t<n.  The last t
+columns W of U vanish in its first n-t rows; their bottom t-by-t block
+is triangular with diagonal one.  Formula (5.1) gives
+
+                    p^4 B = -chi_4(p) W W^T mod p.        (6.3)
+
+For the coefficient of X^(n-t) in det(XA+B), multiply by p^(4t) and
+reduce.  The supported lower-right block in (6.3) forces
+
+  p^(4t)[X^(n-t)]det(XA+B)
+       =(-chi_4(p))^t D_(n-t,m) mod p.                    (6.4)
+
+This residue is nonzero.  Indeed n-t=(p+1)/2-m, so the largest factorial
+argument in D_(n-t,m) is m+(p-1)/2<p; all its numerator and denominator
+factorials are p-units.  Therefore (6.4) is an EXACT valuation -4t,
+and the monic coefficient in (6.1) has exact valuation
+
+                  -4t-v_p(D_(n,m)).                     (6.5)
+
+If Q_(n,m) is the actual monic primitive multiplier, (6.5) implies
+v_p(Q_(n,m))>=4t+v_p(D_(n,m))>=4t.  The possible content of the
+unnormalized determinant is not ignored; it is handled by (6.1).
+
+For any fixed rho>=0 with m/n->rho, summing this prime band gives
+
+  liminf log Q_(n,m)/n^2 >= (1+rho)^2,  0<=rho<=1,
+  liminf log Q_(n,m)/n^2 >= 4,          rho>=1.             (6.6)
+
+The integral is (2N-max(N,2m))^2.  The bound uses only one large-prime
+band and can be far below the actual multiplier.  It is not a theorem
+that all binomial projections have growing primitive values.
+
+7. Isolated primes also give conditional nonvanishing
+------------------------------------------------------
+On consecutive full-parity nodes h,...,h+n-1, suppose
+
+                         h+n<p<2h                       (7.1)
+
+for a prime p.  Every prefix contains p, and no other odd multiple of p.
+Its contribution cancels from every off-diagonal difference, so those
+entries are p-integral.  For every p-integral rational x,
+
+              p^4 K(x)=-chi_4(p) I mod p,
+              v_p(det K(x))=-4n.                        (7.2)
+
+Thus, under a hypothetical equality theta=a/b, any such prime not dividing
+b certifies nonvanishing of the evaluated determinant.  This is sufficient
+nonvanishing for a rationality contradiction if a favorable real/primitive
+bound were also available.  It does not assert irrationality by itself.
+
+At x=0, (7.2) also proves that the monic primitive multiplier has valuation
+exactly 4n at p.  The coordinator combines this with a real lower bound in
+the overshift theorem; see ../coordinator/loewner_shift.txt and my review.
+
+8. Exact finite results and what they show
+------------------------------------------
+All displayed logarithms are natural.  Full-parity examples at offset 0:
+
+    n       log |P_n(theta)|       log Q_n       log |Q_n P_n(theta)|
+    2            -3.251631          3.583519             0.331888
+    8           -48.476904        215.524807           167.047902
+   16          -133.332949       1047.147981           913.815033
+   24          -231.428011       2545.443642          2314.015631
+   32          -337.964211       4749.296964          4411.332752
+
+For n=2 the primitive polynomial is exactly 36X^2-36X-1.  The raw
+values decay, but their observed logarithms do not have the old even-grid
+quadratic size.  This finite observation is not stated as an asymptotic
+theorem.  The coordinator proves a separate, uniformly overshifted failure.
+
+The binomial projections use the monic normalization (6.1).  Examples:
+
+   n=m      log |R_(n,m)(theta)|    log Q_(n,m)    primitive log
+     4             -23.619003        142.559856      118.940852
+     8             -81.088224        704.509281      623.421057
+    16            -246.838624       3111.225170     2864.386546
+
+There are 24 full-parity tests (orders through 32, offsets 0 and n) and
+33 binomial-projection tests (orders through 16, m through 3n).  All 55
+of those tests of degree at least two have primitive absolute value >1.
+The two degree-one cases are the trivial X and X-1.  The separate old
+even-grid baseline has 22 cases, including two degree-one forms, and
+all of its 20 higher-degree primitive values likewise exceed one.
+
+No limiting sign or asymptotic failure assertion is inferred from these
+finite counts.  The new selected-minor nonvanishing theorem (4.2) does
+not make these failing primitive budgets favorable.
+
+9. Verification, sources, and reproduction
+-------------------------------------------
+loewner_probe.py constructs exact rational characteristic polynomials,
+clears to primitive integer coefficients, and uses Arb Hurwitz-zeta
+enclosures for theta.  filter_probe.py carries out (6.1) exactly.  The
+separate checks.py does not import either implementation.  It checks:
+
+  * 8 small polynomials by a separate permutation expansion;
+  * 193 exact large-prime valuation/congruence instances;
+  * 111 isolated-prime evaluations at explicit rational arguments;
+  * 6 direct Hurwitz-tail determinant comparisons/sign certificates.
+
+The auxiliary weight-kernel sign probes in loewner_probe.json use mpmath
+and are labeled diagnostics; they are not used to prove any theorem.
+The coordinator cross-review additionally checks exact Cauchy inverses
+and determinant/norm bounds for 24 orders, in a separate file.
+
+From this directory:
+
+  /home/research/Chat/Math/beta4/.venv/bin/python loewner_probe.py
+  /home/research/Chat/Math/beta4/.venv/bin/python loewner_probe.py --full-parity
+  /home/research/Chat/Math/beta4/.venv/bin/python filter_probe.py
+  /home/research/Chat/Math/beta4/.venv/bin/python checks.py
+  /home/research/Chat/Math/beta4/.venv/bin/python coordinator_review_checks.py
+
+The archive's Loewner starting point was attributed there to selected
+definitions in a working repository by S. Litsey.  No claimed irrationality
+result from that repository is used here.  The present elementary rank,
+period, and prime calculations are proved above, not inferred from a claim.
+
+Targeted literature searches for Dirichlet beta/Loewner/divided differences,
+Catalan/Loewner, and cosine/polygamma entire interpolation did not locate an
+identified exact match for (2.3) or (6.1).  This was a narrow search and
+does not establish novelty.  The binomial determinant (6.2) is explicitly
+classical.  There is no priority claim, external audit, or formal verification.
+
+What remains missing is one family of nonzero selected polynomials whose
+real decay beats its ACTUAL primitive multiplier.  Neither the entire
+completion, the rank theorem, nor the coefficientwise prime laws alone
+provide that joint estimate.

@@ -1,0 +1,360 @@
+ROUND18 ADDENDUM -- 31 OCTOBER 2026
+
+The bounded creative reset is complete. Read coordinated-round-18.txt and
+collaboration/round-18/findings.txt. The new complete analytic argument and
+independent exact reconstruction are in round-18/adversarial/assessment.txt
+and checks.py (under collaboration/).
+
+Recommendation: PARK BETA(4). Three fresh seeds were assessed; none supplies
+a justified new construction campaign. Do not automatically start another
+round. Reopen only for a concrete new mechanism with a quantitative reason
+to expect progress.
+
+The closest candidate, the ordinary-moment first variation, has exact
+target isolation, all-index positivity and normalized error rate
+-2 log(3+sqrt(8)). Its actual primitive reduced-denominator growth remains
+uncontrolled. Removing the full common numerator content improves the
+finite examples substantially, but both primitive forms exceed one at
+all n=3,...,12. All 24 existing pairs were independently reconstructed.
+No all-index arithmetic impossibility is claimed.
+
+The arcsine parameter family is exactly archived. The ordinary-moment
+sequence has not been identified with an archived sequence; different
+families' narrow obstructions are not applied to it. The holonomy and
+cyclotomic seeds supplied no new rationality-sensitive advantage.
+
+Source scopes, corrections, proofs and preservation checks are recorded.
+This is model mathematical analysis with exact cross-checks, not formal
+verification. Everything remains local and unpublished. Stop for review.
+
+The previous record is preserved verbatim below.
+
+ROUND17 ADDENDUM -- 31 OCTOBER 2026
+
+The bounded bordered-frame arithmetic study is complete. Read
+coordinated-round-17.txt and collaboration/round-17/findings.txt;
+local-structure.txt contains the detailed proofs.
+
+The exact large-prime Smith layers give a four-layer denominator bound
+that misses the real budget for all three widths and every fixed 0<c<=1.
+There are maximal-rank Cauchy pairings in the windows where proportional
+moments were hoped for. At c=1/5 a specific coefficient valuation also
+rules out every positive integer coefficient-clearing normalization.
+
+These statements DO NOT exclude all primitive rescalings. The remaining
+issue is an all-index residual-divisibility or numerator-content theorem.
+All nine exact primitive tests fail; observed powers of 2 were fully
+removed. The small-prime denominator estimate does not bound positive
+numerator content. The precise scope and missing lemma are in the report.
+
+Recommendation: stop this implementation, and return only with a new
+content mechanism. No larger parameter scan or new family was started.
+All work is local; no independent model check or formal verification
+occurred this round. Stop for user review.
+
+The previous record is preserved verbatim below.
+
+ROUND 16 ADDENDUM -- 30 OCTOBER 2026
+
+The completed bounded landscape review is coordinated-round-16.txt and
+collaboration/round-16/findings.txt. Its evidence audit distinguishes actual
+primitive obstructions from inadequate estimates and finite failures.
+
+One next investigation is recommended: interleaved nonprincipal borders
+for the positive cubic-tail beta4 kernel. Support, positivity and real size
+are already proved; sufficient primewise savings are not. The first local
+pairing congruence has the desired shape, but its higher-layer transport
+and a favorable arithmetic budget remain open. See the precise missing
+lemma and bounded first test in the report. This is not a proof forecast.
+
+The alternating half-grid and generic arcsine suggestions duplicate work
+already in the archive and are not proposed as new campaigns. Other methods
+remain conceptually open, with their missing bridges recorded.
+
+The review was sequential. Source reading and a Cauchy-energy benchmark
+are not an independent model audit or formal verification. All work is
+local and unpublished. No proposed construction campaign has begun.
+Stop for review before starting one.
+
+The previous record is preserved verbatim below.
+
+ROUND 15 ADDENDUM -- 30 OCTOBER 2026
+
+Latest bounded assessment: coordinated-round-15.txt and
+collaboration/round-15/findings.txt. The round 12 forward/dual mismatch
+has been repaired for both quarter arguments, with exact all-index
+coefficient identities, recurrences, initial data and normalization.
+
+The specified primewise estimates improve each other but are inadequate:
+even ignoring every numerator cost, their content-density ceiling is
+88.2075294973 against the required 142.8620263851. This does not bound
+actual primitive gcds or exclude faster projected decay. Nonvanishing
+of the projected beta(4) form is only checked at five finite indices.
+
+One independent model checker completed two scoped audits, including
+all ten certificate substitutions and the exact arithmetic integral.
+This is not formal verification or a proof of beta(4) irrationality.
+The source audit, complete derivation, arithmetic assessment and check
+records are linked in the report. All work remains local and unpublished.
+
+This phase ends for review. Do not automatically start another campaign
+or treat the failure of these estimates as a general impossibility.
+
+The previous record is preserved verbatim below.
+
+ROUND14 HANDOVER ADDENDUM --30 OCTOBER2026
+
+The bounded complete-family investigation is assessed in
+coordinated-round-14.txt and collaboration/round-14/findings.txt.
+It returns control for review; do not automatically start another round.
+
+Candidate A is exactly the prior half-pole-arithmetic.txt construction,
+including its complete parameter identity. Do not rediscover it or
+present its new independent check as a new arithmetic improvement.
+
+Candidate B uses a moved-base Whipple identity with an essential
+polynomial Abel contribution. Its positive terminating coefficient
+formula proves target support and gives eventual signed nonvanishing.
+For its two explicit arithmetic estimates M_U divides M_D at every n,
+so combining them produces no saving. The beta4-only cofactor W_n has
+exponential rate0 and coefficient v2(4q_n^2)=2-8n+4s2(n). Every POSITIVE
+INTEGER clearing multiplier therefore produces growing forms even if
+all odd-prime denominators were removed.
+
+This is NOT a theorem about the actual primitive integer pairs: division
+by a growing odd common numerator factor is a RATIONAL rescaling and
+is unexcluded. Six prescribed primitive evaluations are unfavorable.
+No adequate all-index gcd estimate or irrationality proof was obtained.
+Read the report's scope before extrapolating to other parameter rays,
+other Whipple orbits, or the unstarted full CMF deformation.
+
+One independent model checker audited the derivations and independently
+reproduced the D side including polynomial parts. This is not formal
+verification. Source reading/limitations and reproduction commands are
+in the report and coordinator/sources.txt.
+
+The previous handover is retained verbatim below.
+
+ROUND13 HANDOVER ADDENDUM --30 OCTOBER2026
+
+The user subsequently authorized a bounded modular-holonomy feasibility
+study. Its mathematical assessment is now in coordinated-round-13.txt
+and collaboration/round-13/findings.txt. The current goal ends with that
+assessment and review; it does not authorize automatically starting the
+recommended complete-family identity investigation.
+
+The fixed level32 system and its two tested variants have ranks9,17,18.
+Their mandatory cusp singularities cap log|phi'(0)| below1.3. Adding
+the tested remainder directions to certified companions would require
+log|phi'(0)|>4 in the compared holonomy bounds, including the checked
+weighted-metric refinement. There is no irrationality proof and no
+general exclusion of modular methods. Consult the final report for the
+exact coefficient-type, coordinate, map, and source-dependency scope.
+
+One independent model checker reviewed the new claims and supplied exact
+reproduction scripts. This is not formal verification. The previous
+handover is retained verbatim below as the record at the earlier pause.
+
+BETA(4) RESEARCH HANDOVER AFTER ROUND12 -- PAUSED FOR REVIEW
+29 October 2026. Local and unpublished.
+
+Read this and archive-index.txt before substantial new work. The latest
+record is coordinated-round-12.txt; round07's completed closure is
+coordinated-round-07.txt. This handover supersedes the
+research-priority suggestions in older chronological notes; their proofs
+and explicitly scoped limitations remain part of the archive.
+
+STATUS
+
+The user requested a convenient stopping point to review the investigation.
+Round12 is closed and work is paused. See review-before-pause.txt. Do not
+start the next experiment until the user resumes. Earlier active-goal
+language in chronological records describes their status at the time.
+
+There is no irrationality proof of theta=beta(4), and no currently
+credible construction whose full arithmetic and analytic estimates
+reach one. The completed rounds contain useful identities, reductions,
+nonvanishing results and obstructions to specific families. Those are
+progress in understanding the problem, not evidence that a proof is near.
+
+The interrupted round07 is closed. Its important retained results are:
+
+ * Rational Hermite sources have a complete4x5 endpoint system and an
+   exact primitive gcd prescription, including singular cases.
+ * For the symmetric circular family, eventual rank and actual signed
+   nonzero errors are proved. The normalized error is asymptotic to
+   (-1)^n C n^(5/2)log^2(n)[(sqrt2-1)/2]^n, C=2.419387... .
+ * The actual primitive coefficient height remains unbounded at a useful
+   rate. At n80 the relative error is around10^-48 while the primitive
+   integer error is around10^320. This does not prove a family no-go.
+ * The third-derivative continued-fraction family has a genuine reduced
+   denominator obstruction at fixed N and even depth. Growing N and
+   odd-depth arithmetic are not covered.
+
+No theorem in the archive rules out a proof by approximation, determinants,
+modular forms, hypergeometric functions, or continued fractions in general.
+Conversely, none of those frameworks is presumed to be the right starting
+point. A change of notation or normalization is not a new mechanism.
+
+Round08 tested fresh structural routes and obtained no credible complete
+proof mechanism. Its exact Euler distribution for the archived csch
+functional is a local tool, but changes no existing primitive polynomial.
+General E-function/Stokes, local CM spectral, monodromy and positive
+continued-fraction criteria failed concrete tests; their precise scopes
+are in coordinated-round-08.txt. Do not generalize these countermodels
+to all methods of those kinds.
+
+The two-loop Usyukina--Davydychev/Schwinger graph and its dimensional
+uniform-index deformation are OLD. The source angular index lambda=2h-1
+and Dspace=4h; Dspace=4b, all propagator powers b, is exactly archived
+balanced h=b. The positive64^(-n) bound does not create a new arithmetic
+family. Check these parameter conventions before a scan.
+
+Round09 completed those proposed gates. The nonuniform central-Green
+family has exact five-period space for every fixed n, positive256^-n
+decay, and a reviewed terminating-harmonic reduction. Its prescribed
+n1..4 pure-beta4 elimination has primitive error about1.57e28. The
+ray is closed to further scans without a new arithmetic ingredient.
+This is not a family impossibility theorem.
+
+An explicit orbifold X=P(1,3,4^5) supplies quarter-Gamma geometry, but
+the natural cumulant sequence has signed n^-5 error and actual primitive
+denominator growth at least exp((24+o(1))n). That sequence fails.
+A nonconstant toric deformation has integral coefficients and changed
+critical values but lacks beta4 calibration. Multiplicative/divisibility
+matrices reduce to linear approximants; the Boolean case is exactly the
+old Euler product. No credible complete route emerged in round09.
+
+Round10 proves a sharp norm of the polynomial Euler functional on
+integer-valued polynomials at p>=5, with first denominator layers at
+p+2,2p+1,3p. This is not the round08 Gauss norm and is not a pole-part
+or primitive-determinant estimate. Full-rank congruence changes preserve
+primitive Gram polynomials; a new proper Fermat source fails p5,p7 tests.
+
+A single positive Bernoulli/Hurwitz functional on the dense quarter grid
+has an explicit positive interpolation numerator cancelling zeta4.
+Its full-degree beta4 determinants are nonzero, but the three prescribed
+primitive values are large. Three nonsymmetric Whipple pole-split jets
+lack the hoped-for transformation-supplied divisibility at the one
+fixture. A fresh TQFT-inspired integer-trace route fails an exact parity
+gate for its direct even-power extension, including mixed odd levels.
+Read coordinated-round-10.txt and its proof/review links before reusing
+these ideas. None yields a credible full irrationality mechanism.
+
+Round11 gives a genuinely calibrated nonlinear cyclotomic norm candidate,
+but its complete conjugate product and actual primitive minimal polynomial
+grow like exp(4(p-1)log p+O(p)). This closes that sine-normalized family.
+An assumption-dependent positive Niven source has a surviving -3 prime
+layer in selected origin derivatives; changing to the period coordinate
+gives an ordinary rational beta integral. Neither fact is a general no-go.
+
+An unsquared quarter-pole functional cancels zeta(4) without the old
+interpolation numerator. Exact dilation retains an ordinary rational
+correction plus an alternating half-pole sum. Seven prescribed primitive
+values are large. For a growing ray, p=8n+5 gives determinant valuation
+-8n under hypothetical rationality, and infinitely many such primes exist.
+This supplies conditional nonvanishing only. No good primitive-size
+estimate follows. Root's previous dense-grid comparison likewise concerns
+analytic scale only, not primitive arithmetic. Read coordinated-round-11.txt
+before reusing these mechanisms. All bounded gates are closed.
+
+Round12 tested a rationality-dependent integer Lambert source. Its direct
+evaluation/truncation has exact denominator p^(p^2), and the primitive
+numerator grows. Complete root-of-unity averaging introduces other q-values;
+it creates no integrality bridge. A regularized log-cube primitive has a
+rational germ under rationality, but adding a rational constant changes
+neither its differential module nor its continuation. Any rational linear
+differential operator removing its endpoint logarithms also kills that
+constant. These are scoped statements, not global method obstructions.
+
+A recent CMF source supplies complementary arithmetic through two exact
+presentations of the same approximants. Our quarter-grid transfer has
+period space Q+Q beta3+Q beta4 and a calibrated beta4 projection. Its
+forward denominator survives, but its two proposed numerator sequences
+differ already at n=1, where both primitive errors are large. The root
+independently reconstructed both kernels and their exact mismatch.
+A complete deformation of the paired parameter identity is a focused
+possible next gate; it is unproved and unstarted. No scan is justified
+merely by the successful period isolation. See round12/fresh/findings.txt.
+
+If research is resumed, do not substitute further scans or a representation of the
+same period for a new arithmetic mechanism. The next round should broaden
+the search while retaining these exact tools and their precise scopes.
+
+REVISED RESEARCH DIRECTION
+
+The user asks for fundamentally different proof mechanisms and unexpected
+connections, without restrictions to existing literature or to any earlier
+framework. The purpose is a rigorous proof of the individual irrationality
+of beta(4). Conditional statements, a disjunction involving other constants,
+or new asymptotics with unresolved arithmetic do not meet that objective.
+
+At most three concurrent workers plus the coordinator are authorized.
+Use fresh workers periodically. A useful allocation is distinct explorations
+with an adversarial checker, rotating roles as concrete proposals emerge.
+Do not automatically send the old workers back to optimize their families.
+
+A short independent brainstorming phase may precede reading the archive.
+Before substantial derivation or computation, each worker must:
+
+ 1. Read this handover and the concise archive index.
+ 2. Read the relevant proof records for a proposed overlap, including the
+    hypotheses of any claimed obstruction and the normalization used.
+ 3. Record whether the idea is equivalent to an archived one, modifies it
+    with a specific new ingredient, or uses a substantially different
+    mechanism. Explain why a relevant old obstruction may cease to apply.
+
+For a promising proposal, state the exact route from its desired theorem
+to irrationality, its currently missing ingredient, and a decisive first
+test. Speculative assumptions are welcome during invention if labeled.
+Prioritize a construction that changes the central balance over more
+precise estimates that leave the same obstacle intact.
+
+Allow meaningful exploration before judging an idea; a numerical failure
+of a few examples is not a general obstruction. Equally, do not turn each
+failed family into a large independent research project. Record a precise
+scoped result, preserve reproducibility, and move on when no concrete
+repair mechanism is apparent.
+
+CHECKING DISCIPLINE
+
+For linear forms, track actual primitive integer pairs, nonvanishing and
+signed errors. If theta=u/v were rational, every nonzero integer form
+A theta+B would have magnitude at least1/v; a sequence tending to zero
+would contradict this. Merely finding one form below1 is insufficient.
+
+For integer polynomials of growing degree d, the appropriate rationality
+contradiction also accounts for the possible factor v^d. Do not silently
+apply the linear-form criterion to growing-degree polynomials.
+
+An expensive SUFFICIENT denominator clearing is not an impossibility
+theorem. Raw determinant scale can cancel completely on primitive
+reduction. Coefficient nonvanishing, determinant rank, and nonzero
+evaluation at theta are three separate claims. A symbolic functional
+identity is not numerical period independence. Asymptotics at a fixed
+parameter need a new argument before that parameter is allowed to grow.
+
+Use separate derivations and independent computational reproductions of
+decisive claims. Consult primary sources for imported theorems and check
+the status of any recent claimed result before relying on it. Label model
+cross-checks, experiments, proofs and formal verification distinctly.
+No novelty claim is justified by failure to find a match in this archive.
+
+PRESERVATION AND EXECUTION
+
+Work only in /home/research/Chat/Math/beta4; do not publish, push, contact
+outsiders or change the sibling tenth-discriminant project. Earlier round
+packets are frozen. Use new round directories and a pre-round hash baseline;
+keep root indexes current when a round is integrated. Exclude __pycache__
+from manifests. Preserve corrected mathematical outputs with clear provenance.
+
+.venv/bin/python supplies python-flint/Arb. System python3 supplies SymPy.
+Avoid a numerical theta value when selecting a supposedly a priori
+construction; diagnostics may of course evaluate already prescribed forms.
+Report meaningful developments candidly and continue between rounds under
+the user's active goal, subject to any later pause or stop instruction.
+
+Round07's bounded closure took place while the persistent goal was paused.
+The user subsequently resumed the edited goal; rounds08-12 ran under that
+objective. The user's latest instruction explicitly requests a stopping
+point for review, so research is now paused after the round12 closure.

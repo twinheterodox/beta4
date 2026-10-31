@@ -1,0 +1,135 @@
+Round09 independent multiplicative gate
+29 October 2026. Local/unpublished. No irrationality proof.
+
+Outcome. Keeping fourth-power Dirichlet denominators under convolution is
+real, but the basic gap construction has only exponential decay in its
+polynomial degree. A divisibility-matrix refinement gives explicit rational
+approximants with a rank1 determinant reduction. The tested families do not
+improve the arithmetic balance. This packet is closed without a general
+obstruction to multiplicative constructions, signed bases or determinants.
+
+1. Polynomial degree is a genuine cost
+
+Write chi=chi_4, theta=beta(4). For P in Z[X], deg(P)=D, expand P(beta(s))
+as an absolutely convergent Dirichlet series for Re(s)>1. Its coefficients
+are integers. At n=3^e the coefficient is the coefficient of z^e in
+P(1/(1+z)). If all coefficients e=0,...,D vanish, P(1/(1+z)) has a zero of
+order>D at0, and hence P=0. Equivalently, multiply by(1+z)^D and inspect
+the degree-D numerator. Thus no nonzero P of degreeD kills all Dirichlet
+coefficients through3^D. Killing e=0,...,D-1 forces P=c(X-1)^D.
+
+The primitive choice is (X-1)^D. Its first possible integer is3^D and its
+actual absolute value is(1-theta)^D. Under theta=u/v in lowest terms,
+v^D |P(theta)|=|v-u|^D. A fixed exponential root smaller than1 does not
+overcome arbitrary v. The convolution denominator exponent4 therefore
+does not by itself prove irrationality. No restriction on arbitrary
+coupled Dirichlet series or determinant constructions follows.
+
+2. Exact divisibility-matrix construction
+
+Let D be a finite set of distinct positive odd integers containing1,
+g(n)=chi(n)/n^4 and e the coordinate vector at1. Put
+
+  K_(d,f)=g(lcm(d,f)).
+
+Absolute convergence and complete multiplicativity give
+
+  theta K_(d,f)=sum_(n>=1) chi(n) 1_(d|n)1_(f|n)/n^4.
+
+Thus theta K-ee^T is the same signed moment matrix with the n=1 atom
+removed. No positivity assertion is justified. If K is nonsingular, set
+c_D=e^T K^-1 e. The matrix determinant lemma gives exactly
+
+  det(XK-ee^T)=X^(r-1) det(K)(X-c_D), r=|D|.                (1)
+
+One must discard the rational scalar and account for the entire common
+content. If c_D=b/a in lowest terms with a>0, the only nontrivial primitive
+factor is aX-b. The powers X^(r-1) do not supply an independent shrinking
+quantity; theta>0, and the intended irrationality test is the linear one.
+No determinant sign or nonzero value is inferred from nonsingularity of K.
+
+For factor-closed D, put F(n)=chi(n)n^4=1/g(n), and
+  h(n)=sum_(d|n)mu(n/d)F(d).
+If E_(d,k)=1_(k|d), then
+
+  K=diag(g(d)) E diag(h(d)) E^T diag(g(d)).                (2)
+
+Indeed F(gcd(d,f))=sum_(k|d,k|f)h(k), while
+g(d)g(f)F(gcd(d,f))=g(lcm(d,f)). The inverse incidence matrix has entries
+mu(d/k) when k|d. Since diag(g)^-1 e=e, (2) yields
+
+  c_D=sum_(d in D) mu(d)^2/h(d).                           (3)
+
+All h(d) are nonzero: for p^a,
+h(p^a)=chi(p)^(a-1)p^(4a-4)(chi(p)p^4-1). For squarefree d,
+h(d)=product_(p|d)(chi(p)p^4-1). On the complete divisor basis of a
+squarefree M, (3) becomes
+
+  c_D=product_(p|M)(1-chi(p)/p^4)^-1.                     (4)
+
+So that case is exactly the old Euler approximation, after primitive
+reduction. For the different basis D={odd d<=N}, (3) is the partial sum
+of the absolutely convergent squarefree expansion
+
+  theta=sum_(d odd squarefree) 1/product_(p|d)(chi(p)p^4-1). (5)
+
+Equation(5) follows from its Euler product. Since
+product_(p odd)(1-1/p^4)^-1<2, the absolute summand is<2/d^4;
+the tail atN is therefore<2/(3N^3). This upper bound alone neither proves
+nonzero errors nor shows that all errors are merely polynomial-sized.
+
+For arbitrary nonsingular K with c_D!=0, define lambda=K^-1 e/c_D and
+W(n)=sum_(d in D,d|n)lambda_d. Then lambda_1=1 and exactly
+
+  theta-c_D=c_D sum_(n>=2) chi(n)W(n)^2/n^4.              (6)
+
+This is a signed error identity, not a positive-measure criterion.
+
+3. Finite decisive checks
+
+divisibility_checks.py prescribes every basis before evaluating theta.
+It verifies1920 exact incidence entries,24 Schur complements,57 numerical-
+argument exact determinant identities,4 Boolean product identities, and
+102 prime-power coefficient identities. Arb at768 bits certifies signs
+for28 prescribed forms. No parameter is fitted to theta's digits.
+
+The only records with primitive magnitude below1 are two descriptions of
+the same form82theta-81. Representative cutoff results:
+
+    maximum odd N     digits in primitive A     log10|A theta+B|
+          5                     5                     1.07345
+         25                    26                    19.05270
+         99                   100                    90.86193
+        399                   411                   400.18814
+
+Five incomplete interval bases and six Boolean-rank truncations also give
+primitive values greater than1. These are finite tests, not a growth
+theorem. General signed nonvanishing and useful primitive estimates remain
+unproved. Enlarging the same cutoff scan is not justified by these results.
+
+Exact route and missing ingredient: prescribe D_N (or a materially new
+coupled extension) for which the reduced denominators of c_D, together
+with the signed formula(6), give nonzero a_N theta-b_N tending to0.
+The complete Boolean implementation cannot be claimed as a new route
+because(4) is exact overlap. No plausible family satisfying the needed
+primitive estimate emerged from this gate.
+
+4. Primary-source reading record
+
+Jeffrey S. Ovall, An analysis of GCD and LCM matrices via the LDL^T-
+factorization, Electronic Journal of Linear Algebra11(2004),51-58.
+https://journals.uwyo.edu/index.php/ela/article/download/243/243/243
+Read Section2, Theorem2.3, Algorithm2.7, Corollary2.8, and the factor-closed
+example4.1; screened the rest. The incidence factorization is classical.
+Formula(2) is derived directly here; no novelty or imported positivity.
+
+Kiran Kedlaya, Notes on analytic number theory, Chapter13 Section13.2.
+https://kskedlaya.org/ant/chap-selberg.html
+Read the quadratic-form diagonalization and its positivity hypotheses.
+The algebra resembles the Selberg sieve, but its positive optimization
+theorem requires g(p)>0 and does not apply to chi(p)/p^4 at primes3mod4.
+No sieve bound is imported into this packet.
+
+Proven identities and same-worker finite checks are distinguished above.
+This lane received a coordinator warning about polynomial degree, but no
+claim of a separate audit or formal verification is made.

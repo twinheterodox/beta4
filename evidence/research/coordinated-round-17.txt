@@ -1,0 +1,34 @@
+ROUND17: INTERLEAVED BORDERS -- FOUR-LAYER METHOD DOES NOT CLOSE THE GAP
+31 October 2026. Local and unpublished. No irrationality proof.
+
+Detailed result: collaboration/round-17/findings.txt.
+Proofs: collaboration/round-17/local-structure.txt.
+
+The bounded arithmetic study specified in the pasted goal is complete.
+The local structure includes squared-node fibres, opposite residues,
+zero fibres, all four negative layers and the small-prime denominator cost.
+Character cancellation makes the regular matrix p-integral. In substantial
+windows the surplus-kernel pairings are a maximal-rank Cauchy matrix,
+so the hoped-for proportional-moment transport fails there.
+
+For p>2M+4 the complete truncated Smith lists are proved. Their sufficient
+large-prime denominator cost is (3+3c^2)r^2, already larger than the real
+decay E(c)r^2 for each prescribed width, and indeed every fixed 0<c<=1.
+This closes the FIRST-FOUR-LAYER BOUND, not every primitive normalization.
+At c=1/5 an exact coefficient valuation additionally proves that every
+positive integer coefficient-clearing multiplier fails asymptotically.
+
+All nine preselected exact primitive examples fail. The 187 eligible
+prime/frame bounds equal exact Gauss valuations; 88 large-prime Smith
+patterns agree with the theorem. The observed common numerator factors
+are powers of 2 and were fully removed. Their all-index asymptotics and
+any new residual-content saving remain unproved. Small-prime denominator
+bounds do not bound positive numerator content.
+
+Recommendation: stop this implementation. Revisit it only with a concrete
+new residual-divisibility or primitive-content mechanism, not larger scans
+or further border-width optimization. No new family/campaign was begun.
+
+Reproduction and limitations are in the report. One agent worked
+sequentially; no independent model audit or formal verification occurred.
+Previous research and source bytes are preserved. Stop for review.

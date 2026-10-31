@@ -1,0 +1,223 @@
+A positive-source obstruction for the common-base Mellin construction
+28 October 2026. Local, unpublished cross-review finding.
+
+This note leaves the completed fresh construction packet unchanged.
+It reviews the single rational Mellin representation supplied by the
+round-03 analysis agent. No irrationality or priority claim is made.
+
+Theorem. In the constrained polynomial family defined below, every nonzero
+polynomial P nonnegative on [0,1] gives a positive beta(4)-only form.
+After any positive rational normalization making its beta(4) coefficient
+a nonzero integer, that form is strictly greater than 1/2. In particular,
+its primitive integer forms cannot tend to zero.
+
+This theorem does not concern signed P, joint Pade determinants, arbitrary
+linear combinations outside this source family, or all Mellin integrals.
+
+
+1. The exact family being reviewed
+
+Let L=log 2, r=-log x, and
+
+  W(r)=r^3/6+L*r^2/4+L^2*r/12,
+
+  U(x)= 900*x^2/[17*(x^4+4)]
+       -2025*x^3/[17*(x^6-4*x^3+8)]
+       -5625*x^5/[17*(x^10-8*x^5+32)].                     (1)
+
+The analysis agent's completed ladder identity gives
+
+  theta=beta(4)=integral_0^1 U(x)*W(-log x) dx/x.           (2)
+
+The rational Mellin representation is independently checked as follows.
+With m=2,3,5, respectively, put
+
+  z_m=i/2,(1+i)/4,(1-i)/8,
+  c_m=225/136,-25/34,9/68.
+
+Then U(x)=sum c_m*m^4*Im[z_m*x^m/(1-z_m*x^m)]. Expanding in absolutely
+convergent geometric series and integrating each logarithmic power gives
+I4(z_m)+(m/2)L I3(z_m)+(m^2/12)L^2 I2(z_m), with I_s=Im Li_s.
+Thus (1) matches the analysis agent's common-base germ and endpoint identity.
+Equation (2) uses the previously established completed ladder identity;
+no numerical identification of theta is being used as a proof of it.
+
+Let D be the monic least common multiple of the three denominators in (1),
+without their factor 17. It has degree 16. Put N=D*U in Q[x]. Consider
+
+  P=A+D*V,      A in Q, V in Q[x],
+  N*V=sum_(j>=1) a_j*x^j,
+
+subject to the two rational linear conditions
+
+             sum_j a_j/j^3=0,   sum_j a_j/j^2=0.          (3)
+
+The indices begin at j>=2 in fact, since N has a zero of order two.
+All integrals converge at both endpoints. Define
+
+                 I(P)=integral_0^1 U(x)P(x)W(r) dx/x.
+
+Termwise integration of the polynomial NV proves the formal pair identity
+
+                    I(P)=A*theta+sum_j a_j/j^4.           (4)
+
+The factors multiplying the canceled sums are respectively L/2 and L^2/12.
+This checks the moment orders in (3).
+
+Define two real moments
+
+  M1=integral_0^1 U(x)*r dx/x,
+  M2=integral_0^1 U(x)*r^2 dx/x.
+
+Conditions (3) are equivalently
+
+  integral U(x)P(x)*r dx/x = A*M1,
+  integral U(x)P(x)*r^2 dx/x = A*M2.                       (5)
+
+No positivity assumption has yet been made.
+
+
+2. U has exactly one sign change, with an exact certificate
+
+The denominator D has no zero on [0,1] and is positive there. For example,
+each original denominator in (1) is a positive constant times
+|1-z_m*x^m|^2, and |z_m|<1. Exact polynomial arithmetic gives
+
+                 U(x)=225*x^2*f(x)/(17*D(x)),             (6)
+
+where
+
+  f(x)=4*x^12-25*x^11+68*x^10-145*x^9+220*x^8-232*x^7
+       +260*x^6-464*x^5+880*x^4-1160*x^3+1088*x^2-800*x+256.
+
+A rational Sturm sequence, recomputed by the standard-library certificate
+script, has successive degrees 12,11,...,0 and these variation counts:
+
+             x       0       3/5       5/8       1
+          V(x)       7        7         6        6.
+
+Also f(0)=256, f(1)=-50,
+
+  f(3/5)=802361314/244140625 >0,
+  f(5/8)=-31248983321/17179869184 <0.
+
+Thus f has exactly one zero x0 in (0,1), with 3/5<x0<5/8.
+Consequently U is positive on (0,x0) and negative on (x0,1).
+Put r0=-log x0. Then U(x) has the same sign as r-r0.
+
+The factorization and Sturm signs are exact, not inferred from a plot or
+floating point roots. The certificate script independently reconstructs
+D and verifies (6) by polynomial division and multiplication.
+
+
+3. The preserved moments force A>0 for every nonnegative source
+
+Suppose P is a nonzero polynomial nonnegative on [0,1] satisfying (3).
+Since U and r-r0 have the same sign and r>0,
+
+  M2-r0*M1=integral U(x)*r*(r-r0) dx/x >0.                 (7)
+
+Likewise the same integral with an additional factor P is strictly
+positive: a nonzero polynomial cannot vanish on an open interval.
+By (5), that integral is A*(M2-r0*M1). Equation (7) therefore forces
+
+                                  A>0.                   (8)
+
+This step does not need separate sign estimates for M1 or M2.
+In particular, a nonzero nonnegative source in this family cannot be a
+pure rational direction with A=0, or a negative-theta-coefficient direction.
+
+
+4. A dual polynomial gives a fixed positive lower bound
+
+The exact identity
+
+  W(r)-(L/4+r0/6)*r^2-(L^2/12)*r
+                         = r^2*(r-r0)/6                 (9)
+
+has a right side with the same sign as U. Multiplying (9) by U(x)P(x)
+and integrating therefore gives
+
+  I(P) >= A*C,
+  C=(L/4+r0/6)*M2+(L^2/12)*M1.                            (10)
+
+The inequality is actually strict for a nonzero polynomial P, but the
+weak form suffices. This establishes the structural lower bound without
+an absolute-value estimate on the original signed kernel U.
+
+For a completely rational lower certificate for C, Section 5 proves
+
+                         M1>9/10,  M2>193/100.             (11)
+
+Moreover L=log 2>2/3, and x0<5/8 gives
+
+                  r0>log(8/5)>6/13.                      (12)
+
+The elementary inequality log a>2(a-1)/(a+1), for a>1, proves both
+logarithmic bounds. It follows, with every quantity positive, that
+
+  C > (1/6+1/13)*(193/100)+(1/27)*(9/10)
+    =1309/2600 >1/2.                                     (13)
+
+If a positive rational multiplier kappa makes the two formal coefficients
+in (4) integers, then kappa*A is a positive integer by (8), hence at least
+one. Thus
+
+                       kappa*I(P)>1/2.                  (14)
+
+In particular (14) holds for primitive integer normalization. This proves
+the theorem. It is stronger than failure of a particular localized source
+sequence, but restricted to the explicitly constrained nonnegative family.
+
+
+5. Rational tail certificates for the moment signs
+
+The exact series formulas are
+
+  M1=sum_(m=2,3,5) c_m*m^2*Im Li_2(z_m),
+  M2=2*sum_(m=2,3,5) c_m*m*Im Li_3(z_m).                  (15)
+
+Use rational majorants rho_m=1/2,3/8,3/16, which satisfy |z_m|<=rho_m<1.
+For s=2,3, after the first K terms,
+
+  |Im Li_s(z_m)-sum_(k=1)^K Im(z_m^k)/k^s|
+       <= rho_m^(K+1)/[(K+1)^s*(1-rho_m)].                (16)
+
+Every finite Gaussian power and every tail bound in (16) is rational.
+The certificate uses K=32, sums signed finite terms exactly, and adds
+absolute tail bounds after multiplying by the coefficients in (15).
+Its exact rational lower endpoints prove (11). Their approximate ranges,
+provided only for readability, are
+
+  0.9006560116125 < M1 < 0.9006560116154,
+  1.9321066776805 < M2 < 1.9321066776807.
+
+The saved JSON contains the actual rational interval endpoints; the proof
+uses those exact inequalities, not the decimal displays. An earlier
+separate Arb evaluation agreed with these intervals but is not required
+by the certificate.
+
+
+6. Reproduction and review limits
+
+Run from beta4/ using standard Python only:
+
+  python3 collaboration/round-03/fresh/mellin_obstruction_checks.py
+
+The output is mellin_obstruction_checks.json. The script checks the
+rational kernel factorization, exact Sturm variations and root bracket,
+the two rational series-tail enclosures, and the lower constant 1309/2600.
+The Sturm implementation uses Fraction polynomial remainders with positive
+rescaling, so all sign data are preserved. It is separate from the SymPy
+root count used during discovery.
+
+This note is an adversarial review result by the fresh investigator.
+The input Mellin representation comes from the analysis agent. Root has
+also reviewed the structural dual-polynomial argument. These are model
+cross-checks, not an external independent audit or formal verification.
+
+The conclusion is limited to P>=0 satisfying BOTH rational moment
+constraints. A signed P can evade the sign argument. Common-base Pade
+pencils are not asserted to have such nonnegative polynomial witnesses.
+The star-capacity bound, the dyadic multiplier estimate, and the separate
+odd-prime mechanism are not contradicted by this theorem.

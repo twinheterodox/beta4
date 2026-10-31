@@ -1,0 +1,726 @@
+{
+  "snapshot_date": "2026-10-31",
+  "archive_root": "/home/research/Chat/Math/beta4",
+  "files": [
+    {
+      "path": "evidence/research/archive-index.txt",
+      "archive_relative_path": "archive-index.txt",
+      "bytes": 24701,
+      "sha256": "d53228fdee599787e2934a51ee36810f754e70d692a45f109f1c20ecb705ef18"
+    },
+    {
+      "path": "evidence/research/arcsine-contact.txt",
+      "archive_relative_path": "arcsine-contact.txt",
+      "bytes": 24453,
+      "sha256": "e5f16913f7e65081827293d48395358d803450b5a7431005c80b2c8e7b02f5a9"
+    },
+    {
+      "path": "evidence/research/arithmetic-followup.txt",
+      "archive_relative_path": "arithmetic-followup.txt",
+      "bytes": 21839,
+      "sha256": "46bd974ebc2c2d349025afd2aae4ac851e9bad5f49b1ac99eafcbd2c615d9fd4"
+    },
+    {
+      "path": "evidence/research/block-arithmetic.txt",
+      "archive_relative_path": "block-arithmetic.txt",
+      "bytes": 26195,
+      "sha256": "261f3f7344b1de97d3f6e67d97945329e7a68ece3bfab7042840e3eed3fd6dfe"
+    },
+    {
+      "path": "evidence/research/collaboration/round-01/arithmetic/findings.txt",
+      "archive_relative_path": "collaboration/round-01/arithmetic/findings.txt",
+      "bytes": 17480,
+      "sha256": "f4a4dd50c9196d273492f2510e8424ad579a663c83087439643f3f902ca4e11a"
+    },
+    {
+      "path": "evidence/research/collaboration/round-01/construction/arithmetic-review.txt",
+      "archive_relative_path": "collaboration/round-01/construction/arithmetic-review.txt",
+      "bytes": 7313,
+      "sha256": "eba8ed275d4d3aed348306805593a9154a56e79aeed35d78b1faeeefb159efed"
+    },
+    {
+      "path": "evidence/research/collaboration/round-01/construction/checks.json",
+      "archive_relative_path": "collaboration/round-01/construction/checks.json",
+      "bytes": 40596,
+      "sha256": "26b55d83fddd3677d26a76ec239bd16d9d9cc178ab2740f4ccc1e8329cbfa1be"
+    },
+    {
+      "path": "evidence/research/collaboration/round-01/construction/checks.py",
+      "archive_relative_path": "collaboration/round-01/construction/checks.py",
+      "bytes": 8935,
+      "sha256": "64ef5ebcedf8d3115532556338b028470905b2e7b7984c9ed6bf99ee3aa3d1ab"
+    },
+    {
+      "path": "evidence/research/collaboration/round-01/construction/findings.txt",
+      "archive_relative_path": "collaboration/round-01/construction/findings.txt",
+      "bytes": 19626,
+      "sha256": "e251d7de10acee4b8ff4009a672556daebf19fdfe332e83f4fb7ed044cfddf15"
+    },
+    {
+      "path": "evidence/research/collaboration/round-01/coordinator/kernel_identity_checks.json",
+      "archive_relative_path": "collaboration/round-01/coordinator/kernel_identity_checks.json",
+      "bytes": 43895,
+      "sha256": "28598208caf3be05e87baaacb060fc3c4946e3889a7a9790509e1a71c315e1ad"
+    },
+    {
+      "path": "evidence/research/collaboration/round-01/coordinator/kernel_identity_checks.py",
+      "archive_relative_path": "collaboration/round-01/coordinator/kernel_identity_checks.py",
+      "bytes": 2237,
+      "sha256": "a1d17cb0b73422d4faeedad8c0134ae56dc0ad657301dc3ebe7116a2026616df"
+    },
+    {
+      "path": "evidence/research/collaboration/round-01/fresh/cone_checks.json",
+      "archive_relative_path": "collaboration/round-01/fresh/cone_checks.json",
+      "bytes": 76782,
+      "sha256": "86d7bcc92195f02f0a5e92841b0e594b99ad27de67a60215dcdcf55b888d7597"
+    },
+    {
+      "path": "evidence/research/collaboration/round-01/fresh/cone_checks.py",
+      "archive_relative_path": "collaboration/round-01/fresh/cone_checks.py",
+      "bytes": 9360,
+      "sha256": "b1c97c4bd258dfec42bce2a5abfbd4cbccdbf6fa063b14a6c7a30187f6d9ad71"
+    },
+    {
+      "path": "evidence/research/collaboration/round-01/fresh/construction_review.txt",
+      "archive_relative_path": "collaboration/round-01/fresh/construction_review.txt",
+      "bytes": 6891,
+      "sha256": "e8cfd1406285023693392ee8e66c071d32929c19957e612800cf00a279c57dc9"
+    },
+    {
+      "path": "evidence/research/collaboration/round-01/fresh/findings.txt",
+      "archive_relative_path": "collaboration/round-01/fresh/findings.txt",
+      "bytes": 22183,
+      "sha256": "b405159745747e51559b9be6774a8ead1f9302cf9881207d213d109393519ec1"
+    },
+    {
+      "path": "evidence/research/collaboration/round-02/analysis/findings.txt",
+      "archive_relative_path": "collaboration/round-02/analysis/findings.txt",
+      "bytes": 32644,
+      "sha256": "eedd2240b891b5edfdb7af3bda7e072c8cda19ee0ea3bac611af405e447f17a7"
+    },
+    {
+      "path": "evidence/research/collaboration/round-02/arithmetic/analysis-review.txt",
+      "archive_relative_path": "collaboration/round-02/arithmetic/analysis-review.txt",
+      "bytes": 5863,
+      "sha256": "43ad99e4d9ac979b7d1362ffc1e050b7ce008333e10cd9d30c108544e4bd8f5a"
+    },
+    {
+      "path": "evidence/research/collaboration/round-02/arithmetic/findings.txt",
+      "archive_relative_path": "collaboration/round-02/arithmetic/findings.txt",
+      "bytes": 20661,
+      "sha256": "2a524e64a5ea2cd5979457d573c6a8fcdf64e6c7e717925e5539bbcf5b2efbf2"
+    },
+    {
+      "path": "evidence/research/collaboration/round-02/fresh/findings.txt",
+      "archive_relative_path": "collaboration/round-02/fresh/findings.txt",
+      "bytes": 13983,
+      "sha256": "0f47776c668b24d505cee251d5c3ff90381d383e73a9c5ff96a66ad03309f886"
+    },
+    {
+      "path": "evidence/research/collaboration/round-02/fresh/simultaneous.txt",
+      "archive_relative_path": "collaboration/round-02/fresh/simultaneous.txt",
+      "bytes": 9153,
+      "sha256": "6e97b55ba5228bddf2c042daacfbcc8fc24d27dc71ff5a26e6a00db0e2d20a8d"
+    },
+    {
+      "path": "evidence/research/collaboration/round-03/analysis/findings.txt",
+      "archive_relative_path": "collaboration/round-03/analysis/findings.txt",
+      "bytes": 22789,
+      "sha256": "c97dffda12e67c2ba9842d448de20e09358b7eedff13d0bd53a09f80b2bfa793"
+    },
+    {
+      "path": "evidence/research/collaboration/round-03/arithmetic/findings.txt",
+      "archive_relative_path": "collaboration/round-03/arithmetic/findings.txt",
+      "bytes": 24506,
+      "sha256": "f91f4c5e23633d4f791fb34f9d586ada2d875500a688001e159911b6e611944c"
+    },
+    {
+      "path": "evidence/research/collaboration/round-03/fresh/findings.txt",
+      "archive_relative_path": "collaboration/round-03/fresh/findings.txt",
+      "bytes": 14820,
+      "sha256": "f80c700946b67bde5e701f8e809952aa3ba552960f11c0e678cf82aaba7916ba"
+    },
+    {
+      "path": "evidence/research/collaboration/round-03/fresh/mellin_positive_obstruction.txt",
+      "archive_relative_path": "collaboration/round-03/fresh/mellin_positive_obstruction.txt",
+      "bytes": 8364,
+      "sha256": "20b3c3afb8b3141d2169d8aef0a5f4eeb3c160ec8a45652c89d553b857bb90ed"
+    },
+    {
+      "path": "evidence/research/collaboration/round-04/arithmetic/findings.txt",
+      "archive_relative_path": "collaboration/round-04/arithmetic/findings.txt",
+      "bytes": 15766,
+      "sha256": "fc3af28c62a217465304972d122c8020223e7ba1ac32b0b1b1b6acf2c84306a0"
+    },
+    {
+      "path": "evidence/research/collaboration/round-04/construction/findings.txt",
+      "archive_relative_path": "collaboration/round-04/construction/findings.txt",
+      "bytes": 18774,
+      "sha256": "f2f3a46cb0ca36cfe7e0d884bef14f51d6487b864326e94cd9d456ad5a86795b"
+    },
+    {
+      "path": "evidence/research/collaboration/round-04/coordinator/loewner_shift.txt",
+      "archive_relative_path": "collaboration/round-04/coordinator/loewner_shift.txt",
+      "bytes": 5614,
+      "sha256": "c193a86c36a79c73d99dce78515c353a5698209239cbd5a4a1030cb2c3313938"
+    },
+    {
+      "path": "evidence/research/collaboration/round-04/fresh/findings.txt",
+      "archive_relative_path": "collaboration/round-04/fresh/findings.txt",
+      "bytes": 17171,
+      "sha256": "4e93b8b2e27a6d9a130ca161a8efeeb2ee64035ebf0ca72a6303c617bc86071e"
+    },
+    {
+      "path": "evidence/research/collaboration/round-05/analysis/findings.txt",
+      "archive_relative_path": "collaboration/round-05/analysis/findings.txt",
+      "bytes": 22542,
+      "sha256": "b64ea90f4e916a2fb258265bffe1320f3ac19b271d2fd75d6e07a93f74f8aa5d"
+    },
+    {
+      "path": "evidence/research/collaboration/round-05/arithmetic/findings.txt",
+      "archive_relative_path": "collaboration/round-05/arithmetic/findings.txt",
+      "bytes": 18027,
+      "sha256": "b2761565cc3e7823bf67bd0d962f5bad773b146988c82687d1d901ec38396357"
+    },
+    {
+      "path": "evidence/research/collaboration/round-05/coordinator/boole_review.txt",
+      "archive_relative_path": "collaboration/round-05/coordinator/boole_review.txt",
+      "bytes": 3975,
+      "sha256": "3661ab60087d3cfb332842c1f9ff765035c36bfdcb653bad6ce12a52cda7c97c"
+    },
+    {
+      "path": "evidence/research/collaboration/round-05/fresh/findings.txt",
+      "archive_relative_path": "collaboration/round-05/fresh/findings.txt",
+      "bytes": 15457,
+      "sha256": "0851f8902ed37b0b740130dfa10e3582448a1a850e4ca57bedbd742f45492040"
+    },
+    {
+      "path": "evidence/research/collaboration/round-06/arithmetic/findings.txt",
+      "archive_relative_path": "collaboration/round-06/arithmetic/findings.txt",
+      "bytes": 16613,
+      "sha256": "bd3bd578b0aa4fd767bd334a279a8ee216c2d60d3b2de3a4fd2c96bb40f48978"
+    },
+    {
+      "path": "evidence/research/collaboration/round-06/coordinator/gram_review.txt",
+      "archive_relative_path": "collaboration/round-06/coordinator/gram_review.txt",
+      "bytes": 3185,
+      "sha256": "e0c2c09b7b0120e0e3a66424fa9881dbe7887bcd2ee1bef6cc7c239c4fcfe597"
+    },
+    {
+      "path": "evidence/research/collaboration/round-06/fresh/findings.txt",
+      "archive_relative_path": "collaboration/round-06/fresh/findings.txt",
+      "bytes": 14240,
+      "sha256": "cbaf38333a62294a81bfdbd570128cb459d9a6c70819d358999f755dca3173ca"
+    },
+    {
+      "path": "evidence/research/collaboration/round-06/fresh/gram_checks.json",
+      "archive_relative_path": "collaboration/round-06/fresh/gram_checks.json",
+      "bytes": 73722,
+      "sha256": "a6cbd9e3ef6dbaa8ebce5cd4b238c7da6f76326f72f681e45cf606670850ebe2"
+    },
+    {
+      "path": "evidence/research/collaboration/round-06/fresh/gram_checks.py",
+      "archive_relative_path": "collaboration/round-06/fresh/gram_checks.py",
+      "bytes": 5984,
+      "sha256": "3d9b2e9bc6868378c1ecdd3cf330dfe2ede2295ee1b61fcf809b220a664f55ff"
+    },
+    {
+      "path": "evidence/research/collaboration/round-06/fresh/pole_annihilator_review.txt",
+      "archive_relative_path": "collaboration/round-06/fresh/pole_annihilator_review.txt",
+      "bytes": 11435,
+      "sha256": "60dc5cbf631033d0249e6b5cb5b53a0a6716689dc7fbdb2ede197032e9486735"
+    },
+    {
+      "path": "evidence/research/collaboration/round-06/identities/arithmetic_review.txt",
+      "archive_relative_path": "collaboration/round-06/identities/arithmetic_review.txt",
+      "bytes": 5619,
+      "sha256": "9c074249f9d520e11155ae3cf7b8b0677e69bc03d57faa190d412734fdea2481"
+    },
+    {
+      "path": "evidence/research/collaboration/round-06/identities/findings.txt",
+      "archive_relative_path": "collaboration/round-06/identities/findings.txt",
+      "bytes": 23746,
+      "sha256": "405a882e22b3b426fb89769527255085de199245638217e0bfc639480fdf51f4"
+    },
+    {
+      "path": "evidence/research/collaboration/round-07/analysis/rank_asymptotic.txt",
+      "archive_relative_path": "collaboration/round-07/analysis/rank_asymptotic.txt",
+      "bytes": 6451,
+      "sha256": "8b0bb2607e3467667145f7728fd52b12f4d6f4e49b9f82f90ccc68b0a02399c1"
+    },
+    {
+      "path": "evidence/research/collaboration/round-07/analysis/residual_asymptotic.txt",
+      "archive_relative_path": "collaboration/round-07/analysis/residual_asymptotic.txt",
+      "bytes": 10054,
+      "sha256": "9b59c16f934bada859dbe9e1ae819b61d62181c1dbb52ca21f6bd80a46b8abe7"
+    },
+    {
+      "path": "evidence/research/collaboration/round-07/arithmetic/findings.txt",
+      "archive_relative_path": "collaboration/round-07/arithmetic/findings.txt",
+      "bytes": 19347,
+      "sha256": "63d566d45fc8695be9316a1076cf201152e71545ac7d61e357862f23a42ec4ec"
+    },
+    {
+      "path": "evidence/research/collaboration/round-07/fresh/findings.txt",
+      "archive_relative_path": "collaboration/round-07/fresh/findings.txt",
+      "bytes": 16126,
+      "sha256": "dacaa6e889f55ac436fcdf46873fbdf0b2c35fef3d6f1c4822ff7435423ebb54"
+    },
+    {
+      "path": "evidence/research/collaboration/round-08/coordinator/dimensional-ladder-gate.txt",
+      "archive_relative_path": "collaboration/round-08/coordinator/dimensional-ladder-gate.txt",
+      "bytes": 4421,
+      "sha256": "b7bbd2479fb6add83e8debcc7775209097a56ca9ae5ea975348195ae5db305b9"
+    },
+    {
+      "path": "evidence/research/collaboration/round-08/discrete/findings.txt",
+      "archive_relative_path": "collaboration/round-08/discrete/findings.txt",
+      "bytes": 10261,
+      "sha256": "5eb975512805442600355d05b27a8f859debcc078de342b9034771a7a6b32cb2"
+    },
+    {
+      "path": "evidence/research/collaboration/round-09/independent/internal_graph_review.txt",
+      "archive_relative_path": "collaboration/round-09/independent/internal_graph_review.txt",
+      "bytes": 12266,
+      "sha256": "d49a79cf7a7a4794cc4515f8090068f8d240b175fb2ff839110b6b2ccd021e55"
+    },
+    {
+      "path": "evidence/research/collaboration/round-09/independent/multiplicative_gate.txt",
+      "archive_relative_path": "collaboration/round-09/independent/multiplicative_gate.txt",
+      "bytes": 6435,
+      "sha256": "b97bde15c97f2e349a8dcab5a807ead9f88f719c2112092e8ab13dc2d7445111"
+    },
+    {
+      "path": "evidence/research/collaboration/round-09/internal_graph/bounded-gate.txt",
+      "archive_relative_path": "collaboration/round-09/internal_graph/bounded-gate.txt",
+      "bytes": 6289,
+      "sha256": "5528f3999cbbc7e37e20b1bd795720d645c86de2ece4d270c9694594445ab938"
+    },
+    {
+      "path": "evidence/research/collaboration/round-09/internal_graph/general-period-space.txt",
+      "archive_relative_path": "collaboration/round-09/internal_graph/general-period-space.txt",
+      "bytes": 4023,
+      "sha256": "8c061e9cfedf63ed9fb168f10eaffc2567ccef056d0e150d949ca5d777e9d307"
+    },
+    {
+      "path": "evidence/research/collaboration/round-09/orbifold/deformation.txt",
+      "archive_relative_path": "collaboration/round-09/orbifold/deformation.txt",
+      "bytes": 5004,
+      "sha256": "8580540f68657eae56fb63b0600af05bc858b3941d99a3297802a6a3ede0ba36"
+    },
+    {
+      "path": "evidence/research/collaboration/round-09/orbifold/findings.txt",
+      "archive_relative_path": "collaboration/round-09/orbifold/findings.txt",
+      "bytes": 11477,
+      "sha256": "10879efac3992612def16f06259cc3c4a297e4cd542d0ec1b08aee20cb19a643"
+    },
+    {
+      "path": "evidence/research/collaboration/round-10/adelic/findings.txt",
+      "archive_relative_path": "collaboration/round-10/adelic/findings.txt",
+      "bytes": 11081,
+      "sha256": "5fe2673bb85d24dbdf1373a97879356b0ccee8b2be0f7fdc340d14726925c842"
+    },
+    {
+      "path": "evidence/research/collaboration/round-10/coordinator/dense-quarter-gate.txt",
+      "archive_relative_path": "collaboration/round-10/coordinator/dense-quarter-gate.txt",
+      "bytes": 3443,
+      "sha256": "989ee0335bb05dd5bf39bab4323e60bf9ff3f917a77d91f6b19ddf2a54f11153"
+    },
+    {
+      "path": "evidence/research/collaboration/round-10/fresh/findings.txt",
+      "archive_relative_path": "collaboration/round-10/fresh/findings.txt",
+      "bytes": 7695,
+      "sha256": "2ae0dee4f222f400169f1c04b6eecf47cf4e1517dfc08adaf33a19facebcaf5c"
+    },
+    {
+      "path": "evidence/research/collaboration/round-10/symmetry/adelic_review.txt",
+      "archive_relative_path": "collaboration/round-10/symmetry/adelic_review.txt",
+      "bytes": 5924,
+      "sha256": "393f849ce7e9c760dd85d4649f48988e0f1188998ecf1ff01e423b7989ffa684"
+    },
+    {
+      "path": "evidence/research/collaboration/round-10/symmetry/findings.txt",
+      "archive_relative_path": "collaboration/round-10/symmetry/findings.txt",
+      "bytes": 6659,
+      "sha256": "80d4c83320188062823193d8cdfa491ca06ae114d7e9dfccc78ab77a3547de9f"
+    },
+    {
+      "path": "evidence/research/collaboration/round-11/coordinator/dense-grid-comparison.txt",
+      "archive_relative_path": "collaboration/round-11/coordinator/dense-grid-comparison.txt",
+      "bytes": 2546,
+      "sha256": "0c1d1f0e985f9b28e8b1bf0afbff42493293064c1ebe7d7f4a415e061c0aa7b6"
+    },
+    {
+      "path": "evidence/research/collaboration/round-11/coordinator/unsquared-nonvanishing.txt",
+      "archive_relative_path": "collaboration/round-11/coordinator/unsquared-nonvanishing.txt",
+      "bytes": 4706,
+      "sha256": "a271ef31215ff366a17f4d4089b653fb812c2aee7ce34de7e846b7be56faf840"
+    },
+    {
+      "path": "evidence/research/collaboration/round-11/fresh/findings.txt",
+      "archive_relative_path": "collaboration/round-11/fresh/findings.txt",
+      "bytes": 9584,
+      "sha256": "15e03a2b5a96fe3924339bcd60f9f68bf0241f56c7a17605e2ac5e1add493ade"
+    },
+    {
+      "path": "evidence/research/collaboration/round-11/norms/findings.txt",
+      "archive_relative_path": "collaboration/round-11/norms/findings.txt",
+      "bytes": 9364,
+      "sha256": "7545387b3072db0492a5d868240ecc530827b4adab93a61b3b306e3ab517b5a1"
+    },
+    {
+      "path": "evidence/research/collaboration/round-11/rationality/findings.txt",
+      "archive_relative_path": "collaboration/round-11/rationality/findings.txt",
+      "bytes": 7852,
+      "sha256": "ee86d961e29eb3f75d9607ade2093379d2e7ac9b3a09bd2b54b94938cb76a7a5"
+    },
+    {
+      "path": "evidence/research/collaboration/round-12/arithmetic/findings.txt",
+      "archive_relative_path": "collaboration/round-12/arithmetic/findings.txt",
+      "bytes": 9054,
+      "sha256": "e8e1efb0379649c64691ce99dfae4fab26798f0d3ffa0f11c09f4134032bcbc1"
+    },
+    {
+      "path": "evidence/research/collaboration/round-12/fresh/findings.txt",
+      "archive_relative_path": "collaboration/round-12/fresh/findings.txt",
+      "bytes": 11876,
+      "sha256": "3229aa4fd965a5f3252d042362e58ad2ae2adece65fa6bca21a3109b493bc9dc"
+    },
+    {
+      "path": "evidence/research/collaboration/round-12/fresh/tail_gauge_gate.txt",
+      "archive_relative_path": "collaboration/round-12/fresh/tail_gauge_gate.txt",
+      "bytes": 2825,
+      "sha256": "870eff9dd93bcec103659549a375ec022782d8e407e2089c6bf2a5e3a7c40051"
+    },
+    {
+      "path": "evidence/research/collaboration/round-12/geometry/findings.txt",
+      "archive_relative_path": "collaboration/round-12/geometry/findings.txt",
+      "bytes": 7771,
+      "sha256": "b4aeffb4118436b95cca4e70dbed51650a7e21d41cb13fcec286584d6bf53314"
+    },
+    {
+      "path": "evidence/research/collaboration/round-13/coordinator/core-claims.txt",
+      "archive_relative_path": "collaboration/round-13/coordinator/core-claims.txt",
+      "bytes": 9537,
+      "sha256": "5af73894f68eda21ebb76a3015321e384dfab89f1e8747da2bbbd534aabe6fec"
+    },
+    {
+      "path": "evidence/research/collaboration/round-13/findings.txt",
+      "archive_relative_path": "collaboration/round-13/findings.txt",
+      "bytes": 13004,
+      "sha256": "c8dbed06b5ce8f4f48ed9d86212b402693fb9d6c69d24fbc55f002e00b5c3ebd"
+    },
+    {
+      "path": "evidence/research/collaboration/round-13/independent/optimized-comparison-audit.txt",
+      "archive_relative_path": "collaboration/round-13/independent/optimized-comparison-audit.txt",
+      "bytes": 14756,
+      "sha256": "5f39da658a6e98098c21de8503a41d08ac7d30fb02055acd5ad4044759d0ab92"
+    },
+    {
+      "path": "evidence/research/collaboration/round-14/findings.txt",
+      "archive_relative_path": "collaboration/round-14/findings.txt",
+      "bytes": 9063,
+      "sha256": "89568ea17ad7eb37cdb656357dc9389358ca577158727b0c3e78b194fa4e612d"
+    },
+    {
+      "path": "evidence/research/collaboration/round-15/coordinator/arithmetic-gate.txt",
+      "archive_relative_path": "collaboration/round-15/coordinator/arithmetic-gate.txt",
+      "bytes": 10670,
+      "sha256": "e1e9168499df6796b9ac73c7281ee04aa2c2f19f6696b46bfb1e0dd65f10ea60"
+    },
+    {
+      "path": "evidence/research/collaboration/round-15/coordinator/complete-deformation.txt",
+      "archive_relative_path": "collaboration/round-15/coordinator/complete-deformation.txt",
+      "bytes": 9658,
+      "sha256": "8993970a56997f37ab2e5dfea2dd6dd8d233a3f0b38b678bcaca8ddeac281da0"
+    },
+    {
+      "path": "evidence/research/collaboration/round-15/findings.txt",
+      "archive_relative_path": "collaboration/round-15/findings.txt",
+      "bytes": 10058,
+      "sha256": "508ae08b25d49725e6cdd82f80dec20399e926f61e0ae8c0e5f5d36421c5e4be"
+    },
+    {
+      "path": "evidence/research/collaboration/round-15/independent/final-audit.txt",
+      "archive_relative_path": "collaboration/round-15/independent/final-audit.txt",
+      "bytes": 13462,
+      "sha256": "c61e841cc2afea531cfc86401f1f46ddda5313430295ae66a5ded216d6453540"
+    },
+    {
+      "path": "evidence/research/collaboration/round-16/archive-audit.txt",
+      "archive_relative_path": "collaboration/round-16/archive-audit.txt",
+      "bytes": 7047,
+      "sha256": "b25c44e433100285a7606dab7483a3cf4a8dfeaabf1ae0713b858095de846d57"
+    },
+    {
+      "path": "evidence/research/collaboration/round-16/findings.txt",
+      "archive_relative_path": "collaboration/round-16/findings.txt",
+      "bytes": 15368,
+      "sha256": "6b69ec12850cb34e338c879bef3a63e079edc074cf68aae140fb90821039e269"
+    },
+    {
+      "path": "evidence/research/collaboration/round-17/findings.txt",
+      "archive_relative_path": "collaboration/round-17/findings.txt",
+      "bytes": 10109,
+      "sha256": "b12a58effe9acb9b5869e15cbab1fedcf044a27e95a20d3af991cf98e4fa5dc5"
+    },
+    {
+      "path": "evidence/research/collaboration/round-17/local-structure.txt",
+      "archive_relative_path": "collaboration/round-17/local-structure.txt",
+      "bytes": 11558,
+      "sha256": "2d2fdd54a22a6ba30500e16c04e39605105ff21de2f384b836f929996d59e5e0"
+    },
+    {
+      "path": "evidence/research/collaboration/round-18/adversarial/assessment.txt",
+      "archive_relative_path": "collaboration/round-18/adversarial/assessment.txt",
+      "bytes": 16669,
+      "sha256": "b5410af41017904b95256783a09e1153e5c2125953166c6dbc5f10d7f53a2c9b"
+    },
+    {
+      "path": "evidence/research/collaboration/round-18/adversarial/checks.json",
+      "archive_relative_path": "collaboration/round-18/adversarial/checks.json",
+      "bytes": 47879,
+      "sha256": "86d07f1ef4a4402416dd8916b1dae40f65bfe2038d8eb69cc0963204458a993f"
+    },
+    {
+      "path": "evidence/research/collaboration/round-18/archive-comparison.txt",
+      "archive_relative_path": "collaboration/round-18/archive-comparison.txt",
+      "bytes": 8032,
+      "sha256": "fbcfa47306f621703f3d9649afd22d10c94f9811c6b1e488156903751c7f313f"
+    },
+    {
+      "path": "evidence/research/collaboration/round-18/explorer/exact-model-coefficients.json",
+      "archive_relative_path": "collaboration/round-18/explorer/exact-model-coefficients.json",
+      "bytes": 25789,
+      "sha256": "f24d7eee961f043ad7a4ca16ef0b839ddd4b5580e22f3dd993bb2dde80da76e9"
+    },
+    {
+      "path": "evidence/research/collaboration/round-18/findings.txt",
+      "archive_relative_path": "collaboration/round-18/findings.txt",
+      "bytes": 13486,
+      "sha256": "f79933dc682a44f5b540d53b882f512cbb598ee4b9ba8b353f9973e68dd93497"
+    },
+    {
+      "path": "evidence/research/collaboration/round-18/primitive-check.json",
+      "archive_relative_path": "collaboration/round-18/primitive-check.json",
+      "bytes": 38347,
+      "sha256": "03174e06eaca8484f78aae286f8f10bf9446fdc9596e2ea103d7baa13e43249d"
+    },
+    {
+      "path": "evidence/research/collaboration/round-18/primitive_check.py",
+      "archive_relative_path": "collaboration/round-18/primitive_check.py",
+      "bytes": 1652,
+      "sha256": "6515f05c8d9bc3a75cc88e37ca5bf9b59094527711728680836f3c4e31e134ea"
+    },
+    {
+      "path": "evidence/research/coordinated-round-01.txt",
+      "archive_relative_path": "coordinated-round-01.txt",
+      "bytes": 11720,
+      "sha256": "ac8b17f77e7fc84f9a7b6b9ab1f2e0375e721a589f1751ace8fdf7d203c0a88d"
+    },
+    {
+      "path": "evidence/research/coordinated-round-02.txt",
+      "archive_relative_path": "coordinated-round-02.txt",
+      "bytes": 12604,
+      "sha256": "e9bba8f351a256494dd8565910e3471bf6979c50da11095ce3f04c283f0adebc"
+    },
+    {
+      "path": "evidence/research/coordinated-round-03.txt",
+      "archive_relative_path": "coordinated-round-03.txt",
+      "bytes": 13082,
+      "sha256": "98df41cd32bbdb9d91a751bb2690fda5e41b2e594583dbddf2b4fecbe6304db9"
+    },
+    {
+      "path": "evidence/research/coordinated-round-04.txt",
+      "archive_relative_path": "coordinated-round-04.txt",
+      "bytes": 11516,
+      "sha256": "7cb6d71838ee0f5ebde6010a415af6db13f66bebd0bbe959412c0c0046e8139f"
+    },
+    {
+      "path": "evidence/research/coordinated-round-05.txt",
+      "archive_relative_path": "coordinated-round-05.txt",
+      "bytes": 12348,
+      "sha256": "4ba2f4bffb9fbf3eb0c5b245ce9bc8f182ae4871bffdc13857d51fc752fa9caf"
+    },
+    {
+      "path": "evidence/research/coordinated-round-06.txt",
+      "archive_relative_path": "coordinated-round-06.txt",
+      "bytes": 10969,
+      "sha256": "ee106805ff3f390f8ffd6b0dd42990e176db4ad453e829d1ad77d20e5bf13ecd"
+    },
+    {
+      "path": "evidence/research/coordinated-round-07.txt",
+      "archive_relative_path": "coordinated-round-07.txt",
+      "bytes": 10688,
+      "sha256": "50d607038f759407e2a46af43a8c190c776a129786e6df24f34aa4681de939dc"
+    },
+    {
+      "path": "evidence/research/coordinated-round-08.txt",
+      "archive_relative_path": "coordinated-round-08.txt",
+      "bytes": 6888,
+      "sha256": "070133a8e209b5ae4c590c67398725f3afd66e1f05656bd950e881a4a9bc42ef"
+    },
+    {
+      "path": "evidence/research/coordinated-round-09.txt",
+      "archive_relative_path": "coordinated-round-09.txt",
+      "bytes": 5351,
+      "sha256": "04713cf4ee8eecf9e3edf06b7156dd072d2fa99030913018782003d222a05c59"
+    },
+    {
+      "path": "evidence/research/coordinated-round-10.txt",
+      "archive_relative_path": "coordinated-round-10.txt",
+      "bytes": 4340,
+      "sha256": "d35440c3bf41cfb611a8b99a0ac473d103dfb3c9d593f94e86614a1499c9b173"
+    },
+    {
+      "path": "evidence/research/coordinated-round-11.txt",
+      "archive_relative_path": "coordinated-round-11.txt",
+      "bytes": 5177,
+      "sha256": "b85e6e84eaf93e2e0fb189b69a5e5935e51cb95f63806525f2466dfcc7af3051"
+    },
+    {
+      "path": "evidence/research/coordinated-round-12.txt",
+      "archive_relative_path": "coordinated-round-12.txt",
+      "bytes": 5222,
+      "sha256": "e867c10c2190e417d64d42a7b142ee39e3effb1dd6756712ec2c8b9c5ab8297a"
+    },
+    {
+      "path": "evidence/research/coordinated-round-13.txt",
+      "archive_relative_path": "coordinated-round-13.txt",
+      "bytes": 2312,
+      "sha256": "1863a0afdb612aaaba38fd446b8fa4bcb1c61584a3b892b467a5f7c81aef06f0"
+    },
+    {
+      "path": "evidence/research/coordinated-round-14.txt",
+      "archive_relative_path": "coordinated-round-14.txt",
+      "bytes": 1720,
+      "sha256": "f3277c31596b251e91b2225d2e18ab6af3898d76d66bd7614559d0fc8a8968c5"
+    },
+    {
+      "path": "evidence/research/coordinated-round-15.txt",
+      "archive_relative_path": "coordinated-round-15.txt",
+      "bytes": 2360,
+      "sha256": "c7f48dcf7d4227424a59dff2ca79dd57a84d277032b42445a6607f7ead5c455a"
+    },
+    {
+      "path": "evidence/research/coordinated-round-16.txt",
+      "archive_relative_path": "coordinated-round-16.txt",
+      "bytes": 2089,
+      "sha256": "3d150b6ccff66b5c6225cd5b6128e72643a4f147244779ce76de7b73b15c3780"
+    },
+    {
+      "path": "evidence/research/coordinated-round-17.txt",
+      "archive_relative_path": "coordinated-round-17.txt",
+      "bytes": 1938,
+      "sha256": "277cb426079ae211d0610aebdd73c97a1ba8dd37dc30c9a797f25267d64ee2a6"
+    },
+    {
+      "path": "evidence/research/coordinated-round-18.txt",
+      "archive_relative_path": "coordinated-round-18.txt",
+      "bytes": 1925,
+      "sha256": "517a3b5b747c0721ec1b6b277620da8d74a2d7b4c4e73910c5b47ab270cd2502"
+    },
+    {
+      "path": "evidence/research/coupled-holonomy.txt",
+      "archive_relative_path": "coupled-holonomy.txt",
+      "bytes": 14229,
+      "sha256": "777eba07ac100d15d655d696296b30f8a3cc81e21cad4acb2e5e8e151c6b7a89"
+    },
+    {
+      "path": "evidence/research/cyclotomic-integrals.txt",
+      "archive_relative_path": "cyclotomic-integrals.txt",
+      "bytes": 16982,
+      "sha256": "f1756201f1b4765e34e96d86e7e7ad704685659c7bf1e687141c2cc650d51d90"
+    },
+    {
+      "path": "evidence/research/deep-investigation.txt",
+      "archive_relative_path": "deep-investigation.txt",
+      "bytes": 19355,
+      "sha256": "4a478bd66f05b81604a2f47eb2114d95ea42a8791c297c067a7050d67e2039cc"
+    },
+    {
+      "path": "evidence/research/dilations-and-positive-kernels.txt",
+      "archive_relative_path": "dilations-and-positive-kernels.txt",
+      "bytes": 20197,
+      "sha256": "b9993b7e7de8618532135eef7765d5a23f6b62b18943d750b1c8a175fb4247a5"
+    },
+    {
+      "path": "evidence/research/half-pole-arithmetic.txt",
+      "archive_relative_path": "half-pole-arithmetic.txt",
+      "bytes": 13532,
+      "sha256": "f5e4feb640fea6aead37f2d023d9aaf86dd65d23c809ff81a2b4dfe146b47879"
+    },
+    {
+      "path": "evidence/research/ladder-integrals.txt",
+      "archive_relative_path": "ladder-integrals.txt",
+      "bytes": 22237,
+      "sha256": "d755ec337d6088c249cac14802eff8bcb4fc51bc285c68a1ac294454541e64cc"
+    },
+    {
+      "path": "evidence/research/modular-detour.txt",
+      "archive_relative_path": "modular-detour.txt",
+      "bytes": 19985,
+      "sha256": "71b5772571ea3558b9876bbee2333a76696566b7a15d566d4e6e3835a26b41ff"
+    },
+    {
+      "path": "evidence/research/new-avenues.txt",
+      "archive_relative_path": "new-avenues.txt",
+      "bytes": 21279,
+      "sha256": "a582c5a7053cfdd2d8a2995e8bb8d7359e6d051c7ec143b08302e6f4ed58a2ea"
+    },
+    {
+      "path": "evidence/research/new-constructions.txt",
+      "archive_relative_path": "new-constructions.txt",
+      "bytes": 16894,
+      "sha256": "787f4e59f439560f42a7d7f1788af31ee0ab9dbf717b5e2cf813cec4d929a17b"
+    },
+    {
+      "path": "evidence/research/next-proof-avenues.txt",
+      "archive_relative_path": "next-proof-avenues.txt",
+      "bytes": 18036,
+      "sha256": "a44721005866cb78f48530f6fb7f411d5eed26cfbd9bd5b5e67e7ee2030fdbad"
+    },
+    {
+      "path": "evidence/research/orthogonal-cancellation.txt",
+      "archive_relative_path": "orthogonal-cancellation.txt",
+      "bytes": 13944,
+      "sha256": "6a859fb47ad315d5ed0c5636a0c79209020764a7e676700f874c3def3b0ee65a"
+    },
+    {
+      "path": "evidence/research/quotient-circle.txt",
+      "archive_relative_path": "quotient-circle.txt",
+      "bytes": 6513,
+      "sha256": "5bbc4fae25f20a285b558c6e06c8361e22f068669a9b296702d0f67e1ec37b30"
+    },
+    {
+      "path": "evidence/research/quotient-investigation.txt",
+      "archive_relative_path": "quotient-investigation.txt",
+      "bytes": 14070,
+      "sha256": "c32773842ff105328bc5496c0313f51598b646c54eea56ee7d71a804b25eb337"
+    },
+    {
+      "path": "evidence/research/radial-cancellation.txt",
+      "archive_relative_path": "radial-cancellation.txt",
+      "bytes": 16666,
+      "sha256": "e219f355c992abcc2612b7d0b38165e2f660af5cc224128d286475bba73956c7"
+    },
+    {
+      "path": "evidence/research/research-handover.txt",
+      "archive_relative_path": "research-handover.txt",
+      "bytes": 19657,
+      "sha256": "dca78b88a38c2b8baca0212525d9e9e011a15b791a3f8e17d5b74444ee117a20"
+    },
+    {
+      "path": "evidence/research/structural-followup.txt",
+      "archive_relative_path": "structural-followup.txt",
+      "bytes": 13954,
+      "sha256": "6e5ddaea1db4212ff539b90c9b4f240a8616f6989dc7679fa9380464e1944c9f"
+    },
+    {
+      "path": "evidence/research/two-loop-numerators.txt",
+      "archive_relative_path": "two-loop-numerators.txt",
+      "bytes": 17607,
+      "sha256": "9a8dcfcc3b9ba93ac2b011cbf357966c336ddb354e8ade723c247d1d1b5d8249"
+    }
+  ]
+}

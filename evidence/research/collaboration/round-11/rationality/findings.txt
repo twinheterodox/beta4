@@ -1,0 +1,184 @@
+RATIONALITY-DEPENDENT NIVEN GATE
+29 October 2026. Local and unpublished. No irrationality proof.
+
+Outcome
+
+A fixed hypothetical theta=u/v does create exact endpoint zeros in a
+nonlinear source. It does not supply the finite differentiation and
+endpoint integrality needed for a Niven-type contradiction. The exact
+derivative obstruction below is stronger than a numerical failure, but
+its scope is only the proposed blanket endpoint-integrality mechanism.
+It does not exclude every finite Niven truncation or a construction using
+the full polylogarithmic jet. No credible repaired mechanism emerged.
+
+1. The assumption-dependent positive source
+
+Let chi4(m) be 0 on even m and (-1)^((m-1)/2) on odd m, and put
+
+ F(x)=sum_(m>=1) chi4(m)x^m/m^4, E=x*d/dx,
+ theta=F(1)=beta(4), E^4F=x/(1+x^2).                  (1)
+
+The series, or its integral
+
+ F(x)=x/6 integral_0^1 (-log t)^3/(1+x^2 t^2) dt,
+
+shows F'(x)>0 on [0,1]: the differentiated integrand contains
+(1-x^2 t^2)/(1+x^2 t^2)^2, positive almost everywhere. Thus
+0<F(x)<theta for 0<x<1.
+
+Assume theta=u/v, u,v positive integers. Define
+
+ A_n(x)=[vF(x)(u-vF(x))]^n/n!,
+ I_n=integral_0^1 A_n(x)/(1+x^2) dx.                 (2)
+
+Then I_n>0, and
+
+  I_n <= (u^2/4)^n/n! ->0.                           (3)
+
+Consequently an integrality theorem I_n in Z for an unbounded sequence
+would prove irrationality. This is a precise sufficient contradiction;
+no such theorem follows merely from the rationality assumption.
+
+The factor A_n has a zero of order n at each endpoint. At zero its
+first nonzero ordinary derivative is A_n^(n)(0)=(uv)^n. At x=1,
+write t=log x. The first surviving derivative is
+
+  E^n A_n(1)=(-uv)^n (EF(1))^n
+            =(-uv)^n (pi^3/32)^n.                  (4)
+
+The rational endpoint value does not rationalize this derivative or the
+remaining jet, which also contains beta(2) and beta(1). The critical
+beta(3) evaluation used in (4) is the same archived endpoint identity;
+the derivative formula itself only needs EF(1).
+
+2. An exact surviving prime layer in the origin derivatives
+
+Fix n>=1 and nonzero integers u,v. For every ODD prime p>n with p not
+dividing uv,
+
+  v_p(A_n^(p+n-1)(0))=-3.                           (5)
+
+The odd-prime restriction matters: p=2,n=1 would be an exception because
+chi4(2)=0.
+
+Proof. Expand
+
+ A_n=(1/n!) sum_(k=0)^n (-1)^k binom(n,k)
+                    u^(n-k) v^(n+k) F^(n+k).
+
+Set N=p+n-1<2p. In a coefficient of degree N, a p-denominator can
+only come from the coefficient chi4(p)/p^4 of one F factor. For
+F^(n+k), including that coefficient requires degree at least
+p+n+k-1. Thus only k=0 can contribute such a denominator, and its
+only possibilities choose that coefficient once and the linear
+coefficient of F in each other factor. Their multiplicity is n.
+The resulting leading coefficient is
+
+  u^n v^n chi4(p)/[(n-1)! p^4],
+
+whose p-valuation is -4. Every other term is p-integral. Finally
+v_p(N!)=1, so ordinary differentiation gives exactly (5). QED.
+
+Thus no fixed numerator and denominator u,v make all origin derivatives
+integral. This blocks a blanket endpoint-integrality claim, not every
+finite truncation: a separate construction could use only selected
+derivatives and pay selected denominators. No bound making such a
+repair useful was obtained, and no old denominator scan is reopened.
+
+3. Why changing differentiation coordinates does not complete the proof
+
+In the coordinate z=F(x), A_n is a polynomial and differentiation in z
+terminates. But the corresponding natural integral is exactly
+
+ J_n=integral_0^1 A_n(x) F'(x) dx
+    =u^(2n+1)n!/[v(2n+1)!].                         (6)
+
+Substitute w=vF(x) and integrate w^n(u-w)^n by elementary repeated
+integration by parts. Formula (6) is a positive rational beta integral,
+not an integer. At n=(p-1)/2 for an odd prime p not dividing uv,
+v_p(J_n)=-1. Its positive primitive constant polynomial is always1;
+denominator clearing removes the apparent shrinking-integer gain.
+
+The Euler derivative E retains the rational forcing in (1), but it does
+not even preserve the rational function field C(x,F). Here is a short
+functional proof, independent of any numerical period independence.
+E^3F=arctan x has monodromy pi around x=i. The lower primitives have
+finite limits there, so the induced change in F is
+
+  Delta F=(pi/6)log^3(x/i),
+  Delta(EF)=(pi/2)log^2(x/i).                        (7)
+
+These follow by three integrations with E; each lower change vanishes
+at x=i. Suppose EF=R(x,F), R in C(x,z). At a generic nearby x, repeating
+the loop replaces F by F+m Delta F for every integer m, and EF by
+EF+m Delta(EF). A rational function of z agreeing with an affine
+function on that infinite set must itself be affine. Its z coefficient
+would therefore be Delta(EF)/Delta F=3/log(x/i), which is not a rational
+function of x. This contradicts R in C(x,z).
+
+Thus the finite polynomial derivative sum central to the proposed
+Niven transfer is unavailable in this field. The larger field involving
+EF,E^2F,E^3F does close differentially under (1); the argument above
+does not exclude it. It would require a new endpoint elimination and
+arithmetic theorem, rather than an identification of real and p-adic
+periods or the rationality of F(1) alone.
+
+4. A rational-endpoint control retaining positive forcing
+
+Define, using the convergent rational Taylor series of Li4,
+
+ H(x)=x+[Li4(x/2)-Li4(x^2/2)]/32.                   (8)
+
+Then H(0)=0, H(1)=1, and
+
+ (E^4H)/x=1+[1/(2-x)-16x/(2-x^2)]/32 >=33/64
+                                                   (0<=x<=1). (9)
+
+For the bound, 1/(2-x)>=1/2 and 16x/(2-x^2)<=16. The forcing is
+positive and rational, with all its poles outside the interval.
+Also H'>=251/256. Indeed, for 0<=z<1,
+
+ z <= Li3(z) <= z+z^2/[8(1-z)],
+
+directly from its series. Hence, for 0<x<=1,
+
+ Li3(x/2)/x >=1/2,
+ 2Li3(x^2/2)/x <= x+x^3/[16(1-x^2/2)] <=9/8.
+
+Insert these in H'=1+[Li3(x/2)-2Li3(x^2/2)]/(32x).
+The bounds extend to x=0 by continuity. Therefore 0<H(x)<1 inside
+the interval, and [H(1-H)]^n/n! has the same positive endpoint-zero
+features as (2). Its integral against (E^4H)dx/x is positive and at
+most (33/32)4^(-n)/n!, since (E^4H)/x<=33/32.
+
+The comparison is not a rational function in disguise. Li4(x/2)
+has genuine logarithmic-cube monodromy around x=2, while the second
+term is locally regular there on a continued branch. Thus rational
+Taylor coefficients, a rational positive forcing, nontrivial logarithmic
+monodromy, and positive endpoint factors coexist with a rational endpoint.
+The target has a more restrictive pole geometry; no theorem turning
+that distinction into the missing endpoint integrality was found.
+
+This is a control for the broad proposed Niven transfer only, not an
+obstruction to all assumption-dependent constructions.
+
+5. Reproduction and scope
+
+python3 checks.py uses exact rational arithmetic to compare (1), (8)
+and (9) through degree32; reproduce (5) for prescribed small n, odd
+primes and three fixed integer pairs; check the first endpoint-jet
+formula on rational formal jets; and check the retained prime in (6).
+No numerical theta enters construction or testing. The all-index
+claims are the elementary proofs above; the finite checks supplement
+them and are not formal verification.
+
+The bounded run passed 96 origin derivative-layer checks, 18 endpoint
+jet checks, 18 coordinate-integral prime checks and 60 dense-grid bound
+checks, with both differential-equation series checked through degree32.
+
+Root independently checked the derivative-layer argument and required
+the explicit odd-prime qualification, incorporated above. This packet
+does not assert a new irrationality result, a universal Niven no-go,
+a p-adic identification, or an asymptotic primitive obstruction.
+The packet is frozen after this bounded gate; manifest.json records
+its file hashes. No additional source scan or research branch is active.

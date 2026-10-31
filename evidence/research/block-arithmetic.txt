@@ -1,0 +1,605 @@
+Block arithmetic: positive moments, exact recurrences, and denominator bounds
+28 October 2026. Local and unpublished.
+
+Outcome and scope
+-----------------
+This investigation establishes several uniform identities for the coupled
+Catalan/beta(4) family, but does not prove the irrationality of beta(4).
+
+The main analytic result is a positive moment representation for BOTH
+normalized error sequences, on the same interval [0,phi^(-10)]. It gives
+an explicit bound for arbitrary block combinations that retains cancellation
+between indices. This replaces the earlier unspecified contour constant.
+An exact rational telescoping certificate also proves the mixed recurrence
+and the formerly conjectural order-four recurrence. The positive moments
+give the previously missing slit continuation directly.
+
+On the arithmetic side, there are exact formulas for the powers of 2 in
+all four coefficient sequences, and a sharper uniform residue denominator
+lemma. These results separate some of the arithmetic costs; they do not
+yet bound the size of the source coefficients needed in a growing block.
+
+Combining exact lattice calculations with the new analytic bound gives
+two integer forms A beta(4)+B with nonzero coefficient determinant, each
+of absolute value below 3*10^(-34). These are finite examples, with 426-
+and 432-bit coefficients, not an irrationality argument. No improvement
+over numerical continued fractions at comparable height is claimed.
+
+The missing theorem is still a uniform small-lift construction: as blocks
+grow, produce two independent integral coefficient images whose source
+polynomials tend to zero in the stated norm. A small image-lattice index
+does not supply that theorem. No priority claim, independent review, or
+formal verification is made; the symbolic and numerical checks here were
+performed by the same agent.
+
+1. Conventions and the source family
+------------------------------------
+Write G=beta(2), B4=beta(4), phi=(1+sqrt(5))/2, and
+
+    rho=phi^(-10)=(123-55 sqrt(5))/2 < 1/122.
+
+Throughout this note m is the BLOCK index, corresponding to source index
+n=2m in the preceding notes. To avoid repeated subscripts, put
+
+    (a_m,b_m,c_m,d_m)=(a_(2m),b_(2m),c_(2m),d_(2m))_old.
+
+Thus a row numbered m in results/coupled_coefficients.json has the four
+coefficients used here. They are rational, and the two small forms are
+
+    R_m=a_m G+b_m,
+    S_m=16a_m B4+c_m G+d_m.                                  (1)
+
+Their construction comes from the classical Catalan approximants [Z] and
+the quarter-pole hypergeometric family [KZ]; the pole splitting is the
+experiment developed in hypergeometric-arithmetic.txt and coupled-holonomy.txt.
+Specifically, for m>=0 set
+
+    p_j=(2j+1)/4,   0<=j<=4m+1,
+    K_(2m)=(4m+1)!/2^(4m+2),
+    F_m(t,e)=K_(2m) (2t+2m+1)
+                * product_{ell=-3m}^{m-1}(t-ell)
+                / product_{j=0}^{4m+1}((t+p_j)^2-e^2).
+
+An empty numerator product is one. Let F_m(t)=F_m(t,0), and
+H_m(t)=sum_j(t+p_j)^(-2). Then
+
+    R_m=sum_{t>=0} F_m(t),
+    S_m=sum_{t>=0} F_m(t) H_m(t).                            (2)
+
+The formal partial fractions give (1); no assumption of linear independence
+of 1,G,B4 is used. Initial data are
+
+    (a_0,b_0,c_0,d_0)=(8,0,0,0),
+    (a_1,b_1,c_1,d_1)=(649/8,-10699/144,2445/8,-2026399/1296).
+
+In particular R_0=8G and S_0=128B4. The earlier bounds
+0<R_m<8rho^m and 0<S_m<(32/m)rho^m, m>0, remain valid.
+
+2. Positive moments for both normalized sequences
+--------------------------------------------------
+For x=(x_1,x_2,x_3,x_4) in (0,1)^4 put z=x_1 x_2 x_3 x_4 and
+
+    Psi(x)=z product_i(1-x_i)^2/(1-z)^4,
+    omega(x)=(1+z)/(1-z)^2 * (x_1 x_2)^(-3/4)(x_3 x_4)^(-1/4),
+    ell(x)=-log x_1+log x_2-log x_3+log x_4.
+
+Let nu be the arcsine probability measure on (0,1),
+dnu(u)=du/(pi sqrt(u(1-u))). On six variables x,u,v define
+
+    T=16(uv)^2 Psi(x),
+    dmu=(1/4)omega(x) dx dnu(u)dnu(v),
+    deta=(1/8)omega(x)ell(x)^2 dx dnu(u)dnu(v).
+
+Then, for every integer m>=0,
+
+    R_m/(4m+1)^2 = integral T^m dmu,
+    S_m/(4m+1)^2 = integral T^m deta.                        (3)
+
+Both measures are positive and finite. Their masses are 8G<8 and
+128B4<128, and their pushforwards by T have infinite support in [0,rho].
+
+2.1 Derivation by beta integrals
+
+The integer zeros in the numerator allow t=m+k, k>=0. Splitting the
+quarter progressions in the denominator gives the four rising factorials
+
+    product_{b in {1/4-e,1/4+e,3/4-e,3/4+e}} (k+m+b)_(2m+1).
+
+Use
+
+    1/(a)_(2m+1)=1/(2m)! * integral_0^1 x^(a-1)(1-x)^(2m) dx
+
+and the elementary power-series identity
+
+    sum_{k>=0}(2k+4m+1)(k+1)_(4m) z^k
+       =(4m+1)! (1+z)/(1-z)^(4m+2).
+
+Consequently
+
+    sum_t F_m(t,e)=C_m integral Psi(x)^m omega(x) exp(e ell(x)) dx,
+    C_m=((4m+1)!)^2/[2^(4m+2)((2m)!)^4].                    (4)
+
+This identity is analytic for |e|<1/4. At zero endpoints all exponents
+remain greater than -1 on smaller closed e-disks. Near x_i=1 for all i,
+the singular factor is O((sum_i(1-x_i))^(-2)), integrable in four
+dimensions. Logarithmic derivatives are also integrable. These estimates
+justify coefficient extraction, or one can first use positive real e and
+then analytic continuation on a smaller disk.
+
+The arcsine moments give
+
+    integral u^(2m)dnu(u)=binom(4m,2m)/16^m,
+    C_m=(4m+1)^2/4 * 16^m * (integral u^(2m)dnu(u))^2.
+
+Taking the e^0 and e^2 coefficients in (4), with [e^2]exp(e ell)=ell^2/2,
+proves (3). In particular, the second measure is positive; it is not a
+signed measure inferred from a recurrence. Swapping x_1,x_2 and x_3,x_4
+changes ell to -ell and explains the evenness in e.
+
+2.2 The sharp support endpoint
+
+At a fixed product z=x^4, concavity of log(1-exp(s)), s<0, gives
+
+    product_i(1-x_i) <= (1-x)^4.
+
+It follows that
+
+    Psi(x_1,x_2,x_3,x_4)
+       <= [x(1-x)/((1+x)(1+x^2))]^4.
+
+With s=x+x^(-1)>=2, the square of the bracket is
+(s-2)/(s^2(s+2)). Differentiation gives its maximum at
+s=1+sqrt(5)=2phi, with value 1/(4phi^5). Therefore 16Psi<=rho,
+and hence 0<=T<=rho. Equality is approached when the four x_i coincide
+at the maximizer and u,v approach one. Although ell then vanishes, every
+neighborhood of this configuration contains points where ell!=0, so the
+second measure has the same support endpoint. Both pushforwards have
+infinite support. Their normalized Hankel matrices are positive definite.
+No favorable arithmetic bound for those Hankel determinants is asserted.
+
+2.3 Cancellation, continuation, and a polynomial filter
+
+For any two real polynomials P(t)=sum x_m t^m and Q(t)=sum y_m t^m,
+
+ |sum_m (x_m R_m+y_m S_m)/(4m+1)^2|
+       <= 8 ||P||_[0,rho] +128 ||Q||_[0,rho].                (5)
+
+Unlike a sum of absolute source terms, (5) retains cancellation in P,Q.
+The normalized generating functions are Stieltjes transforms of mu,eta,
+and continue holomorphically to C minus [1/rho,infinity). Applying
+(4theta+1)^2, theta=z d/dz, gives the same continuation for the original
+generating functions. Explicitly, their kernels are
+
+    sum_{m>=0}(4m+1)^2 (zT)^m=(1+22zT+9(zT)^2)/(1-zT)^3.
+
+This closes the slit-continuation gap for S in coupled-holonomy.txt. It
+does not establish Q(z)-linear independence, or fix the negative arithmetic
+margin of the holonomy templates tested there.
+
+A simple integer polynomial illustrates the analytic gain. For
+p(t)=t(t-1)(t-2),
+
+    sup_{0<=t<=256rho}|p(t)|=2/(3sqrt(3)) < 1.
+
+The two interior extrema have that magnitude. For the endpoint beyond 2,
+use 256rho<128/61<17/8 and p(17/8)^2<4/27. Hence replacing P(T) by
+p(256T)^N in (5) produces exponentially decreasing integrals, bounded by
+8*(2/(3sqrt(3)))^N or 128 times that power. These are explicit analytic
+filters. Their coefficients have NOT been shown to meet the required
+integrality and auxiliary-period conditions; the filter alone is not an
+irrationality construction.
+
+3. A computable norm and finite integer forms
+---------------------------------------------
+Use the circle with center h=1/256 and radius r=1/224, and its normalized
+L2 norm. The interval [0,rho] lies strictly inside the circle. Since
+rho<1/122,
+
+    |(t-h)/r| <= 469/488   (0<=t<=rho).
+
+Cauchy--Schwarz on the Taylor coefficients about h gives
+|P(t)| <= ||P||_circle /sqrt(1-((t-h)/r)^2) < 4||P||_circle.
+Thus (5) implies the entirely explicit inequality
+
+ |sum_m (x_m R_m+y_m S_m)/(4m+1)^2|
+       < 514 sqrt(||P||_circle^2+||Q||_circle^2)              (6)
+
+for nonzero P,Q. Indeed the two separate constants are 32 and 512,
+and 32^2+512^2<514^2. The monomial Gram matrix is rational:
+
+    G_ij=sum_{k=0}^{min(i,j)} binom(i,k)binom(j,k)
+                             h^(i+j-2k) r^(2k).             (7)
+
+In a block the indices i,j are the actual m=N,...,N+w-1, not local
+indices starting at zero.
+
+For reference, an explicit constant also applies without dividing source
+forms by (4m+1)^2. Write D=(4t d/dt+1)^2=16t^2 d^2/dt^2+24t d/dt+1.
+For a polynomial in the unit-circle coordinate, delta=1-(469/488)^2>1/14
+gives evaluation bounds 4,84,3920 for it and its first two derivatives
+times its L2 norm. These follow by differentiating the geometric-series
+kernel; the squared derivative norms are (1+s^2)/(1-s^2)^3 and
+4(1+4s^2+s^4)/(1-s^2)^5. Since t/r<2, |DP(t)|<255000||P||_circle.
+Using sqrt(8^2+128^2)<129 gives the safe constant 33,000,000 for the
+unnormalized pair. This retroactively makes the old circle-norm results
+absolute certificates as well; the normalized bound is much cleaner.
+
+3.1 Exact lattice construction and certification
+
+At each source m, the normalized coefficient rows in coordinates (G,B4,1)
+are
+
+    (a_m,0,b_m)/(4m+1)^2,
+    (c_m,16a_m,d_m)/(4m+1)^2.
+
+Adjoining two integer-coordinate slack variables and taking an integer
+kernel after clearing matrix denominators enforces zero G coefficient
+and integer B4 and constant coefficients. Exact LLL on the Gram matrix
+(7) seeks short source polynomials. Every coefficient image is then
+recomputed exactly. Zero images are discarded, nonzero images are divided
+by their complete gcd, and two with nonzero coefficient determinant are
+selected. The same divisor is applied to the source polynomials and norm.
+
+The selection uses the source coefficients and the rational norm, not a
+numerical value of beta(4). The final error bounds follow from (6).
+
+    N     w      upper bound for BOTH errors, normalized construction
+    8    16                  2.55*10^(-19)
+    8    24                  1.40*10^(-27)
+   16    16                  6.06*10^(-17)
+   16    24                  3.00*10^(-34)
+
+For the last row, the individual bounds are below 2.408*10^(-34) and
+2.563*10^(-34). Coefficient sizes are 426 and 432 bits. A separate
+Fraction computation checks every coefficient coordinate, directly
+translates each polynomial to the circle, and checks the norm and the
+squared rational error inequality. Arb evaluations also enclose the
+actual errors, around 8.79*10^(-41) and 7.32*10^(-42), but these
+evaluations are not used to derive (6) or the displayed certificates.
+
+If two independent integer coefficient pairs with such bounds could be
+constructed with errors tending to zero along unbounded blocks, beta(4)
+would be irrational: at a rational value p/q at least one form would be
+a nonzero multiple of 1/q. The present finite table supplies no such
+uniform construction. The table is not monotone in N, and tiny errors
+alone are uninformative without controlling coefficient size or proving
+a limiting theorem. Earlier numerical continued-fraction comparisons
+were substantially better at comparable heights.
+
+4. A uniform mixed recurrence, certified by telescoping
+--------------------------------------------------------
+Let
+
+    L f_m=f_(m+2)+u(m)f_(m+1)+v(m)f_m,
+    u=q_1/q_2,  v=q_0/q_2,
+
+where the degree-14 polynomials q_j are the exact coefficient blocks in
+results/coupled_guess_a.json. This base recurrence was already derived
+from [Z] by eliminating odd source indices. Despite the discovery filename,
+it is proved, and La=Lb=LR=0.
+
+There are explicit rational functions P(m),Q(m), stored as rational
+coefficient lists in results/block_recurrence.json, for which
+
+    L S_m+P(m)R_m+Q(m)R_(m+1)=0,                            (8)
+    L c_m+P(m)a_m+Q(m)a_(m+1)=0,
+    L d_m+P(m)b_m+Q(m)b_(m+1)=0.
+
+Both rational functions have numerator degree 26 and denominator degree
+28, with P(m)~2/m^2 and Q(m)~-398/m^2. They were first reconstructed
+from finite data. The proof of (8) is the following rational-function
+certificate, not agreement with further terms.
+
+4.1 Certificate specification
+
+Put e_j=t+2m+(2j+1)/4. There are polynomials Tnum,Znum in t over Q(m),
+of degrees 13 and 25, and rational functions
+
+    T_m(t)=(t-m)Tnum(t)/[(2t+2m+1) product_{j=2}^7 e_j^2],
+    Z_m(t)=(t-m)Znum(t)/[(2t+2m+1) product_{j=2}^7 e_j^4].
+
+Their complete factored coefficient lists are in
+results/block_telescoping.json. They satisfy the identities
+
+    F_(m+2)+uF_(m+1)+vF_m = Delta_t(F_m T_m),
+
+    F_(m+2)H_(m+2)+uF_(m+1)H_(m+1)+vF_m H_m
+           +P F_m+Q F_(m+1)
+        = Delta_t(F_m (T_m H_m+Z_m)).                        (9)
+
+Here Delta_t g(t)=g(t+1)-g(t). These are identities of rational functions
+of t for each m, proved using rational shift quotients over Q(m).
+
+For a compact way to reproduce or verify the certificate, let
+
+    A=(t+3m+1)(t+1/4)^2(t+3/4)^2,
+    B=(t-m)e_8^2 e_9^2,
+    D2=product_{j=2}^9 e_j^2,
+    r_i=F_(m+i)/F_m.
+
+The first polynomial equation is
+
+    A Tnum(t+1)-B Tnum(t)=(2t+2m+1)D2 (r_2+u r_1+v).
+
+The right side is polynomial after cancellation. With
+tau=F_m(t+1)/F_m(t), dH_i=H_(m+i)-H_m, and
+dH_t=H_m(t+1)-H_m(t), the second is
+
+    A e_2^2 e_3^2 Znum(t+1)-(t-m)e_8^4 e_9^4 Znum(t)
+       =(2t+2m+1)D2^2
+          * [r_2 dH_2+u r_1 dH_1+P+Q r_1-tau T_m(t+1)dH_t].
+
+It too is polynomial. Solving coefficients from the top down has diagonal
+entries d-4m-15, 0<=d<=13, and d-4m-27, 0<=d<=25, respectively.
+These never vanish at m>=0. The residual lower coefficients all vanish
+identically over Q(m), as checked by experiments/block_telescoping.py.
+The displayed coefficient files and this algorithm are the exact algebraic
+certificate; a finite numerical fit is not being used as a substitute.
+
+At t=0 the boundary is zero: F_m(0)=0 for m>=1, and T_0,Z_0 have a
+factor t. At infinity F_m=O(t^(-4m-3)), H_m=O(t^(-2)), and T_m,Z_m=O(t),
+so the upper boundary also vanishes. All relevant denominators are
+nonzero for m>=0 and t>=0. Summing (9) proves the real recurrence.
+
+The coefficient recurrences in (8) require a little care. They are not
+inferred from an unproved independence of G,B4,1. Apply the formal
+partial-fraction summation map instead. A difference g(t+1)-g(t) cancels
+its complete quarter-progression period coefficients and leaves the
+rational boundary -g(0), which is zero here. Thus its three formal
+coordinates vanish separately.
+
+4.2 The formerly conjectural order-four equation
+
+The operator in results/coupled_guess_c.json (also the d candidate) has
+the base L as a right factor. Substituting (8) into that exact factorization
+and reducing the remaining shifts of R using LR=0 leaves two zero rational
+functions. This is checked symbolically in experiments/block_symbolic_checks.py.
+Consequently that order-four, degree-52 recurrence is now proved for
+c,d,S, as well as a,b,R. The old finite-discovery files retain their
+original status text; the proof is supplied by the later certificates.
+
+Its generating-function equation has theta order 52, with highest-theta
+coefficient, up to a nonzero constant, (z^2-123z+1)^2. Thus the only
+possible finite differential singularities are 0,rho,1/rho. No minimality
+or functional-independence conclusion is inferred. Section 2 supplies a
+simpler direct proof of the desired continuation of the error functions.
+
+5. Exact powers of 2
+---------------------
+Let s_2(m) be the binary digit sum and nu_2 the 2-adic valuation. For m>=1,
+
+    nu_2(a_m)=3+2s_2(m)-8m,
+    nu_2(b_m)=nu_2(a_m)-1,
+    nu_2(c_m)=nu_2(a_m)-2 floor(log_2 m),
+    nu_2(d_m)=nu_2(c_m)-1.                                 (10)
+
+In particular, the deformation adds only logarithmically many powers of 2
+to these coefficient denominators. This is a uniform theorem about the
+individual coefficients, distinct from the finite image-index pattern
+in Section 7.
+
+5.1 Rational-function inputs
+
+Put
+
+ h(m)=225280m^6+856064m^5+1328384m^4+1076736m^3
+                         +480784m^2+112176m+10699.
+
+The factorizations are
+
+ q_2=64(m+2)^2(2m+3)^2(4m+5)^2(4m+7)^2 h(m),
+ q_0=64(m+1)^2(2m+1)^2(4m+1)^2(4m+3)^2 h(m+1),
+ D=(m+2)^4(2m+3)^4(4m+5)^4(4m+7)^4 h(m)^2,
+ P=(m+1)^2(2m+1)^2 P22(m)/D,
+ Q=-Q26(m)/(64D).
+
+Each of h,-q_1,P22,Q26 is an integer polynomial with odd constant
+coefficient and all other coefficients even. These are exact polynomial
+identities checked from the stored coefficients, so for every integer m>=0,
+
+ nu_2(u)=-6-2nu_2(m+2),
+ nu_2(v)=2nu_2(m+1)-2nu_2(m+2),
+ nu_2(P)=2nu_2(m+1)-4nu_2(m+2),
+ nu_2(Q)=-6-4nu_2(m+2).                                    (11)
+
+5.2 Induction
+
+Let A_m=3+2s_2(m)-8m, with A_0=3. The identity
+s_2(m+1)-s_2(m)=1-nu_2(m+1) gives
+
+    A_(m+1)-A_m=-6-2nu_2(m+1).
+
+In the recurrence for a, the term u a_(m+1) has lower valuation than
+v a_m by 12+4nu_2(m+1). There is therefore no cancellation at the
+least valuation, and the initial data prove the first formula. The same
+argument gives b with the extra -1; b_0=0 is handled directly.
+
+For c at target index n=m+2, compare u c_(n-1) with Q a_(n-1).
+Writing ell=floor(log_2(n-1)), their valuations differ by
+2(nu_2(n)-ell). If n is not a power of 2, the u term is strictly lower.
+If n is a power of 2, the Q term is strictly lower. The P term has
+valuation 12+4nu_2(n-1) greater than the Q term, and the v term is
+strictly above the relevant minimum. For n>=3 its comparison with the
+u term has gap 12+4nu_2(n-1)+2(floor(log_2(n-1))-floor(log_2(n-2))).
+The case n=2 follows directly since c_0=0. This proves the c formula,
+including the extra factor 4 at each power-of-2 index. Replacing a,c by
+b,d shifts the relevant valuations by -1 and proves the d formula;
+the zero terms at index zero are again handled directly.
+
+6. A sharper uniform residue denominator lemma
+-----------------------------------------------
+For this section only return to the ORIGINAL even source index n=2m.
+Let M=2n+1 and L_j=lcm(1,...,j). Let H_j(e) be the moving-pole residue
+numerator from coupled-holonomy.txt, so that A_j(e)=16K_n H_j(e) and
+
+ A_j(e)=F_j(e) product_{h!=j}(1+4e/(h-j))^(-1),
+ F_j(e)=8/4^n * Q_j(e)/(2n)! * binom(M,j)^2 (M-2j+4e)/M,
+ Q_j(e)=product_{ell=-3n/2}^{n/2-1}(4e-(2j+1)-4ell).
+
+For every j=0,...,M and every k>=0,
+
+              16^n L_M^k [e^k] A_j(e) is an integer.        (12)
+
+Taylor coefficients, not derivatives, are used, so the factorial costs
+of differentiation have not been discarded.
+
+6.1 Odd primes
+
+For an odd prime p, s=3n/2-(2j+1)/4 is p-integral, and
+Q_j(e)/(2n)!=4^(2n) binom(s+e,2n). Vandermonde's polynomial identity
+expands this as a sum of binom(s,2n-r)binom(e,r). The first factor is
+p-integral: approximate s by nonnegative integers modulo arbitrarily high
+p-powers and use continuity of this fixed rational polynomial.
+
+For r>=1,
+
+    binom(e,r)=e/r product_{i=1}^{r-1}(e/i-1).
+
+An e^k coefficient has a denominator dividing a product of k integers
+at most 2n. Hence L_(2n)^k clears it. The constant part of the remaining
+factor is integral because
+
+ binom(M,j)^2 (M-2j)/M
+      =binom(M,j)[binom(M,j)-2binom(M-1,j-1)].
+
+Its linear term has denominator M, costing one additional L_M for one
+additional Taylor order. Finally, the inverse factors in A_j have
+coefficients (-4/(h-j))^k, also cleared order by order by L_M^k.
+This proves (12) at every odd prime.
+
+6.2 The prime 2 and coefficient consequences
+
+At 2 the polynomial Q_j has integer coefficients, M is odd, and
+16^n F_j has integral coefficients: its possible 2-denominator is bounded
+by 2n+nu_2((2n)!)-3<=4n-4 at positive even n. The inverse factors are
+again cleared by L_M^k. The case n=0 is immediate from the displayed
+products. This completes (12).
+
+Let alpha_(j,k)=[e^k]A_j(e), and let T_(j,s) be the finite quarter-tail
+sum of order s removed in shifting p_j to 1/4 or 3/4. Explicitly, with
+r=1+2(j mod 2),
+
+    T_(j,s)=sum_{i=0}^{floor(j/2)-1}4^s/(4i+r)^s.
+
+The formal coefficients at original source n are
+
+ a_n=sum_{j even}alpha_(j,0),
+ c_n=sum_{j even}alpha_(j,2),
+ b_n=-(1/16)sum_j[alpha_(j,0)T_(j,2)+alpha_(j,1)T_(j,1)],
+ d_n=-(1/16)sum_j sum_{k=0}^3 alpha_(j,k)T_(j,4-k).
+
+Every odd tail denominator is at most 4n-1. Combining (12), the total
+Taylor-plus-tail orders, and the exact 2-valuations (10), gives, for even
+n>=2,
+
+    16^n a_n in Z,
+    16^n L_(2n+1)^2 c_n in Z,
+    16^n L_(4n)^2 b_n in Z,
+    16^n L_(4n)^4 d_n in Z.                                (13)
+
+For b_n the classical stronger L_(2n)^2 bound is already available [Z];
+no improvement for b is claimed here. For the deformation, (13) improves
+the earlier proved L_(6n+3) bounds and their extra constant factors.
+In block notation the c,d multipliers are 256^m L_(4m+1)^2 and
+256^m L_(8m)^4, respectively.
+
+The still sharper inclusions with L_(2n)^2 for c and L_(2n)^4 for d
+observed in the old coefficient table were unproved at this stage. The
+subsequent half-pole-arithmetic.txt proves the stronger L_n^2 inclusion
+for c, at every index, and a gcd bound for d with the same exponential
+rate as L_(2n)^4. The exact L_(2n)^4 inclusion for d remains unproved.
+Neither these individual bounds nor (13) establish inexpensive block
+combinations.
+
+7. What the coefficient-image computations say
+-----------------------------------------------
+For the UNNORMALIZED source rows (a_m,0,b_m),(c_m,16a_m,d_m), form
+
+    Gamma_(N,w)=(sum of their Z-spans, m=N,...,N+w-1) intersect Z^3.
+
+This can be computed in three dimensions by duality, avoiding the costly
+source lift. If Lambda is the rational row lattice generated by the
+sources, then (Lambda intersect Z^3)^*=Lambda^*+Z^3. Hermite forms on
+both sides give an exact basis for Gamma. A separate construction using
+the full integer kernel agrees in nine small cases.
+
+In all 128 cases N=1,...,64 with widths w=2 and w=3N, the observed index
+has
+
+    nu_2([Z^3:Gamma_(N,w)])=8N+3-2s_2(N).                   (14)
+
+For w=3N, its odd part is one in all 64 cases, and G coefficient one is
+attainable. At width two, G coefficient one is NOT always attainable:
+N=53 and N=58 have first-coordinate generator 97. A separate 31-case
+grid also tests intermediate widths and larger N. Width 2N does not
+always remove the odd index factors in that grid.
+
+Equation (14) and the saturation at w=3N are finite patterns, NOT uniform
+theorems. In particular the simpler guess 8N+1 for the valuation fails
+away from one-bit N; the binary digit sum matters.
+
+Even a proof of these index patterns would leave the key difficulty.
+An image basis does not control the source polynomials realizing it.
+There are 2w-3 exact-identity directions in a rank-three source block,
+and a short lattice vector often has zero coefficient image. A volume
+argument that counts those directions as useful approximants is invalid.
+
+The next substantive target is therefore a constructive bound for two
+independent images together with their source lifts in (6), or an explicit
+arithmetically admissible polynomial family in (5). This requires control
+of the real size as well as congruence solvability. The new recurrences
+and moments supply tools to study that target, not its solution.
+
+8. Reproduction and evidence
+-----------------------------
+Run from beta4. The 360-row coupled coefficient file is an existing input.
+
+  .venv/bin/python experiments/block_recurrence.py
+  python3 experiments/block_telescoping.py
+  python3 experiments/block_symbolic_checks.py
+  python3 experiments/block_valuation_checks.py
+  .venv/bin/python experiments/block_residue_checks.py
+  .venv/bin/python experiments/block_circle_lattice.py --normalized \
+      --output results/block_circle_normalized.json
+  python3 experiments/block_moment_checks.py
+  .venv/bin/python experiments/block_image_lattice.py
+  .venv/bin/python experiments/block_lattice_checks.py
+
+The mixed telescoper is checked over Q(m), including all residual
+coefficients. Separate direct rational checks cover 50 summand identities
+and five zero-boundary examples. Exact Ore reduction has two zero residuals.
+The valuation checks include four parity-polynomial identities and 1436
+coefficient valuations. The residue checks include 392 Taylor inclusions,
+seven fully rebuilt coefficient quadruples, and 1077 global inclusions.
+
+The moment checks compare 105 beta-integral summands and 31 arcsine
+prefactors. They separately rebuild all 16 saved circle forms, including
+their coefficient triples, exact norms, nonzero pair determinants, and
+rational absolute-error bounds. The lattice checker reproduces the 128
+image patterns and nine kernel-versus-dual comparisons. These finite
+checks support the displayed uniform proofs; they do not replace them.
+
+The older discovery files retain their original experimental status text.
+Use block_telescoping.json and block_symbolic_checks.json for the later
+recurrence proof, and block_moment_checks.json for the later absolute
+bounds on the original unnormalized circle experiments.
+
+Sources and relation to earlier work
+------------------------------------
+[Z] W. Zudilin, An Apery-like difference equation for Catalan's constant,
+arXiv:math/0201024v3. Used for the classical base family and recurrence;
+the normalization issue at n=0 is recorded in the earlier literature review.
+https://arxiv.org/abs/math/0201024v3
+
+[KZ] C. Krattenthaler and W. Zudilin, Hypergeometry inspired by irrationality
+questions, arXiv:1802.08856v2, Section 2. Source of the quarter-pole
+construction motivating the present family, not a claim about this
+pole-splitting deformation or these block experiments.
+https://arxiv.org/abs/1802.08856v2
+
+Earlier local derivations: hypergeometric-arithmetic.txt (family and initial
+arithmetic), coupled-holonomy.txt (parameter identity, base recurrence,
+and failed holonomy budgets), new-avenues.txt (block arithmetic and the
+fixed auxiliary-period criterion). No further external literature was
+reviewed for this follow-up, and novelty relative to the wider literature
+has not been established.

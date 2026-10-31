@@ -1,0 +1,142 @@
+FULL-PARITY LOEWNER MATRICES: AN ACTUAL OVERSHIFT OBSTRUCTION
+29 October 2026. Coordinator. Local and unpublished.
+
+This supplements the fresh worker's full-parity construction. It is a
+scoped actual-value theorem, not an assertion about all node designs.
+In particular it does not treat the interesting offset m comparable to
+the matrix order N. No irrationality or priority claim is made.
+
+1. Definition and the asymptotic mechanism
+
+Write theta=beta(4), S_j(a)=sum_(0<=k<a) (-1)^k/(2k+1)^j, and
+
+  g_j(x)=sum_(k>=0) (-1)^k/(2k+1+2x)^j,  x>0.
+
+For consecutive integer nodes a=m,...,m+N-1, the rational pencil is
+
+  K_aa(X)=X-S_4(a),
+  K_ab(X)=(S_3(a)-S_3(b))/(6(a-b)),  a!=b.
+
+At X=theta, its diagonal is (-1)^a g_4(a) and off-diagonal is
+[(-1)^b g_3(b)-(-1)^a g_3(a)]/[6(a-b)]. The integral formulas
+
+  g_3(x)=(1/4) integral_0^infty t^2 exp(-2xt) sech(t) dt,
+  g_4(x)=(1/12) integral_0^infty t^3 exp(-2xt) sech(t) dt
+
+give g_3'=-6g_4. Since 0<=1-sech(t)<=t^2/2 for t>=0,
+
+  |g_3(x)-1/(16x^3)| <= 3/(32x^5),
+  0<g_4(x)<=1/(32x^4).                                    (1)
+
+For example the sech inequality follows from sech(t)>=1-t^2/2:
+it is trivial for t>=sqrt(2), and on [0,sqrt(2)) follows from
+cosh(t)<=1/(1-t^2/2), by comparison of their nonnegative series.
+
+Take N=2r and group nodes of even and odd relative offset. Multiply
+the whole matrix by (-1)^m, which leaves its even-order determinant
+unchanged. With D_ij=1/(2i-2j-1), 0<=i,j<r, equations (1) imply
+
+  m^3 (-1)^m K(theta) = C+E,
+  C= [[0,-D/48],[-D^T/48,0]].                              (2)
+
+In particular, for FIXED even N and m tending to infinity,
+
+  det K(theta) ~ (-1)^r 48^(-N) (det D)^2 m^(-3N).           (3)
+
+The Cauchy matrix D is nonsingular. Thus the new opposite-parity
+entries have a full-rank leading term, whereas the same-parity entries
+are one power smaller. This is an explicit analytic cost of filling
+in the half-step grid; the word 'entire' alone supplies no size saving.
+
+2. Uniform estimates with growing order
+
+The following loose constants suffice for a rigorous uniform result.
+If m>=1 and 0<=a<=2r-1, (1) and
+1-(1+a/m)^(-3)<=3a/m give
+
+  |m^3 g_3(m+a)-1/16| <=3r/(8m).
+
+Opposite-parity entries of E therefore have absolute value at most
+r/(8m). Same-parity entries and diagonals have absolute value at most
+1/(32m), by g_3'=-6g_4 and the mean value theorem. Consequently
+
+  ||E||_infinity <= r^2/(4m).                              (4)
+
+Here and below the matrix norm is the maximum absolute row sum.
+The explicit Cauchy inverse gives
+
+ |(D^(-1))_ji|= A_i B_j/|2i-2j-1|,
+ A_i=2(r-i) b_i b_(r-i),
+ B_j=2(j+1) b_(j+1) b_(r-1-j),
+ b_k=binom(2k,k)/4^k.
+
+The elementary inequality b_k<=1/sqrt(k+1) follows by induction from
+b_(k+1)/b_k=(2k+1)/(2k+2). Thus A_i,B_j<=2sqrt(r), every inverse
+entry has absolute value <=4r, and both row and column norms are
+at most 4r^2. It follows that
+
+  ||C^(-1)||_infinity <=192r^2,
+  |det C|>= (192r^2)^(-N).                                (5)
+
+For the determinant estimate in (5), apply the spectral-radius bound
+to D^(-1), so |det D|>= (4r^2)^(-r), and use (2).
+
+If m>=96r^4, equations (4)-(5) give
+||C^(-1)E||_infinity<=1/2. Every eigenvalue of I+C^(-1)E then has
+modulus at least 1/2. Therefore the ACTUAL evaluated determinant is
+nonzero and obeys
+
+  |det K(theta)| >= m^(-3N) (384r^2)^(-N).                 (6)
+
+No sign-regularity assumption or irrationality assumption is used.
+
+3. Primitive arithmetic and an actual failure theorem
+
+Let P_m,N(X)=det K(X), a monic rational polynomial of degree N.
+Its primitive positive multiplier kappa is an INTEGER: the least
+common denominator of its coefficients. Clearing a monic rational
+polynomial in this way gives content one, since any common divisor
+would also divide its leading coefficient and contradict minimality.
+
+Suppose there is a prime p with
+
+  m+N < p < 2m.                                           (7)
+
+For every node a, the odd denominators in S_4(a) include p exactly
+once and include no other multiple of p. Thus p^4 S_4(a) is congruent
+to chi_4(p) modulo p. In off-diagonal differences S_3(a)-S_3(b),
+the contribution with denominator p cancels. No other odd multiple
+of p occurs, and p does not divide a-b. The off-diagonal entries
+are therefore p-integral. In particular
+
+  p^4 K(0) = -chi_4(p) I mod p,
+  v_p(P_m,N(0))=-4N,
+  v_p(kappa)=4N.                                          (8)
+
+The upper equality follows as every entry has valuation >=-4.
+This is the fresh worker's isolated-prime mechanism, applied here
+to primitive polynomial coefficients; it does not require theta
+to be rational. Monicity means negative multiplier valuations at
+other primes cannot undo this lower bound: kappa>=p^(4N).
+
+THEOREM. Let N=2r, m>=768r^4, and let (7) hold. Then
+
+  |kappa P_m,N(theta)|
+      > (m/(384r^2))^N >= (2r^2)^N >= 2^N.                 (9)
+
+Proof: combine the actual lower bound (6) with (8) and p>m.
+
+There are prescribed families in this scope without invoking a
+prime-distribution theorem. For each r choose any prime
+p>768r^4+2r+1 and set m=p-2r-1. Then (7) holds and m>=768r^4.
+The theorem retires this overshifting strategy for the full-parity
+pencil. It says nothing about offset m~N, arbitrary node sets,
+compressed/projected pencils, or other beta(4) constructions.
+
+4. Verification status
+
+The proof is elementary and is accompanied by the separate exact and
+Arb implementation loewner_shift_check.py/json. Those finite checks
+test formulas and constants, not replace the uniform argument above.
+Model cross-review is recorded separately. This is not formal proof
+verification or an external human audit.

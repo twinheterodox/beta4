@@ -1,0 +1,209 @@
+ROUND11: SINE NORMALIZATION AND A COMPLETE CYCLOTOMIC NORM GATE
+29 October 2026. Local and unpublished. No irrationality proof.
+
+Outcome and exact scope
+-----------------------
+The nonlinear norm is genuinely outside the round10 rational-trace
+obstruction. The prescribed sine normalization also calibrates its
+principal embedding to UNNORMALIZED theta=beta4. However, the complete
+conjugate product grows like exp(4*(p-1)*log(p)+O(p)); primitive content
+cannot remove this growth. This is a theorem about the one family below,
+with p running over ODD PRIMES. It does not close nonlinear norms,
+other normalizations, other weights, or other algebraic approximants.
+
+There is no claim that every odd composite level obeys all assertions
+below. Several identities extend, but the degree, sine product and
+asymptotic statement are proved only in the prime-level setting used.
+No novelty claim is made.
+
+1. Exact candidate and the rationality criterion
+-----------------------------------------------
+For an odd prime p let h=pi/(2p), w=exp(2*pi*i/(4p)), and define
+
+ alpha_p=sin(h)^4 sum_(1<=n<p,n odd)
+              chi_(-4)(n)*cos(nh)^3/sin(nh)^4.                (1)
+
+Let F_p=Q(w+w^(-1)), the real cyclotomic field of degree d=p-1.
+The alpha_p belong to F_p. In fact Section3 proves their actual minimal
+degree is d as well; the norm argument would be valid in the full
+field without that extra fact.
+
+Write U_p=8*alpha_p. Then the exact identity is
+
+ U_p=sum_(n odd,0<n<p) chi(n)
+       [(w-w^-1)/(w^n-w^-n)]^4*(w^n+w^-n)^3.                (2)
+
+Every term in (2) is an algebraic integer. Indeed z=w^2 is a primitive
+2p-th root; for odd0<n<p, z^n is also primitive. The polynomial
+Phi_(2p)(x)=x^(p-1)-x^(p-2)+...-x+1 has Phi_(2p)(1)=1.
+Thus1-z^n is a unit in Z[z], by the polynomial Bezout identity obtained
+from Phi_(2p)(x)-Phi_(2p)(1). The difference w^n-w^-n is that unit
+times a root of unity. This proves U_p is integral with NO untracked
+odd-prime denominator. It does not assert8 is always the least integer
+scale: the exact p7 primitive polynomial, for example, has content64.
+
+Define the monic rational norm polynomial and an integral polynomial
+
+ M_p(X)=Norm_(F_p/Q)(X-alpha_p),
+ J_p(X)=Norm_(F_p/Q)(8X-U_p)=8^d*M_p(X) in Z[X].           (3)
+
+Its positive content g_p divides its leading coefficient8^d. Put
+ P_p=J_p/g_p, the actual primitive polynomial, with positive leading
+coefficient. All products at the unknown real theta below mean
+NORM-POLYNOMIAL EVALUATIONS. The quantity theta-alpha_p is not asserted
+to belong to F_p unless theta is first assumed rational.
+
+Under theta=u/v, v>0, the nonzero integer criterion would be
+ v^d*P_p(u/v) in Z\{0}.
+Equivalently the sufficient uncleared norm is
+ Norm(8v*alpha_p-8u), whose magnitude is
+ (8v)^d product_sigma |sigma(alpha_p)-theta|.
+The factor v^d is essential. The next sections show that even P_p(theta)
+itself grows for this family; the criterion cannot succeed.
+
+2. Correct principal normalization and signed error
+---------------------------------------------------
+The round10 cotangent expression Sigma_4 at the prescribed half cusp
+satisfies alpha_p=(p/2)*sin(h)^4*Sigma_4. Its proved two-term expansion
+therefore gives
+
+ alpha_p=theta - [pi^2*(4*theta+5*beta(2))/24]*p^(-2)
+                      +O(p^(-4)).                            (4)
+
+For completeness this can be derived directly, with no topological
+theorem: cos(x)^3/sin(x)^4=x^-4-(5/6)x^-2+R(x), where R is smooth on
+[0,pi/2]. Alternating samples of R have uniformly bounded sum by its
+total variation. Alternating tails of n^-4 and n^-2 have bounds p^-4
+and p^-2. Hence
+ sum chi(n)*cos(nh)^3/sin(nh)^4
+ =h^-4*theta -(5/6)h^-2*beta(2)+O(1).
+Multiplication by sin(h)^4 and
+ (sin(h)/h)^4=1-(2/3)h^2+O(h^4) proves (4).
+
+The coefficient in brackets is strictly positive. Consequently the
+principal error theta-alpha_p is nonzero and comparable to p^-2 for
+all sufficiently large p. This is not inferred from numerical values.
+
+3. All conjugates: a small pole dominates
+----------------------------------------
+The embeddings of F_p can be represented uniquely by
+
+ k odd, 1<=k<2p, k!=p,
+
+and their values are
+ alpha_(p,k)=sin(kh)^4 sum_(n odd,0<n<p)
+                   chi(n)*cos(knh)^3/sin(knh)^4.             (5)
+There are d=p-1 of them, with exactly one representative for each pair
+of complex embeddings k and -k modulo4p. In this convention
+ alpha_(p,1)=alpha_p and alpha_(p,2p-1)=-alpha_p.
+These are two DISTINCT real-field embeddings.
+
+Let f(x)=cos(x)^3/sin(x)^4 on(0,pi/2), and put
+ C=sum_(n odd,n>=1)n^-4=pi^4/96,
+ delta=2-C>0.
+The function x^4*f(x) is strictly decreasing. To check this, its
+logarithmic derivative is4/x-3*tan(x)-4*cot(x). The desired sign is
+equivalent to H(x)>0 for
+ H(x)=x*(3+cos(x)^2)-4*sin(x)*cos(x).
+Since H(0)=0 and H'(x)=7*sin(x)^2-2*x*sin(x)*cos(x)
+ >=5*sin(x)^2>0 (use x*cos(x)<=sin(x)), the sign follows.
+In particular f(mh)<=f(h)/m^4 for odd1<=m<p.
+
+Multiplication by k permutes the pairs {n,2p-n} of odd nonzero residues
+modulo2p. For every n in our half set, write kn=2p*l+epsilon*m with
+epsilon=+/-1 and odd0<m<p. Then f(knh)=(-1)^l*f(mh).
+Therefore the sum in (5) is sum_m eta_m*f(mh), with EVERY eta_m=+/-1
+and EVERY odd m in the half set appearing exactly once. Regardless
+of these signs, the m1 term outweighs the whole tail:
+
+ delta*f(h) <= |sum_m eta_m*f(mh)| <= C*f(h).
+
+It follows uniformly over all embeddings that
+
+ delta*cos(h)^3*[sin(kh)/sin(h)]^4
+   <= |alpha_(p,k)|
+   <= C*cos(h)^3*[sin(kh)/sin(h)]^4.                        (6)
+
+This explicitly counts every conjugate rather than estimating only
+the physical value. It explains why a normalizer small at k1 is costly
+elsewhere: sin(kh) is of order1 for most k.
+
+For p>=5 and k notin{1,2p-1}, sin(kh)>=sin(3h) and
+ sin(3h)/sin(h)=3-4*sin(h)^2>=2.
+Using delta>0.98 and cos(h)^3>=3*sqrt(3)/8>0.64, (6) gives
+ |alpha_(p,k)|>10.                                      (7)
+The principal value is positive by the alternating decreasing sum,
+and at most C<1.02. Thus it is the ONLY conjugate in(0,2).
+No nontrivial embedding fixes alpha_p, proving [Q(alpha_p):Q]=d.
+For p3, alpha_3=3*sqrt(3)/8 has degree2=d directly.
+
+4. Complete product and actual primitive growth
+-----------------------------------------------
+The exact sine product over our embedding representatives is
+
+ product_(k odd,1<=k<2p,k!=p) sin(kh)=2^(1-p)=2^-d.        (8)
+
+For example, (8) follows by evaluating the factorization of x^p+1
+at x1 and taking absolute values, then removing the k=p term (which
+has sine1). Equivalently it is the usual product over odd sine angles.
+Applying (6) and (8),
+
+ [delta*cos(h)^3/(16*sin(h)^4)]^d
+ <= product_k |alpha_(p,k)|
+ <= [C*cos(h)^3/(16*sin(h)^4)]^d.                         (9)
+
+Since theta lies in(80/81,1), for the d-2 nonprincipal embeddings (7)
+implies
+ 0.9*|alpha_(p,k)| < |theta-alpha_(p,k)|
+                         < 1.1*|alpha_(p,k)|.
+For k1, use (4); for k=2p-1, theta+alpha_p stays bounded above and
+below by positive constants. Also alpha_p itself stays bounded above
+and below by positive constants. Replacing the two principal factors
+in (9) therefore changes the logarithm only by -2*log(p)+O(1), and
+all other replacements change it by O(d). As sin(h)~pi/(2p),
+
+ log|M_p(theta)|=4*d*log(p)+O(d).                         (10)
+
+In particular M_p(theta) is nonzero for all large p. The actual
+primitive polynomial satisfies
+
+ |M_p(theta)| <= |P_p(theta)| <= 8^d*|M_p(theta)|,
+
+because1<=g_p<=8^d. Hence
+
+ log|P_p(theta)|=4*(p-1)*log(p)+O(p) -> +infinity.         (11)
+
+This is a statement about the actual primitive polynomial in (3),
+not an inference from a sufficient denominator-clearing estimate.
+The separate minimal-degree argument in Section3 also shows it is
+the primitive minimal polynomial of alpha_p. No conclusion is being
+transferred silently from an ambient polynomial to one of its factors.
+
+5. Prescribed checks and boundaries
+-----------------------------------
+Run: python3 collaboration/round-11/norms/check_sine_norms.py
+Output: checks.json.
+
+For p3,5,7,11 the script constructs U_p in Z[w]/Phi_(4p), verifies
+reality and the sign involution, computes the exact resultant, and
+finds the expected square of a degree(p-1) monic polynomial. It then
+clears the factor8, computes the COMPLETE integer content, and keeps
+the primitive polynomial. The contents are1,1,64,1; no assumed uniform
+gcd has been used. Their log absolute primitive evaluations at theta
+are approximately3.57,14.32,25.43,67.93.
+
+Separate100-digit diagnostics at p11,31,101 check every conjugate in
+(6), the principal p^-2 error and the full product. These numerical
+checks are not certified intervals, proofs of the asymptotics, or
+formal verification. The all-prime argument is the proof above.
+
+The source of (1) is the round10 even-power extension, itself inspired
+by Marché--Masbaum's CUBIC integer-signature formula. None of their
+theorems assert the present even-power integrality or norm estimate;
+these have been derived explicitly. Their original source/read scope
+is frozen in round10/fresh/source_scope.json. The present proof imports
+only elementary root-of-unity and trigonometric identities, all supplied.
+
+No larger scan is warranted by this family. A repair would have to
+change the distribution of the conjugates (or introduce a different
+arithmetic mechanism), not just sharpen the principal expansion.

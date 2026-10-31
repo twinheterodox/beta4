@@ -1,0 +1,137 @@
+Optimal rational lifts: a two-dimensional reformulation
+28 October 2026. Local and unpublished.
+
+Follow-up: quotient-investigation.txt carries out the proposed prefix and
+filter investigation. It proves a qualitative limiting-metric theorem,
+compares all 144 new directions with continued fractions, and records
+finite failures of explicit filters. The original pilot below is retained.
+half-pole-arithmetic.txt records the resulting uniform arithmetic gain.
+
+This follow-up arose while deciding what to investigate after
+block-arithmetic.txt. It supplies an exact reformulation and one finite
+pilot, not a uniform decay theorem or an irrationality proof. All checking
+was by the same agent.
+
+1. The source weights may be rational
+
+The analytic moment inequality in block-arithmetic.txt applies to arbitrary
+real source weights. For an irrationality argument, the FINAL coefficients
+of beta(4) and 1 must be integral and the coefficient of G must vanish.
+There is no need to impose integrality on the source weights themselves.
+
+Let V be the 2w by 3 matrix of normalized source coefficient rows, ordered
+as (G,beta(4),1), and let H be the rational positive definite circle Gram
+matrix from that note. A row x of source weights gives image xV and norm
+squared x H x^T. V has rank three for the blocks under consideration.
+
+For any prescribed image u, put
+
+    W=H^(-1)V,
+    J=(V^T H^(-1)V)^(-1),
+    x_*=u J W^T.
+
+Then x_* V=u, and
+
+    min_{xV=u} x H x^T = u J u^T.                           (1)
+
+Indeed x_* H=u J V^T. If yV=0, the cross term between x_* and y is
+zero, so (x_*+y)H(x_*+y)^T=x_* H x_*^T+y H y^T. This proves optimality
+and uniqueness. All the data are rational, so x_* is rational for every
+rational u; no approximation or rounding of the minimizer is needed.
+
+For u=(0,A,B), let K be the beta/constant principal 2 by 2 submatrix of J.
+Then every integer pair A,B has a rational lift and the certificate
+
+    |A beta(4)+B| <= 514 sqrt((A,B) K (A,B)^T).              (2)
+
+The two best independent integer directions for this positive definite
+binary quadratic form are found by exact Gauss reduction. This removes
+the exact-identity directions before optimization. Optimality is relative
+to this particular circle-norm certificate, not to every possible bound.
+
+Relation to the preceding integer-source search: clear the denominators
+of x_* by D. The integer source vector Dx_* has coefficient image
+(0,DA,DB). For a primitive pair A,B its image gcd is exactly D. Dividing
+by this gcd recovers x_*. Thus these rational lifts are compatible with
+complete primitive reduction of the old family. The old search optimized
+integer source rows first and only then divided selected images by their
+gcd; it could miss the much better primitive directions obtained here.
+This is an improvement in formulation and optimization, without a claim
+of a new general approximation theorem.
+
+2. Exact pilot
+
+Use N=8,w=16, so m=8,...,23, with the same normalization, circle and
+constant 514 as before. Exact Gauss reduction gives coefficient pairs
+
+ A_1=21476276077376486606272803816149626853903585025611,
+ B_1=-21238846218409313605479349262563260808351391652700,
+ A_2=36989132945306620308855585700905004922458739227456,
+ B_2=-36580201499888406982459260186607049363669001143709.
+
+Their determinant A_1 B_2-B_1 A_2 is 1. The coefficient bit lengths
+are 164 and 165. The certified bounds are, respectively,
+
+    |A_1 beta(4)+B_1| < 2.867*10^(-45),
+    |A_2 beta(4)+B_2| < 8.724*10^(-45).
+
+Both are below 9*10^(-45), verified by exact rational squared inequalities.
+For comparison, the preceding source-lattice search on this SAME block
+had both errors bounded by 2.55*10^(-19), with 248-bit coefficients.
+Its larger N=16,w=24 block had bounds below 3*10^(-34) and coefficient
+sizes 426 and 432 bits.
+
+Arb evaluations give actual errors around -3.311*10^(-51) and
+4.086*10^(-50). Those values were not used in choosing the coefficient
+pairs or in the norm proof. No claim of superiority to continued fractions
+at comparable height is made. Gauss reduction of a binary form is itself
+closely connected to rational approximation, so a comparison with numerical
+continued fractions would not establish a distinct irrationality mechanism.
+
+The generator saves the rational source weights, image metric, and
+Lagrange multipliers certifying optimality. A separate Fraction checker
+rebuilds the three coefficient coordinates, directly translates the
+polynomials onto the circle, verifies Hx=V lambda, checks the determinant,
+and verifies the Gauss reduction inequalities and absolute error bounds.
+
+  .venv/bin/python experiments/quotient_circle.py
+  python3 experiments/quotient_circle_checks.py
+
+Outputs: results/quotient_circle.json and results/quotient_circle_checks.json.
+
+3. The next mathematical target
+
+For growing blocks, the target is a uniform upper bound tending to zero
+for the SECOND independent integer direction in K_(N,w). Control of the
+shortest direction alone does not suffice: at a rational beta(4), one
+direction can vanish identically. The existing pilot proves nothing about
+the required limiting behavior.
+
+One can write K=[[k11,k12],[k12,k22]] as
+
+    (A,B)K(A,B)^T
+       =k22 (B+alpha A)^2 + delta A^2,
+    alpha=k12/k22,   delta=det(K)/k22>0.
+
+In particular |beta(4)-alpha|<=514 sqrt(delta), by using the rational
+image (0,1,-alpha). A small delta alone does not bound the second integer
+direction: its behavior also depends on rational approximation to alpha.
+This prevents a determinant or volume argument from silently assuming
+the irrationality it is meant to prove.
+
+The recommended next investigation is to use the now-proved recurrence
+to understand the exact changing binary forms, their reduced coefficient
+pairs, and possible explicit recurrences for good pairs. In parallel in
+the mathematical sense, the positive moment model suggests constructing
+source polynomials with the arithmetic conditions built in. The existing
+filter [t(t-1)(t-2)]^n contracts on [0,256phi^(-10)], but has not been
+made arithmetically admissible with a proved acceptable cost.
+
+Integer polynomials small on an interval connect this latter direction
+to the integer Chebyshev problem. Pritsker's paper below studies the
+unconstrained extremal problem; it does not supply our auxiliary-period
+cancellation or denominator theorem. Only its abstract was consulted for
+this planning connection, not its full proof.
+
+I. E. Pritsker, Small polynomials with integer coefficients,
+https://arxiv.org/abs/math/0101166.

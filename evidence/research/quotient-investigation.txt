@@ -1,0 +1,316 @@
+Following the quotient metric: approximation, positivity, and arithmetic
+28 October 2026. Local and unpublished.
+
+This continues the investigation proposed at the end of quotient-circle.
+The exact prefix metrics are now computed through width 96. A better
+interval norm improves finite certificates, but all 144 selected integer
+directions are continued-fraction convergents or intermediate convergents.
+A qualitative theorem explains why the analytic metric degenerates and
+why its second integer minimum remains the essential arithmetic issue.
+
+Two explicit contracting polynomial families and a separate positive
+Catalan-cancellation construction were tested with full primitive reduction.
+None of those tested families supplies shrinking integer forms. The useful
+arithmetic result that emerged during this investigation is recorded in
+half-pole-arithmetic.txt: an exact parameter identity and smaller proved
+denominator bounds. No irrationality proof or independent audit is claimed.
+
+1. Fixed conventions and exact metric updates
+
+This note uses the BLOCK index m. Write
+
+ A_m=a_(2m), B_m=b_(2m), C_m=c_(2m), D_m=d_(2m),
+ R_m=A_m G+B_m,
+ S_m=16A_m theta+C_m G+D_m,
+ theta=beta(4), G=beta(2).
+
+The positive moment representations in block-arithmetic give
+
+ Rbar_m=R_m/(4m+1)^2=integral t^m dmu(t),
+ Sbar_m=S_m/(4m+1)^2=integral t^m deta(t),
+
+with positive infinite-support measures on [0,rho], rho=phi^(-10), and
+masses <8 and <128. Here phi=(1+sqrt(5))/2. For the circle with center
+h=1/256 and radius r=1/224, they give the uniform certificate
+
+ |Rbar(P)+Sbar(Q)| <=514 sqrt(||P||_circle^2+||Q||_circle^2). (1)
+
+The norm is normalized L2 on that circle. The underlying coefficient
+matrix V has rows (A_m,0,B_m)/(4m+1)^2 and (C_m,16A_m,D_m)/(4m+1)^2,
+in coordinate order (G,theta,1). For the prefix m=0,...,w-1, w>=2,
+put J_w=(V^T H^(-1)V)^(-1), where H is the source norm Gram matrix.
+The beta/constant principal submatrix K_w is the exact optimal metric:
+
+ min_(xV=(0,A,B)) xHx^T=(A,B)K_w(A,B)^T.
+
+The minimum permits rational source weights. Only A,B have to be integers.
+The proof and explicit minimizer are in quotient-circle, Section 1.
+
+The circle polynomials P_j(t)=((t-h)/r)^j=(224t-7/8)^j are orthonormal.
+Let Z_j be the two coefficient-image rows of Rbar(P_j), Sbar(P_j).
+Then M_w=J_w^(-1)=sum_(j<w) Z_j^T Z_j. Consequently
+
+ J_(w+1)=J_w-J_w Z_w^T (I_2+Z_w J_w Z_w^T)^(-1) Z_w J_w.  (2)
+
+This exact rank-two update was verified at every width through 96. It is
+a useful computational identity; it is not a recurrence for the reduced
+integer coefficient pairs and does not imply their required decay.
+
+2. A stronger interval-norm certificate
+
+The containing interval [0,b], b=1/122, has rational endpoint. On it use
+the normalized uniform L2 norm and shifted Legendre polynomials
+
+ P_j(t)=L_j(244t-1)
+       =sum_(m=0)^j (-1)^(j-m)binom(j,m)binom(j+m,m)122^m t^m.
+
+Their squared norms are 1/(2j+1). For any polynomial of degree <w,
+the facts |L_j(x)|<=1 on [-1,1] and sum_(j<w)(2j+1)=w^2 give
+
+                   ||P||_infinity <= w ||P||_L2.
+
+The moment masses then imply
+
+ |Rbar(P)+Sbar(Q)|
+       <=129w sqrt(||P||_L2^2+||Q||_L2^2).                (3)
+
+All metric calculations remain rational. In this basis
+M_w=sum_(j<w)(2j+1)Z_j^T Z_j; the update (2) uses I_2/(2w+1)
+in place of I_2. The dependence of the certificate constant on w is
+retained. In particular, for this norm it is 129w times the second
+minimum, not the second minimum alone, that must tend to zero.
+
+Examples from EXACT Gauss reduction, with Arb enclosures of the resulting
+norm bounds, are below. Each bound applies to both independent directions.
+The coefficient size is the maximum bit length of their four integers.
+
+  width    circle bound       bits     interval bound      bits
+   16      6.67 * 10^(-30)     100      1.49 * 10^(-32)      107
+   32      4.33 * 10^(-65)     215      3.89 * 10^(-70)      231
+   64      8.24 * 10^(-136)    450      5.47 * 10^(-146)     483
+   96      1.52 * 10^(-206)    685      7.92 * 10^(-222)     736
+
+These are prefixes N=0. They should not be confused with the earlier
+N=8,width=16 pilot. The new sample covers widths 2,...,32 and 40,48,64,
+80,96 for both norms: 72 metrics and 144 integer pairs.
+
+After constructing the metrics and choosing the pairs, the script computed
+an Arb-certified continued-fraction prefix of theta. Of the 144 pairs,
+114 are convergents and 30 are intermediate convergents. Every first
+Gauss vector is a convergent. The remaining second vectors have the
+exact form
+
+ (q_(k-2)+j q_(k-1), -(p_(k-2)+j p_(k-1))),  1<=j<a_k.
+
+The numerical value of theta played no role in constructing the metrics
+or selecting the pairs. This is nonetheless approximation of the familiar
+continued-fraction kind, not evidence of a new irrationality mechanism.
+No all-width claim about this exact CF classification is made.
+
+3. What the circle metrics converge to
+
+There is a uniform explanation for the analytic degeneration. This
+section concerns the fixed circle norm, whose constant in (1) is uniform.
+Let lambda_2(K_w) be the least possible maximum of the K_w lengths of
+two linearly independent integer pairs. Then
+
+             lambda_2(K_w) -> 0  IF AND ONLY IF theta
+             is irrational.                              (4)
+
+This is a characterization, not a proof that either side holds. Its
+point is to isolate the arithmetic content which an estimate must supply.
+
+Proof. The new terminating formula in half-pole-arithmetic implies
+A_m>=8 and 0<=C_m/A_m<8. Define the rational number
+
+ alpha_m=(C_m B_m-A_m D_m)/(16 A_m^2).
+
+The source combination
+
+ ell_m=S_m/(16A_m)-C_m R_m/(16A_m^2)=theta-alpha_m          (5)
+
+has image (0,1,-alpha_m) and a source lift whose circle norm is at most
+
+ epsilon_m=(sqrt(65)/128)(4m+1)^2 (15/1792)^m ->0.         (6)
+
+Indeed its two normalized-source polynomials are multiples of t^m,
+with common factor (4m+1)^2/(16A_m), and |t|<=h+r=15/1792 on
+the circle. Inequality (1) also shows |theta-alpha_m|<=514 epsilon_m.
+
+There is a fixed rational lift of the constant 1:
+
+        1=(25/B_1)Rbar_1-(A_1/(8B_1))Rbar_0,             (7)
+
+where A_1=649/8, B_1=-10699/144. Denote its circle norm by C0.
+For any fixed real A,B, combine A times (5) with (B+A alpha_m) times
+(7). The image is (0,A,B), and the norm is at most
+
+               |A|epsilon_m+C0|B+A alpha_m|.
+
+For rational A,B this is a rational lift, as required by the arithmetic
+construction. Allowing real A,B here simply describes the quadratic form.
+
+Enlarging the prefix only adds possible source polynomials, so K_w
+decreases in the positive-semidefinite order and has a limit K_infinity.
+The preceding lift and (1) give, for every real A,B,
+
+ |A theta+B|/514 <= sqrt((A,B)K_infinity(A,B)^T)
+                         <= C0 |A theta+B|.
+
+It follows that
+
+       K_infinity=c [[theta^2,theta],[theta,1]],
+       1/514^2<=c<=C0^2.                                 (8)
+
+Thus the analytic limit has rank one regardless of whether theta is
+rational. This observation by itself says nothing decisive about the
+second INTEGER minimum.
+
+If theta is irrational, there are two independent integer pairs with
+|A theta+B| as small as desired, by elementary rational approximation.
+Fix two such pairs, then let w grow; (8) makes their K_w norms as small
+as desired. This proves the forward implication in (4).
+
+Conversely, if theta=p/q in lowest terms, any two independent integer
+pairs include one for which |A theta+B|>=1/q. By (1) its K_w norm is
+at least 1/(514q), for every w. This proves the other implication.
+
+Consequences. A small determinant, small transverse eigenvalue, or fast
+convergence of the rational center to theta is expected even in the
+rational case. A proof of a quantitative upper bound tending to zero
+for lambda_2 would still prove irrationality; (4) does not rule out such
+an arithmetic proof. It explains why analytic richness and finite
+success alone do not supply that proof.
+
+4. A direct arithmetic sufficient estimate, and its finite failure
+
+For a rational positive definite binary form K, write K=s Z, where s>0
+is rational and Z is a primitive integral matrix. A Gauss-reduced matrix
+g has 0<g11<=g22 and |g12|<=g11/2. Hence
+
+   det K>=3 g11 g22/4,       g11>=s,
+   lambda_2(K)^2=g22<=4 det(K)/(3s).                       (9)
+
+This is a genuine arithmetic upper bound, rather than an argument from
+volume alone. But it is far too weak for the tested metrics. At width
+96 the natural logarithm of the resulting ERROR upper bound is about
++3624 for the circle metric and +4016 for the interval metric. In
+contrast the actual reduced-vector bounds are those in Section 2.
+Every one of the 72 tested estimates (9) is large, not small.
+
+The rational centers alpha=k12/k22 also have expensive denominators:
+11,516 bits and 12,840 bits at width 96 for the two norms. Their excellent
+real approximation does not automatically turn them into useful primitive
+integer forms. These finite diagnostics do not exclude sharper arithmetic
+estimates, congruences, or a successful different construction.
+
+5. Integer polynomial filters: the full normalization matters
+
+Put u=256t. On [0,256rho] two integral polynomials contract:
+
+ f(u)=u(u-1)(u-2),            |f(u)|<=2/(3sqrt(3))<2/5,
+ g(u)=u(u-2)(u-1)^2,          |g(u)|<=1/4.
+
+For the second assertion put v=u-1,z=v^2. Then g=z(z-1), and
+0<=z<=(67/61)^2 because 256rho<128/61. The endpoint value is less
+than 1/4 and the interior minimum is -1/4. This proves the bound.
+
+For an unnormalized source, multiplication of the m-th moment by
+(4m+1)^2 is the differential operator (4u d/du+1)^2. For F=f^N or
+g^N, with |f|<=tau, |f'|<=d1, |f''|<=d2, it gives the bound
+
+ B_N=16U^2[N(N-1)tau^(N-2)d1^2+N tau^(N-1)d2]
+        +24UN tau^(N-1)d1+tau^N,
+ U=17/8,
+ (tau,d1,d2)=(2/5,3,7) or (1/4,4,14).
+
+The filtered R and S have absolute values at most 8B_N and 128B_N.
+If their coefficient quadruple is (a,b,c,d), eliminating G gives
+
+                 16a^2 theta+ad-cb=aS-cR.
+
+The experiment clears its exact denominators, divides the FULL gcd of
+the two final integer coefficients, and tests the resulting primitive
+form. Both families were checked at N=1,...,24,32,48,64: 54 cases.
+Every primitive absolute value is rigorously above 1. At N=64 their
+logarithms are about 4945 and 6617, respectively. Thus real contraction
+of these particular powers is overwhelmed by their arithmetic cost.
+
+This is not a uniform impossibility theorem for all integer filters,
+all powers, or all ways of combining source rows. It is a failed finite
+test of the two explicit constructions just described.
+
+6. A uniform positive form with exact Catalan cancellation
+
+There is a separate construction that guarantees nonvanishing, without
+checking numerical continued fractions. Define rational functionals
+on polynomials by
+
+ calA(t^m)=A_m/(4m+1)^2,
+ calC(t^m)=C_m/(4m+1)^2,
+ calD(t^m)=D_m/(4m+1)^2.
+
+Then Sbar(P)=16 calA(P)theta+calC(P)G+calD(P)=integral P deta,
+and calC(1)=0. For any rational polynomial F put
+
+           V=calC(F^2)-2calC(F)F.
+
+Expansion gives calC(V^2)=0 exactly. Consequently, whenever V is a
+nonzero polynomial,
+
+          16 calA(V^2)theta+calD(V^2)=integral V^2 deta>0.  (10)
+
+Strict positivity follows from the positive measure's infinite support.
+For F=t^N, N>=1, formula (3) in half-pole-arithmetic gives calC(F)>0,
+so V is nonconstant and (10) is a uniformly nonzero beta(4)-only family.
+The underlying operation is an elementary rational parametrization of
+a quadratic equation with the known isotropic vector 1; no claim of
+a new general parametrization method is made.
+
+The missing property is arithmetic smallness. The exact experiment tried
+F=t^N; F=f(256t)^N; F=L_N(2t/123-1)-(-1)^N; and seven polynomials
+obtained by solving calC(t^i F)=calC(t^i) on i=1,...,N. The first three
+families use N=1,...,16,24,32, and the last uses N=2,4,8,12,16,24,32.
+All 61 primitive integer values are positive and rigorously above 1.
+
+For the last construction, the required finite matrices were invertible
+at the tested sizes. No general positivity or invertibility theorem for
+those calC Hankel matrices is assumed. The positive measure in (10) is
+eta, not a hypothetical positive measure representing calC.
+
+The positive cancellation identity is valid even though these choices
+fail the size test. In particular, this direction has supplied a uniform
+nonvanishing construction but not the normalization estimate needed for
+irrationality.
+
+7. Record and remaining mathematical issue
+
+The exact parameter identity in half-pole-arithmetic is the strongest
+new arithmetic result from this pass. It supplies information genuinely
+missing from the earlier residue estimates, while the metric and filter
+tests identify which observed successes do not close the proof.
+
+What remains is a family of nonzero INTEGER beta(4)-only forms whose
+values tend to zero, or another equally decisive irrationality criterion.
+A sharper real estimate by itself will not settle the tested failures.
+The parameter-level rational coefficient b_n(e) is a concrete unresolved
+arithmetic object; its undeformed version has a classical multiple-sum
+formula, but the derivative's full arithmetic has not been transferred.
+
+Reproduction:
+
+  .venv/bin/python experiments/quotient_evolution.py
+  python3 experiments/quotient_evolution_checks.py
+  .venv/bin/python experiments/integer_moment_filters.py
+  .venv/bin/python experiments/positive_catalan_cancellation.py
+
+The generator uses FLINT rational matrices and Arb enclosures. A separate
+Sympy/Fraction implementation rebuilds eight full monomial Gram metrics
+(both norms at widths 2,4,8,12), checks 100 exact Legendre inner products,
+and classifies all 144 saved directions as convergents or intermediate
+convergents. These are separate implementations by the same agent, not
+independent mathematical verification or formal proof verification.
+
+Outputs are the corresponding JSON files in results/. Exact large
+coefficients, primitive scaling factors, error intervals, and the
+continued-fraction diagnostic prefix are retained. All work remains local.

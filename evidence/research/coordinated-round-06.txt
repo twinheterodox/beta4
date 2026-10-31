@@ -1,0 +1,215 @@
+COORDINATED BETA(4) INVESTIGATION, ROUND 06
+29 October 2026. Local and unpublished. No irrationality proof.
+
+The main surviving construction is a prescribed rational Hermite family.
+It has exact beta(4)-only endpoint forms and admits fixed-size residue
+and rank reductions. Its required primitive height and nonvanishing
+estimates remain open. This round also constructed an integral modular
+pole multiplier and an exact algebraic tetralogarithm presentation, while
+proving a true primitive obstruction for a new full-rank Gram family.
+
+Three workers and the coordinator prepared separate derivations and
+cross-checks. The reviews below are model cross-checks, not human audits,
+proof-assistant verification, or claims of novelty. Nothing was published.
+
+1. A selective integral modular pole multiplier
+
+Use the reviewed eta coordinate t of round05, with degree two on X0(32)
+and degree one on its Fricke quotient. For an odd prime p put m=p^2,
+N=32p^2, t1=t(q), t2=t(q^m), delta1=D_q t1,
+delta2=D_q t2=p^2 v, and
+
+ B_c=(delta1+delta2)^2-(c/p^2)delta1 delta2
+    =(delta1+p^2 v)^2-c delta1 v in Z[[q]].
+
+Its leading term is q^2. Let
+
+ C_p={4j^2:1<=j<p, j^2=p^2 mod16}
+       union {32r^2:1<=r<=floor(p/sqrt8)},
+ b_p=|C_p|=(1/4+1/sqrt8)p+O(1),  W_p=product_(c in C_p)B_c.
+
+The ordinary t1=t2 orbit has derivative-ratio invariant
+R+R^-1=4j^2/p^2-2; its trace is possible exactly at the displayed
+congruence classes. The shifted Fricke orbit has invariant
+R+R^-1=32r^2/p^2-2, independently of its other matrix entries. Thus
+W_p cancels every ordinary and every shifted r!=0 denominator-zero
+family. A local ramification argument proves that denominator zeros
+have order at most two and that the cancellation includes branch points.
+No period values at the canceled poles need to be evaluated.
+
+The weight can be removed without introducing primes or interior poles.
+With Theta_a=theta3(2a tau)^2 and F_p=Theta_1 Theta_(8p^2),
+
+ U_p=W_p/F_p^(2b_p) in q^(2b_p)+q^(2b_p+1)Z[[q]]
+
+is a weight-zero Fricke-invariant modular function, holomorphic in the
+upper half-plane. F_p is a zero-free integral unit series and transforms
+by -N tau^2. This is a convolution of coefficient pairs, not a global
+scalar rescaling. Its initial zero coefficients are not witnesses.
+
+Multiplying round05's alternative remainder by U_p preserves its
+beta(4)-only coefficient pairs. The remaining candidates are the new
+Fricke fixed points tau=c/d+i/(sqrt32 p d), ad=1+32p^2c^2. The theta
+character automatically cancels those with d=3 mod4. Genuine surviving
+poles with d=1 mod4 were separately interval-certified at
+
+ (p,c,d)=(3,1,17),(5,1,9),(7,2,9),(11,2,9),(13,1,9),(17,4,9).
+
+They give a raw-coefficient limsup obstruction for these fixed primes.
+They do not establish a primitive obstruction, an all-index lower bound,
+or a uniform growing-prime theorem. The multiplier is a positive
+cancellation construction, not a successful irrationality sequence.
+
+Proof and root checks: collaboration/round-06/coordinator/pole_annihilator.*
+and remaining_fixed_points_check.*. Separate review and implementation:
+collaboration/round-06/fresh/pole_annihilator_review*.
+
+2. A genuine weight-four identity and precise module limitations
+
+Write D4(z)=Im[Li4(z)-log|z|Li3(z)+log^2|z|Li2(z)/3]. Exact distribution
+and prime deletion hold for this completed function. Applied to the
+non-torsion Broadhurst ladder, however, deletion changes the endpoint to
+additional values R(q^d); it does not retain a rational multiple of theta.
+
+Two scoped limits of simple functional repairs are now proved. First,
+primitive10p roots create genuine non-real-analytic singularities of
+R(t^p). A fixed rational-function module cannot absorb them; added
+arguments need total degree at least4(p-1)/3. An explicit divisor-symbol
+contraction also retains a coefficient with a p denominator. This is a
+parametric/symbol statement, not a statement about all numerical periods.
+
+Second, for a=1+i and distinct odd primes p, the integers
+N_p=Norm(a^p-1) are odd, greater than one, and pairwise coprime; every
+prime divisor ell satisfies ell=1 mod4p. Thus log|1-a^-p| introduces
+one new rational-log direction per p, with log N_p=p log2+o(1).
+This closes the proposed fixed rational S-unit/log module, not every
+larger functional construction or a primitive approximation family.
+
+A constructive pivot specializes Gangl's weight-four relation using
+X={w,b,c}, Y={2/3,2/3,-1/3}, w=(1+i)/2, and b,c the roots of
+2x^2-(1-i)x-1. It yields an exact presentation of theta as21 completed
+tetralogarithms at specified quartic arguments, all inside the unit disk.
+The coefficient l1 norm is39, maximum modulus0.98100176286..., and the
+least common integer scale to algebraic integers is216. The complete
+exact argument table and coefficient list are saved, not fitted by PSLQ.
+
+Source audit matters here. Gangl's printed definition includes an extra
+Li0 term if read literally with the standard convention; it does not
+satisfy the intended identity. The packet records that discrepancy and
+proves the needed standard-normalization identity through an exact
+symbol certificate and Zagier's criterion. A second worker independently
+checked a different one-variable certificate and fixed the additive
+constant. A small numerical residual alone is not used as the proof.
+
+The original uncompleted relative trace into Q(i) is valid. Inverting
+arguments individually to place them inside the disk breaks that orbit;
+the naive traced Taylor series then has radius below1/6. Completion also
+requires log|b| in the compositum with the conjugate field. A coupled
+algebraic/logarithmic rational approximation construction remains missing.
+
+Proofs, primary-source references, exact certificates, and trace limits:
+collaboration/round-06/identities/findings.txt and adjacent scripts/data.
+Independent review: arithmetic/identities_review.txt and crosscheck files.
+
+3. A positive full-rank Gram that really fails after primitive reduction
+
+Using the previously derived cyclotomic kernel
+J(P)=integral P(u,v) log^2(uv)/(sqrt(uv)(1+uv)) du dv, define
+
+ mu_m=J((u-v)^(2m))/96=binom(2m,m)theta+B_m,
+ P_n(X)=det[binom(2(i+j),i+j)X+B_(i+j)]_(0<=i,j<n).
+
+The real moments have positive support on[0,1], whereas their theta
+coefficient is the arcsine moment sequence on[0,4]. Consequently
+P_n has exact degree n and leading coefficient2^(n-1), with
+P_n(theta)>0 and log P_n(theta)=-(log4)n^2+O(n log n).
+This genuinely avoids the elementary rank-one collapse.
+
+Nevertheless, for every prime p>4n, its ACTUAL primitive multiplier obeys
+
+ v_p(kappa_n)=3 max(0,2n-2-floor(p/4)).
+
+The first nonzero third-layer residue produces an anti-triangular block;
+an actual polynomial coefficient attains the maximal denominator, so
+uncomputed global content cannot erase it. The prime range(4n,8n)
+alone gives log kappa_n>=6n^2+o(n^2). Combining true value and true
+primitive lower bounds proves
+
+ log[kappa_n P_n(theta)]>=(6-log4)n^2+o(n^2).
+
+Thus this principal Gram family fails even the degree-normalized
+small-value criterion. Other frames, weights, and arithmetic filters
+are not ruled out. A separate binomial/Mellin construction in the
+arithmetic packet also retains p^4 on an infinite prime subsequence;
+that latter fact alone is not an actual-value obstruction.
+
+Proof and exact checks: fresh/findings.txt and gram_checks.*.
+Independent mathematical review: coordinator/gram_review.txt.
+
+4. Prescribed rational Hermite sources: the live construction
+
+For D=1+x^2 or1+x-x^2, prescribe G=R/D^n, deg R<=2n, G(0)=0, and
+
+ f=A/(1+x^2)+E^4G/x, E=x d/dx,
+
+with zeros of order n at both0 and1. Signed integer minors, with a
+specified RREF fallback at deficient rank, choose the source independently
+of theta. Four integrations by parts give exactly
+
+ integral_0^1 f(x)(-log x)^3 dx/6=A theta+R(1)/D(1)^n.
+
+The rational endpoint is dyadic for the circular denominator and integral
+for the endpoint-unit denominator. Exact augmented-determinant formulas
+retain both source content and final pair content. Merely having only
+dyadic endpoint denominators is not a primitive arithmetic saving: the
+integer source coefficients may be large.
+
+The residual numerator has fixed degree: f=x^n(1-x)^n P/D^(n+4), deg P<=6,
+in the circular case; with the extra factor1+x^2 in the denominator it
+has deg P<=8 in the endpoint-unit case. The independent analytic follow-up
+reduces the circular source condition to six local logarithmic-residue
+equations in seven coefficients. Its zero-A subspace has exactly the
+nullity of an explicit4-by-4 binomial derivative matrix. These are proved
+equivalences, not observations from finite rank calculations.
+
+Both reductions extend to asymmetric endpoint orders with total2n.
+The denominator D_c=1+c x(1-x), c>0, has an analogous eight-residue
+description in nine coefficients and still has integral endpoint pairs.
+The coordinator's exact real optimizer gives the sufficient budget
+kappa H rho(c,a/n)^n; in the symmetric case rho=1/(4+c).
+It does not omit the unknown source height H or primitive content.
+
+The n=1 circular source has A=0 and primitive value1, explicitly accounted
+for. Finite exact checks reproduce complete source and primitive pairs;
+the tested nonzero-A primitive values all exceed one. Sturm calculations
+prove nonzero source integrals for circular n=3,...,8, with differing
+signs after A-positive normalization. There is no uniform rank,
+nonvanishing, or favorable primitive-height theorem yet.
+
+The next useful algebraic step is to extend the fixed4-by-4 homogeneous
+rank test to an inhomogeneous formula for the actual endpoint pair.
+That could make joint content and real-error analysis substantially
+more explicit. It is a research target, not a completed consequence.
+
+Proofs and arithmetic: arithmetic/findings.txt and hermite_sources.*.
+Independent arithmetic review: identities/arithmetic_review*.
+Fixed-size reductions: fresh/hermite_analysis.*; coordinator/hermite_review.txt.
+General real framework: coordinator/asymmetric_hermite.txt, separately
+reviewed in identities/asymmetric_hermite_review.txt.
+
+5. Evidence, preservation, and continuation
+
+Exact and interval checks were reproduced during integration, including
+the two independent symbol certificates, full primitive Hermite pairs,
+Gram residues/exponents, modular trace and theta identities, and selected
+period residuals. Finite checks are kept separate from all-index proofs.
+The archived baseline comprised650 files; no pre-round file was changed
+before integration. Only the root README and manifest are updated as
+the index of the new packet; preceding proofs and computations remain
+unchanged. The integration record stores the verification and hashes.
+
+Continue autonomously with the Hermite endpoint/content problem and a
+fresh construction search. Do not infer that any current family succeeds
+from its structural reductions or fails merely from poor finite values.
+The objective remains an irrationality proof of beta(4), and is not yet
+achieved.

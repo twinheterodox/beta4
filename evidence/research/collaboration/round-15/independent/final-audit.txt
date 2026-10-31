@@ -1,0 +1,263 @@
+FINAL NARROW AUDIT: COMPLETED CERTIFICATES AND ARITHMETIC CEILING
+30 October 2026. Local and unpublished. Independent model cross-check,
+with exact computations; not proof-assistant verification.
+
+Conclusion
+
+I found no correction needed in the completed deformed certificate
+definitions, boundary transfer, shifted valuation phases, selected-term
+inequality directions, dyadic exponent, breakpoint grid, or PNT/tail
+argument. The numerical ceiling and shortfall reproduce exactly.
+
+The negative conclusion is valid in its stated restricted sense: the
+specified forward-term/dual-row lower valuation estimates, combined with
+the established upper error bound, do not certify a useful integer-form
+estimate. This is not a bound on the actual primitive height or gcd, and
+does not prove asymptotic growth or nonvanishing of the projected errors.
+The current complete-deformation.txt, arithmetic-gate.txt, and findings.txt
+preserve these distinctions. No numerical period independence is used.
+
+1. All-index polynomial certificates and their normalization
+
+I read deformed_certificates.py, verify_deformation.py, the two completed
+certificate outputs, and the relevant source certificate arithmetic and
+boundary arguments. The independent audit_final.py rebuilds the forcing
+polynomials, loads the SAVED certificate coefficients, and verifies their
+full polynomial substitutions. It does not run or trust the polynomial
+solver to assert its own answer. All five residuals are zero at each
+quarter, for ten exact bivariate polynomial identities in total.
+
+The forward recurrence conversion uses the correct C_(n+1)/C_n, including
+the shifted factors 12,13,14 in its numerator and 2,3,4 in its denominator,
+and the unshifted 15,10,1,14 factorial factors. The descending-shift
+coefficient convention matches the companion's last column. The dual
+recurrence has no forward scalar normalization. Both independent rebuilt
+recurrences equal the saved ones exactly.
+
+The forward Gamma summand has positive shifted factors at the finite
+summation boundaries. Dividing it by the displayed K(n)D(n,k) gives
+h(k+1)/h(k)=A(k)/B_-(k+1), exactly with the alpha shifts in fproblem.
+At k=0 the B_- factor vanishes and h is finite. At k=14n+43 the
+reciprocal Gamma factor with argument zero vanishes; the remaining
+factors are finite. This sums the scalar recurrence at every n>=0.
+
+For the dual, an explicit continuation consistent with the rebuilt
+equations is, with a=1+alpha,
+
+ T_alpha(n,k)=exp(i*pi*k) Gamma(16n+k+a) Gamma(17n+k+a)
+  /[Gamma(2n+k+a) Gamma(n+k+a) Gamma(k+1)
+    Gamma(11n-k+1) Gamma(k-n+1) Gamma(12n-k+1)
+    Gamma(k-2n+1) Gamma(10n-k+2)].
+
+It obeys
+
+ T_alpha(n,-s-alpha)
+  =exp(-i*pi*(s+alpha)) sin(pi*(s+alpha))^3 R_n^alpha(s)/pi^3.
+
+The multiplier is 1-periodic. The row weights must therefore be
+(k+alpha)^j, and power(j,alpha) implements those weights exactly.
+The dproblem and dshift products reproduce this Gamma ratio and its
+index shifts. There is no extra n-dependent reflection sign.
+
+2. Transfer boundaries: different substitutions must be retained
+
+For the forward H kernel the reflection multiplier is pi^2/sin^2(pi*s),
+so the certificate uses k=1-s. The sampling boundary is s=12n+alpha,
+which explains the code's k=1-12n-alpha. These are compatible statements;
+one must not replace the forward substitution by k=1-s-alpha.
+
+For n>=2, all four shifted-index forward derivative tails start at
+m=12n on the grid s=m+alpha. Their omitted terms lie in the common
+triple-zero ranges. The certificate contains H_n(s-1), which has a
+triple zero at this lower boundary. Its denominator is nonzero there.
+The degree is at most zero, so its expansion at infinity is a constant
+plus O(1/s), whose first and second derivatives vanish at infinity.
+Local uniform convergence of the differentiated rational tails is enough
+to pass derivatives through the sums.
+
+For the dual the substitution is instead k=1-s-alpha. The potentially
+extra positive integer poles from D_1 are at n+2, 2n+2, and 2n+3.
+For n>=1, R_n(s-1) has the required zeros at all three points, and these
+factors cancel. Every remaining finite pole lies in -alpha+Z.
+Summing Laurent coefficients of each pole order is therefore invariant
+under translation s -> s+1. This proves the A and B row recurrences
+separately, without using independence of numerical zeta values.
+
+The two dual differentiated tails can start at integer m=16n for n>=1.
+All omitted terms are in the common double-zero blocks. The certificate
+contains R_n(s-1), which has a double zero at s=16n, and its denominator
+does not vanish there. Its degree is at most zero, so its derivative
+vanishes at infinity. Subtracting the already proved A and B recurrences
+then gives the D recurrence. The initial simple pole is retained.
+
+I independently rechecked the lower-denominator nonvanishing tests and
+the degree bounds from the saved polynomials. Using the separate
+linear-factor Laurent implementation from audit_deformation.py, I also
+recomputed the two exceptional forward recurrence indices n=0,1, the
+exceptional dual step n=0, and the first three forward matrix readouts.
+All pass at both quarters. These complete the initial-data and boundary
+requirements for the all-index identifications in this construction.
+
+3. Exact shifted valuation phase and the directions of the bounds
+
+For p>3, c in {1,3}, let l in {1,3} satisfy lp=c mod 4, and put t=l/4.
+The unique residue in [0,p-1] for which 4j+c is divisible by p is
+j0=(lp-c)/4. Hence the exact count for a block of length L is
+
+ #{0<=j<L : p divides 4j+c}
+   =floor(L/p-t+(c/4-1)/p)+1.                         (F1)
+
+The formula includes L=0. In the one-level range this is precisely
+v_p((c/4)_L); at higher levels the same count is applied to p^r with
+the appropriate residue phase. The independent script checks 2,208
+literal finite counts as diagnostics of the algebraic formula.
+
+Applying (F1) to interval products gives the stated f_t and nu_t with
+the MINUS phase. For a selected triple pole j=rn, the six denominator
+factorial lengths are
+
+ rn, (11-r)n, (r-1)n, (12-r)n, (r-2)n, (10-r)n+1.
+
+Thus the limiting formula drops only the last +1 offset. All finite
+offsets remain O(1/p) and are treated separately at walls. The two
+quarter phases exchange as p changes between 1 and 3 mod 4.
+
+For Lambda, sum(SE)=0, sum_A A*IE_A=30, and sum_A A*SE_A=-30.
+The +1 constants in (F1) cancel, as do all linear slopes. This proves
+the stated phi_t with no omitted phase constant or linear term.
+
+The inequality directions are correct:
+ - The minimum over all forward terms is at most the minimum over
+   k=rn, r=0,...,14.
+ - m_A is at most the selected triple-pole minimum, and m_B is at most
+   that minimum minus 1. Therefore their sum is at most twice that
+   minimum minus 1.
+ - Taking the maximum of these two upper bounds still bounds above
+   the maximum of the two specified lower valuation estimates.
+
+This yields exactly U_t. It is a ceiling on the ESTIMATES, not on the
+valuation of Q itself. Discarding the P4 constraints can only make that
+ceiling more optimistic. The explicit divisor paragraph added after
+(A3) is also valid: integrality supplies the zero valuation lower bound,
+so max(0,v_p(M_n)+w_p) is a legitimate common-divisor exponent.
+
+4. Complete grid, exact integral, and the PNT limit
+
+Every selected expression is a sum of floors d*x-t, with positive
+integer d<=28 and t in {0,1/4,3/4}; zero slopes are harmless constants.
+The jumps lie at (m+t)/d. The 854-cell grid is therefore a complete
+refinement. I independently generated the grid from the slopes actually
+present, obtaining 720 cells. It is contained in the coordinator's grid
+and gives EXACTLY the same rational integrals and upper bounds.
+
+Period one follows separately for each term from cancellation of its
+integer slopes, not merely from sample tests. Both U functions vanish
+near zero, are nonnegative, and have essential maxima 9 and 11. The
+integrals through 40 plus (9+11)/40 give
+
+ combined upper ceiling = 88.207529497305839689734595508644931... .
+
+The finite-estimate passage is sound. On a fixed compact x interval
+away from the finite rational wall set, all O(1/p) offsets in (F1) and
+the factorial arguments preserve their floors for sufficiently large n.
+Adding the two quarters removes the dependence on p mod 4. Ordinary
+PNT for the weighted prime sum then gives the integral against dx/x^2;
+PNT in arithmetic progressions is unnecessary.
+
+Fixed wall neighborhoods are handled before shrinking them. The finite
+selected forward valuation is at most 5. The selected triple-pole
+leading valuation and balanced Lambda valuation have uniformly bounded
+one-level contributions; the stated bounds 8 and 12 are conservative.
+Thus 32 per quarter dominates the finite ceilings, including offsets
+at walls. The neighborhoods' weighted contribution can be made
+arbitrarily small by PNT. For p<n/X above the one-level cutoff, the
+combined bound is at most 64*theta(n/X), giving 64n/X+o(n).
+The primes below sqrt(120n) contribute o(n), because the selected
+balanced valuations have only O(log n) bounded layers per prime.
+
+The order of limits is therefore important and correct: first n tends
+to infinity on fixed intervals, then wall neighborhoods shrink, then
+X tends to infinity. This proves the limsup bound by the full limiting
+integral. Only AFTER that passage is it legitimate to bound the remaining
+limiting integral by the sharper periodic maxima 9/40 and 11/40.
+Possible finite-prime wall exceptions are not silently bounded by those
+essential maxima.
+
+5. Dyadic exponent and analytic input
+
+For every forward interior summand, exactly
+
+ v2(B(n,k))=-90n+3*s2(10n)
+             +v2(binom(15n,n+k))+v2(binom(15n,k)),
+
+where s2 is binary digit sum. The two binomial carry counts are uniformly
+O(log n), so the forward minimum is -90n+O(log n).
+
+At a selected triple pole j=rn, its leading Laurent coefficient has
+
+ v2(leading)=-90n-1+sum s2(L),
+
+with the six factorial lengths L listed in Section 3. The numerator has
+30n odd-quarter factors, of total valuation -60n. Also exactly
+
+ v2(Lambda_n)=90n-1-sum_A IE_A*s2(An).
+
+Derivative and coordinate losses are O(log n); the endpoint's dyadic
+denominators have bounded order. Thus the specified dual-row q bound
+has the same -90n+O(log n) exponent. Taking the better bound leaves the
+product certificate's dyadic cost at 180 log 2 per index. This says
+nothing about extra dyadic cancellation in the actual Q sums.
+
+I independently checked that both normalized limiting matrices equal
+the source matrix, that its cubic has a unique real root in the stated
+positive bracket and a conjugate growing pair, and that the endpoint
+resultant is nonzero. I also rechecked the closed Lambda one-step ratio
+against the saved matrix-derived ratio at both quarters.
+
+The transfer of the recessive-state bound to fixed negative quarter
+alpha is legitimate: for real s>=2n and n>=1, the quotient of the
+shifted and unshifted denominator products is bounded by constants
+independent of n. Indeed it is a product of 30n+4 factors
+1/(1+alpha/(s+j)), each with s+j>=2n. The same product-rule estimates
+bound the derivative. Thus the finite-range exclusion exponent c0 is
+unchanged, and the tail still has a polynomial bound. The source's
+elementary cone argument applies to the identical limiting matrix;
+it does not require a summable O(1/n) perturbation. The initial state
+is nonzero because its three coefficient rows form an invertible matrix
+and the coefficient of the constant period is 1.
+
+Positivity and the Stirling comparison give the same exact Q growth
+exponent. Outward-rounded independent calculations give
+
+ g =112.8075392474546803394975923022004137551...,
+ sigma=65.45153656586513672669443353769926675898...,
+ required q-only content=142.8620263850657488089930566356699020164...,
+ certificate height floor=167.4620361352145894587560534292253850211...,
+ shortfall=54.65449688775990911925846112702497126597... .
+
+6. Interpretation, remaining scope, and reproduction
+
+These inequalities compare a ceiling on what the specified arithmetic
+estimates certify with an UPPER bound on relative error. They establish
+that this combination of estimates is quantitatively inadequate. They
+do not turn the upper error estimate into a matching lower estimate.
+No optimal error exponent or eventual nonvanishing of the character
+projection is used. The reported absence of such a nonvanishing theorem
+is appropriate. Extra cancellation in the projected error, or stronger
+content of the actual sums/minors, remains outside this assessment.
+
+This audit did not re-evaluate the five primitive Arb diagnostics or all
+442 prime diagnostics, and it does not independently certify the entire
+source paper, source archive, or formal developments. Their values are
+not needed for the certificate ceiling. The mathematical constructions,
+all-index identities audited here, and finite tests are distinguished
+from those other claims.
+
+Reproduce from /home/research/Chat/Math/beta4:
+ PYTHONDONTWRITEBYTECODE=1 collaboration/round-15/.venv-source/bin/python collaboration/round-15/independent/audit_final.py
+
+Outputs: independent/final-audit-results.json. The script uses the
+reviewed source module only for exact elementary polynomial arithmetic,
+and audit_deformation.py for the independent finite Laurent calculation.
+It writes only under independent/. The current narrow audit is complete;
+no further family, parameter search, or delegation was undertaken.

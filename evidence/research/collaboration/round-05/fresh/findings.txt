@@ -1,0 +1,362 @@
+Euler--Boole tail approximants: a uniform primitive-value obstruction
+===================================================================
+29 October 2026. Local and unpublished.
+
+No irrationality proof is obtained. The result below excludes one entire
+prescribed family, with every integer tail endpoint and every truncation
+order, by a lower bound on its ACTUAL primitive integer values. It is not
+an inference from an unsuccessful sufficient denominator bound.
+
+Let theta=beta(4), N>=1 and m>=0. Define
+
+ S_N = sum_(0<=k<N) (-1)^k/(2k+1)^4,
+ T_(N,m) = (1/12) sum_(0<=j<m)
+            E_(2j)(2j+1)(2j+2)(2j+3)/(2N)^(2j+4),
+ A_(N,m) = S_N + (-1)^N T_(N,m),                       (1)
+
+where sech(t)=sum E_(2j)t^(2j)/(2j)! and an empty sum is zero.
+Write A_(N,m)=a_(N,m)/q_(N,m) in lowest terms, with q_(N,m)>0.
+Thus
+
+                P_(N,m)(X)=q_(N,m)X-a_(N,m)           (2)
+
+is the uniquely normalized primitive integer linear polynomial.
+
+THEOREM. Every P_(N,m)(theta) is nonzero. Uniformly over all m>=1,
+
+ |theta-A_(N,m)| >= pi^2 exp(-pi*N)/(144N),             (3)
+
+and, uniformly over all m>=0,
+
+ liminf_(N->infinity) inf_(m>=0) log(q_(N,m))/N >= 8.   (4)
+
+Consequently
+
+ liminf_(N->infinity) inf_(m>=0)
+      log |P_(N,m)(theta)| / N >= 8-pi > 0.            (5)
+
+Every sequence with N+m tending to infinity therefore has
+|P_(N,m)(theta)| tending to infinity. Multiplying these primitive forms,
+even with degrees tending to infinity, cannot give values whose
+degree-normalized absolute values tend to zero (Section 6).
+
+The real exponential constant pi in (3) is sharp: if
+m=pi*N/2+O(1), then
+
+ |theta-A_(N,m)| ~ pi^3/(48*sqrt(2N)) * exp(-pi*N).    (6)
+
+The arithmetic rate 8 is a proved lower bound, not a claim to the exact
+denominator rate for every growing truncation schedule. Actual denominators
+can be much larger. No assertion is made about arbitrary rational linear
+combinations, Padé approximants, or determinants of these forms.
+
+
+1. Independent choice and archive check
+---------------------------------------
+
+00_initial_ideas.txt was written before reading the archive. The initial
+choice was a nonlinear moment determinant. README.txt and the round-04
+fresh note showed that the elementary Mellin Hankel version already has
+a rank-one theta coefficient and had already been considered. The pivot
+to (1) was recorded in 01_pivot.txt before developing this theorem.
+
+This is the midpoint Euler--Boole expansion of an alternating tail. The
+summation method and Euler numbers are classical, not new constructions.
+A local text search found related Euler expansions but did not locate
+this particular uniform primitive-value theorem in the existing archive.
+That search is not a literature survey or a priority claim.
+
+
+2. Exact tail identity and integral remainder
+---------------------------------------------
+
+The Euler numbers used here are integers directly from
+
+ E_0=1,  E_(2r)=-sum_(0<=j<r) binom(2r,2j)E_(2j), r>=1,
+
+which follows by multiplying the formal power series of cosh and sech.
+The Laplace representation 1/u^4=(1/6) integral_0^infinity t^3 exp(-ut)dt
+and the geometric series give, for N>=1,
+
+ theta-S_N = (-1)^N R_N,
+ R_N = (1/12) integral_0^infinity t^3 exp(-2Nt)sech(t)dt.     (7)
+
+The exchanges can also be justified first on a finite alternating sum;
+the remainder is dominated by an integrable exponential. Integrating the
+finite Taylor polynomial of sech(t) gives exactly T_(N,m), because
+integral t^(2j+3) exp(-2Nt)dt=(2j+3)!/(2N)^(2j+4).
+There are no auxiliary beta-values, powers of pi, logarithms, or other
+periods in A_(N,m).
+
+Put a=pi/2 and a_k=(2k+1)a. The classical partial fractions identity is
+
+ sech(t)=2 sum_(k>=0) (-1)^k a_k/(a_k^2+t^2), t>=0.     (8)
+
+Here is a short derivation, to make the remainder argument self-contained.
+Expand f(x)=cosh(tx)/cosh(t), 0<=x<=1, in the mixed-boundary cosine basis
+cos(a_k x). Twice integrating f''=t^2 f by parts gives
+
+ integral_0^1 f(x)cos(a_k x)dx = a_k(-1)^k/(t^2+a_k^2).
+
+The cosine series at x=0 equals f(0) by ordinary Fourier convergence
+(the even extension is smooth near zero). Its coefficients are twice
+these integrals. This proves (8), including the conditionally convergent
+t=0 value. The remainder below is absolutely convergent.
+
+The finite geometric identity applied to each term of (8) gives, for
+every integer m>=1 and every t>=0,
+
+ sech(t)-sum_(j<m) E_(2j)t^(2j)/(2j)!
+   =(-1)^m t^(2m) C_m(t),
+
+ C_m(t)=2 sum_(k>=0) (-1)^k a_k^(1-2m)/(t^2+a_k^2).    (9)
+
+The coefficient identification follows by Taylor expansion near zero;
+the finite geometric identity then establishes (9) for all real t>=0.
+No convergent Taylor expansion outside |t|<pi/2 is being assumed.
+
+Set f_k(t)=2a_k^(1-2m)/(t^2+a_k^2). For m>=1 these are strictly
+decreasing positive terms, and
+
+ f_1(t)/f_0(t)
+   =3^(1-2m)(t^2+a^2)/(t^2+9a^2) <= 3^(1-2m) <= 1/3.
+
+Therefore the elementary alternating-series bound gives
+
+ (1-3^(1-2m))*2a^(1-2m)/(t^2+a^2)
+       <= C_m(t) <= 2a^(1-2m)/(t^2+a^2).               (10)
+
+Both inequalities are strict for t>0. In particular C_m(t)>0.
+Equations (7)--(10) prove
+
+ theta-A_(N,m)=(-1)^(N+m) epsilon_(N,m),
+ epsilon_(N,m)=(1/12) integral_0^infinity
+                   t^(2m+3)exp(-2Nt) C_m(t)dt >0.     (11)
+
+This nonvanishing is unconditional and holds even under the hypothesis
+that theta is rational.
+
+
+3. A uniform lower bound, and the sharp raw exponential rate
+-----------------------------------------------------------
+
+The lower half of (10) implies
+
+ epsilon_(N,m) >= (pi/18) integral_0^infinity
+           (t/a)^(2m) [t^3/(t^2+a^2)] exp(-2Nt)dt.
+
+For t>=a, (t/a)^(2m)>=1 and t^3/(t^2+a^2)>=a/2. Restricting the
+integral to t>=a gives
+
+ epsilon_(N,m) >= (pi/18)*(a/2)*exp(-2Na)/(2N)
+                =pi^2 exp(-pi*N)/(144N),
+
+which proves (3) uniformly in the completely unrestricted integer m>=1.
+
+For m=0 the separate estimate sech(t)>=exp(-t) in (7) gives
+
+                 R_N >= 1/[2(2N+1)^4].                (12)
+
+Thus m=0 is also nonzero and is larger on the exponential scale.
+
+For completeness, the exponential lower bound is not an artifact of a
+coarse estimate. Let m=aN+delta_N, with delta_N bounded. Equations (10)
+and (11) reduce epsilon to the first-pole integral with relative error
+O(3^(1-2m)):
+
+ epsilon_(N,m) = (1+O(3^(1-2m)))*(pi/12)
+   integral_0^infinity exp(N phi(t))
+       [t^3/(t^2+a^2)] (t/a)^(2delta_N) dt,
+ phi(t)=2a log(t/a)-2t.
+
+The unique maximum is at t=a, with phi(a)=-2a=-pi and
+phi''(a)=-2/a. The remaining factor at a is a/2, independently of
+delta_N. Laplace's method, uniform for bounded delta_N, gives
+
+ epsilon_(N,m) ~ (pi/12)*(a/2)*sqrt(pi*a/N)*exp(-pi*N),
+
+which is precisely (6). Standard localization proves this directly:
+outside a fixed neighborhood of a the exponent has a strict gap, and
+inside it the second-order Taylor term gives a Gaussian after scaling
+by sqrt(N). The factors (t/a)^(2delta_N) and their local derivatives
+are uniformly bounded for bounded delta_N.
+
+
+4. Large primes in the ACTUAL reduced denominator
+-------------------------------------------------
+
+Let p be an odd prime with p^2>2N and p<2N. Define J=J(N,p) as the
+number of positive odd integers r for which pr<2N. Multiplying S_N by
+p^4 and reducing modulo p leaves exactly the denominators divisible by p:
+
+                 p^4 S_N = chi_4(p) S_J mod p,         (13)
+
+provided reduction of S_J is defined. Indeed every such denominator is
+pr with r odd and r<p, and chi_4(pr)=chi_4(p)chi_4(r). All remaining
+summands vanish after multiplication by p^4.
+
+If p does not divide 6N then T_(N,m) is p-integral for EVERY m>=0:
+its only rational denominators in (1) divide 12 times a power of 2N.
+The integer Euler coefficients cause no additional denominator primes.
+Consequently, if S_J is a nonzero element of F_p, then
+
+       v_p(A_(N,m))=-4 and v_p(q_(N,m))=4              (14)
+
+for every m>=0. This is an exact valuation of the reduced fraction,
+not a factor asserted in a chosen clearing multiplier. Addition of a
+p-integral correction cannot cancel the p^(-4) principal part.
+
+Fix an integer K>=1. For all sufficiently large N, every prime in
+
+                      2N/(2K+1) < p < 2N              (15)
+
+has p^2>2N and 1<=J(N,p)<=K. Each S_j is a strictly positive rational
+number: it is an initial alternating sum of strictly decreasing positive
+terms, starting at 1. The finite list S_1,...,S_K therefore has finitely
+many numerator and denominator prime divisors. For sufficiently large N
+all primes in (15) avoid that finite exceptional set. Thus (14) holds for
+every prime in (15) other than the prime divisors of 6N.
+
+Let vartheta(x)=sum_(p<=x) log p. Since the sum of log p over the distinct
+prime divisors of 6N is at most log(6N), we obtain, uniformly in m,
+
+ log q_(N,m) >= 4[vartheta(2N)-vartheta(2N/(2K+1))-log(6N)]
+                     - O_K(1).                        (16)
+
+Endpoint conventions affect at most O(log N), and 2N is not an odd prime
+for N>=2. The prime number theorem vartheta(x)=x+o(x) yields
+
+ liminf_(N->infinity) inf_m log q_(N,m)/N
+               >= 8[1-1/(2K+1)].                      (17)
+
+K is arbitrary. Taking K to infinity AFTER the liminf proves (4).
+There is no unproved uniformity in K: every fixed K has its own finite
+threshold, which is all that the limiting argument needs.
+
+The obstruction already follows from K=1 alone: for primes
+2N/3<p<2N there is exactly one odd denominator divisible by p, so
+S_J=S_1=1 and no numerator exceptions occur. That gives denominator
+rate 16/3 and primitive-value rate 16/3-pi>0. The limiting argument
+sharpens the proved rate to 8-pi; it is not needed merely for divergence.
+
+In fact the proof of (4) applies to S_N+C_N for ANY rational correction
+C_N whose denominator primes are confined to those dividing 6N. It does
+not give a lower bound on the error of an arbitrary such correction;
+the signed integral in Section 3 is essential for the theorem about (1).
+
+
+5. Primitive values and all escaping parameter sequences
+---------------------------------------------------------
+
+For m>=1 combine (3) and (4). For m=0 combine (12) and (4). The errors
+in these bounds are uniform in m, so they prove (5) for an arbitrary
+choice m=m(N), with no size restriction on that choice.
+
+If N is bounded and m tends to infinity, (10)--(11), restricted to any
+fixed interval [b,b+1] with b>a, give
+
+ epsilon_(N,m) >= c_(N,b)*(b/a)^(2m),  c_(N,b)>0.
+
+This diverges uniformly over any fixed finite set of N. Since q>=1,
+the primitive values also diverge. Combining this observation with (5)
+proves divergence whenever N+m tends to infinity, even when N itself
+does not tend to infinity.
+
+The theorem is compatible with finitely many small primitive values.
+For example N=1,m=0 gives X-1; N=2,m=0 gives 81X-80; and N=1,m=1
+gives 32X-31. Their values at theta are nonzero and smaller than one.
+They cannot be extrapolated to a shrinking sequence in this family.
+
+
+6. A limited growing-degree corollary
+-------------------------------------
+
+All the factors (2) are primitive and nonzero at theta, and their
+absolute values tend to infinity off finite subsets of the parameter
+lattice. It follows that
+
+              c = inf_(N>=1,m>=0) |P_(N,m)(theta)| > 0.    (18)
+
+For any finite product of d such factors, repeated factors allowed,
+Gauss's lemma says that the product is already a primitive integer
+polynomial of degree d. Its value satisfies
+
+                  |product P_(N,m)(theta)|^(1/d) >= c.    (19)
+
+Thus merely multiplying these prescribed forms does not repair the
+problem by increasing the degree. To see the relevance, if theta=u/v
+were rational, every nonzero integer polynomial F of degree d would
+satisfy |F(theta)|>=v^(-d). A sufficient polynomial irrationality
+sequence would have |F(theta)|^(1/d) tending to zero. Products in (19)
+cannot do this; for all v>=1/c the bound (19) alone is compatible with
+the rational lower bound. This does not exclude sums, resultants, or
+general determinant combinations, which need not factor in this manner.
+
+
+7. Extension and limitations
+-----------------------------
+
+The same proof works for beta(s), for every fixed integer s>=2. Replace
+t^3/12 by t^(s-1)/[2(s-1)!] in (7), and replace the correction coefficient
+by E_(2j)(s+2j-1)!/[2(s-1)!(2j)!]. The large-prime reduced denominator
+rate becomes at least 2s. Restricting the positive remainder integral to
+[pi/2,pi/2+1/N] gives a uniform lower bound C_s exp(-pi*N)/N. Thus the
+primitive-value lower rate is at least 2s-pi>0. This generalization is
+included as a proof consequence; numerical checks below focus on s=4.
+
+What is established:
+  * exact beta(4)-only rational approximants;
+  * unconditional remainder sign and nonvanishing;
+  * a uniform lower bound, with sharp optimal raw exponential rate;
+  * exact surviving prime valuations in primitive normalization;
+  * failure of every endpoint/truncation schedule, and of products of
+    its primitive factors under the degree-normalized criterion.
+
+What is not established:
+  * irrationality or rationality of beta(4);
+  * an obstruction to arbitrary Euler-type transformations;
+  * an obstruction to linear combinations of (1), Padé reconstruction,
+    nonlinear cancellation, or determinants that do not factor;
+  * the exact denominator rate for a general growing m;
+  * novelty, priority, human audit, or formal verification.
+
+
+8. Checks, sources, and reproduction
+-------------------------------------
+
+Reproducible scripts in this directory:
+  python3 collaboration/round-05/fresh/exact_checks.py
+  .venv/bin/python collaboration/round-05/fresh/interval_checks.py
+
+The first script uses exact rational arithmetic and independent formal
+series inversion. The second constructs the correction from factorial
+Laplace moments, computes theta and the tail separately with Arb Hurwitz
+zeta, checks signs and bounds, and records actual reduced coefficients.
+These are separate implementations by the same worker, not independent
+human verification. Their precise finite coverage is in their JSON outputs.
+
+Completed checks: 160 Euler coefficients by three exact implementations;
+13 direct symbolic sech coefficients; eight finite geometric identities;
+652 exact prime valuations; 43 primitive rational forms and 43 direct
+Hurwitz-tail comparisons; 16 signed remainder inequalities at points
+inside and outside the Taylor disk; four primitive product checks.
+All checks passed. Of the 43 primitive values, exactly the three small
+examples listed in Section 5 are below one. Four asymptotic ratios are
+also recorded as diagnostics; they are not the proof of (6).
+
+External reference scope, consulted 29 October 2026:
+  * NIST DLMF 24.2, equations 24.2.6--24.2.9:
+    https://dlmf.nist.gov/24.2#ii
+    Read the Euler-number generating-function convention, signs, and
+    integrality. The recurrence here also proves integrality directly.
+  * NIST DLMF 24.17(i), equations 24.17.1--24.17.2:
+    https://dlmf.nist.gov/24.17#i
+    Read the classical Boole summation formula and its remainder to check
+    the attribution of the method. Our tail identity is derived in (7).
+  * A search located Borwein--Calkin--Manna, Euler--Boole Summation
+    Revisited, at an author-hosted Clemson PDF. The fetch timed out;
+    that paper was NOT read and is NOT used as evidence here.
+
+The partial fractions identity is derived in Section 2. The only
+asymptotic arithmetic input is the classical prime number theorem.
+No exhaustive external search or originality assessment was attempted.

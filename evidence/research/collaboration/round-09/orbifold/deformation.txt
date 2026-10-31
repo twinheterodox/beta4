@@ -1,0 +1,104 @@
+ROUND09: NONCONSTANT TORIC BOX DEFORMATION
+29 October 2026. Local/unpublished. A construction gate, not a proof route.
+
+This is a different geometric step from extracting the old Gamma filter:
+change the mirror Laurent polynomial by an actual age1 box monomial.
+It changes the critical-value configuration and gives integral coefficients.
+It does not yet identify a pure beta4 connection coefficient.
+
+For X=P(1,3,4^5), take the fan vertices e_y,e_1,...,e_5 and
+v_0=(-3,-4,-4,-4,-4,-4). The quarter-sector box point is
+(v_0+3e_y)/4=(0,-1,-1,-1,-1,-1), with age1. Its monomial is
+U=(x1...x5)^(-1). Thus consider
+
+ W_lambda=y+x1+...+x5+y^(-3)(x1...x5)^(-4)+lambda U.          (1)
+
+This is not a constant shift of W. It is among the allowed monomials of
+the reflexive fan polytope. The extra toric parameter therefore belongs to
+the extended mirror construction discussed in Iritani0903 and1101.
+
+1. Exact integer sequence
+
+The only nonzero constant terms of W_lambda^N have N=6n. Writing a for
+the exponent of the old inverse monomial and b for that of U, the exponent
+conditions force b=n-4a, the y exponent3a, and each x_i exponent n. Hence
+
+ c_n(lambda)=CT(W_lambda^(6n))
+   =(6n)!/(n!)^5 sum_(a=0)^floor(n/4)
+                    lambda^(n-4a)/[a!(3a)!(n-4a)!].         (2)
+
+These are integers for integer lambda. An independent formula is
+
+ c_n(lambda)=(6n)!/(n!)^6
+       sum_a binom(n,4a)binom(4a,a)lambda^(n-4a).            (3)
+
+The inner sum is a binomial transform of the algebraic sequence which is
+binom(4a,a) at index4a and0 otherwise. Thus this deformation is a Hadamard
+product of the central multinomial sequence with an explicit algebraic
+sequence. It is not evidence of an unexamined generic Picard-Fuchs system.
+
+2. Exact critical values
+
+At a torus critical point all x_i=x. Write p=y x^5. The y derivative gives
+p^4=3, and the x derivatives give x^6=lambda+4p/3. The critical value is
+W_lambda=6x. Put kappa=4/3^(3/4). For the generating function
+sum c_n(lambda)t^n, the four candidate finite singularities from torus
+critical points have reciprocals
+
+          6^6(lambda+kappa zeta),   zeta in {1,i,-1,-i}.     (4)
+
+For nonnegative real lambda these are distinct except at degenerations.
+At lambda=0 their absolute values coincide; the first nonconstant deformation
+separates the positive critical value from the two complex ones. But its
+dominant/next growth ratio is only
+
+ (lambda+kappa)/sqrt(lambda^2+kappa^2) <= sqrt2,              (5)
+
+with equality at lambda=kappa. At integer lambda=2 the ratio is about1.41.
+The absolute next growth is 6^6 sqrt(lambda^2+kappa^2), much larger than1.
+Consequently canceling just the largest coefficient-growth term is not a
+small integer form by itself, even if the companion coefficients were
+integral. This is an analytic warning, not a primitive-value impossibility
+theorem: no suitable beta4 companion sequence has been supplied yet.
+
+3. More geometric freedom and the precise missing gate
+
+The remaining order4 box monomials give the larger family
+
+ W=y+sum x_i+y^(-3)X^(-4)+lambda X^(-1)
+                   +mu y^(-1)X^(-2)+nu y^(-2)X^(-3), X=prod x_i.
+
+At critical points x_i=x and p=yx^5, its reduction is
+
+ W=5x+x^(-5) f(p),
+ f(p)=p+lambda+mu/p+nu/p^2+1/p^3,
+ p^4-mu p^2-2nu p-3=0, x^6=f(p), W_crit=6x.                (6)
+
+The global monomial change p=yX gives exactly
+ W=sum_i x_i+f(p)/X,
+not just its critical-point restriction. It preserves the torus constant
+term and Haar form. The integral coefficient sequence is therefore
+(6n)!/(n!)^6 CT_p f(p)^n. This follows by multinomial expansion, so all three
+parameters can be treated without invoking a numerical differential-equation
+fit. No parameter scan was launched: calibration must come first.
+
+The central Gamma framing is topological, but fixing nonzero box parameters
+and extracting a new one-variable period does not automatically preserve
+the normalized quarter-Frobenius coefficient or isolate beta4. In particular,
+the fourth cumulant from findings.txt already lives beyond the homogeneous
+anticanonical period system. What is missing is an explicit extended period,
+cycle and boundary normalization for (1) or(6) whose relevant connection
+coefficient is rational*beta4 plus controlled rational terms. Only after
+that identity is proved would denominator/nonvanishing estimates have a
+defined object to estimate.
+
+This supplies a concrete possible repair mechanism and a decisive gate;
+it supplies neither that gate nor a credible integrality/convergence margin.
+It should not be advertised as a proof route until the calibration is done.
+The Kerr involution/strong-temperedness hypotheses were not established for
+this family, and cannot be inferred from its reflexive polytope.
+
+Reproduction: check_models.py checks (2) against(3) through n8 for
+lambda=0,1,2,3 and records the exact integers and critical-value magnitudes.
+The critical-value algebra above is exact. The general three-parameter
+reduction is an algebraic derivation, not a separately implemented check.

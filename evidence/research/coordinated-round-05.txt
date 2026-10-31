@@ -1,0 +1,264 @@
+COORDINATED ROUND05: BALANCED MODULAR DELETION AND THE POLES IT LEAVES
+29 October 2026. Local and unpublished.
+
+No irrationality proof has been obtained. This round transfers exact
+prime deletion into the modular/Eichler construction, with a precise
+theta-only endpoint and a genuine determinant arithmetic saving. It
+also identifies why three proposed modular coordinate/prefactor repairs
+fail to provide the intended raw decay. A separate fresh investigation
+proves a uniform primitive-value obstruction for Euler--Boole truncations.
+
+All full proofs and checks are under collaboration/round-05/. The two
+continuing workers initially chose modular mechanisms independently;
+both found the same quadratic repair. The fresh worker began without
+the conversation history, screened its initial idea against the archive,
+and then developed the Euler--Boole theorem. During cross-review it
+proposed another modular prefactor; the coordinator and fresh worker
+jointly analyzed its remaining complex poles. This is coordinated model
+review, not a human audit, formal verification, or priority assessment.
+
+1. The minimal Fricke-compatible prime filter
+
+Use the archived Lambert/Eichler series
+
+ F(q)=sum_(d odd) chi_4(d)q^d/[d^4(1+q^d)],
+ G(q)=sum_(d odd) q^d/[d^4(1+q^(2d))],
+
+and V_p h(q)=h(q^p). Their exact outer-index deletions are
+
+ (1-chi(p)p^-4 V_p)F,
+ (1-p^-4 V_p)G.
+
+Both have p-integral Fourier coefficients. A single deletion factor
+does not respect the cubic coefficient reversal needed by the Fricke
+transformation. The unique minimal simultaneous filter, up to scalar,
+has degree two:
+
+ C_p(V)=(1-chi(p)p^-4 V)(1-pV),
+ C_p^*(V)=chi(p)(1-p^-4 V)(1-chi(p)pV).
+
+For a degree-r F filter C, its paired G filter is
+p^(-3r/2)V^r C(p^3/V). Bounded p-denominators on both sides require
+C(chi(p)p^4)=C(p^-1)=0, explaining the minimal degree. With C_p(0)=1,
+both filtered Fourier series are actually p-integral.
+
+Apply these to the F and G components of the old H32 period filter.
+For selected primes S, P=product S, the new level is32P^2 and
+
+ S_2=7 product_(p in S)(1-p)(1-chi(p)/p^4).
+
+The exact new Fricke value is S_2 theta/2, theta=beta(4). The doubled
+rational F component alone has the theta-only cusp value S_2 theta
+at q=1. The period-killing moments remain zero, so no other period
+has been silently introduced at these stated endpoints.
+
+The arithmetic gain must be assessed for the actual target. Scalar
+coefficient forms have sufficient multiplier P^4 d^4, where d is the
+LCM of the odd integers in the coefficient prefix coprime to P. For
+large selected primes this can equal the old scalar clearing factor.
+For an order-n endpoint determinant, however, the bound is
+
+  kappa <= P^4 d_(2n,S)^(4(n+1)).
+
+The selected fourth powers are paid once in the endpoint, rather than
+once per determinant row. Deleting exactly y<p<=2n gives
+log^+kappa=o(n^2) when pi(y)log n=o(n). The exact n=8,p=11 comparison,
+using h_1=32 in every case, gives actual primitive exponent24 before
+filtering and4 after the quadratic filter.
+
+A quartic self-dual extension also exists, but is not a free improvement.
+At the same constant-dilation normalization its endpoint grows by p,
+its level grows by another p^2, and entry denominators of order p^3
+return. The same determinant then has exponent21, worse than4.
+Dividing the entire germ by an endpoint scalar does not change its
+primitive determinant pair: J_(h/a)(X)=a^(-(n+1))J_h(aX).
+
+Full proof: arithmetic/findings.txt. The arithmetic/analysis reviews
+corrected one quantifier: the cutoff set is exactly the primes in the
+specified band, so its product cannot contain uncontrolled larger primes.
+
+2. A cusp alternative with a uniform nonzero error
+
+For U=16F-10V_2F+V_4F, retain only minimal physical deletion:
+
+ U_S=product_(p in S)(1-chi(p)p^-4 V_p)U,
+ alpha_S=product_(p in S)(1-chi(p)/p^4).
+
+Its endpoint is(7/2)alpha_S theta. Unlike the sparse cyclotomic germ
+of round04, its Fourier coefficients at multiples of a selected prime
+are retained through the other Lambert divisors. The exact transformed
+identity is
+
+ U_S(tau)-(7/2)alpha_S theta
+  =-8i tau^3 sum_(r=1,2,4; d|P)
+        a_r r^3 mu(d)chi(d)/d G(-1/(8rd tau)),
+ (a_1,a_2,a_4)=(16,-10,1).
+
+Put x=pi/(16Py), sigma=product_(p in S)(1+1/p). Along tau=iy,
+
+ U_S(iy)-(7/2)alpha_S theta
+  =-512 mu(P)chi(P)y^3 e^-x/P * (1+epsilon),
+ |epsilon|<=2e^(-2x)+5P sigma e^-x.
+
+Thus x>=log(20P sigma) gives a uniform two-sided bound and known
+nonzero sign. The dependence on P is explicit: the sufficient cusp
+approach scale is y of order at most1/(P log P). These analytic
+evaluations are not automatically rational approximants of small height.
+
+For each FIXED finite S, the fourth derivative is a nonzero holomorphic
+positive-weight modular form. A cusp Fourier expansion proves it cannot
+be meromorphic through any finite rational cusp. Hence the q germ has
+the unit circle as a natural boundary. Its cumulative generating germ
+is nonrational, and Kronecker gives infinitely many nonzero endpoint
+determinants for that same fixed S. This does not prove nonvanishing
+when S varies with the determinant order.
+
+The natural boundary forces every filled compact supporting continuation
+from reciprocal infinity to contain the unit disk. Its minimum capacity
+is therefore1. This limits the usual unweighted absolute-contour bound;
+it is NOT a lower bound for actual determinant values. An endpoint-fixing
+Möbius substitution seems to improve capacity, but multiplies the whole
+Hankel pencil by exactly a^(-n(n+1)), leaving its primitive pair unchanged.
+
+Full proof: analysis/findings.txt. A draft sentence incorrectly calling
+all q=exp(-2pi y) values transcendental was removed during review; no
+transcendence assertion about the sampled q values is needed.
+
+3. Two integral coordinates have accessible uncanceled singularities
+
+The naive higher-level trace T_P=t(q)+t(q^(P^2)) has integral q expansion
+and formal inverse. Its Fricke fixed-point value is2t(q0^P), where
+q0=exp(-pi/(2sqrt2)). For P>=3 this is below2/19, whereas
+T_P(q0)>t0>3/20. Starting from q=0, the real inverse therefore meets an
+earlier critical point. The desired fixed point is on another branch.
+
+The coordinator proves the first critical q_c lies between q0 and2/5.
+For the quadratic single-prime filter p>=7, |H_p(q_c)|<13 while its
+theta target has magnitude greater than20. Thus the pole of
+J_p^5/(D log T_P) is actually uncanceled there. This is a genuine
+continuation obstruction, not just a poorly chosen estimate.
+
+The analysis worker tested a different integral parameter,
+
+ T_m=t(q)t(q^m)/(t(q)+t(q^m))^m,
+
+with m=p^2 or p^4. It has q-leading coefficient1, integral coefficients,
+and integral inverse. Nevertheless mT_m(z/m) converges to z exp(2z),
+including derivatives on compact sets. Its principal negative-real
+critical point is -1/(2m)+O(m^-2), with value-1/(2em)+O(m^-2).
+The theta remainder does not cancel the resulting inverse-square-root
+singularity. This gives actual raw coefficient limsup growth of at
+least2em(1+O(1/m)), not a primitive-value obstruction.
+
+Proofs: coordinator/trace_coordinate.txt and analysis/findings.txt.
+Exact rational certificates and separate interval checks accompany them.
+
+4. A better prefactor cancels one pole, but not the next pair
+
+The fresh worker proposed keeping q and replacing the derivative
+prefactor by
+
+ Atilde_p=J_p^3 [t(q)+t(q^(p^2))]/[t(q)-t(q^(p^2))].
+
+It has integral q coefficients in Z[sqrt2], correct Fricke weight, and
+avoids the artificial earlier positive-real pole. Its nearest pole is
+the intended Fricke point, and H_p minus its theta target cancels it.
+This is a valid improvement in the geometric construction.
+
+However the complete degree-two fiber description of t on X0(32)
+identifies the next denominator zeros. They form the conjugate pair
+
+ tau_+=1/(2p^2)+i sqrt(p^2-8)/(sqrt32 p^2),
+ tau_-=-conjugate(tau_+),
+ q_+=rho_p exp(pi i/p^2), q_-=conjugate(q_+),
+ rho_p=exp[-pi sqrt(p^2-8)/(2sqrt2 p^2)]<1.
+
+They are the unique next pair for every odd p>=3. The p=3 tie that
+appears in a crude height bound is ruled out by the determinant
+congruence for Gamma0(32). For large p these zeros are simple and
+the numerator is nonzero; small selected primes are checked separately.
+
+An exact shifted-period identity gives
+
+ H_p(tau_+)-target -> -(1/2)H32'(i/sqrt32).
+
+The derivative is rigorously enclosed as i times7.6426869042..., so
+the pair remains uncanceled for all sufficiently large primes.
+Direct certificates additionally cover3,5,7,11,17,31,101; no effective
+threshold for all other small primes is claimed.
+
+For each covered fixed p, the q-series remainder has radius exactly
+rho_p. Its Fricke and reality symmetries force the leading residue
+phase to be a real multiple of tau_+. The resulting periodic coefficient
+factor cannot vanish: otherwise a rational cosine of a rational
+multiple of pi would equal1-16/p^2, outside its possible rational values.
+Consequently EVERY sufficiently late raw coefficient has absolute
+value at least c(p)rho_p^(-n), c(p)>0.
+
+This all-index statement is still about raw real coefficient forms in
+one embedding. Splitting their two rational components and removing
+common integer content remains a different arithmetic question.
+There is no primitive-value no-go theorem for this prefactor here.
+
+Proof: fresh/alternative_prefactor.txt. The coordinator and fresh worker
+jointly derived the pole/phase mechanism; a third worker audited it.
+The degree of t was clarified during review: degree2 on X0(32), degree1
+on its Fricke quotient. Exact symmetry proves the residue's imaginary
+direction; interval checks support consistency and certify nonzero size.
+
+5. A uniform primitive obstruction for Euler--Boole approximants
+
+The separate fresh construction uses the classical midpoint alternating
+tail expansion. Let S_N=sum_(k<N)(-1)^k/(2k+1)^4 and
+
+ A_(N,m)=S_N+(-1)^N/12 sum_(j<m)
+             E_(2j)(2j+1)(2j+2)(2j+3)/(2N)^(2j+4),
+
+where E_(2j) are integer Euler numbers. Write A=a/q in lowest terms.
+The exact sech partial fractions give a strictly signed integral error
+and, for every m>=1,
+
+ |theta-A_(N,m)|>=pi^2 exp(-pi N)/(144N).
+
+The lower exponential rate is sharp: at m=pi N/2+O(1), the error is
+asymptotic to pi^3 exp(-pi N)/(48sqrt(2N)). Increasing the truncation
+order arbitrarily cannot evade the uniform lower bound.
+
+The correction has no denominator primes outside those dividing6N.
+Large primes in the original partial sum therefore retain their fourth
+layers in the ACTUAL reduced fraction. A fixed-prime-band argument,
+followed by a fixed-K-then-liminf limit, proves uniformly in m
+
+ liminf log q_(N,m)/N >=8,
+ liminf log|q_(N,m)theta-a_(N,m)|/N >=8-pi>0.
+
+The primitive values diverge whenever N+m tends to infinity, including
+bounded N and growing m. The finitely small examples are recorded and
+do not contradict the theorem. Gauss's lemma also rules out repairing
+this family merely by multiplying its primitive factors: their
+degree-normalized values have a positive lower bound. General sums,
+resultants, or nonfactoring determinants are not excluded.
+
+Full proof: fresh/findings.txt; separate coordinator review in
+coordinator/boole_review.txt. No novelty claim is made for either the
+classical summation method or the proved family obstruction.
+
+6. Verification and the remaining construction task
+
+The worker packets were cross-reviewed after their independent initial
+choices. Root read all complete proofs, independently rebuilt the
+modular endpoint pairs via cumulative Hankel matrices, checked the full
+normalization invariance and exponents24,4,21, and independently rebuilt
+36 Euler--Boole primitive forms with48 surviving-prime checks. The trace
+coordinate has a separate exact rational inequality certificate and
+rigorous illustrative brackets. Detailed finite counts, proof hashes,
+review corrections, and preservation checks are in the round directory.
+
+The portable positive result is balanced modular prime deletion with
+its full endpoint and primitive bookkeeping. What remains missing is
+an analytic construction that uses this saving without retaining
+uncanceled periods or creating a compensating arithmetic cost.
+The next work should pursue a new source of cancellation or a different
+proof architecture, rather than expanding these failed finite tests.
+
+Everything remains local and unpublished. The goal continues.

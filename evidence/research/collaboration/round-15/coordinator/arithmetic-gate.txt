@@ -1,0 +1,223 @@
+ARITHMETIC TRANSFER AND AN OPTIMISTIC CERTIFICATE CEILING
+30 October2026. Local and unpublished.
+
+Scope first
+
+The result below obstructs the DIRECT TRANSFER OF THE SOURCE'S SPECIFIED
+FORWARD-TERM / DUAL-ROW VALUATION ESTIMATES, used with the established
+error exponent. It is NOT an upper bound for actual common numerator
+content, NOT a lower bound for actual primitive height, and NOT a proof
+that every normalization of this family fails. Cancellation inside sums
+or minors, a different arithmetic identity, or an additional exponential
+error cancellation is outside this ceiling.
+
+1. A uniform integer normalization
+
+Set E_n=60n+3 v2((10n)!), ell_n=floor(log2(16n)), and O_m the odd part
+of lcm(1,...,m). For n>=1,
+
+ D_n=6*2^(E_n+ell_n)*O_(76n)^4
+       clears (Q_n,P3_n,P4_n) at BOTH quarters.                    (A1)
+
+Each variable-upper binomial has denominator supported only at2. For an
+odd prime power p^r, the arithmetic progression4t+c contains at least
+floor(m/p^r) multiples in any m consecutive terms, proving odd integrality
+after division by m!. At2 its valuation is exactly -2m-v2(m!). Three
+degree10n factors are thus cleared by2^E_n; the other binomials are
+integers. The binomial derivative identity
+
+ d/dx binom(x,m)=sum_(j=1)^m (-1)^(j-1) binom(x,m-j)/j
+
+and the source's fixed-upper/tail factorial argument show that
+2^E_n*lcm(1,...,16n) clears every Gamma-interpolation derivative B'.
+This includes both simple-zero tails. The shorter-degree binomials in
+the derivative identity need no larger dyadic power.
+
+H_m^r(c/4)=4^r sum_(j<m)(4j+c)^-r has odd denominator dividing O_(4m)^r.
+Here m<=19n. Combine the derivative's one LCM layer with the three
+harmonic layers, and include1/2,1/3. This proves(A1). Consequently
+256 D_n^2 clears the two rational coefficients of W_n. This is only a
+sufficient normalization; full primitive reduction is done separately.
+
+2. Complementary, primewise lower bounds
+
+Fix p>3 with p^2>120n. Every relevant factorial/difference numerator is
+below120n, so each reciprocal differentiation factor costs at most one
+power of p. All u_n entries are p-integral, and1/256 is a p-adic unit.
+
+Forward: let h_m indicate whether some4j+c, 0<=j<m, is divisible by p.
+For interior terms put v_k=v_p(B(n,k)). Then
+
+ F_q=min_(0<=k<=14n) v_k,
+ F_4=min_k { v_k-4h_(4n+k), v'_k-3h_(4n+k) },                    (A2)
+
+where v'_k=v_k-1 in the interior, and the exact factorial valuation
+of the simple-zero derivative is used in the tails. Absent B terms
+have infinite valuation. These are valid lower bounds for v_p(Q),v_p(P4).
+
+Dual: at pole s=-alpha-j, let m_j<=3 be its order and nu_j the valuation
+of its leading Laurent coefficient. Expanding the regular factors gives
+
+ v_p(c_(j,i)) >= nu_j-(m_j-i).
+
+The polynomial(-s)^k is p-integral. Thus valid row bounds are
+
+ m_A=min_(m_j=3)nu_j,
+ m_B=min{ min_(m_j=3)(nu_j-1), min_(m_j=2)nu_j },
+ m_D=min_(j,1<=i<=m_j)[nu_j-(m_j-i)-(i+1)h_(2n+j)].
+
+Using the EXACT closed Lambda from complete-deformation.txt gives
+
+ G_q=v_p(Lambda)+m_A+m_B,
+ G_4=v_p(Lambda)+m_B+m_D.                                        (A3)
+
+Take max(F_q,G_q) and max(F_4,G_4) separately. For W the q bound is the
+sum of the two quarter q bounds; its rational-constant bound is the
+minimum of the two P4-times-Q bounds. These formulas pay for Lambda,
+the two different Q sequences, and the projection. No savings are added
+twice. primewise_transfer.py verifies the inequalities against exact
+coefficients at modest indices and records where the dual bound improves
+the forward bound. The formulas, rather than those finite diagnostics,
+are the all-index proof of the bounds.
+
+For an explicit integer representative, start with M_n=256D_n^2 from(A1).
+For each p>3 with p^2>120n and p<=120n, let w_p be the smaller of the
+two derived W-coefficient bounds. Then
+ product_p p^max(0,v_p(M_n)+w_p)
+divides both integer coefficients of M_n W_n. This constructs a uniform
+common divisor from the estimates, without inspecting the actual gcd.
+The four finite improvements survive the final projection: at
+(n,p)=(2,19),(3,23),(4,31),(4,37), the raw W-coefficient minimum improves
+from-4 to-3. See cofactor-prime-improvements.json. This is an arithmetic
+gain for the beta4 forms themselves, although far too small to settle
+the quantitative balance.
+
+3. An optimistic upper ceiling for what(A2)-(A3) can certify
+
+Discard EVERY cost associated with P4 and retain only the q coefficients.
+This can only help the normalization certified by(A2)-(A3). We now upper
+bound the odd-prime saving its q bounds permit.
+
+Let x=n/p. For a=c/4 and p odd, choose l in{1,3} with lp=c mod4 and
+write t=l/4. Away from the finitely many limiting walls, a shifted
+Pochhammer block contributes floors with phase t. The two quarters swap
+t=1/4,3/4 as p changes residue class, so their SUM is independent of
+p mod4. No prime-number theorem in progressions is required below.
+
+At k=rn, r=0,...,14, the forward-term valuation has limiting value
+
+ f_t(x,r)=sum_(A=12,13,14)
+ [floor((r+A)x-t)-floor((r+A-10)x-t)-floor(10x)]
+ +floor(15x)-floor((1+r)x)-floor((14-r)x)
+ +floor(15x)-floor(rx)-floor((15-r)x).
+
+The full minimum F_q is at most min_(r=0,...,14) f_t(x,r). Selecting
+these terms supplies an UPPER ceiling for the minimum; no claim is made
+that this sparse list finds its actual minimum.
+
+At the triple poles j=rn, r=3,...,9, the leading valuation is
+
+ nu_t(x,r)=floor((16+r)x-t)-floor((2+r)x-t)
+          +floor((17+r)x-t)-floor((1+r)x-t)
+          -sum_(A=r,11-r,r-1,12-r,r-2,10-r) floor(Ax).
+
+From Lambda, put
+ phi_t(x)=sum_A e_A floor(Ax)+sum_A f_A floor(Ax-t),
+ e={8:1,9:2,11:2,12:1,14:-1,16:-1},
+ f={11:1,12:2,13:2,14:1,16:-1,17:-2,18:-2,19:-1}.
+
+The shifted multiplicities sum to zero and all weighted multiplicities
+sum to zero. There is no missing phase constant or linear term.
+
+Because m_A<=min_r nu_t and m_B<=min_r nu_t-1, the combined q bound
+from(A2)-(A3) is at most
+
+ U_t(x)=max{ min_(r=0,...,14) f_t(x,r),
+              phi_t(x)+2 min_(r=3,...,9)nu_t(x,r)-1 }.              (A4)
+
+This intentionally ignores P4, omits many summands/poles from the minima,
+and permits separate per-prime choices of representation. Every choice
+makes it an optimistic ceiling for the specified certificate.
+
+4. Exact floor integration and passage to asymptotic densities
+
+Every function in(A4) is periodic of period1: expanding x->x+1 cancels
+the integer slope shifts. Its only breakpoints in(0,1) are among
+(4m+l)/(4d), d=1,...,28, l=0,1,3. The explicit union has854 open cells.
+On each cell every floor is constant, so one rational midpoint determines
+the whole cell exactly. Additional one-third/period tests are diagnostics.
+
+optimistic_arithmetic_gate.py integrates U_t(x)/x^2 through40 using exact
+rationals. Both functions vanish near0. Their periodic essential maxima
+are9 and11, so the remaining limiting integrals cost at most9/40,11/40.
+It proves
+
+ integral U_(1/4)(x)/x^2 dx <53.694,
+ integral U_(3/4)(x)/x^2 dx <34.514,
+ combined upper ceiling =88.20752949730584... .                    (A5)
+
+To justify this as a ceiling for the FINITE estimates, first restrict
+x to a fixed bounded interval away from the rational walls. The O(1/p)
+offsets then preserve every selected-term floor, uniformly as n grows.
+The PNT gives the integrals on those intervals. Neighborhoods of the
+finite set of walls have arbitrarily small limiting contribution because
+the finite one-level exponents are uniformly bounded. One may use32
+as a bound for each quarter: the selected forward binomial valuation is
+at most5; the selected triple-pole leading valuation is at most8, and
+the balanced Lambda valuation is at most12. Their dual sum is at most27.
+Thus the omitted tail p<n/X has upper contribution at most64n/X+o(n).
+The primes below sqrt(120n) contribute o(n): each balanced odd-prime
+valuation has O(log n) layers, with uniformly bounded contribution per
+layer. These bounds also handle thin shifted walls in the tail.
+Taking n->infinity, shrinking fixed wall neighborhoods, then X->infinity
+proves the limsup ceiling by the full limiting integral. The last step
+allows the sharper periodic tail bound in(A5). No finite-prime sample or
+unverified wall-offset enumeration is used as an asymptotic proof.
+
+5. The dyadic cost and quantitative shortfall
+
+For the specified forward q bound, each summand has valuation
+
+ -60n-3v2((10n)!)+O(log n)=-90n+O(log n),
+
+uniformly in k; the two ordinary binomials cost only O(log n) carries.
+For the dual q bound, a selected triple leading coefficient has valuation
+-90n+O(log n), Lambda has valuation+90n+O(log n), and the derivative,
+monomial and endpoint losses are O(log n). Thus the direct dual-row
+estimate has the SAME dyadic exponent. Taking the better of the two
+specified bounds does not change it. For the product coefficient, the
+certified dyadic normalization therefore costs180 log2 per index.
+
+The established relative error exponent is g=112.807539... and the q
+growth exponent is sigma=65.451536.... Even after all P4 costs have
+been forgiven, success using these estimates would require odd content
+density greater than
+
+ 2sigma+180log2-g=142.8620... .                                   (A6)
+
+But(A5) is below88.208. deformed_rates.py verifies the inequality with
+Arb intervals: the shortfall is greater than54.65 per index. Equivalently,
+these q estimates cannot certify a product height exponent below about
+167.46, whereas the available relative error exponent is112.81.
+
+This is NOT a claim that the errors grow at that rate, nor that the
+actual primitive height has that lower bound. It limits what this
+particular collection of lower valuation estimates can certify.
+In particular, higher divisibility of the SUM Q, common content exposed
+by a new identity, a cheaper character projection, or faster projected
+decay could evade it. None is supplied by the completed transfer.
+
+6. Primitive diagnostics and stopping decision
+
+primitive_gate.py clears the EXACT two coefficients of W and divides
+their full gcd. It certifies nonzero errors with Arb, without using beta4
+to choose the family. The prescribed n=1,2,3,4,6 have log absolute
+primitive errors approximately326.81,710.46,1081.43,1472.72,2233.45.
+These finite values are unfavorable evidence, not an asymptotic theorem.
+
+The complete paired identities genuinely repair round12's equality gap.
+The transferred arithmetic mechanism, however, misses even the generous
+q-only test by a large margin. No large parameter scan or complete
+P4-density optimization is warranted by this construction. The bounded
+phase should end after independent checking of this conclusion, with the
+new identities retained and the above limitations explicit.

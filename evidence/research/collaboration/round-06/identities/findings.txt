@@ -1,0 +1,491 @@
+ROUND 06 — FUNCTIONAL RELATIONS, POWER ORBITS, AND AN ALGEBRAIC PIVOT
+29 October 2026. Local, unpublished proof and computation packet.
+
+Outcome and scope
+=================
+
+Exact completed-polylogarithm distribution does extend to the old
+non-torsion ladder. It does NOT preserve its theta-only endpoint. I prove
+two obstructions to repairing that loss with a fixed module:
+
+* A fixed finite list of rational-function D4 germs cannot absorb all
+  prime-power defects modulo constants. New primitive10p branch points
+  force the total degree of additional arguments to grow at least
+  linearly in p. A precise divisor-symbol contraction also detects a
+  surviving p denominator in any symbol-certified rewrite of the defect.
+* The natural anharmonic reflection at q^p, q=(1-i)/2, introduces the
+  norms N_p=Norm((1+i)^p-1). For distinct odd primes these integers are
+  pairwise coprime. Their logarithms add one independent rational-log
+  direction per prime, with an explicit weighted height cost.
+
+These are scoped module/presentation obstructions, NOT independence
+theorems for tetralogarithm VALUES and NOT primitive-form no-go theorems.
+
+The substantial pivot is an exact specialization of an actual weight-four
+functional relation of Gangl. It isolates12 beta(4), with21 remaining
+arguments in a quartic field. All21 can be moved inside the unit disk;
+their coefficient L1 norm is39 and their largest modulus is0.9810017... .
+Their least common integer scale to algebraic integers is216. Ordinary
+relative traces work before choosing inversions; the completion logarithms
+and the incompatible embeddings obstruct the tempting free rational trace.
+A prescribed termwise trace after inversion actually has radius less than
+1/6. No rational primitive approximation family is claimed for this pivot.
+
+Independent initial choices were saved in00_initial_choices.txt before
+discussion with the other workers. No old files were changed. This is an
+application and exact specialization of classical functional relations,
+not a claim that the general relation or the specialization is new in
+the literature. No priority search or external publication was performed.
+
+1. Exact function and primary-source reading
+==========================================
+
+Use theta=beta(4) and the standard single-valued classical tetralogarithm
+
+ D4(z)=Im[Li4(z)-log|z| Li3(z)+(log^2|z|/3)Li2(z)].      (1.1)
+
+Initially this formula is read on |z|<1, and then continued as the
+single-valued function. The convention is the IMAGINARY part at even
+weight. It satisfies D4(conj z)=-D4(z), D4(1/z)=-D4(z), and vanishes on
+the real projective line. The inversion and distribution conventions were
+checked in Zagier's primary author appendix, section1, PDF pages3-5:
+ https://people.mpim-bonn.mpg.de/zagier/files/tex/LewinPolylogarithms/fulltext.pdf
+
+Actual weight-four input for the pivot: Herbert Gangl, Functional equations
+of higher logarithms, arXiv:math/0207222v1, Theorem4.1 and its proof in
+section6 (PDF pages7 and10-13). The source and extracted text are adjacent:
+ gangl_functional_equations.pdf / gangl_functional_equations.txt
+ https://arxiv.org/abs/math/0207222
+
+Gangl's22-term relation in section3 is a TRILOGARITHM relation. It is not
+used as a weight-four theorem. The selected Theorem4.1 is explicitly for
+L4. Its proof checks the fourth-weight symbol, including the final terms.
+
+There is a literal normalization discrepancy in section2.1: BOTH the
+arXiv PDF and published author PDF print the Bernoulli sum through m,
+rather than m-1. The page was inspected visually. With the standard
+Li0(z)=z/(1-z), this adds -log^4|z| Im Li0(z)/45 at weight4 and does not
+give(1.1); at weight2 it also contradicts the stated Bloch--Wigner
+identification. We do not silently apply that literal displayed function.
+Instead, the independent exact symbol certificate in section5 below,
+combined with Zagier's correctly stated m-1 completion, PROVES the
+required identity. The published copy and definition-page image are
+retained locally. The literal extra term is also numerically certified
+to change our specialized relation to-0.1568968453..., not zero.
+
+Also read Rudenko, On the functional equations for polylogarithms in one
+variable, arXiv:1511.09110v1, Theorem1.4 and section3 (PDF pages2-3,6-8):
+ https://arxiv.org/abs/1511.09110
+ rudenko_one_variable.pdf / rudenko_one_variable.txt
+The printed definition repeats Re at even weight; (1.1), independently
+fixed from Zagier, is used here. The no-fixed-module theorem below has
+an elementary local proof, so it does not depend on silently correcting
+that typography or on a converse about numerical special values.
+
+2. Distribution is exact, but the endpoint changes
+=================================================
+
+For any positive integer d, direct summation of the convergent series gives
+
+ D4(z^d)=d^3 sum_(zeta^d=1) D4(zeta z).                 (2.1)
+
+Indeed the Li_s root-of-unity sum is d^(1-s)Li_s(z^d), while
+log|z^d|=d log|z|. All three completion terms therefore have the same
+factor d^3. Continuation gives the identity globally; no additive
+constant is lost, as the series identity tends to zero at z=0.
+
+The exact exclusion of Taylor summands whose index is divisible by p is
+
+ D4(z)-p^-4 D4(z^p)
+  =sum_(n>=1,p not dividing n) Im(z^n)
+        [n^-4-log|z| n^-3+(log^2|z|/3)n^-2].            (2.2)
+
+Thus completion does not destroy physical index deletion when its log
+scales correctly. Formula(2.1) rewrites (2.2) as
+
+ D4(z)-(1/p)sum_(zeta^p=1)D4(zeta z).                  (2.3)
+
+For a squarefree product P of selected primes, all rotations can be merged:
+
+ product_(p|P)(1-p^-4 V_p)D4(z)
+     =sum_(zeta^P=1) a_(ord zeta) D4(zeta z),
+ a_r=mu(r)/r product_(p|P/r)(1-1/p), r|P.              (2.4)
+
+Here V_p means z->z^p on the completed function. There are P rotations,
+their norms equal |z|, their coefficients have denominator dividing P,
+
+ P a_r=mu(r) product_(p|P/r)(p-1),
+ sum_(zeta^P=1)|a_(ord zeta)|=2^omega(P) phi(P)/P.      (2.5)
+
+The rotation field Q(zeta_P) has degree phi(P). At the Gaussian ladder
+point the argument field Q(i,zeta_P) has degree2phi(P), or phi(P) over
+Q(i), for odd P. The argument count and coefficient height have not
+disappeared. This is a presentation
+identity, not a reduction of the primitive multiplier of an old form.
+
+For comparison, the inherited completed Broadhurst ladder is
+
+ R(z)=(225/136)D4(-z^2)-(25/34)D4(-z^3)+(9/68)D4(-z^5),
+ q=(1-i)/2, R(q)=theta.                               (2.6)
+
+For primes greater than5, raising rotations to powers2,3,5 permutes each
+rotation orbit, so(2.4) applies to R as a P-function orbit as well.
+Its depleted endpoint is EXACTLY
+
+ sum_(d|P) mu(d)d^-4 R(q^d),                           (2.7)
+
+not an asserted rational multiple of theta. No relation removing the
+additional values in(2.7) has been proved. This is where torsion endpoints
+and the non-torsion completed ladder differ: i^p=chi_4(p)i, whereas q^p
+does not return to q by a root of unity alone.
+
+3. A fixed rational-function module cannot absorb the power defects
+===================================================================
+
+First an explicit local singularity calculation avoids assumptions about
+positivity, monodromy cancellation, or the interpretation of a symbol.
+Near z=1 write z=exp(w), w=a+ib with a,b real and small. Integrating
+Li1(exp(w))=-log(1-exp(w)) gives, for s=2,3,4, a holomorphic remainder
+plus the sole nonanalytic term -w^(s-1)log(-w)/(s-1)! . In(1.1) its
+coefficient is
+
+ -w^3/6+a w^2/2-a^2 w/3 = i b(a^2+b^2)/6.
+
+Therefore
+
+ D4(exp(a+ib)) = [b(a^2+b^2)/6]log|a+ib|
+                         + a real-analytic function.  (3.1)
+
+In particular z=1 is a genuine non-real-analytic point. Single-valuedness
+does not mean analyticity there. An unramified holomorphic pullback retains
+this singularity. The function is real-analytic away from0,1,infinity.
+
+THEOREM3.1. Fix any finite list of nonconstant rational functions f_j(t)
+over C. For all sufficiently large primes p, R(t^p) cannot equal a
+rational linear combination of D4(f_j(t)) plus a constant, as functions
+of a complex parameter t. This remains true if coefficients may depend
+on p and if R(t) is included in the fixed list.
+
+Proof. At every primitive10p-th root zeta, -t^(5p) takes the value1 with
+nonzero derivative. Neither -t^(2p) nor -t^(3p) equals0,1,infinity there.
+The coefficient9/68 is nonzero, so(3.1) shows that R(t^p) has a genuine
+singularity at each of the4(p-1) such points. The possible singularities
+of the fixed list lie in the finite union of the preimages of0,1,infinity
+under its rational functions. Eventually no primitive10p root is in this
+finite set. A sum of real-analytic functions cannot equal the singular
+left side. QED.
+
+This is stronger than the elementary fact that the literal powers of a
+non-torsion number have distinct moduli. It permits arbitrary clean
+functional equations among the listed functions and arbitrary constants.
+It is a PARAMETRIC statement; an identity at the single point t=q is
+not excluded.
+
+A quantitative extension is immediate. If additional rational arguments
+g_(p,j) are used and their total degree is D_p, then, outside finitely many
+p depending on the fixed list,
+
+                         3D_p >=4(p-1).               (3.2)
+
+Each nonconstant rational map of degree d has at most3d distinct points
+over0,1,infinity. This is a degree/argument-complexity lower bound, not a
+coefficient-height lower bound: t^p itself has small coefficients and
+degree p. It allows a growing module or different approximation methods.
+
+For an explicit symbol diagnostic use
+
+ J4[f]=(f)^2 tensor ((f) wedge(1-f)),
+
+where parentheses mean the divisor, and evaluate the first two factors
+at0 and the wedge at(0,zeta). At a primitive10p root this gives
+
+ J4[-t^(5p)] ->(5p)^3;
+ J4[-t^(2p)], J4[-t^(3p)], J4[-t^m] (m=2,3,5) ->0.
+
+Consequently the p-deleted R has contraction
+
+          J4[R(t)-p^-4 R(t^p)] -> -1125/(68p).         (3.3)
+
+For p>17 its p-adic valuation is-1. Every rational function has integer
+divisor orders. Thus any rational-coefficient rewrite whose divisor
+symbols AGREE with this defect must have at least one coefficient with
+negative p-adic valuation. It cannot be rewritten with only p-integral
+coefficients in this symbol calculus. This includes symbol-certified
+functional reductions and is not a statement about arbitrary numerical
+relations at q, nor about common content of endpoint integer forms.
+
+4. The anharmonic orbit introduces genuinely new logarithmic directions
+=======================================================================
+
+Put a=1+i, q=a^-1. For an odd prime p define
+
+ A_p=a^p-1 in Z[i],
+ N_p=A_p conjugate(A_p)=2^p+1-2 Re(a^p).               (4.1)
+
+THEOREM4.1. N_p>1 is odd. The integers N_p for DISTINCT odd primes p
+are pairwise coprime. Every rational prime ell dividing N_p satisfies
+ell=1 modulo4p.
+
+Proof. A_p is prime to1+i. For distinct primes p,r, the Euclidean
+identity for a^m-1 shows gcd(A_p,A_r) divides a-1=i, hence is a unit.
+If a Gaussian prime divides A_p and conjugate(A_r), then a^p=1 and
+conjugate(a)^r=1 in its residue field. Since conjugate(a)=-ia, raising
+to the other exponent gives(-i)^(pr)=1. Because pr is odd, this forces
+i=1 or-1, possible only at a prime over2, already excluded. These two
+orientations cover a rational prime common to N_p and N_r.
+
+An inert odd rational prime cannot divide N_p: its Gaussian ideal is
+conjugation-stable, so the same argument with p=r would force i=+/-1.
+Thus ell splits and its residue field is F_ell. The residue of a has
+order exactly p, since a-1=i is a unit. Hence p divides ell-1, and
+splitting gives4 divides ell-1. Finally
+N_p=|a^p-1|^2>1 for p>=3. QED.
+
+For example N_3=13,N_5=41,N_7=113. No primitive-divisor theorem or
+unproved prime-distribution statement is needed.
+
+Taking absolute values gives the exact logarithmic relation
+
+ log|1-q^p|=(log N_p-p log2)/2.                        (4.2)
+
+The real logarithms log N_p, together with log2, are linearly independent
+over Q: clear rational coefficients, exponentiate, and use unique prime
+factorization and pairwise coprimality. Relative to any fixed finite set
+of rational logarithms, all but finitely many selected primes therefore
+require a new independent log direction. Also
+
+ log N_p=p log2+O(2^(-p/2)),                           (4.3)
+
+with explicit bounds2log(2^(p/2)-1)<=log N_p<=2log(2^(p/2)+1).
+If log N_p is represented as sum_j c_j log r_j with c_j rational and
+r_j positive rational, valuations give the useful weighted height bound
+
+ log N_p <=sum_j |c_j| log(|numerator(r_j)denominator(r_j)|)
+          <=2sum_j |c_j| h(r_j),                      (4.4)
+
+where h is the usual logarithmic rational height. Coefficient size and
+argument height can trade off; neither can simply be omitted.
+
+This applies directly to the proposed anharmonic repair. Although
+
+ q^p/(q^p+conj(q)^p) equals q or conj(q)
+
+according as p=1 or3 modulo4, the reflection1-q^p and the fractional
+linear argument q^p/(q^p-1) contain A_p in their divisor data. Returning
+the quotient of conjugate powers to the old point does not close the
+whole anharmonic/logarithmic orbit. The theorem rules out a FIXED
+rational S-unit/log module for that mechanism. It does not prove
+independence of D4(q^p), prohibit cancellations in a larger clean
+functional relation, or give a lower bound for primitive approximation
+errors. The completion in(1.1) itself uses log|q^p|, so(4.2) is specifically
+the extra cost of invoking reflection/anharmonic transformations.
+
+5. A concrete new presentation from a genuine weight-four relation
+=================================================================
+
+Set w=(1+i)/2 and let b,c be the roots of
+
+                   2x^2-(1-i)x-1=0,
+
+choosing b=(conj(w)+sqrt(2-i/2))/2 with the principal square root and
+c=conj(w)-b. Define
+
+ X={w,b,c}, Y={2/3,2/3,-1/3},
+ t=-w/2, u=-4/27, U_x=1-1/x, V_y=1-1/y.
+
+Exactly x^2(x-1)=t for every x in X, and y^2(y-1)=u for every y in Y.
+The n=3 coefficient pattern of Gangl's Theorem4.1 gives the following
+zero relation for the STANDARD D4, proved independently just below:
+
+ 0=3D4(t/u)
+   -4 sum_(x in X,y in Y)D4(U_x/V_y)
+   +9 sum_(x in X,y in Y)D4((1-x)/(1-y))
+   -36sum_(x in X,y in Y)D4(x/y)
+   +12sum_(x in X)D4(U_x)-12sum_(y in Y)D4(V_y).       (5.1)
+
+For an independent symbol proof, parametrize the split triples by
+
+ X(r)={r(r+1),r+1,-r}/(r^2+r+1), Y(s)=X(s).
+
+The34 terms of the displayed pattern belong to Q(r,s). The adjacent
+gangl_symbol_check.py factors each argument and its complement into
+12 multiplicative atoms and computes all1018 occupied coordinates of
+beta4[f]=f^2 tensor(f wedge(1-f)) EXACTLY. Every coordinate is zero;
+the JSON retains the complete factor vectors, not floating residuals.
+Zagier's criterion for(1.1) therefore makes the value constant. Swapping
+r,s negates it by inversion, so the constant is0. The specialization
+r=w/b,s=1 gives exactly the X,Y above; this is checked in the exact
+quadratic field by gangl_specialization.py. This proof uses the source's
+coefficient pattern but not its ambiguous printed Bernoulli upper limit.
+
+Multiplicity two at y=2/3 is retained. It is justified by continuity
+from nearby distinct roots; none of the displayed nonreal arguments
+becomes undefined. The symbol proof yields a constant, and swapping X,Y
+negates the value by D4 inversion, while the diagonal X=Y has value0.
+Thus the additive constant is0. No unaccounted lower-weight products
+or assumed independence of periods enters(5.1).
+
+All V_y are real, so their D4 terms vanish. Exactly U_w=i contributes
+12theta. Every other term is a specified D4 value. Applying only the
+proved inversion and conjugation laws places its argument inside|z|<1.
+The result can be written
+
+                  theta=sum_(j=1)^21 d_j D4(z_j).     (5.2)
+
+The complete EXACT list, in the basis z_j=A_j+B_j b with A_j,B_j in Q(i),
+is gangl_specialization.json; the adjacent self-contained script constructs
+it directly from(5.1), merges duplicates, and supplies an integral
+polynomial for every argument. This is also an unambiguous compact
+definition of(5.2), without decimal arguments or a PSLQ fit.
+
+Its measured quantities are certified with Arb512-bit intervals:
+
+ sum |d_j|=39; common coefficient denominator12;
+ max |z_j|=0.9810017628608227634... <1;
+ least positive integer D with every Dz_j integral is D=216.
+
+For integrality, beta=2b satisfies
+
+ beta^2-(1-i)beta-2=0,
+ beta^4-2beta^3-2beta^2+4beta+4=0.                     (5.3)
+
+The identities bc=-1/2 and(1-b)(1-c)=i/2 show that inversions of b,c,
+1-b,1-c introduce only powers of2. All remaining denominators in the
+explicit table divide2^3*3^3=216 in Z[i,beta]. Conversely the table
+contains8(1+i)/27 and3(1+i)/8, forcing27 and8 respectively for ANY
+integer integral scale, so216 is exact, not merely a convenient bound.
+The largest displayed primitive integral-polynomial height is629856;
+for Gaussian arguments the recorded degree-four polynomial can be a
+square, and no minimal-polynomial claim is made there.
+
+The quartic in(5.3) is irreducible with discriminant2^8*17. Hence this
+presentation has introduced a degree-four field and ramification at17,
+as well as the explicit denominator prime3. It has not replaced the
+old rational three-block presentation at negligible arithmetic cost.
+
+All completion logarithms lie in the span of
+
+                      log2, log3, log|b|.             (5.4)
+
+Indeed |c|=1/(2|b|), |1-b|=2^(-3/2)|b|^-2,
+|1-c|=2^(1/2)|b|^2, and |w|=2^-1/2. Together with the rational factors
+in(5.1), these determine every modulus. Formula(5.2) accounts for these
+products exactly, but does NOT say that they separately vanish in an
+ordinary Li4-only expansion.
+
+6. What the trace does and does not do
+====================================
+
+There is a valid relative trace already present. Let sigma fix i and
+exchange b,c. For every rational function F over Q(i),
+
+ F(b)^n+F(c)^n in Q(i).
+
+These power sums obey the exact order-two recurrence with coefficients
+F(b)+F(c) and F(b)F(c). In particular the uncompleted Li_s sums over
+the entire X-set in(5.1), with a COMMON formal variable multiplying
+their arguments, have coefficients in Q(i); taking imaginary parts
+gives rational coefficients. This useful statement requires no CM field.
+
+There are two distinct obstacles to promoting it to the intended rational
+completed approximation.
+
+(a) The original relative-trace orbit includes arguments of modulus>1.
+After individually inverting them to obtain(5.2), the chosen inside-disk
+representatives are no longer closed under sigma. A naive termwise trace
+of the resulting power series has arguments as large as
+
+            max_j |sigma(z_j)|=6.004046715799924595... .
+
+The maximum occurs uniquely at the relative conjugate of-2(1-1/b), whose
+coefficient in(5.2) is2/3. No other term has that modulus. In the ordinary
+Li4 part, n^4 times the traced coefficient is a finite exponential sum.
+Its largest nonreal conjugate pair cannot cancel, so the root limsup of
+the absolute coefficients equals that maximum. Equivalently its rational
+generating function after four Euler derivatives has an uncanceled pole
+there. The traced Taylor series has radius at most1/6.004... and cannot
+be evaluated term by term at1. This is a proved failure of that specified
+free-trace prescription, not of all algebraic simultaneous approximants.
+
+(b) The completion needs log|b|, not merely logarithms of elements in
+the relative field K=Q(i,b). In fact |b|^2 is NOT in K. If it were,
+conj(b)=|b|^2/b would belong to K, making K conjugation-stable. But
+K=Q(i,sqrt(8-2i)); conjugation-stability would force sqrt17 into K,
+since sqrt(8-2i)sqrt(8+2i)=2sqrt17. The Gaussian square-class test rules
+this out: neither17 nor(8-2i)/17 is a square in Q(i); the latter's norm
+4/17 is not a rational square. Thus K is not CM in the chosen embedding.
+
+For reference the positive real number r=|b|^2 is
+
+ r=[1+sqrt17+sqrt(2+2sqrt17)]/8,
+ 16r^4-8r^3-8r^2-2r+1=0.                             (6.1)
+
+A log germ formed from this norm naturally belongs to K times its
+conjugate field, not to the two-term relative trace alone. Independent
+permutations of holomorphic and antiholomorphic branches require explicit
+log/monodromy bookkeeping. No such paired trace identity is assumed here.
+This identifies precisely what is already rational and what is missing.
+
+7. Actual real error available, and the missing integer family
+=============================================================
+
+With every logarithm kept as its EXACT constant, truncate each completed
+series in(5.2) after N. Its error is bounded by
+
+ sum_j |d_j| r_j^(N+1)/(1-r_j)
+   [1/(N+1)^4+|log r_j|/(N+1)^3+log^2(r_j)/(3(N+1)^2)].
+                                                                  (7.1)
+
+The proved bounds at N=20,100,500 are respectively less than
+0.000855,5.075e-7,3.480e-12. This is a quantitative REAL evaluation
+scheme, not an integer linear form: the truncations retain algebraic
+coefficients and the three logarithms(5.4).
+
+For this fixed completed-source truncation the errors are nonzero
+infinitely often. If they were eventually zero then every sufficiently
+late coefficient would vanish. Multiplication by n^4 gives a sum of
+distinct exponentials z_j^n,conj(z_j)^n with polynomial coefficients
+of degree at most2. At the unique largest-modulus argument its polynomial
+coefficient is nonzero. Such an exponential polynomial cannot vanish
+eventually, as seen by its rational generating function's poles.
+This does not provide the needed rational/primitive normalization.
+
+The immediate construction gate is explicit: supply a coupled algebraic
+and logarithmic numerator family that preserves(5.2), controls the other
+embeddings, and yields rational coefficients after the correct period
+cancellations. Simply tracing the existing Taylor terms fails by6(a);
+simply treating the logs as rational constants fails by6(b). No claim
+that every possible signed or simultaneous family fails is made.
+
+8. Reproduction, exact checks, and boundaries
+============================================
+
+Run from /home/research/Chat/Math/beta4:
+
+ .venv/bin/python collaboration/round-06/identities/gangl_specialization.py
+ python3 collaboration/round-06/identities/obstruction_checks.py
+ python3 collaboration/round-06/identities/gangl_symbol_check.py
+
+All three scripts are self-contained and write only adjacent JSON files.
+The first verifies all polynomial-root identities exactly, constructs
+the21 arguments and exact coefficients, certifies their moduli and the
+relative-embedding costs, checks integral polynomials and scales, and
+encloses the functional-identity residual within2^-450 at512-bit precision.
+The exact generic symbol certificate, Zagier criterion, zero-constant
+argument and specialization algebra are the proof; the Arb residual is
+a consistency check. The incompatible literal upper-m completion is
+checked separately and explicitly rejected.
+
+The second verifies the local singular coefficient exactly, checks the
+primitive10p symbol contractions at p=19,23,29, and checks the norm
+identities/factorizations and pairwise gcds for the prescribed primes
+3,5,7,11,13,17,19,23. The all-prime theorems above do not rely on these
+finite checks. It also verifies the quartic irreducibility/discriminant
+and the norm polynomial in(6.1).
+
+No PSLQ assertion is used. No hypothetical independence of Catalan's
+constant or other polylogarithm values is used. All additive constants
+in the functional relation, inversion conventions, field extensions,
+function counts, and explicit argument scales are retained. The packet
+contains a genuine new presentation for this investigation and precise
+limits of two attempted repairs; it contains no irrationality proof.

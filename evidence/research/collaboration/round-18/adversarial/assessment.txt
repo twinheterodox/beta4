@@ -1,0 +1,359 @@
+ROUND 18 — FRESH ADVERSARIAL ASSESSMENT
+31 October 2026. Local and unpublished. No construction campaign.
+
+VERDICT
+
+Park the current beta(4) project. I tried to overturn that recommendation
+and found useful corrections to its supporting argument, but no concrete
+new mechanism with a justified inexpensive next investigation. This is a
+decision about the present proposals, not a theorem that these methods or
+beta(4) irrationality are impossible.
+
+The strongest candidate, the ordinary-moment first variation, is better
+understood than the explorer's report suggests. Its target is exactly
+beta(4), its nonvanishing holds at EVERY index, and its scalar error has a
+sharp exponential rate. Full primitive normalization also improves it
+substantially compared with the direct moment model. These are real
+advantages. They do not supply the missing primitive denominator saving.
+The arcsine realization is an exact archived family; the ordinary-moment
+sequence is not identified with an archived coefficient sequence.
+
+The decisive remaining question is now precise: can the reduced
+denominator of r_n'(0), defined below, have a strictly favorable exponential
+rate on an infinite subsequence? No such arithmetic mechanism was supplied
+or found here. The n<=12 results do not answer that all-index question.
+
+1. TARGET CALIBRATION AND AN INDEPENDENT RATIONAL FORMULA
+
+Write theta=beta(4), t=x^2, and
+
+ F(u)=sum_(k>=0) (-1)^k/((2k+1)^2-u),
+ q_j(u)=1/((2j+1)^2-u),
+ w_u(x)=sinh(sqrt(u)*(-log x))/(sqrt(u)*(1+x^2)),
+ m_j(u)=integral_0^1 x^(2j)w_u(x)dx.
+
+At u=0 use the analytic value of the quotient. Expansion or the elementary
+Laplace integral proves m_j+m_(j+1)=q_j, m_0=F, F(0)=beta(2), and
+F'(0)=theta. All integrals and their first derivatives are analytic for
+|u|<1; on a smaller closed disc the hyperbolic-sine majorant is integrable
+at x=0. There is no factorial or extra factor of two in F'(0).
+
+For n>=2 put d=n-1 and use indices 0<=i,j<d:
+
+ c_j(u)=q_j(u),
+ B_ij(u)=q_(i+j)(u)+q_(i+j+1)(u),
+ a_n(u)=det B(u),
+ r_n(u)=c(u)^T B(u)^(-1)c(u).
+
+For n=1 take a_1=1 and r_1=0. The polynomial basis
+
+ 1, (1+t), (1+t)t, ..., (1+t)t^(n-2)
+
+has determinant one relative to 1,t,...,t^(n-1). In this basis the moment
+matrix is exactly
+
+ [ F(u)    c(u)^T ]
+ [ c(u)    B(u)   ].
+
+Consequently
+
+ H_n(u)=a_n(u)(F(u)-r_n(u))=a_n(u)F(u)+b_n(u),
+ b_n=-a_n r_n.                                           (1)
+
+This proves the rank-one target dependence without assuming any numerical
+independence of beta values. For 0<=u<1 the weight is positive, so B is
+positive definite and a_n(u)>0. The assertion that w_u is a positive
+weight needs this restriction: for negative u it oscillates near zero.
+That does not damage the argument. A right derivative at zero suffices;
+alternatively, for each fixed n the finite Gram matrix stays positive
+definite on a sufficiently small two-sided neighborhood by continuity.
+
+Differentiation gives exactly
+
+ W_n=a_n(0)H_n'(0)-a_n'(0)H_n(0)
+    =a_n(0)^2 theta+a_n(0)b_n'(0)-a_n'(0)b_n(0),
+ E_n:=W_n/a_n(0)^2=theta-r_n'(0).                         (2)
+
+Thus beta(2) cancels identically. The one-row determinant derivative is a
+valid calculus identity, but alone says nothing about the divisibility
+left after this elimination. For a general polynomial P(u,F(u)), its
+derivative still contains P_u(0,beta(2))+theta P_X(0,beta(2)); no free
+beta(2) elimination has been provided in that higher-degree setting.
+
+As a small explicit calibration, n=2 gives a=10/9, b=-1,
+a'=82/81, b'=-2, and
+
+ W_2=(2/81)(50 theta-49),  E_2=theta-49/50.
+
+The direct weight-four model instead gives the primitive pair
+82 theta-81 and scalar error theta-81/82.
+
+2. VARIATIONAL NONVANISHING: THE COORDINATOR'S PROPOSAL IS CORRECT
+
+Every polynomial of degree<n with P(-1)=1 has the form
+P(t)=1+(1+t)Q(t), deg Q<d. Completing the square in the displayed block
+matrix proves
+
+ lambda_n(u):=H_n(u)/a_n(u)
+   =min_(deg P<n, P(-1)=1) integral_0^1 P(x^2)^2 w_u(x)dx. (3)
+
+The minimizer is unique; explicitly
+P_(n,u)(t)=1-(1+t)sum_(j<d)(B(u)^(-1)c(u))_j t^j.
+It is analytic in u near zero. Its derivative has value zero at t=-1
+and therefore is an admissible constrained variation. Stationarity makes
+the cross term vanish when (3) is differentiated. Since
+
+ w_0'(x)=(-log x)^3/(6(1+x^2)),
+
+equation (2) becomes the all-index identity
+
+ E_n=integral_0^1 P_(n,0)(x^2)^2
+                      (-log x)^3/(6(1+x^2)) dx > 0.      (4)
+
+The inequality is strict because P_(n,0)(-1)=1, so the polynomial is not
+identically zero. This proves W_n>0 for every n, independent of finite
+numerics and independent of any rationality hypothesis.
+
+Let lambda_(n,4) be the constrained minimum for the same weight-four
+density, and lambda_(n,2)=lambda_n(0). Then
+
+                    E_n >= lambda_(n,4) > 0.              (5)
+
+The first variation is not analytically superior to the direct model
+after normalizing its theta coefficient to one. In the independently
+checked indices 2..12 inequality (5) is strict, by an exact rational
+comparison; no numerical beta(4) evaluation is needed for that comparison.
+No assertion of strict inequality for every n>1 is required here.
+
+3. A SHARP SCALAR ERROR RATE, WITH AN ELEMENTARY PROOF
+
+The variational observation also removes a possible misleading comparison
+of raw determinant sizes. In the t variable the two measures are
+
+ eta_2(t)dt=(-log t)dt/[4 sqrt(t)(1+t)],
+ eta_4(t)dt=(-log t)^3 dt/[96 sqrt(t)(1+t)].
+
+Their total masses are beta(2) and theta. Put rho=3+sqrt(8). Then
+
+ lim_(n->infinity) log(lambda_(n,2))/n
+ =lim_(n->infinity) log(lambda_(n,4))/n
+ =lim_(n->infinity) log(E_n)/n
+ =-2 log rho = -3.525494348... .                           (6)
+
+Here is a proof; no asymptotic theorem about orthogonal polynomials is
+being imported.
+
+For either minimum, test
+P(t)=T_(n-1)(2t-1)/T_(n-1)(-3). Its value at -1 is one, and its squared
+supremum on [0,1] is 1/T_(n-1)(3)^2. Since
+T_d(3)=(rho^d+rho^(-d))/2, this gives the upper exponent in (6).
+
+For the lower bound, restrict to I_e=[e,1-e], 0<e<1/2, of length L=1-2e.
+Each density has a positive minimum c_(s,e) there. The orthonormal
+Legendre polynomials on an interval I of length L are
+
+ sqrt((2j+1)/L) * L_j((2t-a-b)/L),  I=[a,b].
+
+For |z|<=1, |L_j(z)|<=1; for |z|>1,
+|L_j(z)|<=(|z|+sqrt(z^2-1))^j. These bounds follow directly from the
+integral formula
+L_j(z)=pi^(-1) integral_0^pi (z+sqrt(z^2-1)cos v)^j dv,
+using parity for negative real z. The same formula with the imaginary
+square root proves the inside-interval bound; it is a polynomial identity,
+as can also be checked by expanding its generating function.
+
+Expanding P in this orthonormal basis and applying Cauchy--Schwarz gives
+
+ |P(t_*)|^2 <= (n^2/L) R^(2(n-1)) integral_I P(t)^2dt,     (7)
+
+where R=1 inside I and R=|z_*|+sqrt(z_*^2-1) otherwise.
+For t_*=-1 and I=I_e, z_*=-3/(1-2e). Thus
+
+ lambda_(n,s) >= c_(s,e)(1-2e)/[n^2 R_e^(2(n-1))].
+
+First take n to infinity, then e down to zero. This proves the lower
+exponent and hence the first two equalities in (6).
+
+For the upper bound on E_n, fix 0<e<1 and use I=[0,1-e]. We have
+eta_2(t)>=(1-t)/8>=e/8 on I. Apply (7) to P_(n,0), uniformly for
+t_* in [0,1]. The largest transformed argument is
+s_e=(1+e)/(1-e), so with S_e=s_e+sqrt(s_e^2-1),
+
+ sup_[0,1] |P_(n,0)|^2
+    <= 8 n^2 S_e^(2(n-1)) lambda_(n,2)/[e(1-e)].
+
+Integrating against eta_4 bounds E_n by theta times this expression.
+The already proved lambda_(n,2) exponent gives
+limsup log(E_n)/n <= -2 log rho+2 log S_e. Let e down to zero, so S_e
+tends to one. The opposite inequality follows from (5). This completes
+the proof of (6).
+
+The direct Hankel determinant has quadratic logarithmic decay, but its
+coefficient a_(n,4) carries the same leading determinant scale. The first
+variation contains the square a_n(0)^2. These scalar factors disappear
+when the approximation is put in primitive integer form. Equation (6),
+rather than the raw n^2 determinant scale, is the relevant analytic
+budget for the reduced denominator. The old endpoint Christoffel
+obstructions must NOT be imported here: their constraint was at a support
+endpoint, while the present constraint is at -1 outside the support [0,1].
+That distinction is why an exponential, rather than polynomial, scalar
+error is available here.
+
+4. PRIMITIVE ARITHMETIC AND THE EXACT MISSING LEMMA
+
+Write r_n'(0)=p_n/A_n in lowest terms with A_n>0. Equation (2) says that
+the primitive pair is exactly
+
+                       L_n=A_n theta-p_n=A_n E_n.          (8)
+
+Equivalently, clearing the two rational coefficients by their least
+common denominator D and then dividing their FULL integer gcd g yields
+the same pair. Any nonzero rational rescaling of W_n leaves (8) unchanged
+up to sign. In particular, multiplying the parameter family H_n,a_n by a
+rational factor f(u) multiplies its exterior form by f(0)^2; it provides
+no new primitive saving. A determinant basis change of that kind is not
+an additional arithmetic mechanism.
+
+If theta=h/b is rational, b L_n is a nonzero positive integer. Thus a
+sequence with L_n->0 would prove irrationality. A single small value, or
+the n=1,2 values below one, cannot exclude an unknown b.
+
+From (6), along any infinite subsequence,
+
+ log L_n = log A_n - 2 n log rho + o(n).                   (9)
+
+A NECESSARY condition for L_n->0 is
+limsup log A_n/n <= 2 log rho along that subsequence. This condition at
+equality is NOT sufficient: the sublinear terms still matter.
+A SUFFICIENT condition is a strictly favorable margin
+limsup log A_n/n < 2 log rho. More generally one can prove directly
+log A_n+log E_n->-infinity with quantified lower-order terms.
+No all-index height estimate of either useful kind has been established.
+
+The independent checks use Fraction Gaussian elimination on B, followed
+by the identity
+
+ r_n'(0)=2 c'(0)^T v-v^T B'(0)v,  v=B(0)^(-1)c(0),
+ a_n'(0)=a_n(0) trace(B(0)^(-1)B'(0)).
+
+This is separate from the explorer's difference-of-determinants and
+replaced-row implementation. It reproduces all a,b,a',b', and both
+primitive pairs at every existing index 1..12. Arb enclosures then verify
+the signs and finite sizes; no new index or family was evaluated.
+
+Some independent diagnostic values are:
+
+ n   model              log A_n       log scalar error    log L_n/n^2
+ 3   direct              24.082512       -10.875814          1.467411
+ 3   first variation     21.369976        -8.523832          1.427349
+ 6   direct             181.815401       -21.987538          4.439663
+ 6   first variation    141.949801       -19.363907          3.405164
+ 9   direct             479.239775       -32.740135          5.512341
+ 9   first variation    354.356711       -30.034542          4.003977
+12   direct             909.748685       -43.404960          6.016276
+12   first variation    660.303908       -40.661541          4.303072
+
+The full content correction at n=12 changes the explorer's first-
+variation logarithm per n^2 from 6.271803 to 4.303072. This is substantial,
+and its primitive form is far smaller than the direct primitive form.
+All 20 pairs at n=3..12 nevertheless exceed one. The corrected examples
+are finite failures, not an all-index growth theorem. The extracted
+content in these 24 examples is entirely dyadic; that is likewise only
+a finite observation, not a reason to exclude new odd content later.
+
+The reported large-prime pole saturation for the DIRECT determinant does
+not fix this logical gap. It concerns the denominator of the raw
+coefficient pair before numerator content is removed, is only finitely
+checked, and is not a theorem for the first variation. Neither that
+observation nor an integer-multiplier lower bound can substitute for a
+bound on the actual reduced denominator in (8).
+
+5. ARCHIVE COMPARISON AND THE OTHER SEEDS
+
+Arcsine family. In arcsine-contact.txt, substitute u=a^2. Since
+arcsin|t|-pi/2=-arccos|t| and cosine is even, the two measures agree
+identically, not just to first order. The rational moment recurrence and
+boundary 4F(u) agree as well. The u derivative equals the a^2 coefficient,
+or one half the second a derivative at zero. Carreira's signed measure
+is -2 times that coefficient measure: its boundary -8 beta(4) is
+consistent with the present derivative boundary +4 beta(4). There is no
+calibration discrepancy and no new parameter family here.
+
+Ordinary moments. The rank-one/Schur-complement mechanism overlaps with
+arithmetic-followup.txt, and exterior elimination overlaps with round14.
+No full coefficient-sequence identification was established. The
+inverse-moment model in deep-investigation.txt uses a different measure
+and grid. The arcsine high-column prime statement assumes its own
+arcsine entries, p>H, high columns, p-integral rows, and invertibility of
+the beta coefficient matrix modulo p. It does not apply to B above.
+Round14's multiplier divisibility and its fixed cofactor dyadic lower
+bound are also family-specific and explicitly allow unbounded primitive
+content. None establishes a general obstruction to this ordinary model.
+
+Holonomy. The displayed parameter functions J(a) and F(u) have genuine
+poles at infinitely many finite points, so they cannot be solutions of
+linear differential equations over Q(a), respectively Q(u). That does
+not exclude a different geometric variable. More significantly, the
+simple lower-jet objection is not the last word. The archived function
+
+ C(x)=F_0-log(x)F_1+(log x)^2 F_2/2-(log x)^3 F_3/6
+
+does satisfy C(1)=theta and C'(x)=-(log x)^3/[6(1+x^2)]. Hence, under
+theta rational, its entire Taylor jet at 1 is rational. The telescoping
+calculation and the archive's rational-jet repair are valid.
+
+The same archive explains why this repair alone supplies no holonomy
+contradiction: adding a rational constant does not change its differential
+span, continuation domains, or denominator growth rate. I checked its
+stated linear-operator obstruction: continuation around zero changes
+C by Delta with derivative
+-[(log x+2pi i)^3-(log x)^3]/[6(1+x^2)]. Its residue at x=i is
+31pi^3/24. Continuing again about i changes Delta by a nonzero constant.
+Thus a rational linear differential operator killing the zero-endpoint
+branch must kill 1 and therefore erase the constant carrying theta.
+This is a valid scoped proof, not an obstruction to nonlinear expressions,
+new systems, or all arithmetic holonomy. The fresh seed provides none of
+the latter with a new rationality-dependent advantage.
+
+Cyclotomic seed. The series identities
+Li_4(i)-Li_4(-i)=2i theta and
+Li_4(i)+Li_4(-i)=-7 zeta(4)/64 are correct. The odd projector is already
+the defining beta germ. No additional correspondence, rational relation
+with 1, or improved integral lattice was exhibited. Older specialized
+functional-equation obstructions are not needed for this assessment.
+
+6. THE STRONGEST CASE FOR CONTINUING, AND WHY IT DOES NOT WIN
+
+The favorable case is concrete: the ordinary first variation has exact
+target isolation, all-index positive nonvanishing, sharp exponential
+scalar decay, and a substantial primitive improvement over direct
+weight-four moments in the existing data. Its exterior evaluation point
+also avoids the older endpoint-polynomial-decay obstruction. It would be
+wrong to reject it for a missing sign theorem, claim its primitive form
+is equal to an archived sequence without proof, or infer an asymptotic
+arithmetic impossibility from the finite table.
+
+Those improvements leave exactly the hard arithmetic question (8)-(9).
+A specific new identity or congruence controlling the REDUCED denominator
+of r_n'(0), with a plausible favorable rate, would justify an inexpensive
+first check against the already available n<=12 pairs. No such identity,
+congruence, or rationality-dependent divisibility mechanism is present.
+Stating the needed height lemma, hoping for a larger future gcd, changing
+rational basis, or requesting larger determinants does not itself supply
+a new mechanism. The other two seeds similarly contain no new specified
+object to test.
+
+I therefore retain ZERO proposals for another investigation and recommend
+parking the project. The bounded phase ends at this verdict. No further
+construction, parameter search, external communication, or goal change
+was undertaken.
+
+FILES AND EVIDENCE STATUS
+
+checks.py and checks.json contain the independent reconstruction and all
+24 finite records. source-read-scope.json records the exact source scopes,
+existing paper provenance and checked hashes. No new paper was downloaded.
+The arguments above are mathematical derivations with exact computational
+cross-checks; they are not formal verification. No recent paper's claimed
+global irrationality theorem is an input, and previous model agreement is
+not treated as evidence.

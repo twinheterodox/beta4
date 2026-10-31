@@ -1,0 +1,527 @@
+ARCSINE CONTACT, THE ODD BOUNDARY, AND PRIME-LAYER OBSTRUCTIONS
+28 October 2026. Local research record; not a publication.
+
+Status
+------
+This investigation follows next-proof-avenues.txt. It proves an explicit
+dilogarithm companion for the arcsine parameter family, a formula for its
+odd boundary period, and two prime-layer congruences. It also constructs
+five variants of exact beta(4)-only determinants. All 202 recorded finite
+tests give primitive integer polynomials whose absolute values at beta(4)
+are greater than one. None supplies an irrationality proof.
+
+The odd-period formula was already observed numerically by Carreira [C,
+Section 6]. The proof below supplies a derivation within this investigation;
+no priority claim is made. The deformed measure specializes to Carreira's
+weighted arcsine measure, and the full-parity polynomial rows are the
+Chebyshev rows of the OpenAI Catalan construction [O]. Their contributions
+are identified where used. The exact checks here are additional checks by
+the same assistant, not independent mathematical or formal verification.
+
+1. The parameter family and all boundary values
+----------------------------------------------
+Put G=beta(2), B=beta(4), Z=pi^2/4. For real |a|<1 set
+
+ dmu_a(t) = |t|/sqrt(1-t^2)
+             *cos(a arccos|t|)/cos(pi a/2) dt,   -1<t<1,
+ m_v(a) = integral t^v dmu_a(t),
+ M_a(i,j) = integral_{-1}^1 integral_0^1
+                      t^i s^j/(1-ts) ds dmu_a(t).
+
+All these integrals converge. Locally uniformly in a near zero, the
+parameter factor and its derivatives are bounded; after integrating s,
+the endpoint majorant is a constant times
+(-log(1-|t|))/sqrt(1-t^2). This justifies the Taylor expansions used here.
+Write M_a=M_0+a^2 M_1+O(a^4), and likewise for m_v.
+
+With c_k=4^(-k) binom(2k,k), direct integration by parts gives
+
+ m_(2k)(a) = 2(2k+1)! / product_{r=0}^k ((2r+1)^2-a^2),
+ m_(2k+1)(a)=0,
+ m_(2k),0 = 2/((2k+1)c_k),
+ m_(2k),1 = m_(2k),0 sum_{r=0}^k 1/(2r+1)^2.                 (1)
+
+For example, after t=cos u the moment integral is
+2/cos(pi a/2) integral_0^(pi/2) cos^(2k+1)(u) cos(au) du.
+Its initial value is 2/(1-a^2), and its recurrence is
+((2k+1)^2-a^2)m_(2k)=2k(2k+1)m_(2k-2).
+
+Let K_d^-(a)=M_a(d,0), K_d^+(a)=M_a(0,d), and
+X(a)=sum_{v>=0}m_v(a)/(v+1)^2. Write X3=X(0). The boundary values are
+
+ K_0^-=K_0^+=4 sum_{r>=1, r odd} chi_4(r)/(r^2-a^2),
+ K_1^- = ((1+a^2)m_0(a)-a^2 K_0)/(1-a^2),
+ K_1^+ = Z+a^2 Y+O(a^4),
+ K_2^+ = 2+a^2 X(a).                                        (2)
+
+To obtain K_0, set t=cos u and expand
+log((1+cos u)/(1-cos u))=4 sum_{r odd}cos(ru)/r. The integral of
+cos(au)cos(ru) on [0,pi/2] is
+chi_4(r) cos(pi a/2) r/(r^2-a^2). Abel damping justifies the Fourier
+calculation at the integrable logarithmic endpoint. For K_1^- use
+
+ m_(v-2)(a)-m_v(a)
+     = ((v+1-a^2)/(v(v+1)))m_v(a),  v even >=2,
+
+and sum the telescoping differences. The formula for K_2^+ follows by
+summing the moment recurrence after division by (v+1)^2, retaining the
+initial term (1-a^2)m_0=2.
+
+The full boundary recurrences, with the initial values (2), are
+
+ (d^2-a^2)K_d^- = d(d-1)K_(d-2)^-
+       +d(m_(d-2)+m_(d-1))
+       -a^2(K_0-sum_{v<d}m_v/(v+1)),                  d>=2,
+
+ (d-1)(d-2)K_d^+ = ((d-2)^2-a^2)K_(d-2)^+
+       +a^2 K_0+2(d-2)/(d-1),                         d>=3. (3)
+
+These follow by inserting the moment recurrence in the absolutely
+convergent defining sums and partial fractions. For the first, add
+a^2 sum_{v>=d}m_v/(v+1) to its left side after moving the K_(d-2)
+term there. The coefficient of m_v simplifies to
+d(v+1-a^2)/(v(v+1)); hence the sum telescopes to
+d sum_{v>=d}(m_(v-2)-m_v)=d(m_(d-2)+m_(d-1)).
+For the second put j=d-2 and sum the moment recurrence, including
+its initial forcing 2, with multiplier j/((v+1)(v+j+1)). After the
+shift by two, the coefficient is
+j(j+1)/(v+j+3)-(j^2-a^2)/(v+j+1)-a^2/(v+1),
+and the initial term is 2j/(j+1), as required.
+The a^2 coefficient also agrees with the independent recurrences of
+[C, Lemma nurec], under M_nu=-2M_1.
+
+All entries reduce to a boundary value by
+
+ M_a(i,j)=K_(i-j)^- - sum_{k=1}^j m_(i-j+k-1)(a)/k,   i>=j,
+ M_a(i,j)=K_(j-i)^+ - sum_{k=1}^i m_(k-1)(a)/(j-i+k),  i<j. (4)
+
+Consequently M_1(i,j) has an explicit expression in the rational span
+of 1,G,B,Z,X3,Y. This is an expression with named coefficients; no
+linear independence of these constants is assumed. For even i and j,
+Z and Y do not occur. Discarding odd indices is the simplification used
+in [C, Section 6], but the full list will be useful below.
+
+The Taylor density is particularly simple. If theta=arcsin|t|, then
+
+ dmu_1(t)=h(t)dmu_0(t),  h(t)=(pi theta-theta^2)/2,
+                   0<=h(t)<=pi^2/8<sqrt(2).                 (5)
+
+2. A universal dilogarithm companion
+-----------------------------------
+Let g_d denote the coefficient of 4G in K_d^-,1. The recurrences give
+
+ g_0=0, g_1=-1,
+ g_(2k)=(2k-1)/(2k)g_(2k-2)+(c_k-1)/(4k^2),
+ g_d=(d-1)/d g_(d-2)-1/d^2,                       d odd >=3.
+
+For f(z)=sqrt(1-z^2) and w(z)=z/(1+f(z)), their generating function is
+
+                   sum_{d>=0} g_d z^d = -2 Li_2(w(z))/f(z). (6)
+
+In particular its even part is -Li_2(w(z)^2)/(2f(z)). This identity
+provides an explicit global companion rather than a new triangular
+solve for every chosen column range.
+
+Here is a derivation. Write theta_z=z d/dz. For the even generating
+function g_e the recurrence gives
+
+ [theta_z^2-z^2(theta_z+2)(theta_z+1)]g_e
+                        =1/f-1/(1-z^2).
+
+The operator factors as theta_z[(1-z^2)theta_z-z^2]. Integrating once,
+using the zero constant term, and then changing to w gives
+d(f g_e)=log(1-w^2) dw/w. Thus f g_e=-Li_2(w^2)/2.
+For the odd part, the forcing is -z/(1-z^2); the first integral is
+-atanh z. Since atanh z=2 atanh w, the second integral gives
+f g_o=-(Li_2(w)-Li_2(-w)). The even and odd parts combine to (6).
+
+For an even polynomial P(t) put
+
+ Q(t) = [ P(t) Li_2(w(1/t)^2)/2 ]_(nonnegative powers of t). (7)
+
+Then M_1(P,2j)+M_0(Q,2j) has no contribution from the lower-boundary
+G coefficients. Indeed the G coefficient from P is the convolution
+with 4g_(2k); the coefficient from Q is the convolution with 4c_k.
+Equation (6) says exactly that these convolutions cancel.
+If every exponent in P is at least every column index in use, there
+are no forward G or X3 contributions, and each entry is in Q+Q B.
+
+For unrestricted P, let x_k and u_k be the forward coefficients of
+X3 and G in M_1(0,2k), respectively. Then
+
+ x_1=1, x_k=(2k-2)/(2k-1)x_(k-1),
+ u_1=0, u_k=(2k-2)/(2k-1)u_(k-1)+4/((2k-1)(2k-2)).
+
+Equivalently x_(k+1)=m_(2k),0/2 and
+u_k/x_k=2 sum_{l=1}^{k-1}c_l/l. These coefficients permit a simultaneous
+contact construction: require both forward convolutions to vanish on
+the chosen column band and then use (7) for the lower contribution.
+The experiment solves these exact linear systems without using decimal
+digits of B. No uniform normality or nonvanishing theorem is proved.
+
+There is also an integral description of the two forward sequences.
+For lambda_k=x_(k+1), delta_k=4 log(2)lambda_k-u_(k+1),
+
+ lambda_k = integral_0^1 x^k/(2 sqrt(1-x)) dx,
+ delta_k = integral_0^1 2x^k atanh(sqrt(1-x))/sqrt(1-x) dx.    (8)
+
+After x=1-s^2 the second integral is
+4 integral_0^1 (1-s^2)^k atanh(s) ds. Its initial value is 4log(2).
+For k>=1, integrate the derivative of s(1-s^2)^k atanh(s) to get
+delta_k=2k/(2k+1)delta_(k-1)-2/(k(2k+1)), which proves (8).
+Thus this contact problem can be phrased using two explicit weights.
+That observation alone does not prove an appropriate orthogonality or
+arithmetic theorem.
+
+3. The odd boundary is a quadratic expression in lower periods
+--------------------------------------------------------------
+The constant in (2) satisfies
+
+                          Y=Z^2-4G^2=pi^4/16-4G^2.          (9)
+
+[C, Section 6] already records the equivalent combination
+G^2-pi^4/64 as a numerical observation. The following proof is useful
+because it makes the extra constant in a full-parity construction
+available without an additional unproved period identity.
+
+Set b_n=1/(2n^2 c_n), O_n=sum_{r=1}^n(2r-1)^(-2), and define
+
+ A(x)=(arcsin x)^2=sum_{n>=1}b_n x^(2n),
+ V(x)=sum_{n>=1}b_n O_n x^(2n),
+ H(x)=integral_0^x arcsin(t)/(t sqrt(1-t^2)) dt.
+
+Equation (1) gives Y=V(1); also H(1)=2G. The last identity follows
+from t=sin theta and integration by parts using
+integral_0^(pi/4) log(tan u) du=-G.
+
+The rational coefficient recurrence gives the differential identity
+
+                       (1-x^2)V''-xV'=2H(x)/x.              (10)
+
+For completeness, at x^(2n-2) its two sides are
+2n(2n-1)b_n O_n-4(n-1)^2 b_(n-1)O_(n-1)
+and 2n b_n/(2n-1). This follows from
+O_n-O_(n-1)=(2n-1)^(-2) and the recurrence for b_n.
+
+Now compose V and H with x=sin theta. Dots denote theta derivatives.
+Equation (10) and the definition of H imply
+
+ V-double-dot=2H/sin theta,   H-dot=theta/sin theta.
+
+Both sides of d/dtheta(theta V-dot-V)=d/dtheta(H^2) agree and vanish
+at theta=0, so
+
+                          theta V-dot-V=H^2.               (11)
+
+To justify the endpoint derivative, O_n-pi^2/8=O(1/n) and
+b_n=O(n^(-3/2)) by the central-binomial estimate. Hence the derivative
+in x of V-(pi^2/8)A has an absolutely convergent series at x=1.
+Multiplication by cos theta makes this derivative tend to zero as
+theta tends to pi/2. Therefore V-dot(pi/2)=pi^3/8. Substitution in
+(11) gives (9). There is no numerical identification step in this proof.
+
+4. Two exact large-prime layers
+-------------------------------
+In this section index i or j means the even actual index 2i or 2j.
+Fix H>=1 and an odd prime p>H, with 0<=i,j<=H. Write R_e(i,j) for
+the rational coefficient of M_e(2i,2j) in the expressions (3)--(4).
+Let epsilon=(-1)^((p-1)/2). Then
+
+ p^4 R_1(i,j) is p-integral, and modulo p it is
+
+   -2 epsilon c_(i-j), if i>=j>p/2;
+    0,                 otherwise.                         (12)
+
+For the low columns 0<=j<=floor(p/2), a stronger comparison holds:
+
+ p^3 R_1(i,j), p R_0(i,j) are p-integral, and
+                   p^3 R_1(i,j) = p R_0(i,j) modulo p.      (13)
+
+Proof. Since all relevant moment indices v are even and below 2p,
+formula (1) gives v_p(m_v,0)>=-1, v_p(m_v,1)>=-3 and
+p^3 m_v,1 = p m_v,0 modulo p. The only possible term 1/p^2 in its
+odd harmonic sum occurs when v>=p-1. In particular
+
+ p m_(p-1+2l),0 = 2 epsilon c_l modulo p
+
+whenever p-1+2l is in range: start at p-1 using
+binom(p-1,(p-1)/2)=epsilon modulo p, then use the moment recurrence.
+
+For even lower boundary indices d<2p, all divisions by d in (3)
+are p-units. The rational order-zero term has valuation at least -1,
+and the order-one term at least -3. The rational order-one upper
+boundary has valuation at least -2: its even recurrence can cross
+d-1=p only once; the order-zero upper boundary has valuation at least
+-2, and the subsequent order-one recurrence adds no new p denominator.
+Thus no boundary contributes to (12).
+
+In the finite tail (4), a fourth power can only arise from the divisor
+k=p in the lower formula. It is present exactly when 2j>=p, and its
+moment is m_(p+2(i-j)-1),1. This gives (12). In the upper formula,
+if the divisor 2(j-i)+k is p, then k-1<p-1 and that moment has no
+p denominator. No fourth power arises there.
+
+For j<=floor(p/2), the lower finite-tail divisors k are units. The
+lower boundary recurrence, after multiplication by p^3, reduces to
+p times its order-zero recurrence: the remaining prefix terms have
+valuation at least -2 and vanish modulo p after that multiplication.
+The initial rational lower terms are both zero. Forward gaps in these
+low columns are below p, so the upper-boundary and upper-tail terms
+are p-integral. This proves (13).
+
+These statements persist under the companion (7). If P has degree
+at most 2H and p-integral coefficients, Q does too: the coefficients
+of w are dyadic and the Li_2 denominators here are r^2 with r<=H<p.
+The order-zero companion contributes at worst p^(-2), so it does not
+affect (12), or (13) on low columns. If A_j and B_j are the beta(4)
+and rational coefficients of M_1(P,2j)+M_0(Q,2j), respectively, then
+
+           p^4 B_j = -(epsilon/2) A_j modulo p,  j>p/2.    (14)
+
+For a square matrix consisting of such high columns, if its A matrix
+is invertible modulo p, (14) implies v_p(det(B+X A))=-4n for every
+p-integral rational X. Equivalently its primitive-polynomial clearing
+factor has exactly 4n powers of p at this prime. Indeed p^4 B has
+invertible reduction and p^4 X A vanishes there. The constant term
+already has valuation -4n, while no coefficient has smaller valuation.
+
+This is a conditional local obstruction for this family and range.
+It does not cover every prime, a mixed low/high column pool, an
+arbitrary beta(4) construction, or an assumed algebraic value of B.
+In particular it is not an impossibility theorem for the whole method.
+
+5. Exact constructions and measured outcomes
+--------------------------------------------
+For every square rational pencil B+X A, the programs interpolate
+det(B+X A), clear denominators, and divide out the integer coefficient
+gcd. Call the resulting primitive integer polynomial F(X). Arb then
+encloses F(beta(4)), at precision determined by its coefficient height.
+The interpolation is checked at an additional point and by the leading
+coefficient det(A). This permits an exact arithmetic test, rather than
+testing a possibly wasteful denominator multiplier.
+
+Five sets of tests were performed. Parameter configurations can overlap;
+the count is of recorded tests, not distinct polynomials.
+
+ Construction                       Cases   Largest matrix   All |F(B)|>1
+ High-support dilogarithm companion    88           12              yes
+ Prime-constrained row lattice        40            8              yes
+ Simultaneous forward contact         38           12              yes
+ Full parity, even G auxiliary        15           12              yes
+ Full parity, full G auxiliary        21           24              yes
+ Total                               202
+
+The first construction uses
+P_r(t)=t^(2L)(1-t^2)^h T_(g+r)(2t^2-1), L=n+q,
+and columns s^(2k)(1-s^2)^q. Equation (7) supplies Q_r. An invertible
+change from monomials to the unshifted Chebyshev basis gives the same
+primitive polynomial, as checked explicitly; this basis change by
+itself cannot improve a determinant. At n=12 the best recorded
+log|F(B)|/n^2 is 7.877652.
+
+The second uses a larger pool of 2n or 3n such rows. Exact congruence
+lattices make selected prime denominators disappear. LLL is applied to
+a rational upper Gram matrix independent of the digits of B; rows are
+selected subject to full beta-coefficient rank. At n=8 with 24 source
+rows, the normalized logarithm improves from about 21.716 to 5.768,
+but remains positive. All 40 primitive values exceed one. Local
+negative Smith exponents are saved as diagnostics; they show that
+large-prime layers persist even before imposing row congruences.
+
+There is a proved rational real bound for this search. With the
+polynomials stored in t, define
+
+ R_rs = integral (4P_r P_s+2Q_r Q_s) dmu_0,
+ G_jk = integral_0^1 s^(4b+2j+2k)(1-s^2)^q ds.
+
+For q>=2, the integral operator C(s) -> integral C(s)(1-s^2)^q/(1-ts)ds
+has squared norm at most 8 between the indicated weighted spaces.
+This follows by Cauchy--Schwarz, integral dmu_0=2, and
+integral_0^1(1-s^2)^q/(1-ts)^2 ds<=4 for -1<t<1.
+Equation (5) gives the row Gram bound R. Consequently, for a rational
+row matrix U and primitive clearing factor rho,
+
+ |rho det(E)|^2 <= rho^2 8^n det(U R U^T) det(G).             (15)
+
+The right side is rational and was also computed. It is greater than
+one in every tested lattice case. The actual Arb values, not just this
+upper bound, fail the desired size test.
+
+The third construction removes both forward coefficients in Section 2
+by solving 2(n+q) exact contact equations. It allows lower exponents in
+P instead of enforcing high support. The tested contact matrices are
+invertible, but the coefficients become costly. At n=12 the best
+recorded log|F(B)|/n^2 is 21.735820. No uniform nonvanishing theorem
+for this family was obtained.
+
+6. Retaining both parities
+-------------------------
+The original Catalan proof [O, odd-primes.tex, leading-layer section]
+uses pairs of raw columns whose indices differ by an odd prime p.
+Restricting all raw indices to even numbers removes those particular
+p-separated pairs. Pairs separated by 2p remain possible, and other
+cancellation mechanisms are not excluded. This is a reason to examine
+full parity, not a proof that even indices must fail.
+
+Equation (9) permits an explicit full-parity construction. To explain
+it, construct arrays
+
+ C_G(i,j)=G delta_ij+B_G(i,j),
+ C_Z(i,j)=Z delta_ij+B_Z(i,j),
+
+where B_G,B_Z are rational. One choice of C_G is obtained by replacing
+the even monomial row t^(2i) in M_0/4 by
+sum_{k=0}^i s_k t^(2(i-k)), with
+s_k=c_k/(1-2k)=[x^k]sqrt(1-x). The inverse convolution makes the G
+coefficient delta_ij at even column 2j. There is no Z term.
+
+C_Z is 3/2 times the ordinary Cauchy integral on [0,1]^2. Thus
+B_Z(i,i)=-(3/2)sum_{r=1}^i r^(-2), and for i!=j
+B_Z(i,j)=(3/2)(H_j-H_i)/(j-i).
+
+A second, lower-degree G normalization uses the full monomial row
+sum_{k=0}^{floor(i/2)}s_k t^(i-2k) in M_0/4. Its G coefficient is
+again delta_ij; its forward Z coefficients are removed by C_Z on the
+finite column range. Both choices have been implemented.
+
+Use entrywise products, denoted by a circle, to define
+
+ C_Y=C_Z circle C_Z -4 C_G circle C_G
+             -2 B_Z circle C_Z +8 B_G circle C_G.
+
+By direct expansion and (9),
+
+ C_Y(i,j)=Y delta_ij+B_Y(i,j),
+                    B_Y=4 B_G circle B_G-B_Z circle B_Z.    (16)
+
+This is an exact quadratic integral realization of the unwanted odd
+period, rather than treating it as a new independent constant. It
+does not by itself give a favorable real or arithmetic bound.
+
+An X3 array C_X=X3 I+B_X is constructed from the even logarithmic
+kernel L_mu(i,j)=integral integral t^i s^j(-log s)/(1-ts) ds dmu_0.
+Use the same inverse convolution to make its X3 coefficient diagonal,
+then subtract its G coefficient matrix times C_G. The recurrences
+for L_mu are those of [C, Lemma nurec], reproduced in the program.
+
+Now take the actual full-parity Chebyshev rows of [O]: with
+L=b+n+q, C=L+g, and 0<=r<n,
+
+ P_r(t)=(1-t)^h t^(C-1) T_|r-g|(1/t),
+ D_r(t)=sgn(r-g)(1-t)^h t^(C-1) U_(|r-g|-1)(1/t).
+
+They obey tP_r/sqrt(1-t^2)-D_r=O(t^L). From (3), the Y coefficient
+of M_1(P_r,j) is precisely [t^j]tP_r/sqrt(1-t^2), hence is D_r,j
+for j<L. Subtract sum_i D_r,i C_Y(i,j), retaining ALL coefficients
+of D, including those above the contact band. Remove the remaining
+G,Z,X3 coefficients with C_G,C_Z,C_X, respectively. The resulting
+matrix has entries in Q+Q B. Apply the usual binomial column filter.
+
+Retaining the high coefficients of D matters: symmetric Chebyshev
+indices can give identical P rows with opposite companions. Truncating
+D would discard this source of rational row variation. Nevertheless
+the tested beta coefficient rank can be less than n, and the polynomial
+degree and n must not be silently identified.
+
+The 15 tests with the even G auxiliary all fail; at n=12 the best
+log|F(B)|/n^2 is 4.877869. The 21 tests with full G normalization all
+fail too; its baseline grows from 5.071338 at n=12 to 5.685716 at n=24.
+The smaller auxiliary degrees therefore do not repair the measured
+balance. The saved per-degree-squared diagnostic differs from the
+per-n-squared value when the beta coefficient rank drops.
+
+7. Consequences for the next direction
+--------------------------------------
+The present investigation resolves three concrete algebraic questions:
+the global even companion, the odd boundary identity, and the leading
+prime layers. It has not resolved the analytic-arithmetic balance.
+The 202 tests give no evidence that enlarging these specific families
+will yield the required decay.
+
+A further attempt should address cancellation inside a common integral
+representation, so that the lower-period corrections retain the same
+endpoint decay and prime-column relations as the main term. Equations
+(9) and (16) make a two-factor integral construction possible at the
+algebraic level. The finite canonical projections tested here do not
+supply the required simultaneous control. A candidate must exhibit
+both a real bound and its prime reductions before a broad optimization
+scan is justified; positivity/nonvanishing is a separate requirement.
+
+The distinction between a period identity and a useful approximation
+construction is essential. Projecting formal words onto an
+indecomposable part, or cancelling products algebraically, does not
+automatically preserve a bound on their numerical integrals. Nor does
+a single-valued construction automatically annihilate products: its
+period map is multiplicative. These ideas cannot supply free arithmetic
+or analytic savings.
+
+As a possible source of a different integral design, the selected
+primary-source reading [BD, introduction and Sections 3.6--3.7] describes
+quadratic expressions in period integrals and their complex integral
+realizations. Brown [Br, introduction and Section 8.2] constructs
+single-valued hyperlogarithms using products of ordinary hyperlogarithms.
+These are established constructions, not results of this project.
+Their application to the present beta(4) approximation problem remains
+speculative: no suitable integral family, denominator theorem, favorable
+decay estimate, or nonvanishing result has been produced from them.
+No blanket claim about other approaches follows from these failures.
+
+8. Reproducibility and validation
+---------------------------------
+The following commands run from the beta4 directory:
+
+ .venv/bin/python experiments/arcsine_contact.py
+ .venv/bin/python experiments/arcsine_arithmetic_rows.py
+ .venv/bin/python experiments/arcsine_pade_contact.py
+ .venv/bin/python experiments/arcsine_full_parity.py
+ .venv/bin/python experiments/arcsine_full_parity_reduced.py
+ .venv/bin/python experiments/arcsine_contact_checks.py
+ .venv/bin/python experiments/arcsine_integral_checks.py
+
+Results have matching names under results/. Exact checks include:
+
+ - 80 coefficient checks of the Y differential recurrence;
+ - 161 coefficients of its first integral;
+ - 161 full and 81 even dilogarithm companion coefficients;
+ - 1,922 comparisons between full and even boundary implementations;
+ - 59 checks against Carreira's independently arranged recurrence;
+ - 780 formal evaluations of the quadratic auxiliary identity;
+ - 148,827 matrix-entry fourth-layer reductions, including 113,927
+   low-column third-layer comparisons and 34,900 high-column cases;
+ - 2,439 moment congruences and 2,439 polynomial-companion congruences.
+
+The polynomial evaluations in the five scans are Arb interval
+computations. A separate 55-digit mpmath comparison of 22 mixed
+integrals agrees to better than 10^(-48); it is explicitly diagnostic,
+not interval-certified. The written proofs establish the
+uniform identities; finite checks do not replace those proofs.
+
+Before changes to README and this manifest update, all 366 previously
+recorded file hashes were verified unchanged. The previous research
+records and external sources were retained. Nothing was published or
+sent to external collaborators.
+
+References and precise reading scope
+------------------------------------
+[C] Marcos Costa Santos Carreira, Determinant constructions for the
+Dirichlet beta value at four, 9 October 2026. Section 6, including the
+boundary recurrences, weighted measure and odd-period observation;
+Section 7 for context on prime costs. Local source:
+sources/carreira/beta4_determinants.tex.
+https://github.com/MarcosCarreira/catalan-designs
+
+[O] OpenAI, Catalan's constant is irrational, 24 September 2026.
+The polynomial rows and raw-column framework in foundations.tex, and
+the leading-layer/pairing argument in odd-primes.tex, were used here.
+Local sources: sources/openai/foundations.tex and odd-primes.tex.
+https://github.com/openai/math/blob/main/preprints/Catalans-constant-is-irrational-September-24-2026/paper.pdf
+
+[BD] Francis Brown and Clement Dupont, Single-valued integration and
+double copy, arXiv:1810.07682v3. Read the introduction and selected
+statements in Sections 3.6--3.7 online; not a complete review.
+https://arxiv.org/html/1810.07682
+
+[Br] Francis C. S. Brown, Single-valued hyperlogarithms and unipotent
+differential equations. Read the introduction and inspected the
+examples in Section 8.2 online; not a complete review.
+https://www.ihes.fr/~brown/RHpaper5.pdf

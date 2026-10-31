@@ -1,0 +1,99 @@
+COORDINATED BETA(4) RESEARCH: ROUND11
+29 October 2026. Local and unpublished. Goal remains active.
+
+Outcome
+
+No irrationality proof or credible complete route emerged. The strongest
+retained result is conditional nonvanishing for an unsquared quarter-pole
+determinant family. Its tested primitive values remain much too large.
+Separate algebraic-norm and assumption-dependent Niven constructions also
+fail their specific gates. These conclusions concern the stated families.
+
+1. Conditional nonvanishing and exact period cancellation
+
+The symmetric imaginary-line Bernoulli functional has pole value
+ Lambda(1/(x+a))=a^4 zeta(4,a)-1/2-a/3.
+At a_j=(2j+1)/4, ordinary Lagrange interpolation cancels zeta(4),
+leaving entries in Q+Q theta without the previous high-degree positive
+interpolation numerator. Its theta coefficient matrix is positive;
+positivity of the evaluated matrix is not asserted.
+
+Let V=product_(m=1)^n(x-m)^4, h=2n, K=8n+4, D=product_(j<K)(x+a_j),
+and H_ij=Lambda(V x^(i+j)/D), 0<=i,j<h. If theta=c is rational and
+p=8n+5 is prime outside its denominator, then
+                  v_p(det H(c))=-8n.
+After multiplication by p^4, exactly h finite-tail nodes survive modulo
+p and form a square Vandermonde Gram matrix with unit weights. An
+elementary argument supplies infinitely many such primes. This fills the
+nonvanishing requirement under hypothetical rationality, but says nothing
+favorable about real size after primitive normalization.
+
+The auxiliary-prime mechanism is adapted from Lai's work; the proof here
+is explicit. See collaboration/round-11/coordinator/unsquared-nonvanishing.txt
+and norms/auxiliary_prime_review.txt for provenance, proof and model review.
+
+All seven prescribed primitive determinants are large. Their logarithmic
+absolute values range from 8.14 to 144.78. Dilation identifies the source
+with ordinary-plus-alternating half-pole derivative sums; the ordinary
+rational correction cannot be dropped. This is a change of source geometry,
+not a wholly new functional. The bounded gate does not prove a general
+asymptotic obstruction. Details: fresh/findings.txt and norms/unsquared_review.txt.
+
+2. Nonlinear cyclotomic norms
+
+For an odd prime p and h=pi/(2p), define
+ alpha_p=sin(h)^4 sum_(n odd,0<n<p) chi_(-4)(n)cos(nh)^3/sin(nh)^4.
+Then 8 alpha_p is integral, its degree is p-1, and
+ theta-alpha_p ~ pi^2(4theta+5beta(2))/(24p^2)>0.
+This avoids the old rational-trace parity obstruction and calibrates
+unnormalized beta(4). But almost all conjugates are large. The primitive
+minimal polynomial P_p has
+              log|P_p(theta)|=4(p-1)log p+O(p).
+Its complete content can save only exp(O(p)). The family therefore fails
+the rationality contradiction, including the v^(p-1) cost if theta=u/v.
+This is a proved failure of this particular norm family, not of all norms.
+Details: collaboration/round-11/norms/findings.txt.
+
+3. Rationality-dependent positive integrals
+
+For F(x)=sum chi_4(m)x^m/m^4, assume theta=F(1)=u/v and set
+A_n=[vF(u-vF)]^n/n!. The associated positive integrals tend to zero,
+but endpoint rationality does not make their derivatives integral.
+For each odd p>n not dividing uv, the origin derivative of order p+n-1
+has valuation -3. Changing to F as coordinate gives only the rational
+beta integral u^(2n+1)n!/[v(2n+1)!]. A positive rational-endpoint control
+retains rational forcing and logarithmic monodromy, showing why those
+generic features alone cannot supply the missing argument. No general
+Niven impossibility theorem is claimed. Details: rationality/findings.txt.
+
+4. The previous dense grid's analytic comparison
+
+After scalar normalization, the positive interpolated kernel on the dense
+quarter grid lies between polynomial-in-K multiples of 1/(t+1/16).
+Its r-by-r Gram determinant therefore differs by only O(r log K) in the
+logarithm. This prevents counting the denser grid as a free leading-order
+analytic improvement. It is not a primitive-content or polynomial-degree
+comparison. Details: coordinator/dense-grid-comparison.txt and
+rationality/dense-grid-review.txt.
+
+Checks and preservation
+
+The unsquared family has 106 exact reduction checks and a separate model
+reproduction of all seven primitive polynomials/scalars and 21 moments.
+Root and a worker independently checked the conditional nonvanishing
+formula; the latter includes a full rational-matrix valuation at p=13.
+The Niven packet has 96 exact derivative-layer, 18 endpoint-jet and 18
+coordinate-integral checks. The norm packet computes all primitive
+contents at p=3,5,7,11. Finite exact checks supplement the stated proofs;
+Arb values, noncertified numerical diagnostics and model reviews are
+distinguished. No human audit, formal verification or novelty is claimed.
+
+Reproduction commands are in each packet. coordinator/integration_check.json
+records integrity verification, independent agreements and index updates.
+Earlier packets are preserved. No publication or external contact occurred.
+
+Next direction
+
+Continue the revised search for fundamentally different mechanisms. These
+closures should prevent rediscovery, not lock research into the same
+families. Require a concrete new ingredient before reopening their scans.

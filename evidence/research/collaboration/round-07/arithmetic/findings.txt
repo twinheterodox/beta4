@@ -1,0 +1,462 @@
+FIXED-SIZE HERMITE ENDPOINT ARITHMETIC: CLOSING PROOF PACKET
+29 October 2026. Local and unpublished. Bounded closing pass for round07.
+
+This packet completes the saved arithmetic derivation. It does not extend
+the family, propose an irrationality proof, or make a novelty or formal
+verification claim. The saved script and output were reproduced without
+changing their contents or enlarging the tested index set.
+
+The proved results are:
+
+ * The full rational source space is a four-by-five kernel, including
+   singular four-by-four matrices. Its two endpoint coefficients have an
+   exact determinant and gcd formula.
+ * A common factorial scale can be removed from both endpoint determinants
+   identically. An explicit divisor of the specified integer pair's common
+   content follows; the actual remaining gcd is retained in the checks.
+ * The normalized endpoint column has a sharper denominator bound from
+   FOUR STRICT integration indices. Its local fourth p-denominator layer
+   first occurs at degree4p, and is nonzero there for every prime p>=5.
+
+The last statement concerns a local coefficient and a sufficient bound
+for the endpoint column. It does not assert that all fourth prime layers
+have vanished from the final primitive pair. No uniform primitive-height
+bound sufficient for a shrinking integer form is proved here.
+
+
+1. Setup and the full endpoint system
+
+Let N>=1, a,b>=0, a+b=2N. Let D in Z[x] have degree2, D(0)=1 and
+no zero on [0,1]. In particular D(1)!=0. Write E=x*d/dx and h0=1+x^2.
+The sources under consideration are
+
+ G=R/D^N,  deg R<=2N,  R(0)=0,
+ f=A/h0+E^4G/x,
+ f=O(x^a) at0,   f=O((x-1)^b) at1.                         (1.1)
+
+All coefficients A,R are rational. Four integrations by parts give the
+exact endpoint form
+
+ I(f)=(1/6)integral_0^1 f(x)(-log x)^3 dx
+                           =A theta+G(1), theta=beta(4).   (1.2)
+
+The regularity hypotheses justify the integral. The algebraic endpoint
+system below only needs D(0)=1 and D(1)!=0. No numerical value of theta
+enters its construction.
+
+Set
+
+ F(x)=sum_(j>=1 odd) chi4(j)x^j/j^4,
+ R_low=trunc_(degree<=a)[-D^N F],
+ L(z)=product_(j=a+1)^(2N)(z-j),
+ D(x)^N=sum_(ell=0)^(2N) d_ell x^ell.                       (1.3)
+
+Since E^4F=x/(1+x^2), the condition at0 is exactly
+
+ R=A R_low+sum_(j=a+1)^(2N) r_j x^j.                        (1.4)
+
+Use y=log x near x=1 and put
+
+ T(y)=1/(2 cosh y),
+ V_b(y)=-sum_(m=4)^(b+3) T^(m-4)(0)y^m/m!.                  (1.5)
+
+An empty sum is zero. If g_k=(d/dy)^kG(exp y)|_(y=0), then the second
+condition in (1.1) is equivalent to
+
+ G(exp y)=sum_(k=0)^3 g_k y^k/k!+A V_b(y)+O(y^(b+4)).        (1.6)
+
+Indeed x f=A T(y)+(d/dy)^4G(exp y), and multiplication by x and the
+coordinate change preserve the order of the zero at1.
+
+For r,k=0,1,2,3 define P_r(z)=z^r L(z) and
+
+ K_(r,k)=sum_ell d_ell P_r^(k)(ell)/k!,
+ v_r=(d/dy)^r L(d/dy)
+        [R_low(exp y)-D(exp y)^N V_b(y)]|_(y=0).            (1.7)
+
+The notation v is the inhomogeneous vector; it is called h in the saved
+script and is unrelated to h0=1+x^2. A fully explicit formula is
+
+ v_r=sum_j [x^j]R_low * P_r(j)
+       +sum_ell d_ell sum_(s=4)^(b+r)
+                      P_r^(s)(ell)/s! * T^(s-4)(0).        (1.8)
+
+The derivatives of T are Euler integers divided by2; odd ones vanish.
+
+THEOREM1. The rational source space (1.1) is naturally isomorphic to
+
+                           K g=A v.                       (1.9)
+
+The endpoint pair is exactly (A,g_0). This is a four-by-five kernel
+problem ker[-v|K]; det K is allowed to vanish.
+
+Proof. Put U(y)=D(exp y)^N G(exp y)-A R_low(exp y). Equation(1.4)
+is equivalent to L(d/dy)U=0. Applying derivatives r=0,...,3 at0, the
+jet(1.6) suffices because the operator order is b. The identity
+
+ (d/dy)^r L(d/dy)[exp(ell y)y^k/k!]|_0=P_r^(k)(ell)/k!
+
+gives (1.9).
+
+Conversely assume b>0 and rational A,g satisfy(1.9). Let P(y) be the
+polynomial in(1.6) without the remainder. Form the analytic germ
+U_*(y)=D(exp y)^N P(y)-A R_low(exp y). There is a unique exponential
+sum U=sum_(j=a+1)^(2N) r_j exp(jy) matching its first b derivatives:
+the interpolation matrix is a Vandermonde matrix at b distinct integers.
+Thus all r_j are rational. The four equations(1.9) say that
+L(d/dy)U_* has its first four derivatives zero. Since L is monic, its
+order-b recurrence forces U-U_*=O(y^(b+4)). Division by the nonzero
+germ D(exp y)^N gives (1.6). Taking R as in(1.4) gives exactly(1.1).
+The same recurrence proves uniqueness, including when b<4.
+
+For b=0, L=1 and(1.9) simply says that the first four derivatives of
+D(exp y)^N sum_(k=0)^3g_k y^k/k!-A R_low(exp y) vanish. Hence
+R=A R_low and G=R/D^N have precisely those four jets. This separately
+handles the order-zero boundary case. QED.
+
+This isomorphism does not assert that the kernel has dimension one or
+that its endpoint pair is nonzero. A nonzero source may have A=0, or
+even have a zero endpoint pair. Those cases must be distinguished.
+
+
+2. Integer clearing and actual primitive normalization
+
+Put
+
+ O_a=lcm(1,3,...,largest odd<=a),  O_0=1,
+                           C=2 O_a^4.                     (2.1)
+
+Each K entry is an integer: a divided derivative of an integer polynomial
+at an integer is integral. Also C v is integral. For the low polynomial
+this follows from its coefficient denominators. For the second sum in
+(1.8), every summand is an integer times an Euler integer divided by2.
+Factorials have already canceled in the divided derivatives.
+
+At an index where the integer matrix [-C v|K] has row rank4, its signed
+maximal minors give a kernel vector (u,g_0,g_1,g_2,g_3). The corresponding
+target coefficient is A=C u. Expansion of the first two cofactors gives
+the specified integer endpoint pair
+
+ U=C det K,
+ B=det K[ column0 replaced by C v ].                       (2.2)
+
+The formula remains valid when det K=0, provided the augmented matrix
+has rank4. If (U,B)!=(0,0), its actual primitive pair is
+
+                  (U,B)/gcd(U,B),                         (2.3)
+
+with the overall sign fixed to make the first nonzero coefficient positive.
+This is an actual two-integer gcd, not an entrywise denominator estimate.
+On a one-dimensional source space it agrees with the primitive pair from
+the growing boundary-jet matrix, regardless of that matrix's source-vector
+content. At an augmented-rank-defective index the whole kernel is needed;
+the cofactor pair alone is not a prescription for a particular source.
+
+The circular N=a=b=1 example has det K=0 but augmented rank4. It gives
+A=0, G=x^2/(1+x^2), and primitive constant form1. The saved checks retain
+this case instead of silently treating it as a theta approximation.
+
+
+3. Exact factorial normalization
+
+Let d_b=lcm(1,...,b), with d_0=1. For all four rows and columns,
+
+                        d_b^k K_(r,k)/b! is integral.      (3.1)
+
+Proof. L(z)/b!=binom(z-a-1,b) is integer-valued. At an integer ell,
+Vandermonde's identity expresses binom(ell-a-1+t,b) as an integer linear
+combination of binom(t,j), 0<=j<=b. For k>0 the t^k coefficient of
+
+ binom(t,j)=(-1)^(j-1)t/j * product_(1<=s<j)(1-t/s)
+
+has denominator dividing d_b^k; its constant coefficient is integral.
+Multiplication by (ell+t)^r preserves that denominator bound. Summing
+against the integral d_ell proves(3.1). The empty b=0 case is immediate.
+
+Define
+
+ Khat=K diag(1,d_b,d_b^2,d_b^3)/b!,   vhat=v/b!.             (3.2)
+
+Khat is integral. Replacing g by diag(1,d_b,d_b^2,d_b^3)ghat preserves
+g_0. Equivalently both endpoint determinants acquire exactly the same
+factor
+
+                           d_b^6/(b!)^4.                   (3.3)
+
+Thus their primitive pair is unchanged. Removing this factorial common
+scalar is an exact normalization, not evidence that the residual pair
+has small height. The next section controls the denominator of vhat.
+
+
+4. Four strict integration indices in the local endpoint germ
+
+Let V(x) be the analytic germ at x=1 satisfying
+
+ E^4 V=-x/(1+x^2),  E^jV(1)=0 for j=0,1,2,3.              (4.1)
+
+Then V(exp y)=V_b(y)+O(y^(b+4)). Consequently the vector(1.7), whose
+largest derivative order is b+3, is unchanged if V_b is replaced by
+this full local germ. This is only a statement about jets at1; no global
+branch or rationality of V is assumed.
+
+Put z=x-1 and write
+
+                1/(2+2z+z^2)=sum_(k>=0) q_k z^k.
+
+The four ordinary integrations constructing V are explicit:
+
+ H_3(z)=-integral_0^z dt/(2+2t+t^2),
+ H_2(z)= integral_0^z H_3(t)/(1+t) dt,
+ H_1(z)= integral_0^z H_2(t)/(1+t) dt,
+ V(1+z)=integral_0^z H_1(t)/(1+t) dt.                       (4.2)
+
+All four primitives vanish at z=0. They follow successively by dividing
+the equations for Euler primitives by x=1+z.
+
+For m>=0 put
+
+ W4(m)=product_(r=1)^4 lcm(1,...,floor(m/r)),
+                 lcm of an empty list=1.                  (4.3)
+
+LEMMA2. If V(1+z)=sum c_m z^m, then c_0=...=c_3=0 and, for m>=4,
+
+                  2^ceil((m-3)/2) W4(m)c_m is integral.    (4.4)
+
+Proof. The first kernel has the exact period-four coefficients
+
+ q_(4s)=(-1)^s/2^(2s+1),
+ q_(4s+1)=(-1)^(s+1)/2^(2s+1),
+ q_(4s+2)=(-1)^s/2^(2s+2),   q_(4s+3)=0.                  (4.5)
+
+This follows either from its two-term recurrence or its Gaussian partial
+fractions. Thus 2^(floor(k/2)+1)q_k is integral.
+
+Expanding the four integrations in(4.2), every contribution to c_m has
+strict increasing integration indices
+
+                       1<=j_1<j_2<j_3<j_4=m.
+
+Its denominator, apart from the first kernel's power of2, divides
+j_1 j_2 j_3 j_4. The first kernel index is j_1-1, and j_1<=m-3.
+Equation(4.5) therefore supplies a power of2 no larger than
+2^ceil((m-3)/2).
+
+For any prime p, the maximum total valuation of four distinct positive
+integers at most m is
+
+ sum_(e>=1) min(4,floor(m/p^e))
+        =sum_(r=1)^4 floor(log_p floor(m/r)).               (4.6)
+
+The right side is v_p(W4(m)). This proves that every product of the
+four indices divides W4(m), and hence proves(4.4). The last index being
+exactly m is not needed for this upper bound. QED.
+
+The strictness here is essential and justified: all four integrations
+are ordinary integrations of germs analytic at z=0. This differs from
+an iterated-integral expression with singular dx/x letters at the origin,
+where such a denominator saving cannot be assumed.
+
+
+5. The sharpened normalized-column bound
+
+For b>0 define
+
+ Z_b=gcd(2 b!, 2^ceil(b/2) W4(b+3)),
+ Chat=lcm(O_a^4,Z_b).                                     (5.1)
+
+For b=0 put Z_0=1 and Chat=O_a^4.
+
+THEOREM3. Every entry of Chat*vhat is integral.
+
+Proof. Split v=v_R+v_V according to the two terms in(1.7), including
+the minus sign in the V contribution. For the low polynomial,
+
+ (v_R)_r/b!=sum_j [x^j]R_low * j^r binom(j-a-1,b),
+
+so O_a^4 clears it.
+
+For the other term use the operator identity
+
+                 L(E)=x^(2N+1) (d/dx)^b x^(-a-1).          (5.2)
+
+After applying E^r and evaluating at1, division by b! expresses
+(v_V)_r/b! as an integer linear combination of ordinary Taylor
+coefficients through degree b+r of
+
+                         x^(-a-1)D(x)^N V(x).
+
+For completeness, expanding E^r as an integer combination of
+x^j(d/dx)^j gives derivatives of orders b+s, 0<=s<=r. The corresponding
+ordinary Taylor coefficient is multiplied by (b+s)!/b!, an integer;
+the other factors are derivatives of the integer-power monomial
+x^(2N+1) at1. This proves the asserted integrality of the combination.
+
+Both D(1+z)^N and (1+z)^(-a-1) have integer Taylor coefficients.
+Multiplication by them cannot worsen a coefficient-denominator bound
+that increases with the degree. Lemma2 therefore clears all the Taylor
+coefficients needed here by
+
+                         2^ceil(b/2) W4(b+3).              (5.3)
+
+Independently, formula(1.8) shows v_V is half-integral. Thus v_V/b!
+has denominator dividing 2b!. Combining these TWO bounds gives Z_b.
+Taking its least common multiple with O_a^4 proves the theorem. For
+b=0, V_b=0 and the assertion is just the low-polynomial bound. QED.
+
+This theorem is uniform in the integer quadratic D. It is a sufficient
+bound, and need not be the exact denominator of vhat. For example the
+saved circular N=a=b=8 case has Chat=31116960000, whereas the actual
+common denominator of its four vhat entries is only40516875.
+
+
+6. A genuine common-content divisor, with exact scope
+
+Form the integral pair
+
+ Uhat=Chat det Khat,
+ Bhat=det Khat[ column0 replaced by Chat vhat ].             (6.1)
+
+By(3.3), the exact pair(2.2) satisfies
+
+ (U,B)=q (Uhat,Bhat),
+            q=C(b!)^4/(d_b^6 Chat)>0.                     (6.2)
+
+Write q in lowest terms. Since both pairs are integral, the numerator
+of q divides gcd(U,B), whenever that pair is nonzero. Indeed its reduced
+denominator must divide both coordinates of (Uhat,Bhat); canceling it
+leaves the numerator as a common factor of (U,B). This is a uniform,
+proved divisor of common numerator content in the specified raw pair.
+
+The saved calculations verify(6.2), this divisibility, and equality of
+the two actual primitive pairs. They retain the additional common gcd
+after this guaranteed factor has been removed. The factor can be weak
+at small b (it is72 in the saved circular N=8 case), and it is not
+asserted to exhaust common content.
+
+The role of(6.2) is to remove factorial scale before assessing the actual
+primitive coefficient height. Its content is normalization-dependent:
+rescaling an input pair changes that content while leaving its primitive
+pair unchanged. Neither this factor nor Chat alone proves a useful
+upper or lower asymptotic bound for the final primitive target coefficient.
+
+
+7. The local fourth p-layer is postponed, and the postponement is sharp
+
+THEOREM4. Let p>=5 be prime. No c_m in Lemma2 with m<4p has a denominator
+divisible by p^4. At m=4p its p-adic valuation is exactly -4, and
+
+                    p^4 c_(4p) == -chi4(p)/48 mod p.        (7.1)
+
+Proof. For m<=4p, every integration index is below p^2. A term can
+therefore have four p factors only if all four strict indices are
+multiples of p. This is impossible below4p. At4p there is exactly one
+such chain:
+
+                             (p,2p,3p,4p).
+
+The three intervening coefficients of 1/(1+z) have degrees p-1, so
+their signs are all positive. The first integration contributes
+-q_(p-1). Hence the surviving residue after multiplication by p^4 is
+
+                             -q_(p-1)/24.
+
+The Gaussian partial fractions give
+
+ q_(p-1)=(1/(2i))[(1-i)^(-p)-(1+i)^(-p)].
+
+Modulo p in F_p[i], Frobenius sends i to chi4(p)i. The factors 1+i and
+1-i are units because their norm is2. The displayed difference is then
+chi4(p)i, so q_(p-1)==chi4(p)/2 modp. This proves(7.1), whose right
+side is nonzero. Other chains have at most three p factors and vanish
+after multiplication by p^4 and reduction. QED.
+
+This exact residue statement is about V, not an assertion that every
+entry of vhat has its fourth layer at every available prime. The later
+linear combination may cancel it. Conversely the low polynomial in v
+still carries O_a^4, so the theorem does not delete that separate source
+of fourth prime powers in the full system.
+
+
+8. Recorded denominator comparison and unresolved arithmetic gate
+
+The earlier in-round observation about asymmetry can be stated precisely
+without recommending or extending a construction. It concerns the explicit
+bound Chat, not the actual endpoint pair. If a/N tends to alpha and b/N
+tends to beta=2-alpha, the prime-number-theorem estimate for least common
+multiples gives
+
+ log Chat/N -> sum_(r=1)^4 max(alpha,beta/r)+(beta/2)log2.    (8.1)
+
+The standard input is log lcm(1,...,m)=m+o(m). For the underlying prime
+sum asymptotic see D. Zagier, "Newman's Short Proof of the Prime Number
+Theorem," American Mathematical Monthly104 (1997), p707, stepVI,
+ https://people.mpim-bonn.mpg.de/zagier/files/doi/10.2307/2975232/fulltext.pdf
+Adding the prime-power terms changes that sum by o(m). The coordinator
+checked this author-source input; the closing pass also reopened the
+corresponding statement. No new estimate about primes is claimed here.
+
+Prime-power corrections are o(N). For odd primes of order N, the bound
+has the larger of four layers below a and min(4,floor(b/p)) layers from
+W4; taking gcd with b! does not change that leading profile. The dyadic
+exponent is beta*N/2+O(log N) when beta>0. The endpoint beta=0 agrees
+with the limiting expression.
+
+The elementary piecewise-linear expression in(8.1) is minimized at
+alpha=1/2, beta=3/2, with value13/4+(3/4)log2. At symmetry it is
+4+(1/2)log2. This only identifies the best sufficient clearing in this
+one column. The scaled K entries, their determinant height, the actual
+common gcd, and the real source error all remain relevant. No optimized
+primitive family, and no actual-value no-go, follows from(8.1).
+
+In particular, the required arithmetic step after the separate analytic
+work is a uniform estimate for the ACTUAL reduced target coefficient
+from(2.3). The results here do not prove such an estimate on either side
+of a useful error threshold. They also do not establish rank or nonzero
+error uniformly over all asymmetric endpoint choices and denominators.
+Those are explicit gaps, not consequences of finite examples.
+
+
+9. Reproduction and preservation record
+
+From /home/research/Chat/Math/beta4 run exactly
+
+ .venv/bin/python collaboration/round-07/arithmetic/endpoint_arithmetic.py
+
+The closing rerun used the existing code and the same prescribed data:
+
+ * 11 frozen round06 comparisons: all actual primitive endpoint pairs
+   AND all complete primitive source vectors match exactly.
+ * 6 boundary cases b=0, at N=1,3,6 for D=1+x^2 and D=1+x-x^2:
+   reconstruction and the old Taylor-truncation endpoint pair match.
+ * 61 local coefficients, degrees4 through64: the strict-index and
+   dyadic denominator bound holds, and the independently differentiated
+   local series satisfies its Euler differential equation through every
+   degree justified by the truncation.
+ * 4 sharp fourth-layer checks, p=5,7,11,13: exact exponent4 and residues
+   3,6,3,10 respectively, as predicted by(7.1).
+
+Every fixed-system comparison also checks Khat integrality, the Chat
+bound, both primitive determinant pairs, the exact scalar(6.2), and its
+guaranteed common divisor. No evaluation of theta is used by this script.
+There was no enlarged index or parameter scan in the closing pass.
+
+The existing files were reproduced byte-for-byte:
+
+ endpoint_arithmetic.py
+ SHA256 297923f3ba3b52e07632315d3b3cd7011d53be034fafa1f08db1cee834d4f02b
+ endpoint_arithmetic.json
+ SHA256 8ba11374f7b8c9e4a886d8b0441b19763d163c8e9f827295dc0d5a524d2d3c73
+
+Thus no earlier numerical output needed correction. The coordinator has
+separately reported reconstruction from the growing boundary matrices,
+without importing this fixed-system implementation. The analysis worker
+has independently derived the strict-index, dyadic, and sharp p^4 lemmas;
+its hash-specific review is being saved in its own assigned directory.
+
+The 4x4 construction and factorial argument were coordinated with
+round-07/coordinator/endpoint_system.txt. The homogeneous circular rank
+reduction and rational Euler identity were read from the frozen round06
+and round03 packets. The sole external input checked for the closing
+comparison was the standard PNT consequence cited in Section8, first
+checked by the coordinator. No old-round file was edited, and no theorem
+in this packet is asserted to prove irrationality or a primitive no-go.

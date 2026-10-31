@@ -1,0 +1,259 @@
+BETA(4): BOUNDED MODULAR-HOLONOMY FEASIBILITY ASSESSMENT
+30 October 2026. Local and unpublished. No irrationality proof.
+
+Conclusion
+----------
+The tested level32 modular construction does not warrant another round
+of adding derivatives, homogeneous companions, or first primitives in
+the same coefficient-type framework. The obstruction is quantitative
+and structural, not merely a failed choice of uniformizing map.
+
+Two cusp logarithms force every admissible holomorphic map in the present
+t coordinate to have log|phi'(0)|<1.3. Comparing any proposed augmented
+holonomy bound with the unconditional bound for its companion functions
+forces log|phi'(0)|>4. The comparison also covers the weighted-metric
+refinement in CDT7.6.4/8.0.5, with the precise hypotheses below.
+
+This closes the original construction and the two variants authorized
+for this phase. It does not rule out modular methods, arithmetic holonomy,
+different coordinates or maps, or new arithmetic beyond these coefficient
+types. The appropriate next bounded investigation is a complete-family
+identity with genuinely complementary arithmetic. That phase has not
+been started.
+
+1. The construction and what rationality supplies
+------------------------------------------------
+Let theta=beta(4), kappa=7theta/2, and use the level32 parameter and
+Eichler-integral filter of modular-detour.txt. In brief,
+
+ t=eta(tau)^2 eta(4tau) eta(8tau) eta(32tau)^2
+       /[eta(2tau)^3 eta(16tau)^3],
+ Y=(q d/dq)log t,  J_+=theta3(2tau)^2+2sqrt(2)theta3(16tau)^2,
+ A_+=J_+^5/Y=A0+sqrt(2)A1,
+ B_+=A_+[16F(tau)-10F(2tau)+F(4tau)
+               +(sqrt(2)/2)(4G(tau)-5G(2tau)+G(4tau))]
+     =B0+sqrt(2)B1,
+ Rj=Bj-kappa Aj.
+
+Here F=sum_(d odd) chi(d)q^d/[d^4(1+q^d)] and
+G=sum_(d odd)q^d/[d^4(1+q^(2d))]. Conjugation acts on both factors in B.
+The Aj have integral Taylor coefficients in t. A fixed multiple of the
+Bj coefficients through degree n is cleared by d_n^4, d_n=lcm(1,...,n).
+
+If theta is rational, the Rj have rational Taylor coefficients and the
+same sufficient denominator bound after one fixed scalar multiplication.
+Their principal singularity at t0=0.153332807... cancels, and the chosen
+germs are holomorphic on |t|<1/sqrt(2). This analytic cancellation holds
+without rationality; rationality supplies the arithmetic needed to apply
+the dimension theorem. No independence of unknown numerical periods is
+assumed.
+
+2. Rational descent and the independently counted functions
+----------------------------------------------------------
+The explicit system is given in coordinator/rational-system.txt, with
+integer source polynomials in modular-system-coefficients.json. It is
+obtained from two conjugate order4 operators over Q(sqrt(2)), not from
+assigning the unfiltered rank4 equation to the filtered construction.
+
+Their homogeneous modules are nonisomorphic finite-character twists of
+the irreducible symmetric cube of modular monodromy. They form a direct
+sum of rank8. The least common left multiple descends to Q(t), and
+A0,A0',...,A0^(7) are independent. This semisimple derivative module W
+contains no nonzero rational function.
+
+Under rationality of theta, the following families are independent over
+Q(t), and their spans are closed under differentiation:
+
+ Original: 1,R0,R0',...,R0^(7).                              rank9
+ Variant1: Original plus A0,A0',...,A0^(7).                   rank17
+ Variant2: Variant1 plus I(t)=integral_0^t A0(u)du.           rank18
+
+The explicit nine-component rational block system also uses R1 through
+its third derivative; its closed span equals the rank9 family above.
+
+The independence proof uses the exact congruence, for all sufficiently
+large odd primes outside the hypothetical rationality denominator,
+
+ p^4 R0(t)=t^p(16 chi(p)A0(t)+4A1(t))  (mod p,t^(2p)).
+
+For every nonzero rational differential operator O of order<=7,
+O(16 epsilon A0+4A1) is nonzero and nonrational for epsilon=+1,-1.
+A fixed nonzero coefficient then supplies a surviving valuation -4 in
+O R0 at an index p+O(1). It cannot be canceled by the homogeneous
+companions, which are p-integral outside a fixed finite prime set, or
+by a first primitive, whose valuation in that band is at least -1.
+
+The explicit primitive I is independent of 1 and W because it has a
+nonzero fourth logarithm at a cusp, whereas all members of 1+W have
+logarithm degree at most3. This proves rank18; it is not a conjectural
+count of cohomology classes.
+
+3. Arithmetic profiles
+-----------------------
+The R derivatives through order7 are cleared by a fixed multiple of
+d_(n+7)^4. The A derivatives are integral. The coefficients of I are
+integer/n. Fixed shifts can be handled by endpoints (1+epsilon)n and a
+limit epsilon->0 in the relevant bounds.
+
+The congruence proves a lower bound for every fixed nonzero remainder
+direction even after adding cheap companions: a denominator template
+consisting of a fixed polynomial in n and finitely many LCM factors
+d_floor(b_h n+c_h) must contain at least four factors with b_h>=1.
+Choose a nonzero coefficient of O(16 epsilon A0+4A1) outside the finitely
+many roots of the index polynomial to prove this assertion.
+
+For explicit remainder derivatives the common-prefix log denominator
+is 4n+o(n). For arbitrary rational-function combinations it is at least
+4n+o(n) in the liminf sense, not necessarily exactly that rate: rational
+factors can add exponential denominators at fixed primes. Nor is this a
+claim about the reduced denominator of every individual coefficient.
+
+CDT's flat/integration costs for the displayed families are:
+
+                         dimension   integral    integer/n    four-LCM     tau
+ Original                    9           1           0           8       320/81
+ Homogeneous variant        17           9           0           8       832/289
+ First-primitive variant    18           9           1           8       931/324
+
+All three tau values exceed1.3. They fail the entry condition for the
+full-family bounds. Smaller selected families require a separate argument:
+for example, nine integral companions plus one remainder have tau=19/25,
+which passes that entry condition but does not produce a contradiction.
+
+4. Mandatory singularities and an all-map derivative bound
+----------------------------------------------------------
+The quotient parameter has four elliptic branch values (the roots of
+4t^4-16t^3+12t^2-8t+1) and cusp values 0,infinity,(1+i)/2,(1-i)/2.
+Adjoining homogeneous companions restores the obstruction at the first
+elliptic value. The estimate below optimistically ignores that additional
+restriction, making its failure stronger.
+
+At each of the two nonzero finite cusps a, the R components have a
+nonzero log^4(t-a)/(t-a) term. On the branch computed at tau=1/4 the
+coefficients are 45ia and -45a/4 for R0,R1. Changing branch adds a
+homogeneous solution with logarithm degree at most3. Thus both cusp
+singularities persist on every branch; cancellation in the principal
+disk does not remove them globally.
+
+The result also survives mixed choices O R0+u, where u is in the rational
+span of 1,W and fixed first primitives of W. If Delta=M-1 denotes cusp
+monodromy, Delta^4u is rational, while O Delta^4R0 is nonzero and
+nonrational. Moreover (M^e-1)^4R0=e^4 Delta^4R0, so finite ramification
+cannot remove this obstruction.
+
+Every holomorphic phi:(D,0)->(C,0) making such a noncheap function
+meromorphic must therefore omit both cusps. The universal cover of the
+twice-punctured plane and Schwarz--Pick give
+
+ |phi'(0)|<=Rstar=(4/pi) Re(K((1+i)/2)^2)
+                   =3.52992550073551475...,
+ log Rstar=1.26127676611499713... .
+
+An independent exact rational tail certificate proves Rstar<18/5 and
+log Rstar<13/10. The decimals are diagnostic values; the strict rational
+certificate is what the obstruction uses. Maps on an open disk can be
+restricted to smaller disks when applying a theorem requiring extension
+past the boundary, then handled by a limit.
+
+5. Why smaller families and more companions do not rescue this bound
+-------------------------------------------------------------------
+Suppose c independent unconditional companions and r>=1 remainder
+directions share the same admissible map; m=c+r. Suppose k companions
+have certified integer/n type and the others are integral. Write
+a=log|phi'(0)| and H_k=sum_(j=1)^k 1/j. For k<m the exact integration cost is
+
+ s(m,k)=(2m-1)H_k/m^2.
+
+The all-primitive endpoint has
+s(c,c)=((2c-1)H_(c-1)+1)/c^2. In every case
+m s(m,k)>=c s(c,k). The full favorable profile is
+
+ tau_F=4(1-c^2/m^2)+s(m,k),       tau_C=s(c,k).
+
+The unconditional companion bound uses the same geometric numerator B
+as the proposed augmented bound. A contradiction would require
+
+ c(a-tau_C)<=B<m(a-tau_F),
+
+and therefore
+
+ r a>m tau_F-c tau_C>=4r(1+c/m)>4r.
+
+This is incompatible with a<1.3. When c=0 the entry condition already
+requires a>4. The analogous calculation covers certified integral or
+single-LCM companion bases with tau_C<=1.
+
+The comparison extends to CDT's fixed-radius and weighted-metric
+refinements. For fixed radius weights s, their proof gives the numerator
+
+ B_d(s)=-s^T Gs+(2/d)integral_0^d min_k[(Gs)_k-x log r_k] dx.
+
+Because r_k<=1, the integrand is nondecreasing. Hence B_c(s)<=B_m(s).
+Use the same weights for the unconditional companions, even when they
+were selected for the full family. This proves the same necessary a>4
+condition for CDT7.6.4/8.0.5; no assumption that their stationary weights
+are global minimizers is made. The precise derivation and independent
+check are in the two optimized-comparison notes.
+
+The original comparison also handles the stated multiple-map bound in
+CDT6.0.2 with a common normalized partition. Every map in that application
+must obey the same cusp omission. No numerical conformal-map optimization
+or large coefficient scan can fix this particular comparison.
+
+6. Verification and remaining limits
+------------------------------------
+The main agent developed the constructions and comparison. One worker
+performed an independent model check, with no delegation. Its conclusions
+and qualifications are in independent/audit-report.txt and
+independent/optimized-comparison-audit.txt. This is mathematical checking
+with exact computations, not formal verification or an external human audit.
+
+Reproducible checks include the source/Schwarzian identities through
+degree145 from an independent eta-series implementation; the full prime
+prefix for20 odd primes; symbolic symmetric-cube covariance and cusp
+constants; an exact certificate for Rstar<18/5;495 exact piecewise
+minimizations of the integration cost; and15,120 finite checks of the
+relative arithmetic inequalities. The infinite claims additionally use
+the modularity, divisor-degree, representation, and analytic arguments
+written in the notes. A finite Fourier match by itself is not a proof.
+
+No lemma needed for the scoped comparison is presently left conjectural.
+The published CDT holonomy theorem and its foundational arithmetic
+Hilbert--Samuel and multiplicity results remain imported mathematical
+inputs, not independently formalized theorems. Reading scopes, including
+unread or inaccessible dependencies, are recorded in coordinator/sources.txt.
+
+Specific limits of the obstruction:
+ * The fixed level32 family and the current t coordinate are essential.
+ * The maps here are holomorphic into C; arbitrary meromorphic maps are
+   not covered by the two-omitted-point bound.
+ * Arithmetic profiles must be justified for the chosen basis. Rational
+   combinations of first primitives need not remain of integer/n type.
+ * Fixed-template lower bounds do not cover n-dependent constructions,
+   arbitrary auxiliary-polynomial arithmetic, or a new integral lattice.
+ * Higher extensions and different modular families are unassessed.
+
+There is no assertion that these remaining possibilities cannot work.
+There is also no specific candidate among them with a favorable margin.
+
+7. Recommendation
+------------------
+Stop this bounded modular investigation. The rationality-sensitive
+cancellation is real, but the resulting functional family has too much
+arithmetic cost relative to the continuation it can retain. Increasing
+its counted dimension through the tested companions cannot reverse this.
+
+The best next bounded target is an identity of complete parameterized
+families with complementary primewise divisibility, as discussed in
+literature/strategy-2026-10-30.txt. Round12's two unequal numerators do
+not supply one. A new representation of an unchanged primitive pair
+cannot improve that pair's actual arithmetic; the task must establish
+previously unproved uniform savings or generate a genuinely new family.
+This is a research recommendation, not evidence that irrationality is
+close or that the proposed identity exists.
+
+Primary source for the holonomy framework:
+Calegari--Dimitrov--Tang, arXiv:2408.15403v2,
+https://arxiv.org/abs/2408.15403v2 . Local PDF, hash, theorem references,
+additional primary dependencies and actual reading scope:
+coordinator/sources.txt.

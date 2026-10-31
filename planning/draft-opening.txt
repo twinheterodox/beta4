@@ -1,0 +1,84 @@
+ARITHMETIC OBSTRUCTIONS IN POSITIVE DETERMINANT APPROXIMATIONS TO beta(4)
+Proposed opening; wording remains subject to the priority audit
+Research note prepared with Codex
+
+Abstract
+
+We study two explicit positive determinant constructions for the Dirichlet
+beta value beta(4). Both produce small nonzero real determinants, but their
+primitive integer polynomials have values that grow. For a cubic-tail kernel,
+we prove a uniform two-sided comparison with a Cauchy determinant and show
+that every sequence of consecutive principal offsets has primitive-value
+lower exponent at least 2-2log 2 on the quadratic scale. For a difference-
+variable Gram construction, we determine the exact primitive multiplier
+valuation at every prime p>4n and obtain the lower exponent 6-log 4. The
+arithmetic bounds apply after removal of all common coefficient factors.
+They therefore rule out the specified determinant sequences as sources of
+small primitive values. We state the restrictions on these conclusions and
+separate them from estimates and finite experiments that do not establish
+such an obstruction.
+
+1. Introduction
+
+Positive integral representations offer a way to construct nonzero small
+quantities involving a mathematical constant. Their Gram determinants can
+decay on a quadratic exponential scale, making determinant methods natural
+tools in irrationality arguments. The arithmetic normalization is equally
+important: a rational polynomial with a small value may cease to be small
+when converted to a primitive polynomial with integer coefficients.
+
+The determinant criterion and its relation to positive moments and capacity
+are established features of irrationality methods; Zudilin [ZUDILIN2015]
+gives a systematic account. Rational modifications of moment functionals
+likewise belong to the classical orthogonal-polynomial framework, with an
+explicit determinant treatment in Krattenthaler [KRATTENTHALER2021].
+Prévost [PREVOST2017] develops positive-weight representations and Padé
+approximants for Hurwitz zeta values. These precedents explain why real
+smallness and positivity alone are not the contribution of the present note.
+
+More directly, Carreira [CARREIRA2026] investigates determinant constructions
+for beta(4), including primitive polynomial calculations and the cost of
+their arithmetic normalization. Brown [BROWN2026, Section 7.4] discusses
+denominator clearing, common divisors and congruences in integral
+determinants. Thus neither the investigation of beta(4) determinants nor the
+need to remove full coefficient content is new. Our proposed contribution
+is an exact arithmetic analysis of two specified families, strong enough
+to prove that their actual primitive values grow. No global irrationality
+claim from these recent works is an assumption of our proofs.
+
+The first construction comes from a positive kernel expressed by finite
+cubic and quartic tails. We compare all of its ordered minors with explicit
+Cauchy determinants, with an error of only O(n) in their logarithms. For
+consecutive principal nodes, a unique nonzero minor in a primewise reduction
+forces a denominator contribution that exceeds the real decay. The result
+holds for every offset schedule, including offsets much larger than the
+matrix size.
+
+The second construction takes moments of the difference of two integration
+variables. Its coefficient of beta(4) has full rank, and its real determinant
+has quadratic decay exponent -log 4. A first nonzero residue followed by an
+anti-triangular block determines the exact primitive multiplier at primes
+p>4n. Summing these exponents supplies an arithmetic cost of at least 6n^2,
+which proves the second obstruction.
+
+These are statements about the families defined below. They do not rule out
+other positive weights, nonprincipal designs, different subspaces or new
+arithmetic cancellations. In particular a failed sufficient denominator
+estimate is weaker than either theorem. The accompanying technical record
+keeps such failures and finite observations separate from proved primitive
+obstructions.
+
+Citation placement and acknowledgements
+
+The bracketed identifiers above resolve in sources/reading-record.json.
+Replace them by normal author/year or numbered citations when typesetting.
+The detailed proofs should cite an input where it is used, rather than
+putting all provenance in a paragraph before the mathematics.
+
+Prepared with Codex. The accompanying evidence identifies the model
+cross-checks, exact calculations and interval computations that were
+performed. Those checks are not proof-assistant verification. No claim of
+priority should be inferred beyond the stated comparison with prior work.
+
+This draft opening describes the intended final paper. The complete
+manuscript and supplement have not yet been assembled.

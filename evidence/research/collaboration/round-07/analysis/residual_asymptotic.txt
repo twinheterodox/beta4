@@ -1,0 +1,250 @@
+ACTUAL SIGNED ERROR OF THE SYMMETRIC CIRCULAR HERMITE SOURCE
+2026-10-29. Round07 analytic work. Local and unpublished.
+
+Theorem. For all sufficiently large n, take the unique circular Hermite
+source of rank_asymptotic.txt and normalize its target coefficient to
+A=1. Thus G=R/(1+x^2)^n, G(0)=0, deg R<=2n, and
+
+  Q=1/(1+x^2)+E^4 G/x,   E=x d/dx,
+
+has zeros of order at least n at 0 and 1. Put
+
+  epsilon_n=beta(4)+G(1),   rho=(sqrt(2)-1)/2,
+  h=log(1+sqrt(2)),        kappa=2+sqrt(2),
+  C=pi*sqrt(pi)/48 * kappa^(7/2) * (sqrt(2)-1) * h^3.
+
+Then C>0, numerically C=2.4193871616202196119..., and
+
+  epsilon_n ~ (-1)^n C n^(5/2) (log n)^2 rho^n.          (T)
+
+In particular the actual errors are nonzero and have alternating sign
+for all sufficiently large n. This is a two-sided asymptotic for the
+actual signed error, with all lower periods eliminated exactly. It is
+not an estimate of a positive majorant. It does not assert positivity
+at every index, or control the primitive integer target coefficient.
+
+If a_n X+b_n is the primitive integer endpoint pair with a_n>0, then
+
+  log|a_n beta(4)+b_n|
+    =log a_n+n log rho+(5/2)log n+2loglog n+log C+o(1).   (U)
+
+Thus the exact remaining arithmetic threshold is log(1/rho)
+=log(2(1+sqrt(2))) per n. A limsup of log a_n/n strictly below that
+threshold would prove shrinking integer forms; a liminf strictly above
+it would prove growth for this family. Neither height conclusion is
+assumed or established in this analytic note.
+
+1. A determinant for the actual error, without auxiliary periods
+
+Write
+
+  F(x)=sum_(j>=1 odd) chi_4(j)x^j/j^4
+      =x/6 integral_0^1 log^3(1/u)/(1+x^2u^2) du,
+  D(x)=1+x^2,
+  R_low(x)=-trunc_(degree<=n)[D(x)^n F(x)],
+  S_n(x)=2^(-n)x^(-n)[D(x)^n F(x)+R_low(x)].             (1)
+
+The series defines F near 0 and the integral continues it near [0,1].
+In particular F(1)=beta(4), and E^4 F=x/D(x). The origin endpoint
+condition says exactly that R-R_low is in the span of
+x^(n+1),...,x^(2n).
+
+Let W(t)=G(exp t)+F(exp t). The endpoint at x=1 says
+
+  W(t)=sum_(k=0)^3 p_k t^k/k!+O(t^(n+4)),
+  p_0=epsilon_n.                                      (2)
+
+Since cosh(t)^n=2^(-n)exp(-nt)D(exp t)^n,
+
+  cosh(t)^n W(t)-S_n(exp t)
+       is in span{exp(t),...,exp(nt)}.
+
+Every operator L_(n+r)(d/dt), r=0,...,3, kills this last span.
+Its order is n+r<=n+3, so (2) suffices to evaluate its value at 0.
+Using exactly the row replacement and factorial normalization from
+rank_asymptotic.txt, this gives
+
+  C_n p=e_n,
+  e_n(r)=[z^(n+r)] (1+z)^(-1) S_n(1+z).               (3)
+
+Here C_n is precisely the contour matrix in that note, not an
+independently rescaled matrix. Therefore
+
+  epsilon_n=det C_n[column0 replaced by e_n]/det C_n.  (4)
+
+Equations (1)-(4) establish the actual residual identity directly.
+The other p_k can contain beta(3), beta(2), beta(1), but Cramer's rule
+for p_0 eliminates them identically. No linear independence assumption
+on any period is used. Eventual invertibility is supplied by the
+separate proved rank theorem.
+
+2. Exact exterior-residue integral for the residual column
+
+For 0<u<=1 put f_u(x)=x/(1+u^2x^2) and
+
+  T_u(x)=D(x)^n f_u(x)-trunc_(degree<=n)[D(x)^n f_u(x)].
+
+For fixed u, the function x^(-n-1) T_u(x) is analytic at x=0.
+The coefficient in (3) is consequently computed by a contour about
+x=1, and this contour can be enlarged past x=0. Its only other poles
+are x_+=i/u and x_-=-i/u. Its coefficient integrand is
+
+  2^(-n) T_u(x)/[x^(n+1)(x-1)^(n+r+1)].               (5)
+
+It is O(x^(-r-3)) at infinity, so the coefficient is minus the sum of
+the two exterior residues. At x=x_+ or x_-,
+
+  Res f_u(x) dx=1/(2u^2),
+  Phi(x-1)=D(x)/[2x(x-1)].
+
+The conjugate residue sum gives the exact formula
+
+  e_n(r)=-2^(-n)/6 integral_0^1 log^3(1/u) u^r(1-u^2)^n
+       Im[i^(-r-1)(1+iu)^(-n-r-1)] du,
+                                       r=0,1,2,3.     (6)
+
+Finite Taylor coefficient extraction commutes with the u integral,
+because its derivatives near x=1 are bounded by a constant times
+log^3(1/u), which is integrable. The residue formula extends continuously
+to u=0 after summing the conjugate residues; no contour at u=0 is used.
+In particular no unproved polylogarithm continuation or logarithm-sheet
+choice occurs in (6).
+
+3. Turning the oscillatory endpoint into an ordinary Laplace integral
+
+Define q(u)=(1-u^2)/(1+iu). Formula (6) is the negative imaginary part
+of an integral with analytic factor
+
+  i^(-r-1) u^r (1+iu)^(-r-1) q(u)^n log^3(1/u).
+
+Fix delta=1/10. Deform only u in [0,delta] to the segment
+u=-iv, 0<=v<=delta, followed by the quarter-circle from -i delta to
+delta in the fourth quadrant. The logarithm is continued there with
+arg(u) in [-pi/2,0]. The small circle about 0 has vanishing integral,
+since u^r log^3(u) is integrable for every r>=0. The pole u=i lies
+outside this deformation.
+
+The connector and the remaining real interval contribute O(2^(-n) eta^n)
+for some fixed eta<1. Here is a fully explicit modulus check. On the
+quarter-circle write u=a-ib, a,b>=0, a^2+b^2=delta^2. Then
+
+  |1+iu|^2-|1-u^2|^2
+    =2b+3delta^2-4b^2-delta^4>0.
+
+The quadratic is concave in b, so positivity follows from its positive
+values 3delta^2-delta^4 and 2delta-delta^2-delta^4 at the two endpoints.
+Compactness gives a strict uniform modulus bound |q|<1. On the real
+interval [delta,1], |q|^2=(1-u^2)^2/(1+u^2)<1 as well.
+
+On the vertical segment,
+
+  phi(v)=q(-iv)=(1+v^2)/(1+v),
+  phi(0)=1, phi'(0)=-1, 0<phi(v)<1 for 0<v<=delta,
+  log(1/u)=log(1/v)+i*pi/2.
+
+Tracking u^r du and i^(-r-1) gives exactly
+
+  e_n(r)=(-1)^r 2^(-n) {
+      pi/4 integral_0^delta v^r phi(v)^n/(1+v)^(r+1)
+                                    log^2(1/v) dv
+     -pi^3/48 integral_0^delta v^r phi(v)^n/(1+v)^(r+1) dv
+                         } + O(2^(-n) eta^n).          (7)
+
+This equality with an exponentially small remainder accounts for the
+real cancellation in the original oscillatory integral. In particular
+the cubic logarithm loses its leading cube and leaves a square.
+
+Ordinary endpoint Laplace asymptotics now give
+
+  e_n(r) ~ (-1)^r pi*r!/4 * 2^(-n)n^(-r-1)(log n)^2.   (8)
+
+One elementary justification is to set v=w/n, use
+phi(w/n)^n -> exp(-w), and dominate by exp(-c w) on the fixed interval;
+split w near 0 and infinity to dominate the logarithmic moments.
+The factors log(1/v)=log n-log w yield the displayed leading square.
+For a more explicit check, the same Laplace expansion gives, for fixed r,
+
+ e_n(r)=(-1)^r pi*r!/4 * 2^(-n)n^(-r-1)
+   { (log n+gamma-H_r)^2 + pi^2/12-H_r^(2)
+                                      +O((log n)^2/n) },       (9)
+
+where H_0=H_0^(2)=0. This follows from the first two logarithmic
+moments of w^r exp(-w) and the first-order analytic Laplace remainder.
+Only the leading term (8), not the refinement (9), is needed below.
+
+4. The relevant three-by-three saddle minor
+
+Use s=sqrt(2)-1, R=2-sqrt(2), z0=-R, kappa=2+sqrt(2),
+and h=-log s. Let M_00 denote the minor of C_n formed by deleting
+row 0 and column 0. Its row functions are y,y^2,y^3 for y=1/z,
+and its column functions are ell,ell^2/2!,ell^3/3! for ell=log(1+z).
+The determinant integration identity yields the two Vandermondes,
+multiplied by product_j y_j ell_j and by 1/(1!2!3!).
+
+The same strictly dominant saddle and dominated-convergence argument
+as in rank_asymptotic.txt applies with three variables. Since
+
+  y0=-1/R, ell0=-h, y0*ell0=h/R>0,
+  y'(0)ell'(0)=1/s,
+
+and the three-variable Gaussian Vandermonde integral is
+(2*pi)^(3/2)*(1!*2!*3!)=12(2*pi)^(3/2), it gives
+
+  M_00 ~ (-1)^n (1+sqrt(2))^(3n)
+     * s^(-6)(h/R)^3
+       / [6(2*pi)^(3/2) kappa^(9/2)n^(9/2)].           (10)
+
+The sign (-1)^n is the cube of the sign of Phi(z0)^n. The other
+three column-0 minors are O((1+sqrt(2))^(3n)n^(-9/2)). To see this
+without assuming their nonzero leading constants, their row determinants
+are a Vandermonde in y times a bounded polynomial, because they select
+three of the four monomials 1,y,y^2,y^3. The same Gaussian majorant
+then proves this bound.
+
+Expansion of the numerator of (4) in column 0, together with (8),
+therefore shows that its row-0 term e_n(0) M_00 is the actual leading
+term. The three other terms are smaller by at least a factor O(1/n).
+No unknown phase or potential cancellation remains in this step.
+
+5. Combining the constants and the arithmetic scope
+
+The rank theorem gave
+
+  det C_n ~ (1+sqrt(2))^(4n) s^(-10)
+               / [(2*pi)^2 kappa^8 n^8].
+
+Combine this with (8) for r=0 and (10) in (4). Before simplifying,
+the leading positive constant is
+
+  pi*sqrt(2*pi)/24 * kappa^(7/2) * s^4 * (h/R)^3.
+
+Since R=sqrt(2)*s, this is exactly C in (T). The exponential quotient
+is 2^(-n)(1+sqrt(2))^(-n)=rho^n, and the power of n is
+8-9/2-1=5/2. This proves (T).
+
+The eventual alternating sign is an actual nonvanishing certificate,
+and remains true under any positive rational or integer normalization.
+The primitive pair has value a_n epsilon_n, which proves (U).
+Source-vector denominators, cleared determinants, and common content
+cannot be substituted for a_n without an arithmetic argument.
+
+6. Finite checks, separate from the proof
+
+residual_checks.py checks the rational-kernel coefficient identity behind
+(6) exactly at n=2,3, u=1/2,2/3 and r=0,1,2,3: 16 exact identities.
+It also independently rebuilds the entire error column from ordinary
+Taylor coefficients of F at x=1, using signed Stirling numbers and the
+Euler-number recurrence for the higher derivatives. At n=12,20,40,80,
+its determinant quotient agrees in Arb interval arithmetic with the
+coordinator's prescribed exact primitive pairs. The check runs at 2048
+bits and records its input-data hash. No old construction script is
+imported or rerun by this check.
+
+The coordinator's independently constructed exact primitive pairs at
+n=12,20,40,80 give the following Arb-enclosed ratios to (T):
+
+  2.6831296384, 2.0607659933, 1.6421877186, 1.4369485543.
+
+The logarithmic correction in (9) converges slowly. These selected
+ratios support the constant and normalization; they do not replace
+the asymptotic proof. No extra source pairs were selected using theta.

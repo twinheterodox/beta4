@@ -1,0 +1,203 @@
+INTEGER q-SERIES: A RATIONALITY-DEPENDENT BOUNDARY SUBTRACTION
+29 October2026. Local/unpublished. No irrationality proof or credible route.
+
+The source is classical, exactly Jouhet--Mosaki beta_q(4). The new attempted
+step was an integrality bridge after assuming theta=beta4 rational. That
+step fails in the specified direct rational-evaluation family by an exact
+reduced-denominator calculation. A subsequent root-of-unity average has
+an exact reduction, but does not produce the desired integer observable.
+These are scoped gates, not a theorem against q-deformations or counting.
+
+1. Exact source and the intended contradiction
+
+Write chi=chi4 and define, for |q|<1,
+
+  A(q)=sum_(n>=1) a_n q^n,
+  a_n=sum_(d|n)chi(d)(n/d)^3 in Z,
+  Phi(q)=q(1+4q+q^2)/(1-q)^4=sum_(n>=1)n^3 q^n.
+
+Absolutely convergent rearrangement gives
+
+  A(q)=sum_(k>=1) k^3 q^k/(1+q^(2k))
+      =sum_(d>=1)chi(d)Phi(q^d).                         (1)
+
+This is exactly equation1.1 of Jouhet--Mosaki [JM], not a new Lambert
+series. Their Section6.1 proves its beta-value boundary calibration.
+
+For t>0 the first expression in(1) is
+
+  A(e^-t)=t^-3 sum_(k>=1) f(kt), f(x)=x^3/(2cosh x).
+
+The integral of f is6theta: expand1/(2cosh x) as the alternating sum
+of exp(-(2j+1)x), or first use finite partial sums with an integrable
+remainder. All derivatives of f are integrable and decay at infinity.
+Euler--Maclaurin with its integral remainder [EM] therefore gives
+
+  A(e^-t)=6theta*t^-4+1/240+t^2/1008+O(t^4).            (2)
+
+To check the constants directly, f(x)=x^3/2-x^5/4+O(x^7),
+f'''(0)=3, f^(5)(0)=-30, B4=-1/30 and B6=1/42. In the formula
+-B_(2r)f^(2r-1)(0)t^(2r-4)/(2r)!, these give1/240 and1/1008.
+Apply the remainder formula with m=4: after the overall t^-3 factor,
+its absolute value is bounded by a constant times t^4, since f^(8)
+is integrable. This is a proved fixed-order expansion, not a divergent
+series used outside its domain. Direct expansion of the rational kernel
+gives
+
+  Phi(e^-t)=6t^-4+1/120-t^2/504+O(t^4).                (3)
+
+Assume theta=u/v, u,v positive integers, and prescribe
+
+  H_(u,v)(q)=240v A(q)-240u Phi(q)-(v-2u).              (4)
+
+It has INTEGER coefficients, including its constant coefficient, and
+the actual real rationality assumption, through(2)-(3), implies
+
+  H_(u,v)(e^-t)=c_(u,v)t^2+O_(u,v)(t^4),
+  c_(u,v)=5(v+2u)/21>0.                               (5)
+
+Thus this is a genuine assumption-dependent shrinking source. A valid
+construction of nonzero integers from it, still tending to zero, would
+contradict rationality. Integer coefficients do not make its values at
+rational q integers. The next section tests that precise missing step.
+
+Nor are its coefficients eventually of one sign. Under theta=u/v,
+80/81<u/v<1, and for every r>=0,
+
+  [q^(2^r)]H=240(v-u)2^(3r)>0,
+  [q^(3*2^r)]H=240(26v-27u)2^(3r)<0.                  (6)
+
+Hence a positivity-based boundary rigidity argument does not apply.
+
+2. The direct rational-evaluation bridge fails exactly
+
+Let p>5 be a prime not dividing v, put M=p^2 and q_p=(p-1)/p, and let
+H^[M] be the polynomial consisting of coefficients0,...,M in(4).
+For ANY positive integers u,v satisfying this prime restriction,
+
+             den(H^[p^2](q_p))=p^(p^2).                (7)
+
+This is the actual reduced denominator, not a sufficient multiplier.
+Indeed
+
+  a_(p^2)=p^6+chi(p)p^3+1,
+  h_M=240v a_M-240u M^3 ==240v (mod p).
+
+In p^M H^[M]((p-1)/p), every term except the top term is divisible
+by p; the top term is h_M(p-1)^M, nonzero modulo p. Thus its numerator
+is coprime to p, proving(7) with the complete possible gcd accounted for.
+
+The truncation error is negligible on the real scale of(5). Indeed
+
+  |a_n|<=n^3 sum_(d>=1)d^-3 <2n^3,
+  |h_n|<=C_(u,v)n^3.
+
+For M=p^2 and q_p=1-1/p, expand n=M+j. The four geometric power sums
+show
+
+  sum_(n>M)n^3 q_p^n=O(p^7 e^-p).                     (8)
+
+Here q_p^M<=e^-p and the sums of j^r q_p^j are O(p^(r+1))
+for r=0,1,2,3. Thus the upper estimate is sufficient for the difference,
+not an unjustified lower bound for an error.
+
+Under theta=u/v, t_p=-log(1-1/p)=p^-1+O(p^-2), and(5),(8) imply
+
+  H^[p^2](q_p)=c_(u,v)p^-2(1+O_(u,v)(p^-1))>0
+
+eventually. Combining with the EXACT denominator(7), its reduced numerator
+N_p satisfies the conditional asymptotic
+
+  N_p=c_(u,v)p^(p^2-2)(1+O_(u,v)(p^-1)) -> infinity.    (9)
+
+This is a theorem about the stated truncation and rational point under
+the hypothetical rationality assumption. It is not a no-go theorem for
+arbitrary filters, optimal truncations, q-hypergeometric constructions,
+or algebraic evaluation points. No extension to those was attempted.
+
+The coefficient h_M also proves den(H^[p^e]((p-1)/p))=p^(p^e)
+for any fixed e>=1, since a_(p^e)==chi(p)^e modulo p. Only e=2
+is used for the real asymptotic and the closed gate above.
+
+3. Root-of-unity averages: an exact follow-up, no integrality bridge
+
+For every odd prime p and n>=1 the divisor definition gives
+
+  a_(pn)=(p^3+chi(p))a_n-chi(p)p^3 a_(n/p),             (10)
+
+where a_(n/p)=0 unless p divides n. To prove it, factor n=p^e m,
+p not dividing m. Multiplicativity reduces(10) to the geometric sum
+a_(p^e)=sum_(j=0)^e chi(p)^j p^(3(e-j)).
+
+Let zeta be a primitive p-th root of unity. Filtering Fourier indices
+and using(10) gives the analytic identity, for |q|<1,
+
+  sum_(j=0)^(p-1) A(zeta^j q)
+     =p[(p^3+chi(p))A(q^p)-chi(p)p^3 A(q^(p^2))].       (11)
+
+All p terms are included. This is a root-of-unity AVERAGE, not an assertion
+that the generally transcendental infinite sums belong to a number field.
+For the finite polynomial A^[M], the same exact statement has cutoffs
+floor(M/p), floor(M/p^2) on the two right-hand sides. At q=1 it is an
+integer coefficient identity, but it contains finite divisor sums rather
+than a small beta4 remainder.
+
+The raw counting sequence S(N)=sum_(n<=N)a_n cannot have an expansion
+S(N)=P(N)+o(1) with a polynomial P of degree at most4. Such an expansion
+would give a_N=P(N)-P(N-1)+o(1), forcing a_N/N^3 to have one limit.
+But this ratio is1 on N=2^r and26/27 on N=3*2^r. Thus this particular
+integer count lacks the small polynomial remainder required by the
+rationality argument. This says nothing about other weights or counts.
+
+For the potentially cheaper algebraic point q=2^(-1/p), all p conjugate
+arguments have the same radius and the principal argument approaches1.
+Equation(11) becomes exactly
+
+  p[(p^3+chi(p))A(1/2)-chi(p)p^3 A(2^-p)].              (12)
+
+The principal boundary limit is calibrated to theta, but this complete
+average transfers it to q-series values. Rationality of theta supplies
+no algebraicity or integrality for those values. Evaluations of finite
+polynomials at these algebraic points can support norms, but would require
+all conjugate estimates and the factor v^p at the degree-p radical point.
+None is supplied here. In particular(12) is not a norm estimate.
+
+The frozen round11 sine-normalized family was read before considering
+this follow-up. It proves growth for its own conjugate distribution, not
+for(12) or all algebraic evaluation points. The present exact reduction
+reveals no credible alternative integer bridge; a root substitution alone
+would not resolve the missing arithmetic. No new norm scan was started.
+
+4. Checks, source scope, and status
+
+Run from beta4:
+  python3 -B collaboration/round-12/arithmetic/check_q_boundary.py
+
+The script independently builds a_n by divisor enumeration and by the
+geometric expansion in(1), verifies prime recurrences and finite averages
+as coefficient identities, checks complete Fraction denominators of the
+prescribed integer fixtures, and rebuilds the local expansion coefficients
+symbolically. Its numerical diagnostics set u=theta,v=1 ONLY to test the
+analytic identity(5); those are deliberately not integer-arithmetic tests.
+The rational fixtures used for(7) are fixed in advance and are not fitted
+to theta. Output checks.json separates exact checks from numerical ones.
+The geometry worker independently reviewed Sections1-2 in
+../geometry/lambert-review.txt, including the primary remainder statement,
+and separately checked9 complete denominators by two exact methods plus
+16 coefficient-sign fixtures. No correction was required. Section3 is
+outside that review. This is model cross-review, not formal verification.
+
+[JM] F. Jouhet and E. Mosaki, Diophantine properties for q-analogues of
+Dirichlet's beta function at positive integers, arXiv:0811.4287v1.
+https://arxiv.org/html/0811.4287v1
+Read Introduction through Theorem1.1/corollaries and the proof outline;
+Section6.1 and Section6.2. The source identity and calibration are reused.
+Its fixed-q results are not imported as an irrationality transfer.
+
+[EM] NIST DLMF2.10.1, Euler--Maclaurin formula with integral remainder.
+https://dlmf.nist.gov/2.10.E1
+Read the formula and its absolute-integrability hypothesis. The required
+hypothesis for f(x)=x^3/(2cosh x) and the t-scaling are checked in Section1.
+
+No result here proves theta irrational or supplies a credible full route.
+The completed gate should not be enlarged into another parameter scan.

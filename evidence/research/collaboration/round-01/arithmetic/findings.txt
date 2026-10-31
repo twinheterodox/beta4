@@ -1,0 +1,417 @@
+Round 01 arithmetic investigation: regular-word denominator savings
+28 October 2026. Local, unpublished research record.
+
+Scope and conclusion
+
+This is an independent derivation of the denominator statements and an
+independent rational-kernel coefficient implementation. It is not a human
+or formal verification, a priority claim, or an irrationality proof.
+No source outside this round's arithmetic directory was changed.
+
+The denominator theorem in dilations-and-positive-kernels.txt is valid,
+but its baseline 8 L_N^4 is loose for these regular iterated integrals.
+There is a stronger explicit bound, and a further Frobenius refinement.
+For fixed odd k>=3, if Q_(N,k) is the least common denominator of all
+coefficients of r_k through t-degree N, the proved results imply
+
+  3/2+1/(k+2) <= liminf_N log Q_(N,k)/N
+               <= limsup_N log Q_(N,k)/N
+               <= 3/2+1/k+1/(2k+4).                         (A)
+
+These inequalities do not assert that a limit exists. They improve the
+previous upper rate 2+2/k and show that a cost approaching 3N/2 persists
+as k grows. There are also explicit first occurrences of the p and p^2
+layers, and an exact residue-rank lemma for endpoint Pade determinants.
+The latter gives a surviving raw determinant multiplier upper bound.
+It is not a primitive height estimate or a nonvanishing theorem.
+
+The exact implementation passed 54,532 coefficient/prime checks of the
+strongest finite bound, 12,558 Frobenius coefficient checks, 18 surviving
+fourth-layer checks, 25 determinant residue-rank checks, and six exact
+comparisons of the new endpoint determinant with the old Pade solver.
+The proof, rather than these finite checks, establishes the uniform claims.
+
+1. Independent audit of the original bound
+
+Write u=log((1+t)/(1-t)), v=log((1+t^k)/(1-t^k)), k odd, and
+
+  r_k=2h(u)+4h(v)-4h(u+v)-2h(2v)+2h(u+2v),
+  h'''(x)=x^2 sech'(x)/8,
+  h(0)=h'(0)=h''(0)=0.
+
+For x=a u+b v with the nonnegative integers used here, put
+A(t)=(1+t)^a(1+t^k)^b. Then x' is an integer power series, and
+
+  sigma(t)=sech(x(t))
+    =A(t)A(-t)/[(A(t)^2+A(-t)^2)/2]
+
+is an integer power series: its denominator is an integer polynomial
+with constant coefficient 1. Thus both letters
+
+  alpha=dx,  omega=sech(x) dx
+
+are regular at zero and have integer coefficients. With I_j=int x^j omega,
+
+  h=(3x I_2-x^2 I_1-2I_3)/8.                                (1)
+
+Successive integrations and products give the stated crude bound
+8 L_N^4. For p>N/k, the expansion
+
+  r_k=2 sum_(j>=2) (2^j-2)v^j/j! * [h^(j)(u)-h^(j)(0)]       (2)
+
+has j<p and p-integral v-coefficients through degree N. Moreover
+
+  h''(u)=u^2 sech(u)/8 - (1/4) int_0^u s sech(s) ds,          (3)
+
+and for j>=3,
+
+  h^(j)(u)=(1/8)[u^2 sigma^(j-2)(u)
+             +2(j-3)u sigma^(j-3)(u)
+             +(j-3)(j-4)sigma^(j-4)(u)],                   (4)
+
+where nonexistent negative derivatives are omitted. Derivatives here
+are with respect to the logarithmic argument. Since sech(u) and tanh(u)
+are integer series in t, all sigma^(m)(u) are integer series. The only
+odd-prime denominator cost in (3)-(4) is two integrations or two logs.
+This proves the original two-layer claim. If p=2 could be in the large
+prime range, N<2k and r_k is zero through N; otherwise p=2 belongs to the
+four-layer range. Thus the original D_(N,k) is sound, including p=2.
+
+2. A stronger regular-word denominator lemma
+
+Let L_0=L_1=1, and for r>=1 define
+
+  W_r(N)=product_(j=1)^r L_floor(N/j),
+  E_(r,p)(N)=v_p(W_r(N))
+     =sum_(a>=1) min(r,floor(N/p^a)).                        (5)
+
+Lemma. A length-r iterated integral based at zero whose letters are
+regular integer power-series differentials has all its coefficients
+through degree N in W_r(N)^(-1) Z. The same holds for integer linear
+combinations of such words. A product of words of total length r has
+this bound, by the integer shuffle identity.
+
+Proof. For a coefficient of degree at most N, the integration indices
+satisfy 1<=n_1<...<n_r<=N, and a summand denominator is n_1...n_r.
+For every a, at most min(r,floor(N/p^a)) of these indices are divisible
+by p^a. This proves the exponent in (5). Equality for the maximum over
+sets of indices follows by selecting the r integers having largest
+p-valuations (when N>=r; for N<r the word coefficients are all zero).
+Equivalently, summing the exponents in the product of
+LCMs gives exactly the right side of (5). The shuffle identity has
+integer coefficients, so multiplication introduces no new denominator.
+Regularity of the letters is essential; a dt/t letter would invalidate
+the strict-index argument.
+
+Formula (1) is a sum of length-four words and their shuffle products.
+In fact, with words ordered from innermost to outermost integration,
+there is the useful exact identity
+
+  h=(I[alpha,alpha,omega,alpha]
+             -I[alpha,omega,alpha,alpha])/4.               (6)
+
+For example I_3=6 I[alpha,alpha,alpha,omega], and shuffling x I_2
+and x^2 I_1 in (1) cancels that word and gives (6). Consequently
+
+             8 W_4(N) clears every coefficient of r_k.    (7)
+
+This is already an improvement to the general baseline:
+log W_4(N)=(1+1/2+1/3+1/4)N+o(N)=(25/12)N+o(N).
+
+For p>N/k, formulas (3)-(4) improve further: u^2 is twice a regular
+length-two word; the integral in (3) is a length-two word; and u is a
+length-one word. Multiplication by integer series or by the p-integral
+v^j/j! in (2) preserves the W_2(N) bound. Constants h^(j)(0) have no odd
+prime denominators. This proves the exact finite bound
+
+  Q_(N,k) divides D^word_(N,k),
+  D^word_(N,k)=8 product_p p^e_p,
+  e_p=E_(4,p)(N) if p<=N/k,
+      E_(2,p)(N) if p>N/k.                                  (8)
+
+The factor 8 handles the prime 2; when the nonzero coefficients occur,
+2 is in the first case. This deliberately unoptimized factor is harmless.
+An equivalent expression is
+
+  8 L_N L_floor(N/2)
+    * product_(p<=N/k) p^[v_p(L_floor(N/3))+v_p(L_floor(N/4))].
+
+For every fixed odd k,
+
+ log D^word_(N,k)
+   =[3/2+1/max(k,3)+1/max(k,4)]N+o(N).                      (9)
+
+For k=3 this is 25/12: the slow-variable cutoff adds no leading-rate
+improvement to the sharpened generic bound. For odd k>=5 it is 3/2+2/k.
+Thus (9) improves the old bound for every k, but the origin of the gain
+must not be misidentified at k=3.
+
+3. A further finite Frobenius cap
+
+The regular-word argument also audits the stated Frobenius congruence.
+For a p-integral unit f, the Cartier identity for dlog f says that its
+coefficient at t^(mp-1), reduced modulo p, is the p-th power of the
+coefficient at t^(m-1). For alpha=dx the Frobenius letter is alpha.
+For omega, use
+
+  omega=-i dlog[(1+i exp x)/(1-i exp x)].
+
+Its Frobenius letter is chi_4(p) omega. In a length-four word of degree
+below p^2, multiplying by p^4 and reducing modulo p leaves just the
+summands whose four integration indices are divisible by p. Formula
+(6), followed by the fixed integer filter, therefore gives
+
+  p^4 r_k(t)=chi_4(p) r_k(t^p) mod p,    through degree <p^2. (10)
+
+All reduced coefficient expressions are p-integral in that range.
+Let d=2k+4 for k>=3 (d=6 for k=1). Since r_k starts in degree d, (10)
+shows that whenever
+
+                 p>=5,  N<p^2,  N<dp,                     (11)
+
+every coefficient through N has p-valuation at least -3.
+
+An explicit bound stronger than (8) is therefore obtained by replacing
+its prime exponent, including the separate factor 8 at p=2, by its
+minimum with 3 whenever (11) holds. Call this bound D^F_(N,k). This is
+the strongest finite bound implemented in the accompanying script.
+
+For fixed odd k>=3, primes p<=sqrt(N) contribute only O(sqrt(N)log N).
+For the larger primes the four possible layers have respective cutoffs
+
+                 N,  N/2,  N/k,  N/(2k+4).
+
+The prime number theorem now proves
+
+  log D^F_(N,k)=[3/2+1/k+1/(2k+4)]N+o(N).                  (12)
+
+The finite bound itself does not use the prime number theorem.
+
+4. Exact first occurrences of the first two prime layers
+
+These lemmas explain why the 3/2 base in (9) and (12) is not merely an
+artifact of a bound. Throughout this section k>=3 is odd and p>=5 prime.
+
+First layer. Every coefficient of degree <p+2k+3 is p-integral, and
+
+  p [t^(p+2k+3)]r_k = -32/3 mod p.                          (13)
+
+In particular this coefficient has valuation exactly -1.
+
+Proof. The claimed degree N_1=p+2k+3 satisfies N_1<kp for all the stated
+k,p, so (2) has p-integral v and j! factors. A convenient identity is
+
+ h''(u(t))=-(1/2) int_0^t s u(s)^2/(1+s^2)^2 ds.             (14)
+
+The first p-denominator in u^2 is at degree p+1, with p-times coefficient
+8. The even series h'' cannot acquire an earlier denominator from its
+outer integration: the first even positive multiple of p is 2p>p+3.
+Thus its first denominator is at p+3, with residue -4/3 by (14).
+The j=2 term of (2) is 2v^2 h''(u), giving residue 2*4*(-4/3)=-32/3.
+The j=3 term has its first possible nonintegrality at fast degree p+2,
+then has the factor v^3. For j>=4, (4) gives a lower fast degree p,
+and v^j has degree at least 4k. These are strictly later than N_1.
+This proves both the preceding integrality and (13).
+
+Second layer. Suppose additionally
+
+                       2p+2k+2<kp.                         (15)
+
+Define delta_p=0 for p=3 mod4 and delta_p=1 for p=1 mod4. Every
+coefficient of degree <2p+2k+2delta_p has valuation at least -1, and
+
+ p^2[t^(2p+2k)]r_k=8 mod p          if p=3 mod4,
+ p^2[t^(2p+2k+2)]r_k=-8 mod p       if p=1 mod4.              (16)
+
+These coefficients have valuation exactly -2. The sufficient condition
+(15) excludes only finitely many primes for each fixed k.
+
+Proof. Put U(t)=u(t^p) and
+
+  W(t)=int_0^t u(s)*2/(1+s^2) ds.
+
+The two regular letters in W are du and sech(u)du. Their Frobenius
+multipliers are 1 and chi_4(p), respectively. For the fast degrees
+needed here (<p^2),
+
+  p u(t)=U(t) mod p,
+  p^2 W(t)=chi_4(p) W(t^p) mod p.
+
+Formula (3) therefore gives
+
+ p^2 h''(u)=U^2 sech(u)/8 - chi_4(p)W(t^p)/4 mod p.           (17)
+
+For j>=3, formula (4) leaves only U^2 sigma^(j-2)(u)/8 after multiplying
+by p^2 and reducing. With their v^j factors these terms begin strictly
+later than 2p+2k+2. The relevant fast degree is at most 2p+2<p^2;
+the full degree need not itself be below p^2. Condition (15) makes
+v and the j! factors p-integral. Finally
+
+  v^2=4t^(2k)+O(t^(6k)),  U^2=4t^(2p)+O(t^(4p)),
+  sech(u)=1-2t^2+O(t^4),  W(t^p)=2t^(2p)+O(t^(4p)).
+
+Multiplying (17) by 2v^2 gives the two initial residues
+
+       4(1-chi_4(p)) t^(2p+2k)-8t^(2p+2k+2).
+
+This proves (16) and the asserted lack of an earlier second layer.
+
+Together with (10), which for p>d gives
+
+   v_p([t^(dp)]r_k)=-4,
+   p^4[t^(dp)]r_k=-4chi_4(p) mod p,                         (18)
+
+these onset lemmas prove the lower inequality in (A): the first layer
+is present for every sufficiently large p<=N-O_k(1), the second for
+every sufficiently large p<=N/2-O_k(1), and two additional layers for
+p<=N/d. Summing log p yields 3/2+2/d=3/2+1/(k+2).
+The upper inequality follows from (12).
+
+5. What survives in endpoint Pade determinants
+
+Set a_j=[t^(2j)]r_k and a_0=0. Define the n-vector b and n-by-n matrix H by
+
+  b_i=a_i,
+  H_ij=a_(i+j)-a_(i+j-1),       1<=i,j<=n.
+
+The endpoint determinant is the linear polynomial
+
+  L_n(X)=det [6X  b^T; b  H]
+        =A_n X+C_n,
+  A_n=6det H,
+  C_n=-b^T adj(H)b.                                        (19)
+
+When the relevant Pade system is nonsingular, this produces exactly the
+same primitive [n/n] endpoint form as the original solver. To see this,
+let c_0=6X, c_j=a_j for j>0, and S_j=sum_(i=0)^j c_i. In the determinant
+with first row (S_0,...,S_n) and subsequent rows
+(a_l,...,a_(l+n)), l=1,...,n, the bottom n rows encode the reversed
+Pade denominator vector. Subtract each column's predecessor (performing
+these subtractions from right to left) to obtain precisely (19).
+This also explains why there is only one target-period row.
+
+The coefficient bound does survive a general, unoptimized raw clearing:
+with D=D^F_(4n,k),
+
+                    D^(n+1) L_n(X) is integral.             (20)
+
+The corresponding fixed-k upper rate for the clearing logarithm is
+[6+4/k+4/(2k+4)]n^2+o(n^2), instead of the old entrywise rate
+[8+8/k]n^2+o(n^2). This is a valid upper bound, not a sharp multiplier
+asymptotic, and no adequate real determinant bound is proved here.
+
+A more informative local surviving statement follows from (16).
+Suppose p>=5, p>n,
+
+  4n<kp,  4n-2k<p^2,  2p+2k+2<kp,
+  n<d_p:=p+k+delta_p<=2n.                                  (21)
+
+The second displayed inequality is redundant in most of this range but
+is retained for clarity. Then p^2 H is p-integral and
+
+               rank_Fp(p^2 H mod p)=R:=2n-d_p+1.             (22)
+
+Indeed, all a_j before j=d_p vanish after multiplication by p^2 and
+reduction modulo p. At j=d_p the residue is a unit by (16). Thus rows
+with i<d_p-n vanish. The bottom-right R-by-R block is anti-triangular
+with a nonzero anti-diagonal: along i+j=d_p, H has the residue of a_d_p.
+This proves both the upper and lower rank bounds exactly.
+
+The first row and column of p^2[6X,b^T;b,H] vanish modulo p, so its rank
+is also R. Elementary integral row/column elimination now gives
+
+  v_p(A_n)>=-n-R,
+  v_p(C_n)>=-n-R-1.                                        (23)
+
+Thus the local exponent needed to clear the raw coefficients is at most
+n+R+1, instead of the naive 2(n+1). No lower bound on that exponent,
+no full p-adic Smith form, and no primitive size bound follows just
+from the residue rank.
+
+6. Raw clearing, primitive multiplier, and primitive height
+
+These are three different quantities. For nonzero L_n, let
+
+  M_n=lcm(denominator(A_n),denominator(C_n)),
+  g_n=gcd(M_n A_n,M_n C_n),
+  kappa_n=M_n/g_n,
+  P_n(X)=kappa_n L_n(X) primitive integral, up to sign.
+
+At every prime,
+
+  v_p(kappa_n)=-min(v_p(A_n),v_p(C_n)).                       (24)
+
+The multiplier kappa_n can be rational; M_n is an integer. Primitive
+height is max(|kappa_n A_n|,|kappa_n C_n|), not either M_n or kappa_n.
+The actual irrationality estimate would use
+
+              |P_n(beta(4))|=kappa_n |L_n(beta(4))|.         (25)
+
+A prime can occur to a large exponent in kappa_n and yet divide neither
+primitive coefficient. This does NOT remove that prime's cost from (25).
+For example, k=3,n=30,p=41 has
+
+  v_41(A_n)=v_41(C_n)=-36,
+  v_41(kappa_n)=36,
+  v_41(primitive beta coefficient)=0.
+
+The raw denominator cost remains directly relevant through kappa_n.
+Conversely, residue rank alone does not lower-bound primitive height;
+primitive content and the real sizes of the raw coefficients matter too.
+
+Here are targeted exact diagnostics (natural logarithms). Each coefficient
+LCM is for a_0,...,a_(2n); its degree cutoff in t is 4n.
+
+ k   n   log coefficient LCM   log M_n   log g_n  log kappa_n  log height
+ 3  15          69.455          686.062    63.770      622.292      737.370
+ 5  21          96.882         1336.523    70.701     1265.822     1412.942
+ 9  33         161.198         3293.825    95.654     3198.171     3405.329
+17  57         271.865         9970.455   145.561     9824.894    10157.022
+
+These are finite scale comparisons, not a height-growth theorem or a
+size test for P_n(beta(4)). No additional broad Pade search is proposed.
+A successful construction still needs nonvanishing, sufficient real
+decay, and a multiplier bound compatible with that decay.
+
+7. Exact checks and reproduction
+
+Files:
+  independent_arithmetic.py
+  independent_arithmetic.json
+
+The coefficient implementation does not import the earlier filters.
+For each x=a u+b v it builds x' directly from rational functions,
+integrates to x, builds sech(x) from the integer polynomial A, and
+uses (1). It does not use exponential/log series routines or the earlier
+Euler-number expansion. Only the final six Pade cross-checks import the
+old solver; this does not enter coefficient generation or any bound check.
+
+Run from /home/research/Chat/Math/beta4:
+
+  .venv/bin/python collaboration/round-01/arithmetic/independent_arithmetic.py
+
+The completed run checks k,N=(1,96),(3,360),(5,480),(7,480),(9,520),(17,400).
+It performed 54,532 coefficient/prime checks of the Frobenius-capped bound,
+12,558 Frobenius coefficient checks, 18 surviving-fourth-layer checks,
+25 exact residue-rank and raw-valuation checks, and the six Pade endpoint
+matches (k,n)=(3,5),(3,10),(5,7),(5,14),(9,11),(17,19).
+It also checks the onset formulas whenever their stated hypotheses fit
+inside the coefficient prefix. Runtime in this workspace was about six
+seconds. The saved JSON records the exact coefficients of the tested
+Pade forms, all local valuations, and denominator comparisons.
+
+Selected common-denominator comparisons:
+
+ k    N    actual log LCM   old bound   word bound   Frobenius-capped bound
+ 3   360       574.907       982.978      748.019             694.890
+ 5   480       760.252      1180.692      907.467             854.338
+ 9   520       782.283      1177.119      896.381             870.673
+17   400       539.636       890.383      669.837             666.701
+
+Exploratory third-layer onsets, which are saved but NOT used as a theorem,
+suggest (k+4)p+k for fixed k and sufficiently large p. There are exceptions
+when p is small relative to k, where p^2 indices enter. No uniform proof
+of that observation was obtained, and the upper bound (12) does not rely
+on it. A focused follow-up could investigate this remaining third layer;
+proving that onset would sharpen the coefficient interval, but would
+still not by itself settle the determinant multiplier problem.

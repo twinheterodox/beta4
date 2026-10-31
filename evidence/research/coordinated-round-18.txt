@@ -1,0 +1,34 @@
+ROUND18: BOUNDED CREATIVE RESET — PARK BETA(4)
+31 October 2026. Local and unpublished. No irrationality proof.
+
+Detailed assessment: collaboration/round-18/findings.txt.
+Full new analytic argument: collaboration/round-18/adversarial/assessment.txt.
+
+The specified sequential fresh exploration, archive comparison, and fresh
+adversarial review are complete. Three conceptual seeds were assessed;
+none supplies a justified next construction campaign.
+
+The closest candidate is an ordinary-moment first variation with exact
+beta(2) cancellation. Its positive constrained-minimum formula proves
+nonvanishing at every index. Its normalized error has exponential rate
+-2 log(3+sqrt(8)), not the raw determinant's quadratic logarithmic rate.
+The missing condition is useful growth of the actual reduced denominator.
+
+The first numerical assessment omitted common numerator content. Removing
+the FULL gcd improves the examples substantially but does not reverse the
+finite failures: both primitive forms exceed one at all n=3,...,12.
+A separate Fraction Schur-complement implementation reproduces all 24
+primitive pairs and all first-jet coefficients exactly. These finite checks
+do not prove an all-index arithmetic obstruction.
+
+The arcsine realization is exactly archived; the ordinary-moment sequence
+has not been identified with an archived sequence. Narrow obstructions
+from other families are not transferred to it. The holonomy and cyclotomic
+seeds supply no new rationality-sensitive object or arithmetic advantage.
+
+Recommendation: park the project. Reopen only for a concrete new mechanism
+with a quantitative reason to expect improvement, not larger scans of the
+same forms. No next campaign was started. Source scopes, limitations,
+preservation audit and reproduction records accompany the detailed report.
+This is mathematical analysis with an independent model cross-check,
+not formal verification. Stop for review.

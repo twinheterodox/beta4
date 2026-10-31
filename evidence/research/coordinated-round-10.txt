@@ -1,0 +1,88 @@
+ROUND10: ARITHMETIC-FIRST GATES AND A FRESH TOPOLOGICAL TEST
+29 October 2026. Local and unpublished.
+
+No irrationality proof or credible complete route emerged. Three fresh
+workers and the coordinator tested four concrete ideas, checked the
+archive first, and stopped unsuccessful constructions at prescribed
+tests. The useful tools below are progress in understanding constructions,
+not evidence that beta4 irrationality is close. The goal remains active.
+
+1. A sharp local arithmetic tool
+
+For tau(P)=-E(P''')/12, E(x^n)=Euler_n(0), its exact norm on polynomials
+of degree<=n that are integer-valued on Z_p is p^H_p(n), p>=5, where
+
+ H_p(n)=max{h:m_p(h)<=n},
+ m_p(3q+r)=(3-r)p^q+r p^(q+1), r=0,1,2.
+
+This follows from sum tau(binomial(x,j))z^j
+=-log(1+z)^3/[12(1+z/2)]. The first three denominator layers start
+at p+2,2p+1,3p, and are attained exactly. The statement concerns the
+polynomial functional, not its rational pole extension or a final
+primitive determinant. It does not improve any already computed
+primitive value by changing its basis.
+
+Finite full-rank congruence restrictions on a source lattice multiply a
+Gram determinant by a rational square and leave its primitive polynomial
+unchanged. A proper-subspace test with
+F_p(t)=t(t^((p-1)/2)-(-1)^((p-1)/2))^2 did change the polynomial,
+but the prescribed p5,p7 cases were worse than matched central controls.
+Both choices have the same best leading-coefficient p-integrality at
+degree2p and the same tested raw determinant valuation -16.
+
+2. Positive cancellation on a denser quarter grid
+
+Let a_j=(2j+1)/4, D_K(t)=product_(j<K)(t+a_j^2), and let S_K be the
+degree<K polynomial with S_K(-a_j^2)=1/a_j. It is positive for t>=0.
+For the positive Hurwitz functional
+
+ nu(R)=int_0^infinity R(y^2)[-y^4 f'''(y)/3]dy,
+ f(y)=1/(exp(2pi y)-1),
+ nu(1/(t+a^2))=a^3 zeta(4,a)-1/(2a)-1/3,
+
+the matrix nu(S_K t^(i+j)/D_K), 0<=i,j<floor((K-1)/2), has entries
+in Q+Q beta4. Lagrange interpolation cancels the zeta4 component exactly.
+Both the integral matrix and its beta4 coefficient matrix are positive
+definite. Its determinant is positive and has the full target degree.
+
+The primitive polynomials at K3,5,7 have logarithmic values
+4.72051,23.30580,61.97903. The first is4050 beta4-3893. Three separate
+exact algorithms agree, including an independent worker review; Arb
+certifies the signs. No further scan or general obstruction was inferred.
+The high-degree interpolating numerator has real and arithmetic costs;
+the denser poles are not a free gain.
+
+3. Hypergeometric transformation gate
+
+Three rational pair-splitting jets of one nonsymmetric Whipple fixture
+were computed exactly. Their formal vectors in(1,beta2,beta4) have
+determinant25792/6075. The 120-element Thomae group supplies no
+cross-branch stabilizer relation at this prescribed base. Six primitive
+beta2 eliminations all have absolute value>1. This does not exclude other
+base points, transformations or arithmetic effects; no scaled ray was run.
+Root independently reconstructed all three rational jets and period vectors.
+
+4. A different starting point: integer topological signatures
+
+A primary TQFT paper supplies integer signatures through cubic cotangent
+sums. The direct even-power extension has a beta4 limit, but it lies in a
+cyclotomic component negated by an involution fixing the rationals. Every
+nonzero such sum is nonrational; rational trace projections, including
+rational combinations across odd levels, annihilate it. Its leading limit
+is also beta4/pi^4 and includes a beta2 lower term. The proposed direct
+integer-sequence contradiction therefore fails. This is a scoped result
+about that extension, not all topology or geometric methods.
+
+Records
+
+Proofs and exact source-reading scopes are in collaboration/round-10/:
+ adelic/findings.txt; symmetry/adelic_review.txt;
+ coordinator/dense-quarter-gate.txt; fresh/dense_quarter_review.txt;
+ symmetry/findings.txt; fresh/findings.txt;
+ coordinator/review.txt and coordinator/integration_check.json.
+
+The packets distinguish proved identities, finite checks, model reviews,
+Arb bounds and noncertified quadrature. No formal verification, human
+audit, novelty claim or publication is asserted. Earlier files remain
+preserved. Continue seeking a mechanism that changes the arithmetic
+obstacle; do not turn these failed gates into larger index scans.

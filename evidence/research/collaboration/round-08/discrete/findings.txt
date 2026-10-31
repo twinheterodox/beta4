@@ -1,0 +1,233 @@
+Round 08: exact discrete tests, with no irrationality proof
+29 October 2026. Local and unpublished.
+
+The irrationality objective remains open in this packet. Two discrete
+mechanisms were tested after the archive comparison. Neither supplies a
+credible missing theorem. The tests below close only the stated proposals;
+they are not obstructions to arbitrary arithmetic or continued fractions.
+
+1. Rational tails do not become finite-state merely by rationality
+
+Write S_N=sum_(0<=k<N)(-1)^k/(2k+1)^4 and, for a starting value x,
+
+  t_N(x)=(-1)^N(x-S_N).
+
+Then
+
+  t_(N+1)(x)+t_N(x)=1/(2N+1)^4.                         (1)
+
+Every rational x gives rational states. The distinguished starting value
+x=theta is characterized by the decaying boundary condition t_N -> 0;
+indeed t_N(x)=(-1)^N(x-theta)+t_N(theta), and
+
+  1/[2(2N+1)^4] < t_N(theta) < 1/(2N+1)^4.             (2)
+
+For (2), use the elementary Laplace representation
+  t_N(theta)=(1/6) integral_0^infinity
+      t^3 exp(-(2N+1)t)/(1+exp(-2t)) dt.
+The denominator factor lies strictly between 1 and 2.
+
+No bounded denominator or finite-state assertion follows from rational x.
+For example, let p be an odd prime with (2N-1)/3 < p <= 2N-1.
+There is exactly one denominator in S_N divisible by p, namely p^4.
+For p not dividing den(x),
+
+  v_p(x-S_N)=-4.                                       (3)
+
+The archived round-05/fresh/findings.txt Section 4 proves the stronger
+fixed-band denominator result, including more than the single-multiple
+band in (3). Repeating that proof is unnecessary. Its proof applies to a
+fixed rational correction x as well: the finite prime support of den(x)
+does not change the eventual bands. Thus rational starting data do not
+provide a cheap normalization of (1).
+
+Exact irrationality implication that was sought:
+  Prove that no rational orbit of (1) satisfies the decaying boundary
+  condition. This would prove theta irrational directly.
+Missing ingredient:
+  A rigidity theorem stronger than rationality of every state or local
+  valuations. Those properties already hold for all rational starts.
+First decisive test:
+  Derive rational states and their reduced denominators before asserting
+  finite state. Equations (1)--(3) fail that proposed implication.
+
+2. Real Euler products do not identify a p-adic value
+
+For a finite prime cutoff X let
+
+  E_X=product_(3<=p<=X, p prime)(1-chi_4(p)/p^4).
+
+The absolutely convergent real Euler product gives E_X -> 1/theta.
+Its exact primitive pair is
+
+  U_X=product_p (p^4-chi_4(p)), V_X=(product_p p)^4,
+  E_X=(U_X/gcd(U_X,V_X))/(V_X/gcd(U_X,V_X)).             (4)
+
+For a fixed prime ell,
+  v_ell(E_X)=sum_(p<=X) v_ell(p^4-chi_4(p))
+             -4*1_(ell odd and ell<=X).               (5)
+In particular, each prime p=1 mod(4ell) contributes positively to the
+sum. There are infinitely many such primes. An elementary cyclotomic
+proof suffices: for a prescribed finite set of primes choose an integer
+A divisible by those primes and 4ell; every prime divisor r of
+Phi_(4ell)(A)>1 avoids the prescribed set and 4ell, and has order 4ell
+for A modulo r. Hence r=1 mod(4ell). For ell=2, each factor numerator is
+even, so its valuation tends to infinity without this argument.
+
+Consequently E_X -> 0 in every fixed Q_ell, while E_X -> 1/theta>0 in R.
+There is no contradiction if the real limit is rational: the elementary
+sequence n!/(n!+1) tends to 1 in R and to 0 in every Q_ell. A claimed
+identification of these limits is false, even for positive rational
+sequences. Equation (5) is not an assertion about a p-adic L-value.
+
+The local argument is self-contained. For the cyclotomic step, the usual
+factorization X^m-1=product_(d|m)Phi_d(X) and its reduction modulo a prime
+r not dividing m imply that roots of Phi_m have exact multiplicative
+order m; separability of X^m-1 supplies the disjointness. Phi_m(0)=1 for
+m>1 ensures avoidance of primes dividing A.
+
+Exact irrationality implication that was sought:
+  Deduce that a nonzero rational real limit must agree with one of these
+  p-adic limits, or obtain a simultaneous product-formula inequality.
+Missing ingredient:
+  A common quantitative height estimate forcing that agreement. Ordinary
+  real convergence does not do so. The factorial example is a decisive
+  counterexample to the unqualified implication.
+Scope:
+  This closes the bare infinite-valuation argument only. It does not rule
+  out a construction using an Euler product plus a new height theorem.
+
+3. A discrete continued fraction and its primitive normalization
+
+This was the distinct second test after the recurrence route failed.
+It does not differentiate the archived continued fraction in a parameter.
+Its proposed mechanism was Euclidean descent from positivity and integer
+partial coefficients, rather than a new asymptotic approximation family.
+
+For ANY strictly increasing positive integers a_0,a_1,... define
+
+  C_N = 1/(a_0 + a_0^2/(a_1-a_0 + a_1^2/(
+                    a_2-a_1 + ... + a_(N-2)^2/(a_(N-1)-a_(N-2))))).
+
+For N=1 this means C_1=1/a_0. Then exactly
+
+  C_N=sum_(0<=k<N)(-1)^k/a_k.                           (6)
+
+Proof by continuants. Set P_0=0,Q_0=1,P_1=1,Q_1=a_0, and for N>=2
+
+  P_N=(a_(N-1)-a_(N-2))P_(N-1)+a_(N-2)^2 P_(N-2),
+  Q_N=(a_(N-1)-a_(N-2))Q_(N-1)+a_(N-2)^2 Q_(N-2).
+
+Induction gives
+
+  Q_N=product_(k<N) a_k,
+  P_N=Q_N sum_(k<N)(-1)^k/a_k.                          (7)
+
+This proves (6), including all signs and indices. In the target case
+a_n=(2n+1)^4, the positive partial denominators are
+
+  a_n-a_(n-1)=16n(4n^2+1), n>=1,
+
+and the partial numerators are perfect eighth powers (2n-1)^8.
+All coefficients are integers. However, the ACTUAL primitive pair is
+
+  p_N=P_N/gcd(P_N,Q_N), q_N=Q_N/gcd(P_N,Q_N),            (8)
+
+which is exactly the reduced pair of S_N. Its error is bounded by
+
+  q_N/[2(2N+1)^4] < |q_N theta-p_N|
+                         < q_N/(2N+1)^4.              (9)
+
+Thus the fraction has not created a smaller integer remainder. In
+particular the surviving prime layers (3), and the archived stronger
+denominator result, still apply after the full primitive reduction.
+Raw factorial-sized continuants must not be counted as an improvement.
+
+The exact criterion a successful Euclidean descent would need is stronger
+than (9): if theta=u/v, it would have to force the positive complete
+quotients to terminate or force a bounded-denominator integer remainder
+to decrease to zero. Neither is a consequence of the displayed formulas.
+
+4. A rational control with the same broad discrete features
+
+Set
+
+  a_n=(2n+1)(2n+3)(2n+7)(2n+9),
+  f_n=1/[(2n+1)(2n+3)(2n+5)(2n+7)].
+
+Direct cancellation proves
+
+  1/a_n=(f_n+f_(n+1))/2,
+  sum_(n>=0)(-1)^n/a_n=f_0/2=1/210.                    (10)
+
+The corresponding fraction (6) therefore has a rational positive limit.
+All its partial denominators are positive integers; its numerators are
+perfect squares; a_n has degree four with leading term 16n^4; the partial
+denominators have degree three; and the partial numerators have degree
+eight. These are exactly the broad degree and positivity features of the
+target fraction. Hence those features alone cannot justify irrationality.
+
+The first control has overlaps between adjacent factors. Even that feature
+can be removed. Set d=105 and instead take
+
+  a_n=product_(j=0)^3(dn+1+2dj),
+  g_n=1/product_(j=0)^2(dn+1+2dj).
+
+Then
+
+  1/a_n=(g_n-g_(n+2))/(6d),
+  sum_(n>=0)(-1)^n/a_n=(g_0-g_1)/(6d)>0,              (11)
+
+a positive rational number. Moreover gcd(a_n,a_(n+1))=1 for every n.
+Indeed, any common prime between one factor of each product divides
+d*(1+2k-2j), where the odd multiplier has absolute value 1,3,5, or 7.
+All such primes divide d, but each linear factor is 1 mod d. This is
+impossible. The corresponding Euler fraction therefore also has coprime
+adjacent numerators and coprime corresponding numerator/denominator pairs.
+
+There is a uniform version: any prescribed finite coprimality window K
+can be matched by a rational control. Choose an even L>K and let d be
+the product of all absolute nonzero integers Lr+h with -3<=r<=3 and
+1<=h<=K. Put a_n=product_(j=0)^3(dn+1+Ldj). For 1<=h<=K, every prime
+dividing gcd(a_n,a_(n+h)) would divide d*(Lr+h), hence d, again impossible.
+With g_n the reciprocal of the first three factors,
+
+  1/a_n=(g_n-g_(n+L))/(3Ld),
+  sum_(n>=0)(-1)^n/a_n
+       =sum_(0<=j<L)(-1)^j g_j/(3Ld),                  (12)
+
+which is positive rational because L is even. These examples have the
+same degree pattern and the same normalized leading behavior
+(a_n-a_(n-1))/sqrt(a_(n-1)^2) ~ 4/n as the target.
+
+The real difference these controls do NOT erase is that target a_n is
+the fourth power of one linear polynomial. No theorem exploiting this
+exact repeated-factor structure to force descent was found. Mere absence
+of a rational-function antidifference is also insufficient: rationality
+of a single definite sum does not assert such an antidifference exists.
+
+The latter absence for the target follows independently: if a rational
+function R(x) satisfied R(x)+R(x+1)=1/(2x+1)^4, a finite pole orbit modulo
+Z would have noncanceling extreme poles unless the right side had poles
+at both ends of the orbit. It has only one. Equivalently, its nonzero
+order-four alternating discrete residue cannot occur in a rational
+antidifference. This is functional nonsummability, NOT a numerical
+irrationality theorem.
+
+5. Checks and review
+
+discrete_checks.py rebuilds continuants and fractions independently,
+checks the rational control telescoping, records the actual primitive
+target denominators and errors without using theta to select anything,
+and checks finite Euler products and their valuation formula.
+
+The adversarial worker independently verified (10), including the value
+1/210, and (11), including its adjacent coprimality. It confirmed the
+restricted conclusion about those features. The generalization (12) is
+proved directly above and has exact finite checks; it has not received a
+separate agent review. No review established a perfect-power descent.
+
+The tests make no novelty claim and import no specialized irrationality
+theorem. The identities have self-contained proofs above. The stronger
+prime-band denominator estimate is explicitly reused from the archived
+round-05 proof, not represented as a new result of this packet.

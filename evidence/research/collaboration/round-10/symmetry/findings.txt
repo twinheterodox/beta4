@@ -1,0 +1,147 @@
+ROUND10: A THREE-BRANCH WHIPPLE SYMMETRY GATE
+29 October 2026. Local and unpublished. No irrationality proof.
+
+Outcome and scope
+
+One prescribed nonsymmetric fixture supplies genuinely different rational
+pole-splitting jets. It does not supply a new arithmetic mechanism. Its
+three formal coefficient vectors are independent; the stated 120-element
+Thomae group supplies no relation between different branches at this base
+point. Six prescribed primitive eliminations all have absolute value >1.
+No scaled parameter ray was tested. These are statements about this gate,
+not a no-go theorem for the general multiparameter hypergeometric method.
+
+1. Explicit transformation and proposed mechanism
+
+Write h=(h0;h1,h2,h3,h4) and, where the series converges, set
+
+ S(h)=sum_(t>=0) (-1)^t (h0+2t) Gamma(t+h0)/Gamma(t+1)
+                 * product_(i=1)^4 Gamma(t+hi)/Gamma(t+1+h0-hi).
+
+Whipple's transformation gives the normalized identity
+
+ S(h)/product Gamma(hi)
+  = 3F2(a1,a2,a3;b2,b3;1)/[Gamma(b2)Gamma(b3)Gamma(s)],       (1)
+
+ a1=1+h0-h1-h2, a2=h3, a3=h4,
+ b2=1+h0-h1, b3=1+h0-h2, s=b2+b3-a1-a2-a3.
+
+Together with permutations of h1,...,h4, numerator permutations of the
+3F2 generate the classical group of order120. For example, a1<->a3 is
+
+ h -> (1+2h0-h1-h2-h4;
+       1+h0-h2-h4, 1+h0-h1-h4, h3, 1+h0-h1-h2).           (2)
+
+The exact equality for UNNORMALIZED sums is
+
+ S(g h)= [product Gamma((g h)i)/product Gamma(hi)] S(h).     (3)
+
+Thus derivatives of the gamma quotient must be retained. An identity
+for normalized series is not an equality of unnormalized Taylor jets.
+
+Assume h0,h4 are integers, h1,h2,h3 are half-integers, and the positive
+integer lengths below hold. Moving a pair hi->hi+z,hj->hj-z gives
+
+ R_ij(t,z)=(h0+2t)(t+1)_(h0-1)
+  / [(t+hi+z)_d (t+hj-z)_d
+     product_(k!=i,j)(t+hk)_(1+h0-2hk)],
+ d=1+h0-hi-hj.                                            (4)
+
+This is an exact gamma cancellation, not a truncated deformation. It
+retains every integer numerator zero. Unequal half-indices give three
+different rational branches. The intended new ingredient was a fixed
+integral relation supplied by (1)-(3), cancelling the unwanted beta2
+jet while retaining beta4, or genuinely forcing simultaneous coefficient
+divisibility. Generic rational cofactors do not provide that ingredient.
+
+2. The decisive prescribed fixture
+
+Take h=(7;3/2,5/2,7/2,3), chosen before any theta evaluation. At z=0
+all three branches equal
+
+ R0(t)=512(t+1)(t+2)(t+5)(t+6)
+       /[(2t+3)(2t+5)^2(2t+7)^2(2t+9)^2(2t+11)].
+
+The alternating sum of R0 is -12773/720+(155/8) beta2.
+Let L_ij=sum_(t>=0)(-1)^t [z^2]R_ij(t,z). In the order
+(rational,beta2,beta4), exact partial fractions give
+
+ L12: (-62552537/648000,  695/32,    155/2),
+ L13: (-71583467/648000, 10637/288,  155/2),
+ L23: (-2507141/25920,    2105/96,   155/2).               (5)
+
+Reflection R_ij(-7-t,z)=R_ij(t,z) cancels odd beta orders. The fixed
+factor 2t+7 cancels the central pole of the unsplit denominator, so the
+z^2 jets have pole order at most4. All series here converge absolutely
+and locally uniformly in z near0: R_ij=O(t^-4), and its z^2 coefficient
+is O(t^-6). Termwise differentiation and partial-fraction summation are
+therefore valid. Formula (5) is a formal coefficient computation; no
+numerical independence of 1,beta2,beta4 is assumed or proved.
+
+The determinant of the three coefficient vectors is25792/6075, not0.
+This rules out a zero relation between these three FORMAL vectors only.
+It does not rule out a relation between their numerical period values.
+
+3. Actual group gate, retaining normalization
+
+The c-parameter permutations used in group_gate.py are those of [Z02,
+Section3], equivalently [KZ18, pp.5-7]. They generate exactly120 index
+permutations and60 distinct ordered h-images at this fixture.
+
+For each of the three entire affine lines h(z), every group element was
+tested. Retain an image only if its base h0 is7, its base multiset of the
+other four h's is {3/2,5/2,7/2,3}, and its tangent, after reordering to
+the original distinct base entries, is +/- one of the three pair-split
+tangents. The only resulting branch relations are each branch to itself
+with the same direction and gamma quotient1. Its Taylor coefficients
+are exactly(1,0,0). There is no cross-branch stabilizer relation in this
+specified group and fixture. This is not a classification of all
+hypergeometric identities, nor does it exclude arithmetic information
+from transformed base points elsewhere in the orbit.
+
+4. Primitive arithmetic and signed values
+
+Ordinary beta2 cofactors of the pairs(L12,L13), (L12,L23), (L13,L23)
+have primitive weights respectively
+
+ (10637,-6255), (421,-417), (6315,-10637).
+
+Their primitive pairs, in the convention B+A beta4, are
+
+ 6800523437 -6877001250 beta4, error -449481.504271...;
+    3088643    -3138750 beta4, error  -15406.711777...;
+ 1341636727 -1356567750 beta4, error   66441.569810....
+
+Eliminating beta2 with the base form instead gives
+
+ 96228317 -97301250 beta4, error2775.934900...;
+ 32078239 -32433750 beta4, error3058.644966...;
+  3849317  -3892050 beta4, error295.357396....
+
+Every displayed pair has gcd1. Arb at384 bits encloses each signed value
+away from0 and proves its absolute value >1. The mixed L12,L13,L23 values
+are positive, approximately0.00513761,0.00518819,0.00153785; their small
+raw values do not survive primitive elimination. None of these finite
+facts supplies a rate theorem or a general obstruction.
+
+5. Verification and reproduction
+
+ fixture.py: exact SymPy branch construction, direct parameter derivative
+ and independent log-derivative formula, complete partial fractions.
+ independent_check.py: separate standard-library Fraction implementation;
+ direct truncated product division at20 points certifies each whole
+ rational identity after a degree19 common-denominator bound. It rebuilds
+ all three formal vectors, their determinant and pair eliminations.
+ group_gate.py: exact120-element group closure, affine-line image tests,
+ gamma-factor ratios and their first three Taylor coefficients.
+ verify_arb.py: certified signed values from Hurwitz-zeta beta formulas.
+
+Run from beta4:
+ PYTHONDONTWRITEBYTECODE=1 python3 collaboration/round-10/symmetry/fixture.py
+ PYTHONDONTWRITEBYTECODE=1 python3 collaboration/round-10/symmetry/independent_check.py
+ PYTHONDONTWRITEBYTECODE=1 python3 collaboration/round-10/symmetry/group_gate.py
+ PYTHONDONTWRITEBYTECODE=1 .venv/bin/python collaboration/round-10/symmetry/verify_arb.py
+
+The second implementation is by the same worker, not an independent
+model review or formal verification. The source and archive reading
+scope is recorded separately. No novelty claim is made.

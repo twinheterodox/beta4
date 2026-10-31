@@ -1,0 +1,186 @@
+BETA(4): A COMPLETE FORWARD/DUAL TRANSFER, WITH AN ARITHMETIC SHORTFALL
+30 October 2026. Local and unpublished. No irrationality proof.
+
+Assessment
+
+The missing exact pairing from round 12 has been repaired. There are now
+two complete quarter-argument families whose forward sums and dual minors
+give IDENTICAL rational coefficients for every index. Their coefficient
+recurrences, initial data, boundary terms and changing normalization have
+been checked explicitly. The direct divisibility transfer produces actual
+primewise improvements, but it does not supply a viable beta4 proof.
+
+The obstruction found is quantitative and scoped to the stated arithmetic
+estimates. Isolating beta4 multiplies the two quarter denominators. Even
+after ignoring every numerator-related cost, the transferred estimates
+can certify at most 88.20753... in odd-prime content density, whereas the
+established analytic estimate would need 142.86203.... The shortfall is
+54.65450... per index. These are NOT bounds on the actual primitive gcd,
+and do not establish an impossibility theorem for this family or method.
+
+1. What changed from the failed transfer
+
+The original source is Leibtag et al., New Directions in Irrationality,
+arXiv 2610.27799v1, Section 6.2. Its forward and dual presentations expose
+different divisibility of the same coefficients. Round 12 changed only
+the harmonic sampling and produced unequal numerators.
+
+Here the pole grid, both parameter trajectories, initial states, rational
+readouts and factorial normalization are deformed together. Integer zero
+blocks in the dual remain fixed. In the forward kernel, its zero blocks
+and its sampling grid move together. Thus the telescoping boundary terms
+continue to vanish rather than becoming an omitted correction.
+
+For alpha=-3/4,-1/4 and a=1+alpha, the construction gives simultaneous
+approximants P3_n/Q_n and P4_n/Q_n to zeta(3,a),zeta(4,a). Its period
+support is exactly the displayed span of 1,zeta(3,a),zeta(4,a); no
+independence assumption is used to identify the coefficients.
+
+The forward denominator is the positive rational binomial sum
+
+ Q_n=sum_(k=0)^(14n)
+     binom(k+12n+alpha,10n)binom(k+13n+alpha,10n)
+     binom(k+14n+alpha,10n)binom(15n,n+k)binom(15n,k).
+
+The numerator formulas include the complete Gamma-interpolation
+derivatives, including both simple-zero tails. The dual is a 3x3 minor
+of explicit Laurent coefficient rows. The complete identities and their
+new Pochhammer normalization are in coordinator/complete-deformation.txt.
+
+2. What is proved about the identities
+
+An Euler-adjoint concomitant gives a rational pairing K(n,alpha), with
+the exact endpoint and initial cross products. A separate model check
+rederived these identities for symbolic n,alpha.
+
+For BOTH quarter specializations, exact rational-function calculations
+verify the matrix intertwining, companions, regularity and nondegenerate
+initial data. Ten rebuilt polynomial telescoping certificates prove
+the all-index forward readouts and separate dual coefficient-row
+recurrences. The largest certificate has bidegree(553,114). These are
+exact symbolic substitutions; the size is not a measure of mathematical
+novelty. The generic-alpha algebra and the two certified all-index
+specializations are distinguished throughout.
+
+3. Analytic scale and projection
+
+Both quarter systems have exactly the source's limiting matrix. The
+shifted explicit state obeys the same exponential growth exclusion that
+identifies the recessive mode. The endpoint projection remains nonzero.
+Consequently the established relative approximation rate is
+
+ g=112.80753924745468...,
+ log Q_n/n -> sigma=65.45153656586513... .
+
+Let superscripts a,b denote the arguments 1/4,3/4. The exact beta4 form is
+
+ W_n=Q_n^a Q_n^b beta4
+       -(P4_n^a Q_n^b-P4_n^b Q_n^a)/256.
+
+It follows from zeta(4,1/4)-zeta(4,3/4)=256beta4, with every auxiliary
+period eliminated. The rational error has upper exponential rate
+2sigma-g=18.09553... before integer normalization. This is an upper
+bound, not a proved optimal rate or signed asymptotic for W_n.
+
+The separate quarter approximations do not share a denominator up to
+an established inexpensive factor. Treating them as if they did would
+remove an actual elimination cost.
+
+4. Arithmetic advantage, and why it is insufficient
+
+Both presentations now legitimately supply bounds on the SAME rational
+coefficients. They are combined by taking the stronger bound for each
+prime and each coefficient, retaining Lambda and the final projection.
+All 442 finite quarter/prime diagnostics passed. Four exhibit a genuine
+dual improvement over the forward bound; for example at n=2,a=3/4,p=19,
+the q bound improves 0->1 and the P4 bound improves -4->-3.
+All four gains survive the final beta4 projection: its common coefficient
+valuation bound improves -4->-3 at the corresponding primes.
+
+The all-index large-prime estimates and a sufficient global integer
+normalization are proved in coordinator/arithmetic-gate.txt. A separate
+optimistic test discards all P4 costs, uses only selected q summands and
+dual poles, and allows separate best-per-prime choices. Thus it gives
+the transferred certificate more saving than it can actually attain.
+
+The dyadic certificate cost is 180log2 per index for the product. An exact
+854-cell floor calculation bounds its possible odd-prime q saving by
+88.2075294973..., including the limiting tail. The independent checker
+used a smaller 720-cell grid and obtained the same exact rational bound.
+Fixed-neighborhood and uniform tail bounds justify the PNT passage. The saving required by
+the established decay estimate is 142.8620263851.... This large shortfall
+does not warrant a full numerator-density optimization or a ray scan.
+
+This ceiling is for the SPECIFIED source-style termwise estimates.
+It does not bound cancellation inside q sums or determinants, actual
+common numerator content, or gains from another identity. Nor does it
+exclude an additional exponential cancellation in the projected error.
+Any of those would be an extra ingredient not supplied by this transfer.
+
+5. Exact primitive diagnostics and nonvanishing
+
+After clearing the exact coefficients and dividing their full gcd:
+
+ n     digits of A       log|A beta4-B|
+ 1          192                326.8124
+ 2          407                710.4594
+ 3          618               1081.4335
+ 4          836               1472.7236
+ 6         1265               2233.4533
+
+All five values are certified nonzero by Arb. The exact integers,
+normalization factors and interval values are preserved. These finite
+failures are not an asymptotic primitive-growth theorem. An eventual or
+bounded-gap nonvanishing theorem for W_n remains unproved; individual
+quarter-system nondegeneracy must not be substituted for it.
+
+6. Source and check status
+
+The original joint source mechanism was audited before transfer. All
+three relevant source notebooks were read and rerun in a private copy,
+including their five telescoping certificates, 181 prime diagnostics,
+980 offset chambers, 19,600 integration cells and spectral checks.
+Missing source modules were acquired at the already pinned revision.
+Sources, versions, hashes and exact reading/verification scope are in
+coordinator/source-audit.txt and coordinator/sources.json. No Lean build or claim
+about every theorem in the source paper is made.
+
+One independent model checker reviewed the initial periods, generic
+adjoint pairing, shifted boundaries and finite identities using a separate
+implementation. Its first report is independent/audit.txt. Its completed
+second report, independent/final-audit.txt, independently reconstructs
+all ten certificate equations, exceptional initial steps, the shifted
+valuation phases, exact floor integrals and spectral constants. It also
+reviews the written boundary, dyadic and PNT/tail arguments. Both reports
+found no correction needed in their stated scopes.
+
+The checker did not rerun the 442 prime diagnostics or the five primitive
+Arb calculations; those are main-agent computational checks. These are
+independent model cross-checks, not human review or formal verification.
+
+7. Recommendation
+
+Retain the complete paired construction as a repair of a genuine gap in
+our earlier attempt. Do not continue this ray by routine parameter scans
+or fine tuning of the existing valuation bounds. A credible reopening
+would require a cheaper character projection, a new uniform content
+theorem, or demonstrably faster projected decay. None is presently
+established. Return this bounded phase for review rather than launching
+another campaign. No priority claim is made for the identities.
+
+Reproduction, from beta4
+
+ PYTHONDONTWRITEBYTECODE=1 collaboration/round-15/.venv-source/bin/python collaboration/round-15/coordinator/run_source_notebooks.py
+ PYTHONDONTWRITEBYTECODE=1 collaboration/round-15/.venv-source/bin/python collaboration/round-15/coordinator/deform_matrices.py
+ PYTHONDONTWRITEBYTECODE=1 collaboration/round-15/.venv-source/bin/python collaboration/round-15/coordinator/adjoint_pairing.py
+ PYTHONDONTWRITEBYTECODE=1 collaboration/round-15/.venv-source/bin/python collaboration/round-15/coordinator/verify_deformation.py
+ PYTHONDONTWRITEBYTECODE=1 collaboration/round-15/.venv-source/bin/python collaboration/round-15/coordinator/deformed_certificates.py
+ python3 collaboration/round-15/coordinator/optimistic_arithmetic_gate.py
+ PYTHONDONTWRITEBYTECODE=1 collaboration/round-15/.venv-source/bin/python collaboration/round-15/coordinator/deformed_rates.py
+ python3 collaboration/round-15/coordinator/primewise_transfer.py
+ PYTHONDONTWRITEBYTECODE=1 collaboration/round-15/.venv-source/bin/python collaboration/round-15/coordinator/primitive_gate.py
+ PYTHONDONTWRITEBYTECODE=1 python3 collaboration/round-15/independent/audit_deformation.py
+ PYTHONDONTWRITEBYTECODE=1 collaboration/round-15/.venv-source/bin/python collaboration/round-15/independent/audit_final.py
+
+These commands reproduce computations; the written all-index boundary,
+valuation, asymptotic and scope arguments remain part of the assessment.

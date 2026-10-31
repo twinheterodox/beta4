@@ -1,0 +1,78 @@
+Coordinator review of the fresh Euler--Boole theorem
+29 October 2026. Local and unpublished. Model review, not formal verification.
+
+The complete fresh/findings.txt was read. No substantive mathematical
+gap was found in its stated scope. The result excludes the prescribed
+endpoint/truncation family and products of its primitive factors, not
+general sums, Padé constructions, or nonfactoring determinants.
+
+1. Exact remainder and constants
+
+The midpoint tail integral has prefactor1/12 because the ordinary
+Laplace factor1/6 is multiplied by1/(2cosh t). Integrating its finite
+Taylor polynomial gives exactly the displayed rational correction;
+there is no auxiliary period. The mixed-boundary Fourier derivation
+is valid at x=0 even though the function does not vanish at x=1.
+Two integrations by parts give
+  (t^2+a_k^2) integral f(x)cos(a_k x)dx=a_k(-1)^k.
+The alternating partial fractions at t=0 converge, and the m>=1
+geometric remainders converge absolutely.
+
+For the remainder kernel, f_1/f_0<=3^(1-2m)<=1/3. This gives strict
+positivity and the exact sign(-1)^(N+m). Restricting to t>=pi/2
+gives the constant pi^2/(144N), independently of how m grows.
+The m=0 case is correctly treated separately with sech(t)>=exp(-t).
+
+The sharp asymptotic also checks. The first-pole integral has exponent
+phi(t)=2a log(t/a)-2t, a=pi/2. Its stationary point is a, with curvature
+-2/a. The amplitude at that point is a/2. Multiplication by pi/12
+and the Gaussian factor sqrt(pi a/N) gives precisely
+pi^3/(48 sqrt(2N)). Bounded shifts in the truncation index do not
+change that leading constant. This is a genuine two-sided estimate.
+
+2. Primitive denominator lower bound
+
+For p^2>2N, multiplication by p^4 leaves only odd denominators pr.
+Their character factors split as chi(p)chi(r), giving the exact
+residue chi(p)S_J. Every Euler correction is p-integral when p does
+not divide6N, regardless of m. A p-integral correction cannot cancel
+a nonzero p^(-4) principal part. Thus the proof concerns the ACTUAL
+reduced denominator, not a sufficient clearing factor.
+
+For fixed K, all S_1,...,S_K are positive rationals, so their exceptional
+numerator/denominator primes form a finite set. These are avoided by
+the prime band as N tends to infinity. The loss from primes dividing
+6N is at most log(6N). The prime number theorem gives rate
+8(1-1/(2K+1)) uniformly in m. Letting K grow AFTER this liminf is
+legitimate; no uniform exceptional-set estimate in growing K is used.
+The simpler K=1 rate already exceeds pi.
+
+3. Uniformity and nonlinear scope
+
+For bounded N and increasing m, the positive remainder integral on
+any interval strictly to the right of pi/2 grows geometrically in m.
+Combining this with uniform growth at large N proves divergence off
+finite subsets of the parameter lattice. Each form is nonzero, so
+its absolute value has a positive global infimum over the lattice.
+
+Gauss's lemma then gives the stated degree-normalized lower bound for
+products of primitive factors. The note does not confuse ordinary
+decay of powers of one small form with the stronger degree-normalized
+decay needed to exclude every possible rational denominator.
+
+The extension to fixed integer beta(s), s>=2, has the same signed
+sech remainder and prime mechanism. Its correction coefficients have
+denominators supported at a fixed finite set and at N (in fact the
+factorial ratio simplifies further), so the rate2s is justified.
+
+4. Separate finite checks
+
+coordinator/boole_check.py constructs22 sech coefficients by Flint
+formal series inversion, without importing the worker's code. It
+rebuilds36 exact rational approximants, checks signs and uniform
+lower bounds using Arb, and verifies48 isolated-prime valuations.
+All passed. The larger worker checks were inspected as supplementary
+evidence, not used in place of the uniform argument.
+
+No claim of originality, a human audit, formal proof, or irrationality
+of beta(4) is made. The full round integration record fixes input hashes.

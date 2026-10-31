@@ -1,0 +1,118 @@
+ROUND09: A REVIEWED INTERNAL-GRAPH FAMILY AND TWO OTHER GATES
+29 October2026. Local and unpublished.
+
+There is still no proof of beta(4) irrationality and no credible complete
+construction with favorable arithmetic. This round produced an exact
+family and meaningful tests, but its immediate pure-beta4 projection
+fails. The persistent goal remains active. Model proof reviews and finite
+checks are not formal verification, a human audit or a priority claim.
+
+1. Nonuniform Green-kernel graph
+
+Let theta=beta4, G=beta2 and
+
+ J_n=integral_[0,1]^4 P^n/D,
+ P=t^4 r^2(1-r)^2 x(1-x)y(1-y),
+ D=r x(1-x)+(1-r)y(1-y)+tr(1-r)(x^2+y^2).
+
+This comes from a five-edge graph in dimension8n+4 with four outer
+propagator powers n+1 and central power4n+1. The latter is the Laplacian
+Green exponent. This is not the uniform-index ray mistakenly proposed
+in round08. A Jacobian test proves P is not pointwise a function of
+the two old external-moment coordinates. Broader graph equivalence and
+literature priority have not been classified.
+
+The integrals are positive and
+
+ 0<J_n<=6theta*256^-n,
+ J_n~pi^(3/2)/(12sqrt2) n^(-5/2)256^-n.
+
+A terminating Gegenbauer expansion diagonalizes the central Green kernel;
+both radial integrations are elementary. The exact rational source has
+poles of order at most4 and a reflection symmetry. Consequently, for
+EVERY fixed integer n>=0,
+
+             J_n belongs to Q+QG+Qtheta+Qlog2+Qzeta3.
+
+An independent proof bounds the absolute integrated harmonic terms by
+O_n(k^(-4n-3)); no unjustified boundary exchange is used. This proves the
+period identity, not a uniform arithmetic bound as n grows.
+
+The first exact identity is
+
+ 384J_1=301-3018G+2916theta-1168log2+324zeta3,
+
+with primitive integer vector and positive value about0.24867938.
+It is not rational under theta rational because other periods remain.
+For n1..4 the primitive mixed-period values are approximately
+0.2487,3.187,3014.9,823919.9. The sole prescribed four-consecutive-index
+elimination of G,log2,zeta3 gives the primitive form
+
+ 159801213020005019950588599750 theta
+                         -173719233934895586910503507703,
+
+whose certified value is about-1.5684694957*10^28. Root independently
+reconstructed all rational sources/partial fractions and this pair by
+a different polynomial algorithm. No larger scan was run. This failure
+does not prove a general obstruction for the family or for graph methods.
+
+The new ingredient is the terminating-harmonic reduction and internal
+weight. The resulting arithmetic is again an alternating rational-sum
+problem; merely interpreting it geometrically does not remove its cost.
+
+2. An explicit orbifold realization and its limited consequence
+
+The worker constructs X=P(1,3,4^5), its quarter sectors, rank24 quantum
+differential equation, K-lattice and integral regularized coefficients
+(24n)!/[n!(3n)!(4n)!^5]. It corrects an initial nongorenstein candidate.
+The fourth quarter coefficient lies beyond the rank18 homogeneous
+anticanonical period system; integral K-monodromy alone does not supply
+arithmetic for that extension or for its nonlinear cumulant extraction.
+
+The exact fourth-cumulant difference isolates theta. The resulting
+prescribed rational sequence r_n=P_n/Q_n satisfies
+
+ r_n-theta~ -3/(10240n^5),  r_n<theta,
+ log Q_n >=24n+o(n).
+
+The denominator statement detects actual surviving fourth powers at
+primes6n+5<p<=12n+3, outside at most12 endpoint exceptions. Hence its
+primitive errors diverge. Root independently checked the elementary
+proof and reproduced43 prime valuations and five signed rational pairs.
+This theorem concerns that particular sequence, not all geometric methods.
+
+A nonconstant toric box deformation produces a different integer
+constant-term sequence and explicitly changes the critical values. Its
+beta4 connection coefficient is UNPROVED. It is a construction gate,
+not a calibrated irrationality route. The external geometric theorems
+were read selectively by the worker; root has not audited those papers.
+
+3. Multiplicative construction
+
+Powers of beta4 retain fourth-power Dirichlet denominators, but polynomial
+degree is a genuine rationality cost. The maximal elementary coefficient
+gap gives (theta-1)^D and cannot handle arbitrary rational denominators.
+
+A signed divisibility matrix K_(d,f)=chi(lcm(d,f))/lcm(d,f)^4 has
+
+ det(XK-ee^T)=X^(r-1)det(K)(X-c_D), c_D=e^T K^-1 e.
+
+For factor-closed D, c_D=sum mu(d)^2/h(d), h=(chi(n)n^4)*mu.
+A full Boolean divisor basis reproduces the old finite Euler product.
+Other prescribed finite bases give no useful primitive improvement.
+There is no positivity assumption or general asymptotic no-go theorem.
+
+4. Records and next action
+
+Read collaboration/round-09/coordinator/review.txt for the exact review
+scope and reproduction commands in the referenced scripts. Key proofs:
+ internal_graph/first-period.txt and general-period-space.txt;
+ independent/internal_graph_review.txt and multiplicative_gate.txt;
+ orbifold/findings.txt and deformation.txt;
+ coordinator/internal-weight-analysis.txt.
+All paths above are under collaboration/round-09/.
+
+Earlier research is preserved. The next round should broaden the search
+again, rather than extend these failed scans without a specific new
+arithmetic mechanism. The goal is the actual irrationality theorem;
+the structural results in this record do not substitute for it.

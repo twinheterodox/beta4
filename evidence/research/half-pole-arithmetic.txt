@@ -1,0 +1,338 @@
+The deformed Catalan coefficient and a smaller denominator budget
+28 October 2026. Local and unpublished.
+
+This note continues coupled-holonomy.txt and block-arithmetic.txt. It proves
+an exact terminating sum for the full deformed Catalan coefficient. The
+sum improves its denominator bound at every Taylor order. A second pole
+representation also improves the proved denominator bound for the rational
+term of the beta(4) form. These are arithmetic results for our existing
+family, not an irrationality proof. All checks are by the same agent;
+neither independent verification nor priority is claimed.
+
+The main tools are classical hypergeometric transformations. In particular,
+the undeformed terminating sum is Krattenthaler--Rivoal [KR08, Lemma 3],
+up to our normalization. The transfer between pole representations is a
+direct specialization of Krattenthaler--Zudilin [KZ18, Theorem 2]. We give
+the parameter substitutions and normalization rather than crediting the
+resulting arithmetic improvement to an unexplained computational identity.
+
+1. Conventions and the result
+
+Throughout this note n is the ORIGINAL EVEN source index, not the block
+index m=n/2. Put G=beta(2), L_N=lcm(1,...,N), and L_0=1. Our source forms
+are
+
+  r_n=a_n G+b_n,
+  s_n=16a_n beta(4)+c_n G+d_n.
+
+They are the coefficients of 1 and e^2 in
+
+  E_n(e) = (2n+1)!/2^(2n+2) * sum_(t>=0)
+      (2t+n+1) product_(ell=-3n/2)^(n/2-1)(t-ell)
+      / product_(j=0)^(2n+1)((t+(2j+1)/4)^2-e^2).          (1)
+
+The formal partial-fraction decomposition, established in coupled-holonomy,
+is E_n(e)=a_n(e)T(e)/16+b_n(e), where a_n(e),b_n(e) are rational functions
+regular and even near zero, and
+
+  T(e)=sum_(t>=0)[1/((t+1/4)^2-e^2)-1/((t+3/4)^2-e^2)]
+      =16G+256 beta(4)e^2+4096 beta(6)e^4+...,
+  a_n(e)=a_n+c_n e^2+...,
+  b_n(e)=b_n+d_n e^2+....
+
+No linear-independence assumption about these periods is used to identify
+the coefficients: they are defined by partial fractions and finite tails.
+
+For 0<=j<=n set
+
+  U_(n,j)=binom(n,j) binom(n-1/2,j) binom(n+j-1/2,j).
+
+The exact parameter identity proved below is
+
+  a_n(e)=8 sum_(j=0)^n U_(n,j)
+                     product_(k=1)^j (1-4e^2/k^2)^(-1)
+        =8 3F2(-n,n+1/2,1/2-n;1-2e,1+2e;1).             (2)
+
+In particular, writing H_j^(2)=sum_(k=1)^j 1/k^2,
+
+  a_n=8 sum_j U_(n,j),
+  c_n=32 sum_j U_(n,j) H_j^(2),
+  16^n L_n^2 c_n is an integer.                           (3)
+
+More generally, for EVERY k>=0,
+
+  16^n L_n^(2k) [e^(2k)]a_n(e) is an integer.              (4)
+
+The improved rational-term bound is
+
+  16^n D_n d_n is an integer,
+  D_n=gcd(L_(2n)^5,L_(4n)^4).                             (5)
+
+It obeys
+
+  L_(2n)^4 | D_n | L_(2n)^4 L_floor(sqrt(4n))^4.           (6)
+
+The sharper exact conjecture 16^n L_(2n)^4 d_n in Z remains
+UNPROVED here. It holds at all 359 positive even indices in the existing
+table, through n=718. In contrast, (3) is now proved, not just observed.
+
+2. Transferring the full parameter, not just its value at zero
+
+Define the rational function
+
+ F_n(t,e)=n!(2t+n+1)
+   product_(ell=0)^(n-1)(t-ell) product_(ell=n+1)^(2n)(t+ell)
+   / product_(j=0)^n [(t+j+1/2)((t+j+1/2)^2-4e^2)].
+
+Then, uniformly on a sufficiently small closed disk about e=0,
+
+                   E_n(e)=sum_(t>=0)(-1)^t F_n(t,e).     (7)
+
+Here is a normalization check for applying [KZ18, Theorem 2]. Put z=2e
+and substitute c=n+1/2+z, d=n+1/2-z in that theorem. In the alternating
+sum the first nonzero summand is t=n; in (1) it is t=n/2. Their initial
+factors are respectively
+
+ H_n=(n!)^2(3n+1)(2n+1)_n
+     /[(n+1/2)_(n+1)(n+1/2+z)_(n+1)(n+1/2-z)_(n+1)],
+
+ Q_n=2^(2n+2)((2n+1)!)^2
+     /[(n+1/2+z)_(2n+2)(n+1/2-z)_(2n+2)].
+
+The remaining series are exactly the 6F5(-1) and 6F5(1) in that theorem.
+Its gamma prefactor after this substitution is
+
+ Gamma(4n+3) Gamma(2n+3/2-z) Gamma(2n+3/2+z) Gamma(2n+2)
+ ----------------------------------------------------------------.
+ Gamma(3n+2) Gamma(3n+5/2-z) Gamma(3n+5/2+z) Gamma(n+1)
+
+Multiplying it by H_n gives Q_n, by the gamma duplication formula.
+There is no residual parameter-dependent factor. The sign (-1)^n is 1
+because our source indices are even. Absolute locally uniform convergence
+justifies extracting Taylor coefficients in (7).
+
+3. A terminating transformation for the Catalan coefficient
+
+For generic nonzero z near zero, let D_j(z) be the residue of F_n(t,z/2)
+at t=-j-1/2+z, for 0<=j<=n. Put B(u)=sum_(t>=0)(-1)^t/(t+u).
+Shifting the alternating sums and using the reflection t -> -n-1-t
+shows that their non-rational part is
+
+  C(z)[B(1/2-z)-B(1/2+z)],   C(z)=sum_j (-1)^j D_j(z).
+
+The fixed half-integer poles give zero total coefficient of B(1/2).
+Moreover B(1/2-z)-B(1/2+z)=(z/2)T(z/2). Thus the formal coefficient is
+
+                         a_n(z/2)=8z C(z).               (8)
+
+One can identify this with the coefficient from (1) without presuming
+independence of any numerical periods. The corresponding rational
+coefficients multiply the same meromorphic T(e). If their difference
+were nonzero, (7) would express T(e) as a rational function. But T(e)
+has simple poles at every positive odd quarter-integer, with nonzero
+residues. It is not rational. The coefficient functions therefore agree.
+Alternatively the quarter-residue sum can be transformed directly.
+
+Here are the finite transformations in full. Write (x)_n for a rising
+factorial and set
+
+ t0=(n+2z)(1/2-z)_n(n+1/2+z)_n /[(z)_(n+1)(2z)_(n+1)],
+ a=-n-2z, b=n+1/2-z, x=-n-z, y=1/2-n-z.
+
+The ratio of consecutive residues gives
+
+ C(z)=(-1)^n t0 H,
+ H=6F5(a,1+a/2,b,x,y,-n;
+       a/2,1+a-b,1+a-x,1+a-y,1+a+n;-1).
+
+Use the terminating Whipple transformation recorded as (3.2) of [KR08]:
+
+ H=W 3F2(-n,-n-z,1/2-n-z;1/2-2n,1/2-2n-z;1),
+ W=(1-n-2z)_n(n+1/2)_n /[(1-z)_n(1/2-z)_n].
+
+Next use the terminating identity
+
+ 3F2(-n,A,B;C,D;1)
+   =(C-A)_n/(C)_n *
+      3F2(-n,A,D-B;A-C-n+1,D;1).
+
+This identity follows by expanding a terminating 2F1 transformation and
+interchanging finite sums (or directly by Chu--Vandermonde). For our
+series take A=-n-z, B=1/2-n-z, C=1/2-2n-z, D=1/2-2n. The new factor is
+
+ T0=(1/2-n)_n/(1/2-2n-z)_n,
+
+and the series is 3F2(-n,-n-z,-n+z;1/2,1/2-2n;1).
+Reverse its finite sum. This introduces the factor
+
+ R0=(-1)^n(-n-z)_n(-n+z)_n /[(1/2)_n(1/2-2n)_n]
+
+and leaves 3F2(-n,1/2-n,n+1/2;1+z,1-z;1). Finally,
+
+                       (-1)^n z t0 W T0 R0=1.
+
+Together with (8), this proves (2). All manipulations are identities of
+rational functions in z. Apparent singularities at z=0 are removed by
+continuation, so taking Taylor coefficients there is legitimate.
+
+At e=0 formula (2) specializes to the sum in [KR08, Lemma 3]. Their a_n
+is -4 sum U_(n,j); ours is 8 sum U_(n,j). The parameter extension above
+is the step used here to control the new Taylor coefficients.
+
+4. Arithmetic and positivity of the coefficient
+
+For any integer v and j>=0, 4^j binom(v+1/2,j) is an integer. At every
+odd prime, binom(v+1/2,j) is p-integral by the integer-valued-binomial
+property. At 2, its denominator divides 2^j j!, whose 2-valuation is
+at most 2j. Hence 16^n U_(n,j) is integral for j<=n.
+
+The coefficient of e^(2k) in the product in (2) is 4^k times the complete
+homogeneous polynomial of degree k in 1,1/2^2,...,1/j^2. Multiplication
+by L_n^(2k) clears each monomial denominator. This proves (4) and (3).
+These are Taylor coefficients; no derivative factorial is being omitted.
+
+Every U_(n,j) is positive. Therefore
+
+  a_n>=8,
+  0<c_n/a_n<4 zeta(2)=2pi^2/3<8    (n>=1),               (9)
+  c_0=0.
+
+The strict bound <8 follows already from sum_(k>=1)1/k^2<2 and needs
+no numerical optimization. In particular the unwanted coefficient has
+the same exponential scale as a_n, with a uniformly bounded ratio.
+This is useful in the limiting-metric argument in quotient-investigation.
+
+5. Laurent coefficients at half-integer poles
+
+Put R_n(t)=F_n(t,0). Differentiating the product as a Taylor series gives
+
+ [e^2]F_n(t,e)=S_n(t)
+       =4R_n(t) sum_(j=0)^n (t+j+1/2)^(-2).               (10)
+
+Let S_(j,s) be its Laurent coefficient of (t+j+1/2)^(-s), s=1,...,5.
+For all j,s,
+
+                 16^n L_n^(5-s) S_(j,s) is integral.     (11)
+
+To prove this, factor
+
+ R_n(t)=(2t+n+1) binom(t,n) binom(t+2n,n) Q_n(t)^3,
+ Q_n(t)=n!/product_(h=0)^n(t+h+1/2).
+
+(The rational function Q_n(t) here is unrelated to the initial series
+factor Q_n of Section 2.) The residue of Q_n(t) at x_j=-j-1/2 is
+(-1)^j binom(n,j), an integer. Its partial fractions imply that the
+y^k coefficient of y Q_n(x_j+y) is cleared by L_n^k.
+
+The y^k coefficient of either binomial factor at x_j is cleared by
+4^n L_n^k. At odd primes use Vandermonde's identity with
+
+ binom(y,r)=y/r product_(i=1)^(r-1)(y/i-1):
+
+an order-k coefficient has a denominator dividing a product of k
+integers at most n. The other binomial factor in Vandermonde is
+p-integral. At 2 the entire polynomial numerator is integral after
+multiplying by 2^n, and n+v_2(n!)<=2n, so 4^n suffices before any L_n.
+
+Thus the regular part y^3 R_n(x_j+y) has its order-k coefficient
+cleared by 16^n L_n^k. By (10),
+
+ y^5 S_n(x_j+y)=4 y^3 R_n(x_j+y)
+          *[1+y^2 sum_(h!=j)(y+h-j)^(-2)].
+
+The bracket has its order-k coefficient cleared by L_n^k as well.
+Taking k=5-s proves (11).
+
+In summing the partial fractions, the alternating finite tail at j is
+
+ T_(j,s)=sum_(t=0)^(j-1) (-1)^t 2^s/(2t+1)^s.
+
+The formal rational coefficient is
+
+                d_n=-sum_(j=0)^n sum_(s=1)^5
+                              (-1)^j S_(j,s) T_(j,s).
+
+For n>=1, tail denominators are at most 2n-1 and L_n divides L_(2n-1).
+The total Laurent-plus-tail order is five. Consequently
+
+                16^n L_(2n-1)^5 d_n is integral.         (12)
+
+Weakening L_(2n-1) to L_(2n) and intersecting with the proved quarter-pole
+bound 16^n L_(4n)^4 d_n in block-arithmetic, Section 6, proves (5).
+Intersection is valid: if two integers M,N both clear a rational number,
+then gcd(M,N) clears it, by Bezout's identity. At n=0, d_0=0 directly.
+
+6. Size of the saving and its limits
+
+For a prime p let a=v_p(L_(2n)), b=v_p(L_(4n)). Then
+
+ v_p(D_n)=min(5a,4b)>=4a,
+ v_p(D_n)-4a=min(a,4(b-a)).
+
+Here b-a is 0 or 1. A positive excess requires a>=1 and p^(a+1)<=4n,
+so p<=sqrt(4n); the excess is at most 4. This proves (6), and even the
+slightly stronger surplus bound product_(p<=sqrt(4n)) p^4.
+
+Using log L_N=N+o(N) just to express exponential rates gives
+
+       log L_n^2=2n+o(n),        log D_n=8n+o(n).
+
+The preceding proved multipliers for c_n,d_n had respective rates
+4n+o(n) and 16n+o(n). Thus both odd-prime exponential costs are halved.
+Excluding the prime 2 changes these rates only by O(log n). The common
+factor 16^n remains; it has NOT been halved. Equivalently the full
+upper-bound rates change from log(16)+4 and log(16)+16 to log(16)+2 and
+log(16)+8, respectively. These are denominator bounds, not asymptotic
+equalities for the actual reduced denominators.
+
+This does not by itself make the final integer forms small. Multiplying
+or combining forms to cancel G still incurs large coefficients, and
+the exact finite searches already used the actual reduced denominators.
+Their poor arithmetic is therefore not repaired merely by improving a
+proof of a clearing bound. Likewise the earlier unfavorable holonomy
+budgets allowed optimistic denominator estimates already. A proof of the
+remaining exact d_n conjecture would remove a subexponential surplus in
+(5), rather than supply another exponential saving.
+
+The useful lesson is more specific: transforming the FULL parameter
+family can reveal cancellation invisible in termwise residue estimates.
+The undeformed rational coefficient was treated with Andrews' multiple
+sum by [KR08, Section 4]. A corresponding parameter-level formula for
+b_n(e), with explicit arithmetic, is still missing from this investigation.
+We have not assumed that its derivative inherits their theorem for free.
+
+7. Reproducible checks and attribution
+
+  .venv/bin/python experiments/half_pole_transfer.py
+  .venv/bin/python experiments/catalan_parameter_identity.py
+
+The first script independently rebuilds 11 quadruples (a,b,c,d), n=0,2,
+...,20, from half-pole Laurent coefficients and verifies 605 inclusions
+(11). It compares the two full sums at 12 nonzero parameter choices by
+512-bit Arb digamma evaluation; differences contain zero and have size
+below 10^(-110). The analytic identity is proved by (7), not by these
+numerical comparisons. It also tests the global inclusions and surplus
+bounds at every positive even index through 718.
+
+The second checks (2) at 39 exact rational parameter choices, verifies
+156 transformation/prefactor identities, and compares 28 quarter-pole
+Taylor coefficients through e^6. It rebuilds all 720 saved a,c values
+from the positive sum and checks all 360 instances of (3). The all-index,
+all-Taylor-order claims rest on Sections 2--4, not finite testing.
+
+Saved outputs:
+  results/half_pole_transfer.json
+  results/catalan_parameter_identity.json
+
+[KZ18] C. Krattenthaler and W. Zudilin, Hypergeometry inspired by
+irrationality questions, arXiv:1802.08856v2 (2018), Theorem 2.
+https://arxiv.org/abs/1802.08856v2
+
+[KR08] C. Krattenthaler and T. Rivoal, On a linear form for Catalan's
+constant, arXiv:0810.1927v1 (2008), Lemma 3, formula (3.2), and Section 4.
+https://arxiv.org/abs/0810.1927v1
+
+The parameter identity and its arithmetic consequences are derivations in
+this investigation using those sources. A novelty search for this precise
+deformation has not been completed. The PDFs and extracted texts were
+already in the local library; no new external source was downloaded.

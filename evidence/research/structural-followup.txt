@@ -1,0 +1,336 @@
+Beta(4): structural follow-up to the first investigation
+27 October 2026 — unpublished local working record
+Research note prepared with Codex
+
+Outcome. A modified construction has a positive integral representation,
+which proves nonvanishing at beta(4) for every determinant size. Its finite
+arithmetic balance is worse than the original interlaced construction.
+The original construction has not acquired a uniform nonvanishing proof
+or the negative asymptotic bound needed for irrationality. No beta(4)
+irrationality theorem is claimed.
+
+This file extends research-notes.txt without replacing its record of the
+first investigation. All statements labeled proofs below are mathematical
+arguments in this working note, not formally verified or independently
+reviewed results. Priority has not been established.
+
+1. The two weights come from a known base system
+
+Write theta=t d/dt. Define the base functionals
+
+  B_1(R)=integral_0^infinity R(y^2) y csch(pi y) dy,
+  C_1(R)=integral_0^infinity R(y^2) sech(pi y) dy.
+
+In the t-coordinate their density ratio is
+
+  h_1(t)=tanh(pi sqrt(t))/sqrt(t)
+        =(2/pi) sum_{j>=0} 1/(t+(j+1/2)^2).
+
+Thus the base pair is a Nikishin system. This exact hyperbolic-weight
+pair, after rescaling, is the multiple Pollaczek system treated by
+Aptekarev, Lopez Lagomasino, and Martinez-Finkelshtein [P1, Section 1;
+P2, Section 3.3]. This connection is existing mathematics, not a new
+property of our beta(4) construction.
+
+Three integrations by parts give the exact functional identities
+
+  B_4 = B_1 o [(2theta+2)(2theta+3)(2theta+4)/6],
+  C_4 = C_1 o [(2theta+1)(2theta+2)(2theta+3)/6].
+
+They hold for the polynomials and negative-square-pole rational functions
+used here. At zero the boundary terms vanish: in the B case the factors
+are y^4 R(y^2), with derivatives paired with a csch singularity; all three
+boundary products are O(y). In the C case the corresponding factor is
+y^3 R(y^2) and sech is regular. At infinity exponential decay dominates
+every polynomial factor. The remaining differential expressions are
+
+  y^(-1) d^3[y^4 R(y^2)]/dy^3
+      =[(2theta+2)(2theta+3)(2theta+4)R](y^2),
+  d^3[y^3 R(y^2)]/dy^3
+      =[(2theta+1)(2theta+2)(2theta+3)R](y^2).
+
+These identities explain why the coefficients of the two weights are
+related, but they do not transfer the base system's positivity theorem.
+
+2. Two precise obstacles to transferring that theorem
+
+2.1 An explicit loss of normality
+
+The first three moments are
+
+  B_4: 1, 5/2, 14;
+  C_4: 1/2, 5/4, 175/32.
+
+If P(t)=c_0+c_1 t+c_2 t^2 satisfies B_4(P)=C_4(P)=0, subtracting
+half the first equation from the second gives
+
+  -(49/32)c_2=0.
+
+Hence every such P has degree at most one, and the nonzero solutions are
+multiples of t-5/2. In particular there is no monic degree-two polynomial
+orthogonal to both weights at multi-index (1,1). The differentiated pair
+is not perfect in the way the base Nikishin pair is. This does not assert
+that our Cauchy-column determinants vanish; those are different matrices.
+
+2.2 The ratio has nonreal poles
+
+Put h=tanh(pi y). Direct differentiation gives
+
+  w_C(y)/w_B(y) = h^5(6h^2-5)/(y(6-5h^2)).
+
+Let u_0=artanh(sqrt(5/6)). At y=u_0/pi+i/2 we have
+tanh(pi y)=coth(u_0)=sqrt(6/5). The denominator of the ratio vanishes
+while the numerator does not. Thus its meromorphic continuation as a
+function of t=y^2 has a nonreal pole. It cannot be the Stieltjes transform
+of a positive measure supported on the negative real axis, unlike h_1.
+Adding a polynomial to the ratio does not remove this pole. This rules
+out that particular direct Nikishin argument, not all possible positivity
+or nonvanishing arguments.
+
+3. The original matrix also has a useful rank-two identity
+
+For M_ij=F_j(t^i/(t+a_j^2)), where F_j is B_4 or C_4,
+
+  M_(i+1),j + a_j^2 M_ij = F_j(t^i).
+
+The right side has only two different columns. This is a rank-two
+displacement relation and gives a possible link with simultaneous
+rational approximation. It is an exact identity, not yet a recurrence
+or asymptotic estimate for the determinant. No such estimate has been
+deduced from it in this investigation.
+
+4. A modified family with a proved nonvanishing property
+
+The signed weight C_4 can be combined with B_4 in a controlled way.
+
+Lemma. For all y>0,
+
+  w_C(y) >= -(pi/4) w_B(y).
+
+Proof. w_B is strictly positive. When w_C>=0 the assertion is immediate.
+Otherwise put h=tanh(pi y) and u=h^2, so 0<u<5/6. Since
+pi y=artanh(h)>=h,
+
+  -w_C/w_B
+    = pi h^5(5-6u)/(artanh(h)(6-5u))
+    <= pi u^2(5-6u)/(6-5u).
+
+The identity
+
+  u(1-u)(6-5u)-u^2(5-6u)
+       =u(11u^2-16u+6)
+       =u[11(u-8/11)^2+2/11]>0
+
+shows that the last expression is at most pi u(1-u)<=pi/4.
+This proves the bound. In particular pi/4<1.
+
+For an integer n>=1 define
+
+  D_B(t)=prod_{j=0}^{n-1}(t+(j+1/2)^2),
+  D_C(t)=prod_{j=1}^n(t+j^2).
+
+Every factor of D_B(t) is smaller than its paired factor of D_C(t)
+when t>=0. For any rational lambda with 0<=lambda<=1, define
+
+  F_n(R)=B_4(R/D_B)+lambda C_4(R/D_C).
+
+Its integral weight is
+
+  W_n(y)=w_B(y)/D_B(y^2)+lambda w_C(y)/D_C(y^2)
+        >=(1-pi/4) w_B(y)/D_B(y^2)>0.
+
+For any integer h>=1 form the Hankel determinant
+
+  H_(n,h)=det[F_n(t^(i+j))]_(0<=i,j<h).
+
+Proposition. H_(n,h)>0 for every n,h>=1 and rational 0<=lambda<=1.
+Every entry lies in Q+Q beta(4).
+
+Proof. For any nonzero real polynomial p of degree less than h, the
+quadratic form of the matrix is
+
+  integral_0^infinity p(y^2)^2 W_n(y) dy > 0.
+
+All integrals converge and the weight is strictly positive, so the
+matrix is positive definite. Equivalently its determinant is
+
+  1/h! integral_(0,infinity)^h
+       prod_{i<j}(y_j^2-y_i^2)^2 prod_i W_n(y_i) dy_i > 0.
+
+For arithmetic, polynomial division and simple partial fractions reduce
+each B term to rational B moments and its half-integer pole values, and
+each C term to rational C moments and its integer pole values. The
+formulas in research-notes.txt then give Q+Q beta(4). The coefficient
+matrix of beta(4) is a sum of at most 2n rank-one matrices, so the
+determinant polynomial has degree at most min(h,2n).
+
+This solves nonvanishing for this MODIFIED family. It neither proves
+nonvanishing for the original interlaced Cauchy-column determinants nor
+establishes the required arithmetic/real size inequality.
+
+5. Numerical outcome for the positive family
+
+As before, normalize each determinant polynomial to a primitive integer
+polynomial Q, preserving its sign at beta(4). Measure
+
+  Lambda = log Q(beta(4))/h^2.
+
+At lambda=1, with h=2n, the comparison is:
+
+  h    original interlaced    positive Hankel variant
+  12      0.8535084278           2.0226481294
+  24      1.1946000911           2.4196659277
+  48      1.4381616267           2.6465210108
+
+The comparison uses the same number 2n=h of pole locations. Nonvanishing
+is now proved, but the primitive arithmetic balance is worse. Sixteen
+designs were tested in total: n=6,12,24; h/n in {1/2,1,3/2,2}; and
+lambda=1, with lambda=1/2 also tested at n=24. All Lambda values were
+positive. This is finite evidence, not an impossibility theorem.
+
+The implementation checks include exact agreement with the B-only
+primitive polynomial when lambda=0 and h=n, at n=2,4,6. Six direct
+integral comparisons for the combined weight at n=1,2 agree with the
+rational formulas within 2.8e-59 using 60 working digits. The polynomial
+coefficients and their primitive content are exact. Numerical evaluation
+uses two precisions, not interval certification.
+
+6. Adapted polynomial rows do not improve the tested designs
+
+The ordinary Meixner--Pollaczek recurrence [D] at angle pi/2, with
+H_m=m! P_m, is
+
+  H_0=1, H_1=2y,
+  H_(m+1)=2y H_m-m(m+2lambda-1)H_(m-1).
+
+For lambda=1/2 and lambda=1 its even polynomials H_(2d)(y) are rational
+polynomials in t=y^2, adapted respectively to the C_1 and B_1 weights.
+The implementation verified 72 exact scalar orthogonality identities.
+
+Replacing monomials of degrees 0,...,K-1 by any other rational basis
+of that same polynomial space only multiplies the determinant by a
+nonzero rational number. It therefore leaves the primitive integer
+polynomial unchanged. The zero-offset tests confirm this exactly.
+
+To change the row space, we tested sequences of consecutive adapted
+polynomials with positive degree offsets, including inverse images under
+the Euler operators in Section 1. We also used the genuine two-weight
+base multiple Pollaczek polynomials, computed from their exact rational
+moment equations. All their row denominators were powers of two in the
+tested range. Thus their failure was not caused by introducing large odd
+denominators in the row coefficients.
+
+There were 40 designs including controls, at K=12 and 24. Every
+positive-offset design was worse than the zero-offset baseline. For
+example, at K=24 an offset of 6 in the true two-weight base sequence
+gives Lambda=1.52637, versus 1.19460 at zero offset. The corresponding
+individual-weight sequences give 1.58827 and 1.61862. These tests do not
+exclude other row spaces; they do exclude a straightforward benefit
+from this particular orthogonal-polynomial adaptation at these sizes.
+
+7. Where the extra weight-four cost occurs
+
+For a fixed matrix basis let D clear all rational entry coefficients.
+Write g for the positive gcd of the coefficients of det(D M(X)). Then
+
+  Q(X)=(D^K/g) det M(X)
+
+is primitive. Thus
+
+  log|Q(beta(s))| = log|det M(beta(s))| + K log D-log g.
+
+The normalization term can be split into its 2-adic contribution and
+all odd-prime contributions. This split uses the same monomial basis
+at every weight; the individual terms are basis-dependent, while their
+sum and Q are invariant under rational basis changes.
+
+For the original mixed construction at K=24, raising the weight from
+s=2 to s=4 changes the normalized quantities by
+
+  real determinant size:             +0.1768086771
+  2-adic normalization:              -0.0433216988
+  odd-prime normalization:           +0.7761298201
+  total:                             +0.9096167985
+
+Here Lambda rises from 0.2849832926 to 1.1946000911. The same qualitative
+pattern occurs at K=12. The EXTRA weight-four cost is dominated by odd
+primes in these tests. This does not mean that the entire final gap is
+an odd-prime term, or that an asymptotic prime-cost theorem has been
+proved. The tested weight-two construction itself is already positive.
+
+This provides a concrete reason to demand a new arithmetic cancellation
+before pursuing larger versions of the same determinant search.
+
+8. Finite prime tests and their limits
+
+For the original primitive Q_K, exact reduction modulo p=K-1 gives
+
+  K=6, p=5:    roots in F_p = {0};
+  K=12, p=11:  roots in F_p = {7};
+  K=24, p=23:  no roots in F_p;
+  K=48, p=47:  no roots in F_p.
+
+Thus Q_24(a/b) is nonzero for rational a/b with 23 not dividing b,
+and similarly Q_48 with 47. This is a finite certificate, not a uniform
+nonvanishing theorem: a hypothetical denominator may contain both primes.
+The 2-adic Newton polygons also allow integral root valuations, so they
+did not supply a simple unconditional exclusion of rational roots.
+
+9. What has and has not been gained
+
+We now have a structural connection with existing approximation theory,
+an explicit demonstration of why its most immediate theorem does not
+transfer, and a different determinant family for which nonvanishing has
+a short proof. None of these supplies the shrinking primitive integer
+polynomials required to prove beta(4) irrational. The positive-family
+modification and the tested adapted row spaces do not close that gap.
+
+The current evidence supports a change in the arithmetic construction,
+specifically one that alters the odd-prime cost, before another large
+optimization run. This is a research judgment based on these families,
+not a theorem that all determinant methods must fail. The work remains
+private and no release or announcement is warranted by these results.
+
+10. Reproduction and references
+
+New scripts, relative to /home/research/Chat/Math/beta4:
+
+  python3 experiments/structural_checks.py
+  .venv/bin/python experiments/pollaczek_rows.py
+  .venv/bin/python experiments/pollaczek_rows.py --inverse-euler \
+      --sizes 12 24 --offset-ratios 0 0.25 0.5 \
+      --output results/pollaczek_inverse.json
+  .venv/bin/python experiments/multiple_pollaczek.py
+  .venv/bin/python experiments/weight_comparison.py
+  .venv/bin/python experiments/positive_hankel.py
+  .venv/bin/python experiments/positive_hankel.py --integral-checks-only
+  .venv/bin/python experiments/positive_hankel.py --pole-counts 24 \
+      --dimension-ratios 0.5 1 1.5 2 --lambda-values 1 1/2 \
+      --output results/positive_hankel_24.json
+
+Exact coefficient files and diagnostics are in results/. The 14 symbolic
+checks cover the differential operators, positivity algebra and the
+normality defect. Source versions of the first investigation are unchanged.
+The six direct combined-integral checks are recorded in
+results/positive_hankel_integral_checks.json.
+
+[P1] A. I. Aptekarev, G. Lopez Lagomasino, A. Martinez-Finkelshtein,
+     Strong asymptotics for the Pollaczek multiple orthogonal polynomials
+     ensembles, arXiv:1410.1261. See Section 1 for the exact base weights,
+     their Nikishin representation, and normality of the base system.
+     https://arxiv.org/abs/1410.1261
+
+[P2] The same authors, On Nikishin systems with discrete components and
+     weak asymptotics of multiple orthogonal polynomials,
+     arXiv:1403.3729v2 (2017), Section 3.3. This supplies context on the
+     multiple Pollaczek system and its asymptotic theory. Its asymptotic
+     theorems have not been applied to our differentiated determinant.
+     https://arxiv.org/abs/1403.3729
+
+[D] NIST Digital Library of Mathematical Functions, equation 18.22.8,
+    Meixner--Pollaczek recurrence.
+    https://dlmf.nist.gov/18.22.E8
+
+For the OpenAI Catalan construction, Carreira's beta(4) investigation,
+and Krisman's higher-beta linear forms, see the references and precise
+attribution in research-notes.txt.

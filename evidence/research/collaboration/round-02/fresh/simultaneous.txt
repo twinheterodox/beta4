@@ -1,0 +1,189 @@
+A COMPATIBLE THREE-BLOCK APPROXIMATION AFTER THE COMPLETED LADDER
+28 October 2026. Local and unpublished; companion to findings.txt.
+
+Status
+------
+This is a genuinely different construction from the scalar Taylor truncation
+retired in findings.txt. It uses different polynomial multipliers for the
+three interior arguments, with matched values at the evaluation point, and
+a shared approximation to log2 and log^2 2. I derive:
+  * exact beta(4)-only rational forms with common leading coefficient 25^n;
+  * a uniform, explicitly positive leading error asymptotic, hence eventual
+    nonvanishing, before integer clearing;
+  * an explicit integer clearing factor retaining some dyadic savings.
+That factor is too large for an irrationality proof. All twelve primitive
+forms checked have absolute value >1. These finite checks DO NOT prove
+that the simultaneous family fails asymptotically. No structured determinant,
+optimally chosen simultaneous Pade system, or other arbitrary approximation
+is ruled out. I have no credible favorable primitive arithmetic estimate.
+
+1. Matched pole polynomials
+--------------------------
+Use z_1=i/2, z_3=(1+i)/4, z_5=(1-i)/8 and the coefficients c_j,alpha_j
+of findings.txt, (5)--(6). The polynomials with zeros at 1/z_j and
+1/conj(z_j) are
+ P_1(t)=t^2+4,
+ P_3(t)=t^2-4t+8,
+ P_5(t)=t^2-8t+32.
+Crucially,
+ P_1(1)=P_3(1)=5,       P_5(1)=25.
+Thus their powers (2n,2n,n) ALL evaluate to 25^n. Independent approximants
+to the three blocks can be combined without multiplying three unrelated
+leading coefficients.
+
+Let T_N denote truncation at degree N about t=0, evaluated at t=1 when
+followed by '(1)'. Let I_s(z_j t) be the rational analytic imaginary-part
+germ defined in findings.txt. Set
+ m_1=m_3=2n, m_5=n,
+ N_j=2m_j+2n,  so (N_1,N_3,N_5)=(6n,6n,4n),
+ A_(j,s)=[T_(N_j)(P_j(t)^(m_j) I_s(z_j t))](1), s=2,3,4.     (S1)
+All A_(j,s) are rational.
+
+For the logarithms use ell(t)=-log(1-t/2), and
+ B_r=[T_(8n)((2-t)^(4n) ell(t)^r)](1), r=1,2.                 (S2)
+The multiplier has value 1 at t=1. In particular B_2 is a direct
+approximation to log^2 2, not the square of a separately approximated log.
+Define
+ R_n=sum_j c_j [A_(j,4)+alpha_j B_1 A_(j,3)
+                            +(alpha_j^2/3)B_2 A_(j,2)],
+ Lambda_n=25^n beta(4)-R_n.                                  (S3)
+This is an exact beta(4)-only rational form by the classical identity (5).
+It does not insert a numerically selected rational approximation to beta(4).
+
+2. Exact errors for the individual polylogarithm blocks
+-----------------------------------------------------
+For any of the three z=z_j, P=P_j, put eta=z/conj(z), m=m_j,
+N=2m+ell, and
+ E_s=25^n I_s(z)-[T_N(P(t)^m I_s(zt))](1).
+Direct summation of the Taylor tail, using the integral for 1/k^s, gives
+
+ E_s=Im{ z^(ell+1)/(s-1)! integral_0^1
+          x^ell [(1-x)(1-eta x)]^m (-log x)^(s-1)/(1-zx) dx }. (S4)
+
+Indeed
+ P(1/(zx))=(1-x)(1-eta x)/(z^2 x^2),
+and for a polynomial Q of degree D the tail is
+ z^(N+1) integral_0^1 x^N Q(1/(zx))(-log x)^(s-1)/(1-zx) dx/(s-1)!.
+All interchanges are justified by absolute convergence for |z|<1.
+Formula (S4) also shows why truncating merely at N=2m is inadequate:
+there is no vanishing x^ell factor at x=0, and the absolute source error
+then decreases only polynomially. The extra 2n orders in (S1) are essential.
+
+3. Logarithm errors and a common nonvanishing asymptotic
+------------------------------------------------------
+Write l=log2, delta_r=l^r-B_r. For k=4n and h>k the exact coefficients are
+ [t^h](2-t)^k ell(t)
+    =(-1)^k 2^(k-h)/[h binom(h-1,k)] =: b_h,
+ [t^h](2-t)^k ell(t)^2
+    =2b_h(H_(h-k-1)-H_k).                                    (S5)
+One derivation differentiates 2^k(1-t/2)^(k-a) once or twice at a=0.
+For h>8n, b_h>0 and the harmonic difference is nonnegative. Consequently
+ delta_1>0, delta_2>=0. Also
+ delta_1=2^(-4n-1) integral_0^1 x^(4n)(1-x)^(4n)/(1-x/2) dx
+         <=4096^(-n).
+Since b_(h+1)/b_h=(h-k)/(2(h+1))<1/2 and
+ H_(h-k-1)-H_k <= (h-8n-1)/(4n+1), summing a geometric first moment gives
+ 0<=delta_2 <=4 delta_1/(4n+1).                               (S6)
+
+The exact error decomposition from (S3) is
+ Lambda_n=sum_j c_j [E_(j,4)+alpha_j l E_(j,3)
+                   +(alpha_j^2/3)l^2 E_(j,2)
+                   +alpha_j delta_1 A_(j,3)
+                   +(alpha_j^2/3)delta_2 A_(j,2)].             (S7)
+The A values are O(25^n), so the last two terms are O((25/4096)^n).
+
+For j=3, formula (S4) gives a uniform bound O(64^(-n)) for each s=2,3,4:
+ |z_3|^(2n)=2^(-3n), and
+ x^2(1-x)^2(1+x^2)/8 <=1/64.
+For j=5 it similarly gives O(144^(-n)), using
+ x^2(1-x)<=4/27 and sqrt(1+x^2)<3/2, so
+ x^2(1-x)sqrt(1+x^2)/32 <=1/144.
+The constants absorb |z_j|, 1/(1-|z_j|), and the integrable log powers.
+
+For j=1, eta=-1 and ell=2n. The completed error is exactly
+
+ E_(1,4)+l E_(1,3)+(l^2/3)E_(1,2)
+ =(-1)^n 2^(-2n-1) integral_0^1 [x^2(1-x^2)^2]^n
+        [(-log x)^3/6+l(-log x)^2/2+l^2(-log x)/3]
+                         /(1+x^2/4) dx.                     (S8)
+
+The integrand is positive. Its exponential factor has a unique interior
+maximum at x_0=1/sqrt3, equal to 4/27. For
+ f(x)=log[x^2(1-x^2)^2], one has f''(x_0)=-18.
+Ordinary one-dimensional Laplace asymptotics (Taylor expansion at the
+unique maximum and exponential domination away from it) therefore gives
+
+ Lambda_n ~ (-1)^n K 27^(-n)/sqrt(n),                          (S9)
+ K=(225/884)sqrt(pi) [u^3/6+l u^2/2+l^2 u/3] >0,
+ u=(log3)/2.
+
+Here the j=3, j=5, and logarithm errors are exponentially smaller than
+27^(-n)/sqrt(n). Thus Lambda_n is nonzero, has sign (-1)^n, and tends to
+zero for every sufficiently large n. This is a source-form statement,
+NOT a shrinking-integer-form statement.
+
+4. An explicit compatible integer clearing factor
+------------------------------------------------
+Put L_M=lcm(1,...,M). Then
+
+ D_n=17 * 2^(9n+4) * L_(6n)^2 * L_(8n)^2                       (S10)
+
+satisfies D_n R_n in Z. Hence
+ D_n 25^n beta(4)-D_n R_n
+is a nonzero integer linear form for all sufficiently large n.
+
+Proof of the dyadic saving: for j=1,3,5 the polynomial P_j(t)^m has
+coefficient valuation at least ceil(alpha_j(2m-r)) at t^r. Check this
+on the three coefficients of P_j and use convolution. Since
+2^ceil(alpha_j k) Im(z_j^k) is an integer, every summand of a coefficient
+of total degree <=2m+ell has dyadic denominator dividing
+2^ceil(alpha_j ell), apart from the denominator k^s. Thus
+ 2^(2alpha_j n) L_(N_j)^s A_(j,s) is an integer.                (S11)
+The same argument with (2-t)^(4n) and ell(t)^r gives
+ 2^(4n) L_(8n)^r B_r in Z.                                   (S12)
+The largest extra dyadic cost in products is 5n+4n=9n.
+The odd and remaining small-prime denominators divide
+L_(6n)^4, L_(6n)^3 L_(8n), or L_(6n)^2 L_(8n)^2, respectively;
+the last one is a common multiple of all three. The fixed rational
+coefficients c_j alpha_j^r / (3 if r=2 else 1) have common denominator
+17*16. This proves (S10).
+
+Without matching the pole multipliers, the elementary termwise bound for
+this same choice of truncation orders would have an extra dyadic factor
+as large as 2^(18n); (S11)--(S12) reduce that to 2^(9n). This is a real
+arithmetic compatibility, but still far from the required estimate.
+By the prime number theorem,
+ log D_n=(28+9 log2)n+o(n),
+whereas -log|Lambda_n|=(log27)n+O(log n). The displayed clearing bound
+therefore DOES NOT yield shrinking integer forms. This comparison is
+not a lower bound for primitive heights and is not an impossibility
+theorem for this simultaneous construction.
+
+5. Exact finite diagnostics and remaining gap
+--------------------------------------------
+Run from beta4/:
+ .venv/bin/python collaboration/round-02/fresh/simultaneous.py
+This constructs one fixed family at n=1,...,12; it does not scan
+parameter grids. It reduces the two integer coefficients by their gcd
+and evaluates the primitive forms using Arb at 1200 bits.
+All twelve source forms have the predicted sign and all twelve primitive
+absolute values exceed one. Their log absolute primitive values run
+from about 17.8007 at n=1 to 317.7174 at n=12. The integer-pair gcd in
+these twelve cases is one. Exact coefficients and certificates are in
+simultaneous_results.json.
+
+The theorem (S9) establishes eventual nonvanishing and exponential decay
+before arithmetic clearing. The missing estimate is a favorable bound
+for the primitive coefficients, or a different simultaneous numerator
+construction preserving the matched value 25^n while saving much more
+than (S10). Period cancellation by itself does not furnish that saving.
+The n=1,...,12 data do not establish an asymptotic primitive obstruction.
+No general Pade, block-determinant, or independent-embedding construction
+has been excluded. In particular, the scalar dyadic denominator theorem
+of findings.txt says nothing by itself about determinant content or the
+rank of a scaled leading residue matrix.
+
+The match P_1(1)=P_3(1)=5,P_5(1)=25 and formulas (S4),(S9),(S10) give a
+concrete starting point should another round find a structural arithmetic
+mechanism. I do not have a credible reason at present to enlarge this
+fixed family's numerical tests or to claim an irrationality result.

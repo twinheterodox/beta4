@@ -1,0 +1,236 @@
+ROUND17: THE FOUR NEGATIVE PRIME LAYERS AND THE BORDER PAIRING
+31 October 2026. Local derivation; not formal verification.
+
+Notation is exactly round16: C=[1,r], m=floor(cr/2), M=r+2m,
+N=r+m, interleaved border sets, Phi(X), P(X)=det Phi(X).
+For p>3 with p^2>4M, put B=p^4 Phi. All valuations of polynomials
+are Gauss valuations, v(sum a_j X^j)=min_j v_p(a_j).
+
+1. Exact singular/regular decomposition, including the zero fibre
+
+Define
+ H_l(a;p)=sum_(positive odd t, pt<4a) chi4(t)/t^l,
+ U_l(a;p)=sum_(positive odd n<4a, p not dividing n) chi4(n)/n^l.
+Since p^2>4M, all t in H_l are p-units. Exactly,
+ S_l(a)=chi4(p)p^(-l)H_l(a;p)+U_l(a;p).
+
+The regular cubic sum satisfies
+ U_3(a+p)=U_3(a) mod p,
+ U_3(p-a)=-U_3(a) mod p,
+ U_3(pk)=0 mod p.
+For the first identity, in any block of 4p consecutive integers, each
+p-unit residue occurs in two odd positions separated by 2p; the chi4
+signs are opposite. For the second, reflect n to 4p-n in a complete
+block. Both chi4 and the inverse cube change sign, so their product
+does not. The third follows by complete blocks. Extend by periodicity.
+
+Consequently the matrix R(X) with entries
+ R_ab=[b U_3(b)-a U_3(a)]/[6(b^2-a^2)]      (a!=b),
+ R_aa=X-U_4(a)+U_3(a)/(12a)                (a common),
+is p-integral. If a==b mod p or a==-b mod p but the residue is nonzero,
+the numerator cancels the single p in the denominator. If both are zero,
+a and b each contain one p, and U_3(a),U_3(b) each contain another p,
+cancelling the two denominator factors. On a zero diagonal U_3(a)
+cancels the p in a. There are no larger node-factor valuations because
+2M<p^2/2. This covers all exceptional fibres.
+
+Thus Phi=Psi+R(X), with R p-integral and
+ Psi_ab=chi4(p)[b H_3(b)-a H_3(a)]/[6p^3(b^2-a^2)]  (a!=b),
+ Psi_aa=chi4(p)[-H_4(a)/p^4+H_3(a)/(12ap^3)].
+
+In particular B=p^4 Psi mod p^4. The regular terms DO NOT enter the
+first four layers. This sharpens the preliminary note, which had allowed
+an order-p^3 contribution before the character cancellation was proved.
+
+2. Reduction on squared-node fibres
+
+For different squared residues B_ab=0 mod p. For a nonzero fibre choose
+1<=t<p/2 and write a=epsilon*t+pk, b=eta*t+pl.
+
+ * Same sign, distinct nodes:
+     B_ab=chi4(p)[H_3(b)-H_3(a)]/[12(l-k)] mod p.
+ * Opposite signs:
+     B_ab=chi4(p)[H_3(b)+H_3(a)]/[12(l+k)] mod p.
+ * Nonzero diagonal: B_aa=-chi4(p)H_4(a) mod p.
+ * Zero fibre a=pk,b=pl: off-diagonal
+     chi4(p)[l S_3(l)-k S_3(k)]/[6(l^2-k^2)],
+   and diagonal chi4(p)[-S_4(k)+S_3(k)/(12k)].
+
+The formulas follow by cancelling the explicit node factors in Psi.
+They keep a and -a together; treating them as separate fibres is wrong.
+
+For distinct fibres s=a^2 and t=b^2 modulo p, let
+ V(a)=chi4(p)a H_3(a) mod p.
+Then B_ab=p[V(b)-V(a)]/[6(t-s)] mod p^2. For integral kernel vectors
+y,z on the two fibres their first pairing is
+ p/[6(t-s)] det[[sum y,sum y V],[sum z,sum z V]] mod p^2.
+The additional factor a in V is material to transport between fibres.
+
+3. A systematic failure of proportional-moment transport
+
+Take p>max(M,7) and common nodes t in
+ T={1<=t<=r: p/4<t<p/2, r<p-t<=M}.
+Each such fibre consists of common t and the single border node p-t.
+Both lie between p/4 and 3p/4, so H_3=H_4=1. If the border node is
+row-only, the local column is chi4(p)*(-1,1/6)^T, with left kernel
+vector (1,6). For a column-only border the right kernel is (1,6).
+The moment pair is (7,-5 chi4(p)t).
+
+For a row-surplus fibre t and column-surplus fibre s, direct substitution
+therefore gives
+             y_t^T B z_s=-35 chi4(p)p/[6(t+s)] mod p^2.       (3.1)
+Every such pairing has valuation exactly one. Moreover its matrix after
+division by p is a nonzero scalar times the Cauchy matrix 1/(t+s).
+All its square minors are units: the t's and s's are distinct, their
+differences are nonzero modulo p and 0<t+s<p. Hence its rank is exactly
+the smaller number of surplus fibres on the two sides.
+
+These are actual kernel pairings in the first Schur layer. Eliminating
+the invertible part of B mod p changes them only at order p^2. There is
+no freedom to choose a different moment direction inside these one-
+dimensional local kernels. Mixing them retains the stated maximal rank.
+
+The phenomenon occupies intervals of positive scaled length for EACH
+prescribed width. Up to O(1) endpoint effects from m=floor(cr/2), use
+ p/r in [3/2,31/20] for c=1/5,
+ p/r in [9/5,19/10] for c=1/2,
+ p/r in [11/5,5/2] for c=1.
+For the first two, |T|/r=3(p/r)/4-1; for the third it is 1-(p/r)/4.
+Row-only and column-only borders alternate, so both counts are |T|/2+O(1).
+Thus the nonzero first pairings have rank of order r, not an isolated
+exception. This blocks the direct proportional-pair window mechanism in
+these regimes. It does not exclude cancellations involving other layers
+or an entirely different arithmetic construction.
+
+4. Truncated Smith exponents give all four negative layers
+
+Let mu_i=min(4, actual Smith exponent_i of B over the Gauss DVR).
+They are determined by B mod p^4, hence by Psi alone and independently
+of X. Unit-pivot elimination over Z/(p^4) computes them exactly. If an
+entry of least valuation v<4 is used as pivot, all other entries are
+divisible by p^v; subtracting an integral multiple of its row clears
+the column. This is a unimodular operation and recursively produces
+the Smith exponents, capped at four.
+
+Put tau_p=sum_i(4-mu_i). Then
+   v_G(P)>=-tau_p,       v_p(den P)<=tau_p.                   (4.1)
+After these pivots the remaining block is divisible by p^4. Factoring
+it and the active pivots gives more precisely
+   P=p^(-tau_p) u_p(X) det T_p(X),                           (4.2)
+where u_p has Gauss valuation zero and T_p is integral in that DVR.
+Thus v_G(P)=-tau_p+t_p with t_p=v_G(det T_p)>=0. The four-layer
+estimate does not control t_p. If no capped exponent equals four,
+there is no residual block and t_p=0 automatically.
+
+This distinction is essential: the truncated negative layers do not
+prove an actual primitive-value obstruction by themselves.
+
+5. All four layers are explicit for p>2M+4
+
+Let h=max(0,r-floor(p/4)). If 2M+4<p<4r, every border node is high
+(4a>p), there are h high common nodes, and l=r-h low common nodes.
+All node sums, differences and nodes are p-units. Only the odd multiple
+p occurs in each singular sum, so H_3=H_4=1_high and
+   p^4 Psi=chi4(p)(D+pF),
+where D is -1 on high common diagonals and zero elsewhere. The low-low
+block of F is zero. Its low-high entries are
+   b/[6(b^2-a^2)].
+These are Cauchy entries times unit column factors. Every maximal minor
+with distinct row/column nodes is a unit. The endpoint allowance ensures
+l>=h+m.
+
+First eliminate the h unit pivots of D. On the remaining low-common and
+border nodes the first layer has block form
+    [ 0  C1 ]
+    [ C2 C3 ],
+with C1 full column rank m and C2 full row rank m. Its rank is 2m, so
+there are precisely 2m pivots of valuation one.
+
+Their left null vectors can be chosen on the low common rows, annihilating
+C1 exactly over Z_p; right null vectors similarly annihilate C2. At the
+second layer the induced matrix, up to a unit sign, is
+   (Y F_low,high-common)(F_high-common,low Z).
+Each factor has rank h: adjoining the h high-common Cauchy columns to
+the m border columns is a unit full-rank Cauchy matrix, and likewise for
+rows. The first factor is injective on an h-dimensional space and the
+second surjects onto it, so their product has rank h. Eliminating the
+first layer changes this second-layer block only at order p^3.
+
+Finally D+pF itself has rank exactly 2(h+m) over Q_p. Indeed, group all
+high nodes together. Its low-low block is zero and both off-diagonal
+blocks have full rank h+m. The kernel consists exactly of low vectors
+annihilated by one of those blocks. The h+2m+h pivots already found
+account for this whole rank. There is no additional valuation-three
+pivot; all remaining truncated exponents are four.
+
+Therefore the COMPLETE capped Smith list in this range is
+   0 repeated h, 1 repeated 2m, 2 repeated h,
+   4 repeated N-2h-2m.                                    (5.1)
+In particular tau_p=6h+6m.
+
+If 4r<p<4M, there are no high common nodes. Let H=M-floor(p/4), the
+total number of high border nodes, counting rows and columns together.
+The same low/high Cauchy-block argument gives rank H for F, and the
+capped Smith list is
+   1 repeated H, 4 repeated N-H; tau_p=3H.                  (5.2)
+Primes in the bounded endpoint strip do not affect the leading r^2 rate.
+
+6. Quantitative obstruction to using these four layers alone
+
+With m=cr/2+O(1), the prime number theorem sums (5.1)-(5.2) to
+ sum_(2M+4<p<4M) tau_p log p=(3+3c^2)r^2+o(r^2).
+Indeed the two integrals, in x=p/r, are
+ integral_(2+2c)^4 6(1+c/2-x/4) dx=3(1-c^2),
+ integral_4^(4+4c) 3(1+c-x/4) dx=6c^2.
+
+This is the contribution to the SUFFICIENT denominator bound from the
+four-layer method, not a lower bound for the actual primitive multiplier.
+It already exceeds E(c) for all three c. Even charging zero for every
+other prime leaves no favorable comparison using this method.
+
+In fact changing the width anywhere in 0<c<=1 cannot fix this comparison.
+Since 0<=rho_c<=1 on [0,1+c] and the energy integrand is nonnegative,
+ E(c)<=2(1+c)^2 log 2<=4(1+c^2)log 2<3(1+c^2).
+The last inequality uses 4 log 2<3. This is an analytic corollary of the
+same formula, not an enlarged parameter scan or a primitive obstruction.
+
+For completeness, the crude bound e_p<=4N at sqrt(4M)<p<=2M+4,
+combined with (5), gives an all-primes sufficient upper coefficient
+  log den P <= (11+12c+7c^2)r^2+o(r^2).
+For p<=sqrt(4M), each rational entry has denominator valuation
+O(log r/log p), uniformly. Multiplying the determinant valuation by log p
+costs O(N log r) per prime. All these primes together therefore cost
+O(r^(3/2) log r)=o(r^2).
+This includes 2 and 3 and their higher powers. PNT is only an ordinary
+prime sum here; the chi4(p) factor is a unit and does not affect the lists.
+This is a bound on NEGATIVE valuations, not on positive numerator content.
+No all-index estimate for the latter, even at a fixed prime, follows from it.
+
+Recovering a favorable bound would require a new uniform theorem about
+t_p in (4.2), or sufficiently large primitive numerator content elsewhere.
+The precise arithmetic burden has not vanished; it is now isolated in
+the residual integral determinant.
+
+7. A stronger, narrower integer-normalization obstruction at c=1/5
+
+For 2M+4<p<4r, the coefficient of X^(r-h) in P has EXACT valuation
+  -4h-3m.                                                   (7.1)
+Expand it as the sum of minors using h common nodes and all border nodes.
+A minor with only j<h high common nodes has valuation at least
+-4j-3(h+m-j)>-4h-3m. For the unique minor using all h high common nodes,
+only the permutation terms using all h diagonals can reach the minimum.
+The remaining border determinant is, modulo p after multiplying by p^(3m),
+a unit scalar times the Cauchy determinant 1/(a+b). Its determinant is a
+unit because all border differences and sums are nonzero modulo p.
+Hence there is no cancellation at that coefficient's claimed valuation.
+
+Consequently
+  log den P >= (2-c-c^2)r^2+o(r^2).
+At c=1/5 this constant is 44/25=1.76, whereas E(1/5)<1.653.
+Using the inherited LOWER real-size bound, every positive INTEGER
+multiplier clearing the coefficients gives values growing exponentially
+in r^2. The difference is >0.1076r^2 asymptotically.
+
+This does NOT exclude division by a large common integer numerator
+factor after clearing denominators. The primitive multiplier may be
+rational. No all-index bound on that numerator factor is proved here.

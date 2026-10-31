@@ -1,0 +1,53 @@
+THE EXACT TAIL HAS NO RATIONAL POLYNOMIAL TRANSFER GAUGE
+29 October 2026. Local and unpublished. A scoped closure, not an
+irrationality theorem and not an obstruction to other recurrences.
+
+Put f(x)=(2x+1)^(-4) and A(x)=[[-1,f(x)],[0,1]].
+The ordinary alternating tail obeys y_(n+1)=A(n)y_n, y_n=(t_n,1)^T.
+
+Claim. There is no U in GL_2(Q(x)) for which
+  B(x)=U(x+1) A(x) U(x)^(-1)
+has all entries in Q[x]. Thus a rational change of these two state
+coordinates cannot produce polynomial, in particular integral-polynomial,
+transfer matrices. Factorial or other nonrational gauges are not covered.
+
+Proof. If B were polynomial, then
+  det B(x)=-det U(x+1)/det U(x) -> -1 as x -> infinity.
+Thus det B=-1 and B^(-1) is polynomial. Let v(x)=U(x)e_1. Then
+  v(x+1)=-B(x)v(x).
+For any finite complex c, a polynomial matrix with polynomial inverse
+preserves the minimum order of vanishing of the coordinates at c.
+Consequently ord_(c+1)(v)=ord_c(v). Finite support of the pole/zero
+divisor of a nonzero rational vector forces every such minimum order
+to be zero. Hence v is a primitive polynomial vector. Bezout's identity
+extends v to W in GL_2(Q[x]) with determinant 1.
+
+In the coordinates W, B becomes
+  B_1(x)=W(x+1)^(-1) B(x) W(x)=[[-1,P(x)],[0,1]],
+where P is polynomial. The operator r(x) -> r(x+1)+r(x) is invertible
+on polynomials of degree at most deg(P), because its coefficient matrix
+in the monomial basis is triangular with diagonal 2. Choose polynomial
+r with r(x+1)+r(x)=P(x). Then (r(x),1)^T is a rational +1 solution.
+Transporting it back gives a nonzero rational solution z of
+z(x+1)=A(x)z(x). Its second coordinate is rational and 1-periodic, hence
+constant. That constant is nonzero: otherwise the first coordinate
+would be a nonzero rational 1-antiperiodic function, which is impossible
+by its behavior at infinity. Dividing by the constant yields a rational
+R with R(x+1)+R(x)=f(x).
+
+Such an R cannot exist. On each pole orbit modulo Z, a finite nonempty
+set of poles of R contributes uncanceled extreme poles to R(x+1)+R(x),
+one at the left endpoint shifted by -1 and one at the right endpoint.
+The right side f has only one pole, at -1/2. Orbits disjoint from -1/2
+cannot occur, and its orbit would still contribute two distinct extreme
+poles. This is a contradiction. QED.
+
+Relation to archive. The final rational-antidifference obstruction is
+already in round08/discrete/findings.txt. The argument above checks the
+stronger proposed two-state mechanism: an arbitrary rational gauge,
+including nontriangular gauges, cannot hide that obstruction in an
+integral state lattice. It does not add a new proof route. It is therefore
+closed without an index or parameter scan.
+
+No imported theorem beyond elementary polynomial/rational algebra is
+needed. No computer calculation or formal verification is claimed.

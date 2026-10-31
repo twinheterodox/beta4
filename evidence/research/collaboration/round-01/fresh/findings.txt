@@ -1,0 +1,535 @@
+Scalar positive-polynomial witnesses for beta(4): an exact cone and degree law
+28 October 2026. Local, unpublished research note.
+
+There is no irrationality proof here. The useful output is a structural
+theorem, rather than another unsuccessful fixed family. For the scalar
+positive-polynomial integral below, the entire bounded-degree search is
+exactly a two-dimensional rational cone. Unrestricted positive polynomial
+weights, including integer weights after primitive normalization, encode
+every positive rational linear form in beta(4). Their positivity imposes
+no extra Diophantine restriction.
+
+The cone has explicit rational boundary polynomials, a self-contained
+proof, and a sharp exponential degree law. If L=A beta(4)+B>0 and A!=0,
+the least degree of a positive-polynomial witness satisfies
+
+  degree = log(|A|/L)/log(3+2sqrt(2)) + O(log log(|A|/L))
+
+as |A|/L tends to infinity. This describes the cost of encoding an already
+known form; it does not produce the required small integer forms.
+
+All finite arithmetic below is exact, with Arb enclosures for evaluations
+at beta(4). A second Fraction implementation checks the endpoint formulas.
+Both implementations and the mathematical arguments are by the same
+investigator, not an independent audit or formal verification. No priority
+claim is made for the classical ingredients or their applications here.
+
+
+1. Independent starting point, and overlap with the archive
+
+The first candidate was to eliminate all auxiliary periods at the outset:
+
+  I(P) = 1/6 integral_0^1
+           (-log x)^3 P(x^2)/(1+x^2) dx,
+
+with P a rational polynomial, preferably nonnegative on [0,1]. This is a
+pure beta(4) form without a separate Catalan cancellation. The basic
+construction is already inside the archive's differentiated cyclotomic
+and tail constructions; it is not presented as a new period identity.
+
+The following files were consulted after forming the candidate:
+
+  beta4/README.txt
+  beta4/cyclotomic-integrals.txt
+  beta4/literature/weighted-tails.txt
+  beta4/structural-followup.txt
+  beta4/orthogonal-cancellation.txt
+  beta4/quotient-investigation.txt
+  relevant positive-form and Padé experiment code found by text search.
+
+The cyclotomic note already proves prime-denominator obstructions for
+particular families. The structural and orthogonal notes use hyperbolic
+and discrete moment systems; they do not contain the scalar bounded-degree
+cone classification proved below. The quotient investigations already
+warn that unrestricted arithmetic optimization can be equivalent to the
+original irrationality problem. The present result gives an explicit
+complete version of that warning for this scalar family, including
+rational extremizers and the optimal exponential degree scale.
+
+No recent claim about Catalan's irrationality is used. No literature
+claim of novelty is inferred from the local text search.
+
+
+2. Formal coefficient pairs: no irrationality assumption
+
+Write theta=beta(4), and introduce the positive measure
+
+  dnu(t) = (-log t)^3/(96 sqrt(t)) dt,       0<t<1.
+
+Its moments are rational:
+
+  nu_k = integral t^k dnu(t) = 1/(2k+1)^4.                  (1)
+
+Thus nu_0=1, and
+
+  I(P) = integral P(t)/(1+t) dnu(t),
+  theta = I(1),             0<theta<1.                     (2)
+
+Define a FORMAL coefficient map, whether or not theta is irrational:
+
+  A(P)=P(-1),
+  B(P)=integral [P(t)-P(-1)]/(1+t) dnu(t).                 (3)
+
+The quotient in (3) is a polynomial, so B(P) is rational when P is.
+Equation (2) gives the evaluation identity
+
+                   I(P)=A(P) theta+B(P).                  (4)
+
+All assertions below about a pair (A,B) refer to this explicitly defined
+map. They never recover coefficients by assuming that 1 and theta are
+linearly independent over Q.
+
+If P>=0 on [0,1] and P is not the zero polynomial, then I(P)>0. The
+measure has a strictly positive density throughout the open interval.
+This is uniform nonvanishing, with no arithmetic conclusion yet.
+
+
+3. The unrestricted cone is the whole positive half-plane
+
+Theorem 1. The image under (3) of the rational polynomials nonnegative
+on [0,1] is exactly
+
+  {(0,0)} union {(A,B) in Q^2 : A theta+B>0}.               (5)
+
+Proof. Necessity follows from positivity of the integral. Conversely let
+L=A theta+B>0. If A=0, take P=B(1+t), since I(1+t)=nu_0=1.
+
+For A>0 set
+
+  P_n(t)=A ((1-t)/2)^(2n).
+
+For A<0 set
+
+  P_n(t)=(-A) t ((1-t)/2)^(2n).
+
+In either case P_n>=0, A(P_n)=A, and
+
+               0<I(P_n)<=|A| theta 4^(-n).                 (6)
+
+Choose n with I(P_n)<L, and put
+
+  delta=B-B(P_n)=L-I(P_n)>0,
+  P=P_n+delta(1+t).                                       (7)
+
+Although L involves theta, delta is rational by its first expression.
+The polynomial in (7) is nonnegative and has the prescribed formal pair.
+For example, the sufficient choice
+
+  n=max(0,ceil(log(2|A|/L)/log 4))
+
+gives I(P_n)<=L/2 because theta<1. Its degree is at most
+max(1,2n+[A<0]). The zero pair is represented by P=0. QED.
+
+Integer-polynomial consequence. If (A,B) is a primitive integer pair
+with A theta+B>0, clear the rational coefficients of the polynomial in
+(7) by a positive integer K. Its formal pair is (KA,KB), and primitive
+normalization returns exactly (A,B). Thus restricting the source to
+integer polynomials does not restrict the primitive image when their
+coefficient heights are unrestricted.
+
+The construction is deliberately conditional on a prescribed positive
+target form. Choosing n using L, or first finding the target by continued
+fractions, already supplies the approximation one wished to prove exists.
+Consequently (5) is not an irrationality construction. In particular:
+
+  existence of such primitive positive forms tending to zero
+                  is equivalent to irrationality of theta.
+
+For a rational theta=a/b every positive integer form is at least 1/b.
+For an irrational theta the usual rational approximations provide forms
+tending to zero, and (7) then encodes them. An impossibility theorem for
+ALL positive polynomial weights after primitive normalization would
+therefore amount to proving theta rational. Particular-family obstructions
+must not be extended to that unrestricted class.
+
+
+4. An essentially sharp degree bound, with an explicit integer lift
+
+Put rho=3+2sqrt(2). Let T_n be the Chebyshev polynomial, and define
+
+  q_n(t)=T_n(2t-1)/T_n(-3),
+  T_n(3)=(rho^n+rho^(-n))/2.
+
+Then q_n(-1)=1 and |q_n(t)|<=1/T_n(3) on [0,1]. Replace the base
+polynomial in Theorem 1 by
+
+  P_n=A q_n^2                  if A>0,
+  P_n=(-A) t q_n^2            if A<0.                       (8)
+
+Again A(P_n)=A, and
+
+  I(P_n)<=|A| theta/T_n(3)^2 <=4|A| rho^(-2n).              (9)
+
+For example,
+
+  n=max(0,ceil(log(8|A|/L)/(2 log rho)))
+
+makes the right side of (9) at most L/2. Formula (7) therefore gives
+a rational witness of degree at most max(1,2n+[A<0]).
+
+For a primitive integer target let H=max(|A|,|B|), let
+m=max(1,2n+[A<0]), and set
+
+  d_m=lcm(1,3,5,...,2m-1),
+  K=T_n(3)^2 d_m^4.                                        (10)
+
+Then KP has integer coefficients, its primitive formal pair is the
+original (A,B), and its largest coefficient in absolute value is at most
+
+                         4 H K.                           (11)
+
+Indeed, the roots of T_n(2t-1) all lie in (0,1), so its coefficients
+alternate in sign and their absolute sum is |T_n(-3)|. The coefficient
+absolute sum of q_n is 1, and that of either base polynomial in (8) is
+at most |A|. Its coefficients have denominator dividing T_n(3)^2.
+Polynomial division in (3) introduces no new denominator. The remaining
+moments have odd denominators at most 2m-1 to the fourth power, proving
+(10). Also |B(P_n)|<=I(P_n)+|A|theta<=2|A|, so
+|delta|<=|B|+2|A|. This proves (11).
+
+These are exact bounds, not an assertion that K is minimal. If desired,
+the prime number theorem gives log d_m=2m+o(m), so the integer witness
+has logarithmic coefficient height O(log H+log(|A|/L)). Its dependence
+on the already-small target L remains the essential circularity.
+
+4.1 A matching exponential lower bound for EVERY positive polynomial
+
+Theorem 2. Let P>=0 on [0,1], with degree D>=1, and let A=P(-1).
+Then
+
+     I(P) >= |A|/[3*2^26 D^12 rho^D].                      (12)
+
+The harmless power D^12 is not optimized. The exponential factor rho^D
+is optimal in view of (8)-(9).
+
+Proof. Put M=max_[0,1] P. Expand
+
+  P((1+y)/2)=sum_(k=0)^D a_k T_k(y).
+
+The cosine-integral expressions for these coefficients give |a_0|<=M
+and |a_k|<=2M for k>=1. Since |T'_k(y)|<=k^2 on [-1,1],
+
+  max_[0,1] |P'(t)| <=4M sum_(k=1)^D k^2 <=4M D^3.         (13)
+
+The derivative bound on T_k follows directly from
+T_k(cos u)=cos(ku) and |sin(ku)|<=k|sin u|; the endpoints follow by
+continuity. Thus no sharp Markov inequality is needed.
+
+Let ell=1/(8D^3). There is an interval J of length ell, contained in
+[0,1] and within distance ell of a point where P=M, on which P>=M/2.
+On the central half of J both distances to the endpoints 0,1 are at
+least ell/4. Furthermore
+
+  dnu(t)/(1+t) >= (1-t)^3/192 dt,                          (14)
+
+because -log t>=1-t and sqrt(t)(1+t)<=2. Integration on that central
+half gives
+
+  I(P)>=M ell^4/49152=M/[3*2^26 D^12].                    (15)
+
+The Chebyshev exterior-point inequality gives
+
+  |P(-1)|<=M T_D(3)<=M rho^D.                             (16)
+
+For completeness, interpolate at the D+1 points corresponding to
+cos(j*pi/D), j=0,...,D, after the affine change from [-1,1] to [0,1].
+At the exterior point -1, the Lagrange coefficients alternate in sign.
+Their absolute sum is T_D(3): interpolation of T_D attains the same
+triangle inequality with equality because its values at those points
+also alternate. This proves (16). Combining (15)-(16) proves (12).
+The zero polynomial is immediate. QED.
+
+Let d(A,B) be the least degree of a nonnegative rational witness for a
+given formal rational pair with L=A theta+B>0 and A!=0. The upper
+construction and (12) imply, uniformly as R=|A|/L tends to infinity,
+
+  d(A,B)=log R/log rho+O(log log R).                        (17)
+
+More explicitly any degree D>=1 witness satisfies
+
+  D log rho+12 log D >=log R-log(3*2^26),
+
+while (8)-(9) give the upper bound with only an absolute additive
+constant. This degree law describes approximation quality; it does
+not imply that integer target pairs of that quality exist.
+
+
+5. Exact rational endpoints for the entire bounded-degree cone
+
+Here is the complete finite-degree classification. It avoids searching
+over large polynomial coefficient spaces.
+
+For w in {1,t,1-t,t(1-t)}, put c=w(-1), which is nonzero. For n>=0,
+minimize I(w p^2) over real polynomials p of degree at most n satisfying
+p(-1)=1. Write p=1+(1+t)h, with deg h<=n-1. Define rational data
+
+  b0 = nu((w-c)/(1+t)),
+  v_i = nu(w t^i),
+  H_ij = nu(w(1+t)t^(i+j)),            0<=i,j<n.            (18)
+
+The matrix H is positive definite: its quadratic form integrates a
+nonzero polynomial square against w(1+t)dnu, whose density is positive
+on the open interval. Therefore
+
+  p_*(t)=1-(1+t) sum_i (H^(-1)v)_i t^i,
+  r_(w,n)=(v^T H^(-1)v-b0)/c,                             (19)
+
+are rational, and completing the square gives the exact minimum
+
+  min I(wp^2)=c theta+b0-v^T H^(-1)v
+             =c(theta-r_(w,n)).                           (20)
+
+For n=0, the vector and matrix are empty, the quadratic expression is
+zero, and p_*=1. This convention is used below. Formula (20) involves
+theta only in a fixed constant term, so rationality of the minimizer
+does not assume anything about irrationality of theta.
+
+For D>=1 define rational endpoints by this table:
+
+   degree        lower l_D                 upper u_D
+   ----------------------------------------------------------------
+   D=2n, n>=1    r_(1,n)                   r_(t(1-t),n-1)
+   D=2n+1        r_(1-t,n)                 r_(t,n)
+
+For each lower entry divide w p_*^2 by c>0, obtaining P_D^+.
+For each upper entry divide w p_*^2 by -c>0, obtaining P_D^-.
+These are nonnegative rational polynomials of degree at most D, with
+
+  (A(P_D^+),B(P_D^+))=(1,-l_D),
+  (A(P_D^-),B(P_D^-))=(-1,u_D).                            (21)
+
+Both are nonzero. Positivity proves, without any irrationality assumption,
+
+                         l_D<theta<u_D.                   (22)
+
+Theorem 3. For every D>=1, the image of the cone of real polynomials
+nonnegative on [0,1] and of degree at most D is exactly
+
+  C_D={lambda(1,-l_D)+eta(-1,u_D):lambda,eta>=0}
+     ={(A,B):B+l_D A>=0 and B+u_D A>=0}.                   (23)
+
+Its rational points are exactly the image of the rational such
+polynomials. A rational pair in C_D has the explicit rational witness
+
+  P=lambda P_D^+ +eta P_D^-,
+  lambda=(B+u_D A)/(u_D-l_D),
+  eta=(B+l_D A)/(u_D-l_D).                                 (24)
+
+Proof. Use the following elementary interval sum-of-squares fact:
+
+  deg P<=2n:     P=p^2+t(1-t)q^2,    deg p<=n, deg q<=n-1;
+  deg P<=2n+1:   P=t p^2+(1-t)q^2,   deg p,deg q<=n.        (25)
+
+The coefficients of p,q need only be real. One proof of (25) is included
+below. For any component w q^2, (20) gives
+
+  I(w q^2)>=q(-1)^2 c(theta-r_(w,n));
+
+if q(-1)=0 the right side is zero and ordinary positivity suffices.
+
+For even degree put a=p(-1)^2, b=2q(-1)^2. Then A=a-b and
+
+  B>=-l_D a+u_D b.
+
+For odd degree put a=2q(-1)^2, b=p(-1)^2. The same statements hold.
+Since a,b>=0 and u_D>l_D, both inequalities in (23) follow. Conversely,
+the coefficients in (24) are nonnegative precisely under those two
+inequalities, and (21) verifies their formal coefficient pair. If A,B
+are rational, so are lambda,eta and the resulting polynomial. QED.
+
+5.1 The interval sum-of-squares fact used in the proof
+
+For a polynomial P nonnegative on [0,1], the even trigonometric polynomial
+P((1+cos u)/2) is nonnegative. Its elementary spectral factorization is
+
+  P((1+cos u)/2)=|F(exp(iu))|^2,
+
+where F has real coefficients and degree at most deg P. To see this
+algebraically, multiply its Laurent expression by a power of z. Zeros
+off the unit circle occur in conjugate reciprocal groups, and zeros on
+the unit circle have even multiplicity by nonnegativity. Selecting one
+reciprocal half, with conjugate symmetry and half the unit-circle zeros,
+gives a real polynomial F; the positive scalar is absorbed into F.
+
+For even bound 2n, center F by exp(-inu). Its real part is a polynomial
+of degree at most n in cos u. Its imaginary part is sin u times a
+polynomial of degree at most n-1 in cos u. Taking the absolute square,
+then setting t=(1+cos u)/2, gives the first line of (25).
+
+For odd bound 2n+1 center by exp(-i(n+1/2)u). The real part is cos(u/2)
+times a polynomial of degree at most n in cos u; the imaginary part is
+sin(u/2) times such a polynomial. Since cos^2(u/2)=t and
+sin^2(u/2)=1-t, this gives the second line. Lower actual degree causes
+no problem: the centered frequencies remain inside the same bounds.
+The zero polynomial is immediate. This is the classical interval
+sum-of-squares argument, not a claimed new factorization theorem.
+
+5.2 Boundary cases and convergence
+
+Degree zero is separate: its cone is {(A,0):A>=0}, represented by the
+constant P=A. The even-degree table must NOT be used with n=0.
+
+At degree one,
+
+  l_1=1/2,  u_1=1,
+  P_1^+=(1-t)/2,       P_1^-=t.
+
+At degree two,
+
+  l_2=81/82,           u_2=161/162,
+  P_2^+=((1-81t)/82)^2,
+  P_2^-=t(1-t)/2.                                          (26)
+
+The inclusions C_D subset C_(D+1) show that l_D is nondecreasing and
+u_D is nonincreasing. Using the Chebyshev trial polynomials in (19)
+gives the explicit bounds
+
+  theta-l_(2n) <=theta/T_n(3)^2,
+  u_(2n)-theta <=theta/[8T_(n-1)(3)^2],        n>=1;
+  theta-l_(2n+1) <=theta/[2T_n(3)^2],
+  u_(2n+1)-theta <=theta/T_n(3)^2,             n>=0.        (27)
+
+Applying (12) to the canonical polynomials in (21), whose |A|=1,
+supplies a matching lower bound for EACH of these two gaps. Therefore
+
+  log(theta-l_D)=-D log rho+O(log D),
+  log(u_D-theta)=-D log rho+O(log D).                       (28)
+
+No unproved strong asymptotic theorem about the logarithmic weight is
+needed for this exponential rate. It is purely real approximation.
+
+
+6. The exact degree/height criterion, and the missing arithmetic
+
+Theorem 3 is a complete membership test for a proposed integer form.
+For a height bound H>=1 and D>=1, the least positive value represented
+by a formal integer pair with max(|A|,|B|)<=H is exactly
+
+  E_D(H)=min(1,
+       min_(1<=q<=H) [q theta-floor(q l_D)],
+       min_(1<=q<=H) [ceil(q u_D)-q theta]).                (29)
+
+For A=q>0 the first cone inequality requires B>=-q l_D, so the smallest
+admissible integer B is -floor(q l_D). For A=-q the second requires
+B>=q u_D, giving ceil(q u_D). Since 0<l_D<u_D<=1, these choices also
+satisfy |B|<=H. The case A=0 contributes 1. If a candidate is not
+primitive, division by its content gives a smaller admissible integer
+pair, so the minimum automatically includes full primitive normalization.
+
+All candidate coefficients in (29) are determined by rational data.
+The formula reduces arbitrary positive polynomial searches of bounded
+degree and final coefficient height to a two-dimensional integer problem.
+
+Rapid convergence in (28) does NOT force E_D(H_D)->0 for a usable H_D.
+The rational approximants must lie at or beyond the endpoints l_D,u_D, and their
+denominators can be large. Under theta=a/b rational, every term in (29)
+is positive and at least 1/b, despite the same exponential convergence
+of the endpoints. This is an immediate diagnostic against drawing an
+irrationality conclusion from the real decay alone.
+
+Nor can large primitive values on both canonical rays exclude good
+interior integer directions. Rational combinations in (24) may have
+large source denominators but a small primitive final pair. The selected
+checks below explicitly illustrate that phenomenon.
+
+For every fixed positive integer form there is eventually a D for which
+it belongs to C_D, by (22), (27), or Theorem 1. Accordingly,
+
+  inf_(D,H) E_D(H)=0  if and only if theta is irrational.   (30)
+
+Equation (30) is a reformulation, not progress on the needed Diophantine
+existence. A successful use of this family must therefore supply extra
+arithmetic information selecting small integer directions as D grows.
+Positivity, endpoint convergence, a large polynomial basis, and generic
+clearing denominators alone do not supply that information.
+
+
+7. Exact and certified checks; limited numerical conclusions
+
+cone_checks.py uses exact FLINT rationals for moments, matrices,
+polynomials, primitive normalization, and cone tests. Arb encloses theta
+using [zeta(4,1/4)-zeta(4,3/4)]/256 with precision exceeding the final
+coefficient bit length by at least 512 bits.
+
+Recorded checks:
+
+  - 18 canonical endpoint forms at D=1,2,3,4,5,6,8,12,16;
+  - 240 exact SOS/cone and rational reconstruction checks;
+  - exact nesting checks through D=12;
+  - 13 positive target forms lifted to integer polynomial witnesses,
+    including A=0, both signs of A, and ordinary continued-fraction
+    examples chosen only to test the encoding theorem;
+  - exact minimum witness degrees for those 13 targets via (23);
+  - 18 endpoint values reproduced by a separate Fraction implementation
+    using bordered determinants instead of FLINT linear solves.
+
+The four endpoint forms at degrees 1 and 2 have values below one. The
+14 endpoint forms at the other selected degrees all exceed one after
+full primitive normalization. For example:
+
+   degree    lower coefficient bits   upper bits   log(lower value)  log(upper value)
+      4              35                   34          13.20670         12.88119
+      8             159                  149          91.57946         85.08818
+     16             692                  654         446.49964        420.72811
+
+These are finite results, not an asymptotic denominator obstruction.
+They do not exclude combinations of the canonical forms.
+
+Indeed the primitive target
+
+                  5719097-5783031 theta
+
+has an Arb-enclosed value approximately 8.38670195725509e-8. Its
+minimum nonnegative-polynomial witness degree is exactly 16 under (23),
+although both degree-16 canonical primitive endpoint values are enormous.
+The JSON also retains its exact degree-16 cone multipliers and an integer
+polynomial witness obtained from (24), checked to have this primitive pair.
+The generic Chebyshev construction gives an integer witness of degree
+21. This is an ordinary continued-fraction form encoded in the cone,
+not a newly discovered approximation or an irrationality result.
+
+Reproduce from any working directory:
+
+  /home/research/Chat/Math/beta4/.venv/bin/python \
+    /home/research/Chat/Math/beta4/collaboration/round-01/fresh/cone_checks.py
+
+  python3 \
+    /home/research/Chat/Math/beta4/collaboration/round-01/fresh/fraction_checks.py
+
+Outputs are cone_checks.json and fraction_checks.json in this directory.
+The first retains exact endpoint fractions, canonical polynomials,
+primitive coefficient pairs, Arb intervals, integer witnesses, and
+minimum degrees. All writes are confined to this fresh-investigation
+directory. Nothing has been published, pushed, installed, or sent outside
+the local coordinated investigation.
+
+
+8. What this does and does not narrow
+
+Proved: the scalar positive-polynomial method has no hidden auxiliary
+period, an exact rational two-ray cone at each degree, explicit rational
+extremizers, a complete integer-height membership test, and the optimal
+exponential degree scale for encoding prescribed positive forms.
+
+Not proved: an arithmetic selection theorem forcing E_D(H_D)->0, an
+asymptotic obstruction even for the endpoint primitive forms, or any
+irrationality/transcendence statement about beta(4).
+
+Concrete research consequence: an unrestricted search over nonnegative
+scalar polynomials with this kernel need not be repeated in a larger
+basis. Formula (29) already solves its formal optimization. A materially
+different construction must impose and exploit additional arithmetic
+structure, or change the kernel/period realization; otherwise it merely
+re-encodes rational approximation to theta. This conclusion is specific
+to the scalar kernel (2), not to all positive multivariable periods,
+determinant methods, or possible irrationality arguments.

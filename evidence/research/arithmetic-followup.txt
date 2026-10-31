@@ -1,0 +1,526 @@
+Beta(4): endpoint reduction, a dilation construction, and its obstruction
+27 October 2026. Local, unpublished working research record.
+
+Status
+
+There is no irrationality proof. This pass produces a genuinely
+three-parameter positive Gram construction involving beta(4) alone, but
+also proves that its primitive full determinants grow rather than shrink.
+The obstruction extends to finite mixtures of fixed integer dilation
+scales with a nonzero net contribution at the largest scale, and to the
+two natural reflection blocks. It is an obstruction to these specified
+families, not to determinant methods in general.
+
+The preceding construction has also been reduced to endpoint
+approximation problems. Their errors cannot decay exponentially with
+matrix size. Exact arithmetic confirms a very poor balance in larger
+examples. This is stronger diagnostic information than another finite
+parameter search, but is not an asymptotic lower bound for every primitive
+factor of the preceding construction.
+
+The formulas below were developed during this investigation. Priority has
+not been established. Checks use two implementations by the same agent;
+there has been no independent model/human audit or formal verification.
+
+1. Common moment calculation
+
+Set y_i=x_i^4, z=y_1 y_2 y_3 y_4, and
+
+  dmu(x)=dx_1 dx_2 dx_3 dx_4 / (1+(x_1 x_2 x_3 x_4)^2),
+  I(a)=integral y^a dmu
+      =sum_{m>=0} (-1)^m / product_{i=1}^4(2m+4a_i+1).
+
+Here a has nonnegative integer coordinates. This is a positive Gram/Mellin
+framework of the general kind discussed by Brown [B]. The particular
+period-cancellation constructions below are derived explicitly here.
+
+Write b_j(a) for the coefficient of beta(j) in the partial-fraction
+expansion of I(a). Its remaining term is rational. Then
+
+  b_1(a)=0,
+  b_j(a+k*1)=b_j(a),
+  b_j(M*1-a)=(-1)^j b_j(a),
+  b_j(d*a)=d^(j-4) b_j(a).                         (1)
+
+The translation and reflection identities apply when all exponents
+involved remain nonnegative; d is a positive integer. To check these
+identities, use F_a(u)=product_i(u+4a_i)^(-1). All shifts in the beta tails
+are even integers. The sum of simple-pole residues is zero since
+F_a(u)=O(u^-4). Also
+
+  F_{d*a}(u)=d^-4 F_a(u/d),
+
+which gives the last identity coefficient by coefficient. Reflection
+changes the order-j coefficients by (-1)^j. Four distinct coordinates
+give a rational moment, since there are only simple poles and their
+beta(1) coefficient is zero.
+
+2. What the old four-dimensional seed actually computes
+
+For a in {0,1}^4 with first coordinate zero, ordered lexicographically,
+put f_a=y^a-y^(1-a). The old seed g=Wf used
+
+  W=[1 0  0  0 0 0 0 0
+     0 1  1 -1 0 0 0 0
+     0 1 -1  0 0 1 0 0
+     0 7 -7  0 6 7 6 6].
+
+Replace g_3 by (g_3-7g_2)/6. For every product-variable moment z^k,
+the rational summand matrix, with u=2m+4k+1, becomes exactly
+
+  [Ra Rb 0  0
+   Rb Rc 0  0
+   0  0  Rc 0
+   0  0  0  Rc],                                  (2)
+
+where
+
+  Ra=64(5u^6+120u^5+1160u^4+5760u^3
+          +15872u^2+24576u+16384)/(u^4(u+4)^4(u+8)^4),
+  Rb=64(5u^2+40u+64)/(u^3(u+4)^2(u+8)^3),
+  Rc=1/(4u^3)-6/(u+4)^4-1/(4(u+8)^3).
+
+This is an identity of rational functions, not an observed factorization
+at finitely many matrix sizes. The scalar blocks are identical. The
+two-by-two block also has beta(4) rank one after adjoining any number of
+powers of z. Thus the old degree-three primitive determinant is the
+product of one primitive linear factor and the square of another.
+
+2.1 The repeated scalar factor
+
+Let T_s(k)=sum_{0<=j<k}(-1)^j/(2j+1)^s. The scalar moments in (2) are
+
+  c_k=(1/4)sum_{j=0}^3(-1)^j/(4k+2j+1)^3
+                  +6T_4(2k+2)-6 beta(4)
+     =integral_0^1 z^k w(z) dz,
+
+  w(z)=z^(1/4) L^2(sinh L-L)/(256(1+sqrt(z))),
+  L=-log z.                                       (3)
+
+For example, the density before the substitution z=t^4 is
+
+  ((1-t^8)(-log t)^2/8-t^4(-log t)^3)/(1+t^2).
+
+The elementary Laplace integral of each power of -log t gives Rc.
+Formula (3) makes positivity immediate and gives
+w(z)~(1-z)^5/3072 as z tends to 1 from the left.
+
+In the n-by-n Hankel matrix [c_{i+j}], change polynomial basis to
+1,(1-z),(1-z)z,...,(1-z)z^(n-2). Only the first diagonal entry contains
+beta(4). Its Schur complement is
+
+  lambda_n=min_{deg P<n, P(1)=1} integral P(z)^2 w(z) dz
+          =r_n-6 beta(4),       r_n rational.       (4)
+
+This is the Christoffel endpoint minimization problem; it follows directly
+by completing the square in the rational lower-right Gram block.
+
+On 1/2<=z<=1, use z^(1/4)>=1/2, 1+sqrt(z)<=2,
+sinh L-L>=L^3/6, and L>=1-z. Consequently
+
+  w(z)>=(1-z)^5/6144.
+
+After z=(1+t)/2, the comparison measure is (1-t)^5 dt/393216.
+The shifted Jacobi endpoint kernel for degree less than n is
+
+  sum_{j=0}^{n-1}(2j+6) binom(j+5,5)^2
+       =6 binom(n+5,6)^2.
+
+Its reciprocal is the endpoint minimum. Thus, explicitly,
+
+  r_n/6-beta(4) >= 1/(14155776 binom(n+5,6)^2).      (5)
+
+The error cannot decrease exponentially in n. If r_n/6=B_n/A_n in
+lowest terms, A_n>0, a necessary condition for
+0<B_n-A_n beta(4)<1 is
+
+  A_n<14155776 binom(n+5,6)^2.
+
+The tested denominators miss this polynomial budget by enormous factors.
+Natural logarithms, with outward-rounded Arb evaluation:
+
+  n       log A_n       log(r_n/6-beta(4))    log(B_n-A_n beta(4))
+  4       228.5500           -18.1857                210.3644
+  8      1008.2085           -25.2126                982.9959
+ 16      4324.3839           -32.7125               4291.6713
+ 24     10019.2255           -37.2710               9981.9544
+ 32     18129.8740           -40.5621              18089.3119
+ 48     41567.5648           -45.2610              41522.3039
+
+Equation (5), rather than the decimal evaluation, already proves that
+every listed primitive form is greater than one. These examples do not
+prove a general asymptotic growth law for A_n.
+
+For comparison, the unnormalized Hankel determinant itself satisfies
+
+  lim n^-2 log det[c_{i+j}]=-log 4.
+
+An elementary proof bounds the Gram determinant above using monic shifted
+Chebyshev polynomials, and below by comparing with Lebesgue measure on
+[epsilon,1-epsilon]. The Cauchy determinant evaluates the latter moment
+determinant; then let epsilon tend to zero. This small real determinant
+does not by itself control the primitive integer linear form (4).
+
+2.2 The remaining factor
+
+There is also the exact polynomial identity
+
+  g_0=1-z,
+  g_1=g_0-h,
+  h=(1-y_1 y_2)(1-y_3)(1-y_4).                    (6)
+
+The two-by-two moment block in (2), with n powers of z in each component,
+therefore gives the minimum of
+
+  integral (h P(z)+(1-z)Q(z))^2 dmu,
+  deg P,deg Q<n, P(1)=1.                          (7)
+
+Again it equals a rational number minus 6 beta(4). Adding Q improves the
+approximation, but cannot eliminate the variation of h at fixed z.
+
+To make that precise, write y_i=exp(-t_i), T=sum t_i=-log z. Conditional
+on T, the vector t_i/T is uniform on the three-dimensional simplex.
+The marginal density in z is
+
+  rho(z)=z^-3/4 (-log z)^3/(1536(1+sqrt(z))).
+
+For u_i=t_i/T,
+
+  h/T^3 -> (u_1+u_2)u_3u_4.
+
+Under this simplex distribution the limiting mean is 1/60 and variance
+is 1/8400. More generally Var(h|z)/T^6 is continuous and strictly
+positive on 0<=T<=log 2, using the continuous limiting value at T=0.
+For T>0 the conditional function is nonconstant (it vanishes on a face
+and is positive in the interior). Compactness therefore gives a positive
+uniform lower bound. In particular,
+
+  rho(z) Var(h|z) >= c (1-z)^9 on [1/2,1]
+
+for some c>0; its asymptotic coefficient at z=1 is 1/25804800.
+Conditional variance bounds (7) below by
+integral P(z)^2 rho(z) Var(h|z) dz. The Jacobi endpoint calculation
+with exponent 9 now gives a positive constant times
+
+  1/binom(n+9,10)^2.
+
+Thus this second approximation also cannot have exponential error decay.
+The constant here is not optimized; the assertion is an analytic lower
+bound, not a claimed bound on the primitive denominators for all n.
+Exact Schur-complement calculations give:
+
+  n       log A_n       log approximation error     log primitive form
+  4       461.3330             -26.4730                   434.8600
+  8      2008.5757             -37.3359                  1971.2398
+ 16      8661.7943             -49.0042                  8612.7901
+ 24     20088.9047             -56.2218                 20032.6829
+ 48     83195.7483             -69.1820                 83126.5662
+
+All these forms are greater than one by Arb interval evaluation.
+
+3. A genuine three-parameter beta(4)-only Gram construction
+
+For H>=3 let
+
+  S_H={(0,a,b,c):0<a<b<c<=H},   N=binom(H,3).
+
+For u in S_H define U_u=y^u and V_u=y^(c*1-u). Choose fixed unequal
+positive integers r,s, and use the two-component polynomial row
+
+  Phi_u=(r(U_u^r+V_u^r), s(U_u^s-V_u^s)).          (8)
+
+Take the ordinary sum of the two positive Gram pairings. The resulting
+N-by-N matrix satisfies exactly
+
+  M_H=A_H+C beta(4) I_N,
+  A_H rational, C=2(r^2-s^2).                     (9)
+
+Proof. Same-side sums u+v and their complements have four distinct
+coordinates, so their moments are rational. For the cross terms,
+reflection in (1) cancels beta(3). Dilation makes the beta(2) coefficients
+r^2*r^-2-s^2*s^-2=0. Four coincident coordinates in a cross term occur
+precisely when u=v, since the first coordinates of both indices are zero.
+Their beta(4) coefficient is 2(r^2-s^2). This proves (9).
+
+The matrix is positive definite. For example, the first components in
+(8) are independent: their distinct lexicographically leading monomials
+are V_u^r, which have positive first-coordinate exponent, whereas every
+U_u^r has first-coordinate exponent zero.
+
+Unlike the previous tensor extension, the target coefficient has full
+rank N, with N of order H^3. No beta(2) or beta(3) remains, and the row
+coefficients do not grow with H. These are genuine construction gains.
+They still do not give the required arithmetic/size balance.
+
+4. The prime-denominator obstruction for (8)
+
+Let d=max(r,s), and let Q_H be the primitive integer polynomial obtained
+from det(A_H+C X I_N). Choose its sign so Q_H(beta(4))>0. Write
+
+  Q_H(X)=kappa_H det(A_H+C X I_N),  kappa_H>0.
+
+For primes 2dH<p<4dH, excluding the fixed prime divisors of C,
+p^4 A_H is integral at p and is diagonal modulo p. For u=(0,a,b,c),
+
+  (p^4 A_H)_{uu}
+    =2 chi_{-4}(p) (s^2 1_{p<4sc}-r^2 1_{p<4rc}) mod p.    (10)
+
+Why there are no missing fourth-order terms: distinct exponent
+differences have absolute value at most 2dH<p, so the partial-fraction
+coefficients have denominators prime to p. Off-diagonal moments have
+poles of order at most three. The order-four diagonal terms are the
+beta(4) tails at shifts rc and sc. In these tails the only possible odd
+multiple of p is p itself, since p>2dH. The alternating sign is
+chi_{-4}(p)=(-1)^((p-1)/2). This proves (10).
+
+The rank modulo p is
+
+  R_p=N-binom(floor(p/(4d)),3).
+
+The coefficient of X^(N-R_p) in the raw determinant has valuation
+exactly -4R_p: after multiplication by p^(4R_p), its reduction is a
+nonzero unit times the product of the nonzero diagonal entries in (10).
+Consequently v_p(kappa_H)>=4R_p. The denominator of kappa_H in lowest
+terms divides |C|^N, because the leading coefficient of the raw
+polynomial is C^N. Therefore the finite inequality
+
+  kappa_H >= |C|^-N product_{2dH<p<4dH, p not dividing C} p^(4R_p)    (11)
+
+holds. Other primes are not being estimated optimistically: the possible
+negative valuations of kappa_H are already covered by |C|^-N.
+
+The prime number theorem applied to this weighted prime sum gives
+
+  log kappa_H >= (17d/4) HN+o(HN).                  (12)
+
+Indeed the coefficient is
+16d integral_{1/2}^1(1-t^3)dt=17d/4. This is an asymptotic obstruction;
+the finite calculations use (11) directly and do not require an
+effective prime number theorem.
+
+5. A lower bound for the real determinant
+
+The direction of the estimate matters: to establish failure, we need to
+show the real determinant is not small enough to offset (11).
+
+Since dmu>=dx/2, retain the first component of (8). After t_i=x_i^(4r),
+each coordinate has probability weight a t^(a-1)dt, a=1/(4r). The squared
+norm of its monic degree-k orthogonal polynomial is
+
+  h_k(r)=a/((2k+a) binom(2k+a-1,k)^2),
+  log h_k(r)=-2k log 4+O(log(k+1)).                 (13)
+
+The formula follows either from shifted Jacobi polynomials or directly
+as a ratio of the Cauchy moment determinants [a/(a+i+j)]. The latter
+identity is checked separately in the symbolic audit.
+
+Expand each product polynomial in this product monic orthogonal basis.
+Its lexicographically leading exponent is (c,c-a,c-b,0), with coefficient
+one. The corresponding N-by-N coefficient minor is triangular with
+diagonal one. Cauchy--Binet and positivity therefore give the exact bound
+
+  det M_H >= (r^2/2)^N
+             product_{0<a<b<c<=H} h_c(r) h_{c-a}(r) h_{c-b}(r).       (14)
+
+The degree sum is 6 binom(H+1,4). Thus
+
+  log det M_H >= -3 log(4) HN+o(HN).               (15)
+
+Notice that r does not multiply the leading rate in (13): the variable
+change puts the polynomials on [0,1] with degrees k, not rk. Combining
+(12) and (15) proves
+
+  liminf log Q_H(beta(4))/(HN) >= 17d/4-3 log 4>0. (16)
+
+For r=1,s=2 the lower rate is 4.3411169166..., already strictly positive.
+The normalized values grow exponentially in HN. They cannot establish
+irrationality through small nonzero integer polynomial values.
+
+For r=1,s=2 the exact finite calculations give:
+
+  H   N     log raw determinant    log kappa_H    log Q_H(beta(4))
+  3   1          -7.2520              99.1528             91.9008
+  4   4         -39.0972             548.0846            508.9873
+  5  10        -122.5655            1688.8672           1566.3017
+  6  20        -294.6674            4021.7299           3727.0624
+  7  35        -602.1284            8318.2848           7716.1564
+  8  56       -1101.5272           15138.6988          14037.1717
+
+Equations (11) and (14) alone prove Q_H(beta(4))>1 in every listed case,
+independently of evaluating beta(4). The saved files also give Arb values.
+
+6. Why more fixed dilation scales do not repair this construction
+
+Allow fixed rational weights w_j, with j in a finite set of positive
+integers. At each scale use the positive Gram contribution
+
+  |w_j| (U_u^j+sign(w_j)V_u^j)(U_v^j+sign(w_j)V_v^j).
+
+Assume
+
+  sum_j w_j/j^2=0,      C=2 sum_j w_j !=0,
+  D=max{j:w_j!=0}.
+
+Then again M=A+C beta(4) I, and D>=2. This includes (8). Coefficients and
+scales are fixed as H grows; their constants can be arbitrary rationals.
+The argument also allows both signs at a scale provided the largest used
+scale has nonzero net weight. It does not address extra, higher scales
+whose net beta contribution is exactly zero.
+
+For p in (2DH,4DH), the diagonal reduction is now
+
+  -2 chi_{-4}(p) sum_{j:p<4jc} w_j mod p.
+
+Whenever p/(4D)<c<p/(4(D-1)), only the largest scale contributes. Away
+from finitely many fixed coefficient primes this diagonal entry cannot
+vanish, regardless of cancellation among the smaller scales. Using only
+these mandatory nonzero diagonal entries yields
+
+  log kappa_H >= g(D) HN+o(HN),
+  g(D)=12+D/4-D^4/(4(D-1)^3).                      (17)
+
+For completeness, the distribution of c/H among S_H has density 3t^2.
+After exchanging the prime and row sums the coefficient is
+
+  16 integral_0^1 3t^2 [(Dt-D/2)_+-((D-1)t-D/2)_+]dt,
+
+which equals (17). Moreover
+
+  g(2)=17/2,
+  g'(D)=(6D^2-4D+1)/(4(D-1)^4)>0.
+
+Retain any one nonzero positive Gram component to repeat (14)--(15).
+It follows that every such fixed mixture satisfies
+
+  liminf log Q_H(beta(4))/(HN) >= g(D)-3 log 4
+                              >=4.3411169166...>0.       (18)
+
+This covers an apparent escape in which successive cumulative weights
+cancel. For example w_1=5,w_2=-36,w_3=36 cancels beta(2) and has zero
+cumulative weight at scales 2 and 3 together. The unavoidable largest-
+scale interval in (17) still prevents success. Exact examples for
+H=3,4,5 check this cancellation and the residual prime ranks.
+
+7. The natural reflection factors also fail
+
+The index involution
+
+  (0,a,b,c) -> (0,c-b,c-a,c)
+
+commutes with M. It comes from reversing the four x coordinates; sum
+components are preserved and difference components change sign in both
+factors of the pairing. Split into invariant and anti-invariant row
+combinations. The block dimensions are m_+,m_-=N/2+O(H^2).
+
+Use an integer basis: sum/difference of each pair, and one copy of each
+fixed row in the invariant block. The beta(4) coefficient is C times a
+diagonal matrix with entries 2 for pairs and 1 for fixed rows. Its leading
+coefficient still bounds the possible denominator of the primitive
+normalizer by a fixed constant to the power m_+ or m_-.
+
+The diagonal reduction above is constant on each orbit. Each block
+therefore retains half the mandatory prime rank up to O(H^2), uniformly
+in p. Its arithmetic lower rate per Hm is again g(D).
+
+For the real lower bound, select the larger lexicographic leading
+monomial from each orbit. Its degree is at most 3c. These leading
+monomials remain distinct and give a triangular minor of absolute value
+one. The average c in either block is (3/4)H+o(H), so (13) gives
+
+  log det M_+/- >= -(9/2) log(4) Hm_+/-+o(Hm_+/-).
+
+Thus the primitive polynomials of BOTH blocks obey
+
+  liminf log |Q_+/- (beta(4))|/(Hm_+/-)
+      >= g(D)-(9/2)log 4
+      >=2.2616753749...>0.                         (19)
+
+The primitive full polynomial is, up to sign, the product of the two
+primitive block polynomials, by Gauss's lemma. Exact factorization for
+r=1,s=2 and H=3,...,8 produces precisely these nonempty blocks, with
+degrees respectively
+
+  1; 1+3; 3+7; 7+13; 13+22; 22+34.
+
+All eleven factors are greater than one in absolute value at beta(4),
+certified by Arb. Their equality with the block determinants is checked
+exactly. Equations (18)--(19) do not establish irreducibility for every H
+and do not exclude useful additional factors at untested sizes.
+
+8. Rational extra directions and the scope of the conclusion
+
+One can add many rational Gram directions, including monomials with
+widely spaced, strictly ordered exponents. Such additions should not be
+confused with an automatic increase in irrationality strength. If the
+extra Gram block R and cross block V are rational, then
+
+  det [S(X) V; V^t R]=det R * det(S(X)-V R^-1 V^t).
+
+The rational factor det R disappears on passing to the primitive integer
+polynomial. The Schur complement can change the approximation and its
+arithmetic substantially, but its new denominator cost must be analyzed.
+This identity does not prove that rational extra directions cannot help.
+
+Likewise, the collision-avoidance counting observation in the previous
+record applied to a specially restricted complement-closed monomial set.
+It was not a general obstruction to higher-dimensional rational padding.
+
+The present asymptotic obstruction assumes the complete ordered index
+set S_H, fixed integer dilation scales and coefficients, and the stated
+positive Gram pairing. Different row geometries, H-dependent scales or
+weights, other rational functions/measures, additional factors, and
+arithmetically designed non-Gram forms are not ruled out. A change of
+rational basis within the same full space leaves its primitive
+determinant unchanged and cannot evade this result.
+
+The useful conclusion is that these particular extensions should be
+retired as routes to an individual beta(4) irrationality proof. The
+construction does solve cancellation, dimension growth, and nonvanishing;
+the prime calculation then shows precisely why those successes are
+insufficient. Another unrestricted search is not justified merely by
+increasing the sizes of these determinants. A new proposal should first
+identify a mechanism changing the arithmetic obstruction or the
+approximation problem itself.
+
+9. Reproduction and verification
+
+From /home/research/Chat/Math/beta4:
+
+  .venv/bin/python experiments/endpoint_budget.py
+  .venv/bin/python experiments/endpoint_block.py
+  .venv/bin/python experiments/dilation_gram.py
+  .venv/bin/python experiments/dilation_factor_audit.py
+  .venv/bin/python experiments/dilation_symmetry.py
+  python3 experiments/arithmetic_symbolic_audit.py
+
+The associated results/*.json files record exact coefficients and
+outward-rounded values. The six main dilation determinants are checked
+against their finite prime lower bounds. The symmetry/mixture audit
+checks nine matrices, sixteen nonempty blocks, 34,211 entrywise prime
+reductions, and 92 block characteristic-coefficient valuations. Its
+finite lower bounds prove every tested block exceeds one.
+
+The separate Sympy implementation checks all sixteen symbolic seed block
+entries, seventy dilation coefficient vectors, thirty-five reflection
+coefficient vectors, sixteen independently recomputed entries of the
+H=4 dilation matrix and its primitive polynomial, twenty-four monic
+Jacobi norms, and forty-seven degree-sum identities. It also checks the
+polynomial identity (6), the limiting variance 1/8400, and the derivative
+of g(D). These checks supplement the arguments above. They are neither
+an independent mathematical audit nor formal verification.
+
+README.txt gives the investigation order. manifest.json records SHA256
+hashes. This directory remains separate from the tenth-discriminant
+repository, and no part of this pass has been uploaded or published.
+
+Source
+
+[B] Francis Brown, Mellin transforms, transfinite diameter and rational
+    approximations of integrals, arXiv:2604.20741, 2026.
+    https://arxiv.org/abs/2604.20741
+    General Gram/Mellin approximation framework, not a source for the
+    specific dilation construction or the obstruction proved here.
+
+The preceding records give the Carreira, Krisman, Rivoal--Zudilin and
+OpenAI inputs to the earlier experiments. No stronger arithmetic estimate
+from those constructions is assumed to transfer to the family above.

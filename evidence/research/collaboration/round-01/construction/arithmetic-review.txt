@@ -1,0 +1,160 @@
+Focused cross-review of the round-01 arithmetic findings
+28 October 2026. Local and unpublished.
+
+Reviewed files (read-only):
+  ../arithmetic/findings.txt
+    SHA256 e9f096fb0c189cfda1fec0b855361e5de834466158b6b04c35a4cac69deaafe6
+  ../arithmetic/independent_arithmetic.py
+    SHA256 613cf37878ba270f66d30b9a5643c067d168c6c556a58ef4c67b7216168f7513
+
+The coordinator requested a proof review of the regular four-word bound,
+the two-word large-prime improvement, and the asymptotic comparison.
+I reconstructed these before reading the completed findings, then read
+the complete writeup. I found no mathematical gap in those statements.
+This is same-model cross-review, not independent human or formal
+verification. No additional coefficient scan was used as evidence.
+
+1. Regular-word denominators
+
+The decisive hypothesis is that all differentials are REGULAR at the
+basepoint. Writing a length-r coefficient explicitly gives a sum with
+denominators n_1...n_r, where
+
+                    1<=n_1<...<n_r<=N.
+
+For each p^a, at most min(r,floor(N/p^a)) of the distinct indices can
+be divisible by p^a. Summing these incidence bounds gives
+
+ v_p(n_1...n_r)<=sum_{a>=1}min(r,floor(N/p^a))
+              =sum_{j=1}^r v_p(L_floor(N/j)).
+
+The last equality follows by exchanging the a,j sums; it is exact,
+including higher prime powers. Thus W_r(N)=product_{j=1}^r L_floor(N/j)
+is a valid common denominator through degree N. This is not the invalid
+claim that arbitrary repeated logarithmic integrations always have
+distinct denominator indices: the regularity condition is essential.
+
+For h, both alpha=dx and omega=sech(x)dx have integer regular Taylor
+series. The integer shuffle identity applies to the displayed products.
+I also checked the more economical word identity explicitly. With
+innermost-to-outermost ordering, write A=I[alpha,alpha,alpha,omega],
+B=I[alpha,alpha,omega,alpha], C=I[alpha,omega,alpha,alpha]. Then
+
+ I_3=6A,  x I_2=6A+2B,  x^2 I_1=6A+4B+2C.
+
+Substitution into (3x I_2-x^2 I_1-2I_3)/8 gives h=(B-C)/4.
+Therefore the stated 8 W_4(N) bound is safe. Its constant factor can be
+improved because both letters have even integer coefficients, but this
+does not alter any exponent or asymptotic rate being claimed.
+
+2. Why two words suffice at p>N/k
+
+In the expansion in v, only j<=floor(N/k)<p occurs, and all coefficients
+of v through degree N have p-integral denominators. Thus v^j/j! and
+the integer multipliers introduce no p denominator.
+
+The expression for h''(u) is a sum of u^2 times an integer series and
+one regular length-two integral. For j>=3, the formula for h^(j)(u)
+is a polynomial of degree at most two in u, with integer-series
+coefficients apart from the fixed factor 1/8. Derivatives of sech at
+u(t) are integer series because they are integer polynomials in
+sech(u)=(1-t^2)/(1+t^2) and tanh(u)=2t/(1+t^2).
+
+Products of two logs are shuffle sums of length-two words. Multiplying
+by a p-integral power series preserves the degree-N denominator bound:
+every coefficient used has degree <=N, and W_2(M) divides W_2(N) for
+M<=N. This checks an otherwise easy-to-miss convolution issue.
+
+The constant terms h^(j)(0) have no odd-prime denominators. If p=2 is
+in the large-prime range then N<2k, before the slow filter's first
+nonzero coefficient, so no 2-adic exception is missed. Accordingly
+the exact piecewise W_4/W_2 finite bound is valid.
+
+3. Rates, and the Frobenius refinement
+
+The regular-word baseline is
+
+                log W_4(N)=(25/12)N+o(N).
+
+The two-word base contributes (1+1/2)N. Each extra j=3,4 layer is
+restricted both to p<=N/j and to p<=N/k. Higher prime powers contribute
+o(N) for fixed k. This gives exactly
+
+ 3/2 + 1/max(k,3) + 1/max(k,4)
+
+as the coefficient of N. In particular k=3 has no improvement over
+the sharpened generic baseline at THIS stage. The arithmetic findings
+state this qualification correctly.
+
+I checked the additional Frobenius step as well. For alpha, the Cartier
+letter is alpha. For omega=-i dlog[(1+i exp x)/(1-i exp x)], it is
+chi_4(p)omega: the logarithmic derivative has Gaussian coefficients,
+and its scalar -i changes by the factor chi_4(p). Every length-four
+word for h has one omega and three alpha letters. Below degree p^2,
+p^4 kills every summand except those with all four integration indices
+divisible by p. Dividing those indices by p proves the claimed
+Frobenius congruence, with the indicated chi_4(p) factor.
+
+Since the first nonzero coefficient has degree d=2k+4, this really
+caps the denominator exponent at 3 when N<dp and N<p^2. For primes
+above sqrt(N), the final four cutoffs are consequently
+
+                     N, N/2, N/k, N/d.
+
+For k=3 the uncapped fourth-layer cutoff had been N/4; for k>=5 it
+had been N/k. The cap gives N/d in both cases. Small primes contribute
+only o(N). The final upper coefficient rate is therefore correctly
+
+                     3/2+1/k+1/(2k+4),
+
+for each fixed odd k>=3.
+
+4. Check of the lower-rate comparison
+
+Although the primary request concerned upper bounds, I read the onset
+proofs needed for the displayed two-sided interval as well.
+
+For the first layer, u^2 first has a p denominator at degree p+1 with
+residue 8. In h''=-1/2 int t u(t)^2/(1+t^2)^2 dt, this gives degree
+p+3 and residue -4/3. No earlier denominator can arise from the outer
+integration, because the first even multiple of p is 2p>p+3. The j=2
+term multiplies by 2v^2, giving degree p+2k+3 and residue -32/3. The
+j>=3 terms start too late, as asserted.
+
+For the second layer, below the relevant fast cutoff p^2 one has
+p u=U and p^2 W=chi_4(p)W(t^p) modulo p, with U=u(t^p). Therefore
+
+ p^2 h''=U^2 sech(u)/8-chi_4(p)W(t^p)/4.
+
+After multiplication by 2v^2 the first two candidate residues are
+4(1-chi_4(p)) at degree 2p+2k and -8 at degree 2p+2k+2. The condition
+2p+2k+2<kp makes the slow factors and factorials p-integral. The
+remaining fast degrees are at most 2p+2<p^2, even if the TOTAL degree
+is larger than p^2. This distinction is handled correctly in the proof.
+The j>=3 terms are again later. The stated exact second-layer onsets
+therefore follow under their hypotheses.
+
+For fixed k, the omitted primes in these onset hypotheses form a finite
+set. The fourth-layer coefficient at degree dp is nonzero modulo p
+for p>d, since the original degree-d coefficient is -4. Consequently
+the common denominator has at least one layer through N-O_k(1), a
+second through N/2-O_k(1), and two extra layers through N/d, up to
+finitely many primes. The lower rate 3/2+2/d=3/2+1/(k+2) follows.
+
+Thus the displayed inequality for liminf and limsup is supported by
+the stated proofs. It neither asserts a limit nor identifies the
+unresolved third-layer onset.
+
+5. Scope that must remain explicit
+
+All rates above use the original t-degree N. Reindexing the even series
+by z=t^2 doubles a rate per coefficient index. The endpoint n-by-n
+matrix needs original degree 4n; the arithmetic writeup uses this
+cutoff consistently.
+
+These are common-denominator bounds for coefficients and consequent
+raw clearing upper bounds. They do not by themselves bound the
+primitive determinant multiplier sharply, prove nonvanishing, or give
+a small real determinant. The cross-review therefore supports the
+arithmetic improvement, while supplying no inference that it resolves
+the compatibility problem from the research task.

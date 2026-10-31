@@ -1,0 +1,285 @@
+ARITHMETIC OBSTRUCTIONS IN POSITIVE DETERMINANT APPROXIMATIONS TO beta(4)
+Writing plan and proposed theorem statements — 31 October 2026
+
+Decision
+========
+
+Prepare one focused mathematical paper, accompanied by a comprehensive
+technical supplement. The main paper should prove the two determinant
+obstructions C03 and C07, with their analytic and local-arithmetic lemmas.
+It should not narrate eighteen research rounds or imply that beta(4)
+irrationality itself has been ruled out as a research target.
+
+The contribution worth testing with a mathematical reader is specific:
+positive real determinants with very favorable decay can nevertheless have
+provably growing primitive integer values, and in these two families the
+loss is visible in exact coefficient valuations. A bad upper bound for a
+chosen common denominator would not establish this conclusion.
+
+The 57-entry inventory is a selection and reconciliation of the archive,
+not 57 proposed new theorems. Twelve entries record archived primitive-value
+obstructions of varying scope; only the selected determinant proofs have
+received the focused source/proof review described in this writing pass.
+General positivity, orthogonal-polynomial identities and content removal
+must be credited as established tools. Priority of the specific new
+statements remains provisional.
+
+1. Conventions that the paper must establish first
+================================================
+
+Let theta=beta(4)=sum_{k>=0}(-1)^k/(2k+1)^4. If Q is a nonzero polynomial
+in Q[X], its primitive representative is the unique positive rational
+multiple Z=kappa Q with integral coefficients of gcd one, when Q has
+positive leading coefficient. The primitive representative is independent
+of multiplying Q by a positive rational scalar.
+
+A sufficient denominator D, for which DQ is integral, need not equal
+kappa. A lower bound for D is not automatically a lower bound for kappa.
+Similarly, a lower bound for an integral coefficient-clearing multiple
+can miss a rational primitive rescaling when the leading coefficient has
+nontrivial numerator content. This distinction is the reason C03/C07 and
+P06/Q05 have different statuses.
+
+State the degree-sensitive rationality test correctly. If theta=a/b is
+rational and deg Z_n<=n, then b^n Z_n(theta) is an integer. A sufficient
+contradiction would be nonzero Z_n(theta) with
+
+                 |Z_n(theta)|^(1/n) -> 0.
+
+The much simpler linear-form criterion is a special case. Merely saying
+that integer-polynomial values tend to zero while their degrees grow is
+insufficient. No theorem from a recent manuscript is needed for this
+elementary observation.
+
+2. First family: cubic-tail kernel
+=================================
+
+For a positive integer a, set
+
+ S_l(a)=sum_{j=0}^{a-1} [(4j+1)^(-l)-(4j+3)^(-l)].
+
+For a,b positive integers define
+
+ K(a^2,b^2)=[b S_3(b)-a S_3(a)]/[6(b^2-a^2)]       if a!=b,
+ K(a^2,a^2)=theta-S_4(a)+S_3(a)/(12a).
+
+Proposition A (positive representation; C01).
+With A(s)=sech(2pi s) and
+
+ omega(s)=pi^2 s^2 [1+A(s)-2A(s)^3]/96,
+
+ K(x,y)=integral_0^infinity omega(s)/[(x+s^2)(y+s^2)] ds
+
+at the specified squared nodes, and all its ordered square minors are
+strictly positive. The zero-node extension has K(0,0)=2theta.
+
+Proposition B (uniform comparison; C02).
+For increasing positive integer row nodes a_1,...,a_n and column nodes
+b_1,...,b_n, let C_ij=1/(a_i+b_j). Put
+
+ c0=pi^3/192, M=1+2/(3sqrt(6)), tau=1/(sqrt(2)pi).
+
+Then
+
+ [c0/(1+tau)^2]^n det C <= det[K(a_i^2,b_j^2)] <= (M c0)^n det C.
+
+The O(n) error in the logarithm is absolute and uniform in all nodes.
+This strength is useful beyond the principal-family obstruction; it also
+explains the real-size calculation for later nonprincipal experiments.
+
+Proof structure for A and B.
+Derive the representation directly. Apply the determinant integration
+identity and the Cauchy product formula: the integrand has a fixed positive
+sign. Compare densities, not individual matrix entries. Evaluate
+
+ R_tau(a,b)=[ab+tau(a+b)]/[(a+b)(a+tau)(b+tau)]
+
+by a rank-one update:
+
+ det R_tau = det C
+             product_i a_i/(a_i+tau) product_j b_j/(b_j+tau)
+             [1+tau(sum_i 1/a_i+sum_j 1/b_j)].
+
+Include its short interpolation proof. The common-zero version can be a
+short lemma or appendix; it is not needed to understand the main theorem.
+
+Theorem 1 (all consecutive offsets; C03).
+Let Q_{n,m}(X) be the determinant obtained from K on the principal nodes
+a_i=m+i, 1<=i<=n, replacing theta by X. Let Z_{n,m}=H_{n,m}Q_{n,m} be
+primitive, with H_{n,m}>0. For every sequence of integers m_n>=0,
+
+ liminf_{n->infinity} log Z_{n,m_n}(theta)/n^2 >= 2-2log 2 >0.
+
+Proof outline.
+Q is monic, so H is a positive integer. For a general principal node set
+with maximum M0, a prime 2M0<p<4M0, p>=5, and
+
+ r_p=#{i:4a_i>p},
+
+the coefficient of X^(n-r_p) has valuation exactly -4r_p. Only one
+principal minor survives the scaled reduction. This proves a lower bound
+for the actual primitive multiplier, including any coefficient gcd.
+
+For m/n->rho<infinity, the arithmetic lower exponent is
+
+ A(rho)=2(1+rho)^2  for 0<=rho<=1;
+ A(rho)=8rho       for rho>=1.
+
+The negative Cauchy exponent is
+
+ D(rho)=[(2rho+2)^2 log(2rho+2)-2(2rho+1)^2 log(2rho+1)
+                                +(2rho)^2 log(2rho)]/2,
+
+with 0^2 log 0=0. Since D'(rho)<=4log2<4<=A'(rho) on its pieces,
+A-D is minimized at zero and equals 2-2log2 there. The prime number
+theorem and the exact Cauchy product supply the two exponents.
+
+Treat m/n->infinity separately: log H>=(8-o(1))mn, whereas the negative
+real logarithm is O(n^2[1+log(1+m/n)])=o(mn). A subsequence argument
+then proves the stated uniform liminf. Do not silently restrict m=O(n).
+
+Scope.
+This theorem concerns the entire determinant of this principal pencil.
+Invertible rational row/column changes preserve its primitive polynomial.
+Sparse nodes, nonprincipal frames, subspaces, weights, factorizations and
+new combinations require their own arguments.
+
+3. Second family: difference-variable Gram determinants
+=======================================================
+
+For a polynomial P define
+
+ J(P)=integral_[0,1]^2 P(u,v)log^2(uv)/(sqrt(uv)(1+uv))du dv,
+ mu_m=J((u-v)^(2m))/96,
+ T_s(j)=sum_{k=0}^{j-1}(-1)^k/(2k+1)^s,
+ C_m=binom(2m,m),
+ B_m=-C_m T_4(m)+(1/6)sum_{0<=j<=2m,j!=m}binom(2m,j)T_3(j)/(j-m).
+
+Proposition C (C04-C05).
+mu_m=C_m theta+B_m. For
+
+ Q_n(X)=det[C_{i+j}X+B_{i+j}]_{0<=i,j<n},
+
+deg Q_n=n, its leading coefficient is 2^(n-1), and Q_n(theta)>0.
+Moreover
+
+ log Q_n(theta)=-(log 4)n^2+O(n log n).
+
+Proof outline.
+Integrate monomials and pair their off-diagonal terms to cancel beta(3).
+Push forward by y=(u-v)^2 to get positive moments on [0,1]. The density
+is bounded below by (1-y)/6144. Use explicit Jacobi norms for the lower
+determinant bound and Chebyshev trial polynomials for the upper bound.
+The central binomial coefficients are the arcsine moments on [0,4]; their
+monic integral Chebyshev basis has norms 1,2,2,..., proving the leading
+coefficient formula. No assumed period independence enters any step.
+
+Theorem 2 (exact primitive prime exponents and growth; C06-C07).
+Let Z_n=kappa_n Q_n be primitive with kappa_n>0 rational. For every prime
+p>4n,
+
+ v_p(kappa_n)=3 max(0,2n-2-floor(p/4)).
+
+Consequently
+
+ log Z_n(theta)>=(6-log 4)n^2+o(n^2).
+
+Proof outline.
+For p>4n the fourth-order diagonal tails are p-integral. The third-order
+tails first acquire p at m0=floor(p/4)+1. Their first scaled residue is
+nonzero, and the lower-right residue block is anti-triangular of rank
+r=max(0,2n-1-m0). Entries outside that block are p-integral, not merely
+zero after the first reduction. This stronger fact bounds every
+coefficient valuation below by -3r.
+
+Selecting the entire leading residue block leaves an upper-left pencil
+whose leading coefficient is a power of two. Its p-unit coefficient
+attains valuation -3r. That proves equality, not just a denominator
+estimate. At other odd primes the leading coefficient prevents negative
+v_p(kappa_n); at 2 it bounds the loss by n-1. Summing primes in (4n,8n)
+gives 6n^2+o(n^2). Combine with Proposition C.
+
+Scope.
+This closes the defined principal Gram sequence, including all rational
+rescalings of it. It does not close arbitrary weights, sparse frames,
+projections or general determinant constructions.
+
+4. Dependency map and proposed organization
+===========================================
+
+ Section 1. Introduction: the problem, prior determinant work, precise
+            contributions and limits; state the two main theorems.
+ Section 2. Primitive normalization and degree-sensitive smallness.
+ Section 3. Positive cubic-tail kernel and uniform Cauchy comparison.
+ Section 4. The consecutive principal obstruction, including all offsets.
+ Section 5. Difference-variable Gram construction and real-size bounds.
+ Section 6. Exact local valuations and its primitive-growth obstruction.
+ Section 7. Scope: why the results leave other constructions open.
+ Appendix. Optional zero-node comparison and finite check instructions.
+
+ C01 -> C02 -> C03 (with exact local coefficient valuations and PNT).
+ C04 -> C05; C04 -> C06; C05+C06+PNT -> C07.
+ C08 is the elementary normalization convention shared by both proofs.
+
+No computational search is needed as an input to these asymptotic proofs.
+The exact scripts test identities and finite valuations, and interval
+calculations check particular evaluations. They do not replace the proofs.
+
+Standard mathematical inputs are the prime number theorem, Stirling's
+formula, Cauchy determinants and elementary Gram/orthogonal-polynomial
+identities. Supply short derivations of the identities actually used.
+The note should not call itself elementary in the historical sense or
+claim to prove all these background results from first principles.
+
+5. Supplement: preserve breadth without diluting the main paper
+==============================================================
+
+Organize the supplement by method, following method-catalog.txt. Each
+promoted item gets its definition, exact statement, proof, normalization,
+reproducible calculation if applicable, attribution and scope paragraph.
+Each unfinished route gets the actual established statements and the
+missing lemma. It must not receive a theorem title implying impossibility.
+
+The most substantial candidates beyond the main paper are the repeated
+quadratic source obstruction (S03), Euler-Boole theorem (S04), fixed-endpoint
+continued fraction theorem (S05), cyclotomic norm theorem (S06), constrained
+Mellin positive-source theorem (S09), and monodromy statement (E04).
+These need individual source/novelty/proof promotion before publication.
+Their proofs are mathematically different enough that adding them all
+to the main text would obscure its common mechanism.
+
+Use S01, P06 and P07 to explain the boundary of the main conclusions.
+In particular the positive-polynomial cone contains every positive rational
+theta-form, and ordinary first variation retains unresolved arithmetic.
+Neither can honestly be described as ruled out by the two main theorems.
+
+Include unsuccessful estimates, exact equivalences, finite scans and
+superseded claims in the catalog, with stable links to their original
+records. Do not reproduce irrelevant chats, token counts or worker logs
+as mathematical exposition. The 120 snapshots are a selected evidence
+packet, not yet the complete publishable computational supplement.
+
+6. Remaining work before a public manuscript
+===========================================
+
+The selection step is complete. The following work belongs to drafting
+and checking the paper, not another attempt to prove irrationality:
+
+ - Rewrite C01-C08 into one consistent notation, with every definition
+   at first use and citations at the point of mathematical dependence.
+ - Reconcile the cubic-tail representation against Carreira's different
+   functionals explicitly; avoid claiming the first positive beta(4) kernel.
+ - Audit the exact family definitions against any close prior variants.
+   Search silence is not a priority certificate; scoped novelty remains
+   provisional until that comparison and external scrutiny.
+ - Have the assembled proofs checked as a single manuscript. Existing
+   agent reviews are model cross-checks, not human or formal verification.
+ - Convert the selected checks to a reproducible, version-pinned harness
+   running away from the immutable source snapshots. The existing scripts
+   write beside themselves; they must not overwrite historical results.
+ - Audit each supplemental theorem separately before presenting it as
+   an established new result; preserve the original evidence meanwhile.
+
+The initial public version should distinguish the main
+paper from its growing supplement and preserve tags/releases. There is no
+reason to force this work into the tenth-discriminant version sequence.

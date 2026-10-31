@@ -1,0 +1,413 @@
+ROUND 05 — FRICKE-COMPATIBLE EXACT PRIME DELETION
+29 October 2026. Local and unpublished arithmetic research packet.
+
+Outcome and exact scope
+=======================
+
+Exact prime deletion DOES transfer to the two Lambert/Eichler germs,
+but a single dilation factor is incompatible with their Fricke pairing.
+A quadratic factor repairs this. It is the unique minimal-degree
+simultaneous deletion filter, up to a scalar. It preserves the two
+period-killing moments and a beta(4)-only endpoint, at level multiplied
+by p^2. Products over primes preserve the same statements.
+
+The arithmetic gain depends on the precise target:
+
+* For an order-n endpoint determinant, selected fourth powers are paid
+  once in the endpoint scalar, while the coefficient entries are integral
+  at those primes. This gives a substantive saving. An exact modular
+  F-part example has v_11(kappa):24->4 at n=8.
+* For a single modular coefficient form, the endpoint scalar can restore
+  the same fourth-power clearing that was removed from its coefficient.
+  There is no automatic improvement in that scalar-form budget.
+
+A quartic self-dual extension is also explicit. With the SAME canonical
+constant dilation coefficient 1, its scalar selected-prime bound is 3
+rather than 4, but the endpoint grows by p and the level grows by another
+p^2. Its determinant bound is worse, because entry denominators return.
+In the same n=8,p=11 example its actual exponent is 21. No invariant
+primitive-value advantage is established for the quartic extension.
+
+An integral local modular-coordinate/prefactor construction is supplied
+to make the coefficient arithmetic concrete. Its Fricke symmetry is
+exact, but its new fixed point need not lie on the first inverse sheet.
+No real decay, evaluated nonvanishing, or irrationality theorem is claimed.
+The analytic worker and coordinator separately investigate that obstruction.
+
+1. Input, choices, and notation
+===============================
+
+The initial choices are recorded in 00_initial_choices.txt, before
+outgoing discussion with the analytic worker. Three mechanisms were
+compared: outer Lambert-index deletion, full Fourier-index deletion,
+and a quadratic Fricke-compatible repair. The last is the primary choice.
+The coordinator independently derived the linear incompatibility and
+subsequently the minimal-degree classification; the analytic worker
+independently found the same quadratic repair. This is coordinated
+elementary research, not a novelty claim.
+
+Use theta=beta(4), chi=chi_4, q=exp(2pi i tau), and V_p h(tau)=h(p tau).
+The inherited modular-detour.txt defines
+
+  F(tau)=sum_(d odd>=1) chi(d) q^d/[d^4(1+q^d)],
+  G(tau)=sum_(d odd>=1) q^d/[d^4(1+q^(2d))].              (1.1)
+
+Its established period-filter statement is the input used here. If
+a_r, r|M, satisfy sum a_r r=sum a_r r^3=0, put
+
+  S=sum a_r, K=sqrt(M^3/8), b_s=K a_(M/s)/s^3,
+  H=sum a_r F(r tau)+sum b_s G(s tau).
+
+Then, with N=8M and W_N tau=-1/(N tau),
+
+  H(W_N tau)-S theta/2
+      =i/[N^(3/2)tau^3] (H(tau)-S theta/2).              (1.2)
+
+Thus H(i/sqrt(N))=S theta/2. The starting weights are
+a_1=16,a_2=-10,a_4=1, M=4, S=7, giving
+
+  H_32=16F-10V_2F+V_4F
+        +sqrt(2)[2G-(5/2)V_2G+(1/2)V_4G].               (1.3)
+
+The arithmetic arguments below are independent of a global modular
+coordinate. We use (1.2) as the previously recorded classical period
+identity, not as a theorem newly independently re-proved in this round.
+The word level refers to the displayed Fricke level and the underlying
+modular forms; H itself is an Eichler combination. A single Fricke law
+does not assert vanishing of its periods for the whole congruence group.
+
+2. Exact physical deletion and Fourier operators
+================================================
+
+For an odd prime p, let lambda=chi(p)/p^4 and mu=1/p^4. Splitting the
+outer index d according to p|d gives EXACTLY
+
+  F^[p]=(1-lambda V_p)F
+       =sum_(d odd,p not dividing d) chi(d)q^d/[d^4(1+q^d)],
+  G^[p]=(1-mu V_p)G
+       =sum_(d odd,p not dividing d) q^d/[d^4(1+q^(2d))]. (2.1)
+
+Both resulting Fourier series have p-integral coefficients. Products
+over different primes commute. This is an exact Lambert-index identity,
+not an assumption that cyclotomic deletion commutes with an arbitrary
+completed modular coordinate.
+
+For clarity, the Fourier coefficient-selection operator U_p is different:
+U_p(sum h_n q^n)=sum h_(pn)q^n. The divisor sums in (1.1) give
+
+  U_p F=(1+lambda)F-lambda V_pF,
+  U_p G=(chi(p)+mu)G-chi(p)mu V_pG.                       (2.2)
+
+Indeed F_(p^k)=1+lambda+...+lambda^k, whereas
+G_(p^k)=chi(p)^k F_(p^k); the same local recurrence holds with any
+prime-to-p index attached. In particular full Fourier-index deletion is
+
+  (1-V_pU_p)F=(1-V_p)(1-lambda V_p)F,
+  (1-V_pU_p)G=(1-chi(p)V_p)(1-mu V_p)G.                  (2.3)
+
+The F polynomial in (2.3) has value zero at V=1. In the period-filtered
+construction it therefore kills the theta endpoint scalar too. This
+specific full-deletion route does not retain a nonzero theta target.
+
+3. The local Fricke classification and quadratic repair
+========================================================
+
+Take a polynomial C(V)=sum_(j=0)^r c_j V^j and enlarge M to Mp^r.
+The paired G polynomial dictated by (1.2), including the change in K, is
+
+  C^*(V)=p^(-3r/2) V^r C(p^3/V).                        (3.1)
+
+For even r this remains over the old coefficient field Q(sqrt(2)).
+
+THEOREM 3.1. A fixed polynomial C gives uniformly bounded p-denominators
+for CF only if C(chi(p)p^4)=0, and this condition is sufficient for a
+uniform bound. The analogous condition for C^*G is C(p^(-1))=0.
+Consequently the minimal simultaneous degree is two, with unique
+polynomial up to scalar
+
+  C_p(V)=(1-chi(p)p^(-4)V)(1-pV).                        (3.2)
+
+Proof. For k>=r, the coefficient at q^(p^k) in CF is
+
+  C(1)/(1-lambda)-lambda^(k+1)C(lambda^(-1))/(1-lambda).
+
+If the second coefficient is nonzero, its valuation tends to minus
+infinity and eventually cannot cancel the constant first term. Conversely
+the root condition factors out exact physical deletion (2.1), leaving
+a fixed polynomial and hence a uniform denominator bound. For G the
+growing local root is mu, so its condition is C^*(p^4)=0. By (3.1),
+this is C(p^(-1))=0. The two roots chi(p)p^4 and p^(-1) are distinct.
+This proves minimality and (3.2). QED.
+
+With the canonical normalization C_p(0)=1, its partner is
+
+  C_p^*(V)=chi(p)(1-p^(-4)V)(1-chi(p)pV).                (3.3)
+
+Both CF and C^*G are p-INTEGRAL, not merely uniformly bounded: after
+the respective physical deletions their remaining factors are integral.
+The endpoint factor is nonzero:
+
+  a_p=C_p(1)=(1-p)(1-chi(p)/p^4).                       (3.4)
+
+This supersedes the two-dilation incompatibility. The latter was a
+correct restriction at degree one, not a general obstruction.
+
+For a finite nonempty prime set S and P=product_(p in S)p, apply the
+product of C_p to the F part of (1.3) and the product of C_p^* to the
+G part. Denote the result by H_2. Its level is
+
+  N_2=32P^2,
+  S_2=7 product_(p in S)(1-p)(1-chi(p)/p^4).              (3.5)
+
+The original two moments remain zero, because multiplying divisor
+weights multiplies each moment by the corresponding C_p(p) or C_p(p^3).
+Thus (1.2) still holds with S=S_2 and N=N_2. The precise fixed-point
+target is H_2(i/sqrt(N_2))=S_2 theta/2.
+
+The same theta-only endpoint also exists at the real q cusp. Dominated
+convergence gives F(q)->theta/2 as q->1 from below. The G constant
+term there is independent of its dilation, and sum b_s=0 by the cubic
+moment. Consequently H_2(q)->S_2 theta/2 at q=1. In particular its
+RATIONAL F component alone, doubled, has endpoint S_2 theta.
+
+4. A concrete integral formal coordinate and prefactor
+=======================================================
+
+Let t_0 and J_+ be the level-32 eta/theta series in modular-detour.txt:
+t_0=q+integer higher coefficients, t_0(W_32 tau)=t_0(tau), and
+J_+(W_32 tau)=-i sqrt(32)tau J_+(tau). For any integer L>1 put
+
+  t_L=t_0(tau)+t_0(L^2 tau),
+  J_L=J_+(tau)+L J_+(L^2 tau),
+  Y_L=D log t_L,  A_L=J_L^5/Y_L.                         (4.1)
+
+At N=32L^2 these satisfy
+
+  t_L(W_N tau)=t_L(tau),
+  J_L(W_N tau)=-i sqrt(N)tau J_L(tau),
+  A_L(W_N tau)=-i N^(3/2)tau^3 A_L(tau).                 (4.2)
+
+For example W_N exchanges t_0(tau) and t_0(L^2 tau); the factor L
+in J_L is exactly the weight-one matching factor. Y_L transforms by
+N tau^2. These statements follow directly from the old Fricke laws.
+
+Formally t_L=q+..., with integral coefficients. Its compositional
+inverse q(t_L) is integral. Also Y_L is an integral unit series, and
+J_L has coefficients in Z[sqrt(2)]. Thus A_L, expressed in t_L, has
+both rational components integral. Take L=P for H_2, and put B_L=A_LH_2.
+The meromorphic combination B_L-(S_2 theta/2)A_L is Fricke invariant.
+
+This is NOT a claim that t_L is a global coordinate or that its new
+fixed point is the dominant branch on the Taylor germ's sheet. Nor
+does mere invariance prove holomorphy at a higher-order critical point.
+The new fixed point has t_L=2t_0(iL/sqrt(32)), exponentially small
+in L, but the principal inverse encounters other geometry first.
+The coordinator and analytic worker investigate that issue separately.
+
+5. Exact primitive arithmetic: scalar forms versus determinants
+===============================================================
+
+For a prefix of degree N, define
+
+  d_(N,S)=lcm{d: 1<=d<=N, d odd, gcd(d,P)=1}.              (5.1)
+
+All Fourier coefficients of the two deleted Lambert series through N
+are cleared by d_(N,S)^4. The remaining quadratic factors are integral.
+The old G coefficient 1/2 is the only extra rational factor in H_2.
+Therefore, after the integral coordinate and prefactor in section 4,
+
+  a_(n,j) in Z,
+  2 d_(N,S)^4 b_(n,j) in Z,       n<=N, j=0,1,            (5.2)
+
+where A_L=sum(a_(n,0)+sqrt(2)a_(n,1))t_L^n and similarly for B_L.
+There are no new denominator primes from the level or coordinate in
+this explicit FORMAL construction. This says nothing about coefficient
+height or analytic continuation.
+
+The exact scalar-form target is
+
+  L_(n,j)=S_2 a_(n,j) theta-2 b_(n,j).                    (5.3)
+
+If it is a nonzero rational pencil, define its primitive multiplier
+kappa by clearing the pair and dividing by the full integer gcd. Then
+
+  kappa <= P^4 d_(N,S)^4,
+  v_p(kappa)<=4 for every p in S.                        (5.4)
+
+These are bounds for the actual primitive multiplier under the stated
+canonical normalization, not assertions of equality or small content.
+Cross-prime factors in the endpoint numerator are included automatically
+when the exact pair is normalized.
+
+For a scalar coefficient form, (5.4) need not improve the old budget.
+If all selected primes lie in (sqrt(N),N], then
+
+  P^4 d_(N,S)^4 = O_N^4,
+
+where O_N is the odd least common multiple through N. The deleted
+fourth powers have simply moved to the endpoint scalar. At n=1, for
+a single selected p, the actual exponent is 4 outside explicit small
+exceptional divisors of the prefactor; the script checks both character
+signs p=3 and p=5. No small-denominator claim is inferred from p-integral
+Fourier coefficients alone.
+
+For a DETERMINANT the budget is different. Let h(q) be twice the rational
+F part of H_2, so h(1)=S_2 theta and h_1=32 for every selected prime set.
+For order n, use its prefix through N=2n and define
+
+  b_i=h_i, T_ij=h_(i+j)-h_(i+j-1),
+  J_h(X)=det[[X,-b^T],[b,T]].
+
+The exact endpoint form is J_h(S_2 theta). Its nonzero pencil has
+
+  kappa <= P^4 d_(2n,S)^(4(n+1)),
+  v_p(kappa)<=4 for every selected p.                    (5.5)
+
+Proof: D=d_(2n,S)^4 clears h, so the constant determinant coefficient
+is cleared by D^(n+1), and the theta coefficient by P^4D^n. Multiplying
+by P^4D^(n+1) clears both. Selected p's do not divide D. QED.
+
+If S is exactly the set of odd primes y<p<=2n, the elementary bounds
+log d<=pi(y)log(2n) and log P<=2n log(2n) imply
+
+  log^+(kappa)=o(n^2) whenever pi(y_n)log n=o(n).          (5.6)
+
+This is the substantial determinant saving: P^4 is paid ONCE rather
+than n+1 times. It does not imply real decay or uniform nonvanishing.
+The analytic cusp route encounters a different barrier, treated by
+the analytic worker; it is not resolved by (5.6).
+
+An exact comparison at n=8,p=11 uses this SAME h_1=32 normalization:
+
+  unfiltered F-part determinant:          v_11(kappa)=24,
+  quadratic simultaneous deletion:        v_11(kappa)= 4.
+
+This is computed from the complete rational pairs and their gcds.
+It is not an entrywise-only comparison or a pure global rescaling.
+
+6. Quartic self-dual extension: valid, but no established advantage
+==================================================================
+
+Define
+
+  D_p(V)=p^3+(p^4-p^3-1)V+V^2.
+
+It satisfies p^(-3)V^2D_p(p^3/V)=D_p(V) and D_p(1)=p^4.
+Thus C_pD_p and C_p^*D_p remain a Fricke-paired deletion pair, now at
+level multiplied by p^4. Their endpoint is integral at p. But reporting
+only this fact would be misleading: multiplying the quadratic form by
+p^4 would also make its local multiplier integral without changing
+its primitive pair.
+
+To compare actual constructions, KEEP the constant F dilation coefficient
+equal to 1. Use
+
+  C_(p,4)=C_p D_p/p^3,
+  C_(p,4)^*=C_p^* D_p/p^3.                               (6.1)
+
+The resulting H_4 has
+
+  N_4=32P^4, S_4=P S_2,
+  selected-prime coefficient valuations >=-3.             (6.2)
+
+Use L=P^2 in (4.1). The corresponding scalar coefficient forms obey
+
+  kappa <= P^3 d_(N,S)^4, v_p(kappa)<=3.                  (6.3)
+
+However the endpoint has grown by P, and the cleared theta scalar is
+IDENTICAL before the prefactor is included:
+
+  P^3 S_4=P^4 S_2
+     =7 product_(p in S)(1-p)(p^4-chi(p)).                 (6.4)
+
+Moreover D_p/p^4 has nonnegative coefficients summing to 1. The
+endpoint-normalized germs satisfy the exact convex-dilation identity
+
+  H_4/S_4 = product_(p in S)[D_p(V_p)/p^4] (H_2/S_2).     (6.5)
+
+Thus the one-layer sufficient denominator reduction is accompanied
+by a changed source and level, not free primitive cancellation.
+
+For an order-n determinant, selected coefficient denominators return.
+The sufficient quartic bound is
+
+  kappa <= [P^3 d_(2n,S)^4]^(n+1),                       (6.6)
+
+which can be much worse than (5.5). In the SAME n=8,p=11,h_1=32
+comparison, the quartic actual exponent is 21, versus 4 for the
+quadratic construction. This is why the degree-two repair remains
+the primary candidate in this packet.
+
+Full primitive scalar-pair checks show no automatic advantage either.
+At coefficient n=1, the component-0 primitive log absolute values are
+
+  selected primes      quadratic          quartic
+  {3}                    13.30396          11.41393
+  {5}                    14.43998          12.79279
+  {3,5}                  17.61473          17.66996
+
+All are large. These prescribed checks illustrate scale/content effects;
+they are not an asymptotic comparison or a parameter search.
+
+7. Normalization safeguards and concrete first-coefficient formulas
+===================================================================
+
+Multiplying a whole rational form by a nonzero rational changes kappa
+inversely but leaves the primitive pair unchanged up to sign. Likewise
+for endpoint determinants,
+
+  J_(h/a)(X)=a^(-(n+1))J_h(aX).                           (7.1)
+
+Consequently one must not count new primes from an endpoint-normalizing
+scalar separately while forgetting the cancelling determinant scalar.
+All finite values in this packet use full primitive normalization.
+
+The formal first coefficients make the chosen source height explicit.
+Let L=P for degree two and L=P^2 for degree four, and let e=chi(P).
+For both constructions the first Lambert coefficient is unchanged
+apart from the same G sign e. Direct expansion of (4.1) gives
+
+  a_(1,0)=(1+L)^4(3062+802L),
+  a_(1,1)=(1+L)^4(2036+596L),
+  b_(1,0)=(1+L)^5(6416+1192e),
+  b_(1,1)=(1+L)^5(4768+802e).                             (7.2)
+
+The factor (1+L)^4 is removed by primitive normalization. The remaining
+polynomials, endpoint scalar, and exact gcd must still be retained.
+In particular a coefficient-integrality theorem does not control
+integer coefficient height. Formulas (7.2) are checked independently
+against formal inversion and composition in the script.
+
+8. Checks, reading scope, and remaining gate
+===========================================
+
+Run from /home/research/Chat/Math/beta4:
+
+  .venv/bin/python collaboration/round-05/arithmetic/modular_depletion.py
+
+The script imports no older research code and writes only its adjacent
+JSON file. The prescribed prime sets are {3},{5},{3,5}, both degrees
+2 and 4, prefix degree20. It checks exact physical deletion by two
+independent coefficient constructions, the weighted Fricke reversal,
+both period moments, endpoint factors, formal integral coordinate
+inversion, integer prefactor components, complete clearing bounds,
+first-coefficient formulas, and selected actual primitive pairs.
+The separate n=8,p=11 determinant comparison gives exponents24,4,21.
+Numerical values use Arb at256 bits; no numerical test is promoted to
+an asymptotic or nonvanishing theorem.
+
+Read locally: modular-detour.txt, experiments/modular_eichler.py and
+experiments/modular_apery.py. The old period identity, eta/theta Fricke
+laws and their definitions are the explicitly inherited inputs. This
+packet does not re-audit their entire modular provenance. No external
+literature was needed for the new elementary coefficient/filter proofs.
+No old files were changed, no extra agents were spawned, and nothing
+was published.
+
+The main surviving object is the minimal quadratic coupled filter with
+a precise theta-only Fricke and cusp relation, selected-prime integral
+coefficients, and a once-per-prime determinant endpoint cost. The next
+gate is analytic: a first-sheet modular coordinate or a real cancellation
+mechanism strong enough to use that arithmetic. Neither the wrong-sheet
+fixed-point observation nor a natural-boundary absolute estimate should
+be confused with a theorem that all such primitive forms fail.

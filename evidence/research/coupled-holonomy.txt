@@ -1,0 +1,305 @@
+Coupled generating functions: an arithmetic-holonomy feasibility test
+27 October 2026. Local and unpublished.
+
+Update, 28 October 2026: block-arithmetic.txt proves the mixed recurrence
+by rational telescoping and thereby certifies the order-four recurrence
+left conjectural in Section 4 below. Positive moment representations for
+both normalized error sequences also prove the missing slit continuation
+for S. The new note sharpens the proved residue denominator bounds and
+gives exact powers-of-2 valuations. This closes those specific gaps in the
+original investigation; the failed arithmetic-holonomy budgets, missing
+functional-independence input, and absence of an irrationality proof remain.
+The original dated account below is retained as a record of that stage.
+
+Outcome
+-------
+The coupled-family approach avoids the extra coefficient denominator from
+eliminating Catalan's constant separately at each index. However, the direct
+functional cancellation tested here loses the small-error behavior. Standard
+slit-domain holonomy templates also have a large negative arithmetic margin,
+even if granted substantially stronger inputs than we have proved.
+
+This is a negative feasibility result for the constructions and templates
+specified below, not an impossibility theorem for arithmetic holonomy or
+beta(4). In particular, the necessary functional independence and global
+continuation for a successful holonomy application have NOT been proved.
+There is no irrationality proof or independent verification claim.
+
+1. The full parameter family
+----------------------------
+Write G=beta(2), B4=beta(4), and let n>=0 be even. Define
+
+ P_n(t)=(2t+n+1) product_{ell=-3n/2}^{n/2-1}(t-ell),
+ p_j=(2j+1)/4,  0<=j<=2n+1,
+ R_n(t)=P_n(t)/product_j(t+p_j)^2,
+ R_(n,e)(t)=P_n(t)/product_j((t+p_j)^2-e^2),
+ K_n=(2n+1)!/2^(2n+2).
+
+The numerator product is empty at n=0. Set S_n(t)=[e^2]R_(n,e)(t),
+so S_n=R_n sum_j(t+p_j)^(-2). These are the classical-parameter
+quarter-pole construction and deformation from hypergeometric-arithmetic.txt.
+
+There is an exact one-period identity before taking the e expansion. Put
+
+ T(e)=sum_{k>=0}[1/((k+1/4)^2-e^2)-1/((k+3/4)^2-e^2)]
+     =16G+256 B4 e^2+O(e^4).
+
+For rational functions a_n(e),b_n(e), even in e and regular near zero,
+
+ K_n sum_{t>=0}R_(n,e)(t)=a_n(e)T(e)/16+b_n(e).       (1)
+
+Proof. At x_j=-p_j, put
+
+ H_j(e)=P_n(x_j+e)/product_{h!=j}[(p_h-p_j)(p_h-p_j+2e)].
+
+The residues at x_j+e and x_j-e are respectively H_j(e)/(2e) and
+-H_j(-e)/(2e). Reflection gives H_(2n+1-j)(e)=-H_j(-e).
+The sum of all residues is zero. Hence h(e)=sum_{j even}H_j(e)
+is even, and sum_{j odd}H_j(e)=-h(e). Grouping the shifted quarter
+progressions gives (1), with a_n(e)=16 K_n h(e). All finite shifts
+contribute a rational function b_n(e). The original summand is even in e,
+so b_n(e) is even as well. This proves the identity for |e| sufficiently
+small; the convergent sums justify coefficient extraction there.
+
+Write a_n(e)=a_n+c_n e^2+O(e^4), b_n(e)=b_n+d_n e^2+O(e^4). Then
+
+ r_n:=K_n sum R_n = a_n G+b_n,
+ s_n:=K_n sum S_n =16 a_n B4+c_n G+d_n.                (2)
+
+In particular, (a_0,b_0,c_0,d_0)=(8,0,0,0), r_0=8G, s_0=128B4.
+The a_n and -b_n are eight times the classical Catalan recurrence
+coefficients at even n. The normalization is checked against that
+recurrence, not inferred from a numerical fit.
+
+2. What can be proved about arithmetic and convergence
+------------------------------------------------------
+Let L_N=lcm(1,...,N), and L_0=1. A uniform, deliberately conservative
+bound that follows directly from the residue products is
+
+ 16^n a_n is integral,
+ 16^(n+1) L_(6n+3)^2 b_n is integral,
+ 2*16^n L_(6n+3)^2 c_n is integral,
+ 96*16^n L_(6n+3)^4 d_n is integral.                   (3)
+
+Here is an elementary justification retaining all differentiation costs.
+Let alpha_j=16 K_n times the double-pole coefficient of R_n. With
+m=2n+1 and
+ Q_j=product_{ell=-3n/2}^{n/2-1}(-(2j+1)-4ell),
+
+ alpha_j=8/4^n * Q_j/(2n)!
+          * binom(m,j)[binom(m,j)-2 binom(m-1,j-1)].
+
+Take the binomial with lower index -1 to be zero. For every odd prime,
+Q_j has at least the valuation of (2n)!: it is a product of 2n consecutive
+terms in a progression with step 4. Its power-of-2 denominator is cleared
+by 16^n. Thus 16^n alpha_j is integral.
+
+The next three Taylor coefficients of 16 K_n H_j(e) are
+
+ alpha_j l_1,
+ alpha_j(l_1^2+l_2)/2,
+ alpha_j(l_1^3+3l_1 l_2+l_3)/6,
+
+where l_i are logarithmic derivatives at zero. Inspection of their product
+factors shows L_(6n+3)^i l_i is integral. The finite quarter-progression
+tails of order s are cleared by L_(6n+3)^s. Combining these statements,
+including the division by 16 in the normalized partial fractions, proves
+(3). No differentiated factorial cost is omitted.
+
+The substantially sharper inclusions with L_(2n)^2 for b_n,c_n and
+L_(2n)^4 for d_n, all with multiplier 16^n, hold in all 360 computed
+even indices n=0,...,718 (1440 exact checks). The a_n,b_n bounds are
+classical. The sharper c_n,d_n inclusions are FINITE OBSERVATIONS here,
+not uniform theorems.
+
+There is also a useful rigorous analytic bound. At positive even n, the
+integer zeros permit the sums defining r_n,s_n to start at t=n/2. Every
+remaining summand of R_n is positive, and
+
+ 0 < S_n(t)/R_n(t)
+   <= (2n+2)/(n/2+1/4)^2 < 8/n.
+
+Consequently 0<s_n<(8/n)r_n. The classical Catalan moment representation
+has peak epsilon=phi^(-5), phi=(1+sqrt(5))/2, and gives
+0<r_n<=8G epsilon^n at even n. Therefore the generating functions
+
+ R(z)=sum_{m>=0}r_(2m)z^m,
+ S(z)=sum_{m>=0}s_(2m)z^m
+
+are holomorphic for |z|<R_*:=phi^10=122.9918693812442... .
+The classical moment integral continues R to C minus [R_*,infinity).
+The corresponding slit continuation for S has NOT been proved here.
+
+3. Functional cancellation and its direct test
+----------------------------------------------
+Define A(z),B(z),C(z),D(z) from a_(2m),b_(2m),c_(2m),d_(2m). Then
+
+ R=GA+B,        S=16 B4 A+GC+D.
+
+In particular, the following cancellation is exact:
+
+ A S-C R=16 B4 A^2+A D-C B.                            (4)
+
+If B4 were rational, (4) would be a power series with rational coefficients.
+This is an appropriate candidate to test: it retains B4 and removes G,
+without introducing the large individual denominator of c_n/a_n.
+The common-denominator bound in (3) is stable under these Cauchy products:
+at series index m, 96*256^m L_(12m+3)^4 clears the rational part of (4).
+The experimentally stronger L_(4m)^4 also clears all available terms.
+
+But multiplying the small functions R,S by A,C does not preserve their
+large domain of analyticity. The actual coefficients demonstrate the
+problem in the tested range. Let F_m=[z^m](A S-C R). We obtain
+
+ m       F_m/a_(2m)      log of the primitive |A_int B4+B_int|
+ 16       79.83894                     400.3552
+ 64       78.73971                    1643.0901
+256       78.46260                    6718.9998.
+
+These are Arb enclosures of exact coefficient expressions, not upper
+bounds inferred from absolute summands. The primitive integer coefficient
+pairs were reduced by their complete gcd. All nine tested values exceed
+one. The raw coefficients have the scale of the large Catalan coefficients
+in this range, rather than the scale of r_n or s_n.
+
+This supports retention of the nearest singularity. It is NOT a proof of
+the radius of convergence of (4), an asymptotic theorem, or an obstruction
+to every possible differential or nonlinear cancellation.
+
+Rationality of B4 alone also does not make R or S rational-coefficient
+series: their coefficients still contain G. One cannot put the two small
+error functions directly into a rational arithmetic-holonomy theorem.
+
+4. Differential equations: proved facts versus discovered candidates
+-------------------------------------------------------------------
+The classical recurrence, after eliminating odd source indices, gives a
+proved order-two recurrence for a_(2m),b_(2m), with coefficient polynomials
+of degree 14. Its leading characteristic polynomial is
+
+  X^2-123X+1.
+
+The polynomial coefficients are in results/coupled_guess_a.json. Despite
+that discovery filename, this particular recurrence is now proved from
+the classical one by exact symbolic elimination. Its generating-function
+operator is explicitly
+
+ L= sum_{j=0}^2 z^(2-j) q_j(theta-j),  theta=z d/dz,
+
+where q_j are the stored recurrence polynomials. Its order in theta is 14,
+and L A=0, while L B is a polynomial of degree one. No minimal-order claim
+is made.
+
+For c_(2m) and d_(2m), modular discovery followed by rational reconstruction
+found the SAME order-four recurrence, with polynomial degree 52. It passes
+all exact checks through m=359, including 60 coefficient terms beyond the
+300-term discovery input. It also annihilates a_(2m),b_(2m) throughout the
+tested range. Its leading characteristic polynomial is
+
+  (X^2-123X+1)^2.
+
+An exact calculation in the shift-operator algebra shows that this
+candidate operator has the proved order-two operator as a RIGHT factor.
+That factorization is a polynomial identity; the assertion that the
+candidate annihilates c or d for every index remains UNPROVED. We did not
+promote a guessed recurrence to a theorem based on long finite agreement.
+
+If certified, it would yield an order-52 generating-function equation
+with explicit polynomial boundary terms by the same recurrence-to-ODE
+conversion. These data suggest an extension of the old system with the
+same exponential scales. They do not establish independence over Q(z).
+Constant-linear independence of finitely sampled sequences, recurrence
+order, and Q(z)-linear independence of functions are different assertions.
+
+5. Arithmetic-holonomy feasibility bounds
+----------------------------------------
+The relevant precise input is Calegari--Dimitrov--Tang [CDT], Theorem 2.5.1:
+for Q(z)-independent holonomic rational series and a shared meromorphic
+pullback under phi, one needs a positive denominator
+
+ log|phi'(0)|-tau,
+ tau=(1/M^2) sum_{i=1}^M (2i-1)sigma_i
+
+for the ordered denominator profiles considered there. A positive value
+is only an entry condition; the theorem's numerator and dimension bound
+must still be checked. Functional independence and common continuation
+are hypotheses, not consequences of having several displayed series.
+
+Use the experimentally favorable denominator types, absorbing 256^m by
+z ->256z. The error disk radius is then
+
+ R_*/256=0.4804369897704852... .
+
+Even grant a shared slit domain C minus [R_*/256,infinity), which is more
+than has been proved for the deformation and the rational candidate (4).
+The standard conformal slit map phi(w)=4(R_*/256)w/(1+w)^2 has
+
+ log|phi'(0)|=0.6532351672363626... .
+
+The following direct templates all fail the entry condition:
+
+ denominator profiles       tau       log|phi'(0)|-tau
+ [16]                        16           -15.34676
+ [0,16]                      12           -11.34676
+ [0,8,8,16]                  11           -10.34676.
+
+The first two model a rational beta(4) candidate, with or without the
+constant function. The last grants all four favorable arithmetic types
+and a shared domain. These are diagnostic templates, not assertions that
+their independence or continuation hypotheses hold. Proved bound (3)
+would make their arithmetic cost larger still.
+
+This computation does NOT optimize all uniformizations. Maps permitting
+continuation around singularities, arithmetic changes of variable, other
+coefficient combinations, and other denominator profiles require separate
+arguments. In particular it is not a no-go theorem for arithmetic holonomy.
+The needed new global continuation or divisibility mechanism is still absent.
+
+6. Assessment and reproducibility
+----------------------------------
+The arithmetic improvement from keeping the coupled system is real: it
+removes the division by a single large coefficient a_n. The direct
+functional projection sacrifices the needed analytic advantage, however,
+and the stated favorable slit-map templates remain far from the holonomy
+threshold. Thus this pass does not justify a large investment in proving
+the guessed order-52 equation as a route to beta(4) irrationality.
+
+The precise outcomes are: the parameter identity (1); uniform bounds (3);
+the positivity and error-disk bounds; an exact functional cancellation;
+a proved base differential equation; and a carefully labeled conjectural
+larger equation with finite arithmetic/interval diagnostics. Functional
+independence and a successful holonomy bound remain unestablished.
+
+Reproduce using beta4/.venv/bin/python:
+  experiments/coupled_coefficients.py --terms 360
+  experiments/coupled_guess.py --field a
+  experiments/coupled_guess.py --field c --train 300 --max-order 10 --max-degree 65
+  experiments/coupled_guess.py --field d --train 300 --max-order 10 --max-degree 65
+  experiments/coupled_diagnostics.py
+Use system python3 for experiments/coupled_symbolic_check.py.
+Checks include 720 classical coefficient comparisons, 1440 finite
+denominator inclusions, two old deformation fixtures, two parameter-residue
+identities, 242 elementary divisibility checks, exact base recurrence
+elimination and exact right factorization. This is same-agent checking.
+
+Sources
+--------
+[CDT] F. Calegari, V. Dimitrov, Y. Tang, The linear independence of 1,
+zeta(2), and L(2,chi_-3), arXiv:2408.15403v2, Theorem 2.5.1 and
+Remark 11.1.17. The latter already explains why the standard Catalan
+approximants do not meet their method's requirements.
+https://arxiv.org/abs/2408.15403v2
+
+[CDT2] Same authors, Arithmetic holonomy bounds and effective Diophantine
+approximation, arXiv:2510.04156, Section 2.1, for the explicit workflow
+from a rationality hypothesis to rational overconvergent functions.
+https://arxiv.org/abs/2510.04156
+
+[Z] W. Zudilin, An Apery-like difference equation for Catalan's constant,
+arXiv:math/0201024v3, recurrence (2)--(4). For the integral normalization,
+see the n=0 correction already recorded in the literature review.
+https://arxiv.org/abs/math/0201024v3
+
+[KZ] C. Krattenthaler, W. Zudilin, Hypergeometry inspired by irrationality
+questions, arXiv:1802.08856v2, Section 2. Their quarter-pole construction
+motivates the family; the pole-splitting experiment is not their claim.
+https://arxiv.org/abs/1802.08856v2

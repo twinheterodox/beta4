@@ -1,0 +1,144 @@
+Adversarial reading of construction/findings.txt, sections 3-4
+28 October 2026. Local, unpublished.
+
+Scope: a separate agent's mathematical reading of the displayed proofs,
+not independent formal verification. I read the kernel/comparison setup
+to identify dependencies, then checked the arithmetic and branch arguments
+in sections 3-4 directly. I did not rerun the construction agent's large
+finite checks. No files outside fresh/ were changed.
+
+Conclusion: I found no error in the stated specified-family obstruction
+or in the nonreal logarithmic-branch obstruction. Their restrictions on
+scope are essential and are stated correctly. Details of the checks and
+potential failure points follow.
+
+1. Exact coefficient valuation (3.1)-(3.3)
+
+For 2M0<p<4M0 and p>=5, every a_i, a_i-a_j, and a_i+a_j is a p-unit.
+The differences are nonzero because the principal nodes are distinct.
+All odd tail denominators are <4M0, whereas 3p>6M0; hence the only
+multiple of p in a relevant tail is p itself. The S_4 term therefore
+has residue chi_4(p), while all S_3 contributions disappear after
+multiplication by p^4 and reduction modulo p. This validates the diagonal
+rank-r_p reduction, including its sign.
+
+For the coefficient of X^(n-r_p), multiplying each r_p-minor by p^(4r_p)
+indeed leaves exactly one nonzero reduction: the minor selecting all
+high nodes. This does not rely on a generic noncancellation hypothesis.
+The case r_p=0 is harmless: the coefficient is the monic leading term.
+
+Monicity of Q is what prevents negative prime valuations in its primitive
+scaling factor H: H itself is an integer. For the common-zero principal
+family, the leading coefficient is 2, and the unique surviving minor's
+complement includes the zero index. Its additional factor is exactly 2,
+a unit for these primes. Thus the only possible negative contribution
+to log H is the stated -log 2. There is no missing normalization loss
+at other primes in this lower bound.
+
+2. Asymptotic lower bound and uniformity in the offset
+
+The unshifted weighted-prime integral is
+
+  4 integral_(2n)^(4n) (n-x/4) dx =2n^2.
+
+Floors contribute O(theta(4n))=O(n), not a hidden n^2 term. Reversing
+the sum for general shifted nodes gives, for each high node a,
+
+  4[theta(4a)-theta(2M0)] =16(a-M0/2)+o(M0),
+
+uniformly over the node interval. For m/n tending to a finite rho this
+sums to the stated A(rho)n^2+o(n^2), with
+
+  A(rho)=2(1+rho)^2 for rho<=1, and A(rho)=8rho for rho>=1.
+
+I checked the Cauchy-product exponent separately: the numerator contributes
+n^2 log n-(3/2)n^2+o(n^2), and the denominator contributes
+n^2 log n+n^2 integral_[0,1]^2 log(2rho+x+y) dxdy+o(n^2).
+This yields exactly the displayed D(rho). Its derivative at zero is
+4 log 2, and is decreasing. Consequently A-D has its minimum at zero,
+equal to 2-2 log 2>0.
+
+When m/n tends to infinity the same prime-number-theorem error is
+o(nM0)=o(nm). The exact reversed main term is 8mn+O(n). The elementary
+Cauchy-product lower bound is -O(n^2[1+log(1+m/n)]), which is indeed
+o(mn) in this regime. Thus the proof handles arbitrarily large offsets,
+including superexponential ones, rather than assuming m=O(n).
+
+The subsequence argument giving the universal liminf is valid: every
+sequence m_n/n has a subsequence converging in the compactified interval
+[0,infinity], and each possible limit is covered. Rational invertible
+changes of basis multiply the full determinant by a rational scalar, so
+primitive content removes the change exactly. This observation does not
+cover deleting rows or choosing a different subspace, as the note says.
+
+3. Local singular coefficient in section 4
+
+At x0=i*pi/2, with epsilon=x-x0,
+
+  sech(x)=-i/epsilon+O(epsilon),
+  sech'(x)=i/epsilon^2+O(1),
+  x^2 sech'(x)/8
+       =-i*pi^2/(32 epsilon^2)-pi/(8 epsilon)+O(1).
+
+Three local integrations therefore give
+
+  h(x)=i*pi^2/32 epsilon log epsilon
+       -pi/16 epsilon^2 log epsilon + analytic.
+
+In particular the note's first-order logarithmic coefficient and its
+sign are correct. Analytic continuation can add a quadratic polynomial
+to a branch of h but cannot alter this local logarithmic coefficient.
+
+For a root z0^k=-q^2 with k odd, changing the sign of a square root
+changes t0^k's sign, so one can choose t0^k=iq. The globally holomorphic
+principal v(t)=2atanh(t^k) on |t|<1 then takes v(t0)=i*pi/4. The
+derivative (2v)'(t0)=4k t0^(k-1)/(1+q^2) is nonzero.
+
+The strip exclusions are complete, not just numerical separation:
+
+  - u has imaginary part in (-pi/2,pi/2), so h(u) has no pole argument.
+  - u+v has imaginary part in (-pi/4,3pi/4), so the only possible sech
+    pole is i*pi/2, forcing u=i*pi/4 and t0=iq. Its kth power has the
+    wrong modulus q^k!=q.
+  - u+2v has imaginary part in (0,pi), so the only possible pole is
+    i*pi/2, forcing u=0 and t0=0, also impossible.
+
+Thus only the -2h(2v) term is singular at the selected point and its
+first-order logarithm cannot cancel. The map z=t^2 is locally invertible
+there. Exactly one of the k roots z0 is real (negative), leaving k-1
+nonreal branch points inside the unit disk.
+
+4. Algebraic modifications and the moment-transform exclusion
+
+Locally the singular part has analytic coefficient A(z) with a nonzero
+first-order zero multiplying log(z-z0). An algebraic prefactor may have
+a Puiseux zero or pole there, but after a finite number of loops its
+branch returns. The additive monodromy of the product is then a nonzero
+multiple of a(z)A(z). Algebraic addition cannot cancel it. This proves
+the stated exclusion for every nonzero algebraic prefactor, including
+ones vanishing at every selected branch point.
+
+A finite signed or complex measure on compact real support gives a
+transform integral dmu(s)/(1-zs) holomorphic at all nonreal z. Its
+continuation from zero through the nonreal domain is single-valued and
+regular at the exhibited nonreal points. Hence the branch obstruction
+does rule out that class of moment representations.
+
+The field in the note is explicitly C(z), so treating the constant
+6 beta(4) as an algebraic constant when absorbing its multiple into b
+is legitimate; no algebraicity of beta(4) over Q is being assumed.
+
+The exclusion does not extend automatically to nonlinear changes of
+the independent variable, nonalgebraic logarithm-cancelling operations,
+noncompact/nonreal support, or matrix-valued representations in which
+this scalar germ is absent. The note already preserves these limits.
+
+5. Review limitations
+
+The asymptotic arithmetic conclusion depends on the positive lower
+determinant comparison in section 2, rather than on the upper bound
+alone. I checked its use and the rank-one regularized Cauchy identity
+while reading the setup, but this review's target was sections 3-4.
+The finite computation files are corroboration, not the proofs of
+uniformity or logarithmic monodromy. Agreement between agents does not
+constitute independent mathematical verification.

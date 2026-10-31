@@ -1,0 +1,233 @@
+ROUND09: EXPLICIT ORBIFOLD GAMMA DATA AND THE ARITHMETIC GATE
+29 October 2026. Local and unpublished. No irrationality proof.
+
+Assessment
+----------
+An explicit compact toric orbifold supplies quarter-Gamma connection data,
+an integral K-lattice, a scalar differential operator, and integer regularized
+period coefficients. The obvious prescribed rational extraction of beta4
+nevertheless fails: its actual primitive integer errors grow exponentially.
+This is a theorem about the one sequence below, not a theorem against
+orbifold quantum cohomology, Gamma classes or geometric irrationality methods.
+
+The additional geometric ingredient was the concrete orbifold and its
+integral structure. The extraction itself reduces to the old finite-Gamma
+arithmetic, including all nonlinear normalization costs. No novelty claim.
+The separate deformation.txt tests a nonconstant toric deformation instead
+of extending this failed sequence into a larger no-go project.
+
+1. Space, twisted sectors, differential operator and lattice
+----------------------------------------------------------
+Use the weighted projective stack
+
+ X=P(1,3,4,4,4,4,4),   dim_C X=6,   h=c1(O_X(1)).
+
+Write w=(1,3,4,4,4,4,4), S=sum w=24. The inertia components with stabilizer
+elements exp(2pi i/4) and exp(6pi i/4) are P(4,4,4,4,4), of dimension4.
+Their rational ordinary cohomology has h^5=0. With the convention that the
+stabilizer acts on O(w) by exp(2pi i wf), the Euler sequence and Iritani's
+definition (0903.1463v3, formula23) give
+
+ Gamma_X|_(f=1/4) = Gamma(3/4+h) Gamma(1/4+3h) Gamma(1+4h)^5,
+ Gamma_X|_(f=3/4) = Gamma(1/4+h) Gamma(3/4+3h) Gamma(1+4h)^5.
+
+The labels exchange if the inverse-sector convention is used; this is why
+the later scalar Frobenius conventions are given explicitly. The constant
+factor on each sector is Gamma(1/4)Gamma(3/4)=pi sqrt2, so this example avoids
+an unknown individual Gamma(1/4) normalization. It does not avoid the Tate
+and grading factors in Iritani's actual lattice framing.
+
+The algebraic K-group has the concrete presentation
+
+ K_0(X)=Z[L,L^(-1)]/((1-L)(1-L^3)(1-L^4)^5),
+
+where replacing L=O(1) by O(-1) gives the same presentation up to a unit.
+This follows from equivariant localization for the complement of the origin
+in the weight representation of G_m. The relation has unit constant and
+leading coefficients, so 1,L,...,L^23 give a free integral basis. Its Euler
+pairing is unimodular: the line-bundle exceptional basis has upper-triangular
+Euler matrix with diagonal1; the needed negative-degree vanishings are the
+weighted projective cohomology vanishings for degrees between -23 and -1.
+Iritani's Gamma framing maps this lattice to flat sections. Sector projection
+alone is not an integral operation and is not being used to claim integral
+Taylor coefficients.
+
+At z=1 and q=Q exp(t), Coates--Corti--Lee--Tseng Corollary1.8 gives
+
+ [ P(D)-q ] J=0,   D=q d/dq,
+ P(D)=D (3D)(3D-1)(3D-2) [(4D)(4D-1)(4D-2)(4D-3)]^5.       (1)
+
+This has order24. Its exponents at q=0 are 0 with multiplicity7, 1/3 and
+2/3 once each, and 1/4,1/2,3/4 with multiplicity5 each. Iritani0903,
+Theorems4.11 and4.14, identify the K-lattice with the toric mirror thimble
+lattice under their hypotheses. The weighted-projective mirror theorem is
+proved in the primary source above; no general Gamma conjecture is assumed.
+
+2. Regularization and the dimension that is lost
+-----------------------------------------------
+The regularized holomorphic period has integer coefficients
+
+ c_n=(24n)!/[n!(3n)!(4n)!^5].                              (2)
+
+It is also CT(W_0^(24n)), where
+
+ W_0=y+x1+...+x5+1/[y^3 (x1...x5)^4].                     (3)
+
+This independently proves integrality by the multinomial theorem. The
+nonzero constant terms of W_0^N occur only at N divisible by24.
+
+Put M=24^24/(3^3 4^20), z=Mq. The hypergeometric numerator parameters are
+ initially k/24, 1<=k<=24. The denominator parameters are k/w_i,
+1<=k<=w_i, with multiplicities. Cancel the six common parameters
+1/4,1/3,1/2,2/3,3/4,1. The irreducible scalar operator becomes
+
+ L=D^6(D-1/4)^4(D-1/2)^4(D-3/4)^4
+       -z product_(1<=k<=23, k notin {6,8,12,16,18})(D+k/24). (4)
+
+It has order18 and only the singular points0,1,infinity. Its conifold
+exponent at1 is2; possible resonance does not add a new finite singularity.
+Its quarter exponents now have multiplicity4, not5. On the fourfold cover
+z=u^4, the finite singularity lifts to all four fourth roots of unity.
+Thus a single canceled dominant connection term does not by itself create
+an exponentially larger disk of convergence for all the required germs.
+
+The geometric reason for the missing degree is explicit. X is Gorenstein
+(every weight divides24), and a general anticanonical hypersurface Y has
+dimension5. Its quarter-sector fixed locus is a degree6 hypersurface in
+P^4, of dimension3, so h^4 vanishes there. The fourth quarter-Frobenius
+coefficient belongs to an extension, for example (D-rho)L, not the
+homogeneous rank18 local system. Iritani1101 Theorem6.9 on the ambient
+integral VHS does not automatically give the arithmetic of this extension.
+
+The initially tested P(1,4^5) has rank21 and integer regularized coefficients
+(21n)!/[n!(4n)!^5], but is not Gorenstein: every degree21 polynomial is
+divisible by the weight1 coordinate. Its anticanonical hypersurface is
+reducible. It is therefore not an instance of the stated Batyrev theorem.
+The change to X above fixes this concrete geometric defect.
+
+3. Exact connection extraction, including lower products
+--------------------------------------------------------
+Define the normalized coefficient function, for rational x near a quarter,
+
+ b_n(x)=Gamma(1+24(n+x))/Gamma(1+24x)
+        product_i Gamma(1+w_i x)/Gamma(1+w_i(n+x)).           (5)
+
+For each fixed n it is a rational function of x with rational coefficients.
+Multiplication formulas reduce the reciprocal hypergeometric Gamma quotient
+in Bloch--Vlasenko Proposition26 to a nonzero constant times
+
+ M^x F(x),    F(x)=Gamma(1+x)Gamma(1+3x)Gamma(1+4x)^5
+                         /Gamma(1+24x).                    (6)
+
+Equivalently, uniformly near rho,
+ b_n(rho+s)/b_n(rho) -> M^s F(rho+s)/F(rho).
+This also follows directly from Stirling and does not require the general
+connection theorem. At rho=1/4 and3/4, F(rho) is a rational multiple of
+pi sqrt2. The factor M^s contributes only to the first logarithmic
+coefficient and hence disappears from the fourth cumulant below.
+
+Set
+
+ C(x)=1/4 [ sum_i w_i^4 zeta(4,1+w_i x)
+                         -24^4 zeta(4,1+24x) ].             (7)
+
+Then C(x)=[s^4]log F(x+s). By the Hurwitz shifts and the difference between
+the two quarter values,
+
+ C(1/4)-C(3/4)=C0-5120 theta,
+ C0=1357014445571814521897312639/271692096890942768040000,
+ theta=beta(4).                                             (8)
+
+This is an exact identity. The coefficient -5120 is
+(1-3^4)*256/4. All ordinary zeta4 terms cancel between the two sectors.
+The rational shifts giving C0 are reproduced without numerical fitting.
+
+Taking a logarithm is essential. If a normalized series is
+1+a1 s+a2 s^2+a3 s^3+a4 s^4+..., its fourth logarithmic coefficient is
+a4-a1 a3-a2^2/2+a1^2 a2-a1^4/4. Thus the G^2 and other decomposable
+contributions have been removed explicitly, rather than omitted. This is
+nonlinear extraction from connection data. An integral lattice for the
+original linear differential system alone gives no denominator bound for it.
+
+4. Prescribed rational sequence and actual primitive obstruction
+----------------------------------------------------------------
+Let S_m(a)=sum_(j=0)^(m-1)(a+j)^(-4), and set
+
+ T_n(rho)=1/4 [sum_i w_i^4 S_(w_i n)(1+w_i rho)
+                         -24^4 S_(24n)(1+24rho)],
+ r_n=[C0-T_n(1/4)+T_n(3/4)]/5120.                           (9)
+
+T_n is exactly [s^4]log(b_n(rho+s)/b_n(rho)). Thus r_n is defined a priori
+and rational. Write r_n=P_n/Q_n in lowest terms, Q_n>0. All clearing and
+nonlinear normalization costs are included in this actual primitive pair.
+
+The signed error has the exact identity
+
+ r_n-theta=[C(n+1/4)-C(n+3/4)]/5120
+            ~ -3/(10240 n^5).                              (10)
+
+It is strictly negative for every n>=0. To prove the sign, substitute the
+Hurwitz integral into (7), scaling the integration variable separately in
+each term:
+
+ C(x)=1/24 int_0^infty u^3 exp(-xu)
+       [sum_i 1/(exp(u/w_i)-1)-1/(exp(u/24)-1)] du.
+
+For fixed u>0, h(a)/a=1/[a(exp(u/a)-1)] is strictly increasing in a>0.
+Since every w_i<24 and sum_i w_i=24, the bracket is strictly negative.
+Differentiation shows C'(x)>0, proving (10)'s sign. The usual Hurwitz
+asymptotic gives C(x)=-3/(4x^4)+O(x^(-5)); differentiating the convergent
+Laplace expansion gives the stated leading difference. This is a proof,
+not merely the numerical error pattern.
+
+There is also a short actual denominator proof. Let p>18 be prime and
+
+                  6n+5 < p <= 12n+3.
+
+Exclude p if it divides any of 24n+7,...,24n+18. Then v_p(Q_n)=4.
+Indeed, in the w=3 part of (9), exactly one denominator 4j+7 or4j+13
+equals p; it occurs with coefficient +/-81/80 after all normalizations.
+No other odd multiple of p occurs, and p exceeds every w=1 denominator.
+The w=4 difference telescopes to denominators4n+2,4n+3 and fixed terms,
+all smaller than p. The w=24 difference telescopes to the twelve excluded
+endpoints and fixed terms. C0's denominator has no primes above18. Thus
+the unique p^(-4) contribution cannot cancel. Each endpoint has at most one
+prime in this interval for n sufficiently large, so there are at most12
+exceptions. The prime number theorem now gives
+
+ log Q_n >= 4[sum_(6n+5<p<=12n+3)log p -12log(24n+18)]
+          =24n+o(n).
+
+Together with (10), this proves |Q_n theta-P_n| -> infinity. This is not
+an expensive sufficient clearing bound: it detects primes in the actual
+reduced denominator. It closes only the explicit extraction (9).
+
+For scale, the small exact checks at n=1,2,4,8,16 give denominator bit
+lengths151,208,383,584,1213. Their log primitive errors are approximately
+93.7,131.0,249.2,385.7,818.1. No large scan was undertaken.
+
+5. What remains missing
+-----------------------
+We have a geometric realization and exact beta4 extraction, but no useful
+primitive approximants. The pure beta4 extraction uses an extended system
+and a fourth cumulant; neither integral K-monodromy nor the homogeneous
+Calabi-Yau lattice supplies its arithmetic. The tested coefficient limit
+has only polynomial decay and an actual exponential denominator obstruction.
+
+A different geometric mechanism would need a calibrated beta4 extension
+and an integral sequence with favorable error after primitive reduction.
+The deformation in deformation.txt genuinely changes the finite critical
+values and has an exact integral coefficient formula; its beta4 calibration
+is still a missing theorem, before any claim about its arithmetic margin.
+
+Evidence and reproduction
+-------------------------
+python3 collaboration/round-09/orbifold/check_models.py
+
+check_models.py uses Fraction exact arithmetic, independent multinomial and
+binomial coefficient formulas, symbolic parameter cancellation and 90-digit
+mpmath diagnostics. checks.json preserves the actual primitive pairs and
+prime-layer checks. The identities and sign/asymptotic/prime arguments above
+are mathematical derivations. The numerical checks are not certified Arb
+intervals. There is no independent agent audit or formal verification here.
+Source reading scope and version information are in reading-status.json.

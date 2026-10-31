@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "scope": "Writing-packet consistency, references and byte hashes only; not mathematical verification.",
+  "claims": 57,
+  "evidence_files": 120,
+  "evidence_bytes": 1683173,
+  "method_groups": 12,
+  "research_rounds": 18,
+  "paper_sources": 8,
+  "original_archive_compared": true,
+  "local_pdfs_checked": 8,
+  "classification_counts": {
+    "positive_construction": 5,
+    "analytic_theorem": 2,
+    "primitive_value_obstruction": 12,
+    "arithmetic_theorem": 6,
+    "standard_fact": 1,
+    "structural_theorem": 1,
+    "finite_evidence": 2,
+    "estimate_limitation": 5,
+    "partial_construction": 11,
+    "structural_obstruction": 7,
+    "attributed_identity": 3,
+    "equivalence": 2
+  }
+}

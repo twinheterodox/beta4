@@ -1,0 +1,238 @@
+ROUND10: AN EXACT INTEGER-VALUED NORM AND A PROPER-SOURCE GATE
+29 October 2026. Local and unpublished. No irrationality proof.
+
+Outcome
+
+The polynomial Euler functional has a sharp, elementary norm on the
+integer-valued polynomial space. This is a different norm from the
+Gauss norm bounded in round08. Its first three odd-prime denominator
+layers start at degrees p+2, 2p+1, 3p, for p>=5.
+
+Finite congruence conditions on a complete Gram source space change
+only a rational scalar, so that proposed remedy is retired. A different
+Fermat multiplier does change the proper source space. Its two prescribed
+tests have larger actual primitive values than matched old controls,
+and no local determinant improvement at the prime it was designed for.
+This finite gate does not prove an asymptotic impossibility theorem.
+
+1. Exact norm on integer-valued polynomials
+
+Let E(x^d)=E_d(0), where sum E_d(0) z^d/d!=2/(exp(z)+1), and
+
+  tau(P)=-(1/12)E(P''').
+
+Fix p>=5. Equip Q_p[x] of degree at most n with
+||P||_Int=sup_(x in Z_p)|P(x)|_p. For n>=3 define
+
+  m_p(3q+r)=(3-r)p^q+r p^(q+1),  q>=0, r=0,1,2,
+  H_p(n)=max{h>=0:m_p(h)<=n}.                         (1)
+
+THEOREM. The operator norm of tau on that space is exactly p^H_p(n).
+For n<3 it is zero. More explicitly, put a_j=tau(binomial(x,j)). Then
+
+  min_(0<=j<=n) v_p(a_j)=-H_p(n),                     (2)
+  p^h a_(m_p(h)) == -c_h/12 mod p,
+  c_h=1 if h=0 mod3, and c_h=3 otherwise.             (3)
+
+In particular, for every p>=5:
+
+  v_p(a_(p+2))=-1,  v_p(a_(2p+1))=-2,
+  v_p(a_(3p))=-3,  p a_(p+2)==-1/4 mod p.            (4)
+
+Proof. Every polynomial P of degree at most n has a unique expansion
+P=sum_(j=0)^n b_j binomial(x,j), with b_j=Delta^j P(0). Thus if P is
+integer-valued on Z_p, every b_j is in Z_p. Conversely, binomial(x,j)
+is integer-valued there: its integer values at nonnegative integers
+extend by continuity to their dense subset closure Z_p. Consequently
+||P||_Int=max_j |b_j|_p. This proves the needed basis assertion directly.
+
+The formal generating function is
+
+  sum_(j>=0) a_j z^j
+    =-log(1+z)^3 / [12(1+z/2)].                     (5)
+
+Indeed sum binomial(x,j)z^j=(1+z)^x, while
+E((1+z)^x)=2/(2+z); three x derivatives give log(1+z)^3.
+
+A summand of the coefficient of z^j on the right of (5) has three
+positive log indices u,v,w with u+v+w<=j. Its possible p-denominator
+exponent is v_p(u)+v_p(v)+v_p(w). If these valuations are a,b,c,
+then u+v+w>=p^a+p^b+p^c. Among triples of nonnegative exponents with
+sum h, the minimum of p^a+p^b+p^c is m_p(h). To prove this, whenever
+a>=b+2 replace (a,b) by (a-1,b+1); the sum of exponents is unchanged
+and the sum of powers strictly decreases. Thus every minimizing triple
+has exponents differing by at most one, giving exactly (1).
+
+It follows that v_p(a_j)>=-H_p(j). At j=m_p(h), a contribution with
+denominator exponent h must use u,v,w equal to the three minimizing
+powers themselves, and the geometric factor in (5) must use its
+constant term. There are c_h such ordered triples. Every other summand
+has valuation at least -h+1. Each minimizing index is odd, hence their
+sum is odd; the sign and factor -1/12 give (3). Since c_h is a p-unit
+for p>=5, this proves the sharp lower bound and then (2). The binomial
+polynomial at that degree has norm one, so the operator norm is attained.
+QED.
+
+An exact universal denominator consequence: on the globally
+integer-valued polynomial lattice of degree <=n, the part of the
+denominator of tau supported at primes >=5 is cleared optimally by
+
+  M_n=product_(p>=5) p^H_p(n).                       (6)
+
+Only primes <=n-2 appear. The first three exponent layers have cutoffs
+n-2, (n-1)/2, n/3; further layers at a prime p begin at p^2+2p.
+No prime-number theorem or asymptotic estimate is needed here. The
+statement concerns the polynomial part alone, not rational-source pole
+values or final primitive coefficients.
+
+There is no conflict with round08. That theorem bounds tau by one in
+the Gauss COEFFICIENT norm on Q_p<x>; an integer-valued binomial
+polynomial can have nonintegral monomial coefficients. The norms cannot
+be interchanged. The exceptional primes 2 and3 are not included in
+the new sharp statement.
+
+2. Scope of the full-rank congruence gate
+
+Fix rational functions f_1,...,f_h and a bilinear functional
+B_X(f,g)=mu_X(fg/W), with rational W and values in Q[X]. Let M_X
+be its Gram matrix. Replacing the source lattice by any full-rank
+rational lattice with basis matrix T gives
+
+  M'_X=T^t M_X T,  det M'_X=(det T)^2 det M_X.        (7)
+
+Hence its positive primitive integer polynomial is unchanged. A finite
+system of homogeneous congruences on the coefficients contains a
+nonzero integer multiple of the original Z^h lattice; it therefore has
+full rational rank and is covered by (7).
+
+This covers only the complete h-dimensional determinant. Selecting
+fewer particular vectors, taking a proper subspace, changing poles,
+or choosing a different multiplier is outside the statement. In
+particular it is not a no-go theorem for useful source lifts from a
+lattice. The old block image-index warning remains applicable there.
+
+The fixed checks use h=3, K=3,4 and W=D_K(t),
+D_K=product_(j=0)^(K-1)(t+(j+1/2)^2). They compare monomials, the
+integer-valued central basis D_i(t)/(2i)!, and the complete solution
+lattice P(1)=P'(1)=0 mod5, P(2)=0 mod7. The latter has the basis
+
+  -10+25t-10t^2,   10t-5t^2,   7-14t+7t^2.
+
+Its determinant has absolute value175=5^2*7, equal to the constraint
+index, so it is the full solution lattice. The raw determinant changes
+by 1/2304 or30625 respectively; the exact primitive polynomial is
+identical in each comparison. This part requires no larger experiment.
+
+3. A proper space from Fermat divisibility
+
+For an odd prime p, set e=(p-1)/2, epsilon=(-1)^e and
+
+  F_p(t)=t(t^e-epsilon)^2.                            (8)
+
+Then, identically,
+
+  F_p(-x^2)=-x^2(x^(p-1)-1)^2.                      (9)
+
+If x is a p-adic unit, Fermat's residue identity makes the square in
+(9) divisible by p^2. If p divides x, the x^2 factor does so. Hence
+F_p(-x^2)/p^2 is integer-valued on Z_p. The polynomial degree is p.
+For p=1 mod4, F_p has a positive root at t=1, unlike D_p. This is a
+specific new numerator shape within the archived csch functional.
+
+There is no improved degree-for-integrality efficiency here. For every
+integer-valued polynomial of degree2p in x, its leading coefficient
+times (2p)! is in Z_p, by the binomial-basis proof above. Since
+v_p((2p)!)=2, the leading coefficient of F_p(-x^2)/p^2 attains the
+best possible p-denominator at that degree. But so does the old
+D_p(-x^2)/(2p)!. The changed root placement is the only potential
+advantage tested, not a stronger leading-coefficient arithmetic bound.
+
+The prescribed gate uses just p=5,7 and
+
+  K=2p+3,  V_p=(F_p/p^2)*span_Q{1,t},
+  Delta_p(X)=det(mu_X(f_i f_j/D_K))_(0<=i,j<2).       (10)
+
+The matched old control is V_p=(D_p/(2p)!)*span_Q{1,t}, with the
+same K and matrix size. These are proper subspaces of the larger
+degree-p+1 polynomial space, not alternative full bases. Their
+primitive polynomials are different, checked exactly.
+
+Here mu_X is precisely the archived csch functional, with
+
+ mu_X(t^j)=(-1)^j tau(x^(2j+4)),
+ mu_X(1/(t+(j+1/2)^2))
+   =2(2j+1)^3(-1)^j(X-T_4(j))-1/(2j+1).
+
+At theta=beta(4) it integrates against
+w(y)=-(y^4/6)(d/dy)^3 csch(pi y)>0 on y>0. Both Gram matrices
+are positive definite: a nonzero polynomial in V_p has only finitely
+many real zeros, while D_K(y^2)>0 and w(y)>0. Thus Delta_p(theta)>0,
+and the positively normalized primitive Q_p also has Q_p(theta)>0.
+This proves actual nonvanishing without a numerical independence claim.
+
+Exact polynomial division plus residues gives Q_p. Arb gives:
+
+ p  K   multiplier   degree  maximum coefficient bits  log Q_p(theta)
+ 5 13   Fermat         2             331                152.581582
+ 5 13   central        2             267                118.451422
+ 7 17   Fermat         2             492                240.352689
+ 7 17   central        2             400                192.882663
+
+Every displayed value is positive and greater than one. The JSON files
+retain full exact integer coefficients and outward-rounded values.
+For BOTH normalized designs and BOTH p, the minimum p-valuation of the
+raw determinant's coefficients is -16. Thus the uniform pointwise p^2
+divisibility of F_p(-x^2) gives no determinant advantage at its target
+prime in this fixture. It cannot be counted as an extra primitive gain.
+Removing either displayed source normalization leaves the primitive
+polynomial unchanged, separately checked.
+
+4. What a successful extension would have to prove
+
+For any prescribed family of such positive determinants, let Q_n be
+the actual primitive integer polynomial, d_n its degree. If theta=u/v,
+then v^d_n Q_n(theta) is a positive integer. Therefore
+
+  log Q_n(theta)/d_n -> -infinity                    (11)
+
+would contradict rationality. At the fixed matrix size2 used here,
+Q_n(theta)->0 would suffice. An isolated value below1 would not suffice.
+
+A possible genuinely arithmetic-first extension would construct a
+single small-degree multiplier that realizes useful local divisibility
+at many primes while maintaining a favorable positive integral. Merely
+multiplying (8) over primes pays the sum of their degrees; a CRT lift
+may instead pay a large coefficient height. No bound overcoming either
+cost was found. The actual primitive balance, not a chosen sufficient
+clearing denominator, is the missing estimate. The two finite failures
+give no asymptotic no-go theorem, but also no concrete reason for a scan.
+
+The round08 affine parameter Y=chi(p)p^4 X+C_p remains a valid local
+tool; its p-adic C_p is never identified with a real rational theta.
+No new irrationality mechanism is established by this packet.
+
+5. Reproduction and status
+
+In this directory:
+  python3 gate.py
+  /home/research/Chat/Math/beta4/.venv/bin/python evaluate.py
+
+gate.py uses only Fraction/integer arithmetic. It independently computes
+97 Mahler coefficients by the Euler moments and by (5), checks 1,034
+norm instances and 35 sharp residues, 2 basis-invariance fixtures, and
+the 4 prescribed proper-space designs. evaluate.py uses 1,600-bit Arb
+to evaluate the already fixed primitive polynomials. The exact local
+proof is independent of those finite checks. The csch representation
+and positivity are inherited from the explicitly read archive.
+
+This is a model proof and exact/interval computational reproduction,
+not formal verification, a human audit, or a novelty claim.
+
+Independent review completed: ../symmetry/adelic_review.txt, .py, .json.
+The reviewer checked the all-degree proof, obtained 282 norm instances
+and 13 sharp residues using unsigned Stirling numbers, and independently
+rebuilt all four proper-source rational determinants, primitive
+polynomials, primitive multipliers and local valuations from the closed
+formula for D_K' at its roots. No adelic implementation was imported.
+No mathematical or normalization issue was found. This packet is frozen
+after that review; manifest.json records its file hashes.

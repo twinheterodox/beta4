@@ -1,0 +1,63 @@
+THE DENSE-QUARTER NUMERATOR REMOVES ITS APPARENT POTENTIAL GAIN
+29 October 2026. Local and unpublished. Analytic comparison only.
+
+Archive input: round10/coordinator/dense-quarter-gate.txt and the
+independent closed-residue formula in round10/fresh/dense_quarter_review.txt.
+This is a short exact consequence, not another parameter scan.
+
+Write R_K=S_K/D_K, a_j=(2j+1)/4. The closed residues give
+
+ R_K(t)=sum_(j=0)^(K-1)
+       (-1)^j 4^K/[(K-1-j)!(K+j)!] *1/(t+a_j^2).
+
+Its coefficient at1/t at infinity is
+
+ c_K=4^K/[(2K-1)(K-1)!^2],
+
+because sum_(j=0)^(K-1)(-1)^j binom(2K-1,K-1-j)
+=binom(2K-2,K-1). The last identity follows immediately by Pascal
+telescoping. Thus
+
+ R_K(t)/c_K=sum_j (-1)^j b_j/(t+a_j^2),
+ b_j=(2K-1)(K-1)!^2/[(K-1-j)!(K+j)!],
+ b_0=2-1/K,
+ b_(j+1)/b_j=(K-1-j)/(K+j+1)<1.
+
+For t>=0 the positive summands b_j/(t+a_j^2) strictly decrease.
+An alternating finite sum lies between its first-minus-second term
+and its first term, for either parity of K>=2. Since
+b_1/b_0=(K-1)/(K+1) and a_1>a_0,
+
+ [2b_0/(K+1)]/(t+1/16) <= R_K(t)/c_K <= b_0/(t+1/16).  (1)
+
+The inequalities are strict here but non-strict ones suffice. This is
+uniform on the entire positive axis, not just at a scaling limit.
+
+Consequently, for any r linearly independent real polynomial sources
+p_1,...,p_r, let G_K be their Gram matrix for the positive density
+(R_K/c_K)w and G_0 that for w/(t+1/16), where w is the round10
+positive Hurwitz density and t=y^2. Then, as positive matrices,
+
+ ell_K G_0 <= G_K <= u_K G_0,
+ ell_K=2b_0/(K+1), u_K=b_0,
+
+so
+
+ ell_K^r det G_0 <= det G_K <= u_K^r det G_0.             (2)
+
+Proof: conjugate by G_0^(-1/2), whose existence follows from strict
+positive definiteness, then multiply the positive eigenvalue bounds.
+An additional fixed or K-dependent nonnegative multiplier can be put
+into both positive densities without changing the same comparison.
+
+When r=O(K), the logarithmic comparison error in (2) is O(K log K),
+which is o(K^2). Thus the cancellation numerator in THIS construction
+removes the tempting K^2-scale benefit of the denser denominator.
+The rational scalar c_K changes no primitive polynomial on its own.
+
+Scope: (2) compares analytic Gram values. The fixed-pole matrix is not
+being asserted to have the same period space, degree, primitive content
+or coefficient height. No general primitive-growth obstruction follows.
+This identifies why more pole-count optimization lacks a specific
+analytic advantage; it does not rule out a different interpolation,
+signed source, proper subspace or arithmetic gain.

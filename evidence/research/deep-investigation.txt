@@ -1,0 +1,425 @@
+Beta(4): a deeper construction search
+27 October 2026 — local, unpublished working record
+Research note prepared with Codex
+
+Outcome
+
+This pass has not proved the irrationality of beta(4). It does produce a
+different exact construction: an explicitly given space of four-variable
+polynomials eliminates the unwanted beta values from a positive Gram
+pairing. Its coefficients are small integers, and the construction extends
+to arbitrarily large matrices. Thus elimination and nonvanishing can be
+handled together in this family. Its arithmetic/size balance is still bad.
+
+A separate saturated-lattice construction improves the finite rational
+approximations obtained in the preceding passes, but its primitive integer
+linear forms still grow exponentially. An exact telescoping identity
+explains why simply adding many polynomial multipliers mostly supplies
+zero relations, rather than cheaply isolating beta(4).
+
+Everything here is a mathematical working argument or a finite check.
+No independent model audit, human audit, formal verification, or priority
+claim is asserted. In particular, a construction derived here need not be
+new in the literature. No result has been published or uploaded.
+
+1. Criteria and numerical normalization
+
+For a primitive integer linear form L=A beta(4)+B, with A>1, use
+
+  delta = -log|L|/log A.
+
+An infinite sequence of nonzero forms with A tending to infinity and delta
+bounded below by a positive constant would prove irrationality. The
+threshold in these experiments is delta=0. Improved approximations with
+negative delta do not meet it.
+
+For a determinant P(beta(4)), clear denominators and divide the gcd of all
+polynomial coefficients, obtaining primitive Q in Z[X]. Write
+
+  Lambda = log|Q(beta(4))|/K^2,
+
+where K is the matrix size. The relevant asymptotic target remains a
+negative upper bound, with a nonvanishing proof. This normalization is
+unchanged by rational changes of row or column bases. For the full
+multi-index constructions, K^2 is only a finite reporting scale; no claim
+is made that it is their correct asymptotic scale.
+
+A large product does not imply that every polynomial factor is large.
+Consequently this pass also factors the relevant determinant polynomials
+over Q and checks their primitive factors separately.
+
+2. Convergent forms and their saturated cancellation lattice
+
+Put
+
+  R(t)=prod_{ell=-n-a-1}^a(t-ell) /
+                         prod_{k=0}^n(t+k+1/2)^4,
+  u=2t+n+1.
+
+For an even polynomial P in u, with deg(P R)<0, consider
+
+  L(P)=sum_{t>=0} (-1)^t P(u) R(t).
+
+Reflection t -> -n-1-t gives R(-n-1-t)=(-1)^n R(t).
+The alternating partial-fraction sums therefore cancel beta(1) and
+beta(3). The result is a rational linear form in 1, beta(2), beta(4).
+No derivatives are taken, so simple integer zeros suffice. This permits
+more zeros on the summation range than the triple-zero derivative family.
+
+To cancel beta(2), do not restrict to a pair of forms. For even n use
+
+  P_j(t)=binom(t+n/2+j,2j)
+        =prod_{h=1}^j((t+(n+1)/2)^2-(h-1/2)^2)/(2j)!.
+
+These polynomials are reflection invariant and integer valued at integer
+t. Their values at half-integer poles have only powers of 2 in the
+denominator; their derivatives can have additional denominators, which
+are retained in the exact computations.
+
+Compute the rational coefficient of beta(2) for every j=0,...,J. Clear the
+denominator of this constraint row and use Hermite normal form on its
+augmentation by the identity matrix to obtain the complete integer
+kernel. LLL then reduces this kernel in the multiplier coordinates. Neither
+the numerical value of beta(4) nor a numerical approximation error is used
+to construct or reduce the lattice. Remove combinations that are identically
+zero; clear denominators and primitive content in each surviving form.
+
+Selected results, using a=n/2 and J about n/8 (J=3 at n=12):
+
+    n       best delta       log A       log|A beta(4)+B|
+   12      -0.518135          90.52          46.90
+   24      -0.547276         188.98         103.42
+   48      -0.564910         386.17         218.15
+   96      -0.575071         782.52         450.00
+  192      -0.593670        1623.48         963.81
+
+This improves the finite approximation exponent over the earlier tested
+scalar constructions, but is far from the irrationality threshold. The
+improvement is not a positive asymptotic estimate. At n=192 the 25 input
+forms yield a 24-dimensional cancellation lattice; 22 reduced basis
+vectors give exact zero forms, and two give nonzero beta(4) coefficients.
+
+Code: experiments/direct_fourth_poles.py, experiments/kernel_lattice.py.
+Data: results/direct_fourth_poles.json, results/kernel_lattice.json,
+      results/kernel_lattice_extended.json.
+
+3. A telescoping explanation of the zero directions
+
+This is an exact identity, not an inference from the numerical ranks.
+Let h satisfy h(-n-2-t)=-h(t), and set
+
+  P_h(t)=(t-a-1)(t+n+1/2)^4 h(t-1)
+            +(t+n+a+2)(t+1/2)^4 h(t),
+  S_h(t)=(t-a-1)(t+n+1/2)^4 h(t-1) R(t).
+
+The elementary quotient identity
+
+  R(t+1)/R(t) = (t+n+a+2)/(t-a)
+                      * ((t+1/2)/(t+n+3/2))^4
+
+gives
+
+  P_h(t)R(t)=S_h(t)+S_h(t+1).
+
+Also P_h(-n-1-t)=P_h(t). Since R(0)=0, alternating summation yields
+
+  sum_{t=0}^M (-1)^t P_h(t)R(t)=(-1)^M S_h(M+1).
+
+It tends to zero whenever deg(S_h)<0. The cancellation is also a formal
+identity among the rational, beta(2), and beta(4) coefficients: shifting
+the partial fractions of S_h by one reverses their alternating sums,
+and the rational boundary term is S_h(0)=0. It does not assume that the
+three periods are linearly independent.
+
+Taking h(t)=(2t+n+2)^(2j+1) gives a nonzero even polynomial P_h of degree
+2j+6. Consequently, in the space of even polynomials of degree at most
+2J, there are at least J-2 independent telescoping directions (when all
+forms converge). The quotient has dimension at most three.
+
+This explains why a naive appeal to Siegel's lemma is insufficient:
+many short relations can cancel the target and rational term as well as
+the unwanted period. It does not prove that all possible integral-lattice
+improvements within this family are impossible.
+
+Code: experiments/deep_checks.py checks 18 such polynomial identities,
+their reflection symmetry, and annihilation of the full coefficient vector.
+
+4. Positive Gram construction by cancellation of a quadratic form
+
+This is the main construction to retain from the present pass. It uses
+the positive measure
+
+  dmu(x)=dx1 dx2 dx3 dx4 / (1+(x1 x2 x3 x4)^2)
+
+on (0,1)^4. For a=(a1,a2,a3,a4) with nonnegative integer coordinates,
+
+  I(a)=integral prod x_i^(4a_i) dmu
+      =sum_{m>=0} (-1)^m / prod_i(2m+4a_i+1).
+
+The geometric expansion is justified by absolute summability after
+integration. A partial-fraction decomposition shows
+
+  I(a)=b0(a)+b2(a) beta(2)+b3(a) beta(3)+b4(a) beta(4),
+
+with rational coefficients. There is no beta(1) coefficient: the sum of
+the simple-pole coefficients is zero because the rational function has
+order four at infinity. Repeated exponents account for the higher poles.
+
+Two identities for the nonconstant coefficients are useful:
+
+  b_s(a+k(1,1,1,1))=b_s(a),              k>=0;
+  b_s(M(1,1,1,1)-a)=(-1)^s b_s(a),       0<=a_i<=M.
+
+The first follows by translating all poles. The second follows by
+reflecting the rational function in its pole coordinate. All shifts in
+the beta tails are even, so no extra alternating sign is introduced.
+
+4.1 An explicit small seed
+
+For a in {0,1}^4 with first coordinate zero, in lexicographic order, put
+
+  f_a=prod x_i^(4a_i)-prod x_i^(4(1-a_i)).
+
+There are eight such polynomials, indexed
+
+  0000, 0001, 0010, 0011, 0100, 0101, 0110, 0111.
+
+Their Gram matrix has the form A+B beta(2)+C beta(4); beta(3) cancels by
+the complement reflection. The rational symmetric matrix B is indefinite.
+The following integer matrix has four independent rows and satisfies
+W B W^T=0:
+
+  W = [1  0  0  0  0  0  0  0]
+      [0  1  1 -1  0  0  0  0]
+      [0  1 -1  0  0  1  0  0]
+      [0  7 -7  0  6  7  6  6].
+
+Thus g=W f gives a positive definite four-by-four Gram matrix with entries
+in Q+Q beta(4). Positivity is preserved because this is an actual
+restriction of a positive integral pairing. The g_i are independent
+polynomials, so a nonzero combination cannot vanish almost everywhere.
+
+The surviving beta(4) coefficient is
+
+  W C W^T = [0  0   0    0]
+            [0 -6   0    0]
+            [0  0  -6  -42]
+            [0  0 -42 -510],
+
+which has rank three. All matrices needed to check these assertions are
+in results/isotropic_seed_certificate.json. They have been recomputed
+with a separate Sympy implementation of the moment residues.
+
+4.2 Extension to every size in a sequence
+
+Let z=(x1 x2 x3 x4)^4. For m>=0 take the 4(m+1) polynomials
+
+  z^r g_i,     0<=r<=m, 0<=i<4.
+
+Uniform translation of the exponents proves that the beta(2) and beta(3)
+coefficients still vanish in every entry of their Gram matrix. Its beta(4)
+coefficient matrix is J_(m+1) tensor (W C W^T), with J the all-ones
+matrix; its rank is three. Therefore the determinant is a polynomial in
+beta(4) of degree at most three, even as the matrix size increases.
+
+These polynomials are independent. For i>0 their monomials have exponent
+minimum r and maximum r+1 before the factor 4, so different r have disjoint
+non-diagonal supports. At each r the three corresponding combinations
+are independent. The remaining polynomials are z^r(1-z), which are also
+independent. Hence every one of these Gram determinants is strictly
+positive. This establishes nonvanishing for the whole sequence.
+
+4.3 Arithmetic outcome
+
+The coefficient cancellation works with entries of W bounded by 7. It
+does not supply the denominator estimate needed for irrationality:
+
+  matrix dimension       primitive log-value / dimension^2
+          8                         2.812382
+         12                         3.231106
+         20                         3.544659
+         36                         3.879011
+         52                         4.122278
+
+In all these cases the primitive cubic factors as one linear factor
+times the square of another linear factor. Both factors were evaluated
+separately. At dimension 52 their log absolute values are approximately
+5582.85 and 2781.89. A useful small factor is not concealed by the product.
+
+A separate search on the complete exponent cube {0,1,2}^4 constructs a
+ten-dimensional isotropic subspace, with a surviving beta(4) coefficient
+of rank two. Its primitive quadratic has log absolute value 246.94.
+The elementary search does not find a maximal isotropic subspace; no
+maximality or general obstruction is asserted.
+
+The Gram strategy is motivated by the general Mellin-integral framework
+of Brown [B]. The period cancellation by W, the concrete seed, and the
+translation construction are derived and checked here. This attribution
+is not a claim that the construction is new. The tensor extension still
+adds only one parameter. It does not realize the full multivariate gain
+that Brown's criterion is intended to exploit.
+
+Code: experiments/isotropic_mellin.py, experiments/isotropic_tensor.py.
+
+5. Other constructions tested
+
+5.1 Critical cubic poles and Abel summation
+
+For even n, use triple integer zeros and third-order half-integer poles:
+
+  R(t)=(2t+n+1) prod_{ell=-n-a-1}^a(t-ell)^3 /
+                                prod_{k=0}^n(t+k+1/2)^3.
+
+The polynomial part has degree 6a+4. The Abel sum of sum (-1)^t R''(t)
+isolates beta(4); beta(3) and beta(5) cancel by reflection. The polynomial
+part must be included. Its powers have Abel sums
+
+  A(1)=1/2,
+  A(t^d)=(2^(d+1)-1)(-1)^d B_(d+1)/(d+1),  d>=1.
+
+With that correction included, 24 tested forms have negative delta and
+generally do not even approximate beta(4) increasingly well. The tempting
+minimal pole order does not rescue the triple-zero arithmetic.
+
+5.2 Higher poles and global removal of higher beta values
+
+Odd pole orders 5,7,9,11 with triple zeros and two derivatives give forms
+in beta(4),...,beta(p+1). Even polynomial multipliers remove the higher
+values exactly. Tests of 62 minimal-degree eliminations, and saturated
+lattices for orders 11,19,35, fail to give shrinking integer forms.
+These are uniform-pole experimental families, NOT reproductions or
+refutations of Krisman's optimized multiblock construction [K].
+
+5.3 A divided-difference matrix
+
+For F3(a)=sum_{m>=0}(-1)^m/(m+a)^3, use nodes a_i=2i+1/2.
+Off-diagonal entries (F3(a_i)-F3(a_j))/(a_j-a_i) are rational, since
+the common beta(3) term cancels. Diagonals are -F3'(a_i)=3F4(a_i),
+so contain beta(4) alone. This eliminates lower constants symmetrically
+inside the matrix, rather than by independent scalar eliminations.
+Its primitive Lambda is 3.29 at size 4 and 6.15 at size 24: unsuccessful.
+
+5.4 An inverse-moment construction with dyadic ordinary moments
+
+For C_4 from the preceding investigation,
+
+  C_4(t^-1)=0,             C_4(t^-2)=-16 beta(4).
+
+One derivation uses the Mellin identity
+
+  C_4(t^e)=Gamma(2e+4) beta(2e+1)/(3 pi^(2e+1)).
+
+It initially follows from the sech series and extends to e>-5/2 by
+analytic continuation, with removable singularities. The functional
+equation gives beta'(-3)=-48 beta(4)/pi^3, yielding the coefficient -16
+at e=-2. Direct numerical integrals independently check both identities.
+
+The Hankel matrix with entries C_4(t^(i+j-2)) therefore has beta(4) only
+in its top-left corner; all other entries are rational dyadic moments.
+Avoiding the growing odd-prime tails does not solve the problem: the
+resulting primitive linear forms still grow, and their tested errors
+have no useful decay. This is an additional reminder that the odd-prime
+loss is an obstruction in particular families, not a universal diagnosis.
+
+5.5 A simpler positive Mellin family
+
+Taking monomials on the exponent line with slopes (-3,-1,1,3), and adding
+or subtracting their complements, produces a positive Gram matrix with
+only beta(4) and rational entries. All off-diagonal shifts are distinct,
+so only simple poles occur and beta(1) cancels. Its much larger shifts
+make its primitive Lambda about 48--52 in the tested sizes 4,8,12.
+It motivated the fuller isotropic construction in Section 4 but is not
+numerically competitive. A size-24 evaluation was stopped after the
+smaller cases were decisively worse; no size-24 result is reported.
+
+There is a precise limitation of avoiding exponent collisions by merely
+selecting monomials. Suppose a set S in {0,...,H}^4 includes complements,
+and for distinct a,b all four coordinates of a+(M1-b) are distinct.
+Then, for any pair r!=s, the map a -> a_r-a_s is injective on S. Hence
+|S|<=2H+1. Such a selection cannot retain a quadratic or higher growth
+in the number of rows. Algebraic cancellation, as in Section 4, is needed
+to escape this particular counting restriction.
+
+6. Verification and reproducibility
+
+- Exact rational partial fractions and primitive integer coefficients
+  are saved in the result files; no PSLQ relation is used as a theorem.
+- Eighteen telescoping polynomials and their complete coefficient-vector
+  cancellations are checked exactly.
+- A separate Sympy implementation recomputes 70 four-variable Mellin
+  moments and all 64 entries of the seed's period matrices. It verifies
+  the rank and isotropy certificate independently of the Flint code.
+  This is a second implementation by the same agent, not an independent
+  mathematical audit by another model or a human.
+- Arb interval arithmetic, at 16,749-bit precision for the batch, proves
+  |Q(beta(4))|>1 for all 265 primitive forms or determinant polynomials
+  in the current pass. It also checks the earlier floating-point logs.
+- An exact factor audit covers 36 determinant polynomials, including
+  selected preceding interlaced and positive families, and 42 factors
+  counted separately across them. Every checked primitive factor also
+  has absolute value greater than 1 at beta(4), certified with Arb.
+- These finite checks prove statements about the evaluated examples.
+  They do not establish an asymptotic impossibility result.
+
+From /home/research/Chat/Math, representative commands are:
+
+  beta4/.venv/bin/python beta4/experiments/kernel_lattice.py
+  beta4/.venv/bin/python beta4/experiments/kernel_lattice.py --mode higher --sizes 12 24 --output results/kernel_lattice_higher.json
+  beta4/.venv/bin/python beta4/experiments/kernel_lattice.py --sizes 96 192 --focused --output results/kernel_lattice_extended.json
+  beta4/.venv/bin/python beta4/experiments/isotropic_mellin.py
+  beta4/.venv/bin/python beta4/experiments/isotropic_tensor.py
+  python3 beta4/experiments/deep_symbolic_audit.py
+  beta4/.venv/bin/python beta4/experiments/deep_checks.py
+  beta4/.venv/bin/python beta4/experiments/factor_audit.py
+
+The remaining construction scripts have descriptive filenames and their
+default runs reproduce their corresponding result files. SHA256 hashes
+are recorded in manifest.json. System Python supplies Sympy; the local
+venv supplies python-flint and mpmath.
+
+7. Assessment
+
+There is now an explicit mechanism for removing lower periods from a
+positive Gram construction without a large coefficient cost at the seed
+stage. That is the most useful structural result of this pass. The tested
+extension still has the wrong arithmetic/size balance, so it does not
+justify announcing an irrationality result or an approach close to one.
+
+A meaningful further advance would require an expanding, genuinely
+multivariate family of such period-canceling spaces with controlled
+heights and denominators, or a different construction with a better
+balance. Merely increasing the multiplier count, invoking positivity,
+or asserting that triple zeros improve divisibility does not supply that
+missing estimate. These are specific lessons from this investigation,
+not a claim that other routes cannot work.
+
+Sources
+
+[B] Francis Brown, Mellin transforms, transfinite diameter and rational
+    approximations of integrals, arXiv:2604.20741, April 2026; published
+    online August 2026. The general Gram/Mellin strategy and criteria,
+    especially Sections 1 and 7.
+    https://arxiv.org/abs/2604.20741
+
+[C] Marcos Costa Santos Carreira, Determinant constructions for the
+    Dirichlet beta value at four, October 2026.
+    https://zenodo.org/records/23326647
+    https://github.com/MarcosCarreira/catalan-designs
+    The local source copy and attribution remain in sources/carreira/.
+    Its scalar and determinant experiments inform what has already been
+    tested; none of its negative tests is used as a general no-go theorem.
+
+[K] Shawn Krisman, One of beta(4), beta(6), ..., beta(36) is irrational,
+    October 2026. Motivation for triple integer zeros and two derivatives.
+    https://hexagonmath.org/2610.00285v2
+
+[R] Tanguy Rivoal and Wadim Zudilin, Diophantine properties of numbers
+    related to Catalan's constant, Math. Ann. 326 (2003), 705--721.
+    Classical context for rational functions and reflection cancellation.
+    https://rivoal.perso.math.cnrs.fr/articles/betacatalan.pdf
+
+[O] OpenAI, Catalan's constant is irrational, September 24, 2026 manuscript,
+    October public release. Source of the determinant comparison motivating
+    the preceding investigations; this pass does not assume that its
+    estimates transfer unchanged to beta(4).
+    https://github.com/openai/math/tree/main/preprints/Catalans-constant-is-irrational-September-24-2026

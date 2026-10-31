@@ -1,0 +1,115 @@
+Adversarial cross-review of the round-02 analytic packet
+28 October 2026. Local and unpublished.
+
+Reviewed version:
+  collaboration/round-02/analysis/findings.txt
+  SHA256 7426e9c079c995d74f642fbee415337bea2884a171a10b80d8034e42bedf4da2
+
+Supporting implementations inspected:
+  checks.py
+  SHA256 dbffa5331b845051001cab64be0488113795d60b984bc39a3a61dbd5691b50e7
+  checks.json
+  SHA256 be85eb7550084ed4dffff11f7007c545b102243d944d74d4b7ba8c9a875c82c4
+
+Scope and verdict
+
+I read the complete findings and concentrated on sections 2--5: genuine
+outer branches, local monodromy, logarithm sheets, arbitrary compact cut
+components, and the projection/capacity lower bounds. I also checked the
+shared endpoint normalization and the direction of the arithmetic/analytic
+comparison. No remaining substantive gap was found in that reviewed scope
+in the exact version above. This is coordinated model cross-review, not
+formal verification or independent human verification.
+
+The first draft had a substantive sheet gap
+
+The first saved draft used a full inverse-image boundary cycle and argued
+that connectedness of the lifted continuation domain ensured the principal
+disk monodromy calculation applied. That does not follow: a continuation
+path can leave the unit disk and change u,v by integral multiples of 2pi*i.
+Different boundary components may carry different shifts. I raised this
+objection before accepting the component theorem; the coordinator agreed.
+
+The reviewed revision repairs it, rather than merely changing wording:
+
+1. On ONE loop the shifts A,B are fixed. At a pole whose principal sign is
+   sigma, the argument is sigma*i*pi/2+2pi*i*ell. Direct integration of
+   h''' gives quadratic monodromy coefficient
+   -i*pi^2(1+4sigma*ell)/8. Thus a type contributes the weighted count
+   W=N+4ell*S, with S congruent to N modulo 2.
+
+2. For 1<=N<=5, W cannot vanish: divisibility first forces N=4, and then
+   4ell*S is divisible by 8. The three-type quadratic coefficient matrix
+   has determinant 128. Linear independence of 1,u,u^2,v,uv,v^2 follows
+   from their distinct initial degrees for k>=3. Hence a nonempty branch
+   collection cannot have zero monodromy on any logarithm sheet in the
+   stated small-count range.
+
+3. The theorem is now explicitly restricted to k=3 and k=5. Reciprocity
+   bounds the number of outer w-roots of each type by five. One conformal
+   t-lift counts one preimage per w-root. The proof does not double these
+   counts by taking both square-root lifts. The example N=8,S=2,ell=-1
+   correctly warns that this argument cannot be extended indiscriminately.
+
+Topology of the repaired single-loop argument
+
+The clopen separation step is legitimate for a compact Hausdorff K:
+compactness of K intersect the disk reduces the component/quasicomponent
+separation to a relatively clopen K' disjoint from the disk.
+
+I independently checked that K' is filled. A bounded complementary
+component would contain no point of C\K, because C\K is connected to
+infinity. It would therefore lie in K\K', yet have boundary in K',
+contradicting the positive separation of the two compact clopen pieces.
+
+The decreasing filled polygonal-neighborhood construction then yields a
+finite neighborhood missing the closed disk and the complementary compact
+piece of K. Paths to infinity with positive clearance justify convergence
+of the filled neighborhoods to K'. Small corner perturbations can remove
+point contacts without losing those separations. An outer Jordan boundary
+around the component containing w0 has its whole interior in |w|>1 and
+avoids K. Its single analytic t=1/sqrt(w) lift is therefore conformal on
+that interior. This is the needed single-loop argument; no simultaneous
+principal-sheet assumption or unproved connectivity of all branch points
+remains.
+
+For continuing the individual h compositions to the loop, paths may always
+be perturbed to avoid the finite possible branch divisor E_k. This makes
+the termwise continuation legitimate even if a possible singularity of
+individual terms is removable in their sum.
+
+Capacity checks
+
+The projection inequality is in the correct direction: every finite set
+in a projection can be lifted to K, and pairwise distances can only grow.
+Therefore cap(proj K)<=cap K.
+
+For k=3, the two branch-containing components need not coincide. Their
+imaginary projections still contain [1,b] and [-b,-1]. The identity
+cap([-b,-1] union [1,b])=sqrt(b^2-1)/2 follows from the polynomial map
+w -> w^2 and the interval capacity formula. I checked the exact root
+argument giving b>13/5 and hence cap K>6/5, including the inequality
+377/170<sqrt(5). No connected-cut extremality assumption is hidden here.
+
+For k=5, the two displayed rational endpoint signs locate an exclusive
+P12 root w0<-12/5. The real projection of its component contains
+[w0,-1], giving cap K>(12/5-1)/4=7/20. This does not imply cap K>1;
+the findings explicitly preserve that distinction.
+
+Limits of this review and of the conclusion
+
+I inspected the exact and Arb checking code but did not independently
+reconstruct every isolated root enclosure or rerun scripts that would
+write into the analysis worker's directory. I did not independently
+rederive the optional w=0 continuation formula, the Loewner diagnostics,
+or the cited primary-paper Polya theorem; none is used to bypass the
+reviewed component/projection argument.
+
+The arithmetic normalization is the same L_n and kappa_n as in this
+worker's packet. Combining an upper bound on kappa with the absolute
+contour upper estimate supplies only a sufficient shrinking criterion.
+The positive gap shows that this criterion cannot succeed with the
+current constants, not that the actual determinants or primitive values
+have a positive lower asymptotic. The revised findings state that limit
+correctly. No irrationality proof or actual-value no-go follows from
+this review.

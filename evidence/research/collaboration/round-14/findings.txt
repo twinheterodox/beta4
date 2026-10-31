@@ -1,0 +1,205 @@
+BETA(4): TWO COMPLETE-FAMILY IDENTITY CANDIDATES
+30 October 2026. Local and unpublished. No irrationality proof.
+
+Conclusion
+
+Neither candidate supplies a credible improved arithmetic construction.
+Candidate A is exactly an already archived family. Candidate B gives a
+complete moved-base identity, a positive coefficient formula, and eventual
+nonvanishing, but the proposed complementary denominator estimates do not
+improve one another. In fact one proved multiplier divides the other for
+every n. Even perfect removal of odd-prime denominators cannot rescue
+integer clearing of its fixed cofactor normalization.
+
+The last statement is NOT an obstruction to primitive rational rescaling:
+a sufficiently large common numerator factor remains an unexcluded way
+to change the balance. No such factor is established, and the six exact
+primitive examples are unfavorable. The appropriate outcome is to stop
+this bounded assessment, not to run a larger parameter scan or claim an
+impossibility theorem for hypergeometric methods.
+
+1. Candidate A: the symmetric quadratic deformation is old work
+
+KZ18 Theorem2, specialized before differentiation, identifies the split
+half-pole Catalan family with the zero-preserving quarter-pole family.
+All parameter-dependent gamma factors cancel exactly. Its second jet
+and subsequent beta2 elimination give exactly the primitive beta4 pair
+already evaluated in experiments/quarter_pole_deformation.py.
+
+During source comparison the more precise match was located in
+half-pole-arithmetic.txt, Sections2-3: that note already contains the
+complete identity, the meromorphic formal-coefficient argument, and
+stronger denominator estimates. This phase does not claim them as new.
+
+The independent checker confirmed the full normalization and formal
+coefficients at n=2,4,8. The n=4,8 primitive pairs agree with the saved
+archive; that particular saved table has no n=2 entry. The identity
+holds for the whole even-index family, not just
+these examples; its derivation imports KZ18. The earlier large primitive
+errors are not repaired by another presentation of the same pairs.
+No additional large-index scan was performed.
+
+2. Candidate B: a complete transformation with a polynomial part
+
+Write (x)_m for the rising factorial. For integers n>=1 set
+
+ U_n(x,e)=2(x-n+1)_n(x+2n+1)_n /
+          [(x+1/2+e)_(2n+1)(x+1/2-e)_(2n+1)],
+ D_n(x,e)=(2x+n+1)(x-2n+1)_(2n)(x+n+1)_(2n) /
+          [(x+1/2)_(n+1)(x+1/2+e)_(n+1)(x+1/2-e)_(n+1)],
+ I_n(e)=sum_(x>=0)(-1)^x U_n(x,e),
+ J_n(e)=Abel-sum_(x>=0)(-1)^x D_n(x,e).
+
+Whipple's transformation followed by a numerator permutation gives the
+complete identity
+
+ J_n(e)=(-1)^n (n+1)_n(n+1/2+e)_n(n+1/2-e)_n I_n(e).     (1)
+
+The transformed base point differs from the one in round10, so the old
+fixed-base stabilizer test does not cover it. The D summand has degree
+n-2. Its polynomial Abel contribution is retained, including in every
+finite arithmetic check. Simple fixed integer zeros permit recentering
+both sums without a boundary correction. This is a parameter deformation,
+not the archived triple-zero second-derivative Abel construction.
+
+Both complete families reduce to A(e)H(e)+B(e) with A,B rational and
+
+ H(e)=sum_(k>=0)(-1)^k/[(k+1/2)^2-e^2]
+     =4 beta2+16e^2 beta4+... .
+
+Reflection removes the other simple-pole periods. The infinitely many
+poles of H prove uniqueness over Q(e), so no independence assumption
+about numerical beta values is needed to compare the formal coefficients.
+
+For G_n(e)=(2n)! I_n(e)/8, a terminating transformation gives
+
+ G_n(e)=T_n(e)H(e)/4+B_n(e),
+ T_n(e)=sum_(j=0)^n w_(n,j) product_(k=1)^j(1-e^2/k^2)^(-1),
+ w_(n,j)=binom(n,j)binom(2n-1/2,j)binom(n+j-1/2,j)>0.     (2)
+
+The exact prefactor derivation is in coordinator/moved-whipple.txt.
+Let G0=q beta2+b and G2=4q beta4+c beta2+d, where subscripts0,2 denote
+Taylor coefficients. Then q=T_n(0)>0 and c/q is the positive weighted
+average of H_j^(2). The beta4-only cofactor form is
+
+ W_n=qG2-cG0=4q^2 beta4+qd-cb.                          (3)
+
+3. Primewise comparison: the apparent improvement disappears
+
+Put C=binom(2n,n), R=(n+1/2)_n/n!, and L_m=lcm(1,...,m).
+Elementary binomial/Laurent coefficient bounds from the U presentation,
+using the sharper positive formula(2) for q,c, prove that
+
+ M_U W_n has integer coefficients,
+ M_U=4 C 16^(2n)L_(4n)^4.                               (4)
+
+Write F=J/n! and kappa(e)=(-1)^n8(n+1/2+e)_n(n+1/2-e)_n/(n!)^2.
+Then F=kappa G, and the corresponding exterior form satisfies
+
+ W_F=kappa(0)^2 W_n,       kappa(0)^2=64R^4.
+
+The derivative kappa_2 cancels in the exterior product. The constant
+kappa(0)^2 does not disappear from the arithmetic comparison.
+The D presentation, INCLUDING its polynomial part, supplies
+
+ M_D=2^(18n+1)L_(2n)^5 kappa(0)^2.                      (5)
+
+The two bounds must be combined with gcd(M_U,M_D). They give no saving:
+
+                         M_U divides M_D.             (6)
+
+For odd p, set a=v_p(L_(2n)), b=v_p(L_(4n)). Legendre's formula gives
+v_p(C)<=a and v_p(R)>=b-a. Therefore
+
+ v_p(M_U)=4b+v_p(C)<=4b+a<=5a+4v_p(R)=v_p(M_D).
+
+The explicit power-of-two comparison gives the same ordering. This is
+an all-index, all-prime statement about these two proved multipliers.
+It is not a claim that either multiplier is the best possible one.
+
+The polynomial part is handled by interpolation at half integers, where
+Q_n(k+1/2)=n!k!/(n+k+1)! has denominator dividing L_(n+k+1).
+Its Newton basis elements have rational dyadic Abel sums. The complete
+argument and all exponents are in coordinator/primewise-comparison.txt.
+
+4. Size, nonvanishing, and an optimistic arithmetic gate
+
+An Euler double integral for F has nth-power factor
+
+ f(x,y)=x^2(1-x)y(1-y)^2/(1-xy)^2.
+
+Its unique maximum occurs at
+ x0=(sqrt17-1)/4, y0=(sqrt17-3)/2,
+ f0=(85sqrt17-349)/32=0.0457493180469... .
+
+Laplace estimates and the positive sum(2) give
+
+ log|G0|/n -> log f0,
+ log q/n -> -log f0,
+ G2/G0 ->0,             c/q ->zeta(2).
+
+Thus the beta4-only form(3) is nonzero for all sufficiently large n,
+with sign(-1)^(n+1), and log|W_n|/n ->0. Nonvanishing here concerns
+the actual signed value, not merely its leading coefficient.
+The explicit bound(4) gives
+
+ log|M_U W_n|/n ->16+10log2=22.9314718...>0.
+
+There is also an optimistic test independent of the odd-prime bounds.
+The j=n term in(2) has the unique least2-valuation, proving
+
+ v2(q)=-4n+2s2(n),
+
+where s2 counts binary ones. Every positive INTEGER m_n clearing the
+coefficients of the fixed form(3) must have
+
+ m_n>=2^(8n-4s2(n)-2),
+ liminf log|m_n W_n|/n >=8log2>0.                       (7)
+
+Even removal of every odd-prime denominator would therefore leave this
+integer-clearing construction unsuccessful. The qualification is vital:
+one may clear denominators and then divide large common integer content,
+which corresponds to a RATIONAL multiplier of W_n. Equation(7) does
+not exclude that possibility. A large, quantified numerator gcd is the
+missing arithmetic lemma; no such all-index estimate is supplied here.
+
+Exact primitive diagnostics, after removing the full gcd:
+
+ n       digits of A       log|A beta4+B|
+ 1            5                 0.51645
+ 2           15                18.96590
+ 3           24                34.30484
+ 4           34                51.80927
+ 8           81               135.08065
+16          167               284.37923
+
+Arb intervals exclude0 in each case. These are finite failures, not a
+proof of asymptotic primitive growth.
+
+5. Checks, sources, and remaining scope
+
+One independent model checker audited the complete identities, formal
+support, polynomial contributions, positive coefficient formula, primewise
+comparison, and analytic/nonvanishing argument. It used a separate exact
+D-side implementation; the main agent's implementation uses U residues.
+This is an independent model cross-check with exact computations, not
+formal verification or an external human audit.
+
+Primary source inputs are KZ18 Theorem2 for A, and the classical Whipple
+transformations as stated/derived in Zudilin2002 and Karp--Prilepkina2022
+for B. Relevant proofs were read; standard imported summations and the
+inaccessible Bailey/Rahman dependencies are explicitly recorded in
+coordinator/sources.txt. No claim is made to have checked every dependency
+from first principles, or to establish priority for these constructions.
+
+Reproduction from beta4:
+ PYTHONDONTWRITEBYTECODE=1 .venv/bin/python collaboration/round-14/coordinator/moved_whipple.py
+ PYTHONDONTWRITEBYTECODE=1 python3 collaboration/round-14/independent/check_quadratic.py
+ PYTHONDONTWRITEBYTECODE=1 python3 collaboration/round-14/independent/check_moved_whipple.py
+
+Recommendation: do not continue these two candidates by numerical scans
+or sharper versions of the same sufficient denominator bounds. Reopening
+B would require a concrete mechanism proving large primitive content or
+avoiding the costly cofactor; neither is currently available. Other full
+identities, other moved-base rays, and the undeveloped CMF deformation
+remain unassessed. This phase gives no reason to claim a proof is near.

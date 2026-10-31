@@ -1,0 +1,96 @@
+GENERAL FIXED-INDEX PERIOD SPACE: REVIEWED STRUCTURAL TOOL
+29 October 2026. Local and unpublished. No irrationality proof.
+
+The fresh independent worker's full proof is
+../independent/internal_graph_review.txt, especially section6.
+I read that note in full and independently checked the normalization,
+coefficient simplification, reflection signs and period cancellation.
+This record retains its conclusion and precise scope in this packet.
+The proof is attributable to the independent review; the original
+finite harmonic construction and n1 calculation are in first-period.txt.
+
+Theorem. For every fixed integer n>=0, the prescribed positive cube
+integral J_n has a specified rational decomposition in
+
+          1, beta(2), beta(4), log(2), zeta(3).
+
+The theorem does not assert independence of those five numbers,
+estimate coefficient denominators, or give nonvanishing after a signed
+combination removes three auxiliary periods.
+
+Put lambda=4n+1, delta=3n and a=n+1. The spherical radial coefficient is
+d_(n,k) P_(n,k)(r^2), where
+
+ d_(n,k)=(a)_k/(lambda)_k,
+ P_(n,k)(s)=2F1(k+a,-delta;k+lambda+1;s).
+
+Let A_j(k) denote the coefficient of s^j in dP. Its exact cancellation
+of Pochhammer factors is
+
+ A_j(k)=[(4n)!/n!] (-1)^j binom(3n,j)
+    /[prod_(q=n+j+1)^(4n)(k+q)
+      prod_(q=4n+2)^(4n+j+1)(k+q)].
+
+All its poles are simple, and the angular pole k=-lambda is absent.
+Empty products have value1. Define
+
+ L_j=2(k+3n+1+j), M_l=2(k+2n+1+l),
+ T_jl=2(k+2n+1+j+l), V_jl=2(k+1+j+l),
+
+ I_n(k)=2 sum_(j,l=0)^(3n) A_j(k) A_l(k)
+          [1/(L_jT_jl)+1/(L_jM_l)+1/(M_lV_jl)],
+ C_n(k)=prod_(r=1)^(4n)(k+2r)/[2^(4n)(4n)!],
+ R_n(k)=4(n!)^4 C_n(k) I_n(k)/[(4n)!(k+lambda)^2].
+
+The exact representation is
+
+               J_n=sum_(ell>=0)(-1)^ell R_n(2ell).
+
+Absolute interchange does not require a guessed degree cancellation.
+Euler's integral gives P_(n,k)(s)=E[(1-sT)^(3n)] with
+T~Beta(k+n+1,3n+1). For fixed n>=1 and k>=1,
+
+ P_(n,k)(s)<=C(n)[(1-s)^(3n)+k^(-3n)].
+
+After log radial coordinates r=exp(x),s=exp(y), the exponential factor
+in the full radial integral is
+
+ exp[n(x+y)-(k+n+1)(|x|+|y|)-(k+4n+1)|x-y|].
+
+The endpoint bound and d_(n,k)=O_n(k^(-3n)) therefore give
+I_n(k)=O_n(k^(-12n-2)). The absolute angular majorant is
+C_k^lambda(1)=O_n(k^(8n+1)), with an additional(k+lambda)^(-2).
+Thus the integrated absolute terms areO_n(k^(-4n-3)), a summable bound.
+The n0 case is direct. All estimates are for fixed n; they are not
+uniform estimates when the arithmetic construction lets n grow.
+
+The poles of R_n occur only at integer k=-q with1<=q<=8n+1 and
+have order at most4. Away from the angular pole, A_jA_l supplies at
+most2 orders and the radial fractions at most2. At the angular pole
+A_jA_l is regular, so the squared angular factor plus radial factors
+again gives at most4. R_n is proper.
+
+For k'=-2lambda-k and j'=3n-j, the coefficient formula gives
+A_j(k')=A_j'(k). The radial factors obey L<->-M and T<->-V under
+complementing j,l. Swapping the two summation indices then proves
+I_n(k')=I_n(k). C_n and the squared angular denominator are invariant,
+so
+
+                    R_n(-2lambda-k)=R_n(k).
+
+Consequently the partial-fraction coefficients satisfy
+c_(2lambda-q,s)=(-1)^s c_(q,s). On odd q the beta-tail shift signs
+agree across each pair, so odd beta orders cancel. On even q the eta
+shift signs are opposite, so even eta orders cancel. The central pole
+q=lambda is odd and has only even orders. With maximum order4, the
+remaining terms are beta2,beta4,eta1,eta3 and rational finite tails.
+Since eta1=log2 and eta3=3zeta3/4, the theorem follows.
+
+There is no sign discrepancy between using A_j=d*p here and using
+A_j/(k+lambda) in the coordinator's reciprocal-product computation.
+The latter coefficient has a minus sign under reflection; the pair of
+coefficients in each summand cancels it.
+
+This general theorem strengthens the exact structural description.
+It does not repair the primitive cofactor value in bounded-gate.txt,
+and no new index, projector or filter computation follows from it here.

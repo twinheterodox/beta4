@@ -1,0 +1,156 @@
+BOUNDED NONUNIFORM-GRAPH PERIOD AND ARITHMETIC GATE
+29 October 2026. Local and unpublished. No irrationality proof.
+
+1. Scope
+
+After the exact n1 reduction in first-period.txt, the coordinator
+authorized only n2,n3,n4 and a first period elimination. This note
+records that bounded gate. No index or parameter optimization was run.
+
+All four periods have the same specified decomposition in
+1,G=beta2,B=beta4,log2,zeta3. This does not assert those numbers are
+linearly independent. The first cofactor projection to1,B has a very
+large primitive value, so the immediate construction is unfavorable.
+This is not an asymptotic obstruction to this entire graph family.
+
+2. Exact harmonic formula used
+
+For the ray b=2n+1,q=n put a=n+1,lambda=4n+1,delta=3n. The graph
+dimension is2lambda+2 and the central edge is its Green kernel.
+The radial Gegenbauer coefficient is
+
+ d_k=(a)_k/(lambda)_k,
+ p_j=(k+a)_j(-delta)_j/[(k+lambda+1)_j j!], 0<=j<=delta,
+
+ f_k(r)=d_k sum_j p_j r^(k-2a+2j),       r<1,
+       =d_k sum_j p_j r^(-k-4a-2j),      r>1.
+
+It follows directly from the same Gegenbauer connection formula as
+the n1 case. The terminating polynomial is nonnegative on[0,1] by
+Euler's integral with positive parameters k+a anddelta+1.
+
+Set
+ L_j=2(k+lambda+1-a+j), M_l=2(k+2a+l-1),
+ T_jl=2(k+lambda+2-2a+j+l),
+ V_jl=2(k+4a-lambda-2+j+l).
+
+The radial integral is
+ I_k=2d_k^2 sum_(j,l) p_j p_l
+          [1/(L_jT_jl)+1/(L_jM_l)+1/(M_lV_jl)].
+
+Hence the exact cube period is
+
+ J_n=(n!)^4(4n)! *4lambda^2/Gamma(lambda+1)^2
+            sum_(k>=0) C_k^lambda(0) I_k/(k+lambda)^2.     (3)
+
+The factor4lambda^2 multiplies I_k, which already includes2d_k^2.
+At n0 the
+resulting scalar summand is6/(k+1)^4 and J0=6B.
+
+Only even k=2m survive, and
+ C_(2m)^lambda(0)=(-1)^m(lambda)_m/m!.
+The code builds the resulting rational R_n(k) exactly. For n1..4
+its numerator/denominator degrees are(8,20),(16,36),(24,52),(32,68).
+After removal of the polynomial C_(2m)^lambda(0)/(-1)^m, the radial
+coefficient times C_k^lambda(1) isO(k^(-4n-3)). This is summable.
+The positivity and absolute-interchange argument in first-period.txt
+therefore applies to each of these four cases. No term at a logarithmic
+radial exponent is omitted.
+
+3. Coefficients
+
+Each row below is in the order1,G,B,log2,zeta3.
+
+ n1:
+ 301/384, -503/64, 243/32, -73/24, 27/32.
+
+ n2:
+ 108052739/5160960, -4096479/28672, 968625/8192,
+ -1181/30, 135/8.
+
+ n3:
+ 1701703477897631/3065610240000, -296760191627/81100800,
+ 389656575/131072, -751162462/779625, 17451/40.
+
+ n4:
+ 2312373334725637794503/138248152154112000,
+ -1467438605522993/13358858240, 47814641548245/536870912,
+ -317575742608/11036025, 91773/7.
+
+The smallest common coefficient denominators are respectively
+384,5160960,3065610240000,414744456462336000. The resulting integer
+vectors have gcd1. Their positive values are approximately
+0.24867938,3.18723607,3014.86784,823919.85355.
+
+These are mixed-period values, not beta4 irrationality forms. The exact
+coefficients are obtained from all partial fractions of R_n, with an
+independent Fraction Taylor-division implementation that reconstructs
+the complete rational function. No numerical fitting is used.
+
+4. One prescribed cofactor elimination
+
+Use the signed3x3 minors of the G,log2,zeta3 coefficient matrix for
+J1,J2,J3,J4. Primitive integer weights for those four integrals are
+
+ 353720886250242691740,
+ -4774397862496991434503,
+ 1810465779919768339500,
+ -54124199093616171520.
+
+The three auxiliary coefficients cancel exactly. Clearing the remaining
+two coefficients and dividing their gcd gives
+
+ 159801213020005019950588599750 B
+        -173719233934895586910503507703.                  (4)
+
+Its value is approximately-1.5684694957141836752*10^28.
+Arb evaluates its sign and excludes zero. This first projection has not
+preserved the small mixed-period value after primitive reduction. The
+cofactor matrix, normalization and full coefficient costs are retained.
+
+5. Equivalence and interpretation
+
+The completed conformal graph has three distinct indices on the n1
+case:2 on finite outer edges,3 on infinity edges,5 on the central edge.
+The uniform DIS graph has at most two. Therefore ordinary conformal
+relabeling or a graph automorphism cannot identify them directly. A
+direct unique-vertex star-triangle move is unavailable on the finite
+three-valent graph because its incident index sum is9, not12.
+These observations do not classify more complicated graph identities.
+
+The n1 test R(m-5)/S5(m) is nonpolynomial, ruling out one especially
+simple old fixed-b source identification. General linear combinations,
+cohomological reductions and broader integration-by-parts equivalences
+are not excluded. They would need their actual rational coefficient cost
+tracked; membership in a common five-period space alone is not a new
+primitive mechanism.
+
+The useful outcome is the finite harmonic reduction of this internal
+deformation and its actual first arithmetic data. The result gives no
+reason to run a larger cofactor scan automatically. A continuation would
+need a specific source symmetry or arithmetic cancellation that changes
+the cost of removing the three lower periods. No such saving is proved.
+
+6. Reproduction
+
+With system Python, from this directory:
+ PYTHONDONTWRITEBYTECODE=1 python3 check_first_period.py
+ PYTHONDONTWRITEBYTECODE=1 python3 bounded_periods.py
+
+For rigorous numerical enclosures:
+ PYTHONDONTWRITEBYTECODE=1 ../../../.venv/bin/python verify_bounded_arb.py
+
+The absolute interpreter path is
+/home/research/Chat/Math/beta4/.venv/bin/python.
+JSON files retain all residues, primitive coefficients and Arb values.
+The first-case normalization check comprises3 cube identities,
+37 polynomial connection identities,81 spherical moment identities,
+144 independently integrated radial-region terms, and the old-source
+ratio test. These supplement the analytic proof; they are not a formal
+proof-assistant verification or a full audit of general Feynman identities.
+
+The coordinator independently rebuilt n1--n4 using a common polynomial
+denominator, without importing these scripts. All period coefficients,
+partial fractions, primitive mixed vectors and the pair (4) agree.
+See ../coordinator/independent_harmonic_arithmetic.py and its saved
+result. Its separate1200-bit Arb calculation also certifies (4).
