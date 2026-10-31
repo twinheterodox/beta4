@@ -137,14 +137,12 @@ cost at each large prime exactly.
 
 \subsection{The two families and main results}
 
-The first construction starts from a positive kernel: a function $K(x,y)$
-whose matrices $[K(x_i,x_j)]$ at distinct nodes are positive definite.
-At positive integer squares its off-diagonal entries are rational;
-each diagonal entry is $\theta$ plus a rational number. The determinant
-is therefore a monic polynomial in $\theta$. The formulas below define
-that polynomial directly; Section~\ref{sec:kernel} explains the kernel
-and proves its positivity. A matrix of the form $XI+R$ is a
-\emph{matrix pencil}, meaning that its entries depend linearly on $X$.
+The first construction seeks a symmetric matrix with rational
+off-diagonal entries and $\theta$ plus a rational number on each
+diagonal entry. We also want the matrix to be positive definite, so
+that its determinant cannot vanish. The following calculation explains
+the entries; positive definiteness is established separately in
+Section~\ref{sec:kernel}.
 
 For integers $a\geq 0$ and $\ell\geq 2$, write
 \begin{equation}\label{eq:S}
@@ -152,12 +150,49 @@ For integers $a\geq 0$ and $\ell\geq 2$, write
  \left(\frac1{(4j+1)^\ell}-\frac1{(4j+3)^\ell}\right),
  \qquad S_\ell(0)=0.
 \end{equation}
-For distinct positive integer nodes $a_1,\ldots,a_n$, let $R(a)$ be the rational
+These are the first $2a$ terms of the alternating beta series of order
+$\ell$, grouped into pairs. In particular, $\theta-S_4(a)$ is the
+remaining fourth-power tail. To obtain it by differentiation, start
+from the shifted cubic tail
+\[
+ f(t)=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k+1+4t)^3}
+ \qquad(t\geq0).
+\]
+At a nonnegative integer $a$, shifting the summation index and
+differentiating give
+\[
+ f(0)-f(a)=S_3(a),\qquad f'(a)=-12\bigl(\theta-S_4(a)\bigr).
+\]
+Thus subtracting the tail from $f(0)$ gives rational values at integer
+arguments, while its derivative introduces $\theta$. Combine these
+properties by setting, for $x>0$,
+\[
+ g(x)=\frac{\sqrt{x}}6\bigl(f(0)-f(\sqrt{x})\bigr),\qquad
+ K(x,y)=\frac{g(y)-g(x)}{y-x},\quad K(x,x)=g'(x).
+\]
+Here $K$ is a divided difference, with its limiting derivative on the
+diagonal. At squared integer nodes,
+\[
+ g(a^2)=\frac{aS_3(a)}6,\qquad
+ g'(a^2)=\frac{S_3(a)-af'(a)}{12a}
+        =\theta-S_4(a)+\frac{S_3(a)}{12a}\quad(a>0).
+\]
+The factor $\sqrt{x}$ compensates for the $1/(2\sqrt{x})$ from the
+chain rule, and the factor $1/6$ makes the coefficient of $\theta$
+exactly one. These identities explain both the squared nodes and
+the constants in the matrix entries. For distinct positive integers
+$a_1,\ldots,a_n$, we have
+$[K(a_i^2,a_j^2)]_{i,j}=\theta I_n+R(a)$, where $R(a)$ is the rational
 symmetric matrix
 \begin{equation}\label{eq:R}
  R(a)_{ii}=-S_4(a_i)+\frac{S_3(a_i)}{12a_i},\qquad
  R(a)_{ij}=\frac{a_jS_3(a_j)-a_iS_3(a_i)}{6(a_j^2-a_i^2)}\quad(i\ne j).
 \end{equation}
+The representation in Section~\ref{sec:kernel} proves that $K$ is a
+positive kernel: its matrices at distinct positive nodes are positive
+definite. This does not follow from the divided-difference formula
+alone. Replacing $\theta$ by $X$ gives a \emph{matrix pencil} $XI_n+R(a)$,
+whose entries depend linearly on $X$ and whose determinant is monic.
 For consecutive nodes $a_i=m+i$, $1\leq i\leq n$, set
 \begin{equation}\label{eq:principal-Q}
  Q_{n,m}(X)=\det(XI_n+R(a)),\qquad

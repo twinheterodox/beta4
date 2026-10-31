@@ -1,12 +1,12 @@
 {
   "status": "passed",
-  "recorded_at_utc": "2026-10-31T16:35:05.934176+00:00",
+  "recorded_at_utc": "2026-10-31T16:48:45.647624+00:00",
   "scope": "Final package consistency and visual review after the accessibility revision; not independent mathematical verification.",
   "source": "paper/beta4-determinant-obstructions.tex",
-  "source_sha256": "fdf45b5fd9280cce8b63cea38c40452acbe8c463476212f21b00900bd4d0ba1f",
+  "source_sha256": "39dbe604a0342f6a53bdd7a231d6aaa49bcf3587da5f80ccfa7718fd27a349ac",
   "pdf": "output/pdf/beta4-determinant-obstructions.pdf",
-  "pdf_sha256": "132c45bdd82d6440c4f0fdc4fe6d658860d5d62ede34e203069279f5daa3cf63",
-  "pages": 16,
+  "pdf_sha256": "901936eb9cdd8d8fdf8c1144e6e3cd7da64314bf12a46328528fac51137e44c4",
+  "pages": 17,
   "visual_inspection": {
     "pages_inspected": [
       1,
@@ -24,14 +24,15 @@
       13,
       14,
       15,
-      16
+      16,
+      17
     ],
-    "rendering": "Poppler, 100 dpi; all pages inspected, with changed pages re-inspected after final builds.",
+    "rendering": "Poppler, 100 dpi; all 17 final pages inspected after expanding the introduction.",
     "result": "No clipping, overlap, broken formulas or illegible layout observed in the final render."
   },
   "latex": {
     "unique_labels": 88,
-    "reference_occurrences": 79,
+    "reference_occurrences": 80,
     "unresolved_references": [],
     "bibliography_keys": [
       "Brown",
@@ -198,7 +199,7 @@
   "independent_audit_of_assembled_draft": false,
   "formal_verification": false,
   "source_files_match_build_record": 1,
-  "build_record_sha256": "6ef663b4d05569ec3c29f085eb6391da76ba40a85a83ddae7f6d525f5611a57b",
+  "build_record_sha256": "5d1ee83143b22abd1e683fb2838144eb159e7fc5589fc6bc008f957d131008f2",
   "proof_preservation": {
     "baseline_commit": "local-prepublication-revision",
     "existing_statement_and_proof_blocks_unchanged": 39,
@@ -207,7 +208,7 @@
   },
   "editorial_review": {
     "record": "planning/accessibility-review.txt",
-    "sha256": "083300b1890e08b43b1ccd3bd19474470aa963f1dc90eefd220474d49e91c0fa",
+    "sha256": "5d94bd8c530ba28103351672be2be0dc1cf0cf915f2bfc11db29e360d47e0c17",
     "scope": "Accessibility revision by the assembling model; no independent mathematical audit."
   },
   "new_expository_example_check": {
@@ -254,5 +255,16 @@
     "mathematical_statements_and_proofs_unchanged": true,
     "layout_comparison": "Page 1 changed and was visually re-inspected; pages 2-16 match the previously inspected render pixel-for-pixel.",
     "calculation_suites_rerun": false
+  },
+  "kernel_derivation_revision": {
+    "change": "Derive the rational matrix entries in the introduction from the shifted cubic tail and its divided difference; explain paired partial sums, squared nodes and the factors 6 and 12.",
+    "equation_numbers_preserved": [
+      "1.3",
+      "1.4"
+    ],
+    "mathematical_statements_and_proofs_unchanged": true,
+    "derivation_review": "The shift and derivative identities, product rule and chain rule were checked algebraically against the existing Section 3 construction.",
+    "calculation_suites_rerun": false,
+    "final_page_count": 17
   }
 }

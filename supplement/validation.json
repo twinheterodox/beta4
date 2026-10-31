@@ -243,7 +243,7 @@
   },
   "editorial_review": {
     "record": "planning/accessibility-review.txt",
-    "sha256": "083300b1890e08b43b1ccd3bd19474470aa963f1dc90eefd220474d49e91c0fa",
+    "sha256": "5d94bd8c530ba28103351672be2be0dc1cf0cf915f2bfc11db29e360d47e0c17",
     "scope": "Accessibility revision by the assembling model; no independent mathematical audit."
   },
   "new_expository_example_check": {

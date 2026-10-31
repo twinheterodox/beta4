@@ -12,7 +12,7 @@ Start with the focused paper; use the supplement for the broader investigation.
 
 | Document | Contents | Source and review |
 | --- | --- | --- |
-| **[Main paper (16 pages)](output/pdf/beta4-determinant-obstructions.pdf)** | Complete proofs of the two determinant obstructions, with a shared proof outline and worked arithmetic example. | [LaTeX](paper/beta4-determinant-obstructions.tex) · [Assembly audit](paper/audit.txt) |
+| **[Main paper (17 pages)](output/pdf/beta4-determinant-obstructions.pdf)** | Complete proofs of the two determinant obstructions, with a shared proof outline and worked arithmetic example. | [LaTeX](paper/beta4-determinant-obstructions.tex) · [Assembly audit](paper/audit.txt) |
 | **[Technical supplement (31 pages)](output/pdf/beta4-investigations.pdf)** | A guide to the constructions, selected complete proofs, exact reductions, unresolved arithmetic, and all 57 grouped records. | [Source guide](supplement/README.md) · [Assembly audit](supplement/audit.txt) |
 
 Both abstracts and introductions now start from the irrationality criterion and explain the comparison between approximation error and arithmetic cost. The [accessibility revision record](planning/accessibility-review.txt) describes the added explanations and layout checks; the existing statements and proofs are unchanged.

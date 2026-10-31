@@ -17,6 +17,15 @@ Each family and major proof stage has an explanation of its purpose.
 A three-node, prime-seven example illustrates why a surviving principal
 minor forces a denominator even after coefficient cancellation.
 
+Following reader feedback, the introduction now derives the first
+matrix before displaying its entries. It identifies S_l(a) as the
+first 2a beta-series terms, introduces the shifted cubic tail, and
+computes the rational values and the derivative that contains beta(4).
+The squared nodes and factors 6 and 12 are explained through the
+divided difference and the chain rule. These extra displays are
+unnumbered, preserving equations (1.3) and (1.4). The opening paragraph
+also consistently uses A/B and B theta - A, matching theta = a/b.
+
 The supplement adds a table of its proved results and a suggested
 reading order. Its sections explain the motivation and mechanism of
 each construction before introducing the formulas. Definitions include
@@ -59,11 +68,13 @@ model audit was commissioned.
 
 Build and visual review
 Both drafts compile without unresolved references or overfull/underfull
-box warnings. The final main paper has 16 pages; the supplement has 31.
+box warnings. The final main paper has 17 pages; the supplement has 31.
 All pages were rendered with Poppler at 100 dpi and visually inspected
 for legible mathematics, spacing, table layout, clipping and overlap.
-After the last wording/layout edits, fresh renders were compared with
-the inspected pages; changed pages were inspected again. An unnecessary
+For the earlier incremental wording/layout edits, fresh renders were
+compared with the inspected pages; changed pages were inspected again.
+The later introduction expansion received a fresh inspection of all
+17 main-paper pages. An unnecessary
 page break before the supplement's bibliography was removed to avoid
 leaving a page with only the final register entry.
 
