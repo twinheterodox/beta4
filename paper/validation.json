@@ -1,11 +1,11 @@
 {
   "status": "passed",
-  "recorded_at_utc": "2026-10-31T16:15:43.952499+00:00",
+  "recorded_at_utc": "2026-10-31T16:35:05.934176+00:00",
   "scope": "Final package consistency and visual review after the accessibility revision; not independent mathematical verification.",
   "source": "paper/beta4-determinant-obstructions.tex",
-  "source_sha256": "12dd0243805d2f9a9495193a70da37228ce721b976637c1e02a53c26f3855f94",
+  "source_sha256": "fdf45b5fd9280cce8b63cea38c40452acbe8c463476212f21b00900bd4d0ba1f",
   "pdf": "output/pdf/beta4-determinant-obstructions.pdf",
-  "pdf_sha256": "69434ae841edfd89129ac846abbe244d8c95c2d8a164c7ae6144347c730a8c81",
+  "pdf_sha256": "132c45bdd82d6440c4f0fdc4fe6d658860d5d62ede34e203069279f5daa3cf63",
   "pages": 16,
   "visual_inspection": {
     "pages_inspected": [
@@ -198,7 +198,7 @@
   "independent_audit_of_assembled_draft": false,
   "formal_verification": false,
   "source_files_match_build_record": 1,
-  "build_record_sha256": "bb8a1637bfe1892031b07baac11ae957f8256f4074f693602d632746604cc16e",
+  "build_record_sha256": "6ef663b4d05569ec3c29f085eb6391da76ba40a85a83ddae7f6d525f5611a57b",
   "proof_preservation": {
     "baseline_commit": "local-prepublication-revision",
     "existing_statement_and_proof_blocks_unchanged": 39,
@@ -248,5 +248,11 @@
     }
   },
   "reproduction_suites_rerun_for_accessibility_revision": false,
-  "audit_record_scope": "Historical assembly audit; current editorial review recorded separately."
+  "audit_record_scope": "Historical assembly audit; current editorial review recorded separately.",
+  "notation_correction": {
+    "change": "Use A/B and B theta - A in the opening paragraph, consistently with theta = a/b; specify b > 0.",
+    "mathematical_statements_and_proofs_unchanged": true,
+    "layout_comparison": "Page 1 changed and was visually re-inspected; pages 2-16 match the previously inspected render pixel-for-pixel.",
+    "calculation_suites_rerun": false
+  }
 }
