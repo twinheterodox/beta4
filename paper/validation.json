@@ -1,11 +1,11 @@
 {
   "status": "passed",
-  "recorded_at_utc": "2026-11-01T13:14:41.988667+00:00",
+  "recorded_at_utc": "2026-11-01T13:23:24.632209+00:00",
   "scope": "Structural revision and introduction follow-ups: preservation, compilation, references, attribution, artifact consistency and visual review. Earlier reproduction checks are retained with their stated scopes; this is not independent mathematical verification.",
   "source_files_match_build_record": 1,
-  "build_record_sha256": "8d9f0efdd25bb737af0ece6362a94733991a871d3936fbc93fbc8fdfb13f3a41",
+  "build_record_sha256": "f041808bc8135750c4b6838b1122d4fef8471c92fbf8bcfb9c2ff4dbbd69f742",
   "pdf": "output/pdf/beta4-determinant-obstructions.pdf",
-  "pdf_sha256": "767fff28cf5c6265706b4d59da99b719d9b8774916f7b7c83d0d4b23d9f58be5",
+  "pdf_sha256": "b6ec2e099b04b5afaed4cb4f325675b41febcd531e34ecdc6f603abe808a3e69",
   "pages": 20,
   "visual_inspection": {
     "pages_inspected": [
@@ -30,13 +30,12 @@
       19,
       20
     ],
-    "rendering": "Poppler, 100 dpi. All 20 pages inspected after the introduction and attribution revision. The final bibliography layout changed only pages 19-20, which were reinspected; pages 1-18 match the inspected render pixel-for-pixel.",
+    "rendering": "Poppler, 100 dpi. Page 1 reinspected after adding a citation to the abstract's original first sentence; pages 2-20 match the previously inspected render pixel-for-pixel.",
     "final_changed_pages_reinspected": [
-      19,
-      20
+      1
     ],
     "other_final_pages_match_inspected_render": true,
-    "result": "No clipping, overlap, broken formulas or illegible layout observed; the bibliography fits together on page 20."
+    "result": "No clipping, overlap, broken formulas or illegible layout observed."
   },
   "latex": {
     "unique_labels": 92,
@@ -51,7 +50,7 @@
       "Prevost",
       "Zudilin"
     ],
-    "citation_occurrences": 9,
+    "citation_occurrences": 10,
     "all_citations_resolved": true,
     "main_results_numbering": {
       "thm:principal": "1.1",
@@ -315,7 +314,7 @@
   "independent_audit_of_assembled_draft": false,
   "formal_verification": false,
   "source": "paper/beta4-determinant-obstructions.tex",
-  "source_sha256": "64ce72bdf78194da93b159930deb36a1caa85cf5edf3eb7d9f3bf2c93e145b93",
+  "source_sha256": "64c9a2bd688f5d36674e24e971d9d378c02f8996b0fc63d8a01f4e8b567c3df3",
   "historical_statement_preservation": {
     "baseline_commit": "local-prepublication-revision",
     "formal_statements_unchanged_in_document": 11,
@@ -465,6 +464,23 @@
         "reused_primary_pdf_hashes_checked": 4,
         "original_litsey_tex_snapshot_hash_checked": true,
         "new_downloads": 0
+      }
+    },
+    {
+      "baseline_commit": "local-prepublication-revision",
+      "change": "Add a citation to Zudilin at the end of the abstract's original first sentence; the explicit named attribution remains in Section 1.2.",
+      "only_stated_abstract_change": true,
+      "changed_pages_reinspected": [
+        1
+      ],
+      "other_pages_pixel_identical": 19,
+      "calculation_suites_rerun": false,
+      "source_review": {
+        "source_id": "ZUDILIN2015",
+        "local_text": "../literature/text/1507.05697.txt",
+        "scope": "Existing reading of Proposition 2 and Section 2 reused; acknowledgements and references at text lines 405-485 reread. Official arXiv metadata confirms submission 21 July 2015, revision 2 February 2016, journal publication 2017.",
+        "metadata_url": "https://arxiv.org/abs/1507.05697",
+        "limits": "Direct attribution for the relevant positive-moment approach, not an absolute historical priority claim for all determinant-based irrationality arguments."
       }
     }
   ]
