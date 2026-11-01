@@ -1,11 +1,11 @@
 {
   "status": "passed",
-  "recorded_at_utc": "2026-10-31T23:19:15.193502+00:00",
+  "recorded_at_utc": "2026-11-01T00:26:26.254410+00:00",
   "scope": "Structural revision and subsequent Section 1.2 explanation: text preservation, compilation, cross-references, artifact consistency and visual review; not independent mathematical verification.",
   "source_files_match_build_record": 1,
-  "build_record_sha256": "f4ff208a2348802ec8081aec1de6ebc7c99d79024184a3174856aa97f14664dc",
+  "build_record_sha256": "e5e09bf7a7ce29a49155cff6746d760f3fa5841df056a4158d0ac5e00960e4e6",
   "pdf": "output/pdf/beta4-determinant-obstructions.pdf",
-  "pdf_sha256": "04ad62f037f4dc0ebcd14c8328b8acccb1282f6caf4b157dbd5aecc514662aa4",
+  "pdf_sha256": "1511791800ae8d13228f4420fcd635bf9dd3a4dc0a92756004c0968aaebb554a",
   "pages": 19,
   "visual_inspection": {
     "pages_inspected": [
@@ -29,7 +29,7 @@
       18,
       19
     ],
-    "rendering": "Poppler, 100 dpi. Page 2 reinspected after the row-vector wording clarification; the other eighteen pages match the previously inspected PDF render pixel-for-pixel.",
+    "rendering": "Poppler, 100 dpi. Page 2 reinspected after simplifying the opening of Section 1.2; the other eighteen pages match the previously inspected PDF render pixel-for-pixel.",
     "final_changed_pages_reinspected": [
       2
     ],
@@ -312,7 +312,7 @@
   "independent_audit_of_assembled_draft": false,
   "formal_verification": false,
   "source": "paper/beta4-determinant-obstructions.tex",
-  "source_sha256": "f42f782f0e9a969dedb2945b5b7afdaa438eb341e05ff0cc9ce5ecc9385d314b",
+  "source_sha256": "677bc31de823cf39064fca5ebea615bdf84cdcf66739e00b69b3748d5195bc2a",
   "historical_statement_preservation": {
     "baseline_commit": "local-prepublication-revision",
     "formal_statements_unchanged_in_document": 11,
@@ -363,6 +363,16 @@
     {
       "baseline_commit": "local-prepublication-revision",
       "change": "Replace the resulting row lengths with the lengths of the orthogonalized row vectors in Section 1.2.",
+      "only_change_after_whitespace_normalization": true,
+      "changed_pages_reinspected": [
+        2
+      ],
+      "other_pages_identical": 18,
+      "calculation_suites_rerun": false
+    },
+    {
+      "baseline_commit": "local-prepublication-revision",
+      "change": "Replace the two-sentence opening of Section 1.2 with: If the entries in a matrix are rational linear forms in theta, its determinant is a polynomial with rational coefficients evaluated at theta.",
       "only_change_after_whitespace_normalization": true,
       "changed_pages_reinspected": [
         2
