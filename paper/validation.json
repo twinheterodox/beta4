@@ -1,11 +1,11 @@
 {
   "status": "passed",
-  "recorded_at_utc": "2026-11-01T15:15:36.640294+00:00",
-  "scope": "Structural revision and introduction follow-ups: preservation, compilation, references, attribution, artifact consistency and visual review. Earlier reproduction checks are retained with their stated scopes; this is not independent mathematical verification.",
+  "recorded_at_utc": "2026-11-01T18:31:36.678227+00:00",
+  "scope": "Current editorial revision: supplement citation, explanation of the split, mathematical-text preservation, compilation, links and visual review. Earlier mathematical and reproduction checks retain their stated historical scopes.",
   "source_files_match_build_record": 1,
-  "build_record_sha256": "acff7326ec33c4544e873019761996b2962d5ae4ae726dcd0f9ff3b9d6a6e49f",
+  "build_record_sha256": "1541977b8131cf5a0076e1a84b91bb7499ccf7644dffa23e8aa97cd10ed8b835",
   "pdf": "output/pdf/beta4-determinant-obstructions.pdf",
-  "pdf_sha256": "d5e87f0e172b6ee589ae9691afb38e49965d77a9f2d3fb865f0845516e935cc5",
+  "pdf_sha256": "67455da3da14c0f767ea98e656da20cd7ab7316d0cf54ac11fdc9fdaae3e3a29",
   "pages": 20,
   "visual_inspection": {
     "pages_inspected": [
@@ -30,11 +30,10 @@
       19,
       20
     ],
-    "rendering": "Poppler, 100 dpi. Pages 2-16 reinspected after removing the explanatory clause defining Z[X]; all other pages match the previously inspected render pixel-for-pixel.",
+    "rendering": "Poppler, 100 dpi; all 20 pages visually inspected in four-page sheets and compared with the preceding PDF.",
     "final_changed_pages_reinspected": [
+      1,
       2,
-      3,
-      4,
       5,
       6,
       7,
@@ -42,11 +41,8 @@
       9,
       10,
       11,
-      12,
-      13,
-      14,
-      15,
-      16
+      18,
+      20
     ],
     "other_final_pages_match_inspected_render": true,
     "result": "No clipping, overlap, broken formulas or illegible layout observed."
@@ -62,9 +58,10 @@
       "Litsey",
       "OpenAI",
       "Prevost",
+      "Supplement",
       "Zudilin"
     ],
-    "citation_occurrences": 10,
+    "citation_occurrences": 12,
     "all_citations_resolved": true,
     "main_results_numbering": {
       "thm:principal": "1.1",
@@ -97,7 +94,7 @@
     },
     {
       "from": "README.md",
-      "target": "supplement/audit.txt"
+      "target": "planning/supplement-self-contained-review.txt"
     },
     {
       "from": "README.md",
@@ -193,7 +190,7 @@
     },
     {
       "from": "supplement/README.md",
-      "target": "audit.txt"
+      "target": "../planning/supplement-self-contained-review.txt"
     },
     {
       "from": "supplement/README.md",
@@ -201,11 +198,11 @@
     },
     {
       "from": "supplement/README.md",
-      "target": "../planning/expository-review.txt"
+      "target": "../checks/paired/README.txt"
     },
     {
       "from": "supplement/README.md",
-      "target": "../planning/accessibility-review.txt"
+      "target": "coverage.json"
     },
     {
       "from": "supplement/README.md",
@@ -217,11 +214,15 @@
     },
     {
       "from": "supplement/README.md",
-      "target": "coverage.json"
+      "target": "../checks/case-studies-result.json"
     },
     {
       "from": "supplement/README.md",
       "target": "../sources/supplement-reading.json"
+    },
+    {
+      "from": "supplement/README.md",
+      "target": "audit.txt"
     },
     {
       "from": "checks/README.md",
@@ -244,8 +245,28 @@
       "target": "../planning/expository-review.txt"
     },
     {
+      "from": "checks/README.md",
+      "target": "case-studies-result.json"
+    },
+    {
+      "from": "checks/README.md",
+      "target": "paired/README.txt"
+    },
+    {
+      "from": "checks/README.md",
+      "target": "supplement-requirements.txt"
+    },
+    {
       "from": "checks/SUPPLEMENT.md",
       "target": "supplement-reproduction.json"
+    },
+    {
+      "from": "checks/SUPPLEMENT.md",
+      "target": "case-studies-result.json"
+    },
+    {
+      "from": "checks/SUPPLEMENT.md",
+      "target": "paired/README.txt"
     }
   ],
   "local_pdf_source_links_checked": [
@@ -328,7 +349,7 @@
   "independent_audit_of_assembled_draft": false,
   "formal_verification": false,
   "source": "paper/beta4-determinant-obstructions.tex",
-  "source_sha256": "7c95fe327e80d7ed08e90c64a71f22ea34041b1a32ac226795abe5e14eb8dec8",
+  "source_sha256": "2fa796e8d1816362ce6d3359accb3c4989f4b2c0215acbd47b957cd165785392",
   "historical_statement_preservation": {
     "baseline_commit": "local-prepublication-revision",
     "formal_statements_unchanged_in_document": 11,
@@ -602,6 +623,31 @@
       ],
       "other_pages_pixel_identical": 5,
       "calculation_suites_rerun": false
+    },
+    {
+      "baseline_commit": "local-prepublication-revision",
+      "change": "Cite the companion supplement formally, explain the division between the two manuscripts at the end of the introduction, and update Section 7 to describe the self-contained case studies.",
+      "existing_statement_remark_and_proof_blocks_unchanged": 23,
+      "every_existing_numbered_display_unchanged": true,
+      "supplement_bibliography_number": 7,
+      "supplement_pdf": "output/pdf/beta4-investigations.pdf",
+      "supplement_pdf_sha256": "3a28502b3213192968b04157ec4be9b4efe49d7d826d01c3aa5c24f5b4653409",
+      "changed_pages_reinspected": [
+        1,
+        2,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        18,
+        20
+      ],
+      "other_pages_pixel_identical": 9,
+      "calculation_suites_rerun": false,
+      "independent_mathematical_audit": false
     }
   ]
 }
