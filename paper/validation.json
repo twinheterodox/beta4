@@ -1,16 +1,14 @@
 {
   "status": "passed",
-  "recorded_at_utc": "2026-11-01T18:31:36.678227+00:00",
-  "scope": "Current editorial revision: supplement citation, explanation of the split, mathematical-text preservation, compilation, links and visual review. Earlier mathematical and reproduction checks retain their stated historical scopes.",
+  "recorded_at_utc": "2026-11-01T18:49:52.138415+00:00",
+  "scope": "Current editorial revision: define the multiplier after (1.3), confirm this is the only source change, rebuild, compare page renders and inspect changed pages. Earlier mathematical and reproduction checks retain their stated historical scopes.",
   "source_files_match_build_record": 1,
-  "build_record_sha256": "1541977b8131cf5a0076e1a84b91bb7499ccf7644dffa23e8aa97cd10ed8b835",
+  "build_record_sha256": "17f03a4ac639a8cead947397f1f80862ab06575d58e7d865c42debca6892473e",
   "pdf": "output/pdf/beta4-determinant-obstructions.pdf",
-  "pdf_sha256": "67455da3da14c0f767ea98e656da20cd7ab7316d0cf54ac11fdc9fdaae3e3a29",
+  "pdf_sha256": "bc76128a3f6e61945b1a5f3dd5a0fa491c39f79204439c3b7fcac58c824b3021",
   "pages": 20,
   "visual_inspection": {
     "pages_inspected": [
-      1,
-      2,
       3,
       4,
       5,
@@ -24,16 +22,12 @@
       13,
       14,
       15,
-      16,
-      17,
-      18,
-      19,
-      20
+      16
     ],
-    "rendering": "Poppler, 100 dpi; all 20 pages visually inspected in four-page sheets and compared with the preceding PDF.",
+    "rendering": "Poppler, 100 dpi. All changed pages inspected in four-page sheets; the other six pages are pixel-identical to the previously inspected PDF.",
     "final_changed_pages_reinspected": [
-      1,
-      2,
+      3,
+      4,
       5,
       6,
       7,
@@ -41,8 +35,11 @@
       9,
       10,
       11,
-      18,
-      20
+      12,
+      13,
+      14,
+      15,
+      16
     ],
     "other_final_pages_match_inspected_render": true,
     "result": "No clipping, overlap, broken formulas or illegible layout observed."
@@ -349,7 +346,7 @@
   "independent_audit_of_assembled_draft": false,
   "formal_verification": false,
   "source": "paper/beta4-determinant-obstructions.tex",
-  "source_sha256": "2fa796e8d1816362ce6d3359accb3c4989f4b2c0215acbd47b957cd165785392",
+  "source_sha256": "46f6efebff2e6a6a906bd8a294b1634fdb61b6adf4bc6b678c7f9a80fea9782d",
   "historical_statement_preservation": {
     "baseline_commit": "local-prepublication-revision",
     "formal_statements_unchanged_in_document": 11,
@@ -646,6 +643,30 @@
         20
       ],
       "other_pages_pixel_identical": 9,
+      "calculation_suites_rerun": false,
+      "independent_mathematical_audit": false
+    },
+    {
+      "baseline_commit": "local-prepublication-revision",
+      "change": "Define kappa_n after (1.3) as the smallest positive rational multiplier making every coefficient of kappa_n Q_n an integer.",
+      "only_stated_prose_change": true,
+      "changed_pages_reinspected": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "other_pages_pixel_identical": 6,
       "calculation_suites_rerun": false,
       "independent_mathematical_audit": false
     }
