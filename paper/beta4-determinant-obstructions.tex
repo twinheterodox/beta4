@@ -228,16 +228,43 @@ diagonal entry. The transformed cubic tail in
 Section~\ref{sec:kernel} gives such a symmetric matrix and also a
 positive integral representation.
 
-Using the same nodes for rows and columns preserves the Gram-matrix
-interpretation; this is the \emph{principal} choice. Consecutive
-integers give a simple first family to test:
+Think of the construction as an infinite symmetric matrix, with rows
+and columns labelled by the positive integers. The entry in row $a$
+and column $b$ is obtained from the two corresponding tail shifts.
+To obtain a finite $n\times n$ matrix, we select $n$ row labels and
+$n$ column labels. These selected labels are the \emph{nodes}.
+
+We select the same labels for rows and columns, giving a
+\emph{principal submatrix}. The positive integral representation
+associates a function with each node and expresses a matrix entry as
+the inner product of the two corresponding functions. Using the same
+nodes therefore gives the Gram matrix of one list of functions.
+Section~\ref{sec:kernel} proves that distinct nodes give linearly
+independent functions, so this determinant is positive.
+
+We take a block of consecutive labels,
 \[
  m+1,m+2,\ldots,m+n.
 \]
-The parameter $n$ is the matrix size and $m$ is its offset. Allowing $m$
-to vary tests whether starting farther along the tails improves the
-construction. Replacing $\theta$ by $X$ and taking the determinant defines $Q_{n,m}(X)$;
-write $Z_{n,m}=\PP(Q_{n,m})$. The construction is made explicit in
+Here $n\geq1$ is the matrix size and $m\geq0$ is the number of labels
+skipped before the block starts. For example, $n=3$, $m=0$ selects
+rows and columns $1,2,3$, whereas $n=3$, $m=10$ selects $11,12,13$.
+Increasing $n$ enlarges the matrix. Increasing $m$ keeps its size fixed
+but uses tails that start farther out in the series. We allow both
+parameters to vary to test whether later tails improve the balance
+between determinant decay and denominator cost.
+
+Each diagonal entry of the selected matrix is $\theta$ plus a rational,
+and every off-diagonal entry is rational. Replace each diagonal
+$\theta$ by the variable $X$, keep the rational parts fixed, and take
+the determinant. This defines a polynomial $Q_{n,m}(X)$ with rational
+coefficients; substituting $X=\theta$ recovers the positive determinant.
+Its primitive representative $Z_{n,m}=\PP(Q_{n,m})$ is obtained by
+clearing denominators and then dividing all coefficients by their
+greatest common divisor.
+It is $Z_{n,m}(\theta)$, after this conversion to integer coefficients,
+that must be small for the irrationality criterion. The full matrix
+entries and determinant are given in
 \eqref{eq:R}--\eqref{eq:principal-Q}.
 
 \begin{theorem}[Consecutive principal determinants]\label{thm:principal}

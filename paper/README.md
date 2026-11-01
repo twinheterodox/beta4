@@ -2,7 +2,7 @@
 
 [Read the paper](../output/pdf/beta4-determinant-obstructions.pdf) · [LaTeX source](beta4-determinant-obstructions.tex)
 
-This 20-page draft of *Arithmetic obstructions in positive determinant approximations to β(4)* explains the motivation and provenance of two determinant constructions and what their failure establishes. It gives both obstruction proofs in one notation, including their analytic representations, real lower bounds, exact local arithmetic and scope. The common-zero extension is an appendix.
+This 21-page draft of *Arithmetic obstructions in positive determinant approximations to β(4)* explains the motivation and provenance of two determinant constructions and what their failure establishes. It gives both obstruction proofs in one notation, including their analytic representations, real lower bounds, exact local arithmetic and scope. The common-zero extension is an appendix.
 
 The introduction starts with the integer-arithmetic contradiction behind an irrationality proof. A two-by-two example explains how determinants produce polynomials, and a simple denominator example explains primitive normalization. The two main theorems then appear with plain-language interpretations, before the detailed matrix formulas. A shared three-step proof outline and an exponent table explain why the arithmetic cost defeats the real decay.
 

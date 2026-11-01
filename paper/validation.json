@@ -1,14 +1,16 @@
 {
   "status": "passed",
-  "recorded_at_utc": "2026-11-01T18:49:52.138415+00:00",
-  "scope": "Current editorial revision: define the multiplier after (1.3), confirm this is the only source change, rebuild, compare page renders and inspect changed pages. Earlier mathematical and reproduction checks retain their stated historical scopes.",
+  "recorded_at_utc": "2026-11-01T21:13:33.450597+00:00",
+  "scope": "Current editorial revision: expand the introduction explanation of principal nodes, offsets and determinant polynomials; confirm all other source text, formal statements, proofs and numbered displays are unchanged; rebuild and inspect every page. Earlier mathematical and reproduction checks retain their stated historical scopes.",
   "source_files_match_build_record": 1,
-  "build_record_sha256": "17f03a4ac639a8cead947397f1f80862ab06575d58e7d865c42debca6892473e",
+  "build_record_sha256": "418b2c71107de6b346f54b2fd3f85ff776ac3f7d318befdf295d049fc93f632e",
   "pdf": "output/pdf/beta4-determinant-obstructions.pdf",
-  "pdf_sha256": "bc76128a3f6e61945b1a5f3dd5a0fa491c39f79204439c3b7fcac58c824b3021",
-  "pages": 20,
+  "pdf_sha256": "7c5fddee5a2098f2465469384dc00ee9d09e36d68ce1a4cdec45a12c8f20efa0",
+  "pages": 21,
   "visual_inspection": {
     "pages_inspected": [
+      1,
+      2,
       3,
       4,
       5,
@@ -22,31 +24,19 @@
       13,
       14,
       15,
-      16
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
     ],
-    "rendering": "Poppler, 100 dpi. All changed pages inspected in four-page sheets; the other six pages are pixel-identical to the previously inspected PDF.",
-    "final_changed_pages_reinspected": [
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16
-    ],
-    "other_final_pages_match_inspected_render": true,
+    "rendering": "Poppler, 100 dpi. All 21 pages inspected in four-page sheets.",
     "result": "No clipping, overlap, broken formulas or illegible layout observed."
   },
   "latex": {
     "unique_labels": 92,
-    "reference_occurrences": 92,
+    "reference_occurrences": 93,
     "unresolved_references": [],
     "bibliography_keys": [
       "Brown",
@@ -346,7 +336,7 @@
   "independent_audit_of_assembled_draft": false,
   "formal_verification": false,
   "source": "paper/beta4-determinant-obstructions.tex",
-  "source_sha256": "46f6efebff2e6a6a906bd8a294b1634fdb61b6adf4bc6b678c7f9a80fea9782d",
+  "source_sha256": "52264798a7983050d91b978fd85acd737348ab0e9d58a6fa2c7c990e7bfa4d6d",
   "historical_statement_preservation": {
     "baseline_commit": "local-prepublication-revision",
     "formal_statements_unchanged_in_document": 11,
@@ -667,6 +657,39 @@
         16
       ],
       "other_pages_pixel_identical": 6,
+      "calculation_suites_rerun": false,
+      "independent_mathematical_audit": false
+    },
+    {
+      "change": "Explain nodes as row and column labels, the principal Gram-matrix choice and positivity, matrix size versus offset with two three-node examples, and the conversion from Q to its primitive integer polynomial Z.",
+      "baseline_commit": "local-prepublication-revision",
+      "only_requested_introduction_block_changed": true,
+      "existing_statement_and_proof_blocks_unchanged": 23,
+      "numbered_displays_unchanged": true,
+      "all_pages_inspected": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "pages": 21,
       "calculation_suites_rerun": false,
       "independent_mathematical_audit": false
     }
