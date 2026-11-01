@@ -1,0 +1,32 @@
+SELF-CONTAINED SUPPLEMENT REVISION — 1 November 2026
+
+Purpose: give a mathematical reader reproducible starting points, with the
+construction, established arguments and exact unresolved question in the
+manuscript. Standard results and the companion paper may be cited precisely;
+our research logs must not supply missing proof steps for a featured case.
+
+Keep the existing complete proofs. Expand the substantial unresolved and
+partially obstructed constructions into case studies. Separate bounded
+experiments and historical variants into a concise navigation catalog.
+
+Priority coverage:
+1. Interleaved/nonprincipal determinants: family, positivity/energy, local
+   arithmetic, integer versus rational normalization, exact remaining issue.
+2. Quarter-pole determinants: positive squared and unsquared variants,
+   explicit entries, cancellation, conditional nonvanishing proof.
+3. Common-base polylogarithm determinants and simultaneous multipliers:
+   reproducible definitions and precise separation of known/unknown costs.
+4. Rational endpoint/Hermite sources and slow filters: exact construction,
+   cancellation, nonvanishing and normalization questions.
+5. Hypergeometric/paired identities: explicit rational functions and
+   reductions, reconstruction of coefficients, scope of arithmetic bounds.
+6. Modular sources: transformations, eliminated periods, exact singularity
+   obstruction for the specified coordinates.
+7. Coupled/ladder and rationality-dependent routes: recoverable formulas,
+   reductions or scoped failure proofs; exclude redundant exploratory logs.
+8. Reader guide, claim coverage and citation/source ledger; reproducible
+   exact checks for newly exposed formulas, build and visual PDF review.
+
+This is exposition and verification of existing work, not a resumed search
+for irrationality or a new independent/model/formal verification claim.
+No public upload. Preserve frozen evidence and the untracked main-paper PDF.

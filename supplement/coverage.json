@@ -213,7 +213,7 @@
     {
       "id": "A01",
       "archived_classification": "arithmetic_theorem",
-      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "supplement_scope": "Slow-dilation germ, endpoint and regular-word coefficient bound proved here; sharper Frobenius bounds and prefix lower rates remain archived.",
       "primary_path": "evidence/research/collaboration/round-01/arithmetic/findings.txt",
       "all_proof_paths": [
         "evidence/research/collaboration/round-01/arithmetic/findings.txt",
@@ -246,7 +246,7 @@
     {
       "id": "A04",
       "archived_classification": "partial_construction",
-      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "supplement_scope": "Exact Euler deletion, primitive selected-prime bound and subquadratic sufficient cost proved here; matching analytic bounds are not supplied.",
       "primary_path": "evidence/research/collaboration/round-04/arithmetic/findings.txt",
       "all_proof_paths": [
         "evidence/research/collaboration/round-04/arithmetic/findings.txt",
@@ -257,7 +257,7 @@
     {
       "id": "A05",
       "archived_classification": "primitive_value_obstruction",
-      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "supplement_scope": "Sparse Pade pair and determinant scalar collapse proved here; additional oversieved primitive obstruction remains archived, natural cutoff unresolved.",
       "primary_path": "evidence/research/collaboration/round-04/construction/findings.txt",
       "all_proof_paths": [
         "evidence/research/collaboration/round-04/construction/findings.txt"
@@ -277,7 +277,7 @@
     {
       "id": "H01",
       "archived_classification": "positive_construction",
-      "supplement_scope": "Euler identity and one-endpoint reduction proved here; two-endpoint system retained as an archived claim.",
+      "supplement_scope": "Euler and one-endpoint reductions plus the full two-endpoint four-by-five parametrization proved here, including singular cases.",
       "primary_path": "evidence/research/collaboration/round-03/fresh/findings.txt",
       "all_proof_paths": [
         "evidence/research/collaboration/round-03/fresh/findings.txt",
@@ -289,7 +289,7 @@
     {
       "id": "H02",
       "archived_classification": "arithmetic_theorem",
-      "supplement_scope": "Strict-index denominator word proved here; source-specific sharpness retained as an archived claim.",
+      "supplement_scope": "Strict-index denominator word and the factorial endpoint normalization proved here; source-specific sharpness remains archived.",
       "primary_path": "evidence/research/collaboration/round-01/arithmetic/findings.txt",
       "all_proof_paths": [
         "evidence/research/collaboration/round-01/arithmetic/findings.txt",
@@ -300,7 +300,7 @@
     {
       "id": "H03",
       "archived_classification": "partial_construction",
-      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "supplement_scope": "The underlying endpoint construction is explicit here; the specialized eventual-rank and circular-error asymptotics remain archived.",
       "primary_path": "evidence/research/collaboration/round-07/analysis/rank_asymptotic.txt",
       "all_proof_paths": [
         "evidence/research/collaboration/round-07/analysis/rank_asymptotic.txt",
@@ -332,7 +332,7 @@
     {
       "id": "L03",
       "archived_classification": "partial_construction",
-      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "supplement_scope": "Common-base germ, nonvanishing, capacity bound, leading dyadic cost and signed-integral alternative developed here; the odd-prime inequality remains open.",
       "primary_path": "evidence/research/collaboration/round-03/analysis/findings.txt",
       "all_proof_paths": [
         "evidence/research/collaboration/round-03/analysis/findings.txt",
@@ -343,7 +343,7 @@
     {
       "id": "L04",
       "archived_classification": "partial_construction",
-      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "supplement_scope": "Compatible pole multipliers, exact error formula, eventual signed asymptotic and sufficient clearing factor proved here; primitive arithmetic remains open.",
       "primary_path": "evidence/research/collaboration/round-02/fresh/simultaneous.txt",
       "all_proof_paths": [
         "evidence/research/collaboration/round-02/fresh/simultaneous.txt"
@@ -364,7 +364,7 @@
     {
       "id": "M01",
       "archived_classification": "positive_construction",
-      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "supplement_scope": "Classical period identity specialized explicitly; period cancellation and coefficient prime cost proved here. Specialized Apery-limit singularity analysis remains archived.",
       "primary_path": "evidence/research/modular-detour.txt",
       "all_proof_paths": [
         "evidence/research/modular-detour.txt",
@@ -375,7 +375,7 @@
     {
       "id": "M02",
       "archived_classification": "arithmetic_theorem",
-      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "supplement_scope": "F-only prime deletion, cusp-error sign/size and fixed-filter natural boundary proved here. Balanced quadratic/quartic filter variants remain archived.",
       "primary_path": "evidence/research/collaboration/round-05/arithmetic/findings.txt",
       "all_proof_paths": [
         "evidence/research/collaboration/round-05/arithmetic/findings.txt",
@@ -441,7 +441,7 @@
     {
       "id": "Q04",
       "archived_classification": "positive_construction",
-      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "supplement_scope": "Full forward/dual definitions, remainder formulas, proof mechanism and standalone exact all-index certificates supplied; source recurrence theorem is explicitly cited for rates.",
       "primary_path": "evidence/research/collaboration/round-15/coordinator/complete-deformation.txt",
       "all_proof_paths": [
         "evidence/research/collaboration/round-12/fresh/findings.txt",
@@ -454,7 +454,7 @@
     {
       "id": "Q05",
       "archived_classification": "estimate_limitation",
-      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "supplement_scope": "Specified transferred-valuation ceiling proved with exact floor integration; no upper bound on actual common content is asserted.",
       "primary_path": "evidence/research/collaboration/round-15/coordinator/arithmetic-gate.txt",
       "all_proof_paths": [
         "evidence/research/collaboration/round-15/coordinator/arithmetic-gate.txt",
@@ -491,7 +491,7 @@
     {
       "id": "P03",
       "archived_classification": "partial_construction",
-      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "supplement_scope": "Full rational-series family and five-period decomposition proved here, with explicit cofactor elimination; original geometric derivation and positive-integral bound remain archived.",
       "primary_path": "evidence/research/collaboration/round-09/internal_graph/general-period-space.txt",
       "all_proof_paths": [
         "evidence/research/collaboration/round-09/internal_graph/general-period-space.txt",
@@ -503,7 +503,7 @@
     {
       "id": "P04",
       "archived_classification": "partial_construction",
-      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "supplement_scope": "Squared quarter-pole pencil, exact moment/pole evaluations, positivity, degree and analytic comparison proved here; primitive asymptotics remain open.",
       "primary_path": "evidence/research/collaboration/round-10/coordinator/dense-quarter-gate.txt",
       "all_proof_paths": [
         "evidence/research/collaboration/round-10/coordinator/dense-quarter-gate.txt",
@@ -514,7 +514,7 @@
     {
       "id": "P05",
       "archived_classification": "partial_construction",
-      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "supplement_scope": "Unsquared quarter-pole pencil, coefficient recovery and auxiliary-prime conditional nonvanishing proved here; normalized size remains open.",
       "primary_path": "evidence/research/collaboration/round-11/fresh/findings.txt",
       "all_proof_paths": [
         "evidence/research/collaboration/round-11/fresh/findings.txt",
@@ -525,7 +525,7 @@
     {
       "id": "P06",
       "archived_classification": "estimate_limitation",
-      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "supplement_scope": "Explicit interleaved family, positivity/energy, local Smith layers and integer-clearing limitation proved here; rational primitive content remains open.",
       "primary_path": "evidence/research/collaboration/round-16/archive-audit.txt",
       "all_proof_paths": [
         "evidence/research/collaboration/round-16/archive-audit.txt",
@@ -617,7 +617,7 @@
     {
       "id": "E07",
       "archived_classification": "structural_obstruction",
-      "supplement_scope": "Catalogued with its archived scope; not promoted to a newly audited theorem.",
+      "supplement_scope": "Rationality-dependent source, origin prime obstruction, endpoint derivative, coordinate integral and differential-field limitation proved here.",
       "primary_path": "evidence/research/collaboration/round-11/rationality/findings.txt",
       "all_proof_paths": [
         "evidence/research/collaboration/round-11/rationality/findings.txt"

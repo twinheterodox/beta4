@@ -14,7 +14,23 @@ hashes. It includes the rational Sturm and tail certificate used in
 Theorem~\ref{thm:mellin}. Additional finite algebra checks cover the
 rewritten scalar, Euler--Boole, continuant and monodromy formulas.
 The precise cases, counts, dependencies and results are in
-\path{checks/supplement-reproduction.json}. No large parameter search
+\path{checks/supplement-reproduction.json}. The expanded case studies
+have an additional independent implementation of finite exact formulas
+in \path{checks/case_studies.py}, including partial fractions, prime
+reductions, endpoint reconstruction and determinant identities. Its
+report is \path{checks/case-studies-result.json}. Here ``independent
+implementation'' means a separate calculation by the assembling model,
+not an independent model or human audit.
+
+The paired-identity directory is self-contained: its rational matrices,
+polynomial problem definitions and exact solver reconstruct all ten
+certificates, rather than depending on the original research environment.
+It records exact matrix transport, regularity, exceptional initial cases
+and the closed normalizing scalar. Separate scripts reproduce the floor
+integration and enclose the numerical rates with Arb. The written proof
+in Section~\ref{subsec:paired-proof} explains the transfer from algebraic
+certificates to finite sums and differentiated tails. Computation does
+not replace those analytic boundary arguments. No large parameter search
 is part of this writing pass. Archived tests outside that runner retain
 their original status and are not described as rerun.
 

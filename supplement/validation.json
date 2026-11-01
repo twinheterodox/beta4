@@ -1,12 +1,19 @@
 {
   "status": "passed",
-  "recorded_at_utc": "2026-10-31T17:17:23.397585+00:00",
-  "scope": "Package consistency and visual review after the equation-by-equation expository revision; not independent mathematical verification.",
-  "source_files_match_build_record": 13,
-  "build_record_sha256": "82dd8bc2a42863b681fcf2df7d0325ca782f598f5dc74e94a484fa62f36e411e",
+  "recorded_at_utc": "2026-11-01T17:41:50.039509+00:00",
+  "scope": "Package consistency, source/proof preservation, reproduction checks and visual review of the self-contained case-study revision; not independent mathematical verification.",
+  "baseline_commit": "local-prepublication-revision",
+  "previous_validation": {
+    "commit": "local-prepublication-revision",
+    "path": "supplement/validation.json",
+    "pages": 34,
+    "scope": "Package consistency and visual review after the equation-by-equation expository revision; not independent mathematical verification."
+  },
+  "source_files_match_build_record": 21,
+  "build_record_sha256": "b028c16b89f50b6b4c600a3406a4830c107e906db678beafd9f522658bf33ca0",
   "pdf": "output/pdf/beta4-investigations.pdf",
-  "pdf_sha256": "77e065ce8cf9751d3296651f27d9e43da0aea76a46aa40c9973b449f20c752f5",
-  "pages": 34,
+  "pdf_sha256": "3a28502b3213192968b04157ec4be9b4efe49d7d826d01c3aa5c24f5b4653409",
+  "pages": 67,
   "visual_inspection": {
     "pages_inspected": [
       1,
@@ -42,41 +49,73 @@
       31,
       32,
       33,
-      34
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67
     ],
-    "rendering": "Poppler, 100 dpi; all pages inspected. Final link-color changes were rendered again and compared with the inspected pages.",
+    "rendering": "Poppler, 100 dpi; all 67 pages visually inspected in four-page sheets. All final pages rendered again and compared with the inspected images.",
     "final_changed_pages_reinspected": [
-      28,
-      29,
-      30,
-      31,
-      32,
-      33,
-      34
+      31
     ],
     "other_final_pages_match_inspected_render": true,
     "result": "No clipping, overlap, broken formulas or illegible layout observed."
   },
   "latex": {
-    "unique_labels": 110,
-    "reference_occurrences": 55,
+    "unique_labels": 195,
+    "reference_occurrences": 151,
     "unresolved_references": [],
     "bibliography_keys": [
+      "BerndtStraub",
+      "Bradley",
       "Broadhurst",
       "CDT",
       "Carreira",
       "DLMF",
       "Gangl",
       "Krattenthaler",
+      "KroneckerNote",
+      "Lai",
       "Leibtag",
       "Litsey",
       "Main",
       "MarcheMasbaum",
       "OpenAI",
+      "Polya",
       "Prevost",
       "Zudilin"
     ],
-    "citation_occurrences": 15,
+    "citation_occurrences": 23,
     "all_citations_resolved": true,
     "overfull_or_underfull_boxes": false,
     "control_characters": false
@@ -92,7 +131,7 @@
     },
     {
       "from": "README.md",
-      "target": "paper/audit.txt"
+      "target": "planning/narrative-review.txt"
     },
     {
       "from": "README.md",
@@ -104,7 +143,11 @@
     },
     {
       "from": "README.md",
-      "target": "supplement/audit.txt"
+      "target": "planning/supplement-self-contained-review.txt"
+    },
+    {
+      "from": "README.md",
+      "target": "planning/narrative-review.txt"
     },
     {
       "from": "README.md",
@@ -113,6 +156,10 @@
     {
       "from": "README.md",
       "target": "planning/accessibility-review.txt"
+    },
+    {
+      "from": "README.md",
+      "target": "paper/audit.txt"
     },
     {
       "from": "README.md",
@@ -156,6 +203,10 @@
     },
     {
       "from": "paper/README.md",
+      "target": "../planning/narrative-review.txt"
+    },
+    {
+      "from": "paper/README.md",
       "target": "../planning/expository-review.txt"
     },
     {
@@ -188,7 +239,7 @@
     },
     {
       "from": "supplement/README.md",
-      "target": "audit.txt"
+      "target": "../planning/supplement-self-contained-review.txt"
     },
     {
       "from": "supplement/README.md",
@@ -196,11 +247,11 @@
     },
     {
       "from": "supplement/README.md",
-      "target": "../planning/expository-review.txt"
+      "target": "../checks/paired/README.txt"
     },
     {
       "from": "supplement/README.md",
-      "target": "../planning/accessibility-review.txt"
+      "target": "coverage.json"
     },
     {
       "from": "supplement/README.md",
@@ -212,11 +263,15 @@
     },
     {
       "from": "supplement/README.md",
-      "target": "coverage.json"
+      "target": "../checks/case-studies-result.json"
     },
     {
       "from": "supplement/README.md",
       "target": "../sources/supplement-reading.json"
+    },
+    {
+      "from": "supplement/README.md",
+      "target": "audit.txt"
     },
     {
       "from": "checks/README.md",
@@ -239,8 +294,28 @@
       "target": "../planning/expository-review.txt"
     },
     {
+      "from": "checks/README.md",
+      "target": "case-studies-result.json"
+    },
+    {
+      "from": "checks/README.md",
+      "target": "paired/README.txt"
+    },
+    {
+      "from": "checks/README.md",
+      "target": "supplement-requirements.txt"
+    },
+    {
       "from": "checks/SUPPLEMENT.md",
       "target": "supplement-reproduction.json"
+    },
+    {
+      "from": "checks/SUPPLEMENT.md",
+      "target": "case-studies-result.json"
+    },
+    {
+      "from": "checks/SUPPLEMENT.md",
+      "target": "paired/README.txt"
     }
   ],
   "local_pdf_source_links_checked": [
@@ -303,21 +378,141 @@
     "../../evidence/research/coupled-holonomy.txt",
     "beta4-determinant-obstructions.pdf"
   ],
-  "reproduction_report": "checks/supplement-reproduction.json",
-  "reproduction_report_sha256": "90fbab7a3f50029fc34ea9f012778f7c1ee71e7ba45dc9f3169f7bbf6ff8af77",
-  "reproduction_input_and_output_hashes_checked": 0,
+  "local_pdf_source_link_scope": "Every run: target in the compiled TeX source exists relative to the output PDF; build has no unresolved references.",
+  "literature_pdf_hashes_checked": [
+    {
+      "source": "ZUDILIN2015",
+      "path": "/home/research/Chat/Math/beta4/literature/papers/A-determinantal-approach-to-irrationality_1507.05697v2.pdf",
+      "sha256": "5b9ce0da2370473eff453a436dcf2901ed886e58fd9521db01e5c1818166788c"
+    },
+    {
+      "source": "CARREIRA2026",
+      "path": "/home/research/Chat/Math/beta4/literature/papers/Determinant-constructions-for-the-Dirichlet-beta-value-at-four_carreira-beta4-2026.pdf",
+      "sha256": "a2e673cf9243fdb578ec7f2798a50da1ef004fd6059df49210ded5c004edb163"
+    },
+    {
+      "source": "BROADHURST1998",
+      "path": "/home/research/Chat/Math/beta4/literature/papers/Polylogarithmic-ladders-hypergeometric-series-and-the-ten-millionth-digits-of-zeta-3-and-zeta-5_math-9803067v1.pdf",
+      "sha256": "8b7042a4748b62c85d46ef987aa4f5bdce2c4b3e0518104c7fde0acbf4efd0ee"
+    },
+    {
+      "source": "GANGL2002",
+      "path": "/home/research/Chat/Math/beta4/literature/papers/Functional-equations-for-higher-logarithms_math-0207222v1.pdf",
+      "sha256": "8a1fd48d87dff949aadace90da6b65606cd90a7bfe646725b4fbe08ac3edf631"
+    },
+    {
+      "source": "LEIBTAG2026",
+      "path": "/home/research/Chat/Math/beta4/literature/papers/New-Directions-in-Irrationality_2610.27799v1.pdf",
+      "sha256": "29ae9b2fddf5a5cb5ff2180b8b45e1049206d0587062beb6ecb5c5c3dd2889c2"
+    },
+    {
+      "source": "KRATTENTHALER2021",
+      "path": "/home/research/Chat/Math/beta4/literature/papers/Determinant-identity-for-rationally-modified-moments_Krattenthaler_2103.03969v1.pdf",
+      "sha256": "9257216e0cfef032a4ab8f4799ef3251fe18027a053fade8f93e1e36c152001b"
+    },
+    {
+      "source": "PREVOST2017",
+      "path": "/home/research/Chat/Math/beta4/literature/papers/Remainder-Pade-approximants-for-the-Hurwitz-zeta-function_Prevost_1709.05389v1.pdf",
+      "sha256": "5861d99061460d253ba17cdac081f9ce9fb5bfcdaf4ab131a04a456d65b58038"
+    },
+    {
+      "source": "OPENAI2026",
+      "path": "/home/research/Chat/Math/beta4/literature/papers/Catalans-constant-is-irrational-OpenAI_openai-catalan-2026.pdf",
+      "sha256": "4023d0344abceb79dc46a16380dac3a662193f9d4f23e6c340b2162068b04c0e"
+    },
+    {
+      "source": "CDT2025",
+      "path": "/home/research/Chat/Math/beta4/literature/papers/Arithmetic-holonomy-bounds-and-effective-Diophantine-approximation_2510.04156v1.pdf",
+      "sha256": "5f403f337fed8bfd776348a04aaaec7d57ca6f90c31dd871ed793bf24239c8f1"
+    },
+    {
+      "source": "LITSEY2026",
+      "path": "/home/research/Chat/Math/beta4/literature/papers/Irrationality-measures-for-differences-of-trigamma-values_litsey-lambda-2026.pdf",
+      "sha256": "c67bdc85087678939be3816856888b8b7febe67968a437e0a4556170acd79e33"
+    },
+    {
+      "source": "MARCHEMASBAUM2026",
+      "path": "/home/research/Chat/Math/beta4/literature/papers/Signatures-in-TQFT-asymptotics-and-modularity_e826bc37.pdf",
+      "sha256": "e826bc37d6a726c6a455225f9363ac1c0923565ef68229440f3f27965c4c1235"
+    },
+    {
+      "source": "Series acceleration formulas for Dirichlet series with periodic coefficients",
+      "path": "/home/research/Chat/Math/beta4/literature/papers/Series-acceleration-formulas-for-Dirichlet-series-with-periodic-coefficients_math-0505078v1.pdf",
+      "sha256": "5a9efa4825798d5e7b0e392f1250587fd7611f941d0e873d296b671a24517751"
+    },
+    {
+      "source": "On a secant Dirichlet series and Eichler integrals of Eisenstein series",
+      "path": "/home/research/Chat/Math/beta4/literature/papers/On-a-secant-Dirichlet-series-and-Eichler-integrals-of-Eisenstein-series_1406.2273v1.pdf",
+      "sha256": "0208ce078d1e7d22bf601b67a18959c2d938ec4c4bbc8ac9c1a7e7228f6224ba"
+    },
+    {
+      "source": "On Polya' Theorem in Several Complex Variables",
+      "path": "/home/research/Chat/Math/beta4/literature/papers/On-Polya-Theorem-in-Several-Complex-Variables_1609.00218v1.pdf",
+      "sha256": "57ff58d473b86d29af24740195d401a9af5be54c2feef8ae5eaee29cc71159dc"
+    },
+    {
+      "source": "The linear independence of 1 zeta 3 and zeta 4",
+      "path": "/home/research/Chat/Math/beta4/literature/papers/The-linear-independence-of-1-zeta-3-and-zeta-4_2610.06838v2.pdf",
+      "sha256": "f7a04e09f30abb01793574ce399489d527d71378ce1d52269012b0a158931a6d"
+    },
+    {
+      "source": "The Carlson Polya theorem on rational functions",
+      "path": "/home/research/Chat/Math/beta4/literature/papers/The-Carlson-Polya-theorem-on-rational-functions_polya-carlson.pdf",
+      "sha256": "a030d8e64ec51300d3f1c0d3d689a782d2defe10d4331447c7f7353efdf7af88"
+    }
+  ],
+  "source_ledger_sha256": "2c20163b31daf2e91a05fab37c4d3ae7eb6752471d4047aab3887c0639db8df7",
+  "reproduction_reports": [
+    {
+      "path": "checks/supplement-reproduction.json",
+      "sha256": "d1f4577f04c79665105e06335ba8d1171cfb1b72add1663cb49e203363436099"
+    },
+    {
+      "path": "checks/case-studies-result.json",
+      "sha256": "dcec40702af2a6f1074070b67f39a4a1517814ac5e2e28b8ccfc228811eae0d9"
+    },
+    {
+      "path": "checks/paired/result.json",
+      "sha256": "03802b6b2b7a8e606a962afe1113027effcfcff1740178c85a471a355b17ddc0"
+    },
+    {
+      "path": "checks/paired/arithmetic-result.json",
+      "sha256": "a85249a513d09bc20c7be29dabc31ce9d7ab208e3d656f9fa8d4a7e5f0893061"
+    },
+    {
+      "path": "checks/paired/rates-result.json",
+      "sha256": "8c6e218693f5d4bc4b2deadede82f71f5990c29acc984a06334090bffa328138"
+    }
+  ],
+  "reproduction_input_and_output_hashes_checked": 8,
   "reproduction_suite_rerun": true,
+  "case_study_exact_or_interval_checks": 120,
+  "paired_polynomial_certificates": 10,
+  "paired_input_hashes_checked": 10,
+  "paired_floor_partition_cells": 854,
   "statement_preservation": {
     "baseline_commit": "local-prepublication-revision",
-    "formal_statements_unchanged_in_document": 10,
-    "formal_statements_unchanged_across_both_documents": 21,
-    "comparison_record": "planning/expository-review.json",
-    "comparison_sha256": "70059eb11e25338a7026030bd7688041ca5a2c810ecac8238594c989659d7b84",
-    "proof_text": "Expanded and reorganized; no claim of verbatim proof preservation in this revision."
+    "original_proof_sections_byte_unchanged": [
+      "supplement/sections/02-euler-quadratic.tex",
+      "supplement/sections/03-boole.tex",
+      "supplement/sections/04-continuants.tex",
+      "supplement/sections/05-cyclotomic.tex",
+      "supplement/sections/06-completed-mellin.tex",
+      "supplement/sections/07-monodromy.tex",
+      "supplement/sections/08-first-variation.tex"
+    ],
+    "cone_section_after_intro_byte_unchanged": true,
+    "main_paper_source_and_pdf_unchanged": [
+      "paper/beta4-determinant-obstructions.tex",
+      "output/pdf/beta4-determinant-obstructions.pdf"
+    ],
+    "frozen_evidence_files_unchanged": 127,
+    "new_case_study_sections": 8,
+    "scope": "Existing complete proofs preserved; new case studies reconstruct archived arguments and distinguish proved results from incomplete estimates."
   },
   "editorial_review": {
-    "record": "planning/expository-review.txt",
-    "sha256": "9702d3873e8867d1e51b1aeb4626cad9bb2da196d1df31fec10a0ed0783b95c6"
+    "record": "planning/supplement-self-contained-review.txt",
+    "sha256": "c72005a0d2042721957dd0e61200c019b45a249f75128e3d3cd8ebdc1d7510eb"
   },
   "historical_reviews": [
     {
@@ -329,6 +524,11 @@
       "record": "planning/accessibility-review.txt",
       "sha256": "5d94bd8c530ba28103351672be2be0dc1cf0cf915f2bfc11db29e360d47e0c17",
       "scope": "Earlier revision, before the present proof expansions."
+    },
+    {
+      "record": "planning/expository-review.txt",
+      "sha256": "9702d3873e8867d1e51b1aeb4626cad9bb2da196d1df31fec10a0ed0783b95c6",
+      "scope": "Earlier equation-by-equation revision, before the present case-study expansion."
     }
   ],
   "packet_consistency": {
@@ -364,11 +564,10 @@
   "claim_navigation": {
     "claims": 57,
     "distinct_compiled_destinations": 57,
-    "record_label_occurrences": 50,
+    "record_label_occurrences": 70,
     "all_record_labels_resolve": true,
-    "all_paths_in_manifests": true,
+    "all_paths_exist": true,
     "classifications_unchanged": true,
-    "coverage_sha256": "e48430ef4a83ee33d62b8366c7cbdeefd5b2f6b5acafc9b4ed3d801418763a3c",
-    "primary_source_correction": "Q04 now links to round-15 complete-deformation.txt."
+    "coverage_sha256": "9546a94bb5c6df784b9298dcd7475ee3408a4a41fd42d38079910f349001cce6"
   }
 }

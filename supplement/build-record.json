@@ -1,22 +1,22 @@
 {
   "status": "compiled",
-  "pages": 34,
+  "pages": 67,
   "source_files": [
     {
       "path": "supplement/beta4-investigations.tex",
-      "sha256": "d41e0f334deb0db3a5523c6ef5da94602b06c465399f7ed339311eb6bfc996ee"
+      "sha256": "983bef719fffc143a0b008cf5ce5facf91a9f0e3e812e612ee093ea7115445e5"
     },
     {
       "path": "supplement/claim-register.tex",
-      "sha256": "e3cecb89833c2f9fddf54fc8ed6e01a7e337849aa3b6ea42bbdd47c0116c9d8c"
+      "sha256": "7343328633533ae6c93d5022cdd053ea857ce451a5a6ebad36b35794b5f40924"
     },
     {
       "path": "supplement/references.tex",
-      "sha256": "abd7ed377fe212fe5f2b4ba2b0a6598e85543919100997164c63c2c5e49bc749"
+      "sha256": "0885ec4f31a567455642cd926325f4fb3b720700a452a26c3a84bf6e4302c93e"
     },
     {
       "path": "supplement/sections/01-conventions-cone.tex",
-      "sha256": "7f8d8c72d24564e84b49fa0485ac4774b4ab31ab84e969d796f399ffcbe0bac4"
+      "sha256": "05c1059e3178ef36f333115741dc7b3da42ff95f6173b061751fb7bd4ee97cc8"
     },
     {
       "path": "supplement/sections/02-euler-quadratic.tex",
@@ -48,15 +48,47 @@
     },
     {
       "path": "supplement/sections/09-method-record.tex",
-      "sha256": "a1b35009d65ea9924758b2a60f846c3dbecd20fe215a48a3007d1443c8a4fe85"
+      "sha256": "214c775df00cccc0d040797b07e6f838a32edeb14cff19d9f3ffecae88a03ebf"
     },
     {
       "path": "supplement/sections/10-evidence.tex",
-      "sha256": "ed33eb898507b9deb12e01f48e6a8b36da619325c413c2906404dbe3860f813a"
+      "sha256": "589cd86d8e5b0496344fa2308ec9426d4410cabddc4b9c2ed1d89b94b15aed75"
+    },
+    {
+      "path": "supplement/sections/11-interleaved.tex",
+      "sha256": "e2aaa7834d138043e5731ebd9bee06a8f64164e45a508350042c541e0381d233"
+    },
+    {
+      "path": "supplement/sections/12-quarter-poles.tex",
+      "sha256": "de596ba91f9de1f55a504823293382a3e78219bf51d708a9355ed386c72c5633"
+    },
+    {
+      "path": "supplement/sections/13-common-base.tex",
+      "sha256": "d77c874e7687205fdfc66c928ef22af4d7cb9a81e111ffffa38d47f729f91cc7"
+    },
+    {
+      "path": "supplement/sections/14-endpoints-filters.tex",
+      "sha256": "f0faee38b018125232183479aee5242fa9001039c69ffdbd800dc0464d9b30c4"
+    },
+    {
+      "path": "supplement/sections/15-modular.tex",
+      "sha256": "c18b2ff86f30fb164309e382104a4b30df9f434503585193daa37af428f09403"
+    },
+    {
+      "path": "supplement/sections/16-coupled-niven.tex",
+      "sha256": "51b47f35e8789f01d5934452ca5072cac4ad429f8ffde5ad9e52e516eceb4242"
+    },
+    {
+      "path": "supplement/sections/17-paired.tex",
+      "sha256": "148130564c81a16fcd81cc36532e83003e9b3d1980a724a91f9980d5ec0f0eac"
+    },
+    {
+      "path": "supplement/sections/18-compatible.tex",
+      "sha256": "29aef784249d6708dc0aa617751600fb6af3af3f940b07d188edb841feff8ccc"
     }
   ],
   "pdf": "output/pdf/beta4-investigations.pdf",
-  "pdf_sha256": "77e065ce8cf9751d3296651f27d9e43da0aea76a46aa40c9973b449f20c752f5",
+  "pdf_sha256": "3a28502b3213192968b04157ec4be9b4efe49d7d826d01c3aa5c24f5b4653409",
   "tex_engine": "pdfTeX 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian)",
   "unresolved_references": false,
   "overfull_or_underfull_boxes": false,

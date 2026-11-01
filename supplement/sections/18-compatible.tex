@@ -1,0 +1,183 @@
+\section{Compatible multipliers and slow logarithmic dilations}
+\label{sec:compatible-case}
+Two further constructions are useful to retain explicitly. Both try to
+save denominators before elimination: one matches the endpoint values
+of different multipliers, and the other arranges cancellations between
+logarithmic arguments moving at different speeds.
+
+\subsection{Three pole multipliers with the same endpoint}
+\record{L04}
+Use the completed identity~\eqref{eq:ladder}, with
+\[
+ (z_1,z_3,z_5)=(i/2,(1+i)/4,(1-i)/8),
+\]
+\[
+ (c_1,c_3,c_5)=(225/136,-25/34,9/68),
+\]
+\[
+ (\alpha_1,\alpha_3,\alpha_5)=(1,3/2,5/2).
+\]
+Thus $\theta=\sum_jc_j(\Im\Li_4(z_j)+\alpha_j\log2\Im\Li_3(z_j)
+ +(\alpha_j^2/3)\log^22\Im\Li_2(z_j))$.
+Let
+\[
+ P_1=t^2+4,\quad P_3=t^2-4t+8,\quad P_5=t^2-8t+32,
+ \qquad (m_1,m_3,m_5)=(2n,2n,n).
+\]
+The key elementary compatibility is $P_j(1)^{m_j}=25^n$ for all
+three indices. Their zeros are the two reciprocal conjugate arguments.
+Writing $[\ ]_{\leq N}$ for Taylor truncation, set
+\begin{align*}
+ A_{j,s}&=\left.[P_j(t)^{m_j}\mathcal I_s(z_jt)]_{\leq2m_j+2n}
+                                                       \right|_{t=1},\\
+ B_r&=\left.[(2-t)^{4n}(-\log(1-t/2))^r]_{\leq8n}\right|_{t=1},\quad r=1,2,\\
+ R_n&=\sum_jc_j\left(A_{j,4}+\alpha_jB_1A_{j,3}
+                          +\frac{\alpha_j^2}{3}B_2A_{j,2}\right),\qquad
+ \Lambda_n=25^n\theta-R_n.
+\end{align*}
+Here $\mathcal I$ is the analytic conjugate-difference germ used in
+Section~\ref{sec:common-base}. All coefficients are rational. In
+particular $B_2$ approximates the square of the logarithm directly;
+it is not $B_1^2$.
+
+An exact tail formula makes the analytic success transparent. For
+$z=z_j$, $m=m_j$, $\eta=z/\bar z$, put
+$E_{j,s}=25^n\Im\Li_s(z)-A_{j,s}$. Expanding the geometric tail and
+using $k^{-s}=\int_0^1x^{k-1}(-\log x)^{s-1}\dd x/(s-1)!$ gives
+\begin{equation}\label{eq:sim-tail}
+ E_{j,s}=\Im\left\{\frac{z^{2n+1}}{(s-1)!}
+ \int_0^1\frac{x^{2n}[(1-x)(1-\eta x)]^m(-\log x)^{s-1}}
+                                      {1-zx}\dd x\right\}.
+\end{equation}
+Indeed $P_j(1/(zx))=(1-x)(1-\eta x)/(z^2x^2)$, which cancels
+$2m$ powers from the tail starting at degree $2m+2n+1$.
+Absolute convergence for $|z|<1$ justifies the interchange.
+
+Let $l=\log2$ and $\delta_r=l^r-B_r$. For $h>4n$ the logarithmic
+Taylor coefficients are
+\[
+ [t^h](2-t)^{4n}(-\log(1-t/2))=b_h
+      =\frac{2^{4n-h}}{h\binom{h-1}{4n}},\qquad
+ [t^h](2-t)^{4n}(-\log(1-t/2))^2
+                  =2b_h(H_{h-4n-1}-H_{4n}).
+\]
+These follow by differentiating $2^{4n}(1-t/2)^{4n-a}$ in $a$
+at zero, once and twice. For $h>8n$, all terms are nonnegative.
+The integral formula for the first tail and the ratio
+$b_{h+1}/b_h=(h-4n)/(2(h+1))<1/2$ yield
+\[
+ 0<\delta_1\leq4096^{-n},\qquad
+ 0\leq\delta_2\leq\frac{4\delta_1}{4n+1}.
+\]
+The second inequality follows by bounding the harmonic difference by
+$(h-8n-1)/(4n+1)$ and summing a geometric first moment.
+Since $A_{j,s}=O(25^n)$, replacing $l,l^2$ by $B_1,B_2$ costs only
+$O((25/4096)^n)$ in $\Lambda_n$.
+
+For $j=3$ and $5$, formula~\eqref{eq:sim-tail} gives respectively
+$O(64^{-n})$ and $O(144^{-n})$. The elementary bounds needed are
+$x^2(1-x)^2(1+x^2)/8\leq1/64$ and
+$x^2(1-x)\sqrt{1+x^2}/32\leq1/144$ on $[0,1]$.
+For $j=1$ the completed tail is exactly
+\[
+ (-1)^n2^{-2n-1}\int_0^1[x^2(1-x^2)^2]^n
+ \frac{(-\log x)^3/6+l(-\log x)^2/2+l^2(-\log x)/3}
+      {1+x^2/4}\dd x.
+\]
+The bracket has its unique maximum $4/27$ at $x=1/\sqrt3$; the
+second derivative of its logarithm there is $-18$. Taylor expansion
+at the maximum and exponential domination off a neighborhood give
+\begin{equation}\label{eq:sim-rate}
+ \Lambda_n\sim(-1)^n K\frac{27^{-n}}{\sqrt n},\qquad
+ K=\frac{225\sqrt\pi}{884}
+              \left(\frac{u^3}6+\frac{lu^2}2+\frac{l^2u}3\right)>0,
+ \quad u=\frac{\log3}2.
+\end{equation}
+The other errors are exponentially smaller. Thus eventual nonvanishing
+and analytic decay are established for these rational forms.
+
+Writing $L_m=\operatorname{lcm}(1,\ldots,m)$, a sufficient multiplier is
+\begin{equation}\label{eq:sim-clear}
+ D_n=17\,2^{9n+4}L_{6n}^2L_{8n}^2.
+\end{equation}
+For verification, the coefficient of $t^r$ in $P_j^{m_j}$ has dyadic
+valuation at least $\lceil\alpha_j(2m_j-r)\rceil$; convolution
+preserves this bound. Combining it with the rational coefficients of
+$\mathcal I_s(z_jt)$ gives
+$2^{2\alpha_jn}L_{2m_j+2n}^sA_{j,s}\in\Z$.
+Similarly $2^{4n}L_{8n}^rB_r\in\Z$.
+The fixed rational constants are cleared by $17\cdot16$, and
+$L_{6n}^2L_{8n}^2$ is a multiple of the required products
+$L_{6n}^4$ and $L_{6n}^3L_{8n}$. This proves~\eqref{eq:sim-clear}.
+Its logarithmic rate is $28+9\log2$, far above the decay rate
+$\log27$. The comparison says that this sufficient bound does not
+prove irrationality. It is not a lower bound for the primitive
+multiplier. The twelve recorded primitive forms failed, but useful
+all-index primitive arithmetic remains the missing estimate.
+
+\subsection{A logarithmic filter whose coefficient cost decreases}
+\record{A01}\record{A02}\record{A03}\record{A06}
+The slow-dilation family can be defined without any special-value
+arithmetic. Let $h(0)=h'(0)=h''(0)=0$ and
+$h'''(x)=x^2\sech'(x)/8$. For a fixed odd $k\geq3$ put
+\[
+ u=\log\frac{1+t}{1-t},\qquad v=\log\frac{1+t^k}{1-t^k},\qquad
+ r_k(t)=2h(u)+4h(v)-4h(u+v)-2h(2v)+2h(u+2v).
+\]
+It has rational Taylor coefficients and begins
+$r_k(t)=-4t^{2k+4}+O(t^{2k+6})$.
+The endpoint identity $r_k(1^-)=-6\theta$ follows directly from
+\[
+ h(x)=T(x)-3\theta+\tfrac32\beta(3)x-\tfrac14\beta(2)x^2,
+ \qquad
+ T(x)=\frac18\int_x^\infty y(y-x)(2y-x)\sech y\dd y.
+\]
+Both sides have the prescribed third derivative and initial values;
+the three needed moments of $\sech y$ are obtained from its exponential
+series. In the displayed combination of $h$ values, the linear and
+quadratic terms cancel, the constants sum to $-6\theta$, and all
+$T$ terms vanish as $t\uparrow1$. Thus $h_k=-r_k$ is an explicit
+rational-coefficient germ with endpoint $6\theta$, to which the
+bordered determinant~\eqref{eq:common-J} applies with target $6X$.
+
+There is an elementary coefficient-denominator improvement. If
+$x=au+bv$ is any of the five arguments above, put
+$A(t)=(1+t)^a(1+t^k)^b$. Then $dx$ has integral power-series
+coefficients and
+\[
+ \sech x=\frac{A(t)A(-t)}{(A(t)^2+A(-t)^2)/2}\in\Z[[t]],
+\]
+since the denominator is an integer polynomial with constant one.
+With $I_j=\int_0^x s^j\sech s\dd s$, integration gives
+\[
+ h(x)=\frac{3xI_2-x^2I_1-2I_3}{8}.
+\]
+This is a rational combination of length-four iterated integrals with
+regular integral letters $dx$ and $\sech x\,dx$.
+A coefficient of degree at most $N$ has integration indices
+$1\leq n_1<\cdots<n_4\leq N$. Its denominator therefore divides
+\[
+ W_4(N)=\prod_{j=1}^4L_{\lfloor N/j\rfloor},\qquad
+ v_p(W_4(N))=\sum_{a\geq1}\min(4,\lfloor N/p^a\rfloor).
+\]
+Products obey the same bound by the integer shuffle identity.
+Hence $8W_4(N)$ clears the coefficient prefix. For $p>N/k$, expansion
+in $v$ reduces the necessary word length to two: explicitly
+\[
+ r_k=2\sum_{j\geq2}\frac{(2^j-2)v^j}{j!}
+                       \bigl(h^{(j)}(u)-h^{(j)}(0)\bigr),\qquad
+ h''(u)=\frac{u^2\sech u}{8}-\frac14\int_0^u s\sech s\dd s.
+\]
+Through degree $N$ only $j<p$ occurs, the coefficients of $v$ are
+$p$-integral, and further derivatives of $h$ involve at most two
+logarithms. Thus the exponent $v_p(W_2(N))$ suffices at these primes.
+This supplies a uniform, reconstructible coefficient bound; the sharper
+Frobenius bounds and fixed-$k$ lower rates are recorded in A01.
+
+The unresolved question is what survives after taking a determinant
+and its full primitive content. Positivity of a function does not
+prove positivity of its endpoint determinant. The logarithmic filter
+also develops nonreal branch points, so it cannot simply be identified
+with a positive real-supported Cauchy transform in the same variable.
+The fixed-$k$ coefficient bounds do not answer either issue or give
+uniform estimates for $k$ growing with the determinant order.

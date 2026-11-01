@@ -13,8 +13,9 @@ constructions. Some start from integrals, some improve the alternating
 series by tail corrections or continued fractions, and some use
 algebraic approximations or differential equations. The companion
 paper~\cite{Main} treats two determinant families in detail. Here we
-give selected further proofs and retain the other attempts with their
-precise mathematical status.
+give further obstruction proofs and reproducible case studies of the
+substantial unfinished constructions. Each case states what is known
+and the exact additional estimate needed to continue it.
 
 The results are organized around three questions: what makes the
 constructed value nonzero, how small is it as a real number, and what
@@ -32,8 +33,6 @@ remained decisive in this investigation. Carreira's work~\cite{Carreira}
 provides directly related $\beta(4)$ constructions and tests; the general
 positive-weight and rationally modified moment frameworks also appear in
 Pr\'evost~\cite{Prevost} and Krattenthaler~\cite{Krattenthaler}.
-These are sources of context and specific attributed constructions,
-not inputs asserting a global irrationality theorem.
 
 For a nonzero $Q\in\Q[X]$, write $\Prim(Q)=\kappa Q$, where
 $\kappa>0$ and the resulting integer coefficients have gcd one. Then
@@ -100,12 +99,55 @@ Moment differentiation
 \end{tabular}
 \end{center}
 
+\paragraph{A guide to the unfinished constructions.}
+The following case studies are designed as starting points for further
+work. Each defines its coefficients without numerical fitting and gives
+the arguments supporting its established properties. The last column
+identifies what is still missing, rather than suggesting that an
+unfavorable convenient denominator proves failure.
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{.24\linewidth}
+                       >{\raggedright\arraybackslash}p{.32\linewidth}
+                       >{\raggedright\arraybackslash}p{.36\linewidth}@{}}
+\toprule
+Construction & Established part & Remaining issue\\\midrule
+\endhead
+Interleaved frames (\ref{sec:interleaved-case})
+ & Positivity, exact analytic rate and local prime layers.
+ & Common numerator content after rational primitive normalization.\\[4pt]
+Quarter poles (\ref{sec:quarter-case})
+ & Explicit pencils; positivity in one version and conditional prime-based
+   nonvanishing in the other.
+ & Useful all-index primitive size estimates.\\[4pt]
+Common-base ladder (\ref{sec:common-base})
+ & Infinitely many nonzero values; decay beats the cost at 2.
+ & A bound for the aggregate cost at odd primes.\\[4pt]
+Endpoint interpolation and prime deletion (\ref{sec:endpoint-filter-case})
+ & Exact endpoint parametrization and selected-prime savings.
+ & Nonvanishing and decay compatible with the full normalization.\\[4pt]
+Modular source (\ref{sec:modular-case})
+ & Exact period cancellation, a signed cusp error and coefficient arithmetic.
+ & An integer-form construction retaining the analytic gain.\\[4pt]
+Coupled periods (\ref{sec:coupled-case})
+ & A five-period reduction and an explicit elimination procedure.
+ & Nonvanishing and arithmetic after the signed elimination.\\[4pt]
+Paired identities (\ref{sec:paired-case})
+ & Two exact coefficient presentations, character projection and a scoped
+   limitation on transferred estimates.
+ & Stronger primitive arithmetic or projected decay, and nonvanishing.\\[4pt]
+Compatible multipliers (\ref{sec:compatible-case})
+ & A common target coefficient and eventual nonzero exponential decay.
+ & A sufficiently small primitive multiplier.\\
+\bottomrule
+\end{longtable}
 For a first reading, Sections~\ref{sec:quadratic}--\ref{sec:boole}
-give direct examples of the real-size versus denominator comparison.
-Section~\ref{sec:variation} shows what remains when the analytic part
-succeeds but the arithmetic part is unresolved. The other sections can
-then be read by method; the integral notation in Section~\ref{sec:cone}
-is also used in Section~\ref{sec:quadratic}.
+give direct examples of the analytic-size versus denominator comparison.
+Sections~\ref{sec:variation} and \ref{sec:common-base} show what remains
+when the analytic estimates succeed and the arithmetic is unresolved.
+The signed quarter-pole case illustrates nonvanishing without positivity.
+The other sections can be read by method; notation and dependencies are
+introduced locally. The paired-identity case includes machine-readable
+certificates because its exact polynomial identities are too large to
+print usefully. Its replay program requires no original research workspace.
 
 Four conclusions must be kept separate. A \emph{primitive obstruction}
 bounds actual primitive values. An \emph{estimate limitation} says only
@@ -126,9 +168,12 @@ Fourier convergence and the stated elementary polynomial identities.
 Throughout, $\chi_4(m)$ is zero for even $m$ and
 $(-1)^{(m-1)/2}$ for odd $m$.
 The completed Mellin application has an additional, explicitly identified
-polylogarithmic input in Section~\ref{sec:mellin}. The source register
-distinguishes proofs rewritten here from results retained as archived
-claims. No new independent audit of this assembled supplement is asserted.
+polylogarithmic input in Section~\ref{sec:mellin}. The modular case imports a precisely normalized classical transformation
+formula; the paired case uses a stated asymptotic recurrence theorem.
+The interleaved case states the kernel comparison imported from the
+companion paper. These external inputs are identified where used.
+The source register distinguishes the expanded cases from exploratory
+variants retained only as archived claims. No new independent audit of this assembled supplement is asserted.
 
 \section{Positive polynomial sources: a scope boundary}\label{sec:cone}
 Multiplying an integral representation of $\theta$ by a nonnegative

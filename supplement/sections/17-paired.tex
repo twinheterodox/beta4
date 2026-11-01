@@ -1,0 +1,477 @@
+\section{Quarter-shifted paired hypergeometric identities}
+\label{sec:paired-case}\record{Q04}\record{Q05}
+Leibtag et al.~\cite[Section 6.2]{Leibtag} represent the same
+approximation coefficients in two ways: a terminating hypergeometric
+sum and minors of a dual coefficient matrix. Different presentations
+can expose different prime divisors. The experiment here deforms that
+pair of presentations to the quarter arguments $1/4$ and $3/4$, then
+subtracts to isolate $\theta$. Shifting only the final harmonic sums
+does not preserve the identity. The kernels, their coefficients and
+the normalizing scalar all have to change together.
+
+This is the most computationally substantial case study. We give the
+finite definitions, the exact remainder formulas, and the mechanism
+of the paired identities. The accompanying directory
+\path{checks/paired/} contains the rational matrix data and a standalone
+exact replay of the ten polynomial certificates. Those data are part
+of this case study, not a reference to an unspecified research log.
+The mathematical argument explains what the certificates prove and
+why their boundary terms vanish.
+
+\subsection{Forward coefficients and an exact remainder}
+Let $\alpha=-3/4$ or $-1/4$, and put $a=1+\alpha$. For $n\geq0$ set
+\begin{equation}\label{eq:paired-B}
+ B_n^\alpha(k)=\prod_{j\in\{12,13,14\}}
+                 \binom{k+jn+\alpha}{10n}
+                     \binom{15n}{n+k}\binom{15n}{k}.
+\end{equation}
+For differentiation this means the full Gamma interpolation, with
+$\binom{x}{m}=x(x-1)\cdots(x-m+1)/m!$ for integer $m\geq0$ and
+$\binom{15n}{z}=\Gamma(15n+1)/[\Gamma(z+1)\Gamma(15n-z+1)]$.
+In particular, $B_n^\alpha(k)$ can be zero at an integer while its
+derivative is nonzero. Put
+\[
+ H_m^{(s)}(a)=\sum_{j=0}^{m-1}(j+a)^{-s},
+\]
+and define the rational numbers
+\begin{align}
+ Q_n^a&=\sum_{k=0}^{14n}B_n^\alpha(k),\notag\\
+ P_{s,n}^a&=\sum_{k=-n}^{15n}\left(
+ B_n^\alpha(k)H_{4n+k}^{(s)}(a)
+ -\frac{(B_n^\alpha)'(k)}{s-1}H_{4n+k}^{(s-1)}(a)\right),
+ \quad s=3,4.\label{eq:paired-forward}
+\end{align}
+The summation range in the second line includes both simple-zero tails.
+For reproduction without Gamma differentiation, the derivative in the
+interior $0\leq k\leq14n$ is $B_n^\alpha(k)$ times
+\[
+ \sum_{j=12}^{14}\sum_{i=0}^{10n-1}\frac1{k+jn+\alpha-i}
+ +H_{14n-k}^{(1)}(1)-H_{n+k}^{(1)}(1)
+ +H_{15n-k}^{(1)}(1)-H_k^{(1)}(1).
+\]
+For $14n<k\leq15n$, replace the last two binomials in
+\eqref{eq:paired-B} by
+$\binom{15n}{k}(-1)^k/[(n+k)\binom{n+k-1}{15n}]$;
+for $k=-i$, $1\leq i\leq n$, replace them by
+$\binom{15n}{n-i}(-1)^{i-1}/[(15n+i)\binom{15n+i-1}{i-1}]$.
+These are exactly their simple-zero derivatives.
+
+Write $(z)_m=z(z+1)\cdots(z+m-1)$ and define
+\begin{align}
+ \mathcal H_n(s)&=\frac{(-1)^n(15n)!^2}{(10n)!^3}
+ \frac{\prod_{j=12}^{14}(s-jn-\alpha)_{10n}}
+                         {(s)_{14n+1}(s-n)_{16n+1}},\notag\\
+ T_n(z)&=\mathcal H_n(z+4n).
+ \label{eq:paired-T}
+\end{align}
+Gamma reflection gives
+$B_n^\alpha(x)=(\sin(\pi x)/\pi)^2T_n(-x-4n)$.
+Taking the double and simple Laurent coefficients therefore gives
+\begin{equation}\label{eq:paired-partial}
+ T_n(z)=\sum_{k=-n}^{15n}\left(
+ \frac{B_n^\alpha(k)}{(z+4n+k)^2}
+ -\frac{(B_n^\alpha)'(k)}{z+4n+k}\right).
+\end{equation}
+Both sides are proper rational functions with the same principal parts;
+the difference is a polynomial vanishing at infinity. Also
+$\sum_k(B_n^\alpha)'(k)=0$ because $T_n=O(z^{-2})$.
+Differentiate and sum~\eqref{eq:paired-partial} at $z=m+\alpha$,
+$m\geq1$. The elementary identity
+$\sum_{m\geq1}(m+\alpha+h)^{-s}=\zeta(s,a)-H_h^{(s)}(a)$
+then proves
+\begin{equation}\label{eq:paired-remainders}
+ \begin{split}
+ Q_n^a\zeta(3,a)-P_{3,n}^a
+      &=-\frac12\sum_{m\geq1}T_n'(m+\alpha),\\
+ Q_n^a\zeta(4,a)-P_{4,n}^a
+      &=\frac16\sum_{m\geq1}T_n''(m+\alpha).
+ \end{split}
+\end{equation}
+All differentiated tails converge absolutely. Their first $9n$ and
+$8n$ sampled terms, respectively, vanish by the multiplicities of the
+numerator roots. These formulas already define useful exact starting
+points independently of the paired representation.
+
+\subsection{Dual coefficient rows and the paired identities}
+Define a different rational function
+\begin{equation}\label{eq:paired-R}
+ \mathcal R_n(s)=
+ \frac{(-1)^n(1+2n-s)_{14n}(1+n-s)_{16n}}
+ {(s+\alpha)_{11n+1}(s+n+\alpha)_{11n+1}(s+2n+\alpha)_{8n+2}}.
+\end{equation}
+For $k=0,1,2$, take the partial fractions
+\[
+ (-s)^k\mathcal R_n(s)=
+       \sum_{j\geq0}\sum_{i=1}^3\frac{c_{j,i}^{(k)}}{(s+\alpha+j)^i}.
+\]
+Absent poles and orders have coefficient zero. Define three rational
+row vectors, whose coordinates are indexed by $k$, by
+\begin{equation}\label{eq:paired-rows}
+ A_k=3\sum_jc_{j,3}^{(k)},\qquad
+ B_k=2\sum_jc_{j,2}^{(k)},\qquad
+ D_k=-\sum_{j,i}i\,c_{j,i}^{(k)}H_{2n+j}^{(i+1)}(a).
+\end{equation}
+The simple coefficients sum to zero, since the rational function is
+$O(s^{-2})$ or smaller. Thus differentiation and summation yield the
+vector identity
+\begin{equation}\label{eq:paired-state}
+ G_n=A_n\zeta(4,a)+B_n\zeta(3,a)+D_n
+ =\left(-\sum_{m>2n}\left.\frac{d}{ds}
+                  [(-s)^k\mathcal R_n(s)]\right|_{s=m}\right)_{k=0}^2.
+\end{equation}
+This proves the formal absence of $\zeta(2,a)$ without a numerical
+linear-independence assumption. At $n=0$ the rows are
+\[
+ A_0=3(1,\alpha,\alpha^2),\quad
+ B_0=-2(1,1+\alpha,\alpha^2+2\alpha),\quad
+ D_0=(a^{-2},a^{-1},1).
+\]
+
+Put $u_n=(1,10n+a,(10n+a)^2)$ and
+\begin{equation}\label{eq:paired-lambda}
+ \Lambda_n=
+ \frac{(8n)!(9n)!^2(11n)!^2(12n)!}{6(14n)!(16n)!}
+ \frac{(a)_{11n}(a)_{12n}^2(a)_{13n}^2(a)_{14n}}
+ {(a)_{16n}(a)_{17n}^2(a)_{18n}^2(a)_{19n}}.
+\end{equation}
+The complete paired formulas are
+\begin{equation}\label{eq:paired-minors}
+ Q_n^a=\Lambda_n\det\begin{bmatrix}B_n\\A_n\\u_n\end{bmatrix},\qquad
+ P_{3,n}^a=-\Lambda_n\det\begin{bmatrix}D_n\\A_n\\u_n\end{bmatrix},\qquad
+ P_{4,n}^a=\Lambda_n\det\begin{bmatrix}D_n\\B_n\\u_n\end{bmatrix}.
+\end{equation}
+The next subsection details the finite certificate proof of these
+all-index identities. It is longer than merely checking several $n$,
+because the derivative tails and the separate coefficient rows need
+their own recurrence justification.
+
+\subsection{How to verify the all-index identities}\label{subsec:paired-proof}
+The data files specify rational matrices $M(n)$ of size $4$, $Q(n)$
+of size $3$, a $4\times3$ matrix $K(n)$, and rank-three companion
+matrices $C(n),C_Q(n)$. They are exact rational functions in $n$,
+not fitted floating-point recurrences. A rational entry is stored as
+two lists of coefficients in ascending powers of $n$, for its numerator
+and denominator. The replay performs the following checks.
+
+First, with $e_0=(1,0,0,0)^T$ and
+$E_n=(8n+1)(9n+1)(10n+1)(11n+a)$, it verifies the rational identities
+\begin{equation}\label{eq:paired-transport}
+ M(n)K(n+1)Q(n)^T=c(n)K(n),\qquad K(n)u_n^T=-E_ne_0.
+\end{equation}
+The rank-three reduction is explicit. Form the Krylov matrix
+\[
+ U(n)=\bigl[e_0,\ M(n)e_0,\ M(n)M(n+1)e_0\bigr].
+\]
+Then $M(n)U(n+1)=U(n)C(n)$; the analogous $3\times3$ identity
+holds for $Q,C_Q$. All denominators, all required determinants, and
+the leading recurrence coefficients are nonzero at every integer
+$n\geq0$. This is certified by a polynomial sign test: after a
+fixed shift the coefficients have one sign and the constant is nonzero,
+with the finitely preceding integers checked exactly.
+
+For context, $K$ comes from an Euler Lagrange identity. With
+$\partial=z\,d/dz$, use
+\[
+ \mathcal L=z\prod_{j=1}^5(\partial-a_j+1)
+                  -\prod_{j=1}^5(\partial-b_j),
+\]
+where
+\[
+ (a_j)=(-16n,-17n,1+11n+\alpha,1+12n+\alpha,2+10n+\alpha),\qquad
+ (b_j)=(-2n,-n,\alpha,n+\alpha,2n+\alpha).
+\]
+If $\mathcal L=\sum_j l_j(z)\partial^j$, then
+\[
+ \partial\sum_{j\geq1}\sum_{h=0}^{j-1}
+       (-1)^h\partial^h(l_jf)\partial^{j-1-h}g
+       =f\mathcal Lg-g\mathcal L^*f.
+\]
+Apply the contiguous change
+$f=z^{2n}(\partial+12n+a)F/(12n+a)$ and evaluate at $z=1$.
+The fourth $F$ derivative reduces by its hypergeometric equation;
+the extra $g$-jet column vanishes. The remaining bilinear matrix is
+$K$. The certificate proof only needs~\eqref{eq:paired-transport},
+so the supplied rational data can be checked without importing a
+computer algebra package for hypergeometric transformations.
+
+Second, the scalar recurrences must describe the actual sums.
+For each quarter, \path{problems.py} constructs five explicit polynomial
+problems over $\Q[n][k]$ of the form
+\begin{equation}\label{eq:paired-certificate}
+ \mathcal A(n,k)P(n,k+1)-\mathcal B(n,k)P(n,k)
+                                             =\mathcal F(n,k).
+\end{equation}
+They are the forward scalar recurrence, the dual scalar recurrence,
+and the three coordinate transports of the dual row. The right side
+is obtained by putting the relevant shifted hypergeometric summands
+over their common denominator. Every linear factor, shift and factorial
+normalization is retained explicitly in that file. The solver uses
+\emph{exact descending coefficients}, then independently substitutes
+the full resulting polynomial in~\eqref{eq:paired-certificate}.
+For these problems $\deg_k\mathcal A=\deg_k\mathcal B=5$, their
+leading coefficients are one and their next coefficients differ by
+$-d$, where $d$ is the prescribed degree of $P$. The coefficient
+of $k^{i+4}$ has pivot $i-d$. All lower coefficients are consequently
+determined by the leading one; the four remaining equations fix that
+one by polynomial division. A nonzero residual rejects the certificate.
+
+The degrees $(\deg_nP,\deg_kP)$ are
+\[
+\begin{array}{c|ccccc}
+\alpha&\text{forward}&\text{dual scalar}&\text{row }0&\text{row }1&\text{row }2\\\hline
+-3/4&(553,114)&(448,107)&(125,35)&(126,35)&(127,35)\\
+-1/4&(553,114)&(446,107)&(124,35)&(125,35)&(126,35).
+\end{array}
+\]
+These large degrees explain the use of machine-readable coefficients.
+The complete objects are generated and checked by
+\path{checks/paired/verify.py}; no recurrence is accepted because it
+matches a finite run of examples.
+
+Third, transfer from a polynomial identity to a sum requires its boundary
+terms. For the forward sum the factorial continuation terminates at
+$k=0$ and $k=14n+43$ for the four shifted summands. For the derivative
+tails use the \emph{uncentered} kernel $\mathcal H_n$ in
+\eqref{eq:paired-T}, sampled at $s=m+\alpha$, $m>4n$.
+For $n\geq2$, the four shifted tails can all start at $m=12n$:
+omitted first and second derivatives lie in their common triple-zero
+interval. The lower certificate has a zero of order three there;
+its denominator is nonzero by the exact shifted sign test.
+At infinity it is constant plus $O(s^{-1})$, so its first and second
+derivatives vanish. Absolute locally uniform tail convergence permits
+differentiation. The two exceptional recurrence indices $n=0,1$ are
+checked exactly for both numerators.
+
+For the dual rows the three certificates become rational identities
+\[
+ (-s)^j\mathcal R_{n+1}(s)
+ -\sum_{i=0}^2Q(n)_{ij}(-s)^i\mathcal R_n(s)
+                           =V_j(n,s+1)-V_j(n,s).
+\]
+At $n\geq1$ all finite poles of $V_j$ lie in $-\alpha+\Z$;
+the apparent positive integer poles cancel against numerator zeros.
+Translation preserves the total Laurent coefficient of each order,
+so $A_n$ and $B_n$ separately transport by $Q(n)$.
+For the differentiated sums in~\eqref{eq:paired-state}, both tails
+can start at $m=16n$. Omitted terms lie in the common double-zero
+interval, the lower certificate derivative vanishes, and its derivative
+is $O(s^{-2})$ at infinity. This proves transport of $G_n$;
+subtracting the separate $A,B$ transports proves transport of $D$.
+The exceptional $n=0$ step checks all nine rational row coordinates.
+No assertion of numerical period independence enters this step.
+
+Finally let $\Phi_M(n)=M(0)\cdots M(n-1)$, and similarly for $Q$.
+The forward readout rows before multiplication by
+$C_n^\alpha=B_n^\alpha(0)$ are
+\[
+ \rho_q=(1,0,0,0),\quad
+ \rho_3=(0,0,-1/2,(2\alpha+1)/4),\quad
+ \rho_4=(0,0,0,-1/6).
+\]
+The preceding recurrences and their first three values identify
+$C_n^\alpha\rho_j\Phi_M(n)e_0$ with the forward quantities.
+At $n=0$, multiplication by $K(0)$ gives respectively
+$-(a/6)(B_0\times A_0)$, $(a/6)(D_0\times A_0)$ and
+$-(a/6)(D_0\times B_0)$. Telescope~\eqref{eq:paired-transport}
+and use $(vQ)\times(wQ)=\det(Q)(v\times w)Q^{-T}$.
+This gives~\eqref{eq:paired-minors} with scalar
+\[
+ \frac{C_n^\alpha a\prod_{j<n}c(j)}{6E_n\det\Phi_Q(n)}.
+\]
+Its initial value is $1/6$; the one-step ratio agrees identically
+with~\eqref{eq:paired-lambda}, completing the proof. All the stated
+matrix, polynomial, boundary-degree and initial-value checks are included
+in the standalone replay.
+
+\subsection{Character projection, rates and denominator normalization}
+The elementary identity
+$\zeta(4,1/4)-\zeta(4,3/4)=256\theta$ gives, with $a=1/4,b=3/4$,
+\begin{equation}\label{eq:paired-W}
+ W_n=Q_n^aQ_n^b\theta
+       -\frac{P_{4,n}^aQ_n^b-P_{4,n}^bQ_n^a}{256}.
+\end{equation}
+Thus all auxiliary constants disappear. The coefficient of the target
+is a product of two different denominators, which matters in estimating
+its size.
+
+For reference, we state precisely the analytic input to the arithmetic
+comparison below. With
+\[
+ \sigma=65.45153656\ldots,\qquad g=112.80753924\ldots,
+\]
+the fixed-quarter construction has
+\begin{equation}\label{eq:paired-rates}
+ \frac{\log Q_n^a}{n}\longrightarrow\sigma,\qquad
+ \left|\zeta(s,a)-\frac{P_{s,n}^a}{Q_n^a}\right|
+               \leq e^{-(g-o(1))n},\quad s=3,4.
+\end{equation}
+Here the analytic recurrence argument is the dual-convergence result
+of Leibtag et al.~\cite[Theorem 2.6, Corollary 2.7 and Appendix B.1]{Leibtag},
+with the shifted matrices just certified. The required checks can be
+made explicitly as follows. Under $\operatorname{diag}(1,n+1,(n+1)^2)$
+the two $Q(n)$ limits coincide. Their eigenvalues are a real
+$\lambda_0=7.2027\ldots\,10^{-24}$ and a conjugate pair of modulus
+$e^{59.5199\ldots}$; $g=\log(|\lambda_1|/\lambda_0)$.
+The vector $u_n$ tends, after scaling, to $(1,10,100)$ and has
+nonzero projection on the required eigenspace. The exact limiting
+matrix and its cyclic-vector determinant are checked in the accompanying
+\path{checks/paired/rates.py} replay.
+
+To identify the actual state as the small solution, one does not
+assume the conclusion of a numerical recurrence fit. On $2n\leq s\leq17n$,
+the products in~\eqref{eq:paired-R}, and their first derivatives,
+are bounded by a polynomial in $n$ times $e^{c_0n}$, where
+\[
+ c_0=14\log15+16\log16-11\log2-11\log3-8\log4
+          =51.4744\ldots<\log|\lambda_1|.
+\]
+For example bound the numerator factors by $15n$ and $16n$, and
+the three denominator blocks below by $2n+\alpha$, $3n+\alpha$,
+$4n+\alpha$. Fixed shifts change these exponential bounds only by
+bounded or polynomial factors. Differentiating products adds only
+polynomial factors, including at numerator zeros. For $s\geq17n$,
+all numerator factors have magnitude at most $s$, all denominator
+factors are at least $s-3/4$, and differentiation gives an integrable
+polynomial tail $O(n s^{k-5})$, $k\leq2$. The state therefore has
+growth strictly below the conjugate pair. It is nonzero: its initial
+coefficient matrix is invertible and its constant coordinate is $1$.
+The cited separation argument identifies it with the recessive mode.
+The initial readouts and nonzero limiting projection then give the
+relative-error estimate in~\eqref{eq:paired-rates}.
+
+The coefficient growth follows independently from the positive sum
+\eqref{eq:paired-forward}. Stirling's formula and the Laplace maximum
+for $k/n\in[0,14]$ give $\sigma=\max\phi(x)$, where, with $L(t)=t\log t$
+and $L(0)=0$,
+\[
+ \phi(x)=\sum_{j=12}^{14}\bigl(L(x+j)-L(10)-L(x+j-10)\bigr)
+       +2L(15)-L(x+1)-L(14-x)-L(x)-L(15-x).
+\]
+Its second derivative is strictly negative on $(0,14)$, and its first
+derivative tends to opposite infinities at the endpoints. Its derivative
+therefore vanishes at the unique root in $(0,14)$ of
+\[
+ \prod_{j\in\{0,1,2,3,4\}}(x+j)
+            -\prod_{j=12}^{14}(x+j)(14-x)(15-x)=0.
+\]
+Fixed quarter shifts do not affect this exponential rate.
+Consequently~\eqref{eq:paired-W} has upper error exponent
+$2\sigma-g=18.0955\ldots$ before primitive normalization. This is
+an upper bound, not an assertion that the projected error actually
+grows or has that exact exponent.
+
+A convenient uniform integer denominator is also explicit. Let $O_m$
+be the odd part of $\operatorname{lcm}(1,\ldots,m)$ and set, for $n\geq1$,
+\begin{equation}\label{eq:paired-clear}
+ D_n=6\,2^{60n+3v_2((10n)!)+\lfloor\log_2(16n)\rfloor}O_{76n}^4.
+\end{equation}
+It clears $Q_n^a,P_{3,n}^a,P_{4,n}^a$ at both quarters, so
+$256D_n^2$ clears~\eqref{eq:paired-W}. To verify this, each degree-$m$
+quarter-binomial is integral at odd primes by counting multiples in
+an arithmetic progression of step four; its exact dyadic cost is
+$2m+v_2(m!)$. The derivative identity
+\[
+ \frac{d}{dx}\binom{x}{m}
+       =\sum_{j=1}^m\frac{(-1)^{j-1}}j\binom{x}{m-j}
+\]
+and the simple-zero tail formulas add one factor
+$\operatorname{lcm}(1,\ldots,16n)$. The harmonic sums have index at
+most $19n$ and odd denominator dividing $O_{76n}^s$. Combining the
+one derivative layer with at most three harmonic layers, and clearing
+$1/2,1/3$, proves~\eqref{eq:paired-clear}. This bound is sufficient,
+and need not equal the primitive multiplier.
+
+\subsection{What the transferred arithmetic estimates can certify}
+It is possible to quantify a limitation without claiming a theorem
+about all actual common factors. The following calculation concerns
+only the termwise forward valuations and leading-Laurent-coefficient
+bounds in the dual rows.
+For $p>3$, $p^2>120n$, put $x=n/p$. The two quarter arguments give
+phases $t=1/4,3/4$, interchanged when the residue class of $p$ changes.
+Define the floor functions
+\begin{align*}
+ f_t(x,r)={}&\sum_{j=12}^{14}\bigl(
+  \lfloor(r+j)x-t\rfloor-\lfloor(r+j-10)x-t\rfloor-\lfloor10x\rfloor\bigr)\\
+ &+2\lfloor15x\rfloor-\lfloor(1+r)x\rfloor-\lfloor(14-r)x\rfloor
+                         -\lfloor rx\rfloor-\lfloor(15-r)x\rfloor,\\
+ \nu_t(x,r)={}&\lfloor(16+r)x-t\rfloor-\lfloor(2+r)x-t\rfloor
+              +\lfloor(17+r)x-t\rfloor-\lfloor(1+r)x-t\rfloor\\
+ &-\sum_{j\in\{r,11-r,r-1,12-r,r-2,10-r\}}\lfloor jx\rfloor,\\
+ \varphi_t(x)={}&\sum_j e_j\lfloor jx\rfloor+
+                            \sum_j f_j\lfloor jx-t\rfloor,
+\end{align*}
+where the two coefficient lists are
+\[
+ (e_8,e_9,e_{11},e_{12},e_{14},e_{16})=(1,2,2,1,-1,-1),
+\]
+\[
+ (f_{11},f_{12},f_{13},f_{14},f_{16},f_{17},f_{18},f_{19})
+                              =(1,2,2,1,-1,-2,-2,-1).
+\]
+They come respectively from a forward summand at $k=rn$, a triple
+pole at $j=rn$, and the scalar~\eqref{eq:paired-lambda}. For the
+specified estimates an optimistic ceiling on the quarter's lower
+valuation bound for $Q_n^a$ is
+\begin{equation}\label{eq:paired-ceiling}
+ U_t(x)=\max\left\{\min_{0\leq r\leq14}f_t(x,r),\quad
+          \varphi_t(x)+2\min_{3\leq r\leq9}\nu_t(x,r)-1\right\}.
+\end{equation}
+Indeed, restricting a minimum to selected terms makes it larger.
+The two dual rows contributing to $Q$ have lower bounds at most the
+selected leading valuation and that valuation minus one, respectively.
+Taking the better of the two presentations gives the maximum. Costs
+from $P_4$ have been discarded altogether. Every relaxation makes
+this a more generous ceiling for the specified estimates.
+
+The functions are periodic with period one and vanish near zero.
+All breakpoints on $[0,1]$ belong to
+\[
+ \left\{\frac{4m+l}{4d}:1\leq d\leq28,\ l\in\{0,1,3\},\
+                         0\leq4m+l\leq4d\right\}.
+\]
+The union has 854 open cells. One rational midpoint gives the exact
+constant value on each cell. Integrating through $40$ uses only the
+rational weights $1/a-1/b$; the remaining tails are at most $9/40$
+and $11/40$, the respective essential maxima divided by $40$.
+The standalone calculation \path{checks/paired/arithmetic.py} gives
+\begin{equation}\label{eq:paired-density}
+ \int_0^\infty\frac{U_{1/4}(x)+U_{3/4}(x)}{x^2}\dd x
+                        <88.208.
+\end{equation}
+To pass from limiting floors to finite prime sums, first restrict $x$
+to a bounded set away from the rational walls. The $O(1/p)$ offsets
+then preserve all floors; the prime number theorem gives the integral.
+Small neighborhoods of the finitely many walls contribute arbitrarily
+little because the one-level exponents are uniformly bounded. A bound
+of $32$ per quarter suffices: forward selected valuations are at most
+$5$, triple-pole leading valuations at most $8$, and the balanced scalar
+valuation at most $12$. The tail $p<n/X$ is thus at most $64n/X+o(n)$;
+primes below $\sqrt{120n}$ contribute $o(n)$, since each has $O(\log n)$
+bounded layers. Let $n$, then $X$, tend to infinity. The sum of the two
+phases is independent of $p\bmod4$, so no prime number theorem in
+progressions is required for this passage.
+
+For these same estimates the dyadic cost of each quarter's $Q$ is
+$90n+O(\log n)$: the three quarter-binomials cost
+$60n+3v_2((10n)!)$, and ordinary binomial carries contribute only
+$O(\log n)$. The selected dual bound has the same leading cost.
+Even after forgiving every $P_4$ cost, success with
+\eqref{eq:paired-rates} would require odd-prime savings exceeding
+\[
+ 2\sigma+180\log2-g=142.8620\ldots,
+\]
+well above~\eqref{eq:paired-density}. This establishes the claimed
+limitation of the transferred valuation estimates. It does not bound
+the actual gcd of the sums or minors from above, and it does not
+exclude faster decay after the character projection.
+
+\paragraph{What remains.}
+The paired identities are available, the auxiliary constants cancel
+exactly, and both coefficient presentations can be reconstructed.
+What is missing is eventual or suitably frequent nonvanishing of
+$W_n$, together with shrinking values after its \emph{full} primitive
+normalization. The five recorded indices $n=1,2,3,4,6$ give nonzero
+but large primitive errors; those computations are finite evidence.
+Cancellation inside the sums, a cheaper character projection, or a
+stronger projected-error estimate would go beyond the specific
+arithmetic comparison just proved.

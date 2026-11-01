@@ -1,0 +1,246 @@
+\section{Coupled period reductions and rationality-dependent sources}
+\label{sec:coupled-case}
+The constructions in this section illustrate two different ways of
+moving beyond a single positive matrix. Coupling produces a small space
+of special values, which one can then eliminate by linear algebra.
+Alternatively, assuming $\theta$ rational can create endpoint zeros
+that were unavailable before the assumption. Both operations are exact;
+neither automatically preserves the property needed for an irrationality
+proof.
+
+\subsection{An explicit five-period family}\label{subsec:five-period}
+\record{P03}
+A coupled integral led to the rational series defined below. We use the
+series as the definition here, so that reconstructing its coefficients
+does not require the original geometric or spherical-integral derivation.
+For an integer $n\geq0$, put $\lambda=4n+1$ and
+\begin{equation}\label{eq:coupled-A}
+ A_j(k)=\frac{(4n)!}{n!}
+ \frac{(-1)^j\binom{3n}{j}}
+ {\displaystyle\prod_{q=n+j+1}^{4n}(k+q)
+  \displaystyle\prod_{q=4n+2}^{4n+j+1}(k+q)},\qquad 0\leq j\leq3n.
+\end{equation}
+An empty product is one. Define
+\[
+ L_j=2(k+3n+1+j),\quad M_l=2(k+2n+1+l),\quad
+ T_{jl}=2(k+2n+1+j+l),\quad V_{jl}=2(k+1+j+l),
+\]
+and
+\begin{align}
+ I_n(k)&=2\sum_{j,l=0}^{3n}A_j(k)A_l(k)
+ \left(\frac1{L_jT_{jl}}+\frac1{L_jM_l}+\frac1{M_lV_{jl}}\right),\notag\\
+ C_n(k)&=\frac{\prod_{r=1}^{4n}(k+2r)}{2^{4n}(4n)!},\qquad
+ R_n(k)=\frac{4(n!)^4C_n(k)I_n(k)}{(4n)!(k+\lambda)^2},\notag\\
+ J_n&=\sum_{\ell\geq0}(-1)^\ell R_n(2\ell).
+ \label{eq:coupled-R}
+\end{align}
+Every uncombined summand of $R_n(k)$ is $O_n(k^{-2n-4})$:
+each $A_j$ has $3n$ denominator factors, the radial fractions supply
+two more, the angular denominator another two, and $C_n$ has degree
+$4n$. Thus the series defining $J_n$ converges absolutely. The formulas
+are finite rational operations followed by an elementary convergent
+sum; they define the family without fitting a recurrence.
+
+\begin{proposition}\label{prop:five-period}
+For each $n\geq0$, the formulas above give an explicitly computable
+rational decomposition
+\begin{equation}\label{eq:five-period}
+ J_n=r_n+b_n\beta(2)+a_n\theta+\ell_n\log2+z_n\zeta(3).
+\end{equation}
+No linear independence of these five numbers is assumed.
+\end{proposition}
+\begin{proof}
+All poles of $R_n$ have the form $-q$, $1\leq q\leq8n+1$, with
+order at most four. Away from $q=\lambda$, the two $A$ factors
+supply at most two orders and the radial fraction at most two.
+At $q=\lambda$ the $A$ factors are regular, so the angular double
+pole and the radial fractions still give at most four. Properness
+was established above. Consequently
+\[
+ R_n(k)=\sum_{q=1}^{8n+1}\sum_{s=1}^4\frac{c_{q,s}}{(k+q)^s},
+ \qquad c_{q,s}\in\Q.
+\]
+There is a useful reflection symmetry. Under
+$k'=-2\lambda-k$, $j'=3n-j$, formula~\eqref{eq:coupled-A} gives
+$A_j(k')=A_{j'}(k)$: the denominator factors reverse, and their signs
+cancel the change in $(-1)^j$. The radial factors transform as
+$L\leftrightarrow-M$ and $T\leftrightarrow-V$; swapping $j,l$
+then preserves their sum. Both $C_n$ and $(k+\lambda)^2$ are
+invariant. Hence
+\[
+ R_n(-2\lambda-k)=R_n(k),\qquad
+ c_{2\lambda-q,s}=(-1)^s c_{q,s}.
+\]
+For $q=2h+1$ and $q=2h+2$, respectively, the required alternating
+sums are
+\begin{align*}
+ \sum_{\ell\geq0}\frac{(-1)^\ell}{(2\ell+2h+1)^s}
+ &=(-1)^h\left(\beta(s)-\sum_{j=0}^{h-1}
+                          \frac{(-1)^j}{(2j+1)^s}\right),\\
+ \sum_{\ell\geq0}\frac{(-1)^\ell}{(2\ell+2h+2)^s}
+ &=2^{-s}(-1)^h\left(\eta(s)-\sum_{j=1}^{h}
+                          \frac{(-1)^{j-1}}{j^s}\right),
+\end{align*}
+where $\eta(1)=\log2$ and $\eta(3)=3\zeta(3)/4$.
+Across reflected odd poles the tail signs agree, canceling odd beta
+orders; across reflected even poles they are opposite, canceling even
+eta orders. The central pole is odd and has only even orders.
+Only $\beta(2),\beta(4),\eta(1),\eta(3)$ and rational tails remain.
+The individual order-one sums converge conditionally; there are only
+finitely many of them, so taking their limits is legitimate.
+\end{proof}
+This proof is also an exact algorithm. At a pole of maximal order four,
+expand $(k+q)^4R_n(k)$ through degree three in $k+q$ to recover the
+four coefficients, then use the two finite-tail formulas. For example,
+\[
+ J_0=6\theta,\qquad
+ J_1=\frac{301}{384}-\frac{503}{64}\beta(2)
+        +\frac{243}{32}\theta-\frac{73}{24}\log2+\frac{27}{32}\zeta(3).
+\]
+The second displayed coefficient vector has primitive integer form
+$(301,-3018,2916,-1168,324)$ in the order
+$(1,\beta(2),\theta,\log2,\zeta(3))$.
+
+\paragraph{Elimination and what it does not preserve.}
+Choose four indices $n_0,\ldots,n_3$ and form the $3\times4$ rational
+matrix whose columns are $(b_{n_j},\ell_{n_j},z_{n_j})^T$.
+Let $w_j$ be its signed maximal minors, with signs chosen so that
+$\sum_jw_j(b_{n_j},\ell_{n_j},z_{n_j})=0$. Then
+\begin{equation}\label{eq:coupled-cofactor}
+ \sum_{j=0}^3w_jJ_{n_j}
+ =\left(\sum_jw_ja_{n_j}\right)\theta+\sum_jw_jr_{n_j}.
+\end{equation}
+If the matrix has rank less than three, use an explicitly computed
+rational null vector instead; the maximal minors would all vanish.
+Thus the auxiliary constants can be eliminated without assuming they
+are independent. But positive individual integrals can cancel in this
+signed sum, and the minors can have large denominators. To use
+\eqref{eq:coupled-cofactor} one still needs nonvanishing and a bound
+after dividing out the full common content of its two coefficients.
+The four recorded finite cofactor experiments do not supply those
+all-index estimates. The fixed period-space theorem is the reusable
+conclusion here; it is not a proof that the final linear form is small.
+
+\subsection{Endpoint zeros obtained by assuming rationality}
+\label{subsec:niven-case}\record{E07}
+Niven-type proofs suggest a different starting point: use a hypothetical
+rational value to construct a positive function with many endpoint zeros.
+Let
+\[
+ \mathcal F(x)=\sum_{m\geq1}\frac{\chi_4(m)x^m}{m^4},\qquad
+ E=x\frac{d}{dx},\qquad E^4\mathcal F=\frac{x}{1+x^2}.
+\]
+The integral representation
+\[
+ \mathcal F(x)=\frac{x}{6}\int_0^1
+                       \frac{(-\log t)^3}{1+x^2t^2}\dd t
+\]
+shows that $\mathcal F'(x)>0$ on $[0,1]$: its differentiated
+integrand contains $(1-x^2t^2)/(1+x^2t^2)^2$, positive almost everywhere.
+Assume $\theta=u/v$ with positive integers $u,v$, and define
+\begin{equation}\label{eq:niven-source}
+ A_n(x)=\frac{[v\mathcal F(x)(u-v\mathcal F(x))]^n}{n!},\qquad
+ I_n=\int_0^1\frac{A_n(x)}{1+x^2}\dd x.
+\end{equation}
+Then $0<I_n\leq(u^2/4)^n/n!\to0$. The source has a zero of order
+$n$ at each endpoint. An integrality theorem for an unbounded sequence
+of these $I_n$ would therefore give a contradiction. The issue is that
+the endpoint zeros do not provide the requisite integrality theorem.
+
+\begin{proposition}\label{prop:niven-prime}
+For any fixed $n\geq1$ and nonzero integers $u,v$, every odd prime
+$p>n$ with $p\nmid uv$ satisfies
+\[
+ v_p\bigl(A_n^{(p+n-1)}(0)\bigr)=-3.
+\]
+Under the rationality assumption the first nonzero Euler derivative
+at the other endpoint is
+\[
+ E^nA_n(1)=(-uv)^n\left(\frac{\pi^3}{32}\right)^n.
+\]
+\end{proposition}
+\begin{proof}
+Expand
+\[
+ A_n=\frac1{n!}\sum_{k=0}^n(-1)^k\binom nk
+                   u^{n-k}v^{n+k}\mathcal F^{n+k}.
+\]
+At degree $N=p+n-1<2p$, a $p$-denominator can only come from the
+coefficient $\chi_4(p)/p^4$ in one factor. In $\mathcal F^{n+k}$,
+using that coefficient requires degree at least $p+n+k-1$.
+Only $k=0$ contributes, with $n$ choices for that factor and the
+linear coefficient in every other factor. Its contribution is
+$u^nv^n\chi_4(p)/((n-1)!p^4)$, of valuation $-4$; all other terms
+are $p$-integral. Multiplying by $N!$, whose valuation is one,
+proves the claim. At $x=1$, use the coordinate $t=\log x$.
+The linear term of $v\mathcal F(e^t)(u-v\mathcal F(e^t))$ is
+$-uv(E\mathcal F)(1)t$. Since $(E\mathcal F)(1)=\beta(3)=\pi^3/32$,
+the coefficient of $t^n$ gives the second formula.
+\end{proof}
+Thus not all origin derivatives can be integral, and rationality of
+the endpoint does not rationalize its derivative. This excludes a
+blanket endpoint-integrality argument, while leaving open constructions
+that use only selected derivatives and control their denominators.
+
+\subsection{Changing variables and the differential obstruction}
+In the coordinate $z=\mathcal F(x)$, the source becomes a polynomial,
+but the natural corresponding integral is explicitly
+\begin{equation}\label{eq:niven-beta}
+ \int_0^1 A_n(x)\mathcal F'(x)\dd x
+       =\frac{u^{2n+1}n!}{v(2n+1)!}.
+\end{equation}
+Indeed substitute $w=v\mathcal F(x)$ and use
+$\int_0^u w^n(u-w)^n\dd w=u^{2n+1}(n!)^2/(2n+1)!$.
+This is a positive rational number. For
+$n=(p-1)/2$, $p\nmid uv$, its valuation at the odd prime $p$ is
+$-1$. Clearing its denominator and removing common numerator content
+leaves the constant polynomial $1$, rather than shrinking integers.
+
+One cannot instead keep the original Euler derivative and treat
+$\mathcal F$ as its only additional rational-function coordinate.
+In fact
+\begin{equation}\label{eq:niven-field}
+ E\mathcal F\notin\C(x,\mathcal F).
+\end{equation}
+Here is a direct functional proof. The third Euler derivative is
+$\arctan x$; continuation once around $x=i$ changes it by $\pi$.
+Integrating with $E$, and taking the lower changes to vanish at $i$,
+gives
+\[
+ \Delta\mathcal F=\frac\pi6\log^3(x/i),\qquad
+ \Delta(E\mathcal F)=\frac\pi2\log^2(x/i).
+\]
+If $E\mathcal F=R(x,\mathcal F)$ with $R\in\C(x,z)$, repeated
+continuation at a generic nearby $x$ would give
+$R(x,\mathcal F+m\Delta\mathcal F)
+ =E\mathcal F+m\Delta(E\mathcal F)$ for every integer $m$.
+A rational function of $z$ agreeing with an affine function on this
+infinite set must itself be affine. Its slope would be
+$3/\log(x/i)$, which is not rational in $x$. This proves
+\eqref{eq:niven-field}. The larger field containing all four Euler
+primitives does close under differentiation. It would require a new
+endpoint-elimination and arithmetic argument, which this calculation
+does not exclude.
+
+\paragraph{A useful control example.}
+The failure is not repaired by imposing rational Taylor coefficients,
+positive rational forcing and a nonpolynomial primitive. The function
+\[
+ \mathcal H(x)=x+\frac{\Li_4(x/2)-\Li_4(x^2/2)}{32}
+\]
+has $\mathcal H(0)=0$, $\mathcal H(1)=1$, and
+\[
+ \frac{E^4\mathcal H}{x}
+    =1+\frac1{32}\left(\frac1{2-x}-\frac{16x}{2-x^2}\right)
+       \geq\frac{33}{64},\qquad
+ \mathcal H'(x)\geq\frac{251}{256}\quad(0\leq x\leq1).
+\]
+For the derivative estimate use
+$z\leq\Li_3(z)\leq z+z^2/[8(1-z)]$ and differentiate the displayed
+formula; the two polylogarithmic terms divided by $x$ are bounded
+below by $1/2$ and above by $9/8$, respectively. All Taylor
+coefficients are rational and the forcing has no pole on the interval.
+Nevertheless its endpoint is the rational number $1$.
+Thus those structural properties alone cannot supply the missing
+irrationality implication. The target's particular pole geometry
+would have to enter an additional argument.

@@ -1,0 +1,225 @@
+\section{Two-endpoint interpolation and exact prime deletion}
+\label{sec:endpoint-filter-case}
+
+These are two distinct ways to design an approximation before taking
+its primitive form. Endpoint interpolation forces zeros in an integral
+source. Prime deletion instead removes selected coefficient denominators
+from a generating function. Both operations are exact, but neither
+alone controls the normalized error. We give enough information to
+construct the endpoint pairs without recovering a large historical
+linear system. The records are \recordid{H01}--\recordid{H03} and
+\recordid{A04}--\recordid{A05}.
+
+\subsection{A four-by-five system for all rational Hermite sources}
+Write $\mathcal F(x)=\sum_{j\geq1}\chi_4(j)x^j/j^4$ and $E=x\,d/dx$,
+so $E^4\mathcal F=x/(1+x^2)$ and $\mathcal F(1)=\theta$.
+For a source $f$ put
+\[
+ \mathcal I(f)=\frac16\int_0^1f(x)(-\log x)^3\dd x.
+\]
+Fix $N\geq1$, positive $a,b$ with $a+b=2N$, and a quadratic
+$D\in\Z[x]$ with $D(0)=1$ and no zero on $[0,1]$.
+Seek $A\in\Q$ and $R\in\Q[x]$, $\deg R\leq2N$, $R(0)=0$,
+such that, with $G=R/D^N$,
+\begin{equation}\label{eq:hermite-source}
+ f=\frac{A}{1+x^2}+\frac{E^4G}{x}
+       =O(x^a)\text{ at }0,\qquad f=O((x-1)^b)\text{ at }1.
+\end{equation}
+Four integrations by parts, or the monomial identity
+$\mathcal I(E^4x^j/x)=1$ for $j\geq1$, give
+\begin{equation}\label{eq:hermite-value}
+ \mathcal I(f)=A\theta+G(1).
+\end{equation}
+For the integration argument the rational $G$ is regular on the
+integration interval and vanishes at zero; all logarithmic boundary
+terms at zero vanish, and the surviving endpoint term is $G(1)$.
+Zeros of $f$ may make its integral small, but its sign and normalization
+still require separate analysis.
+
+Define
+\[
+ R_{\rm low}(x)=[-D(x)^N\mathcal F(x)]_{\leq a},\qquad
+ L(z)=\prod_{j=a+1}^{2N}(z-j),\qquad D(x)^N=\sum_\ell d_\ell x^\ell,
+\]
+where brackets mean Taylor truncation. Let
+\[
+ T(y)=\frac1{2\cosh y},\qquad
+ V_b(y)=-\sum_{m=4}^{b+3}\frac{T^{(m-4)}(0)y^m}{m!}.
+\]
+All these finite coefficients are rational. For $0\leq r,k\leq3$ set
+\begin{align}
+ K_{rk}&=\sum_\ell d_\ell
+          \left.\frac1{k!}\frac{\dd^k}{\dd z^k}(z^rL(z))\right|_{z=\ell},
+ \label{eq:hermite-K}\\
+ v_r&=\left.\partial_y^rL(\partial_y)
+           \bigl(R_{\rm low}(e^y)-D(e^y)^NV_b(y)\bigr)\right|_{y=0}.
+ \label{eq:hermite-v}
+\end{align}
+
+\begin{proposition}[Exact endpoint parametrization; H01]\label{prop:hermite-map}
+The source space~\eqref{eq:hermite-source} is naturally identified with
+\[
+ Kg=Av,\qquad g_k=\left.\partial_y^kG(e^y)\right|_{y=0},\quad0\leq k\leq3.
+\]
+Its endpoint form is $A\theta+g_0$. This includes singular $K$ and
+zero-target solutions; no determinant is divided out.
+\end{proposition}
+\begin{proof}
+The condition at zero is exactly
+$R=AR_{\rm low}+\sum_{j=a+1}^{2N}r_jx^j$.
+Put $H(y)=G(e^y)$. Multiplying the source by $x=e^y$ changes it to
+$AT(y)+H''''(y)$, so the condition at one is
+\[
+ H(y)=\sum_{k=0}^3g_ky^k/k!+AV_b(y)+O(y^{b+4}).
+\]
+The condition at zero is equivalently
+\[
+ L(\partial_y)\bigl(D(e^y)^NH(y)-AR_{\rm low}(e^y)\bigr)=0.
+\]
+Apply $\partial_y^r$, $r=0,1,2,3$, and evaluate at zero. The identity
+$P(\partial_y)(e^{\ell y}y^k/k!)|_0=P^{(k)}(\ell)/k!$
+gives exactly $Kg=Av$.
+
+Conversely, use the prescribed Taylor polynomial for $H$ as initial
+data for the displayed order-$b$ differential equation. Its leading
+coefficient at zero is $D(1)^N\ne0$. The four equations say that the
+residual of that polynomial vanishes to order four, so the differential
+recurrence makes the solution agree through degree $b+3$.
+This also handles $b<4$; the same recurrence forces the additional
+specified derivatives. The equation implies
+$D(e^y)^NH-AR_{\rm low}(e^y)=\sum_{j=a+1}^{2N}r_je^{jy}$.
+Its distinct integer exponents and rational initial data give rational
+$r_j$ by a Vandermonde system. Thus it reconstructs the required $R$.
+\end{proof}
+
+\subsection{Primitive endpoint pairs and the actual error}
+Every entry of $K$ is integral, since a divided derivative of an integer
+polynomial at an integer is integral. Let $d_a$ be the lcm of the odd
+positive integers at most $a$ and $C=2d_a^4$. Then $Cv$ is integral.
+For $R_{\rm low}$ this follows from its coefficient denominators;
+for $V_b$ it follows from $T^{(j)}(0)$ being half-integers and from
+Leibniz's rule, whose evaluated factorial ratios are integers.
+Cramer's identity supplies the integer endpoint pair
+\begin{equation}\label{eq:hermite-pair}
+ (A,B)=\bigl(C\det K,\ \det K[\text{column }0\leftarrow Cv]\bigr).
+\end{equation}
+If this pair is zero it is not a witness. If the augmented matrix has
+rank less than four, compute its full rational kernel instead of using
+vanishing maximal minors. For every nonzero pair, divide its complete
+gcd before any numerical comparison.
+
+There is an exact formula for the signed error, not merely its source.
+Set $S_a(x)=R_{\rm low}(x)+D(x)^N\mathcal F(x)$ and
+$\ell_r=\partial_y^rL(\partial_y)S_a(e^y)|_0$.
+Since $\partial_y^4\mathcal F(e^y)=T(y)$, the column relation is
+$v=\ell-K\eta$, where $\eta_k=\partial_y^k\mathcal F(e^y)|_0$ and
+$\eta_0=\theta$. Multilinearity therefore gives
+\begin{equation}\label{eq:hermite-error}
+ \det K\,\theta+\det K[0\leftarrow v]=\det K[0\leftarrow\ell].
+\end{equation}
+All lower-period endpoint derivatives disappear through repeated columns.
+The identity is valid even when $K$ is singular.
+
+A useful factorial normalization changes neither primitive pair.
+With $d_b=\operatorname{lcm}(1,\ldots,b)$,
+$d_b^kK_{rk}/b!$ is integral: expand
+$L(z)/b!=\binom{z-a-1}{b}$ at an integer by Vandermonde's identity,
+and use
+$\binom{t}{j}=(-1)^{j-1}(t/j)\prod_{s=1}^{j-1}(1-t/s)$.
+The coefficient of $t^k$ has denominator dividing $d_b^k$.
+Replacing $K$ by $K\operatorname{diag}(1,d_b,d_b^2,d_b^3)/b!$
+and $v$ by $v/b!$ multiplies both determinants by
+$d_b^6/(b!)^4$. It improves a representation, not the primitive pair.
+
+For $D=1+x^2$, $a=b=N=n$, the scalar remainder $S_n$ is positive
+on $x>0$. To see this, use
+$\mathcal F(x)=x\int_0^1(-\log u)^3/(1+x^2u^2)\dd u/6$.
+Put $m=\lceil n/2\rceil$, $y=x^2$, $t=u^2$. The remainder of
+$(1+y)^n/(1+ty)$ after degree $m-1$ in $y$ is
+\[
+ \frac{y^m}{1+ty}\left(c_m(t)+\sum_{k=m+1}^n\binom nk y^{k-m}\right),
+ \qquad c_m(t)=\sum_{k=0}^m\binom nk(-t)^{m-k}.
+\]
+In reverse order the alternating terms defining $c_m$ decrease in
+magnitude on $0\leq t<1$, giving strict positivity. Integrate the
+remainder to obtain $S_n>0$. The determinant in~\eqref{eq:hermite-error}
+contains high derivatives of $S_n$; its positivity does not follow.
+The unresolved questions for a selected schedule are nonzero endpoint
+error and the comparison of that error with the reduced pair's size.
+Equations~\eqref{eq:hermite-K}--\eqref{eq:hermite-pair} give a fixed-size
+exact procedure for investigating them.
+
+\subsection{Prime deletion changes the generating function}
+Return to $\mathcal F(t)=\sum\chi_4(j)t^j/j^4$. For an odd prime $p$,
+\[
+ \mathcal F(t)-\frac{\chi_4(p)}{p^4}\mathcal F(t^p)
+       =\sum_{p\nmid j}\frac{\chi_4(j)t^j}{j^4}.
+\]
+For a finite set $S$ of odd primes put $P=\prod_{p\in S}p$ and
+\begin{equation}\label{eq:deleted-germ}
+ G_S(t)=\sum_{(j,P)=1}\frac{\chi_4(j)t^j}{j^4},\qquad
+ \alpha_S=\prod_{p\in S}(1-\chi_4(p)/p^4),\qquad G_S(1)=\alpha_S\theta.
+\end{equation}
+Build the bordered pencil~\eqref{eq:common-J} from the coefficients
+of $G_S$, and evaluate its variable at $\alpha_S\theta$.
+For each $p\in S$ every coefficient entry is $p$-integral, whereas
+$v_p(\alpha_S)\geq-4$. Therefore the actual primitive multiplier of
+this endpoint pencil satisfies $v_p(\kappa)\leq4$, independently of
+matrix size. The endpoint factor is essential to this conclusion.
+
+For matrix order $n$, delete every odd prime $y<p\leq2n$.
+The surviving prefix through degree $2n$ is cleared by
+\[
+ D_{y,2n}=\prod_{\substack{p\leq\min(y,2n)\\p\ {m odd}}}
+              p^{4\lfloor\log_p(2n)\rfloor}.
+\]
+Scaling the bordered matrix gives a sufficient overall multiplier
+$P^4D_{y,2n}^{n+1}$, whence
+\[
+ \log^+\kappa\leq4\log P+4(n+1)\pi(y)\log(2n)=o(n^2)
+\]
+if $\pi(y_n)\log n=o(n)$; $y_n=\sqrt n$ suffices even using
+$\pi(y)\leq y$ and $\log P\leq2n\log(2n)$.
+This is a genuine arithmetic result with no matching analytic theorem.
+
+The analytic cost is concrete. In the divisor expansion
+$G_S=\sum_{d\mid P}\mu(d)\chi_4(d)d^{-4}\mathcal F(t^d)$,
+apply $E^4$. At a primitive $4P$th root of unity only $d=P$
+can have a pole, since $E^4\mathcal F(t^d)=d^4t^d/(1+t^{2d})$.
+Its coefficient is nonzero. Thus growing prime sets create genuine
+new singularities. Neither the analytic bound nor the nonvanishing
+subsequence for a fixed germ can simply be reused for this varying family.
+
+\subsection{A sparse family whose tiny determinant factor cancels}
+There is a useful explicit test of the last warning. Let $M=3^k$,
+$n=M-1$, and delete every odd prime at most $B\geq2n$ except 3.
+The coefficient prefix is $r(t)+ct^M$, where
+\[
+ r(t)=\sum_{0\leq a<k}\frac{(-1)^at^{3^a}}{3^{4a}},\qquad
+ c=\frac{(-1)^k}{M^4},\qquad \deg r=M/3<M/2.
+\]
+The polynomials $q(t)=r(t)/t-ct^{M-1}$ and $p(t)=r(t)^2/t$ obey
+$q(t)(r(t)+ct^M)-p(t)=-c^2t^{2M-1}$, so they give a diagonal
+Pad\'e pair for this prefix. More precisely its bordered determinant is
+\begin{equation}\label{eq:sparse-collapse}
+ J_{n,S}(X)=(-1)^{n(n-1)/2+1}c^{M-2}
+                 \bigl((r(1)-c)X-r(1)^2\bigr).
+\end{equation}
+Here is a verification of the scalar, which matters for normalization.
+Reverse the columns of $T$ and multiply by $(I-\mathrm{shift}_{\rm down})^{-1}$.
+The result is $cI+N-\mathbf1v^T$, with
+$N_{ij}=r_{M+i-j}$, $v_j=r_{M-j}$, $N^2=0$ and $v^TN=0$.
+The determinant lemma gives
+$\det T=\delta c^{n-1}(c-r(1))$, $\delta=(-1)^{n(n-1)/2}$.
+Also $\operatorname{adj}(T)_{11}=\delta c^{n-1}$ and
+$T\mathbf1=ce_1-b$. Using these identities in
+$X\det T+b^T\operatorname{adj}(T)b$ proves~\eqref{eq:sparse-collapse}
+without assuming $T$ invertible.
+
+The entire factor $c^{M-2}$ disappears after primitive normalization.
+The remaining form is
+$(r(1)-c)\alpha_S\theta-r(1)^2$. At the natural cutoff $B=2n$
+its useful real and primitive estimates remain unresolved. Tiny raw
+determinants alone therefore do not settle this prescribed sparse family.
+An additional large-cutoff obstruction in the catalog concerns a
+different scale; it does not close the natural cutoff.

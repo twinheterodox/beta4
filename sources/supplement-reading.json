@@ -93,7 +93,8 @@
       "archive_read_scope": "All textual pages 1-73 read, including Appendices A-C and references. Illustrative plots on pages 53-60 only captions read; supplement certificates not yet read or executed. Important proof steps are delegated to notebooks.",
       "writing_pass_read_scope": "The inventory reconciles the round-12 and round-15 source/deformation packets; no new whole-paper rereading in this writing pass.",
       "unread_dependencies_and_limits": "The library records all 73 textual pages read with supplement certificates pending. Round 15 supplies its own exact paired-identity audit; this writing step does not verify the paper or general CMF claims.",
-      "status": "Source comparison and reading only; not independent mathematical or formal verification."
+      "status": "Source comparison and reading only; not independent mathematical or formal verification.",
+      "self_contained_revision_read_scope": "Theorem 2.6/Corollary 2.7 and Appendix B.1 (text lines 212-275 and 2850-2980); exact prescribed telescoping solver, shifted products, initial readouts and concomitant source scripts read. A standalone local replay rederived and checked all ten shifted polynomial identities and matrix transport. This does not audit the paper as a whole or its global irrationality claims. Asymptotic recurrence theory is an explicitly cited external input."
     },
     {
       "title": "A determinant identity for moments of orthogonal polynomials that implies Uvarov's formula for the orthogonal polynomials of rationally related densities",
@@ -198,6 +199,81 @@
       "unread_dependencies_and_limits": "The topological construction and asymptotic theorems were not audited or applied.",
       "status": "Read to stated scope during supplement writing; not independent mathematical or formal verification.",
       "supplement_read_scope": "Text lines 1-110: introduction; 295-325: cubic signature formula, source credit to Murakami, and displayed reduction; 500-550: rewriting context. Motivation only; our norm theorem is proved directly."
+    },
+    {
+      "title": "Series acceleration formulas for Dirichlet series with periodic coefficients",
+      "authors": "David M. Bradley",
+      "version": "math/0505078v1",
+      "source_url": "https://arxiv.org/abs/math/0505078",
+      "download_url": "https://arxiv.org/pdf/math/0505078",
+      "sha256": "5a9efa4825798d5e7b0e392f1250587fd7611f941d0e873d296b671a24517751",
+      "retrieved_at_utc": "2026-10-27T21:41:51.933062+00:00",
+      "retrieval_provenance": null,
+      "local_path": "/home/research/Chat/Math/beta4/literature/papers/Series-acceleration-formulas-for-Dirichlet-series-with-periodic-coefficients_math-0505078v1.pdf",
+      "text_path": "/home/research/Chat/Math/beta4/literature/text/math-0505078.txt",
+      "archive_read_scope": "Transformation formulas previously consulted for modular-detour.txt; not systematically reread.",
+      "self_contained_revision_read_scope": "Corollary 4 and historical remarks; odd-character Theorem 2 and its proof chain through Lemmas 1-5 and 7, text lines 141-205, 340-395, 530-877, 986-1090. Elementary coth partial fractions and classical even-zeta/odd-beta evaluations are imported standard identities.",
+      "status": "Reading and source comparison; exact computations are recorded separately. No independent human/model or formal verification claim."
+    },
+    {
+      "title": "On a secant Dirichlet series and Eichler integrals of Eisenstein series",
+      "authors": "Bruce C. Berndt; Armin Straub",
+      "version": "1406.2273v1",
+      "source_url": "https://arxiv.org/abs/1406.2273",
+      "download_url": "https://arxiv.org/pdf/1406.2273",
+      "sha256": "0208ce078d1e7d22bf601b67a18959c2d938ec4c4bbc8ac9c1a7e7228f6224ba",
+      "retrieved_at_utc": "2026-10-27T21:41:52.040916+00:00",
+      "retrieval_provenance": null,
+      "local_path": "/home/research/Chat/Math/beta4/literature/papers/On-a-secant-Dirichlet-series-and-Eichler-integrals-of-Eisenstein-series_1406.2273v1.pdf",
+      "text_path": "/home/research/Chat/Math/beta4/literature/text/1406.2273.txt",
+      "archive_read_scope": "Selected Eichler-integral material previously consulted for modular-detour.txt; not systematically reread.",
+      "self_contained_revision_read_scope": "Section 4: lattice Eisenstein definition, absolute convergence, Fourier expansion and transformations (text lines 395-610); Example 6.4 (873-925). Used for modularity and context, with the period formula proved by the Bradley specialization. No audit of the entire paper.",
+      "status": "Reading and source comparison; exact computations are recorded separately. No independent human/model or formal verification claim."
+    },
+    {
+      "title": "On Polya' Theorem in Several Complex Variables",
+      "authors": "Günyüz, Ozan; Zakharyuta, Vyacheslav",
+      "version": "1609.00218v1",
+      "source_url": "https://arxiv.org/abs/1609.00218",
+      "download_url": "https://arxiv.org/pdf/1609.00218",
+      "sha256": "57ff58d473b86d29af24740195d401a9af5be54c2feef8ae5eaee29cc71159dc",
+      "retrieved_at_utc": "2026-10-30T17:10:58.781828+00:00",
+      "retrieval_provenance": null,
+      "local_path": "/home/research/Chat/Math/beta4/literature/papers/On-Polya-Theorem-in-Several-Complex-Variables_1609.00218v1.pdf",
+      "text_path": "/home/research/Chat/Math/beta4/literature/text/1609.00218.txt",
+      "archive_read_scope": "All 8 pages: multivariate Polya inequality, Vandermonde-functional proof, and sharpness for a suitably chosen positive functional. External transfinite-diameter and Bernstein–Markov results not audited.",
+      "self_contained_revision_read_scope": "Theorem 2.1, the classical one-variable Polya inequality (text lines 95-155). The supplement supplies its contour/Vandermonde normalization and its particular polynomial-preimage capacity calculation. Multivariate results are not used.",
+      "status": "Reading and source comparison; exact computations are recorded separately. No independent human/model or formal verification claim."
+    },
+    {
+      "title": "The linear independence of 1 zeta 3 and zeta 4",
+      "authors": "Li Lai",
+      "version": "2610.06838v2",
+      "source_url": "https://arxiv.org/abs/2610.06838v2",
+      "download_url": null,
+      "sha256": "f7a04e09f30abb01793574ce399489d527d71378ce1d52269012b0a158931a6d",
+      "retrieved_at_utc": null,
+      "retrieval_provenance": "Inherited from earlier local research records and inventoried centrally on 2026-10-30; exact original retrieval timestamp was not recorded in this catalog.",
+      "local_path": "/home/research/Chat/Math/beta4/literature/papers/The-linear-independence-of-1-zeta-3-and-zeta-4_2610.06838v2.pdf",
+      "text_path": "/home/research/Chat/Math/beta4/literature/text/The-linear-independence-of-1-zeta-3-and-zeta-4_2610.06838v2.txt",
+      "archive_read_scope": "All 26 textual pages read in this pass, including full prime summation, auxiliary-prime nonvanishing, contour estimates, and Meixner-Pollaczek comparison. Earlier round 08 selected identities had exact checks; the full paper has not been independently verified.",
+      "self_contained_revision_read_scope": "Introduction and Section 3 auxiliary-prime nonvanishing argument (text lines 1-90 and 291-385). Context for the auxiliary-prime mechanism; the quarter-pole Vandermonde specialization is proved independently in the supplement. No global independence theorem imported.",
+      "status": "Reading and source comparison; exact computations are recorded separately. No independent human/model or formal verification claim."
+    },
+    {
+      "title": "The Carlson Polya theorem on rational functions",
+      "authors": "Aitor Iribar Lopez",
+      "version": null,
+      "source_url": "https://people.math.ethz.ch/~airibar/Polya_Carlson.pdf",
+      "download_url": "https://people.math.ethz.ch/~airibar/Polya_Carlson.pdf",
+      "sha256": "a030d8e64ec51300d3f1c0d3d689a782d2defe10d4331447c7f7353efdf7af88",
+      "retrieved_at_utc": "2026-10-30T17:11:51.928145+00:00",
+      "retrieval_provenance": null,
+      "local_path": "/home/research/Chat/Math/beta4/literature/papers/The-Carlson-Polya-theorem-on-rational-functions_polya-carlson.pdf",
+      "text_path": "/home/research/Chat/Math/beta4/literature/text/polya-carlson.txt",
+      "archive_read_scope": "Pages 1–7 of expository notes: Kronecker/Hankel rationality and contour-capacity mechanism. Remaining Carlson proof and translated primary appendix not read.",
+      "self_contained_revision_read_scope": "Theorem 1 and proof of Kronecker leading-Hankel rationality criterion, text lines 1-150 (PDF pages 1-3). Other parts of the Carlson-Polya notes not used.",
+      "status": "Reading and source comparison; exact computations are recorded separately. No independent human/model or formal verification claim."
     }
   ],
   "fresh_reading": {
@@ -213,13 +289,37 @@
       "urls": [
         "https://dlmf.nist.gov/24.2",
         "https://dlmf.nist.gov/24.17",
-        "https://dlmf.nist.gov/5.11"
+        "https://dlmf.nist.gov/5.11",
+        "https://dlmf.nist.gov/25.11.E29"
       ],
       "accessed_on": "2026-10-31",
-      "actual_read_scope": "Euler-number generating function and integrality convention; Boole formula and remainder; gamma-ratio asymptotic and sector condition. Used for classical attribution; relevant supplement calculations are derived in the text."
+      "actual_read_scope": "Euler-number generating function and integrality convention; Boole formula and remainder; gamma-ratio asymptotic and sector condition. Used for classical attribution; relevant supplement calculations are derived in the text.",
+      "self_contained_revision_read_scope": "Hermite integral at 25.11.29 and Hurwitz shift at 25.11.3, consulted 2026-11-01; used to derive the quarter-pole functional with all rational correction terms retained.",
+      "local_hermite_formula": "sources/web/dlmf-25.11.E29.tex",
+      "hermite_formula_sha256": "f8011fba03fe90d7f186ab415c5adfa8d5c27972acfcc6a2a22576158e3c4165"
     }
   ],
-  "proof_scope": "Eight record groups have selected complete statements rewritten; H01 and H02 have partial results rewritten. Other claims retain their archived status. No global recent irrationality theorem is an input.",
+  "proof_scope": "Expanded case studies have explicit constructions and supporting proofs; the exact per-claim treatment is in supplement/coverage.json. Exploratory variants remain catalogued with their archived scope.",
   "external_dependency": "The beta interpretation of the completed U-kernel explicitly uses Broadhurst ladder identities; the lower-bound theorem itself is a rational-kernel theorem. Kummer/Lewin dependency not independently audited.",
-  "verification": "Source reading and same-model mathematical review, not a new independent audit or formal verification."
+  "verification": "Source reading and same-model mathematical review, not a new independent audit or formal verification.",
+  "previous_proof_scope": "Eight record groups have selected complete statements rewritten; H01 and H02 have partial results rewritten. Other claims retain their archived status. No global recent irrationality theorem is an input.",
+  "self_contained_revision": {
+    "recorded_at_utc": "2026-11-01T17:28:31.571987+00:00",
+    "new_paper_downloads": 0,
+    "external_inputs": [
+      "Companion paper: positive kernel and uniform Cauchy comparison, stated explicitly.",
+      "Broadhurst: completed ladder identity, already derived from the printed identities in the earlier section; full Kummer/Lewin ancestry not independently re-audited.",
+      "Bradley: classical Ramanujan-type transformation; relevant proof chain read, specialization displayed.",
+      "Berndt-Straub: standard Eisenstein modularity, Fourier expansions and cusp holomorphy.",
+      "Kronecker criterion and one-variable Polya determinant inequality, with proof/normalization context.",
+      "Leibtag et al.: stated dual-convergence/asymptotic recurrence argument; shifted algebra and identifying bounds supplied locally."
+    ],
+    "checks": [
+      "checks/case-studies-result.json",
+      "checks/paired/result.json",
+      "checks/paired/arithmetic-result.json",
+      "checks/paired/rates-result.json"
+    ],
+    "scope": "Exposition and verification of existing constructions, not a new search or independent audit."
+  }
 }

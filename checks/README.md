@@ -34,3 +34,9 @@ python3 checks/expository_example.py
 The [result](expository-example.json) records the scaled matrix, the three principal-minor residues and the coefficient valuation. The [initial accessibility revision](../planning/accessibility-review.txt) preserved all statement and proof blocks and did not rerun the earlier suites.
 
 The subsequent [expository review](../planning/expository-review.txt) expands proofs while preserving all formal statements. Both calculation suites were rerun for that pass and passed; their scripts, exact structural results and frozen evidence are unchanged. These replays support the expanded exposition without constituting a fresh independent mathematical audit.
+
+## Expanded supplement case studies
+
+Run `python3 checks/case_studies.py` for exact reconstructions of the newly printed formulas; see [the results](case-studies-result.json). These bounded checks support the written proofs and do not establish asymptotics by extrapolation.
+
+The [paired-identity replay guide](paired/README.txt) explains the standalone symbolic certificate bundle. Run `python3 checks/paired/verify.py`, then `python3 checks/paired/arithmetic.py` and `python3 checks/paired/rates.py`. The first checks ten polynomial identities and their matrix, boundary and initial-value requirements; the other scripts check the exact floor integration and Arb rate enclosures. Use [supplement-requirements.txt](supplement-requirements.txt) for dependencies.

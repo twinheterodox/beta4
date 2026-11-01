@@ -15,11 +15,11 @@ OUTPUT.parent.mkdir(parents=True, exist_ok=True)
 for i in range(3):
     run = subprocess.run(['pdflatex', '-interaction=nonstopmode', '-halt-on-error',
         '-file-line-error', '-output-directory='+str(BUILD), str(SOURCE)],
-        cwd=ROOT, capture_output=True, text=True)
+        cwd=ROOT, capture_output=True, text=True, errors="replace")
     (BUILD/f'build-pass-{i+1}.txt').write_text(run.stdout+run.stderr)
     if run.returncode:
         raise SystemExit(run.stdout[-6000:]+run.stderr)
-log = (BUILD/SOURCE.with_suffix('.log').name).read_text()
+log = (BUILD/SOURCE.with_suffix('.log').name).read_text(errors="replace")
 failures = [s for s in log.splitlines() if any(t in s.lower() for t in
             ('undefined','multiply defined','overfull','underfull'))]
 if failures:

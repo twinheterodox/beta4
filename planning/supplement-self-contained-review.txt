@@ -1,0 +1,97 @@
+SELF-CONTAINED SUPPLEMENT REVISION
+1 November 2026
+
+Purpose and scope
+
+The user asked for research notes that other mathematicians can use as a
+starting point. The former supplement gave complete proofs of selected
+obstructions but left several substantial constructions as summaries with
+archive pointers. This revision develops those constructions in the text.
+It is a writing and reconstruction pass, not a resumed parameter search or
+a proof of the irrationality of beta(4).
+
+The resulting supplement has 67 pages. Eight new case-study sections cover
+interleaved determinants; squared and unsquared quarter poles; the
+common-base polylogarithm ladder; endpoint interpolation and prime deletion;
+modular transformations; coupled period reductions and Niven-type sources;
+quarter-shifted paired identities; and compatible pole multipliers and slow
+logarithmic dilations. Each gives motivation, explicit definitions,
+arguments for the established conclusions, and the precise remaining
+arithmetic or nonvanishing question.
+
+The introduction now gives separate reading guides to proved results and
+unfinished constructions. The wider catalog retains shorter variants and
+bounded experiments without promoting their archived classifications to
+newly audited theorems. The source register states the treatment of each of
+the 57 grouped records. Original research logs are supporting material for
+the case studies, rather than a source of missing definitions or proof
+steps.
+
+Declared inputs
+
+Self-contained exposition does not mean re-proving every classical input.
+The interleaved case states the companion paper's kernel comparison; the
+ladder cases explicitly use Broadhurst's printed functional identity.
+Hermite's formula, the classical Hankel criterion, the one-variable Polya
+determinant estimate and the modular transformation are identified where
+used. The paired case states its asymptotic recurrence input, explains its
+application to the shifted system, and supplies its algebraic certificates
+as standalone data and code. The source ledger records the relevant
+reading scopes and dependencies that were not independently re-audited.
+
+Reproducible algebra
+
+checks/paired/ contains exact rational matrices, complete polynomial
+problem definitions and a solver that regenerates and substitutes all ten
+telescoping certificates. The replay checks matrix transport, regularity,
+boundary-degree conditions, exceptional initial indices, the closed scalar
+normalization and initial coefficient readouts. It requires python-flint
+but not the original research environment, upstream notebooks, a network
+connection or the original large expanded certificate files. Separate
+scripts reproduce the exact 854-cell floor integration and interval bounds
+for the numerical rates. The text supplies the analytic arguments that
+transfer the polynomial identities to the infinite sums.
+
+checks/case_studies.py provides 120 bounded exact or interval checks of the
+newly printed formulas. These include partial fractions, prime reductions,
+Hermite endpoint reconstruction, determinant identities and denominator
+bounds. They support the written arguments; they do not turn finite data
+into asymptotic theorems.
+
+The existing supplement suite was also rerun successfully. Its three
+archived certificate replays and exact identity checks pass, and all 127
+frozen evidence files retain their recorded hashes. New results are in
+checks/case-studies-result.json and checks/paired/*-result.json, with the
+identity replay in checks/paired/result.json. The existing suite's report
+is checks/supplement-reproduction.json.
+
+Preservation and limits
+
+The baseline was commit local-prepublication-revision. The main
+paper and its canonical PDF were not changed. Original supplement proof
+sections 02 through 08, and the cone section following the introduction,
+are byte-for-byte unchanged. The smaller catalog was shortened where a
+new case study now supplies the argument. Frozen source evidence was not
+edited, including superseded stages of the research record.
+
+The distinctions between an integer clearing multiplier and the primitive
+rational multiplier, between an insufficient bound and a failed
+construction, and between finite observations and all-index results remain
+explicit. In particular, no useful primitive estimate or projected
+nonvanishing theorem is newly asserted for the paired construction.
+
+Final checks
+
+The final PDF compiles with resolved references and no overfull or underfull
+box warnings. All 67 pages were rendered with Poppler at 100 dpi and
+inspected in four-page sheets. After the final wording correction, all
+pages were rendered again: only page 31 changed, and that page was inspected
+separately. No clipping, overlap, broken formulas or illegible layout was
+observed. Final hashes, source and local-link checks, claim navigation,
+preservation comparisons and reproduction results are recorded in
+supplement/validation.json.
+
+This revision was assembled and checked by the writing model. It is not a
+fresh independent-model audit, a human mathematical audit or formal
+verification. Earlier audit records retain their historical scope. The
+revision remains local and unpublished.

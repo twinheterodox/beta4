@@ -1,0 +1,242 @@
+\section{Quarter-pole determinants with and without a positivity guarantee}
+\label{sec:quarter-case}
+
+The positive constructions in the main paper remove unwanted constants
+before estimating a determinant. A different possibility is to use
+Hurwitz zeta values on the quarter grid. Their common $\zeta(4)$ term
+can be removed by interpolation, leaving only $\theta$ and rational
+numbers. There are two versions. Squared poles preserve a positive
+Gram representation but require an extra numerator. Unsquared poles
+avoid that numerator but require a separate nonvanishing argument.
+This section supplies both constructions and proves the conditional
+nonvanishing result of record \recordid{P05}; record \recordid{P04}
+is the positive version.
+
+\subsection{A functional with explicit rational moments and pole values}
+Let $f(y)=(e^{2\pi y}-1)^{-1}$ and
+\[
+ w(y)=-\frac{y^4}3 f'''(y),\qquad
+ \nu(R)=\int_0^\infty R(y^2)w(y)\dd y.
+\]
+The exponential expansion of $f$ shows $w>0$. It is bounded near zero
+and decays exponentially at infinity. Define Bernoulli numbers by
+$z/(e^z-1)=\sum_{j\geq0}B_jz^j/j!$, so $B_1=-1/2$.
+The needed evaluations are
+\begin{align}
+ \nu(t^e)&=\frac{(2e+4)!|B_{2e+2}|}{6(2e+2)!},\quad e\geq0,
+ \label{eq:quarter-moments}\\
+ \nu\left(\frac1{t+a^2}\right)
+     &=a^3\zeta(4,a)-\frac1{2a}-\frac13,\quad a>0.
+ \label{eq:quarter-resolvent}
+\end{align}
+For the first formula, integrate by parts three times and then use
+$\int_0^\infty y^{s-1}f(y)\dd y=\Gamma(s)\zeta(s)/(2\pi)^s$
+and the classical even-zeta evaluation. For the second put
+$g(y)=y^4/(a^2+y^2)$. All boundary terms vanish, and
+\[
+ \nu((t+a^2)^{-1})=\frac13\int_0^\infty g'''(y)f(y)\dd y
+       =8a^4\int_0^\infty
+            \frac{y(a^2-y^2)f(y)}{(a^2+y^2)^4}\dd y.
+\]
+Hermite's integral for the Hurwitz zeta function at $s=4$
+\cite[Eq. 25.11.29]{DLMF} identifies this with the right side
+of~\eqref{eq:quarter-resolvent}. Thus the normalization and the two
+rational correction terms are fixed; they cannot be dropped.
+
+Set $a_j=(2j+1)/4$ and
+\[
+ T_j=256\sum_{k=0}^{\lfloor j/2\rfloor-1}
+             (4k+1+2(j\bmod2))^{-4}.
+\]
+Separating the two odd residue classes gives
+\begin{equation}\label{eq:quarter-zeta}
+ \zeta(4,a_j)=120\zeta(4)+128(-1)^j\theta-T_j.
+\end{equation}
+For $j=0,1$ the sum and difference are $240\zeta(4)$ and $256\theta$;
+integer shifts of $a_j$ subtract the displayed finite tail. This proves
+\eqref{eq:quarter-zeta} without any independence assumption about constants.
+
+\subsection{Squared poles: positivity and exact coefficient recovery}
+Let $D_K(t)=\prod_{j<K}(t+a_j^2)$, and let $S_K$ be the polynomial
+of degree less than $K$ interpolating $S_K(-a_j^2)=1/a_j$.
+This is an explicit rational polynomial, obtainable by Lagrange
+interpolation. It is positive on $[0,\infty)$: every derivative of
+$(-t)^{-1/2}$ is positive on the negative axis, so its divided differences
+are positive; in the Newton interpolation expression all factors are
+positive when $t\geq0$.
+
+For $K\geq2h+1$ consider the $h$ by $h$ matrix
+\[
+ G_{ik}=\nu\left(\frac{S_K(t)t^{i+k}}{D_K(t)}\right),\qquad0\leq i,k<h.
+\]
+To compute an entry, divide $S_K(t)t^\ell$ by $D_K(t)$ and write
+\begin{equation}\label{eq:squared-division}
+ \frac{S_K(t)t^\ell}{D_K(t)}
+       =Q_\ell(t)+\sum_{j<K}\frac{c_{j,\ell}}{t+a_j^2},
+ \qquad c_{j,\ell}=\frac{(-a_j^2)^\ell}{a_jD_K'(-a_j^2)}.
+\end{equation}
+Evaluate the polynomial part by~\eqref{eq:quarter-moments}, and
+use~\eqref{eq:quarter-resolvent}--\eqref{eq:quarter-zeta} on the poles.
+The $\zeta(4)$ coefficient is zero, since
+\[
+ \sum_{j<K}a_j^3c_{j,\ell}
+   =-\sum_{j<K}\frac{(-a_j^2)^{\ell+1}}{D_K'(-a_j^2)}=0
+       \quad(\ell\leq K-3).
+\]
+The last equality is the coefficient of $t^{K-1}$ in the Lagrange
+interpolation formula for $t^{\ell+1}$. We obtain rational matrices
+$G(X)=B+XA$. The moment representation proves $G(\theta)$ positive
+definite. Also
+\[
+ A=128\sum_{j<K}\frac{(-1)^ja_j^2}{D_K'(-a_j^2)}v_jv_j^T,
+ \qquad v_j=(1,-a_j^2,\ldots,(-a_j^2)^{h-1})^T.
+\]
+Each weight is positive, because $D_K'(-a_j^2)$ has sign $(-1)^j$.
+The vectors span $\R^h$, so $A$ is positive definite and
+$\det G(X)$ has degree exactly $h$. Both nonvanishing and coefficient
+recovery are therefore settled for this family.
+
+\subsection{Why the additional numerator matters analytically}
+The interpolation numerator partly undoes the benefit of adding poles.
+The following comparison makes that statement quantitative without
+claiming an arithmetic obstruction. Directly multiplying the node
+differences in~\eqref{eq:squared-division} for $\ell=0$ gives
+\[
+ \frac{S_K(t)}{D_K(t)}=
+ \sum_{j<K}\frac{(-1)^j4^K}{(K-1-j)!(K+j)!}\frac1{t+a_j^2}.
+\]
+Its coefficient at $1/t$ is
+$c_K=4^K/((2K-1)(K-1)!^2)$, by Pascal telescoping of the
+alternating binomial sum. Put
+\[
+ b_j=\frac{(2K-1)(K-1)!^2}{(K-1-j)!(K+j)!},\qquad b_0=2-1/K.
+\]
+The positive terms $b_j/(t+a_j^2)$ decrease with $j$ for $t\geq0$,
+since $b_{j+1}/b_j=(K-1-j)/(K+j+1)<1$. The alternating-sum bounds
+therefore give, for $K\geq2$,
+\begin{equation}\label{eq:squared-comparison}
+ \frac{2b_0}{K+1}\frac1{t+1/16}
+ \leq\frac{S_K(t)}{c_KD_K(t)}
+ \leq\frac{b_0}{t+1/16}.
+\end{equation}
+For any $h$ independent real polynomial test functions, their Gram
+matrices for these weights satisfy the same matrix inequalities.
+Conjugating by the inverse square root of the fixed-pole Gram matrix
+and multiplying its eigenvalues gives determinant factors between
+$(2b_0/(K+1))^h$ and $b_0^h$.
+When $h=O(K)$, their logarithms differ by only $O(K\log K)$.
+This is an analytic comparison; it does not identify the two determinant
+polynomials or their primitive content. The three archived tests
+$(K,h)=(3,1),(5,2),(7,3)$ are finite failures after primitive normalization.
+An all-index primitive estimate is still missing.
+
+\subsection{Unsquared poles: an explicit signed pencil}
+Now use the same weight on the imaginary line:
+\[
+ \Lambda(R)=\frac12\int_0^\infty(R(iy)+R(-iy))w(y)\dd y.
+\]
+For real rational functions with negative real poles this converges,
+and~\eqref{eq:quarter-moments}--\eqref{eq:quarter-resolvent} give
+\begin{equation}\label{eq:lambda-poles}
+ \Lambda(x^j)=\frac{(j+4)(j+3)}6 B_{j+2},\qquad
+ \Lambda((x+a)^{-1})=a^4\zeta(4,a)-\frac12-\frac a3.
+\end{equation}
+Odd polynomial moments vanish. Unlike a real-line Gram functional,
+$\Lambda(P^2)$ need not be positive.
+
+Take integers $M\geq0$, $h\geq1$, $K\geq4M+2h+4$, and set
+\[
+ V_M(x)=\prod_{m=1}^M(x-m)^4,\qquad
+ D_K^*(x)=\prod_{j<K}(x+a_j),\qquad
+ r_{j,\ell}=\frac{V_M(-a_j)(-a_j)^\ell}{(D_K^*)'(-a_j)}.
+\]
+All entries in the matrix below are now explicit rational linear forms:
+\begin{equation}\label{eq:unsquared-pencil}
+ H_{ik}(X)=\sum_{j<K}r_{j,i+k}a_j^4\bigl(128(-1)^jX-T_j\bigr),
+       \qquad 0\leq i,k<h.
+\end{equation}
+Indeed, apply partial fractions and~\eqref{eq:lambda-poles} to
+$\Lambda(V_Mx^{i+k}/D_K^*)$. The degree is at most $K-6$.
+Lagrange interpolation cancels the $\zeta(4)$ coefficient (multiply
+the numerator by $x^4$), and also the elementary corrections
+(multiply by 1 and $x$). Formula~\eqref{eq:unsquared-pencil} retains
+all rational terms through $T_j$.
+Since
+\[
+ (D_K^*)'(-a_j)=\frac{(-1)^j j!(K-1-j)!}{2^{K-1}},
+\]
+the coefficient matrix of $X$ is positive definite: its weights are
+$128(-1)^ja_j^4V_M(-a_j)/(D_K^*)'(-a_j)>0$ at $K$ distinct nodes.
+Thus the polynomial determinant has degree $h$. This does not prove
+that its value at $\theta$ is nonzero.
+
+There is also an exact derivative-sum interpretation. With
+$F_\ell(x)=x^4V_M(x)x^\ell/D_K^*(x)=O(x^{-2})$,
+partial fractions give
+\begin{equation}\label{eq:unsquared-derivative}
+ H_{ik}(\theta)=-\frac16\sum_{n\geq0}F_{i+k}'''(n).
+\end{equation}
+The equality follows by differentiating each simple pole three times;
+the pole coefficients sum to zero. The series converges absolutely.
+The fourth-order zeros at $0,1,\ldots,M$ remove the first $M+1$ terms.
+They do not make the remaining terms, or their determinant, positive.
+
+\subsection{Nonvanishing under hypothetical rationality}
+An auxiliary prime can replace positivity for the nonvanishing step.
+This is the elementary Vandermonde mechanism used in the related
+literature~\cite[Section 3]{Lai}; the specialization is proved here.
+
+\begin{proposition}[Conditional nonvanishing; P05]\label{prop:quarter-nonzero}
+Use $M=n$, $h=2n$, $K=8n+4$ in~\eqref{eq:unsquared-pencil}.
+If $p=8n+5$ is prime and $u/v$ is $p$-integral, then
+\[
+ v_p\bigl(\det H(u/v)\bigr)=-8n.
+\]
+Consequently, if $\theta$ were rational, these determinants would be
+nonzero for infinitely many $n$.
+\end{proposition}
+\begin{proof}
+Here $K=p-1$. All factors of $(D_K^*)'(-a_j)$ are $p$-units.
+After writing the tails as sums over odd integer denominators, their
+only possible denominator divisible by $p$ is $p$ itself. Put
+$j_0=(p-1)/2=4n+2$. The denominator $p$ occurs in $T_j$ precisely for
+$j=j_0+2s$, $1\leq s\leq h$. At these nodes $a_j=p/4+s$,
+so $a_j\equiv s$ and $p^4T_j\equiv256\pmod p$.
+The tails at all other nodes are integral. Thus $p^4H(u/v)$ reduces to
+\[
+ \sum_{s=1}^h w_s v_sv_s^T,
+ \qquad v_s=(1,-s,\ldots,(-s)^{h-1})^T,\qquad
+ w_s=\frac{-256s^4V_n(-s)}{(D_K^*)'(-a_{j_0+2s})}\pmod p.
+\]
+Every weight is a unit: each $s+m$ in $V_n(-s)$ is between 2 and
+$3n<p$. The $h$ nodes are distinct. The determinant is therefore
+$\prod_s w_s\prod_{s<t}(t-s)^2\ne0\pmod p$, proving the valuation.
+
+For completeness, infinitely many primes $5\bmod8$ avoid any finite
+set of odd primes without needing a prime-progression theorem. Choose
+an odd integer $A$ divisible by the forbidden primes and by 5.
+Every prime divisor of $A^2+4$ avoids that set and is $1\bmod4$,
+since $-1$ is a square modulo it. As $A^2+4\equiv5\pmod8$, at least
+one prime divisor is $5\bmod8$. It is not 5. Repeat with the enlarged
+set, including the odd denominator primes of the assumed rational
+$\theta$. This supplies infinitely many admissible $n$.
+\end{proof}
+
+\subsection{The exact remaining task}
+For the last family write $Z_n=\Prim(\det H_n)$; its degree is $2n$.
+The proposition supplies the required nonvanishing subsequence under
+rationality. It would suffice to prove, along that subsequence,
+\[
+ \frac1n\log|Z_n(\theta)|\longrightarrow-\infty.
+\]
+No such estimate, or all-index primitive obstruction, is established.
+The seven earlier tests used $(M,h,K)=(0,1,6),(0,2,8),(0,3,10),
+(1,1,10),(1,2,12),(1,3,14),(2,2,16)$; all primitive absolute values
+exceeded one. These are different finite fixtures, not a test of every
+index on the nonvanishing ray. The first primitive polynomial was
+$118682030250X-117369943777$.
+Formula~\eqref{eq:unsquared-pencil}, followed by an exact determinant
+and complete coefficient-gcd removal, specifies an independent
+reproduction procedure. For the positive squared version use polynomial
+division~\eqref{eq:squared-division} first; omitting its polynomial
+quotient would change the matrix.

@@ -1,0 +1,275 @@
+\section{Interleaved determinants: changing the arithmetic without losing positivity}
+\label{sec:interleaved-case}
+
+The principal determinant in the companion paper has the same row and
+column nodes. Its primitive values grow. Changing the basis of that
+matrix cannot help, but changing the node sets changes the determinant
+polynomial itself. Interleaved borders are a natural test: retain a
+common block carrying the target $\theta$, and add distinct row and
+column nodes to create new cancellations at primes. This geometry was
+suggested by Litsey's trigamma construction~\cite{Litsey}. The estimates
+below concern the beta kernel defined here, not the constants in that
+work. They develop record \recordid{P06}.
+
+\subsection{The matrix and its exact analytic benchmark}
+For positive integers $a$ define
+\[
+ S_\ell(a)=\sum_{j=0}^{a-1}\bigl((4j+1)^{-\ell}-(4j+3)^{-\ell}\bigr),
+\]
+and the rational pencil
+\begin{equation}\label{eq:frame-entry}
+ \Phi_{ab}(X)=
+ \begin{cases}
+ \displaystyle\frac{bS_3(b)-aS_3(a)}{6(b^2-a^2)},&a\ne b,\\[5pt]
+ \displaystyle X-S_4(a)+\frac{S_3(a)}{12a},&a=b.
+ \end{cases}
+\end{equation}
+Fix $0<c\leq1$, put $m=\lfloor cr/2\rfloor$, $N=r+m$ and $M=r+2m$,
+and take the ordered node sets
+\[
+ \mathcal A=\{1,\ldots,r\}\cup\{r+1,r+3,\ldots,r+2m-1\},\qquad
+ \mathcal B=\{1,\ldots,r\}\cup\{r+2,r+4,\ldots,r+2m\}.
+\]
+Write $P_{r,c}(X)=\det[\Phi_{ab}(X)]_{a\in\mathcal A,b\in\mathcal B}$.
+This formula alone specifies every rational coefficient and permits
+exact reproduction; no numerical value of $\theta$ is needed.
+
+Here is the analytic input from the companion paper, stated with its
+normalization~\cite[Proposition 3.1 and Theorem 3.3]{Main}:
+\begin{equation}\label{eq:frame-kernel}
+ \Phi_{ab}(\theta)=\int_0^\infty
+       \frac{\omega(s)}{(a^2+s^2)(b^2+s^2)}\dd s,\qquad
+ \omega(s)=\frac{\pi^2s^2}{96}(1+A(s)-2A(s)^3),
+\end{equation}
+where $A(s)=\sech(2\pi s)$, and
+\begin{equation}\label{eq:frame-comparison}
+ L^N\det\left[\frac1{a+b}\right]
+ \leq P_{r,c}(\theta)\leq U^N\det\left[\frac1{a+b}\right],
+\end{equation}
+with $L=(\pi^3/192)/(1+1/(\sqrt2\pi))^2$ and
+$U=(\pi^3/192)(1+2/(3\sqrt6))$.
+Both constants are positive and independent of all nodes. Positivity
+also follows directly from~\eqref{eq:frame-kernel}: expand the
+integral determinant as the integral of the product of its two Cauchy
+determinants. For ordered nodes the product is positive off coincidences.
+The coefficient of $X^r$ is the disjoint-border minor, positive by the
+same argument (and equal to one if $m=0$). Thus $P_{r,c}$ has degree
+exactly $r$, and $P_{r,c}(\theta)>0$.
+
+The Cauchy product evaluates its leading real decay. Put
+\[
+ I(a,b)=\frac{(a+b)^2\log(a+b)+(a-b)^2\log|a-b|
+                    -2a^2\log a-2b^2\log b}{2},
+ \qquad 0^2\log0=0,
+\]
+and
+\begin{equation}\label{eq:frame-energy}
+ E(c)=\frac{I(1,1)+2I(1,1+c)+I(1+c,1+c)}4.
+ \qquad
+ \log P_{r,c}(\theta)=-E(c)r^2+o(r^2).
+\end{equation}
+To verify the limit, the row and column counting measures divided by
+$r$ both converge to
+$\rho_c=(\mathbf1_{[0,1]}+\mathbf1_{[0,1+c]})/2$.
+In the Cauchy product, the two Vandermonde numerators supply the
+$\log|x-y|$ integral and the denominator supplies $\log(x+y)$.
+The leftover scale factor is $-N\log r=o(r^2)$.
+Truncate the logarithms at distance $\epsilon$ from their singularities.
+The bounded grid density bounds the omitted normalized sums by
+$O(\epsilon|\log\epsilon|)+o(1)$; then let $\epsilon$ decrease to zero.
+Finally two integrations give
+\[
+ I(a,b)=\int_0^a\int_0^b\log\frac{x+y}{|x-y|}\dd x\dd y.
+\]
+The $O(N)$ error in~\eqref{eq:frame-comparison} does not change the limit.
+Thus there is no unknown leading analytic gain in this specified family.
+
+\subsection{The arithmetic quantity that would suffice}
+Let $D_{r,c}$ be the least positive integer clearing the coefficients
+of $P_{r,c}$, let $g_{r,c}$ be the gcd of the coefficients of
+$D_{r,c}P_{r,c}$, and put $\kappa_{r,c}=D_{r,c}/g_{r,c}$.
+A sufficient irrationality criterion for one fixed $c$ is
+\begin{equation}\label{eq:frame-target}
+ \limsup_{r\to\infty}\frac{\log\kappa_{r,c}}{r^2}<E(c).
+\end{equation}
+Indeed, rationality $\theta=u/v$ would make
+$v^r\kappa_{r,c}P_{r,c}(\theta)$ a positive integer; its logarithm
+would tend to minus infinity. Replacing $\kappa_{r,c}$ by $D_{r,c}$
+gives a stronger sufficient condition, not an equivalent one.
+
+The following calculation explains both the available estimate and
+its limitation. For a prime $p$, the Gauss valuation of a polynomial
+is the minimum valuation of its coefficients. It extends to a discrete
+valuation on $\Q_p(X)$; reduction of integral rational functions gives
+the residue field $\mathbb F_p(X)$. We use elementary pivot elimination
+over this valuation ring. This is the setting for the Smith exponents
+below; it does not specialize $X$ to $\theta$.
+
+\subsection{Isolating the four negative prime layers}
+Suppose $p>3$ and $p^2>4M$. Separate the multiples of $p$ in each tail:
+\begin{align*}
+ H_\ell(a;p)&=\sum_{\substack{t>0\ {
+m odd}\\pt<4a}}
+                  \frac{\chi_4(t)}{t^\ell},&
+ U_\ell(a;p)&=\sum_{\substack{0<n<4a\ {
+m odd}\\p\nmid n}}
+                  \frac{\chi_4(n)}{n^\ell},\\
+ S_\ell(a)&=\chi_4(p)p^{-\ell}H_\ell(a;p)+U_\ell(a;p).
+\end{align*}
+All denominators in $H_\ell$ are $p$-units. In a block of $4p$
+integers, odd positions differing by $2p$ have the same residue modulo
+$p$ and opposite characters. Reflecting a complete block by
+$n\mapsto4p-n$ gives, respectively,
+\[
+ U_3(a+p)\equiv U_3(a),\qquad
+ U_3(p-a)\equiv-U_3(a),\qquad U_3(pk)\equiv0\pmod p.
+\]
+Consequently the matrix obtained by replacing $S_\ell$ by $U_\ell$
+in~\eqref{eq:frame-entry} is $p$-integral. When $a\equiv\pm b\ne0$
+the numerator cancels the factor of $p$ in $b^2-a^2$; when
+$a\equiv b\equiv0$, both factors of $p$ are cancelled by the node
+and $U_3$ factors. The inequality $2M<p^2/2$ excludes higher node-factor
+valuations. The diagonal follows in the same way.
+
+We therefore have $\Phi=\Psi+R(X)$ with $R$ integral and
+\[
+ \Psi_{ab}=\frac{\chi_4(p)(bH_3(b;p)-aH_3(a;p))}
+                    {6p^3(b^2-a^2)}\quad(a\ne b),\qquad
+ \Psi_{aa}=\chi_4(p)\left(-\frac{H_4(a;p)}{p^4}
+                              +\frac{H_3(a;p)}{12ap^3}\right).
+\]
+In particular $p^4\Phi\equiv p^4\Psi\pmod{p^4}$.
+Let $\mu_i$ be the Smith exponents of $p^4\Phi$, capped at four,
+and $\tau_p=\sum_i(4-\mu_i)$. Successive unit-pivot elimination,
+dividing out the minimum power of $p$ at each step, gives
+\begin{equation}\label{eq:frame-residual}
+ P_{r,c}=p^{-\tau_p}u_p\det T_p,
+ \qquad v_G(u_p)=0,\quad T_p\text{ integral}.
+\end{equation}
+The matrix $T_p$ is what remains after the negative layers have been
+removed. Thus $v_G(P_{r,c})=-\tau_p+t_p$, where
+$t_p=v_G(\det T_p)\geq0$. Knowing all four negative layers does not
+bound $t_p$ and does not determine primitive numerator content.
+
+\subsection{An explicit large-prime calculation}
+\begin{proposition}[Four-layer estimate; P06]\label{prop:frame-layers}
+For $2M+4<p<4r$, put $h=r-\lfloor p/4\rfloor$. The capped Smith
+exponents of $p^4\Phi$ are
+\[
+ 0\ (h\text{ times}),\quad1\ (2m\text{ times}),\quad
+ 2\ (h\text{ times}),\quad4\ (N-2h-2m\text{ times}).
+\]
+For $\max(2M+4,4r)<p<4M$, put $H=M-\lfloor p/4\rfloor$.
+They are $1$ repeated $H$ times and $4$ repeated $N-H$ times.
+Consequently the contribution of these primes to $\sum_p\tau_p\log p$
+is $(3+3c^2)r^2+o(r^2)$.
+\end{proposition}
+\begin{proof}
+All node sums and differences are $p$-units in this range. The only
+possible odd multiple of $p$ in a tail is $p$ itself, so
+$H_3(a;p)=H_4(a;p)=\mathbf1_{4a>p}$. Call these nodes high.
+There are $h$ high common nodes and all borders are high in the first
+range. Up to the unit $\chi_4(p)$ the singular matrix is $D+pF$,
+where $D$ is minus the identity on those $h$ diagonals and zero elsewhere.
+The low-low block of $F$ is zero; its low-high entry is
+$b/[6(b^2-a^2)]$, a Cauchy entry times a unit column factor.
+Every admissible maximal minor is a unit. There are
+$l=r-h\geq h+m$ low common nodes.
+
+Eliminate the $h$ unit pivots. On the remaining low and border nodes,
+the first layer has block form
+$\left(\begin{smallmatrix}0&C_1\\C_2&C_3\end{smallmatrix}\right)$,
+where $C_1$ has column rank $m$ and $C_2$ has row rank $m$.
+Its rank is $2m$. Left and right null vectors can be supported on the
+low common nodes and chosen to annihilate the border Cauchy columns
+and rows exactly. On these kernels the second layer is, up to a sign,
+\[
+ (YF_{\rm low,high\ common})(F_{\rm high\ common,low}Z).
+\]
+Adjoining the $h$ high-common columns to the $m$ border columns is a
+unit full-rank Cauchy matrix, and the analogous assertion holds for
+rows. The first factor is injective and the second surjective on an
+$h$-dimensional space; their product has rank $h$. Eliminating the
+first layer changes this block only in the third layer.
+The exact singular matrix $D+pF$ has rank $2(h+m)$: its low-low
+block is zero and its two low-high blocks have full rank $h+m$.
+The $h+2m+h$ pivots found account for this rank, so there are no
+further pivots of valuation less than four.
+
+In the second range no common node is high. The low-high Cauchy
+blocks now give rank $H$, all in the first layer; the same argument
+leaves every other capped exponent equal to four.
+The respective values of $\tau_p$ are $6h+6m$ and $3H$.
+With $x=p/r$, the prime number theorem gives the two integrals
+\[
+ \int_{2+2c}^4 6(1+c/2-x/4)\dd x=3(1-c^2),\qquad
+ \int_4^{4+4c}3(1+c-x/4)\dd x=6c^2.
+\]
+Bounded endpoint strips and the floors contribute $o(r^2)$.
+\end{proof}
+
+This estimate cannot by itself prove~\eqref{eq:frame-target}, for any
+fixed $0<c\leq1$. The energy integrand is nonnegative and
+$\rho_c\leq1$, so
+\begin{equation}\label{eq:frame-gap}
+ E(c)\leq2(1+c)^2\log2
+       \leq4(1+c^2)\log2<3(1+c^2).
+\end{equation}
+Even omitting every other prime leaves an unfavorable comparison for
+the bound obtained by setting $t_p=0$ in~\eqref{eq:frame-residual}.
+This proves failure of that bound, not growth of the actual primitive value.
+For completeness, using $4N$ at the remaining primes above $\sqrt{4M}$
+gives
+\[
+ \log D_{r,c}\leq(11+12c+7c^2)r^2+o(r^2).
+\]
+At smaller primes every entry costs $O(\log r/\log p)$ powers of $p$,
+so their total is $O(r^{3/2}\log r)=o(r^2)$. This includes 2 and 3.
+
+\subsection{A genuine obstruction for integer multipliers}
+For $2M+4<p<4r$ a specific coefficient has the exact valuation
+\begin{equation}\label{eq:frame-coefficient}
+ v_p([X^{r-h}]P_{r,c})=-4h-3m.
+\end{equation}
+Indeed, expand this coefficient using minors containing $h$ common
+nodes and all borders. A minor containing only $j<h$ high common nodes
+has valuation at least $-4j-3(h+m-j)>-4h-3m$.
+In the unique minor using all high common nodes, only terms selecting
+all $h$ diagonals attain the minimum. The remaining border determinant,
+after scaling by $p^{3m}$, is a unit multiple of the Cauchy determinant
+$[1/(a+b)]$; its node differences and sums are units. Hence there
+is no cancellation of the term of minimum valuation.
+Summing~\eqref{eq:frame-coefficient} gives
+\[
+ \log D_{r,c}\geq(2-c-c^2)r^2+o(r^2).
+\]
+At $c=1/5$, this lower exponent is $44/25=1.76$, whereas the explicit
+formula~\eqref{eq:frame-energy} gives $1.6523<E(1/5)<1.6524$.
+The latter interval can be checked using
+$\log x=2\sum_{j\geq0}z^{2j+1}/(2j+1)$, $z=(x-1)/(x+1)$,
+with geometric tail bounds. Every positive integer coefficient-clearing
+multiplier therefore produces growing values at this width.
+Division by common numerator content remains possible, so this is
+still not a primitive-value obstruction.
+
+\subsection{What remains open, and how to reproduce the construction}
+The nine archived examples ($r=8,16,24$ and $c=1/5,1/2,1$) remain
+finite evidence. Each used the entire rational polynomial, its least
+clearing denominator and the complete coefficient gcd. They do not
+bound $g_{r,c}$ for general $r$.
+A reader can reproduce such a calculation from~\eqref{eq:frame-entry}
+using the block matrix on common and border nodes. If its blocks are
+$XI_r+U,V,W,Z$, then $Z$ is invertible by positivity and
+\[
+ P_{r,c}(X)=\det Z\,\det(XI_r+U-VZ^{-1}W).
+\]
+Compute the characteristic polynomial over $\Q$, clear all coefficient
+denominators, and divide the complete integer coefficient gcd.
+This also specifies a practical exact procedure independently of our scripts.
+
+The unresolved quantity is the primitive multiplier $\kappa_{r,c}$.
+A new estimate must control the residual factors $t_p$ in
+\eqref{eq:frame-residual}, or common content at other primes, strongly
+enough to reach~\eqref{eq:frame-target}. The four-layer estimate,
+the integer-clearing obstruction and the finite primitive failures
+have different scopes; none closes that question.

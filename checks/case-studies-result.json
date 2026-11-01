@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "run_at_utc": "2026-11-01T17:27:49.331885+00:00",
+  "counts": {
+    "rational_weight_derivative": 1,
+    "squared_partial_fraction_and_period_cancellation": 9,
+    "squared_leading_coefficient": 3,
+    "unsquared_primitive_fixture": 1,
+    "unsquared_prime_nonvanishing": 12,
+    "border_hankel_identity": 24,
+    "common_base_dyadic_bound": 12,
+    "common_base_radial_star": 1,
+    "hermite_reconstruction": 18,
+    "modular_first_prime_layer": 20,
+    "sparse_determinant_identity": 3,
+    "coupled_period_reduction": 2,
+    "compatible_pole_tail_identity": 3,
+    "compatible_multiplier_saddle": 1,
+    "niven_origin_prime_layer": 9,
+    "interleaved_energy_enclosure": 1
+  },
+  "total_exact_or_interval_checks": 120,
+  "interleaved_energy": "[1.652307066307911847918612 +/- 4.48e-25]",
+  "scope": "Bounded exact reconstructions and one Arb inequality supporting the newly exposed formulas; no formal or independent-model verification."
+}

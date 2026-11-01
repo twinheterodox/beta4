@@ -1,0 +1,126 @@
+{
+  "status": "passed",
+  "run_at_utc": "2026-11-01T17:41:17.658219+00:00",
+  "seconds": 28.58,
+  "quarters": [
+    {
+      "alpha": "-3/4",
+      "polynomial_identity_degrees": [
+        [
+          553,
+          114
+        ],
+        [
+          448,
+          107
+        ],
+        [
+          125,
+          35
+        ],
+        [
+          126,
+          35
+        ],
+        [
+          127,
+          35
+        ]
+      ],
+      "matrix_transport": true,
+      "regularity": true,
+      "closed_scalar_ratio": true,
+      "forward_exceptions": [
+        0,
+        1
+      ],
+      "dual_exception": 0,
+      "initial_readout_indices": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "alpha": "-1/4",
+      "polynomial_identity_degrees": [
+        [
+          553,
+          114
+        ],
+        [
+          446,
+          107
+        ],
+        [
+          124,
+          35
+        ],
+        [
+          125,
+          35
+        ],
+        [
+          126,
+          35
+        ]
+      ],
+      "matrix_transport": true,
+      "regularity": true,
+      "closed_scalar_ratio": true,
+      "forward_exceptions": [
+        0,
+        1
+      ],
+      "dual_exception": 0,
+      "initial_readout_indices": [
+        0,
+        1,
+        2
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "path": "algebra.py",
+      "sha256": "885155050c4bbe8ae1c667412f7c0c464eae174f3e7e4706787474f2ab62aceb"
+    },
+    {
+      "path": "arithmetic.py",
+      "sha256": "81e4dc815e192a8de89c315a762bb88db6ca15ac4fe6a4a1d7bd0a1d5383af00"
+    },
+    {
+      "path": "import_data.py",
+      "sha256": "f596d840f5e20a309f2ec236b60b8e0c709cec31b3e051cc85ccf8a0f850fbe6"
+    },
+    {
+      "path": "problems.py",
+      "sha256": "ee6183cc5735793d71eb5fbba9a82578caa04f5edea1db2aa9df7423a4c9d1c5"
+    },
+    {
+      "path": "rates.py",
+      "sha256": "05129bb11a053c057fe68e7dadb1a211ca532647296070050ad9f8d48410da1f"
+    },
+    {
+      "path": "readouts.py",
+      "sha256": "87d0f7072384ebba048cf4875f6e7755997b5f9fc6b811a29952fb9a59c3c8f0"
+    },
+    {
+      "path": "verify.py",
+      "sha256": "4b4935ea0b740fb952130ea23037764d19eeaf99122be6f4ec33dbc4881f7b91"
+    },
+    {
+      "path": "quarter.json",
+      "sha256": "ff4eafb3af58f8aacfed5c7127dc1888c784e1ba58e8f85355257199a9943734"
+    },
+    {
+      "path": "threequarter.json",
+      "sha256": "ba8fe8394ee5c91a5bd01c892d753edeabbc8631993f39264fe62a9edf41e3e4"
+    },
+    {
+      "path": "provenance.json",
+      "sha256": "e1dd40c60516229537f3578e23fac0fd180f68b3f291796e6ec757073286e396"
+    }
+  ],
+  "scope": "Exact identities and stated boundary conditions; analytic transfer is explained in the manuscript. No independent or formal verification claim."
+}

@@ -1,0 +1,231 @@
+\section{Modular transformations and prime-filtered cusp errors}
+\label{sec:modular-case}
+\record{M01}\record{M02}
+A modular transformation can turn slow convergence near one boundary
+point into fast convergence near another. For this problem it also
+introduces an unwanted multiple of $\pi^4$. The construction below
+removes that term exactly. It then separates three questions that are
+easy to confuse: whether the transformed error is small and nonzero,
+whether the coefficients have manageable denominators, and whether
+these facts produce small integer forms.
+
+\subsection{The classical identity and its cancellation}
+Write $\chi=\chi_4$, $q=e^{2\pi i\tau}$, with $\Im\tau>0$, and define
+\begin{align}
+ L_F(\tau)&=\sum_{d\geq1}\frac{\chi(d)q^d}{d^4(1-q^d)},&
+ L_G(\tau)&=\sum_{d\geq1}\frac{q^d}{d^4(1+q^{2d})},\notag\\
+ F(\tau)&=L_F(\tau)-2L_F(2\tau)
+       =\sum_{d\text{ odd}}\frac{\chi(d)q^d}{d^4(1+q^d)},&
+ G(\tau)&=L_G(\tau)-\frac{L_G(2\tau)}{16}
+       =\sum_{d\text{ odd}}\frac{q^d}{d^4(1+q^{2d})}.
+ \label{eq:modular-series}
+\end{align}
+All sums converge absolutely. A specialization of Bradley's
+Ramanujan-type formula~\cite[Corollary 4]{Bradley} gives
+\begin{equation}\label{eq:modular-LF}
+ L_F(\tau)+\frac\theta2
+ =\frac{i\tau^3}{2}L_G\left(-\frac1{4\tau}\right)
+   +i\pi^4\left(\frac5{3072\tau}-\frac\tau{192}
+                                  -\frac{\tau^3}{360}\right).
+\end{equation}
+For clarity about normalization, in that corollary take the integer
+parameter $2$, put its positive parameters equal to
+$\alpha=\pi\Im\tau$, $\beta=\pi/\Im\tau$, and use
+$E_0=1,E_2=-1,E_4=5$, $B_0=1,B_2=1/6,B_4=-1/30$.
+This gives~\eqref{eq:modular-LF} on the positive imaginary axis;
+analytic continuation gives the upper half-plane identity.
+Subtract twice the same formula at $2u$ from the formula at $u$,
+then put $u=-1/(8\tau)$. The result is
+\begin{equation}\label{eq:modular-fricke}
+ \tau^3F\left(-\frac1{8\tau}\right)-\frac{i}{64}G(\tau)
+ =\frac\theta2\tau^3-i\pi^4
+                \left(\frac{\tau^2}{512}+\frac1{12288}\right).
+\end{equation}
+Thus the special value enters a transformation law with an explicit
+polynomial correction. This is the Eichler-integral viewpoint:
+four derivatives $q\,d/dq$ of these series are holomorphic modular
+forms of weight five. Their Fourier expansions and transformations
+are instances of the Eisenstein-series construction in
+Berndt--Straub~\cite[Section 4 and Example 6.4]{BerndtStraub}.
+
+Choose coefficients
+\[
+ a_1=16,\qquad a_2=-10,\qquad a_4=1.
+\]
+They satisfy $\sum a_rr=\sum a_rr^3=0$ and $\sum a_r=7$.
+Consequently, with
+\begin{equation}\label{eq:modular-AH}
+ A=16F-10F(2\tau)+F(4\tau),\qquad
+ H=A+\frac{\sqrt2}{2}\bigl(4G-5G(2\tau)+G(4\tau)\bigr),
+\end{equation}
+all $\pi^4$ terms cancel and
+\begin{equation}\label{eq:modular-H}
+ H\left(-\frac1{32\tau}\right)-\frac72\theta
+  =\frac{i}{32^{3/2}\tau^3}\left(H(\tau)-\frac72\theta\right).
+\end{equation}
+Here is a direct way to check the coefficients, without guessing a
+modular combination. Solve~\eqref{eq:modular-fricke} for $F(r\tau)$.
+Its polynomial terms are proportional to $r\tau$ and $r^3\tau^3$,
+and its $G$ term is
+$-8i(r\tau)^3G(-1/(8r\tau))$. Under $\tau\mapsto-1/(32\tau)$
+the indices $r=1,2,4$ reverse to $4/r$; their cubic weights give
+exactly $(\sqrt2/2)(4,-5,1)$. The two displayed zero sums remove
+the polynomial terms in both directions. At the fixed point
+$\tau=i/\sqrt{32}$ the multiplier in~\eqref{eq:modular-H} is $-1$,
+so $H(i/\sqrt{32})=7\theta/2$.
+
+\subsection{Deleting prime denominators while retaining an exact error}
+Let $S$ be a finite set of odd primes, $P=\prod_{p\in S}p$, and
+$\alpha_S=\prod_{p\in S}(1-\chi(p)/p^4)$. Empty products are one.
+For $V_df(\tau)=f(d\tau)$ set
+\begin{equation}\label{eq:modular-filter}
+ A_S=\prod_{p\in S}(1-\chi(p)p^{-4}V_p)A
+    =\sum_{r\in\{1,2,4\}}\sum_{d\mid P}
+           a_r\mu(d)\chi(d)d^{-4}F(rd\tau),\qquad
+ c_S=\frac72\alpha_S.
+\end{equation}
+The symbol $\mu(d)$ here is $(-1)$ to the number of prime factors of
+the squarefree divisor $d$. The elementary identity
+\[
+ (1-\chi(p)p^{-4}V_p)F
+   =\sum_{\substack{d\text{ odd}\\p\nmid d}}
+                  \frac{\chi(d)q^d}{d^4(1+q^d)}
+\]
+shows that every coefficient of $A_S$ is $p$-integral for $p\in S$.
+It removes an outer divisor in the Lambert sum; it does not remove
+every Fourier coefficient whose index is divisible by $p$.
+Dominated convergence gives $A_S(iy)\to c_S\theta$ as $y\downarrow0$.
+
+Apply the solved form of~\eqref{eq:modular-fricke} term by term in
+\eqref{eq:modular-filter}. The same two zero sums eliminate the
+polynomial terms for every $d$, giving the exact remainder
+\begin{equation}\label{eq:modular-cusp-exact}
+ A_S(\tau)-c_S\theta
+   =-8i\tau^3\sum_{r,d\mid P}
+          \frac{a_rr^3\mu(d)\chi(d)}{d}
+                         G\left(-\frac1{8rd\tau}\right),
+\end{equation}
+where the sum over $r$ is still $1,2,4$.
+This identity yields a uniform sign and size estimate.
+
+\begin{proposition}\label{prop:modular-cusp}
+Put $\sigma_P=\sum_{d\mid P}d^{-1}$, $x=\pi/(16Py)$ and $z=e^{-x}$.
+If $x\geq\log(20P\sigma_P)$, then
+\begin{equation}\label{eq:modular-cusp-bound}
+ A_S(iy)-c_S\theta
+  =-\frac{512\mu(P)\chi(P)y^3z}{P}(1+\varepsilon),\qquad
+ |\varepsilon|\leq2z^2+5P\sigma_Pz<\frac12.
+\end{equation}
+In particular the error is nonzero, with the displayed sign, and its
+absolute value lies strictly between $256y^3z/P$ and $768y^3z/P$.
+\end{proposition}
+\begin{proof}
+Regard $G$ temporarily as a power series in a real argument $z$.
+For $0<z\leq1/2$ its defining sum gives
+$|G(z)-z|\leq2z^3$ and $0<G(z)\leq2z$:
+the first summand differs from $z$ by at most $z^3$, while the
+remaining odd summands are bounded by
+$z^3/[3^4(1-z^2)]$.
+In~\eqref{eq:modular-cusp-exact} the unique largest dilation is
+$rd=4P$, with coefficient $64\mu(P)\chi(P)/P$ and argument $z$.
+Every other argument is $z^{4P/(rd)}$ with integer exponent at least
+$2$. Since $\sum_r|a_r|r^3=160$, their total absolute contribution
+inside the sum is at most $320\sigma_Pz^2$. Divide by $64z/P$ and
+include the leading term's relative error $2z^2$.
+Finally $z\leq(20P\sigma_P)^{-1}\leq1/20$ makes the bound less
+than $1/2$.
+\end{proof}
+The required approach scale is explicit:
+$y\leq\pi/[16P\log(20P\sigma_P)]$. These are analytic evaluations
+at $q=e^{-2\pi y}$. They are not rational approximants merely because
+their error is small. A further construction must turn the identity
+into rational coefficients without losing its decay.
+
+\subsection{A fixed-filter obstruction to the ordinary contour estimate}
+We give the analytic limitation rather than infer it from a plot of
+singularities. A positive-integer-weight holomorphic modular form,
+periodic with period one and holomorphic at the cusps of a finite-index
+subgroup, cannot extend meromorphically through a finite rational cusp
+unless it is zero. Indeed, choose
+$\gamma=\left(\begin{smallmatrix}a&b\\c&d\end{smallmatrix}\right)$
+with $c\ne0$ taking infinity to the cusp. After increasing the cusp
+width if necessary, $f|_k\gamma=a_0+O(e^{-\eta\Im z})$ there.
+Meromorphic continuation through $a/c$ would make this a convergent
+Laurent series in $1/z$. Its difference from $a_0$ is exponentially
+flat on the imaginary axis, so every Laurent coefficient is zero.
+It follows that $f(\tau)=a_0(a-c\tau)^{-k}$, which contradicts
+periodicity if $a_0\ne0$ and nonzeroness if $a_0=0$.
+
+For fixed $S$, $(q\,d/dq)^4A_S$ is such a modular form after passing
+to a common subgroup for its finitely many dilations. Its coefficient
+of $q$ is $16$, so it is nonzero. If $A_S$ continued through a root
+of unity, its fourth derivative would too. Every root of unity is
+therefore a singularity; their density makes the unit circle a
+\emph{natural boundary}, across which no analytic continuation is possible.
+
+There are two useful consequences. First, for $h=2A_S$, the cumulative
+germ $(X-h(q))/(1-q)$ is nonrational for every complex $X$. The
+Hankel criterion used in Section~\ref{sec:common-base} therefore gives
+infinitely many nonzero endpoint determinants for each fixed filter.
+Second, the compact set removed in the ordinary reciprocal-plane
+absolute-contour estimate must contain the whole unit circle, whose
+logarithmic capacity is one. The estimate used in
+Section~\ref{sec:common-base} cannot supply a negative quadratic decay
+constant here. This is a limitation of that estimate. It is neither
+a lower bound for the actual determinants nor a uniform statement
+when $S$ grows with the matrix size.
+
+\subsection{An explicit coefficient realization and its prime cost}
+For readers wishing to reproduce the coefficient experiment, the
+level-32 choice was the following formal change of variable and prefactor:
+\begin{align*}
+ t(q)&=q\prod_{d\in\{1,2,4,8,16,32\}}\prod_{j\geq1}
+                 (1-q^{dj})^{e_d},
+       &(e_1,e_2,e_4,e_8,e_{16},e_{32})&=(2,-3,1,1,-3,2),\\
+ J(q)&=\vartheta_3(2\tau)^2+2\sqrt2\,\vartheta_3(16\tau)^2,
+       &\vartheta_3(u)&=\sum_{m\in\Z}e^{\pi i m^2u},\\
+ Y(q)&=q\,\frac{d}{dq}\log t(q),&
+ \mathcal A(t(q))&=\frac{J(q)^5}{Y(q)},\qquad
+ \mathcal B(t(q))=\mathcal A(t(q))H(\tau).
+\end{align*}
+These definitions alone suffice to compute every coefficient exactly:
+$t=q+O(q^2)$ has an integral compositional inverse,
+$Y\in1+q\Z[[q]]$, and all operations take place in
+$\Q(\sqrt2)[[q]]$. Write
+$\mathcal A=\sum(a_{n,0}+\sqrt2a_{n,1})t^n$ and
+$\mathcal B=\sum(b_{n,0}+\sqrt2b_{n,1})t^n$.
+Then $a_{n,j}\in\Z$, and $2\operatorname{lcm}(1,\ldots,n)^4b_{n,j}$
+is integral. The latter follows directly from the Lambert coefficients
+in~\eqref{eq:modular-series}; integral composition and multiplication
+preserve that denominator bound.
+
+The fourth powers are real costs of these coefficient sequences, not
+just artifacts of this sufficient bound. For an odd prime $p$, all
+coefficients before degree $p$ are $p$-integral, while
+\[
+ p^4[q^p]H\equiv16\chi(p)+2\sqrt2\pmod p.
+\]
+Since $\mathcal A(0)=(1+2\sqrt2)^5=401+298\sqrt2$, and composition
+with $q=t+O(t^2)$ does not change this first nonintegral coefficient,
+\begin{equation}\label{eq:modular-prime-coeff}
+ \begin{split}
+ p^4b_{p,0}&\equiv6416\chi(p)+1192\pmod p,\\
+ p^4b_{p,1}&\equiv4768\chi(p)+802\pmod p.
+ \end{split}
+\end{equation}
+Thus $v_p(b_{p,j})=-4$ apart from the finitely many primes dividing
+one of the four displayed nonzero integers. The least denominator
+clearing a whole prefix through $n$ consequently has logarithm
+$4n+o(n)$, by the prime number theorem and the matching upper bound.
+This does not say that every individual coefficient has that denominator,
+or determine the primitive content of a determinant built from them.
+
+\paragraph{What remains.}
+The transformation and cusp estimate are available exactly, and the
+coefficient construction is reproducible. A continuation of this route
+must control primitive coefficient combinations, or supply a different
+arithmetic interpretation of the transformed values. Neither selected
+prime deletion nor the nonzero cusp error supplies this missing step.
+The more specialized coordinate and rational-system tests remain in
+records \recordid{M03}--\recordid{M04}; their finite comparisons do not
+exclude other modular choices.

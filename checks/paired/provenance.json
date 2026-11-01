@@ -1,0 +1,25 @@
+{
+  "operation": "Canonical exact rational functions; no archived status flags imported.",
+  "sources": [
+    {
+      "file": "adjoint-pairing.json",
+      "sha256": "374cbaf14fc097120578df500c90c9039ee55957acc1529b5b6e4f7a9ea5f8ab"
+    },
+    {
+      "file": "deformed-matrices-quarter.json",
+      "sha256": "ddcec55af8b31bd11a3bbe703428125b6c4128aff2b27f886a61f651a762dc1b"
+    },
+    {
+      "file": "verified-matrices-quarter.json",
+      "sha256": "66f1012689c55e1338235eca65dbca9c90f529c2d7c010d253fe38d2a878c0da"
+    },
+    {
+      "file": "deformed-matrices-threequarter.json",
+      "sha256": "2273b34eab065e512f3db8fa7b7ce1337fe92140b876f8a4b3560e0bb1dac3c4"
+    },
+    {
+      "file": "verified-matrices-threequarter.json",
+      "sha256": "ffa89980d5804f41759f23d8f36a79bf452fb03680e847d21a8c1ef00c051d7f"
+    }
+  ]
+}

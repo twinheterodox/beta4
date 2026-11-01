@@ -1,0 +1,232 @@
+\section{A common-base ladder determinant with an unresolved odd-prime cost}
+\label{sec:common-base}
+
+Approximating the terms of a functional identity separately can destroy
+its arithmetic advantage: eliminating their unwanted constants multiplies
+large coefficients. Here the polylogarithm arguments remain powers of
+one variable throughout the construction. This gives a determinant whose
+analytic decay beats its entire cost at the prime 2. The missing step is
+the other primes, not nonvanishing. We develop record \recordid{L03}
+and then a related signed-integral alternative.
+
+\subsection{A rational-coefficient germ and its endpoint determinant}
+Put $q=(1-i)/2$, $z_m=-q^m$ for $m=2,3,5$, and
+$(c_2,c_3,c_5)=(225/136,-25/34,9/68)$. Write
+\[
+ \mathcal I_s(z_mt^m)=
+  \frac{\Li_s(z_mt^m)-\Li_s(\overline z_mt^m)}{2i},
+ \qquad L(t)=-\log(1-t^2/2).
+\]
+This defines an analytic germ, not the imaginary part operation on
+complex $t$. All its Taylor coefficients are rational. Define
+\begin{equation}\label{eq:common-H}
+ H(t)=\sum_{m=2,3,5}c_m\left(
+ \mathcal I_4(z_mt^m)+\frac m2L(t)\mathcal I_3(z_mt^m)
+              +\frac{m^2}{12}L(t)^2\mathcal I_2(z_mt^m)\right)
+       =\sum_{j\geq1}h_jt^j.
+\end{equation}
+The completed Broadhurst identity~\eqref{eq:ladder} gives $H(1)=\theta$.
+Its use here has the same external dependency as Section~\ref{sec:mellin}.
+Each $h_j$ is obtained by finite convolution of the displayed series,
+so the following polynomial is reproducible over $\Q$:
+\begin{equation}\label{eq:common-J}
+ b_i=h_i,\quad T_{ij}=h_{i+j}-h_{i+j-1}\quad(1\leq i,j\leq n),
+ \qquad
+ J_n(X)=\det\begin{pmatrix}X&-b^T\\b&T\end{pmatrix}.
+\end{equation}
+For $n=0$ put $J_0(X)=X$. Its degree is at most one, even though its
+matrix size grows. With
+$c_j(X)=X-\sum_{\ell=1}^jh_\ell$, adjacent row and column differences
+give the exact identity
+\begin{equation}\label{eq:common-hankel}
+ \det[c_{i+j}(X)]_{0\leq i,j\leq n}=(-1)^nJ_n(X),
+ \qquad \sum_{j\geq0}c_j(X)t^j=\frac{X-H(t)}{1-t}.
+\end{equation}
+No invertibility of $T$ or Pad\'e normality is required.
+
+\subsection{Nonvanishing from a logarithmic branch}
+As $t$ increases to $\sqrt2$, the polylogarithm arguments tend to
+$i,e^{i\pi/4},e^{-i\pi/4}$, none equal to 1. The coefficient of
+$L(t)^2$ at that endpoint is
+\[
+ A_+=\frac{75}{272}\bigl(2\beta(2)-3\operatorname{Cl}_2(\pi/4)\bigr),
+ \qquad \operatorname{Cl}_2(\phi)=\sum_{j\geq1}\frac{\sin(j\phi)}{j^2}.
+\]
+The alternating series gives $\beta(2)<1$. The first three Clausen
+terms and the absolute tail bound $\sum_{j\geq4}j^{-2}<1/3$ give
+\[
+ \operatorname{Cl}_2(\pi/4)>
+       \frac{5\sqrt2}{9}+\frac14-\frac13>\frac{25}{36},
+ \qquad A_+<-\frac{25}{1088}.
+\]
+Thus $H$ has a genuine logarithm-squared singularity. Subtracting any
+constant $X$ and dividing by $1-t$ cannot remove it. Kronecker's
+classical Hankel criterion says that a power series is rational exactly
+when all its sufficiently large leading Hankel determinants vanish
+\cite[Theorem 1]{KroneckerNote}. Applied to~\eqref{eq:common-hankel},
+it proves that $J_n(X)\ne0$ for infinitely many $n$ for every fixed
+complex $X$, in particular $X=\theta$. No irrationality assumption or
+positivity argument enters this step.
+
+\subsection{A common analytic domain and a determinant bound}
+Let $E=t\,d/dt$. The rational function $U$ in~\eqref{eq:U} satisfies
+\[
+ U(t)=\sum_m c_m m^4\mathcal I_0(z_mt^m).
+\]
+Define $Y_0=U$, $EY_j=Y_{j-1}$ and $Y_j(0)=0$ for $1\leq j\leq4$.
+Then
+\begin{equation}\label{eq:common-tower}
+ H=Y_4+\tfrac12LY_3+\tfrac1{12}L^2Y_2,\qquad
+ Y_j(t)=\frac1{(j-1)!}\int_0^1U(tx)(-\log x)^{j-1}\frac{\dd x}{x}.
+\end{equation}
+These identities follow coefficientwise. They also specify analytic
+continuation by integration on radial segments.
+
+For $p_2=t^4+4$, $p_3=t^6-4t^3+8$, $p_5=t^{10}-8t^5+32$,
+let $D=p_2p_3p_5/(t^2+2t+2)^2$. Polynomial division shows
+\[
+ (2-t^2)D(t)\mid t^{120}-2^{60}.
+\]
+All possible finite singularities lie at radius $\sqrt2$ on the
+120th-root rays. Remove those rays outward from that radius. The
+remaining domain is star-shaped, and~\eqref{eq:common-tower} gives
+single-valued holomorphic functions there. There is no singularity at
+zero because $U=O(t^2)$.
+
+In the reciprocal variable put
+\[
+ G(w)=\frac{\theta-H(1/w)}{w-1},\qquad
+ K=\{w:w^{120}\in[0,2^{-60}]\}.
+\]
+The apparent pole at $w=1$ is removable precisely because $H(1)=\theta$.
+Thus $G$ is holomorphic off the compact star $K$ and vanishes at infinity.
+The logarithmic capacity of a segment of length $a$ is $a/4$; the
+monic polynomial-preimage rule gives
+\[
+ \operatorname{cap}(K)=\bigl(2^{-60}/4\bigr)^{1/120}=2^{-31/60}.
+\]
+For this particular preimage the rule also follows by composing the
+segment's Green function with $w^{120}$ and dividing by 120.
+
+P\'olya's determinant inequality~\cite[Theorem 2.1, one variable]{Polya}
+now yields
+\begin{equation}\label{eq:common-real}
+ \log|J_n(\theta)|\leq-\frac{31}{60}(\log2)n^2+o(n^2),
+\end{equation}
+with $\log0=-\infty$. To check the exponent normalization, the Laurent
+coefficients of $G$ are $c_j(\theta)$. Their Hankel determinant is
+\[
+ \frac1{(n+1)!(2\pi i)^{n+1}}\int_{\Gamma^{n+1}}
+       \prod_jG(w_j)\prod_{i<j}(w_j-w_i)^2\prod_j\dd w_j.
+\]
+Here $\Gamma$ surrounds $K$ in its analytic complement.
+The maximum squared Vandermonde on successively smaller contour
+neighborhoods has leading logarithm
+$n(n+1)\log\operatorname{cap}(K)$. The remaining factors contribute
+only $O(n\log n)$ for a fixed contour. This explains why there is one
+capacity exponent on the $n^2$ scale, not twice that exponent.
+
+\subsection{The complete leading cost at 2}
+For $J_n\ne0$ write $\Prim(J_n)=\kappa_nJ_n$.
+We give a short bound sufficient for the leading rate; the stronger
+finite-index residue-rank correction is unnecessary here.
+In $\Q_2(i)$ take $\pi_2=1-i$, with $v_{\pi_2}(2)=2$.
+Substitute $x=qt$, so $v_{\pi_2}(q)=-1$. The polylogarithm blocks become
+\[
+ \mathcal B_{m,s}(x)=\frac{\Li_s(-x^m)-\Li_s(-i^mx^m)}{2i},\qquad
+ [x^{mj}]\mathcal B_{m,s}
+       =\frac{(-1)^j(1-i^{mj})}{2ij^s}.
+\]
+For $m=2$ these vanish at even $j$. For $m=3,5$ they vanish when
+$4\mid j$; at odd $j$ the valuation is $-1$, and at $j\equiv2\pmod4$
+it is $-2s$. Including $c_m,m/2,m^2/12$, multiplication by $-64$
+makes each of the three blocks in~\eqref{eq:common-H} integral.
+The worst valuations before that multiplication, for each of the
+three blocks, are $-6,-10,-12$ at $m=2,3,5$.
+
+In the $x$ variable $L=-\log(1-ix^2)$. Through degree $2n$ its
+coefficients have 2-adic valuation at least $-r$, where
+$r=\lfloor\log_2 n\rfloor$; those of $L^2$ have valuation at least
+$-2r$. Hence $f_j=\lambda q^{-j}h_j$ is integral for $j\leq2n$,
+where $\lambda=-64\,2^{2r}$. Scale row and column $i$ of the bordered
+matrix by $q^{-i}$, with index zero for the border, and scale the whole
+matrix by $\lambda$. Its entries are $\lambda X$, $\pm f_i$ and
+$f_{i+j}-q^{-1}f_{i+j-1}$, all integral. The determinant multiplier has
+2-adic valuation
+\[
+ B_n=\frac{n(n+1)}2+(6+2r)(n+1).
+\]
+Since the original coefficients are rational, their valuations over
+$\Q_2(i)$ are twice their ordinary 2-adic valuations. We conclude
+\begin{equation}\label{eq:common-two}
+ v_2(\kappa_n)\leq B_n=\tfrac12n^2+O(n\log n).
+\end{equation}
+Combining~\eqref{eq:common-real} and~\eqref{eq:common-two} gives
+\[
+ \log|2^{B_n}J_n(\theta)|
+       \leq-\frac{\log2}{60}n^2+o(n^2).
+\]
+These are shrinking, infinitely often nonzero linear forms with
+2-integral coefficients. They are not necessarily integer forms.
+
+\subsection{The precise missing inequality}
+Put $d_n=2^{\max(0,v_2(\kappa_n))}$. It would suffice to prove
+\begin{equation}\label{eq:common-missing}
+ \limsup_{\substack{n\to\infty\\J_n\ne0}}
+       \frac{\log(\kappa_n/d_n)}{n^2}<\frac{\log2}{60}.
+\end{equation}
+This includes all odd-prime costs and any compensating numerator
+content; it is a sufficient target, not a necessary condition for every
+use of the germ. No bound of this strength is established. Finite
+primitive failures at $n=12,16,20$ do not settle the asymptotic question.
+To reproduce a form, expand~\eqref{eq:common-H} through degree $2n$,
+build~\eqref{eq:common-J} over $\Q[X]$, and clear its two coefficients
+followed by their full gcd. This procedure does not require solving a
+possibly singular Pad\'e system.
+
+\subsection{A signed-integral alternative with only one LCM layer}
+The same rational kernel also gives a different, completely explicit
+starting point. Retain $D$ above and put $N_0=17DU\in\Z[x]$; it has
+a zero of order two at zero. For arbitrary $S\in\Z[x]$ and $A\in\Z$ set
+\[
+ F=x(1-x)^2N_0^4S,\qquad
+ V=17\frac{E^3F}{N_0},\qquad P=A+DV.
+\]
+At most three differentiations can remove at most three of the four
+$N_0$ factors, so $V\in\Z[x]$. With $N=DU=N_0/17$ one has
+$NV=E^3F$. If $F=\sum f_jx^j$, the constraints of
+\eqref{eq:constraints} become $F(1)=EF(1)=0$, which hold by construction.
+Consequently~\eqref{eq:mellin-pair} gives exactly
+\begin{equation}\label{eq:signed-rodrigues}
+ I(P)=A\theta+\sum_j\frac{f_j}{j}.
+\end{equation}
+Thus $\operatorname{lcm}(1,\ldots,\deg F)$ clears the rational remainder,
+rather than its fourth power. This is an arithmetic improvement, not
+a smallness or nonvanishing theorem.
+
+There are infinitely many nonzero source polynomials giving the zero
+form. For any nonzero $Z\in\Z[x]$, let
+\[
+ R_0=N_0^5(1-x)^3Z,\qquad F=ER_0,
+ \qquad S=(5N_0'(1-x)-3N_0)Z+N_0(1-x)Z'.
+\]
+Then this $F$ has the prescribed form and
+$\sum f_j/j=R_0(1)-R_0(0)=0$. With $A=0$ the source is nonzero,
+since $E^4$ is injective on polynomials with zero constant coefficient.
+A small-vector argument must therefore distinguish the kernel of the
+map to the final two coefficients from genuine small nonzero forms.
+
+There is also a limitation on an absolute-integral estimate. In the
+notation of Section~\ref{sec:mellin}, the constraint preserves
+$\int PU(-\log x)\dd x/x=A M_1$, where $M_1>9/10$ is proved there.
+As $W(\rho)\geq(\log2)^2\rho/12$,
+\[
+ \int_0^1|PU|W(-\log x)\frac{\dd x}{x}
+       \geq\frac{(\log2)^2}{12}|A|M_1.
+\]
+After a positive normalization making the nonzero target coefficient
+an integer this is greater than $1/30$.
+Hence a successful signed choice must exploit cancellation in the
+actual integral and establish nonvanishing separately. Formula
+\eqref{eq:signed-rodrigues} supplies free parameters and exact arithmetic;
+it does not yet supply that choice or those two proofs.
