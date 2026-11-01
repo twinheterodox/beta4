@@ -1,11 +1,11 @@
 {
   "status": "passed",
-  "recorded_at_utc": "2026-11-01T13:23:24.632209+00:00",
+  "recorded_at_utc": "2026-11-01T13:26:26.741547+00:00",
   "scope": "Structural revision and introduction follow-ups: preservation, compilation, references, attribution, artifact consistency and visual review. Earlier reproduction checks are retained with their stated scopes; this is not independent mathematical verification.",
   "source_files_match_build_record": 1,
-  "build_record_sha256": "f041808bc8135750c4b6838b1122d4fef8471c92fbf8bcfb9c2ff4dbbd69f742",
+  "build_record_sha256": "156cf468df1abdc7e58e4aa82e889056eea5f0d528930e02cd1f77ffb86d5ed0",
   "pdf": "output/pdf/beta4-determinant-obstructions.pdf",
-  "pdf_sha256": "b6ec2e099b04b5afaed4cb4f325675b41febcd531e34ecdc6f603abe808a3e69",
+  "pdf_sha256": "36b1081d6801d300efac40f146e66062038eba11ff0c963014306db8eac10efd",
   "pages": 20,
   "visual_inspection": {
     "pages_inspected": [
@@ -30,7 +30,7 @@
       19,
       20
     ],
-    "rendering": "Poppler, 100 dpi. Page 1 reinspected after adding a citation to the abstract's original first sentence; pages 2-20 match the previously inspected render pixel-for-pixel.",
+    "rendering": "Poppler, 100 dpi. Page 1 reinspected after distinguishing the general positive-determinant strategy from its beta(4) application in the abstract; pages 2-20 match the previously inspected render pixel-for-pixel.",
     "final_changed_pages_reinspected": [
       1
     ],
@@ -314,7 +314,7 @@
   "independent_audit_of_assembled_draft": false,
   "formal_verification": false,
   "source": "paper/beta4-determinant-obstructions.tex",
-  "source_sha256": "64c9a2bd688f5d36674e24e971d9d378c02f8996b0fc63d8a01f4e8b567c3df3",
+  "source_sha256": "0cdd3ae92a7eb2d9449f0721bc15210c2b6e88ec9e9c06993f36096a8324171d",
   "historical_statement_preservation": {
     "baseline_commit": "local-prepublication-revision",
     "formal_statements_unchanged_in_document": 11,
@@ -482,6 +482,16 @@
         "metadata_url": "https://arxiv.org/abs/1507.05697",
         "limits": "Direct attribution for the relevant positive-moment approach, not an absolute historical priority claim for all determinant-based irrationality arguments."
       }
+    },
+    {
+      "baseline_commit": "local-prepublication-revision",
+      "change": "State the general approach to irrationality first in the abstract, retaining the Zudilin citation, then introduce beta(4) as the case investigated by the two constructions.",
+      "only_stated_abstract_change": true,
+      "changed_pages_reinspected": [
+        1
+      ],
+      "other_pages_pixel_identical": 19,
+      "calculation_suites_rerun": false
     }
   ]
 }
