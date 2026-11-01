@@ -1,11 +1,11 @@
 {
   "status": "passed",
-  "recorded_at_utc": "2026-11-01T14:33:18.324427+00:00",
+  "recorded_at_utc": "2026-11-01T15:15:36.640294+00:00",
   "scope": "Structural revision and introduction follow-ups: preservation, compilation, references, attribution, artifact consistency and visual review. Earlier reproduction checks are retained with their stated scopes; this is not independent mathematical verification.",
   "source_files_match_build_record": 1,
-  "build_record_sha256": "a352a631c6bf40d03e6c8b18b8474265da5e15b60a345bc4bc0c6e740087fefd",
+  "build_record_sha256": "acff7326ec33c4544e873019761996b2962d5ae4ae726dcd0f9ff3b9d6a6e49f",
   "pdf": "output/pdf/beta4-determinant-obstructions.pdf",
-  "pdf_sha256": "8d6863de8d6295ab92db03024163c6eea4fdbc14f8f8223a650874bb5c1b9fda",
+  "pdf_sha256": "d5e87f0e172b6ee589ae9691afb38e49965d77a9f2d3fb865f0845516e935cc5",
   "pages": 20,
   "visual_inspection": {
     "pages_inspected": [
@@ -30,10 +30,23 @@
       19,
       20
     ],
-    "rendering": "Poppler, 100 dpi. Pages 2-3 reinspected after shortening the matrix-size and polynomial-degree passage; all other pages match the previously inspected render pixel-for-pixel.",
+    "rendering": "Poppler, 100 dpi. Pages 2-16 reinspected after removing the explanatory clause defining Z[X]; all other pages match the previously inspected render pixel-for-pixel.",
     "final_changed_pages_reinspected": [
       2,
-      3
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
     ],
     "other_final_pages_match_inspected_render": true,
     "result": "No clipping, overlap, broken formulas or illegible layout observed."
@@ -315,7 +328,7 @@
   "independent_audit_of_assembled_draft": false,
   "formal_verification": false,
   "source": "paper/beta4-determinant-obstructions.tex",
-  "source_sha256": "15344903e71350cda60c3a855aeb99538f8b27f512bf5220449a68e8bc73ca91",
+  "source_sha256": "7c95fe327e80d7ed08e90c64a71f22ea34041b1a32ac226795abe5e14eb8dec8",
   "historical_statement_preservation": {
     "baseline_commit": "local-prepublication-revision",
     "formal_statements_unchanged_in_document": 11,
@@ -564,6 +577,30 @@
         3
       ],
       "other_pages_pixel_identical": 18,
+      "calculation_suites_rerun": false
+    },
+    {
+      "baseline_commit": "local-prepublication-revision",
+      "change": "Remove the explanatory clause defining the standard notation Z in Z[X].",
+      "only_stated_prose_change": true,
+      "changed_pages_reinspected": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "other_pages_pixel_identical": 5,
       "calculation_suites_rerun": false
     }
   ]
