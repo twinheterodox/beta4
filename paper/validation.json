@@ -1,11 +1,11 @@
 {
   "status": "passed",
-  "recorded_at_utc": "2026-11-01T13:53:21.464281+00:00",
+  "recorded_at_utc": "2026-11-01T14:18:44.333638+00:00",
   "scope": "Structural revision and introduction follow-ups: preservation, compilation, references, attribution, artifact consistency and visual review. Earlier reproduction checks are retained with their stated scopes; this is not independent mathematical verification.",
   "source_files_match_build_record": 1,
-  "build_record_sha256": "38b16c3cd9e90c6a27793dfc5463f40f6f2fb1973114538cd3a03c30e07c69d8",
+  "build_record_sha256": "32a776eded97ae6e30bbb5cbdb45ab92979df585f53ae778ac20500e0cd2db5d",
   "pdf": "output/pdf/beta4-determinant-obstructions.pdf",
-  "pdf_sha256": "6592b7eef2c55f6d80dffe3217cdc55b2200c854381dcaa0375d726def0d324e",
+  "pdf_sha256": "65b6f5f3ab47f3c8e9abd4bdeb833fb08609e36390f7a426b1641306242944ce",
   "pages": 20,
   "visual_inspection": {
     "pages_inspected": [
@@ -30,9 +30,17 @@
       19,
       20
     ],
-    "rendering": "Poppler, 100 dpi. Page 1 reinspected after renaming Section 1.1 A classical irrationality argument; pages 2-20 match the previously inspected render pixel-for-pixel.",
+    "rendering": "Poppler, 100 dpi. Pages 1-9 reinspected after shortening the abstract; pages 10-20 match the previously inspected render pixel-for-pixel.",
     "final_changed_pages_reinspected": [
-      1
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
     ],
     "other_final_pages_match_inspected_render": true,
     "result": "No clipping, overlap, broken formulas or illegible layout observed."
@@ -314,7 +322,7 @@
   "independent_audit_of_assembled_draft": false,
   "formal_verification": false,
   "source": "paper/beta4-determinant-obstructions.tex",
-  "source_sha256": "03bec61a6386df45139c1b583434571e51d830f6980270bd6f06a37aed3ea6ee",
+  "source_sha256": "b836f10c2b0d6a380de93736e59df20f8a2589350566a292e34318c107631565",
   "historical_statement_preservation": {
     "baseline_commit": "local-prepublication-revision",
     "formal_statements_unchanged_in_document": 11,
@@ -522,6 +530,25 @@
         1
       ],
       "other_pages_pixel_identical": 19,
+      "calculation_suites_rerun": false
+    },
+    {
+      "baseline_commit": "local-prepublication-revision",
+      "change": "Retain the growth conclusion in the abstract while removing the exact exponents, shifted-node qualification and exact-prime description.",
+      "only_stated_abstract_change": true,
+      "technical_details_retained_in_body": true,
+      "changed_pages_reinspected": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "other_pages_pixel_identical": 11,
       "calculation_suites_rerun": false
     }
   ]
