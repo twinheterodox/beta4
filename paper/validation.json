@@ -1,11 +1,11 @@
 {
   "status": "passed",
-  "recorded_at_utc": "2026-11-01T14:18:44.333638+00:00",
+  "recorded_at_utc": "2026-11-01T14:24:02.020486+00:00",
   "scope": "Structural revision and introduction follow-ups: preservation, compilation, references, attribution, artifact consistency and visual review. Earlier reproduction checks are retained with their stated scopes; this is not independent mathematical verification.",
   "source_files_match_build_record": 1,
-  "build_record_sha256": "32a776eded97ae6e30bbb5cbdb45ab92979df585f53ae778ac20500e0cd2db5d",
+  "build_record_sha256": "b2cd0485861273a65c09c289802aaad463425a0351e1467604eaa29867942c22",
   "pdf": "output/pdf/beta4-determinant-obstructions.pdf",
-  "pdf_sha256": "65b6f5f3ab47f3c8e9abd4bdeb833fb08609e36390f7a426b1641306242944ce",
+  "pdf_sha256": "69c1f4ac18f388aff1d26fc9288ef884867d52ab9b950ef5fb51b40a58e29f40",
   "pages": 20,
   "visual_inspection": {
     "pages_inspected": [
@@ -30,17 +30,9 @@
       19,
       20
     ],
-    "rendering": "Poppler, 100 dpi. Pages 1-9 reinspected after shortening the abstract; pages 10-20 match the previously inspected render pixel-for-pixel.",
+    "rendering": "Poppler, 100 dpi. Page 2 reinspected after adding Thus to the approximation-error conclusion; all other pages match the previously inspected render pixel-for-pixel.",
     "final_changed_pages_reinspected": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9
+      2
     ],
     "other_final_pages_match_inspected_render": true,
     "result": "No clipping, overlap, broken formulas or illegible layout observed."
@@ -322,7 +314,7 @@
   "independent_audit_of_assembled_draft": false,
   "formal_verification": false,
   "source": "paper/beta4-determinant-obstructions.tex",
-  "source_sha256": "b836f10c2b0d6a380de93736e59df20f8a2589350566a292e34318c107631565",
+  "source_sha256": "6c7a44b71a1e3f4a765f743241217522e6a5d133062e4bccb55d8622e69fff27",
   "historical_statement_preservation": {
     "baseline_commit": "local-prepublication-revision",
     "formal_statements_unchanged_in_document": 11,
@@ -549,6 +541,16 @@
         9
       ],
       "other_pages_pixel_identical": 11,
+      "calculation_suites_rerun": false
+    },
+    {
+      "baseline_commit": "local-prepublication-revision",
+      "change": "Add Thus to connect the approximation-error conclusion to the preceding displayed identity.",
+      "only_stated_prose_change": true,
+      "changed_pages_reinspected": [
+        2
+      ],
+      "other_pages_pixel_identical": 19,
       "calculation_suites_rerun": false
     }
   ]
