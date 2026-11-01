@@ -1,11 +1,11 @@
 {
   "status": "passed",
-  "recorded_at_utc": "2026-11-01T00:26:26.254410+00:00",
+  "recorded_at_utc": "2026-11-01T01:08:30.132310+00:00",
   "scope": "Structural revision and subsequent Section 1.2 explanation: text preservation, compilation, cross-references, artifact consistency and visual review; not independent mathematical verification.",
   "source_files_match_build_record": 1,
-  "build_record_sha256": "e5e09bf7a7ce29a49155cff6746d760f3fa5841df056a4158d0ac5e00960e4e6",
+  "build_record_sha256": "bad2be297306ecd70ba0d32c784612c38075877f29a71000f7f368a6a1fc93d5",
   "pdf": "output/pdf/beta4-determinant-obstructions.pdf",
-  "pdf_sha256": "1511791800ae8d13228f4420fcd635bf9dd3a4dc0a92756004c0968aaebb554a",
+  "pdf_sha256": "6cf2e3d9a90d7d1ab07370bbdbdf63d9be627af9f081535978e78801bbb92335",
   "pages": 19,
   "visual_inspection": {
     "pages_inspected": [
@@ -29,7 +29,7 @@
       18,
       19
     ],
-    "rendering": "Poppler, 100 dpi. Page 2 reinspected after simplifying the opening of Section 1.2; the other eighteen pages match the previously inspected PDF render pixel-for-pixel.",
+    "rendering": "Poppler, 100 dpi. Page 2 reinspected after defining analytic and arithmetic estimates and replacing real side with analytic side; the other eighteen pages match the previously inspected PDF render pixel-for-pixel.",
     "final_changed_pages_reinspected": [
       2
     ],
@@ -312,7 +312,7 @@
   "independent_audit_of_assembled_draft": false,
   "formal_verification": false,
   "source": "paper/beta4-determinant-obstructions.tex",
-  "source_sha256": "677bc31de823cf39064fca5ebea615bdf84cdcf66739e00b69b3748d5195bc2a",
+  "source_sha256": "4b953949944bc42412460fee2c29898e8ed0204b4486ab439993eef931de2664",
   "historical_statement_preservation": {
     "baseline_commit": "local-prepublication-revision",
     "formal_statements_unchanged_in_document": 11,
@@ -374,6 +374,16 @@
       "baseline_commit": "local-prepublication-revision",
       "change": "Replace the two-sentence opening of Section 1.2 with: If the entries in a matrix are rational linear forms in theta, its determinant is a polynomial with rational coefficients evaluated at theta.",
       "only_change_after_whitespace_normalization": true,
+      "changed_pages_reinspected": [
+        2
+      ],
+      "other_pages_identical": 18,
+      "calculation_suites_rerun": false
+    },
+    {
+      "baseline_commit": "local-prepublication-revision",
+      "change": "Define analytic estimates as concerning numerical size and decay, and arithmetic estimates as concerning integer coefficients, denominators and divisibility; use On the analytic side in Section 1.2.",
+      "only_stated_prose_changes_after_whitespace_normalization": true,
       "changed_pages_reinspected": [
         2
       ],
