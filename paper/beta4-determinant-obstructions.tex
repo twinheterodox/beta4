@@ -109,13 +109,14 @@ $\theta$. For example, with $r,s,t\in\Q$,
 An $n\times n$ matrix of linear entries similarly gives a polynomial
 of degree at most $n$, and exactly $n$ in our two constructions.
 Increasing the dimension can help make the determinant small, but
-increasing the degree makes the irrationality test harder. In this
-comparison, \emph{analytic} estimates concern numerical size and decay;
-\emph{arithmetic} estimates concern integer coefficients, denominators
-and divisibility.
+increasing the degree makes the irrationality test harder.
 
-On the analytic side, determinants can be especially small when their
-rows are almost linearly dependent. Orthogonalizing the rows of a real
+On the \emph{analytic} side, we estimate the determinant's absolute
+value and how rapidly it decreases as the matrix size grows. This
+part of the argument treats the determinant as a real number and does
+not assume that $\theta$ is rational. Determinants can be especially
+small when their rows are almost linearly dependent.
+Orthogonalizing the rows of a real
 square matrix by subtracting combinations of earlier rows preserves
 the determinant. Its absolute value is the product of the lengths of
 the orthogonalized row vectors. Thus small components in successive new directions can
@@ -129,9 +130,13 @@ This explains how decay on the $n^2$ scale can arise. It is an
 illustrative mechanism; the rate for each actual construction requires
 proof, as does nonvanishing.
 
-On the arithmetic side, the degree determines the lower bound under
-rationality. If $Z\in\Z[X]$ has degree at most $n$, then $b^nZ(a/b)$
-is an integer. Thus
+On the \emph{arithmetic} side, we use properties of integers and
+fractions. The starting fact is that a nonzero integer has absolute
+value at least one. This gives a lower bound for a nonzero rational
+number once we control its denominator. Suppose $\theta=a/b$ and let
+$Z\in\Z[X]$, meaning that $Z$ is a polynomial with integer coefficients.
+If its degree is at most $n$, multiplying $Z(a/b)$ by $b^n$ clears
+all denominators. Hence $b^nZ(a/b)$ is an integer, and
 \begin{equation}\label{eq:integer-test}
  Z(\theta)\ne0\quad\Longrightarrow\quad
  |Z(\theta)|\geq b^{-n}\qquad\text{if }\theta=a/b.
