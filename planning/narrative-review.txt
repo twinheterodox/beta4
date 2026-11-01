@@ -92,3 +92,45 @@ the bibliography adjustment. Compilation and cross-reference checks pass.
 The new elementary explanation was checked directly; the calculation
 suites were not rerun. This remains an editorial check, not a fresh
 independent mathematical audit.
+
+Follow-up: motivation, provenance and significance (1 November 2026)
+===================================================================
+
+The abstract now identifies the two constructions. Section 1.2 explains
+why positive moments can improve an irrationality test, citing Zudilin
+at the relevant point, and distinguishes this framework from OpenAI's
+mixed signed determinant construction, which motivated the investigation.
+
+Section 1.4 explains the design problem before the theorems: isolate
+beta(4), obtain nonvanishing, and seek rapid determinant decay.
+For the first family, integer tail shifts and derivatives suggest
+divided differences; matching node lists retains the Gram interpretation,
+and consecutive blocks give a simple initial choice whose offset can vary.
+The original research record explicitly credited Litsey's divided-difference
+matrices as the prompt for this direction. This missing attribution is
+now in the introduction and bibliography. The source snapshot of 28 October
+and the pinned paper's Section 2.1 were checked. The transformed cubic-tail
+kernel is derived in the paper, not attributed as a formula of Litsey.
+
+For the second family, the introduction explains why powers of (u-v)^2
+are used: even total degree cancels beta(3), while the variable stays
+in [0,1], allowing a standard positive moment determinant. Carreira's
+related beta(4) constructions and primitive computations are cited in
+context. No priority claim is added.
+
+New Section 1.5 explains the value and scope of the obstruction theorems.
+They rule out an asymptotic repair by larger sizes, every offset schedule
+in the first family, hidden common coefficient factors, scalar
+normalization and invertible rational basis changes. They do not rule out
+other polynomials, node designs, subspaces or combinations.
+
+All 23 existing statement/remark/proof environments and every numbered
+display are unchanged verbatim. The body from Section 2 through the appendix
+is unchanged; a page break keeps the bibliography together on page 20.
+The PDF was rebuilt with no unresolved references or box warnings.
+All 20 pages were visually inspected. The final bibliography layout
+changed only pages 19-20, which were reinspected; pages 1-18 matched
+the inspected render pixel-for-pixel.
+
+This is an editorial and attribution check, not an independent
+mathematical audit. Calculation suites were not rerun.

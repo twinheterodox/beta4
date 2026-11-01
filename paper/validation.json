@@ -1,12 +1,12 @@
 {
   "status": "passed",
-  "recorded_at_utc": "2026-11-01T01:36:09.677140+00:00",
-  "scope": "Structural revision and subsequent Section 1.2 explanation: text preservation, compilation, cross-references, artifact consistency and visual review; not independent mathematical verification.",
+  "recorded_at_utc": "2026-11-01T13:14:41.988667+00:00",
+  "scope": "Structural revision and introduction follow-ups: preservation, compilation, references, attribution, artifact consistency and visual review. Earlier reproduction checks are retained with their stated scopes; this is not independent mathematical verification.",
   "source_files_match_build_record": 1,
-  "build_record_sha256": "e76858fdffda905a0b68ba2789e4d983980a0cd3989be56e53484b7bccf616a2",
+  "build_record_sha256": "8d9f0efdd25bb737af0ece6362a94733991a871d3936fbc93fbc8fdfb13f3a41",
   "pdf": "output/pdf/beta4-determinant-obstructions.pdf",
-  "pdf_sha256": "3e0714acb3a1735377e6a79d080498d9ed7812626ae52a497720c59e720ce316",
-  "pages": 19,
+  "pdf_sha256": "767fff28cf5c6265706b4d59da99b719d9b8774916f7b7c83d0d4b23d9f58be5",
+  "pages": 20,
   "visual_inspection": {
     "pages_inspected": [
       1,
@@ -27,45 +27,31 @@
       16,
       17,
       18,
-      19
+      19,
+      20
     ],
-    "rendering": "Poppler, 100 dpi. Pages 2-19 reinspected after expanding the analytic and arithmetic explanations; page 1 matches the previously inspected render pixel-for-pixel.",
+    "rendering": "Poppler, 100 dpi. All 20 pages inspected after the introduction and attribution revision. The final bibliography layout changed only pages 19-20, which were reinspected; pages 1-18 match the inspected render pixel-for-pixel.",
     "final_changed_pages_reinspected": [
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19
+      19,
+      20
     ],
     "other_final_pages_match_inspected_render": true,
-    "result": "No clipping, overlap, broken formulas or illegible layout observed."
+    "result": "No clipping, overlap, broken formulas or illegible layout observed; the bibliography fits together on page 20."
   },
   "latex": {
     "unique_labels": 92,
-    "reference_occurrences": 89,
+    "reference_occurrences": 92,
     "unresolved_references": [],
     "bibliography_keys": [
       "Brown",
       "Carreira",
       "Krattenthaler",
+      "Litsey",
       "OpenAI",
       "Prevost",
       "Zudilin"
     ],
-    "citation_occurrences": 8,
+    "citation_occurrences": 9,
     "all_citations_resolved": true,
     "main_results_numbering": {
       "thm:principal": "1.1",
@@ -273,12 +259,12 @@
     "statement_reorganization": "Theorem 1.2 retains degree, leading coefficient, positivity and growth; its exact large-prime valuation clause is now Proposition 6.1. The two statements together retain the original assertions.",
     "comparison_record": "planning/narrative-review.json",
     "comparison_sha256": "e97ff4c272054b8aa1dd6b7ea2c9e60625977f0b2049f5fda5e0455b27592054",
-    "record_scope": "The comparison record describes the preceding structural revision. Preservation for the current Section 1.2 follow-up is recorded separately below."
+    "record_scope": "This comparison record describes the earlier structural revision. Preservation for subsequent introduction changes is recorded in editorial_followups."
   },
   "editorial_review": {
     "record": "planning/narrative-review.txt",
-    "sha256": "cf0aab3f2e5c628ffe6cc5a3be5ba968fec47ad62f20c3dd917236aad549d625",
-    "record_scope": "Structural revision and explanatory expansion; subsequent wording changes are recorded in editorial_followups."
+    "sha256": "f9d0f5629854cd9679dccfd62af2c6ccca0f0f70d72cb0851dff89ac1d4ca01b",
+    "record_scope": "Structural revision and follow-ups, including the 1 November motivation, provenance and significance revision. Other wording changes are recorded in editorial_followups."
   },
   "historical_reviews": [
     {
@@ -329,7 +315,7 @@
   "independent_audit_of_assembled_draft": false,
   "formal_verification": false,
   "source": "paper/beta4-determinant-obstructions.tex",
-  "source_sha256": "db489b665186d40245d1d849f4586dafe890389f500a701cc9c9827a720ad8c5",
+  "source_sha256": "64ce72bdf78194da93b159930deb36a1caa85cf5edf3eb7d9f3bf2c93e145b93",
   "historical_statement_preservation": {
     "baseline_commit": "local-prepublication-revision",
     "formal_statements_unchanged_in_document": 11,
@@ -436,6 +422,50 @@
       "other_pages_identical": 1,
       "calculation_suites_rerun": false,
       "independent_mathematical_audit": false
+    },
+    {
+      "baseline_commit": "local-prepublication-revision",
+      "change": "Explain why both constructions are natural within the positive determinant approach, distinguish the roles of Zudilin and OpenAI, credit Litsey for the recorded divided-difference prompt, situate Carreira's related work, and explain the significance and limits of the obstruction theorems in new Section 1.5.",
+      "existing_statement_remark_and_proof_blocks_unchanged": 23,
+      "every_existing_numbered_display_unchanged": true,
+      "body_from_section_2_through_appendix_unchanged": true,
+      "layout_change": "A page break keeps the seven bibliography entries together on page 20.",
+      "all_pages_inspected": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "final_layout_changed_pages_reinspected": [
+        19,
+        20
+      ],
+      "other_final_pages_pixel_identical": 18,
+      "calculation_suites_rerun": false,
+      "independent_mathematical_audit": false,
+      "source_attribution_review": {
+        "record": "sources/manuscript-reading.json",
+        "sha256": "15595216b7552247e16c6b3eda20a215ff047f4451e5fd4a52463486c505968d",
+        "reused_primary_pdf_hashes_checked": 4,
+        "original_litsey_tex_snapshot_hash_checked": true,
+        "new_downloads": 0
+      }
     }
   ]
 }

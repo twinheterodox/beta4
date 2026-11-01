@@ -47,10 +47,11 @@ approximations to $\beta(4)$}
 Small positive determinants offer a possible route to proving that
 $\beta(4)=1-3^{-4}+5^{-4}-\cdots$ is irrational. The determinant must
 be the value of an integer polynomial, and it must be sufficiently
-small relative to the polynomial's degree. We examine two explicit
-constructions and prove that clearing denominators necessarily destroys
-the required smallness, even after all common coefficient factors are
-removed. The resulting primitive integer-polynomial values
+small relative to the polynomial's degree. We examine two constructions:
+a divided-difference kernel built from beta-series tails and a Gram
+matrix of positive moments. For both, we prove that clearing denominators
+necessarily destroys the required smallness, even after all common
+coefficient factors are removed. The resulting primitive integer-polynomial values
 grow at least exponentially in the square of the matrix size, with
 lower exponents $2-2\log2$ and $6-\log4$. The first conclusion covers
 every consecutive block of positive integer nodes, regardless of how
@@ -158,10 +159,18 @@ of functions. If those functions are linearly independent, the matrix
 is positive definite and its determinant is positive, although it may
 be very small. Integral representations of this kind let us establish
 nonvanishing without knowing whether $\theta$ is rational.
-Zudilin~\cite{Zudilin} develops this approach systematically.
-The determinant strategy for the related value $\beta(2)$, Catalan's
-constant, described by OpenAI~\cite[Section~1.2]{OpenAI}, is a motivation
-for testing such constructions at $\beta(4)$.
+Zudilin~\cite[Proposition~2 and Section~2]{Zudilin} develops this approach
+systematically: the extra structure of positive moments can give a
+determinant irrationality test even when the available bounds do not
+suffice for the original linear-form test. This is a concrete reason
+to try organizing approximations into a matrix.
+
+The investigation here was motivated by OpenAI's determinant construction
+for the related value $\beta(2)$, Catalan's constant
+\cite[Section~1.2]{OpenAI}. That construction uses mixed, signed
+determinants, with nonvanishing established separately. We examine
+simpler positive constructions at $\beta(4)$, where an integral
+representation can settle nonvanishing directly.
 
 \subsection{The cost of integer coefficients}
 
@@ -193,26 +202,44 @@ only that the estimate is inadequate. Our proofs instead show that
 the determinants cannot be smaller, or their primitive multipliers
 cheaper, by enough to make the construction work.
 
-\subsection{The two results and what they mean}
+\subsection{Why these two constructions?}
 
-The exact matrix entries are given in
+The basic design problem is to retain only $\theta$ and rational numbers
+in the entries while securing a nonzero determinant. If other constants
+remain, the assumption that $\theta$ is rational need not make the
+entries rational. The two families below meet both requirements, using
+different elementary identities. They are natural starting choices
+within the positive determinant approach.
+
+Carreira~\cite[Sections~5--6 and~11--12]{Carreira} also investigates
+determinant constructions that isolate $\beta(4)$, including positive
+integral representations and computations with primitive polynomials.
+The specific formulas studied here are derived in
 Sections~\ref{sec:kernel-construction} and~\ref{sec:gram-construction}.
-Here we describe the two designs and state the conclusions.
-Carreira~\cite{Carreira} also investigates $\beta(4)$ determinant
-constructions and their primitive arithmetic. The results below give
-proofs of failure for the specified infinite families, including all
-common coefficient cancellation.
+Our conclusions concern their full infinite families and include
+all common coefficient cancellation.
 
 \paragraph{First construction: consecutive nodes.}
-We build a symmetric matrix with rational off-diagonal entries and
-$\theta$ plus a rational on each diagonal entry. The same nodes are
-used for its rows and columns; this is the meaning of \emph{principal}.
-We choose consecutive integer nodes
+Litsey's use of divided-difference matrices for trigamma values
+\cite[Section~2.1]{Litsey} suggested the starting point for this
+construction. Such a matrix records difference quotients off the
+diagonal and derivatives on it. Integer shifts of a beta-series tail
+differ by finite rational sums, while differentiating a cubic tail
+produces a fourth-power tail. These two facts suggest how to obtain
+rational off-diagonal entries and $\theta$ plus a rational on each
+diagonal entry. The transformed cubic tail in
+Section~\ref{sec:kernel} gives such a symmetric matrix and also a
+positive integral representation.
+
+Using the same nodes for rows and columns preserves the Gram-matrix
+interpretation; this is the \emph{principal} choice. Consecutive
+integers give a simple first family to test:
 \[
  m+1,m+2,\ldots,m+n.
 \]
-The parameter $n$ is the matrix size and $m$ is its offset. Replacing
-$\theta$ by $X$ and taking the determinant defines $Q_{n,m}(X)$;
+The parameter $n$ is the matrix size and $m$ is its offset. Allowing $m$
+to vary tests whether starting farther along the tails improves the
+construction. Replacing $\theta$ by $X$ and taking the determinant defines $Q_{n,m}(X)$;
 write $Z_{n,m}=\PP(Q_{n,m})$. The construction is made explicit in
 \eqref{eq:R}--\eqref{eq:principal-Q}.
 
@@ -239,9 +266,17 @@ this family. The theorem concerns consecutive blocks, not arbitrary
 selections of nodes.
 
 \paragraph{Second construction: moments of a positive weight.}
-We use integrals of powers of $y=(u-v)^2$, with $u,v\in[0,1]$, against
-a positive weight. Such integrals are called \emph{moments}. Write
-them as $\mu_0,\mu_1,\ldots$ and form the matrix
+Here we start from a positive double integral for $\theta$ and seek
+polynomial functions whose integrals still involve only $\theta$ and
+rational numbers. For the weight in Section~\ref{sec:gram-construction},
+general monomials can introduce $\beta(3)$ as well. The choice
+$y=(u-v)^2$, with $u,v\in[0,1]$, serves two purposes: its powers have
+even total degree, which makes the $\beta(3)$ terms cancel, and
+$0\leq y\leq1$, which is useful for making the determinant small.
+
+Integrating the powers $1,y,y^2,\ldots$ against this positive weight
+gives its \emph{moments} $\mu_0,\mu_1,\ldots$. The standard Gram-matrix
+construction then gives
 $[\mu_{i+j}]_{0\leq i,j<n}$, the Gram matrix of
 $1,y,\ldots,y^{n-1}$. Each moment turns out to be a rational multiple
 of $\theta$ plus a rational. Replacing $\theta$ by $X$ gives a
@@ -266,15 +301,35 @@ how many powers of every prime $p>4n$ remain in the primitive
 multiplier. That arithmetic result is stated alongside its proof
 in Section~\ref{sec:delta-arithmetic}.
 
-These conclusions go beyond observing that a list of examples fails.
-They rule out the required small values at all sufficiently large
-sizes, with every offset schedule included in the first family.
-They also account for all rational scalar rescalings, because the
-primitive polynomial already gives the smallest such value.
-The contribution is a precise explanation of failure for these two
-natural constructions. It does not decide whether $\theta$ is rational,
-or exclude different determinants, polynomial factors or combinations
-of the constructed expressions.
+\subsection{What the obstructions establish}
+
+Both constructions have features one would want in an irrationality
+proof: they isolate the target constant, their determinants are
+provably nonzero, and those determinants become very small. An
+unsuccessful calculation at a few sizes would leave open whether larger
+matrices, better parameters or hidden common factors could make the
+method work. Even an unsuccessful upper bound would leave open whether
+the estimate, rather than the construction, was at fault.
+
+The theorems settle those possibilities for the stated families.
+After every common coefficient factor has been removed, the actual
+integer-polynomial values grow exponentially in $n^2$. In the first
+family this holds for every way of choosing the offset as $n$ grows.
+For both families, no rational scalar normalization can give
+integer-polynomial values with smaller absolute value than the primitive
+normalization already used. An invertible rational change of row or column basis cannot
+help either: it only rescales the same determinant polynomial, as
+explained in Section~\ref{sec:normalization}.
+
+The contribution is therefore a diagnosis of failure for two plausible
+starting constructions, together with exact arithmetic that explains
+the failure. Better estimates or a different scalar normalization
+cannot repair them; a successful modification would have to change the
+determinant polynomial or extract different expressions from it.
+This conclusion does not decide whether $\theta$ is rational and does
+not exclude different node designs, matrices, polynomial factors or
+combinations of determinants. The obstruction theorems concern the
+specified families, rather than the determinant approach as a whole.
 
 \subsection{How the proofs work}
 
@@ -1362,6 +1417,7 @@ real determinant has logarithm $-2\log2\,(n-1)^2+o(n^2)$. Adding proves
 the assertion.
 \end{proof}
 
+\clearpage
 \begin{thebibliography}{9}
 
 \bibitem{Brown}
@@ -1383,6 +1439,13 @@ C.~Krattenthaler,
 implies Uvarov's formula for the orthogonal polynomials of rationally
 related densities},
 \href{https://arxiv.org/abs/2103.03969v1}{arXiv:2103.03969v1} (2021).
+
+\bibitem{Litsey}
+S.~Litsey,
+\emph{Irrationality measures for differences of trigamma values},
+preprint (2026),
+\href{https://github.com/slitsey/catalan-irrationality-measure/blob/aa2a42f4f3835347ad46608779e22dd52c2dc7bf/paper-lambda/lambda-irrationality.pdf}{pinned PDF in the catalan-irrationality-measure repository},
+commit \texttt{aa2a42f4f383} (full identifier in the source ledger).
 
 \bibitem{OpenAI}
 OpenAI,
