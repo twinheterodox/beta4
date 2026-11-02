@@ -258,13 +258,10 @@ We take a block of consecutive labels,
 \[
  m+1,m+2,\ldots,m+n.
 \]
-Here $n\geq1$ is the matrix size and $m\geq0$ is the number of labels
-skipped before the block starts. For example, $n=3$, $m=0$ selects
-rows and columns $1,2,3$, whereas $n=3$, $m=10$ selects $11,12,13$.
-Increasing $n$ enlarges the matrix. Increasing $m$ keeps its size fixed
-but uses tails that start farther out in the series. We allow both
-parameters to vary to test whether later tails improve the balance
-between determinant decay and denominator cost.
+Here $n\geq1$ is the matrix size and $m\geq0$ is the offset.
+Allowing $m$ to vary with $n$ tests whether starting farther along
+the tails improves the balance between determinant decay and
+denominator cost.
 
 For this block, write $Q_{n,m}(X)$ for the determinant polynomial
 and $Z_{n,m}=\PP(Q_{n,m})$ for its primitive representative. Here the
