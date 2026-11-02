@@ -1,0 +1,77 @@
+Final editorial reading of the main manuscript
+2 November 2026
+
+Scope
+
+The entire main manuscript was read, from the abstract through the
+appendix and bibliography. The review covered the explanation of the
+irrationality strategy, the distinction between the two constructions,
+notation, proof transitions, quantifiers, cross-references and the scope
+of the conclusions. All 21 pages of the rebuilt PDF were visually
+inspected. The supplement was not revised or reread in this pass.
+
+Edits
+
+- Clarify that accurate rational approximation alone is insufficient:
+  the nonzero integer linear forms themselves must tend to zero.
+- Explicitly restrict the primitive polynomial's minimality to rational
+  rescalings that retain integer coefficients.
+- Identify the repeated kernel formula as a recall of the same
+  construction, now extended to zero.
+- Distinguish a relative offset m/n tending to zero from an integer
+  offset tending to zero, and make the Riemann-sum parametrization precise.
+- In the second construction, distinguish monomials with equal or
+  unequal exponents from diagonal or off-diagonal entries of the final
+  moment matrix. The latter has theta throughout its entries.
+- Use a direct heading for the determinant-size estimates, repeat the
+  definition of chi_4 where the second arithmetic proof needs it, and
+  state that rational basis changes preserve primitive polynomials up
+  to sign.
+- Record the 2016 revision date of the cited Zudilin v2 manuscript.
+
+Minor proof qualification
+
+The zero-node appendix now explicitly restricts its local prime argument
+to p >= 5, matching Lemma 4.1. The previous wording omitted that inherited
+condition. It is necessary at small sizes: for nodes 0,1, the coefficient
+of X is -49/27, whose 3-adic valuation is -3 rather than -4. This was
+checked by exact rational arithmetic during the reading. Excluding these
+small primes does not affect the asymptotic prime sum or the corollary.
+
+Preservation and checks
+
+The baseline is the commit recorded in paper/validation.json. All twelve
+formal statements and both remarks are unchanged verbatim. All numbered
+displays are unchanged. Seven of nine proof environments are unchanged;
+the moment identity proof has terminology clarifications, and the
+appendix proof gains the prime qualification described above.
+
+The PDF builds without unresolved references or box warnings. All labels,
+citations and local document links resolve. The 21 rendered pages have
+no observed clipping, overlap, broken formulas or illegible layout.
+No new mathematical result or numerical constant is asserted. The full
+reproduction suites were not rerun; their inputs and archived outputs
+were not changed.
+
+Source checks
+
+The saved local copies were used; no new versions were downloaded.
+The following extracted-text ranges were reread for attribution and
+comparison, not to audit their global theorems:
+
+- ZUDILIN2015: lines 1-260, including Proposition 2, its determinant proof
+  and examples. The v2 cover stamp gives 2 February 2016.
+- LITSEY2026: lines 80-195 and 245-295, including Section 2.1's
+  divided-difference matrix and rational entries at integer shifts.
+- BROWN2026: lines 1490-1538, especially Section 7.4's denominator,
+  common-factor and congruence discussion.
+- CARREIRA2026: lines 680-820, including Definition 24(B), Lemma 25
+  and its proof, for the comparison with the csch-derived density.
+- OPENAI2026: lines 65-155, including Section 1.2's mixed signed
+  determinant strategy and separate nonvanishing argument.
+
+Source identifiers, versions, local paths and checksums remain in
+sources/reading-record.json. Earlier reading scopes remain historical.
+This is a same-model final reading and targeted consistency check, not
+an independent mathematical audit or proof-assistant verification.
+The manuscript remains local and unpublished.

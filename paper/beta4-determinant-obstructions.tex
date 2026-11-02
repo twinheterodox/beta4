@@ -51,13 +51,14 @@ positive integer. The strategy is to show that the resulting values
 eventually fall below one, yielding a contradiction.
 For $\beta(4)=1-3^{-4}+5^{-4}-\cdots$, we examine two constructions:
 a divided-difference matrix built from beta-series tails and a moment
-matrix built from powers of a difference variable. For both, we prove that clearing denominators
+matrix built from powers of a difference variable. For both, we prove
+that clearing denominators
 necessarily destroys the required smallness, even after all common
 coefficient factors are removed. The resulting values grow at least
 exponentially in the square of the matrix size. These are failure theorems for the two
 specified families. We explain the irrationality criterion and the
 constructions before developing their positive integral representations,
-real estimates and prime-divisibility arguments.
+estimates of determinant size and prime-divisibility arguments.
 \end{abstract}
 
 \section{Introduction}
@@ -92,8 +93,8 @@ If $A_n/B_n$ approximates $\theta$, the relevant quantity is
 \]
 Thus, the approximation error must remain small after multiplication by its
 denominator. Every real number has arbitrarily accurate rational
-approximations; the integer-form requirement is what makes this an
-irrationality test.
+approximations; requiring the nonzero forms $B_n\theta-A_n$ themselves
+to tend to zero is stronger.
 
 \subsection{Why use determinants?}
 
@@ -182,8 +183,9 @@ all coefficients. The resulting integer polynomial is called
 Here $\kappa_n$ is the smallest positive rational multiplier for which
 all coefficients of $\kappa_n Q_n$ are integers.
 Every integer polynomial proportional to $Q_n$ is an integer multiple
-of $Z_n$. Thus $Z_n$ has the smallest nonzero absolute value obtainable
-by rationally rescaling this same polynomial.
+of $Z_n$. Consequently, among nonzero rational rescalings of $Q_n$
+with integer coefficients, $Z_n$ has the smallest absolute value at
+$\theta$.
 
 Removing common factors matters. For example,
 $Q(X)=(6X+12)/5$ becomes integral after multiplication by $5$, but its
@@ -599,7 +601,8 @@ Differentiating~\eqref{eq:sech-transform} twice under the integral gives
  \Ree f(is)=\frac{\pi^3}{32}A(s)(2A(s)^2-1),
  \quad A(s)=\sech(2\pi s).
 \end{equation}
-Define
+Recall the transformed function and its divided difference, now extended
+to zero:
 \begin{equation}\label{eq:gK}
  g(x)=\frac{\sqrt{x}}6\bigl(f(0)-f(\sqrt{x})\bigr),\quad g(0)=0,
  \qquad K(x,y)=\frac{g(y)-g(x)}{y-x},
@@ -884,7 +887,7 @@ We now compare two functions of the relative offset $m/n$:
 $\mathcal A$ measures the forced denominator cost, and $\mathcal D$
 measures the real decay. Their difference will be the lower bound
 for the primitive value. This subsection treats finite limiting
-offsets; the next handles $m/n\to\infty$ separately so that no
+ratios; the next handles $m/n\to\infty$ separately so that no
 uniformity in an unbounded parameter is assumed.
 
 Take $a_i=m+i$, $M_0=m+n$, and suppose first that $m/n\to\rho<\infty$.
@@ -906,8 +909,9 @@ where
  \end{cases}
 \end{equation}
 Reversing the prime sum counts, for each node $a_i$, the primes from
-$2M_0$ up to $4a_i$. With $a_i/n\to\rho+t$, the resulting
-Riemann sum is $16\int_0^1(\rho+t-(\rho+1)/2)_+\dd t$, where
+$2M_0$ up to $4a_i$. Since $a_i/n=m/n+i/n$ and $m/n\to\rho$,
+the limiting Riemann sum is
+$16\int_0^1(\rho+t-(\rho+1)/2)_+\dd t$, where
 $u_+=\max(u,0)$. When $\rho\leq1$, only the upper part of the node
 interval contributes; when $\rho\geq1$, every node contributes.
 These are the two cases in~\eqref{eq:A-def}.
@@ -933,8 +937,8 @@ At $\rho=0$ the logarithmic corner singularity is integrable and its
 Riemann sums converge. Indeed, counting at most $k$ grid points with
 $i+j=k$ bounds the contribution from $i+j\leq\varepsilon n$ by
 $O(\varepsilon^2(1+|\log\varepsilon|))+O(\log(n+1)/n)$.
-A positive offset tending to zero is handled by
-monotonicity between offsets zero and any fixed $\varepsilon>0$.
+A positive relative offset $m/n$ tending to zero is handled by
+monotonicity between relative offsets zero and any fixed $\varepsilon>0$.
 Integrating explicitly yields
 \begin{equation}\label{eq:D-explicit}
  \begin{split}
@@ -1001,9 +1005,9 @@ This completes the proof of Theorem~\ref{thm:principal}.
 
 \section{Second construction: a moment determinant}\label{sec:gram}
 
-The second design begins with a positive double integral. Its monomial
-integrals involve fourth-power beta tails on the diagonal and cubic
-tails off the diagonal. Expanding an even power of $u-v$ makes the
+The second design begins with a positive double integral. Integrating
+a monomial $u^iv^j$ produces fourth-power beta tails when $i=j$ and
+cubic tails when $i\ne j$. Expanding an even power of $u-v$ makes the
 unwanted $\beta(3)$ terms cancel, leaving rational linear forms in
 $\theta$. Moreover $y=(u-v)^2$ lies in $[0,1]$, so its powers form a
 positive moment sequence on a short interval. This gives both a
@@ -1030,8 +1034,8 @@ including such modifications and repeated parameters.
 
 To identify the polynomial in $\theta$, expand $(u-v)^{2m}$.
 The middle term contributes
-$\binom{2m}{m}(\theta-T_4(m))$; paired off-diagonal terms have
-rational values because their cubic beta tails cancel. The factor
+$\binom{2m}{m}(\theta-T_4(m))$; terms with unequal exponents have
+rational values because their $\beta(3)$ contributions cancel. The factor
 $1/96$ normalizes $\mu_0=\theta$. The calculation below proves
 $\mu_m=C_m\theta+B_m$, with the following rational coefficients:
 \begin{align}
@@ -1047,7 +1051,7 @@ $\mu_m=C_m\theta+B_m$, with the following rational coefficients:
 Here $T_\ell(j)$ truncates the beta series after $j$ individual terms,
 so $S_\ell(a)=T_\ell(2a)$. The central binomial coefficient $C_m$
 comes from the middle term just described; $B_m$ collects the finite
-tail corrections and the off-diagonal terms. Empty sums are zero.
+tail corrections and the terms with unequal exponents. Empty sums are zero.
 In particular $B_0=0$ and $B_1=-149/81$.
 
 \begin{lemma}\label{lem:moment-formula}
@@ -1084,10 +1088,10 @@ In~\eqref{eq:mono-off}, the two cubic tails have the same sign
 $(-1)^i=(-1)^j$, so their $\beta(3)$ terms cancel.
 Now expand
 $\mu_m=\sum_{j=0}^{2m}(-1)^j\binom{2m}{j}J(u^jv^{2m-j})/96$.
-Its diagonal term contributes
+Its middle term, $j=m$, contributes
 $\binom{2m}{m}(\theta-T_4(m))$ by~\eqref{eq:mono-diag}.
 For $j\ne m$, the sign $(-1)^j$ cancels the corresponding sign
-in~\eqref{eq:mono-off}. The off-diagonal sum becomes
+in~\eqref{eq:mono-off}. The sum over $j\ne m$ becomes
 \[
  -\frac1{12}\sum_{\substack{0\leq j\leq2m\\j\ne m}}\binom{2m}{j}
        \frac{T_3(j)-T_3(2m-j)}{m-j}.
@@ -1143,7 +1147,7 @@ monomials has determinant one. The moment determinant is therefore the
 product of these norms, giving~\eqref{eq:binomial-det}.
 \end{proof}
 
-\subsection{Matching upper and lower real exponents}
+\subsection{Matching bounds for determinant size}
 
 The upper estimate needs monic polynomials uniformly small on $[0,1]$;
 Chebyshev polynomials supply them. For the lower estimate we compare
@@ -1225,7 +1229,8 @@ surviving minor did in Remark~\ref{rem:prime-example}. In this family
 we also bound every coefficient's denominator at the same prime, which
 turns a lower bound into an exact formula.
 
-Fix $n\geq1$ and a prime $p>4n$. All moment indices used in
+Fix $n\geq1$ and a prime $p>4n$, and put
+$\chi_4(p)=(-1)^{(p-1)/2}$. All moment indices used in
 $Q_n^{\Delta}$ satisfy $0\leq m\leq2n-2$. In particular $2m<p$,
 $|j-m|<p$ for the indices in~\eqref{eq:B}, and $T_4(m)$ is $p$-integral.
 In $T_3(j)$ the only possible odd denominator divisible by $p$ is $p$
@@ -1359,7 +1364,7 @@ alone would not prove the same conclusion.
 
 These results concern the full pencils defined in
 \eqref{eq:principal-Q} and~\eqref{eq:delta-Q}. Invertible rational basis
-changes preserve their primitive polynomials, but different subspaces,
+changes preserve their primitive polynomials up to sign, but different subspaces,
 sparse designs, nonprincipal minors, polynomial weights, factors and
 combinations of determinants are outside the two obstruction theorems.
 The uniform real comparison in Theorem~\ref{thm:comparison} does apply
@@ -1443,7 +1448,8 @@ $Z_n^0$ be its primitive representative. Then
 
 \begin{proof}
 The coefficient matrix of $X$ is $\diag(2,1,\ldots,1)$, so the leading
-coefficient of the determinant is 2. For primes $2(n-1)<p<4(n-1)$,
+coefficient of the determinant is 2. For primes $p\geq5$ with
+$2(n-1)<p<4(n-1)$,
 the unique high-node minor from Lemma~\ref{lem:principal-local} is
 unchanged; its complementary diagonal coefficient contributes a factor
 2, a $p$-unit. Thus the same coefficient valuation $-4r_p$ is attained.
@@ -1505,7 +1511,8 @@ companion technical supplement, 1 November 2026,
 \bibitem{Zudilin}
 W.~Zudilin,
 \emph{A determinantal approach to irrationality},
-\href{https://arxiv.org/abs/1507.05697v2}{arXiv:1507.05697v2} (2015).
+\href{https://arxiv.org/abs/1507.05697v2}{arXiv:1507.05697v2}
+(2015; revised 2016).
 
 \end{thebibliography}
 \end{document}

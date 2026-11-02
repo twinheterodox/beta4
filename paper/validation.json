@@ -1,23 +1,20 @@
 {
   "status": "passed",
-  "recorded_at_utc": "2026-11-02T15:24:41.218867+00:00",
-  "scope": "Current editorial revision: shorten the matrix-size and offset explanation, remove the numerical examples and retain the reason for varying the offset. Confirm this paragraph is the only source change, rebuild, compare page renders and inspect every changed page. Earlier mathematical and reproduction checks retain their stated historical scopes.",
+  "recorded_at_utc": "2026-11-02T16:11:52.311213+00:00",
+  "scope": "Final reading of the entire main paper: expository, notational and proof-scope clarifications; selected primary-source attribution checks; preservation of all theorem statements and numbered formulas; exact check of the small-prime qualification in the appendix; compilation, cross-references, local links and visual inspection of all pages. No fresh independent mathematical audit or full reproduction-suite rerun.",
   "source_files_match_build_record": 1,
-  "build_record_sha256": "c3ef071dc98e3c96a801664e501ce9efb8dc610743c787836a2afbc30e25a570",
+  "build_record_sha256": "e00b9d173cd4ca337c00931180d539b5567bdc6a634f6b794366ddd5dede2a94",
   "pdf": "output/pdf/beta4-determinant-obstructions.pdf",
-  "pdf_sha256": "1c67d006c36684dbf50f7c6c74df388c7b6ab3856801c2013ee03d501ae93544",
+  "pdf_sha256": "db832b4dfc3bcba510d3c082031e3bfc44e52faacdb5229e3040377261b7372d",
   "pages": 21,
   "visual_inspection": {
     "pages_inspected": [
-      4,
-      5,
-      6
-    ],
-    "rendering": "Poppler, 100 dpi. All three changed pages inspected; the other eighteen pages are pixel-identical to the previously inspected PDF.",
-    "pixel_identical_pages": [
       1,
       2,
       3,
+      4,
+      5,
+      6,
       7,
       8,
       9,
@@ -34,6 +31,7 @@
       20,
       21
     ],
+    "rendering": "Poppler, 100 dpi. All 21 final pages visually inspected.",
     "result": "No clipping, overlap, broken formulas or illegible layout observed."
   },
   "latex": {
@@ -71,7 +69,7 @@
     },
     {
       "from": "README.md",
-      "target": "planning/narrative-review.txt"
+      "target": "planning/final-reading-2026-11-02.txt"
     },
     {
       "from": "README.md",
@@ -140,6 +138,10 @@
     {
       "from": "paper/README.md",
       "target": "beta4-determinant-obstructions.tex"
+    },
+    {
+      "from": "paper/README.md",
+      "target": "../planning/final-reading-2026-11-02.txt"
     },
     {
       "from": "paper/README.md",
@@ -338,7 +340,7 @@
   "independent_audit_of_assembled_draft": false,
   "formal_verification": false,
   "source": "paper/beta4-determinant-obstructions.tex",
-  "source_sha256": "0415bde2b49ca86ddbbffc960bed5f8b642f5f91bbca90425e70996638fd06ec",
+  "source_sha256": "76011af6c1bb69595d5ba593ab1ba5c4fa1dbdfe341f2312686be56014fe21fd",
   "historical_statement_preservation": {
     "baseline_commit": "local-prepublication-revision",
     "formal_statements_unchanged_in_document": 11,
@@ -796,6 +798,63 @@
       "pages": 21,
       "calculation_suites_rerun": false,
       "independent_mathematical_audit": false
+    },
+    {
+      "change": "Final whole-paper reading: tighten approximation and normalization statements, relative-offset wording, the moment construction terminology, repeated notation and basis-change sign; add the inherited p>=5 condition to the zero-node appendix; record the cited Zudilin revision date.",
+      "baseline_commit": "local-prepublication-revision",
+      "formal_statements_and_remarks_preserved": 14,
+      "proof_blocks": 9,
+      "unchanged_proof_blocks": 7,
+      "changed_proof_indices_one_based": [
+        5,
+        9
+      ],
+      "numbered_displays_unchanged": true,
+      "proof_text_changes": [
+        "Moment identity proof: call the central expansion term the middle term, and identify the remaining sum by j!=m.",
+        "Zero-node appendix: restrict the local prime argument to p>=5, matching Lemma 4.1."
+      ],
+      "exact_small_prime_check": {
+        "nodes": [
+          0,
+          1
+        ],
+        "prime": 3,
+        "coefficient_of_X": "-49/27",
+        "valuation": -3,
+        "scope": "Checks necessity of the inherited prime qualification; asymptotic corollary unchanged."
+      },
+      "all_pages_inspected": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "pages": 21,
+      "calculation_suites_rerun": false,
+      "independent_mathematical_audit": false
     }
-  ]
+  ],
+  "final_editorial_reading": {
+    "record": "planning/final-reading-2026-11-02.txt",
+    "sha256": "9566ae59916f49f3681384e309913768e2a94d5f351fed396c8a436e7420bc34",
+    "scope": "Whole-paper same-model reading and targeted consistency checks; no independent audit or formal verification."
+  }
 }
