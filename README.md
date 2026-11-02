@@ -6,7 +6,7 @@ This repository contains a focused paper and a companion investigation record on
 
 The paper studies two positive determinant families. In each, the real determinant becomes very small, but the **actual primitive integer polynomial**, after removing all common coefficient factors, has a value that grows. These are mathematical obstructions for the specified families. They do not exclude other proofs of irrationality.
 
-**Status:** complete drafts of the main paper and technical supplement, revised for readers unfamiliar with the constructions, kept local and intended for `twinheterodox/beta4-obstructions`. No remote repository or release has been created. The assembled drafts have not received a fresh independent audit.
+**Status:** the main paper, technical supplement and accompanying code have passed an [independent model review](planning/independent-model-review-2026-11-02.json), reported on 2 November 2026. The drafts remain local and intended for `twinheterodox/beta4-obstructions`. No remote repository or release has been created.
 
 Start with the focused paper; use the supplement for the broader investigation.
 
@@ -30,7 +30,7 @@ The [reproduction instructions and results](checks/README.md) distinguish main-p
 
 The main results are a uniform primitive-growth obstruction for shifted consecutive principal determinants, and an exact large-prime valuation theorem leading to a primitive-growth obstruction for difference-variable Gram determinants. The supplement distinguishes further proved limitations from incomplete constructions and finite evidence. Its positive-source cone and ordinary-moment first variation also explain why particular-family failures do not settle the broader problem. Priority of the specific statements remains subject to the recorded literature comparison and further scrutiny.
 
-The work was prepared with Codex. Archived model cross-checks, exact rational calculations, interval calculations, source reading and formal verification are distinguished throughout. There has been no proof-assistant verification of these results. The current writing pass did not commission another independent model audit.
+The work was prepared with Codex. The independent model review, archived model cross-checks, exact rational calculations, interval calculations and source reading are recorded separately. The independent review is a model cross-check; it is not a human mathematical audit or proof-assistant verification.
 
 To check the packet's internal references and evidence hashes:
 

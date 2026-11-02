@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "review_type": "independent_model_review",
+  "reported_on": "2026-11-02",
+  "source": "User report in the conversation",
+  "user_statement": "The papers and code etc passed independent model review",
+  "scope": [
+    "Main paper",
+    "Technical supplement",
+    "Accompanying code and supporting materials"
+  ],
+  "reviewer_model": null,
+  "detailed_report_provided": false,
+  "human_mathematical_audit": false,
+  "formal_verification": false,
+  "workspace_revision_when_reported": "local-prepublication-revision",
+  "workspace_artifacts_when_reported": [
+    {
+      "pdf": "output/pdf/beta4-determinant-obstructions.pdf",
+      "pdf_sha256": "db832b4dfc3bcba510d3c082031e3bfc44e52faacdb5229e3040377261b7372d",
+      "pages": 21,
+      "source_build_record": "paper/build-record.json"
+    },
+    {
+      "pdf": "output/pdf/beta4-investigations.pdf",
+      "pdf_sha256": "e1e7d765bafa8106dfbc0aee933e2b04fe48a0170167b1041fab83c12617e15c",
+      "pages": 67,
+      "source_build_record": "supplement/build-record.json"
+    }
+  ],
+  "snapshot_scope": "Records the local state when the user reported the result; reviewer identity, detailed findings and individual execution logs were not supplied."
+}

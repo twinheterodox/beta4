@@ -23,7 +23,7 @@ The rerun covered:
 
 The exact structural records match the archived results. Numerical interval strings are not required to match byte-for-byte; their inequalities are checked afresh. The unrelated slow-filter branch diagnostics are not part of this paper and are not rerun.
 
-These are model-authored calculations and a replay of existing checks, with an additional rational-polynomial implementation for the norm formulas. They are not a fresh independent model audit, a human audit or formal verification.
+These are model-authored calculations and a replay of existing checks, with an additional rational-polynomial implementation for the norm formulas. Separately, the papers and accompanying code have passed an [independent model review](../planning/independent-model-review-2026-11-02.json), reported on 2 November 2026. That model cross-check is distinct from these computational replays; neither is a human audit or formal verification.
 
 The later accessibility revision added one worked example: the three-node principal matrix at the prime seven. Its standalone exact rational-arithmetic check needs only the Python standard library:
 

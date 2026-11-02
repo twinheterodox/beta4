@@ -1,14 +1,14 @@
 {
   "status": "passed",
-  "recorded_at_utc": "2026-11-02T16:11:52.311213+00:00",
-  "scope": "Final reading of the entire main paper: expository, notational and proof-scope clarifications; selected primary-source attribution checks; preservation of all theorem statements and numbered formulas; exact check of the small-prime qualification in the appendix; compilation, cross-references, local links and visual inspection of all pages. No fresh independent mathematical audit or full reproduction-suite rerun.",
+  "recorded_at_utc": "2026-11-02T17:32:24.491539+00:00",
+  "scope": "Record the user-reported independent model review and update review-status prose; verify source/proof preservation, compilation, local links and changed-page layout. No mathematical check suite was rerun for this status-only update.",
   "source_files_match_build_record": 1,
-  "build_record_sha256": "e00b9d173cd4ca337c00931180d539b5567bdc6a634f6b794366ddd5dede2a94",
+  "build_record_sha256": "3682bb3e305738cebc5fd9dc342d684b774faef7c3f513baacdf85a6ce0a7e44",
   "pdf": "output/pdf/beta4-determinant-obstructions.pdf",
-  "pdf_sha256": "db832b4dfc3bcba510d3c082031e3bfc44e52faacdb5229e3040377261b7372d",
+  "pdf_sha256": "cdb528bc1836aed5a7c4ad6105ac3165ce57fb56d06763ea69a4b3676c3fe40a",
   "pages": 21,
   "visual_inspection": {
-    "pages_inspected": [
+    "pages_rendered": [
       1,
       2,
       3,
@@ -31,8 +31,13 @@
       20,
       21
     ],
-    "rendering": "Poppler, 100 dpi. All 21 final pages visually inspected.",
-    "result": "No clipping, overlap, broken formulas or illegible layout observed."
+    "pages_inspected_this_update": [
+      19
+    ],
+    "unchanged_pages_pixel_identical_to_previously_inspected_pdf": true,
+    "baseline_commit": "local-prepublication-revision",
+    "rendering": "Poppler, 100 dpi; baseline and final versions compared page by page. All changed pages visually inspected.",
+    "result": "No clipping, overlap or broken formulas observed."
   },
   "latex": {
     "unique_labels": 92,
@@ -61,6 +66,10 @@
   "checked_local_links": [
     {
       "from": "README.md",
+      "target": "planning/independent-model-review-2026-11-02.json"
+    },
+    {
+      "from": "README.md",
       "target": "output/pdf/beta4-determinant-obstructions.pdf"
     },
     {
@@ -81,7 +90,7 @@
     },
     {
       "from": "README.md",
-      "target": "planning/supplement-self-contained-review.txt"
+      "target": "planning/supplement-final-reading-2026-11-02.txt"
     },
     {
       "from": "README.md",
@@ -132,6 +141,54 @@
       "target": "planning/draft-opening.txt"
     },
     {
+      "from": "checks/README.md",
+      "target": "SUPPLEMENT.md"
+    },
+    {
+      "from": "checks/README.md",
+      "target": "reproduction.json"
+    },
+    {
+      "from": "checks/README.md",
+      "target": "../planning/independent-model-review-2026-11-02.json"
+    },
+    {
+      "from": "checks/README.md",
+      "target": "expository-example.json"
+    },
+    {
+      "from": "checks/README.md",
+      "target": "../planning/accessibility-review.txt"
+    },
+    {
+      "from": "checks/README.md",
+      "target": "../planning/expository-review.txt"
+    },
+    {
+      "from": "checks/README.md",
+      "target": "case-studies-result.json"
+    },
+    {
+      "from": "checks/README.md",
+      "target": "paired/README.txt"
+    },
+    {
+      "from": "checks/README.md",
+      "target": "supplement-requirements.txt"
+    },
+    {
+      "from": "checks/SUPPLEMENT.md",
+      "target": "supplement-reproduction.json"
+    },
+    {
+      "from": "checks/SUPPLEMENT.md",
+      "target": "case-studies-result.json"
+    },
+    {
+      "from": "checks/SUPPLEMENT.md",
+      "target": "paired/README.txt"
+    },
+    {
       "from": "paper/README.md",
       "target": "../output/pdf/beta4-determinant-obstructions.pdf"
     },
@@ -172,6 +229,10 @@
       "target": "../planning/method-catalog.txt"
     },
     {
+      "from": "paper/README.md",
+      "target": "../planning/independent-model-review-2026-11-02.json"
+    },
+    {
       "from": "supplement/README.md",
       "target": "../output/pdf/beta4-investigations.pdf"
     },
@@ -181,7 +242,7 @@
     },
     {
       "from": "supplement/README.md",
-      "target": "../planning/supplement-self-contained-review.txt"
+      "target": "../planning/supplement-final-reading-2026-11-02.txt"
     },
     {
       "from": "supplement/README.md",
@@ -216,48 +277,12 @@
       "target": "audit.txt"
     },
     {
-      "from": "checks/README.md",
-      "target": "SUPPLEMENT.md"
+      "from": "supplement/README.md",
+      "target": "../planning/supplement-self-contained-review.txt"
     },
     {
-      "from": "checks/README.md",
-      "target": "reproduction.json"
-    },
-    {
-      "from": "checks/README.md",
-      "target": "expository-example.json"
-    },
-    {
-      "from": "checks/README.md",
-      "target": "../planning/accessibility-review.txt"
-    },
-    {
-      "from": "checks/README.md",
-      "target": "../planning/expository-review.txt"
-    },
-    {
-      "from": "checks/README.md",
-      "target": "case-studies-result.json"
-    },
-    {
-      "from": "checks/README.md",
-      "target": "paired/README.txt"
-    },
-    {
-      "from": "checks/README.md",
-      "target": "supplement-requirements.txt"
-    },
-    {
-      "from": "checks/SUPPLEMENT.md",
-      "target": "supplement-reproduction.json"
-    },
-    {
-      "from": "checks/SUPPLEMENT.md",
-      "target": "case-studies-result.json"
-    },
-    {
-      "from": "checks/SUPPLEMENT.md",
-      "target": "paired/README.txt"
+      "from": "supplement/README.md",
+      "target": "../planning/independent-model-review-2026-11-02.json"
     }
   ],
   "local_pdf_source_links_checked": [
@@ -269,22 +294,13 @@
   "reproduction_suite_rerun": false,
   "statement_preservation": {
     "baseline_commit": "local-prepublication-revision",
-    "formal_environments_counted": [
-      "theorem",
-      "proposition",
-      "lemma",
-      "corollary",
-      "definition"
-    ],
-    "baseline_formal_environments": 11,
-    "current_formal_environments": 12,
-    "existing_formal_environments_verbatim_preserved": 10,
-    "existing_remarks_verbatim_preserved": 2,
-    "existing_proof_blocks_verbatim_preserved": 9,
-    "statement_reorganization": "Theorem 1.2 retains degree, leading coefficient, positivity and growth; its exact large-prime valuation clause is now Proposition 6.1. The two statements together retain the original assertions.",
-    "comparison_record": "planning/narrative-review.json",
-    "comparison_sha256": "e97ff4c272054b8aa1dd6b7ea2c9e60625977f0b2049f5fda5e0455b27592054",
-    "record_scope": "This comparison record describes the earlier structural revision. Preservation for subsequent introduction changes is recorded in editorial_followups."
+    "scope": "Only review-status prose changed in the manuscripts.",
+    "mathematical_expressions_and_formal_proof_blocks_unchanged": true,
+    "code_and_frozen_evidence_unchanged": true,
+    "pages_unchanged": true,
+    "changed_tex_files": [
+      "paper/beta4-determinant-obstructions.tex"
+    ]
   },
   "editorial_review": {
     "record": "planning/narrative-review.txt",
@@ -334,13 +350,11 @@
       "structural_obstruction": 7,
       "attributed_identity": 3,
       "equivalence": 2
-    },
-    "record_scope": "Retained packet check from the preceding revision. No inventory, evidence, source-ledger or source-PDF changes in this structural revision."
+    }
   },
-  "independent_audit_of_assembled_draft": false,
   "formal_verification": false,
   "source": "paper/beta4-determinant-obstructions.tex",
-  "source_sha256": "76011af6c1bb69595d5ba593ab1ba5c4fa1dbdfe341f2312686be56014fe21fd",
+  "source_sha256": "2a0d9b199c093819fe295b9c16e8553253b454ea592c0927d7cfb70ffa34c800",
   "historical_statement_preservation": {
     "baseline_commit": "local-prepublication-revision",
     "formal_statements_unchanged_in_document": 11,
@@ -372,7 +386,7 @@
       "other_pages_identical": 17
     }
   ],
-  "reproduction_scope": "Existing report retained; all nine recorded input/output hashes checked. Calculations were not rerun because this pass changes exposition and placement, with the determinant formulas and proof calculations preserved.",
+  "reproduction_scope": "Historical reproduction records retained. The review-status update changes no mathematical formulas or code and reruns no mathematical suite.",
   "editorial_followups": [
     {
       "baseline_commit": "local-prepublication-revision",
@@ -856,5 +870,42 @@
     "record": "planning/final-reading-2026-11-02.txt",
     "sha256": "9566ae59916f49f3681384e309913768e2a94d5f351fed396c8a436e7420bc34",
     "scope": "Whole-paper same-model reading and targeted consistency checks; no independent audit or formal verification."
+  },
+  "previous_validation": {
+    "commit": "local-prepublication-revision",
+    "path": "paper/validation.json",
+    "recorded_at_utc": "2026-11-02T16:11:52.311213+00:00",
+    "scope": "Final reading of the entire main paper: expository, notational and proof-scope clarifications; selected primary-source attribution checks; preservation of all theorem statements and numbered formulas; exact check of the small-prime qualification in the appendix; compilation, cross-references, local links and visual inspection of all pages. No fresh independent mathematical audit or full reproduction-suite rerun."
+  },
+  "independent_model_review": {
+    "status": "passed",
+    "reported_on": "2026-11-02",
+    "source": "User report",
+    "record": "planning/independent-model-review-2026-11-02.json",
+    "record_sha256": "09ac6cc83686acb889cf5eebaeafd0926b909b61de90b4a763f0169c2c21e71a"
+  },
+  "human_mathematical_audit": false,
+  "previous_editorial_statement_preservation": {
+    "baseline_commit": "local-prepublication-revision",
+    "formal_environments_counted": [
+      "theorem",
+      "proposition",
+      "lemma",
+      "corollary",
+      "definition"
+    ],
+    "baseline_formal_environments": 11,
+    "current_formal_environments": 12,
+    "existing_formal_environments_verbatim_preserved": 10,
+    "existing_remarks_verbatim_preserved": 2,
+    "existing_proof_blocks_verbatim_preserved": 9,
+    "statement_reorganization": "Theorem 1.2 retains degree, leading coefficient, positivity and growth; its exact large-prime valuation clause is now Proposition 6.1. The two statements together retain the original assertions.",
+    "comparison_record": "planning/narrative-review.json",
+    "comparison_sha256": "e97ff4c272054b8aa1dd6b7ea2c9e60625977f0b2049f5fda5e0455b27592054",
+    "record_scope": "This comparison record describes the earlier structural revision. Preservation for subsequent introduction changes is recorded in editorial_followups."
+  },
+  "computational_checks_this_pass": {
+    "mathematical_suites_rerun": false,
+    "scope": "Status-only prose change; previous computational reports and scripts retained unchanged."
   }
 }

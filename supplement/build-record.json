@@ -16,7 +16,7 @@
     },
     {
       "path": "supplement/sections/01-conventions-cone.tex",
-      "sha256": "3ebbfd31feb229bc952f88b3c53f7fac38afd01e92f23caff87bdf260f2c7be9"
+      "sha256": "24b5e37950e39f9a5e4d09a7122be2344eaebf1b86611ba43f7d2969cced3f4a"
     },
     {
       "path": "supplement/sections/02-euler-quadratic.tex",
@@ -52,7 +52,7 @@
     },
     {
       "path": "supplement/sections/10-evidence.tex",
-      "sha256": "589cd86d8e5b0496344fa2308ec9426d4410cabddc4b9c2ed1d89b94b15aed75"
+      "sha256": "25cb18b869cb16f6e0bdd1194e5eafa0e3b645e7bdfa5f7259dbf93bfe8447b5"
     },
     {
       "path": "supplement/sections/11-interleaved.tex",
@@ -88,7 +88,7 @@
     }
   ],
   "pdf": "output/pdf/beta4-investigations.pdf",
-  "pdf_sha256": "e1e7d765bafa8106dfbc0aee933e2b04fe48a0170167b1041fab83c12617e15c",
+  "pdf_sha256": "828f7a5cbe20343ad67c230c1eca0d94d39c88120fbda1ca5ef7092d07b8b3f0",
   "tex_engine": "pdfTeX 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian)",
   "unresolved_references": false,
   "overfull_or_underfull_boxes": false,

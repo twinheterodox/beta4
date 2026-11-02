@@ -1,21 +1,21 @@
 {
   "status": "passed",
-  "recorded_at_utc": "2026-11-02T16:41:50.513812+00:00",
-  "scope": "Complete editorial reading, targeted arithmetic replay, package consistency and visual review; not independent mathematical verification.",
+  "recorded_at_utc": "2026-11-02T17:32:24.494481+00:00",
+  "scope": "Record the user-reported independent model review and update review-status prose; verify source/proof preservation, compilation, local links and changed-page layout. No mathematical check suite was rerun for this status-only update.",
   "baseline_commit": "local-prepublication-revision",
   "previous_validation": {
     "commit": "local-prepublication-revision",
     "path": "supplement/validation.json",
-    "pages": 67,
-    "scope": "Package consistency, source/proof preservation, reproduction checks and visual review of the self-contained case-study revision; not independent mathematical verification."
+    "recorded_at_utc": "2026-11-02T16:41:50.513812+00:00",
+    "scope": "Complete editorial reading, targeted arithmetic replay, package consistency and visual review; not independent mathematical verification."
   },
   "source_files_match_build_record": 21,
-  "build_record_sha256": "a8be36c309f334c7ec63fab0fdedecc9740bd0055491eb1ed581af4b4c6a7705",
+  "build_record_sha256": "28c207eb1ae90421668fae600eea6f6b662bd9b4d02fd760b11311e415526e8e",
   "pdf": "output/pdf/beta4-investigations.pdf",
-  "pdf_sha256": "e1e7d765bafa8106dfbc0aee933e2b04fe48a0170167b1041fab83c12617e15c",
+  "pdf_sha256": "828f7a5cbe20343ad67c230c1eca0d94d39c88120fbda1ca5ef7092d07b8b3f0",
   "pages": 67,
   "visual_inspection": {
-    "pages_inspected": [
+    "pages_rendered": [
       1,
       2,
       3,
@@ -84,7 +84,13 @@
       66,
       67
     ],
-    "rendering": "Poppler, 100 dpi; all 67 final pages visually inspected in four-page sheets.",
+    "pages_inspected_this_update": [
+      6,
+      60
+    ],
+    "unchanged_pages_pixel_identical_to_previously_inspected_pdf": true,
+    "baseline_commit": "local-prepublication-revision",
+    "rendering": "Poppler, 100 dpi; baseline and final versions compared page by page. All changed pages visually inspected.",
     "result": "No clipping, overlap or broken formulas observed."
   },
   "latex": {
@@ -118,6 +124,10 @@
     "damaged_parity_labels_repaired": 8
   },
   "checked_local_links": [
+    {
+      "from": "README.md",
+      "target": "planning/independent-model-review-2026-11-02.json"
+    },
     {
       "from": "README.md",
       "target": "output/pdf/beta4-determinant-obstructions.pdf"
@@ -200,6 +210,10 @@
     },
     {
       "from": "checks/README.md",
+      "target": "../planning/independent-model-review-2026-11-02.json"
+    },
+    {
+      "from": "checks/README.md",
       "target": "expository-example.json"
     },
     {
@@ -275,6 +289,10 @@
       "target": "../planning/method-catalog.txt"
     },
     {
+      "from": "paper/README.md",
+      "target": "../planning/independent-model-review-2026-11-02.json"
+    },
+    {
       "from": "supplement/README.md",
       "target": "../output/pdf/beta4-investigations.pdf"
     },
@@ -321,6 +339,10 @@
     {
       "from": "supplement/README.md",
       "target": "../planning/supplement-self-contained-review.txt"
+    },
+    {
+      "from": "supplement/README.md",
+      "target": "../planning/independent-model-review-2026-11-02.json"
     }
   ],
   "local_pdf_source_links_checked": [
@@ -489,38 +511,16 @@
       "sha256": "8c6e218693f5d4bc4b2deadede82f71f5990c29acc984a06334090bffa328138"
     }
   ],
-  "computational_checks_this_pass": {
-    "paired_floor_calculation_rerun": true,
-    "period_cells": 854,
-    "period_maxima": [
-      9,
-      11
-    ],
-    "combined_upper_bound": 88.20752949730584,
-    "result_byte_identical_to_baseline": true,
-    "other_mathematical_suites_rerun": false,
-    "scope": "The finite integer minima agree with the preserved calculation. Other unchanged reports retain their previous checking status."
-  },
   "statement_preservation": {
-    "formal_statement_counts": {
-      "theorem": 6,
-      "proposition": 9,
-      "lemma": 1
-    },
-    "formal_statements_unchanged_except_parity_typography": true,
-    "numbered_displays_clarified": [
-      "eq:signed-rodrigues",
-      "eq:paired-ceiling"
-    ],
-    "numerical_constants_and_conclusions_unchanged": true,
-    "scope": "Manual complete reading and source comparison; display changes specify the existing functional and finite integer index sets, plus parity-label repairs.",
-    "main_paper_source_and_pdf_unchanged": [
-      "paper/beta4-determinant-obstructions.tex",
-      "output/pdf/beta4-determinant-obstructions.pdf"
-    ],
-    "frozen_evidence_files_unchanged": 127,
-    "claim_register_and_classifications_unchanged": true,
-    "check_scripts_and_recorded_results_unchanged": true
+    "baseline_commit": "local-prepublication-revision",
+    "scope": "Only review-status prose changed in the manuscripts.",
+    "mathematical_expressions_and_formal_proof_blocks_unchanged": true,
+    "code_and_frozen_evidence_unchanged": true,
+    "pages_unchanged": true,
+    "changed_tex_files": [
+      "supplement/sections/01-conventions-cone.tex",
+      "supplement/sections/10-evidence.tex"
+    ]
   },
   "editorial_review": {
     "record": "planning/supplement-final-reading-2026-11-02.txt",
@@ -576,7 +576,6 @@
       "equivalence": 2
     }
   },
-  "independent_audit_of_assembled_draft": false,
   "formal_verification": false,
   "claim_navigation": {
     "claims": 57,
@@ -586,5 +585,50 @@
     "all_paths_exist": true,
     "classifications_unchanged": true,
     "coverage_sha256": "9546a94bb5c6df784b9298dcd7475ee3408a4a41fd42d38079910f349001cce6"
+  },
+  "independent_model_review": {
+    "status": "passed",
+    "reported_on": "2026-11-02",
+    "source": "User report",
+    "record": "planning/independent-model-review-2026-11-02.json",
+    "record_sha256": "09ac6cc83686acb889cf5eebaeafd0926b909b61de90b4a763f0169c2c21e71a"
+  },
+  "human_mathematical_audit": false,
+  "previous_editorial_statement_preservation": {
+    "formal_statement_counts": {
+      "theorem": 6,
+      "proposition": 9,
+      "lemma": 1
+    },
+    "formal_statements_unchanged_except_parity_typography": true,
+    "numbered_displays_clarified": [
+      "eq:signed-rodrigues",
+      "eq:paired-ceiling"
+    ],
+    "numerical_constants_and_conclusions_unchanged": true,
+    "scope": "Manual complete reading and source comparison; display changes specify the existing functional and finite integer index sets, plus parity-label repairs.",
+    "main_paper_source_and_pdf_unchanged": [
+      "paper/beta4-determinant-obstructions.tex",
+      "output/pdf/beta4-determinant-obstructions.pdf"
+    ],
+    "frozen_evidence_files_unchanged": 127,
+    "claim_register_and_classifications_unchanged": true,
+    "check_scripts_and_recorded_results_unchanged": true
+  },
+  "previous_computational_checks": {
+    "paired_floor_calculation_rerun": true,
+    "period_cells": 854,
+    "period_maxima": [
+      9,
+      11
+    ],
+    "combined_upper_bound": 88.20752949730584,
+    "result_byte_identical_to_baseline": true,
+    "other_mathematical_suites_rerun": false,
+    "scope": "The finite integer minima agree with the preserved calculation. Other unchanged reports retain their previous checking status."
+  },
+  "computational_checks_this_pass": {
+    "mathematical_suites_rerun": false,
+    "scope": "Status-only prose change; previous computational reports and scripts retained unchanged."
   }
 }
