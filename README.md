@@ -1,12 +1,14 @@
-# Arithmetic obstructions in approximations to β(4)
+# Research on the irrationality of β(4)
 
-This repository contains a focused paper and a companion investigation record on constructions for the irrationality of
+This repository collects research on the irrationality of the Dirichlet beta value
 
 β(4) = 1 − 1/3⁴ + 1/5⁴ − 1/7⁴ + ⋯.
 
-The paper studies two positive determinant families. In each, the real determinant becomes very small, but the **actual primitive integer polynomial**, after removing all common coefficient factors, has a value that grows. These are mathematical obstructions for the specified families. They do not exclude other proofs of irrationality.
+Its scope includes constructions, proofs, computational checks and documented obstructions across approaches to this problem. The first contributions are a focused paper on two positive determinant families and a self-contained supplement covering the broader investigation.
 
-**Status:** the main paper, technical supplement and accompanying code have passed an [independent model review](planning/independent-model-review-2026-11-02.json), reported on 2 November 2026. The drafts remain local and intended for `twinheterodox/beta4-obstructions`. No remote repository or release has been created.
+In the two families studied in the main paper, the real determinant becomes very small, but the **actual primitive integer polynomial**, after removing all common coefficient factors, has a value that grows. These are mathematical obstructions for the specified families. They do not exclude other proofs of irrationality. The present papers do not establish the irrationality of β(4).
+
+**Review status:** the main paper, technical supplement and accompanying code have passed an [independent model review](planning/independent-model-review-2026-11-02.json), reported on 2 November 2026.
 
 Start with the focused paper; use the supplement for the broader investigation.
 
@@ -15,9 +17,9 @@ Start with the focused paper; use the supplement for the broader investigation.
 | **[Main paper (21 pages)](output/pdf/beta4-determinant-obstructions.pdf)** | Explains the irrationality strategy, why these constructions are natural, their provenance and what their failure establishes, followed by complete proofs and a worked arithmetic example. | [LaTeX](paper/beta4-determinant-obstructions.tex) · [Final editorial reading](planning/final-reading-2026-11-02.txt) |
 | **[Technical supplement (67 pages)](output/pdf/beta4-investigations.pdf)** | Self-contained case studies with explicit constructions, proofs, remaining questions and standalone certificates; a separate catalog covers all 57 grouped records. | [Source guide](supplement/README.md) · [Final editorial reading](planning/supplement-final-reading-2026-11-02.txt) |
 
-The main paper now explains the strategy before introducing the technical formulas: what would contradict rationality, why determinants might help, and what happens when their coefficients are made integral. Each main theorem is followed by a plain-language interpretation of its quantitative conclusion and scope. The exact matrix entries appear with their derivations in Sections 3 and 5; the large-prime formula formerly included in Theorem 1.2 is now Proposition 6.1, beside its proof. This [structural revision](planning/narrative-review.txt) preserves the mathematical content and all nine existing proof blocks. The supplement has a broader introductory guide and now develops the substantial unfinished routes as reproducible case studies. Its paired hypergeometric identities have a standalone exact replay, and each unfinished case states the missing mathematical estimate.
+The main paper explains the strategy before introducing the technical formulas: what would contradict rationality, why determinants might help, and what happens when their coefficients are made integral. Each main theorem is followed by a plain-language interpretation of its quantitative conclusion and scope. The supplement develops the substantial unfinished routes as reproducible case studies. Its paired hypergeometric identities have a standalone exact replay, and each unfinished case states the missing mathematical estimate.
 
-The [earlier equation-by-equation review](planning/expository-review.txt), [accessibility review](planning/accessibility-review.txt) and [main-paper assembly audit](paper/audit.txt) record their respective revisions. Their preservation and checking statements apply to those historical versions.
+The [structural review](planning/narrative-review.txt), [equation-by-equation review](planning/expository-review.txt), [accessibility review](planning/accessibility-review.txt) and [main-paper assembly audit](paper/audit.txt) record earlier revisions. Their preservation and checking statements apply to those historical versions.
 
 The [reproduction instructions and results](checks/README.md) distinguish main-paper exact/interval checks from the supplement's certificate replays and exact reconstructions. The supporting documents are:
 
@@ -57,4 +59,6 @@ python3 tools/render_supplement_register.py
 python3 tools/build_supplement.py
 ```
 
-The assembly audits describe their respective writing passes; later editorial reviews are recorded separately. This checkout is under `beta4/obstructions/`, with its own Git history. The original working archive is in the enclosing `beta4/` directory, and third-party PDFs are in `../literature/papers/`. To compare the evidence with that local archive and check the literature files, run `python3 tools/validate_packet.py --archive-root .. --check-local-pdfs`. Earlier audit records describe the directory layout at the time of their review. The original material in this repository is licensed under Apache 2.0; cited works retain their own terms.
+The repository includes the evidence and certificates needed by these instructions; the original working archive is not required. Source ledgers retain URLs, hashes and local paths from the research environment. Third-party paper PDFs are not redistributed. The validator's optional `--archive-root` and `--check-local-pdfs` flags are for comparisons in that original environment. Historical audit records retain the directory layout and publication status at the time they were written.
+
+The original material in this repository is licensed under [Apache 2.0](LICENSE); cited works retain their own terms.
