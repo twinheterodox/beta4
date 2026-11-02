@@ -50,8 +50,8 @@ multiplying each determinant by a suitable denominator would give a
 positive integer. The strategy is to show that the resulting values
 eventually fall below one, yielding a contradiction.
 For $\beta(4)=1-3^{-4}+5^{-4}-\cdots$, we examine two constructions:
-a divided-difference kernel built from beta-series tails and a Gram
-matrix of positive moments. For both, we prove that clearing denominators
+a divided-difference matrix built from beta-series tails and a moment
+matrix built from powers of a difference variable. For both, we prove that clearing denominators
 necessarily destroys the required smallness, even after all common
 coefficient factors are removed. The resulting values grow at least
 exponentially in the square of the matrix size. These are failure theorems for the two
@@ -204,9 +204,14 @@ cheaper, by enough to make the construction work.
 The basic design problem is to retain only $\theta$ and rational numbers
 in the entries while securing a nonzero determinant. If other constants
 remain, the assumption that $\theta$ is rational need not make the
-entries rational. The two families below meet both requirements, using
-different elementary identities. They are natural starting choices
-within the positive determinant approach.
+entries rational. Both families below use Gram matrices of linearly
+independent functions, which guarantees positive determinants.
+They differ in how the entries are formed and how
+unwanted constants are eliminated. The first starts with divided
+differences of shifted tails and proves a positive integral
+representation for the resulting matrix. The second starts with a
+positive integral and chooses powers of a variable whose moments
+involve only $\theta$ and rational numbers.
 
 Carreira~\cite[Sections~5--6 and~11--12]{Carreira} also investigates
 determinant constructions that isolate $\beta(4)$, including positive
@@ -216,31 +221,36 @@ Sections~\ref{sec:kernel-construction} and~\ref{sec:gram-construction}.
 Our conclusions concern their full infinite families and include
 all common coefficient cancellation.
 
-\paragraph{First construction: consecutive nodes.}
+The final step is common to both constructions: replace $\theta$ by
+$X$ in the entries, take the determinant polynomial $Q$, and pass to
+its primitive representative $Z=\PP(Q)$ as in \eqref{eq:budget}.
+The irrationality criterion concerns the size of $Z(\theta)$ after
+this conversion to integer coefficients.
+
+\paragraph{First construction: divided differences at consecutive nodes.}
 Litsey's use of divided-difference matrices for trigamma values
 \cite[Section~2.1]{Litsey} suggested the starting point for this
 construction. Such a matrix records difference quotients off the
 diagonal and derivatives on it. Integer shifts of a beta-series tail
 differ by finite rational sums, while differentiating a cubic tail
-produces a fourth-power tail. These two facts suggest how to obtain
+produces a fourth-power tail. Section~\ref{sec:kernel-construction}
+transforms and normalizes the cubic tail so that these two facts give
 rational off-diagonal entries and $\theta$ plus a rational on each
-diagonal entry. The transformed cubic tail in
-Section~\ref{sec:kernel} gives such a symmetric matrix and also a
-positive integral representation.
+diagonal entry.
 
-Think of the construction as an infinite symmetric matrix, with rows
-and columns labelled by the positive integers. The entry in row $a$
-and column $b$ is obtained from the two corresponding tail shifts.
-To obtain a finite $n\times n$ matrix, we select $n$ row labels and
-$n$ column labels. These selected labels are the \emph{nodes}.
+The resulting infinite symmetric matrix has rows and columns labelled
+by positive integers, indicating the tail shifts. To obtain a finite
+$n\times n$ matrix, we select $n$ row labels and $n$ column labels.
+These selected labels are the \emph{nodes}. We use the same list for
+rows and columns, giving a \emph{principal submatrix}.
 
-We select the same labels for rows and columns, giving a
-\emph{principal submatrix}. The positive integral representation
-associates a function with each node and expresses a matrix entry as
-the inner product of the two corresponding functions. Using the same
-nodes therefore gives the Gram matrix of one list of functions.
-Section~\ref{sec:kernel} proves that distinct nodes give linearly
-independent functions, so this determinant is positive.
+The integral representation in Section~\ref{sec:kernel} identifies
+this same matrix as the Gram matrix of the functions
+$s\mapsto 1/(a^2+s^2)$, one for each selected shift $a$, with a
+common positive weight on $s>0$. Distinct shifts give linearly
+independent functions, so the determinant is positive. Thus the
+divided-difference description supplies the desired arithmetic form
+of the entries, while the integral description establishes positivity.
 
 We take a block of consecutive labels,
 \[
@@ -254,17 +264,10 @@ but uses tails that start farther out in the series. We allow both
 parameters to vary to test whether later tails improve the balance
 between determinant decay and denominator cost.
 
-Each diagonal entry of the selected matrix is $\theta$ plus a rational,
-and every off-diagonal entry is rational. Replace each diagonal
-$\theta$ by the variable $X$, keep the rational parts fixed, and take
-the determinant. This defines a polynomial $Q_{n,m}(X)$ with rational
-coefficients; substituting $X=\theta$ recovers the positive determinant.
-Its primitive representative $Z_{n,m}=\PP(Q_{n,m})$ is obtained by
-clearing denominators and then dividing all coefficients by their
-greatest common divisor.
-It is $Z_{n,m}(\theta)$, after this conversion to integer coefficients,
-that must be small for the irrationality criterion. The full matrix
-entries and determinant are given in
+For this block, write $Q_{n,m}(X)$ for the determinant polynomial
+and $Z_{n,m}=\PP(Q_{n,m})$ for its primitive representative. Here the
+replacement of $\theta$ by $X$ changes only the diagonal entries.
+The full matrix entries and determinant are given in
 \eqref{eq:R}--\eqref{eq:principal-Q}.
 
 \begin{theorem}[Consecutive principal determinants]\label{thm:principal}
@@ -290,24 +293,28 @@ this family. The theorem concerns consecutive blocks, not arbitrary
 selections of nodes.
 
 \paragraph{Second construction: moments of a positive weight.}
-Here we start from a positive double integral for $\theta$ and seek
-polynomial functions whose integrals still involve only $\theta$ and
-rational numbers. For the weight in Section~\ref{sec:gram-construction},
-general monomials can introduce $\beta(3)$ as well. The choice
-$y=(u-v)^2$, with $u,v\in[0,1]$, serves two purposes: its powers have
-even total degree, which makes the $\beta(3)$ terms cancel, and
-$0\leq y\leq1$, which is useful for making the determinant small.
+Here the starting point is the positive double integral for $\theta$
+in Section~\ref{sec:gram-construction}. Set $y=(u-v)^2$, where
+$u,v\in[0,1]$, and use the functions $1,y,\ldots,y^{n-1}$.
+Their pairwise products are $y^{i+j}$, so their Gram matrix is
+$[\mu_{i+j}]_{0\leq i,j<n}$, where the \emph{moment} $\mu_k$ is the
+integral of $y^k$ against the positive weight. The functions are
+linearly independent on $0<y<1$, so this determinant is positive.
 
-Integrating the powers $1,y,y^2,\ldots$ against this positive weight
-gives its \emph{moments} $\mu_0,\mu_1,\ldots$. The standard Gram-matrix
-construction then gives
-$[\mu_{i+j}]_{0\leq i,j<n}$, the Gram matrix of
-$1,y,\ldots,y^{n-1}$. Each moment turns out to be a rational multiple
-of $\theta$ plus a rational. Replacing $\theta$ by $X$ gives a
-determinant polynomial $Q_n^\Delta(X)$ and its primitive representative
-$Z_n^\Delta=\PP(Q_n^\Delta)$. Formula~\eqref{eq:delta-Q} gives their
-precise definitions; the superscript $\Delta$ denotes this
-difference-variable construction.
+The choice of $y$ also supplies the required arithmetic form.
+General monomials in $u,v$ can introduce $\beta(3)$ as well as
+$\theta$. Expanding $(u-v)^{2k}$ gives only terms of even total
+degree, for which the $\beta(3)$ contributions cancel. Consequently
+every moment has the form $\mu_k=C_k\theta+B_k$, with rational
+$C_k,B_k$. In this matrix $\theta$ occurs throughout the entries,
+with coefficients $C_{i+j}$; the indices record powers of $y$.
+The interval $0\leq y\leq1$ is also useful for estimating the
+determinant's decay.
+
+Write $Q_n^\Delta(X)$ for the determinant after replacing $\theta$
+by $X$, and $Z_n^\Delta=\PP(Q_n^\Delta)$. The superscript $\Delta$
+denotes the difference variable $u-v$. Formula~\eqref{eq:delta-Q}
+gives the precise coefficients and determinant.
 
 \begin{theorem}[Difference-variable Gram determinants]\label{thm:delta}
 The polynomial $Q_n^{\Delta}$ has degree $n$ and leading coefficient

@@ -1,20 +1,23 @@
 {
   "status": "passed",
-  "recorded_at_utc": "2026-11-01T21:13:33.450597+00:00",
-  "scope": "Current editorial revision: expand the introduction explanation of principal nodes, offsets and determinant polynomials; confirm all other source text, formal statements, proofs and numbered displays are unchanged; rebuild and inspect every page. Earlier mathematical and reproduction checks retain their stated historical scopes.",
+  "recorded_at_utc": "2026-11-02T13:22:27.037114+00:00",
+  "scope": "Current editorial revision: distinguish the shared Gram-matrix and primitive-normalization framework from the two rules for forming entries, and identify the divided-difference and integral descriptions as descriptions of the same first matrix. Rebuild, confirm formal statements, proofs and numbered displays unchanged, compare page renders and inspect every changed page. Earlier mathematical and reproduction checks retain their stated historical scopes.",
   "source_files_match_build_record": 1,
-  "build_record_sha256": "418b2c71107de6b346f54b2fd3f85ff776ac3f7d318befdf295d049fc93f632e",
+  "build_record_sha256": "882cbd4306c836afac4397ae5c734894a4234e19e32f73ef5872cd8201e6c1f0",
   "pdf": "output/pdf/beta4-determinant-obstructions.pdf",
-  "pdf_sha256": "7c5fddee5a2098f2465469384dc00ee9d09e36d68ce1a4cdec45a12c8f20efa0",
+  "pdf_sha256": "0291a1f9145ca1721ee3e44b2b4eb3377b05ccb089a4494d1455e27086892330",
   "pages": 21,
   "visual_inspection": {
     "pages_inspected": [
       1,
-      2,
       3,
       4,
       5,
-      6,
+      6
+    ],
+    "rendering": "Poppler, 100 dpi. All five changed pages inspected; the other sixteen pages are pixel-identical to the previously inspected PDF.",
+    "pixel_identical_pages": [
+      2,
       7,
       8,
       9,
@@ -31,12 +34,11 @@
       20,
       21
     ],
-    "rendering": "Poppler, 100 dpi. All 21 pages inspected in four-page sheets.",
     "result": "No clipping, overlap, broken formulas or illegible layout observed."
   },
   "latex": {
     "unique_labels": 92,
-    "reference_occurrences": 93,
+    "reference_occurrences": 94,
     "unresolved_references": [],
     "bibliography_keys": [
       "Brown",
@@ -336,7 +338,7 @@
   "independent_audit_of_assembled_draft": false,
   "formal_verification": false,
   "source": "paper/beta4-determinant-obstructions.tex",
-  "source_sha256": "52264798a7983050d91b978fd85acd737348ab0e9d58a6fa2c7c990e7bfa4d6d",
+  "source_sha256": "fac3499f5b5e10cdf2d236d7c1970ddc6dc53641ee67d8434f0fc37642f61a95",
   "historical_statement_preservation": {
     "baseline_commit": "local-prepublication-revision",
     "formal_statements_unchanged_in_document": 11,
@@ -673,6 +675,41 @@
         4,
         5,
         6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "pages": 21,
+      "calculation_suites_rerun": false,
+      "independent_mathematical_audit": false
+    },
+    {
+      "change": "Separate the common Gram-matrix and normalization framework from the two construction descriptions; explain that the first matrix has both divided-difference and integral descriptions; distinguish rational functions indexed by tail shifts from powers of a difference variable, and diagonal-only versus full-matrix occurrences of theta; use corresponding distinct names in the abstract.",
+      "baseline_commit": "local-prepublication-revision",
+      "existing_statement_and_proof_blocks_unchanged": 23,
+      "numbered_displays_unchanged": true,
+      "text_after_construction_descriptions_unchanged": true,
+      "changed_pages_inspected": [
+        1,
+        3,
+        4,
+        5,
+        6
+      ],
+      "pixel_identical_pages": [
+        2,
         7,
         8,
         9,
