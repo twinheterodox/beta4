@@ -1,6 +1,6 @@
 # Companion supplement
 
-[Read the supplement](../output/pdf/beta4-investigations.pdf) · [LaTeX entry point](beta4-investigations.tex) · [Current revision review](../planning/supplement-self-contained-review.txt)
+[Read the supplement](../output/pdf/beta4-investigations.pdf) · [LaTeX entry point](beta4-investigations.tex) · [Final editorial reading](../planning/supplement-final-reading-2026-11-02.txt)
 
 This 67-page draft is a mathematical starting point for continuing the investigation behind the [focused determinant paper](../paper/README.md). Its substantial constructions can now be reconstructed from the text and accompanying certificate files, without recovering definitions or missing proof steps from research logs.
 
@@ -24,6 +24,6 @@ python3 checks/paired/rates.py
 
 The build needs LaTeX and Poppler. The existing [reproduction report](../checks/supplement-reproduction.json) distinguishes exact calculations from numerical diagnostics and checks all 127 frozen evidence hashes. The new [case-study checks](../checks/case-studies-result.json) reconstruct formulas independently of the archived calculation scripts. The paired replay checks symbolic all-index identities; its finite initial cases and numerical rate enclosures have separate roles, explained in the manuscript and replay guide.
 
-The [source ledger](../sources/supplement-reading.json) records versions, local PDFs, checksums, actual reading scope and external dependencies. The [original assembly audit](audit.txt) and earlier editorial records describe their respective historical drafts.
+The [source ledger](../sources/supplement-reading.json) records versions, local PDFs, checksums, actual reading scope and external dependencies. The [original assembly audit](audit.txt) and [self-contained expansion review](../planning/supplement-self-contained-review.txt) describe their respective historical drafts. The final reading clarifies notation and parameter ranges, repairs damaged parity labels, and checks the complete PDF. It reruns the paired floor calculation; the other recorded mathematical checks belong to the earlier revision.
 
 This is a local, unpublished draft prepared with Codex. The revision includes source review and exact computational checks by its assembling model, not a fresh independent audit or formal verification. It does not settle the irrationality of β(4).

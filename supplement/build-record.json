@@ -12,15 +12,15 @@
     },
     {
       "path": "supplement/references.tex",
-      "sha256": "0885ec4f31a567455642cd926325f4fb3b720700a452a26c3a84bf6e4302c93e"
+      "sha256": "f17493ba0e494b7035397c15db4b7a71416d8eba9b5a61a5345d3dad6e1ae29d"
     },
     {
       "path": "supplement/sections/01-conventions-cone.tex",
-      "sha256": "05c1059e3178ef36f333115741dc7b3da42ff95f6173b061751fb7bd4ee97cc8"
+      "sha256": "3ebbfd31feb229bc952f88b3c53f7fac38afd01e92f23caff87bdf260f2c7be9"
     },
     {
       "path": "supplement/sections/02-euler-quadratic.tex",
-      "sha256": "ada0f9b0cb21cc5214d7f6df6e2434bd99437bd0ccdb672a6592343191a4b7cc"
+      "sha256": "e49bfb110bed6a15d3f242947cb9482aefbd8da488bcd80f81a34bb5b168b356"
     },
     {
       "path": "supplement/sections/03-boole.tex",
@@ -32,7 +32,7 @@
     },
     {
       "path": "supplement/sections/05-cyclotomic.tex",
-      "sha256": "bdbd0548ee57d6a87e13cfbe84cb7270c8207cf030745e1297499d09ef5a02ae"
+      "sha256": "d71c0a28fa5ebd8f1e5441bc9574ba8e1e75c715b9b104a5cbaffa9938d54497"
     },
     {
       "path": "supplement/sections/06-completed-mellin.tex",
@@ -44,11 +44,11 @@
     },
     {
       "path": "supplement/sections/08-first-variation.tex",
-      "sha256": "803a819ef6a067e9523d815e03c4de49d05b163c13ca1d82deb85156f81fef69"
+      "sha256": "b040ede696f4277e089fdf866b280c8c83d81145bca7dda3bdb7fe24ce3ee679"
     },
     {
       "path": "supplement/sections/09-method-record.tex",
-      "sha256": "214c775df00cccc0d040797b07e6f838a32edeb14cff19d9f3ffecae88a03ebf"
+      "sha256": "f4ab614f1edc73130b27419fb02492b6aecba2391119f3718be7871413eeb3a5"
     },
     {
       "path": "supplement/sections/10-evidence.tex",
@@ -56,23 +56,23 @@
     },
     {
       "path": "supplement/sections/11-interleaved.tex",
-      "sha256": "e2aaa7834d138043e5731ebd9bee06a8f64164e45a508350042c541e0381d233"
+      "sha256": "aa8e980ec7619ece902c111a441b95c12f0009f9d3aea6a0f8932d37d82e2808"
     },
     {
       "path": "supplement/sections/12-quarter-poles.tex",
-      "sha256": "de596ba91f9de1f55a504823293382a3e78219bf51d708a9355ed386c72c5633"
+      "sha256": "17c9ae68ad51a596671522b59822089d95bbe84c5920ecf00d9a5f1665ae1ba9"
     },
     {
       "path": "supplement/sections/13-common-base.tex",
-      "sha256": "d77c874e7687205fdfc66c928ef22af4d7cb9a81e111ffffa38d47f729f91cc7"
+      "sha256": "6fae39c404cffd5922b5fce6412aa864501095fc56022a2c82472f1b884c216d"
     },
     {
       "path": "supplement/sections/14-endpoints-filters.tex",
-      "sha256": "f0faee38b018125232183479aee5242fa9001039c69ffdbd800dc0464d9b30c4"
+      "sha256": "8f4a2609eb1b3b6cb3718b43f971412e6fdba64f9dac9832156f7c669ee669a1"
     },
     {
       "path": "supplement/sections/15-modular.tex",
-      "sha256": "c18b2ff86f30fb164309e382104a4b30df9f434503585193daa37af428f09403"
+      "sha256": "0339cbabbabca269be96265b68b381468e61027957c4f1314ab4262959494da3"
     },
     {
       "path": "supplement/sections/16-coupled-niven.tex",
@@ -80,7 +80,7 @@
     },
     {
       "path": "supplement/sections/17-paired.tex",
-      "sha256": "148130564c81a16fcd81cc36532e83003e9b3d1980a724a91f9980d5ec0f0eac"
+      "sha256": "48ee9e82b39738afd444f10d1e1ab57771db3c3ea5bf1e09afe8cc27702dacd4"
     },
     {
       "path": "supplement/sections/18-compatible.tex",
@@ -88,7 +88,7 @@
     }
   ],
   "pdf": "output/pdf/beta4-investigations.pdf",
-  "pdf_sha256": "3a28502b3213192968b04157ec4be9b4efe49d7d826d01c3aa5c24f5b4653409",
+  "pdf_sha256": "e1e7d765bafa8106dfbc0aee933e2b04fe48a0170167b1041fab83c12617e15c",
   "tex_engine": "pdfTeX 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian)",
   "unresolved_references": false,
   "overfull_or_underfull_boxes": false,

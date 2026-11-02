@@ -6,7 +6,8 @@ linear form is $q_n\theta-a_n=q_ne_n$. To prove irrationality by this
 route, one needs these forms to be nonzero and tend to zero.
 Indeed, if $\theta=a/b$ were rational with $b>0$, every such nonzero form would
 have absolute value at least $1/b$. Thus the central comparison is
-between the decay of $e_n$ and the growth of its reduced denominator.
+between the decay of $e_n$ and the growth of the approximant's reduced
+denominator $q_n$.
 
 This supplement asks how that comparison works in several explicit
 constructions. Some start from integrals, some improve the alternating
@@ -42,7 +43,7 @@ $\kappa>0$ and the resulting integer coefficients have gcd one. Then
 Here $v_p$ counts powers of the prime $p$ in the numerator minus those
 in the denominator of a nonzero rational number; $v_p(0)=+\infty$.
 For example, $v_p(p^{-3})=-3$. A rational number is $p$-integral
-when its valuation is nonnegative and a $p$-unit when it is zero.
+when its valuation is nonnegative and a $p$-unit when its valuation is zero.
 Reduction modulo $p$ means inverting a denominator not divisible by $p$.
 The notation $[X^j]Q$ denotes a polynomial coefficient.
 The identity follows because the minimum valuation of a primitive
@@ -269,8 +270,8 @@ bound, with an absolute additive constant.
 
 For the converse, a polynomial cannot have a large maximum on an
 arbitrarily narrow region. We use a derivative bound to turn that
-maximum into an integral lower bound. For a degree-$D$ nonnegative
-$P$ set $M=\max_{[0,1]}P$.
+maximum into an integral lower bound. For a nonnegative polynomial
+$P$ of degree $D\geq1$, set $M=\max_{[0,1]}P$.
 Its Chebyshev expansion has constant coefficient at most $M$ in absolute
 value and other coefficients at most $2M$, by the cosine coefficient
 integrals. The identity $T_k(\cos u)=\cos(ku)$ gives

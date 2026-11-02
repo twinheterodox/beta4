@@ -1,18 +1,18 @@
 {
   "status": "passed",
-  "recorded_at_utc": "2026-11-01T17:41:50.039509+00:00",
-  "scope": "Package consistency, source/proof preservation, reproduction checks and visual review of the self-contained case-study revision; not independent mathematical verification.",
+  "recorded_at_utc": "2026-11-02T16:41:50.513812+00:00",
+  "scope": "Complete editorial reading, targeted arithmetic replay, package consistency and visual review; not independent mathematical verification.",
   "baseline_commit": "local-prepublication-revision",
   "previous_validation": {
     "commit": "local-prepublication-revision",
     "path": "supplement/validation.json",
-    "pages": 34,
-    "scope": "Package consistency and visual review after the equation-by-equation expository revision; not independent mathematical verification."
+    "pages": 67,
+    "scope": "Package consistency, source/proof preservation, reproduction checks and visual review of the self-contained case-study revision; not independent mathematical verification."
   },
   "source_files_match_build_record": 21,
-  "build_record_sha256": "b028c16b89f50b6b4c600a3406a4830c107e906db678beafd9f522658bf33ca0",
+  "build_record_sha256": "a8be36c309f334c7ec63fab0fdedecc9740bd0055491eb1ed581af4b4c6a7705",
   "pdf": "output/pdf/beta4-investigations.pdf",
-  "pdf_sha256": "3a28502b3213192968b04157ec4be9b4efe49d7d826d01c3aa5c24f5b4653409",
+  "pdf_sha256": "e1e7d765bafa8106dfbc0aee933e2b04fe48a0170167b1041fab83c12617e15c",
   "pages": 67,
   "visual_inspection": {
     "pages_inspected": [
@@ -84,12 +84,8 @@
       66,
       67
     ],
-    "rendering": "Poppler, 100 dpi; all 67 pages visually inspected in four-page sheets. All final pages rendered again and compared with the inspected images.",
-    "final_changed_pages_reinspected": [
-      31
-    ],
-    "other_final_pages_match_inspected_render": true,
-    "result": "No clipping, overlap, broken formulas or illegible layout observed."
+    "rendering": "Poppler, 100 dpi; all 67 final pages visually inspected in four-page sheets.",
+    "result": "No clipping, overlap or broken formulas observed."
   },
   "latex": {
     "unique_labels": 195,
@@ -118,7 +114,8 @@
     "citation_occurrences": 23,
     "all_citations_resolved": true,
     "overfull_or_underfull_boxes": false,
-    "control_characters": false
+    "control_characters_other_than_tab_or_newline": false,
+    "damaged_parity_labels_repaired": 8
   },
   "checked_local_links": [
     {
@@ -131,7 +128,7 @@
     },
     {
       "from": "README.md",
-      "target": "planning/narrative-review.txt"
+      "target": "planning/final-reading-2026-11-02.txt"
     },
     {
       "from": "README.md",
@@ -143,7 +140,7 @@
     },
     {
       "from": "README.md",
-      "target": "planning/supplement-self-contained-review.txt"
+      "target": "planning/supplement-final-reading-2026-11-02.txt"
     },
     {
       "from": "README.md",
@@ -194,86 +191,6 @@
       "target": "planning/draft-opening.txt"
     },
     {
-      "from": "paper/README.md",
-      "target": "../output/pdf/beta4-determinant-obstructions.pdf"
-    },
-    {
-      "from": "paper/README.md",
-      "target": "beta4-determinant-obstructions.tex"
-    },
-    {
-      "from": "paper/README.md",
-      "target": "../planning/narrative-review.txt"
-    },
-    {
-      "from": "paper/README.md",
-      "target": "../planning/expository-review.txt"
-    },
-    {
-      "from": "paper/README.md",
-      "target": "../planning/accessibility-review.txt"
-    },
-    {
-      "from": "paper/README.md",
-      "target": "audit.txt"
-    },
-    {
-      "from": "paper/README.md",
-      "target": "../supplement/README.md"
-    },
-    {
-      "from": "paper/README.md",
-      "target": "../planning/theorem-inventory.txt"
-    },
-    {
-      "from": "paper/README.md",
-      "target": "../planning/method-catalog.txt"
-    },
-    {
-      "from": "supplement/README.md",
-      "target": "../output/pdf/beta4-investigations.pdf"
-    },
-    {
-      "from": "supplement/README.md",
-      "target": "beta4-investigations.tex"
-    },
-    {
-      "from": "supplement/README.md",
-      "target": "../planning/supplement-self-contained-review.txt"
-    },
-    {
-      "from": "supplement/README.md",
-      "target": "../paper/README.md"
-    },
-    {
-      "from": "supplement/README.md",
-      "target": "../checks/paired/README.txt"
-    },
-    {
-      "from": "supplement/README.md",
-      "target": "coverage.json"
-    },
-    {
-      "from": "supplement/README.md",
-      "target": "../checks/supplement-requirements.txt"
-    },
-    {
-      "from": "supplement/README.md",
-      "target": "../checks/supplement-reproduction.json"
-    },
-    {
-      "from": "supplement/README.md",
-      "target": "../checks/case-studies-result.json"
-    },
-    {
-      "from": "supplement/README.md",
-      "target": "../sources/supplement-reading.json"
-    },
-    {
-      "from": "supplement/README.md",
-      "target": "audit.txt"
-    },
-    {
       "from": "checks/README.md",
       "target": "SUPPLEMENT.md"
     },
@@ -316,6 +233,94 @@
     {
       "from": "checks/SUPPLEMENT.md",
       "target": "paired/README.txt"
+    },
+    {
+      "from": "paper/README.md",
+      "target": "../output/pdf/beta4-determinant-obstructions.pdf"
+    },
+    {
+      "from": "paper/README.md",
+      "target": "beta4-determinant-obstructions.tex"
+    },
+    {
+      "from": "paper/README.md",
+      "target": "../planning/final-reading-2026-11-02.txt"
+    },
+    {
+      "from": "paper/README.md",
+      "target": "../planning/narrative-review.txt"
+    },
+    {
+      "from": "paper/README.md",
+      "target": "../planning/expository-review.txt"
+    },
+    {
+      "from": "paper/README.md",
+      "target": "../planning/accessibility-review.txt"
+    },
+    {
+      "from": "paper/README.md",
+      "target": "audit.txt"
+    },
+    {
+      "from": "paper/README.md",
+      "target": "../supplement/README.md"
+    },
+    {
+      "from": "paper/README.md",
+      "target": "../planning/theorem-inventory.txt"
+    },
+    {
+      "from": "paper/README.md",
+      "target": "../planning/method-catalog.txt"
+    },
+    {
+      "from": "supplement/README.md",
+      "target": "../output/pdf/beta4-investigations.pdf"
+    },
+    {
+      "from": "supplement/README.md",
+      "target": "beta4-investigations.tex"
+    },
+    {
+      "from": "supplement/README.md",
+      "target": "../planning/supplement-final-reading-2026-11-02.txt"
+    },
+    {
+      "from": "supplement/README.md",
+      "target": "../paper/README.md"
+    },
+    {
+      "from": "supplement/README.md",
+      "target": "../checks/paired/README.txt"
+    },
+    {
+      "from": "supplement/README.md",
+      "target": "coverage.json"
+    },
+    {
+      "from": "supplement/README.md",
+      "target": "../checks/supplement-requirements.txt"
+    },
+    {
+      "from": "supplement/README.md",
+      "target": "../checks/supplement-reproduction.json"
+    },
+    {
+      "from": "supplement/README.md",
+      "target": "../checks/case-studies-result.json"
+    },
+    {
+      "from": "supplement/README.md",
+      "target": "../sources/supplement-reading.json"
+    },
+    {
+      "from": "supplement/README.md",
+      "target": "audit.txt"
+    },
+    {
+      "from": "supplement/README.md",
+      "target": "../planning/supplement-self-contained-review.txt"
     }
   ],
   "local_pdf_source_links_checked": [
@@ -378,7 +383,7 @@
     "../../evidence/research/coupled-holonomy.txt",
     "beta4-determinant-obstructions.pdf"
   ],
-  "local_pdf_source_link_scope": "Every run: target in the compiled TeX source exists relative to the output PDF; build has no unresolved references.",
+  "local_pdf_source_link_scope": "Every run: target exists relative to the output PDF; record destinations also resolve in the compiled auxiliary file.",
   "literature_pdf_hashes_checked": [
     {
       "source": "ZUDILIN2015",
@@ -484,35 +489,42 @@
       "sha256": "8c6e218693f5d4bc4b2deadede82f71f5990c29acc984a06334090bffa328138"
     }
   ],
-  "reproduction_input_and_output_hashes_checked": 8,
-  "reproduction_suite_rerun": true,
-  "case_study_exact_or_interval_checks": 120,
-  "paired_polynomial_certificates": 10,
-  "paired_input_hashes_checked": 10,
-  "paired_floor_partition_cells": 854,
-  "statement_preservation": {
-    "baseline_commit": "local-prepublication-revision",
-    "original_proof_sections_byte_unchanged": [
-      "supplement/sections/02-euler-quadratic.tex",
-      "supplement/sections/03-boole.tex",
-      "supplement/sections/04-continuants.tex",
-      "supplement/sections/05-cyclotomic.tex",
-      "supplement/sections/06-completed-mellin.tex",
-      "supplement/sections/07-monodromy.tex",
-      "supplement/sections/08-first-variation.tex"
+  "computational_checks_this_pass": {
+    "paired_floor_calculation_rerun": true,
+    "period_cells": 854,
+    "period_maxima": [
+      9,
+      11
     ],
-    "cone_section_after_intro_byte_unchanged": true,
+    "combined_upper_bound": 88.20752949730584,
+    "result_byte_identical_to_baseline": true,
+    "other_mathematical_suites_rerun": false,
+    "scope": "The finite integer minima agree with the preserved calculation. Other unchanged reports retain their previous checking status."
+  },
+  "statement_preservation": {
+    "formal_statement_counts": {
+      "theorem": 6,
+      "proposition": 9,
+      "lemma": 1
+    },
+    "formal_statements_unchanged_except_parity_typography": true,
+    "numbered_displays_clarified": [
+      "eq:signed-rodrigues",
+      "eq:paired-ceiling"
+    ],
+    "numerical_constants_and_conclusions_unchanged": true,
+    "scope": "Manual complete reading and source comparison; display changes specify the existing functional and finite integer index sets, plus parity-label repairs.",
     "main_paper_source_and_pdf_unchanged": [
       "paper/beta4-determinant-obstructions.tex",
       "output/pdf/beta4-determinant-obstructions.pdf"
     ],
     "frozen_evidence_files_unchanged": 127,
-    "new_case_study_sections": 8,
-    "scope": "Existing complete proofs preserved; new case studies reconstruct archived arguments and distinguish proved results from incomplete estimates."
+    "claim_register_and_classifications_unchanged": true,
+    "check_scripts_and_recorded_results_unchanged": true
   },
   "editorial_review": {
-    "record": "planning/supplement-self-contained-review.txt",
-    "sha256": "c72005a0d2042721957dd0e61200c019b45a249f75128e3d3cd8ebdc1d7510eb"
+    "record": "planning/supplement-final-reading-2026-11-02.txt",
+    "sha256": "4e99bec25d489fa97009b8479db5cdf1b40919962a754551f30addc3a20d9544"
   },
   "historical_reviews": [
     {
@@ -529,6 +541,11 @@
       "record": "planning/expository-review.txt",
       "sha256": "9702d3873e8867d1e51b1aeb4626cad9bb2da196d1df31fec10a0ed0783b95c6",
       "scope": "Earlier equation-by-equation revision, before the present case-study expansion."
+    },
+    {
+      "record": "planning/supplement-self-contained-review.txt",
+      "sha256": "c72005a0d2042721957dd0e61200c019b45a249f75128e3d3cd8ebdc1d7510eb",
+      "scope": "Historical self-contained case-study expansion, before the final editorial reading."
     }
   ],
   "packet_consistency": {

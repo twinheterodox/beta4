@@ -1,0 +1,90 @@
+FINAL READING OF THE TECHNICAL SUPPLEMENT
+2 November 2026
+
+Scope
+-----
+Read the complete 67-page supplement, including the case studies,
+method catalog, claim register and references. This was an editorial
+and consistency review by the assembling model. It was not a new
+independent mathematical audit or formal verification, and did not
+resume the research investigation.
+
+The organization remains appropriate: the introductory tables separate
+proved obstructions from unfinished constructions, the substantial cases
+state their definitions and dependencies locally, and the catalog keeps
+shorter archived variants separate. The supplement is necessarily more
+technical than the focused paper. Its section introductions and explicit
+remaining questions support reading by method without reconstructing
+the research chronology. No further structural rewrite was needed.
+
+Corrections and clarifications
+-----------------------------
+1. The introduction now compares the error with the denominator of the
+   rational approximant. The generally irrational error itself has no
+   reduced denominator. The definition of a p-unit explicitly refers
+   to its valuation being zero.
+2. Section 2's derivative estimate explicitly assumes positive degree.
+   Section 3 specifies rational functions and rational polynomials over
+   Q; its source-level integrality statement now says P,Q are in Z[t],
+   rather than ambiguously saying the rational function has integer
+   coefficients. The scope statement spells out what differing numbers
+   of cancelled Taylor coefficients mean.
+3. Section 9's variational minimum is explicitly over real polynomials.
+   Section 10 states the representative range 0 <= a <= p for the
+   reflection congruence before extending it by periodicity.
+4. Section 11 explains that squared and unsquared poles refer to their
+   locations, not pole multiplicities. Both constructions have simple
+   poles. The degree bound in the partial-fraction argument explicitly
+   refers to the numerator.
+5. Section 12 restricts the dyadic estimate to n >= 1 and corrects the
+   functional in (12.8) from I(P) to I_U(P), as defined in (7.5).
+   The scalar functional I in Section 2 is a different functional.
+6. Section 13 specifies that N,a,b are integers and that k >= 1 in the
+   sparse family. Its factorial-normalization sentence now refers
+   unambiguously to the primitive endpoint pair.
+7. Section 16.5 explicitly takes its minima over r in {0,...,14} and
+   r in {3,...,9}. These are selected integer terms, not continuous
+   intervals. This is the meaning used in the preserved calculation;
+   the proof and numerical ceiling are unchanged.
+8. Section 18 includes the qualification "up to sign" for primitive
+   invariance under rational basis changes, consistent with the main
+   paper. Minor wording was simplified in Sections 14 and 18.
+9. Eight damaged parity labels in Sections 3, 6, 10 and 13 were repaired.
+   Six contained literal carriage returns where a LaTeX command was
+   intended, and two contained an embedded newline followed by "m odd".
+   They now use explicit text commands for odd/even. These errors did
+   not produce LaTeX compilation warnings.
+10. Zudilin's cited v2 now records the 2016 revision as well as the
+    original 2015 date, matching the companion bibliography.
+
+Validation
+----------
+The source comparison is against commit local-prepublication-revision. The theorem,
+proposition, lemma and corollary statements are unchanged apart from
+the repaired parity label in Theorem 3.1. Numerical constants and
+conclusions are unchanged. The two substantive display clarifications
+are the functional name in (12.8) and the finite integer sets in (16.16).
+The other display changes repair the eight parity labels.
+
+Rebuilt using tools/build_supplement.py: 67 pages, no undefined or
+multiply defined references, and no overfull or underfull boxes. All
+67 pages were rendered with Poppler at 100 dpi and visually inspected
+in four-page sheets. No clipping, overlap or broken formulas observed.
+
+Reran checks/paired/arithmetic.py to check the clarified finite-index
+interpretation: all 854 open cells were reproduced, the essential
+maxima remained 9 and 11, and the combined upper bound remained
+88.20752949730584 < 88.208. Its result file is byte-identical to the
+previous report. The other mathematical check suites were not rerun;
+their scripts and recorded results are unchanged.
+
+Checked source/build hashes, references, citations and local navigation.
+The packet validator again checked all 57 grouped claims, all 127 frozen
+evidence files against the original archive, and its 12 local literature
+PDFs. The additional literature PDFs in the previous supplement
+validation record retain their recorded hashes.
+
+The main paper's source and canonical PDF, the claim classifications,
+and the frozen evidence remain unchanged. Earlier reviews describe
+their historical versions; supplement/validation.json records the
+current artifact and the scope of this pass. No publication was made.

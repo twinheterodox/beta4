@@ -409,12 +409,14 @@ where the two coefficient lists are
                               =(1,2,2,1,-1,-2,-2,-1).
 \]
 They come respectively from a forward summand at $k=rn$, a triple
-pole at $j=rn$, and the scalar~\eqref{eq:paired-lambda}. For the
+pole at $j=rn$, and the scalar~\eqref{eq:paired-lambda}. We sample only
+integer $r$: $0,\ldots,14$ for the forward sum and $3,\ldots,9$ for
+the triple poles. For the
 specified estimates an optimistic ceiling on the quarter's lower
 valuation bound for $Q_n^a$ is
 \begin{equation}\label{eq:paired-ceiling}
- U_t(x)=\max\left\{\min_{0\leq r\leq14}f_t(x,r),\quad
-          \varphi_t(x)+2\min_{3\leq r\leq9}\nu_t(x,r)-1\right\}.
+ U_t(x)=\max\left\{\min_{r\in\{0,\ldots,14\}}f_t(x,r),\quad
+          \varphi_t(x)+2\min_{r\in\{3,\ldots,9\}}\nu_t(x,r)-1\right\}.
 \end{equation}
 Indeed, restricting a minimum to selected terms makes it larger.
 The two dual rows contributing to $Q$ have lower bounds at most the

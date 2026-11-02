@@ -12,7 +12,7 @@ Let $E=t\,\mathrm d/\mathrm dt$, $g(t)=t/(1+t^2)$, and
 \[
  J(R)=\frac16\int_0^1(-\log t)^3R(t)\frac{\dd t}{t}.
 \]
-If $H$ is rational, regular on $[0,1]$, and $H(t)=O(t)$ at zero,
+If $H\in\Q(t)$ is regular on $[0,1]$ and $H(t)=O(t)$ at zero,
 put $h(z)=H(e^{-z})$. Then $E=-\mathrm d/\mathrm dz$, and
 $J(E^4H)=\frac16\int_0^\infty z^3h^{(4)}(z)\dd z$.
 Four integrations by parts leave $h(0)=H(1)$; the other boundary
@@ -25,7 +25,7 @@ This isolates the target exactly, but imposes no favorable arithmetic
 bound on the coefficient $A$.
 
 Put $F(y)=\sum_{k\geq0}(-1)^ky^k/(2k+1)^4$. Let
-$Q(y)=\sum_{j=0}^d q_jy^j$ have no zero on $[0,1]$, and let $C_m$
+$Q(y)=\sum_{j=0}^d q_jy^j\in\Q[y]$ have no zero on $[0,1]$, and let $C_m$
 be the Taylor polynomial of $QF$ through degree $m-1$. The choice
 $H(t)=-AtC_m(t^2)/Q(t^2)$ cancels the first $m$ odd coefficients
 of $Ag+E^4H$: indeed $E^4(tF(t^2))=g(t)$, and
@@ -53,7 +53,7 @@ $\log(u_n+v_n)=o(n)$. Set
 $P_n(y)=y^n(u_n-v_ny)^n$ and let $L_n>0$ be the value of its
 primitive formal pair under~\eqref{eq:formal-pair}. Then
 \[
- \liminf_{\substack{n\to\infty\\n\ {m even}}}
+ \liminf_{\substack{n\to\infty\\n\ \text{even}}}
  \frac{\log L_n}{n}
  \geq\frac83-\log(5+4\sqrt2)>0.
 \]
@@ -111,10 +111,10 @@ The exceptional sum is at most $\log(u+v)=o(n)$.
 \end{proof}
 
 It suffices more generally that the displayed exceptional prime sum
-be $o(n)$. The theorem does not cover odd $n$, different osculation
-lengths, general denominator polynomials, or sums of these forms.
-The source-level statement is weaker: if $H=P/Q$ has integer
-coefficients and $p\nmid Q(0)$, cancellation of the first $m$ odd
+be $o(n)$. The theorem does not cover odd $n$, different numbers of
+cancelled Taylor coefficients, general denominator polynomials, or sums
+of these forms. The source-level statement is weaker: if $H=P/Q$ with
+$P,Q\in\Z[t]$ and $p\nmid Q(0)$, cancellation of the first $m$ odd
 coefficients forces
 $v_p(A)\geq4\max_{k<m}v_p(2k+1)$. This follows coefficientwise from
 $A(-1)^k+(2k+1)^4[t^{2k+1}]H=0$. It does not by itself control

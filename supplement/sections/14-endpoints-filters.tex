@@ -17,7 +17,7 @@ For a source $f$ put
 \[
  \mathcal I(f)=\frac16\int_0^1f(x)(-\log x)^3\dd x.
 \]
-Fix $N\geq1$, positive $a,b$ with $a+b=2N$, and a quadratic
+Fix integers $N\geq1$, $a,b\geq1$ with $a+b=2N$, and a quadratic
 $D\in\Z[x]$ with $D(0)=1$ and no zero on $[0,1]$.
 Seek $A\in\Q$ and $R\in\Q[x]$, $\deg R\leq2N$, $R(0)=0$,
 such that, with $G=R/D^N$,
@@ -120,7 +120,7 @@ $\eta_0=\theta$. Multilinearity therefore gives
 All lower-period endpoint derivatives disappear through repeated columns.
 The identity is valid even when $K$ is singular.
 
-A useful factorial normalization changes neither primitive pair.
+A useful factorial normalization leaves the primitive endpoint pair unchanged.
 With $d_b=\operatorname{lcm}(1,\ldots,b)$,
 $d_b^kK_{rk}/b!$ is integral: expand
 $L(z)/b!=\binom{z-a-1}{b}$ at an integer by Vandermonde's identity,
@@ -170,7 +170,7 @@ matrix size. The endpoint factor is essential to this conclusion.
 For matrix order $n$, delete every odd prime $y<p\leq2n$.
 The surviving prefix through degree $2n$ is cleared by
 \[
- D_{y,2n}=\prod_{\substack{p\leq\min(y,2n)\\p\ {m odd}}}
+ D_{y,2n}=\prod_{\substack{p\leq\min(y,2n)\\p\ \text{odd}}}
               p^{4\lfloor\log_p(2n)\rfloor}.
 \]
 Scaling the bordered matrix gives a sufficient overall multiplier
@@ -191,7 +191,8 @@ new singularities. Neither the analytic bound nor the nonvanishing
 subsequence for a fixed germ can simply be reused for this varying family.
 
 \subsection{A sparse family whose tiny determinant factor cancels}
-There is a useful explicit test of the last warning. Let $M=3^k$,
+There is a useful explicit test of the last warning. For an integer
+$k\geq1$, let $M=3^k$,
 $n=M-1$, and delete every odd prime at most $B\geq2n$ except 3.
 The coefficient prefix is $r(t)+ct^M$, where
 \[

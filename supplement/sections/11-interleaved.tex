@@ -108,11 +108,9 @@ below; it does not specialize $X$ to $\theta$.
 \subsection{Isolating the four negative prime layers}
 Suppose $p>3$ and $p^2>4M$. Separate the multiples of $p$ in each tail:
 \begin{align*}
- H_\ell(a;p)&=\sum_{\substack{t>0\ {
-m odd}\\pt<4a}}
+ H_\ell(a;p)&=\sum_{\substack{t>0\ \text{odd}\\pt<4a}}
                   \frac{\chi_4(t)}{t^\ell},&
- U_\ell(a;p)&=\sum_{\substack{0<n<4a\ {
-m odd}\\p\nmid n}}
+ U_\ell(a;p)&=\sum_{\substack{0<n<4a\ \text{odd}\\p\nmid n}}
                   \frac{\chi_4(n)}{n^\ell},\\
  S_\ell(a)&=\chi_4(p)p^{-\ell}H_\ell(a;p)+U_\ell(a;p).
 \end{align*}
@@ -124,6 +122,8 @@ $n\mapsto4p-n$ gives, respectively,
  U_3(a+p)\equiv U_3(a),\qquad
  U_3(p-a)\equiv-U_3(a),\qquad U_3(pk)\equiv0\pmod p.
 \]
+The reflection identity is stated for $0\leq a\leq p$; periodicity
+extends it to the corresponding residue classes.
 Consequently the matrix obtained by replacing $S_\ell$ by $U_\ell$
 in~\eqref{eq:frame-entry} is $p$-integral. When $a\equiv\pm b\ne0$
 the numerator cancels the factor of $p$ in $b^2-a^2$; when
