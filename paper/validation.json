@@ -1,23 +1,23 @@
 {
   "status": "passed",
-  "recorded_at_utc": "2026-11-02T13:22:27.037114+00:00",
-  "scope": "Current editorial revision: distinguish the shared Gram-matrix and primitive-normalization framework from the two rules for forming entries, and identify the divided-difference and integral descriptions as descriptions of the same first matrix. Rebuild, confirm formal statements, proofs and numbered displays unchanged, compare page renders and inspect every changed page. Earlier mathematical and reproduction checks retain their stated historical scopes.",
+  "recorded_at_utc": "2026-11-02T13:32:13.551091+00:00",
+  "scope": "Current editorial revision: replace the compressed statement about infinite families and coefficient cancellation with the approved explicit wording about matrix sizes, offsets and common integer coefficient factors. Confirm this is the only source change, rebuild, compare page renders and inspect the changed page. Earlier mathematical and reproduction checks retain their stated historical scopes.",
   "source_files_match_build_record": 1,
-  "build_record_sha256": "882cbd4306c836afac4397ae5c734894a4234e19e32f73ef5872cd8201e6c1f0",
+  "build_record_sha256": "2225a60ccb1cd8703bcf3d641d136ce07ef0920c789d2327dc73c4bd1aff0b29",
   "pdf": "output/pdf/beta4-determinant-obstructions.pdf",
-  "pdf_sha256": "0291a1f9145ca1721ee3e44b2b4eb3377b05ccb089a4494d1455e27086892330",
+  "pdf_sha256": "100151fa64561edaac732a8211c7e586915c2812568eb595094d82fb279a2dd9",
   "pages": 21,
   "visual_inspection": {
     "pages_inspected": [
+      3
+    ],
+    "rendering": "Poppler, 100 dpi. The changed page was inspected; the other twenty pages are pixel-identical to the previously inspected PDF.",
+    "pixel_identical_pages": [
       1,
-      3,
+      2,
       4,
       5,
-      6
-    ],
-    "rendering": "Poppler, 100 dpi. All five changed pages inspected; the other sixteen pages are pixel-identical to the previously inspected PDF.",
-    "pixel_identical_pages": [
-      2,
+      6,
       7,
       8,
       9,
@@ -338,7 +338,7 @@
   "independent_audit_of_assembled_draft": false,
   "formal_verification": false,
   "source": "paper/beta4-determinant-obstructions.tex",
-  "source_sha256": "fac3499f5b5e10cdf2d236d7c1970ddc6dc53641ee67d8434f0fc37642f61a95",
+  "source_sha256": "d5662f768f07e1e8dc48444d260905a2c5774b81495898231608bb297f7901de",
   "historical_statement_preservation": {
     "baseline_commit": "local-prepublication-revision",
     "formal_statements_unchanged_in_document": 11,
@@ -710,6 +710,39 @@
       ],
       "pixel_identical_pages": [
         2,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "pages": 21,
+      "calculation_suites_rerun": false,
+      "independent_mathematical_audit": false
+    },
+    {
+      "change": "Replace the compressed sentence about infinite families and coefficient cancellation with the approved explanation of arbitrary matrix sizes, all first-family offsets and removal of every common integer coefficient factor.",
+      "baseline_commit": "local-prepublication-revision",
+      "only_requested_wording_changed": true,
+      "changed_pages_inspected": [
+        3
+      ],
+      "pixel_identical_pages": [
+        1,
+        2,
+        4,
+        5,
+        6,
         7,
         8,
         9,
