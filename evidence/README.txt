@@ -1,10 +1,12 @@
 EVIDENCE SNAPSHOT
 31 October 2026
 
-The research/ directory contains 120 byte-for-byte copies from the original
-beta4 working archive. They total about 1.7 MB. manifest.json records the
-original relative path, size and SHA256 of each copy. The original files
-were not moved, rewritten or deleted.
+The research/ directory contains 120 selected records from the original
+beta4 working archive. They total about 1.7 MB. Personal home-directory
+prefixes are represented as /home/research in the published text records.
+The mathematical statements, calculation scripts and results are unchanged.
+manifest.json records the original relative path and the size and SHA256
+of each published copy. The private originals were not modified.
 
 The selection includes all eighteen coordinated reports, the archive map,
 the underlying proofs referenced by the inventory, the existing model review
@@ -31,8 +33,9 @@ stage, not current instructions or final mathematical conclusions.
 The two selected mathematical proofs were read in the initial selection
 pass. Their archived calculations were not rerun at that stage. The later
 main-paper drafting pass reran the relevant checks in scratch copies and
-recorded the results in checks/reproduction.json. All 120 snapshots remain
-unchanged. Hash and reference checks are packet checks; model cross-checks,
+recorded the results in checks/reproduction.json. That pass preserved all
+120 snapshots; the later publication normalization affects paths only.
+Hash and reference checks are packet checks; model cross-checks,
 exact finite calculations and interval computations retain their separate
 statuses. Nothing here is proof-assistant verification or a priority certificate.
 
@@ -56,10 +59,11 @@ not be replaced by values from an earlier incomplete content reduction.
 
 Supplement additions (31 October 2026)
 -------------------------------------
-Seven additional verbatim files are separately inventoried in
+Seven additional archived files are separately inventoried in
 supplement-manifest.json, under supplement-source/. They supply three
 selected calculation scripts and their original outputs, plus the actual
 modular-prefactor pole note. The M03 inventory link previously pointed to
 the separate Euler--Boole report and has been corrected. The original
-120-file manifest and all of its snapshots remain unchanged. The supplement
-runner uses temporary copies; fresh outputs are in checks/supplement-results/.
+120-file selection was preserved. Both manifests now give hashes for the
+published copies after path normalization. The supplement runner uses
+temporary copies; fresh outputs are in checks/supplement-results/.

@@ -73,13 +73,18 @@ for row in manifest['files']:
     total_bytes += len(raw)
     if args.archive_root:
         original = args.archive_root / row['archive_relative_path']
-        require(original.is_file() and original.read_bytes() == raw,
+        original_bytes = (original.read_bytes().replace(
+            str(Path.home()).encode(), b'/home/research')
+            if original.is_file() else None)
+        require(original_bytes == raw,
                 f'original differs or is missing: {original}')
 
 pdfs_checked = 0
 if args.check_local_pdfs:
     for s in reading['sources']:
         p = Path(s['local_path'])
+        if p.is_relative_to('/home/research'):
+            p = Path.home() / p.relative_to('/home/research')
         require(p.is_file(), f"missing PDF {s['id']}: {p}")
         require(hashlib.sha256(p.read_bytes()).hexdigest() == s['sha256'],
                 f"PDF hash mismatch {s['id']}")

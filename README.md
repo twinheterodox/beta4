@@ -26,7 +26,7 @@ The [reproduction instructions and results](checks/README.md) distinguish main-p
 - [Theorem inventory](planning/theorem-inventory.txt): 57 grouped claims, with precise scope, evidence, reading status and proposed placement.
 - [Novelty audit](planning/novelty-audit.txt): established ingredients, closest primary comparisons, candidate contributions and unresolved priority questions.
 - [Method catalog](planning/method-catalog.txt): coverage of all 12 method groups and 18 coordinated research rounds, including repaired and superseded conclusions.
-- [Evidence guide](evidence/README.txt): 120 original verbatim snapshots and seven supplemental source files, including proofs, review records and selected calculation scripts/results.
+- [Evidence guide](evidence/README.txt): 120 archived records and seven supplemental source files, including proofs, review records and selected calculation scripts/results. Personal filesystem paths are normalized in the published copies.
 - [Source and reading record](sources/reading-record.json): versions, local PDF locations, checksums, reading scopes and unread dependencies.
 - [Original paper plan](planning/paper-plan.txt) and [opening proposal](planning/draft-opening.txt): the selection-stage documents retained in the history.
 
@@ -59,6 +59,6 @@ python3 tools/render_supplement_register.py
 python3 tools/build_supplement.py
 ```
 
-The repository includes the evidence and certificates needed by these instructions; the original working archive is not required. Source ledgers retain URLs, hashes and local paths from the research environment. Third-party paper PDFs are not redistributed. The validator's optional `--archive-root` and `--check-local-pdfs` flags are for comparisons in that original environment. Historical audit records retain the directory layout and publication status at the time they were written.
+The repository includes the evidence and certificates needed by these instructions; the original working archive is not required. Source ledgers retain URLs, hashes and local paths with the home directory represented as `/home/research`. Third-party paper PDFs are not redistributed. The validator's optional `--archive-root` and `--check-local-pdfs` flags are for comparisons in the original environment; they account for this path normalization. Historical audit records retain the publication status and checking results at the time they were written; references to private prepublication commits are omitted.
 
 The original material in this repository is licensed under [Apache 2.0](LICENSE); cited works retain their own terms.
