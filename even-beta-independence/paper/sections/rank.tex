@@ -1,0 +1,302 @@
+\section{The weak rank condition}\label{sec:rank}
+
+The size estimates are now available, but Proposition~\ref{prop:criterion}
+also requires the weak rank condition \eqref{eq:weak-rank}. We prove it
+first for the derivative rows $Q_k^{[p]}(-1)$, before removing the odd
+columns. Section~\ref{sec:conclusion} then passes it to the integer forms
+in even beta values.
+The rows have zero entries for $i>b+h$: this holds for $C^{[p]}$ and
+is preserved by \eqref{eq:Q}. We can therefore work with the system
+truncated at component $b+h$.
+
+The proof adapts \cite[Section~4.5]{F26}. A forbidden kernel vector would
+give solutions whose polynomial combinations have many vanishing
+derivatives at $-1$. We convert these into remainders for a single
+polynomial row, prove that the remainders are independent, and apply
+Proposition~\ref{prop:multiplicity} to contradict their total vanishing.
+The inequality below is the one obtained from that final count.
+
+\begin{proposition}\label{prop:rank}
+Assume
+\begin{equation}\label{eq:rank-condition}
+ (h+1)(\kappa-2r)+\omega>a.
+\end{equation}
+For all sufficiently large admissible $n$, if
+$x_0,\ldots,x_{b+h}\in\Q$ satisfy
+\[
+ \sum_{i=0}^{b+h}Q_{k,i}^{[p]}(-1)x_i=0
+ \quad(0\leq p\leq h,\quad 2M+2\leq k\leq\kappa n),
+\]
+then $x_0=0$.
+\end{proposition}
+
+\subsection{Taylor corrections and a common polynomial row}
+
+Suppose $x_0\neq0$, and scale so that $x_0=1$.
+Let $g_0,\ldots,g_{b+h}$ solve \eqref{eq:base-system} near $-1$ with
+$g_i(-1)=x_i$. In particular $g_0=1$.
+The kernel equations say that certain high derivatives of
+$\sum_i C_i^{[p]}g_i$ vanish at $-1$. To turn this into a zero of high
+order, we must also remove the lower Taylor coefficients.
+Choose $T_p\in\Q[z]$ of degree at most $2M$ to cancel the Taylor polynomial
+through degree $2M$ of $\sum_i C_i^{[p]}g_i$ at $-1$.
+The universal identity \eqref{eq:universal-row} and the assumed vanishing
+of the higher derivatives give
+\begin{equation}\label{eq:f-zero}
+ f_p(z):=T_p(z)+\sum_{i=1}^{b+h}C_i^{[p]}(z)g_i(z)
+          =O((z+1)^{\kappa n}).
+\end{equation}
+The derivatives of orders $0,\ldots,2M$ vanish by the choice of $T_p$;
+those of orders $2M+1,\ldots,\kappa n-1$ vanish by hypothesis.
+
+The functions $f_p$ still have different coefficient rows. The
+multiplicity theorem instead needs one fixed polynomial row applied to
+several solutions of the same system. Following Fischler, we arrange
+this by combining the $f_p$ with powers of a local branch
+$L(z)=-\log z$ near $-1$:
+\[
+ \rho_q(z)=\sum_{p=0}^q\binom qp L(z)^{q-p}f_p(z)
+ \qquad(0\leq q\leq h).
+\]
+Each $\rho_q$ retains the zero of order at least $\kappa n$ at $-1$.
+The common polynomial row will have $h+1$ entries for the corrections
+$T_p$ and $b$ entries for the original polynomials $P_i$:
+\begin{equation}\label{eq:S-common}
+ S_i(z)=
+ \begin{cases}
+ T_{h-i}(z)/(h-i)!,&0\leq i\leq h,\\
+ z^M P_{i-h}(z),&h+1\leq i\leq b+h,
+ \end{cases}
+\end{equation}
+The dependence on $q$ is placed in the solution vectors. Define
+\begin{equation}\label{eq:Yq}
+ y_{i,q}(z)=
+ \begin{cases}
+ 0,&i<h-q,\\[2pt]
+ \displaystyle\frac{q!}{(i+q-h)!}L(z)^{i+q-h},&h-q\leq i\leq h,\\[6pt]
+ \displaystyle\sum_{p=0}^q\binom qp L(z)^{q-p}
+            (-1)^p(i-h)_p g_{i-h+p}(z),&i>h.
+ \end{cases}
+\end{equation}
+Then $\rho_q=\sum_i S_i y_{i,q}$.
+All vectors $Y_q=(y_{0,q},\ldots,y_{b+h,q})$ solve the same system
+\begin{align}
+ y_0'&=0,\notag\\
+ y_i'&=-y_{i-1}/z &&(1\leq i\leq h),\notag\\
+ y_{h+1}'&=\frac{2}{z(1-z)}y_h-\frac1{2z}y_{h+1},
+                                                   \label{eq:enlarged-system}\\
+ y_i'&=-y_{i-1}/z-y_i/(2z) &&(i\geq h+2).\notag
+\end{align}
+The first $h+1$ components are powers of $L$; the components with $i>h$
+contain the original solution $g$.
+On differentiating the latter components, terms from the derivatives of
+$L^{q-p}$ combine with those from the derivatives of $g_{i-h+p}$.
+After reindexing, their coefficients simplify by the identity
+\[
+ (j)_p-p(j)_{p-1}=(j-1)_p
+ \qquad(j\geq2,\ p\geq1).
+\]
+The $p=0$ factor is $1$. This gives the equation at index $i=h+j$.
+When $j=1$, the corresponding factors vanish for $p\geq1$; the remaining
+source is $2L^q/[z(1-z)]$, giving the equation for $y_{h+1}$.
+The diagonal term remains $-y_i/(2z)$ in every summand.
+The equations for $i\leq h$ follow by differentiating powers of $L$.
+
+\subsection{Quadratic change of variable}
+
+The common diagonal term $-y_i/(2z)$ in the components $i>h$ can be
+removed by multiplying those components by $\sqrt z$. We introduce
+$w$ with $z=w^2$ so that this change is rational in the new variable
+and the coefficient row remains polynomial. Set
+\[
+ v_i(w)=
+ \begin{cases}
+ y_i(w^2),&i\leq h,\\
+ w\,y_i(w^2),&i>h.
+ \end{cases}
+\]
+The diagonal terms cancel, leaving
+\begin{align}
+ v_0'&=0,\notag\\
+ v_i'&=-2v_{i-1}/w &&(i\geq1,\ i\neq h+1),\label{eq:lifted-system}\\
+ v_{h+1}'&=4v_h/(1-w^2).\notag
+\end{align}
+The common coefficient polynomials become
+\begin{equation}\label{eq:lifted-polynomials}
+ \widetilde S_i(w)=
+ \begin{cases}
+ S_i(w^2),&i\leq h,\\
+ w^{2M-1}P_{i-h}(w^2),&i>h.
+ \end{cases}
+\end{equation}
+Their degrees are at most $4M$: those with $i\leq h$ have degree at
+most $4M$, and those with $i>h$ have degree at most
+$2(M+n)-1\leq4M-1$.
+For the solutions obtained from $Y_q$, the remainder
+$\sum_i\widetilde S_i v_i$ equals $\rho_q(w^2)$.
+It vanishes to order at least $\kappa n$ at each of $\ii$ and $-\ii$.
+
+The change of variable increases the polynomial degrees, but it also
+gives two points at which to count the high-order zeros.
+The same polynomials \eqref{eq:lifted-polynomials} are used at both
+points; only the local solution families differ.
+This is why the Taylor corrections were constructed in $z$ before
+making the change of variable.
+
+\subsection{Independence by residues}
+
+To count these zeros with Proposition~\ref{prop:multiplicity}, we must
+know that no nonzero constant combination of the $h+1$ remainders
+vanishes identically. The triangular form of the new system makes this
+possible. Each derivative link has a nonzero residue, whereas the
+derivative of a rational function has zero residue at every finite point.
+The following lemma uses this to rule out rational-function relations
+between successive components. It abstracts the argument in
+\cite[Section~4.5, Step~4]{F26}. Different links of the system may use
+different finite poles.
+
+\begin{lemma}\label{lem:chain}
+Suppose $v_0$ is a nonzero constant and
+$v_j'=a_j(w)v_{j-1}$ for $1\leq j\leq t$, where each rational function
+$a_j$ has a nonzero residue at some finite point.
+Then $v_0,\ldots,v_t$ are linearly independent over $\C(w)$.
+\end{lemma}
+
+\begin{proof}
+Clear the denominators of a putative rational relation and write it as
+$\sum_{i=0}^{\alpha}U_i v_i=0$, with $U_\alpha\neq0$ and $\alpha\geq1$.
+Let $D=\deg U_\alpha$. Differentiating $D+1$ times eliminates
+$v_\alpha$. The coefficient of $v_{\alpha-1}$ is
+\begin{equation}\label{eq:residue-coefficient}
+ U_{\alpha-1}^{(D+1)}
+   +\sum_{j=0}^{D}(a_\alpha U_\alpha^{(j)})^{(D-j)}.
+\end{equation}
+This follows by differentiating $U_\alpha v_\alpha$ successively and
+retaining the two highest components.
+All summands except $j=D$ are derivatives of rational functions; the
+first term is a polynomial. They have zero residue at every finite point.
+The remaining residue is $U_\alpha^{(D)}\Res(a_\alpha)$, nonzero at a
+suitable point. Thus \eqref{eq:residue-coefficient} is not the zero
+function. Clearing denominators gives a polynomial relation with
+nonzero highest coefficient at index $\alpha-1$.
+Descent eventually gives a nonzero polynomial times the nonzero
+constant $v_0$ equal to zero, a contradiction.
+\end{proof}
+
+In \eqref{eq:lifted-system}, the link $-2/w$ has residue $-2$ at $0$,
+and $4/(1-w^2)$ has residue $-2$ at $1$.
+Consider a nonzero constant combination of the solutions $Y_q$.
+If $q_0$ is the largest index with nonzero coefficient, its first
+nonzero component is at index $h-q_0$ and is a nonzero constant,
+by \eqref{eq:Yq}. This component remains constant after the change
+of variable and rescaling.
+Lemma~\ref{lem:chain}, starting at that index, shows that the remainder
+cannot vanish identically, because its highest coefficient
+$\widetilde S_{b+h}=w^{2M-1}P_b(w^2)$ is nonzero.
+Thus the $h+1$ high-order remainders are linearly independent at
+each of $\ii$ and $-\ii$.
+
+\subsection{The other local remainders}
+
+We also need remainders at $0$, infinity and $\pm1$. These will come from
+solutions whose first $h+1$ components vanish. The remaining equations
+then integrate to powers of a logarithm. Their combined orders at $0$
+and infinity will be independent of $M$, while one of them will inherit
+additional zeros at $\pm1$ from the decay of $F_n$.
+
+For $j=1,\ldots,b$, system \eqref{eq:lifted-system} has a solution
+whose components below $h+j$ vanish and whose remaining components are
+\[
+ \widetilde v_{i,j}(w)
+     =\frac{(-\log(w^2))^{i-h-j}}{(i-h-j)!}
+     \qquad(i\geq h+j).
+\]
+Its remainder is
+\begin{equation}\label{eq:homogeneous-remainders}
+ \widetilde\rho_j(w)=w^{2M-1}
+       \sum_{i=j}^bP_i(w^2)
+            \frac{(-\log(w^2))^{i-j}}{(i-j)!}.
+\end{equation}
+These $b$ remainders are independent.
+In a nonzero constant relation, the least index $j$ with nonzero
+coefficient supplies the unique highest logarithmic degree, with a
+nonzero coefficient proportional to $P_b$.
+This is impossible because $\log(w^2)$ is transcendental over $\C(w)$.
+
+At $0$, each remainder has order at least $2M-1$; at infinity its order
+is at least $-2(M+n)+1$.
+
+For the zeros at $\pm1$, consider
+\begin{equation}\label{eq:Rn-zero}
+ R_n(z):=\sum_{i=1}^b P_i(z)\frac{(-\log z)^{i-1}}{(i-1)!}
+       =O((z-1)^{\omega n-1})
+\end{equation}
+near $1$, on the branch $\log1=0$.
+The asserted order is another form of the vanishing of $F_n$ at infinity.
+Indeed, the partial fractions give the Laplace-transform identity
+\[
+ F_n(t)=\int_0^\infty e^{-tu}
+       \sum_{i=1}^b P_i(e^{-u})\frac{u^{i-1}}{(i-1)!}\dd u
+ \qquad(t>0).
+\]
+If the analytic function multiplying $e^{-tu}$ is $G(u)$, the coefficient
+of $t^{-k-1}$ is $G^{(k)}(0)$. Proposition~\ref{prop:rational} therefore
+implies that $G$ vanishes to order at least $\omega n-1$. Since
+$G(u)=R_n(e^{-u})$, this proves \eqref{eq:Rn-zero}.
+This is the observation used in \cite[Sections~3.5 and~4.5]{F26}.
+
+Now $\widetilde\rho_1(w)=w^{2M-1}R_n(w^2)$.
+At each of $w=1$ and $w=-1$, choose the local branch for which
+$\log(w^2)=0$ at that point. The map $w\mapsto w^2$ has nonzero
+derivative there, so \eqref{eq:Rn-zero} gives order at least
+$\omega n-1$ at each point.
+These two local branches need not be restrictions of a single global
+branch; Proposition~\ref{prop:multiplicity} allows the different local
+solutions.
+
+\subsection{Counting the orders}
+
+Apply Proposition~\ref{prop:multiplicity} with
+\[
+ \Sigma=\{0,\infty,1,-1,\ii,-\ii\},\qquad m=4M
+\]
+to \eqref{eq:lifted-system} and \eqref{eq:lifted-polynomials}.
+The system is regular singular: its matrix has only simple finite poles
+and is $O(1/w)$ at infinity. Its solutions therefore have the required
+Nilsson expansions.
+The constructed families give the following bounds.
+\begin{center}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Point & Independent remainders & Order of each, at least\\
+\midrule
+Each of $\ii,-\ii$ & $h+1$ & $\kappa n$\\
+$0$ & $b$ & $2M-1$\\
+$\infty$ & $b$ & $-2(M+n)+1$\\
+Each of $1,-1$ & $1$ & $\omega n-1$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+There is a common rational differential operator of order
+$\mu\leq b+h+1$ annihilating all remainders.
+Differentiating a remainder iterates the operation
+$S\mapsto S'+S\matA$ on a row of length $b+h+1$; its first $b+h+2$
+iterates are rationally dependent.
+Since the $b$ remainders at infinity are independent, $\mu\geq b$.
+The multiplicity estimate gives
+\begin{align*}
+ \bigl(2(h+1)\kappa-2b+2\omega\bigr)n-2
+   &\leq(4rn+1)(\mu-b)+C\\
+   &\leq(4rn+1)(h+1)+C.
+\end{align*}
+The constant depends only on the system and $\Sigma$.
+The finitely many possibilities $1\leq b\leq a$ allow a uniform constant,
+even when $b$ varies with $n$.
+Dividing the last inequality by $2n$ would give
+\[
+ (h+1)(\kappa-2r)+\omega\leq b+o(1)\leq a+o(1).
+\]
+This contradicts \eqref{eq:rank-condition} for sufficiently large $n$
+and proves Proposition~\ref{prop:rank}.
+

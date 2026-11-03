@@ -1,0 +1,20 @@
+{
+  "distinct_products_lcm_checks": 52,
+  "fundamental_matrix_route_comparisons": 2304,
+  "nonzero_coefficients_compared": 1204,
+  "taylor_depth": 7,
+  "max_taylor_order": 36,
+  "enlarged_system_symbolic_identities": 100,
+  "pullback_and_residue_checks": 3,
+  "descending_residue_identities": 12,
+  "constant_certificate": {
+    "log_lower": "753114459111884487225644939696932713875971793033276834896775552/553363288220835205777494909307713877862954255822400617330837775",
+    "log_upper": "3012457842721143971927901689146116259358437248288124914612635873/2213453152883340823109979637230855511451817023289602469323351100",
+    "sqrt_upper": "1167/1000",
+    "constant_lower": "3765572295559422436128224698484663569379858965166384174483877760000/17328482349264545011398169914510522305545167570803145333968630899719",
+    "constant_lower_decimal_diagnostic": 0.21730537156470836,
+    "greater_than_0_21_exact": true,
+    "rank_slope_greater_than_1_exact": true
+  },
+  "status": "Exact finite supporting checks; same assistant; not formal or independent mathematical verification."
+}

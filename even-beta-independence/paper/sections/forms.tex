@@ -1,0 +1,152 @@
+\section{Half-integer sums and their differential system}\label{sec:forms}
+
+We now turn the rational function of Proposition~\ref{prop:rational}
+into linear forms in beta values. First we identify the functions whose
+values at $-1$ give the required even arguments. We then express the sums
+of $F_n$ in terms of those functions and remove the finite corrections
+by differentiation.
+
+\subsection{The functions at the evaluation point}
+
+The half-integer denominators are chosen so that alternating signs give
+the beta series: $(t+\tfrac12)^{-j}=2^j(2t+1)^{-j}$.
+For $j\geq1$, put
+\[
+ \Phi_j(z)=\sum_{t=0}^{\infty}\frac{z^t}{(t+\tfrac12)^j}
+ \qquad(|z|<1).
+\]
+The integral
+\begin{equation}\label{eq:Phi-integral}
+ \Phi_j(z)=\frac1{(j-1)!}\int_0^1
+       \frac{x^{-1/2}(-\log x)^{j-1}}{1-zx}\dd x
+\end{equation}
+continues it to $\C\setminus[1,\infty)$.
+In particular, the series or its Abel limit gives
+$\Phi_j(-1)=2^j\beta(j)$, including $j=1$.
+
+We still need to remove the odd arguments $j$. The positive and negative
+half-integer sums lead to functions at $z$ and $1/z$; we combine them as
+\[
+ H_j(z)=z^{-1}\Phi_j(1/z)-(-1)^j\Phi_j(z).
+\]
+Both terms are analytic near $-1$ by \eqref{eq:Phi-integral}.
+At that point the combination supplies the factor $1+(-1)^j$:
+\begin{equation}\label{eq:H-values}
+ H_j(-1)=-(1+(-1)^j)2^j\beta(j).
+\end{equation}
+Thus $H_j(-1)$ is zero for odd $j$ and is $-2^{j+1}\beta(j)$ for even $j$.
+
+Their derivatives are rational-function combinations of the same
+functions and the constant function. Let $\Phi_0(z)=1/(1-z)$.
+For any positive integer $d$, the identity
+$z\Phi_j'(z)=\Phi_{j-1}(z)-\Phi_j(z)/2$ implies that
+$(1,H_1,\ldots,H_d)$ is a solution of
+\begin{align}
+ y_0'&=0,\notag\\
+ y_1'&=\frac{2}{z(1-z)}y_0-\frac1{2z}y_1,\label{eq:base-system}\\
+ y_j'&=-\frac1z y_{j-1}-\frac1{2z}y_j \qquad(2\leq j\leq d).\notag
+\end{align}
+The coordinate $y_0$ represents the constant function $1$, which appears
+in the derivative of $H_1$. Since the coefficients have no pole at $-1$,
+arbitrary initial values there determine an analytic solution. We will
+use the beta-valued initial vector for the linear forms, and arbitrary
+initial vectors for the rank proof.
+
+\subsection{Summation and finite tails}
+
+From now on we assume $r\geq2$, and set $M=rn$.
+The sums start beyond this cutoff so that the decay estimates for $F_n$
+apply. To obtain several families of forms we use $F_n$ and its first
+$h$ derivatives, where $0\leq h\leq a$ is an integer. A derivative of
+order $p$ raises a denominator power $i$ to $i+p$, so we use the system
+\eqref{eq:base-system} with $d=a+h$.
+
+The powers of $z$ in the following definition align the two reflected
+sums with $H_j$. The factor $z^M$ makes the finite corrections polynomial,
+as the next lemma shows.
+For $0\leq p\leq h$ define, on the unit circle,
+\begin{equation}\label{eq:S}
+ S_{n,p}(z)=z^M\sum_{t=M}^{\infty}
+ \left\{F_n^{(p)}(t+\tfrac12)z^{-t-1}
+              -F_n^{(p)}(-t-\tfrac12)z^t\right\}.
+\end{equation}
+Here $F_n^{(p)}$ is differentiated with respect to its argument.
+Near $-1$ we continue the two tails separately, using the identity below.
+
+\begin{lemma}\label{lem:tail}
+Near $-1$ there is an identity
+\begin{equation}\label{eq:tail-decomposition}
+ S_{n,p}(z)=V_{n,p}(z)
+      +z^M\sum_{i=1}^b(-1)^p(i)_p P_i(z)H_{i+p}(z),
+ \qquad \deg V_{n,p}\leq2M-1.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Differentiate the partial fractions of $F_n$. For a fixed pair $i,j$
+write $s=i+p$ and change the summation index to $l=t+j$ in the positive
+tail, and to $l=t-j$ in the negative tail. The infinite parts give the
+corresponding term of \eqref{eq:tail-decomposition}. The finite correction
+is $(-1)^p(i)_p c_{i,j}$ times
+\begin{equation}\label{eq:finite-correction}
+ -\sum_{l=0}^{M+j-1}\frac{z^{M+j-l-1}}{(l+\tfrac12)^s}
+ +(-1)^s\sum_{l=0}^{M-j-1}\frac{z^{M+j+l}}{(l+\tfrac12)^s}.
+\end{equation}
+Since $0\leq j\leq n\leq M$, all exponents are nonnegative and at most
+$2M-1$. Summing these corrections proves the assertion.
+
+The positive and negative infinite tails are initially analytic on
+opposite sides of the circle. Each has the displayed continuation near
+$-1$ by \eqref{eq:Phi-integral}. For the derivative orders used below,
+the differentiated series converge absolutely on the circle; their
+values agree with the derivatives of the continuations by Abel limits.
+\end{proof}
+
+\subsection{Rows representing derivatives}
+
+Write the nonpolynomial part of \eqref{eq:tail-decomposition} as
+$\sum_i C_i^{[p]}H_i$. Its coefficient polynomials are
+\begin{equation}\label{eq:C}
+ C_0^{[p]}=0,\qquad
+ C_i^{[p]}(z)=
+ \begin{cases}
+ (-1)^p(i-p)_p z^M P_{i-p}(z),&p+1\leq i\leq p+b,\\
+ 0,&\text{otherwise}.
+ \end{cases}
+\end{equation}
+The degree of each is at most $M+n$.
+They have integer coefficients. We next track the coefficients produced
+by differentiating this expression. The system \eqref{eq:base-system}
+expresses every derivative in the same functions, so no additional
+special functions are needed.
+Starting with $Q_{1,i}^{[p]}=C_i^{[p]}$, the product rule gives
+\begin{align}
+ Q_{k+1,0}^{[p]}&=(Q_{k,0}^{[p]})'
+                   +\frac{2Q_{k,1}^{[p]}}{z(1-z)},\notag\\
+ Q_{k+1,i}^{[p]}&=(Q_{k,i}^{[p]})'
+                   -\frac{Q_{k,i}^{[p]}}{2z}
+                   -\frac{Q_{k,i+1}^{[p]}}z
+                    \qquad(1\leq i\leq d),                    \label{eq:Q}
+\end{align}
+where $Q_{k,d+1}^{[p]}=0$. The index $k=1$ corresponds to no
+differentiation; hence $Q_k^{[p]}$ represents the derivative of order
+$k-1$.
+For \emph{every} solution of \eqref{eq:base-system}, differentiation gives
+\begin{equation}\label{eq:universal-row}
+ \left(\sum_{i=1}^d C_i^{[p]}y_i\right)^{(k-1)}
+       =\sum_{i=0}^d Q_{k,i}^{[p]}y_i.
+\end{equation}
+For $k\geq2M+2$, the derivative also kills $V_{n,p}$, so
+\begin{equation}\label{eq:value-row}
+ \frac{S_{n,p}^{(k-1)}(-1)}{(k-1)!}
+  =\frac{Q_{k,0}^{[p]}(-1)}{(k-1)!}
+     +\sum_{i=1}^d\frac{Q_{k,i}^{[p]}(-1)}{(k-1)!}H_i(-1).
+\end{equation}
+Equation \eqref{eq:H-values} makes the right side a rational linear form
+in $1$ and the even beta values. Dividing by $(k-1)!$ turns the derivatives
+into Taylor coefficients, whose denominators we can control in the next
+section. The finite correction $V_{n,p}$ has disappeared, so its
+coefficient denominators do not have to be cleared.
+The universal identity \eqref{eq:universal-row}, valid for arbitrary
+initial values of the solution, will supply the rank argument.
+

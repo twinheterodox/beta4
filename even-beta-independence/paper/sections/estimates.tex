@@ -1,0 +1,108 @@
+\section{Sizes of coefficients and of linear forms}\label{sec:estimates}
+
+We now supply the two size bounds in Proposition~\ref{prop:criterion}.
+Both include the multiplier from Section~\ref{sec:arithmetic}: the forms
+must remain small after their coefficients have been made integral.
+We use derivatives of order exceeding the degree of the finite correction,
+while leaving enough decay in the tail for its sum to converge. Accordingly,
+assume
+\begin{equation}\label{eq:kappa-range}
+ 2r<\kappa<\omega,\qquad
+ 2M+2\leq k\leq\kappa n,\qquad 0\leq p\leq h.
+\end{equation}
+In addition to the integer conditions in Proposition~\ref{prop:rational},
+we require $\kappa n$ to be integral. We call such $n$ \emph{admissible}:
+$rn$, $\omega n$, $\Omega n$ and $\kappa n$ are all integers.
+We prove bounds uniform throughout the displayed range.
+
+\begin{proposition}\label{prop:estimates}
+Every coefficient of the integer form $\Lambda_{n,p,k}$ is at most
+$B^{n+o(n)}$ in absolute value, where
+\begin{equation}\label{eq:B}
+ \log B=\log\chi+(r+1)\log(3/2)
+                 +\kappa(\log8+\Ht_{a+h}).
+\end{equation}
+The values satisfy $|\Lambda_{n,p,k}|\leq\alpha^{n+o(n)}$, where
+\begin{equation}\label{eq:alpha}
+ \log\alpha=\log\chi-\Omega\log r
+                 +\kappa(1+\log4+\Ht_{a+h}).
+\end{equation}
+\end{proposition}
+
+The term $-\Omega\log r$ in \eqref{eq:alpha} supplies the decay;
+the other terms are costs from the coefficient bound, differentiation
+and denominators. Section~\ref{sec:conclusion} chooses the parameters so
+that $\log\alpha<0$ and compares this decay with $\log B$.
+
+\begin{proof}[Coefficient bound]
+On the disk $|z+1|\leq1/2$, the row-sum norm of the matrix in
+\eqref{eq:base-system} is at most $11/3$, since $|z|\geq1/2$ and
+$|1-z|\geq3/2$. Integrating along a straight segment from $-1$ gives
+$\|U(z+1)\|\leq e^{11/6}$.
+Equations \eqref{eq:coeff-small} and \eqref{eq:C} give
+\[
+ \max_i |C_i^{[p]}(z)|
+     \leq \exp(n\log\chi+o(n))(3/2)^{(r+1)n}
+\]
+on the same disk. The factors $(i)_p$ depend only on the fixed parameters,
+and the number of coefficients is polynomial in $n$.
+Cauchy's coefficient estimate therefore bounds
+$Q_{k,i}^{[p]}(-1)/(k-1)!$ by this expression times $2^{k-1}$ and a
+fixed constant. Multiply by $\Dt_{d,k-1}$.
+By monotonicity it is enough to bound $\Dt_{d,\kappa n}$, and
+\eqref{eq:D-rate} yields \eqref{eq:B}. The factors $2^{i+1}$ in
+\eqref{eq:H-values} are fixed while $n$ tends to infinity.
+\end{proof}
+
+\begin{proof}[Value bound]
+For real $x\geq M+1/2$ and $0\leq p\leq h$, we first claim
+\begin{equation}\label{eq:F-tail-bound}
+ |F_n^{(p)}(\pm x)|
+ \leq\exp(n\log\chi+o(n))\,r^{-\Omega n}(M/x)^{\omega n}.
+\end{equation}
+The Laurent series converges for $|t|>n$, because all poles lie among
+$0,-1,\ldots,-n$. Differentiation adds the factor
+$(\nu)_p x^{-p}$ to the bound for the $\nu$th term.
+For $\omega n\leq\nu<\Omega n$, combine \eqref{eq:laurent-bounds} as
+\[
+ r^{\nu-\Omega n}(n/x)^\nu
+       =r^{-\Omega n}(M/x)^\nu.
+\]
+There are $O(n)$ terms, with remaining factors bounded by a fixed power
+of $n$. For $\nu\geq\Omega n$, write
+$(n/x)^\nu=r^{-\nu}(M/x)^\nu$.
+The remaining tail is bounded by a polynomial in $n$ times
+$r^{-\Omega n}$, because $r\geq2$ and $a,p$ are fixed.
+This proves \eqref{eq:F-tail-bound}, uniformly in $x$ and $p$.
+
+Write $\ell=k-1$.
+After division by $\ell!$, the absolute derivatives at $-1$ of the
+monomials in \eqref{eq:S} are
+\[
+ \binom{t-M+\ell}{\ell},
+ \qquad
+ \binom{M+t}{\ell},
+\]
+where the second is zero if $M+t<\ell$.
+For $x=t+1/2$ and $\ell\geq2M+1$, both upper arguments are at most
+$(\ell/M)x$.
+The elementary bound $\binom{v}{\ell}\leq(ev/\ell)^\ell$ gives
+\[
+ \left|\frac{S_{n,p}^{(\ell)}(-1)}{\ell!}\right|
+ \leq \exp(n\log\chi+o(n))r^{-\Omega n}e^\ell
+       \sum_{t=M}^{\infty}
+           \left(\frac{M}{t+1/2}\right)^{\omega n-\ell}.
+\]
+The exponent $E=\omega n-\ell$ satisfies
+$E-1\geq(\omega-\kappa)n$. The sum is at most
+$1+M/(E-1)$ by comparison with an integral, so it is uniformly bounded.
+We obtain
+\[
+ \left|\frac{S_{n,p}^{(\ell)}(-1)}{\ell!}\right|
+ \leq\exp\bigl(n(\log\chi-\Omega\log r+\kappa)+o(n)\bigr).
+\]
+These bounds also justify the absolute convergence of the differentiated
+series used in Lemma~\ref{lem:tail}. Multiplication by
+$\Dt_{d,\ell}\leq\Dt_{d,\kappa n}$ proves \eqref{eq:alpha}.
+\end{proof}
+

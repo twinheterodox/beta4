@@ -1,0 +1,74 @@
+{
+  "fixtures": [
+    {
+      "p": 0,
+      "derivative_order": 4,
+      "beta_coefficients": [
+        "7/2",
+        "0",
+        "-5/3",
+        "0",
+        "-2"
+      ]
+    },
+    {
+      "p": 0,
+      "derivative_order": 5,
+      "beta_coefficients": [
+        "341/240",
+        "0",
+        "-89/120",
+        "0",
+        "-3/4"
+      ]
+    },
+    {
+      "p": 0,
+      "derivative_order": 6,
+      "beta_coefficients": [
+        "341/480",
+        "0",
+        "-89/240",
+        "0",
+        "-3/8"
+      ]
+    },
+    {
+      "p": 1,
+      "derivative_order": 4,
+      "beta_coefficients": [
+        "23/12",
+        "0",
+        "-17/6",
+        "0",
+        "2/3",
+        "0"
+      ]
+    },
+    {
+      "p": 1,
+      "derivative_order": 5,
+      "beta_coefficients": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "p": 1,
+      "derivative_order": 6,
+      "beta_coefficients": [
+        "-77/288",
+        "0",
+        "109/240",
+        "0",
+        "-3/20",
+        "0"
+      ]
+    }
+  ],
+  "status": "Exact two-route coefficient comparison; same-assistant implementation."
+}

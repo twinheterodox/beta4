@@ -1,0 +1,56 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype,booktabs,array}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\hypersetup{pdftitle={Linear independence of even Dirichlet beta values},
+ pdfauthor={},pdfsubject={Working mathematical draft; independently cross-checked by another model},
+ pdfcreator={LaTeX}}
+\setlength{\emergencystretch}{1em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\Res}{Res}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\Ht}{\mathsf H}
+\newcommand{\Dt}{\mathcal D}
+\newcommand{\matA}{\mathcal A}
+\newcommand{\Ocal}{\mathcal O}
+\title{Linear independence of even Dirichlet beta values}
+\author{\normalsize Research note prepared with Codex}
+\date{\small Working draft\\2 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Let $\beta(s)=1-3^{-s}+5^{-s}-\cdots$ denote the Dirichlet beta function.
+For all sufficiently large even integers $s$, we prove
+\[
+ \dim_{\Q}\Span_{\Q}\{\beta(2),\beta(4),\ldots,\beta(s)\}
+ \geq 0.21\sqrt{\frac{s}{\log s}}.
+\]
+\end{abstract}
+\input{paper/sections/introduction}
+\input{paper/sections/inputs}
+\input{paper/sections/forms}
+\input{paper/sections/arithmetic}
+\input{paper/sections/estimates}
+\input{paper/sections/rank}
+\input{paper/sections/conclusion}
+\input{paper/references}
+\end{document}
+

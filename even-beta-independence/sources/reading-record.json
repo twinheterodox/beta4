@@ -1,0 +1,135 @@
+{
+  "created_at_utc": "2026-11-03T01:23:39.539175+00:00",
+  "path_base": "Private beta4 research archive. Archive-relative paths below are provenance identifiers, not files distributed in this repository; use source_url or download_url to obtain the cited versions.",
+  "scope": "The seven references cited in the paper, with pinned versions, checksums and actual reading scopes. Third-party papers are not redistributed.",
+  "sources": [
+    {
+      "citation_key": "F18",
+      "title": "Shidlovskys multiplicity estimate and irrationality of zeta values",
+      "authors": "Stephane Fischler",
+      "version": "Author-hosted PDF of the 2018 article; version pinned by SHA256",
+      "sha256": "2bdee6c8a06a3591cbcc4bc9ad7868af04b05aebeed9bb41f44d58bcfb519446",
+      "source_url": "https://www.imo.universite-paris-saclay.fr/~fischler/caract.pdf",
+      "download_url": "https://www.imo.universite-paris-saclay.fr/~fischler/caract.pdf",
+      "retrieved_at_utc": "2026-10-30T17:20:23.250347+00:00",
+      "role_in_paper": "Supporting proof of the imported multiplicity theorem",
+      "actual_read_scope": "All 28 pages were read in the earlier review. Section 3.1, including its proof, was reread for the present draft. Local-family independence, uniformity in the polynomial row and different local choices were checked. Differential-Galois and global exponent-sum theorems are imported dependencies, not independently audited.",
+      "verification_status": "Read and used only to the stated scope; not independently or formally verified.",
+      "archive_relative_path": "literature/papers/Shidlovskys-multiplicity-estimate-and-irrationality-of-zeta-values_fischler-shidlovsky-2018.pdf",
+      "archive_text_relative_path": "literature/text/fischler-shidlovsky-2018.txt"
+    },
+    {
+      "citation_key": "F20",
+      "title": "Irrationality of values of L-functions of Dirichlet characters - October 2019 revision",
+      "authors": "Stephane Fischler",
+      "version": "Author revision dated 10 October 2019",
+      "sha256": "1177d05fdd7e96340813edad907a5bcbd404eeaa357a9affb7919091d51b1678",
+      "source_url": "https://www.imo.universite-paris-saclay.fr/~stephane.fischler/Lschi.pdf",
+      "download_url": "https://www.imo.universite-paris-saclay.fr/~stephane.fischler/Lschi.pdf",
+      "retrieved_at_utc": "2026-10-30T17:30:57.138945+00:00",
+      "role_in_paper": "Context only: previous logarithmic dimension bound",
+      "actual_read_scope": "Theorem 1 and its even-beta specialization were reread for the introduction. The earlier review compared Section 2 and its criterion with the arXiv version. The older criterion is not a proof input here; the full 2019 revision has not been independently audited.",
+      "verification_status": "Read and used only to the stated scope; not independently or formally verified.",
+      "archive_relative_path": "literature/papers/Irrationality-of-values-of-L-functions-of-Dirichlet-characters-October-2019-revision_fischler-lfunctions-2019-revised.pdf",
+      "archive_text_relative_path": "literature/text/fischler-lfunctions-2019-revised.txt"
+    },
+    {
+      "citation_key": "F26",
+      "title": "Linear independence of odd zeta values using Siegel’s lemma",
+      "authors": "Stéphane Fischler",
+      "version": "Author PDF dated 26 March 2026",
+      "sha256": "1576b611c8c0771fb63406274faf022898d568a085f243a469dda1c0f7ece7f5",
+      "source_url": "https://doi.org/10.1112/jlms.70535",
+      "download_url": "https://www.imo.universite-paris-saclay.fr/~stephane.fischler/siegel.pdf",
+      "retrieved_at_utc": "2026-11-02T21:14:36.423622+00:00",
+      "role_in_paper": "Proof inputs: Proposition 1, Theorems 3 and 4; LCM device, rank organization and numerical parameters",
+      "actual_read_scope": "Sections 1-4 of the 46-page author PDF were read in the preceding investigation. For this paper, the criterion, multiplicity statement, rational-function output and rank proof were reread; relevant coefficient/LCM estimates and the final parameter calculation were checked against the adaptation. The underlying differential-Galois and exponent-sum results remain imported.",
+      "verification_status": "Read and used only to the stated scope; not independently or formally verified.",
+      "archive_relative_path": "literature/papers/Linear-independence-of-odd-zeta-values-using-Siegels-lemma_Fischler_2026-03-26.pdf",
+      "archive_text_relative_path": "literature/text/Linear-independence-of-odd-zeta-values-using-Siegels-lemma_Fischler_2026-03-26.txt"
+    },
+    {
+      "citation_key": "M25",
+      "title": "Linear independence of values of Dirichlet $L$ functions",
+      "authors": "Ludovic Mistiaen",
+      "version": "2512.02612v1",
+      "sha256": "a10553ad0b221f9620b229943400cab24ed20876c2bf459d318c14806a08c65d",
+      "source_url": "https://arxiv.org/abs/2512.02612v1",
+      "download_url": "https://arxiv.org/pdf/2512.02612v1",
+      "retrieved_at_utc": "2026-11-02T21:11:40.033076+00:00",
+      "role_in_paper": "Context and route selection; not a proof input",
+      "actual_read_scope": "The introduction, Remark 3 and Section 2 conductor restriction were revisited. Selected construction, rank and criterion sections were read in the preceding investigation, as recorded in the library. The full estimates and optimization have not been audited.",
+      "verification_status": "Read and used only to the stated scope; not independently or formally verified.",
+      "archive_relative_path": "literature/papers/Linear-independence-of-Dirichlet-L-values_Mistiaen_2512.02612v1.pdf",
+      "archive_text_relative_path": "literature/text/Linear-independence-of-Dirichlet-L-values_Mistiaen_2512.02612v1.txt"
+    },
+    {
+      "citation_key": "M26",
+      "title": "Linear independence of values of polylogarithms with periodic coefficients, outside the disk of convergence",
+      "authors": "Ludovic Mistiaen",
+      "version": "2610.09774v1",
+      "sha256": "04e140048c14a5109c1eed868bb5cc33274bc3e49c71c6527160b9d2d6af6adf",
+      "source_url": "https://arxiv.org/abs/2610.09774v1",
+      "download_url": "https://arxiv.org/pdf/2610.09774v1",
+      "retrieved_at_utc": "2026-11-02T21:09:06.444099+00:00",
+      "role_in_paper": "Context only: all-weight periodic-polylogarithm comparison",
+      "actual_read_scope": "The opening theorem and domain on the first four pages were reread for the parity comparison. Earlier reading covered the first five pages and selected LaTeX. The full proof has not been read or independently audited.",
+      "verification_status": "Read and used only to the stated scope; not independently or formally verified.",
+      "archive_relative_path": "literature/papers/Linear-independence-of-periodic-polylogarithms-outside-disk_Mistiaen_2610.09774v1.pdf",
+      "archive_text_relative_path": "literature/text/Linear-independence-of-periodic-polylogarithms-outside-disk_Mistiaen_2610.09774v1.txt"
+    },
+    {
+      "citation_key": "KT26",
+      "title": "Irrationality of values of $L$-functions for real Dirichlet characters",
+      "authors": "Veekesh Kumar; Riccardo Tosi",
+      "version": "2610.41458v1",
+      "sha256": "ee3d7849086a2cdd9f9cb7515565564a60ca7c3edf809242702f2896e2ec096b",
+      "source_url": "https://arxiv.org/abs/2610.41458v1",
+      "download_url": "https://arxiv.org/pdf/2610.41458v1",
+      "retrieved_at_utc": "2026-11-02T21:09:06.442351+00:00",
+      "role_in_paper": "Related claimed irrational-value count, with an explicit qualification and a counterexample to the v1 Lemma 18. No theorem or construction from this source is an input to the present proof.",
+      "actual_read_scope": "The introduction and main announced statement were revisited. Earlier detailed reading and exact tests of selected construction and denominator claims are recorded in literature/audits/kumar-tosi-v1-2026-11-02/. The full preprint remains unaudited. Its result and the attempted local repair are not inputs to this paper. For the introduction footnote, the K_ell and g definitions and the Lemma 18 statement in Section 3.3 were rechecked against the archived TeX. The zero-case contradiction is stated in full in the footnote; it does not disprove the main theorem.",
+      "verification_status": "Read and used only to the stated scope; not independently or formally verified.",
+      "archive_relative_path": "literature/papers/Irrationality-of-L-values-for-real-Dirichlet-characters_Kumar-Tosi_2610.41458v1.pdf",
+      "archive_text_relative_path": "literature/text/Irrationality-of-L-values-for-real-Dirichlet-characters_Kumar-Tosi_2610.41458v1.txt"
+    },
+    {
+      "citation_key": "RZ03",
+      "title": "Diophantine properties of numbers related to Catalans constant",
+      "authors": "Tanguy Rivoal; Wadim Zudilin",
+      "version": "Author-hosted version of the 2003 article; pinned by SHA256",
+      "sha256": "24da4f15fcb76df57e6bfc9150d6753ed32e20538b6589023baa33c487744edf",
+      "source_url": "https://rivoal.perso.math.cnrs.fr/articles/betacatalan.pdf",
+      "download_url": "https://rivoal.perso.math.cnrs.fr/articles/betacatalan.pdf",
+      "retrieved_at_utc": "2026-10-30T17:11:41.362645+00:00",
+      "role_in_paper": "Context only: previous bound and half-integer approximation provenance",
+      "actual_read_scope": "All 17 pages were read previously. The introduction, Theorem 1 and half-integer construction in Section 2 were revisited for the present citations. Some imported valuation/height lemmas were not reread. DOI and bibliographic details were checked against the publisher record.",
+      "verification_status": "Read and used only to the stated scope; not independently or formally verified.",
+      "archive_relative_path": "literature/papers/Diophantine-properties-of-numbers-related-to-Catalans-constant_rivoal-zudilin-2003.pdf",
+      "archive_text_relative_path": "literature/text/rivoal-zudilin-2003.txt"
+    }
+  ],
+  "novelty_search": {
+    "date_local": "2026-11-02",
+    "primary_records_checked": [
+      "https://arxiv.org/abs/2512.02612",
+      "https://arxiv.org/abs/2610.09774",
+      "https://arxiv.org/abs/2610.41458",
+      "https://www.imo.universite-paris-saclay.fr/~stephane.fischler/"
+    ],
+    "comparisons": "Previous logarithmic even-beta dimension bound; conductor-4 exclusion in Mistiaen; all-weight periodic-polylogarithm theorem; distinction between dimension and an announced count of irrational values.",
+    "search_terms": [
+      "Dirichlet beta linear independence 2026",
+      "beta values Siegel Fischler",
+      "Catalan half-integer Fischler",
+      "Dirichlet beta square-root linear independence",
+      "beta values sqrt linear independence"
+    ],
+    "finding": "No exact match identified in the examined sources. Not an exhaustive search or a priority determination."
+  },
+  "check_environment": {
+    "python": "3",
+    "sympy": "1.14.0"
+  },
+  "status": "Source reading by the developing assistant. The paper passed a separately reported independent model cross-check; this does not imply an independent audit of every cited source."
+}

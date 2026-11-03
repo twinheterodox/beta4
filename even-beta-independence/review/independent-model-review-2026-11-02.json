@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "review_type": "independent_model_cross_check",
+  "reported_on": "2026-11-02",
+  "recorded_at_utc": "2026-11-03T03:36:17.193220+00:00",
+  "source": "Reported successful cross-check by another model",
+  "scope": [
+    "Paper: Linear independence of even Dirichlet beta values"
+  ],
+  "reviewer_model": null,
+  "detailed_report_provided": false,
+  "separate_code_review_or_test_rerun_reported": false,
+  "human_mathematical_audit": false,
+  "formal_verification": false,
+  "workspace_artifact_when_reported": {
+    "pdf": "output/pdf/even-beta-independence.pdf",
+    "pdf_sha256": "5d945380769a811726d0f88a6d277bfaaaec920eb74e0978d3651a0be0eeba8f",
+    "pages": 16,
+    "source_files": {
+      "paper/even-beta-independence.tex": "803a96cabc02a941f81a0b37896732d7944fdf19f0bb7f12cfbabda22544c2c6",
+      "paper/references.tex": "064835e6e9b46cc24f3becca960429e386f8f137450a07f65ae17d7a8671c6e1",
+      "paper/sections/arithmetic.tex": "e0d519bdcaa7962cafdf246f2c20e8a5cdc6866ee4fb1103d79b14c0ec7324d9",
+      "paper/sections/conclusion.tex": "b975292bb2d3e90c5e84588cb27c94c35a57248f905db3ad3e610b684627164f",
+      "paper/sections/estimates.tex": "c9caa70ccc4ccc50dde30d1e7bd8d1a8983eafa5df0acee529e6a99274538983",
+      "paper/sections/forms.tex": "65f6ae0074a74fd30e11f5410f46aaaeb6db84a7972e4f917d717f44036f12a4",
+      "paper/sections/inputs.tex": "cafcac479ee88e49a2d69afc00137f2cea81fb26a24e59d85da5a4dbba16048e",
+      "paper/sections/introduction.tex": "15ab42dd29f5cb024af5e2bb08015d72e9232ff6a9d23e391a8406b50060837e",
+      "paper/sections/rank.tex": "d58a1fb5195c0671dff267cae4e014fcfe6f344773c10dee3fde732fb43a7430"
+    }
+  },
+  "snapshot_scope": "Records the local paper revision when the successful cross-check was reported. The precise files reviewed, model identity and detailed findings were not supplied.",
+  "subsequent_editorial_changes": [
+    "Updated the review-status statements.",
+    "Removed the standalone cross-check notice below the abstract.",
+    "Changed \"The proof in v1\" to \"The proof\" in the introduction. No mathematical statements or proof arguments changed."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "run_at_utc": "2026-11-03T03:58:22.608415+00:00",
+  "scope": "Exact finite supporting checks and a self-contained rebuild of the publication package; not an asymptotic proof, independent model review or formal verification.",
+  "environment": {
+    "python": "3.14.4",
+    "sympy": "1.14.0"
+  },
+  "commands": [
+    "python3 checks/check_local_system.py",
+    "python3 checks/check_linear_forms.py"
+  ],
+  "reports": {
+    "checks/local-system-results.json": "8643a52cb8421f8082745209b0fb8b051c9e656703a08978214f75a08e51790a",
+    "checks/half-shift-forms-checks.json": "22a845d2a459882d32e1f3ceb308338c0e307c8eba13bc5fa5cebd295c3b5806"
+  },
+  "reports_match_original_checks": true,
+  "isolated_build": {
+    "status": "passed",
+    "pages": 16,
+    "pdf_text_matches_reviewed_pdf": true,
+    "unresolved_references": false,
+    "overfull_boxes": false
+  },
+  "published_pdf": {
+    "path": "output/pdf/even-beta-independence.pdf",
+    "sha256": "51d00192ae48dc630af57f5ec4bdcb9911f57967f0366fbb8d7372e50017e44c"
+  }
+}

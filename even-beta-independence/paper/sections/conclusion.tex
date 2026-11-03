@@ -1,0 +1,111 @@
+\section{The dimension estimate and the choice of parameters}
+\label{sec:conclusion}
+
+We can now assemble the argument. Section~\ref{sec:arithmetic} made the
+forms integral, Section~\ref{sec:estimates} bounded their coefficients
+and values, and Section~\ref{sec:rank} supplied the rank statement.
+We first apply the criterion with all auxiliary parameters fixed, then
+choose them as the number of beta values increases.
+
+For each admissible $n$, form the integer matrix with rows the coefficients
+of $\Lambda_{n,p,k}$ in
+\[
+ 1,\beta(2),\ldots,\beta(2\lfloor(a+h)/2\rfloor).
+\]
+It satisfies \eqref{eq:weak-rank}.
+Indeed, a rational vector annihilating all these rows lifts to one for
+the rows $Q_{k,i}^{[p]}(-1)$ by putting zero in every odd coordinate and
+multiplying coordinate $i/2$ by $-2^{i+1}$ for even $i\geq2$.
+Its constant coordinate is unchanged.
+The row multipliers $\Dt_{d,k-1}/(k-1)!$ are nonzero, so
+Proposition~\ref{prop:rank} forces that constant coordinate to be zero.
+
+If $\log\alpha<0$, Proposition~\ref{prop:criterion} gives
+\[
+ \dim_\Q\Span_\Q\{1,\beta(2),\ldots,
+                      \beta(2\lfloor(a+h)/2\rfloor)\}
+       \geq1-\frac{\log\alpha}{\log B}.
+\]
+Removing $1$ loses at most one dimension. Thus
+\begin{equation}\label{eq:parameter-bound}
+ D(2\lfloor(a+h)/2\rfloor)\geq-\frac{\log\alpha}{\log B}.
+\end{equation}
+
+The scales in the parameter choice can be read from this quotient.
+Increasing $\Omega$ improves the decay through $\Omega\log r$, but it
+also increases $\log\chi$ by a term of order $\Omega^2/a$.
+The denominator estimate contributes a term of order $\log a$ when
+$h$ is proportional to $a$. Taking $\Omega$ of order
+$\sqrt{a\log a}$ therefore keeps $\log B$ of order $\log a$ while
+making $-\log\alpha$ of order $\sqrt{a\log a}$. Their quotient has the
+desired order $\sqrt{a/\log a}$.
+
+For the numerical constants, use the choice of \cite[Section~4.6]{F26}.
+Let $a$ tend to infinity through positive multiples of $25$, and set
+\begin{equation}\label{eq:parameters}
+ h=\frac{9a}{25},\quad
+ r=\frac{39}{10},\quad
+ \kappa=\frac{529}{50},\quad
+ \omega=12,\quad
+ \Omega=\left\lfloor r\sqrt{a\log a}\right\rfloor.
+\end{equation}
+For sufficiently large $a$ these satisfy
+$a>\Omega\geq\omega>\kappa>2r$ and $0\leq h\leq a$, and
+\[
+ (h+1)(\kappa-2r)+\omega
+  =\left(\frac{9a}{25}+1\right)\frac{139}{50}+12>a.
+\]
+Take $n$ through sufficiently large multiples of $50$.
+For each fixed $a$, all needed integer conditions and the weak rank
+statement then hold.
+
+As $a\to\infty$, equations \eqref{eq:coeff-small}, \eqref{eq:B} and
+\eqref{eq:alpha} give
+\begin{align}
+ \log\chi&\sim\frac{r^2\log r}{2}\log a,\notag\\
+ \log B&\sim\left(\frac{r^2\log r}{2}+\kappa\right)\log a,
+                                                   \label{eq:rates-asymptotic}\\
+ \log\alpha&\sim-r\log r\sqrt{a\log a}.\notag
+\end{align}
+In particular, $\log\alpha<0$ for sufficiently large $a$.
+With $s=a+h=34a/25$, \eqref{eq:parameter-bound} implies
+\begin{equation}\label{eq:cstar}
+ \liminf_{\substack{s\to\infty\\34\mid s}}
+   \frac{D(s)}{\sqrt{s/\log s}}
+ \geq
+ c_*:=\frac{r\log r}
+   {\left(r^2\log r/2+\kappa\right)\sqrt{34/25}}
+ =0.2174562348\ldots .
+\end{equation}
+The strict inequality $c_*>0.21$ requires little numerical precision:
+$1.36<\log(3.9)$ and $\sqrt{1.36}<1.167$ already suffice,
+since $x/(r^2x/2+\kappa)$ increases with $x>0$.
+
+Finally $D(s)$ is nondecreasing, and successive multiples of $34$ have
+bounded gaps. For an arbitrary large even $s$, apply
+\eqref{eq:cstar} to $34\lfloor s/34\rfloor$.
+The quotient of the corresponding factors $\sqrt{s/\log s}$ tends to $1$.
+The strict slack between $c_*$ and $0.21$ proves
+Theorem~\ref{thm:main}.
+
+\begin{remark}
+The limiting assertion \eqref{eq:cstar} extends to all even $s$ in the
+same way. We retain the simpler constant $0.21$ in the theorem.
+No explicit threshold for \emph{sufficiently large} is asserted;
+in particular, the multiplicity constant has not been tracked.
+\end{remark}
+
+\section*{Acknowledgements and preparation}
+
+The proof uses Fischler's rational-function construction, refined
+linear-independence criterion and multiplicity method. The numerical
+parameters and the organization of the rank argument are taken from his
+proof, with the adaptations identified in the text.
+Mistiaen's explanation of the conductor restriction suggested the
+evaluation-point question addressed here.
+
+This research note was prepared with OpenAI Codex. The accompanying exact
+calculations check finite instances of the identities and denominator
+bounds; they are not formal verification. The paper has been independently
+cross-checked by another model.
+

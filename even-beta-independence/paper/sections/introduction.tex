@@ -1,0 +1,155 @@
+\section{Introduction}
+
+The Dirichlet beta function is
+\[
+ \beta(s)=\sum_{m=0}^{\infty}\frac{(-1)^m}{(2m+1)^s}.
+\]
+Its values at positive odd integers are nonzero rational multiples of
+powers of $\pi$. The arithmetic of its even values is much less understood.
+One way to measure progress without settling an individual value is to
+bound the dimension
+\begin{equation}\label{eq:dimension}
+ D(s)=\dim_{\Q}\Span_{\Q}\{\beta(2),\beta(4),\ldots,\beta(s)\},
+ \qquad s\geq2\ \text{even}.
+\end{equation}
+A lower bound $D(s)\geq d$ means that at least $d$ values in this finite
+list are linearly independent over the rationals. It implies that at
+least $d-1$ of them are irrational, but does not identify those values.
+
+Rivoal and Zudilin \cite[Theorem~1]{RZ03} proved a logarithmic lower bound
+with leading constant $1/(2+\log2)$ for the span after adjoining $1$.
+Fischler \cite[Theorem~1]{F20} subsequently obtained
+\begin{equation}\label{eq:oldbound}
+ D(s)\geq\frac{1+o(1)}{1+\log2}\log s
+ \qquad(s\longrightarrow\infty,\ s\text{ even}),
+\end{equation}
+as a special case of his result for periodic Dirichlet series.
+His later use of Siegel's lemma to construct rational functions with
+small coefficients gives a bound of order $\sqrt{s/\log s}$ for odd
+zeta values \cite{F26}.
+
+Mistiaen \cite[Theorem~1.0.5 and Remark~3]{M25} extends that method to
+Dirichlet characters whose conductors are not divisible by $4$. The
+restriction excludes the character of conductor $4$ associated with
+$\beta$, so that theorem does not cover the even beta values.
+We obtain the following bound for the beta function.
+
+\begin{theorem}\label{thm:main}
+For every sufficiently large even integer $s$,
+\[
+ D(s)\geq0.21\sqrt{\frac{s}{\log s}}.
+\]
+\end{theorem}
+
+The theorem concerns linear independence in a growing family. It does
+not, in particular, establish the irrationality of $\beta(4)$.
+A recent preprint of Kumar and Tosi \cite{KT26} claims a bound of
+square-root order for the \emph{number of irrational values} of real
+Dirichlet $L$-functions. The proof contains unresolved arithmetic
+errors,\footnote{For example, in the notation of \cite[Section~3.3]{KT26},
+take $a=b=1$ and $h=y=\ell=0$. For sufficiently large admissible $n$,
+$K_0(0)=\prod_{j=0}^{(2r+T)n}(1-rn+j)=0$, because the factor
+$j=rn-1$ vanishes, whereas $g_{0,1,1}(0)=1$ by the empty-product
+convention. This contradicts the finite $p_n$-adic valuation asserted
+in Lemma~18. This objection concerns the proof as written and does not
+disprove the main theorem.}
+so we do not regard that version as establishing the claimed bound.
+Our proof is independent of theirs.
+Theorem~\ref{thm:main} concerns the stronger
+quantity \eqref{eq:dimension}: irrational numbers can still satisfy many
+rational linear relations.
+
+Specializing general results on polylogarithms with periodic coefficients
+\cite{M26} gives bounds involving both even and odd beta values.
+However, the odd values $\beta(1),\beta(3),\ldots$ are already linearly
+independent over the rationals: they are nonzero rational multiples of
+distinct powers of $\pi$, and $\pi$ is transcendental.
+The lower bound supplied by those results can therefore be met by the odd
+values alone, without establishing the desired independence among the even
+values. Our construction avoids this issue by producing linear forms
+involving only $1$ and the even beta values.
+
+\subsection{How the proof works}
+
+For a fixed even cutoff $s=2v$, the proof constructs integer linear forms
+in $1$ and the even beta values:
+\[
+ \lambda_0+\lambda_1\beta(2)+\cdots+\lambda_v\beta(2v),
+ \qquad \lambda_0,\ldots,\lambda_v\in\Z.
+\]
+If all these beta values were rational, any nonzero such form would have
+absolute value bounded below by the reciprocal of a common denominator.
+Linear-independence criteria refine this observation to give a lower bound
+on the dimension of their span.
+
+With this set of beta values fixed, we use a criterion of Fischler, stated in
+Proposition~\ref{prop:criterion}. It requires a family of forms at each
+large index $n$, with controlled growth of their integer coefficients and
+exponential decay of their values. It also requires a rank condition on
+the coefficient matrix, which prevents the whole family from vanishing.
+The dimension bound depends on the decay rate relative to the coefficient
+growth. Thus constructing a small expression is only the first step:
+we must control its size after clearing denominators and establish the
+required rank condition.
+
+The starting point is Fischler's rational function
+\[
+ F_n(t)=\sum_{i=1}^{a}\sum_{j=0}^{n}\frac{c_{i,j}}{(t+j)^i},
+ \qquad c_{i,j}\in\Z,
+\]
+whose coefficients have controlled size and whose many initial zero
+Laurent coefficients make it decay rapidly far from its poles
+\cite[Theorem~4]{F26}. The coefficients are supplied by an existence
+theorem; no explicit formula for them is needed.
+We retain this rational function and sum it over half-integers.
+
+Half-integer arguments already occur in classical approximations to beta
+values, including the hypergeometric construction of
+Rivoal and Zudilin \cite[Section~2]{RZ03}.
+They are natural here because powers of $t+\tfrac12$ are proportional to
+powers of the odd integers $2t+1$ in the beta series. Alternating sums
+therefore produce beta values. Combining the positive and negative
+half-integer sums removes the odd beta values.
+Section~\ref{sec:forms} carries this out using generating functions
+evaluated at $z=-1$.
+
+These generating functions satisfy a rational differential system whose
+coefficients have no pole at $-1$: it is an \emph{ordinary point} of the
+system. This avoids the singular evaluation point identified in
+\cite[Section~2]{M25}. At an ordinary point, the initial values determine
+an analytic solution, and its Taylor coefficients express derivatives
+in terms of those initial values. This is useful for the arithmetic of
+our linear forms. The sums first produce finite correction terms with
+rational coefficients. We remove those terms by differentiation
+\emph{before} clearing denominators. Section~\ref{sec:arithmetic} then
+bounds the denominators through the local differential system, and
+Section~\ref{sec:estimates} compares the resulting coefficient growth
+and decay.
+
+The remaining task is the rank condition. Section~\ref{sec:rank} follows
+Fischler's multiplicity method \cite[Section~4.5]{F26}: failure of the
+rank condition would force certain polynomial combinations of solutions
+to have more vanishing than their degrees permit. Our system has an
+extra diagonal term, so we first make the change $z=w^2$ and rescale
+some components of the solution. This removes that term and allows the
+independence argument to work. The substitution doubles the relevant
+polynomial degrees, but the evaluation point now has two preimages,
+$\ii$ and $-\ii$. Counting the vanishing at both recovers the required
+inequality.
+
+Section~\ref{sec:inputs} states the three inputs from Fischler precisely.
+Once their hypotheses have been verified, Section~\ref{sec:conclusion}
+uses his numerical parameter choice to obtain the stated constant.
+
+\subsection{Conventions}
+
+All logarithms are natural. We write
+$(i)_p=i(i+1)\cdots(i+p-1)$, with $(i)_0=1$, and
+$\Ht_d=\sum_{j=1}^d1/j$ for the $d$th harmonic number.
+The symbol $\ii$ denotes the imaginary unit.
+The auxiliary parameters of the construction are fixed while $n$ tends
+to infinity through an indicated infinite set of integers.
+Every $o(n)$ in that stage of the proof is uniform in the finite indices
+and in the specified derivative range. Only in the last section do we
+let the parameter controlling the largest beta argument tend to infinity.
+

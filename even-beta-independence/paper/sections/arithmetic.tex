@@ -1,0 +1,127 @@
+\section{Denominators of the local solution}\label{sec:arithmetic}
+
+Our aim is to turn the rational linear forms in \eqref{eq:value-row}
+into integer linear forms without losing their smallness. Put $u=z+1$
+and let $U(u)$ be the fundamental matrix of \eqref{eq:base-system},
+normalized by $U(0)=I$. Thus the solution with initial column $x$ at $-1$
+is $U(u)x$. The Taylor coefficients of $U$ record how the derivatives of
+a solution depend on its initial values. Since the polynomial row
+$C^{[p]}$ has integer coefficients, denominators for these Taylor
+coefficients will suffice for our forms.
+
+We use the distinct-product least common multiple from
+\cite[Lemma~2]{F26}; here positive indices suffice. The reason for
+distinct products will emerge from solving the differential system by
+successive integrations: each integration contributes a denominator
+equal to a new, strictly larger Taylor degree.
+
+For integers $d\geq1$ and $k\geq0$, define
+\begin{equation}\label{eq:Delta-def}
+ \Delta_{d,k}
+   =\lcm\left\{\prod_{t\in I}t:
+        I\subseteq\{1,\ldots,k\},\ |I|\leq d\right\},
+ \qquad \Dt_{d,k}=4^k\Delta_{d,k}.
+\end{equation}
+Empty products and $\lcm(1,\ldots,0)$ are taken to be $1$.
+
+\begin{lemma}\label{lem:lcm}
+One has
+\begin{equation}\label{eq:lcm-product}
+ \Delta_{d,k}=\prod_{j=1}^{d}\lcm(1,\ldots,\lfloor k/j\rfloor).
+\end{equation}
+In particular, $\Dt_{d,k}$ divides $\Dt_{d,k+1}$, and for fixed $d$,
+\begin{equation}\label{eq:D-rate}
+ \log\Dt_{d,k}=(\log4+\Ht_d)k+o(k).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For a prime $p$, the maximum valuation of a product of at most $d$
+distinct integers in $\{1,\ldots,k\}$ is the sum of the $\min\{d,k\}$ largest
+valuations in that set. It equals
+\[
+ \sum_{e\geq1}\min\{d,\lfloor k/p^e\rfloor\}.
+\]
+The product on the right of \eqref{eq:lcm-product} has the same valuation:
+for each $e$, there are exactly $\min\{d,\lfloor k/p^e\rfloor\}$ indices
+$j$ with $p^e\leq\lfloor k/j\rfloor$.
+Divisibility follows either from the definition or from this formula.
+Finally, the prime number theorem gives
+$\log\lcm(1,\ldots,K)=K+o(K)$.
+Sum this estimate over the fixed set $1\leq j\leq d$ to obtain
+\eqref{eq:D-rate}.
+\end{proof}
+
+The dependence on $d$ is important. Allowing $d$ arbitrary factors from
+$\{1,\ldots,k\}$ would give the larger multiplier
+$\lcm(1,\ldots,k)^d$, with logarithm asymptotic to $dk$.
+Distinct factors give $\Ht_d k$ instead. Since $\Ht_d$ grows only
+logarithmically with $d$, this keeps the arithmetic cost small when the
+number of beta values is later increased.
+
+\begin{lemma}\label{lem:denominators}
+For the normalized fundamental matrix $U$ defined above,
+\[
+ \Dt_{d,k}[u^k]U(u)\in M_{d+1}(\Z)
+ \qquad(k\geq0).
+\]
+\end{lemma}
+
+\begin{proof}
+The common diagonal term in the equations is removed by an integrating
+factor. Put $\eta(u)=(1-u)^{-1/2}$, set $y_i=\eta(u)v_i$ for $i\geq1$,
+and leave $y_0=v_0$ unchanged. Since $\eta(0)=1$, this does not change
+initial values.
+The transformed equations are
+\begin{equation}\label{eq:local-gauge}
+ v_0'=0,\qquad
+ v_1'=-\frac{\eta(u)}{1-u/2}v_0,\qquad
+ v_i'=\frac{v_{i-1}}{1-u}\quad(i\geq2).
+\end{equation}
+Both $\eta(u)$ and $-\eta(u)/(1-u/2)$ have their degree-$j$ coefficient
+in $4^{-j}\Z$. For $\eta$, this follows from
+\[
+ \eta(u)=\sum_{j\geq0}\binom{2j}{j}\frac{u^j}{4^j};
+\]
+multiplication by $(1-u/2)^{-1}$ preserves the asserted denominator bound.
+The coefficients of $(1-u)^{-1}$ are integers.
+
+Each entry of the normalized solution of \eqref{eq:local-gauge} is a
+finite sum of iterated integrals of depth at most $d$, and multiplication
+by $\eta$ restores $U$. Expand one contribution to a coefficient of degree
+$k$. At each integration, the degree increases strictly. Its integration
+denominators are therefore distinct integers
+\[
+ 1\leq t_1<\cdots<t_e\leq k,\qquad e\leq d.
+\]
+Their product divides $\Delta_{d,k}$.
+The total degrees supplied by coefficients of the multiplied series,
+including the final factor $\eta$, are at most $k$; their powers of $4$
+divide $4^k$. This controls each contribution and hence their sum.
+The argument includes the column with $v_0(0)=1$, whose first integration
+uses the inhomogeneous term displayed in \eqref{eq:local-gauge}.
+\end{proof}
+
+\begin{corollary}\label{cor:integer}
+For every $p,k,i$ in the construction,
+\[
+ \Dt_{d,k-1}\frac{Q_{k,i}^{[p]}(-1)}{(k-1)!}\in\Z.
+\]
+For $k\geq2M+2$ this gives an integer linear form in
+$1,\beta(2),\ldots,\beta(2\lfloor d/2\rfloor)$ whose value is
+\begin{equation}\label{eq:integer-form}
+ \Lambda_{n,p,k}
+       =\Dt_{d,k-1}\frac{S_{n,p}^{(k-1)}(-1)}{(k-1)!}.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+The row $C^{[p]}(-1+u)$ has integral Taylor coefficients.
+The coefficient of $u^{k-1}$ in $C^{[p]}(-1+u)U(u)$ is the row
+$Q_k^{[p]}(-1)/(k-1)!$, by \eqref{eq:universal-row}.
+Use Lemma~\ref{lem:denominators} and
+$\Dt_{d,j}\mid\Dt_{d,k-1}$ for $j\leq k-1$.
+Substitution of \eqref{eq:H-values} multiplies even columns by integers
+and sets odd contributions to zero.
+\end{proof}
+

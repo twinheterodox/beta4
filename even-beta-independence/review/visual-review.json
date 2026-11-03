@@ -1,0 +1,51 @@
+{
+  "reviewed_at_utc": "2026-11-03T03:46:57.504652+00:00",
+  "pdf": "output/pdf/even-beta-independence.pdf",
+  "pdf_sha256": "51d00192ae48dc630af57f5ec4bdcb9911f57967f0366fbb8d7372e50017e44c",
+  "pages": 16,
+  "method": "Rendered all 16 pages at 110 dpi after the requested wording edit. Visually inspected page 2; raster hashes confirm all other pages are identical to the previously inspected revision.",
+  "page_notes": {
+    "1": "Abstract is followed directly by the introduction. Title, formulas and theorem remain legible with clean spacing.",
+    "2": "Requested wording appears correctly; paragraph, formulas and footnote fit cleanly.",
+    "3": "Proof outline, conventions and the complete refined criterion fit with clear section transitions.",
+    "4": "Rational-function input, parameter explanations and multiplicity preface legible; equations fit.",
+    "5": "Remainder definition, Nilsson-order explanation and multiplicity theorem readable; Section 3 begins cleanly.",
+    "6": "Parity selection, differential system and finite-tail formulas legible; no collisions.",
+    "7": "Derivative recurrence and universal identity readable. Revised transition to the denominator section is clear and fits.",
+    "8": "LCM formula and proof, including min(d,k), readable. Integrating-factor formulas fit.",
+    "9": "Denominator proof, integer-form corollary and two size bounds readable; explanatory text is outside the proposition.",
+    "10": "Tail estimates fit cleanly. The introduction to the rank argument has sufficient space.",
+    "11": "Rank proposition, Taylor corrections and piecewise solution-vector formulas readable without overflow.",
+    "12": "Differential identities, quadratic substitution and residue-lemma statement readable.",
+    "13": "Residue descent, logarithmic remainders and relocated Laplace-transform identity fit cleanly.",
+    "14": "Six-point order table, final rank contradiction and start of the dimension argument readable.",
+    "15": "Parameter-scale explanation, numerical choice, limiting constant and scope remark readable.",
+    "16": "Updated preparation paragraph and all references fit cleanly; model cross-check is stated separately from computational checks."
+  },
+  "unresolved_layout_issues": [],
+  "build_warnings": {
+    "unresolved_references": false,
+    "overfull_boxes": false,
+    "underfull_warnings": []
+  },
+  "previous_pdf_sha256": "925e620253e5b6253573400f04cfc7f8a3f8cecc1eefef0ef58b00b8c6b97be5",
+  "editorial_change": "Changed \"The proof in v1\" to \"The proof\" in the introduction, as requested.",
+  "rendered_page_sha256": {
+    "page-01.png": "fdffa40154a4063f7faf3dda9220eb232cf41c3f640401855df1127050bf95a0",
+    "page-02.png": "f5bc27ce37e2571ce691db8e615bf4c1913f1ab3940ee15fe44511728e54228e",
+    "page-03.png": "f51080304d2ed89873bc0a53999bdff50d8b24faa88764ad859e6c95745b6d28",
+    "page-04.png": "9bcc83ba0cad6fe88cf3b71f86956943f7288068a86d0bea80be26c097f76656",
+    "page-05.png": "6cf4050c993f10087b28bdefdbeb286b257b3f7ee083da30a7815942343354c9",
+    "page-06.png": "4e95081489cdd5e5ccc988ac82808ede691ebc7f46f5eae43133656b8305ddf9",
+    "page-07.png": "6cd70937ea05e20c00efe7dcaa34e51666f3eac6637545a358aad3bda63eed26",
+    "page-08.png": "1df277412c1145a2c7fa549984e44338c37a1a82e3c36cb8bcafc70754ef5bad",
+    "page-09.png": "4323a66a321d33ca4741898d3816aeea5f97635ae1acb086cfa2ab4508c2b9fb",
+    "page-10.png": "58ea9ce7d13838535b68a071561bbce59287f59053aebed5568afddba28c183c",
+    "page-11.png": "3d856bb27c60678ea9fa7200ff9d39b67647028ae967f3d8698e12166cbe31c8",
+    "page-12.png": "7092dad626295df45e5833ae682917cd08c02605e6ca0526c82498189a6fd820",
+    "page-13.png": "d96328da06ac5f206d8e58c43e8f5e600c35c50387a1ed994f03649299738a22",
+    "page-14.png": "49806f2243889d3e222daa6f1160153c8d18e6b86363e550e847bc1bfc94c878",
+    "page-15.png": "867358912c53670a9e67f005fadd0e90cbccdc8cf3a987e0e58178ae24bfcd85",
+    "page-16.png": "1b3e60d9d27d33351e7980d08a6a67984f0b95e4f914df5326f62c09a25da49a"
+  }
+}

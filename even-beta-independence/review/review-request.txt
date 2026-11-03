@@ -1,0 +1,66 @@
+ORIGINAL BRIEF FOR INDEPENDENT MATHEMATICAL REVIEW
+Prepared locally; no request was sent by the developing assistant.
+
+A successful cross-check by another model was subsequently reported on
+2 November 2026; see independent-model-review-2026-11-02.json. The original
+review questions below are retained for reference and further review.
+
+Please assess the proof of Theorem 1.1 in
+output/pdf/even-beta-independence.pdf:
+
+  dim_Q span_Q{beta(2), beta(4), ..., beta(s)}
+      >= 0.21 sqrt(s/log s)
+
+for every sufficiently large even integer s.
+
+The main source is paper/even-beta-independence.tex, with section files
+under paper/sections/. Exact supporting scripts and outputs are in checks/.
+The archived primary-source versions and actual reading scopes are in
+sources/reading-record.json. When this brief was prepared, the draft had
+been checked only by its developing assistant. Please treat the self-audit
+in review/audit.txt as a description of that assistant's checks, not as
+independent evidence of correctness.
+
+Please prioritize these questions:
+
+1. Is the half-integer tail decomposition, including its finite polynomial
+   and the system at -1, correct? Do the differentiated sums and analytic
+   continuations agree for all derivative orders used in the estimates?
+
+2. Does the local denominator proof cover every entry of the normalized
+   fundamental matrix, including the constant-coordinate column? In the
+   iterated integrals, are the integration denominators indeed distinct
+   cumulative degrees, with depth at most d and total series cost 4^k?
+
+3. Are the coefficient and value bounds uniform in p and the full range
+   2rn+2<=k<=kappa*n? Does the separation of the limits n and a avoid any
+   hidden dependence problem?
+
+4. Does the rank construction use a single polynomial row after the
+   quadratic change of variable? Check the enlarged-system identities,
+   residue descent, and independence of each selected family. In
+   particular, is it legitimate to count the families at both i and -i,
+   and to use separate branches at 1 and -1?
+
+5. Does Fischler's Theorem 3 in the pinned 2026 author version apply to all
+   six families, including the negative orders at infinity and the
+   n-dependent choices of solutions? Check the common annihilating
+   operator and the uniformity when b varies between 1 and a.
+
+6. Does the reduction to even columns preserve the required weak rank
+   condition? Check the application of Proposition 1, the loss of one
+   dimension on removing 1, and the final constant and interpolation.
+
+Please report any gap with its exact location and whether it invalidates
+the theorem or can be repaired without changing the conclusion. Check
+the main argument independently of the finite test results. Those tests
+are not an asymptotic certificate.
+
+Separately, relevant prior results that already imply this even-parity
+dimension estimate would change the paper's positioning. The comparison
+currently distinguishes a dimension bound from a count of irrational
+values, and excludes arguments where the odd beta values alone can supply
+the claimed dimension. Priority has not been asserted.
+
+Please distinguish a manual or model mathematical audit from formal
+verification and from merely reproducing the computations.

@@ -1,0 +1,173 @@
+MATHEMATICAL SELF-AUDIT OF THE WORKING PAPER
+2 November 2026
+
+Subsequent independent model cross-check
+
+On 2 November 2026 the user reported that the new paper had been verified
+by another model. The successful cross-check and the local paper revision
+at the time are recorded in independent-model-review-2026-11-02.json.
+No reviewer identity, detailed findings or separate code-execution report
+was supplied. This records a model cross-check, not a human mathematical
+audit or formal verification.
+
+Original self-audit: verdict and scope
+
+The same assistant that developed the construction reviewed the complete
+argument. No unresolved substantive gap was found. This is a working-proof
+assessment, not independent review, formal verification, or a priority
+determination. The review brief in review-request.txt was prepared at
+this stage, before the subsequent model cross-check was reported.
+
+The exact inputs
+
+Fischler's author version dated 26 March 2026 is the reference version for
+Proposition 1, Theorem 3 and Theorem 4. The corresponding statements in
+Section 2 of this paper were compared with those source statements.
+The parameter choice follows his Section 4.6. The rational-function input
+is unchanged; the sums, differential system, local arithmetic and rank
+adaptation are written out here.
+
+The proof of the multiplicity result in Fischler's 2018 Section 3.1 was
+also read. Its differential-Galois and global exponent-sum foundations
+are imported mathematical results, not independently re-proved here.
+The 2026 formulation is used for the remainders with negative orders at
+infinity. That formulation is explicit and is used in Fischler's own rank
+application. Independent choices of local solution families at different
+points are allowed; only independence within each family is required.
+
+Fischler's 2020 theorem is cited for the earlier logarithmic bound. Its
+older abstract linear-independence criterion is not used. In particular,
+the non-annihilation issue recorded in the earlier local literature review
+does not enter this proof: the 2026 criterion explicitly assumes theta_0
+is nonzero and includes the weak rank condition proved in Section 6.
+
+Checks of the argument
+
+1. Half-integer expansion. The continued functions Phi_j and H_j give
+   H_j(-1)=0 at odd j and -2^(j+1) beta(j) at even j. The constant
+   coordinate in the system is separate from the definition of H_j.
+   The finite-tail correction has degree at most 2M-1. Its derivatives
+   are removed before any denominator multiplier is applied.
+
+2. Universal derivatives. The row recurrence represents derivatives for
+   every solution of the system, not only the solution giving beta values.
+   This is necessary for the arbitrary rational initial vector in the
+   rank proof. Exact coefficient comparisons support the identities.
+
+3. Local arithmetic. The distinct-product LCM is the positive-index form
+   of Fischler's arithmetic device. Its prime valuations give the product
+   formula and its asymptotic rate. In the gauged local solution, each
+   integration contributes a strictly increasing cumulative degree. Thus
+   there are at most d distinct integration denominators, while all series
+   coefficients contribute a total power of 4 no larger than 4^k.
+   Monotonicity controls products with the integral polynomial row.
+
+4. Estimates. Cauchy's estimate is applied to the normalized fundamental
+   solution on the disk of radius 1/2 about -1. The matrix norm is bounded
+   independently of the dimension, apart from harmless fixed factors.
+   Laurent-coefficient estimates give uniform tail bounds for positive
+   and negative real arguments. Normalized monomial derivatives are
+   bounded before summation. The gap kappa<omega makes the remaining
+   tail summable uniformly in the derivative range. All parameters other
+   than n are fixed at this stage.
+
+5. Rank. Taylor corrections are made in z before passing to z=w^2, so the
+   same polynomial row is used at i and -i. The enlarged system's binomial
+   identities retain the diagonal -1/(2z) term, which the pullback removes.
+   The residue descent applies to both kinds of link. It proves the
+   independence of the high-order remainders within each local family.
+   Homogeneous logarithmic solutions supply the other local families.
+   Counting both evaluation points compensates for the doubled polynomial
+   degree. The system and its finite pole set are fixed as n grows.
+   Since 1<=b<=a, the finitely many possible systems give a uniform
+   multiplicity constant when b depends on n.
+
+6. Dimension. After the odd columns vanish, any rational kernel vector
+   lifts to one for the unreduced rows with the same constant coordinate.
+   The 2026 refined criterion therefore applies. Removing 1 loses at most
+   one dimension. First n tends to infinity for fixed a, then a tends to
+   infinity. The specified parameters give the limiting coefficient
+   0.2174562348..., with strict slack over 0.21. Monotonicity extends the
+   conclusion from multiples of 34 to every sufficiently large even s.
+
+Changes made during the writing audit
+
+The proof now includes explicit finite corrections, the normalized local
+denominator argument, the general residue-descent lemma and its algebra,
+the six-point order count, and the lifting of the reduced rational kernel.
+The comparison with periodic-polylogarithm results explains why a theorem
+allowing both parities does not alone give a theorem about even beta values.
+The LCM device is cited in its arithmetic context, and the Rivoal-Zudilin
+DOI was checked and corrected during reference preparation.
+
+Supporting calculation for the periodic-polylogarithm comparison
+
+Mistiaen's notation is L(f,j,z)=sum_(m>=1) f(m) z^m/m^j, initially
+for |z|<1. Take the period-2 function f equal to 1 on odd integers and
+0 on even integers. At z=i, the convergent series gives
+L(f,j,i)=i beta(j) for j>=1. The point i is permitted by the theorem's
+domain for period 2. Since beta(j) is real, a relation over Q(i) splits
+into two relations over Q, so the two notions of linear independence
+coincide for these values. Multiplication by the common factor i does
+not change the dimension. This calculation supports the comparison in
+the introduction; it is not part of the proof of the new theorem and
+is retained here instead of in a paper footnote.
+
+Computational support
+
+The check reports and their scope are described in ../checks/README.txt.
+They all passed. Finite identities and exact certificates support the
+written proof but do not replace its asymptotic or multiplicity arguments.
+The supporting scripts do not evaluate beta numerically.
+
+Limits
+
+No explicit threshold in s is claimed. This is a family theorem and does
+not prove the irrationality of beta(4). No matching half-integer extension
+was found in the literature examined, but the search is not exhaustive
+and does not establish novelty. The Kumar-Tosi preprint is mentioned as
+a contemporary claimed irrational-value count. The introduction explicitly
+qualifies the unresolved arithmetic errors in v1 and gives the zero-case
+counterexample to Lemma 18 in a footnote. That calculation was checked
+again against the archived source definitions and statement. It concerns
+the proof as written and does not disprove the main theorem. None of its
+claims or the attempted repairs in the research archive is an input to
+this proof.
+
+Reader-oriented revision of the full paper
+
+The developing assistant reread every section with attention to what the
+reader knows at each stage. This is an expository revision, not a new
+independent mathematical review. The theorem, parameter choices, constants,
+imported hypotheses and substantive proof arguments are unchanged.
+
+The introduction now explains the three requirements on the linear forms
+before introducing the construction. Section 2 begins with the refined
+criterion. The sections on summation, denominators, estimates and rank
+each explain their purpose and how the following construction meets it.
+The Laplace-transform consequence of vanishing at infinity now appears
+at its first use in Section 6.4. The last section explains the parameter
+scales before giving their numerical values. The abstract remains brief.
+
+Two notation collisions were removed: the local integrating factor is
+eta(u), rather than b(u), and the homogeneous remainder families use j
+rather than beta as an index. The admissible indices and the restriction
+to components through b+h are now explicit. The denominator discussion
+explains the gain from distinct integration degrees over arbitrary
+products, and the rank discussion explains why the quadratic substitution
+requires counting at both preimages of the evaluation point.
+The last read also clarified an ambiguous reference to the universal
+derivative identity and wrote min(d,k), rather than d, for the number of
+largest valuations selected in the LCM proof, to cover k<d explicitly.
+
+One inadequate explanation was removed from the final remark: a>4 alone
+does not show that the method cannot isolate beta(4), because a=5, h=0
+still has 4 as the largest even argument. No such impossibility claim is
+needed or proved. The introduction retains the correct scope statement
+that this growing-family theorem does not establish beta(4)'s irrationality.
+
+The revised sources were compared with the saved pre-revision snapshot.
+All labels were retained, and the displayed mathematics was checked for
+unintended changes. The exact-check scripts and their reports were not
+changed or rerun for this expository revision. Build and visual checks are
+recorded separately for the rebuilt canonical PDF.

@@ -1,0 +1,158 @@
+\section{Three inputs from Fischler}\label{sec:inputs}
+
+We first state the criterion that turns linear forms into a dimension
+bound. The other two inputs provide the rational functions from which
+the forms are built and the multiplicity estimate used to prove their
+rank condition.
+
+\subsection{A refined linear-independence criterion}
+
+The rows of the matrix below are the coefficients of integer linear
+forms in the target numbers. The two size bounds measure the growth of
+those coefficients and the decay of the forms when evaluated at the
+target vector. The rank condition is the third hypothesis to be proved.
+
+\begin{proposition}[{\cite[Proposition~1]{F26}, over $\Q$}]
+\label{prop:criterion}
+Let $\theta=(\theta_0,\ldots,\theta_v)^T$ be a real vector with
+$\theta_0\neq0$.
+For each $n$ in an infinite set, let $L_n$ be an integer matrix with
+$v+1$ columns and any finite number of rows.
+Suppose that, for fixed $B>1$ and $\alpha<1$ with $\alpha>0$,
+\[
+ \max_{i,j}|(L_n)_{i,j}|\leq B^{n+o(n)},\qquad
+ \max_i|(L_n\theta)_i|\leq\alpha^{n+o(n)}.
+\]
+Suppose also that, for sufficiently large $n$,
+\begin{equation}\label{eq:weak-rank}
+ L_nx=0,\quad x\in\Q^{v+1}\quad\Longrightarrow\quad x_0=0.
+\end{equation}
+Then
+\[
+ \dim_\Q\Span_\Q\{\theta_0,\ldots,\theta_v\}
+       \geq1-\frac{\log\alpha}{\log B}.
+\]
+\end{proposition}
+
+Condition \eqref{eq:weak-rank} says that the first column is not a
+rational linear combination of the other columns. Full column rank is
+not required. This distinction is useful here because the rational
+function in Proposition~\ref{prop:rational} is obtained by an existence
+argument, and its coefficients need not give full rank.
+In our application, $\theta_0=1$ and the other coordinates are even beta
+values. We will bound the coefficients and values of the forms in
+Section~\ref{sec:estimates}, then prove \eqref{eq:weak-rank} in
+Section~\ref{sec:rank}. No lower bound on the value of each individual
+form is required.
+
+\subsection{A rational function with small coefficients}
+
+The construction supplies two properties at once: integer
+partial-fraction coefficients of controlled size, and high-order
+vanishing at infinity. The latter means that the function decays rapidly
+at the arguments where we will sum it.
+
+\begin{proposition}[{\cite[Theorem~4]{F26}}]\label{prop:rational}
+Let $a$ be a positive integer and let $\omega,\Omega,r$ be rational
+numbers with
+\[
+ a>\Omega\geq\omega\geq1,\qquad r\geq1.
+\]
+For every sufficiently large integer $n$ such that $rn,\omega n,\Omega n$
+are integers, there are integers $c_{i,j}$, not all zero, for
+$1\leq i\leq a$ and $0\leq j\leq n$, with the following properties.
+Set
+\[
+ F_n(t)=\sum_{i=1}^a\sum_{j=0}^n\frac{c_{i,j}}{(t+j)^i}
+       =\sum_{\nu\geq1}A_\nu t^{-\nu}.
+\]
+Then $A_\nu=0$ for $\nu<\omega n$,
+\begin{equation}\label{eq:coeff-small}
+ |c_{i,j}|\leq \exp(n\log\chi+o(n)),
+ \quad
+ \log\chi=
+ \frac{\omega\log2+3\omega^2+\omega^2\log(a+1)
+                +\frac12\Omega^2\log r}{a-\omega},
+\end{equation}
+and, uniformly in $\nu$,
+\begin{equation}\label{eq:laurent-bounds}
+ |A_\nu|\leq \exp(n\log\chi+o(n))\,n^\nu\nu^a
+ \begin{cases}
+ r^{\nu-\Omega n},&\nu<\Omega n,\\
+ 1,&\nu\geq\Omega n.
+ \end{cases}
+\end{equation}
+\end{proposition}
+
+Here $a$ bounds the pole orders, and $\omega n$ is a lower bound for
+the order of vanishing at infinity. The parameter $r$ will determine
+the summation cutoff $rn$.
+The larger threshold $\Omega n$ gives the stronger estimate in the first
+line of \eqref{eq:laurent-bounds}. These parameters are fixed as $n$ grows;
+their choice is postponed until Section~\ref{sec:conclusion}.
+
+Group the coefficients with the same pole order into polynomials
+\[
+ P_i(z)=\sum_{j=0}^n c_{i,j}z^j,
+ \qquad b=\max\{i:P_i\not\equiv0\}.
+\]
+The $P_i$ will multiply the special functions obtained by summing $F_n$.
+We retain the actual largest index $b$, rather than replacing it by $a$,
+because the rank proof needs a nonzero highest coefficient $P_b$.
+The integer $b$ may depend on $n$, but always satisfies $1\leq b\leq a$.
+
+\subsection{A multiplicity estimate}
+
+The rank proof will argue by contradiction. If the coefficient matrix
+has a forbidden kernel vector, we can construct polynomial combinations
+of solutions with many vanishing derivatives. The following theorem
+limits their total order of vanishing in terms of the polynomial degrees.
+It plays the role of a zero-counting bound for these combinations.
+
+Let $Y'=\matA(w)Y$ be a fixed rational differential system of size $q$.
+For polynomials $S_0,\ldots,S_{q-1}$ of degree at most $m$, write
+\[
+ \mathcal R(Y)=\sum_{j=0}^{q-1}S_jY_j.
+\]
+We call this scalar function the \emph{remainder} associated with the
+solution $Y$ and the fixed polynomial row $(S_0,\ldots,S_{q-1})$.
+The selected remainders must satisfy a common scalar linear differential
+equation of some order $\mu$, with rational coefficients. In our
+application such an equation will follow from the finite dimension of
+the system.
+
+At a point $\sigma$, the Nilsson class consists of finite sums of
+holomorphic functions multiplied by complex powers and nonnegative
+integer powers of a logarithm of the local coordinate.
+At infinity the local coordinate is $1/w$.
+The order is the least real part of a power that occurs after expanding
+the holomorphic factors; logarithmic factors do not change it. For example,
+$\ord_0(w^e(\log w)^j)=\operatorname{Re}e$.
+In particular, $w^N$ has order $-N$ at infinity. Negative orders will
+therefore occur when we apply the theorem.
+
+\begin{proposition}[{\cite[Theorem~3]{F26};
+see also \cite[Theorem~3.1]{F18}}]\label{prop:multiplicity}
+Let $\Sigma$ be a fixed finite set of points of the Riemann sphere
+containing infinity. At each $\sigma\in\Sigma$, choose a family of local
+solutions $Y_{\sigma,j}$, indexed by $j\in J_\sigma$, whose remainders
+are in the Nilsson class and are linearly independent over $\C$.
+If a nonzero rational differential operator of order $\mu$ annihilates
+all these remainders, then
+\[
+ \sum_{\sigma\in\Sigma}\sum_{j\in J_\sigma}
+       \ord_\sigma\mathcal R(Y_{\sigma,j})
+       \leq(m+1)(\mu-|J_\infty|)+C.
+\]
+The constant $C$ depends only on the differential system and on $\Sigma$.
+\end{proposition}
+
+The solution families at different points need not agree by analytic
+continuation, and no independence between different families is required.
+These features are explicit in \cite[Section~3.1]{F18}.
+We use the formulation in \cite{F26}, which also allows negative orders
+at infinity, as in its proof of Proposition~3.
+The constant is uniform in the polynomial row and in the selected
+solutions. This uniformity is essential when that row and the solutions
+depend on $n$.
+
