@@ -1,11 +1,11 @@
 {
-  "reviewed_at_utc": "2026-11-03T03:46:57.504652+00:00",
+  "reviewed_at_utc": "2026-11-03T12:31:03.195963+00:00",
   "pdf": "output/pdf/even-beta-independence.pdf",
-  "pdf_sha256": "51d00192ae48dc630af57f5ec4bdcb9911f57967f0366fbb8d7372e50017e44c",
+  "pdf_sha256": "e20cc465f472b07a1d9999c9fc7e05d808e342de9f8e6e8072309b7c2ab7bcaf",
   "pages": 16,
-  "method": "Rendered all 16 pages at 110 dpi after the requested wording edit. Visually inspected page 2; raster hashes confirm all other pages are identical to the previously inspected revision.",
+  "method": "Rendered all 16 pages at 110 dpi after the author-line edit. Visually inspected page 1; all other rendered pages match the previously inspected revision exactly.",
   "page_notes": {
-    "1": "Abstract is followed directly by the introduction. Title, formulas and theorem remain legible with clean spacing.",
+    "1": "Pseudonymous author and Codex preparation credit are legible and centered. Abstract, introduction and theorem fit cleanly on the first page.",
     "2": "Requested wording appears correctly; paragraph, formulas and footnote fit cleanly.",
     "3": "Proof outline, conventions and the complete refined criterion fit with clear section transitions.",
     "4": "Rational-function input, parameter explanations and multiplicity preface legible; equations fit.",
@@ -28,10 +28,10 @@
     "overfull_boxes": false,
     "underfull_warnings": []
   },
-  "previous_pdf_sha256": "925e620253e5b6253573400f04cfc7f8a3f8cecc1eefef0ef58b00b8c6b97be5",
-  "editorial_change": "Changed \"The proof in v1\" to \"The proof\" in the introduction, as requested.",
+  "previous_pdf_sha256": "51d00192ae48dc630af57f5ec4bdcb9911f57967f0366fbb8d7372e50017e44c",
+  "editorial_change": "Added twinheterodox above Research note prepared with Codex on the title page, and set PDF author metadata to twinheterodox.",
   "rendered_page_sha256": {
-    "page-01.png": "fdffa40154a4063f7faf3dda9220eb232cf41c3f640401855df1127050bf95a0",
+    "page-01.png": "c98d6fc884b75b0fb840638b392c1ed47fa041c0f3996ff10ccf9f472a1fa4da",
     "page-02.png": "f5bc27ce37e2571ce691db8e615bf4c1913f1ab3940ee15fe44511728e54228e",
     "page-03.png": "f51080304d2ed89873bc0a53999bdff50d8b24faa88764ad859e6c95745b6d28",
     "page-04.png": "9bcc83ba0cad6fe88cf3b71f86956943f7288068a86d0bea80be26c097f76656",

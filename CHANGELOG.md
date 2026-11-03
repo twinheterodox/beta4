@@ -1,5 +1,9 @@
 # Changelog
 
+## 3 November 2026 — Author attribution
+
+- Added twinheterodox as the author of *Linear independence of even Dirichlet beta values*, retaining the Codex preparation credit, and updated the PDF author metadata.
+
 ## 2 November 2026 — Even beta values
 
 - Added *Linear independence of even Dirichlet beta values*, with its PDF, complete LaTeX source, exact supporting checks and source-reading records in `even-beta-independence/`.

@@ -2,7 +2,7 @@
   "status": "compiled; visual review recorded separately",
   "pages": 16,
   "source_files": {
-    "paper/even-beta-independence.tex": "84d8eb7c4d97044ccd1ae01db5feeae51ea36d61212c9c5a69b06955af00c5ad",
+    "paper/even-beta-independence.tex": "ad3fc8c40d308c601738946ebc0f7d3287817040e593e491a1c80c67c7211a92",
     "paper/references.tex": "064835e6e9b46cc24f3becca960429e386f8f137450a07f65ae17d7a8671c6e1",
     "paper/sections/arithmetic.tex": "e0d519bdcaa7962cafdf246f2c20e8a5cdc6866ee4fb1103d79b14c0ec7324d9",
     "paper/sections/conclusion.tex": "609ed18b3033032014970261aded717d162c4f37995d2e7f875315e9a95fe61c",
@@ -13,7 +13,7 @@
     "paper/sections/rank.tex": "d58a1fb5195c0671dff267cae4e014fcfe6f344773c10dee3fde732fb43a7430"
   },
   "pdf": "output/pdf/even-beta-independence.pdf",
-  "pdf_sha256": "51d00192ae48dc630af57f5ec4bdcb9911f57967f0366fbb8d7372e50017e44c",
+  "pdf_sha256": "e20cc465f472b07a1d9999c9fc7e05d808e342de9f8e6e8072309b7c2ab7bcaf",
   "unresolved_references": false,
   "overfull_boxes": false,
   "underfull_warnings": [],
