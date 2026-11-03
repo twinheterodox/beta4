@@ -31,14 +31,19 @@ Removing $1$ loses at most one dimension. Thus
  D(2\lfloor(a+h)/2\rfloor)\geq-\frac{\log\alpha}{\log B}.
 \end{equation}
 
-The scales in the parameter choice can be read from this quotient.
-Increasing $\Omega$ improves the decay through $\Omega\log r$, but it
-also increases $\log\chi$ by a term of order $\Omega^2/a$.
-The denominator estimate contributes a term of order $\log a$ when
-$h$ is proportional to $a$. Taking $\Omega$ of order
-$\sqrt{a\log a}$ therefore keeps $\log B$ of order $\log a$ while
-making $-\log\alpha$ of order $\sqrt{a\log a}$. Their quotient has the
-desired order $\sqrt{a/\log a}$.
+We choose the parameters in the order of the constraints they must meet.
+First fix $r\geq2$, $\kappa$, $\omega$ and a proportion $0<h/a\leq1$
+such that
+\[
+ 2r<\kappa<\omega,\qquad \frac{h}{a}(\kappa-2r)>1.
+\]
+The first condition gives a nonempty range of derivative rows with
+summable tails; the second ensures the rank condition.
+Next choose $\Omega$ so that its coefficient cost $\Omega^2/a$ has
+the same order as the denominator cost $\log a$.
+Thus $\Omega$ has order $\sqrt{a\log a}$, and its decay contribution
+$\Omega\log r$ dominates both costs. These choices leave $\log B$
+of order $\log a$ and $-\log\alpha$ of order $\sqrt{a\log a}$.
 
 For the numerical constants, use the choice of \cite[Section~4.6]{F26}.
 Let $a$ tend to infinity through positive multiples of $25$, and set
@@ -50,17 +55,22 @@ Let $a$ tend to infinity through positive multiples of $25$, and set
  \Omega=\left\lfloor r\sqrt{a\log a}\right\rfloor.
 \end{equation}
 For sufficiently large $a$ these satisfy
-$a>\Omega\geq\omega>\kappa>2r$ and $0\leq h\leq a$, and
+$a>\Omega\geq\omega>\kappa>2r$ and $0\leq h\leq a$.
+The rank condition has a small strict margin, visible in its slope:
 \[
- (h+1)(\kappa-2r)+\omega
-  =\left(\frac{9a}{25}+1\right)\frac{139}{50}+12>a.
+ \frac{h}{a}(\kappa-2r)
+   =\frac9{25}\left(\frac{529}{50}-2\cdot\frac{39}{10}\right)
+   =\frac{1251}{1250}>1.
 \]
 Take $n$ through sufficiently large multiples of $50$.
 For each fixed $a$, all needed integer conditions and the weak rank
 statement then hold.
 
-As $a\to\infty$, equations \eqref{eq:coeff-small}, \eqref{eq:B} and
-\eqref{eq:alpha} give
+As $a\to\infty$, the $\Omega^2$ term supplies the leading part of
+$\log\chi$, and $\kappa\Ht_{a+h}\sim\kappa\log a$ supplies the
+denominator contribution to $\log B$. The term $-\Omega\log r$
+dominates $\log\alpha$. Equations \eqref{eq:coeff-small}, \eqref{eq:B}
+and \eqref{eq:alpha} therefore give
 \begin{align}
  \log\chi&\sim\frac{r^2\log r}{2}\log a,\notag\\
  \log B&\sim\left(\frac{r^2\log r}{2}+\kappa\right)\log a,
@@ -104,8 +114,11 @@ proof, with the adaptations identified in the text.
 Mistiaen's explanation of the conductor restriction suggested the
 evaluation-point question addressed here.
 
-This research note was prepared with OpenAI Codex. The accompanying exact
-calculations check finite instances of the identities and denominator
-bounds; they are not formal verification. The paper has been independently
-cross-checked by another model.
+This research note was prepared with OpenAI Codex, using Astra-6-Max for
+the exposition revisions. An independent proof audit by a second model,
+reported on 3 November 2026, found no substantive mathematical gap in the
+19-page revision. The audit checked the denominator and rank arguments,
+the application of Fischler's multiplicity estimate and the final bound;
+the supplied and additional computational checks were reported to pass.
+The audit used the cited results and was not formal verification.
 

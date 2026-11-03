@@ -1,0 +1,107 @@
+{
+  "completed_at_utc": "2026-11-03T15:24:43.380468+00:00",
+  "review_round": 2,
+  "status": "Review completed; two focused exposition recommendations and one optional display refinement. Manuscript unchanged.",
+  "report": "review/human-reader-expository-review-2026-11-03-round2.txt",
+  "report_sha256": "6b66f906af5f42c02d39a08ee4f48a739e9d8b4a3feb5a7c42b5b7ffb423ce93",
+  "guidance": {
+    "path_relative_to_project_root": "../../mathematical-exposition.txt",
+    "sha256": "84e3f6b850cd2eb56c71d8b10cb90b0425de6c7b7bc4f5050a034e8691364244"
+  },
+  "audience": "Mathematically trained human reader familiar with linear algebra, power series, complex analysis and basic linear differential systems, without prior study of Fischler's construction.",
+  "reading_scope": "Complete current LaTeX manuscript: abstract, all seven sections and references. Three imported propositions treated as stated inputs. Particular attention to the origin of the square-root scale.",
+  "snapshot": {
+    "pages": 18,
+    "pdf": "output/pdf/even-beta-independence.pdf",
+    "pdf_sha256": "58a5d2f36ac47b08ec4a615ba9cd5b58c225fa584696f2f41aceebfed0ed4e3b",
+    "source_files": {
+      "paper/even-beta-independence.tex": "1e45c5116f1865fba9883e40b271be29832512462bf3a5f0d03377e5e692a17e",
+      "paper/references.tex": "064835e6e9b46cc24f3becca960429e386f8f137450a07f65ae17d7a8671c6e1",
+      "paper/sections/arithmetic.tex": "53e52301a1768e979d65129aa7409eb67f955c596c9d290085d1c84e4a3d5a59",
+      "paper/sections/conclusion.tex": "b74572d28f3019347580732c95d2fd3f11721f54331d6440ecc31f0de65bfe80",
+      "paper/sections/estimates.tex": "67d7479478cd4a0789905ccfdc2d4f370d2625345f8cb54826580c812d810502",
+      "paper/sections/forms.tex": "806e7736b0f2f537f7b481565281a5302f90297eb9c3fa2ba90a5bfc6353de8c",
+      "paper/sections/inputs.tex": "d8abe487d24b24f825c602c16eb2a7aeceff0b90e3ea56371bc17f6213dc17eb",
+      "paper/sections/introduction.tex": "ae7a8663c2106466333b81e1b0b8640281f2f2a8deb710404f728068dd297a61",
+      "paper/sections/rank.tex": "07f42ce24ac35355d15c5ac63ba9c267fff95886cd7439fd8a8c08957a088562"
+    },
+    "build_record": "paper/build-record.json",
+    "build_record_sha256": "52c7633d9e316480eba15643eef51c046d8bba19592fb0be0cab5229086ea8a1"
+  },
+  "earlier_review_assessment": {
+    "revision_record": "review/human-reader-exposition-revision-2026-11-03.json",
+    "revision_record_sha256": "8bb08c3a1311a12ad49045ca4d747643c25ce34760b1b2aaef84abfb2fc8bcda",
+    "findings_H1_through_H7": "Addressed in the current manuscript. The new recommendations are narrower local bridges, not a reopening of the previous structural recommendations."
+  },
+  "findings": [
+    {
+      "id": "R1",
+      "priority": "medium",
+      "optional": false,
+      "title": "Show the differential cancellation in the h=1 example",
+      "locations": [
+        {
+          "path": "paper/sections/rank.tex",
+          "lines": [
+            148,
+            171,
+            210
+          ]
+        }
+      ],
+      "recommendation": "Demonstrate the derivative relation for Z_j=L*g_j-j*g_(j+1), so the h=1 example shows differential closure as well as the common row. Replace the easy first-two-component check or shorten adjacent prose."
+    },
+    {
+      "id": "R2",
+      "priority": "medium",
+      "optional": false,
+      "title": "Expose the coefficient correspondence in the Laplace-transform step",
+      "locations": [
+        {
+          "path": "paper/sections/rank.tex",
+          "lines": [
+            356,
+            365,
+            371
+          ]
+        }
+      ],
+      "recommendation": "Display the Laplace integral of u^k/k! and identify A_(k+1)=G^(k)(0), then the order transfer through exp(-u). Keep the asymptotic or finite-partial-fraction justification explicit."
+    },
+    {
+      "id": "R3",
+      "priority": "low",
+      "optional": true,
+      "title": "Make the square-root balance easier to locate at a glance",
+      "locations": [
+        {
+          "path": "paper/sections/introduction.tex",
+          "lines": [
+            148
+          ]
+        },
+        {
+          "path": "paper/sections/conclusion.tex",
+          "lines": [
+            42
+          ]
+        }
+      ],
+      "recommendation": "Optionally replace part of the existing prose with a displayed scale balance Omega^2/a of order log a and the resulting dimension-bound scale. The current prose already explains the mechanism; no optimization claim is proposed."
+    }
+  ],
+  "verification_scope": {
+    "source_and_pdf_hashes_match_existing_build_record": true,
+    "existing_visual_review_matches_current_pdf": true,
+    "existing_visual_review": "review/visual-review.json",
+    "existing_visual_review_sha256": "bcc819a67592a3b17e5be5b99f7d71f4ffde9fb3c0fbbd4ca71035aa0dadc171",
+    "manuscript_modified": false,
+    "pdf_rebuilt": false,
+    "supporting_check_scripts_rerun": false,
+    "new_visual_review": false,
+    "human_reader_test": false,
+    "suggested_illustration_check": "Direct SymPy substitution confirmed the generic h=1 relation Z_j prime=-Z_(j-1)/z-Z_j/(2z) for j>=2; no permanent test or manuscript files were changed.",
+    "limitations": "Editorial review by the developing assistant; not a new mathematical audit, independent model review or formal verification."
+  },
+  "distribution": "Local review records and README index only; no publication or external submission."
+}

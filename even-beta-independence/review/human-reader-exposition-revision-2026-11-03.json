@@ -1,0 +1,226 @@
+{
+  "completed_at_utc": "2026-11-03T15:11:22.765747+00:00",
+  "status": "All seven findings of the human-reader exposition review addressed; rebuilt and visually reviewed locally.",
+  "guidance": {
+    "path_relative_to_project_root": "../../mathematical-exposition.txt",
+    "sha256": "84e3f6b850cd2eb56c71d8b10cb90b0425de6c7b7bc4f5050a034e8691364244"
+  },
+  "audience": "Mathematically trained human reader familiar with linear algebra, power series, complex analysis and basic linear differential systems, without prior study of Fischler's construction.",
+  "review_addressed": {
+    "path": "review/human-reader-expository-review-2026-11-03.json",
+    "sha256": "ae6ccfb4bf0b4b84452291f4eaa51be81d9fc93f8e86316360e08516e939dd56",
+    "report": "review/human-reader-expository-review-2026-11-03.txt",
+    "report_sha256": "82d25812ce8534e40fbe415ad9b32e1ff89cd8917bf09e3f9c0056b61b7b1bcf"
+  },
+  "previous_revision": {
+    "pages": 17,
+    "pdf_sha256": "d9c2f5ab11255e9ff2f7f9719ff36c71699b101f975d93fd495bd159fd2dce1b"
+  },
+  "current_revision": {
+    "pages": 18,
+    "pdf": "output/pdf/even-beta-independence.pdf",
+    "pdf_sha256": "58a5d2f36ac47b08ec4a615ba9cd5b58c225fa584696f2f41aceebfed0ed4e3b",
+    "source_files": {
+      "paper/even-beta-independence.tex": "1e45c5116f1865fba9883e40b271be29832512462bf3a5f0d03377e5e692a17e",
+      "paper/references.tex": "064835e6e9b46cc24f3becca960429e386f8f137450a07f65ae17d7a8671c6e1",
+      "paper/sections/arithmetic.tex": "53e52301a1768e979d65129aa7409eb67f955c596c9d290085d1c84e4a3d5a59",
+      "paper/sections/conclusion.tex": "b74572d28f3019347580732c95d2fd3f11721f54331d6440ecc31f0de65bfe80",
+      "paper/sections/estimates.tex": "67d7479478cd4a0789905ccfdc2d4f370d2625345f8cb54826580c812d810502",
+      "paper/sections/forms.tex": "806e7736b0f2f537f7b481565281a5302f90297eb9c3fa2ba90a5bfc6353de8c",
+      "paper/sections/inputs.tex": "d8abe487d24b24f825c602c16eb2a7aeceff0b90e3ea56371bc17f6213dc17eb",
+      "paper/sections/introduction.tex": "ae7a8663c2106466333b81e1b0b8640281f2f2a8deb710404f728068dd297a61",
+      "paper/sections/rank.tex": "07f42ce24ac35355d15c5ac63ba9c267fff95886cd7439fd8a8c08957a088562"
+    }
+  },
+  "changed_manuscript_files": [
+    "paper/sections/arithmetic.tex",
+    "paper/sections/conclusion.tex",
+    "paper/sections/estimates.tex",
+    "paper/sections/forms.tex",
+    "paper/sections/inputs.tex",
+    "paper/sections/introduction.tex",
+    "paper/sections/rank.tex"
+  ],
+  "findings_addressed": [
+    {
+      "id": "H1",
+      "change": "Introduced h before use in the introduction, explained the gain of h+1 families and cost a+h, and tied proportional growth of h to the rank condition.",
+      "locations": [
+        "paper/sections/introduction.tex:106",
+        "paper/sections/forms.tex:13",
+        "paper/sections/rank.tex:33"
+      ]
+    },
+    {
+      "id": "H2",
+      "change": "Separated the three rational-function properties and assigned distinct roles to omega and Omega before the formal input; interpreted both tail factors and identified exact vanishing as the source of rank zeros.",
+      "locations": [
+        "paper/sections/inputs.tex:51",
+        "paper/sections/inputs.tex:95",
+        "paper/sections/estimates.tex:63",
+        "paper/sections/rank.tex:362"
+      ]
+    },
+    {
+      "id": "H3",
+      "change": "Placed the matrix product rule before the component recurrence and explained its use for both small forms and a hypothetical kernel solution. The factorial normalization and denominator clearing are explicit. Added H_1(-1)=0, H_1 prime(-1)=-1 to explain retaining odd functions during differentiation.",
+      "locations": [
+        "paper/sections/forms.tex:85",
+        "paper/sections/forms.tex:150",
+        "paper/sections/forms.tex:189"
+      ]
+    },
+    {
+      "id": "H4",
+      "change": "Added a two-integration example before the distinct-product LCM; compared the naive an exponent with n log a and the available n sqrt(a log a) decay, respecting the order of limits.",
+      "locations": [
+        "paper/sections/arithmetic.tex:12",
+        "paper/sections/arithmetic.tex:62"
+      ]
+    },
+    {
+      "id": "H5",
+      "change": "Explained why logarithms match the differential chain, related local and quadratic diagonal cancellation, and distinguished solution-vector independence from scalar-remainder independence. Preserved the h=1 example and residue proof.",
+      "locations": [
+        "paper/sections/rank.tex:142",
+        "paper/sections/rank.tex:227",
+        "paper/sections/rank.tex:273"
+      ]
+    },
+    {
+      "id": "H6",
+      "change": "Organized parameter selection by simultaneous derivative-range and rank constraints, then the Omega balance. Displayed the exact rank slope 1251/1250 and identified the leading contributions to the rates. Fischler attribution and numerical parameters are unchanged.",
+      "locations": [
+        "paper/sections/conclusion.tex:34",
+        "paper/sections/conclusion.tex:59",
+        "paper/sections/conclusion.tex:69"
+      ]
+    },
+    {
+      "id": "H7",
+      "change": "Explained that the selected derivative range is one order beyond the minimum needed to remove the finite tail, and suits both the estimates and the degree-2M Taylor correction.",
+      "locations": [
+        "paper/sections/forms.tex:175"
+      ]
+    }
+  ],
+  "preservation": {
+    "method": "Compared all labelled theorem, proposition, lemma, corollary, remark, equation and align environments against the local pre-edit snapshot.",
+    "unchanged_labels_by_file": {
+      "paper/even-beta-independence.tex": [],
+      "paper/references.tex": [],
+      "paper/sections/arithmetic.tex": [
+        "cor:integer",
+        "eq:D-rate",
+        "eq:Delta-def",
+        "eq:integer-form",
+        "eq:lcm-product",
+        "eq:local-gauge",
+        "lem:denominators",
+        "lem:lcm"
+      ],
+      "paper/sections/conclusion.tex": [
+        "eq:cstar",
+        "eq:parameter-bound",
+        "eq:parameters",
+        "eq:rates-asymptotic"
+      ],
+      "paper/sections/estimates.tex": [
+        "eq:B",
+        "eq:F-tail-bound",
+        "eq:alpha",
+        "eq:kappa-range",
+        "prop:estimates"
+      ],
+      "paper/sections/forms.tex": [
+        "eq:C",
+        "eq:H-values",
+        "eq:Phi-integral",
+        "eq:Q",
+        "eq:S",
+        "eq:base-system",
+        "eq:finite-correction",
+        "eq:tail-decomposition",
+        "eq:universal-row",
+        "eq:value-row",
+        "lem:tail"
+      ],
+      "paper/sections/inputs.tex": [
+        "eq:coeff-small",
+        "eq:laurent-bounds",
+        "eq:weak-rank",
+        "prop:criterion",
+        "prop:rational"
+      ],
+      "paper/sections/introduction.tex": [
+        "eq:dimension",
+        "eq:oldbound",
+        "thm:main"
+      ],
+      "paper/sections/rank.tex": [
+        "eq:Rn-zero",
+        "eq:S-common",
+        "eq:Yq",
+        "eq:enlarged-system",
+        "eq:f-zero",
+        "eq:homogeneous-remainders",
+        "eq:lifted-polynomials",
+        "eq:lifted-system",
+        "eq:rank-condition",
+        "eq:residue-coefficient",
+        "lem:chain",
+        "prop:multiplicity",
+        "prop:rank"
+      ]
+    },
+    "bibliography_unchanged": true,
+    "main_tex_unchanged": true,
+    "earlier_review_records_retained": true
+  },
+  "verification": {
+    "build": {
+      "command": "python3 tools/build_paper.py",
+      "status": "passed",
+      "pdflatex_passes": 3,
+      "unresolved_references": false,
+      "overfull_boxes": false,
+      "underfull_warnings": [],
+      "record": "paper/build-record.json",
+      "sha256": "52c7633d9e316480eba15643eef51c046d8bba19592fb0be0cab5229086ea8a1"
+    },
+    "local_system_checks": {
+      "command": "python3 checks/check_local_system.py",
+      "status": "passed",
+      "record": "checks/local-system-results.json",
+      "sha256": "8643a52cb8421f8082745209b0fb8b051c9e656703a08978214f75a08e51790a",
+      "counts": {
+        "distinct_products_lcm_checks": 52,
+        "fundamental_matrix_route_comparisons": 2304,
+        "nonzero_coefficients_compared": 1204,
+        "taylor_depth": 7,
+        "max_taylor_order": 36,
+        "enlarged_system_symbolic_identities": 100,
+        "pullback_and_residue_checks": 3,
+        "descending_residue_identities": 12
+      },
+      "constant_above_0_21_exact": true,
+      "rank_slope_above_1_exact": true
+    },
+    "linear_form_checks": {
+      "command": "python3 checks/check_linear_forms.py",
+      "status": "passed",
+      "record": "checks/half-shift-forms-checks.json",
+      "sha256": "22a845d2a459882d32e1f3ceb308338c0e307c8eba13bc5fa5cebd295c3b5806",
+      "coefficient_vectors_compared": 6
+    },
+    "whitespace_check": "No whitespace errors in the seven edited sections; checked with git diff --no-index --check against the pre-edit snapshot.",
+    "visual_review": {
+      "record": "review/visual-review.json",
+      "sha256": "bcc819a67592a3b17e5be5b99f7d71f4ffde9fb3c0fbbd4ca71035aa0dadc171",
+      "pages_inspected": 18,
+      "unresolved_layout_issues": []
+    },
+    "scope": "Same-assistant editorial review and exact finite supporting calculations; no new independent model review, human-reader study or formal verification."
+  },
+  "distribution": "Local revision only; publication copy, existing ZIP and external submissions were not updated."
+}

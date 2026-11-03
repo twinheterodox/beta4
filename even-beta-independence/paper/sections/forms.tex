@@ -6,6 +6,36 @@ values at $-1$ give the required even arguments. We then express the sums
 of $F_n$ in terms of those functions and remove the finite corrections
 by differentiation.
 
+\subsection{Parameters and the two differentiations}
+
+From now on $r\geq2$ and $M=rn$. Choose an integer $h$ with
+$0\leq h\leq a$, and put $d=a+h$.
+We use $F_n,F_n',\ldots,F_n^{(h)}$ to obtain $h+1$ families for the
+rank argument. Differentiating a pole of order $i$ raises its order,
+so these extra families require beta arguments up to $d$.
+The parameters and indices used in the construction have the following roles.
+\begin{center}
+\begin{tabular}{@{}p{0.17\textwidth}p{0.77\textwidth}@{}}
+\toprule
+Symbol & Role\\
+\midrule
+$n$ & Index tending to infinity to produce increasingly small forms.\\
+$a,b$ & Allowed and actual largest pole orders of $F_n$; $1\leq b\leq a$.\\
+$h,d=a+h$ & Largest derivative order of $F_n$ and upper bound for the beta arguments.\\
+$r,M=rn$ & The sums start at the cutoff $M$, beyond the poles of $F_n$.\\
+$\omega,\Omega$ & Control exact Laurent vanishing and additional exponential smallness, respectively.\\
+$\kappa$ & Controls the upper limit $k\leq\kappa n$ on the derivative rows; its constraints are imposed in Section~\ref{sec:estimates}.\\
+$p$ & Order of differentiation of $F_n(t)$ with respect to $t$, with $0\leq p\leq h$.\\
+$k-1$ & Order of differentiation of a generating function with respect to $z$; $k=1$ means no differentiation.\\
+\bottomrule
+\end{tabular}
+\end{center}
+Thus $p$ selects a family, whereas $k$ selects a derivative row within
+that family. The derivatives in $z$ remove finite polynomial corrections
+and provide the rows needed for the linear-independence criterion.
+We keep the upper bound $d$ fixed while $n$ tends to infinity; the
+number of beta values is increased only in Section~\ref{sec:conclusion}.
+
 \subsection{The functions at the evaluation point}
 
 The half-integer denominators are chosen so that alternating signs give
@@ -52,14 +82,16 @@ arbitrary initial values there determine an analytic solution. We will
 use the beta-valued initial vector for the linear forms, and arbitrary
 initial vectors for the rank proof.
 
+Although the odd-indexed functions vanish at $-1$, their derivatives
+need not: the system gives $H_1(-1)=0$ but $H_1'(-1)=-1$.
+We therefore keep all components during differentiation and use the
+zero odd values only when evaluating the resulting forms at $-1$.
+
 \subsection{Summation and finite tails}
 
-From now on we assume $r\geq2$, and set $M=rn$.
-The sums start beyond this cutoff so that the decay estimates for $F_n$
-apply. To obtain several families of forms we use $F_n$ and its first
-$h$ derivatives, where $0\leq h\leq a$ is an integer. A derivative of
-order $p$ raises a denominator power $i$ to $i+p$, so we use the system
-\eqref{eq:base-system} with $d=a+h$.
+The sums start beyond the cutoff $M=rn$ so that the decay estimates
+for $F_n$ apply. Since we use derivatives of $F_n$ of orders
+$0\leq p\leq h$, we take the system \eqref{eq:base-system} with $d=a+h$.
 
 The powers of $z$ in the following definition align the two reflected
 sums with $H_j$. The factor $z^M$ makes the finite corrections polynomial,
@@ -114,12 +146,16 @@ $\sum_i C_i^{[p]}H_i$. Its coefficient polynomials are
  0,&\text{otherwise}.
  \end{cases}
 \end{equation}
-The degree of each is at most $M+n$.
-They have integer coefficients. We next track the coefficients produced
-by differentiating this expression. The system \eqref{eq:base-system}
-expresses every derivative in the same functions, so no additional
-special functions are needed.
-Starting with $Q_{1,i}^{[p]}=C_i^{[p]}$, the product rule gives
+These polynomials have integer coefficients and degree at most $M+n$.
+To track derivatives, write the system as $y'=\matA y$ and temporarily
+suppress $p$ in the row $C$. The product rule reads
+\[
+ (Cy)'=(C'+C\matA)y.
+\]
+Differentiation replaces the coefficient row and keeps the same vector
+of functions. The new row depends only on $C$ and the system, so it
+works for every solution $y$.
+Starting with $Q_{1,i}^{[p]}=C_i^{[p]}$, iteration gives
 \begin{align}
  Q_{k+1,0}^{[p]}&=(Q_{k,0}^{[p]})'
                    +\frac{2Q_{k,1}^{[p]}}{z(1-z)},\notag\\
@@ -136,7 +172,10 @@ For \emph{every} solution of \eqref{eq:base-system}, differentiation gives
  \left(\sum_{i=1}^d C_i^{[p]}y_i\right)^{(k-1)}
        =\sum_{i=0}^d Q_{k,i}^{[p]}y_i.
 \end{equation}
-For $k\geq2M+2$, the derivative also kills $V_{n,p}$, so
+Since $\deg V_{n,p}\leq2M-1$, differentiation of order $2M$ already
+kills this correction. We use $k\geq2M+2$, hence order $k-1\geq2M+1$:
+the extra derivative gives a convenient range for the estimates and
+the degree-$2M$ Taylor correction in the rank proof. In this range,
 \begin{equation}\label{eq:value-row}
  \frac{S_{n,p}^{(k-1)}(-1)}{(k-1)!}
   =\frac{Q_{k,0}^{[p]}(-1)}{(k-1)!}
@@ -147,6 +186,11 @@ in $1$ and the even beta values. Dividing by $(k-1)!$ turns the derivatives
 into Taylor coefficients, whose denominators we can control in the next
 section. The finite correction $V_{n,p}$ has disappeared, so its
 coefficient denominators do not have to be cleared.
-The universal identity \eqref{eq:universal-row}, valid for arbitrary
-initial values of the solution, will supply the rank argument.
+The same rows will connect the size estimates to the rank proof.
+For the solution $(1,H_1,\ldots,H_d)$, they represent the derivatives
+that become small integer forms after factorial normalization and
+denominator clearing. For a solution whose initial vector lies in a
+putative rational kernel of these rows, identity
+\eqref{eq:universal-row} makes those derivatives vanish. This is the
+source of the high-order zeros used in Section~\ref{sec:rank}.
 

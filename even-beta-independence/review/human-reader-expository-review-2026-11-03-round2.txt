@@ -1,0 +1,149 @@
+Second expository review for human readers
+3 November 2026
+
+Manuscript: Linear independence of even Dirichlet beta values
+Revision: the current 18-page local manuscript.
+PDF SHA256: 58a5d2f36ac47b08ec4a615ba9cd5b58c225fa584696f2f41aceebfed0ed4e3b
+
+The intended reader knows linear algebra, power series, complex analysis
+and basic linear differential systems, but has not studied Fischler's
+construction. The three imported propositions are treated as stated
+inputs. This is an exposition review of the full manuscript, with
+particular attention to the explanation of the square-root scale.
+
+Overall judgment
+
+The previous revision substantially improves the route through the
+argument. The reasons for the additional families, the different roles
+of omega and Omega, the two uses of the differential rows, and the
+denominator saving are now explicit. The earlier review's seven findings
+have been addressed. The square-root scale is explained both in the
+introduction and in the final parameter choice.
+
+The remaining recommendations are narrower: two local bridges in the
+rank proof, followed by an optional improvement to the visibility of the
+square-root explanation. I do not recommend another broad expansion of
+the paper. The question in each case is what a reader still has to
+reconstruct, not whether the displayed identities can be checked.
+
+R1. Show the differential cancellation in the h=1 example
+Priority: medium; the most useful remaining change.
+Locations: paper/sections/rank.tex:148, 171 and 210.
+
+The example now successfully explains how different families can use
+one fixed polynomial row. However, its derivative check verifies only
+the first two components, (0,1) and (1,L). The unfamiliar and decisive
+components are L*g_j - j*g_(j+1). The text asserts that these satisfy the
+same enlarged system, then postpones the explanation to the general
+binomial calculation.
+
+The reader therefore understands where the family index has gone before
+understanding why the new functions still form a common differential
+system. The needed cancellation is small enough to show in the example.
+Set
+
+  Z_j = L*g_j - j*g_(j+1).
+
+For j >= 2, the base system and L'=-1/z give
+
+  Z_j' = -g_j/z + L*(-g_(j-1)/z - g_j/(2z))
+                    - j*(-g_j/z - g_(j+1)/(2z))
+       = -Z_(j-1)/z - Z_j/(2z).
+
+At the first link, Z_1' = 2L/[z(1-z)] - Z_1/(2z). These are precisely
+the required lower equations for the h=1 column. The calculation makes
+the coefficient j understandable: differentiation changes it to j-1,
+which supplies the previous component.
+
+Replace the easy first-two-component check with this calculation, or
+add the essential line and shorten the surrounding explanation. Keep
+the general formulas and their verification. This is an illustration
+of the existing argument, not a correction to its identities.
+
+R2. Expose the coefficient correspondence in the Laplace-transform step
+Priority: medium.
+Location: paper/sections/rank.tex:356, especially lines 365-374.
+
+The six-point overview tells the reader that Laurent vanishing at
+infinity supplies zeros above z=1. The proof eventually gives the
+Laplace-transform identity, but passes directly from it to the assertion
+that the coefficient of t^(-k-1) is G^(k)(0). This is the crucial bridge
+between two different locations and two different functions.
+
+Make the correspondence visible with the elementary identity
+
+  integral_0^infinity exp(-t*u) * u^k/k! du = t^(-k-1)
+  (t > 0, k a nonnegative integer).
+
+Then identify A_(k+1)=G^(k)(0) in the large-t expansion. The zeros of
+A_1,...,A_(omega*n-1) become the zeros of the first omega*n-1 Taylor
+coefficients of G at zero. Finally G(u)=R_n(exp(-u)) transfers that
+order to R_n at z=1, since exp(-u)=1-u+O(u^2).
+
+The manuscript already contains the correct correspondence and the
+change of variable. This recommendation displays why they work. State
+the correspondence as an asymptotic expansion, or derive it from the
+finite partial-fraction expression; do not justify it by unrestricted
+termwise integration of an arbitrary local Taylor series over the
+whole positive real axis. Two or three explanatory lines should suffice.
+
+R3. Make the square-root balance easier to locate at a glance
+Priority: low; presentation refinement, not a missing explanation.
+Locations: paper/sections/introduction.tex:148 and
+paper/sections/conclusion.tex:42.
+
+The current prose does flag where the square root comes from. It names
+the linear decay gain in Omega, the quadratic coefficient cost Omega^2/a,
+and the logarithmic denominator cost. It also explains the conversion
+from a to the beta cutoff s. No new mechanism needs to be supplied.
+
+For greater visibility, replace part of the prose in the introduction
+with a short displayed chain, explicitly described as a scale comparison:
+
+  Omega^2/a of order log a
+       => Omega of order sqrt(a log a),
+
+  dimension-bound scale = sqrt(a log a)/log a = sqrt(a/log a).
+
+Lead it with a direct sentence such as: "The square-root scale comes
+from the quadratic cost of increasing Omega." Explain that increasing
+Omega to this scale gains decay while keeping coefficient growth on
+the logarithmic scale. This makes the choice easy to recall without
+introducing an optimization claim or repeating the final asymptotic
+calculation. The existing explanation is already adequate if brevity
+is preferred; this item is optional.
+
+What now works well
+
+The opening interpretation of the dimension bound makes the result's
+meaning clear. The weak rank condition is explained in elementary
+column language. Section 3 distinguishes the two derivative indices
+and explains why odd functions remain during differentiation. The
+matrix product rule connects the numerical forms with the kernel
+argument. Section 4 now presents an example before its denominator
+machinery and explains why the saving matters at the theorem's scale.
+The six-point overview gives the rank proof a visible target, including
+the special role of the infinity family. The conclusion presents the
+parameter constraints before the numerical values and displays the
+strict margin in the rank condition.
+
+These passages should be preserved. Routine index changes, the LCM
+valuation proof, and the norm estimates do not need expansion for the
+stated audience. The principal opportunities left are the two short
+rank-proof connections above.
+
+Scope and status
+
+Read the complete current LaTeX manuscript, including the abstract,
+all seven sections, and the references. Verified that all source hashes
+and the PDF hash match paper/build-record.json, and that the existing
+visual-review record refers to this same 18-page PDF. No new PDF
+rendering was needed for this source-based exposition review.
+
+The manuscript and PDF were not modified. The build and supporting
+check scripts were not rerun. The proposed generic h=1 derivative
+identity was checked by direct symbolic substitution as a check on the
+recommendation. This review does not provide a new mathematical audit,
+independent model review, or reader study. Earlier review records remain
+unchanged. The snapshot and finding locations are recorded in
+human-reader-expository-review-2026-11-03-round2.json.

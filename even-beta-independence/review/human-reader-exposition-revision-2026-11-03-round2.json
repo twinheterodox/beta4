@@ -1,0 +1,196 @@
+{
+  "completed_at_utc": "2026-11-03T15:43:22.623617+00:00",
+  "status": "Requested second-review recommendations R1 and R2 implemented; clean build and supporting checks; changed pages visually inspected.",
+  "authorization_scope": "User requested items 1 and 2 of the second expository review. The optional R3 square-root display was not requested or added.",
+  "review_addressed": {
+    "path": "review/human-reader-expository-review-2026-11-03-round2.json",
+    "sha256": "28de589c63e676176be6407b88855346c634906869442864cd9ddc85757a2af1",
+    "report": "review/human-reader-expository-review-2026-11-03-round2.txt",
+    "report_sha256": "6b66f906af5f42c02d39a08ee4f48a739e9d8b4a3feb5a7c42b5b7ffb423ce93"
+  },
+  "guidance": {
+    "path_relative_to_project_root": "../../mathematical-exposition.txt",
+    "sha256": "84e3f6b850cd2eb56c71d8b10cb90b0425de6c7b7bc4f5050a034e8691364244"
+  },
+  "audience": "Mathematically trained human reader familiar with linear algebra, power series, complex analysis and basic linear differential systems, without prior study of Fischler's construction.",
+  "previous_revision": {
+    "pages": 18,
+    "pdf_sha256": "58a5d2f36ac47b08ec4a615ba9cd5b58c225fa584696f2f41aceebfed0ed4e3b"
+  },
+  "current_revision": {
+    "pages": 19,
+    "pdf": "output/pdf/even-beta-independence.pdf",
+    "pdf_sha256": "68e78a076de5ecfc59512bb70e4478c3142301564973c5583a51013dd5ee857a",
+    "source_files": {
+      "paper/even-beta-independence.tex": "1e45c5116f1865fba9883e40b271be29832512462bf3a5f0d03377e5e692a17e",
+      "paper/references.tex": "064835e6e9b46cc24f3becca960429e386f8f137450a07f65ae17d7a8671c6e1",
+      "paper/sections/arithmetic.tex": "53e52301a1768e979d65129aa7409eb67f955c596c9d290085d1c84e4a3d5a59",
+      "paper/sections/conclusion.tex": "b74572d28f3019347580732c95d2fd3f11721f54331d6440ecc31f0de65bfe80",
+      "paper/sections/estimates.tex": "67d7479478cd4a0789905ccfdc2d4f370d2625345f8cb54826580c812d810502",
+      "paper/sections/forms.tex": "806e7736b0f2f537f7b481565281a5302f90297eb9c3fa2ba90a5bfc6353de8c",
+      "paper/sections/inputs.tex": "d8abe487d24b24f825c602c16eb2a7aeceff0b90e3ea56371bc17f6213dc17eb",
+      "paper/sections/introduction.tex": "ae7a8663c2106466333b81e1b0b8640281f2f2a8deb710404f728068dd297a61",
+      "paper/sections/rank.tex": "60dd66ec8ef51cb54b69b0421143430e40b13edcac228617ab2fea60d79fc793"
+    }
+  },
+  "changed_manuscript_files": [
+    "paper/sections/rank.tex"
+  ],
+  "findings_addressed": [
+    {
+      "id": "R1",
+      "status": "implemented",
+      "location": "paper/sections/rank.tex:173",
+      "change": "Replaced the easy first-two-component check with the explicit three-line cancellation for Z_j=L*g_j-j*g_(j+1), explained the coefficient j becoming j-1, and supplied the first-link boundary identity."
+    },
+    {
+      "id": "R2",
+      "status": "implemented",
+      "location": "paper/sections/rank.tex:387",
+      "change": "Added the Laplace integral of u^k/k!, justified the finite asymptotic expansion by repeated integration by parts for fixed n and K, and identified A_(k+1)=G^(k)(0). Explained the order transfer through exp(-u)=1-u+O(u^2)."
+    }
+  ],
+  "preservation": {
+    "unchanged_labels_by_file": {
+      "paper/even-beta-independence.tex": [],
+      "paper/references.tex": [],
+      "paper/sections/arithmetic.tex": [
+        "cor:integer",
+        "eq:D-rate",
+        "eq:Delta-def",
+        "eq:integer-form",
+        "eq:lcm-product",
+        "eq:local-gauge",
+        "lem:denominators",
+        "lem:lcm"
+      ],
+      "paper/sections/conclusion.tex": [
+        "eq:cstar",
+        "eq:parameter-bound",
+        "eq:parameters",
+        "eq:rates-asymptotic"
+      ],
+      "paper/sections/estimates.tex": [
+        "eq:B",
+        "eq:F-tail-bound",
+        "eq:alpha",
+        "eq:kappa-range",
+        "prop:estimates"
+      ],
+      "paper/sections/forms.tex": [
+        "eq:C",
+        "eq:H-values",
+        "eq:Phi-integral",
+        "eq:Q",
+        "eq:S",
+        "eq:base-system",
+        "eq:finite-correction",
+        "eq:tail-decomposition",
+        "eq:universal-row",
+        "eq:value-row",
+        "lem:tail"
+      ],
+      "paper/sections/inputs.tex": [
+        "eq:coeff-small",
+        "eq:laurent-bounds",
+        "eq:weak-rank",
+        "prop:criterion",
+        "prop:rational"
+      ],
+      "paper/sections/introduction.tex": [
+        "eq:dimension",
+        "eq:oldbound",
+        "thm:main"
+      ],
+      "paper/sections/rank.tex": [
+        "eq:Rn-zero",
+        "eq:S-common",
+        "eq:Yq",
+        "eq:enlarged-system",
+        "eq:f-zero",
+        "eq:homogeneous-remainders",
+        "eq:lifted-polynomials",
+        "eq:lifted-system",
+        "eq:rank-condition",
+        "eq:residue-coefficient",
+        "lem:chain",
+        "prop:multiplicity",
+        "prop:rank"
+      ]
+    },
+    "labelled_formal_environment_count": 49,
+    "all_other_manuscript_sources_unchanged": true,
+    "bibliography_unchanged": true,
+    "previous_review_and_revision_records_retained": true
+  },
+  "verification": {
+    "build": {
+      "command": "python3 tools/build_paper.py",
+      "status": "passed",
+      "pdflatex_passes": 3,
+      "record": "paper/build-record.json",
+      "sha256": "205bd9d3668ae5a5513742dddd3b026c484c7b23567eb0acc8c4a0d349fe2cc6",
+      "unresolved_references": false,
+      "overfull_boxes": false,
+      "underfull_warnings": []
+    },
+    "local_system_checks": {
+      "command": "python3 checks/check_local_system.py",
+      "status": "passed",
+      "record": "checks/local-system-results.json",
+      "sha256": "8643a52cb8421f8082745209b0fb8b051c9e656703a08978214f75a08e51790a",
+      "counts": {
+        "distinct_products_lcm_checks": 52,
+        "fundamental_matrix_route_comparisons": 2304,
+        "nonzero_coefficients_compared": 1204,
+        "taylor_depth": 7,
+        "max_taylor_order": 36,
+        "enlarged_system_symbolic_identities": 100,
+        "pullback_and_residue_checks": 3,
+        "descending_residue_identities": 12
+      },
+      "constant_above_0_21_exact": true,
+      "rank_slope_above_1_exact": true
+    },
+    "linear_form_checks": {
+      "command": "python3 checks/check_linear_forms.py",
+      "status": "passed",
+      "record": "checks/half-shift-forms-checks.json",
+      "sha256": "22a845d2a459882d32e1f3ceb308338c0e307c8eba13bc5fa5cebd295c3b5806",
+      "coefficient_vectors_compared": 6
+    },
+    "added_derivative_calculation": "Direct SymPy substitution checked both the generic j>=2 link and the j=1 source term exactly.",
+    "laplace_argument": "Reviewed analytically: G is a finite sum of polynomial multiples of exp(-j*u), j>=0, so repeated integration by parts has vanishing boundary terms at infinity and a remainder O(t^(-K-2)) for fixed n and K.",
+    "whitespace_check": "git diff --no-index --check found no whitespace errors in the edited rank section.",
+    "visual_review": {
+      "record": "review/visual-review.json",
+      "sha256": "6f38075e6f9bebdd12241758efd977d7ec178dcb60977747fa6d3f88f3b9f858",
+      "directly_inspected_pages": [
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "unchanged_pages_verified_by_image_hash": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "unresolved_layout_issues": []
+    },
+    "scope": "Same-assistant exposition revision, direct algebra checks and exact finite supporting calculations; not a new independent model review, human reader study or formal verification."
+  },
+  "distribution": "Local revision only; no change to the publication copy, ZIP or external submissions."
+}

@@ -1,21 +1,21 @@
 {
   "status": "compiled; visual review recorded separately",
-  "pages": 16,
+  "pages": 19,
   "source_files": {
-    "paper/even-beta-independence.tex": "ad3fc8c40d308c601738946ebc0f7d3287817040e593e491a1c80c67c7211a92",
+    "paper/even-beta-independence.tex": "31a2b42b0c6f85697bfb406827bc75dd82b0cf101ddcd20ff004da5793af1e94",
     "paper/references.tex": "064835e6e9b46cc24f3becca960429e386f8f137450a07f65ae17d7a8671c6e1",
-    "paper/sections/arithmetic.tex": "e0d519bdcaa7962cafdf246f2c20e8a5cdc6866ee4fb1103d79b14c0ec7324d9",
-    "paper/sections/conclusion.tex": "609ed18b3033032014970261aded717d162c4f37995d2e7f875315e9a95fe61c",
-    "paper/sections/estimates.tex": "c9caa70ccc4ccc50dde30d1e7bd8d1a8983eafa5df0acee529e6a99274538983",
-    "paper/sections/forms.tex": "65f6ae0074a74fd30e11f5410f46aaaeb6db84a7972e4f917d717f44036f12a4",
-    "paper/sections/inputs.tex": "cafcac479ee88e49a2d69afc00137f2cea81fb26a24e59d85da5a4dbba16048e",
-    "paper/sections/introduction.tex": "851221c9caf88654039662ab8d30e7c074c30ffe2bad562449dd64abd85d62f3",
-    "paper/sections/rank.tex": "d58a1fb5195c0671dff267cae4e014fcfe6f344773c10dee3fde732fb43a7430"
+    "paper/sections/arithmetic.tex": "53e52301a1768e979d65129aa7409eb67f955c596c9d290085d1c84e4a3d5a59",
+    "paper/sections/conclusion.tex": "52d52cf1c8045c80a1b9e60b17cbb18d1d5b82dcddbf98442dd863d486feb767",
+    "paper/sections/estimates.tex": "67d7479478cd4a0789905ccfdc2d4f370d2625345f8cb54826580c812d810502",
+    "paper/sections/forms.tex": "806e7736b0f2f537f7b481565281a5302f90297eb9c3fa2ba90a5bfc6353de8c",
+    "paper/sections/inputs.tex": "d8abe487d24b24f825c602c16eb2a7aeceff0b90e3ea56371bc17f6213dc17eb",
+    "paper/sections/introduction.tex": "ae7a8663c2106466333b81e1b0b8640281f2f2a8deb710404f728068dd297a61",
+    "paper/sections/rank.tex": "60dd66ec8ef51cb54b69b0421143430e40b13edcac228617ab2fea60d79fc793"
   },
   "pdf": "output/pdf/even-beta-independence.pdf",
-  "pdf_sha256": "e20cc465f472b07a1d9999c9fc7e05d808e342de9f8e6e8072309b7c2ab7bcaf",
+  "pdf_sha256": "83fff93aebeff3b79fb2f316df94518321a7b7dab815c7ab37d8ebf0b5cc5fe8",
   "unresolved_references": false,
   "overfull_boxes": false,
   "underfull_warnings": [],
-  "mathematical_status": "Working draft; independent model cross-check passed, reported 2 November 2026."
+  "mathematical_status": "Independent model proof audit of the 19-page revision, reported 3 November 2026: no substantive mathematical gap identified; supplied and additional computational checks reported to pass. The audit used the cited results and was not formal verification. See review/independent-model-review-2026-11-03.json for the report and reviewed revision."
 }

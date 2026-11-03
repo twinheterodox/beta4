@@ -1,0 +1,109 @@
+Final expository review
+3 November 2026
+
+Manuscript: Linear independence of even Dirichlet beta values
+Revision: current 19-page local manuscript.
+PDF SHA256: 68e78a076de5ecfc59512bb70e4478c3142301564973c5583a51013dd5ee857a
+
+Decision
+
+No further substantive exposition changes are recommended. I would end
+this exposition pass and use the current draft for human mathematical
+review. This judgment is about the manuscript's presentation for its
+intended audience; it is not a certification of the theorem.
+
+The intended reader knows linear algebra, power series, complex analysis
+and basic linear differential systems, but has not studied Fischler's
+construction. The three imported propositions are treated as stated
+inputs. The paper remains technically demanding, especially in Section 6,
+but now gives that reader the purposes, examples and connections needed
+to follow its construction.
+
+Findings
+
+No unresolved substantive exposition findings were identified. The seven
+findings in the first human-reader review and the two requested changes
+from the second review have been addressed.
+
+The result and its scope are clear at the beginning: the paper proves a
+dimension bound for a growing family, does not identify an individual
+even beta value as irrational, and does not assert an explicit threshold.
+The introductory proof outline identifies the coefficient bound, value
+bound and rank condition before the technical construction starts.
+
+The roles of the parameters are now explained when they become useful.
+The extra t-derivatives supply families for the rank proof and increase
+the beta cutoff. The parameters omega and Omega control exact vanishing
+and additional smallness separately. The z-derivatives provide rows and
+remove the finite corrections. The matrix product rule makes the common
+mechanism behind the small forms and the hypothetical kernel solution
+explicit, including the factorial normalization.
+
+The denominator section now gives a concrete reason for distinct factors
+before introducing their least common multiple. Its comparison of an
+exponent of order a*n with one of order n*log(a) explains why the saving
+matters for the theorem. The order of limits is preserved.
+
+The h=1 example now demonstrates both requirements of the construction:
+the polynomial row stays fixed, and the new functions satisfy one common
+differential system. The displayed derivative cancellation explains the
+coefficient j and the preceding component Z_(j-1), including the first
+link's source term. The general formulas therefore follow an example
+that shows their essential mechanism.
+
+The rank proof distinguishes independence of solution vectors from
+independence of scalar remainders and states why the residue argument is
+needed. Its six-point overview identifies each contribution, including
+the reduction of the degree factor supplied by the infinity family.
+The final table and count agree with that overview.
+
+The revised Laplace passage now shows why Taylor coefficients of G at
+zero correspond to Laurent coefficients of F_n at infinity. The finite
+asymptotic expansion is justified with n and the truncation order fixed,
+and the nonzero linear term of exp(-u)-1 explains the transfer of the
+vanishing order to z=1. The offset from omega*n to omega*n-1 is consistent.
+
+The square-root mechanism is explicit in the introduction and the final
+parameter choice: the quadratic coefficient cost Omega^2/a is balanced
+against log(a), giving Omega on the sqrt(a log(a)) scale; division by
+the logarithmic coefficient-growth rate gives sqrt(a/log(a)). The beta
+cutoff is proportional to a. The numerical choices follow the derivative
+and rank constraints, with the exact rank slope 1251/1250 displayed.
+The optional extra square-root display suggested in the second review
+is not needed to complete the exposition pass.
+
+Internal consistency and presentation
+
+The final reading followed the dependencies between sections, including
+the derivative cutoff and Taylor correction, the normalization of the
+integer forms, the degree and zero counts after the quadratic change,
+the Laplace coefficient index, and the two limiting stages. No new
+internal inconsistency was identified in that reading.
+
+All source hashes agree with the build record, and the current PDF hash
+agrees with the latest revision and visual-review records. The recorded
+supporting-check results also retain the hashes from that revision.
+The LaTeX log contains no undefined or multiply defined references and
+no overfull or underfull box warnings. The 56 labels are unique, all
+98 source reference commands resolve, and all citation keys resolve
+among the seven bibliography entries.
+
+Freshly rendered and visually reread pages 3, 8, 13, 16, 17 and 18,
+covering the square-root overview, denominator example, h=1 construction,
+Laplace transfer and final parameter argument. Their PNG hashes match
+the existing final visual-review record. The passages are legible and
+the displays fit. The earlier complete visual review remains applicable
+to this unchanged PDF.
+
+Scope and disposition
+
+Read the complete current LaTeX manuscript, including the abstract,
+all seven sections and bibliography. This was the developing assistant's
+final exposition and internal-consistency review. The cited external
+proofs were not re-audited, and this was not an independent model review,
+formal verification or a test with human readers.
+
+The manuscript and PDF were left unchanged. The successful build and
+supporting checks were validated against their records rather than rerun.
+Only this review record and the README index/status were added or updated.
+No publication, repository push or external submission was performed.

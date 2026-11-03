@@ -1,0 +1,121 @@
+{
+  "recorded_at_utc": "2026-11-03T16:11:16.875061+00:00",
+  "status": "complete",
+  "purpose": "Record the supplied independent model audit of the final 19-page exposition revision and identify the exposition model using the author-supplied label.",
+  "changes": [
+    "Replaced the preparation note about an earlier revision with the current audit result, its reported date, principal scope and proof-audit status.",
+    "Named Astra-6-Max for the exposition revisions, based on the author's explicit identification in the conversation; kept the independent reviewer unnamed.",
+    "Updated PDF subject metadata, README status and index, and the build script's mathematical-status text.",
+    "Preserved the supplied report verbatim and recorded its provenance, scope, reported computations, model-attribution source and reviewed revision hashes.",
+    "Rebuilt the canonical PDF and updated the visual-review record; preserved historical reviews."
+  ],
+  "reviewed_revision": {
+    "pdf_sha256": "68e78a076de5ecfc59512bb70e4478c3142301564973c5583a51013dd5ee857a",
+    "pages": 19,
+    "source_files": {
+      "paper/even-beta-independence.tex": "1e45c5116f1865fba9883e40b271be29832512462bf3a5f0d03377e5e692a17e",
+      "paper/references.tex": "064835e6e9b46cc24f3becca960429e386f8f137450a07f65ae17d7a8671c6e1",
+      "paper/sections/arithmetic.tex": "53e52301a1768e979d65129aa7409eb67f955c596c9d290085d1c84e4a3d5a59",
+      "paper/sections/conclusion.tex": "b74572d28f3019347580732c95d2fd3f11721f54331d6440ecc31f0de65bfe80",
+      "paper/sections/estimates.tex": "67d7479478cd4a0789905ccfdc2d4f370d2625345f8cb54826580c812d810502",
+      "paper/sections/forms.tex": "806e7736b0f2f537f7b481565281a5302f90297eb9c3fa2ba90a5bfc6353de8c",
+      "paper/sections/inputs.tex": "d8abe487d24b24f825c602c16eb2a7aeceff0b90e3ea56371bc17f6213dc17eb",
+      "paper/sections/introduction.tex": "ae7a8663c2106466333b81e1b0b8640281f2f2a8deb710404f728068dd297a61",
+      "paper/sections/rank.tex": "60dd66ec8ef51cb54b69b0421143430e40b13edcac228617ab2fea60d79fc793"
+    }
+  },
+  "current_revision": {
+    "pdf": "output/pdf/even-beta-independence.pdf",
+    "pdf_sha256": "d9591f799c2cfb26d2779244356192f97159937da3857135d6032926417fa6ed",
+    "pages": 19,
+    "source_files": {
+      "paper/even-beta-independence.tex": "31a2b42b0c6f85697bfb406827bc75dd82b0cf101ddcd20ff004da5793af1e94",
+      "paper/references.tex": "064835e6e9b46cc24f3becca960429e386f8f137450a07f65ae17d7a8671c6e1",
+      "paper/sections/arithmetic.tex": "53e52301a1768e979d65129aa7409eb67f955c596c9d290085d1c84e4a3d5a59",
+      "paper/sections/conclusion.tex": "52d52cf1c8045c80a1b9e60b17cbb18d1d5b82dcddbf98442dd863d486feb767",
+      "paper/sections/estimates.tex": "67d7479478cd4a0789905ccfdc2d4f370d2625345f8cb54826580c812d810502",
+      "paper/sections/forms.tex": "806e7736b0f2f537f7b481565281a5302f90297eb9c3fa2ba90a5bfc6353de8c",
+      "paper/sections/inputs.tex": "d8abe487d24b24f825c602c16eb2a7aeceff0b90e3ea56371bc17f6213dc17eb",
+      "paper/sections/introduction.tex": "ae7a8663c2106466333b81e1b0b8640281f2f2a8deb710404f728068dd297a61",
+      "paper/sections/rank.tex": "60dd66ec8ef51cb54b69b0421143430e40b13edcac228617ab2fea60d79fc793"
+    }
+  },
+  "mathematics_unchanged": {
+    "verified": true,
+    "method": "Compared all nine LaTeX sources with the reviewed snapshot. Seven files are byte-identical. In conclusion.tex everything before Acknowledgements and preparation is identical. In the main source only the PDF subject line changed.",
+    "theorem_statements_and_numbered_formulas_unchanged": true
+  },
+  "validation": {
+    "build": "Three pdflatex passes completed; 19 pages; no unresolved references, overfull boxes or underfull warnings.",
+    "build_record": "paper/build-record.json",
+    "build_record_sha256": "7c9ea5d86997e6b2de335ad906242a3a1c96308e7b2ee0da9ec8bc909ccadfa0",
+    "visual_review": "review/visual-review.json",
+    "visual_review_sha256": "952463bfa9b643f49ebfc613974cbc3ff67afa1a19ed056b4f7d4feb764cbfb8",
+    "changed_pages_visually_inspected": [
+      18,
+      19
+    ],
+    "pages_matching_previously_reviewed_images": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "rendered_page_sha256": {
+      "page-01.png": "d7cf99a14aaf0aadaa6f5260f61e3414cc702184d778b9d82e98dd3ab4c9f7e4",
+      "page-02.png": "97235e9886ebb941b4ff1c3a3981a319dc18b0284a6cb919be5e968b62415cff",
+      "page-03.png": "984ff90e287d8f69b7a664d074006d642877b74214a27d332453cd21c5a56b36",
+      "page-04.png": "1df766663484f19c2f5c3142081c99804df3eb2c25bdf4b47ea1383d6e3f519d",
+      "page-05.png": "42a86889c2fadc24cc4b1e948d91e82a6569096813458522bafb6bfd63105c63",
+      "page-06.png": "ba8cedac63739c6a124e6b536cc0f0e324c403039a04f89060d4c6e4620ca6bb",
+      "page-07.png": "26cf1dea6f8d2126c3bac7cdbffafeddb0963fd4b7a9d4e8489704bfb7adb2c4",
+      "page-08.png": "fb8f6418c09947406f334314fa7075c574f2dc0ac8e767b4e4da4603ab02f4fe",
+      "page-09.png": "5776b7e66c7d8642b6528094261e580beddf04b0d1ba8d53a2e65edf0af79211",
+      "page-10.png": "3e51d8a26016ccf43bb6aa468c7efde8da8e830f041ae87a08f8df21c907659e",
+      "page-11.png": "abddcab97740240209204fbe968577c628975dba6ae9bd23b7a0934753be1b7a",
+      "page-12.png": "9e74a097897c5e20fbac70f40588e7f47b210894af4a7fb5f1e096f897e0779f",
+      "page-13.png": "10a97bea112268e4e55ff3e7c1ed8160032e543090a77edd0349f6fbcb5fbff4",
+      "page-14.png": "e3771cc2a5a7be22854949bd3c0151938e10f1fc4291570a4e3746fb5d38272e",
+      "page-15.png": "68c01e83254928c9342619a91040bc0dee79eb3083b00573b03fd586194904c0",
+      "page-16.png": "860da36c9bc91d4ba4f26520f44cc555f43456a2463ccb83b7f2c4bad7600624",
+      "page-17.png": "f9d657b237306d2b594fb1193f668b00be31a1e0fb32064c815c732745710f81",
+      "page-18.png": "5f7dbc8c93399eea39dbcf62f269248ffad3a6549495f09ffa742c8fbea44318",
+      "page-19.png": "6537404e3f19519759afd3de7df3f8e2351866fc294d7a9d8189b778dfbced6d"
+    },
+    "pdf_text_and_metadata": "Verified model attribution, audit conclusion, reported date and pseudonymous author.",
+    "mathematical_checks_rerun": false,
+    "reason": "Only preparation/status wording changed; the mathematical text is identical to the reviewed and previously checked revision.",
+    "retained_passed_check_results_sha256": {
+      "checks/local-system-results.json": "8643a52cb8421f8082745209b0fb8b051c9e656703a08978214f75a08e51790a",
+      "checks/half-shift-forms-checks.json": "22a845d2a459882d32e1f3ceb308338c0e307c8eba13bc5fa5cebd295c3b5806"
+    },
+    "additional_reviewer_checks": "Recorded as supplied in the independent audit report; not independently rerun for this update."
+  },
+  "changed_files_sha256": {
+    "paper/sections/conclusion.tex": "52d52cf1c8045c80a1b9e60b17cbb18d1d5b82dcddbf98442dd863d486feb767",
+    "paper/even-beta-independence.tex": "31a2b42b0c6f85697bfb406827bc75dd82b0cf101ddcd20ff004da5793af1e94",
+    "README.txt": "a19472c3516f0be996e957a1a43c9f927ebab844aca9cf7fdf201d58029e938b",
+    "tools/build_paper.py": "acf4f40ec4d0637c3d93ad90b63991d4329a6f4b6230c7770ce914f315ba66c2",
+    "paper/build-record.json": "7c9ea5d86997e6b2de335ad906242a3a1c96308e7b2ee0da9ec8bc909ccadfa0",
+    "review/visual-review.json": "952463bfa9b643f49ebfc613974cbc3ff67afa1a19ed056b4f7d4feb764cbfb8"
+  },
+  "created_files_sha256": {
+    "review/independent-model-review-2026-11-03.txt": "87e4586251bd9a1786d2924229302a92009d38c5af9367bba63031fe7c991899",
+    "review/independent-model-review-2026-11-03.json": "3ab51fa906ed6e8f328b5d8b641737fb2a480486581ce2c8243e887c75af94ee"
+  },
+  "publication_updated": false,
+  "scope": "Local status and attribution update. The separate publication copy and existing ZIP were not changed."
+}

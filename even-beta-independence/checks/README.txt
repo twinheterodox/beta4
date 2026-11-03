@@ -34,9 +34,10 @@ uses an asymptotic weak rank condition on a family of rows, rather than
 nonvanishing of each row. The fixture tests the algebraic identities; it
 is not an instance satisfying all asymptotic parameter conditions.
 
-The publication replay is recorded in reproduction.json; both check reports
-matched the original outputs exactly, and an isolated build reproduced the
-reviewed PDF text.
+The earlier publication replay is recorded in reproduction.json; both
+check reports matched the original outputs exactly, and an isolated build
+reproduced the PDF text for the revision recorded there. The current
+relocation build is recorded in ../review/consolidation-2026-11-03.json.
 
 All calculations use exact rational or symbolic arithmetic. The decimal
 constant in the JSON is a diagnostic; the inequality certificate is
@@ -44,8 +45,12 @@ rational. No numerical approximation to any beta value is used.
 
 The computational implementations were prepared and checked by the developing
 assistant. Separate computational routes are not independent model review.
-The paper subsequently passed a reported cross-check by another model; its
-scope is recorded in ../review/independent-model-review-2026-11-02.json.
+The current 19-page paper passed an independent model proof audit, reported
+on 3 November 2026; its scope is recorded in
+../review/independent-model-review-2026-11-03.json. That reviewer also
+reported separate checks through Taylor degree 60 and depth 12 and
+numerical tail-identity checks. Their additional code and outputs were
+not supplied and are not part of these scripts.
 The tests do not prove the general denominator lemma, the multiplicity
 argument, or the asymptotic dimension estimate. Those require the written
 proof and its imported mathematical inputs.

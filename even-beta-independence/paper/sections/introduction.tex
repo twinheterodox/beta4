@@ -87,8 +87,10 @@ Proposition~\ref{prop:criterion}. It requires a family of forms at each
 large index $n$, with controlled growth of their integer coefficients and
 exponential decay of their values. It also requires a rank condition on
 the coefficient matrix, which prevents the whole family from vanishing.
-The dimension bound depends on the decay rate relative to the coefficient
-growth. Thus constructing a small expression is only the first step:
+Writing these bounds as $B^{n+o(n)}$ for the coefficients and
+$\alpha^{n+o(n)}$ for the values, with $B>1$ and $0<\alpha<1$, the
+criterion gives $D(s)\geq-\log\alpha/\log B$ after removing the
+adjoined number $1$. Thus constructing a small expression is only the first step:
 we must control its size after clearing denominators and establish the
 required rank condition.
 
@@ -101,7 +103,11 @@ whose coefficients have controlled size and whose many initial zero
 Laurent coefficients make it decay rapidly far from its poles
 \cite[Theorem~4]{F26}. The coefficients are supplied by an existence
 theorem; no explicit formula for them is needed.
-We retain this rational function and sum it over half-integers.
+We sum this rational function and its first $h$ derivatives over
+half-integers. These give $h+1$ families of forms. The additional
+families provide the independent functions needed in the rank argument;
+their cost is to raise the largest possible beta argument from $a$ to
+$a+h$.
 
 Half-integer arguments already occur in classical approximations to beta
 values, including the hypergeometric construction of
@@ -129,17 +135,33 @@ and decay.
 The remaining task is the rank condition. Section~\ref{sec:rank} follows
 Fischler's multiplicity method \cite[Section~4.5]{F26}: failure of the
 rank condition would force certain polynomial combinations of solutions
-to have more vanishing than their degrees permit. Our system has an
-extra diagonal term, so we first make the change $z=w^2$ and rescale
+to have more vanishing than their degrees permit. Each of the $h+1$
+families contributes one such combination, and the final count requires
+$h$ to grow proportionally to $a$. Our system has an extra diagonal
+term, so we first make the change $z=w^2$ and rescale
 some components of the solution. This removes that term and allows the
 independence argument to work. The substitution doubles the relevant
 polynomial degrees, but the evaluation point now has two preimages,
 $\ii$ and $-\ii$. Counting the vanishing at both recovers the required
 inequality.
 
-Section~\ref{sec:inputs} states the three inputs from Fischler precisely.
-Once their hypotheses have been verified, Section~\ref{sec:conclusion}
-uses his numerical parameter choice to obtain the stated constant.
+The size of the final bound comes from balancing two costs. The
+rational-function construction has a parameter $\Omega$ that improves
+the decay exponent by a term proportional to $\Omega$, but increases
+the coefficient-growth exponent by a term of order $\Omega^2/a$.
+With the other auxiliary parameters fixed and $h$ proportional to $a$,
+the denominator estimate contributes only a term of order $\log a$.
+Choosing $\Omega$ of order
+$\sqrt{a\log a}$ therefore keeps $\log B$ of order $\log a$ and
+makes $-\log\alpha$ of order $\sqrt{a\log a}$.
+Their quotient has order $\sqrt{a/\log a}$; the largest beta argument
+$a+h$ is proportional to $a$. Section~\ref{sec:conclusion} makes this
+balance precise and uses Fischler's numerical parameter choice to
+obtain the constant $0.21$.
+
+Section~\ref{sec:inputs} states the criterion and the rational-function
+input precisely. The multiplicity estimate is stated in
+Section~\ref{subsec:multiplicity}, alongside the rank argument that uses it.
 
 \subsection{Conventions}
 

@@ -30,6 +30,93 @@ $x_0,\ldots,x_{b+h}\in\Q$ satisfy
 then $x_0=0$.
 \end{proposition}
 
+The factor $h+1$ records the gain from using all the derivative families:
+each will supply an independent remainder at each point above $-1$.
+For fixed $r,\kappa,\omega$, condition \eqref{eq:rank-condition} forces
+$h$ to grow proportionally to $a$. This is why the extra families, and
+their larger beta cutoff $a+h$, were introduced.
+
+\subsection{The multiplicity estimate and the six points}\label{subsec:multiplicity}
+
+The multiplicity estimate bounds the total vanishing of polynomial
+combinations of solutions in terms of the polynomial degrees. We first
+state it, then describe the contributions we will need from the six
+points in our application.
+
+Let $Y'=\matA(w)Y$ be a fixed rational differential system of size $q$.
+For polynomials $S_0,\ldots,S_{q-1}$ of degree at most $m$, write
+\[
+ \mathcal R(Y)=\sum_{j=0}^{q-1}S_jY_j.
+\]
+We call this scalar function the \emph{remainder} associated with the
+solution $Y$ and the fixed polynomial row $(S_0,\ldots,S_{q-1})$.
+The selected remainders must satisfy a common scalar linear differential
+equation of some order $\mu$, with rational coefficients. In our
+application such an equation will follow from the finite dimension of
+the system.
+
+At a point $\sigma$, the Nilsson class consists of finite sums of
+holomorphic functions multiplied by complex powers and nonnegative
+integer powers of a logarithm of the local coordinate.
+At infinity the local coordinate is $1/w$.
+The order is the least real part of a power that occurs after expanding
+the holomorphic factors; logarithmic factors do not change it. For example,
+$\ord_0(w^e(\log w)^j)=\operatorname{Re}e$.
+In particular, $w^N$ has order $-N$ at infinity. Negative orders will
+therefore occur when we apply the theorem.
+
+\begin{proposition}[{\cite[Theorem~3]{F26};
+see also \cite[Theorem~3.1]{F18}}]\label{prop:multiplicity}
+Let $\Sigma$ be a fixed finite set of points of the Riemann sphere
+containing infinity. At each $\sigma\in\Sigma$, choose a family of local
+solutions $Y_{\sigma,j}$, indexed by $j\in J_\sigma$, whose remainders
+are in the Nilsson class and are linearly independent over $\C$.
+If a nonzero rational differential operator of order $\mu$ annihilates
+all these remainders, then
+\[
+ \sum_{\sigma\in\Sigma}\sum_{j\in J_\sigma}
+       \ord_\sigma\mathcal R(Y_{\sigma,j})
+       \leq(m+1)(\mu-|J_\infty|)+C.
+\]
+The constant $C$ depends only on the differential system and on $\Sigma$.
+\end{proposition}
+
+The solution families at different points need not agree by analytic
+continuation, and no independence between different families is required.
+These features are explicit in \cite[Section~3.1]{F18}.
+We use the formulation in \cite{F26}, which also allows negative orders
+at infinity, as in its proof of Proposition~3.
+The constant is uniform in the polynomial row and in the selected
+solutions. This uniformity is essential when that row and the solutions
+depend on $n$.
+
+The six points will appear after the substitution $z=w^2$. The assumed
+kernel equations produce high-order zeros at the two points $w=\ii$
+and $w=-\ii$ above $z=-1$. The decay of $F_n$ at infinity will supply
+additional zeros at $w=1$ and $w=-1$. We will also construct $b$
+logarithmic remainders at $0$ and infinity, where their orders can be
+read from the polynomial degrees.
+
+The remainders at infinity have a second purpose. In our application the
+common differential operator has order $\mu\leq b+h+1$. Choosing
+$|J_\infty|=b$ reduces the factor $\mu-|J_\infty|$ on the right-hand
+side of the theorem to at most $h+1$. This is essential: the degree cost
+then involves the number of derivative families, rather than the full
+size of the system. The negative orders at infinity must still be
+included on the left. Paired with the orders at $0$, their contribution
+will be $-2bn$.
+
+We will obtain polynomial degrees at most $4rn$ and the inequality
+\[
+ 2(h+1)\kappa n+2\omega n-2bn+O(1)
+       \leq 4rn(h+1)+O(1).
+\]
+The first two terms count the zeros at $\pm\ii$ and $\pm1$;
+the third is the combined contribution at $0$ and infinity.
+After division by $2n$, this contradicts \eqref{eq:rank-condition}.
+The rest of the section constructs the required remainders, verifies
+their independence, and justifies this count.
+
 \subsection{Taylor corrections and a common polynomial row}
 
 Suppose $x_0\neq0$, and scale so that $x_0=1$.
@@ -53,7 +140,56 @@ The functions $f_p$ still have different coefficient rows. The
 multiplicity theorem instead needs one fixed polynomial row applied to
 several solutions of the same system. Following Fischler, we arrange
 this by combining the $f_p$ with powers of a local branch
-$L(z)=-\log z$ near $-1$:
+$L(z)=-\log z$ near $-1$. The choice is suggested by $L'=-1/z$,
+the same coefficient that links $g_j$ to $g_{j-1}$ for $j\geq2$ in
+\eqref{eq:base-system}. Powers of $L$ can therefore provide the
+additional chain of components needed to hold the corrections $T_p$.
+
+First take $h=1$ and set
+\[
+ \rho_0=f_0,\qquad \rho_1=Lf_0+f_1.
+\]
+Substituting \eqref{eq:C} gives
+\begin{align*}
+ \rho_0&=T_0+z^M\sum_{j=1}^b P_jg_j,\\
+ \rho_1&=T_1+LT_0+z^M\sum_{j=1}^b P_j(Lg_j-jg_{j+1}).
+\end{align*}
+Both expressions use the same polynomial row
+\[
+ S=(T_1,T_0,z^MP_1,\ldots,z^MP_b).
+\]
+Indeed, $\rho_0=SY_0$ and $\rho_1=SY_1$ for the columns
+\[
+ \begin{aligned}
+ Y_0&=(0,1,g_1,\ldots,g_b)^T,\\
+ Y_1&=(1,L,Lg_1-g_2,\ldots,Lg_b-bg_{b+1})^T.
+ \end{aligned}
+\]
+The dependence on the family index is now entirely in $Y_0,Y_1$:
+the multipliers of $T_1,T_0$ and each $P_j$ change, while $S$ stays
+fixed. In particular, the logarithm belongs to the solutions, so it
+does not spoil the polynomial row.
+
+The same combinations also preserve the differential chain. Put
+$Z_j=Lg_j-jg_{j+1}$ for $1\leq j\leq b$. For $j\geq2$, the product
+rule and \eqref{eq:base-system} give
+\begin{align*}
+ Z_j'&=-\frac{g_j}{z}
+       +L\left(-\frac{g_{j-1}}z-\frac{g_j}{2z}\right)
+       -j\left(-\frac{g_j}z-\frac{g_{j+1}}{2z}\right)\\
+     &=-\frac{Lg_{j-1}-(j-1)g_j}{z}
+       -\frac{Lg_j-jg_{j+1}}{2z}\\
+     &=-\frac{Z_{j-1}}z-\frac{Z_j}{2z}.
+\end{align*}
+The term $L'g_j=-g_j/z$ changes the coefficient $j$ to $j-1$,
+producing the previous component $Z_{j-1}$.
+At the first link, the same calculation gives
+$Z_1'=2L/[z(1-z)]-Z_1/(2z)$.
+Together with $L'=-1/z$ and the equations for $g$, these identities
+show that both columns solve the $h=1$ case of
+\eqref{eq:enlarged-system} below.
+
+For general $h$, set
 \[
  \rho_q(z)=\sum_{p=0}^q\binom qp L(z)^{q-p}f_p(z)
  \qquad(0\leq q\leq h).
@@ -79,7 +215,7 @@ The dependence on $q$ is placed in the solution vectors. Define
  \end{cases}
 \end{equation}
 Then $\rho_q=\sum_i S_i y_{i,q}$.
-All vectors $Y_q=(y_{0,q},\ldots,y_{b+h,q})$ solve the same system
+All columns $Y_q=(y_{0,q},\ldots,y_{b+h,q})^T$ solve the same system
 \begin{align}
  y_0'&=0,\notag\\
  y_i'&=-y_{i-1}/z &&(1\leq i\leq h),\notag\\
@@ -104,10 +240,13 @@ The equations for $i\leq h$ follow by differentiating powers of $L$.
 
 \subsection{Quadratic change of variable}
 
-The common diagonal term $-y_i/(2z)$ in the components $i>h$ can be
-removed by multiplying those components by $\sqrt z$. We introduce
-$w$ with $z=w^2$ so that this change is rational in the new variable
-and the coefficient row remains polynomial. Set
+The integrating factor in Section~\ref{sec:arithmetic} removed the
+diagonal term locally to control Taylor denominators. Here we need the
+same cancellation in a form that preserves a polynomial row and leaves
+a system suitable for the residue argument.
+Multiplying the components $i>h$ by $\sqrt z$ removes their common
+diagonal term $-y_i/(2z)$. We introduce $w$ with $z=w^2$ so that this
+change is rational in the new variable and the row remains polynomial. Set
 \[
  v_i(w)=
  \begin{cases}
@@ -147,8 +286,12 @@ making the change of variable.
 
 To count these zeros with Proposition~\ref{prop:multiplicity}, we must
 know that no nonzero constant combination of the $h+1$ remainders
-vanishes identically. The triangular form of the new system makes this
-possible. Each derivative link has a nonzero residue, whereas the
+vanishes identically. Independence of the solution vectors alone would
+not suffice: a fixed row can annihilate a nonzero combination of vectors.
+We must rule out such annihilation for our row, whose highest coefficient
+is nonzero because $P_b\not\equiv0$.
+The triangular form of the new system makes this possible.
+Each derivative link has a nonzero residue, whereas the
 derivative of a rational function has zero residue at every finite point.
 The following lemma uses this to rule out rational-function relations
 between successive components. It abstracts the argument in
@@ -232,17 +375,34 @@ For the zeros at $\pm1$, consider
        =O((z-1)^{\omega n-1})
 \end{equation}
 near $1$, on the branch $\log1=0$.
-The asserted order is another form of the vanishing of $F_n$ at infinity.
+The asserted order is another form of the exact Laurent vanishing
+controlled by $\omega$, rather than the additional smallness controlled
+by $\Omega$.
 Indeed, the partial fractions give the Laplace-transform identity
 \[
  F_n(t)=\int_0^\infty e^{-tu}
        \sum_{i=1}^b P_i(e^{-u})\frac{u^{i-1}}{(i-1)!}\dd u
  \qquad(t>0).
 \]
-If the analytic function multiplying $e^{-tu}$ is $G(u)$, the coefficient
-of $t^{-k-1}$ is $G^{(k)}(0)$. Proposition~\ref{prop:rational} therefore
-implies that $G$ vanishes to order at least $\omega n-1$. Since
-$G(u)=R_n(e^{-u})$, this proves \eqref{eq:Rn-zero}.
+Write the factor multiplying $e^{-tu}$ as $G(u)$. The elementary identity
+\[
+ \int_0^\infty e^{-tu}\frac{u^k}{k!}\dd u=\frac1{t^{k+1}}
+ \qquad(t>0,\ k\geq0)
+\]
+explains how Taylor coefficients at $u=0$ become Laurent coefficients
+at infinity. Here $G$ is a finite sum of polynomials times exponentials
+$e^{-ju}$ with $j\geq0$, so repeated integration by parts gives, for
+fixed $n$ and every fixed integer $K\geq0$,
+\[
+ F_n(t)=\sum_{k=0}^K\frac{G^{(k)}(0)}{t^{k+1}}
+             +O(t^{-K-2})\qquad(t\longrightarrow+\infty).
+\]
+Comparing with the Laurent expansion yields $A_{k+1}=G^{(k)}(0)$.
+Thus the exact zeros $A_1,\ldots,A_{\omega n-1}$ in
+Proposition~\ref{prop:rational} force $G$ to vanish to order at least
+$\omega n-1$. Finally, $G(u)=R_n(e^{-u})$ and
+$e^{-u}=1-u+O(u^2)$, so this change of variable preserves the order
+of vanishing and proves \eqref{eq:Rn-zero}.
 This is the observation used in \cite[Sections~3.5 and~4.5]{F26}.
 
 Now $\widetilde\rho_1(w)=w^{2M-1}R_n(w^2)$.

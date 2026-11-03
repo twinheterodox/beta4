@@ -1,0 +1,199 @@
+{
+  "completed_at_utc": "2026-11-03T14:51:25.797705+00:00",
+  "status": "Exposition review completed; manuscript revisions recommended.",
+  "report": "review/human-reader-expository-review-2026-11-03.txt",
+  "report_sha256": "82d25812ce8534e40fbe415ad9b32e1ff89cd8917bf09e3f9c0056b61b7b1bcf",
+  "guidance": {
+    "path_relative_to_project_root": "../../mathematical-exposition.txt",
+    "sha256": "84e3f6b850cd2eb56c71d8b10cb90b0425de6c7b7bc4f5050a034e8691364244"
+  },
+  "audience": "Mathematically trained human reader familiar with linear algebra, power series, complex analysis and basic linear differential systems, without prior study of Fischler's construction.",
+  "reading_scope": "Complete current LaTeX manuscript, including all seven sections, abstract and references; three imported propositions treated as stated inputs.",
+  "snapshot": {
+    "pages": 17,
+    "pdf": "output/pdf/even-beta-independence.pdf",
+    "pdf_sha256": "d9c2f5ab11255e9ff2f7f9719ff36c71699b101f975d93fd495bd159fd2dce1b",
+    "source_files": {
+      "paper/even-beta-independence.tex": "1e45c5116f1865fba9883e40b271be29832512462bf3a5f0d03377e5e692a17e",
+      "paper/references.tex": "064835e6e9b46cc24f3becca960429e386f8f137450a07f65ae17d7a8671c6e1",
+      "paper/sections/arithmetic.tex": "e0d519bdcaa7962cafdf246f2c20e8a5cdc6866ee4fb1103d79b14c0ec7324d9",
+      "paper/sections/conclusion.tex": "f03885b3b3f592f242a20a66ba312387d5304f82c528302088685f5e0a0d9ba9",
+      "paper/sections/estimates.tex": "c9caa70ccc4ccc50dde30d1e7bd8d1a8983eafa5df0acee529e6a99274538983",
+      "paper/sections/forms.tex": "f71abec644096cc6a86c75f016c977c7646e9efcdd694437bc9bea25cc8a725f",
+      "paper/sections/inputs.tex": "724d88a1afcdad666fc508c024b2dc7e8ddf5e85e8d72ef455c841779da209e4",
+      "paper/sections/introduction.tex": "3b6951403650363ce9b82530cc6c5e506485840b6ee3ed225ed1212b5118cf6f",
+      "paper/sections/rank.tex": "e4d6215e8492ae16801b1a1b38ad50d10acb1e0a8b63dedc639e1a83d293990f"
+    }
+  },
+  "findings": [
+    {
+      "id": "H1",
+      "priority": "high",
+      "title": "Explain why the construction needs a growing number of families",
+      "locations": [
+        {
+          "path": "paper/sections/introduction.tex",
+          "lines": [
+            142
+          ]
+        },
+        {
+          "path": "paper/sections/forms.tex",
+          "lines": [
+            11,
+            30
+          ]
+        },
+        {
+          "path": "paper/sections/rank.tex",
+          "lines": [
+            19
+          ]
+        },
+        {
+          "path": "paper/sections/conclusion.tex",
+          "lines": [
+            43
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H2",
+      "priority": "high",
+      "title": "Distinguish the purposes of omega and Omega",
+      "locations": [
+        {
+          "path": "paper/sections/inputs.tex",
+          "lines": [
+            51,
+            88
+          ]
+        },
+        {
+          "path": "paper/sections/estimates.tex",
+          "lines": [
+            58
+          ]
+        },
+        {
+          "path": "paper/sections/rank.tex",
+          "lines": [
+            340
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H3",
+      "priority": "high",
+      "title": "Explain the differential rows as one mechanism with two uses",
+      "locations": [
+        {
+          "path": "paper/sections/forms.tex",
+          "lines": [
+            67,
+            130
+          ]
+        },
+        {
+          "path": "paper/sections/rank.tex",
+          "lines": [
+            116
+          ]
+        },
+        {
+          "path": "paper/sections/conclusion.tex",
+          "lines": [
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H4",
+      "priority": "high",
+      "title": "Show the integration mechanism before the denominator machinery",
+      "locations": [
+        {
+          "path": "paper/sections/arithmetic.tex",
+          "lines": [
+            12,
+            55,
+            89
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H5",
+      "priority": "medium",
+      "title": "Complete two conceptual transitions in the rank proof",
+      "locations": [
+        {
+          "path": "paper/sections/rank.tex",
+          "lines": [
+            133,
+            218,
+            257,
+            297
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H6",
+      "priority": "medium",
+      "title": "Present the numerical choices as a sequence of constraints",
+      "locations": [
+        {
+          "path": "paper/sections/conclusion.tex",
+          "lines": [
+            34,
+            43
+          ]
+        },
+        {
+          "path": "paper/sections/estimates.tex",
+          "lines": [
+            21
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H7",
+      "priority": "low",
+      "title": "Explain the extra derivative in the chosen cutoff",
+      "locations": [
+        {
+          "path": "paper/sections/forms.tex",
+          "lines": [
+            164
+          ]
+        },
+        {
+          "path": "paper/sections/rank.tex",
+          "lines": [
+            122
+          ]
+        },
+        {
+          "path": "paper/sections/estimates.tex",
+          "lines": [
+            87
+          ]
+        }
+      ]
+    }
+  ],
+  "verification_scope": {
+    "source_and_pdf_hashes_match_existing_build_record": true,
+    "manuscript_modified": false,
+    "pdf_rebuilt": false,
+    "supporting_checks_rerun": false,
+    "new_visual_review": false,
+    "human_reader_test": false
+  },
+  "distribution": "Local review record only; no publication or external submission."
+}

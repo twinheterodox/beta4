@@ -1,0 +1,133 @@
+{
+  "completed_at_utc": "2026-11-03T14:05:56.236223+00:00",
+  "status": "Completed local exposition revision and supporting verification.",
+  "previous_built_pdf_sha256": "e20cc465f472b07a1d9999c9fc7e05d808e342de9f8e6e8072309b7c2ab7bcaf",
+  "pdf": "output/pdf/even-beta-independence.pdf",
+  "pdf_sha256": "d9c2f5ab11255e9ff2f7f9719ff36c71699b101f975d93fd495bd159fd2dce1b",
+  "pages": 17,
+  "source_files": {
+    "paper/even-beta-independence.tex": "1e45c5116f1865fba9883e40b271be29832512462bf3a5f0d03377e5e692a17e",
+    "paper/references.tex": "064835e6e9b46cc24f3becca960429e386f8f137450a07f65ae17d7a8671c6e1",
+    "paper/sections/arithmetic.tex": "e0d519bdcaa7962cafdf246f2c20e8a5cdc6866ee4fb1103d79b14c0ec7324d9",
+    "paper/sections/conclusion.tex": "f03885b3b3f592f242a20a66ba312387d5304f82c528302088685f5e0a0d9ba9",
+    "paper/sections/estimates.tex": "c9caa70ccc4ccc50dde30d1e7bd8d1a8983eafa5df0acee529e6a99274538983",
+    "paper/sections/forms.tex": "f71abec644096cc6a86c75f016c977c7646e9efcdd694437bc9bea25cc8a725f",
+    "paper/sections/inputs.tex": "724d88a1afcdad666fc508c024b2dc7e8ddf5e85e8d72ef455c841779da209e4",
+    "paper/sections/introduction.tex": "3b6951403650363ce9b82530cc6c5e506485840b6ee3ed225ed1212b5118cf6f",
+    "paper/sections/rank.tex": "e4d6215e8492ae16801b1a1b38ad50d10acb1e0a8b63dedc639e1a83d293990f"
+  },
+  "approved_improvements": [
+    {
+      "change": "Worked h=1 common-row example before the general formula",
+      "location": "paper/sections/rank.tex, subsection 6.2; PDF page 12",
+      "status": "Added expanded remainders and the common row with both solution columns; checked the signs, indices and specialization of the general formulas."
+    },
+    {
+      "change": "Explain the roles of all six points before their constructions",
+      "location": "paper/sections/rank.tex, subsection 6.1; PDF page 11",
+      "status": "Retained and reviewed the saved explanation, including the infinity factor mu-b and the combined order contribution -2bn."
+    },
+    {
+      "change": "Place the formal multiplicity estimate beside its rank application",
+      "location": "paper/sections/rank.tex, subsection 6.1; PDF page 11",
+      "status": "Retained the saved relocation; confirmed the imported proposition is unchanged and updated references resolve."
+    },
+    {
+      "change": "Compact parameter/index guide and distinction between t and z differentiations",
+      "location": "paper/sections/forms.tex, subsection 3.1; PDF page 5",
+      "status": "Retained and reviewed the saved table and explanation; checked the rendering."
+    },
+    {
+      "change": "Explain the square-root scale in the introduction",
+      "location": "paper/sections/introduction.tex, subsection 1.1; PDF pages 2-3",
+      "status": "Retained the saved quotient and balancing explanation; clarified that the other auxiliary parameters are fixed."
+    }
+  ],
+  "preservation": {
+    "unchanged_statement_labels": [
+      "thm:main",
+      "prop:criterion",
+      "prop:rational",
+      "prop:multiplicity",
+      "prop:rank",
+      "eq:B",
+      "eq:alpha",
+      "eq:S-common",
+      "eq:Yq",
+      "eq:parameters",
+      "eq:parameter-bound",
+      "eq:cstar"
+    ],
+    "references_unchanged": true,
+    "pdf_author": "twinheterodox",
+    "main_theorem_constant": "0.21",
+    "individual_beta_irrationality_claim_added": false
+  },
+  "verification": {
+    "build": {
+      "command": "python3 tools/build_paper.py",
+      "exit_code": 0,
+      "latex_passes": 3,
+      "source_and_pdf_hashes_match": true,
+      "unresolved_references": false,
+      "overfull_boxes": false,
+      "underfull_warnings": []
+    },
+    "local_system": {
+      "command": "python3 checks/check_local_system.py",
+      "exit_code": 0,
+      "script_sha256": "2604585b89b48a4b0f0682e56fcc33e9745d52a08c05cfdac0cbfe4a756f9270",
+      "report": "checks/local-system-results.json",
+      "report_sha256": "8643a52cb8421f8082745209b0fb8b051c9e656703a08978214f75a08e51790a",
+      "counts": {
+        "distinct_products_lcm_checks": 52,
+        "fundamental_matrix_route_comparisons": 2304,
+        "nonzero_coefficients_compared": 1204,
+        "enlarged_system_symbolic_identities": 100,
+        "pullback_and_residue_checks": 3,
+        "descending_residue_identities": 12
+      },
+      "constant_greater_than_0_21_exact": true,
+      "rank_slope_greater_than_1_exact": true
+    },
+    "linear_forms": {
+      "command": "python3 checks/check_linear_forms.py",
+      "exit_code": 0,
+      "script_sha256": "16ae1cfaf739fbdedb47550bde23e7e84529115a6c76be2445728c23b346d2ab",
+      "report": "checks/half-shift-forms-checks.json",
+      "report_sha256": "22a845d2a459882d32e1f3ceb308338c0e307c8eba13bc5fa5cebd295c3b5806",
+      "coefficient_vectors_compared": 6
+    },
+    "visual_review": {
+      "record": "review/visual-review.json",
+      "record_sha256": "e8e807c97d8275d822f712a9753e9340e7f6a357cbea7b8c066f9af52095ab06",
+      "pages_directly_inspected": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "unresolved_layout_issues": []
+    }
+  },
+  "review_scope": "The developing assistant read the complete current manuscript, reviewed the exposition changes, checked preservation of the listed mathematical statements, reran both exact supporting scripts and inspected every rendered page. This is finite supporting verification and editorial review, not formal verification or a new independent model or human mathematical review. The earlier model review is recorded separately in review/independent-model-review-2026-11-02.json and does not certify this revision.",
+  "distribution": {
+    "scope": "Canonical local development files only.",
+    "publication_copy_updated": false,
+    "hexagon_archive_rebuilt": false,
+    "external_submission_made": false
+  }
+}

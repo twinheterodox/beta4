@@ -1,5 +1,12 @@
 # Changelog
 
+## 3 November 2026 — Exposition, independent audit and consolidation
+
+- Updated the even-beta paper to the 19-page revision, with worked denominator and common-row examples, the six-point rank explanation and the parameter balance behind the square-root bound.
+- Recorded the independent model proof audit of that revision: no substantive mathematical gap identified, with the supplied and additional computational checks reported to pass.
+- Added the exposition model attribution and preserved the audit report and reviewed revision hashes.
+- Consolidated the manuscript into this repository as its single working copy, with the current PDF, build instructions and review records together.
+
 ## 3 November 2026 — Author attribution
 
 - Added twinheterodox as the author of *Linear independence of even Dirichlet beta values*, retaining the Codex preparation credit, and updated the PDF author metadata.

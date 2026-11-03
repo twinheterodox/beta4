@@ -1,0 +1,225 @@
+Expository review for human readers
+3 November 2026
+
+Manuscript: Linear independence of even Dirichlet beta values
+Revision: the current 17-page local manuscript, with the h=1 example.
+PDF SHA256: d9c2f5ab11255e9ff2f7f9719ff36c71699b101f975d93fd495bd159fd2dce1b
+
+The intended reader for this review knows linear algebra, power series,
+complex analysis, and basic linear differential systems, but has not
+studied Fischler's construction. The three imported propositions are
+available as stated inputs. The question is whether the manuscript
+helps that reader acquire the organizing ideas of the proof.
+
+The main remaining weakness is that the reasons for several constructions
+are distributed across distant sections. The text usually defines the
+objects precisely and explains how to manipulate them. The reader still
+has to assemble why these are the right objects and how their different
+roles fit together. A parameter table helps recall notation, but cannot
+by itself supply that causal explanation.
+
+The next revision should concentrate on the six connections below. The
+first four have the greatest effect on a first reading. They call for
+short explanations and some reordering within passages, while preserving
+the mathematical statements and the overall organization.
+
+1. Explain why the construction needs a growing number of families
+
+Locations: paper/sections/introduction.tex:142; forms.tex:11 and 30;
+rank.tex:19; conclusion.tex:43. Section filenames after the first are
+relative to paper/sections/ throughout this report.
+
+The introduction uses h proportional to a before introducing h. More
+substantively, Section 3 tells the reader that differentiating F_n in t
+produces several families and raises the possible beta arguments, but
+leaves the need for those extra families to be reconstructed from the
+rank proof. The reader encounters a cost before understanding its benefit.
+
+Introduce h as the largest t-derivative order before its first use, and
+give the reason for using F_n through F_n^(h): the rank argument needs
+enough independent scalar remainders to force a contradiction. Each of
+the h+1 families contributes one of these remainders at each preimage of
+the evaluation point. With r, kappa and omega fixed, the rank inequality
+
+  (h+1)(kappa-2r) + omega > a
+
+requires h to grow proportionally to a. The resulting beta cutoff is at
+most a+h. State this tradeoff informally early, then connect it to the
+displayed inequality where the rank condition is introduced.
+
+The existing parameter table can remain a compact reference. Its role
+should be to reinforce an explanation the reader has already received.
+
+2. Distinguish the purposes of omega and Omega
+
+Locations: inputs.tex:51 and 88; estimates.tex:58; rank.tex:340.
+
+The manuscript distinguishes the two thresholds formally, but a reader
+may still treat both as parameters measuring the same kind of decay.
+Their different jobs are central to the construction's efficiency.
+
+Explain the rational-function input in three parts before its full
+formulas: bounded integer partial-fraction coefficients, exact vanishing
+of the first Laurent coefficients, and additional smallness of the next
+coefficients. Then assign a purpose to each threshold:
+
+  - omega controls the guaranteed order of vanishing. It leaves enough
+    decay after z-differentiation, requiring kappa < omega, and supplies
+    the zeros used above z=1 in the rank count.
+  - Omega controls additional exponential smallness. The stronger
+    Laurent-coefficient estimate supplies the factor r^(-Omega*n) in
+    the tail bound, even though the guaranteed vanishing order remains
+    omega*n.
+
+This explains why omega can remain fixed while Omega grows like
+sqrt(a log a). It also makes the two factors in (5.4),
+r^(-Omega*n) and (M/x)^(omega*n), readable as separate contributions.
+The later parameter balance will then have an established meaning.
+
+3. Explain the differential rows as one mechanism with two uses
+
+Locations: forms.tex:67 and 130; rank.tex:116; conclusion.tex:15.
+
+The product-rule recurrence is correct and the universal identity is
+stated. However, a human reader must recognize for themselves that this
+single mechanism is what connects the small numerical forms to the
+kernel contradiction several pages later.
+
+Before the component recurrence, suppress the family index temporarily,
+write the system as y'=A y, and display the organizing identity
+
+  (C y)' = (C' + C A)y.
+
+The derivative can therefore be represented by a new coefficient row
+without changing the vector of functions. Iterating gives the Q rows.
+These rows depend on the differential system and the initial polynomial
+row, and work for every solution of that system.
+
+Make the two uses explicit at this point. For the beta-valued solution,
+the rows represent derivatives that become the small integer forms after
+factorial normalization and denominator clearing. For the solution with
+a hypothetical rational kernel vector as its initial value, the same
+rows express derivatives that vanish. This explains why introducing the
+arbitrary solution g in Section 6 is useful.
+
+Also explain why the odd-indexed functions remain in the system after
+their values at -1 have vanished. Their derivatives need not vanish:
+the displayed system gives H_1(-1)=0 but H_1'(-1)=-1. Keep the full system
+while differentiating, then use the zero odd initial values when forming
+the beta linear forms. This one example prevents an avoidable question
+about why the proof carries apparently unnecessary coordinates.
+
+4. Show the integration mechanism before the denominator machinery
+
+Locations: arithmetic.tex:12, 55 and 89.
+
+The text already states that integration denominators are distinct and
+explains that harmonic growth is better than linear growth. The missing
+piece is a concrete route by which the reader can discover that fact.
+At present the distinct-product LCM and its valuation proof arrive
+before the reader has seen an integration produce such a product.
+
+Give a two-integration example before defining Delta. Starting with a
+monomial of degree m1, integrate, multiply by a monomial of degree m2,
+and integrate again. For nonnegative m1 and m2, the resulting term is
+
+  u^(m1+m2+2) / [(m1+1)(m1+m2+2)].
+
+The two denominator factors are successive integration degrees, so the
+second is strictly larger. The same mechanism produces an increasing
+list of degrees in every term of an iterated integral. This motivates
+the definition of Delta; the formal proof then handles all depths and
+the additional powers of 4.
+
+Connect the saving to the theorem's scale explicitly. When d is of order
+a and k is of order n, a naive cost proportional to d*k would contribute
+an exponent of order a*n, overwhelming the intended decay on the
+sqrt(a log a)*n scale. The distinct-product estimate reduces this cost
+to order n log a. This is a decisive part of the argument.
+
+5. Complete two conceptual transitions in the rank proof
+
+Locations: rank.tex:133, 218, 257 and 297.
+
+The h=1 example now explains the common polynomial row well. Preserve it.
+One further sentence can explain the choice of logarithms before the
+example: L'=-1/z matches the coefficient that links successive components
+of the differential system. Powers of L are therefore suited to building
+the additional chain of components. The subsequent binomial identities
+verify that design.
+
+At the transition to the residue argument, distinguish independent
+solution vectors from independent scalar remainders. A fixed row can
+annihilate a nonzero vector, so independence of the Y_q alone would not
+justify counting all h+1 remainders. The residue lemma rules out the
+relevant rational-function relation between components of any nonzero
+combination. The nonzero highest polynomial P_b then prevents its scalar
+remainder from being identically zero. State this reason before the
+descent calculation, so the reader knows what that calculation must do.
+
+A short reminder can also connect the two diagonal cancellations. The
+local integrating factor in Section 4 controls denominators. The
+quadratic substitution in Section 6 performs the analogous cancellation
+in a form that keeps the common coefficient row polynomial and permits
+the residue argument. The algebra has related origins but distinct jobs.
+
+6. Present the numerical choices as a sequence of constraints
+
+Locations: conclusion.tex:34 and 43; estimates.tex:21.
+
+The conclusion repeats much of the introduction's square-root explanation
+and then imports the numerical values. Preserve the attribution to
+Fischler, but use this space to explain how the choices fit together:
+
+  First choose fixed r, kappa and omega with 2r < kappa < omega. Then
+  choose the proportion h/a to satisfy the rank requirement. Finally
+  choose Omega on the sqrt(a log a) scale, balancing its quadratic
+  coefficient cost against the logarithmic denominator cost.
+
+For the actual values, the rank slope is particularly instructive:
+
+  (9/25)(529/50 - 2*39/10) = 1251/1250 > 1.
+
+That calculation makes the small strict margin visible. The reader can
+then follow the separate contributions to the final quotient: the
+dominant decay is Omega log r, the coefficient cost contains
+Omega^2 log r/(2a), and the denominator contribution is kappa log a.
+Explain these terms alongside the existing asymptotics, without adding
+an optimization argument or claiming the choices are optimal.
+
+One small clarification
+
+At forms.tex:164 the reader may wonder why k starts at 2M+2 when the
+finite correction has degree at most 2M-1. The chosen derivative order
+k-1 is one higher than the minimum needed to remove that correction.
+Say that the later estimates and Taylor correction use this convenient
+range. This is an explanation of the existing choice, not a request to
+change the bound.
+
+What should be preserved
+
+The opening explanation of the dimension bound and its distinction from
+irrationality of a specified beta value is clear. The interpretation of
+the weak rank condition as a statement about the first column is useful.
+The h=1 example exposes the fixed-row mechanism. The six-point overview
+now explains the origin of the orders and the role of the infinity
+family in reducing the degree factor. The separation between the limits
+n -> infinity and a -> infinity is stated explicitly. These passages
+provide good models for the remaining revisions.
+
+The recommended pass should let a reader explain why the additional
+families are needed, why omega and Omega have separate roles, why one
+differential-row calculation serves both size and rank, and why the
+denominator saving is large enough. It should also let them say why
+independence of the scalar remainders requires a separate argument.
+Adding detail to every calculation would obscure those aims.
+
+Scope
+
+The complete current LaTeX manuscript was reviewed for sequential reading.
+Source and PDF hashes match paper/build-record.json. This review uses
+the guide in the Math workspace. The manuscript and PDF were not changed;
+the earlier build and supporting computations were not rerun. The review
+does not replace mathematical verification or a reading by a human from
+the intended audience. Its snapshot and source locations are recorded
+in human-reader-expository-review-2026-11-03.json.

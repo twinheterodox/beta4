@@ -9,11 +9,18 @@ a solution depend on its initial values. Since the polynomial row
 $C^{[p]}$ has integer coefficients, denominators for these Taylor
 coefficients will suffice for our forms.
 
-We use the distinct-product least common multiple from
-\cite[Lemma~2]{F26}; here positive indices suffice. The reason for
-distinct products will emerge from solving the differential system by
-successive integrations: each integration contributes a denominator
-equal to a new, strictly larger Taylor degree.
+An integrating factor will turn the system into successive integrations.
+The essential denominator saving is already visible in two integrations:
+for nonnegative integers $m_1,m_2$,
+\[
+ \int_0^u x^{m_2}\left(\int_0^x t^{m_1}\dd t\right)\dd x
+   =\frac{u^{m_1+m_2+2}}{(m_1+1)(m_1+m_2+2)}.
+\]
+The denominator factors are the degrees reached at the two integration
+steps. The second is strictly larger than the first. Further integrations
+give a strictly increasing list of degrees, all at most the final degree.
+This motivates the distinct-product least common multiple from
+\cite[Lemma~2]{F26}; here positive indices suffice.
 
 For integers $d\geq1$ and $k\geq0$, define
 \begin{equation}\label{eq:Delta-def}
@@ -55,9 +62,13 @@ Sum this estimate over the fixed set $1\leq j\leq d$ to obtain
 The dependence on $d$ is important. Allowing $d$ arbitrary factors from
 $\{1,\ldots,k\}$ would give the larger multiplier
 $\lcm(1,\ldots,k)^d$, with logarithm asymptotic to $dk$.
-Distinct factors give $\Ht_d k$ instead. Since $\Ht_d$ grows only
-logarithmically with $d$, this keeps the arithmetic cost small when the
-number of beta values is later increased.
+Distinct factors give $\Ht_d k$ instead. In our application $d$ is
+proportional to $a$ and $k$ is of order $n$. First let $n$ grow with
+$a$ fixed, then compare the resulting exponential rates as $a$ increases.
+The naive multiplier would cost an exponent of order $an$, overwhelming
+the intended decay on the scale $n\sqrt{a\log a}$. The distinct factors
+reduce this cost to order $n\log a$, which leaves that decay available
+for the dimension bound.
 
 \begin{lemma}\label{lem:denominators}
 For the normalized fundamental matrix $U$ defined above,

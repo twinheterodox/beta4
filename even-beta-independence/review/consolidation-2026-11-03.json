@@ -1,0 +1,61 @@
+{
+  "recorded_at_utc": "2026-11-03T16:29:34.692540+00:00",
+  "status": "passed",
+  "scope": "Local consolidation and reproducibility checks; no change to the mathematical text and no external publication.",
+  "canonical_package": "even-beta-independence/",
+  "working_copy_policy": "Edit and build this package in the Git repository. Earlier versions belong in Git history; private build and submission records remain outside the repository.",
+  "previous_repository_head": "9709607732a539a48ed66ccfa23d00e9a1eba0e2",
+  "previous_development_pdf_sha256": "d9591f799c2cfb26d2779244356192f97159937da3857135d6032926417fa6ed",
+  "pdf": "output/pdf/even-beta-independence.pdf",
+  "pdf_sha256": "83fff93aebeff3b79fb2f316df94518321a7b7dab815c7ab37d8ebf0b5cc5fe8",
+  "pages": 19,
+  "source_files": {
+    "paper/even-beta-independence.tex": "31a2b42b0c6f85697bfb406827bc75dd82b0cf101ddcd20ff004da5793af1e94",
+    "paper/references.tex": "064835e6e9b46cc24f3becca960429e386f8f137450a07f65ae17d7a8671c6e1",
+    "paper/sections/arithmetic.tex": "53e52301a1768e979d65129aa7409eb67f955c596c9d290085d1c84e4a3d5a59",
+    "paper/sections/conclusion.tex": "52d52cf1c8045c80a1b9e60b17cbb18d1d5b82dcddbf98442dd863d486feb767",
+    "paper/sections/estimates.tex": "67d7479478cd4a0789905ccfdc2d4f370d2625345f8cb54826580c812d810502",
+    "paper/sections/forms.tex": "806e7736b0f2f537f7b481565281a5302f90297eb9c3fa2ba90a5bfc6353de8c",
+    "paper/sections/inputs.tex": "d8abe487d24b24f825c602c16eb2a7aeceff0b90e3ea56371bc17f6213dc17eb",
+    "paper/sections/introduction.tex": "ae7a8663c2106466333b81e1b0b8640281f2f2a8deb710404f728068dd297a61",
+    "paper/sections/rank.tex": "60dd66ec8ef51cb54b69b0421143430e40b13edcac228617ab2fea60d79fc793"
+  },
+  "mathematical_source_files_changed": false,
+  "checks": {
+    "build": "Three pdflatex passes from the relocated repository completed; 19 pages; no unresolved references, overfull boxes or underfull warnings.",
+    "pdf_text_identical_to_previous_reviewed_revision": true,
+    "all_19_rendered_pages_identical_to_previous_reviewed_revision": true,
+    "visual_review": "review/visual-review.json",
+    "visual_review_sha256": "23d5915be39637565a85b7bdc0e4c39a3995dab808eaa8d664fe47841f3062f8",
+    "mathematical_checks_rerun": false,
+    "mathematical_checks_scope": "The previously passed scripts and result files are byte-identical to the reviewed working revision. This consolidation changes their location, not their implementation or the mathematical text.",
+    "retained_scripts_and_results_sha256": {
+      "checks/check_local_system.py": "2604585b89b48a4b0f0682e56fcc33e9745d52a08c05cfdac0cbfe4a756f9270",
+      "checks/check_linear_forms.py": "16ae1cfaf739fbdedb47550bde23e7e84529115a6c76be2445728c23b346d2ab",
+      "checks/local-system-results.json": "8643a52cb8421f8082745209b0fb8b051c9e656703a08978214f75a08e51790a",
+      "checks/half-shift-forms-checks.json": "22a845d2a459882d32e1f3ceb308338c0e307c8eba13bc5fa5cebd295c3b5806"
+    },
+    "repository_packet_validation": {
+      "status": "passed",
+      "claims": 57,
+      "evidence_files": 127,
+      "method_groups": 12,
+      "research_rounds": 18
+    },
+    "archived_source_pdf_paths_and_checksums_validated": 7
+  },
+  "preservation": {
+    "original_development_files_accounted_for": 274,
+    "unrelated_tracked_repository_files_unchanged": 234,
+    "pre_existing_untracked_file_preserved": true,
+    "historical_review_records_retain_their_original_scope": true,
+    "private_build_and_submission_records_kept_outside_git": true,
+    "legacy_workspace_paths_resolve_to_the_same_working_files": true
+  },
+  "review_records": {
+    "independent_audit": "review/independent-model-review-2026-11-03.json",
+    "supplied_audit_report": "review/independent-model-review-2026-11-03.txt",
+    "final_exposition_review": "review/final-expository-review-2026-11-03.txt"
+  },
+  "external_publication_performed": false
+}

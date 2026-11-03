@@ -38,7 +38,7 @@ record = {
     "pdf": str(OUTPUT.relative_to(ROOT)), "pdf_sha256": digest(OUTPUT),
     "unresolved_references": False, "overfull_boxes": False,
     "underfull_warnings": [line for line in log.splitlines() if "Underfull" in line],
-    "mathematical_status": "Working draft; independent model cross-check passed, reported 2 November 2026."
+    "mathematical_status": "Independent model proof audit of the 19-page revision, reported 3 November 2026: no substantive mathematical gap identified; supplied and additional computational checks reported to pass. The audit used the cited results and was not formal verification. See review/independent-model-review-2026-11-03.json for the report and reviewed revision."
 }
 (ROOT / "paper/build-record.json").write_text(json.dumps(record, indent=2)+"\n")
 print(json.dumps(record, indent=2))

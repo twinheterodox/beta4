@@ -1,9 +1,10 @@
-\section{Three inputs from Fischler}\label{sec:inputs}
+\section{The criterion and the rational-function input}\label{sec:inputs}
 
 We first state the criterion that turns linear forms into a dimension
-bound. The other two inputs provide the rational functions from which
-the forms are built and the multiplicity estimate used to prove their
-rank condition.
+bound, then the rational-function construction from which the forms
+are built. Both are due to Fischler. His third input, a multiplicity
+estimate, will be stated in Section~\ref{subsec:multiplicity} when the
+rank proof calls for it.
 
 \subsection{A refined linear-independence criterion}
 
@@ -47,10 +48,14 @@ form is required.
 
 \subsection{A rational function with small coefficients}
 
-The construction supplies two properties at once: integer
-partial-fraction coefficients of controlled size, and high-order
-vanishing at infinity. The latter means that the function decays rapidly
-at the arguments where we will sum it.
+The construction supplies three properties: integer partial-fraction
+coefficients of controlled size, exact vanishing of the first Laurent
+coefficients at infinity, and extra smallness of subsequent Laurent
+coefficients. The first property controls the coefficients of our forms.
+The other two have different roles: the vanishing order, governed by
+$\omega$, leaves enough decay to differentiate the sums and supplies
+zeros for the rank argument; the additional smallness, governed by
+$\Omega$, makes the resulting forms exponentially small.
 
 \begin{proposition}[{\cite[Theorem~4]{F26}}]\label{prop:rational}
 Let $a$ be a positive integer and let $\omega,\Omega,r$ be rational
@@ -88,8 +93,12 @@ Here $a$ bounds the pole orders, and $\omega n$ is a lower bound for
 the order of vanishing at infinity. The parameter $r$ will determine
 the summation cutoff $rn$.
 The larger threshold $\Omega n$ gives the stronger estimate in the first
-line of \eqref{eq:laurent-bounds}. These parameters are fixed as $n$ grows;
-their choice is postponed until Section~\ref{sec:conclusion}.
+line of \eqref{eq:laurent-bounds}; it does not assert additional exact
+vanishing. In the tail estimate it will supply a factor $r^{-\Omega n}$,
+separate from the power decay controlled by $\omega n$.
+All parameters are fixed as $n$ grows. When we later increase $a$ in
+Section~\ref{sec:conclusion}, $\omega$ will remain fixed while $\Omega$
+grows on the scale $\sqrt{a\log a}$.
 
 Group the coefficients with the same pole order into polynomials
 \[
@@ -100,59 +109,3 @@ The $P_i$ will multiply the special functions obtained by summing $F_n$.
 We retain the actual largest index $b$, rather than replacing it by $a$,
 because the rank proof needs a nonzero highest coefficient $P_b$.
 The integer $b$ may depend on $n$, but always satisfies $1\leq b\leq a$.
-
-\subsection{A multiplicity estimate}
-
-The rank proof will argue by contradiction. If the coefficient matrix
-has a forbidden kernel vector, we can construct polynomial combinations
-of solutions with many vanishing derivatives. The following theorem
-limits their total order of vanishing in terms of the polynomial degrees.
-It plays the role of a zero-counting bound for these combinations.
-
-Let $Y'=\matA(w)Y$ be a fixed rational differential system of size $q$.
-For polynomials $S_0,\ldots,S_{q-1}$ of degree at most $m$, write
-\[
- \mathcal R(Y)=\sum_{j=0}^{q-1}S_jY_j.
-\]
-We call this scalar function the \emph{remainder} associated with the
-solution $Y$ and the fixed polynomial row $(S_0,\ldots,S_{q-1})$.
-The selected remainders must satisfy a common scalar linear differential
-equation of some order $\mu$, with rational coefficients. In our
-application such an equation will follow from the finite dimension of
-the system.
-
-At a point $\sigma$, the Nilsson class consists of finite sums of
-holomorphic functions multiplied by complex powers and nonnegative
-integer powers of a logarithm of the local coordinate.
-At infinity the local coordinate is $1/w$.
-The order is the least real part of a power that occurs after expanding
-the holomorphic factors; logarithmic factors do not change it. For example,
-$\ord_0(w^e(\log w)^j)=\operatorname{Re}e$.
-In particular, $w^N$ has order $-N$ at infinity. Negative orders will
-therefore occur when we apply the theorem.
-
-\begin{proposition}[{\cite[Theorem~3]{F26};
-see also \cite[Theorem~3.1]{F18}}]\label{prop:multiplicity}
-Let $\Sigma$ be a fixed finite set of points of the Riemann sphere
-containing infinity. At each $\sigma\in\Sigma$, choose a family of local
-solutions $Y_{\sigma,j}$, indexed by $j\in J_\sigma$, whose remainders
-are in the Nilsson class and are linearly independent over $\C$.
-If a nonzero rational differential operator of order $\mu$ annihilates
-all these remainders, then
-\[
- \sum_{\sigma\in\Sigma}\sum_{j\in J_\sigma}
-       \ord_\sigma\mathcal R(Y_{\sigma,j})
-       \leq(m+1)(\mu-|J_\infty|)+C.
-\]
-The constant $C$ depends only on the differential system and on $\Sigma$.
-\end{proposition}
-
-The solution families at different points need not agree by analytic
-continuation, and no independence between different families is required.
-These features are explicit in \cite[Section~3.1]{F18}.
-We use the formulation in \cite{F26}, which also allows negative orders
-at infinity, as in its proof of Proposition~3.
-The constant is uniform in the polynomial row and in the selected
-solutions. This uniformity is essential when that row and the solutions
-depend on $n$.
-

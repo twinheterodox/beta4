@@ -1,0 +1,21 @@
+INDEPENDENT MODEL PROOF AUDIT
+Reported by the author on 3 November 2026.
+Reviewer: a second model; its name and review execution date were not supplied.
+Scope and reviewed revision: independent-model-review-2026-11-03.json.
+
+User-supplied report (verbatim)
+
+a second model: I found no substantive mathematical gap in the current 19-page version. The revisions also make the argument considerably easier to follow.
+
+  The critical checks hold up:
+
+  • Denominators (§4): successive integrations produce distinct denominator factors, justifying the harmonic-number cost.
+  • Rank (§6): the common polynomial row, residue argument, and counting at all six points fit together. The application of Fischler’s multiplicity estimate meets its stated hypotheses.
+  • Final bound (§7): the parameter constraints and passage to all sufficiently large even s work. I recomputed
+    c_{*} = 0.217456234803943567… > 0.21.
+
+  All supplied exact checks passed. Separate checks also passed through Taylor degree 60 and depth 12, alongside numerical checks of the tail identities.
+
+  The new two-integration example on page 8, the h=1 example on page 13, and the explanation of the infinity contribution substantially improve the exposition.
+
+  No mathematical correction identified in this pass. This remains a proof audit using the cited results, not formal verification; the finite computations support particular identities rather than certify the theorem. I changed no files.
