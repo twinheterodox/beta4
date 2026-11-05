@@ -1,0 +1,111 @@
+\section{Exact arithmetic checks}\label{app:checks}
+
+\subsection{Logarithm bounds and endpoint comparisons}
+\label{app:endpoint-checks}
+
+Here is the finite rational calculation used in
+Section~\ref{sec:count}. For a rational $x\ge1$, write
+$x=2^j y$ with $j\ge0$ and $1\le y<2$, and put
+$z=(y-1)/(y+1)$. With $M=18$, define
+\[
+ L_M(y)=2\sum_{h=0}^{M-1}\frac{z^{2h+1}}{2h+1},\qquad
+ R_M(y)=\frac{2z^{2M+1}}{(2M+1)(1-z^2)}.
+\]
+The positive series $\log y=2\operatorname{atanh}z$ gives
+\[
+ L_M(y)\le\log y\le L_M(y)+R_M(y).
+\]
+Applying the same formula to $2$ gives bounds for $\log2$.
+Adding $j$ times those bounds gives rational numbers
+$\underline{\log}(x)$ and $\overline{\log}(x)$ enclosing
+$\log x$. The remainder follows by replacing all denominators
+in the tail by $2M+1$ and summing the resulting geometric series.
+
+The checker computes $\varphi(d)$ by counting coprime integers and
+then forms $D_k$. For each closed endpoint $s_k$, it computes
+\[
+ 2\left\lceil D_k\left(33+\frac{45}{2}
+                     \underline{\log}(k)\right)\right\rceil,
+ \qquad
+ 2\left\lceil D_k\left(33+\frac{45}{2}
+                     \overline{\log}(k)\right)\right\rceil.
+\]
+These integers agree in every required case, thereby isolating the
+endpoint exactly. It then performs the following rational comparisons:
+\begin{center}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Comparison&Number of cases&Index of smallest margin\\
+\midrule
+Unrounded, $26\le k\le255$&230&29\\
+Rounded, $3\le k\le25$&23&3\\
+\bottomrule
+\end{tabular}
+\end{center}
+After subtraction of $968/6615$, the margins are strictly greater
+than $24529/10^8$ and $14325/10^8$, respectively, as used in the
+proof. All calculations use integer or rational arithmetic. The
+checker also verifies the constants in
+\eqref{eq:tail-T}--\eqref{eq:tail-G}, the two small floors at
+$s=160,364$, and the positive coefficient bound at the end of
+Section~\ref{sec:count}.
+
+The elementary bounds on $\pi$ can be verified independently of
+decimal approximations. For the upper bound,
+\[
+ 0<\int_0^1\frac{x^4(1-x)^4}{1+x^2}\,dx=\frac{22}{7}-\pi.
+\]
+For the lower bound $\pi>157/50$, the checker uses Machin's identity
+$\pi=16\arctan(1/5)-4\arctan(1/239)$ with eight terms of the
+alternating arctangent series and its next-term error bound.
+
+\subsection{Checks of the construction identities}
+
+The positive-definiteness proof in Section~\ref{sec:gram} works for
+every $B$. We also check its normalization and the arithmetic
+identities by separate finite calculations. At each of the ten
+parameter choices in Section~\ref{sec:endpoints}, two partial-fraction
+algorithms over the field with $1\,000\,003$ elements agree with
+an exact rational calculation of the Gram matrix.
+
+The rational calculation uses explicit moments. Every element of
+$\mathcal A$ occurs in $\Lambda$, because the kernel poles are
+numerator zeros. With all fractions reduced, put
+\[
+ \Delta=\prod_{\alpha=v/d\in\Lambda}d^2,\qquad
+ V(x)=\prod_{\alpha=v/d\in\Lambda\setminus\mathcal A}(d^2x+v^2).
+\]
+Then $\prod_{\alpha\in\Lambda}(x+\alpha^2)/Q(x)=V(x)/\Delta$.
+For $0\le k<S$, the elementary beta integral gives
+\begin{equation}\label{eq:moments}
+ \frac1{2\pi}\int_{-\infty}^{\infty}
+                   \frac{y^{2k}}{(y^2+4)^S}\,dy
+ =2^{2k-4S+2}\frac{(2k)!(2S-2k-2)!}{k!(S-k-1)!(S-1)!}.
+\end{equation}
+Thus $M_{b,j}/C_1$ is $\sigma/\Delta$ times the moment functional
+in \eqref{eq:moments} applied to $xV(x)h_b(x)h_j(x)$. The largest
+moment index is $DL/2+N-1<S$, so every integral used is convergent.
+
+At the ten endpoints, the computations check $385$ rational Gram
+entries, $55$ positive leading principal minors and ten integer
+adjugate identities. Full rational computations at
+$(B,s,r)=(1,20,3),(2,24,3)$ and $n=1,17,19$ also check the
+coefficient and constant congruences and grouped integrality.
+These smaller parameter sets test identities; decay is checked
+at the stated theorem endpoints.
+
+Run \path{checks/verify_construction.py} for the construction
+identities and \path{checks/verify_endpoints.py} for the endpoint
+comparisons. Both use only the Python standard library and should
+be run without \texttt{-O}.
+
+\subsection{Independent audit}
+
+An independent mathematical audit reported on 5 November 2026
+found no substantive error or gap in the 19-page revision identified
+in the accompanying audit record. The reviewer checked the general
+arguments and independently reproduced the finite calculations,
+without running or importing the supplied checkers. The audit
+recommended the explanation of uniformity now included in
+Section~\ref{sec:profile-sum}; no mathematical correction was requested.
+It was not formal verification or a fresh audit of all cited literature.

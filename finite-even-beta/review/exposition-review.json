@@ -1,0 +1,125 @@
+{
+  "reviewed_at_utc": "2026-11-04T01:06:50.066264+00:00",
+  "status": "Targeted exposition revision and visual review completed",
+  "reviewer": "Preparing Codex assistant; not an independent reviewer",
+  "pdf": "output/pdf/finite-even-beta.pdf",
+  "pdf_sha256": "abfc76ef7331856f1858015d58e0910de9840419b381da74293c2c50d2627346",
+  "pages": 13,
+  "source_files_sha256": {
+    "paper/finite-even-beta.tex": "7bb9b98ecc8e6e0dd06ddce2b7a7502b761ea3abf0635dfd43f8b5950874cd3f",
+    "paper/references.tex": "5592f38c919a376c68333a9494fd8aa11f828c3036e2daeff19ac4ca486f0277",
+    "paper/sections/arithmetic.tex": "c1fbfda0750110dfbd52c208cbca1c15615bfb59510deac9f830bd01409800c9",
+    "paper/sections/certificate.tex": "4a4a5c54e9fdfa8febce05e2d6e5f2c1e13c44872ef97c84d72455fd046ff77d",
+    "paper/sections/conclusion.tex": "a132915195ba986969272af89b3257b1066c87be1b57e804521137dbfa8827bc",
+    "paper/sections/decay.tex": "aed6a2c8e2a6dd57107d900ef01cdb282ed309bf002823677b82e3788beaa509",
+    "paper/sections/dilation.tex": "5d06ffff1765b9c16a4662069be11bcf66e553bb6c93cd0f30ae88b905575bd2",
+    "paper/sections/forms.tex": "2ee86cb3adf7b38ddf617e0a3a95cf30d830ca85335eb40d110f56e77c04de19",
+    "paper/sections/introduction.tex": "c1fefb1909dce934d70e2ded71267d447a22afbdc81292055fe12eac8cedefa5"
+  },
+  "previous_pdf_sha256": "08c86128f56fb40793063beded9d23eaeeb97d928a31290d48bab8007449dc4b",
+  "previous_review": "review/assembly-review.json",
+  "source_proof_sha256": "f9aaa57ee35e5377f662a9eea3ecc9de6f1da7c173c811fca89ea527dc61e6a7",
+  "audited_plain_text_sha256": "56fa7e55a13da99d1d47a0475d5f227d2ea257c358b5fdd369b3156cc709f8f0",
+  "purpose": "Apply the human-reading exposition principles more fully where the first draft presented parameter choices and normalization before explaining their roles, and lacked a concrete prime-dilation example.",
+  "reader_prerequisites": "Partial fractions, elementary prime valuations and real asymptotic estimates; the manuscript introduces valuation and reduction notation when needed and lists its classical inputs.",
+  "changes": [
+    {
+      "section": "1",
+      "change": "State the expected mathematical background before listing the classical inputs."
+    },
+    {
+      "section": "2",
+      "change": "Derive the pole spacing from preservation of the period-four character and the b^i coefficient pattern, then explain reflection and delayed tails as the two numerator requirements."
+    },
+    {
+      "section": "2",
+      "change": "Explain why reflection of a cutoff rn gives a zero interval of length (2r+4)n, how the four fractional classes cover the three grids, and why one canceled zero requires nominal pole order s+1."
+    },
+    {
+      "section": "2",
+      "change": "Explain the roles and tradeoffs of r=7 and s=364, with their exact certification in Sections 4 and 6; no minimality or optimality claim is added."
+    },
+    {
+      "section": "2",
+      "change": "Motivate the factorial normalization and K^n, then compute the product of the other pole differences to explain the factors 4^(365n) and ((n+1)!)^365 before defining C_n."
+    },
+    {
+      "section": "5",
+      "change": "Define a unit, recover the product (z+1)(z+2) from a ten-factor product modulo 5, and show explicitly how the one-third shift becomes two-thirds. Explain how these operations lead to the general dilation statement."
+    },
+    {
+      "section": "6",
+      "change": "Keep the all-pairs certificate introduction and its code on the same page; certificate content is unchanged."
+    }
+  ],
+  "sequential_reading_check": {
+    "before_construction": "The reader knows why one function is sampled on three grids and why poles are spaced by four.",
+    "before_numerator": "The reader knows the symmetry and delayed-tail requirements, the cutoff role and the four fractional classes.",
+    "before_normalization": "The reader sees which arithmetic costs each factor addresses and is warned that its growth enters the decay estimate.",
+    "before_dilation_proposition": "The reader has seen divisible factors recover a shorter product and other factors reduce to constants, including permutation of the fractional shifts.",
+    "limit": "This is a targeted authoring review, not an independent assessment or a human reader study."
+  },
+  "added_identity_checks": {
+    "modulo_five_product": "All 11 exact polynomial coefficients checked after division by 25; reduction equals (z+1)(z+2).",
+    "fractional_shift_exchange": "Residue classes checked modulo 5; both displayed affine identities checked exactly.",
+    "pole_normalization_cases": 24,
+    "zero_geometry_cases": 4,
+    "status": "All checks passed.",
+    "scope": "Consistency checks of the added explanatory identities and example; no new independent proof audit."
+  },
+  "preservation_checks": {
+    "protected_files_unchanged": [
+      "paper/sections/arithmetic.tex",
+      "paper/sections/decay.tex",
+      "paper/sections/conclusion.tex",
+      "paper/finite-even-beta.tex",
+      "paper/references.tex",
+      "review/independent-audit.json",
+      "review/assembly-review.json",
+      "sources/reading-record.json"
+    ],
+    "all_certificate_scripts_and_results_unchanged": true,
+    "forms_lemma_and_proof_unchanged": true,
+    "dilation_proposition_and_proof_unchanged": true,
+    "certificate_section_only_pagination_change": true,
+    "manuscript_code_snippets_pass": 2,
+    "status": "Passed; theorem, proof steps, certificate data and audit provenance preserved."
+  },
+  "certificate_verification": {
+    "status": "Existing passing exact-certificate results retained; all checker scripts and output files are byte-for-byte unchanged.",
+    "full_certificate_rerun_in_this_revision": false,
+    "reason": "The finite construction, proof arguments and certificate algorithms were not changed. The added explanatory identities were checked separately, and both executable manuscript snippets were run successfully.",
+    "result_files_sha256": {
+      "checks/verification.json": "5cbae90592266b3f0e5f31f06b9f189d57a703d08a7d74482129db60d35a2373",
+      "checks/comparison.json": "d6c074fecf62cb3b1032ef0d15d68694c08f24bb363ce6ef387c9164076dbded"
+    }
+  },
+  "build_check": {
+    "pages": 13,
+    "unresolved_references": false,
+    "overfull_boxes": false,
+    "underfull_warnings": []
+  },
+  "visual_review": {
+    "method": "Poppler rendering at maximum dimension 1400 pixels; visual inspection of all thirteen pages. After the final pagination adjustment, pages 10 and 11 were inspected again and all other page images were verified byte-for-byte identical to the inspected rendering.",
+    "pages_inspected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "result": "No clipping, overlap, broken formulas, split code blocks or stranded code introduction found in the final rendering."
+  },
+  "independent_review_status": "The independent audit remains attached to its original plain-text proof. The typeset revision has not received a new independent audit.",
+  "formal_verification": false,
+  "publication_status": "Local revision only; no commit, push, upload or contact."
+}

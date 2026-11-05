@@ -1,0 +1,90 @@
+{
+  "date": "2026-11-04",
+  "status": "complete typeset manuscript; developing-assistant mathematical and exposition self-review; exact checks and visual inspection passed",
+  "title": "Explicit lower bounds for the number of irrational even beta values",
+  "author": "twinheterodox",
+  "prepared_with": "Codex",
+  "independent_audit": false,
+  "formal_verification": false,
+  "main_result": "I(s) >= floor(pi*sqrt(2s/(135 log s))) for every even s >= 160",
+  "pdf": "output/pdf/even-beta-counts.pdf",
+  "pdf_sha256": "2bb142c06908a539b122cf63d83e63b186c2c656607d1ba47ce29e037e359bc9",
+  "pages": 18,
+  "source_files_sha256": {
+    "paper/even-beta-counts.tex": "9fe2e41c68982877d6ca3b77b1dfb219566e7b0eb2254afe97624c87c892b4d6",
+    "paper/references.tex": "0d9dcfc17f2c240cdd94c63f8fe286c621c33a66ec0a0cb8328b09030a56fbd9",
+    "paper/sections/arithmetic.tex": "59fbe3dbcbd49be0f873be522f4b2fda8c09fbf8a2631b9ffed2c8a01eaf3af5",
+    "paper/sections/checks.tex": "ccf9b57ad7cfa8cbefbc028a84b8a9e1e2a01ebc363fda697d12bd38c039b0c6",
+    "paper/sections/construction.tex": "2f0623b5bafedd4ca4f0b19802efc9a7849bf08fc0c174e58674fccf2e1c95bc",
+    "paper/sections/contradiction.tex": "5bb08391dab0fe2a4a3983126ab9f2b36c1f72abdd6dccf2f9b8b0ded552f76a",
+    "paper/sections/count.tex": "b5bd0b5187cbe0fc02e3f3734e744ca097fc591e23a74bf0113e8e0040a67b04",
+    "paper/sections/decay.tex": "66ee2f070c5b276b5efac94b9524650ed0b29583ae3392e9fb3892d88333c383",
+    "paper/sections/dilation.tex": "c974aa5a16d204e9311c430390249987c87429fd18f53cda45da79162418920e",
+    "paper/sections/endpoints.tex": "75fe3684151141f95747373e952c15ee1cbdc2da084569af866db56056943f4e",
+    "paper/sections/gram.tex": "67075cdf44af3293c3a321199a4fa3ff50ad64ee634466163a20d4bedbd43e9a",
+    "paper/sections/introduction.tex": "d6a07dbc70be041b7f91609ba3f16f86ba428e37fcc277940d562005ee9d6665"
+  },
+  "check_code_sha256": {
+    "checks/base.py": "72cfe437ea0e269ec2f388f175700a34e3f3c28e149fb75473aca60c60896daf",
+    "checks/gram.py": "cd4af5a8d4a78788608274214f0ba2b9f1b7626139ef4246f47e4aa21ce2baff",
+    "checks/verify_construction.py": "66963efb7cd3dbcc12cb73830fadb62a90c0a3491c057099f128ed5c125eba8e",
+    "checks/verify_endpoints.py": "61aa6833d67c3ed09f1209c47ecf968357470ea96b7ee520389f5dea9d92d4bf"
+  },
+  "check_output_sha256": {
+    "checks/construction-verification.json": "049e9375895699a909f41a50b26a1a81a3d6a447e15e05107d84d6f91ba9360d",
+    "checks/endpoint-verification.json": "6c79112b03d832fe928502aa78610866495659e9d9f0bbc758efc102ad9a5ebc"
+  },
+  "construction_checks": {
+    "endpoint_cases": 10,
+    "exact_rational_Gram_entries": 385,
+    "positive_leading_principal_minors": 55,
+    "selected_coefficient_congruences": 272,
+    "other_pole_valuation_bounds": 2312,
+    "constant_congruences": 10,
+    "grouped_constant_divisibilities": 4802
+  },
+  "endpoint_checks": {
+    "unrounded_intervals": 230,
+    "rounded_intervals": 23,
+    "infinite_range_constants": "all exact comparisons passed",
+    "small_floors": [
+      160,
+      364
+    ]
+  },
+  "build_checks": {
+    "unresolved_references": false,
+    "overfull_boxes": false,
+    "underfull_warnings": []
+  },
+  "visual_review": {
+    "all_pages_rendered_at_dpi": 100,
+    "all_pages_reviewed_in_contact_sheets": true,
+    "selected_pages_reviewed_at_full_resolution": [
+      1,
+      5,
+      6,
+      8,
+      12,
+      16,
+      18
+    ],
+    "final_pages_1_through_17_identical_to_reviewed_preceding_render": true,
+    "final_references_kept_on_page_18": true,
+    "clipping_or_overlap_detected": false
+  },
+  "exposition_review": "review/exposition-review.txt",
+  "mathematical_review": "review/mathematical-review.txt",
+  "source_reading_record": "sources/reading-record.json",
+  "preservation": {
+    "finite_even_beta_directory_unchanged": true,
+    "even_beta_independence_directory_unchanged": true,
+    "all_earlier_proof_packages_unchanged": true,
+    "prior_independent_audits_not_transferred": true
+  },
+  "identity_checks": {
+    "pdf_author": "twinheterodox",
+    "identifying_local_paths_or_personal_account_names_in_new_deliverables": false
+  },
+  "publication": "Local assembly only; no commit, push or upload."
+}

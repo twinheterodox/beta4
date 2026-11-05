@@ -1,0 +1,34 @@
+{
+  "reviewed_at_utc": "2026-11-04T11:34:24.797329+00:00",
+  "scope": "User-requested title change; manuscript body unchanged.",
+  "title": "At least three of beta(2), beta(4), ..., beta(364) are irrational.",
+  "pdf": "output/pdf/finite-even-beta.pdf",
+  "pdf_sha256": "7013d776c596eb2625b34f1c867696c6e4e8dcaf0411f6b1fce097e8aeaa364c",
+  "pages": 13,
+  "source_files_sha256": {
+    "paper/finite-even-beta.tex": "c51106a01e627b258d79ad657bd0459de5458c7e07c1458a2bcaed51b3927297",
+    "paper/references.tex": "e639bbd95ea8c1be22f7eec78ca498d5049b3abc2b238a18bdc4141b3d6ae6a6",
+    "paper/sections/arithmetic.tex": "d37ea08e805c20e92b5c6672080b772fa9e8b49597dbca4659a60f11e5cb550f",
+    "paper/sections/certificate.tex": "32ee1a96183aebd56343daf5fef912527e691753e3b9fe50e570dfef297b7f0c",
+    "paper/sections/conclusion.tex": "313a01b0fcda68eb0536daef21981de96d93cdbe5ea3838261279bdb627013af",
+    "paper/sections/decay.tex": "55414eb4fb76a84bb09c2120aec971b02431166e4c6e8caba797765a3425b8c7",
+    "paper/sections/dilation.tex": "ccb39e0485691165b61751344f08351e7831e8b5624049123fcad6c5dc7cc886",
+    "paper/sections/forms.tex": "64115f077b20466bdf5fc73650eb54b7335dd8f94c792e2f75c65cf4006b5f85",
+    "paper/sections/introduction.tex": "60343f82962c8a7124f009b9834e48abea2ebe5376942671f7e4a7b38b396cb7"
+  },
+  "previous_review": "review/wording-review.json",
+  "previous_pdf_sha256": "f9dd48b8fa7afd99b93d7cbe44241f8196727ee048591caebca60cb224ad035f",
+  "changes": [
+    "Replaced the title with the explicit list of beta values and updated PDF title metadata. No forced line break."
+  ],
+  "preservation_check": "The only TeX changes are the title and PDF title metadata. Abstract, body, bibliography, checker code and data, source ledger and historical review records are unchanged.",
+  "build_check": {
+    "unresolved_references": false,
+    "overfull_boxes": false,
+    "underfull_warnings": []
+  },
+  "visual_review": "Rendered all 13 pages at 110 dpi. Only page 1 differs from the previously inspected wording revision. Visually inspected page 1: the title fits on one line without clipping or overlap. Pages 2–13 are pixel-identical to the inspected prior render.",
+  "computational_scope": "No mathematical checks rerun for the title change.",
+  "independent_review_status": "Historical audit scopes unchanged; no new independent audit.",
+  "publication_status": "Local edit only; no commit, push or upload."
+}

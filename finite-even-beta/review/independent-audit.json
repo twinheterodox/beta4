@@ -1,0 +1,54 @@
+{
+  "report_received_on": "2026-11-03",
+  "source": "Independent proof-audit report supplied by the author during preparation.",
+  "reviewer_name": null,
+  "reviewer_model": null,
+  "identity_scope": "Reviewer name and model were not specified; neither a human nor a model identity is inferred.",
+  "audited_plain_text_sha256": "56fa7e55a13da99d1d47a0475d5f227d2ea257c358b5fdd369b3156cc709f8f0",
+  "conclusion": "No substantive mathematical error or gap found; at least three of beta(2),beta(4),...,beta(364) are irrational, hence at least one of beta(6),...,beta(364) is irrational.",
+  "scope": [
+    "Construction and character-sum linear forms",
+    "Denominator lemma for all indices, including grouped constant terms",
+    "Analytic normalization, uniform compact estimates and infinite tail",
+    "Exact rational decay bounds",
+    "Prime dilation, residue-class permutation, local Laurent coefficient extraction and constant-term congruence",
+    "Independently recomputed finite seed and all pair-elimination determinants",
+    "Final irrationality contradiction"
+  ],
+  "reported_independent_method": "Construct the integer numerator N(t), cancel t(t+4)(t+8), and use local polynomial long division with exact rational arithmetic. The auditor reports not running or importing either supplied verification script.",
+  "reported_checks": {
+    "coefficient_divisibilities": 1092,
+    "constant_term_divisibilities": 3,
+    "odd_rho_vanish_exactly": true,
+    "reflection_identities_pass": true,
+    "rational_function_evaluation_points": [
+      "29",
+      "31",
+      "61/2",
+      "91/3"
+    ],
+    "modulus": 1000003,
+    "modulus_primality_checked": true,
+    "unnormalized_seed_residues": [
+      614660,
+      346158,
+      44336
+    ],
+    "nonzero_pair_determinants": 16471,
+    "low_weight_elimination_residue": 187267,
+    "normalization": "C_2=2^1825*3^473",
+    "exact_decay_comparisons_pass": true
+  },
+  "accepted_classical_inputs": [
+    "Stirling formula",
+    "Wilson theorem",
+    "Fermat theorem",
+    "Prime number theorem"
+  ],
+  "independent_checker_artifacts": "The narrative report was supplied. No independent checker source or machine-readable output was supplied.",
+  "formal_verification": false,
+  "priority_assessment": false,
+  "recommended_revision": "Explain before (4.3) why multiplication by u^365 gives a power series over Z_(p), so reduction modulo p commutes with coefficient extraction.",
+  "revised_plain_text_sha256": "f9aaa57ee35e5377f662a9eea3ecc9de6f1da7c173c811fca89ea527dc61e6a7",
+  "typeset_revision_status": "Subsequent exposition revision prepared from the clarified plain-text proof. No new independent audit of the typeset manuscript is claimed."
+}

@@ -1,0 +1,155 @@
+\section{Decay survives denominator clearing}\label{sec:decay}
+
+The prime number theorem gives $d_n^{1/n}\to\ep$, hence also
+$\delta_n^{1/n}\to\ep$. The multiplier $\delta_n^{365}$ therefore grows
+at exponential rate $\ep^{365}$. The following bound shows that the
+forms decay fast enough to compensate.
+
+\begin{proposition}\label{prop:decay}
+For $b=1,2,3$, along positive even $n$,
+\[
+ \limsup_{n\to\infty}|\delta_n^{365}r_{n,b}|^{1/n}<\frac34.
+\]
+\end{proposition}
+
+\begin{proof}
+The positive tail begins just beyond the last zero $7n$. For fixed
+$x>0$, its logarithmic growth rate at distance $nx$ from that zero is
+\[
+ \Phi(x):=\lim_{\substack{n\to\infty\\n\text{ even}}}
+                 \frac1n\log R_n\bigl(n(7+x)\bigr).
+\]
+Thus, for fixed $x>0$, $R_n(7n+nx)=\exp(n\Phi(x)+o(n))$.
+We first find the maximum of $\Phi$, then use uniform estimates to
+bound the whole tail.
+
+The product identity
+$\prod_{j=0}^{N-1}(z+j)=\Gamma(z+N)/\Gamma(z)$ gives
+\begin{align*}
+ P_n(7n+t)
+   &=t\prod_{\theta\in\Theta}
+          \frac{\Gamma(t+18n+\theta)}{\Gamma(t+\theta)},\\
+ \prod_{h=0}^{n}(7n+t+4h)
+   &=4^{n+1}\frac{\Gamma((11n+t)/4+1)}{\Gamma((7n+t)/4)}.
+\end{align*}
+Substitute these expressions and $C_n$ from \eqref{eq:rn} into
+$\log R_n(7n+t)$, set $t=nx$, and apply Stirling's formula. The limit
+exists and equals
+\begin{align}
+ \Phi(x)={}&36\log2+54\log3
+     +4\bigl((x+18)\log(x+18)-x\log x\bigr)\notag\\
+ &-\frac{365}{4}\bigl((x+11)\log(x+11)-(x+7)\log(x+7)\bigr)
+     +365\log4,\label{eq:profile}
+\end{align}
+with continuous extension to $x=0$ obtained by setting $x\log x=0$.
+The $n\log n$ terms and the linear terms from Stirling's formula cancel.
+The factor $4^{365n}$ in $C_n$ contributes the final term $365\log4$.
+
+To locate the maximum, put
+\begin{equation}\label{eq:f}
+ 4\Phi'(x)=\log f(x),\qquad
+ f(x)=\left(\frac{x+18}{x}\right)^{16}
+      \left(\frac{x+7}{x+11}\right)^{365}.
+\end{equation}
+Its logarithmic derivative is
+\[
+ (\log f)'(x)=-\frac{288}{x(x+18)}
+                  +\frac{1460}{(x+7)(x+11)}.
+\]
+The numerator over a common positive denominator is
+$1172x^2+21096x-22176$, which has one positive root. Thus $\log f$
+first decreases and then increases. It tends to $+\infty$ as $x\to0$
+and to zero from below as $x\to\infty$, with leading term $-1172/x$.
+Consequently $f(x)=1$ has exactly one positive solution $x_0$, where
+$\Phi$ attains its global maximum. Using $\Phi'(x_0)=0$ to simplify
+\eqref{eq:profile} gives
+\begin{equation}\label{eq:G}
+ G:=\ep^{\Phi(x_0)}
+  =2^{36}3^{54}(x_0+18)^{72}4^{365}
+      \left(\frac{(x_0+7)^7}{(x_0+11)^{11}}\right)^{365/4}.
+\end{equation}
+
+We now bound the sum in \eqref{eq:positive-bound}. For fixed $A$, the
+gamma-product formula gives
+\[
+ \log R_n(7n+t)=n\Phi(t/n)+O_A(\log n)
+                  \quad(1/3\leq t\leq An),
+\]
+uniformly on that interval. The estimate remains valid for small $t$ because
+$\log\Gamma(y)=y\log y-y+O(\log(y+1)+1)$ for $y$ bounded below by
+a fixed positive constant. Each grid has $O_A(n)$ terms in this interval,
+so the sum over the interval has $n$th-root limsup at most $G$.
+
+For $t\geq An$ with $A\geq18$, every numerator factor is at most $2t$
+and every denominator factor is at least $t$. Therefore
+\[
+ R_n(7n+t)\leq C_n2^{72n+1}t^{-M_n},
+ \qquad M_n=293n+364.
+\]
+The grid has spacing $1/b$. For the sum of $t^{-M_n}$ over this grid,
+we bound the first term by $(An)^{-M_n}$ and the rest by an integral:
+\begin{align*}
+ \sum_{j/b\geq(7+A)n}R_n(j/b)
+ &\leq C_n2^{72n+1}
+       \left((An)^{-M_n}+b\int_{An}^{\infty}t^{-M_n}\,dt\right)\\
+ &=C_n2^{72n+1}(An)^{-M_n}
+       \left(1+\frac{bAn}{M_n-1}\right).
+\end{align*}
+Stirling's formula gives
+\[
+ C_n=4^{365n}K^n(n+1)^{365}(n!)^{293}
+     =\bigl(4^{365}K\ep^{-293}\bigr)^n
+        n^{293n}\exp\bigl(O(\log n)\bigr).
+\]
+The factor $n^{293n}$ cancels the same power in $(An)^{-M_n}$.
+The remaining powers of $n$ do not affect the $n$th-root limit.
+Taking $n$th roots in the tail bound therefore gives a limsup of at most
+\[
+ 4^{365}K2^{72}\ep^{-293}A^{-293}.
+\]
+This tends to zero as $A\to\infty$. We conclude that
+\begin{equation}\label{eq:unscaled-decay}
+ \limsup_{\substack{n\to\infty\\n\text{ even}}}|r_{n,b}|^{1/n}\leq G.
+\end{equation}
+
+To prove $\ep^{365}G<3/4$, set $u=3/5000$.
+Exact rational arithmetic gives
+\begin{equation}\label{eq:fu}
+ \left(\frac{u+18}{u}\right)^{16}
+ \left(\frac{u+7}{u+11}\right)^{365}<1,
+\end{equation}
+so $x_0<u$. Also $(x+7)^7/(x+11)^{11}$ is decreasing for $x\geq0$,
+since its logarithmic derivative is $-4x/((x+7)(x+11))$. Finally,
+the positive exponential series gives
+\[
+ \ep<\sum_{k=0}^5\frac1{k!}
+              +\frac{1/6!}{1-1/7}
+       =\frac{163}{60}+\frac7{4320}<\frac{68}{25}.
+\]
+Consequently
+\begin{align}
+ (\ep^{365}G)^4
+ &<\left(\frac{68}{25}\right)^{1460}2^{144}3^{216}
+       \left(18+\frac3{5000}\right)^{288}4^{1460}
+       \left(\frac{7^7}{11^{11}}\right)^{365}\notag\\
+ &<\frac{81}{256}=\left(\frac34\right)^4.
+ \label{eq:rate-certificate}
+\end{align}
+The rational expression in the first line is approximately $0.2761910348$;
+its exact comparison with $81/256$ is verified below. Combining
+\eqref{eq:unscaled-decay} with $\delta_n^{1/n}\to\ep$ proves the proposition.
+\end{proof}
+
+The comparisons \eqref{eq:fu} and \eqref{eq:rate-certificate}, including
+the bound for $\ep$, can be reproduced with the following exact calculation:
+\begin{quote}\small
+\begin{verbatim}
+from fractions import Fraction as F
+u = F(3, 5000)
+assert ((u+18)/u)**16 * ((u+7)/(u+11))**365 < 1
+assert F(163,60) + F(7,4320) < F(68,25)
+U = (F(68,25)**1460 * 2**144 * 3**216 * (18+u)**288
+     * 4**1460 * (F(7)**7/F(11)**11)**365)
+assert U < F(81,256)
+\end{verbatim}
+\end{quote}

@@ -1,0 +1,12 @@
+{
+  "a": 628,
+  "b": 5,
+  "r": 11,
+  "endpoint": 632,
+  "kernel_upper": "32361/10000",
+  "e_upper": "68/25",
+  "rate_upper_less_than_one": true,
+  "rate_upper_illustrative_decimal": 0.7830025918562022,
+  "arithmetic": "Exact rational; decimal is illustrative only.",
+  "scope": "Appendix A specialization of the source estimate; not a proof audit or optimality claim."
+}

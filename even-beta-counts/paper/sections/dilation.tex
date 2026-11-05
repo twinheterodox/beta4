@@ -1,0 +1,132 @@
+\section{Prime dilation and nonvanishing}\label{sec:dilation}
+
+The preceding estimates will make the rational combinations small.
+We now show how the nonzero seed constant prevents them from being
+zero at every large index. The coefficient of $1$ and the beta
+coefficients scale differently at indices divisible by a large prime.
+After one common scaling, the seed constant survives modulo that
+prime, while every beta coefficient vanishes.
+
+For a prime $p$, write
+$\Zp=\{a/b\in\Q:p\nmid b\}$, and let $v_p$ be the usual
+prime valuation. Recall $\tau=s-E>0$ from \eqref{eq:tau}.
+
+\begin{proposition}\label{prop:dilation}
+Fix a positive odd integer $m$. For all sufficiently large primes $p$,
+\begin{align}
+ p^\tau\rho_i(mp)&\in p^i\Zp,\label{eq:rho-dilation}\\
+ p^\tau q_b(mp)&\equiv
+       \ch(p)(m+1)^{-S}q_b(m)\pmod p.\label{eq:q-dilation}
+\end{align}
+In particular, the second congruence at $m=1$ transfers the seed
+constant with the nonzero factor $\ch(p)2^{-S}$.
+\end{proposition}
+
+\subsection{Dilation of the rational function}
+
+We first compare the rational functions before extracting their
+coefficients. In the following calculations $p$ is large enough
+that it divides none of the fixed denominators, and $p>m+1$.
+Both $(mp)!$ and $(mp+1)!$ have valuation $m$. After removing
+$p^m$, their units reduce to $(-1)^m m!$, by Wilson's theorem.
+Fermat's theorem treats the fixed powers in $C_{mp}$. Hence
+$C_{mp}$ has valuation $(S-DL)m$, and its unit reduces to
+\begin{equation}\label{eq:C-unit}
+ (-1)^{m(S-DL)}\frac{C_m}{(m+1)^S}.
+\end{equation}
+
+In a numerator block with fraction class $a/d$, the factors of
+$P_{mp}(pz)$ divisible by $p$ are selected by
+$dj+a\equiv0\pmod p$. After division by $p$, their fraction class
+is $a'/d$, where $pa'\equiv a\pmod d$ and $1\le a'\le d$.
+This permutes the reduced classes of each denominator and hence
+permutes $\Theta$.
+
+For example, division by $5$ interchanges the classes $1/3$ and
+$2/3$: the first selected factors have
+$(3+1/3)/5=2/3$ and $(1+2/3)/5=1/3$. Keeping all reduced classes
+ensures that such a permutation leaves the numerator construction
+unchanged.
+
+Each block has $Lm$ selected factors. Together with the extra factor
+$p(z-rm)$, their product is $p^{DLm+1}P_m(z)$. The unselected
+numerator units contribute $(-1)^{DLm}$, since each complete block
+of nonzero residues has product $-1$.
+
+In the denominator, the selected indices are $h=py$, $0\le y\le m$.
+They give $p^{S(m+1)}\prod_{y=0}^m(z+4y)^S$. The unselected
+denominator unit is $(-1)^{Sm}$. The signs cancel:
+\[
+ m(S-DL)+DLm-Sm=0.
+\]
+The net valuation is
+$(S-DL)m+(DLm+1)-S(m+1)=-s$. Thus, after removing these powers,
+the resulting rational functions have the congruence
+\begin{equation}\label{eq:R-dilation}
+ p^s R_{mp}(pz)\equiv(m+1)^{-S}R_m(z)\pmod p.
+\end{equation}
+Homogeneity, \eqref{eq:homogeneity}, changes the exponent by $E$:
+\begin{equation}\label{eq:T-dilation}
+ p^\tau T_{mp}(pz)\equiv(m+1)^{-S}T_m(z)\pmod p.
+\end{equation}
+This is why the multiplier affects the prime-dilation exponent,
+even though it leaves the denominator exponent and exponential
+decay estimate unchanged.
+
+\subsection{Extracting coefficients at the poles}
+
+To deduce coefficient congruences from \eqref{eq:T-dilation}, we
+must know that reduction modulo $p$ commutes with the local series
+expansion. Fix a selected pole $h=py$ and put $z=-4y+u$.
+The denominator factorization above shows that
+\begin{equation}\label{eq:local-p-integrality}
+ u^S p^\tau T_{mp}(p(u-4y))\in\Zp[[u]].
+\end{equation}
+After the selected powers of $p$ and the pole factor $u^S$ are
+removed, all other denominator factors have unit constant term.
+Their inverses therefore have coefficients in $\Zp$. The same
+factorization reduces to the local expansion of the right side
+of \eqref{eq:T-dilation}.
+
+The coefficient of $u^{S-i}$ in \eqref{eq:local-p-integrality}
+is $p^{\tau-i}a_{i,py}(mp)$. We may therefore extract it before
+or after reduction, obtaining
+\begin{equation}\label{eq:selected-coefficients}
+ p^{\tau-i}a_{i,py}(mp)
+       \equiv(m+1)^{-S}a_{i,y}(m)\pmod p.
+\end{equation}
+
+Now consider a pole $h=x+py$ with $1\le x<p$. Substitute
+$t=pz-4x$. The extra numerator factor is a unit, the numerator
+blocks have $DLm$ selected factors, and the denominator has $m$
+selected factors, each of multiplicity $S$. Including $C_{mp}$,
+the net valuation is zero. The same local expansion at $z=-4y$
+therefore gives, for the base function,
+$p^{-i}a^{\rm base}_{i,h}(mp)\in\Zp$.
+
+Multiplication by $W_{mp}$ preserves the bound: its $k$th Taylor
+coefficient is an integer and multiplies a base coefficient of order
+$i+k$, with valuation at least $i+k$. Consequently
+\begin{equation}\label{eq:other-coefficients}
+ v_p(a_{i,h}(mp))\ge i\qquad(p\nmid h).
+\end{equation}
+Summing \eqref{eq:selected-coefficients} and
+\eqref{eq:other-coefficients} over all poles proves
+\eqref{eq:rho-dilation}.
+
+\subsection{The surviving constant term}
+
+Apply the constant formula \eqref{eq:q}, taking $p>4Bm$ as well.
+Every denominator $j\le4bmp$ in that formula is then smaller than
+$p^2$, so $v_p(j)\le1$. Multiply the formula by $p^\tau$.
+At a pole with $p\nmid h$, \eqref{eq:other-coefficients} leaves
+valuation at least $\tau>0$, even when $p\mid j$. At a selected
+pole $h=py$, the terms with $p\nmid j$ have valuation at least
+$i>0$, by \eqref{eq:selected-coefficients}.
+
+Only the terms $h=py$, $j=pk$ survive. For these terms the upper
+limit becomes $k\le4by$, and
+$\ch(pk)=\ch(p)\ch(k)$. The surviving sum is therefore
+$\ch(p)(m+1)^{-S}$ times the seed constant formula at index $m$.
+This proves \eqref{eq:q-dilation} and completes the proof of
+Proposition~\ref{prop:dilation}.

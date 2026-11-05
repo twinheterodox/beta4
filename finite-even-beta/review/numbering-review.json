@@ -1,0 +1,34 @@
+{
+  "reviewed_at_utc": "2026-11-04T04:14:53.069032+00:00",
+  "scope": "Number all 13 subsections and state why the small-integer construction contradicts the rationality assumption.",
+  "pdf": "output/pdf/finite-even-beta.pdf",
+  "pdf_sha256": "99c9bb13767ad0e67381354769142f5fdb8d2155e3fc4c47d602e0fd14ba8a02",
+  "pages": 14,
+  "source_files_sha256": {
+    "paper/finite-even-beta.tex": "93ba7041e0ce0d3ae5175fc970f24fd18af262d7586ada70b85ea6407ca1c1da",
+    "paper/references.tex": "e639bbd95ea8c1be22f7eec78ca498d5049b3abc2b238a18bdc4141b3d6ae6a6",
+    "paper/sections/arithmetic.tex": "e05d2fadd903f961b24eb30736d9808b24e6ba9966fc166b71becc70a7ce9bd6",
+    "paper/sections/certificate.tex": "46006b47ef0f55ca7ed4f6a115e5aad358b961bda2c81e36c3f727aeb0e2ee2b",
+    "paper/sections/conclusion.tex": "a534e7b6dd88199fcb527f2783998cbc22c9259e6e88dd1df574ad763423066a",
+    "paper/sections/decay.tex": "ffcbc83e90b377898d106953fff5046636abf50512aed56228711b714b4b3227",
+    "paper/sections/dilation.tex": "e5704a3692eae906d93256a6bef71db25513cfee3bd1ab3cbf6fa5996ea45f63",
+    "paper/sections/forms.tex": "7c8e3e5f909f1849a65b1cd1a5f56aebf788d22ba534cdf2cf322ea3d66cc377",
+    "paper/sections/introduction.tex": "a164d7afed7ce1af5d92e2a41796837dbb55abe3d4cb6c8f53e9b936baf616bc"
+  },
+  "previous_review": "review/strategy-review.json",
+  "previous_pdf_sha256": "e176f0476676246470f09a21825bfa5a0f268ad2754b685349ca93335de50763",
+  "changes": [
+    "Converted all 13 subsection headings to numbered headings.",
+    "The opening of Subsection 1.2 now says the constructed integers tend to zero and are nonzero infinitely often. It explains that a nonzero integer has absolute value at least 1, so this contradicts the assumption of at most two irrational values."
+  ],
+  "scope_check": "Compared every TeX source with the preserved revision: the only edits are subsection numbering and the specified introduction paragraph. Certificate code/data, source-reading ledger, build script and historical review records are unchanged.",
+  "abstract_check": "The approved abstract is unchanged and contains only the result statement.",
+  "build_check": {
+    "unresolved_references": false,
+    "overfull_boxes": false,
+    "underfull_warnings": []
+  },
+  "visual_review": "Rendered all 14 pages. Visually inspected changed pages 1-5 and 9-13; pages 6-8 and 14 are byte-identical to previously inspected renders. Numbered headings fit and the three-form preview remains with its explanation.",
+  "independent_review_status": "No new independent proof audit; the historical audit retains its recorded plain-text scope. No mathematical checks were rerun for this numbering and prose edit.",
+  "publication_status": "Local edit only; no commit, push or upload."
+}

@@ -1,0 +1,93 @@
+{
+  "date": "2026-11-05",
+  "scope": "Editorial response to the independent audit supplied by the user; this record covers the developing assistant's subsequent changes and validation.",
+  "independent_audit_record": "review/independent-audit-2026-11-05.json",
+  "audited_path_snapshot": {
+    "pages": 19,
+    "pdf_sha256": "55bc50db83f1fa0d254af05e0782b929af102f1423206c642589e5c1e0cddfba",
+    "binding": "PDF and source snapshot captured at the path named in the report before editing; the reviewer did not supply a checksum."
+  },
+  "revised_pdf": {
+    "path": "output/pdf/even-beta-counts.pdf",
+    "pages": 20,
+    "sha256": "3f04719f99275d0baa108fe3537fe5efb27bd9002b9d5693001e3513531c2fe3"
+  },
+  "revised_source_files": {
+    "paper/even-beta-counts.tex": "b591ba2d484502de8777c283eb42355ab1242de42f4da29c2a69c24c139ecf92",
+    "paper/references.tex": "2c860190b9e8972c4e2b7affb01139b117a2569f22af74f72cbffa7f70202f6c",
+    "paper/sections/arithmetic.tex": "59fbe3dbcbd49be0f873be522f4b2fda8c09fbf8a2631b9ffed2c8a01eaf3af5",
+    "paper/sections/checks.tex": "1be77cffd14d80f7ef299a7b96ec62322716a45502cdb4e3d4ce086a98e287c7",
+    "paper/sections/construction.tex": "7fda38775dc1358bf5905e336d236e62f27f6c31f8d5319d2b2e54457c0f79d3",
+    "paper/sections/contradiction.tex": "1ef2b638788a99f3f3a64fa8a204e14fa2f424f65e104c3c26b3f1f0b27d761f",
+    "paper/sections/count.tex": "cb20704c969dc37db1a9ade6f333999e8efe695da3f9bbc701244970cfabf2de",
+    "paper/sections/decay.tex": "6748b645f0cdf6cbc63b4e8f400dcd14b66a51f20206c4a32f1f1f67e8fe070a",
+    "paper/sections/dilation.tex": "c974aa5a16d204e9311c430390249987c87429fd18f53cda45da79162418920e",
+    "paper/sections/earlier-count.tex": "b011c10a8dc0503c5d2ba326866edc9c2260aeed4a0a434132745982f205c266",
+    "paper/sections/endpoints.tex": "bb9ef16213394604e8e1bde99c8a8ab384440d4d47110a3b10798872de0b20d3",
+    "paper/sections/gram.tex": "2d7a07e0fe1994a94061c87e4aab06e9a311d53cc4a6f7b4425401044261d455",
+    "paper/sections/introduction.tex": "e9e1c4c36cdd3b6560486c1d1c23cffb3ddc861f87f2256ffc79973541032d23"
+  },
+  "manuscript_changes": [
+    {
+      "file": "paper/sections/decay.tex",
+      "location": "Section 5.2, page 10",
+      "change": "Explain the uniform Stirling error down to t=1/B: use shifted Stirling for t>=1, continuity on [1/B,1] for the remaining bounded gamma arguments, and O(log n) errors for the other gamma factors. Add a subsection label for the audit-note reference."
+    },
+    {
+      "file": "paper/sections/checks.tex",
+      "location": "Appendix A.3, page 19",
+      "change": "Record the independent audit conclusion, independent arithmetic checks, requested clarification and stated scope."
+    }
+  ],
+  "preserved": "The abstract, introduction, theorem statements, constants, endpoint tables and all other manuscript source files are byte-identical to the captured pre-revision version.",
+  "documentation_changes": [
+    "Add the supplied audit report and version-specific audit record.",
+    "Update the paper and repository guides, changelog and build metadata with the audit status and subsequent revision."
+  ],
+  "validation": {
+    "build": "Three successful pdflatex passes using tools/build_paper.py.",
+    "unresolved_references": false,
+    "overfull_boxes": false,
+    "underfull_warnings": [],
+    "source_and_pdf_hashes_match_build_record": true,
+    "visual_review": {
+      "method": "Rendered the current PDF with Poppler at 85 dpi and inspected every changed page.",
+      "pages_inspected": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "pages_pixel_identical_to_previously_reviewed_version": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "result": "No clipping, overlaps, broken formulas, unresolved references or layout defects observed."
+    },
+    "mathematical_explanation_review": "With B and the construction parameters fixed, all gamma arguments except t+theta are comparable to n on the stated range; t+theta stays positive on the remaining compact interval. The added argument supports the same uniform estimate and changes no mathematical result.",
+    "supplied_checkers": "Unchanged and not rerun for this exposition-only response.",
+    "historical_review_files_unchanged": [
+      "review/assembly-review.json",
+      "review/comparison-appendix-2026-11-04.json",
+      "review/comparison-justification-2026-11-04.json",
+      "review/exposition-review.txt",
+      "review/mathematical-review.txt"
+    ],
+    "git_diff_check": "Passed."
+  },
+  "review_scope": "The independent report concerns the captured 19-page version. The new explanation and audit note received the developing assistant's review and compilation/layout checks; no further independent audit or formal verification is claimed."
+}

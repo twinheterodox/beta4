@@ -1,0 +1,88 @@
+{
+  "reviewed_at_utc": "2026-11-04T13:13:55.999948+00:00",
+  "scope": "Added a brief introduction comparison and Appendix A testing specified finite estimates underlying asymptotic results at beta endpoint 364.",
+  "pdf": "output/pdf/finite-even-beta.pdf",
+  "pdf_sha256": "ae77b367a64aafc6bcacc8ff9df3a4839a6e9b9fb49a28bdb8dcebcb0f4e0a85",
+  "pages": 16,
+  "source_files_sha256": {
+    "paper/finite-even-beta.tex": "96369b901c17d2bdebd184b6ca2dcaa0e793996a087386e7328c7fccd7db24f5",
+    "paper/references.tex": "4af9ea621845f9b5ad751b148605926df497a457fc562d87c554b6b496d76d9c",
+    "paper/sections/arithmetic.tex": "d37ea08e805c20e92b5c6672080b772fa9e8b49597dbca4659a60f11e5cb550f",
+    "paper/sections/asymptotic-comparisons.tex": "50374f82cf06b998ece04d358011ef12cda3908d9fe9ab10aef45f12773ea8bd",
+    "paper/sections/certificate.tex": "32ee1a96183aebd56343daf5fef912527e691753e3b9fe50e570dfef297b7f0c",
+    "paper/sections/conclusion.tex": "313a01b0fcda68eb0536daef21981de96d93cdbe5ea3838261279bdb627013af",
+    "paper/sections/decay.tex": "55414eb4fb76a84bb09c2120aec971b02431166e4c6e8caba797765a3425b8c7",
+    "paper/sections/dilation.tex": "ccb39e0485691165b61751344f08351e7831e8b5624049123fcad6c5dc7cc886",
+    "paper/sections/forms.tex": "64115f077b20466bdf5fc73650eb54b7335dd8f94c792e2f75c65cf4006b5f85",
+    "paper/sections/introduction.tex": "d0a7fd0de019e0d38c568fe276454b371dab5cdf6d27b6921f61406bf358efad"
+  },
+  "previous_review": "review/asymptotic-endpoints-review.json",
+  "previous_pdf_sha256": "be3017a4744b86afddb95fbf912362414abeab4a1903a0ea3626399999e6f752",
+  "changes": [
+    "Introduction explains why finite consequences of asymptotic proofs must be checked and points to Appendix A.",
+    "Appendix A covers the Rivoal-Zudilin uniform family, Nishimoto Theorem 5.5, Fischler 2018 and 2020 size estimates, and all admissible parameters in the companion square-root bound at endpoint <=364.",
+    "Added a self-contained standard-library exact checker and its JSON results.",
+    "Added the three primary-source bibliography and reading entries; updated reading scopes for the existing Rivoal-Zudilin and companion citations.",
+    "Kept the opening contradiction paragraph together on page 1."
+  ],
+  "mathematical_review": "Rechecked the Rivoal-Zudilin Laplace-profile upper bound and exponentiation, the elementary upper bound for Nishimoto Theorem 5.5, the two Fischler factors and period ranges, their affine-in-a extension to smaller endpoints, and the quadratic obstruction R<2 in the companion finite estimate. The comparisons concern the estimates and families stated in Appendix A.",
+  "exposition_review": "Applied mathematical-exposition.txt. The introduction states the purpose and outcome without detailed calculations. Appendix A first explains what dimension or decay bound would suffice, then gives the source formulas and the obstruction in each case. The abstract remains a statement of the main result.",
+  "comparison_checks": {
+    "script": "checks/check_asymptotic_comparisons.py",
+    "script_sha256": "729a262e82e5da9cb31ef49fcf66c11ab7d18ffc96088d9e94d634a9ef07cb43",
+    "results": "checks/asymptotic-comparisons.json",
+    "results_sha256": "9821731348099388c235da3e0d372684b560b715db739bace3a39aaecd7bd22b",
+    "rivoal_zudilin_cases": 91,
+    "fischler_2018_cases": 429,
+    "fischler_2020_cases": 111,
+    "nishimoto_and_square_root_constants": "Exact rational comparisons passed; the general reductions are proved in Appendix A.",
+    "decimals": "Illustrative only; no floating-point value decides a certificate inequality."
+  },
+  "preserved_files_sha256": {
+    "paper/sections/forms.tex": "64115f077b20466bdf5fc73650eb54b7335dd8f94c792e2f75c65cf4006b5f85",
+    "paper/sections/arithmetic.tex": "d37ea08e805c20e92b5c6672080b772fa9e8b49597dbca4659a60f11e5cb550f",
+    "paper/sections/decay.tex": "55414eb4fb76a84bb09c2120aec971b02431166e4c6e8caba797765a3425b8c7",
+    "paper/sections/dilation.tex": "ccb39e0485691165b61751344f08351e7831e8b5624049123fcad6c5dc7cc886",
+    "paper/sections/certificate.tex": "32ee1a96183aebd56343daf5fef912527e691753e3b9fe50e570dfef297b7f0c",
+    "paper/sections/conclusion.tex": "313a01b0fcda68eb0536daef21981de96d93cdbe5ea3838261279bdb627013af",
+    "checks/seed.py": "694aa77256056839ab58b09b263fc1698b5a7117a5ce7eaefe9adc7786752ce6",
+    "checks/verify.py": "dc16fdb95449e8b1ec69137ac17a9c635c595dc2ebb10042833df2f06ed52b86",
+    "checks/verification.json": "5cbae90592266b3f0e5f31f06b9f189d57a703d08a7d74482129db60d35a2373",
+    "checks/check_comparison.py": "29f7502b1fbfe2933edbfd9060753894e57541c1be61d962d1e5c5591342b253",
+    "checks/comparison.json": "d6c074fecf62cb3b1032ef0d15d68694c08f24bb363ce6ef387c9164076dbded"
+  },
+  "preservation_check": "Title, abstract, main theorem and Sections 2-7 unchanged. Original theorem checkers, verification results, historical Sorokin comparison and all earlier review records are byte-identical. The companion manuscript was not edited.",
+  "build_check": {
+    "unresolved_references": false,
+    "overfull_boxes": false,
+    "underfull_warnings": []
+  },
+  "visual_review": {
+    "rendered_pages": 16,
+    "resolution_dpi": 110,
+    "changed_pages_inspected": [
+      1,
+      2,
+      13,
+      14,
+      15,
+      16
+    ],
+    "additional_page_inspected": 3,
+    "pages_pixel_identical_to_previous_review": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "result": "No clipping, overlap, broken equations or unresolved reference labels. Opening contradiction paragraph kept together; appendix and references inspected."
+  },
+  "audit_scope": "No new independent audit or formal verification. The supplied independent audit remains scoped to its recorded plain-text proof. The new comparison checker does not audit complete source proofs or exclude refinements of their estimates.",
+  "publication_status": "Local edit only; no commit, push or upload."
+}

@@ -1,0 +1,216 @@
+\section{A bound in terms of the endpoint}\label{sec:count}
+
+Theorem~\ref{thm:family} takes a desired count $B$ and produces
+an endpoint. We now reverse that description. For every even $s$,
+it gives the computable bound
+\begin{equation}\label{eq:inverse}
+ I(s)\ge\max\bigl(\{0\}\cup
+       \{B\ge1:D_B(66+45\log B)\le s\}\bigr).
+\end{equation}
+The ceiling disappears here because $s$ is even. To obtain the
+simpler formula in Theorem~\ref{thm:main}, we need an explicit
+estimate for $D_B$ and control of the intervals between endpoints.
+
+\subsection{The totient estimate and the square-root constant}
+
+\begin{lemma}\label{lem:totients}
+For every integer $k\ge1$, with $a=3/\pi^2$,
+\begin{equation}\label{eq:totient-bound}
+ D_k\le ak^2+k(\log k+2).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Counting coprime ordered pairs in $\{1,\ldots,k\}^2$ gives
+\[
+ 2D_k-1=\sum_{d=1}^k\mu(d)\lfloor k/d\rfloor^2,
+\]
+where $\mu$ is the M\"obius function. The subtraction of $1$
+accounts for the only coprime diagonal pair, $(1,1)$. Replacing
+each squared floor by $(k/d)^2$ costs at most
+$2k\sum_{d=1}^k1/d$. Extending the resulting M\"obius series
+to infinity costs at most $k^2\sum_{d>k}d^{-2}\le k$.
+Since $\sum_{d\ge1}\mu(d)/d^2=6/\pi^2$, we obtain
+\[
+ D_k\le ak^2+k\sum_{d=1}^k\frac1d+\frac k2+\frac12
+       \le ak^2+k(\log k+2).
+\]
+\end{proof}
+
+The same absolute-error estimate gives
+$D_B=aB^2+O(B\log B)$.
+The coefficient $a=3/\pi^2$ is half the density $6/\pi^2$ of
+coprime pairs, since $D_B$ counts fractions with numerator no
+greater than denominator. Thus the leading endpoint in
+\eqref{eq:family} is
+\[
+ s_B\sim45aB^2\log B.
+\]
+The coefficient $45$ records the balance used in
+Section~\ref{sec:endpoints}: the denominator cost is at most
+$36D_B\log B$, while the decay gain per unit of $S=s+1$ is greater
+than $4/5$. Their ratio gives $45=36/(4/5)$.
+
+Since $\log B\sim\tfrac12\log s_B$, solving for $B$
+gives the constant
+\[
+ \sqrt{\frac{2}{45a}}=\pi\sqrt{\frac2{135}}=c
+\]
+in front of $\sqrt{s/\log s}$. The factor $2$ comes from the
+logarithm of the quadratic term $B^2$. We next show that this
+leading constant already satisfies the required finite inequalities.
+
+\subsection{The unrounded bound for large endpoints}
+
+\begin{proposition}\label{prop:unrounded}
+For every even integer $s\ge42\,170$,
+\[
+ I(s)\ge c\sqrt{\frac{s}{\log s}}.
+\]
+\end{proposition}
+\begin{proof}
+The endpoints $s_k$ increase strictly. Between $s_{k-1}$ and
+$s_k$, the family guarantees at least $k-1$ irrational values.
+Since $x/\log x$ increases for $x>\ep$, it suffices to check
+the largest even point in each interval, namely $s_k-2$:
+\begin{equation}\label{eq:unrounded-endpoint-test}
+ c^2(s_k-2)<(k-1)^2\log(s_k-2),\qquad k\ge26.
+\end{equation}
+The first interval starts at $s_{25}=42\,170$.
+
+We first prove \eqref{eq:unrounded-endpoint-test} for every
+$k\ge256$. We record the error in the totient estimate as a
+relative factor $q_k$ and use it to form an upper bound
+$\mathcal U(k)$ for $s_k-2$. Put
+\[
+ \ell=\log k,\qquad b_0=\frac{66}{45}=\frac{22}{15},\qquad
+ q_k=1+\frac{\ell+2}{ak},\qquad
+ \mathcal U(k)=45ak^2(\ell+b_0)q_k.
+\]
+Lemma~\ref{lem:totients} gives $D_k\le ak^2q_k$. Together with
+the ceiling inequality $2\lceil x/2\rceil-2<x$, this yields
+\begin{equation}\label{eq:endpoint-upper}
+ s_k-2<D_k(66+45\ell)\le\mathcal U(k).
+\end{equation}
+It is therefore enough to prove
+$c^2\mathcal U(k)<(k-1)^2\log\mathcal U(k)$. Since
+$c^2=2/(45a)$, this is
+\begin{equation}\label{eq:upper-comparison}
+ 2(\ell+b_0)\frac{q_k}{(1-1/k)^2}<\log\mathcal U(k).
+\end{equation}
+
+Separate the common term $2(\ell+b_0)$ on both sides.
+The excess on the left comes from the totient error and from
+having only $k-1$ guaranteed values before the next endpoint.
+We bound this cost by
+\[
+ \mathcal T(k)=
+ \frac{2(\ell+b_0)((\ell+2)/a+2)}{k(1-1/k)^2},
+\]
+because
+\[
+ \frac{q_k}{(1-1/k)^2}-1
+   =\frac{((\ell+2)/a+2)/k-1/k^2}{(1-1/k)^2}.
+\]
+The excess on the right is the margin available to absorb this cost:
+\[
+ \mathcal G(k)+\log q_k,\qquad
+ \mathcal G(k)=\log(45a(\ell+b_0))-2b_0.
+\]
+As $q_k>1$, it suffices to show $\mathcal T(k)<\mathcal G(k)$.
+The margin $\mathcal G$ increases. We will show that the error
+bound $\mathcal T$ decreases for $k\ge256$, so a comparison at
+$256$ will settle every $k\ge256$. Its logarithmic
+derivative with respect to $\ell$ is
+\[
+ \frac1{\ell+b_0}+\frac1{\ell+2+2a}-1-\frac2{k-1}<0
+                       \qquad(k\ge256).
+\]
+Indeed, $\ell>11/2$, and the sum of the first two terms is
+less than $2/11+2/15<1$. It remains to compare the functions
+at $k=256$.
+
+Use $\pi<22/7$ and $11/2<\log256<111/20$. Direct rational
+comparison gives
+\begin{align}
+ \mathcal T(256)
+ &<2\left(\frac{111}{20}+\frac{22}{15}\right)
+   \left(\left(\frac{111}{20}+2\right)\frac{484}{147}+2\right)
+   \frac{256}{255^2}<\frac32,\label{eq:tail-T}\\
+ 45a(\log256+b_0)&>
+       45\frac{147}{484}\left(\frac{11}{2}+\frac{22}{15}\right)>95.
+       \label{eq:tail-G}
+\end{align}
+Moreover, $\ep<11/4$ and $(11/4)^9<95^2$, so
+$\log95>9/2$. Thus
+\[
+ \mathcal G(256)>\frac92-\frac{44}{15}=\frac{47}{30}>\frac32.
+\]
+Monotonicity proves \eqref{eq:upper-comparison} throughout the
+infinite range $k\ge256$.
+
+For the remaining $230$ indices $26\le k\le255$, use the exact
+totient sums in \eqref{eq:family}. The rational logarithm bounds
+specified in Appendix~\ref{app:endpoint-checks} verify
+\[
+ \frac{(k-1)^2\,\underline{\log}(s_k-2)}{s_k-2}
+       -\frac{968}{6615}>\frac{24529}{10^8}.
+\]
+Here $\underline{\log}(x)\le\log x$ is the explicit rational
+lower bound, and $968/6615=2(22/7)^2/135>c^2$.
+This proves \eqref{eq:unrounded-endpoint-test} for all remaining
+indices, completing the proposition.
+\end{proof}
+
+\subsection{Keeping the floor down to the two-value count}
+
+It remains to cover $160\le s<42\,170$. Let $t_k$ be the
+sharper endpoint in Section~\ref{sec:endpoints} for $2\le k\le10$,
+and let $t_k=s_k$ for $11\le k\le25$. The resulting increasing
+list is
+\begin{center}
+\begin{tabular}{@{}rr@{\qquad}rr@{}}
+\toprule
+$k$&$t_k$&$k$&$t_k$\\
+\midrule
+2&160&14&11\,826\\
+3&364&15&13\,528\\
+4&588&16&15\,262\\
+5&1030&17&18\,576\\
+6&1296&18&20\,000\\
+7&1992&19&23\,820\\
+8&2502&20&25\,704\\
+9&3260&21&28\,422\\
+10&3828&22&30\,766\\
+11&7306&23&35\,622\\
+12&8180&24&37\,624\\
+13&10\,524&25&42\,170\\
+\bottomrule
+\end{tabular}
+\end{center}
+On $t_{k-1}\le s<t_k$, we have $I(s)\ge k-1$. To prove the
+rounded bound, it is enough for the expression inside the floor
+to stay strictly below $k$. Once again, its largest value on the
+even endpoints occurs at $s=t_k-2$. The required test is now
+\begin{equation}\label{eq:rounded-endpoint-test}
+ c^2(t_k-2)<k^2\log(t_k-2),\qquad 3\le k\le25.
+\end{equation}
+The $23$ exact comparisons in Appendix~\ref{app:endpoint-checks}
+give the stronger bound
+\[
+ \frac{k^2\,\underline{\log}(t_k-2)}{t_k-2}
+        -\frac{968}{6615}>\frac{14325}{10^8}.
+\]
+It follows that
+$\lfloor c\sqrt{s/\log s}\rfloor\le k-1\le I(s)$ on every
+one of these intervals. They cover all even integers from $160$
+through $42\,168$, and Proposition~\ref{prop:unrounded} covers
+the rest. This proves Theorem~\ref{thm:main}.
+
+The floor also gives a completely explicit error form:
+\[
+ I(s)>\left(c-\sqrt{\frac{\log s}{s}}\right)
+                \sqrt{\frac{s}{\log s}},\qquad s\ge160\text{ even}.
+\]
+The coefficient is positive throughout this range. In fact,
+$c>19/50$ and $\sqrt{\log160/160}<9/50$, while $\log s/s$
+decreases for $s>\ep$. Hence the coefficient is greater than $1/5$.

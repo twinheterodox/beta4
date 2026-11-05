@@ -1,0 +1,66 @@
+\section{The irrationality contradiction}\label{sec:conclusion}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Suppose at most two of $\beta(2),\beta(4),\ldots,\beta(364)$ are
+irrational. Choose distinct even indices $i,j$ in $[2,364]$ such that
+every other value in the list is rational.
+The columns $v_i=(1,2^i,3^i)^{\mathsf T}$ and $v_j$ are independent.
+Their cross product gives a nonzero integer vector
+$w=(w_1,w_2,w_3)$ with $w\cdot v_i=w\cdot v_j=0$.
+By Lemma~\ref{lem:seed},
+\begin{equation}\label{eq:seed-nonzero}
+ q_w(2):=\sum_{b=1}^3w_bq_b(2)\ne0.
+\end{equation}
+Fix this vector for the rest of the argument and put
+$H_n=\sum_{b=1}^3w_br_{n,b}$.
+
+Equation~\eqref{eq:forms} expresses $H_n$ as a rational constant plus
+a rational linear combination of the remaining beta values. All those
+values are rational by assumption. Let $D$ be a positive common
+denominator of these finitely many rational values. Proposition
+\ref{prop:denominators} shows that
+\begin{equation}\label{eq:integer-contradiction}
+ D\delta_n^{365}H_n\in\Z.
+\end{equation}
+Because the weights are fixed, Proposition~\ref{prop:decay} makes these
+integers tend to zero exponentially along even $n$.
+
+It remains to show that infinitely many are nonzero. Take $n=2p$,
+where $p$ is a sufficiently large prime, coprime to $D$ and to the
+numerator and denominator of $q_w(2)$.
+By \eqref{eq:q-dilation},
+\[
+ p^{364}\sum_{b=1}^3w_bq_b(2p)
+       \equiv\ch(p)3^{-365}q_w(2)\not\equiv0\pmod p.
+\]
+For each remaining index $k$, the rational number $\beta(k)$ is
+$p$-integral because $p\nmid D$. After the same scaling, its coefficient
+is divisible by $p^k$ by \eqref{eq:rho-dilation} and the integrality of
+the weights. Thus every remaining beta term reduces to zero modulo
+$p$, while the constant term does not. Hence $H_{2p}\ne0$.
+
+The integers in \eqref{eq:integer-contradiction} are therefore nonzero
+for infinitely many even $n$, although they tend to zero. This
+contradiction proves the theorem.
+\end{proof}
+
+\subsection{Reproduction and review status}
+
+Run \texttt{python3 checks/verify.py} from the paper directory. It uses
+only the Python standard library and writes \texttt{checks/verification.json}.
+The finite seed, all elimination pairs, the two decay comparisons and
+the normalized seed denominators are checked exactly. It also tests
+the dilation identity at selected primes in all four residue classes
+modulo $12$; these sampled evaluations are consistency checks, whereas
+Section~\ref{sec:dilation} proves the general congruence.
+
+An independent proof audit supplied on 3 November 2026 reported no
+substantive mathematical gap in the preceding plain-text proof and
+independently reconstructed its finite certificate without using the
+supplied verification scripts. This manuscript includes the auditor's
+requested local-power-series explanation and reorganizes the exposition.
+The audit applies to the recorded plain-text version; this typeset
+revision has not received a new independent audit. The review record
+identifies the exact version and scope. Neither the computations nor
+the reported audit constitute formal verification.
+

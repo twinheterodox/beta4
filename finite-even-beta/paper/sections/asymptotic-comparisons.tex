@@ -1,0 +1,145 @@
+\section{Finite consequences of asymptotic estimates}
+\label{sec:asymptotic-comparisons}
+
+To decide whether an asymptotic result already gives
+Theorem~\ref{thm:main}, we examine its finite-parameter estimates.
+Write
+\[
+ \delta(s)=\dim_{\Q}\operatorname{span}_{\Q}
+             \{1,\beta(2),\beta(4),\ldots,\beta(s)\}
+ \qquad(s\text{ even}).
+\]
+A bound forcing $\delta(364)\geq4$ would imply three irrational values.
+The comparisons below concern the specified estimates and parameter
+families in the cited proofs. They give either a dimension bound too
+small to force $4$, even after integer rounding, or a size bound that
+does not establish decay of the integer linear forms.
+
+\subsection{Rivoal--Zudilin's uniform family}
+
+For the parameters in~\cite[(26)]{RZ03}, put $q=366$ and let
+$r=2,4,\ldots,182$. Equation~(29) of that paper gives
+\[
+ \delta(q-2)\geq
+ \frac{q\log r+(q-2r-1)\log2}
+ {(2+\log2)(q-1)+(2r+1)\log(2r+1)}.
+\]
+The largest right-hand side is approximately $1.18156$, at $r=28$.
+The sharper estimate preceding it also remains below $2$.
+Indeed, evaluate the maximum defining its Laplace factor at
+$t_1=\cdots=t_q=r/(r+1)$ and use
+$(1+t_1\cdots t_q)^{2r+1}\leq2^{2r+1}$.
+This bounds that sharper dimension estimate \emph{above} by
+\begin{equation}\label{eq:rz-comparison}
+ U(q,r)=\frac{q\{\log2+(r+1)\log(r+1)-r\log r\}}
+ {(2+\log2)(q-1)+(2r+1)\log(2r+1)}<2.
+\end{equation}
+For all $91$ choices of $r$, the final inequality follows from the exact
+integer comparison
+\[
+ 8^{4(q-1)}2^{q-2}(2r+1)^{2(2r+1)}r^{qr}
+ >3^{4(q-1)}(r+1)^{q(r+1)}
+\]
+and $\ep>8/3$. Also $U(q,r)$ increases with $q$ for fixed $r\geq2$,
+so the same conclusion holds at smaller endpoints in this family.
+These estimates can certify $\delta(364)\geq2$, hence one irrational
+value, but cannot force dimension~$4$.
+
+\subsection{Nishimoto's explicit estimate}
+
+In~\cite[Theorem~5.5]{N11}, take the periodic coefficients to be $\ch$,
+with period $d$ a positive multiple of $4$. For positive integers $a,b$
+with $a$ even, put $r=(d+2b)/d$ and
+$\Delta=(r+1)\log(r+1)-(r-1)\log(r-1)$.
+The explicit estimate is $\delta(a)\geq1+\mathcal A/\mathcal B$, where
+\begin{align*}
+ \mathcal A&=(a+d)\Delta-2a(d+\log2)
+       -4b(\log d-\log2)-2dr\log(2r)-\tfrac13,\\
+ \mathcal B&=2ad+2a\log2+4(b+d)\log(b+d)-4d\log d.
+\end{align*}
+Among the hypotheses are $r\geq2$ and $(a+d)/d\geq3r$.
+For $a\leq364$ these imply $a\geq5d$ and $r+1<32$, so
+\[
+ \Delta<2\log(r+1)+2<10\log2+2<9.
+\]
+Using $\log2>1/2$ and discarding negative terms gives
+$\mathcal A<(8-2d)a+9d$.
+For $d=4$, therefore, $\mathcal A<36$ and
+$\mathcal B>9a\geq180$, whence $1+\mathcal A/\mathcal B<6/5$.
+For $d\geq8$, we instead obtain
+$\mathcal A<d(49-10d)<0$.
+Thus this explicit estimate cannot force dimension~$4$ at~$364$.
+For comparison, the period-$4$ entries in~\cite[Table~5]{N11} certify
+dimension at least $2$ at $2594$ and at least $3$ at $990206$.
+
+\subsection{Fischler's size estimates}
+
+The estimates in~\cite[Section~4.2 and Proposition~4.4]{F18}
+and~\cite[Proposition~1, (1.1)]{F20} bound the integer linear forms by
+$\alpha^{n+o(n)}$. Their applications require $\alpha<1$.
+With the subscripts distinguishing the two papers, the explicit factors are
+\begin{align*}
+ \alpha_{18}&=\ep^a4^{a/N-r}(N+1)^{2r+2}r^{-a/N+4r+2},
+       &1\leq r&<\frac{a}{2N},\\
+ \alpha_{20}&=(4\ep)^{(a+1)/N}(2N)^{2r+2}r^{-(a+1)/N+4(r+1)},
+       &1\leq r&<\frac{a}{3N}.
+\end{align*}
+Here $a,N,r$ are positive integers. For even beta values we may take
+$a=365$, since the largest even index is then $364$.
+In the first construction, the ordinary representation of $\ch$ uses
+$4\mid N$, while its twisted representation permits $N\equiv2\pmod4$,
+including $N=2$. We therefore check all positive even $N$.
+In the second construction we check all positive multiples of $4$,
+including the enlarged periods used in the irrational-value count.
+
+There are $429$ admissible pairs $(N,r)$ in the first case and $111$ in
+the second. Every pair gives $\alpha>1$. These are exact checks:
+raise $\alpha$ to the power $N$, replace $\ep$ by $8/3$, and compare
+the resulting positive integers after clearing denominators.
+For fixed $N,r$, each $\log\alpha$ is affine in $a$ and positive at
+$a=0$. Positivity at $a=365$ therefore also covers smaller endpoints.
+Thus these size estimates do not establish the decay needed at~$364$.
+
+\subsection{The square-root bound}
+
+For our result in~\cite{T26}, we check the finite dimension estimate
+before the asymptotic choice of parameters. The argument below covers
+all admissible choices at this endpoint. In that paper's notation, put $d=a+h$ and
+$H_d=\sum_{j=1}^d1/j$. The largest beta index is
+$2\lfloor d/2\rfloor$, so an endpoint at most $364$ means $d\leq365$.
+Let $X$ be the coefficient-growth exponent $\log\chi$ in that construction.
+Equations~(2.2), (5.2) and (5.3) of~\cite{T26} give
+\begin{align*}
+ X&\geq\frac{\Omega^2\log r}{2(a-\omega)},\\
+ \log\alpha&=X-\Omega\log r+\kappa(1+\log4+H_d),\\
+ \log B&=X+(r+1)\log(3/2)+\kappa(\log8+H_d).
+\end{align*}
+Here $a,h$ are integers with $h\geq0$, $r\geq2$, and
+$a>\Omega\geq\omega>\kappa>2r$.
+The dimension estimate is $\delta(2\lfloor d/2\rfloor)\geq1+R$,
+where $R=-\log\alpha/\log B$ when $\alpha<1$.
+We show that $R<2$, so this estimate cannot force dimension~$4$.
+
+If $R\geq2$, rearranging the last two formulas yields
+\[
+ \Omega\log r-3X\geq
+ \kappa(1+\log4+2\log8+3H_d)+2(r+1)\log(3/2).
+\]
+The lower bound on $X$ makes the left side at most the maximum of a
+quadratic in $\Omega$, namely $(a-\omega)\log r/6$.
+Since $\kappa>2r$ and $\log r/r\leq1/\ep$, division by $\kappa$ gives
+\[
+ \frac{\Omega\log r-3X}{\kappa}
+ <\frac{365}{12\ep}<\frac{365}{32}.
+\]
+On the other hand, $d\geq5$, $\log4>1$ and $\log8>2$ make the right
+side, divided by $\kappa$, greater than
+\[
+ 6+3H_5=\frac{257}{20}>\frac{365}{32},
+\]
+a contradiction.
+
+The accompanying script \texttt{checks/check\_asymptotic\_comparisons.py}
+reproduces the finite integer comparisons and the rational constants used
+above. It uses only Python's standard library; its decimal summaries
+are illustrative and are not used to decide any inequality.

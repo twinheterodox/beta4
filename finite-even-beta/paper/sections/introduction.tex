@@ -1,0 +1,102 @@
+\section{Introduction}
+
+For $s>1$, the Dirichlet beta function is
+\[
+ \beta(s)=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k+1)^s}
+         =1-\frac1{3^s}+\frac1{5^s}-\cdots.
+\]
+\begin{theorem}\label{thm:main}
+At least three of $\beta(2),\beta(4),\ldots,\beta(364)$ are irrational.
+\end{theorem}
+
+\subsection{Comparison with earlier results}
+
+Rivoal and Zudilin~\cite{RZ03} proved that one of
+$\beta(2),\beta(4),\ldots,\beta(14)$ is irrational. The endpoint was reduced
+to $12$ by Zudilin~\cite{Z19} and to $10$ by Lai and Zhou~\cite{LZ22}.
+OpenAI~\cite[Theorem~1.1]{OAI26} subsequently proved that Catalan's
+constant $\beta(2)$ is irrational. Krisman~\cite{K26} proved that at
+least one of $\beta(4),\beta(6),\ldots,\beta(36)$ is irrational.
+
+Sorokin~\cite[Theorem~S]{S07} proved that, for every sufficiently large
+odd $b$ and every even $a>100b\log b$, at least one of
+\[
+ \beta(b+1),\beta(b+3),\ldots,\beta(b+a-1)
+\]
+is irrational. Huttner~\cite[Remark~5]{H12} obtains the same conclusion.
+Both results have a computable threshold for $b$, but neither gives
+its numerical value. To our knowledge, the explicit count of three
+irrational values through $364$ in Theorem~\ref{thm:main} is new.
+
+Asymptotic results give bounds valid for all sufficiently large
+endpoints. In~\cite{T26}, we improve the previous
+logarithmic lower bounds by proving that, for all sufficiently large
+even~$s$, at least $0.21\sqrt{s/\log s}$ of
+$\beta(2),\beta(4),\ldots,\beta(s)$ are linearly independent over the rationals.
+The proofs of asymptotic results can also yield bounds at specified finite
+endpoints, so their consequences at $s=364$ must be checked.
+Appendix~\ref{sec:asymptotic-comparisons} makes this comparison for the
+finite estimates of Rivoal--Zudilin, Nishimoto and Fischler, and for
+the bound in~\cite{T26}. The estimates and parameter families examined
+there do not yield the three-value count in Theorem~\ref{thm:main}.
+
+\begin{samepage}
+\subsection{Canceling two possible exceptions}
+
+Suppose, for a contradiction, that at most two of the listed beta values
+are irrational. We construct three sequences of linear forms. A fixed
+integer combination of the three forms at each index cancels the
+possible irrational terms, producing a single sequence of rational
+numbers. Clearing denominators yields a sequence
+of integers tending to zero with infinitely many nonzero terms. This is
+impossible: a
+nonzero integer has absolute value at least~$1$.\par
+\end{samepage}
+
+\begin{samepage}
+Three sequences allow us to cancel two coefficients. At each positive
+even index $n$, the forms have the shape
+\begin{equation}\label{eq:preview}
+ r_{n,b}=q_b(n)+\sum_{\substack{2\leq i\leq364\\i\text{ even}}}
+                  b^i\rho_i(n)\beta(i),\qquad b=1,2,3,
+\end{equation}
+with rational coefficients. The coefficient column at $\beta(i)$ is a
+scalar multiple of the fixed vector $(1,2^i,3^i)^{\mathsf T}$.
+A nonzero integer vector perpendicular to two such vectors gives
+weights that cancel the same two beta terms for every $n$.
+\end{samepage}
+
+\begin{samepage}
+For example, the combination
+\[
+ H_n=15r_{n,1}-6r_{n,2}+r_{n,3}
+\]
+has coefficient $\rho_i(n)(15-6\cdot2^i+3^i)$ at $\beta(i)$.
+This vanishes for $i=2$ and $i=4$.
+\end{samepage}
+
+For any chosen pair, fix such weights and write
+$H_n=\sum_{b=1}^3w_br_{n,b}$, with constant term
+$q_w(n)=\sum_{b=1}^3w_bq_b(n)$. Sections~\ref{sec:arithmetic}
+and~\ref{sec:decay} give a common denominator for the coefficients and
+show that multiplying by it preserves decay. The remaining beta values
+are rational under our assumption. Multiplying by their fixed common
+denominator then gives the required integers tending to zero.
+
+We must still show that $H_n$ is nonzero infinitely often. The constant
+term could cancel the remaining beta terms, so we distinguish them by
+reduction modulo a large prime $p$. Section~\ref{sec:dilation} compares
+the forms at $n=2p$ with those at $n=2$. After multiplication by a
+suitable power of $p$, every remaining beta term vanishes modulo $p$,
+while the constant term is congruent to a nonzero multiple of $q_w(2)$.
+Thus $q_w(2)\ne0$ implies $H_{2p}\ne0$ for all sufficiently large $p$.
+Section~\ref{sec:certificate} verifies $q_w(2)\ne0$ for every chosen
+pair by an exact determinant calculation. Section~\ref{sec:conclusion}
+combines these facts to finish the contradiction.
+
+The construction builds on the rational-function and elimination methods
+of Kumar and Tosi~\cite{KT26} and Lai and Yu~\cite{LY20}.
+Lai and Sprang~\cite{LS25} also use prime dilation to prove nonvanishing.
+Our proof uses partial fractions and elementary prime valuations,
+together with Stirling's formula, the prime number theorem in its
+least-common-multiple form, and Wilson's and Fermat's congruences.

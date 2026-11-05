@@ -1,0 +1,29 @@
+\section{The counting consequence of the earlier bound}
+\label{app:earlier-count}
+
+We justify the bound $I(s)\ge0.21\sqrt{s/\log s}$ used in the
+introduction to compare the present result with \cite{Tind}.
+The application of Fischler's criterion in \cite[Section~7]{Tind}
+gives a lower bound for the span including $1$. With the parameter
+estimates from that section, it yields
+\[
+ \dim_\Q\operatorname{span}_\Q\{1,\beta(2),\ldots,\beta(s)\}
+ \ge 1+(c_*+o(1))\sqrt{\frac{s}{\log s}},
+ \qquad c_*=0.2174562348\ldots,
+\]
+as $s$ tends to infinity through multiples of $34$.
+All rational beta values lie in $\Q\cdot1$, and each irrational
+value adds at most one dimension. The dimension on the left is
+therefore at most $1+I(s)$, so
+\[
+ I(s)\ge(c_*+o(1))\sqrt{\frac{s}{\log s}}
+ \qquad(34\mid s).
+\]
+
+For an arbitrary large even $s$, put $t=34\lfloor s/34\rfloor$.
+Then $I(s)\ge I(t)$ and
+\[
+ \frac{\sqrt{t/\log t}}{\sqrt{s/\log s}}\longrightarrow1.
+\]
+Since $c_*>0.21$, the preceding estimate gives
+$I(s)\ge0.21\sqrt{s/\log s}$ for every sufficiently large even $s$.

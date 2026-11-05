@@ -1,0 +1,115 @@
+\section{A common denominator}\label{sec:arithmetic}
+
+Put $d_n=\lcm(1,\ldots,n)$ and $\delta_n=4d_n$. For a prime $p$,
+$v_p(x)$ is the exponent of $p$ in a nonzero rational number $x$, with
+$v_p(0)=+\infty$. A rational number is \emph{integral at $p$} if its
+valuation is nonnegative. We bound the denominators of both the beta
+coefficients and the rational correction terms.
+
+\begin{proposition}\label{prop:denominators}
+For $1\leq i\leq364$, $0\leq h\leq n$ and $b=1,2,3$,
+\begin{equation}\label{eq:denominators}
+ \delta_n^{365-i}a_{i,h}(n)\in\Z,\qquad
+ \delta_n^{365-i}\rho_i(n)\in\Z,\qquad
+ \delta_n^{365}q_b(n)\in\Z.
+\end{equation}
+\end{proposition}
+
+\subsection{Taylor coefficients of the numerator}
+
+Define
+\[
+ F_\theta(t)=\frac{A_\theta^n}{(n!)^{18}}
+          \prod_{j=0}^{18n-1}(t-7n+j+\theta),
+ \qquad
+ A_1=1,\quad A_{1/2}=2^{36},\quad A_{1/3}=A_{2/3}=3^{27}.
+\]
+For every integer $u$ and every $k\geq0$, we claim
+\begin{equation}\label{eq:taylor-integral}
+ d_n^k[t^k]F_\theta(t+u)\in\Z.
+\end{equation}
+Here $[t^k]$ denotes the coefficient of $t^k$. Write $\theta=a/b$ in
+lowest terms. Multiplying each linear factor of $F_\theta(t+u)$ by $b$
+gives integer constant terms in a progression with step $b$.
+Fix a prime $q\nmid b$ and split this progression into $18$ blocks of
+length $n$. For every $q^v\leq n$, at least
+$18\lfloor n/q^v\rfloor$ entries are divisible by $q^v$.
+To form a term in the coefficient of $t^k$, we choose the linear term
+from $k$ factors and constant terms from the rest. Omitting those $k$ constants
+loses at most $k$ contributions at each prime-power level. Before
+division by $(n!)^{18}$, the resulting valuation is at least
+\[
+ 18v_q(n!)-k\lfloor\log_q n\rfloor.
+\]
+Multiplication by $d_n^k$ compensates for this loss. Any term that
+still contains a zero constant is zero and needs no estimate.
+
+The factor $A_\theta^n$ compensates for primes dividing $b$.
+For $b=2$, after clearing the $18n$ factor denominators, $2^{18n}$
+remains; this covers $18v_2(n!)\leq18n$.
+For $b=3$, $3^{9n}$ remains, covering $18v_3(n!)\leq9n$.
+Coefficient extraction introduces only further integer factors.
+Thus \eqref{eq:taylor-integral} holds at every prime.
+
+Let
+\[
+ F(t)=(t-7n)\prod_{\theta\in\Theta}F_\theta(t)
+     =\frac{K^nP_n(t)}{(n!)^{72}}.
+\]
+Expansion at $-4h$ gives
+\begin{align}
+ a_{i,h}(n)
+  &=(n+1)^{365}(-1)^{365h}\binom nh^{365}\notag\\[-2pt]
+  &\quad\times[t^{365-i}]
+   \left\{F(t-4h)
+      \prod_{\substack{0\leq k\leq n\\k\ne h}}
+       \left(1+\frac{t}{4(k-h)}\right)^{-365}\right\}.
+       \label{eq:local-coefficient}
+\end{align}
+Each $4(k-h)$ divides $\delta_n$. The binomial series for the remaining
+factors, together with \eqref{eq:taylor-integral}, proves the first
+assertion of \eqref{eq:denominators}; summing over $h$ proves the second.
+The cancellation of the constant powers of $4$ uses the factor
+$4^{365n}$ in $C_n$; the same factor also contributes to the decay
+estimate in Section~\ref{sec:decay}.
+
+\subsection{Clearing the rational correction terms}
+
+The denominators $j$ in \eqref{eq:qb} can exceed $n$, so multiplication
+by $\delta_n^{365}$ need not make each summand integral. We group the
+terms with the same $h,j$ by summing over the pole orders $i$.
+At any fixed prime, at most one pole group can fail to be integral after
+scaling. At a zero of $R_n$, the sum of all pole groups is zero.
+The possible exceptional group is therefore the negative of a sum of
+integral groups, and is integral as well.
+
+Fix an odd $j$ with $1\leq j\leq4bh$. The point $t_0=j/b-4h$ lies in
+$(-4n,0)$ and is a numerator zero: its reduced denominator divides $b$,
+and $\Theta$ supplies the required fraction class. It is not a pole,
+since $t_0=-4k$ would imply $j=4b(h-k)$, impossible for odd $j$.
+Evaluating $R_n(t_0)=0$ yields
+\begin{equation}\label{eq:grouped-zero}
+ \sum_i\frac{a_{i,h}(n)}{(j/b)^i}
+ =-\sum_{k\ne h}\sum_i
+            \frac{a_{i,k}(n)}{(j/b+4(k-h))^i}.
+\end{equation}
+
+Fix a prime $q$, put $v=v_q(\delta_n)$, and set $x_k=j/b+4(k-h)$.
+At most one $x_k$ can have $v_q(x_k)>v$: two such numbers would have
+a difference with valuation greater than $v$, whereas
+\[
+ x_k-x_l=4(k-l)\mid\delta_n\qquad(k\ne l).
+\]
+The coefficient bound already proved implies, for every nonzero rational $x$,
+\begin{equation}\label{eq:valuation-group}
+ v_q\left(\frac{\delta_n^{365}a_{i,h}(n)}{x^i}\right)
+       \geq i\bigl(v-v_q(x)\bigr).
+\end{equation}
+If $v_q(x_h)\leq v$, this inequality makes every term on the left of
+\eqref{eq:grouped-zero} integral at $q$ after multiplication by
+$\delta_n^{365}$. If $v_q(x_h)>v$, every other $x_k$ satisfies
+$v_q(x_k)\leq v$. The scaled right side is then
+integral at $q$, and the identity proves the same for the left side.
+Thus every scaled group is integral at every prime. Summing the groups
+in \eqref{eq:qb} proves the last assertion of
+Proposition~\ref{prop:denominators}.

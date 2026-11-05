@@ -1,0 +1,1155 @@
+{
+  "status": "All exact checks passed; the uniform proof is in the manuscript. Not an independent audit or formal verification.",
+  "cases": [
+    {
+      "parameters": {
+        "B": 1,
+        "s": 64,
+        "r": 7
+      },
+      "decay": {
+        "saddle_upper": "3/250",
+        "f_at_upper_lt_1": true,
+        "fourth_power_rate_upper_lt_1": true,
+        "fourth_power_rate_upper_illustrative": 0.7043859252081,
+        "rate_upper_illustrative": 0.9161206390574116,
+        "cleared_form_nth_root_limsup_lt": "1",
+        "arithmetic": "Exact rational; decimals are illustrative."
+      },
+      "seed": {
+        "parameters": {
+          "B": 1,
+          "s": 64,
+          "r": 7
+        },
+        "prime": 1000003,
+        "seed_index": 1,
+        "node_count": 1,
+        "multiplier_degree": 1,
+        "dilation_exponent": 63,
+        "unnormalized_matrix": [
+          [
+            673415
+          ]
+        ],
+        "symmetric": true,
+        "determinant_residue": 673415,
+        "two_partial_fraction_algorithms_agree": true,
+        "two_constant_algorithms_agree": true,
+        "residue_identity_checks": 1,
+        "rational_kernel_identity_checks": 4,
+        "reflection_and_odd_cancellation": true,
+        "modified_reconstruction_checks": 2
+      },
+      "exact_gram": {
+        "paired_root_count": 9,
+        "kernel_poles_cancel_in_numerator": true,
+        "remaining_positive_polynomial_degree": 8,
+        "largest_moment": 9,
+        "moment_count": 10,
+        "common_sign": 1,
+        "matrix_entries_checked_exactly": 1,
+        "positive_leading_principal_minors": 1,
+        "leading_principal_minor_bits": [
+          159
+        ],
+        "integer_adjugate_weights_constructed": true,
+        "adjugate_seed_identity_exact": true,
+        "all_seed_constant_denominators_cleared_by_4_power_S": true
+      }
+    },
+    {
+      "parameters": {
+        "B": 2,
+        "s": 160,
+        "r": 7
+      },
+      "decay": {
+        "saddle_upper": "21/10000",
+        "f_at_upper_lt_1": true,
+        "fourth_power_rate_upper_lt_1": true,
+        "fourth_power_rate_upper_illustrative": 0.6651354975821133,
+        "rate_upper_illustrative": 0.9030827183494784,
+        "cleared_form_nth_root_limsup_lt": "1",
+        "arithmetic": "Exact rational; decimals are illustrative."
+      },
+      "seed": {
+        "parameters": {
+          "B": 2,
+          "s": 160,
+          "r": 7
+        },
+        "prime": 1000003,
+        "seed_index": 1,
+        "node_count": 3,
+        "multiplier_degree": 5,
+        "dilation_exponent": 155,
+        "unnormalized_matrix": [
+          [
+            563607,
+            208347
+          ],
+          [
+            208347,
+            729837
+          ]
+        ],
+        "symmetric": true,
+        "determinant_residue": 665857,
+        "two_partial_fraction_algorithms_agree": true,
+        "two_constant_algorithms_agree": true,
+        "residue_identity_checks": 4,
+        "rational_kernel_identity_checks": 8,
+        "reflection_and_odd_cancellation": true,
+        "modified_reconstruction_checks": 4
+      },
+      "exact_gram": {
+        "paired_root_count": 18,
+        "kernel_poles_cancel_in_numerator": true,
+        "remaining_positive_polynomial_degree": 15,
+        "largest_moment": 20,
+        "moment_count": 21,
+        "common_sign": -1,
+        "matrix_entries_checked_exactly": 4,
+        "positive_leading_principal_minors": 2,
+        "leading_principal_minor_bits": [
+          402,
+          799
+        ],
+        "integer_adjugate_weights_constructed": true,
+        "adjugate_seed_identity_exact": true,
+        "all_seed_constant_denominators_cleared_by_4_power_S": true
+      }
+    },
+    {
+      "parameters": {
+        "B": 3,
+        "s": 364,
+        "r": 7
+      },
+      "decay": {
+        "saddle_upper": "3/5000",
+        "f_at_upper_lt_1": true,
+        "fourth_power_rate_upper_lt_1": true,
+        "fourth_power_rate_upper_illustrative": 0.27619103483174146,
+        "rate_upper_illustrative": 0.7249405522567652,
+        "cleared_form_nth_root_limsup_lt": "1",
+        "arithmetic": "Exact rational; decimals are illustrative."
+      },
+      "seed": {
+        "parameters": {
+          "B": 3,
+          "s": 364,
+          "r": 7
+        },
+        "prime": 1000003,
+        "seed_index": 1,
+        "node_count": 5,
+        "multiplier_degree": 9,
+        "dilation_exponent": 355,
+        "unnormalized_matrix": [
+          [
+            190647,
+            642218,
+            531073
+          ],
+          [
+            642218,
+            179019,
+            639407
+          ],
+          [
+            531073,
+            639407,
+            86030
+          ]
+        ],
+        "symmetric": true,
+        "determinant_residue": 294924,
+        "two_partial_fraction_algorithms_agree": true,
+        "two_constant_algorithms_agree": true,
+        "residue_identity_checks": 9,
+        "rational_kernel_identity_checks": 12,
+        "reflection_and_odd_cancellation": true,
+        "modified_reconstruction_checks": 6
+      },
+      "exact_gram": {
+        "paired_root_count": 36,
+        "kernel_poles_cancel_in_numerator": true,
+        "remaining_positive_polynomial_degree": 31,
+        "largest_moment": 40,
+        "moment_count": 41,
+        "common_sign": -1,
+        "matrix_entries_checked_exactly": 9,
+        "positive_leading_principal_minors": 3,
+        "leading_principal_minor_bits": [
+          934,
+          1861,
+          2785
+        ],
+        "integer_adjugate_weights_constructed": true,
+        "adjugate_seed_identity_exact": true,
+        "all_seed_constant_denominators_cleared_by_4_power_S": true
+      }
+    },
+    {
+      "parameters": {
+        "B": 4,
+        "s": 588,
+        "r": 7
+      },
+      "decay": {
+        "saddle_upper": "7/25000",
+        "f_at_upper_lt_1": true,
+        "fourth_power_rate_upper_lt_1": true,
+        "fourth_power_rate_upper_illustrative": 0.015339050407658317,
+        "rate_upper_illustrative": 0.35192459432681633,
+        "cleared_form_nth_root_limsup_lt": "1",
+        "arithmetic": "Exact rational; decimals are illustrative."
+      },
+      "seed": {
+        "parameters": {
+          "B": 4,
+          "s": 588,
+          "r": 7
+        },
+        "prime": 1000003,
+        "seed_index": 1,
+        "node_count": 9,
+        "multiplier_degree": 17,
+        "dilation_exponent": 571,
+        "unnormalized_matrix": [
+          [
+            791729,
+            527216,
+            913111,
+            239316
+          ],
+          [
+            527216,
+            430041,
+            667527,
+            125550
+          ],
+          [
+            913111,
+            667527,
+            645795,
+            861729
+          ],
+          [
+            239316,
+            125550,
+            861729,
+            385850
+          ]
+        ],
+        "symmetric": true,
+        "determinant_residue": 406572,
+        "two_partial_fraction_algorithms_agree": true,
+        "two_constant_algorithms_agree": true,
+        "residue_identity_checks": 16,
+        "rational_kernel_identity_checks": 16,
+        "reflection_and_odd_cancellation": true,
+        "modified_reconstruction_checks": 8
+      },
+      "exact_gram": {
+        "paired_root_count": 54,
+        "kernel_poles_cancel_in_numerator": true,
+        "remaining_positive_polynomial_degree": 45,
+        "largest_moment": 62,
+        "moment_count": 63,
+        "common_sign": -1,
+        "matrix_entries_checked_exactly": 16,
+        "positive_leading_principal_minors": 4,
+        "leading_principal_minor_bits": [
+          1530,
+          3052,
+          4570,
+          6085
+        ],
+        "integer_adjugate_weights_constructed": true,
+        "adjugate_seed_identity_exact": true,
+        "all_seed_constant_denominators_cleared_by_4_power_S": true
+      }
+    },
+    {
+      "parameters": {
+        "B": 5,
+        "s": 1030,
+        "r": 8
+      },
+      "decay": {
+        "saddle_upper": "29/50000",
+        "f_at_upper_lt_1": true,
+        "fourth_power_rate_upper_lt_1": true,
+        "fourth_power_rate_upper_illustrative": 0.5055605655874426,
+        "rate_upper_illustrative": 0.8432246577020583,
+        "cleared_form_nth_root_limsup_lt": "1",
+        "arithmetic": "Exact rational; decimals are illustrative."
+      },
+      "seed": {
+        "parameters": {
+          "B": 5,
+          "s": 1030,
+          "r": 8
+        },
+        "prime": 1000003,
+        "seed_index": 1,
+        "node_count": 13,
+        "multiplier_degree": 25,
+        "dilation_exponent": 1005,
+        "unnormalized_matrix": [
+          [
+            416494,
+            982549,
+            73130,
+            107618,
+            159514
+          ],
+          [
+            982549,
+            789635,
+            972991,
+            704804,
+            954494
+          ],
+          [
+            73130,
+            972991,
+            670161,
+            783383,
+            73306
+          ],
+          [
+            107618,
+            704804,
+            783383,
+            426078,
+            337739
+          ],
+          [
+            159514,
+            954494,
+            73306,
+            337739,
+            975787
+          ]
+        ],
+        "symmetric": true,
+        "determinant_residue": 114630,
+        "two_partial_fraction_algorithms_agree": true,
+        "two_constant_algorithms_agree": true,
+        "residue_identity_checks": 25,
+        "rational_kernel_identity_checks": 20,
+        "reflection_and_odd_cancellation": true,
+        "modified_reconstruction_checks": 10
+      },
+      "exact_gram": {
+        "paired_root_count": 100,
+        "kernel_poles_cancel_in_numerator": true,
+        "remaining_positive_polynomial_degree": 87,
+        "largest_moment": 112,
+        "moment_count": 113,
+        "common_sign": -1,
+        "matrix_entries_checked_exactly": 25,
+        "positive_leading_principal_minors": 5,
+        "leading_principal_minor_bits": [
+          2822,
+          5635,
+          8443,
+          11247,
+          14049
+        ],
+        "integer_adjugate_weights_constructed": true,
+        "adjugate_seed_identity_exact": true,
+        "all_seed_constant_denominators_cleared_by_4_power_S": true
+      }
+    },
+    {
+      "parameters": {
+        "B": 6,
+        "s": 1296,
+        "r": 8
+      },
+      "decay": {
+        "saddle_upper": "7/20000",
+        "f_at_upper_lt_1": true,
+        "fourth_power_rate_upper_lt_1": true,
+        "fourth_power_rate_upper_illustrative": 0.05088531182428485,
+        "rate_upper_illustrative": 0.47495023845423,
+        "cleared_form_nth_root_limsup_lt": "1",
+        "arithmetic": "Exact rational; decimals are illustrative."
+      },
+      "seed": {
+        "parameters": {
+          "B": 6,
+          "s": 1296,
+          "r": 8
+        },
+        "prime": 1000003,
+        "seed_index": 1,
+        "node_count": 17,
+        "multiplier_degree": 33,
+        "dilation_exponent": 1263,
+        "unnormalized_matrix": [
+          [
+            690664,
+            615098,
+            52511,
+            58406,
+            502212,
+            961560
+          ],
+          [
+            615098,
+            476865,
+            408814,
+            508927,
+            362710,
+            234352
+          ],
+          [
+            52511,
+            408814,
+            320886,
+            778534,
+            802874,
+            42823
+          ],
+          [
+            58406,
+            508927,
+            778534,
+            507147,
+            735122,
+            297016
+          ],
+          [
+            502212,
+            362710,
+            802874,
+            735122,
+            248721,
+            74946
+          ],
+          [
+            961560,
+            234352,
+            42823,
+            297016,
+            74946,
+            597038
+          ]
+        ],
+        "symmetric": true,
+        "determinant_residue": 446241,
+        "two_partial_fraction_algorithms_agree": true,
+        "two_constant_algorithms_agree": true,
+        "residue_identity_checks": 36,
+        "rational_kernel_identity_checks": 24,
+        "reflection_and_odd_cancellation": true,
+        "modified_reconstruction_checks": 12
+      },
+      "exact_gram": {
+        "paired_root_count": 120,
+        "kernel_poles_cancel_in_numerator": true,
+        "remaining_positive_polynomial_degree": 103,
+        "largest_moment": 136,
+        "moment_count": 137,
+        "common_sign": -1,
+        "matrix_entries_checked_exactly": 36,
+        "positive_leading_principal_minors": 6,
+        "leading_principal_minor_bits": [
+          3550,
+          7090,
+          10625,
+          14157,
+          17685,
+          21210
+        ],
+        "integer_adjugate_weights_constructed": true,
+        "adjugate_seed_identity_exact": true,
+        "all_seed_constant_denominators_cleared_by_4_power_S": true
+      }
+    },
+    {
+      "parameters": {
+        "B": 7,
+        "s": 1992,
+        "r": 7
+      },
+      "decay": {
+        "saddle_upper": "67/1000000",
+        "f_at_upper_lt_1": true,
+        "fourth_power_rate_upper_lt_1": true,
+        "fourth_power_rate_upper_illustrative": 0.5109836971451897,
+        "rate_upper_illustrative": 0.8454769286196394,
+        "cleared_form_nth_root_limsup_lt": "1",
+        "arithmetic": "Exact rational; decimals are illustrative."
+      },
+      "seed": {
+        "parameters": {
+          "B": 7,
+          "s": 1992,
+          "r": 7
+        },
+        "prime": 1000003,
+        "seed_index": 1,
+        "node_count": 23,
+        "multiplier_degree": 45,
+        "dilation_exponent": 1947,
+        "unnormalized_matrix": [
+          [
+            544937,
+            774218,
+            68637,
+            696690,
+            975060,
+            820347,
+            767468
+          ],
+          [
+            774218,
+            348273,
+            699631,
+            505583,
+            934124,
+            206287,
+            937128
+          ],
+          [
+            68637,
+            699631,
+            250899,
+            511131,
+            619276,
+            899175,
+            4721
+          ],
+          [
+            696690,
+            505583,
+            511131,
+            348173,
+            525663,
+            214092,
+            115210
+          ],
+          [
+            975060,
+            934124,
+            619276,
+            525663,
+            719739,
+            323010,
+            870818
+          ],
+          [
+            820347,
+            206287,
+            899175,
+            214092,
+            323010,
+            885171,
+            606664
+          ],
+          [
+            767468,
+            937128,
+            4721,
+            115210,
+            870818,
+            606664,
+            375066
+          ]
+        ],
+        "symmetric": true,
+        "determinant_residue": 216953,
+        "two_partial_fraction_algorithms_agree": true,
+        "two_constant_algorithms_agree": true,
+        "residue_identity_checks": 49,
+        "rational_kernel_identity_checks": 28,
+        "reflection_and_odd_cancellation": true,
+        "modified_reconstruction_checks": 14
+      },
+      "exact_gram": {
+        "paired_root_count": 162,
+        "kernel_poles_cancel_in_numerator": true,
+        "remaining_positive_polynomial_degree": 139,
+        "largest_moment": 184,
+        "moment_count": 185,
+        "common_sign": -1,
+        "matrix_entries_checked_exactly": 49,
+        "positive_leading_principal_minors": 7,
+        "leading_principal_minor_bits": [
+          5339,
+          10667,
+          15990,
+          21308,
+          26623,
+          31935,
+          37244
+        ],
+        "integer_adjugate_weights_constructed": true,
+        "adjugate_seed_identity_exact": true,
+        "all_seed_constant_denominators_cleared_by_4_power_S": true
+      }
+    },
+    {
+      "parameters": {
+        "B": 8,
+        "s": 2502,
+        "r": 7
+      },
+      "decay": {
+        "saddle_upper": "47/1000000",
+        "f_at_upper_lt_1": true,
+        "fourth_power_rate_upper_lt_1": true,
+        "fourth_power_rate_upper_illustrative": 0.0033352652449219864,
+        "rate_upper_illustrative": 0.24031594899342967,
+        "cleared_form_nth_root_limsup_lt": "1",
+        "arithmetic": "Exact rational; decimals are illustrative."
+      },
+      "seed": {
+        "parameters": {
+          "B": 8,
+          "s": 2502,
+          "r": 7
+        },
+        "prime": 1000003,
+        "seed_index": 1,
+        "node_count": 31,
+        "multiplier_degree": 61,
+        "dilation_exponent": 2441,
+        "unnormalized_matrix": [
+          [
+            614829,
+            214353,
+            699110,
+            301882,
+            995015,
+            236098,
+            767530,
+            581249
+          ],
+          [
+            214353,
+            320141,
+            814480,
+            833237,
+            268698,
+            460259,
+            76733,
+            705811
+          ],
+          [
+            699110,
+            814480,
+            259362,
+            630952,
+            34401,
+            34880,
+            218388,
+            798816
+          ],
+          [
+            301882,
+            833237,
+            630952,
+            99402,
+            48275,
+            97588,
+            951157,
+            578038
+          ],
+          [
+            995015,
+            268698,
+            34401,
+            48275,
+            381778,
+            190195,
+            431829,
+            966021
+          ],
+          [
+            236098,
+            460259,
+            34880,
+            97588,
+            190195,
+            71810,
+            276474,
+            801766
+          ],
+          [
+            767530,
+            76733,
+            218388,
+            951157,
+            431829,
+            276474,
+            513297,
+            711342
+          ],
+          [
+            581249,
+            705811,
+            798816,
+            578038,
+            966021,
+            801766,
+            711342,
+            384600
+          ]
+        ],
+        "symmetric": true,
+        "determinant_residue": 275655,
+        "two_partial_fraction_algorithms_agree": true,
+        "two_constant_algorithms_agree": true,
+        "residue_identity_checks": 64,
+        "rational_kernel_identity_checks": 32,
+        "reflection_and_odd_cancellation": true,
+        "modified_reconstruction_checks": 16
+      },
+      "exact_gram": {
+        "paired_root_count": 198,
+        "kernel_poles_cancel_in_numerator": true,
+        "remaining_positive_polynomial_degree": 167,
+        "largest_moment": 228,
+        "moment_count": 229,
+        "common_sign": -1,
+        "matrix_entries_checked_exactly": 64,
+        "positive_leading_principal_minors": 8,
+        "leading_principal_minor_bits": [
+          6742,
+          13474,
+          20199,
+          26919,
+          33636,
+          40351,
+          47062,
+          53770
+        ],
+        "integer_adjugate_weights_constructed": true,
+        "adjugate_seed_identity_exact": true,
+        "all_seed_constant_denominators_cleared_by_4_power_S": true
+      }
+    },
+    {
+      "parameters": {
+        "B": 9,
+        "s": 3260,
+        "r": 7
+      },
+      "decay": {
+        "saddle_upper": "7/200000",
+        "f_at_upper_lt_1": true,
+        "fourth_power_rate_upper_lt_1": true,
+        "fourth_power_rate_upper_illustrative": 0.12838552971263179,
+        "rate_upper_illustrative": 0.5985893963790323,
+        "cleared_form_nth_root_limsup_lt": "1",
+        "arithmetic": "Exact rational; decimals are illustrative."
+      },
+      "seed": {
+        "parameters": {
+          "B": 9,
+          "s": 3260,
+          "r": 7
+        },
+        "prime": 1000003,
+        "seed_index": 1,
+        "node_count": 37,
+        "multiplier_degree": 73,
+        "dilation_exponent": 3187,
+        "unnormalized_matrix": [
+          [
+            528593,
+            859380,
+            424641,
+            750811,
+            805376,
+            914251,
+            633901,
+            445615,
+            165134
+          ],
+          [
+            859380,
+            522216,
+            642146,
+            995686,
+            774545,
+            124659,
+            979159,
+            367895,
+            499114
+          ],
+          [
+            424641,
+            642146,
+            356460,
+            731444,
+            834592,
+            59394,
+            535281,
+            509047,
+            54006
+          ],
+          [
+            750811,
+            995686,
+            731444,
+            861202,
+            838772,
+            799984,
+            898955,
+            751379,
+            342003
+          ],
+          [
+            805376,
+            774545,
+            834592,
+            838772,
+            698690,
+            694969,
+            990457,
+            651552,
+            990210
+          ],
+          [
+            914251,
+            124659,
+            59394,
+            799984,
+            694969,
+            961548,
+            77847,
+            811698,
+            384807
+          ],
+          [
+            633901,
+            979159,
+            535281,
+            898955,
+            990457,
+            77847,
+            971635,
+            674301,
+            125124
+          ],
+          [
+            445615,
+            367895,
+            509047,
+            751379,
+            651552,
+            811698,
+            674301,
+            714363,
+            814866
+          ],
+          [
+            165134,
+            499114,
+            54006,
+            342003,
+            990210,
+            384807,
+            125124,
+            814866,
+            104525
+          ]
+        ],
+        "symmetric": true,
+        "determinant_residue": 794253,
+        "two_partial_fraction_algorithms_agree": true,
+        "two_constant_algorithms_agree": true,
+        "residue_identity_checks": 81,
+        "rational_kernel_identity_checks": 36,
+        "reflection_and_odd_cancellation": true,
+        "modified_reconstruction_checks": 18
+      },
+      "exact_gram": {
+        "paired_root_count": 252,
+        "kernel_poles_cancel_in_numerator": true,
+        "remaining_positive_polynomial_degree": 215,
+        "largest_moment": 288,
+        "moment_count": 289,
+        "common_sign": -1,
+        "matrix_entries_checked_exactly": 81,
+        "positive_leading_principal_minors": 9,
+        "leading_principal_minor_bits": [
+          8821,
+          17631,
+          26434,
+          35233,
+          44027,
+          52819,
+          61608,
+          70393,
+          79176
+        ],
+        "integer_adjugate_weights_constructed": true,
+        "adjugate_seed_identity_exact": true,
+        "all_seed_constant_denominators_cleared_by_4_power_S": true
+      }
+    },
+    {
+      "parameters": {
+        "B": 10,
+        "s": 3828,
+        "r": 8
+      },
+      "decay": {
+        "saddle_upper": "11/100000",
+        "f_at_upper_lt_1": true,
+        "fourth_power_rate_upper_lt_1": true,
+        "fourth_power_rate_upper_illustrative": 0.23239309260228622,
+        "rate_upper_illustrative": 0.694313810532319,
+        "cleared_form_nth_root_limsup_lt": "1",
+        "arithmetic": "Exact rational; decimals are illustrative."
+      },
+      "seed": {
+        "parameters": {
+          "B": 10,
+          "s": 3828,
+          "r": 8
+        },
+        "prime": 1000003,
+        "seed_index": 1,
+        "node_count": 45,
+        "multiplier_degree": 89,
+        "dilation_exponent": 3739,
+        "unnormalized_matrix": [
+          [
+            671320,
+            862519,
+            388462,
+            423647,
+            174488,
+            18373,
+            922441,
+            688138,
+            526325,
+            794625
+          ],
+          [
+            862519,
+            995982,
+            907678,
+            880228,
+            309005,
+            493720,
+            140190,
+            321679,
+            297707,
+            143745
+          ],
+          [
+            388462,
+            907678,
+            83510,
+            31590,
+            459092,
+            874019,
+            208762,
+            298468,
+            651465,
+            453391
+          ],
+          [
+            423647,
+            880228,
+            31590,
+            684862,
+            997325,
+            77647,
+            427624,
+            751557,
+            556693,
+            247970
+          ],
+          [
+            174488,
+            309005,
+            459092,
+            997325,
+            32015,
+            923472,
+            490428,
+            824527,
+            407686,
+            621882
+          ],
+          [
+            18373,
+            493720,
+            874019,
+            77647,
+            923472,
+            299157,
+            495228,
+            552592,
+            304396,
+            997929
+          ],
+          [
+            922441,
+            140190,
+            208762,
+            427624,
+            490428,
+            495228,
+            85886,
+            550763,
+            445386,
+            527905
+          ],
+          [
+            688138,
+            321679,
+            298468,
+            751557,
+            824527,
+            552592,
+            550763,
+            440569,
+            416743,
+            58010
+          ],
+          [
+            526325,
+            297707,
+            651465,
+            556693,
+            407686,
+            304396,
+            445386,
+            416743,
+            897885,
+            113976
+          ],
+          [
+            794625,
+            143745,
+            453391,
+            247970,
+            621882,
+            997929,
+            527905,
+            58010,
+            113976,
+            277658
+          ]
+        ],
+        "symmetric": true,
+        "determinant_residue": 673620,
+        "two_partial_fraction_algorithms_agree": true,
+        "two_constant_algorithms_agree": true,
+        "residue_identity_checks": 100,
+        "rational_kernel_identity_checks": 40,
+        "reflection_and_odd_cancellation": true,
+        "modified_reconstruction_checks": 20
+      },
+      "exact_gram": {
+        "paired_root_count": 320,
+        "kernel_poles_cancel_in_numerator": true,
+        "remaining_positive_polynomial_degree": 275,
+        "largest_moment": 364,
+        "moment_count": 365,
+        "common_sign": -1,
+        "matrix_entries_checked_exactly": 100,
+        "positive_leading_principal_minors": 10,
+        "leading_principal_minor_bits": [
+          10743,
+          21474,
+          32199,
+          42918,
+          53634,
+          64347,
+          75056,
+          85763,
+          96466,
+          107167
+        ],
+        "integer_adjugate_weights_constructed": true,
+        "adjugate_seed_identity_exact": true,
+        "all_seed_constant_denominators_cleared_by_4_power_S": true
+      }
+    }
+  ],
+  "full_dilation_checks": [
+    {
+      "B": 1,
+      "s": 20,
+      "r": 3,
+      "prime": 17,
+      "seed_index": 1,
+      "dilation_exponent": 19,
+      "selected_coefficient_congruences": 40,
+      "nonselected_coefficient_valuations": 320,
+      "constant_congruences": 1,
+      "grouped_constant_divisibilities": 306,
+      "all_rho_valuation_bounds": true,
+      "scope": "Exact full rational coefficient and constant checks; these small parameters are not theorem endpoint instances."
+    },
+    {
+      "B": 1,
+      "s": 20,
+      "r": 3,
+      "prime": 19,
+      "seed_index": 1,
+      "dilation_exponent": 19,
+      "selected_coefficient_congruences": 40,
+      "nonselected_coefficient_valuations": 360,
+      "constant_congruences": 1,
+      "grouped_constant_divisibilities": 380,
+      "all_rho_valuation_bounds": true,
+      "scope": "Exact full rational coefficient and constant checks; these small parameters are not theorem endpoint instances."
+    },
+    {
+      "B": 2,
+      "s": 24,
+      "r": 3,
+      "prime": 17,
+      "seed_index": 1,
+      "dilation_exponent": 19,
+      "selected_coefficient_congruences": 96,
+      "nonselected_coefficient_valuations": 768,
+      "constant_congruences": 4,
+      "grouped_constant_divisibilities": 1836,
+      "all_rho_valuation_bounds": true,
+      "scope": "Exact full rational coefficient and constant checks; these small parameters are not theorem endpoint instances."
+    },
+    {
+      "B": 2,
+      "s": 24,
+      "r": 3,
+      "prime": 19,
+      "seed_index": 1,
+      "dilation_exponent": 19,
+      "selected_coefficient_congruences": 96,
+      "nonselected_coefficient_valuations": 864,
+      "constant_congruences": 4,
+      "grouped_constant_divisibilities": 2280,
+      "all_rho_valuation_bounds": true,
+      "scope": "Exact full rational coefficient and constant checks; these small parameters are not theorem endpoint instances."
+    }
+  ],
+  "uniform_endpoint_checks": {
+    "f_at_u_1_over_50_with_S_66D_lt_1": true,
+    "log_18_02_lt_29_over_10": true,
+    "decay_slope_gt_4_over_5": true,
+    "e_upper_68_over_25": true,
+    "three_rational_ratios_illustrative": [
+      0.07819218090072262,
+      0.9343155992310118,
+      0.9716594718647166
+    ],
+    "arithmetic": "Exact rational comparisons; decimals are illustrative."
+  }
+}

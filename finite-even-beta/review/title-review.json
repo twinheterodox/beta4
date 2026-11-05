@@ -1,0 +1,35 @@
+{
+  "reviewed_at_utc": "2026-11-04T03:09:37.121040+00:00",
+  "scope": "User-selected title and opening prose only.",
+  "title": "At least three even beta values through beta(364) are irrational",
+  "pdf": "output/pdf/finite-even-beta.pdf",
+  "pdf_sha256": "5a04237c83316dc03c7e2cf71d7f9fabe933c80807781b3bd32ba915143a26bf",
+  "pages": 13,
+  "source_files_sha256": {
+    "paper/finite-even-beta.tex": "93ba7041e0ce0d3ae5175fc970f24fd18af262d7586ada70b85ea6407ca1c1da",
+    "paper/references.tex": "3f68ac7dbfc82ada7d311374dc73dd47f1f5da094819e469b6ab2fb1c8211e05",
+    "paper/sections/arithmetic.tex": "2d73e580765bab68cde13742f690980614d38e710ba4628c12e55dffc0db5f22",
+    "paper/sections/certificate.tex": "0c26d515c460f7426c24077aa2c911bffeac3843dccf076c174aa642647a0f4d",
+    "paper/sections/conclusion.tex": "f94286b7ce9f88666fdcc490f7d1de015946098ef1783a55e9c58c417f93ced6",
+    "paper/sections/decay.tex": "71c3355da4f5de5073d1e86d9000a18bca646486c22811fc70c435e7b110a40b",
+    "paper/sections/dilation.tex": "9aa1615c9c6c01be3707f09c112d3e8d10a2823eb66f2df76a8b0c29622a555e",
+    "paper/sections/forms.tex": "18d064734b864e3c1d9534f2e2b0b45e8363d75d703ebed3d4724343cc9a2fbd",
+    "paper/sections/introduction.tex": "b740a19849d9126a075cedf39b3ef8a31a1c4ca84c59e76afffaf27aea27ddc9"
+  },
+  "previous_review": "review/focus-review.json",
+  "previous_pdf_sha256": "14263f21a0f5d7a7ca6d622ec0f3d89310fbb2b1b464aa36d459404cb3a07c3b",
+  "changes": [
+    "Used the title selected by the user, with matching PDF metadata and current paper listings.",
+    "Named the Dirichlet beta function explicitly before its defining series.",
+    "Removed the weaker summary before the theorem and the paragraph stating what the theorem does not assert."
+  ],
+  "preservation": "The theorem, all proof arguments, formulas, checker scripts and outputs are unchanged. Only the title, PDF title metadata and the identified opening prose were edited in the LaTeX sources.",
+  "build_check": {
+    "unresolved_references": false,
+    "overfull_boxes": false,
+    "underfull_warnings": []
+  },
+  "visual_review": "Rendered all 13 pages and inspected the changed first page. The title fits naturally on one line. Pages 2-13 are byte-for-byte identical to the previously reviewed rendering.",
+  "independent_review_status": "Historical reviews retain their exact scope. No new independent proof audit or formal verification is claimed.",
+  "publication_status": "Local edit only; no commit, push or upload."
+}

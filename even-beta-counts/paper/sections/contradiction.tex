@@ -1,0 +1,60 @@
+\section{Completing the irrationality contradiction}\label{sec:contradiction}
+
+We now prove Proposition~\ref{prop:criterion}. Assume its two
+inequalities hold and suppose that at most $B-1$ of
+$\beta(2),\ldots,\beta(s)$ are irrational. Choose $B-1$ distinct
+even indices $i_1<\cdots<i_{B-1}$ containing all possible
+irrational indices, adding further indices if necessary. There
+are enough choices, since $s\ge DL\ge10D\ge10B$.
+
+The coefficients $c_j$ have already fixed the common multiplier
+$W_n$. We now choose integer weights $w=(w_1,\ldots,w_B)$ on the
+$B$ forms to annihilate the columns
+\[
+ (1^{i_j},2^{i_j},\ldots,B^{i_j})^{\mathsf T},
+                  \qquad j=1,\ldots,B-1,
+\]
+by using their signed maximal minors. Its last entry $w_B$ is nonzero.
+Indeed, the corresponding minor is a generalized Vandermonde
+determinant at the distinct positive points
+$1^2,\ldots,(B-1)^2$, with exponents $i_j/2$. A singular minor
+would give a nonzero polynomial with at most $B-1$ monomials
+vanishing at $B-1$ positive points. A polynomial with $k$ monomials
+has at most $k-1$ distinct positive zeros: factor out its smallest
+power and apply Rolle's theorem inductively to its derivative.
+This proves the required nonsingularity. For $B=1$, use the empty
+determinant $1$ and $w=(1)$.
+
+Form the single sequence
+\[
+ H_n=\sum_{b=1}^B w_bF_{n,b},\qquad
+ q_w(n)=\sum_{b=1}^B w_bq_b(n).
+\]
+The weights are fixed, so the chosen beta coefficients cancel at
+every $n$. All remaining beta values are rational under our
+assumption. Let $D_0$ be a common denominator for those rational
+values. Proposition~\ref{prop:denominators} and
+\eqref{eq:cleared-decay} show that
+\begin{equation}\label{eq:integer-sequence}
+ D_0\delta_n^S H_n\in\Z,\qquad
+ D_0\delta_n^S H_n\longrightarrow0
+          \quad(n\to\infty,\ n\text{ odd}).
+\end{equation}
+
+The seed vector was chosen to make this sequence nonzero infinitely
+often. By \eqref{eq:target},
+$q_w(1)=w_B\eta\ne0$. Exclude the finitely many primes dividing
+$D_0$ or the numerator or denominator of $q_w(1)$, and take $p$
+large enough for Proposition~\ref{prop:dilation}. Its constant
+congruence at $m=1$ gives
+\[
+ p^\tau q_w(p)\equiv\ch(p)2^{-S}q_w(1)\not\equiv0\pmod p.
+\]
+Every remaining beta term in $p^\tau H_p$ is divisible by $p$ in
+$\Zp$, by \eqref{eq:rho-dilation} and the rationality assumption.
+Thus $H_p\ne0$ for infinitely many primes $p$.
+
+Equation~\eqref{eq:integer-sequence} now gives infinitely many
+nonzero integers tending to zero. Since a nonzero integer has
+absolute value at least $1$, this is impossible. Therefore
+$I(s)\ge B$, as claimed.

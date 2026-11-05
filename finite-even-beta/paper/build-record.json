@@ -1,0 +1,22 @@
+{
+  "status": "compiled; visual and mathematical reviews recorded separately",
+  "pages": 16,
+  "source_files": {
+    "paper/finite-even-beta.tex": "96369b901c17d2bdebd184b6ca2dcaa0e793996a087386e7328c7fccd7db24f5",
+    "paper/references.tex": "4af9ea621845f9b5ad751b148605926df497a457fc562d87c554b6b496d76d9c",
+    "paper/sections/arithmetic.tex": "d37ea08e805c20e92b5c6672080b772fa9e8b49597dbca4659a60f11e5cb550f",
+    "paper/sections/asymptotic-comparisons.tex": "50374f82cf06b998ece04d358011ef12cda3908d9fe9ab10aef45f12773ea8bd",
+    "paper/sections/certificate.tex": "32ee1a96183aebd56343daf5fef912527e691753e3b9fe50e570dfef297b7f0c",
+    "paper/sections/conclusion.tex": "313a01b0fcda68eb0536daef21981de96d93cdbe5ea3838261279bdb627013af",
+    "paper/sections/decay.tex": "55414eb4fb76a84bb09c2120aec971b02431166e4c6e8caba797765a3425b8c7",
+    "paper/sections/dilation.tex": "ccb39e0485691165b61751344f08351e7831e8b5624049123fcad6c5dc7cc886",
+    "paper/sections/forms.tex": "64115f077b20466bdf5fc73650eb54b7335dd8f94c792e2f75c65cf4006b5f85",
+    "paper/sections/introduction.tex": "9739edc728e1a79f74d337a9d337885b7c9f2bc35f00046f9a341c0b600e7a36"
+  },
+  "pdf": "output/pdf/finite-even-beta.pdf",
+  "pdf_sha256": "8fe8cef9a6e1a5644892881dd9b784cf9eedac7ffc4a506e37e741ab478c0312",
+  "unresolved_references": false,
+  "overfull_boxes": false,
+  "underfull_warnings": [],
+  "review_scope": "Typeset exposition of the previously audited plain-text proof. No new independent audit or formal verification is claimed."
+}

@@ -1,0 +1,76 @@
+{
+  "purpose": "Finite comparisons for the specified estimates in Appendix A.",
+  "certificate_arithmetic": "integers and exact rational numbers",
+  "decimal_values": "illustrative only",
+  "elementary_bounds": {
+    "e_lower": "8/3",
+    "e_upper": "68/25",
+    "log_2_bounds": [
+      "1/2",
+      "7/10"
+    ],
+    "log_8_gt_2": true
+  },
+  "rivoal_zudilin_2003": {
+    "source": "Rivoal-Zudilin (2003), Section 6, (26) and (29)",
+    "q": 366,
+    "beta_endpoint": 364,
+    "even_r_cases": 91,
+    "all_profile_upper_bounds_lt_2": true,
+    "displayed_max_illustrative": [
+      1.1815618331593682,
+      28
+    ],
+    "profile_upper_max_illustrative": [
+      1.525418760816244,
+      24
+    ],
+    "extension_to_smaller_endpoints": "U(q,r) increases with q for fixed r>=2.",
+    "scope": "Uniform family (26), using the published height estimate."
+  },
+  "nishimoto_2011": {
+    "source": "Nishimoto (2011), Theorem 5.5",
+    "max_beta_endpoint": 364,
+    "periods": "positive multiples of 4",
+    "period_4_dimension_estimate_lt": "6/5",
+    "larger_periods_gain_numerator_negative": true,
+    "scope": "Explicit expression in Theorem 5.5; algebraic reduction in Appendix A.2."
+  },
+  "fischler_2018": {
+    "source": "Fischler (2018), Section 4.2 and Proposition 4.4",
+    "a": 365,
+    "beta_endpoint": 364,
+    "periods": "all positive even N",
+    "parameter_pairs": 429,
+    "all_alpha_gt_1": true,
+    "minimum_log_alpha_illustrative": [
+      300.67697697940224,
+      2,
+      12
+    ],
+    "extension_to_smaller_a": "log(alpha) is affine in a and positive at both a=0 and a=365."
+  },
+  "fischler_2020": {
+    "source": "Fischler (2020), Proposition 1, (1.1), author revision 10 October 2019",
+    "a": 365,
+    "beta_endpoint": 364,
+    "periods": "all positive multiples of 4",
+    "parameter_pairs": 111,
+    "all_alpha_gt_1": true,
+    "minimum_log_alpha_illustrative": [
+      29.200753494783633,
+      120,
+      1
+    ],
+    "extension_to_smaller_a": "log(alpha) is affine in a and positive at both a=0 and a=365.",
+    "scope": "Includes the enlarged periods used in the irrational-value count."
+  },
+  "square_root_bound": {
+    "source": "twinheterodox (2026), (2.2), (5.2), (5.3) and Section 7",
+    "max_a_plus_h": 365,
+    "all_admissible_R_lt": 2,
+    "left_upper": "365/32",
+    "right_lower": "257/20",
+    "scope": "Exact constants for the all-parameter argument in Appendix A.4."
+  }
+}

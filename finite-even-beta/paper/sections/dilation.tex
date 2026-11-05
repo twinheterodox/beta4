@@ -1,0 +1,158 @@
+\section{Prime dilation and nonvanishing}\label{sec:dilation}
+
+The estimates above do not rule out $H_n=0$: the constant term could
+cancel the remaining beta terms. We rule this out at indices $n=mp$,
+where $m$ is a fixed positive even integer and $p$ is a large prime.
+After multiplication by $p^{364}$, the beta coefficients vanish modulo
+$p$, while the constant terms reduce to a common nonzero multiple of
+their values at $m$. Under the rationality assumption, the remaining
+beta terms also vanish modulo all sufficiently large $p$. Hence a
+nonzero combined constant at $m$ will imply $H_{mp}\ne0$. We will take
+$m=2$.
+
+\begin{samepage}
+Write $\Zp$ for the rational numbers whose denominators are prime to $p$.
+A \emph{unit} in this ring has both numerator and denominator prime to
+$p$, and hence a nonzero reduction modulo $p$. All reductions below are
+of quantities proved to be $p$-integral.
+
+\subsection{How a long product reproduces a shorter one}
+
+For example, take $p=5$ and consider $\prod_{j=1}^{10}(5z+j)$.
+The factors with $j=5,10$ are
+$5(z+1)$ and $5(z+2)$. Removing their two powers of $5$ leaves
+\[
+ 5^{-2}\prod_{j=1}^{10}(5z+j)
+ =(z+1)(z+2)\prod_{\substack{1\leq j\leq10\\5\nmid j}}(5z+j).
+\]
+The remaining factors reduce to the constants $1,2,3,4$, each occurring
+twice. Since $1\cdot2\cdot3\cdot4\equiv-1\pmod5$, their product is $1$
+modulo $5$. Thus selecting every fifth factor recovers the product of
+length two:
+\[
+ 5^{-2}\prod_{j=1}^{10}(5z+j)\equiv(z+1)(z+2)\pmod5.
+\]
+\end{samepage}
+Fractional shifts can change which block is recovered. For example,
+in $5z+j+1/3$, divisibility by $5$ means $j\equiv3\pmod5$. Writing
+$j=5v+3$ gives
+\[
+ 5z+(5v+3)+\tfrac13=5\bigl(z+v+\tfrac23\bigr).
+\]
+The shift $1/3$ has become $2/3$; the companion block with shift $2/3$
+returns $1/3$. The two blocks exchange, so their product is preserved.
+
+We apply this selection to every numerator and denominator block of
+$R_{mp}(pz)$. The factors divisible by $p$ recover the blocks of $R_m$,
+and Wilson's theorem evaluates the products of the remaining factors.
+Accounting for the powers of $p$ and the normalization gives the
+following proposition.
+
+\begin{proposition}\label{prop:dilation}
+For fixed positive even $m$ and all sufficiently large primes $p$,
+\begin{align}
+ p^{364}\rho_i(mp)&\in p^i\Zp \quad(1\leq i\leq364),
+                                      \label{eq:rho-dilation}\\
+ p^{364}q_b(mp)&\equiv\ch(p)(m+1)^{-365}q_b(m)\pmod p
+                        \quad(b=1,2,3).\label{eq:q-dilation}
+\end{align}
+\end{proposition}
+
+\subsection{The rational-function congruence}
+
+We first prove
+\begin{equation}\label{eq:rational-dilation}
+ p^{364}R_{mp}(pz)\equiv(m+1)^{-365}R_m(z)\pmod p.
+\end{equation}
+This is an identity of rational functions over $\Fp$.
+
+For $p>m+1$, both $(mp)!$ and $(mp+1)!$ have valuation $m$.
+After division by $p^m$, their units are $(-1)^m m!=m!$ modulo $p$,
+by Wilson's theorem and the evenness of $m$. The explicit powers of
+$2$, $3$ and $4$ in the normalization reduce to those in $C_m$ by
+Fermat's theorem. Thus $C_{mp}$ has valuation $293m$,
+and its unit reduces to $C_m/(m+1)^{365}$.
+
+The extra factor $pz-7mp$ in the numerator contributes one factor $p$.
+In a block with shift $\theta=a/b$, precisely $18m$ factors are divisible
+by $p$. They take the form
+\[
+ p(z-7m+v+\theta'),\qquad 0\leq v<18m,
+ \qquad \theta'=a'/b,\quad 1\leq a'\leq b,\quad pa'\equiv a\pmod b.
+\]
+The map $\theta\mapsto\theta'$ permutes $\Theta$. When $p\equiv2\pmod3$,
+the one-third and two-thirds blocks exchange, leaving their product
+unchanged. After division by $p$, the selected factors reproduce
+$P_m(z)$. In each block the remaining factors have product
+$(-1)^{18m}=1$ modulo $p$.
+
+The divisible denominator factors are $p(z+4y)$, $0\leq y\leq m$,
+each with multiplicity $365$. The remaining denominator unit is
+$(-1)^{365m}=1$. The net exponent of $p$ is therefore
+\[
+ 293m+(72m+1)-365(m+1)=-364.
+\]
+The units and remaining factors give exactly \eqref{eq:rational-dilation}.
+
+\subsection{Reducing the partial-fraction coefficients}
+
+We extract the principal parts from \eqref{eq:rational-dilation} by
+expanding at each pole. At a selected pole $z=-4y$, put $z=-4y+u$.
+The factorization above shows that
+\begin{equation}\label{eq:local-integral-series}
+ u^{365}p^{364}R_{mp}\bigl(p(u-4y)\bigr)\in\Zp[[u]].
+\end{equation}
+Multiplication by $u^{365}$ removes the denominator factor at that pole.
+After extraction of the powers of $p$ already counted, every other
+denominator factor has a unit constant term. Its reciprocal has
+$p$-integral power-series coefficients. Reduction therefore commutes
+with coefficient extraction, giving in $\Fp[[u]]$
+\[
+ u^{365}p^{364}R_{mp}\bigl(p(u-4y)\bigr)
+ \equiv(m+1)^{-365}u^{365}R_m(u-4y)\pmod p.
+\]
+The term $a_{i,py}(mp)/(pu)^i$ contributes
+$p^{364-i}a_{i,py}(mp)$ to the coefficient of $u^{365-i}$ on the left.
+Terms regular at this pole contribute only from degree $365$ onward.
+Comparing coefficients yields
+\begin{equation}\label{eq:selected-pole}
+ p^{364-i}a_{i,py}(mp)\equiv(m+1)^{-365}a_{i,y}(m)\pmod p.
+\end{equation}
+We must also control the poles not indexed by a multiple of $p$.
+Write $h=x+py$ with $1\leq x\leq p-1$ and substitute $t=pz-4x$.
+The extra numerator factor is now a unit. Each of the four numerator
+blocks has $18m$ divisible factors, while the denominator has $m$
+divisible factors, each with multiplicity $365$. The total valuation is
+\[
+ 293m+72m-365m=0.
+\]
+After removing these powers of $p$, the remaining poles $-4y$ are
+distinct modulo $p$.
+The same power-series argument, now applied to
+$u^{365}R_{mp}(p(u-4y)-4x)$, shows that
+\begin{equation}\label{eq:other-pole}
+ p^{-i}a_{i,h}(mp)\in\Zp\qquad(p\nmid h).
+\end{equation}
+Both \eqref{eq:selected-pole} and \eqref{eq:other-pole} imply
+$p^{364}a_{i,h}(mp)\in p^i\Zp$; summing over $h$ proves
+\eqref{eq:rho-dilation}.
+
+\subsection{Reducing the constant terms}
+
+Apply these coefficient bounds to the formula \eqref{eq:qb} for
+$q_b(mp)$. If $p>12m$, every
+summation index $j\leq4bmp$ is smaller than $p^2$, so it has valuation
+at most one. After multiplication by $p^{364}$, the terms with $p\nmid h$
+vanish modulo $p$ by \eqref{eq:other-pole}, even when $p\mid j$.
+For $h=py$, terms with $p\nmid j$ vanish by \eqref{eq:selected-pole}.
+Only terms with both $p\mid h$ and $p\mid j$ can remain. Write
+\[
+ h=py,\qquad j=pk,\qquad 1\leq k\leq4by.
+\]
+The coefficients reduce by \eqref{eq:selected-pole}. For odd $p$,
+the weights satisfy $\ch(pk)=\ch(p)\ch(k)$: multiplication by $p$
+preserves the two odd residue classes modulo $4$ if $p\equiv1\pmod4$
+and exchanges them if $p\equiv3\pmod4$; even $k$ has weight zero.
+Taking $\ch(p)$ outside the reduced finite sum gives
+\eqref{eq:q-dilation} and completes the proof of
+Proposition~\ref{prop:dilation}.

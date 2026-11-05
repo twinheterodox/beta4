@@ -1,0 +1,47 @@
+{
+  "reviewed_at_utc": "2026-11-04T11:14:19.051895+00:00",
+  "scope": "Sentence-level revision throughout all seven sections, following the request to improve wording.",
+  "pdf": "output/pdf/finite-even-beta.pdf",
+  "pdf_sha256": "f9dd48b8fa7afd99b93d7cbe44241f8196727ee048591caebca60cb224ad035f",
+  "pages": 13,
+  "source_files_sha256": {
+    "paper/finite-even-beta.tex": "93ba7041e0ce0d3ae5175fc970f24fd18af262d7586ada70b85ea6407ca1c1da",
+    "paper/references.tex": "e639bbd95ea8c1be22f7eec78ca498d5049b3abc2b238a18bdc4141b3d6ae6a6",
+    "paper/sections/arithmetic.tex": "d37ea08e805c20e92b5c6672080b772fa9e8b49597dbca4659a60f11e5cb550f",
+    "paper/sections/certificate.tex": "32ee1a96183aebd56343daf5fef912527e691753e3b9fe50e570dfef297b7f0c",
+    "paper/sections/conclusion.tex": "313a01b0fcda68eb0536daef21981de96d93cdbe5ea3838261279bdb627013af",
+    "paper/sections/decay.tex": "55414eb4fb76a84bb09c2120aec971b02431166e4c6e8caba797765a3425b8c7",
+    "paper/sections/dilation.tex": "ccb39e0485691165b61751344f08351e7831e8b5624049123fcad6c5dc7cc886",
+    "paper/sections/forms.tex": "64115f077b20466bdf5fc73650eb54b7335dd8f94c792e2f75c65cf4006b5f85",
+    "paper/sections/introduction.tex": "60343f82962c8a7124f009b9834e48abea2ebe5376942671f7e4a7b38b396cb7"
+  },
+  "previous_review": "review/numbering-review.json",
+  "previous_pdf_sha256": "99c9bb13767ad0e67381354769142f5fdb8d2155e3fc4c47d602e0fd14ba8a02",
+  "changes": [
+    "Rewrote the introduction as a direct account of the contradiction and removed repeated prospective narration.",
+    "Replaced vague descriptions of coefficient patterns, normalization and reduction with the specific objects and operations involved.",
+    "Defined integrality at a prime and coefficient-extraction notation where first used. Clarified the progression argument and named the denominator multiplier in the grouped-integrality explanation.",
+    "Tightened the decay argument while preserving the explicit gamma products, uniform estimate and integral tail bound.",
+    "Stated the common scaling and rationality hypothesis explicitly in the dilation overview; simplified the headings and transitions between the rational function, its coefficients and the constant terms.",
+    "Clarified which regular function is expanded in the seed calculation, explained the valid modular divisions, and added a reference to Subsection 6.2.",
+    "Rephrased the selection of the two indices and the final reduction argument to avoid ambiguous references.",
+    "Removed unused parameter names L, s and S from the construction discussion. Kept all 13 subsections numbered and the first lemma statement together on one page."
+  ],
+  "preservation_check": {
+    "displayed_equations": "All preserved, apart from terminal punctuation.",
+    "formal_statements": "All theorem, lemma and proposition statements preserved verbatim.",
+    "code_and_data": "Executable manuscript blocks, checker scripts, certificate outputs, source ledger and historical review records unchanged.",
+    "front_matter": "Title, abstract and bibliography unchanged.",
+    "scope": "Prose and headings revised across all seven sections; removed unused names L, s and S in the construction discussion; added a cross-reference to the seed derivation."
+  },
+  "mathematical_reading": "Reviewed the edited prose against the previous proof, including the rationality assumption, fixed cancellation weights, denominator scaling, prime exclusions and local coefficient extraction. This was an exposition review, not a new independent audit.",
+  "build_check": {
+    "unresolved_references": false,
+    "overfull_boxes": false,
+    "underfull_warnings": []
+  },
+  "visual_review": "Rendered and visually read all 13 final pages. Checked paragraph flow, numbered headings, displayed equations, complete lemma and example blocks, executable code and bibliography. No clipping or overlapping content found.",
+  "computational_scope": "The mathematical checker scripts and their recorded outputs are unchanged. No mathematical tests were rerun for this prose revision; source comparisons confirmed preservation of all displayed equations, formal statements and executable blocks.",
+  "independent_review_status": "The historical independent audit retains its exact plain-text scope. No new independent proof audit or formal verification is claimed.",
+  "publication_status": "Local edit only; no commit, push or upload."
+}

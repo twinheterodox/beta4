@@ -1,0 +1,75 @@
+EXPOSITION REVIEW FOR HUMAN READERS
+4 November 2026
+
+Applied mathematical-exposition.txt before drafting and during the
+reading-order review. Intended readers have standard undergraduate
+algebra and analysis, including residues, elementary prime valuations
+and asymptotic estimates. The arithmetic arguments are supplied in full.
+
+1. Abstract and opening.
+   The abstract states the bound, its range and the finite refinements.
+   It contains no proof sketch, sequence of construction steps or
+   intermediate technical formulas. The introduction defines beta and
+   I(s) before the main theorem. The first examples explain how the
+   floor gives counts two and three; the sharper table records genuinely
+   stronger finite information. There is no deletion corollary.
+
+2. The purpose of the sequences.
+   The introduction states the contradiction assumption first. A fixed
+   integer combination of the B forms at every index produces one
+   sequence of rational numbers; clearing denominators produces integers
+   tending to zero. The need for infinitely many nonzero terms is explicit.
+   The three-form example shows how the same weights cancel the same
+   two coefficients at every index.
+
+3. Choices in the rational-function construction.
+   The text explains the spacing four through the alternating signs on
+   odd integers. It derives the zero-block length 2r+4 from reflection
+   about the midpoint of the pole interval. The role of the numerator
+   normalization is stated before its formula and proved in the
+   progression lemma. The alternating character is introduced only when
+   it shortens the actual sums.
+
+4. Why the polynomial multipliers have this form.
+   The target seed vector appears before its construction. A two-grid
+   example gives the kernels, their common denominator and their integer
+   numerators. The text explains that these numerators create products
+   against a shared positive weight. It then explains the negative square
+   in h_b(-(t+2)^2), the odd factor t+2 and the homogeneous lift to all n.
+   The unique-pole argument gives a short reason for independence.
+
+5. Arithmetic and decay.
+   The progression lemma explains what is lost when a Taylor coefficient
+   selects k variable terms. The constant-term proof isolates the only
+   pole group that could have an exceptional denominator. A concrete
+   identity at t=-7/3 shows why the group, rather than each term, is
+   integral at 5. The decay section separates the bounded range from
+   the infinite tail and explains why fixed polynomial degree leaves
+   the exponential rate unchanged.
+
+6. Prime dilation.
+   The purpose is stated before the valuation calculation: the constant
+   must survive while the beta coefficients vanish. The example modulo
+   5 explains the exchange of the one-third and two-thirds classes.
+   The local power-series statement precedes coefficient extraction.
+   The change from exponent s to s-E is retained and explained.
+
+7. From a count parameter to an endpoint bound.
+   The finite family is introduced as an intermediate theorem. The
+   inversion section explains where the square root comes from and
+   why the logarithm of B^2 supplies the factor 2 in the constant.
+   Right endpoints of the constant-count intervals are tested because
+   the comparison function increases. The rounded test uses k^2,
+   whereas the unrounded test uses (k-1)^2; the reason is explicit.
+
+8. Presentation and scope.
+   All subsections are numbered. There is no manual title line break.
+   The title font was adjusted to keep the full descriptive title on
+   one line. Appendix prose was shortened to keep the references
+   together, without removing any proof step or finite comparison.
+   The original three-through-364 manuscript remains separate and
+   unchanged. The new manuscript does not inherit its independent audit.
+
+This is a developing-assistant exposition review, separate from the
+mathematical self-review and exact computational checks. It is not an
+independent audit or a formal verification.

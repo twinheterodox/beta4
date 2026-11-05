@@ -1,0 +1,196 @@
+\section{Prescribing the constant vector by a Gram matrix}\label{sec:gram}
+
+\subsection{The seed constants as residues}
+
+At $n=1$ the only poles are $0$ and $-4$. This makes it possible
+to express the rational constants by integrals along the vertical
+line halfway between the poles. We first identify the rational
+kernels that occur in these integrals.
+
+To write alternating sums over odd integers compactly, let $\ch(k)$
+be $0$ for even $k$, $1$ for $k\equiv1\pmod4$, and $-1$ for
+$k\equiv3\pmod4$. Thus $\ch$ records the signs in the beta series.
+It is periodic with period $4$ and multiplicative.
+
+Let $T$ be a proper rational function with poles at $0,-4$, invariant
+under $t\mapsto-4-t$, with partial fractions
+\[
+ T(t)=\sum_{i=1}^s\frac{a_i}{t^i}
+         +\sum_{i=1}^s\frac{(-1)^ia_i}{(t+4)^i}.
+\]
+In $\sum_{k\ge1}\ch(k)T(k/b)$, shifting the second pole's sum
+by $4b$ leaves the signs unchanged and removes its first $4b$
+terms. The rational constant is therefore
+\[
+ q_b=-\sum_{i=1}^s(-1)^ia_ib^i
+                           \sum_{k=1}^{4b}\frac{\ch(k)}{k^i}.
+\]
+Introduce the kernel
+\[
+ H_b(t)=\sum_{\substack{1\le k<4b\\k\text{ odd}}}
+                         \frac{\ch(k)}{t+k/b}.
+\]
+The coefficient of $t^{i-1}$ in $(t+k/b)^{-1}$ is
+$(-1)^{i-1}(b/k)^i$, so
+\begin{equation}\label{eq:residue-constant}
+ q_b=\Res_{t=0}T(t)H_b(t).
+\end{equation}
+
+On the midpoint line $t=-2+iy$, pair the terms indexed by $k$
+and $4b-k$. Their distances from the midpoint have opposite signs,
+as do their character weights. The result is a real rational
+function of $y^2$:
+\begin{equation}\label{eq:gb}
+ H_b(-2+iy)=g_b(y^2),\qquad
+ g_b(x)=-2\sum_{j=1}^b(-1)^{b-j}
+                  \frac{(2j-1)/b}{x+((2j-1)/b)^2}.
+\end{equation}
+We will give these kernels a common positive denominator and use
+their numerators as multiplier polynomials. This makes the constant
+matrix an integral of products with one common weight.
+
+\begin{example}\label{ex:two-kernels}
+For $B=2$,
+\[
+ g_1(x)=-\frac2{x+1},\qquad
+ g_2(x)=\frac1{x+1/4}-\frac3{x+9/4}.
+\]
+With $Q(x)=(x+1)(4x+1)(4x+9)$, write $g_b=h_b/Q$. Then
+\[
+ h_1(x)=-2(4x+1)(4x+9),\qquad
+ h_2(x)=8(x+1)(3-4x).
+\]
+The four entries of the constant matrix will be integrals of
+$h_1^2,h_1h_2,h_2h_1,h_2^2$ against the same positive weight.
+This is the reason for choosing the kernel numerators as multipliers.
+\end{example}
+
+\subsection{Independent integer polynomials}
+
+Let $\mathcal A$ be the set of distinct positive pole distances:
+\[
+ \mathcal A=\left\{\frac{2j-1}{b}:1\le b\le B,\ 1\le j\le b\right\},
+ \qquad N=|\mathcal A|,\qquad J=N-1.
+\]
+For $a=v/d\in\mathcal A$, always use the reduced numerator and
+denominator. Define
+\begin{equation}\label{eq:Q-h}
+ Q(x)=\prod_{v/d\in\mathcal A}(d^2x+v^2),\qquad
+ h_b(x)=Q(x)g_b(x).
+\end{equation}
+Then $Q(x)>0$ for $x\ge0$, and $h_b\in\Z[x]$ has degree at most
+$J$. Indeed, each summand of $g_b$ is of the form
+$\pm2vd/(d^2x+v^2)$, whose denominator divides $Q$.
+
+\begin{lemma}\label{lem:kernel-independence}
+The polynomials $h_1,\ldots,h_B$ are linearly independent over $\R$.
+Moreover,
+\begin{equation}\label{eq:N-bound}
+ N=D+\sum_{\substack{d\le B\\d\text{ even}}}\varphi(d)\le2D.
+\end{equation}
+\end{lemma}
+\begin{proof}
+In a nonzero relation among the $g_b$, choose the largest index $b$
+with nonzero coefficient. The function $g_b$ has a pole at
+$x=-1/b^2$. Every earlier $g_a$ is regular there, since all its
+positive pole distances are at least $1/a>1/b$. This is impossible.
+Multiplication by $Q$ preserves independence.
+
+The elements of $\mathcal A$ are exactly the reduced fractions
+$v/d$ with $d\le B$, $v$ odd and $0<v<2d$. There are $\varphi(d)$
+such numerators for odd $d$, and $2\varphi(d)$ for even $d$.
+Summing gives \eqref{eq:N-bound}.
+\end{proof}
+
+At the seed, $-(t+2)^2=y^2$ on the midpoint line. The multiplier
+$(t+2)h_b(-(t+2)^2)$ therefore produces the desired factor $h_b(y^2)$
+there, while its odd factor $t+2$ makes the product with $R_1$
+reflection invariant. To lift this choice to every odd index, we
+make it homogeneous in $n,t$:
+\begin{align}
+ W_{n,b}(t)
+ &=n^{2J}(t+2n)h_b\!\left(-\frac{(t+2n)^2}{n^2}\right)\notag\\
+ &=\sum_{k=0}^J h_{b,k}(-1)^k n^{2J-2k}(t+2n)^{2k+1},
+ \qquad h_b(x)=\sum_{k=0}^J h_{b,k}x^k.\label{eq:W}
+\end{align}
+The expanded expression shows that the coefficients are integers.
+Each term has the same total degree in $n,t$:
+\begin{equation}\label{eq:E}
+ E=2J+1=2N-1\le4D-1<s.
+\end{equation}
+The last inequality follows from $S>DL$ and $L\ge10$.
+These polynomials are odd about $-2n$ and satisfy the useful scaling
+identity
+\begin{equation}\label{eq:homogeneity}
+ W_{mp,b}(pt)=p^E W_{m,b}(t).
+\end{equation}
+The degree bound ensures decay at infinity; the scaling identity
+will control prime dilation.
+
+\subsection{The common positive weight}
+
+Let $M_{b,j}$ be the $b$th rational constant associated with
+$W_{1,j}R_1$. We now prove that the matrix $M=(M_{b,j})$ is
+nonsingular.
+
+Write $z=t+2$. The monic numerator $P_1$ has simple real roots and
+is odd in $z$, so for a set $\Lambda$ of $DL/2$ positive rational
+numbers,
+\[
+ P_1(t)=z\prod_{\alpha\in\Lambda}(z^2-\alpha^2).
+\]
+On the line $t=-2+iy$, the denominator $t^S(t+4)^S$ is
+$-(y^2+4)^S$, since $S$ is odd. Substitution gives
+\begin{equation}\label{eq:midpoint-value}
+ W_{1,j}(-2+iy)R_1(-2+iy)
+ =(-1)^{DL/2}C_1
+  \frac{y^2\prod_{\alpha\in\Lambda}(y^2+\alpha^2)}{(y^2+4)^S}
+  h_j(y^2).
+\end{equation}
+
+Every pole of $H_b$ is a point $-k/b\in(-4,0)$ where $P_1$ vanishes.
+These poles cancel in $W_{1,j}R_1H_b$, leaving only $0$ and $-4$.
+Close the upward midpoint line by a large semicircle to its right.
+The contour encloses $0$ clockwise, so the residue theorem and
+\eqref{eq:residue-constant} give
+\begin{equation}\label{eq:Gram}
+ M_{b,j}=\frac{\sigma C_1}{2\pi}
+    \int_{-\infty}^{\infty}\omega(y)h_b(y^2)h_j(y^2)\,dy,
+ \qquad \sigma=(-1)^{DL/2+1},
+\end{equation}
+where
+\[
+ \omega(y)=\frac{y^2\prod_{\alpha\in\Lambda}(y^2+\alpha^2)}
+                  {(y^2+4)^S Q(y^2)}.
+\]
+For completeness, $H_b(t)=O(t^{-2})$ because its character weights
+sum to zero. The contour integrand therefore has degree at most
+$DL+2N-2S-2<-2$ at infinity. The arc integral vanishes, and the
+integral in \eqref{eq:Gram} converges absolutely.
+
+The weight $\omega(y)$ is positive for every real $y\ne0$.
+For a nonzero real vector $v$, Lemma~\ref{lem:kernel-independence}
+shows that $\sum_bv_bh_b$ is a nonzero polynomial. Consequently
+\[
+ \sigma v^{\mathsf T}Mv
+ =\frac{C_1}{2\pi}\int_{-\infty}^{\infty}
+      \omega(y)\left(\sum_bv_bh_b(y^2)\right)^2\,dy>0.
+\]
+Thus $\sigma M$ is positive definite and $M$ is nonsingular.
+
+The entries of $M$ are rational, being constants of rational partial
+fractions. We can therefore choose fixed integers $c_1,\ldots,c_B$
+such that
+\[
+ M(c_1,\ldots,c_B)^{\mathsf T}=\eta e_B,\qquad \eta\in\Q\setminus\{0\}.
+\]
+For all positive odd $n$, set
+\begin{equation}\label{eq:T}
+ W_n=\sum_{j=1}^B c_jW_{n,j},\qquad T_n=W_nR_n.
+\end{equation}
+This gives the prescribed seed vector \eqref{eq:target}. The
+coefficients $c_j$ choose one multiplier $W_n$ shared by all $B$
+forms. The weights introduced in Section~\ref{sec:contradiction}
+will combine those forms to cancel specified beta terms.
+The $c_j$ remain fixed as $n$ varies. Their size can affect
+fixed constants in estimates, but not the exponential decay rate.

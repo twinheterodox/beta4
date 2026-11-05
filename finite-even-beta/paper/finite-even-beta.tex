@@ -1,0 +1,44 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype,booktabs,array,xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\hypersetup{pdftitle={At least three of beta(2), beta(4), ..., beta(364) are irrational.},
+ pdfauthor={twinheterodox},pdfcreator={LaTeX},
+ pdfsubject={At least three of beta(2), beta(4), ..., beta(364) are irrational}}
+\setlength{\emergencystretch}{1.5em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Fp}{\mathbb F_p}
+\newcommand{\Zp}{\Z_{(p)}}
+\newcommand{\ep}{\mathrm e}
+\DeclareMathOperator{\lcm}{lcm}
+\newcommand{\ch}{\chi_4}
+\title{At least three of $\beta(2),\beta(4),\ldots,\beta(364)$ are irrational.}
+\author{twinheterodox\\[2pt]\normalsize Prepared with Codex}
+\date{3 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove that at least three of the numbers
+$\beta(2),\beta(4),\ldots,\beta(364)$ are irrational, where $\beta$ is the
+Dirichlet beta function.
+\end{abstract}
+\input{paper/sections/introduction}
+\input{paper/sections/forms}
+\input{paper/sections/arithmetic}
+\input{paper/sections/decay}
+\input{paper/sections/dilation}
+\input{paper/sections/certificate}
+\input{paper/sections/conclusion}
+\appendix
+\input{paper/sections/asymptotic-comparisons}
+\input{paper/references}
+\end{document}

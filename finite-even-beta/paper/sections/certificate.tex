@@ -1,0 +1,138 @@
+\section{The finite certificate at \texorpdfstring{$m=2$}{m=2}}
+\label{sec:certificate}
+
+Fix even indices $2\leq i<j\leq364$, and write
+\[
+ v_k=(1,2^k,3^k)^{\mathsf T},\qquad
+ q(2)=(q_1(2),q_2(2),q_3(2))^{\mathsf T}.
+\]
+The integer vector $w=v_i\times v_j$ is perpendicular to both columns,
+so the combination $\sum_{b=1}^3w_br_{n,b}$ cancels $\beta(i)$ and
+$\beta(j)$ for every $n$. Its constant term at $n=2$ is
+\[
+ q_w(2)=w\cdot q(2)=\det\bigl(q(2),v_i,v_j\bigr).
+\]
+The determinant is the constant left after canceling the two beta
+terms. If it is nonzero, Proposition~\ref{prop:dilation} proves
+nonvanishing at $n=2p$ for all sufficiently large $p$ under the
+rationality assumption. We therefore need the following finite statement.
+
+\begin{lemma}[Exact seed certificate]\label{lem:seed}
+For every pair of distinct even indices $2\leq i<j\leq364$,
+\begin{equation}\label{eq:determinant}
+ \det\begin{pmatrix}
+ q_1(2)&1&1\\q_2(2)&2^i&2^j\\q_3(2)&3^i&3^j
+ \end{pmatrix}\ne0.
+\end{equation}
+\end{lemma}
+
+We prove this by reduction modulo the prime $\ell=1\,000\,003$.
+A nonzero residue proves that the rational determinant is nonzero,
+provided its entries have denominators prime to $\ell$. We first give
+the three seed residues and test all pairs. Their derivation follows in
+Subsection~\ref{subsec:seed-residues}.
+
+\subsection{The determinant test}
+
+The common normalization $C_2=2^{1825}3^{473}$ is nonzero modulo $\ell$,
+so we may compute with
+\[
+ U_2(t)=\frac{P_2(t)}{t^{365}(t+4)^{365}(t+8)^{365}}.
+\]
+Let $\widetilde a_{i,h}$ be the partial-fraction coefficients of $U_2$
+and $\widetilde q_b$ the corresponding constant terms, defined as in
+\eqref{eq:partials} and \eqref{eq:qb}. Then $q_b(2)=C_2\widetilde q_b$.
+The denominators of $\widetilde a_{i,h}$ have only the prime factors
+$2$ and $3$; the finite sums add only primes at most $23$.
+Reduction modulo $\ell$ is therefore legitimate.
+
+The calculation in Subsection~\ref{subsec:seed-residues} gives
+\begin{equation}\label{eq:seed-residues}
+ (\widetilde q_1,\widetilde q_2,\widetilde q_3)
+        \equiv(614660,346158,44336)\pmod\ell.
+\end{equation}
+For $Q=(614660,346158,44336)$, compute, modulo $\ell$,
+\begin{align*}
+ D_{i,j}={}&Q_1(2^i3^j-2^j3^i)
+          -Q_2(3^j-3^i)+Q_3(2^j-2^i),\\
+ &\hspace{32mm}2\leq i<j\leq364,\quad i,j\text{ even}.
+\end{align*}
+\begin{samepage}
+The following loop checks all pairs using the residues
+in \eqref{eq:seed-residues}:
+\begin{quote}\small
+\begin{verbatim}
+ell = 1000003
+Q1, Q2, Q3 = 614660, 346158, 44336
+count = 0
+for i in range(2, 365, 2):
+    for j in range(i + 2, 365, 2):
+        det = (Q1 * (pow(2,i,ell)*pow(3,j,ell)
+                     - pow(2,j,ell)*pow(3,i,ell))
+               - Q2 * (pow(3,j,ell)-pow(3,i,ell))
+               + Q3 * (pow(2,j,ell)-pow(2,i,ell))) % ell
+        assert det != 0
+        count += 1
+assert count == 16471
+\end{verbatim}
+\end{quote}
+\end{samepage}
+All $\binom{182}{2}=16471$ residues are nonzero. Since $C_2$ is also
+nonzero modulo $\ell$, this proves \eqref{eq:determinant} over $\Q$.
+The weights $(15,-6,1)$ from the introduction give
+\begin{equation}\label{eq:one-pair}
+ 15\cdot614660-6\cdot346158+44336\equiv187267\not\equiv0\pmod\ell.
+\end{equation}
+
+\subsection{Recovering the seed residues}\label{subsec:seed-residues}
+
+To obtain \eqref{eq:seed-residues}, we compute the partial fractions of
+$U_2$. At a pole $-4h$, substitute $t=u-4h$ and multiply by $u^{364}$.
+The resulting function is regular at $u=0$. Its first $364$ Taylor
+coefficients give the principal part of $U_2$, in reverse order.
+
+At the pole $-4h$, where $h=0,1,2$, form the multiset
+\[
+ \mathcal C_h=\{-4h-14\}\mathbin{\cup}
+ \{\!-4h-14+j+\theta:0\leq j<36,\ \theta\in\Theta\}.
+\]
+It has exactly one zero. Delete that zero to obtain $\mathcal C_h^*$,
+and put $\mathcal D_h=\{4(k-h):0\leq k\leq2,\ k\ne h\}$.
+Thus
+\[
+ B_h(u):=u^{364}U_2(u-4h)
+       =\frac{\prod_{c\in\mathcal C_h^*}(u+c)}
+                    {\prod_{d\in\mathcal D_h}(u+d)^{365}}
+       =\sum_{j\geq0}\gamma_{h,j}u^j.
+\]
+Its logarithmic derivative gives a convenient exact recurrence:
+\begin{align}
+ \gamma_{h,0}&=\frac{\prod_{c\in\mathcal C_h^*}c}
+                         {\prod_{d\in\mathcal D_h}d^{365}},\notag\\
+ T_{h,k}&=\sum_{c\in\mathcal C_h^*}c^{-k}
+                      -365\sum_{d\in\mathcal D_h}d^{-k},\notag\\
+ \gamma_{h,j}&=\frac1j\sum_{k=1}^{j}(-1)^{k-1}T_{h,k}\gamma_{h,j-k}
+                 \quad(1\leq j\leq363),\label{eq:seed-recurrence}\\
+ \widetilde a_{i,h}&=\gamma_{h,364-i}\quad(1\leq i\leq364).
+ \notag
+\end{align}
+All divisions are valid modulo $\ell$. Each nonzero
+$c\in\mathcal C_h^*$ and $d\in\mathcal D_h$ has numerator and denominator
+of absolute value less than $\ell$, and each recurrence index $j$ is
+at most $363$.
+
+Substitution in \eqref{eq:qb} gives the residues in
+\eqref{eq:seed-residues}. The supplied implementations in
+\texttt{checks/seed.py} and \texttt{checks/verify.py} use only Python's
+standard library. Primality of $\ell$ is checked by trial division up to
+its integer square root.
+
+The checker computes all $1092$ partial-fraction coefficients both by
+\eqref{eq:seed-recurrence} and by multiplying truncated power series.
+The results agree in every entry. It also checks rational-function
+reconstruction at three points and the vanishing of all odd $\rho_i$
+modulo $\ell$. A separate calculation over $\Q$ verifies the
+divisibility assertions of Proposition~\ref{prop:denominators} at
+$n=2$ for all $1092$ coefficients and all three constant terms, and
+recovers \eqref{eq:seed-residues}.
+

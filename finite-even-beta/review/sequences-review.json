@@ -1,0 +1,31 @@
+{
+  "reviewed_at_utc": "2026-11-04T13:52:46.275239+00:00",
+  "scope": "Clarified that the introductory contradiction constructs sequences of linear forms.",
+  "pdf": "output/pdf/finite-even-beta.pdf",
+  "pdf_sha256": "8ba138bcdda030a40e11b47e7f6f89e99e621f5758d51e6cc2d38d5a4add79c7",
+  "pages": 16,
+  "source_files_sha256": {
+    "paper/finite-even-beta.tex": "96369b901c17d2bdebd184b6ca2dcaa0e793996a087386e7328c7fccd7db24f5",
+    "paper/references.tex": "4af9ea621845f9b5ad751b148605926df497a457fc562d87c554b6b496d76d9c",
+    "paper/sections/arithmetic.tex": "d37ea08e805c20e92b5c6672080b772fa9e8b49597dbca4659a60f11e5cb550f",
+    "paper/sections/asymptotic-comparisons.tex": "50374f82cf06b998ece04d358011ef12cda3908d9fe9ab10aef45f12773ea8bd",
+    "paper/sections/certificate.tex": "32ee1a96183aebd56343daf5fef912527e691753e3b9fe50e570dfef297b7f0c",
+    "paper/sections/conclusion.tex": "313a01b0fcda68eb0536daef21981de96d93cdbe5ea3838261279bdb627013af",
+    "paper/sections/decay.tex": "55414eb4fb76a84bb09c2120aec971b02431166e4c6e8caba797765a3425b8c7",
+    "paper/sections/dilation.tex": "ccb39e0485691165b61751344f08351e7831e8b5624049123fcad6c5dc7cc886",
+    "paper/sections/forms.tex": "64115f077b20466bdf5fc73650eb54b7335dd8f94c792e2f75c65cf4006b5f85",
+    "paper/sections/introduction.tex": "d386152da9fba184c8eead32734598ec22aab84d8f793b085f80973ee9b2ff34"
+  },
+  "previous_review": "review/asymptotic-comparison-appendix-review.json",
+  "previous_pdf_sha256": "ae77b367a64aafc6bcacc8ff9df3a4839a6e9b9fb49a28bdb8dcebcb0f4e0a85",
+  "change": "Subsection 1.2 now introduces three sequences of linear forms, fixed integer weights canceling the possible irrational terms at every index, and the resulting sequence of integers tending to zero with infinitely many nonzero terms. The next paragraph identifies positive even n as the sequence index.",
+  "preservation_check": "Only these two introductory passages changed in the manuscript. The title, abstract, theorem, proof sections, appendix, bibliography, exact checkers, results, source ledger and prior review records are unchanged.",
+  "build_check": {
+    "unresolved_references": false,
+    "overfull_boxes": false,
+    "underfull_warnings": []
+  },
+  "visual_review": "Rendered all 16 pages. Inspected changed pages 1-2 and page 3. Pages 3-16 are pixel-identical to the previously inspected version. No clipping or overlap; opening contradiction paragraph remains together.",
+  "computational_scope": "No mathematical checks rerun for this wording change. No new independent audit or formal verification.",
+  "publication_status": "Local edit only; no commit, push or upload."
+}

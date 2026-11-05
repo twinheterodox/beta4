@@ -1,0 +1,108 @@
+{
+  "reviewed_at_utc": "2026-11-04T02:24:49.996454+00:00",
+  "status": "Three authorized exposition revisions completed and checked",
+  "reviewer": "Preparing Codex assistant; not an independent reviewer",
+  "pdf": "output/pdf/finite-even-beta.pdf",
+  "pdf_sha256": "2e9bd250574d696db25c3d010370a9ada88df80e3b3ffea3f90e278a70824c9d",
+  "pages": 14,
+  "source_files_sha256": {
+    "paper/finite-even-beta.tex": "7bb9b98ecc8e6e0dd06ddce2b7a7502b761ea3abf0635dfd43f8b5950874cd3f",
+    "paper/references.tex": "5592f38c919a376c68333a9494fd8aa11f828c3036e2daeff19ac4ca486f0277",
+    "paper/sections/arithmetic.tex": "2d73e580765bab68cde13742f690980614d38e710ba4628c12e55dffc0db5f22",
+    "paper/sections/certificate.tex": "4a4a5c54e9fdfa8febce05e2d6e5f2c1e13c44872ef97c84d72455fd046ff77d",
+    "paper/sections/conclusion.tex": "a132915195ba986969272af89b3257b1066c87be1b57e804521137dbfa8827bc",
+    "paper/sections/decay.tex": "71c3355da4f5de5073d1e86d9000a18bca646486c22811fc70c435e7b110a40b",
+    "paper/sections/dilation.tex": "5d06ffff1765b9c16a4662069be11bcf66e553bb6c93cd0f30ae88b905575bd2",
+    "paper/sections/forms.tex": "2ee86cb3adf7b38ddf617e0a3a95cf30d830ca85335eb40d110f56e77c04de19",
+    "paper/sections/introduction.tex": "04a96bff418837fb113d6709cacef2e97c9901a233b337b36b4d0c7768e96611"
+  },
+  "previous_pdf_sha256": "abfc76ef7331856f1858015d58e0910de9840419b381da74293c2c50d2627346",
+  "previous_review": "review/exposition-review.json",
+  "source_proof_sha256": "f9aaa57ee35e5377f662a9eea3ecc9de6f1da7c173c811fca89ea527dc61e6a7",
+  "audited_plain_text_sha256": "56fa7e55a13da99d1d47a0475d5f227d2ea257c358b5fdd369b3156cc709f8f0",
+  "changes": [
+    {
+      "section": "4",
+      "change": "Define Phi(x) as the limit of n^(-1) log R_n(n(7+x)) along even n for fixed x>0. Explain its role in bounding the positive tail, show the numerator and denominator gamma-product identities, and then derive the existing profile by Stirling. Identify x=0 as a continuous extension of the profile."
+    },
+    {
+      "section": "3",
+      "change": "Explain the unique possible exceptional pole group before the valuation calculation. Introduce the denominator bases x_k, prove that at most one can exceed the prime-power allowance, and use the numerator-zero identity to prove integrality in the two cases."
+    },
+    {
+      "section": "1",
+      "change": "Replace the ambiguous shorter-list comparison by a list omitting beta(2)."
+    }
+  ],
+  "exposition_assessment": {
+    "before_the_profile": "The reader knows that t measures distance past the last zero, that x=t/n is held fixed, and what the exponential rate Phi measures.",
+    "before_maximization": "The role of the maximum and the later need to control the whole infinite tail are explicit.",
+    "before_valuation_algebra": "The reader knows why only one pole group can be exceptional and how a zero relation transfers integrality to it.",
+    "scope": "Targeted authoring review against the human-reading principles; no independent reader assessment is claimed."
+  },
+  "added_argument_checks": {
+    "status": "Passed",
+    "symbolic_review": "The numerator and denominator gamma identities follow from the gamma recurrence with lengths 18n and n+1. The denominator scale is 4^(n+1), and its upper argument is (11n+t)/4+1. The pre-existing profile formula is unchanged.",
+    "exact_group_uniqueness_checks": 21000,
+    "group_scope": "All relevant odd finite-sum indices for n=2,4,6,8 and b=1,2,3, at all primes below 101. This supports the general difference-and-valuation proof; it does not replace it.",
+    "exact_denominator_scaling_cases": 20,
+    "numerical_gamma_product_checks": 100,
+    "maximum_absolute_log_error": 1.1368683772161603e-13,
+    "numeric_scope": "Floating-point diagnostics of the displayed gamma arguments; not an exact certificate.",
+    "n_log_n_coefficient_cancellation": "293+72-365=0",
+    "linear_stirling_cancellation": "-293-72+365=0",
+    "formal_verification": false
+  },
+  "preservation_checks": {
+    "status": "Passed",
+    "changed_latex_files": [
+      "paper/sections/arithmetic.tex",
+      "paper/sections/decay.tex",
+      "paper/sections/introduction.tex"
+    ],
+    "coefficient_denominator_proof_unchanged": true,
+    "grouped_constant_proof": "Same coefficient bound and numerator-zero identity; reorganized around uniqueness of an exceptional denominator base.",
+    "displayed_profile_formula_unchanged": true,
+    "maximization_uniformity_tail_and_exact_decay_comparisons_unchanged": true,
+    "all_certificate_scripts_and_results_unchanged": true,
+    "prior_reviews_and_source_ledger_preserved": true,
+    "theorem_and_irrationality_contradiction_unchanged": true
+  },
+  "certificate_status": {
+    "full_certificate_rerun_this_revision": false,
+    "reason": "The finite construction, algorithms, data and certificate statements are unchanged. Existing passing exact-certificate outputs were checked for byte-for-byte preservation; the rewritten explanation and added identities received targeted checks.",
+    "result_files_sha256": {
+      "checks/verification.json": "5cbae90592266b3f0e5f31f06b9f189d57a703d08a7d74482129db60d35a2373",
+      "checks/comparison.json": "d6c074fecf62cb3b1032ef0d15d68694c08f24bb363ce6ef387c9164076dbded"
+    }
+  },
+  "build_check": {
+    "pages": 14,
+    "unresolved_references": false,
+    "overfull_boxes": false,
+    "underfull_warnings": []
+  },
+  "visual_review": {
+    "method": "Rendered all fourteen pages with Poppler at maximum dimension 1400 pixels. Inspected changed pages 1 and 5-14 visually; pages 2-4 were verified byte-for-byte identical to the previously inspected rendering.",
+    "pages_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "result": "No clipping, overlap, broken formulas, split code blocks or stranded headings found in the final rendering."
+  },
+  "independent_review_status": "The original independent audit retains its recorded plain-text scope. This typeset revision has not received a new independent audit.",
+  "formal_verification": false,
+  "publication_status": "Local revision only; no commit, push, upload or contact."
+}

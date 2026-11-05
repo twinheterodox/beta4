@@ -1,0 +1,56 @@
+{
+  "reviewed_at_utc": "2026-11-04T03:24:57.760514+00:00",
+  "scope": "Literature comparison and citation update, plus removal of optimality disclaimers. The main theorem and proof are unchanged.",
+  "pdf": "output/pdf/finite-even-beta.pdf",
+  "pdf_sha256": "84dd86a0f039f1a72f8476181a4982ae11dec765ea4d5a5e34825bda098ba2aa",
+  "pages": 13,
+  "source_files_sha256": {
+    "paper/finite-even-beta.tex": "93ba7041e0ce0d3ae5175fc970f24fd18af262d7586ada70b85ea6407ca1c1da",
+    "paper/references.tex": "e639bbd95ea8c1be22f7eec78ca498d5049b3abc2b238a18bdc4141b3d6ae6a6",
+    "paper/sections/arithmetic.tex": "2d73e580765bab68cde13742f690980614d38e710ba4628c12e55dffc0db5f22",
+    "paper/sections/certificate.tex": "0c26d515c460f7426c24077aa2c911bffeac3843dccf076c174aa642647a0f4d",
+    "paper/sections/conclusion.tex": "f94286b7ce9f88666fdcc490f7d1de015946098ef1783a55e9c58c417f93ced6",
+    "paper/sections/decay.tex": "71c3355da4f5de5073d1e86d9000a18bca646486c22811fc70c435e7b110a40b",
+    "paper/sections/dilation.tex": "9aa1615c9c6c01be3707f09c112d3e8d10a2823eb66f2df76a8b0c29622a555e",
+    "paper/sections/forms.tex": "22069d8109e73e3320aba1ca3707ab02d421d7096cd5c6705f7187d2cf55472c",
+    "paper/sections/introduction.tex": "f3ea47010f90a4efa8c1351c020fe2873eff504f9d9c1053fc9b7573324d68b8"
+  },
+  "previous_review": "review/title-review.json",
+  "previous_pdf_sha256": "5a04237c83316dc03c7e2cf71d7f9fabe933c80807781b3bd32ba915143a26bf",
+  "changes": [
+    "Stated the Sorokin and Huttner conclusion explicitly: for sufficiently large odd b and every even a>100b log b, one of beta(b+1),beta(b+3),...,beta(b+a-1) is irrational. Recorded that the effective starting threshold is not numerical in those statements.",
+    "Removed the optimality disclaimers from the introduction and construction discussion.",
+    "Used Krisman without a publication-status label in the prose.",
+    "Added the OpenAI theorem that Catalan's constant beta(2) is irrational, with a pinned reference and source-reading record, after the earlier finite lists beginning at beta(2).",
+    "Kept the cancellation example and its explanation together during repagination."
+  ],
+  "source_statement_checks": [
+    {
+      "citation_key": "S07",
+      "source_url": "https://www.mathnet.ru/php/getFT.phtml?jrnid=mzm&paperid=3742&what=fullt",
+      "pdf_sha256": "a1d4353f0e5e03b0f7dfb550b3fe65fc229ea3e0a3a1719480dbf51bd2987914",
+      "reading_scope_this_revision": "Theorem S on printed p.913 and its concluding proof on p.922; theorem page visually checked."
+    },
+    {
+      "citation_key": "H12",
+      "source_url": "https://doi.org/10.1016/j.indag.2012.03.002",
+      "pdf_sha256": "6c8fd5bca3a3fc3e4cd3db4f393633c1fd428552c35a1913a462e897e0f39377",
+      "reading_scope_this_revision": "Remark 5 on printed pp.545-546, including the parameter conditions across the page break; both pages visually checked."
+    },
+    {
+      "citation_key": "OAI26",
+      "source_url": "https://raw.githubusercontent.com/openai/math/4eaee87548250b2682affda7d05d947c05554bae/preprints/Catalans-constant-is-irrational-September-24-2026/paper.pdf",
+      "pdf_sha256": "4023d0344abceb79dc46a16380dac3a662193f9d4f23e6c340b2162068b04c0e",
+      "reading_scope_this_revision": "Definition G=beta(2), Theorem 1.1 and Section 8 closing proof reread; p.1 visually checked. Prior reading of all 44 pages retained. Official formalization scope and comparator statement inspected; no Lean build performed."
+    }
+  ],
+  "preservation": "All construction-specific identities, mathematical proof arguments, checker scripts, certificate outputs and earlier reviews are preserved. The original and independently audited plain-text proofs are unchanged.",
+  "build_check": {
+    "unresolved_references": false,
+    "overfull_boxes": false,
+    "underfull_warnings": []
+  },
+  "visual_review": "Rendered and visually inspected all 13 pages after the final citation update. Checked the literature statement, complete cancellation example, formulas, code blocks, page transitions and bibliography. No clipped or overlapping content found.",
+  "independent_review_status": "Statement and exposition checks only. Historical independent audits retain their exact scope; no new independent proof audit or formal verification is claimed.",
+  "publication_status": "Local edit only; no commit, push or upload."
+}

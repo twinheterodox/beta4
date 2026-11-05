@@ -1,0 +1,145 @@
+\section{The linear forms and their denominators}\label{sec:arithmetic}
+
+\subsection{Extracting the beta coefficients}
+
+The function $T_n$ in \eqref{eq:T} is reflection invariant and has
+pole order at most $s$ at each of $0,-4,\ldots,-4n$. Its degree
+at infinity is at most $-(S-DL)n-s+E$. Thus it has a partial-fraction
+expansion
+\begin{equation}\label{eq:partials}
+ T_n(t)=\sum_{h=0}^n\sum_{i=1}^s\frac{a_{i,h}(n)}{(t+4h)^i},
+ \qquad \rho_i(n)=\sum_{h=0}^n a_{i,h}(n).
+\end{equation}
+Reflection gives $a_{i,n-h}(n)=(-1)^ia_{i,h}(n)$, so
+$\rho_i(n)=0$ for odd $i$.
+
+For $1\le b\le B$, define the absolutely convergent alternating sum
+\begin{equation}\label{eq:F}
+ F_{n,b}=\sum_{k=0}^{\infty}(-1)^k
+                   T_n\!\left(\frac{2k+1}{b}\right)
+        =\sum_{j\ge1}\ch(j)T_n(j/b).
+\end{equation}
+In the term belonging to the pole $-4h$, replace $j$ by $j+4bh$.
+The character is unchanged, since $4bh$ is a multiple of its period.
+Therefore
+\begin{align}
+ F_{n,b}&=q_b(n)+\sum_{\substack{2\le i\le s\\i\text{ even}}}
+                     b^i\rho_i(n)\beta(i),\label{eq:forms}\\
+ q_b(n)&=-\sum_{h=0}^n\sum_{i=1}^s a_{i,h}(n)b^i
+                       \sum_{j=1}^{4bh}\frac{\ch(j)}{j^i}.
+                       \label{eq:q}
+\end{align}
+For $i=1$, each individual shifted character series converges
+conditionally. There are only finitely many partial-fraction sums,
+so the decomposition remains valid, and its total coefficient at
+$\beta(1)$ vanishes by reflection. At $n=1$, \eqref{eq:q} is precisely
+the seed constant used in Section~\ref{sec:gram}.
+
+\subsection{A progression estimate for numerator blocks}
+
+We need one common multiplier that makes the coefficients and constants
+integral. Put
+\[
+ d_n=\lcm(1,\ldots,n),\qquad \delta_n=4d_n.
+\]
+The key point is that taking a Taylor coefficient of order $k$ loses
+at most $k$ prime-power contributions at each level. The power
+$d_n^k$ restores them.
+
+\begin{lemma}\label{lem:progression}
+For $\theta=a/d\in\Theta$, define
+\[
+ B_\theta(t)=\frac{A_d^n}{(n!)^L}
+                  \prod_{j=0}^{Ln-1}(t-rn+j+a/d).
+\]
+For every integer $v$ and every $k\ge0$,
+\begin{equation}\label{eq:block-integrality}
+ d_n^k[t^k]B_\theta(t+v)\in\Z.
+\end{equation}
+\end{lemma}
+\begin{proof}
+First clear the factor $d$ in every denominator. The factor $d^{Ln}$
+in $A_d^n$ does this exactly. Fix a prime $q$ not dividing $d$.
+In the resulting progression of integer constants, divide the $Ln$
+terms into $L$ blocks of length $n$. At each level $q^e\le n$,
+each block contains at least $\lfloor n/q^e\rfloor$ divisible
+constants. A term in the coefficient of $t^k$ replaces $k$ of these
+constants by variable coefficients. It therefore removes at most
+$k$ contributions at each level. Summing over $e$ gives valuation
+at least
+\[
+ L v_q(n!)-k v_q(d_n).
+\]
+The factors $(n!)^{-L}$ and $d_n^k$ compensate for this bound.
+A term retaining a zero constant is zero and needs no estimate.
+
+If $q\mid d$, the cleared constants are units at $q$. The extra
+factor in $A_d^n$ has valuation
+$n\lceil L/(q-1)\rceil\ge Ln/(q-1)\ge L v_q(n!)$.
+It covers the factorial denominator. These arguments apply to
+each coefficient term, proving \eqref{eq:block-integrality}.
+\end{proof}
+
+\begin{proposition}\label{prop:denominators}
+For every positive odd $n$,
+\begin{equation}\label{eq:denominators}
+ \delta_n^{S-i}a_{i,h}(n)\in\Z,\qquad
+ \delta_n^{S-i}\rho_i(n)\in\Z,\qquad
+ \delta_n^S q_b(n)\in\Z.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Write $B_n(t)=K^nP_n(t)/(n!)^{DL}$. Suppress the index $n$ on
+$a_{i,h}$. Expanding at the pole $-4h$ gives
+\begin{align}
+ a_{i,h}={}&(n+1)^S(-1)^{Sh}\binom nh^S\notag\\[-2pt]
+ &\quad\times[t^{S-i}]
+ \left\{W_n(t-4h)B_n(t-4h)
+       \prod_{k\ne h}\left(1+\frac{t}{4(k-h)}\right)^{-S}\right\}.
+ \label{eq:local-coefficient}
+\end{align}
+To see the normalization, the constants from the other poles have
+product $4^{Sn}(-1)^{Sh}(h!(n-h)!)^S$. Their power of $4$ cancels
+the factor $4^{Sn}$ in $C_n$, leaving the integer prefactor in
+\eqref{eq:local-coefficient}.
+
+Every $4(k-h)$ divides $\delta_n$, and $W_n$ is an integer
+polynomial. Lemma~\ref{lem:progression}, followed by the binomial
+series for the remaining factors, proves the first bound in
+\eqref{eq:denominators}. Summing in $h$ proves the second.
+
+The last bound needs the numerator zeros as well as the coefficient
+bounds. Fix an odd $j\le4bh$ and put $t_0=j/b-4h$. This is a
+numerator zero in $(-4n,0)$ and is not a pole. Hence
+\begin{equation}\label{eq:grouping}
+ \sum_i\frac{a_{i,h}}{(j/b)^i}
+   =-\sum_{k\ne h}\sum_i
+                 \frac{a_{i,k}}{(j/b+4(k-h))^i}.
+\end{equation}
+At a prime $q$, let $v=v_q(\delta_n)$ and write
+$x_k=j/b+4(k-h)$. At most one $x_k$ has valuation greater than
+$v$: otherwise the difference of two such terms,
+$4(k-\ell)$, would also have valuation greater than $v$, although
+it divides $\delta_n$. The coefficient bound gives
+\begin{equation}\label{eq:group-valuation}
+ v_q\!\left(\frac{\delta_n^S a_{i,k}}{x_k^i}\right)
+          \ge i\bigl(v-v_q(x_k)\bigr).
+\end{equation}
+If $v_q(x_h)\le v$, the scaled left side of \eqref{eq:grouping}
+is $q$-integral. Otherwise all groups on the right are $q$-integral,
+so the left side is again $q$-integral. This holds at every prime.
+Summing these integral groups with the signs in \eqref{eq:q}
+proves $\delta_n^S q_b(n)\in\Z$.
+\end{proof}
+
+The grouping is important: the summands with a fixed $i$ need not
+be integral separately. For example, at $n=1$, $b=3$, $h=1$,
+$j=5$, the zero $T_1(-7/3)=0$ gives
+\[
+ \sum_i a_{i,1}(1)\left(\frac35\right)^i
+   =-\sum_i a_{i,0}(1)\left(-\frac37\right)^i.
+\]
+The right side is integral at $5$, by the coefficient bounds, so
+the powers of $5$ in the left-side denominators cancel after the
+terms are grouped. Equation~\eqref{eq:grouping} makes this
+cancellation available at every index and every prime.

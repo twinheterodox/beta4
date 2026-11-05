@@ -1,0 +1,208 @@
+{
+  "status": "Exact finite certificates and consistency checks; not formal verification",
+  "seed": {
+    "m": 2,
+    "s": 364,
+    "r": 7,
+    "prime": 1000003,
+    "q_unnormalized_mod_prime": {
+      "1": 614660,
+      "2": 346158,
+      "3": 44336
+    },
+    "low_weight_elimination_residue": 187267,
+    "crosschecked_all_coefficients": true,
+    "reconstruction_checks": 3,
+    "odd_rho_vanish": true,
+    "elimination_pairs_checked": 16471,
+    "zero_determinant_pairs": []
+  },
+  "decay": {
+    "saddle_upper_bound": "3/5000",
+    "f_at_upper_bound_lt_1": true,
+    "f_at_upper_bound_illustrative_decimal": 0.9807688776795261,
+    "e_upper_bound": "68/25",
+    "rate_fourth_power_upper_lt_81_over_256": true,
+    "rate_fourth_power_upper_illustrative_decimal": 0.27619103483174146,
+    "rate_upper_illustrative_decimal": 0.7249405522567652,
+    "limsup_integer_scaled_form_nth_root_lt": "3/4",
+    "comparison_arithmetic": "Exact rational; decimals are illustrative only."
+  },
+  "dilation": {
+    "zero_class": [
+      {
+        "p": 1009,
+        "p_mod_12": 1,
+        "z": 29,
+        "valuation": -364,
+        "leading_unit": 58,
+        "lambda_times_seed": 58
+      },
+      {
+        "p": 1009,
+        "p_mod_12": 1,
+        "z": 31,
+        "valuation": -364,
+        "leading_unit": 464,
+        "lambda_times_seed": 464
+      },
+      {
+        "p": 1009,
+        "p_mod_12": 1,
+        "z": 37,
+        "valuation": -364,
+        "leading_unit": 414,
+        "lambda_times_seed": 414
+      },
+      {
+        "p": 1013,
+        "p_mod_12": 5,
+        "z": 29,
+        "valuation": -364,
+        "leading_unit": 799,
+        "lambda_times_seed": 799
+      },
+      {
+        "p": 1013,
+        "p_mod_12": 5,
+        "z": 31,
+        "valuation": -364,
+        "leading_unit": 627,
+        "lambda_times_seed": 627
+      },
+      {
+        "p": 1013,
+        "p_mod_12": 5,
+        "z": 37,
+        "valuation": -364,
+        "leading_unit": 764,
+        "lambda_times_seed": 764
+      },
+      {
+        "p": 1019,
+        "p_mod_12": 11,
+        "z": 29,
+        "valuation": -364,
+        "leading_unit": 422,
+        "lambda_times_seed": 422
+      },
+      {
+        "p": 1019,
+        "p_mod_12": 11,
+        "z": 31,
+        "valuation": -364,
+        "leading_unit": 186,
+        "lambda_times_seed": 186
+      },
+      {
+        "p": 1019,
+        "p_mod_12": 11,
+        "z": 37,
+        "valuation": -364,
+        "leading_unit": 384,
+        "lambda_times_seed": 384
+      },
+      {
+        "p": 1039,
+        "p_mod_12": 7,
+        "z": 29,
+        "valuation": -364,
+        "leading_unit": 280,
+        "lambda_times_seed": 280
+      },
+      {
+        "p": 1039,
+        "p_mod_12": 7,
+        "z": 31,
+        "valuation": -364,
+        "leading_unit": 866,
+        "lambda_times_seed": 866
+      },
+      {
+        "p": 1039,
+        "p_mod_12": 7,
+        "z": 37,
+        "valuation": -364,
+        "leading_unit": 678,
+        "lambda_times_seed": 678
+      }
+    ],
+    "other_classes": [
+      {
+        "p": 1009,
+        "x": 1,
+        "valuation": 0
+      },
+      {
+        "p": 1009,
+        "x": 504,
+        "valuation": 0
+      },
+      {
+        "p": 1009,
+        "x": 1008,
+        "valuation": 0
+      },
+      {
+        "p": 1013,
+        "x": 1,
+        "valuation": 0
+      },
+      {
+        "p": 1013,
+        "x": 506,
+        "valuation": 0
+      },
+      {
+        "p": 1013,
+        "x": 1012,
+        "valuation": 0
+      },
+      {
+        "p": 1019,
+        "x": 1,
+        "valuation": 0
+      },
+      {
+        "p": 1019,
+        "x": 509,
+        "valuation": 0
+      },
+      {
+        "p": 1019,
+        "x": 1018,
+        "valuation": 0
+      },
+      {
+        "p": 1039,
+        "x": 1,
+        "valuation": 0
+      },
+      {
+        "p": 1039,
+        "x": 519,
+        "valuation": 0
+      },
+      {
+        "p": 1039,
+        "x": 1038,
+        "valuation": 0
+      }
+    ],
+    "scope": "Evaluations are consistency checks; the factor proof establishes the rational-function congruence."
+  },
+  "arithmetic": {
+    "n": 2,
+    "s": 364,
+    "r": 7,
+    "coefficient_integrality_checks": 1092,
+    "constant_integrality_checks": 3,
+    "unnormalized_seed_reductions_from_exact_rationals": {
+      "1": 614660,
+      "2": 346158,
+      "3": 44336
+    },
+    "arithmetic": "Exact rational, normalized coefficients",
+    "scope": "Actual finite seed; not the general denominator proof."
+  }
+}

@@ -1,0 +1,85 @@
+MATHEMATICAL SELF-REVIEW OF THE NEW COUNT PAPER
+4 November 2026
+
+The manuscript was checked against the uniform-family proof and the
+two explicit endpoint deductions. This is a developing-assistant
+self-review, separate from the exact calculations and visual review.
+The earlier independent audits cover the earlier papers only.
+
+1. Construction and parity.
+   The fraction classes are reduced and represented once, with the
+   integer class represented by 1. The extra endpoint factor gives
+   simple, reflection-symmetric roots. For odd n, the denominator is
+   invariant and the base rational function is odd under reflection.
+   The polynomial multiplier is also odd, so the resulting function
+   is invariant and its odd beta coefficients vanish.
+
+2. Uniform rank.
+   The residue formula has the sign (-1)^(i-1) required by the shifted
+   constant. The paired kernels give the stated g_b. Their integer
+   numerators are independent by the unique smallest pole distance
+   of the largest participating grid. N<=2D gives E=2N-1<s. The
+   midpoint substitution and clockwise contour give the common sign
+   sigma=(-1)^(DL/2+1). Kernel poles cancel against numerator zeros;
+   the arc integral vanishes. The positive weight and polynomial
+   independence prove strict definiteness for every B. Rational
+   inversion then supplies fixed integer multiplier coefficients.
+
+3. Denominators.
+   The progression argument bounds every coefficient term at each
+   prime-power level. Primes dividing the reduced denominator are
+   covered separately by the extra normalization. The factor 4^(Sn)
+   cancels exactly in the local expansion. The constant-term proof
+   uses a numerator zero and at most one exceptional pole group at a
+   prime; it does not assert termwise integrality in the finite sums.
+
+4. Decay.
+   The n log n and linear Stirling contributions cancel in the profile.
+   Its derivative has the stated unique-zero behavior. A uniform
+   estimate down to the first possible nonzero grid point controls
+   the bounded range. The tail includes the polynomial degree and
+   tends to zero uniformly as its cutoff grows. The two exact
+   parameter inequalities imply decay after multiplication by delta^S.
+
+5. Prime dilation.
+   Selected numerator factors permute all reduced fraction classes.
+   The three unit signs cancel for odd seed indices. Homogeneity
+   changes the scaling exponent to tau=s-E>0. Selected-pole extraction
+   is justified in the local power-series ring; nonselected poles
+   satisfy the stronger valuation bound before scaling. Since finite
+   denominators are below p^2, precisely the selected h=py,j=pk terms
+   survive in the constant. The factor chi_4(p)(m+1)^(-S) is retained.
+
+6. Contradiction.
+   The generalized Vandermonde minor is nonzero at positive distinct
+   points, so the last cancellation weight cannot vanish. The seed
+   vector eta e_B therefore gives a nonzero seed constant for every
+   possible exceptional set. Remaining rational beta values have one
+   fixed common denominator. Infinitely many primes give nonzero
+   terms in the integer sequence tending to zero.
+
+7. Finite endpoints and inversion.
+   The closed endpoint satisfies both criterion inequalities uniformly
+   in B, including B=1. The ten smaller parameter choices match the
+   exact construction output. The elementary totient bound includes
+   both the floor error and the tail of the Mobius series. Ceiling
+   errors are handled at s_k-2. The infinite-range comparison is
+   reduced to one decreasing and one increasing function. The 230
+   finite unrounded checks and the 23 rounded checks use different
+   powers, (k-1)^2 and k^2, as required. Their intervals cover every
+   even s>=160 with no missing transition endpoint.
+
+8. Checks and source scope.
+   Both standalone checkers passed after being assembled in the new
+   paper directory. Construction checks include all ten seed matrices
+   over Q and full small-index coefficient and constant congruences.
+   Endpoint comparisons use explicit rational logarithm remainders.
+   Decimals are not used as certificates. Source papers provide
+   context and attribution; no external paper proposition is an input
+   to the proof. The cited Kumar-Tosi result is identified as their
+   stated asymptotic bound, not as a finite consequence used here.
+
+No substantive mathematical change to the underlying proof or its
+two finite deductions was needed during assembly. This review and
+the finite computations are not formal verification or an independent
+mathematical audit.

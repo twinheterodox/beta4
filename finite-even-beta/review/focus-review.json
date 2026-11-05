@@ -1,0 +1,37 @@
+{
+  "reviewed_at_utc": "2026-11-04T02:51:18.509150+00:00",
+  "scope": "Whole-paper focus and exposition review: the sole main result is at least three irrational values among beta(2), beta(4), ..., beta(364).",
+  "pdf": "output/pdf/finite-even-beta.pdf",
+  "pdf_sha256": "14263f21a0f5d7a7ca6d622ec0f3d89310fbb2b1b464aa36d459404cb3a07c3b",
+  "pages": 13,
+  "source_files_sha256": {
+    "paper/finite-even-beta.tex": "0d83b13291d3e19b8868c4a20e3046ef9e4e581c313761af0b765c84e520374f",
+    "paper/references.tex": "3f68ac7dbfc82ada7d311374dc73dd47f1f5da094819e469b6ab2fb1c8211e05",
+    "paper/sections/arithmetic.tex": "2d73e580765bab68cde13742f690980614d38e710ba4628c12e55dffc0db5f22",
+    "paper/sections/certificate.tex": "0c26d515c460f7426c24077aa2c911bffeac3843dccf076c174aa642647a0f4d",
+    "paper/sections/conclusion.tex": "f94286b7ce9f88666fdcc490f7d1de015946098ef1783a55e9c58c417f93ced6",
+    "paper/sections/decay.tex": "71c3355da4f5de5073d1e86d9000a18bca646486c22811fc70c435e7b110a40b",
+    "paper/sections/dilation.tex": "9aa1615c9c6c01be3707f09c112d3e8d10a2823eb66f2df76a8b0c29622a555e",
+    "paper/sections/forms.tex": "18d064734b864e3c1d9534f2e2b0b45e8363d75d703ebed3d4724343cc9a2fbd",
+    "paper/sections/introduction.tex": "91911a0cbe216ed61cacb28b4a3224111e2c40a46f89b1c87fcc4afecd98c51f"
+  },
+  "previous_review": "review/front-matter-review.json",
+  "previous_pdf_sha256": "27e07dd6b4e180099e666978bbaf81353cb262f9e5b65492189b80dac3d08d1f",
+  "changes": [
+    "Limited the abstract to the main theorem.",
+    "Removed Corollary 1.2, its supporting commentary and references, and the separate Sorokin comparison appendix; shortened the prior-work discussion to the relevant finite-subset context.",
+    "Defined beta by its usual alternating series at the opening.",
+    "Introduced chi_4 in the construction as the weights 1,0,-1,0,..., explained the alternating sum and period-four pole spacing, and explained the sign identity in the dilation proof.",
+    "Retained the fixed-weight example solely to illustrate the pair-cancellation step required by the three-value theorem."
+  ],
+  "whole_paper_review": "Read every section and the bibliography. The construction, denominator estimate, decay estimate, dilation argument, all-pairs seed certificate and final contradiction each support the three-value theorem. No separate subset corollary or endpoint-comparison result remains.",
+  "preservation": "The main theorem, construction and proof retain their mathematical content. The final contradiction, denominator and decay sections, all checker scripts and certificate outputs are unchanged. Earlier review and source-reading records retain their original scope.",
+  "build_check": {
+    "unresolved_references": false,
+    "overfull_boxes": false,
+    "underfull_warnings": []
+  },
+  "visual_review": "Rendered and visually inspected all 13 pages, including the opening definition, the weights explanation, equations, code blocks, proof conclusion and bibliography. No clipped or overlapping content found.",
+  "independent_review_status": "No new independent audit or formal verification is claimed; the preceding independent audit retains its recorded plain-text scope.",
+  "publication_status": "Local revision only; no commit, push or upload."
+}

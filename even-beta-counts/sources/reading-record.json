@@ -1,0 +1,75 @@
+{
+  "date": "2026-11-04",
+  "status": "Pinned source copies reused; no new literature or priority search claimed.",
+  "sources": [
+    {
+      "citation_key": "KT26",
+      "title": "Irrationality of values of $L$-functions for real Dirichlet characters",
+      "authors": "Veekesh Kumar; Riccardo Tosi",
+      "version": "2610.41458v1",
+      "source_url": "https://arxiv.org/abs/2610.41458v1",
+      "local_pdf_filename": "Irrationality-of-L-values-for-real-Dirichlet-characters_Kumar-Tosi_2610.41458v1.pdf",
+      "pdf_sha256": "ee3d7849086a2cdd9f9cb7515565564a60ca7c3edf809242702f2896e2ec096b",
+      "retrieved_at_utc": "2026-11-02T21:09:06.442351+00:00",
+      "actual_read_scope": "Assembly reading: main theorem and introduction, including its conductor-four coefficient, and the final elimination argument. Earlier selected reading of the construction, denominators, prime valuations and analytic estimates is recorded in the companion source ledger. Cited for the stated asymptotic result and methodological antecedents; no theorem from this source is a proof input. The complete theorem and its dependencies were not independently audited in this assembly.",
+      "role": "Background and attribution; not an imported proof proposition.",
+      "library_copy_reused": true
+    },
+    {
+      "citation_key": "LS25",
+      "title": "Many $p$-adic odd zeta values are irrational",
+      "authors": "Li Lai; Johannes Sprang",
+      "version": "2306.10393v2",
+      "source_url": "https://arxiv.org/abs/2306.10393v2",
+      "local_pdf_filename": "Many-p-adic-odd-zeta-values-are-irrational_Lai-Sprang_2306.10393v2.pdf",
+      "pdf_sha256": "240092a619e23b666ed61a363e45bd4940ed0a4326c916526df84504c03b3941",
+      "retrieved_at_utc": "2026-11-02T21:11:39.709993+00:00",
+      "actual_read_scope": "Assembly reading: introduction and recorded scope of Lemmas 2.2-2.3, previously read with their proofs. Cited for the auxiliary-prime irrationality method. The remaining p-adic theorem and its construction were not independently audited and are not proof inputs.",
+      "role": "Background and attribution; not an imported proof proposition.",
+      "library_copy_reused": true
+    },
+    {
+      "citation_key": "LY20",
+      "title": "A note on the number of irrational odd zeta values",
+      "authors": "Li Lai; Pin Yu",
+      "version": "1911.08458v2",
+      "source_url": "https://arxiv.org/abs/1911.08458v2",
+      "local_pdf_filename": "A-note-on-the-number-of-irrational-odd-zeta-values_Lai-Yu_1911.08458v2.pdf",
+      "pdf_sha256": "4df3e0fed2d792d72f55007bb5d5e04495d672de79167765577c07513d224878",
+      "retrieved_at_utc": "2026-11-02T21:11:39.835237+00:00",
+      "actual_read_scope": "Assembly reading: abstract and introduction for the square-root count and rational-grid construction. Earlier selected reading of the rational-function definition, arithmetic Propositions 3.1-3.2 and Lemma 3.3 is recorded in the companion source ledger. Cited for background and attribution; the full counting theorem and all its dependencies were not independently audited.",
+      "role": "Background and attribution; not an imported proof proposition.",
+      "library_copy_reused": true
+    },
+    {
+      "citation_key": "T364",
+      "cited_in_current_manuscript": false,
+      "citation_removed_on": "2026-11-05",
+      "citation_removal_note": "The introductory historical comparison and bibliography entry were removed at the author's request. This source record is retained for provenance.",
+      "authors": "twinheterodox",
+      "title": "At least three of beta(2), beta(4), ..., beta(364) are irrational",
+      "version": "Companion manuscript dated 3 November 2026; current 16-page exposition",
+      "local_pdf_location": "../finite-even-beta/output/pdf/finite-even-beta.pdf",
+      "pdf_sha256": "8fe8cef9a6e1a5644892881dd9b784cf9eedac7ffc4a506e37e741ab478c0312",
+      "role": "Prior finite result and construction context; the new paper proves its own count family independently.",
+      "actual_read_scope": "Current opening and references read; the general and finite proof records underlying the new construction were read in full. The historical independent audit retains its original scope and is not extended to the new paper."
+    },
+    {
+      "citation_key": "Tind",
+      "authors": "twinheterodox",
+      "title": "Linear independence of even Dirichlet beta values",
+      "version": "Companion manuscript dated 3 November 2026; original 19-page revision",
+      "source_url": "https://hexagonmath.org/2611.00044v2",
+      "public_version": "Hexagon 2611.00044v2, 3 November 2026, 19 pages",
+      "bibliographic_metadata_checked_on": "2026-11-05",
+      "bibliographic_metadata_check": "Confirmed the title, contributor, version, date, page count and version-specific link on the Hexagon record. The existing local paper copy and its recorded reading scope are retained; this metadata check is not a new proof review.",
+      "local_pdf_location": "../even-beta-independence/output/pdf/even-beta-independence.pdf",
+      "pdf_sha256": "83fff93aebeff3b79fb2f316df94518321a7b7dab815c7ab37d8ebf0b5cc5fe8",
+      "role": "Motivation and comparison; the augmented-span estimate in the earlier proof supports the stated counting consequence. Not an input to the proof of the present main theorem.",
+      "actual_read_scope": "Main theorem, Proposition 2.1, and Section 7 reread on 4 November 2026. Checked the augmented-span bound before (7.1), the parameter estimates (7.3)-(7.4), and the passage from multiples of 34 to all sufficiently large even endpoints. The irrationality-count deduction is explained in Appendix B of the current paper. No new audit of the earlier full proof or imported propositions is claimed.",
+      "counting_consequence_check": "The criterion gives the augmented span dimension at least 1-log(alpha)/log(B). At multiples of 34 the ratio of -log(alpha)/log(B) to sqrt(s/log(s)) tends to c_star=0.2174562348...>0.21. Monotonicity and bounded endpoint gaps give augmented dimension at least 1+0.21 sqrt(s/log(s)) for all sufficiently large even s. Rational entries lie in Q*1, so the augmented dimension is at most I(s)+1. The deduction is included in Appendix B of the new paper; no additional counting statement has been added to the cited manuscript."
+    }
+  ],
+  "stated_KT_conductor_four_constant": "1.151077531731102201284795433937352218057",
+  "stated_KT_constant_scope": "Numerical evaluation of the formula in Theorem 1, used only for the introduction; not a proof input."
+}

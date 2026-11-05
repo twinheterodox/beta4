@@ -1,0 +1,50 @@
+Independent mathematical audit
+Report supplied on 5 November 2026
+
+Recordkeeping note: the reviewer name, model and completion date were not
+specified. The report below is reproduced with the local filesystem path
+replaced by a path relative to the count-paper directory. The accompanying
+JSON record identifies the PDF snapshot captured before the exposition edit;
+its checksum was recorded locally, not supplied by the reviewer.
+
+Report as supplied (path normalized)
+
+independent audit complete: • I found no substantive mathematical error or gap. The proof supports
+  \[
+  I(s)\ge \left\lfloor\pi\sqrt{\frac{2}{135}}\sqrt{\frac{s}{\log s}}\right\rfloor
+  \]
+  for every even s≥160, and the bound without the floor for even s≥42 170. output/pdf/even-beta-counts.pdf
+
+  I checked the general arguments, including:
+
+  • Gram construction, pp. 5–7: kernel independence, the contour’s sign and normalization, positivity, convergence, and the integer homogeneous multiplier. This establishes rank for every B.
+  • Denominators, pp. 7–9: the progression lemma and the grouped cancellation needed for the rational constants.
+  • Decay, pp. 9–11: Stirling normalization, the unique maximum, uniform estimates and infinite-tail control.
+  • Prime dilation, pp. 11–12: factorial units, permutation of fraction classes, local Laurent-coefficient extraction, and the surviving factor χ₄(p)(m+1)^{-S}.
+  • Contradiction and inversion, pp. 13–17: the nonzero Vandermonde minor, infinitely many nonzero cleared integers, ceiling/floor handling, and coverage of every claimed endpoint.
+
+  Using independently written arithmetic—not running or importing the supplied checkers—I reproduced:
+
+   Check                                                           Result
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  ━━━━━━━━━━━━━━━━━━━
+   Rational Gram entries                                       385 passed
+  ───────────────────────────────────────────────────  ───────────────────
+   Positive leading principal minors                            55 passed
+  ───────────────────────────────────────────────────  ───────────────────
+   Integer seed-vector identities                               10 passed
+  ───────────────────────────────────────────────────  ───────────────────
+   Sharp-endpoint decay parameter choices                   All 10 passed
+  ───────────────────────────────────────────────────  ───────────────────
+   Finite interval comparisons                             All 253 passed
+  ───────────────────────────────────────────────────  ───────────────────
+   Selected-pole coefficient congruences                       272 passed
+  ───────────────────────────────────────────────────  ───────────────────
+   Other-pole valuation bounds                               2,312 passed
+  ───────────────────────────────────────────────────  ───────────────────
+   Constant congruences / grouped integrality checks    10 / 4,802 passed
+
+  The smallest interval margins agree with the manuscript: approximately 0.0002452910722 and 0.0001432530917. The rational constants supporting the infinite range also pass.
+
+  One small exposition improvement: on p. 10, spell out why the Stirling error remains uniform down to t=1/B, where t/n→0. The asserted estimate is valid; its justification is compressed.
+
+  This was an independent mathematical audit, not formal verification or a fresh audit of all cited literature. No files were changed.

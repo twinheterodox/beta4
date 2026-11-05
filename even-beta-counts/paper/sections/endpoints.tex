@@ -1,0 +1,86 @@
+\section{Choosing the endpoints}\label{sec:endpoints}
+
+\subsection{One choice that works for every count}
+
+We now prove Theorem~\ref{thm:family} using one convenient choice
+of $r$ and $u$ for every $B$. Set
+\[
+ r=7,\quad L=18,\quad u=\frac1{50},\quad e_0=\frac{68}{25},
+ \qquad A=\frac{11\log11-7\log7}{4}-\log4-\log e_0.
+\]
+In the second criterion inequality,
+\[
+ \frac14\log U=\log K+18D\log(18+u)-AS.
+\]
+The first two terms are the costs from the normalization and the
+numerator factors; $A$ measures the decay gained per unit of $S$.
+We will bound those costs by $36D\log B+(261/5)D$ and show
+$A>4/5$. Thus $S\ge D(66+45\log B)$ will suffice: the coefficient
+$45=36/(4/5)$ covers the logarithmic cost, and $66>261/4$ covers
+the remaining cost. We choose $s_B$ by rounding $D(66+45\log B)$
+up to an even integer, so $S=s_B+1$ exceeds this threshold.
+
+We now verify these bounds and the first criterion inequality.
+The following three comparisons are over the rationals:
+\begin{align}
+ 901^4\left(\frac{351}{551}\right)^{66}&<1,
+       \label{eq:uniform-f}\\
+ (901/50)^{10}&<(163/60)^{29},\label{eq:uniform-log}\\
+ \left((4e_0)^4\frac{7^7}{11^{11}}\right)^5e_0^{16}&<1.
+       \label{eq:uniform-slope}
+\end{align}
+Since $163/60<\ep<e_0$, the last two give
+\begin{equation}\label{eq:uniform-constants}
+ \log(18+u)<\frac{29}{10},\qquad A>\frac45.
+\end{equation}
+For example, the logarithm of the left side of
+\eqref{eq:uniform-slope} is $-20A+16\log e_0$, so it implies
+$A>(4/5)\log e_0>4/5$.
+
+The arithmetic cost also has a simple bound. From \eqref{eq:K},
+$\lceil18/(p-1)\rceil\le18$ gives
+\[
+ A_d\le d^{36},\qquad K\le B^{36D},\qquad
+ \log K\le36D\log B.
+\]
+Take $s=s_B$ from \eqref{eq:family}. Then
+\[
+ S=s+1\ge66D+45D\log B+1>18D.
+\]
+Raising \eqref{eq:uniform-f} to the $D$th power proves $f(u)<1$.
+For the second inequality, \eqref{eq:uniform-constants} gives
+\[
+ \frac14\log U<36D\log B+\frac{261}{5}D-\frac45S
+ \le-\frac35D-\frac45<0.
+\]
+Thus $U<1$, and Proposition~\ref{prop:criterion} proves
+$I(s_B)\ge B$ for every $B\ge1$.
+
+\subsection{Sharper small endpoints}
+
+For particular counts we can use $K$ itself in
+\eqref{eq:U-criterion}, instead of the upper bound $B^{36D}$.
+The following rational choices satisfy $S>DL$, $f(u)<1$ and
+$U<1$; the two inequalities are checked exactly in the supplied
+construction checker.
+\begin{center}
+\begin{tabular}{@{}rrrr@{}}
+\toprule
+$B$ & $s$ & $r$ & $u$\\
+\midrule
+1&64&7&$3/250$\\
+2&160&7&$21/10\,000$\\
+3&364&7&$3/5\,000$\\
+4&588&7&$7/25\,000$\\
+5&1030&8&$29/50\,000$\\
+6&1296&8&$7/20\,000$\\
+7&1992&7&$67/1\,000\,000$\\
+8&2502&7&$47/1\,000\,000$\\
+9&3260&7&$7/200\,000$\\
+10&3828&8&$11/100\,000$\\
+\bottomrule
+\end{tabular}
+\end{center}
+This proves the finite refinements in Theorem~\ref{thm:family}.
+The same rank argument applies in every row; these calculations
+only check the decay inequalities.

@@ -1,0 +1,34 @@
+{
+  "reviewed_at_utc": "2026-11-04T02:36:51.560640+00:00",
+  "scope": "Title and abstract presentation only; no change to the body, mathematical proof or certificates.",
+  "pdf": "output/pdf/finite-even-beta.pdf",
+  "pdf_sha256": "27e07dd6b4e180099e666978bbaf81353cb262f9e5b65492189b80dac3d08d1f",
+  "pages": 14,
+  "source_files_sha256": {
+    "paper/finite-even-beta.tex": "2a767caad0038969b40311226b3314e49a7377cb54fc5c55aee9f0964c72e9b5",
+    "paper/references.tex": "5592f38c919a376c68333a9494fd8aa11f828c3036e2daeff19ac4ca486f0277",
+    "paper/sections/arithmetic.tex": "2d73e580765bab68cde13742f690980614d38e710ba4628c12e55dffc0db5f22",
+    "paper/sections/certificate.tex": "4a4a5c54e9fdfa8febce05e2d6e5f2c1e13c44872ef97c84d72455fd046ff77d",
+    "paper/sections/conclusion.tex": "a132915195ba986969272af89b3257b1066c87be1b57e804521137dbfa8827bc",
+    "paper/sections/decay.tex": "71c3355da4f5de5073d1e86d9000a18bca646486c22811fc70c435e7b110a40b",
+    "paper/sections/dilation.tex": "5d06ffff1765b9c16a4662069be11bcf66e553bb6c93cd0f30ae88b905575bd2",
+    "paper/sections/forms.tex": "2ee86cb3adf7b38ddf617e0a3a95cf30d830ca85335eb40d110f56e77c04de19",
+    "paper/sections/introduction.tex": "04a96bff418837fb113d6709cacef2e97c9901a233b337b36b4d0c7768e96611"
+  },
+  "previous_pdf_sha256": "2e9bd250574d696db25c3d010370a9ada88df80e3b3ffea3f90e278a70824c9d",
+  "previous_review": "review/clarity-review.json",
+  "changes": [
+    "Removed the explicit newline from the title and retained the standard title formatting.",
+    "Replaced the proof-mechanism summary in the abstract with the theorem, the any-two-deletions consequence and the block beginning at beta(6)."
+  ],
+  "abstract_review": "Only the result and its consequences remain. No proof sketch, intermediate formulas, construction details or new notation beyond the beta values.",
+  "preservation": "All manuscript section files, bibliography, checker scripts, certificate outputs and earlier reviews are byte-for-byte unchanged.",
+  "build_check": {
+    "unresolved_references": false,
+    "overfull_boxes": false,
+    "underfull_warnings": []
+  },
+  "visual_review": "Rendered all fourteen pages. Inspected the changed first page: title fits naturally on one line and the abstract contains only result statements. Pages 2-14 are byte-for-byte identical to the previously reviewed rendering.",
+  "independent_review_status": "The prior independent proof audit retains its recorded plain-text scope; no new independent audit is claimed.",
+  "publication_status": "Local edit only; no commit, push or upload."
+}

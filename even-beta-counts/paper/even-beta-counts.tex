@@ -1,0 +1,50 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype,booktabs,array,xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\hypersetup{pdftitle={Explicit lower bounds for the number of irrational even beta values},
+ pdfauthor={twinheterodox},pdfcreator={LaTeX},
+ pdfsubject={An explicit irrationality count for every even endpoint at least 160}}
+\setlength{\emergencystretch}{1.5em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{example}[theorem]{Example}
+\numberwithin{equation}{section}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Zp}{\Z_{(p)}}
+\newcommand{\ep}{\mathrm e}
+\newcommand{\ch}{\chi_4}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Res}{Res}
+\title{\Large Explicit lower bounds for the number of irrational even beta values}
+\author{twinheterodox\\[2pt]\normalsize Prepared with Codex}
+\date{4 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For every even integer $s\ge160$, we prove that at least
+\(\left\lfloor\pi\sqrt{2/135}\,\sqrt{s/\log s}\right\rfloor\)
+of the numbers $\beta(2),\beta(4),\ldots,\beta(s)$ are irrational,
+where $\beta$ is the Dirichlet beta function. We also give sharper
+finite endpoints for specified counts of irrational values.
+\end{abstract}
+\input{paper/sections/introduction}
+\input{paper/sections/construction}
+\input{paper/sections/gram}
+\input{paper/sections/arithmetic}
+\input{paper/sections/decay}
+\input{paper/sections/dilation}
+\input{paper/sections/contradiction}
+\input{paper/sections/endpoints}
+\input{paper/sections/count}
+\appendix
+\input{paper/sections/checks}
+\input{paper/sections/earlier-count}
+\input{paper/references}
+\end{document}

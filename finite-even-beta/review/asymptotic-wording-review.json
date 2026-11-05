@@ -1,0 +1,31 @@
+{
+  "reviewed_at_utc": "2026-11-04T11:50:34.254865+00:00",
+  "scope": "Reworded only the asymptotic comparison in Subsection 1.1.",
+  "pdf": "output/pdf/finite-even-beta.pdf",
+  "pdf_sha256": "2126b19b0dfaa6d052d006607cda5e4b50d9cf5f6f0f8d378c67d06e70846af6",
+  "pages": 13,
+  "source_files_sha256": {
+    "paper/finite-even-beta.tex": "c51106a01e627b258d79ad657bd0459de5458c7e07c1458a2bcaed51b3927297",
+    "paper/references.tex": "ef469b31d8d90358f5e1826b7482a00b3206e6cec58b75bd62a43b0a4bf3c670",
+    "paper/sections/arithmetic.tex": "d37ea08e805c20e92b5c6672080b772fa9e8b49597dbca4659a60f11e5cb550f",
+    "paper/sections/certificate.tex": "32ee1a96183aebd56343daf5fef912527e691753e3b9fe50e570dfef297b7f0c",
+    "paper/sections/conclusion.tex": "313a01b0fcda68eb0536daef21981de96d93cdbe5ea3838261279bdb627013af",
+    "paper/sections/decay.tex": "55414eb4fb76a84bb09c2120aec971b02431166e4c6e8caba797765a3425b8c7",
+    "paper/sections/dilation.tex": "ccb39e0485691165b61751344f08351e7831e8b5624049123fcad6c5dc7cc886",
+    "paper/sections/forms.tex": "64115f077b20466bdf5fc73650eb54b7335dd8f94c792e2f75c65cf4006b5f85",
+    "paper/sections/introduction.tex": "07385fcf5ccc1760bb70eb51dee69057038e84e169369c19a8a6f53d1e2a44bb"
+  },
+  "previous_review": "review/asymptotic-context-review.json",
+  "previous_pdf_sha256": "5d9c2605dd3864afd6ffc53241d624f5514dcc32200ed84c170e45736012a4c3",
+  "change": "Replaced the abstract description of a dimension bound with the explicit statement that at least 0.21 sqrt(s/log s) of the even beta values through s are linearly independent over the rationals, for sufficiently large even s. The strongest-known qualification and reference are retained.",
+  "source_check": "Checked against Theorem 1.1 and the definition of D(s) in the already cited companion manuscript. No new source or mathematical argument.",
+  "preservation_check": "Only the asymptotic paragraph changed in the manuscript. Main theorem, title, abstract, proof, bibliography, source ledger, checkers and historical review records unchanged.",
+  "build_check": {
+    "unresolved_references": false,
+    "overfull_boxes": false,
+    "underfull_warnings": []
+  },
+  "visual_review": "Rendered all 13 pages. Visually checked the changed page 1; pages 2–13 are pixel-identical to the previous inspected version. No clipping or overlap.",
+  "computational_scope": "No mathematical tests rerun for this wording change.",
+  "publication_status": "Local edit only; no commit, push or upload."
+}

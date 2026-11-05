@@ -1,0 +1,150 @@
+{
+  "reviewed_at_utc": "2026-11-04T00:50:43.454251+00:00",
+  "status": "Assembly, exposition, reproduction and visual review completed",
+  "reviewer": "Preparing Codex assistant; not an independent reviewer",
+  "pdf": "output/pdf/finite-even-beta.pdf",
+  "pdf_sha256": "08c86128f56fb40793063beded9d23eaeeb97d928a31290d48bab8007449dc4b",
+  "pages": 12,
+  "source_files_sha256": {
+    "paper/finite-even-beta.tex": "7bb9b98ecc8e6e0dd06ddce2b7a7502b761ea3abf0635dfd43f8b5950874cd3f",
+    "paper/references.tex": "5592f38c919a376c68333a9494fd8aa11f828c3036e2daeff19ac4ca486f0277",
+    "paper/sections/arithmetic.tex": "c1fbfda0750110dfbd52c208cbca1c15615bfb59510deac9f830bd01409800c9",
+    "paper/sections/certificate.tex": "656bbe5f988d7a9f7589efec99778e8b27efb23fb896a523cc8a182556ee4849",
+    "paper/sections/conclusion.tex": "a132915195ba986969272af89b3257b1066c87be1b57e804521137dbfa8827bc",
+    "paper/sections/decay.tex": "aed6a2c8e2a6dd57107d900ef01cdb282ed309bf002823677b82e3788beaa509",
+    "paper/sections/dilation.tex": "f4f44735f15ce7b09e3c94e0ad2d974fe2a7aec3846b4432263d377ed4ab07b0",
+    "paper/sections/forms.tex": "12dda96ab509ae2fba3bb2521858075dd27041eb964aa8beab25f5ec8e17a45d",
+    "paper/sections/introduction.tex": "43389186e44c839a71130c4bde6b104e3cd8fb10caf1d223d02fac43b4958977"
+  },
+  "source_proof_sha256": "f9aaa57ee35e5377f662a9eea3ecc9de6f1da7c173c811fca89ea527dc61e6a7",
+  "audited_plain_text_sha256": "56fa7e55a13da99d1d47a0475d5f227d2ea257c358b5fdd369b3156cc709f8f0",
+  "mathematical_scope": "The main theorem and proof are carried over from the clarified plain-text proof, with reordered exposition and explicit intermediate connections. The independent audit applies to its recorded plain-text version, not to this typeset revision. This review is not a new independent proof audit or formal verification.",
+  "section_mapping": [
+    {
+      "manuscript": "1",
+      "source": "Opening result and Sections 5-6",
+      "change": "State the three-value count, any-two-deletions corollary, worked weights (15,-6,1), and the denominator/decay and nonvanishing tasks before defining the rational function."
+    },
+    {
+      "manuscript": "2",
+      "source": "1",
+      "checks": "Parameters, normalization, pole cancellation, reflection, character shift, conditional i=1 sums, and positive-tail bound."
+    },
+    {
+      "manuscript": "3",
+      "source": "2",
+      "checks": "Progression valuations, partial-fraction normalization and grouped constant-term integrality; the individual finite-sum terms are not presumed integral."
+    },
+    {
+      "manuscript": "4",
+      "source": "3",
+      "checks": "Exponential profile including 365 log 4, unique maximum, uniform compact estimate, infinite tail and both exact rational comparisons."
+    },
+    {
+      "manuscript": "5",
+      "source": "4",
+      "checks": "Prime-dilation factors, exchange of the third shifts, local power-series extraction, other pole classes, finite-sum bounds and character sign."
+    },
+    {
+      "manuscript": "6",
+      "source": "5",
+      "change": "Give the finite recurrence and executable pair and decay tests, and separate exact seed checks from sampled dilation consistency checks."
+    },
+    {
+      "manuscript": "7",
+      "source": "6-7",
+      "checks": "Fixed integer cross-product weights, common denominator, prime exceptions and the nonzero-integer contradiction; distinguish audit versions and scopes."
+    },
+    {
+      "manuscript": "Appendix A",
+      "source": "Previously recorded priority comparison using Sorokin (2007), equation (20)",
+      "change": "Include the finite specialization giving endpoint 632 and its exact rational checker; it is separate from the main proof."
+    }
+  ],
+  "exposition_review": {
+    "intended_reader": "A mathematically trained reader familiar with rational functions, partial fractions, elementary prime valuations and standard asymptotic estimates.",
+    "criteria": "Human sequential reading: explain the goal before the construction, keep the cancellation example and two proof obligations visible, and state the purpose of each technical transition.",
+    "explicit_connections": [
+      "Three grids lead to columns (1,2^i,3^i); fixed weights cancel two values for all n.",
+      "The four numerator shifts cover the fractional classes in the three grids.",
+      "Clearing denominators costs e^365, explaining the decay target.",
+      "Positive tail bounds control size; prime dilation establishes the separate nonvanishing requirement.",
+      "Local integrality is what permits reduction to commute with coefficient extraction.",
+      "The all-pairs certificate upgrades the fixed (15,-6,1) example to a count of three."
+    ],
+    "limit": "This is an authoring review against the human-reading criteria, not a reader study or independent assessment."
+  },
+  "executed_checks": {
+    "checks/verify.py": {
+      "status": "passed",
+      "coefficient_divisibility_checks": 1092,
+      "constant_divisibility_checks": 3,
+      "nonzero_pair_determinants": 16471,
+      "q_unnormalized_mod_1000003": [
+        614660,
+        346158,
+        44336
+      ],
+      "low_weight_elimination_residue": 187267,
+      "both_exact_decay_comparisons": true,
+      "finite_field_algorithms_agree_on_all_coefficients": true,
+      "rational_function_reconstruction_points": 3,
+      "zero_class_dilation_evaluations": 12,
+      "other_class_dilation_evaluations": 12,
+      "scope": "Finite certificates and selected consistency checks; the manuscript supplies the general arguments."
+    },
+    "checks/check_comparison.py": {
+      "status": "passed",
+      "endpoint": 632,
+      "upper_bound_less_than_one": true,
+      "arithmetic": "Exact rational"
+    },
+    "tools/build_paper.py": {
+      "status": "passed",
+      "pages": 12,
+      "unresolved_references": false,
+      "overfull_boxes": false,
+      "underfull_warnings": []
+    }
+  },
+  "checker_files_sha256": {
+    "checks/check_comparison.py": "29f7502b1fbfe2933edbfd9060753894e57541c1be61d962d1e5c5591342b253",
+    "checks/seed.py": "694aa77256056839ab58b09b263fc1698b5a7117a5ce7eaefe9adc7786752ce6",
+    "checks/verify.py": "dc16fdb95449e8b1ec69137ac17a9c635c595dc2ebb10042833df2f06ed52b86"
+  },
+  "result_files_sha256": {
+    "checks/verification.json": "5cbae90592266b3f0e5f31f06b9f189d57a703d08a7d74482129db60d35a2373",
+    "checks/comparison.json": "d6c074fecf62cb3b1032ef0d15d68694c08f24bb363ce6ef387c9164076dbded"
+  },
+  "implementation_preservation": {
+    "seed_module": "Byte-for-byte copy of the supplied seed.py.",
+    "verification_wrapper": "Only documentation, output status, a guard against disabled assertions and explicit assertions on expected residues, pair count, empty zero list and the low-weight residue were added. Mathematical algorithms are unchanged."
+  },
+  "visual_review": {
+    "method": "Rendered the final PDF with Poppler to twelve PNG pages at maximum dimension 1400 pixels; inspected each page visually.",
+    "pages_inspected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "checked": [
+      "Text and equation clipping",
+      "Formula legibility",
+      "Code indentation and wrapping",
+      "Section and page transitions",
+      "References and links",
+      "Page numbering"
+    ],
+    "result": "No visual or formatting defects found in the final twelve-page rendering."
+  },
+  "publication_status": "Local working draft; no commit, push or upload performed in this preparation."
+}

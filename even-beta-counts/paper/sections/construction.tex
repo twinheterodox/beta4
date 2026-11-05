@@ -1,0 +1,94 @@
+\section{Rational functions on the required grids}\label{sec:construction}
+
+\subsection{Zeros, poles and reflection}
+
+The $b$th form will be an alternating sum over the points $j/b$ with
+$j$ odd. We need numerator zeros at the initial points of every such
+grid, both to remove their contribution to the sum and to control
+the denominators of its rational constant. The signs on odd summation
+indices repeat after a shift by $4$, so poles at $0,-4,\ldots,-4n$
+allow each partial-fraction sum to be shifted back to the beta series.
+The distinct fraction classes that occur for $1\le b\le B$ are
+\[
+ \Theta=\left\{\frac ad:1\le d\le B,\ 1\le a\le d,\ (a,d)=1\right\}.
+\]
+The integer class is represented by $1$. Thus $|\Theta|=D_B$.
+For example, at $B=3$ the classes are $1,1/2,1/3,2/3$.
+
+Fix an integer $r\ge3$. If the rightmost zero at index $n$ is $rn$,
+reflection about $-2n$, the midpoint of the pole interval, puts the
+leftmost zero at $-(r+4)n$. The zero interval therefore has length
+$(2r+4)n$. Abbreviate
+\[
+ D=D_B,\qquad L=2r+4,\qquad S=s+1,
+ \qquad S>DL,
+\]
+where $s$ is even. The integer $r$ controls the length of the initial
+zero interval. To normalize the denominators of each fraction class,
+put
+\begin{equation}\label{eq:K}
+ A_d=d^L\prod_{p\mid d}p^{\lceil L/(p-1)\rceil},\qquad
+ K=\prod_{\theta\in\Theta}A_{\operatorname{den}(\theta)},
+\end{equation}
+where the first product is over primes and
+$\operatorname{den}(\theta)$ is the reduced denominator. The
+progression estimate in Section~\ref{sec:arithmetic} explains this
+normalization.
+
+For every positive odd integer $n$, define
+\begin{align}
+ P_n(t)&=(t-rn)\prod_{\theta\in\Theta}
+                    \prod_{j=0}^{Ln-1}(t-rn+j+\theta),\label{eq:P}\\
+ C_n&=4^{Sn}K^n\frac{((n+1)!)^S}{(n!)^{DL}},
+ &R_n(t)&=\frac{C_nP_n(t)}{\prod_{h=0}^n(t+4h)^S}.
+ \label{eq:R}
+\end{align}
+The zero set of $P_n$ consists of the required grid points in
+$[-(r+4)n,rn]$. All these zeros are simple. In particular, one zero
+cancels at every denominator point $0,-4,\ldots,-4n$, leaving pole
+order at most $s$.
+
+Reflection about the midpoint $-2n$ preserves the zero set.
+The numerator has odd degree, so
+$P_n(-4n-t)=-P_n(t)$. Since $n$ is odd, the $n+1$ denominator
+factors give no sign change. Hence
+\[
+ R_n(-4n-t)=-R_n(t).
+\]
+We will multiply $R_n$ by an integer polynomial $W_n$ that is also
+odd about $-2n$. The product $T_n=W_nR_n$ will then be reflection
+invariant. This symmetry is what removes the odd beta coefficients.
+The polynomial $W_n$ will have a fixed homogeneous degree $E<s$
+in the variables $n,t$.
+
+\subsection{The criterion to be proved}
+
+To prove decay, we estimate the largest terms in the alternating
+sums of $T_n$. The rational number $u$ below bounds where their
+exponential size is largest, with distance from the last zero $rn$
+measured in units of $n$. Once that location is bounded, the quantity
+$U$ bounds the fourth power of the exponential rate after clearing
+denominators. Thus the two inequalities locate the maximum and
+make the cleared forms tend to zero. The bound $\ep<68/25$ keeps
+the criterion rational.
+
+\begin{proposition}\label{prop:criterion}
+With the preceding notation, suppose that a positive rational $u$
+satisfies
+\begin{align}
+ f(u)&=\left(\frac{u+L}{u}\right)^{4D}
+          \left(\frac{u+r}{u+r+4}\right)^S<1,
+          \label{eq:f-criterion}\\
+ U&=\left(\frac{68}{25}\right)^{4S}K^4(L+u)^{4DL}4^{4S}
+          \left(\frac{r^r}{(r+4)^{r+4}}\right)^S<1.
+          \label{eq:U-criterion}
+\end{align}
+Then $I(s)\ge B$.
+\end{proposition}
+
+Section~\ref{sec:gram} constructs the seed constant vector,
+Sections~\ref{sec:arithmetic}--
+\ref{sec:dilation} prove the arithmetic and analytic estimates, and
+Section~\ref{sec:contradiction} completes the contradiction. In
+Section~\ref{sec:endpoints} we choose parameters satisfying these
+inequalities uniformly in $B$.

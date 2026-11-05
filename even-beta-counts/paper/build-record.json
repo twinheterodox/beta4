@@ -1,0 +1,26 @@
+{
+  "status": "compiled; visual and mathematical reviews recorded separately",
+  "pages": 20,
+  "source_files": {
+    "paper/even-beta-counts.tex": "b591ba2d484502de8777c283eb42355ab1242de42f4da29c2a69c24c139ecf92",
+    "paper/references.tex": "5de3494d6525e4ad53b7acc098b86aa062c88bbdb1f05d2d52665575ceabd182",
+    "paper/sections/arithmetic.tex": "59fbe3dbcbd49be0f873be522f4b2fda8c09fbf8a2631b9ffed2c8a01eaf3af5",
+    "paper/sections/checks.tex": "1be77cffd14d80f7ef299a7b96ec62322716a45502cdb4e3d4ce086a98e287c7",
+    "paper/sections/construction.tex": "7fda38775dc1358bf5905e336d236e62f27f6c31f8d5319d2b2e54457c0f79d3",
+    "paper/sections/contradiction.tex": "1ef2b638788a99f3f3a64fa8a204e14fa2f424f65e104c3c26b3f1f0b27d761f",
+    "paper/sections/count.tex": "cb20704c969dc37db1a9ade6f333999e8efe695da3f9bbc701244970cfabf2de",
+    "paper/sections/decay.tex": "6748b645f0cdf6cbc63b4e8f400dcd14b66a51f20206c4a32f1f1f67e8fe070a",
+    "paper/sections/dilation.tex": "c974aa5a16d204e9311c430390249987c87429fd18f53cda45da79162418920e",
+    "paper/sections/earlier-count.tex": "b011c10a8dc0503c5d2ba326866edc9c2260aeed4a0a434132745982f205c266",
+    "paper/sections/endpoints.tex": "bb9ef16213394604e8e1bde99c8a8ab384440d4d47110a3b10798872de0b20d3",
+    "paper/sections/gram.tex": "2d7a07e0fe1994a94061c87e4aab06e9a311d53cc4a6f7b4425401044261d455",
+    "paper/sections/introduction.tex": "e9e1c4c36cdd3b6560486c1d1c23cffb3ddc861f87f2256ffc79973541032d23"
+  },
+  "pdf": "output/pdf/even-beta-counts.pdf",
+  "pdf_sha256": "f6848fa9304693f1b96a12ca9c2268511f350eb7c3e607054ddb0d4d3fe0c2a5",
+  "unresolved_references": false,
+  "overfull_boxes": false,
+  "underfull_warnings": [],
+  "independent_audit_record": "review/independent-audit-2026-11-05.json",
+  "review_scope": "Compilation only. The independent audit reported on 5 November 2026 applies to the PDF snapshot identified in the audit record; subsequent exposition revisions are recorded separately. No formal verification is claimed."
+}

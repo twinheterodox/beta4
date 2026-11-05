@@ -1,0 +1,30 @@
+{
+  "reviewed_at_utc": "2026-11-04T12:09:09.298933+00:00",
+  "scope": "Clarified that asymptotic results concern sufficiently large endpoints.",
+  "pdf": "output/pdf/finite-even-beta.pdf",
+  "pdf_sha256": "be3017a4744b86afddb95fbf912362414abeab4a1903a0ea3626399999e6f752",
+  "pages": 13,
+  "source_files_sha256": {
+    "paper/finite-even-beta.tex": "c51106a01e627b258d79ad657bd0459de5458c7e07c1458a2bcaed51b3927297",
+    "paper/references.tex": "ef469b31d8d90358f5e1826b7482a00b3206e6cec58b75bd62a43b0a4bf3c670",
+    "paper/sections/arithmetic.tex": "d37ea08e805c20e92b5c6672080b772fa9e8b49597dbca4659a60f11e5cb550f",
+    "paper/sections/certificate.tex": "32ee1a96183aebd56343daf5fef912527e691753e3b9fe50e570dfef297b7f0c",
+    "paper/sections/conclusion.tex": "313a01b0fcda68eb0536daef21981de96d93cdbe5ea3838261279bdb627013af",
+    "paper/sections/decay.tex": "55414eb4fb76a84bb09c2120aec971b02431166e4c6e8caba797765a3425b8c7",
+    "paper/sections/dilation.tex": "ccb39e0485691165b61751344f08351e7831e8b5624049123fcad6c5dc7cc886",
+    "paper/sections/forms.tex": "64115f077b20466bdf5fc73650eb54b7335dd8f94c792e2f75c65cf4006b5f85",
+    "paper/sections/introduction.tex": "c39e4b053a0d43a327901d997a7c381917c84379b89124518fcb10452354072c"
+  },
+  "previous_review": "review/asymptotic-attribution-review.json",
+  "previous_pdf_sha256": "f45b771aea8c554189210ee9f3339fd3e240ad3c7ac5f5b337710e0a2d4c0240",
+  "change": "Replaced the opening description of asymptotic results with Asymptotic results give bounds valid for all sufficiently large endpoints. Moved over the rationals to the statement of the companion linear-independence result.",
+  "preservation_check": "Only this paragraph changed in the manuscript. The companion bound, its hypotheses and attribution are preserved. The main theorem, proof, title, abstract, bibliography, source ledger, checkers and historical reviews are unchanged.",
+  "build_check": {
+    "unresolved_references": false,
+    "overfull_boxes": false,
+    "underfull_warnings": []
+  },
+  "visual_review": "Rendered all 13 pages. Inspected page 1; no clipping or overlap. Pages 2–13 are pixel-identical to the previous inspected version.",
+  "computational_scope": "No mathematical checks rerun for this wording change.",
+  "publication_status": "Local edit only; no commit, push or upload."
+}

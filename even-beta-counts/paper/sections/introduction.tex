@@ -1,0 +1,171 @@
+\section{Introduction}
+
+For $u>1$, the Dirichlet beta function is
+\[
+ \beta(u)=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k+1)^u}
+         =1-\frac1{3^u}+\frac1{5^u}-\cdots.
+\]
+Its values at positive odd integers are nonzero rational multiples
+of powers of $\pi$, and hence transcendental. The arithmetic of
+its even values is much less understood.
+
+For an even positive integer $s$, write
+\[
+ I(s)=\#\{j:1\le j\le s/2,\ \beta(2j)\notin\Q\}
+\]
+for the number of irrational values among
+$\beta(2),\beta(4),\ldots,\beta(s)$.
+
+In \cite{Tind} we proved that the rational span of
+$\beta(2),\beta(4),\ldots,\beta(s)$ has dimension at least
+$0.21\sqrt{s/\log s}$ for sufficiently large even $s$.
+The same lower bound holds for $I(s)$; see Appendix~\ref{app:earlier-count}.
+
+Here we show that an irrationality bound of the same shape and
+a better constant is valid from a small explicit value of $s$.
+In particular, Theorem~\ref{thm:main} gives a stronger count for
+every even $s\ge160$. We use the constant\footnote{Replacing $c$ by
+$0.358$ gives a bound of the same shape for every even $s\ge64$,
+giving one irrational value at $64$, but only two rather than three
+at $364$. For $64\le s\le158$, this follows from $I(64)\ge1$
+(Section~\ref{sec:endpoints}) and
+$0.358\sqrt{158/\log158}<2$; for $s\ge160$, use
+Theorem~\ref{thm:main}.}
+\[
+ c=\pi\sqrt{\frac{2}{135}}=0.3823824806363651\ldots.
+\]
+All logarithms in this paper are natural.
+
+\begin{theorem}\label{thm:main}
+For every even integer $s\ge160$,
+\begin{equation}\label{eq:main}
+ I(s)\ge\left\lfloor c\sqrt{\frac{s}{\log s}}\right\rfloor.
+\end{equation}
+\end{theorem}
+For every even $s\ge42\,170$, we will also prove the bound without the
+floor.
+
+The construction gives more precise information at individual
+endpoints.  For each column below, at least $B$ of the even beta
+values through $\beta(s)$ are irrational. For comparison, the last row
+shows the expression inside the floor in \eqref{eq:main}, rounded to
+two decimal places.
+\begin{center}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}rrrrrrrrrr@{}}
+\toprule
+$B$&2&3&4&5&6&7&8&9&10\\
+\midrule
+$s$&160&364&588&1030&1296&1992&2502&3260&3828\\
+\addlinespace[2pt]
+$c\sqrt{s/\log s}$&2.15&3.00&3.67&4.66&5.14&6.19&6.84&7.68&8.24\\
+\bottomrule
+\end{tabular}
+\end{center}
+At $s=160$ and $s=364$, the expression inside the floor is
+$2.147\ldots$ and $3.004\ldots$ respectively. Hence the uniform
+bound~\eqref{eq:main} matches the counts in the table at these endpoints.
+At $s=588$, the uniform bound gives $I(588)\ge3$ after taking the
+floor of $3.67\ldots$, whereas applying the construction with
+parameters chosen for this endpoint gives $I(588)\ge4$.
+
+\subsection{A finite endpoint for every requested count}
+
+We prove the main theorem by first giving an endpoint for every
+positive integer $B$. Let $\varphi$ be Euler's totient function,
+with $\varphi(1)=1$.
+
+\begin{theorem}\label{thm:family}
+For every integer $B\ge1$, put
+\begin{equation}\label{eq:family}
+ D_B=\sum_{d=1}^B\varphi(d),\qquad
+ s_B=2\left\lceil D_B\left(33+\frac{45}{2}\log B\right)\right\rceil.
+\end{equation}
+Then $I(s_B)\ge B$. The sharper endpoints in the preceding table
+also hold.
+\end{theorem}
+
+The quantity $D_B$ counts the distinct reduced fraction classes needed
+for the $B$ grids in our construction. It grows quadratically in $B$;
+the endpoint has size $B^2\log B$. Inverting this relation produces
+the square root in Theorem~\ref{thm:main}.
+The formula for $c$ is also of interest in its own right.
+The $\pi$ and the factor $3$ in $135=3\cdot45$ come from
+$D_B\sim(3/\pi^2)B^2$, the asymptotic count of reduced fractions.
+The factor $45$ comes from balancing
+denominator growth against decay, and the factor $2$ from
+inverting the quadratic growth in $B$.
+Section~\ref{sec:count}
+makes the inversion explicit, including the constant and the small
+endpoints.
+
+\subsection{Related constructions}
+
+Lai and Yu~\cite{LY20} obtained lower bounds of order
+$\sqrt{s/\log s}$ for the number of irrational odd zeta values,
+using rational functions whose zeros are arranged on rational grids.
+Kumar and Tosi~\cite[Theorem~1]{KT26} adapt this approach to real
+Dirichlet characters. For the beta function, their stated asymptotic
+coefficient is $1.1510775\ldots$, with the starting endpoint depending
+on the chosen loss in that coefficient. Theorem~\ref{thm:main} gives
+a fixed bound at every even endpoint from $160$ onward.
+
+The rational-function construction and coefficient elimination used
+here build on these methods. The separation of coefficients by an
+auxiliary prime has an antecedent in Lai and Sprang~\cite{LS25}.
+A positive Gram matrix supplies the needed rank for every $B$. We give the
+denominator, decay and prime-dilation arguments in full.
+
+\subsection{How the contradiction will arise}
+
+Fix $B$ and an even endpoint $s$. Suppose that fewer than $B$ of
+the listed beta values are irrational. We construct $B$ sequences
+of linear forms, indexed by positive odd integers $n$, of the shape
+\begin{equation}\label{eq:preview}
+ F_{n,b}=q_b(n)+\sum_{\substack{2\le i\le s\\i\text{ even}}}
+                  b^i\rho_i(n)\beta(i),\qquad 1\le b\le B,
+\end{equation}
+with rational coefficients. The coefficient column at $\beta(i)$
+is a scalar multiple of the fixed vector
+$(1^i,2^i,\ldots,B^i)^{\mathsf T}$. Fixed integer weights on the
+$B$ forms can therefore cancel any $B-1$ specified beta terms
+at every index $n$. Choosing these terms to include the possible
+irrational values produces a sequence of rational numbers.
+
+For example, when $B=3$, the combination
+$15F_{n,1}-6F_{n,2}+F_{n,3}$ cancels the coefficients at
+$\beta(2)$ and $\beta(4)$, since
+$15-6\cdot2^i+3^i=0$ for $i=2,4$. The same weights work for
+every $n$ because the factor $\rho_i(n)$ is shared by the forms.
+
+We bound the growth of a common denominator for the coefficients
+and choose the parameters so that the forms decay faster than this
+denominator grows. The rational beta values that remain after
+cancellation contribute only a fixed additional denominator.
+Thus the fixed combination, after clearing all denominators, gives
+a sequence of integers tending to zero. To obtain a contradiction,
+we must show that infinitely many of these integers are nonzero.
+
+The cancellation weights can be chosen with a nonzero last entry.
+Indeed, the first $B-1$ coordinates of the chosen power vectors
+form a nonsingular generalized Vandermonde matrix
+(Section~\ref{sec:contradiction}). We therefore arrange the constant
+vector at the first index to have only its last coordinate nonzero:
+\begin{equation}\label{eq:target}
+ (q_1(1),\ldots,q_B(1))=\eta e_B,\qquad \eta\ne0,
+\end{equation}
+where $e_B=(0,\ldots,0,1)$. The combined form then has a nonzero
+constant term at $n=1$. A congruence at indices $n=p$, for arbitrarily large primes
+$p$, transfers this nonvanishing: after a suitable scaling, the
+constant term survives modulo $p$ and all remaining beta terms
+vanish. We obtain nonzero integers tending to zero, which is
+impossible.
+
+The main construction is the choice of \eqref{eq:target}. We find
+$B$ polynomial multipliers whose constant vectors form a rational
+invertible matrix. Its entries are integrals of products of
+independent polynomials against one positive weight. This proves
+invertibility for every $B$ and allows us to prescribe the seed
+constant vector. The remaining sections check that these multipliers
+preserve the denominator and decay estimates needed for the
+contradiction.

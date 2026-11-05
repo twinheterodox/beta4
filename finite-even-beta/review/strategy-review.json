@@ -1,0 +1,48 @@
+{
+  "reviewed_at_utc": "2026-11-04T03:59:15.415257+00:00",
+  "scope": "Structural exposition revision following the whole-paper human-reader review. The four findings were strategy before machinery, an explicit seed-to-nonvanishing connection, the determinant purpose before the calculation, and an expanded infinite-tail estimate.",
+  "pdf": "output/pdf/finite-even-beta.pdf",
+  "pdf_sha256": "e176f0476676246470f09a21825bfa5a0f268ad2754b685349ca93335de50763",
+  "pages": 14,
+  "source_files_sha256": {
+    "paper/finite-even-beta.tex": "93ba7041e0ce0d3ae5175fc970f24fd18af262d7586ada70b85ea6407ca1c1da",
+    "paper/references.tex": "e639bbd95ea8c1be22f7eec78ca498d5049b3abc2b238a18bdc4141b3d6ae6a6",
+    "paper/sections/arithmetic.tex": "2d73e580765bab68cde13742f690980614d38e710ba4628c12e55dffc0db5f22",
+    "paper/sections/certificate.tex": "250a4a1b866819df503c5b8fa4f639bc633d3dcc54789834a287ec612f4ac0ef",
+    "paper/sections/conclusion.tex": "f94286b7ce9f88666fdcc490f7d1de015946098ef1783a55e9c58c417f93ced6",
+    "paper/sections/decay.tex": "ffcbc83e90b377898d106953fff5046636abf50512aed56228711b714b4b3227",
+    "paper/sections/dilation.tex": "d131d6b00d59fc5fa14a79daf07123c8f1124b6527bb893712bfe943f9de44fe",
+    "paper/sections/forms.tex": "22069d8109e73e3320aba1ca3707ab02d421d7096cd5c6705f7187d2cf55472c",
+    "paper/sections/introduction.tex": "3e9f97da0160d94666c7591602c9f713e72741b8c0def0325d632b6e18ed29d9"
+  },
+  "previous_review": "review/literature-comparison-review.json",
+  "previous_pdf_sha256": "84dd86a0f039f1a72f8476181a4982ae11dec765ea4d5a5e34825bda098ba2aa",
+  "changes": [
+    "The introduction begins its proof discussion with the assumption of at most two irrational values. It explains why fixed weights and three forms are useful before displaying the forms, and defers exact denominator and decay constants to the proof.",
+    "The introduction and dilation opening explain why a nonzero constant alone is insufficient, and how scaling and reduction modulo a large prime separate it from the remaining rational beta terms.",
+    "Section 6 begins with w=v_i cross v_j and q_w(2)=det(q(2),v_i,v_j). It presents the modular determinant test before deriving the three seed residues.",
+    "The seed lemma now states only the nonvanishing certificate. The unchanged exact decay code is placed with the analytic estimates in Section 4.",
+    "The infinite-tail estimate displays the grid integral bound, rewrites C_n to expose n^(293n), and explains its cancellation against the tail power.",
+    "The three-form preview and its interpretation are kept together. The modulo-5 product example is kept with its notation and conclusion."
+  ],
+  "exposition_review": {
+    "guidance": "Read and applied the mathematical exposition guidance for human readers.",
+    "reading_scope": "Read the entire manuscript source and all 14 rendered pages, including the unchanged proof sections and bibliography. Reread all changed pages after the final pagination adjustments.",
+    "reader_dependencies": "The contradiction explains cancellation; the fixed columns explain fixed weights; the seed determinant supplies the constant that survives prime dilation; the tail integral and normalization explain the decay bound.",
+    "abstract_check": "The approved abstract remains a statement of the theorem and the beta-function name only. No proof sketch, detailed argument or removed corollary was added."
+  },
+  "targeted_checks": {
+    "manuscript_code": "Both executable blocks passed. All 16,471 pair determinants are nonzero and both rational decay comparisons pass. The blocks are byte-identical to the preceding version, with the decay block relocated.",
+    "added_estimates": "Checked the decreasing-grid integral bound and the normalization rewrite algebraically. Exact arithmetic also confirmed the rewrite and tail exponent for n=2,4,6 and the cross-product factor for the worked pair (2,4).",
+    "preservation": "Checker scripts, certificate data, source-reading ledger and preceding review records match their preserved hashes. The title, abstract, theorem, construction section, arithmetic section, final proof and bibliography are unchanged.",
+    "general_proof_audit": "No new independent audit of the general proof was performed."
+  },
+  "build_check": {
+    "unresolved_references": false,
+    "overfull_boxes": false,
+    "underfull_warnings": []
+  },
+  "visual_review": "All 14 pages are covered by direct visual inspection. Changed pages were re-rendered and inspected after pagination adjustments; the other pages were confirmed byte-identical to inspected renders. No clipped or overlapping content, broken references or split executable code found.",
+  "independent_review_status": "The reported independent audit retains its exact plain-text scope. This is an exposition revision with targeted checks, not a new independent audit or formal verification.",
+  "publication_status": "Local edit only; no commit, push or upload."
+}

@@ -1,0 +1,138 @@
+\section{Three forms with matching coefficient columns}\label{sec:forms}
+
+\subsection{Designing one function for all three grids}
+
+To obtain the coefficient pattern in \eqref{eq:preview}, we evaluate
+a single rational function $R_n$ on each grid $j/b$, for $b=1,2,3$,
+and sum with the alternating signs and odd indices of the beta series.
+
+Write these signs as weights $\ch(j)$:
+$\ch(2k)=0$ and $\ch(2k+1)=(-1)^k$ for integers $k\geq0$.
+Thus the weights are $1,0,-1,0,1,0,-1,0,\ldots$ for $j=1,2,\ldots$,
+and
+\[
+ \sum_{j=1}^{\infty}\ch(j)R_n(j/b)
+   =R_n(1/b)-R_n(3/b)+R_n(5/b)-\cdots.
+\]
+The weights have period $4$. We therefore space the poles by $4$:
+a partial-fraction term at $-4h$ satisfies
+\[
+ \frac{1}{(j/b+4h)^i}=\frac{b^i}{(j+4bh)^i}.
+\]
+Since $4bh$ is a multiple of $4$, the shift preserves the weights.
+Poles at $0,-4,\ldots,-4n$ therefore give the required factor $b^i$.
+
+The numerator serves two purposes. Reflection about $-2n$ pairs the
+poles; we arrange that $R_n(-4n-t)=R_n(t)$ for even $n$, so the paired
+coefficients cancel at every odd order. We also make the initial terms
+of each alternating sum vanish, leaving only a tail. If the last
+positive zero is $rn$, its reflection is $-(r+4)n$. The blocks of zeros
+must therefore span an interval of length $(2r+4)n$.
+
+The three grids have fractional parts $0,1/2,1/3,2/3$.
+We use the representatives
+\[
+ \Theta=\{1,\tfrac12,\tfrac13,\tfrac23\},
+\]
+where $1$ represents the integer class. We choose $r=7$, giving a block
+length of $18n$, and take the largest beta index to be $364$.
+Longer zero blocks remove more initial terms but increase the numerator
+degree. Higher pole orders improve decay but enlarge both the list of
+beta values and the multiplier needed to clear denominators.
+Sections~\ref{sec:decay} and~\ref{sec:certificate} verify that our
+choices give sufficient decay and the required nonvanishing.
+
+For positive even $n$, the numerator with these zero blocks is
+\begin{equation}
+ P_n(t)=(t-7n)\prod_{\theta\in\Theta}\prod_{j=0}^{18n-1}
+                         (t-7n+j+\theta).\label{eq:pn}
+\end{equation}
+The factor $t-7n$ adds the right endpoint to the integer block.
+The integer roots of $P_n$ are exactly $-11n,-11n+1,\ldots,7n$;
+the half-integer block reflects into itself, and the third-shift blocks
+exchange. In particular, $P_n$ has a simple zero at each proposed
+pole $-4h$. To leave pole order $364$ after cancellation, we use
+the denominator $\prod_{h=0}^n(t+4h)^{365}$.
+
+\subsection{Choosing the arithmetic normalization}
+
+Multiplication by a constant preserves the zeros, poles and reflection
+symmetry. We choose this constant to control the denominators of the
+partial-fraction coefficients. For each numerator block, we divide by
+$(n!)^{18}$, using the divisibility of products of $n$ consecutive terms.
+There are four blocks, hence the denominator $(n!)^{72}$.
+The fractional shifts require compensating powers of $2$ and $3$,
+supplied by $K^n$ with $K=2^{36}3^{54}$.
+Section~\ref{sec:arithmetic} proves the resulting divisibility bounds.
+
+Expansion at a pole $-4h$ introduces further denominators.
+The constant terms of the other pole factors have product
+\[
+ \prod_{\substack{0\leq k\leq n\\k\ne h}}(4(k-h))^{365}
+ =4^{365n}(-1)^{365h}\bigl(h!(n-h)!\bigr)^{365}.
+\]
+Multiplication by $4^{365n}$ cancels the power of $4$.
+Multiplication by $((n+1)!)^{365}$ then leaves the integer factor
+$(-1)^{365h}((n+1)\binom nh)^{365}$. We therefore set
+\begin{equation}
+ C_n=4^{365n}K^n\frac{((n+1)!)^{365}}{(n!)^{72}},\qquad
+ R_n(t)=\frac{C_nP_n(t)}{\prod_{h=0}^{n}(t+4h)^{365}}.
+ \label{eq:rn}
+\end{equation}
+The size of $C_n$ must be included in the decay estimate of
+Section~\ref{sec:decay}. The numerator has degree $72n+1$, so $R_n$ has degree at
+infinity $-293n-364$. Each pole has order exactly $364$. Write
+\begin{equation}\label{eq:partials}
+ R_n(t)=\sum_{h=0}^{n}\sum_{i=1}^{364}
+              \frac{a_{i,h}(n)}{(t+4h)^i},\qquad
+ \rho_i(n)=\sum_{h=0}^{n}a_{i,h}(n).
+\end{equation}
+
+\begin{samepage}
+\begin{lemma}\label{lem:forms}
+For $b=1,2,3$, define
+\begin{align}
+ r_{n,b}&=\sum_{j=1}^{\infty}\ch(j)R_n(j/b),\label{eq:rnb}\\
+ q_b(n)&=-\sum_{h=0}^{n}\sum_{i=1}^{364}a_{i,h}(n)b^i
+                   \sum_{j=1}^{4bh}\frac{\ch(j)}{j^i}.
+                   \label{eq:qb}
+\end{align}
+Then
+\begin{equation}\label{eq:forms}
+ r_{n,b}=q_b(n)+\sum_{\substack{2\leq i\leq364\\i\text{ even}}}
+                         b^i\rho_i(n)\beta(i).
+\end{equation}
+Moreover,
+\begin{equation}\label{eq:positive-bound}
+ |r_{n,b}|\leq\sum_{j>7bn}R_n(j/b).
+\end{equation}
+\end{lemma}
+\end{samepage}
+
+\begin{proof}
+The roots of $P_n$ are symmetric about $-2n$. The integer and half-integer
+blocks each reflect into themselves, and the one-third and two-thirds
+blocks exchange. Because $n$ is even, numerator and denominator change
+by the same sign under $t\mapsto-4n-t$. Therefore
+\[
+ R_n(-4n-t)=R_n(t),\qquad
+ a_{i,n-h}(n)=(-1)^i a_{i,h}(n),\qquad \rho_i(n)=0\quad(i\text{ odd}).
+\]
+For each partial fraction, shifting the summation variable by $4bh$
+preserves $\ch$ and gives
+\[
+ \sum_{j=1}^{\infty}\frac{\ch(j)}{(j/b+4h)^i}
+ =b^i\left(\beta(i)-\sum_{j=1}^{4bh}\frac{\ch(j)}{j^i}\right).
+\]
+Here $\beta(1)$ denotes its convergent alternating series. The $i=1$
+sums converge because the partial sums of the weights are bounded;
+there are only finitely many partial-fraction sums. The sum of the
+$\beta(1)$ coefficients is zero, as is the sum at every other odd index.
+This proves \eqref{eq:forms}.
+The original series \eqref{eq:rnb} is absolutely convergent.
+
+Every positive grid point $j/b\leq7n$ is a numerator zero. Beyond $7n$,
+all factors of $R_n$ are positive. Taking absolute values now gives
+\eqref{eq:positive-bound}. We use this positive tail only to bound size;
+nonvanishing of the alternating sum requires a separate argument.
+\end{proof}

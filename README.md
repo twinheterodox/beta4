@@ -1,26 +1,51 @@
-# Research on the irrationality of β(4)
+# Irrationality and linear independence of Dirichlet beta values
 
-This repository collects research on the irrationality of the Dirichlet beta value
+This repository collects research on even Dirichlet beta values. The project began with the irrationality question for
 
 β(4) = 1 − 1/3⁴ + 1/5⁴ − 1/7⁴ + ⋯.
 
-Its scope includes constructions, proofs, computational checks and documented obstructions across approaches to this problem, together with results about the larger family of even beta values. The papers below develop two directions: a quantitative linear-independence bound for that family, and obstructions to particular determinant approaches to the individual value β(4). None of the papers establishes the irrationality of β(4).
+The papers below give explicit counts of irrational even beta values, a quantitative linear-independence bound for the growing family, and obstructions to particular determinant approaches to the individual value β(4). They are accompanied by LaTeX sources, computational checks and review records. None of the papers identifies β(4) as irrational.
 
 ## Papers
 
 | Document | Result and contents | Source and checks |
 | --- | --- | --- |
+| **[Explicit lower bounds for the number of irrational even beta values (20 pages)](even-beta-counts/output/pdf/even-beta-counts.pdf)** | At least $\lfloor\pi\sqrt{2s/(135\log s)}\rfloor$ irrational even beta values through β(s), for every even s ≥ 160, with sharper finite endpoints. | [Paper guide](even-beta-counts/README.txt) · [LaTeX](even-beta-counts/paper/even-beta-counts.tex) · [Checks](even-beta-counts/checks/README.txt) |
+| **[At least three of β(2), β(4), …, β(364) are irrational. (16 pages)](finite-even-beta/output/pdf/finite-even-beta.pdf)** | At least three of β(2), β(4), …, β(364) are irrational. Complete proof and exact seed certificate. | [Paper guide](finite-even-beta/README.txt) · [LaTeX](finite-even-beta/paper/finite-even-beta.tex) · [Checks](finite-even-beta/checks/README.txt) |
 | **[Even beta values: linear independence (19 pages)](even-beta-independence/output/pdf/even-beta-independence.pdf)** | A lower bound of $0.21\sqrt{s/\log s}$ for the rational span of β(2), β(4), …, β(s), for every sufficiently large even s. Full proof of the half-integer adaptation of Fischler's method. | [Paper guide](even-beta-independence/README.md) · [LaTeX](even-beta-independence/paper/even-beta-independence.tex) · [Checks](even-beta-independence/checks/README.txt) |
 | **[Determinant obstructions (21 pages)](output/pdf/beta4-determinant-obstructions.pdf)** | Two positive determinant families fail the intended irrationality test, even after all common coefficient factors are removed. Includes complete proofs and a worked arithmetic example. | [LaTeX](paper/beta4-determinant-obstructions.tex) · [Checks](checks/README.md) · [Final reading](planning/final-reading-2026-11-02.txt) |
 | **[Determinant investigation supplement (67 pages)](output/pdf/beta4-investigations.pdf)** | Self-contained case studies with constructions, proofs, remaining questions and standalone certificates; a catalog covers all 57 grouped records. | [Source guide](supplement/README.md) · [Checks](checks/SUPPLEMENT.md) · [Final reading](planning/supplement-final-reading-2026-11-02.txt) |
 
-**Review status:** an [independent model proof audit of the 19-page even-beta paper](even-beta-independence/review/independent-model-review-2026-11-03.json), reported on 3 November 2026, found no substantive mathematical gap. The [full report](even-beta-independence/review/independent-model-review-2026-11-03.txt) records the proof checks and additional computations. The [determinant papers and accompanying code](planning/independent-model-review-2026-11-02.json) passed a separately reported model cross-check. These reviews use the cited mathematical results and are not formal verification.
+**Review status:** an [independent audit of the count paper](even-beta-counts/review/independent-audit-2026-11-05.json), reported on 5 November 2026, found no substantive mathematical error or gap and independently reproduced the finite calculations. The [earlier linear-independence paper](even-beta-independence/review/independent-model-review-2026-11-03.json) received a separate model proof audit reported on 3 November 2026; its [full report](even-beta-independence/review/independent-model-review-2026-11-03.txt) records the proof checks and additional computations. The [determinant papers and accompanying code](planning/independent-model-review-2026-11-02.json) passed a separately reported model cross-check. Each report identifies its own scope; these audits are not formal verification.
 
 See the [changelog](CHANGELOG.md) for repository updates.
 
+## A uniform count from s = 160
+
+The new [count paper](even-beta-counts/output/pdf/even-beta-counts.pdf) proves
+
+$$
+I(s)\ge\left\lfloor\pi\sqrt{\frac{2s}{135\log s}}\right\rfloor
+\qquad(s\ge160\text{ even}),
+$$
+
+where I(s) counts irrational values among β(2), β(4), …, β(s). This gives two at 160 and three at 364. The construction also gives four through 588 and further sharper finite endpoints. A positive Gram matrix proves the required rank for every requested count; prime dilation transfers seed nonvanishing to infinitely many indices.
+
+The [independent audit report](even-beta-counts/review/independent-audit-2026-11-05.txt) covers the general proof and independently written arithmetic checks, including all 253 finite interval comparisons. The [audit record](even-beta-counts/review/independent-audit-2026-11-05.json) identifies the 19-page PDF snapshot captured when the report was supplied. The current version adds the requested explanation of the uniform Stirling error and an audit note; these edits and their validation are [recorded separately](even-beta-counts/review/audit-response-2026-11-05.json). The audit was not formal verification or a fresh audit of all cited literature. The separate three-through-364 paper below is unchanged.
+
+## A finite set of even beta values
+
+The [finite-set paper](finite-even-beta/output/pdf/finite-even-beta.pdf) proves that at least three of β(2), β(4), …, β(364) are irrational. Three alternating sums allow any two chosen coefficients to be canceled; a finite seed and prime dilation ensure nonvanishing, and exact denominator and decay estimates finish the contradiction.
+
+An [independent proof-audit report](finite-even-beta/review/independent-audit.json) for the preceding plain-text proof found no substantive mathematical gap and independently reconstructed its finite certificate. The typeset manuscript is a subsequent exposition revision and has not received a new independent audit. The reviewer identity and model were not specified for that report. The supplied exact checks, reported independent audit and source reading have separate scopes.
+
+The count of three through 364 appears new among the sources checked. The introduction gives the relevant finite-subset precedents, including the block sizes and parameter conditions in the results of Sorokin and Huttner, and OpenAI's irrationality theorem for β(2).
+
+Appendix A checks the finite estimates behind selected asymptotic results. The specified estimates and parameter families of Rivoal–Zudilin, Nishimoto, Fischler and the companion square-root paper do not yield the three-value count at 364. A separate exact checker reproduces the finite comparisons.
+
 ## Even beta values
 
-The new paper proves, for every sufficiently large even integer $s$,
+The linear-independence paper proves, for every sufficiently large even integer $s$,
 
 $$
 \dim_{\mathbb Q}\operatorname{span}_{\mathbb Q}\{\beta(2),\beta(4),\ldots,\beta(s)\}
@@ -48,9 +73,25 @@ The [reproduction instructions and results](checks/README.md) distinguish main-p
 
 The main determinant results are a uniform primitive-growth obstruction for shifted consecutive principal determinants, and an exact large-prime valuation theorem leading to a primitive-growth obstruction for difference-variable Gram determinants. The supplement distinguishes further proved limitations from incomplete constructions and finite evidence. Its positive-source cone and ordinary-moment first variation also explain why particular-family failures do not settle the broader problem. Priority of the specific statements remains subject to the recorded literature comparison and further scrutiny.
 
-The work was prepared with Codex. The independent model review, archived model cross-checks, exact rational calculations, interval calculations and source reading are recorded separately. The independent review is a model cross-check; it is not a human mathematical audit or proof-assistant verification.
+The work was prepared with Codex. Reported proof audits, model cross-checks, exact rational calculations, interval calculations and source reading are recorded separately with their respective scopes. No proof-assistant verification is claimed.
 
 ## Reproducing the results
+
+For the new count paper, from the repository root:
+
+```sh
+python3 -B even-beta-counts/checks/verify_construction.py
+python3 -B even-beta-counts/checks/verify_endpoints.py
+python3 -B even-beta-counts/tools/build_paper.py
+```
+
+For the finite-set paper, all certificate calculations use Python's standard library. From the repository root:
+
+```sh
+python3 finite-even-beta/checks/verify.py
+python3 finite-even-beta/checks/check_asymptotic_comparisons.py
+python3 finite-even-beta/tools/build_paper.py
+```
 
 For the even-beta paper, the [reproduction guide](even-beta-independence/README.md#reproduce-the-checks-and-build) gives the pinned dependency and build instructions. From the repository root:
 

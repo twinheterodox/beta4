@@ -1,0 +1,37 @@
+{
+  "reviewed_at_utc": "2026-11-04T11:46:30.760563+00:00",
+  "scope": "Two-sentence contextual comparison with asymptotic linear-independence bounds, plus its reference.",
+  "pdf": "output/pdf/finite-even-beta.pdf",
+  "pdf_sha256": "5d9c2605dd3864afd6ffc53241d624f5514dcc32200ed84c170e45736012a4c3",
+  "pages": 13,
+  "source_files_sha256": {
+    "paper/finite-even-beta.tex": "c51106a01e627b258d79ad657bd0459de5458c7e07c1458a2bcaed51b3927297",
+    "paper/references.tex": "ef469b31d8d90358f5e1826b7482a00b3206e6cec58b75bd62a43b0a4bf3c670",
+    "paper/sections/arithmetic.tex": "d37ea08e805c20e92b5c6672080b772fa9e8b49597dbca4659a60f11e5cb550f",
+    "paper/sections/certificate.tex": "32ee1a96183aebd56343daf5fef912527e691753e3b9fe50e570dfef297b7f0c",
+    "paper/sections/conclusion.tex": "313a01b0fcda68eb0536daef21981de96d93cdbe5ea3838261279bdb627013af",
+    "paper/sections/decay.tex": "55414eb4fb76a84bb09c2120aec971b02431166e4c6e8caba797765a3425b8c7",
+    "paper/sections/dilation.tex": "ccb39e0485691165b61751344f08351e7831e8b5624049123fcad6c5dc7cc886",
+    "paper/sections/forms.tex": "64115f077b20466bdf5fc73650eb54b7335dd8f94c792e2f75c65cf4006b5f85",
+    "paper/sections/introduction.tex": "ad7f85b8e67dadc35cb2746a4ef48fd545abdd767ea71ce120c701901cfa0390"
+  },
+  "previous_review": "review/explicit-title-review.json",
+  "previous_pdf_sha256": "7013d776c596eb2625b34f1c867696c6e4e8dcaf0411f6b1fce097e8aeaa364c",
+  "changes": [
+    "Added a short paragraph about asymptotic lower bounds for the dimension of the rational span of even beta values, qualifying the square-root order as the strongest known to us.",
+    "Added the companion paper as reference T26, linking to its exact Git version.",
+    "Broadened the heading to Comparison with earlier results."
+  ],
+  "preservation_check": "The theorem, title, abstract, proof, displayed equations and certificate are unchanged. All other section sources, checker code and data, and historical review records match the preceding version.",
+  "comparison_scope": "Order of an asymptotic lower bound for the dimension of the rational span of even beta values, not an unqualified comparison of all irrationality results. This contextual citation introduces no proof dependency.",
+  "source_check": "Reused the local companion PDF and verified that its bytes match Git commit 095d309ae168757dbfa4063484d28186f7f41beb. Previous source reading and a targeted current web search support the qualified comparison; this is not an exhaustive priority assessment.",
+  "build_check": {
+    "unresolved_references": false,
+    "overfull_boxes": false,
+    "underfull_warnings": []
+  },
+  "visual_review": "Rendered and inspected all 13 pages after reflow. The new paragraph and reference, section transitions, formulas and code blocks have no clipping or overlap.",
+  "computational_scope": "No mathematical checker rerun for this introduction and reference edit. Source comparisons confirm that the proof and executable code are unchanged.",
+  "independent_review_status": "The historical independent audit retains its stated scope; no new independent proof audit or formal verification is claimed.",
+  "publication_status": "Local edit only; no commit, push or upload."
+}

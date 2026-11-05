@@ -1,0 +1,48 @@
+{
+  "date": "2026-11-04",
+  "scope": "Introduction comparison revised: the full 0.21 irrationality-count deduction is justified here using the earlier paper without changing that paper.",
+  "changed_manuscript_sources": [
+    "paper/sections/introduction.tex"
+  ],
+  "pdf": "output/pdf/even-beta-counts.pdf",
+  "pdf_sha256": "ea287edef1dc627b2a8b8eecfabfb0013b93741a583ae0949a0ca4c40b538c20",
+  "pages": 18,
+  "source_files_sha256": {
+    "paper/even-beta-counts.tex": "f94ba256b7468983737c215fe26ecfd366e9d365abe5c92d33eda19274e873c7",
+    "paper/references.tex": "25a89d4735684da5111052332f01c94405c27db2a217884dd59a49b2f82f76cb",
+    "paper/sections/arithmetic.tex": "59fbe3dbcbd49be0f873be522f4b2fda8c09fbf8a2631b9ffed2c8a01eaf3af5",
+    "paper/sections/checks.tex": "ccf9b57ad7cfa8cbefbc028a84b8a9e1e2a01ebc363fda697d12bd38c039b0c6",
+    "paper/sections/construction.tex": "2f0623b5bafedd4ca4f0b19802efc9a7849bf08fc0c174e58674fccf2e1c95bc",
+    "paper/sections/contradiction.tex": "5bb08391dab0fe2a4a3983126ab9f2b36c1f72abdd6dccf2f9b8b0ded552f76a",
+    "paper/sections/count.tex": "b5bd0b5187cbe0fc02e3f3734e744ca097fc591e23a74bf0113e8e0040a67b04",
+    "paper/sections/decay.tex": "66ee2f070c5b276b5efac94b9524650ed0b29583ae3392e9fb3892d88333c383",
+    "paper/sections/dilation.tex": "c974aa5a16d204e9311c430390249987c87429fd18f53cda45da79162418920e",
+    "paper/sections/endpoints.tex": "75fe3684151141f95747373e952c15ee1cbdc2da084569af866db56056943f4e",
+    "paper/sections/gram.tex": "67075cdf44af3293c3a321199a4fa3ff50ad64ee634466163a20d4bedbd43e9a",
+    "paper/sections/introduction.tex": "afff3a5fa7bbe0d36b016b0158ed77b22713d8adc8ee5884c4925a5ae37be913"
+  },
+  "mathematical_check": [
+    "The criterion application before (7.1) of the cited manuscript gives augmented dimension at least 1-log(alpha)/log(B).",
+    "The parameter estimates (7.3)-(7.4) give the lower bound 1+(c_star+o(1))*sqrt(s/log(s)) at multiples of 34, with c_star=0.2174562348...>0.21.",
+    "Monotonicity of augmented dimension and bounded gaps between those endpoints give the displayed lower bound for all sufficiently large even s.",
+    "All rational beta values lie in Q*1 and each irrational value adds at most one dimension, so augmented dimension is at most 1+I(s)."
+  ],
+  "validation": {
+    "build": "Three pdflatex passes; no unresolved references or overfull boxes.",
+    "underfull_warnings": [],
+    "visual": "All 18 pages inspected in rendered contact sheets; page 1 inspected separately. No clipping or overlap detected. Main theorem remains on page 1.",
+    "abstract_and_remaining_proof_sources_unchanged": true,
+    "new_independent_audit": false,
+    "supporting_computations": "Not rerun: no construction, analytic bound or finite computational claim changed."
+  },
+  "earlier_paper_restoration": {
+    "source_README_build_record_and_PDF_match_pre_addition_version_and_git_HEAD": true,
+    "pdf_sha256": "83fff93aebeff3b79fb2f316df94518321a7b7dab815c7ab37d8ebf0b5cc5fe8",
+    "pages": 19,
+    "restored_source_and_PDF_match_original_build_record": true,
+    "visual": "Restored pages 1, 17, 18 and 19 rendered and inspected.",
+    "historical_audit_records_unchanged": true
+  },
+  "finite_even_beta_manuscript_unchanged": true,
+  "publication": "Local revision only; no commit, push or upload."
+}

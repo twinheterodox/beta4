@@ -1,0 +1,133 @@
+\section{Decay after clearing denominators}\label{sec:decay}
+
+Clearing denominators multiplies each form by $\delta_n^S$.
+The prime number theorem gives $\delta_n^{1/n}\to\ep$, so it
+suffices to bound the $n$th-root limsup of $|F_{n,b}|$ strictly below
+$\ep^{-S}$. We estimate the alternating sums by their absolute
+values. The initial grid points are zeros,
+and the remaining terms lie to the right of $rn$, where $R_n$ is
+positive. The polynomial $W_n$ has fixed degree and will not change
+the exponential rate.
+
+\subsection{The exponential profile}
+
+We measure distance beyond the last zero in units of $n$, writing
+$t=nx$. The function $\Phi(x)$ below records the exponential
+size of $R_n(rn+t)$ at that scaled position.
+For $t>0$, the numerator and denominator products have the gamma
+representations
+\begin{align*}
+ P_n(rn+t)&=t\prod_{\theta\in\Theta}
+                  \frac{\Gamma(t+Ln+\theta)}{\Gamma(t+\theta)},\\
+ \prod_{h=0}^n(rn+t+4h)
+   &=4^{n+1}\frac{\Gamma(((r+4)n+t)/4+1)}{\Gamma((rn+t)/4)}.
+\end{align*}
+Together with the factorials in $C_n$, Stirling's formula gives
+\begin{align}
+ \Phi(x)&=\lim_{\substack{n\to\infty\\n\text{ odd}}}
+                    \frac1n\log R_n(n(r+x))\notag\\
+ &=\log K+D\bigl((x+L)\log(x+L)-x\log x\bigr)\notag\\
+ &\quad-\frac S4\bigl((x+r+4)\log(x+r+4)
+                         -(x+r)\log(x+r)\bigr)+S\log4.
+ \label{eq:Phi}
+\end{align}
+The coefficient of $n\log n$ from the factorials is $S-DL$;
+the product ratio contributes its negative. The linear Stirling
+terms also cancel. The remaining expression is \eqref{eq:Phi}.
+
+Let $f$ be the function in \eqref{eq:f-criterion}. Direct
+differentiation gives $4\Phi'(x)=\log f(x)$. The derivative of
+$\log f$ has positive denominator and numerator
+\[
+ 4\bigl((S-DL)x^2+L(S-DL)x-DLr(r+4)\bigr).
+\]
+This quadratic has exactly one positive zero. Thus $\log f$ first
+decreases and then increases. It starts at $+\infty$ and approaches
+$0$ from below, with leading term $-4(S-DL)/x$. Consequently it
+has exactly one zero $x_0>0$, where $\Phi$ attains its global
+maximum. The identity $\Phi'(x_0)=0$ simplifies that maximum to
+\begin{equation}\label{eq:G}
+ G=\exp(\Phi(x_0))
+  =K(x_0+L)^{DL}4^S
+        \left(\frac{(x_0+r)^r}{(x_0+r+4)^{r+4}}\right)^{S/4}.
+\end{equation}
+
+\subsection{Summing the profile and controlling the tail}
+\label{sec:profile-sum}
+
+Fix $A>0$. We must allow $t$ to stay as small as $1/B$ while
+$n$ grows. Only the gamma factors $\Gamma(t+\theta)$ can have
+bounded arguments. Stirling's formula for $t\ge1$ and continuity
+on the compact interval $[1/B,1]$ give, uniformly for
+$\theta\in\Theta$,
+\[
+ \log\Gamma(t+\theta)=t\log t-t+O_B(\log(2+t)),
+ \qquad t\ge1/B.
+\]
+All other gamma arguments grow proportionally to $n$ on
+$1/B\le t\le An$. Their logarithmic errors are $O_A(\log n)$,
+as are the error above and the extra term $\log t$ from $P_n$.
+Substitution in the gamma formulas therefore gives the uniform estimate
+\[
+ \log R_n(rn+t)=n\Phi(t/n)+O_A(\log n),
+                       \qquad 1/B\le t\le An.
+\]
+The lower endpoint $1/B$ is sufficient: the first nonzero point on
+any of our grids lies at least that distance beyond $rn$.
+Homogeneity gives $|W_n(rn+t)|=O_A(n^E)$ on this range, which
+contains $O_A(n)$ grid points. Their absolute sum therefore has
+$n$th-root limsup at most $G$.
+
+We also need a bound uniform over the infinite tail. Set
+\begin{equation}\label{eq:tau}
+ \tau=s-E>0,
+\end{equation}
+and take $A\ge\max(L,r+2)$. For $t\ge An$, each numerator factor
+is at most $2t$, each denominator factor is at least $t$, and
+$|W_n(rn+t)|\le C t^E$ for a fixed constant $C$. Thus
+\[
+ |T_n(rn+t)|\le C C_n2^{DLn+1}
+                      t^{-(S-DL)n-\tau}.
+\]
+For $q_n=(S-DL)n+\tau>1$, the tail on a grid of spacing $1/b$
+is bounded by a first term and an integral:
+\[
+ \sum_{\substack{t\text{ on the grid}\\t\ge An}}t^{-q_n}
+ \le(An)^{-q_n}+b\frac{(An)^{1-q_n}}{q_n-1}.
+\]
+Stirling's formula for $C_n$ then gives the tail $n$th-root bound
+\begin{equation}\label{eq:tail}
+ 4^S K2^{DL}\ep^{-(S-DL)}A^{-(S-DL)}.
+\end{equation}
+The powers of $n^{S-DL}$ from the factorials cancel the corresponding
+powers from $(An)^{-(S-DL)n}$. Since $S>DL$, the bound in
+\eqref{eq:tail} tends to zero as $A$ grows. Combining the bounded
+range with the tail proves
+\begin{equation}\label{eq:uncleared-decay}
+ \limsup_{\substack{n\to\infty\\n\text{ odd}}}|F_{n,b}|^{1/n}\le G.
+\end{equation}
+
+\subsection{The two rational inequalities imply decay}
+
+The estimate \eqref{eq:uncleared-decay} reduces the required
+decay to $\ep^S G<1$.
+If $f(u)<1$, the description of $f$ above implies $x_0<u$.
+Also
+\[
+ \frac{(x+r)^r}{(x+r+4)^{r+4}}
+\]
+decreases for $x\ge0$: its logarithmic derivative is
+$-4x/((x+r)(x+r+4))$. Finally, the exponential series gives
+\[
+ \ep<\frac{163}{60}+\frac7{4320}<\frac{68}{25}.
+\]
+Using these bounds in \eqref{eq:G} yields
+$(\ep^S G)^4<U$, where $U$ is the rational expression in
+\eqref{eq:U-criterion}. We have proved the following consequence
+of the two conditions in Proposition~\ref{prop:criterion}:
+\begin{equation}\label{eq:cleared-decay}
+ \limsup_{\substack{n\to\infty\\n\text{ odd}}}
+            |\delta_n^S F_{n,b}|^{1/n}<1.
+\end{equation}
+The same conclusion holds for every fixed integer combination of
+the $B$ forms.
