@@ -10,7 +10,7 @@ The papers below give explicit counts of irrational even beta values, a quantita
 
 | Document | Result and contents | Source and checks |
 | --- | --- | --- |
-| **[Explicit lower bounds for the number of irrational even beta values (20 pages)](even-beta-counts/output/pdf/even-beta-counts.pdf)** | At least $\lfloor\pi\sqrt{2s/(135\log s)}\rfloor$ irrational even beta values through β(s), for every even s ≥ 160, with sharper finite endpoints. | [Paper guide](even-beta-counts/README.txt) · [LaTeX](even-beta-counts/paper/even-beta-counts.tex) · [Checks](even-beta-counts/checks/README.txt) |
+| **[Explicit lower bounds for the number of irrational even beta values (20 pages)](even-beta-counts/output/pdf/even-beta-counts.pdf)** | At least $\lfloor\pi\sqrt{2/135}\,\sqrt{s/\log s}\rfloor$ irrational even beta values through β(s), for every even s ≥ 160, with sharper finite endpoints. | [Paper guide](even-beta-counts/README.txt) · [LaTeX](even-beta-counts/paper/even-beta-counts.tex) · [Checks](even-beta-counts/checks/README.txt) |
 | **[At least three of β(2), β(4), …, β(364) are irrational. (16 pages)](finite-even-beta/output/pdf/finite-even-beta.pdf)** | At least three of β(2), β(4), …, β(364) are irrational. Complete proof and exact seed certificate. | [Paper guide](finite-even-beta/README.txt) · [LaTeX](finite-even-beta/paper/finite-even-beta.tex) · [Checks](finite-even-beta/checks/README.txt) |
 | **[Even beta values: linear independence (19 pages)](even-beta-independence/output/pdf/even-beta-independence.pdf)** | A lower bound of $0.21\sqrt{s/\log s}$ for the rational span of β(2), β(4), …, β(s), for every sufficiently large even s. Full proof of the half-integer adaptation of Fischler's method. | [Paper guide](even-beta-independence/README.md) · [LaTeX](even-beta-independence/paper/even-beta-independence.tex) · [Checks](even-beta-independence/checks/README.txt) |
 | **[Determinant obstructions (21 pages)](output/pdf/beta4-determinant-obstructions.pdf)** | Two positive determinant families fail the intended irrationality test, even after all common coefficient factors are removed. Includes complete proofs and a worked arithmetic example. | [LaTeX](paper/beta4-determinant-obstructions.tex) · [Checks](checks/README.md) · [Final reading](planning/final-reading-2026-11-02.txt) |
@@ -25,11 +25,29 @@ See the [changelog](CHANGELOG.md) for repository updates.
 The new [count paper](even-beta-counts/output/pdf/even-beta-counts.pdf) proves
 
 $$
-I(s)\ge\left\lfloor\pi\sqrt{\frac{2s}{135\log s}}\right\rfloor
+I(s)\ge\left\lfloor\pi\sqrt{\frac{2}{135}}\,\sqrt{\frac{s}{\log s}}\right\rfloor
 \qquad(s\ge160\text{ even}),
 $$
 
-where I(s) counts irrational values among β(2), β(4), …, β(s). This gives two at 160 and three at 364. The construction also gives four through 588 and further sharper finite endpoints. A positive Gram matrix proves the required rank for every requested count; prime dilation transfers seed nonvanishing to infinitely many indices.
+where I(s) counts irrational values among β(2), β(4), …, β(s). The floor can be omitted for every even s ≥ 42,170.
+
+The construction gives sharper counts at individual endpoints. The table compares these with the uniform bound above; the final column shows the expression inside the floor, rounded to two decimal places.
+
+| Endpoint s | Construction: I(s) ≥ | Uniform bound: I(s) ≥ | Expression before flooring |
+| ---: | ---: | ---: | ---: |
+| 160 | 2 | 2 | 2.15 |
+| 364 | 3 | 3 | 3.00 |
+| 588 | 4 | 3 | 3.67 |
+| 1030 | 5 | 4 | 4.66 |
+| 1296 | 6 | 5 | 5.14 |
+| 1992 | 7 | 6 | 6.19 |
+| 2502 | 8 | 6 | 6.84 |
+| 3260 | 9 | 7 | 7.68 |
+| 3828 | 10 | 8 | 8.24 |
+
+For example, the uniform bound guarantees three irrational values through β(588); the construction guarantees four.
+
+A positive Gram matrix proves the required rank for every requested count; prime dilation transfers seed nonvanishing to infinitely many indices.
 
 The [independent audit report](even-beta-counts/review/independent-audit-2026-11-05.txt) covers the general proof and independently written arithmetic checks, including all 253 finite interval comparisons. The [audit record](even-beta-counts/review/independent-audit-2026-11-05.json) identifies the 19-page PDF snapshot captured when the report was supplied. The current version adds the requested explanation of the uniform Stirling error and an audit note; these edits and their validation are [recorded separately](even-beta-counts/review/audit-response-2026-11-05.json). The audit was not formal verification or a fresh audit of all cited literature. The separate three-through-364 paper below is unchanged.
 
