@@ -1,0 +1,106 @@
+\section{Denominators after differentiation}\label{sec:arithmetic}
+
+\subsection{A progression estimate}
+
+Put $d_n=\lcm(1,\ldots,n)$ and $\delta_n=4d_n$. We first
+control the Taylor coefficients of the numerator blocks. Taking
+a coefficient of degree $j$ removes at most $j$ divisible
+constants at each prime-power level; $d_n^j$ pays for that loss.
+
+\begin{lemma}\label{lem:progression}
+For $\theta=v/d\in\Theta$ in lowest terms, define
+\[
+ B_\theta(t)=\frac{A_d^n}{(n!)^L}
+             \prod_{j=0}^{Ln-1}(t-rn+j+v/d).
+\]
+For every integer $v_0$ and every $j\ge0$,
+\begin{equation}\label{eq:block-integrality}
+ d_n^j[t^j]B_\theta(t+v_0)\in\Z.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Clear $d$ from each factor using the factor $d^{Ln}$ in $A_d^n$.
+Fix a prime $q\nmid d$. At each level $q^e\le n$, split the
+$Ln$ progression terms into $L$ blocks of length $n$. Each block
+has at least $\lfloor n/q^e\rfloor$ divisible constants.
+A term in the coefficient of $t^j$ replaces $j$ constants by
+variable terms and loses at most $j$ contributions at that level.
+Its valuation is therefore at least
+\[
+ L v_q(n!)-j v_q(d_n).
+\]
+A term retaining a zero constant is zero and needs no estimate.
+If $q\mid d$, the cleared constants are units and the extra
+factor in $A_d^n$ has valuation
+\[
+ n\left\lceil\frac{L}{q-1}\right\rceil
+       \ge\frac{Ln}{q-1}\ge L v_q(n!).
+\]
+These bounds prove \eqref{eq:block-integrality}. Products and
+integer powers preserve the same coefficient rule by convolution.
+\end{proof}
+
+\subsection{Partial-fraction coefficients}
+
+\begin{proposition}\label{prop:denominators}
+For every positive odd $n$,
+\begin{align}
+ \delta_n^{S-i}a_{i,h}(n)&\in\Z,\label{eq:a-integral}\\
+ \delta_n^{S+k-\nu}A_{\nu,h}(n)&\in\Z,
+ &\delta_n^{S+k-\nu}\rho_\nu(n)&\in\Z,
+ &\delta_n^{S+k}q_b(n)&\in\Z.\label{eq:integral}
+\end{align}
+\end{proposition}
+\begin{proof}
+Write $B_n(t)=K^{mn}P_n(t)^m/(n!)^{mDL}$ and suppress the
+index $n$ on the coefficients. Expanding at $-4h$ gives
+\begin{align}
+ a_{i,h}={}&(n+1)^S(-1)^{Sh}\binom nh^S\notag\\[-2pt]
+ &\quad\times[t^{S-i}]
+ \left\{W_n(t-4h)B_n(t-4h)
+       \prod_{\ell\ne h}\left(1+\frac{t}{4(\ell-h)}\right)^{-S}
+ \right\}.\label{eq:local-coefficient}
+\end{align}
+The constants from the other poles have product
+$4^{Sn}(-1)^{Sh}(h!(n-h)!)^S$. Their cancellation with $C_n$
+leaves the displayed integer prefactor. Each $4(\ell-h)$ divides
+$\delta_n$, and $W_n$ has integer coefficients.
+Lemma~\ref{lem:progression} and the binomial series prove
+\eqref{eq:a-integral}. Formula~\eqref{eq:derivative-coefficients}
+then proves the first two bounds in \eqref{eq:integral}.
+
+The finite sums in \eqref{eq:q} can introduce prime powers not
+covered by $\delta_n$, so the coefficient bounds alone do not
+prove integrality term by term. We use the zeros that survive
+differentiation to cancel these denominators after grouping,
+as in~\cite[Section~4]{Tcount}.
+Fix an odd $j\le4bh$ and put $t_0=j/b-4h$.
+This is a grid point in $(-4n,0)$ and is
+not a pole, so $V_n(t_0)=0$. With
+$x_\ell=j/b+4(\ell-h)$, this says
+\begin{equation}\label{eq:grouping}
+ \sum_\nu\frac{A_{\nu,h}}{x_h^\nu}
+   =-\sum_{\ell\ne h}\sum_\nu\frac{A_{\nu,\ell}}{x_\ell^\nu}.
+\end{equation}
+At a prime $q$ put $v=v_q(\delta_n)$. At most one $x_\ell$ has
+valuation greater than $v$: otherwise the difference of two such
+terms, a nonzero $4(\ell-\ell')$ dividing $\delta_n$, would too.
+The coefficient bound gives
+\begin{equation}\label{eq:group-bound}
+ v_q\!\left(\frac{\delta_n^{S+k}A_{\nu,\ell}}{x_\ell^\nu}\right)
+                    \ge\nu\bigl(v-v_q(x_\ell)\bigr).
+\end{equation}
+If $v_q(x_h)\le v$, the left group in \eqref{eq:grouping} is
+integral after scaling. Otherwise every group on the right is
+integral after scaling, so the same conclusion follows from
+\eqref{eq:grouping}. This holds at every prime. Summing the
+integral groups with the signs in \eqref{eq:q} proves the last
+bound in \eqref{eq:integral}.
+\end{proof}
+
+The exponent in the common multiplier is $S+k$. Multiplicity
+$m$ in the numerator preserves the zeros needed for the grouped
+argument, while differentiation shifts a coefficient of order $i$
+to order $i+k$. Its denominator bound remains $\delta_n^{S-i}$,
+which is $\delta_n^{S+k-(i+k)}$. This explains the additional
+arithmetic cost of differentiation.

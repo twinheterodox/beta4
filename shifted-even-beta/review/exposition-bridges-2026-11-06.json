@@ -1,0 +1,97 @@
+{
+  "date": "2026-11-06",
+  "scope": "The six exposition improvements requested after the full-paper review. The theorem, parameter choices and proof estimates are unchanged.",
+  "reviewer": "Constructing-assistant self-review; not an additional independent mathematical audit.",
+  "previous_pdf_sha256": "ba044c07c33f7f61702858259313fbb7c895ad3a1f15c47038778e0737227220",
+  "pdf": "output/pdf/shifted-even-beta.pdf",
+  "pdf_sha256": "66dc388db68d5f288982519654208886e2a0c5778f8daf958631488c8befbe4d",
+  "pages": 17,
+  "source_files": {
+    "paper/references.tex": "f5a04d6c540e56e35bd5b1824a2e4705d4924eefec4e9a493c82acc16ef23d36",
+    "paper/sections/arithmetic.tex": "ebde3ecd62287c41633eaf5d42e4ddf54c1d1f1812c6a7f5b404db14bedfba32",
+    "paper/sections/checks.tex": "c91621c1d2b075baad02155fcb896c44d75c211f3e3f0a1622ce40de0c85b7a4",
+    "paper/sections/construction.tex": "e14dd00a07f933db65aef16a4fb01baafed4381f522ccfd708fbf1e6c60b9968",
+    "paper/sections/contradiction.tex": "6501c2baf07c9bc6e4353ab79032eaa33d27cc829b1f5838ccad47262b2215a6",
+    "paper/sections/decay.tex": "f4cda7cec04dadce442144512b4c0bf1be33bf2aeac158bdc09b558bea8310f7",
+    "paper/sections/dilation.tex": "a35f46bed23acff746e9e938b0a950e13ecc66dd77396b029a5cb0eac77d6324",
+    "paper/sections/endpoints.tex": "a4bbfc53cb7192cabfd0d65bf67b5587eefb88f8e5f3dee8bbc72a1673ba9b75",
+    "paper/sections/gram.tex": "05cbcefbba9d4cb086c60e89fbfe757ec8358320b28c2ae7761a9ff1b6aaa3a8",
+    "paper/sections/introduction.tex": "f7a0beaedd045c7ff5f4d59179b0d1b953e51d56adf9ca21f91a895f477f8279",
+    "paper/shifted-even-beta.tex": "7ef025accdd9fb8ef7395904551706bbab844ecd54428f71506742327c4977c7"
+  },
+  "changes": [
+    {
+      "section": "2.1",
+      "change": "Explain the roles of grid zeros, poles spaced by four and the polynomial multiplier before defining the rational function."
+    },
+    {
+      "section": "2.3",
+      "change": "Identify e_0=68/25 as a rational upper bound for e."
+    },
+    {
+      "sections": [
+        "2.3",
+        "3"
+      ],
+      "change": "Add the B=2 combination 2^nu F_(n,1)-F_(n,2), whose seed constant is -eta when the seed vector is (0,eta); explain why the general seed vector is eta e_B. Preview the matrix of seed vectors from B candidate multipliers and how nonsingularity produces one common integer multiplier."
+    },
+    {
+      "section": "4.2",
+      "change": "Explain why the coefficient bounds alone do not clear the finite-sum denominators term by term and why cancellation after grouping is needed."
+    },
+    {
+      "section": "6.2",
+      "change": "Name R_(ell p) explicitly and describe its partial-fraction coefficient, replacing the undefined base-function shorthand."
+    },
+    {
+      "section": "8.1",
+      "change": "Motivate S=m S_0, bring the governing estimate forward, and explain how 45*(4/5)=36 and 66*(4/5)=264/5 cover the logarithmic and fixed costs while leaving room for differentiation. Follow the explanation with the existing exact rational certificates."
+    }
+  ],
+  "verification": {
+    "all_original_labelled_formulas_retained": true,
+    "equation_order_and_numbering_changed_in_section_8": true,
+    "new_seed_example": "Direct algebra: the beta(nu) coefficient is 2^nu*rho_nu(n)-2^nu*rho_nu(n)=0 at every index; the rational constant at n=1 is 2^nu*0-eta=-eta. This does not assert that the value of the whole form at n=1 is nonzero.",
+    "new_explanatory_arithmetic": "Exact rational checks confirm 45*(4/5)=36, 66*(4/5)-261/5=3/5, 3/5+4/5-11/10=3/10, (u+18)/u=901 and (u+7)/(u+11)=351/551 for u=1/50.",
+    "abstract_introduction_audit_note_and_bibliography_byte_unchanged": true,
+    "exact_checker_files_and_outputs_unchanged": {
+      "checks/checks.json": "eb6904ef6aced97035c03181fe3a2990168a9ee1f2ec5e8ef99e171ee154b50c",
+      "checks/checks.py": "4b9294a1fac277da4920bb3dac91592cb89955f3693951048ac6d0e195bfca56",
+      "checks/endpoints.json": "3aaea6b49203c68641308818a1450f352f6c0c4e2d85ca8bba943237fe44ca6c",
+      "checks/endpoints.py": "8d11c896eff0e08bf029e04337808d8fc2e74ef3474b0416f0662cabad832169"
+    },
+    "full_checker_rerun": false,
+    "checker_note": "The existing mathematical checks remain applicable; only the newly explanatory coefficient arithmetic was separately checked."
+  },
+  "compilation": {
+    "unresolved_references": false,
+    "overfull_boxes": false,
+    "underfull_warnings": []
+  },
+  "visual_review": {
+    "changed_pages_inspected": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "pixel_identical_pages": [
+      1,
+      2
+    ],
+    "result": "All 17 pages rendered at 90 dpi. Changed pages 3-17 were visually inspected; pages 1-2 are pixel-identical to the preceding reviewed rendering. Equations, tables, section headings and page margins remain clear, with no clipping or overlap."
+  },
+  "identity_review": "PDF author remains twinheterodox. Extracted PDF text and metadata contain no identifying home paths or private identity.",
+  "publication_status": "Prepared locally; no commit or push in this revision."
+}

@@ -1,0 +1,45 @@
+{
+  "reported_on": "2026-11-05",
+  "provenance": "Report supplied by the user in this conversation; independent checker code not supplied here.",
+  "auditor_identity": null,
+  "auditor_model": null,
+  "separate_audit_date": null,
+  "reported_sha256_prefix": "c7197fc5cd341c3c",
+  "audited_proof_sha256": "c7197fc5cd341c3cb71ab30515be836f2cea0156b1252284229bd8d059cdf258",
+  "audited_proof_snapshot": "Preserved privately; the SHA-256 identifies the audited input.",
+  "report": "review/independent-audit-2026-11-05.txt",
+  "conclusion": "No substantive mathematical error or gap; general shifted-interval theorem survives the audit.",
+  "scope": "General arguments for arbitrary allowed parameters, including differentiated Gram rank, denominators, derivative decay, prime dilation, contradiction and endpoints.",
+  "independent_computation": "Reported independently written code, without running or importing supplied checkers.",
+  "reproduced_checks": {
+    "kernel_evaluations": 120,
+    "Gram_entries": 90,
+    "positive_principal_minors": 30,
+    "integer_seed_vectors": 12,
+    "selected_pole_congruences": 800,
+    "other_pole_bounds": 6800,
+    "constant_congruences": 14,
+    "grouped_integrality_seed_and_prime": 6564,
+    "displayed_interval_certificates": 4,
+    "universal_endpoint_rational_inequalities": "All passed"
+  },
+  "additional_dilation_case": {
+    "seed_index": 3,
+    "prime": 17,
+    "n": 51,
+    "coefficient_and_constant_congruences": "Passed, as reported; remaining parameters not specified."
+  },
+  "wording_correction": {
+    "audited_line": 490,
+    "before": "its numerator or denominator",
+    "after": "the numerator or denominator of q_w(1)",
+    "applied": true
+  },
+  "post_audit_proof_changes": [
+    "Status note records the audit and identifies the archived version.",
+    "Ambiguous pronoun in the prime exclusion is replaced by q_w(1)."
+  ],
+  "mathematical_argument_unchanged": true,
+  "limitations": "Independent mathematical audit, not formal verification or certification of priority.",
+  "manuscript_scope": "The independent audit applies to the underlying plain-text proof, not this subsequently assembled PDF. The mathematical correspondence, exact checks and visual review of the LaTeX manuscript are recorded in review/assembly-review.json."
+}

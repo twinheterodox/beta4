@@ -1,0 +1,113 @@
+\section{Choosing the endpoints}\label{sec:endpoints}
+
+\subsection{A choice valid for every starting index and count}
+
+To balance the $m$th power in the numerator, we also make the
+pole exponent $S$ proportional to $m$. Take
+\[
+ r=7,\qquad L=18,\qquad u=\frac1{50},\qquad
+ S_0=s_B+1,\qquad S=mS_0.
+\]
+The integer $S$ is odd, and the resulting endpoint is
+$S-1=m(s_B+1)-1$. Let $f_0,U_0$ denote the expressions
+\eqref{eq:f}--\eqref{eq:U} with multiplicity $1$, derivative
+order $0$ and denominator exponent $S_0$. Then
+\begin{equation}\label{eq:scaled-criterion}
+ f=f_0^m,\qquad U=U_0^m e_0^{4(m-1)}.
+\end{equation}
+Thus $f_0<1$ will give the first condition for every $m$.
+For the second, we need enough decay in $U_0$ to pay the extra
+derivative cost $e_0^{4(m-1)}$.
+
+To see how $S_0$ is chosen, put
+\[
+ A=\frac{11\log11-7\log7}{4}-\log4-\log e_0.
+\]
+From \eqref{eq:K}, the inequality
+$\lceil18/(p-1)\rceil\le18$ gives
+\[
+ A_d\le d^{36},\qquad K\le B^{36D}.
+\]
+Consequently
+\begin{align*}
+ \frac14\log U_0
+ &=\log K+18D\log(18+u)-AS_0\\
+ &\le36D\log B+18D\log(18+u)-AS_0.
+\end{align*}
+The first two terms account for the denominator normalization and
+the numerator growth. The negative term is the decay gained from
+the pole exponent. We will verify the elementary bounds
+\begin{equation}\label{eq:constants}
+ \log(18+u)<\frac{29}{10},\qquad A>\frac45
+\end{equation}
+below. They give
+\[
+ \frac14\log U_0
+ <36D\log B+\frac{261}{5}D-\frac45S_0.
+\]
+The coefficient $45$ in $S_0$ cancels the logarithmic cost because
+$(4/5)45=36$. The coefficient $66$ leaves a further margin because
+$(4/5)66=264/5>261/5$. These choices account for $33$ and $45/2$
+in \eqref{eq:closed-endpoint}. Indeed, that definition gives
+\[
+ S_0\ge66D+45D\log B+1>18D,
+ \qquad
+ \frac14\log U_0<-\frac35D-\frac45.
+\]
+This margin will absorb the cost of differentiation.
+
+To verify the bounds just used and the first condition $f_0<1$,
+we use three rational inequalities:
+\begin{align}
+ 901^4\left(\frac{351}{551}\right)^{66}&<1,
+                                                    \label{eq:f66}\\
+ (901/50)^{10}&<(163/60)^{29},\label{eq:log-bound}\\
+ \left((4e_0)^4\frac{7^7}{11^{11}}\right)^5e_0^{16}&<1.
+                                                    \label{eq:slope}
+\end{align}
+Here $f_0=901^{4D}(351/551)^{S_0}$, so $S_0\ge66D$ and
+\eqref{eq:f66} give $f_0<1$. Since $18+u=901/50$ and
+$163/60<\ep$, \eqref{eq:log-bound} proves the first bound in
+\eqref{eq:constants}. The logarithm of the left side of
+\eqref{eq:slope} is $-20A+16\log e_0$. Since $\log e_0>1$,
+it gives $A>4/5$, the second bound. Finally,
+\begin{equation}\label{eq:log-e0}
+ e_0<\sum_{j=0}^5\frac{(11/10)^j}{j!}<\ep^{11/10},
+ \qquad\hbox{so }\log e_0<\frac{11}{10}.
+\end{equation}
+All the rational comparisons are checked in the accompanying code.
+
+Using \eqref{eq:scaled-criterion}, \eqref{eq:log-e0} and $D\ge1$,
+we obtain
+\[
+ \frac14\log U
+ <-m\left(\frac35D+\frac45\right)+(m-1)\frac{11}{10}
+ \le-\frac3{10}m-\frac{11}{10}<0.
+\]
+Thus $f<1$ and $U<1$ for every positive odd $m$ and every $B\ge1$.
+Proposition~\ref{prop:criterion} proves Theorem~\ref{thm:intervals}.
+At $B=1$ we have $D_1=1$ and $s_1=66$, giving $67m-1$.
+
+\subsection{Sharper individual intervals}
+
+The criterion can be checked directly without the upper bound
+$K\le B^{36D}$. The following rational choices satisfy
+$S>mDL$, $f(u)<1$ and $U<1$:
+\begin{center}
+\begin{tabular}{@{}rrrrrr@{}}
+\toprule
+$m$&$B$&$s=S-1$&$r$&$u$&$U$(approx)\\
+\midrule
+3&1&198&7&$21/2000$&0.00275\\
+5&1&330&7&$103/10\,000$&0.00659\\
+7&1&462&7&$13/1250$&0.01585\\
+19&2&3080&7&$19/10\,000$&0.00183\\
+19&3&6950&7&$59/100\,000$&0.02403\\
+\bottomrule
+\end{tabular}
+\end{center}
+The displayed decimals illustrate the margin; the inequalities
+are verified exactly over $\Q$. In the row with $m=19$ and $B=2$,
+the forms are supported on $\beta(20),\beta(22),\ldots,\beta(3080)$,
+and the criterion guarantees at least two irrational members.
+These choices prove the intervals listed in the introduction.

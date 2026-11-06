@@ -4,19 +4,20 @@ This repository collects research on even Dirichlet beta values. The project beg
 
 β(4) = 1 − 1/3⁴ + 1/5⁴ − 1/7⁴ + ⋯.
 
-The papers below give explicit counts of irrational even beta values, a quantitative linear-independence bound for the growing family, and obstructions to particular determinant approaches to the individual value β(4). They are accompanied by LaTeX sources, computational checks and review records. None of the papers identifies β(4) as irrational.
+The papers below give explicit counts of irrational even beta values in initial segments and shifted intervals, a quantitative linear-independence bound for the growing family, and obstructions to particular determinant approaches to the individual value β(4). They are accompanied by LaTeX sources, computational checks and review records. None of the papers identifies β(4) as irrational.
 
 ## Papers
 
 | Document | Result and contents | Source and checks |
 | --- | --- | --- |
+| **[Irrational even beta values in shifted intervals (17 pages)](shifted-even-beta/output/pdf/shifted-even-beta.pdf)** | For every positive odd m, an irrational value among β(m+1), …, β(67m−1). More generally, any prescribed count in an interval whose upper endpoint grows linearly with its starting index. | [Paper guide](shifted-even-beta/README.txt) · [LaTeX](shifted-even-beta/paper/shifted-even-beta.tex) · [Checks](shifted-even-beta/checks/README.txt) |
 | **[Explicit lower bounds for the number of irrational even beta values (20 pages)](even-beta-counts/output/pdf/even-beta-counts.pdf)** | At least $\lfloor\pi\sqrt{2/135}\sqrt{s/\log s}\rfloor$ irrational even beta values through β(s), for every even s ≥ 160, with sharper finite endpoints. | [Paper guide](even-beta-counts/README.txt) · [LaTeX](even-beta-counts/paper/even-beta-counts.tex) · [Checks](even-beta-counts/checks/README.txt) |
 | **[At least three of β(2), β(4), …, β(364) are irrational. (16 pages)](finite-even-beta/output/pdf/finite-even-beta.pdf)** | At least three of β(2), β(4), …, β(364) are irrational. Complete proof and exact seed certificate. | [Paper guide](finite-even-beta/README.txt) · [LaTeX](finite-even-beta/paper/finite-even-beta.tex) · [Checks](finite-even-beta/checks/README.txt) |
 | **[Even beta values: linear independence (19 pages)](even-beta-independence/output/pdf/even-beta-independence.pdf)** | A lower bound of $0.21\sqrt{s/\log s}$ for the rational span of β(2), β(4), …, β(s), for every sufficiently large even s. Full proof of the half-integer adaptation of Fischler's method. | [Paper guide](even-beta-independence/README.md) · [LaTeX](even-beta-independence/paper/even-beta-independence.tex) · [Checks](even-beta-independence/checks/README.txt) |
 | **[Determinant obstructions (21 pages)](output/pdf/beta4-determinant-obstructions.pdf)** | Two positive determinant families fail the intended irrationality test, even after all common coefficient factors are removed. Includes complete proofs and a worked arithmetic example. | [LaTeX](paper/beta4-determinant-obstructions.tex) · [Checks](checks/README.md) · [Final reading](planning/final-reading-2026-11-02.txt) |
 | **[Determinant investigation supplement (67 pages)](output/pdf/beta4-investigations.pdf)** | Self-contained case studies with constructions, proofs, remaining questions and standalone certificates; a catalog covers all 57 grouped records. | [Source guide](supplement/README.md) · [Checks](checks/SUPPLEMENT.md) · [Final reading](planning/supplement-final-reading-2026-11-02.txt) |
 
-**Review status:** an [independent audit of the count paper](even-beta-counts/review/independent-audit-2026-11-05.json), reported on 5 November 2026, found no substantive mathematical error or gap and independently reproduced the finite calculations. The [earlier linear-independence paper](even-beta-independence/review/independent-model-review-2026-11-03.json) received a separate model proof audit reported on 3 November 2026; its [full report](even-beta-independence/review/independent-model-review-2026-11-03.txt) records the proof checks and additional computations. The [determinant papers and accompanying code](planning/independent-model-review-2026-11-02.json) passed a separately reported model cross-check. Each report identifies its own scope; these audits are not formal verification.
+**Review status:** an [independent audit of the shifted-interval proof](shifted-even-beta/review/independent-audit-2026-11-05.json), reported on 5 November 2026, found no substantive mathematical error or gap in the general theorem and independently reproduced its finite checks. The PDF is a subsequent exposition of that audited plain-text proof. A separate [independent audit of the count paper](even-beta-counts/review/independent-audit-2026-11-05.json), also reported on 5 November, found no substantive mathematical error or gap and independently reproduced the finite calculations. The [earlier linear-independence paper](even-beta-independence/review/independent-model-review-2026-11-03.json) received a separate model proof audit reported on 3 November 2026; its [full report](even-beta-independence/review/independent-model-review-2026-11-03.txt) records the proof checks and additional computations. The [determinant papers and accompanying code](planning/independent-model-review-2026-11-02.json) passed a separately reported model cross-check. Each report identifies its own scope; these audits are not formal verification.
 
 See the [changelog](CHANGELOG.md) for repository updates.
 
@@ -94,6 +95,14 @@ The main determinant results are a uniform primitive-growth obstruction for shif
 The work was prepared with Codex. Reported proof audits, model cross-checks, exact rational calculations, interval calculations and source reading are recorded separately with their respective scopes. No proof-assistant verification is claimed.
 
 ## Reproducing the results
+
+For the shifted-interval paper, from the repository root:
+
+```sh
+python3 -B shifted-even-beta/checks/checks.py
+python3 -B shifted-even-beta/checks/endpoints.py
+python3 -B shifted-even-beta/tools/build_paper.py
+```
 
 For the new count paper, from the repository root:
 

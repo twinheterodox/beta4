@@ -1,0 +1,52 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype,booktabs,array,xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\hypersetup{pdftitle={Irrational even beta values in shifted intervals},
+ pdfauthor={twinheterodox},pdfcreator={LaTeX},
+ pdfsubject={Explicit irrationality counts in intervals with a variable starting index}}
+\setlength{\emergencystretch}{1.5em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{example}[theorem]{Example}
+\numberwithin{equation}{section}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Zp}{\Z_{(p)}}
+\newcommand{\ep}{\mathrm e}
+\newcommand{\ch}{\chi_4}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Res}{Res}
+\title{\Large Irrational even beta values in shifted intervals}
+\author{twinheterodox\\[2pt]\normalsize Prepared with Codex}
+\date{5 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For every positive odd integer $m$, we prove that at least one of
+\[
+ \beta(m+1),\beta(m+3),\ldots,\beta(67m-1)
+\]
+is irrational, where $\beta$ is the Dirichlet beta function.
+More generally, for each positive integer $B$ we give an explicit
+constant $C_B$ such that at least $B$ even beta values with indices
+between $m+1$ and $C_Bm-1$ are irrational, for every positive odd $m$.
+We also give sharper endpoints for particular intervals.
+\end{abstract}
+\input{paper/sections/introduction}
+\input{paper/sections/construction}
+\input{paper/sections/gram}
+\input{paper/sections/arithmetic}
+\input{paper/sections/decay}
+\input{paper/sections/dilation}
+\input{paper/sections/contradiction}
+\input{paper/sections/endpoints}
+\appendix
+\input{paper/sections/checks}
+\input{paper/references}
+\end{document}

@@ -1,0 +1,152 @@
+EXPOSITION REVIEW FOR HUMAN READERS
+5 November 2026
+
+Applied mathematical-exposition.txt to readers familiar with elementary
+number theory, partial fractions, residues and basic asymptotic estimates.
+
+The opening states the shifted interval and its linear endpoint before
+introducing the construction. The introduction explains why deleting
+early values from the earlier count costs an endpoint of order m² log m,
+and gives the actual parameter conditions in Sorokin and Huttner's
+results. Section 1.1 now explicitly contrasts quadratic growth, with
+an additional logarithmic factor, against linear growth. It explains
+the loss of (m-1)/2 possible irrational values when discarding and why
+inverting the square-root count leads to m² log m. The worked example
+at β(20) and the four-row comparison table make the difference concrete.
+Sorokin and Huttner's m log m bounds are distinguished from this
+discarding argument. Krisman's endpoint 36 is compared explicitly
+with the earlier count's endpoint 160 and the general theorem's endpoint
+200 at the same starting index.
+The finite theorem table stays with the main statements.
+
+The proof overview distinguishes m and B, which are fixed, from n,
+which tends to infinity. It describes B sequences of forms, the fixed
+integer combination and why nonzero integers tending to zero create
+a contradiction. Second differentiation provides a small example
+before the arbitrary derivative order and repeated zeros are introduced.
+
+The linear forms and their constants are defined before the seed Gram
+argument. The kernel section explains why moving derivatives onto H_b
+helps and why kernel numerators are useful multiplier polynomials.
+The contour orientation, sign and degree bound are explicit. The
+multiplier coefficients prescribing the seed are distinguished from
+the later weights canceling possible irrational values.
+
+The denominator section explains the prime-power loss, the grouped
+cancellation and the reason differentiation adds k to the common
+clearing exponent. The analytic section explains why a fixed-order
+derivative only costs a polynomial factor, including the first nonzero
+grid point and the infinite tail. The dilation section states its
+nonvanishing purpose before the local congruences.
+
+The abstract states results only. It contains no proof steps or
+construction details. Subsections are numbered, the title has no
+manual line break, and all references are cited in the text.
+
+The mathematical argument and the exposition were checked separately.
+The independent audit covers the underlying argument; it is not used
+as evidence that the subsequent typesetting or presentation is clear.
+
+The subsequent clarity pass defines I(s) before stating its bound,
+explains the discarded-value cost before the threshold, and names
+all nine earlier values by their count in the beta(20) example.
+The table header identifies the earlier source explicitly. Repeated
+comparisons and the general preface to Krisman's fixed interval were
+removed. All mathematical claims, examples and conditions are retained.
+Only Section 1.1 was edited; the abstract and proof are unchanged.
+
+6 November 2026: initial-segment comparison
+
+Before the Krisman comparison, Section 1.1 now explains that earlier
+one-irrational initial blocks through beta(10) are subsumed by the
+irrationality of beta(2). This makes the reason for discussing intervals
+starting at beta(4) explicit. The Lai-Zhou and OpenAI statements have
+references and source reading records. Only Section 1.1 and the
+bibliography changed in the manuscript; the proof is unchanged. The
+16-page rebuild has no unresolved references or box warnings. All pages
+were rendered; changed pages 2, 3 and 16 were inspected, with the remaining
+13 pages pixel-identical to the preceding reviewed rendering.
+
+6 November 2026: first-table comparison
+
+The first table now places the sharper endpoints beside those obtained
+from Theorem 1.1, so the reader can see the gain from choosing parameters
+for each interval. The headings are First index, Last index (grouping
+Specific parameters and Theorem 1.1), and # irrational values (at least).
+The generic endpoints 334, 468, 3742 and 8796 were checked using exact
+rational logarithm enclosures. The enlarged table changes pagination;
+all 16 rebuilt pages were rendered and visually inspected. Compilation
+has no unresolved references or box warnings. The core proof and exact
+checker files remain unchanged.
+
+6 November 2026: first-table headings
+
+Restored First even index and Last even index to make explicit that
+the tabulated endpoints are even beta indices. Numerical entries and
+proof are unchanged. The clean 16-page rebuild changes only rendered
+page 2, which was visually checked; all other pages are pixel-identical.
+
+6 November 2026: include the first even index 4
+
+Added the first-table row 4,198,200,1 and its Section 8 parameter row.
+The later comparison table consistently uses 198 and explains that
+the rows beginning at 4 and 6 use specific parameters. The example
+with m=19,B=2 is identified by its parameters, rather than its changing
+row number. All five exact endpoint checks pass. All 16 PDF pages
+were rendered and the nine changed pages visually inspected; the
+remaining seven are pixel-identical to the preceding reviewed version.
+
+6 November 2026: audit recommendations
+
+Removed the sentence recounting the requested prime-exclusion wording
+change from the manuscript. The audit note now reports its outcome and
+scope without revision history. The original audit report and review
+records retain the recommendation. This preference was also added to
+the project exposition guidance. The 16-page PDF rebuilt without box
+warnings or unresolved references; only rendered page 16 changed, and
+was visually checked. Mathematical content and checkers are unchanged.
+
+6 November 2026: proof-method attribution
+
+Section 1.2 now identifies the count paper as the immediate starting
+point and names the earlier rational-grid and coefficient-elimination
+methods of Lai-Yu and their real-character adaptation by Kumar-Tosi.
+The passage explains that the multiplier, grouped-denominator and
+prime-dilation arguments are extended to differentiated functions.
+Local citations identify the corresponding steps in Sections 2, 3,
+4, 6 and 7; Section 6 credits the Lai-Sprang auxiliary-prime criterion.
+The method paragraph follows the explanation of the proof, so the
+reader has already met the ideas being attributed. All nine references
+are cited. The clean 16-page rebuild has no box warnings or unresolved
+references. Eleven changed pages were visually inspected; five others
+are pixel-identical to the preceding reviewed rendering.
+
+6 November 2026: motivation before the calculations
+
+Applied all six recommendations from the full-paper exposition review.
+The opening construction explains the roles of zeros, pole spacing and
+the multiplier. A B=2 cancellation example motivates the seed constants;
+the Gram section now explains the matrix columns and how they produce
+one common multiplier. The denominator section states the obstruction
+to termwise integrality. The endpoint section presents the governing
+estimate before its certificates and explains the coefficients 66 and
+45 and the choice S=m*S_0. The two smaller changes identify e_0 as an
+upper bound for e and name R_(ell p) in the nonselected-pole argument.
+
+The abstract and introduction are unchanged. The revised explanations
+were read in sequence, including the distinction between the constant
+coefficient and the value of a whole form. The 17-page PDF compiles
+without unresolved references or box warnings. Pages 3-17 were visually
+inspected; pages 1-2 are pixel-identical to the preceding version.
+
+6 November 2026: final reading
+
+Read the complete current 17-page PDF after the table-heading edit.
+The new seed example, Gram-matrix preview, denominator motivation and
+endpoint-cost explanation address the previously identified obstacles.
+The abstract, comparisons, attribution and proof transitions are clear
+for the intended mathematical audience. No further substantive exposition
+changes are recommended. The current U(approx) heading was preserved.
+All pages were rendered; page 15 was visually inspected and all other
+pages are pixel-identical to the preceding reviewed rendering. No
+manuscript source or PDF was changed by this final reading.

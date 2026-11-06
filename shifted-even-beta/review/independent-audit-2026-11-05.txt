@@ -1,0 +1,58 @@
+INDEPENDENT AUDIT REPORTED 5 NOVEMBER 2026
+
+Report supplied by the user; auditor identity and model were not specified.
+Line wrapping, table layout and local filesystem references are normalized.
+The audited plain-text proof has SHA-256
+c7197fc5cd341c3cb71ab30515be836f2cea0156b1252284229bd8d059cdf258.
+The subsequently assembled PDF has a separate assembly review.
+
+I found no substantive mathematical error or gap in the underlying plain-text proof.
+The general shifted-interval theorem survives the audit, including:
+
+  For every positive odd m, at least one of
+  β(m+1),β(m+3),…,β(67m-1) is irrational.
+
+I checked the arguments for arbitrary allowed parameters, particularly
+the new steps:
+
+• Differentiated Gram matrix: the kernel formula, exact pole orders,
+  polynomial independence, contour sign (-1)^{DL/2+(m+1)/2}, convergence
+  and positivity all check out.
+• Denominators: m-fold zeros preserve the grouped cancellation after
+  differentiation. The clearing exponent is correctly increased to S+k.
+• Derivative decay: the fixed-radius Cauchy estimate works even near the
+  last zero, and the infinite tail is controlled. Parameters remain fixed
+  while n→∞; uniform convergence in m is unnecessary.
+• Prime dilation: local coefficient extraction is justified. The weaker
+  nonselected-pole bound vₚ(A_{ν,h})≥ν-k is sufficient because τ>k. The
+  surviving constant has the correct factor χ(p)(ℓ+1)^{-S}.
+• Final contradiction and endpoints: the cancellation weights retain a
+  nonzero seed constant, and the uniform estimate pays the additional
+  derivative cost for every odd m and every B.
+
+Using independently written code, without running or importing the
+supplied checkers, I reproduced:
+
+  Exact check                                                    Passed
+  Differentiated-kernel evaluations                                 120
+  Gram entries, comparing moments with differentiated
+    partial fractions                                               90
+  Positive principal minors / integer seed vectors              30 / 12
+  Selected-pole congruences / other-pole bounds                800 / 6,800
+  Constant congruences                                               14
+  Grouped integrality checks, seed and prime indices              6,564
+
+I also tested seed index ℓ=3, prime 17, hence n=51 beyond the supplied
+cases. Its coefficient and constant congruences passed.
+
+All four displayed interval certificates pass, as do the rational
+inequalities supporting the universal endpoint.
+
+One minor wording correction: at line 490 of the audited plain-text proof,
+replace “its numerator or denominator” with “the numerator or denominator
+of q_{w}(1).” The intended exclusion is clear from the next equation, but
+the pronoun is ambiguous.
+
+Audited version: SHA-256 prefix c7197fc5cd341c3c. This is an independent
+mathematical audit, not formal verification or certification of priority.
+No files were changed.

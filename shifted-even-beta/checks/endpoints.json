@@ -1,0 +1,67 @@
+{
+  "status": "All displayed inequalities checked over Q; decimals illustrative.",
+  "examples": [
+    {
+      "a": 2,
+      "B": 1,
+      "s": 198,
+      "r": 7,
+      "u": "21/2000",
+      "f_lt_1": true,
+      "U_lt_1": true,
+      "f_illustrative": 0.625872937626246,
+      "U_illustrative": 0.002752327579530298
+    },
+    {
+      "a": 3,
+      "B": 1,
+      "s": 330,
+      "r": 7,
+      "u": "103/10000",
+      "f_lt_1": true,
+      "U_lt_1": true,
+      "f_illustrative": 0.9056716838194792,
+      "U_illustrative": 0.0065870792628449
+    },
+    {
+      "a": 4,
+      "B": 1,
+      "s": 462,
+      "r": 7,
+      "u": "13/1250",
+      "f_lt_1": true,
+      "U_lt_1": true,
+      "f_illustrative": 0.7976318265770825,
+      "U_illustrative": 0.015846840524069636
+    },
+    {
+      "a": 10,
+      "B": 2,
+      "s": 3080,
+      "r": 7,
+      "u": "19/10000",
+      "f_lt_1": true,
+      "U_lt_1": true,
+      "f_illustrative": 0.6110523987930941,
+      "U_illustrative": 0.0018300525063741954
+    },
+    {
+      "a": 10,
+      "B": 3,
+      "s": 6950,
+      "r": 7,
+      "u": "59/100000",
+      "f_lt_1": true,
+      "U_lt_1": true,
+      "f_illustrative": 0.0825270544129509,
+      "U_illustrative": 0.02402924047962021
+    }
+  ],
+  "B1_all_odd_m": {
+    "S": "67m",
+    "u": "1/50",
+    "f0_lt_1": true,
+    "U0_times_e0_power4_lt_1": true,
+    "ratio_illustrative": 0.06512324258041524
+  }
+}

@@ -1,0 +1,185 @@
+\section{Introduction}\label{sec:introduction}
+
+For $v>1$, let
+\[
+ \beta(v)=\sum_{j=0}^{\infty}\frac{(-1)^j}{(2j+1)^v} =1-\frac1{3^v}+\frac1{5^v}-\cdots
+\]
+be the Dirichlet beta function. Its values at positive odd integers
+are nonzero rational multiples of powers of $\pi$. The arithmetic
+of its even values is much less understood. We study how many
+irrational even values must occur in an interval whose starting
+index is allowed to vary.
+
+For an integer $B\ge1$, put
+\begin{equation}\label{eq:closed-endpoint}
+ D_B=\sum_{d=1}^B\varphi(d),\qquad
+ s_B=2\left\lceil D_B\left(33+\frac{45}{2}\log B\right)\right\rceil,
+\end{equation}
+where $\varphi$ is Euler's totient function and $\log$ is the natural
+logarithm.
+
+\begin{theorem}\label{thm:intervals}
+For every positive odd integer $m$ and every integer $B\ge1$,
+at least $B$ of the numbers
+\begin{equation}\label{eq:interval}
+ \beta(m+1),\beta(m+3),\ldots,\beta\bigl(m(s_B+1)-1\bigr)
+\end{equation}
+are irrational. In particular, at least one of
+\[
+ \beta(m+1),\beta(m+3),\ldots,\beta(67m-1)
+\]
+is irrational for every positive odd $m$.
+\end{theorem}
+
+The upper endpoint grows linearly with the starting index,
+with a multiplier depending only on $B$. Choosing the construction's
+parameters for specific starting indices and counts gives the following
+smaller upper endpoints (Section~\ref{sec:endpoints}), compared here
+with those from Theorem~\ref{thm:intervals}:
+\begin{center}
+\begin{tabular}{@{}rrrr@{}}
+\toprule
+First even index&\multicolumn{2}{c}{Last even index}&\# irrational values\\
+\cmidrule(lr){2-3}
+&Specific parameters&Theorem~\ref{thm:intervals}&(at least)\\
+\midrule
+4&198&200&1\\
+6&330&334&1\\
+8&462&468&1\\
+20&3080&3742&2\\
+20&6950&8796&3\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Comparison with earlier results}
+
+For any fixed number $B$ of irrational values,
+Theorem~\ref{thm:intervals} gives an upper endpoint that grows
+linearly with the starting index $m+1$.
+
+Let $I(s)$ count the irrational values among
+$\beta(2),\beta(4),\ldots,\beta(s)$. Our earlier paper~\cite{Tcount}
+proves that, for every even $s\ge160$,
+\begin{equation}\label{eq:earlier-count}
+ I(s)\ge\left\lfloor c\sqrt{\frac{s}{\log s}}\right\rfloor,
+ \qquad c=\pi\sqrt{\frac{2}{135}}.
+\end{equation}
+To use this count for an interval starting at $\beta(m+1)$,
+we must allow for all $(m-1)/2$ preceding values to be irrational.
+We therefore need a count of at least
+\[
+ \frac{m-1}{2}+B
+\]
+to ensure that $B$ irrational values remain in the interval.
+For fixed $B$, this target grows proportionally to $m$.
+Reaching it with the square-root bound~\eqref{eq:earlier-count}
+requires $s$ of order $m^2\log m$: quadratic growth in the
+starting index, with an additional logarithmic factor.
+
+For example, the earlier paper also proves the sharper count
+$I(3828)\ge10$. At most nine of these irrational values can have
+indices below $20$, so at least one of
+$\beta(20),\beta(22),\ldots,\beta(3828)$ is irrational.
+Theorem~\ref{thm:intervals} reduces this upper endpoint to $1272$.
+The table compares endpoints guaranteeing one irrational value
+from each listed starting index:
+\begin{center}
+\begin{tabular}{@{}rrr@{}}
+\toprule
+First even index&Endpoint from~\cite{Tcount}&Endpoint here\\
+\midrule
+4&160&198\\
+6&364&330\\
+20&3828&1272\\
+100&187\,340&6632\\
+\bottomrule
+\end{tabular}
+\end{center}
+The middle column follows from the bounds $I(160)\ge2$,
+$I(364)\ge3$, $I(3828)\ge10$ and $I(187\,340)\ge50$
+in~\cite{Tcount}. Discarding the first $1$, $2$, $9$ and $49$
+even beta values, respectively, leaves at least one irrational
+value in each interval.
+
+The last column uses the individual parameter choices in
+Section~\ref{sec:endpoints} at the starting indices $4$ and $6$,
+and the bound $67m-1$ from Theorem~\ref{thm:intervals}
+at $20$ and $100$.
+
+Sorokin~\cite[Theorem~S]{S07} treats shifted intervals directly.
+For every sufficiently large odd $m$ and every even
+$q>100m\log m$, he proves that at least one of
+\[
+ \beta(m+1),\beta(m+3),\ldots,\beta(m+q-1)
+\]
+is irrational. Huttner~\cite[Remark~5]{H12} gives the same
+conclusion. Taking the smallest allowable $q$ gives an upper
+endpoint of order $m\log m$. The case $B=1$ of
+Theorem~\ref{thm:intervals} removes this logarithmic factor:
+$q=66m$ suffices for every positive odd $m$.
+
+Earlier finite results guaranteed an irrational value in a block
+beginning at $\beta(2)$, with the endpoint reduced to $\beta(10)$
+by Lai and Zhou~\cite[Theorem~6.1]{LZ22}. These statements are now
+subsumed by the irrationality of $\beta(2)$~\cite{OAI26}.
+At the starting index $4$, Krisman~\cite{K26} gives a sharper
+result than either bound in the table: at least one of
+$\beta(4),\beta(6),\ldots,\beta(36)$ is irrational.
+
+\subsection{How the proof locates the irrational values}
+
+We construct $B$ sequences of linear forms, all supported on the
+desired interval. The integer $m$ fixes its starting point, and
+$B$ fixes the count; the sequence index $n$ tends to infinity.
+Their beta coefficients have the common shape
+\[
+ F_{n,b}=q_b(n)+
+   \sum_{\substack{m+1\le\nu\le s\\\nu\text{ even}}}
+           b^\nu\rho_\nu(n)\beta(\nu),\qquad 1\le b\le B.
+\]
+The dependence on the grid index $b$ is through the powers $b^\nu$.
+If at most $B-1$ of these beta values were irrational, a fixed
+integer combination of the $B$ forms would cancel their coefficients
+at every $n$. This would produce a sequence of rational numbers.
+We arrange that clearing their denominators gives integers tending
+to zero, and that infinitely many of them are nonzero. Since a
+nonzero integer has absolute value at least $1$, that is impossible.
+
+To remove the values below $\beta(m+1)$, we differentiate $m-1$
+times. For example, normalized second differentiation changes
+\[
+ \frac{a_i}{(t+4h)^i}
+ \quad\hbox{into}\quad
+ \binom{i+1}{2}\frac{a_i}{(t+4h)^{i+2}}.
+\]
+Reflection removes odd indices, so the first surviving even
+exponent is $4$. The zeros used to control rational denominators
+must survive this operation; we therefore start with triple zeros.
+The general construction pairs $(m-1)$st differentiation with
+zeros of multiplicity $m$. The second-derivative and triple-zero
+device is also used in the beta setting by Krisman~\cite{K26}.
+
+The remaining question is whether the rational constants still
+provide enough freedom after differentiation. We express the
+constants at the seed index $n=1$ as a Gram matrix of independent
+polynomials against a positive weight. Differentiating the kernels
+in the Gram construction of~\cite[Section~3]{Tcount} preserves this positive
+representation. It lets us prescribe a nonzero seed constant that
+survives the final cancellation. Prime dilation then propagates
+that constant to infinitely many indices.
+
+Our starting point is the construction in~\cite{Tcount}. We extend
+its polynomial multipliers, grouped denominator argument and
+prime-dilation calculation to the differentiated functions. The
+rational-grid construction and coefficient elimination follow the
+methods used for odd zeta values by Lai and Yu~\cite[Sections~2
+and~5]{LY20} and adapted to real Dirichlet characters by Kumar
+and Tosi~\cite[Section~2]{KT26}.
+
+Section~\ref{sec:construction} defines the functions and linear
+forms. Section~\ref{sec:gram} constructs the seed, and
+Sections~\ref{sec:arithmetic}--\ref{sec:dilation} prove the
+denominator, decay and nonvanishing estimates.
+Section~\ref{sec:contradiction} completes the contradiction;
+Section~\ref{sec:endpoints} chooses the parameters.

@@ -1,0 +1,196 @@
+\section{A Gram matrix for the differentiated seed}\label{sec:gram}
+
+To obtain \eqref{eq:seed-target}, we first construct $B$ candidate
+polynomial multipliers $W_{n,1},\ldots,W_{n,B}$. Each produces
+a vector of $B$ seed constants, one for each summation grid.
+These vectors form the columns of a rational matrix $M$.
+If $M$ is nonsingular, a rational combination of its columns gives
+$e_B$; clearing denominators then gives the desired seed vector
+$\eta e_B$ with integer coefficients on the multipliers.
+We choose the candidates so that $M$ has a Gram representation.
+
+\subsection{Moving the derivatives onto the kernels}
+
+We adapt the Gram representation of~\cite[Section~3]{Tcount} by
+transferring the derivatives from the rational function to its kernel.
+At $n=1$ the only poles are $0$ and $-4$. For a proper rational
+function $V$ invariant under $t\mapsto-4-t$, write
+\[
+ V(t)=\sum_\nu\frac{A_\nu}{t^\nu}
+              +\sum_\nu\frac{(-1)^\nu A_\nu}{(t+4)^\nu}.
+\]
+Its rational constant in the character sum over $j/b$ is
+\[
+ q_b=-\sum_\nu(-1)^\nu A_\nu b^\nu
+                                  \sum_{j=1}^{4b}\frac{\ch(j)}{j^\nu}.
+\]
+Introduce
+\[
+ H_b(t)=\sum_{\substack{1\le j<4b\\j\text{ odd}}}
+                                   \frac{\ch(j)}{t+j/b}.
+\]
+Expanding each summand at $0$ shows that
+$q_b=\Res_{t=0}V(t)H_b(t)$. If $V=T^{(k)}/k!$, the residue of
+a derivative is zero, so repeated integration by parts gives
+\begin{equation}\label{eq:residue}
+ q_b=\Res_{t=0}T(t)\frac{H_b^{(k)}(t)}{k!}.
+\end{equation}
+The sign is positive because $k$ is even. This identity lets us
+leave the numerator of $T$ intact and differentiate the simpler
+kernel instead.
+
+Put $a=(m+1)/2$. On the midpoint line $t=-2+iy$, pair the kernel
+terms whose distances from $-2$ are $\pm\alpha$, where
+$\alpha=(2j-1)/b$. Their character weights have opposite signs.
+In $H_b^{(k)}/k!$, with $k=m-1$, the paired terms are
+\[
+ (-1)^{b-j}\bigl((t+2-\alpha)^{-m}-(t+2+\alpha)^{-m}\bigr).
+\]
+It follows that $H_b^{(k)}(-2+iy)/k!=g_{b,k}(y^2)$, where
+\begin{equation}\label{eq:g}
+ g_{b,k}(x)=-2\sum_{j=1}^b(-1)^{b-j}
+  \frac{\displaystyle\sum_{\ell=0}^{a-1}(-1)^\ell
+           \binom m{2\ell}\alpha^{m-2\ell}x^\ell}
+       {(x+\alpha^2)^m},\qquad \alpha=\frac{2j-1}{b}.
+\end{equation}
+For example, at $b=1$ the original and twice-differentiated kernels
+are
+\[
+ g_{1,0}(x)=-\frac2{x+1},\qquad
+ g_{1,2}(x)=\frac{6x-2}{(x+1)^3}.
+\]
+The numerator changes sign, but the denominator stays positive on
+$x\ge0$. We will use these numerators as multipliers, so that the
+constant matrix becomes an integral of products against one
+positive weight.
+
+\subsection{Independent integer polynomials}
+
+Let
+\[
+ \mathcal A=\left\{\frac{2j-1}{b}:1\le j\le b\le B\right\},
+ \qquad N=|\mathcal A|.
+\]
+For $\alpha=v/d\in\mathcal A$ use its reduced numerator and
+denominator, and define
+\begin{equation}\label{eq:Q-h}
+ Q(x)=\prod_{v/d\in\mathcal A}(d^2x+v^2),\qquad
+ h_b(x)=Q(x)^m g_{b,k}(x),\qquad J=mN-a.
+\end{equation}
+Each $h_b$ is an integer polynomial of degree at most $J$.
+Indeed, with denominator $(d^2x+v^2)^m$, the corresponding numerator
+in \eqref{eq:g} is
+\[
+ -2(-1)^{b-j}\sum_{\ell=0}^{a-1}(-1)^\ell
+       \binom m{2\ell}v^{m-2\ell}d^{m+2\ell}x^\ell.
+\]
+Its coefficients are integers. After multiplication by $Q^m$,
+the degree is at most $m(N-1)+a-1=mN-a$.
+
+\begin{lemma}\label{lem:independence}
+The polynomials $h_1,\ldots,h_B$ are linearly independent over
+$\R$. Moreover,
+\begin{equation}\label{eq:N}
+ N=D+\sum_{\substack{d\le B\\d\text{ even}}}\varphi(d)\le2D.
+\end{equation}
+\end{lemma}
+\begin{proof}
+In a nonzero relation among the $g_{b,k}$, choose the largest
+index $b$ with nonzero coefficient. Its kernel has a pole of exact
+order $m$ at $x=-1/b^2$, and every earlier kernel is regular there.
+The order is exact because the corresponding term of
+$H_b^{(k)}/k!$ has a nonzero principal coefficient, and the change
+$x=-(t+2)^2$ has nonzero derivative at that pole. The relation is
+therefore impossible. Multiplication by $Q^m$ preserves independence.
+
+The distinct distances are precisely the reduced fractions $v/d$
+with $d\le B$, $v$ odd and $0<v<2d$. There are $\varphi(d)$
+such numerators for odd $d$, and $2\varphi(d)$ for even $d$.
+This proves \eqref{eq:N}.
+\end{proof}
+
+At the seed, $-(t+2)^2=y^2$ on the midpoint line, so
+$(t+2)h_b(-(t+2)^2)$ gives the desired numerator there and is
+odd about $-2$. To lift it to all odd indices, make it homogeneous:
+\begin{align}
+ W_{n,b}(t)
+ &=n^{2J}(t+2n)h_b\!\left(-\frac{(t+2n)^2}{n^2}\right)\notag\\
+ &=\sum_{j=0}^J h_{b,j}(-1)^j
+                     n^{2J-2j}(t+2n)^{2j+1}.\label{eq:W}
+\end{align}
+The expanded formula has integer coefficients. Its total degree is
+\begin{equation}\label{eq:E}
+ E=2J+1=m(2N-1)\le m(4D-1),
+\end{equation}
+and it satisfies
+\begin{equation}\label{eq:homogeneity}
+ W_{\ell p,b}(pt)=p^E W_{\ell,b}(t).
+\end{equation}
+Because $S>mDL$ and $L\ge10$, the two exponents
+\begin{equation}\label{eq:taus}
+ \tau_0=S-m-E>0,\qquad \tau=\tau_0+k=S-1-E>k
+\end{equation}
+are positive. The first ensures properness and tail convergence;
+the second will control prime dilation after differentiation.
+
+\subsection{The common positive weight}
+
+Let $M_{b,j}$ be the $b$th rational constant associated with
+$(W_{1,j}R_1)^{(k)}/k!$. We prove that $M$ is nonsingular.
+Writing $z=t+2$, the simple symmetric roots of $P_1$ give
+\[
+ P_1(t)=z\prod_{\alpha\in\Lambda}(z^2-\alpha^2),
+                         \qquad |\Lambda|=DL/2,
+\]
+where all $\alpha$ are positive and $\mathcal A\subseteq\Lambda$.
+Substitution on the midpoint line gives
+\[
+ W_{1,j}(-2+iy)R_1(-2+iy)
+ =(-1)^{mDL/2+a+1}C_1
+   \frac{y^{m+1}\prod_{\alpha\in\Lambda}(y^2+\alpha^2)^m}
+        {(y^2+4)^S}h_j(y^2).
+\]
+Every pole of $H_b^{(k)}/k!$ in $(-4,0)$ has order $m$ and is
+canceled by $P_1^m$. Thus the product in \eqref{eq:residue} has
+poles only at $0,-4$. Close the upward midpoint line by a large
+right semicircle. It encloses $0$ clockwise, so the residue theorem
+gives
+\begin{equation}\label{eq:Gram}
+ M_{b,j}=\frac{\sigma C_1}{2\pi}
+     \int_{-\infty}^{\infty}\omega(y)h_b(y^2)h_j(y^2)\,dy,
+ \qquad \sigma=(-1)^{DL/2+a},
+\end{equation}
+where
+\[
+ \omega(y)=\frac{y^{m+1}\prod_{\alpha\in\Lambda}(y^2+\alpha^2)^m}
+                    {(y^2+4)^S Q(y^2)^m}.
+\]
+The orientation supplies a minus sign, and $m$ is odd, which
+explains the sign $\sigma$. The character weights in $H_b$ sum
+to zero, so $H_b^{(k)}(t)=O(t^{-k-2})$. The contour integrand
+therefore has degree at most $mDL+E-2S-1<-2$ at infinity.
+The arc vanishes and the integral converges absolutely.
+
+The weight is positive for $y\ne0$, since $m+1$ is even.
+For a nonzero vector $v\in\R^B$, Lemma~\ref{lem:independence}
+implies that $\sum_bv_bh_b$ is a nonzero polynomial. Therefore
+\[
+ \sigma v^{\mathsf T}Mv
+ =\frac{C_1}{2\pi}\int_{-\infty}^{\infty}
+       \omega(y)\left(\sum_bv_bh_b(y^2)\right)^2dy>0.
+\]
+Thus $\sigma M$ is positive definite. Its entries are rational
+by \eqref{eq:residue}, so fixed integers $c_1,\ldots,c_B$ can
+be chosen with
+\[
+ Mc=\eta e_B,\qquad \eta\in\Q\setminus\{0\}.
+\]
+For instance, clear the denominators of $M$ and use the last
+column of the resulting integer matrix's adjugate.
+From now on set
+\begin{equation}\label{eq:chosen-W}
+ W_n=\sum_{j=1}^B c_jW_{n,j}.
+\end{equation}
+This proves \eqref{eq:seed-target}. The coefficients $c_j$ fix
+one multiplier shared by all $B$ sequences. They remain fixed as
+$n$ varies, so their sizes do not affect an exponential decay rate.

@@ -1,0 +1,133 @@
+\section{Prime dilation and nonvanishing}\label{sec:dilation}
+
+The previous section makes the forms small after their denominators
+are cleared. To obtain a contradiction, we must also ensure that
+the eventual rational combination is nonzero infinitely often.
+At indices divisible by a large prime, the constant coefficient
+and the beta coefficients have different valuations. The seed
+constant survives a common scaling while the beta coefficients
+vanish modulo the prime. This separation is the principle behind
+the auxiliary-prime criterion of Lai and Sprang~\cite[Lemma~2.3]{LS25}.
+We obtain it by extending the prime-dilation calculation
+of~\cite[Section~6]{Tcount} to the differentiated functions.
+
+Write $\Zp=\{a/b\in\Q:p\nmid b\}$ and let $v_p$ be the
+usual prime valuation. Recall $\tau_0=S-m-E$ and
+$\tau=\tau_0+k=S-1-E>k$ from \eqref{eq:taus}.
+
+\begin{proposition}\label{prop:dilation}
+Fix a positive odd integer $\ell$. For all sufficiently large
+primes $p$,
+\begin{align}
+ p^\tau\rho_\nu(\ell p)&\in p^\nu\Zp,
+                                      \label{eq:rho-dilation}\\
+ p^\tau q_b(\ell p)&\equiv
+     \ch(p)(\ell+1)^{-S}q_b(\ell)\pmod p.
+                                      \label{eq:q-dilation}
+\end{align}
+\end{proposition}
+
+\subsection{The undifferentiated function}
+
+Take $p$ large enough in terms of the fixed parameters and $\ell$;
+in particular, it divides none of their denominators and
+$p>\ell+1$. Both $(\ell p)!$ and $(\ell p+1)!$ have
+$p$-valuation $\ell$. After removing $p^\ell$, their units
+reduce to $(-1)^\ell\ell!$, by Wilson's theorem.
+Fermat's theorem treats the fixed powers of $4$ and $K$.
+Thus $C_{\ell p}$ has valuation $(S-mDL)\ell$, and its unit is
+congruent to
+\begin{equation}\label{eq:C-unit}
+ (-1)^{\ell(S-mDL)}\frac{C_\ell}{(\ell+1)^S}.
+\end{equation}
+
+In a numerator block of fraction class $v/d$, a factor of
+$P_{\ell p}(pz)$ is selected by $p$ when $dj+v\equiv0\pmod p$.
+After division by $p$, its fraction class becomes $v'/d$, where
+$pv'\equiv v\pmod d$. This permutes the reduced classes for
+each denominator, and hence permutes $\Theta$.
+Each block has $L\ell$ selected factors. Together with the
+extra factor $p(z-r\ell)$, they give
+$p^{DL\ell+1}P_\ell(z)$. The unselected numerator units
+contribute $(-1)^{DL\ell}$, since each complete block of nonzero
+residues has product $-1$. For $P_{\ell p}^m$, raise both
+contributions to the $m$th power.
+
+The selected denominator indices are $h=py$, $0\le y\le\ell$.
+They give
+\[
+ p^{S(\ell+1)}\prod_{y=0}^\ell(z+4y)^S,
+\]
+and the unselected denominator unit is $(-1)^{S\ell}$.
+The signs cancel, while the net valuation is
+\[
+ (S-mDL)\ell+m(DL\ell+1)-S(\ell+1)=m-S.
+\]
+Using homogeneity \eqref{eq:homogeneity}, we obtain
+\begin{equation}\label{eq:T-dilation}
+ p^{\tau_0}T_{\ell p}(pz)
+                       \equiv(\ell+1)^{-S}T_\ell(z)\pmod p.
+\end{equation}
+
+\subsection{Local coefficient extraction}
+
+To extract coefficients from \eqref{eq:T-dilation}, we need
+reduction modulo $p$ to commute with the local series expansion.
+At a selected pole $h=py$, put $z=-4y+u$. The factorization above
+gives
+\begin{equation}\label{eq:local-p-integral}
+ u^S p^{\tau_0}T_{\ell p}(p(u-4y))\in\Zp[[u]].
+\end{equation}
+After the displayed powers are removed, every other denominator
+factor has a unit constant term. Its inverse has $p$-integral
+series coefficients, and reduction commutes with Taylor extraction.
+The coefficient of $u^{S-i}$ in \eqref{eq:local-p-integral} is
+$p^{\tau_0-i}a_{i,py}(\ell p)$, so
+\begin{equation}\label{eq:a-dilation}
+ p^{\tau_0-i}a_{i,py}(\ell p)
+                   \equiv(\ell+1)^{-S}a_{i,y}(\ell)\pmod p.
+\end{equation}
+Now use the integer binomial coefficient in
+\eqref{eq:derivative-coefficients}. With $\nu=i+k$ and
+$\tau=\tau_0+k$, this gives
+\begin{equation}\label{eq:selected-coefficients}
+ p^{\tau-\nu}A_{\nu,py}(\ell p)
+                   \equiv(\ell+1)^{-S}A_{\nu,y}(\ell)\pmod p.
+\end{equation}
+Thus the passage to differentiated coefficients is made after
+the justified local extraction.
+
+Consider next a pole $h=x+py$ with $1\le x<p$, and substitute
+$t=pz-4x$. The extra numerator factor is a unit, the numerator
+blocks have $DL\ell$ selected factors, and the denominator has
+$\ell$ selected factors, each of order $S$. Including $C_{\ell p}$,
+the net valuation is zero. Local expansion of $R_{\ell p}$ at
+$-4h$ shows that its partial-fraction coefficient of order $i$
+has valuation at least $i$.
+Multiplication by $W_{\ell p}$ preserves this inequality: its
+$j$th Taylor coefficient is an integer and multiplies a
+coefficient of $R_{\ell p}$ of order $i+j$. Differentiation then gives
+\begin{equation}\label{eq:other-coefficients}
+ v_p\bigl(A_{\nu,h}(\ell p)\bigr)\ge\nu-k
+                                  \qquad(p\nmid h).
+\end{equation}
+This weaker bound suffices because $\tau>k$. Combining
+\eqref{eq:selected-coefficients} and \eqref{eq:other-coefficients}
+over all poles proves \eqref{eq:rho-dilation}.
+
+\subsection{The surviving rational constant}
+
+Use \eqref{eq:q}, taking $p>4B\ell$ as well. Then every
+$j\le4b\ell p$ is less than $p^2$, so $v_p(j)\le1$.
+At a nonselected pole, multiplication by $p^\tau$ leaves
+valuation at least $\tau-k>0$, even if $p\mid j$.
+At a selected pole, a term with $p\nmid j$ has valuation
+at least $\nu>0$, by \eqref{eq:selected-coefficients}.
+
+Only the terms with $h=py$ and $j=pj'$ survive. Their upper
+limit becomes $j'\le4by$, and
+$\ch(pj')=\ch(p)\ch(j')$. Equation~\eqref{eq:selected-coefficients}
+therefore turns the surviving sum into
+$\ch(p)(\ell+1)^{-S}$ times the constant formula at index
+$\ell$. This is \eqref{eq:q-dilation}, completing the proof
+of Proposition~\ref{prop:dilation}.

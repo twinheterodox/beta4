@@ -1,0 +1,103 @@
+MATHEMATICAL REVIEW OF THE LATEX ASSEMBLY
+5 November 2026
+
+The constructing assistant reviewed the LaTeX assembly against the
+independently audited plain-text proof, SHA-256 prefix c7197fc5cd341c3c.
+This is an assembly self-review, not a second independent audit.
+
+Theorem statements and four example intervals agree. The general
+criterion preserves the extra clearing exponent S+k and the factor
+e_0^(4(S+k)). The definitions of P_n, C_n, R_n and V_n agree with
+the audited argument, including k=m-1 and m,n,S odd.
+
+Section 2 now introduces the general linear forms before the seed
+Gram calculation. This changes presentation order, not a dependency:
+the degree condition for W_n is stated before the forms and then
+proved by the Gram construction. The shared multiplier is fixed
+before the final cancellation weights are chosen.
+
+The normalized differentiated kernel, integer numerator degree,
+homogeneous degree E=m(2N-1), contour sign and positive weight agree
+with the audited formulas. Both dilation exponents are retained:
+tau_0=S-m-E and tau=S-1-E>k. The other-pole bound is nu-k.
+Coefficient extraction is justified in the local p-integral series
+before the integer derivative binomial coefficient is applied.
+
+The denominator proof retains the grouped cancellation and does not
+assert integrality of individual fixed-order summands. The decay
+proof includes uniform Stirling bounds, the fixed-radius Cauchy
+estimate and infinite-tail control. The final contradiction explicitly
+excludes primes dividing the numerator or denominator of q_w(1), as
+requested by the independent auditor.
+
+The uniform endpoint proof preserves S=m(s_B+1), f=f_0^m and
+U=U_0^m e_0^(4(m-1)), with the margin needed for every odd m.
+The four finite certificates were reproduced exactly. The explanation
+of U specifies the fourth power of the cleared exponential rate.
+
+Appendix A adds the explicit standard beta-integral moment formula
+used by the checker. With degree m(DL/2+N)-(m+1)/2<S, all required
+moments converge; their normalization agrees with the exact residue
+calculation. This is an explanation of the existing checking method,
+not an additional theorem dependency.
+
+Both relocated checkers passed. Their code and output JSON files are
+byte-identical to the research versions accompanying the audited proof.
+The later optimization of the factor 67 is separate local research and
+is not incorporated into this manuscript or covered by its audit record.
+
+The subsequent revision of Section 1.1 changes only the comparison
+exposition. The counts 3 at 364 and 10 at 3828 were checked against
+the earlier count paper; its general endpoint gives 50 at s_50=187340.
+An exact rational logarithm enclosure verifies that last ceiling, with
+D_50=774. Subtracting 2, 9 and 49 discarded values leaves one in each
+case. The new endpoints are the existing 330 certificate and
+67*19-1=1272, 67*99-1=6632. Sorokin and Huttner's stated thresholds,
+and Krisman's fixed interval, were rechecked against the local source
+texts. The proof and its exact checkers are unchanged by this revision;
+review/comparison-review-2026-11-05.json records the comparisons.
+
+6 November 2026: additional example beginning at beta(4)
+
+For m=3, B=1, S=199, r=7, u=21/2000, the existing criterion
+has D=K=1, L=18 and S>mDL. Exact rational calculation gives f<1
+and U<1, with illustrative values f=0.6258729376 and U=0.0027523276.
+Thus the criterion gives one irrational value among beta(4),...,beta(198).
+The new case was added to endpoints.py; all five finite certificates
+and the all-m certificate pass. The original four cases, the all-m
+certificate, checks.py and checks.json are unchanged. The general proof
+is unchanged. This additional arithmetic check is a self-check and is
+not represented as part of the independent audit reported on 5 November.
+The later comparison table now uses the sharper endpoint 198, while
+the first table retains 200 in its general-theorem column.
+
+6 November 2026: attribution-only revision
+
+The relevant passages in Lai-Yu, Kumar-Tosi and Lai-Sprang were checked
+against the method attributions, with source versions, PDF hashes and
+actual reading scopes recorded. Kumar-Tosi Section 2 is cited for the
+linear-form construction; no result depends on its claimed asymptotic
+theorem. Lai-Sprang Lemma 2.3 is the real auxiliary-prime criterion.
+The count-paper section references were checked against its assembly
+order and corresponding arguments. All displayed mathematics and
+all four checker/result files are unchanged. The full proof remains
+in the manuscript. This citation and presentation review does not
+expand the scope of the earlier independent mathematical audit.
+
+6 November 2026: exposition bridges and reordered endpoint estimates
+
+All original labelled formulas are retained, with order and numbering
+changes in Section 8. The B=2 elimination example was checked directly:
+the selected beta coefficient vanishes identically and the seed constant
+is -eta. No assertion that the whole seed form is nonzero was added.
+The matrix preview describes a rational linear combination followed by
+clearing coefficient denominators, exactly as in the existing proof.
+
+The endpoint coefficient identities and the expression for f_0 were
+checked using exact fractions. The same rational certificates establish
+the displayed bounds, and the original derivative-cost calculation
+remains. Naming R_(ell p) replaces the former base-function shorthand
+without changing the coefficient-valuation claim. The abstract, theorem
+statements, audit note, bibliography, checker code and result files are
+unchanged. This is a self-review of the exposition changes and does not
+expand the independent audit scope.

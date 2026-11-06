@@ -1,5 +1,19 @@
 # Changelog
 
+## 6 November 2026 — Shifted-interval comparisons and exposition
+
+- Added the interval β(4), …, β(198), its explicit parameter choice and exact rational decay check. It improves the general theorem's endpoint 200; the earlier count's endpoint 160 and Krisman's endpoint 36 remain shorter.
+- Compared the five individual endpoints with the general theorem in the opening table and kept the later comparison table consistent. This additional example is recorded separately from the four examples in the 5 November independent audit.
+- Added proof-method attribution and explained the construction's design, the seed choice through a two-form example, the role of the Gram matrix, the need for grouped denominator cancellation, and the endpoint coefficients. The current manuscript is 17 pages; its theorem and exact-check results are unchanged.
+
+## 5 November 2026 — Irrational values in shifted intervals
+
+- Added the separate 16-page paper *Irrational even beta values in shifted intervals*, with complete LaTeX sources, standalone exact checkers and a reproducible build.
+- For every positive odd m, the paper gives an irrational member of β(m+1), …, β(67m−1). Its general family guarantees any fixed number of irrational values with an upper endpoint linear in m, and includes sharper individual intervals.
+- Recorded the independent audit of the underlying plain-text proof, which found no substantive error or gap and independently reproduced the finite calculations. Applied the requested wording clarification in the prime exclusion.
+- Kept the audit's scope separate from the subsequent LaTeX assembly, mathematical self-review and visual inspection. The earlier manuscripts and PDFs are unchanged.
+- Expanded Section 1.1 to explain linear versus quadratic endpoint growth, distinguish the earlier direct shifted bounds, and compare concrete intervals starting at β(6), β(20) and β(100).
+
 ## 5 November 2026 — Independent audit of the uniform count paper
 
 - Recorded the supplied independent mathematical audit: no substantive error or gap found in the 19-page count-paper revision, with the finite calculations reproduced using independently written arithmetic.

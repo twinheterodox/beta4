@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-06",
+  "first_even_index": 4,
+  "last_even_index": 198,
+  "irrational_values_at_least": 1,
+  "general_theorem_last_even_index": 200,
+  "m": 3,
+  "B": 1,
+  "S": 199,
+  "r": 7,
+  "L": 18,
+  "D": 1,
+  "K": 1,
+  "u": "21/2000",
+  "degree_condition": "199 > 3*1*18 = 54",
+  "certificate": {
+    "a": 2,
+    "B": 1,
+    "s": 198,
+    "r": 7,
+    "u": "21/2000",
+    "f_lt_1": true,
+    "U_lt_1": true,
+    "f_illustrative": 0.625872937626246,
+    "U_illustrative": 0.002752327579530298
+  },
+  "validation_command": "python3 -B checks/endpoints.py",
+  "validation_result": "All five finite cases and the all-m certificate passed over the rationals.",
+  "scope": "Direct application of the audited general criterion. This new arithmetic case was checked by the constructing assistant, not by the 5 November independent auditor. No optimality assertion is added to the manuscript.",
+  "pdf": "output/pdf/shifted-even-beta.pdf",
+  "pdf_sha256": "9f2157cc8fd9c910fb47f65d5283f83fcc1a7ce4b012823c4ed3688122dbd1f9",
+  "latest_manuscript_revision": "review/final-reading-2026-11-06.json"
+}

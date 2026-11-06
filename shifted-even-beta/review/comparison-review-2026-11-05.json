@@ -1,0 +1,87 @@
+{
+  "date": "2026-11-05",
+  "scope": "Section 1.1 exposition revision and numerical comparisons; theorem and proof unchanged.",
+  "growth_rates": {
+    "discarding_from_initial_count": "For fixed B, order m^2 log m, from inverting a square-root count after losing (m-1)/2 possible irrational values.",
+    "Sorokin_and_Huttner": "Order m log m for one irrational member, for sufficiently large odd m.",
+    "current_theorem": "Linear in m for every fixed count B, for all positive odd m."
+  },
+  "one_irrational_member_examples": [
+    {
+      "first_even_index": 4,
+      "earlier_count": 2,
+      "discarded": 1,
+      "earlier_endpoint": 160,
+      "current_endpoint": 198,
+      "current_basis": "Specific parameter certificate m=3, B=1, S=199, r=7, u=21/2000. The generic theorem gives 200."
+    },
+    {
+      "first_even_index": 6,
+      "earlier_count": 3,
+      "discarded": 2,
+      "earlier_endpoint": 364,
+      "current_endpoint": 330,
+      "current_basis": "Existing sharper endpoint certificate."
+    },
+    {
+      "first_even_index": 20,
+      "earlier_count": 10,
+      "discarded": 9,
+      "earlier_endpoint": 3828,
+      "current_endpoint": 1272,
+      "current_basis": "67*19-1."
+    },
+    {
+      "first_even_index": 100,
+      "earlier_count": 50,
+      "discarded": 49,
+      "earlier_endpoint": 187340,
+      "current_endpoint": 6632,
+      "current_basis": "67*99-1."
+    }
+  ],
+  "s50_check": {
+    "D50": 774,
+    "half_endpoint_formula": "774*(33+(45/2)*log(50))",
+    "exact_rational_enclosure": [
+      "93669880639531163/1000000000000",
+      "23417470159882791/250000000000"
+    ],
+    "ceiling": 93670,
+    "s50": 187340,
+    "method": "log(50)=5log(2)+log(25/16). For each logarithm use 32 terms of the positive atanh series with its geometric tail bound; all arithmetic rational."
+  },
+  "Krisman_comparison": {
+    "first_even_index": 4,
+    "Krisman_endpoint": 36,
+    "current_general_theorem_endpoint": 200,
+    "earlier_count_paper_endpoint": 160,
+    "current_specific_parameter_endpoint": 198
+  },
+  "source_recheck": {
+    "Tcount": "Introduction, finite count table, general endpoint theorem and Section 8 endpoints.",
+    "S07": "Theorem S in the local source text.",
+    "H12": "Remark 5 in the local source text.",
+    "K26": "Theorem 1.1 in the local source text.",
+    "LZ22": "Theorem 6.1; historical reading of Section 6 retained.",
+    "OAI26": "Definition G=beta(2), Theorem 1.1 and historical comparison; earlier full reading and pinned-version check retained."
+  },
+  "core_exact_checkers": "Unchanged; prior successful runs remain applicable. New comparison arithmetic checked separately.",
+  "pdf": "output/pdf/shifted-even-beta.pdf",
+  "pdf_sha256": "9f2157cc8fd9c910fb47f65d5283f83fcc1a7ce4b012823c4ed3688122dbd1f9",
+  "pages": 17,
+  "visual_review": "All 17 pages rendered. The shortened table heading and table layout on page 15 were visually checked. All other pages are pixel-identical to the preceding reviewed rendering.",
+  "independence": "Constructing-assistant self-review; not an additional independent audit.",
+  "clarity_revision": "The comparison was tightened without changing its claims, numbers, hypotheses or source attribution. I(s) is defined before use and the beta(20) example explicitly counts the nine earlier values.",
+  "table_explanation_revision_date": "2026-11-06",
+  "table_explanation_revision": "The earlier inequalities and discarded counts are explicit, and the final-column explanation is a separate paragraph. Numerical results and their checks are unchanged.",
+  "beta4_comparison_revision_date": "2026-11-06",
+  "beta4_comparison_basis": "The earlier count paper explicitly gives I(160)>=2; omitting beta(2) leaves at least one irrational value from beta(4) through beta(160).",
+  "initial_segment_context_revision_date": "2026-11-06",
+  "initial_segment_context": "The one-irrational initial blocks through beta(10) are distinguished from shifted intervals and explicitly identified as subsumed by the irrationality of beta(2). Lai-Zhou Theorem 6.1 and OpenAI Theorem 1.1 are cited.",
+  "first_table_comparison_record": "review/first-table-comparison-2026-11-06.json",
+  "even_index_headings_restored_on": "2026-11-06",
+  "beta4_specific_example_revision_date": "2026-11-06",
+  "beta4_specific_example_record": "review/beta4-example-2026-11-06.json",
+  "latest_manuscript_revision": "review/final-reading-2026-11-06.json"
+}

@@ -1,0 +1,56 @@
+\section{The irrationality contradiction}\label{sec:contradiction}
+
+We now prove Proposition~\ref{prop:criterion}. Assume its two
+inequalities hold and suppose that at most $B-1$ of
+$\beta(m+1),\beta(m+3),\ldots,\beta(S-1)$ are irrational.
+Choose $B-1$ distinct even indices
+$\nu_1<\cdots<\nu_{B-1}$ containing all possible irrational
+indices, adding further indices if necessary. There are enough
+choices because $S>mDL$ and $D\ge B$.
+
+The coefficients $c_j$ have already fixed the common multiplier
+$W_n$ and the seed vector. As in the elimination argument
+of~\cite[Section~5]{LY20}, we choose fixed integer weights
+$w_1,\ldots,w_B$ on the $B$ forms to annihilate the columns
+\[
+ (1^{\nu_j},2^{\nu_j},\ldots,B^{\nu_j})^{\mathsf T},
+                                  \qquad 1\le j\le B-1.
+\]
+Use their signed maximal minors. The last weight $w_B$ is nonzero:
+its minor is a generalized Vandermonde determinant at
+$1^2,\ldots,(B-1)^2$ with exponents $\nu_j/2$.
+A vanishing minor would give a nonzero polynomial with at most
+$B-1$ monomials and $B-1$ distinct positive roots. A polynomial
+with $q$ monomials has at most $q-1$ such roots: factor out its
+smallest power and apply Rolle's theorem inductively to its
+derivative. This proves nonsingularity. For $B=1$, take $w_1=1$.
+
+Set
+\[
+ H_n=\sum_{b=1}^B w_bF_{n,b},\qquad
+ q_w(n)=\sum_{b=1}^B w_bq_b(n).
+\]
+The chosen beta coefficients cancel at every index. All remaining
+beta values are rational under the assumption, so $H_n$ is a
+rational sequence. Let $D_0$ clear the denominators of those
+rational beta values. Proposition~\ref{prop:denominators} and
+\eqref{eq:cleared-decay} give
+\begin{equation}\label{eq:integers}
+ D_0\delta_n^{S+k}H_n\in\Z,\qquad
+ D_0\delta_n^{S+k}H_n\longrightarrow0
+                   \quad(n\to\infty,\ n\text{ odd}).
+\end{equation}
+
+The seed choice \eqref{eq:seed-target} gives
+$q_w(1)=w_B\eta\ne0$. Exclude the finitely many primes dividing
+$D_0$ or the numerator or denominator of $q_w(1)$, and take $p$
+large enough for Proposition~\ref{prop:dilation}. Its constant
+congruence at $\ell=1$ gives
+\[
+ p^\tau q_w(p)\equiv\ch(p)2^{-S}q_w(1)\not\equiv0\pmod p.
+\]
+Every remaining beta term of $p^\tau H_p$ is divisible by $p$
+in $\Zp$, by \eqref{eq:rho-dilation} and the assumed rationality.
+Thus $H_p\ne0$ for infinitely many primes. Equation~\eqref{eq:integers}
+gives infinitely many nonzero integers tending to zero, which is
+impossible. This proves Proposition~\ref{prop:criterion}.

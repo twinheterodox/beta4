@@ -1,0 +1,75 @@
+{
+  "date": "2026-11-06",
+  "scope": "First introduction table: sharper endpoints compared with the general theorem. No proof changes.",
+  "method": "Exact rational logarithm enclosures from 32 terms of the positive atanh series and a geometric tail bound; both endpoint ceilings agree.",
+  "rows": [
+    {
+      "first_index": 4,
+      "irrational_values_at_least": 1,
+      "specific_last_index": 198,
+      "D_B": 1,
+      "s_B": 66,
+      "general_last_index": 200,
+      "half_s_B_formula_enclosure": [
+        "33",
+        "33"
+      ]
+    },
+    {
+      "first_index": 6,
+      "irrational_values_at_least": 1,
+      "specific_last_index": 330,
+      "D_B": 1,
+      "s_B": 66,
+      "general_last_index": 334,
+      "half_s_B_formula_enclosure": [
+        "33",
+        "33"
+      ]
+    },
+    {
+      "first_index": 8,
+      "irrational_values_at_least": 1,
+      "specific_last_index": 462,
+      "D_B": 1,
+      "s_B": 66,
+      "general_last_index": 468,
+      "half_s_B_formula_enclosure": [
+        "33",
+        "33"
+      ]
+    },
+    {
+      "first_index": 20,
+      "irrational_values_at_least": 2,
+      "specific_last_index": 3080,
+      "D_B": 2,
+      "s_B": 196,
+      "general_last_index": 3742,
+      "half_s_B_formula_enclosure": [
+        "15221928050214841267511231261146056151370783242013920826/156617695648591969910767123378229169956881596561739005",
+        "60887712200859365070044925044584319338406538642916862099/626470782594367879643068493512916679827526386246956020"
+      ]
+    },
+    {
+      "first_index": 20,
+      "irrational_values_at_least": 3,
+      "specific_last_index": 6950,
+      "D_B": 4,
+      "s_B": 462,
+      "general_last_index": 8796,
+      "half_s_B_formula_enclosure": [
+        "16810728268013690430089399787158924864080783/72813083059117234121080636702167694049280",
+        "109269733742088987795628465078235849047114487/473285039884262021787024138564090011320320"
+      ]
+    }
+  ],
+  "pdf": "output/pdf/shifted-even-beta.pdf",
+  "pdf_sha256": "9f2157cc8fd9c910fb47f65d5283f83fcc1a7ce4b012823c4ed3688122dbd1f9",
+  "pages": 17,
+  "visual_review": "All 17 pages rendered. The shortened table heading and table layout on page 15 were visually checked. All other pages are pixel-identical to the preceding reviewed rendering.",
+  "reviewer": "Constructing-assistant self-review; no additional independent audit.",
+  "even_index_headings_restored_on": "2026-11-06",
+  "additional_parameter_certificate": "review/beta4-example-2026-11-06.json",
+  "latest_manuscript_revision": "review/final-reading-2026-11-06.json"
+}
