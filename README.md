@@ -21,9 +21,46 @@ The papers below give explicit counts of irrational even beta values in initial 
 
 See the [changelog](CHANGELOG.md) for repository updates.
 
+## Irrational values in shifted intervals
+
+The [shifted-interval paper](shifted-even-beta/output/pdf/shifted-even-beta.pdf) proves that, for every positive odd integer m, at least one of
+
+$$
+\beta(m+1),\beta(m+3),\ldots,\beta(67m-1)
+$$
+
+is irrational. For example, at least one of β(20), β(22), …, β(1272) is irrational.
+
+More generally, for any integer B ≥ 1, the paper guarantees at least B irrational values among
+
+$$
+\beta(m+1),\beta(m+3),\ldots,\beta\bigl(m(s_B+1)-1\bigr),
+$$
+
+where
+
+$$
+D_B=\sum_{d=1}^B\varphi(d),\qquad
+s_B=2\left\lceil D_B\left(33+\frac{45}{2}\log B\right)\right\rceil.
+$$
+
+Here φ is Euler's totient function and log is the natural logarithm. For any fixed count B, the upper endpoint grows linearly with the starting index. Obtaining the same count by discarding initial values from the [earlier count paper's](even-beta-counts/output/pdf/even-beta-counts.pdf) square-root bound requires an endpoint of order m² log m. At the starting index 20, that paper's sharper finite count gives an endpoint of 3828, compared with 1272 above.
+
+Choosing the construction's parameters for specific starting indices and counts gives smaller endpoints than the general formula:
+
+| First even index | Last even index: specific parameters | Last even index: general formula | Irrational values (at least) |
+| ---: | ---: | ---: | ---: |
+| 4 | 198 | 200 | 1 |
+| 6 | 330 | 334 | 1 |
+| 8 | 462 | 468 | 1 |
+| 20 | 3080 | 3742 | 2 |
+| 20 | 6950 | 8796 | 3 |
+
+The proof extends the count paper's construction by differentiation to remove the unwanted early beta values. A positive Gram matrix supplies the required rank for every starting index and count.
+
 ## A uniform count from s = 160
 
-The new [count paper](even-beta-counts/output/pdf/even-beta-counts.pdf) proves
+The [count paper](even-beta-counts/output/pdf/even-beta-counts.pdf) proves
 
 $$
 I(s)\ge\left\lfloor\pi\sqrt{\frac{2}{135}}\sqrt{\frac{s}{\log s}}\right\rfloor
@@ -104,7 +141,7 @@ python3 -B shifted-even-beta/checks/endpoints.py
 python3 -B shifted-even-beta/tools/build_paper.py
 ```
 
-For the new count paper, from the repository root:
+For the count paper, from the repository root:
 
 ```sh
 python3 -B even-beta-counts/checks/verify_construction.py
