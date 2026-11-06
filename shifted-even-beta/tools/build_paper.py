@@ -38,8 +38,8 @@ record = {
     "pdf": str(OUTPUT.relative_to(ROOT)), "pdf_sha256": digest(OUTPUT),
     "unresolved_references": False, "overfull_boxes": False,
     "underfull_warnings": [line for line in log.splitlines() if "Underfull" in line],
-    "independent_audit_record": "review/independent-audit-2026-11-05.json",
-    "review_scope": "Compilation only. The independent audit reported on 5 November 2026 applies to the plain-text proof identified in the audit record. The LaTeX assembly and visual review are recorded separately. No formal verification is claimed.",
+    "independent_audit_record": "review/independent-audit-2026-11-06.json",
+    "review_scope": "Compilation only. The independent audit reported on 6 November 2026 applies to the plain-text proof identified in the audit record. The v2 LaTeX assembly and visual review are recorded separately. No formal verification is claimed.",
 }
 (ROOT / "paper/build-record.json").write_text(json.dumps(record, indent=2)+"\n")
 print(json.dumps({"pages": pages, "pdf": record["pdf"],

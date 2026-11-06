@@ -1,67 +1,352 @@
 {
-  "status": "All displayed inequalities checked over Q; decimals illustrative.",
-  "examples": [
+  "status": "All exact endpoint certificates passed; not an independent audit.",
+  "e_upper": "10174328183458584617/3742926166425600000",
+  "e_upper_proof": "Sum through 20 plus 1/(20*20!); geometric tail bound.",
+  "certificates": [
     {
-      "a": 2,
       "B": 1,
-      "s": 198,
-      "r": 7,
-      "u": "21/2000",
+      "m": 1,
+      "r": 2,
+      "a": 18,
+      "first_even_index": 2,
+      "last_even_index": 18,
+      "u": "6840759787/1000000000000",
       "f_lt_1": true,
       "U_lt_1": true,
-      "f_illustrative": 0.625872937626246,
-      "U_illustrative": 0.002752327579530298
+      "f_approx": 0.9999999997187388,
+      "U_approx": 0.06207766483401367
     },
     {
-      "a": 3,
       "B": 1,
-      "s": 330,
-      "r": 7,
-      "u": "103/10000",
+      "m": 3,
+      "r": 2,
+      "a": 52,
+      "first_even_index": 4,
+      "last_even_index": 54,
+      "u": "8990232707/1000000000000",
       "f_lt_1": true,
       "U_lt_1": true,
-      "f_illustrative": 0.9056716838194792,
-      "U_illustrative": 0.0065870792628449
+      "f_approx": 0.9999999996648512,
+      "U_approx": 0.4998267604882982
     },
     {
-      "a": 4,
       "B": 1,
-      "s": 462,
-      "r": 7,
-      "u": "13/1250",
+      "m": 5,
+      "r": 2,
+      "a": 88,
+      "first_even_index": 6,
+      "last_even_index": 92,
+      "u": "8058760219/1000000000000",
       "f_lt_1": true,
       "U_lt_1": true,
-      "f_illustrative": 0.7976318265770825,
-      "U_illustrative": 0.015846840524069636
+      "f_approx": 0.999999999267402,
+      "U_approx": 0.10512663498354334
     },
     {
-      "a": 10,
+      "B": 1,
+      "m": 7,
+      "r": 2,
+      "a": 122,
+      "first_even_index": 8,
+      "last_even_index": 128,
+      "u": "8645692609/1000000000000",
+      "f_lt_1": true,
+      "U_lt_1": true,
+      "f_approx": 0.999999999177362,
+      "U_approx": 0.8465226322571702
+    },
+    {
+      "B": 1,
+      "m": 19,
+      "r": 2,
+      "a": 334,
+      "first_even_index": 20,
+      "last_even_index": 352,
+      "u": "8128616097/1000000000000",
+      "f_lt_1": true,
+      "U_lt_1": true,
+      "f_approx": 0.9999999956144165,
+      "U_approx": 0.10743381253484462
+    },
+    {
+      "B": 1,
+      "m": 99,
+      "r": 2,
+      "a": 1740,
+      "first_even_index": 100,
+      "last_even_index": 1838,
+      "u": "1627850703/200000000000",
+      "f_lt_1": true,
+      "U_lt_1": true,
+      "f_approx": 0.9999999864376151,
+      "U_approx": 0.07225831815540457
+    },
+    {
       "B": 2,
-      "s": 3080,
-      "r": 7,
-      "u": "19/10000",
+      "m": 1,
+      "r": 2,
+      "a": 70,
+      "first_even_index": 2,
+      "last_even_index": 70,
+      "u": "779643543/1000000000000",
       "f_lt_1": true,
       "U_lt_1": true,
-      "f_illustrative": 0.6110523987930941,
-      "U_illustrative": 0.0018300525063741954
+      "f_approx": 0.9999999941132955,
+      "U_approx": 0.09965406898761256
     },
     {
-      "a": 10,
-      "B": 3,
-      "s": 6950,
-      "r": 7,
-      "u": "59/100000",
+      "B": 2,
+      "m": 3,
+      "r": 2,
+      "a": 210,
+      "first_even_index": 4,
+      "last_even_index": 212,
+      "u": "779643543/1000000000000",
       "f_lt_1": true,
       "U_lt_1": true,
-      "f_illustrative": 0.0825270544129509,
-      "U_illustrative": 0.02402924047962021
+      "f_approx": 0.9999999823403415,
+      "U_approx": 0.05403349207345117
+    },
+    {
+      "B": 2,
+      "m": 19,
+      "r": 2,
+      "a": 1326,
+      "first_even_index": 20,
+      "last_even_index": 1344,
+      "u": "802179083/1000000000000",
+      "f_lt_1": true,
+      "U_lt_1": true,
+      "f_approx": 0.9999998963539891,
+      "U_approx": 0.5843044323708109
+    },
+    {
+      "B": 3,
+      "m": 1,
+      "r": 2,
+      "a": 186,
+      "first_even_index": 2,
+      "last_even_index": 186,
+      "u": "41902917/200000000000",
+      "f_lt_1": true,
+      "U_lt_1": true,
+      "f_approx": 0.9999999560468505,
+      "U_approx": 0.03463225700602425
+    },
+    {
+      "B": 3,
+      "m": 3,
+      "r": 2,
+      "a": 556,
+      "first_even_index": 4,
+      "last_even_index": 558,
+      "u": "217767167/1000000000000",
+      "f_lt_1": true,
+      "U_lt_1": true,
+      "f_approx": 0.9999998234707319,
+      "U_approx": 0.08624476475752121
+    },
+    {
+      "B": 3,
+      "m": 19,
+      "r": 2,
+      "a": 3520,
+      "first_even_index": 20,
+      "last_even_index": 3538,
+      "u": "218654559/1000000000000",
+      "f_lt_1": true,
+      "U_lt_1": true,
+      "f_approx": 0.9999987935741957,
+      "U_approx": 0.08821136396494296
+    },
+    {
+      "B": 4,
+      "m": 1,
+      "r": 2,
+      "a": 360,
+      "first_even_index": 2,
+      "last_even_index": 360,
+      "u": "132973689/1000000000000",
+      "f_lt_1": true,
+      "U_lt_1": true,
+      "f_approx": 0.9999998477378655,
+      "U_approx": 0.9665403403210802
+    },
+    {
+      "B": 4,
+      "m": 3,
+      "r": 2,
+      "a": 1084,
+      "first_even_index": 4,
+      "last_even_index": 1086,
+      "u": "15944463/125000000000",
+      "f_lt_1": true,
+      "U_lt_1": true,
+      "f_approx": 0.9999995190120237,
+      "U_approx": 0.03409351578671392
+    },
+    {
+      "B": 4,
+      "m": 19,
+      "r": 2,
+      "a": 6860,
+      "first_even_index": 20,
+      "last_even_index": 6878,
+      "u": "64338837/500000000000",
+      "f_lt_1": true,
+      "U_lt_1": true,
+      "f_approx": 0.9999965367956917,
+      "U_approx": 0.3572305499833786
+    },
+    {
+      "B": 5,
+      "m": 1,
+      "r": 2,
+      "a": 554,
+      "first_even_index": 2,
+      "last_even_index": 554,
+      "u": "73388877/1000000000000",
+      "f_lt_1": true,
+      "U_lt_1": true,
+      "f_approx": 0.9999996747356437,
+      "U_approx": 0.163751547316094
+    },
+    {
+      "B": 5,
+      "m": 3,
+      "r": 2,
+      "a": 1662,
+      "first_even_index": 4,
+      "last_even_index": 1664,
+      "u": "73388877/1000000000000",
+      "f_lt_1": true,
+      "U_lt_1": true,
+      "f_approx": 0.9999990241999726,
+      "U_approx": 0.239736502323781
+    },
+    {
+      "B": 5,
+      "m": 19,
+      "r": 2,
+      "a": 10528,
+      "first_even_index": 20,
+      "last_even_index": 10546,
+      "u": "36612089/500000000000",
+      "f_lt_1": true,
+      "U_lt_1": true,
+      "f_approx": 0.9999904700543348,
+      "U_approx": 0.13306419136246786
+    },
+    {
+      "B": 10,
+      "m": 1,
+      "r": 2,
+      "a": 2794,
+      "first_even_index": 2,
+      "last_even_index": 2794,
+      "u": "11811809/1000000000000",
+      "f_lt_1": true,
+      "U_lt_1": true,
+      "f_approx": 0.9999923077998839,
+      "U_approx": 0.2628307852854306
+    },
+    {
+      "B": 10,
+      "m": 3,
+      "r": 2,
+      "a": 8382,
+      "first_even_index": 4,
+      "last_even_index": 8384,
+      "u": "11811809/1000000000000",
+      "f_lt_1": true,
+      "U_lt_1": true,
+      "f_approx": 0.9999769235771612,
+      "U_approx": 0.9913034680722593
+    },
+    {
+      "B": 10,
+      "m": 19,
+      "r": 2,
+      "a": 53092,
+      "first_even_index": 20,
+      "last_even_index": 53110,
+      "u": "11793601/1000000000000",
+      "f_lt_1": true,
+      "U_lt_1": true,
+      "f_approx": 0.9998196644816773,
+      "U_approx": 0.7384580129037517
     }
   ],
-  "B1_all_odd_m": {
-    "S": "67m",
-    "u": "1/50",
-    "f0_lt_1": true,
-    "U0_times_e0_power4_lt_1": true,
-    "ratio_illustrative": 0.06512324258041524
-  }
+  "uniform_general_B": [
+    {
+      "B": 1,
+      "D_odd": 1,
+      "a_B": 18,
+      "endpoint_slope": 19
+    },
+    {
+      "B": 2,
+      "D_odd": 3,
+      "a_B": 84,
+      "endpoint_slope": 85
+    },
+    {
+      "B": 3,
+      "D_odd": 7,
+      "a_B": 228,
+      "endpoint_slope": 229
+    },
+    {
+      "B": 4,
+      "D_odd": 13,
+      "a_B": 460,
+      "endpoint_slope": 461
+    },
+    {
+      "B": 5,
+      "D_odd": 19,
+      "a_B": 714,
+      "endpoint_slope": 715
+    },
+    {
+      "B": 10,
+      "D_odd": 83,
+      "a_B": 3668,
+      "endpoint_slope": 3669
+    }
+  ],
+  "uniform_single_value": "a(m)=2*ceil((879*m-50)/100), endpoint a(m)+m-1; every positive odd m.",
+  "single_value_uniform_comparisons_passed": true,
+  "integer_zero_range_exclusions": [
+    {
+      "r": 1,
+      "profile_at_zero_for_a_18m_already_too_large": true
+    },
+    {
+      "r": 3,
+      "profile_at_zero_for_a_18m_already_too_large": true
+    },
+    {
+      "r": 4,
+      "profile_at_zero_for_a_18m_already_too_large": true
+    },
+    {
+      "r": 5,
+      "profile_at_zero_for_a_18m_already_too_large": true
+    },
+    {
+      "r": 6,
+      "profile_at_zero_for_a_18m_already_too_large": true
+    },
+    {
+      "r": 7,
+      "profile_at_zero_for_a_18m_already_too_large": true
+    },
+    {
+      "r": 8,
+      "profile_at_zero_for_a_18m_already_too_large": true
+    }
+  ],
+  "r_at_least_9": "Degree condition forces a>19m, so cannot improve a<=18m.",
+  "optimization_scope": "Same factorial denominator normalization and absolute-value exponential profile; integer zero-range r. No global obstruction for other constructions is asserted."
 }

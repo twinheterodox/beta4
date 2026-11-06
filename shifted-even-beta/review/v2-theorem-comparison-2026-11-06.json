@@ -1,0 +1,84 @@
+{
+  "date": "2026-11-06",
+  "version": 2,
+  "scope": "Editorial comparison of the general theorems and consistent endpoint notation; not a new independent mathematical audit.",
+  "previous_pdf_sha256": "f16481fac6ea412474a18cdabbe2d5e2792b7ab9a3a732eeb94ac4f4572d54b9",
+  "pdf": "output/pdf/shifted-even-beta.pdf",
+  "pdf_sha256": "877bf973e7e73ea20358a96233155850f723c95f3c8533899ebde4eeaddde43e",
+  "pages": 20,
+  "changes": [
+    "Retained the opening 19m-1 theorem.",
+    "Reproduced the v1 general theorem as an unnumbered historical statement immediately before the current general theorem, with both statements together on page 2.",
+    "Used C_B^(1)m-1 and C_Bm-1 for the two endpoints and displayed their respective totient sums and explicit ceiling formulas.",
+    "Added the multipliers for B=1,2,3 and explained the odd grids and change in pole spacing from 4 to 2.",
+    "Introduced a_B=C_B-1 explicitly in Section 8 and updated the paper guide.",
+    "Removed the superseded short version-change paragraph near the end of the introduction."
+  ],
+  "validation": {
+    "v1_restatement": "The same quantifiers, count and interval as v1, with C_B^(1)=s_B+1 and the original totient sum and ceiling formula.",
+    "v1_ceiling_formula_matches": true,
+    "v2_ceiling_formula_matches_under_C_B_equals_a_B_plus_1": true,
+    "v2_totient_sum_unchanged": true,
+    "abstract_unchanged": true,
+    "endpoint_tables_unchanged": true,
+    "proof_sections_unchanged": true,
+    "checker_sources_and_results_unchanged": true,
+    "comparison_multipliers": [
+      {
+        "B": 1,
+        "D_v1": 1,
+        "D_v2": 1,
+        "C_v1": 67,
+        "C_v2": 19
+      },
+      {
+        "B": 2,
+        "D_v1": 2,
+        "D_v2": 3,
+        "C_v1": 197,
+        "C_v2": 85
+      },
+      {
+        "B": 3,
+        "D_v1": 4,
+        "D_v2": 7,
+        "C_v1": 463,
+        "C_v2": 229
+      }
+    ],
+    "comparison_calculation": "Computed the six displayed multipliers with 80-digit Decimal logarithms; the source formulas were separately matched to v1 and the preceding v2.",
+    "endpoint_section_change": "Introduces a_B=C_B-1 explicitly; the pole order, estimates and endpoint are unchanged.",
+    "full_checkers_rerun_for_this_revision": false
+  },
+  "source_files": {
+    "paper/references.tex": "303847c51a5f1da3f0585f729a6b0c612f860836985aa848fdc42bb34dc003a0",
+    "paper/sections/arithmetic.tex": "0e5ed3473aa9d679f69e9dee47b6ddeadfb778e4a8025f728b605be3da2e5220",
+    "paper/sections/checks.tex": "ea52b293e874e2371040523a670dc4415d056d5d3353a1b208c8d85ccbca0624",
+    "paper/sections/construction.tex": "f8d941762cbb0d0bae0f972328edbb9adf89d1c246114d56904920cf2642a043",
+    "paper/sections/contradiction.tex": "2162e0ba6f2c85496d7fe13dc1a6d58548d2ef8f6f7deb1c272edc1ae66d1ed4",
+    "paper/sections/decay.tex": "2cb0020231bdaec5b0fa487f92ff71b547159e8a5f2fe3e026789ac6faa5351d",
+    "paper/sections/dilation.tex": "e718aea0ed0f20d3dd17cf3f847507b8f0eb9c9523d2c0b7adfca3f67fbf8946",
+    "paper/sections/endpoints.tex": "8f514a229f28097d89f150cc3da716b5faec507a5bc983d2aa8b3f60a3c2a70c",
+    "paper/sections/gram.tex": "81d3276134d1a16a7b40163f3a450649f6377634c477559531e3322c57405051",
+    "paper/sections/introduction.tex": "4a2e00b64cb83344a49c890801464423a0f32856c14a83f95ba3050dbf087788",
+    "paper/sections/optimization.tex": "f421b3a85669f3bc096344008ebee2a946cb679837160c6640bff486c02dab45",
+    "paper/shifted-even-beta.tex": "915e27f206defeba16eec595aa76686dffea749914c7d18ebb9eaffd687fd83d"
+  },
+  "compilation": {
+    "command": "python3 -B tools/build_paper.py",
+    "passes": 3,
+    "unresolved_references": false,
+    "overfull_boxes": false,
+    "underfull_warnings": []
+  },
+  "visual_review": {
+    "renderer": "Poppler pdftoppm, 100 dpi",
+    "pages": 20,
+    "all_pages_reviewed": true,
+    "method": "All 20 pages were rendered and visually inspected after the historical and current general theorems were kept together on page 2.",
+    "result": "No clipped text, broken formulas, table collisions or page-layout defects found."
+  },
+  "independent_audit_record": "review/independent-audit-2026-11-06.json",
+  "independent_audit_scope_unchanged": true,
+  "publication_status": "Local revision; no commit, push or Hexagon submission made for this revision."
+}

@@ -1,0 +1,70 @@
+{
+  "received_at_utc": "2026-11-06T17:56:45.779111+00:00",
+  "source": "Independent audit report supplied by the user in this conversation.",
+  "auditor_identity": null,
+  "auditor_model": null,
+  "separate_audit_date": null,
+  "audited_file": "Plain-text proof preserved locally; SHA-256 identifies the audited snapshot.",
+  "audited_sha256": "603211b50609dc4a4f6646815e7192b61bb8d264c93868d39921f1e0843454e7",
+  "reported_sha256_prefix": "603211b50609dc4a",
+  "hash_match_verified": true,
+  "result": "Theorems A and B pass; no substantive gap or mathematical repair identified.",
+  "scope": [
+    "General Gram construction and rank",
+    "Denominator clearing",
+    "Analytic decay and endpoint criterion",
+    "Prime dilation, elimination and contradiction",
+    "Uniform bounds and exact finite certificates"
+  ],
+  "checker_independence": {
+    "source_inspected_for_coverage": true,
+    "supplied_checkers_run_or_imported": false,
+    "independently_written_calculations": true
+  },
+  "independent_methods": [
+    "Rational interpolation from direct kernel evaluations",
+    "Logarithmic-derivative Taylor recurrence for pole coefficients",
+    "Separate moment recurrence for Gram integrals"
+  ],
+  "structural_checks": {
+    "total": 8909,
+    "categories": {
+      "kernel_evaluations": 57,
+      "gram_entries": 49,
+      "positive_principal_minors": 19,
+      "seed_targets": 9,
+      "reconstructions": 54,
+      "reflection_coefficients": 1308,
+      "differentiated_grid_zeros": 332,
+      "grouped_integrality": 4516,
+      "selected_pole_congruences": 404,
+      "other_pole_bounds": 1940,
+      "constant_congruences": 19,
+      "beta_coefficient_bounds": 202
+    }
+  },
+  "endpoint_certificates": 21,
+  "uniform_parameter_records": 6,
+  "integer_r_exclusions": 7,
+  "tightest_listed_endpoint": {
+    "B": 10,
+    "m": 3,
+    "a": 8382,
+    "U_approx": "0.991303468061"
+  },
+  "limiting_endpoint_multiplier_approx": "18.5722528999226532907",
+  "exposition_recommendations": [
+    "Worked B=2,m=1 Gram example",
+    "Explicit coefficient scaling from (5.2) to (5.3)"
+  ],
+  "report_file": "review/independent-audit-2026-11-06.txt",
+  "formal_verification_reported": false,
+  "post_audit_exposition": {
+    "manuscript": "paper/shifted-even-beta.tex",
+    "original_audited_file_preserved": true,
+    "theorem_statements_unchanged": true,
+    "separate_independent_audit": false,
+    "new_example_exact_self_check": "checks/worked_example.json",
+    "assembly_record": "review/assembly-review.json"
+  }
+}

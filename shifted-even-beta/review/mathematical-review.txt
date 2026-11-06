@@ -1,103 +1,122 @@
-MATHEMATICAL REVIEW OF THE LATEX ASSEMBLY
-5 November 2026
+MATHEMATICAL REVIEW OF THE V2 LATEX ASSEMBLY
+6 November 2026
 
-The constructing assistant reviewed the LaTeX assembly against the
-independently audited plain-text proof, SHA-256 prefix c7197fc5cd341c3c.
-This is an assembly self-review, not a second independent audit.
+Scope
+  Constructing-assistant review of the typeset exposition against the
+  independently audited plain-text proof identified in
+  independent-audit-2026-11-06.json. This is not a new independent
+  audit. The report's scope and the post-audit example are separate.
 
-Theorem statements and four example intervals agree. The general
-criterion preserves the extra clearing exponent S+k and the factor
-e_0^(4(S+k)). The definitions of P_n, C_n, R_n and V_n agree with
-the audited argument, including k=m-1 and m,n,S odd.
+Theorem statements and parameters
+  Theorem 1.1 gives one irrational value from beta(m+1) through
+  beta(19m-1). It is the B=1 case of the general theorem, with
+  D_1=1 and a_1=18.
+  Theorem 1.2 uses odd d<=2B-1, D_B=sum phi(d), and
+  C_B=1+2 ceil[D_B(9+(40/9)log(2B-1))].
+  The endpoint is C_B m-1 for every positive odd m and B>=1.
+  Section 8 sets a_B=C_B-1 and a=m a_B, preserving the pole order
+  and all bounds from the previous notation.
+  Proposition B.1 retains s=m-1+2 ceil((879m-50)/100)<18.58m.
+  The criterion uses even a>mD(2r+1), with endpoint a+m-1.
+  Every displayed individual parameter row matches endpoints.json.
+  The uniform comparison columns were recomputed from the stated
+  formulas. The source comparison statements retain their recorded
+  reading scopes; no new literature audit was undertaken.
 
-Section 2 now introduces the general linear forms before the seed
-Gram calculation. This changes presentation order, not a dependency:
-the degree condition for W_n is stated before the forms and then
-proved by the Gram construction. The shared multiplier is fixed
-before the final cancellation weights are chosen.
+Construction and Gram argument
+  Checked reduced odd fraction classes, D odd, simple numerator zeros,
+  reflection, properness and absolute convergence. The weighted pole
+  sums annihilate odd beta coefficients for odd n.
+  The m=1 conditionally convergent component sums are explicitly treated.
+  Checked the residue sign after even differentiation, exact kernel
+  pole orders, integral h_b coefficients, degree J=m(D-1)/2, homogeneous
+  multiplier degree E=m(D-1), and clockwise-contour sign.
+  The central cancellation uses 2c=m+1. The weight is positive on all
+  of the real line, the integrals converge, and kernel independence
+  gives rank for every B.
+  The worked B=2,m=1,r=2,a=70 example has a separate exact replay:
+  its moment matrix equals minus the seed matrix, the determinant
+  is 5184(mu_0 mu_2-mu_1^2), and the cleared integer multiplier has
+  precisely the prescribed nonzero last seed coordinate.
 
-The normalized differentiated kernel, integer numerator degree,
-homogeneous degree E=m(2N-1), contour sign and positive weight agree
-with the audited formulas. Both dilation exponents are retained:
-tau_0=S-m-E and tau=S-1-E>k. The other-pole bound is nu-k.
-Coefficient extraction is justified in the local p-integral series
-before the integer derivative binomial coefficient is applied.
+Denominators and decay
+  Checked the progression lemma at primes dividing 2d and other primes.
+  The normalization cancels the other-pole constants exactly.
+  The common clearing exponent is a+k, where k=m-1.
+  Grouped cancellation uses surviving grid zeros and the fact that
+  differences 2(l-l') divide delta_n; it includes primes dividing b.
+  Checked the gamma-product profile, cancellation of n log n and
+  linear terms, uniformity as t/n tends to zero, fixed Cauchy radius,
+  polynomial cost of differentiation and a separate infinite-tail bound.
+  The unique maximum and f(u)<1 give x_0<u. The decreasing ratio in G
+  then gives (e^(a+k)G)^2<U<1.
 
-The denominator proof retains the grouped cancellation and does not
-assert integrality of individual fixed-order summands. The decay
-proof includes uniform Stirling bounds, the fixed-radius Cauchy
-estimate and infinite-tail control. The final contradiction explicitly
-excludes primes dividing the numerator or denominator of q_w(1), as
-requested by the independent auditor.
+Prime dilation and contradiction
+  Checked the odd fraction-class permutation, factorial unit,
+  cancellation of the two Wilson signs and degree E in the scaling.
+  The local power-series argument precedes coefficient extraction.
+  It shows explicitly that the order-i coefficient scales by
+  p^(a-E-i), and that a-E-i=tau-nu after differentiation.
+  The weaker nonselected-pole estimate v_p(A)>=nu-k is sufficient
+  because tau=a-E+k>k. The surviving constant has factor chi_4(p).
+  The last generalized Vandermonde minor is nonzero. Fixed integer
+  weights therefore cancel all possible irrational coefficients while
+  preserving a nonzero seed constant.
+  The prime exclusions name the numerator and denominator of q_w(1).
+  The cleared sequence is integral, tends to zero, and is nonzero at
+  infinitely many prime indices, yielding the contradiction.
 
-The uniform endpoint proof preserves S=m(s_B+1), f=f_0^m and
-U=U_0^m e_0^(4(m-1)), with the margin needed for every odd m.
-The four finite certificates were reproduced exactly. The explanation
-of U specifies the fourth power of the cleared exponential rate.
+Endpoints and appendices
+  Checked the uniform K bound, rational comparisons, ceiling formula
+  and the treatment of m=1 and m=3 in the sharper one-value bound.
+  Replayed all 21 endpoint certificates, the six uniform parameter
+  choices, all uniform rational comparisons and seven integer-r
+  comparisons. The numerical limiting profile is labeled numerical.
+  The beta-integral moment formula in Appendix A has denominator
+  (1+y^2)^a and the correct normalization. Its required polynomial
+  degree is less than a.
+  All 8,909 structural self-checks and the additional worked example
+  pass. These finite checks support identities; the general proof
+  supplies the all-parameter statements.
 
-Appendix A adds the explicit standard beta-integral moment formula
-used by the checker. With degree m(DL/2+N)-(m+1)/2<S, all required
-moments converge; their normalization agrees with the exact residue
-calculation. This is an explanation of the existing checking method,
-not an additional theorem dependency.
+Subsequent exposition revision
+  The added single-grid example follows by substituting
+  j=(p-1)/2+ell p; the product of its selected factors is p^L P_1(t).
+  Exact polynomial and residue checks passed in 20 cases.
+  Substitution of D=1, K=2^L, k=m-1 and x=2y gives the exact
+  identity a+k+Phi(2y)=m Psi_r(a/m,y)-1. Exact rational logarithm
+  coefficient comparisons passed in 48 cases. Taking the maximum
+  gives the stated relation to log(e^(a+k)G).
+  The integer-r certificates give Psi_r(18,0)>1, so the finite
+  correction cannot yield decay for these r at a<=18m.
+  These checks concern new explanatory identities, not a new audit.
+  The existing checker sources and results were verified unchanged;
+  the full replays recorded above were not repeated for this revision.
 
-Both relocated checkers passed. Their code and output JSON files are
-byte-identical to the research versions accompanying the audited proof.
-The later optimization of the factor 67 is separate local research and
-is not incorporated into this manuscript or covered by its audit record.
+Headline and abstract revision
+  Restored the displayed list in the abstract, with endpoint 19m-1.
+  Moved the sharper one-value statement and proof to Appendix B;
+  its formulas and rational comparisons are unchanged.
+  Recomputed all seven opening-table uniform endpoints from a_B.
+  All twelve specific parameter rows and the abstract's three
+  examples are unchanged. The general theorem and the seven labeled
+  equations affected by relocation were checked against the prior
+  sources. No new proof or full certificate replay was needed.
 
-The subsequent revision of Section 1.1 changes only the comparison
-exposition. The counts 3 at 364 and 10 at 3828 were checked against
-the earlier count paper; its general endpoint gives 50 at s_50=187340.
-An exact rational logarithm enclosure verifies that last ceiling, with
-D_50=774. Subtracting 2, 9 and 49 discarded values leaves one in each
-case. The new endpoints are the existing 330 certificate and
-67*19-1=1272, 67*99-1=6632. Sorokin and Huttner's stated thresholds,
-and Krisman's fixed interval, were rechecked against the local source
-texts. The proof and its exact checkers are unchanged by this revision;
-review/comparison-review-2026-11-05.json records the comparisons.
+Direct comparison of the two general theorems
+  Restated v1 with C_B^(1)=s_B+1, preserving its original totient sum,
+  ceiling formula, quantifiers and count. The current theorem uses
+  C_B=a_B+1; its constant and endpoint are algebraically unchanged.
+  Checked the multipliers for B=1,2,3: 67,197,463 in v1 and
+  19,85,229 in v2. The source formulas match the corresponding
+  versions; numerical values were recomputed with 80-digit logarithms.
+  The abstract, all endpoint tables, proof sections outside the
+  endpoint-notation changes, and checker sources/results are unchanged.
+  No full certificate replay or new independent audit was needed.
 
-6 November 2026: additional example beginning at beta(4)
-
-For m=3, B=1, S=199, r=7, u=21/2000, the existing criterion
-has D=K=1, L=18 and S>mDL. Exact rational calculation gives f<1
-and U<1, with illustrative values f=0.6258729376 and U=0.0027523276.
-Thus the criterion gives one irrational value among beta(4),...,beta(198).
-The new case was added to endpoints.py; all five finite certificates
-and the all-m certificate pass. The original four cases, the all-m
-certificate, checks.py and checks.json are unchanged. The general proof
-is unchanged. This additional arithmetic check is a self-check and is
-not represented as part of the independent audit reported on 5 November.
-The later comparison table now uses the sharper endpoint 198, while
-the first table retains 200 in its general-theorem column.
-
-6 November 2026: attribution-only revision
-
-The relevant passages in Lai-Yu, Kumar-Tosi and Lai-Sprang were checked
-against the method attributions, with source versions, PDF hashes and
-actual reading scopes recorded. Kumar-Tosi Section 2 is cited for the
-linear-form construction; no result depends on its claimed asymptotic
-theorem. Lai-Sprang Lemma 2.3 is the real auxiliary-prime criterion.
-The count-paper section references were checked against its assembly
-order and corresponding arguments. All displayed mathematics and
-all four checker/result files are unchanged. The full proof remains
-in the manuscript. This citation and presentation review does not
-expand the scope of the earlier independent mathematical audit.
-
-6 November 2026: exposition bridges and reordered endpoint estimates
-
-All original labelled formulas are retained, with order and numbering
-changes in Section 8. The B=2 elimination example was checked directly:
-the selected beta coefficient vanishes identically and the seed constant
-is -eta. No assertion that the whole seed form is nonzero was added.
-The matrix preview describes a rational linear combination followed by
-clearing coefficient denominators, exactly as in the existing proof.
-
-The endpoint coefficient identities and the expression for f_0 were
-checked using exact fractions. The same rational certificates establish
-the displayed bounds, and the original derivative-cost calculation
-remains. Naming R_(ell p) replaces the former base-function shorthand
-without changing the coefficient-valuation claim. The abstract, theorem
-statements, audit note, bibliography, checker code and result files are
-unchanged. This is a self-review of the exposition changes and does not
-expand the independent audit scope.
+Result
+  No substantive discrepancy between the v2 manuscript and the audited
+  argument was found. The additional worked example and notation
+  changes pass the stated exact self-checks. Audit recommendations are
+  implemented in the proof and retained as recommendations only in the
+  review records, not in the manuscript's audit note.

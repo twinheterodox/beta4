@@ -1,132 +1,131 @@
-\section{Decay of the differentiated sums}\label{sec:decay}
+\section{Decay after clearing denominators}\label{sec:decay}
 
-Clearing denominators multiplies a form by $\delta_n^{S+k}$.
-Since $\delta_n^{1/n}\to\ep$, it suffices to bound its
-$n$th-root limsup strictly below $\ep^{-(S+k)}$. The initial
-grid terms through $rn$ vanish. We estimate the remaining terms
-by their absolute values, first on a bounded scaled interval
-and then on the infinite tail.
+Since $\delta_n^{1/n}\to\ep$, clearing denominators costs an
+exponential factor $\ep^{a+k}$. We bound the $n$th-root limsup
+of the forms below its reciprocal.
 
 \subsection{The exponential profile}
 
-For $t>0$ the products in \eqref{eq:P}--\eqref{eq:R} give
+Every grid summand through $2rn$ vanishes. Write a remaining
+point as $2rn+t$, where $t\ge1/M$. The products give
 \begin{align*}
- P_n(rn+t)&=t\prod_{\theta\in\Theta}
-                 \frac{\Gamma(t+Ln+\theta)}{\Gamma(t+\theta)},\\
- \prod_{h=0}^n(rn+t+4h)
-  &=4^{n+1}\frac{\Gamma(((r+4)n+t)/4+1)}{\Gamma((rn+t)/4)}.
+ P_n(2rn+t)
+ &=\prod_{\theta\in\Theta}2^{Ln}
+             \frac{\Gamma((t+\theta)/2+Ln)}{\Gamma((t+\theta)/2)},\\
+ \prod_{h=0}^n(2rn+t+2h)
+ &=2^{n+1}
+      \frac{\Gamma(((2r+2)n+t)/2+1)}{\Gamma((2rn+t)/2)}.
 \end{align*}
-Set $x=t/n$. Stirling's formula, including the normalization $C_n$,
-gives the exponential profile
-\begin{align}
- \Phi(x)&=m\log K
-  +mD\bigl((x+L)\log(x+L)-x\log x\bigr)\notag\\
- &\quad-\frac S4\bigl((x+r+4)\log(x+r+4)
-                   -(x+r)\log(x+r)\bigr)+S\log4.
- \label{eq:Phi}
-\end{align}
-The coefficient of $n\log n$ in the factorial normalization is
-$S-mDL$; the products contribute its negative. The linear
-Stirling terms cancel as well.
+For $x=t/n$, Stirling's formula gives the profile
+\begin{equation}\label{eq:Phi}
+ \begin{split}
+ \Phi(x)={}&m\log K
+   +\frac{mD}{2}\bigl((x+2L)\log(x+2L)-x\log x\bigr)\\
+ &-\frac a2\bigl((x+2r+2)\log(x+2r+2)
+                    -(x+2r)\log(x+2r)\bigr)+a\log2.
+ \end{split}
+\end{equation}
+Here $0\log0=0$. Since $(a-mDL)+mDL-a=0$, both the
+$n\log n$ and linear Stirling terms cancel.
 
-For fixed $A>0$, the estimate
+For each fixed $A>0$, uniformly on $1/M\le t\le An$,
 \begin{equation}\label{eq:uniform-Stirling}
- \log R_n(rn+t)=n\Phi(t/n)+O_A(\log n),
-                  \qquad 1/B\le t\le An,
+ \log R_n(2rn+t)=n\Phi(t/n)+O_A(\log n).
 \end{equation}
-is uniform. Only the factors $\Gamma(t+\theta)$ can have bounded
-arguments. Stirling's formula for $t\ge1$ and continuity on
-$[1/B,1]$ give, uniformly for $\theta\in\Theta$,
+Only the gamma factors in the denominator of $P_n$ can have
+bounded arguments. Uniformly for $t\ge1/M$ and
+$\theta$ in the fixed finite set $\Theta$,
 \[
- \log\Gamma(t+\theta)=t\log t-t+O_B(\log(2+t)),
-                                             \qquad t\ge1/B.
+ \log\Gamma((t+\theta)/2)
+      =\frac t2\log(t/2)-\frac t2+O(\log(2+t)).
 \]
-The other gamma arguments are proportional to $n$, and the
-extra $m\log t$ term is also $O_A(\log n)$. This proves
-\eqref{eq:uniform-Stirling} down to the first possible nonzero
-grid point beyond $rn$.
+For large $t$ this is Stirling's formula; on the remaining
+compact range it follows from continuity. The other gamma
+arguments grow proportionally to $n$. This proves
+\eqref{eq:uniform-Stirling} even when $t/n\to0$.
 
-\subsection{Why differentiation preserves the exponential rate}
-\label{sec:derivative-decay}
+\subsection{Differentiation and the infinite tail}
 
-Use Cauchy's estimate on the circle $|z|=\varepsilon=1/(2B)$
-about $rn+t$, where $t\ge1/B$. Every numerator factor is positive
-at the real center. If its value is $c$, its absolute-value ratio
-on the circle is at most $1+\varepsilon/c$. The sum of these
-reciprocals is $O(\log n)$ on $1/B\le t\le An$, including the
-extra factor $t$. The denominator factors are at least $rn+t$,
-and their reciprocal sum is $O(1)$. Thus, for a fixed constant $C$,
+Use Cauchy's estimate on the circle of radius
+$\varepsilon=1/(2M)$ around $2rn+t$. The numerator factors
+are positive at the real center. If a factor has value $c$
+there, its absolute-value ratio on the circle is at most
+$1+\varepsilon/c$. Using $1+x\le\exp(x)$ and multiplying
+these bounds gives a cost $\exp(O(\log n))$, since the sum of
+the reciprocals is $O(\log n)$. The inverse denominator ratios cost
+$\exp(O(1))$, since the factors are at least $2rn+t$ and their
+reciprocal sum is $O(1)$. Hence, on the bounded scaled range,
 \[
- \sup_{|z|=\varepsilon}|R_n(rn+t+z)|
-                  \le n^C R_n(rn+t).
+ \sup_{|z|=\varepsilon}|R_n(2rn+t+z)|
+                    \le n^C R_n(2rn+t)
 \]
-Homogeneity gives $|W_n(rn+t+z)|=O_A(n^E)$ on this range.
-Consequently
-\begin{equation}\label{eq:Cauchy}
- |V_n(rn+t)|\le\varepsilon^{-k}
-                     \sup_{|z|=\varepsilon}|T_n(rn+t+z)|.
-\end{equation}
-There are $O_A(n)$ grid points in the bounded scaled interval.
-By \eqref{eq:uniform-Stirling}, their absolute sum has
-$n$th-root limsup at most $\exp(\max\Phi)$. Here $m$, and hence
-the derivative order $k$, is fixed while $n\to\infty$.
-
-We also need a bound over the infinite tail. Take
-$A\ge\max(L,r+2,1)$ and $t\ge An$. On the same circle each
-numerator factor is at most $3t$ in absolute value, each
-denominator factor is at least $t$, and
-$|W_n(rn+t+z)|\le C't^E$. Equation~\eqref{eq:Cauchy} gives
+for a fixed $C$ and sufficiently large $n$.
+Homogeneity gives $|W_n(2rn+t+z)|=O_A(n^E)$.
+Cauchy's estimate
 \[
- |V_n(rn+t)|\le C''C_n3^{mDLn+m}
-                           t^{-(S-mDL)n-\tau_0}.
+ |V_n(2rn+t)|\le\varepsilon^{-k}
+                  \sup_{|z|=\varepsilon}|T_n(2rn+t+z)|
 \]
-For $q_n=(S-mDL)n+\tau_0>1$, a first term and an integral bound
-the sum on any grid of spacing $1/b$:
+therefore shows that multiplication and differentiation cost
+only a power of $n$. There are $O_A(n)$ terms in the bounded
+range, so their absolute sum has $n$th-root limsup at most
+$\exp(\max\Phi)$. Here $m,B,r,a$ remain fixed.
+
+For $t\ge An$ with $A$ sufficiently large, every numerator
+factor on the circle is at most $3t$, each denominator factor
+is at least $t$, and $|W_n|\le C't^E$. Thus
 \[
- \sum_{\substack{t\text{ on the grid}\\t\ge An}}t^{-q_n}
+ |V_n(2rn+t)|\le C''\kappa_n3^{mDLn}
+                         t^{-(a-mDL)n-a+E}.
+\]
+Put $q_n=(a-mDL)n+a-E>1$. The odd summation grid has spacing
+$2/b$. Including the intervening grid points gives an upper bound
+on a grid of spacing $1/b$. A first term and an integral then give
+\[
+ \sum_{\substack{t\text{ on the odd grid}\\t\ge An}}t^{-q_n}
  \le(An)^{-q_n}+b\frac{(An)^{1-q_n}}{q_n-1}.
 \]
-Stirling's formula for $C_n$ gives the tail $n$th-root bound
-\begin{equation}\label{eq:tail}
- 4^S K^m3^{mDL}\ep^{-(S-mDL)}A^{-(S-mDL)}.
-\end{equation}
-The powers of $n^{S-mDL}$ from the factorials cancel those from
-the lower tail endpoint. Since $S>mDL$, \eqref{eq:tail} tends
-to zero as $A$ grows. Together with the bounded range, this proves
+Stirling's formula gives the tail $n$th-root bound
+\[
+ 2^aK^m3^{mDL}\ep^{-(a-mDL)}A^{-(a-mDL)}.
+\]
+The factor $n^{a-mDL}$ from the factorials cancels the factor
+$n^{-(a-mDL)}$ from the lower tail endpoint $An$. The bound tends
+to zero as $A$ grows because $a>mDL$.
+Together with the bounded range this proves
 \begin{equation}\label{eq:uncleared-decay}
  \limsup_{\substack{n\to\infty\\n\text{ odd}}}|F_{n,b}|^{1/n}
        \le G:=\exp\!\left(\max_{x\ge0}\Phi(x)\right).
 \end{equation}
 
-\subsection{The two inequalities imply cleared decay}
+\subsection{The criterion implies cleared decay}
 
 The function $f$ in \eqref{eq:f} satisfies
-$4\Phi'(x)=\log f(x)$. The derivative of $\log f$ has a
-positive denominator and numerator
+$2\Phi'(x)=\log f(x)$. After multiplication by a positive
+denominator, $(\log f)'$ has numerator
 \[
- 4\bigl((S-mDL)x^2+L(S-mDL)x-mDLr(r+4)\bigr).
+ 2\bigl((a-mDL)x^2+2L(a-mDL)x-mDL(2r)(2r+2)\bigr).
 \]
-This quadratic has exactly one positive zero. Thus $\log f$
-first decreases and then increases. It starts at $+\infty$
-and tends to $0$ from below, with leading term $-4(S-mDL)/x$.
-It has exactly one zero $x_0>0$, where $\Phi$ reaches its global
-maximum. Substituting $\Phi'(x_0)=0$ into \eqref{eq:Phi} gives
+This quadratic has one positive zero. Thus $\log f$ first
+decreases and then increases. It starts at $+\infty$ and
+tends to $0$ from below, with leading term $-2(a-mDL)/x$.
+It has one zero $x_0>0$, where $\Phi$ has its global maximum.
+Substituting $\Phi'(x_0)=0$ into \eqref{eq:Phi} yields
 \begin{equation}\label{eq:G}
- G=K^m(x_0+L)^{mDL}4^S
-       \left(\frac{(x_0+r)^r}{(x_0+r+4)^{r+4}}\right)^{S/4}.
+ G=K^m(x_0+2L)^{mDL}2^a
+ \left(\frac{(x_0+2r)^{2r}}{(x_0+2r+2)^{2r+2}}\right)^{a/2}.
 \end{equation}
-If $f(u)<1$, then $x_0<u$. The last ratio decreases for $x\ge0$,
-since its logarithmic derivative is
-$-4x/((x+r)(x+r+4))$. Finally, the exponential series gives
+If $f(u)<1$, then $x_0<u$. The ratio in parentheses decreases
+for $x\ge0$, since its logarithmic derivative is
+$-2x/((x+2r)(x+2r+2))$. Using $e_*>\ep$ in \eqref{eq:G}
+therefore gives
 \[
- \ep<\frac{163}{60}+\frac7{4320}<\frac{68}{25}=e_0.
+ (\ep^{a+k}G)^2<U<1.
 \]
-Using these bounds in \eqref{eq:G} yields
-$(\ep^{S+k}G)^4<U<1$. The prime number theorem and
-\eqref{eq:uncleared-decay} therefore prove
+The prime number theorem and \eqref{eq:uncleared-decay} imply
 \begin{equation}\label{eq:cleared-decay}
  \limsup_{\substack{n\to\infty\\n\text{ odd}}}
-       |\delta_n^{S+k}F_{n,b}|^{1/n}<1.
+        |\delta_n^{a+k}F_{n,b}|^{1/n}<1.
 \end{equation}
-The conclusion also holds for every fixed integer combination
-of the $B$ forms.
+Every fixed integer combination of the cleared forms also
+tends exponentially to zero.

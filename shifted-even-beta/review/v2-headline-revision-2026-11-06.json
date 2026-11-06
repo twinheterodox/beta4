@@ -1,0 +1,64 @@
+{
+  "date": "2026-11-06",
+  "version": 2,
+  "scope": "Constructing-assistant editorial revision and mathematical consistency checks; not a new independent audit.",
+  "previous_pdf_sha256": "e08d21f7fab8a5296a683764f61173accdbab9d99ca3805c08259b8efc78312e",
+  "pdf": "output/pdf/shifted-even-beta.pdf",
+  "pdf_sha256": "cb5c3caa1b02d4c27d26790bf4b2b88512335d49d08cad618a1bcc3ddf7b95a8",
+  "pages": 19,
+  "changes": [
+    "Restored the abstract opening as a displayed beta-value list, with endpoint 19m-1; the specific examples are unchanged.",
+    "Placed the one-value theorem first, followed by the unchanged general theorem. Its B=1 case already gives 19m-1.",
+    "Updated the uniform column of the opening table to use the general formula at every count; retained the specific endpoints.",
+    "Moved the sharper uniform statement and proof to Proposition B.1, before the limiting-profile discussion; all mathematical formulas are retained.",
+    "Updated the paper guide, repository overview, checker guide and current review records."
+  ],
+  "mathematical_checks": {
+    "uniform_table_rows_verified": 7,
+    "specific_parameter_rows_unchanged": 12,
+    "moved_and_retained_labeled_equations_verified": 7,
+    "general_theorem_unchanged": true,
+    "abstract_examples_unchanged": true,
+    "new_main_theorem": "The B=1 case of the retained general theorem: D_1=1 and a_1=18, hence endpoint 19m-1.",
+    "result": "All checks passed."
+  },
+  "checker_sources_and_results_unchanged": true,
+  "full_checkers_rerun_for_this_revision": false,
+  "source_files": {
+    "paper/references.tex": "303847c51a5f1da3f0585f729a6b0c612f860836985aa848fdc42bb34dc003a0",
+    "paper/sections/arithmetic.tex": "0e5ed3473aa9d679f69e9dee47b6ddeadfb778e4a8025f728b605be3da2e5220",
+    "paper/sections/checks.tex": "ea52b293e874e2371040523a670dc4415d056d5d3353a1b208c8d85ccbca0624",
+    "paper/sections/construction.tex": "807d49a3df8a122937080ddeafabea1779700151c5e26d935d6f479f46e903ff",
+    "paper/sections/contradiction.tex": "3885a5614645cc8b8c370530675d90ed534d73bdabee3814b27cc5716ffe0202",
+    "paper/sections/decay.tex": "538ecccadd152a5f570650b84607d78255b958cdcaac2b29acdf724fb78708d7",
+    "paper/sections/dilation.tex": "e718aea0ed0f20d3dd17cf3f847507b8f0eb9c9523d2c0b7adfca3f67fbf8946",
+    "paper/sections/endpoints.tex": "b82996c63566ddb7351aa7e951938f14b3b4b404b615743363dac8cb531e1c54",
+    "paper/sections/gram.tex": "81d3276134d1a16a7b40163f3a450649f6377634c477559531e3322c57405051",
+    "paper/sections/introduction.tex": "1a1f20656255d64c5ac62c981a0b72b6c960cc8e920869b8b8eb3c02d506bc17",
+    "paper/sections/optimization.tex": "f421b3a85669f3bc096344008ebee2a946cb679837160c6640bff486c02dab45",
+    "paper/shifted-even-beta.tex": "cb0b70470ae62b6f54d9b5c8f7b9715606f213acebb5c62b7f8c057b51e1f252"
+  },
+  "compilation": {
+    "command": "python3 -B tools/build_paper.py",
+    "unresolved_references": false,
+    "overfull_boxes": false,
+    "underfull_warnings": []
+  },
+  "visual_review": {
+    "renderer": "Poppler pdftoppm, 100 dpi",
+    "pages": 19,
+    "all_pages_reviewed": true,
+    "method": "All 19 pages were rendered and visually inspected after restoring the displayed abstract opening, reordering the opening theorems and moving the sharper uniform bound to Appendix B.",
+    "result": "No clipped text, broken formulas, table collisions or page-layout defects found."
+  },
+  "other_pdfs_unchanged": {
+    "even-beta-counts/output/pdf/even-beta-counts.pdf": "f6848fa9304693f1b96a12ca9c2268511f350eb7c3e607054ddb0d4d3fe0c2a5",
+    "even-beta-independence/output/pdf/even-beta-independence.pdf": "83fff93aebeff3b79fb2f316df94518321a7b7dab815c7ab37d8ebf0b5cc5fe8",
+    "finite-even-beta/output/pdf/finite-even-beta.pdf": "8fe8cef9a6e1a5644892881dd9b784cf9eedac7ffc4a506e37e741ab478c0312",
+    "output/pdf/beta4-determinant-obstructions.pdf": "cdb528bc1836aed5a7c4ad6105ac3165ce57fb56d06763ea69a4b3676c3fe40a",
+    "output/pdf/beta4-investigations.pdf": "828f7a5cbe20343ad67c230c1eca0d94d39c88120fbda1ca5ef7092d07b8b3f0"
+  },
+  "independent_audit_record": "review/independent-audit-2026-11-06.json",
+  "independent_audit_scope_unchanged": true,
+  "publication_status": "Local revision; no commit, push or Hexagon submission made for this revision."
+}

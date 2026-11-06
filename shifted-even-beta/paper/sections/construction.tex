@@ -1,154 +1,157 @@
-\section{Rational functions for a shifted interval}\label{sec:construction}
+\section{Rational functions on odd grids}\label{sec:construction}
 
-\subsection{Repeated zeros and differentiation}
+\subsection{Zeros, poles and differentiation}
 
-Fix a positive odd integer $m$ and an integer $B\ge1$, and put
-$k=m-1$. The $b$th form will be an alternating sum over the
-points $j/b$ with $j$ odd. We need zeros on these grids both to
-remove initial summands and to control the denominators of the
-rational constants. The signs on odd summation indices repeat
-after a shift by $4$, so poles at $0,-4,\ldots,-4n$ allow the
-partial-fraction sums to be shifted back to the beta series
-without changing their signs. A polynomial multiplier will
-provide freedom to choose the seed constants.
-
-The fraction classes needed for all $1\le b\le B$ are
+Fix a positive odd integer $m$, a count $B\ge1$ and an integer
+$r\ge1$. These parameters remain fixed as the positive odd
+integer $n$ tends to infinity. Put
 \[
- \Theta=\left\{\frac vd:1\le d\le B,\ 1\le v\le d,\ (v,d)=1\right\},
- \qquad D=|\Theta|=D_B.
+ k=m-1,\qquad M=2B-1,\qquad L=2r+1.
 \]
-The integer class is represented by $1$.
+The $b$th form will be an alternating sum over the grid $j/b$
+with $j$ odd, for $b=1,3,\ldots,M$. We need zeros on these
+grids both to remove initial summands and to control the
+denominators of the rational constants.
+We place the poles at $0,-2,\ldots,-2n$ and the grid zeros in
+$(-(2r+2)n,2rn)$. This interval is centered at $-n$ and has
+length $2Ln$; $r$ controls how far it extends beyond the poles.
 
-Choose an integer $r\ge3$ and put $L=2r+4$. At index $n$,
-the rightmost zero will be $rn$; reflection about $-2n$ puts the
-leftmost zero at $-(r+4)n$. The length of this interval is $Ln$.
-Let $S$ be an odd integer satisfying $S>mDL$, and put $s=S-1$.
+The reduced fraction classes modulo $2$ are
+\[
+ \Theta=\left\{\frac vd:
+ 1\le d\le M\text{ odd},\ 1\le v<2d\text{ odd},\ (v,d)=1\right\}.
+\]
+There are $\varphi(d)$ classes for each $d$, including the single
+class $1$ for $d=1$. Thus $|\Theta|=D_B$; write $D=D_B$.
+The integer $D$ is odd, since $\varphi(d)$ is even for odd $d>1$.
+Each class contributes $Ln$ points to the zero interval, spaced
+by $2$. The polynomial $P_n$ below therefore has $DLn$ simple zeros.
 Define
 \begin{equation}\label{eq:K}
- A_d=d^L\prod_{p\mid d}p^{\lceil L/(p-1)\rceil},\qquad
- K=\prod_{\theta\in\Theta}A_{\operatorname{den}(\theta)}.
+ A_d=(2d)^L\prod_{p\mid d}p^{\lceil L/(p-1)\rceil},
+ \qquad K=\prod_{\theta\in\Theta}A_{\operatorname{den}(\theta)}.
 \end{equation}
-The first product is over primes; the progression estimate in
-Section~\ref{sec:arithmetic} explains the normalization.
+The product over primes supplies the factorial divisibility
+proved in Section~\ref{sec:arithmetic}.
 
-For every positive odd integer $n$, define
+Choose an even pole order $a>mDL$. Set
 \begin{align}
- P_n(t)&=(t-rn)\prod_{\theta\in\Theta}
-                  \prod_{j=0}^{Ln-1}(t-rn+j+\theta),\label{eq:P}\\
- C_n&=4^{Sn}K^{mn}\frac{((n+1)!)^S}{(n!)^{mDL}},
- &R_n(t)&=\frac{C_nP_n(t)^m}{\prod_{h=0}^n(t+4h)^S}.
+ P_n(t)&=\prod_{\theta\in\Theta}\prod_{j=0}^{Ln-1}
+                      (t-2rn+2j+\theta),\label{eq:P}\\
+ \kappa_n&=2^{an}K^{mn}(n!)^{a-mDL},
+ &R_n(t)&=\frac{\kappa_nP_n(t)^m}{\prod_{h=0}^n(t+2h)^a}.
  \label{eq:R}
 \end{align}
-At $m=1$, these are the rational functions of~\cite[Section~2]{Tcount}.
-All roots of $P_n$ are simple. They include the required grid
-points in $[-(r+4)n,rn]$ and every denominator point
-$0,-4,\ldots,-4n$. Thus the poles of $R_n$ have order at most
-$S-m$. The root set is reflection invariant and $P_n$ has odd
-degree. Since $m,n,S$ are odd,
+The factorial in $\kappa_n$ balances the growth of the products;
+the powers of $2$ and $K$ give
+the coefficient divisibility proved in Section~\ref{sec:arithmetic}.
+None of these grid zeros is a pole.
+The map $\theta\mapsto2-\theta$ preserves $\Theta$, so the root
+set is invariant under $t\mapsto-2n-t$. Since $DLn$ and $m$
+are odd and $a$ is even,
 \[
- P_n(-4n-t)=-P_n(t),\qquad R_n(-4n-t)=-R_n(t).
+ P_n(-2n-t)=-P_n(t),\qquad R_n(-2n-t)=-R_n(t).
 \]
 
-We will choose an integer polynomial $W_n(t)$, odd about $-2n$
-and homogeneous of a fixed total degree $E$ in $n,t$. Set
+Multiplication by an integer polynomial will let us adjust the
+rational constants of the forms, particularly at the seed index
+$n=1$, while retaining all grid zeros. We choose the polynomial
+even about $-n$ to preserve reflection.
+Section~\ref{sec:gram} constructs such a polynomial $W_n(t)$,
+homogeneous in $n,t$ of total degree
+\begin{equation}\label{eq:E}
+ E=m(D-1).
+\end{equation}
+Homogeneity will control its scaling at prime indices.
+Define
 \begin{equation}\label{eq:T-V}
  T_n(t)=W_n(t)R_n(t),\qquad V_n(t)=\frac1{k!}T_n^{(k)}(t).
 \end{equation}
-The degree will satisfy $S-m-E>0$. Then $T_n$ is proper, with
-degree at infinity at most $-(S-mDL)n-(S-m-E)$.
-Both $T_n$ and $V_n$ are reflection invariant, because $k$ is even.
-At every non-pole grid point in the zero interval, $T_n$ has a
-zero of order at least $m=k+1$, so $V_n$ vanishes there. Its poles
-have order at most $S-m+k=S-1$.
+Both functions are antisymmetric about $-n$, because $k$ is
+even. Every grid zero has multiplicity at least $m=k+1$ in
+$T_n$, so $V_n$ still vanishes there. The degree of $T_n$ at
+infinity is at most
+\[
+ -(a-mDL)n-a+E.
+\]
+Since $a>mDL$ and $L\ge3$, we have $a>E$; the functions are
+proper and the sums below converge absolutely.
 
 \subsection{The linear forms}
 
 Write the partial fractions before and after differentiation as
 \begin{align}
- T_n(t)&=\sum_{h=0}^n\sum_{i=1}^{S-m}
-                       \frac{a_{i,h}(n)}{(t+4h)^i},\notag\\
- V_n(t)&=\sum_{h=0}^n\sum_{\nu=1}^{S-1}
-                       \frac{A_{\nu,h}(n)}{(t+4h)^\nu}.
+ T_n(t)&=\sum_{h=0}^n\sum_{i=1}^a
+                     \frac{c_{i,h}(n)}{(t+2h)^i},\notag\\
+ V_n(t)&=\sum_{h=0}^n\sum_{\nu=m}^{a+k}
+                     \frac{A_{\nu,h}(n)}{(t+2h)^\nu}.
  \label{eq:partials}
 \end{align}
-The only possibly nonzero differentiated coefficients are
-\begin{equation}\label{eq:derivative-coefficients}
- A_{i+k,h}(n)=\binom{i+k-1}{k}a_{i,h}(n),
-                    \qquad 1\le i\le S-m.
-\end{equation}
-Reflection gives $A_{\nu,n-h}(n)=(-1)^\nu A_{\nu,h}(n)$.
-Consequently
+Differentiation relates their coefficients by
 \[
- \rho_\nu(n)=\sum_{h=0}^n A_{\nu,h}(n)=0
-                         \quad\hbox{for odd }\nu.
+ A_{i+k,h}(n)=\binom{i+k-1}{k}c_{i,h}(n),
+ \qquad 1\le i\le a.
 \]
+The coefficients $A_{\nu,h}$ are zero outside $m\le\nu\le a+k$.
+Put
+\[
+ \rho_\nu(n)=\sum_{h=0}^n(-1)^h A_{\nu,h}(n).
+\]
+Antisymmetry gives
+$A_{\nu,n-h}=(-1)^{\nu+1}A_{\nu,h}$. Since $n$ is odd,
+$\rho_\nu=(-1)^\nu\rho_\nu$, and every odd coefficient vanishes.
 
-To write the alternating signs compactly, let $\ch(j)$ be $0$
-for even $j$, $1$ for $j\equiv1\pmod4$, and $-1$ for
-$j\equiv3\pmod4$. For $1\le b\le B$, put
-\begin{equation}\label{eq:F}
- F_{n,b}=\sum_{j\ge1}\ch(j)V_n(j/b).
-\end{equation}
-In the term belonging to the pole $-4h$, shift the summation index
-by $4bh$. The character is unchanged, and the omitted initial terms
-give a rational constant. Thus
+For odd integers $j$ write $\ch(j)=(-1)^{(j-1)/2}$.
+For each odd $b\le M$, put
+\[
+ F_{n,b}=\sum_{\substack{j\ge1\\j\text{ odd}}}\ch(j)V_n(j/b).
+\]
+In the term from the pole $-2h$, shift the character index by
+$2bh$. Since $b$ is odd, the sign changes by $(-1)^h$.
+The omitted initial terms give
 \begin{align}
  F_{n,b}&=q_b(n)+
-   \sum_{\substack{m+1\le\nu\le S-1\\\nu\text{ even}}}
-          b^\nu\rho_\nu(n)\beta(\nu),\label{eq:forms}\\
- q_b(n)&=-\sum_{h=0}^n\sum_{\nu=1}^{S-1}A_{\nu,h}(n)b^\nu
-                     \sum_{j=1}^{4bh}\frac{\ch(j)}{j^\nu}.
+   \sum_{\substack{m+1\le\nu\le a+m-1\\\nu\text{ even}}}
+             b^\nu\rho_\nu(n)\beta(\nu),\label{eq:forms}\\
+ q_b(n)&=-\sum_{h=0}^n(-1)^h\sum_{\nu=m}^{a+k}A_{\nu,h}(n)b^\nu
+                  \sum_{\substack{1\le j<2bh\\j\text{ odd}}}
+                             \frac{\ch(j)}{j^\nu}.
  \label{eq:q}
 \end{align}
-For $k\ge2$ the individual series are absolutely convergent.
-When $k=0$, the individual exponent-one series converge
-conditionally and their total beta coefficient is zero. There
-are only finitely many partial-fraction series, so the decomposition
-is valid in this case too.
+At $m=1$, the exponent-one partial-fraction series converge
+conditionally. Only finitely many series are combined, and
+their total $\beta(1)$ coefficient is zero; no infinite
+rearrangement is involved.
 
 \subsection{A rational criterion for the endpoints}
 
-The criterion below states the two estimates we will need. The
-positive rational $u$ bounds the location of the largest terms,
-measured beyond $rn$ in units of $n$. The quantity $U$ bounds the
-fourth power of the exponential rate after clearing denominators.
-Put $e_0=68/25$, a rational upper bound for $\ep$.
+The positive rational $u$ below bounds the location of the largest
+summands, measured beyond $2rn$ in units of $n$. The quantity $U$
+bounds the square of the exponential rate after clearing
+denominators.
 
 \begin{proposition}\label{prop:criterion}
-With the parameters above, suppose that a positive rational $u$
-satisfies
+With the parameters above, let $e_*>\ep$ be rational. Suppose
+a positive rational $u$ satisfies
 \begin{align}
- f(u)&=\left(\frac{u+L}{u}\right)^{4mD}
-       \left(\frac{u+r}{u+r+4}\right)^S<1,\label{eq:f}\\
- U&=e_0^{4(S+k)}K^{4m}(L+u)^{4mDL}4^{4S}
-       \left(\frac{r^r}{(r+4)^{r+4}}\right)^S<1.
+ f(u)&=\left(\frac{u+2L}{u}\right)^{mD}
+       \left(\frac{u+2r}{u+2r+2}\right)^a<1,\label{eq:f}\\
+ U&=e_*^{2(a+k)}K^{2m}(u+2L)^{2mDL}2^{2a}
+       \left(\frac{(2r)^{2r}}{(2r+2)^{2r+2}}\right)^a<1.
  \label{eq:U}
 \end{align}
 Then at least $B$ of
-$\beta(m+1),\beta(m+3),\ldots,\beta(S-1)$ are irrational.
+$\beta(m+1),\beta(m+3),\ldots,\beta(a+m-1)$ are irrational.
 \end{proposition}
 
-The extra factor $e_0^{4k}$ in \eqref{eq:U} pays for the
-denominators introduced by differentiation. We still need a seed
-constant that survives the elimination of the possible irrational
-values.
-
-For example, when $B=2$, the combination
-\[
- 2^\nu F_{n,1}-F_{n,2}
-\]
-eliminates $\beta(\nu)$ at every $n$, by \eqref{eq:forms}.
-If $q_1(1)=0$ and $q_2(1)=\eta\ne0$, its rational constant at
-$n=1$ is $-\eta$, whichever index $\nu$ must be eliminated.
-
-For general $B$, the elimination in Section~\ref{sec:contradiction}
-can be performed with a nonzero coefficient on the last form.
-We therefore choose $W_n$ so that
+The exponent $a+k$ pays for denominators after differentiation.
+To finish the criterion, we also need a seed constant that survives
+the elimination of the possible irrational values. We will choose
+one multiplier $W_n$ shared by all the forms so that
 \begin{equation}\label{eq:seed-target}
- (q_1(1),\ldots,q_B(1))=\eta e_B,\qquad
-                        \eta\in\Q\setminus\{0\},
+ (q_1(1),q_3(1),\ldots,q_M(1))=\eta e_B,
+ \qquad \eta\in\Q\setminus\{0\}.
 \end{equation}
-where $e_B=(0,\ldots,0,1)$. The rational constant of the combined
-form at $n=1$ is then $\eta$ times its nonzero last coefficient.
-This is the seed constant used by the prime-dilation argument
-in Section~\ref{sec:dilation}.
+Here $e_B=(0,\ldots,0,1)$ has $B$ coordinates.
+The elimination can be performed with nonzero weight on the last
+form, so this seed vector retains a nonzero constant.

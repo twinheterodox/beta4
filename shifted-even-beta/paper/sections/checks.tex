@@ -1,72 +1,89 @@
 \section{Exact checks and audit scope}\label{app:checks}
 
-\subsection{The kernel, Gram and arithmetic identities}
+\subsection{The identities and endpoint certificates}
 
-The proof of rank in Section~\ref{sec:gram} applies to every $m$
-and $B$. The accompanying computations check its formulas and
-normalization, together with the denominator and dilation identities.
-They use exact integer and rational arithmetic.
+The finite checks compare the proof's formulas with separate exact
+calculations. They supplement the arguments for arbitrary parameters;
+the proof does not extrapolate from the checked cases.
 
-For the Gram entries, the residue formula and the moment integral
-provide two calculations. With every fraction reduced, put
+For example, Gram entries can be calculated either from partial
+fractions or from moments of the positive weight. With each
+$\alpha=v/d$ reduced, put
 \[
- \Delta=\prod_{\alpha=v/d\in\Lambda}d^2,\qquad
+ \Delta=\prod_{v/d\in\Lambda}d^2,\qquad
  P_*(x)=\prod_{v/d\in\Lambda\setminus\mathcal A}(d^2x+v^2).
 \]
-Since $\mathcal A\subseteq\Lambda$,
+Then
 \[
  \frac{\prod_{\alpha\in\Lambda}(x+\alpha^2)}{Q(x)}
-                         =\frac{P_*(x)}{\Delta}.
+                           =\frac{P_*(x)}{\Delta}.
 \]
-For $0\le j<S$, the elementary beta integral gives
+The elementary beta integral gives, for $0\le j<a$,
 \begin{equation}\label{eq:moments}
  \frac1{2\pi}\int_{-\infty}^{\infty}
-                \frac{y^{2j}}{(y^2+4)^S}\,dy
- =2^{2j-4S+2}\frac{(2j)!(2S-2j-2)!}{j!(S-j-1)!(S-1)!}.
+       \frac{y^{2j}}{(1+y^2)^a}\,dy
+ =\frac{(2j)!(2a-2j-2)!}
+        {2^{2a-1}j!(a-j-1)!(a-1)!}.
 \end{equation}
-Thus $M_{b,c}/C_1$ is $\sigma/\Delta^m$ times the moment
-functional in \eqref{eq:moments} applied to
-$x^aP_*(x)^m h_b(x)h_c(x)$. Its degree is at most
-$m(DL/2+N)-a<S$, so all the moments converge.
+Thus $\mathcal M_{b,j}/\kappa_1$ is $\sigma/\Delta^m$ times the
+moment functional in \eqref{eq:moments} applied to
+$P_*^m h_bh_j$. Its degree is at most
+$m(D(L+1)/2-1)<a$, so every required moment converges.
 
-The checker uses $m=1,3,5$, $B=1,2,3,4$, $r=3$ and
-$S=10mD+1$ for the seed calculations. For complete prime
-dilations it uses $(m,B)=(1,1),(3,1),(5,1),(3,2)$ with the
-same rule for $S$, and primes $17,19$.
-These smaller parameters test identities; decay is checked at
-the theorem's displayed endpoints.
+The structural checker uses nine seed cases with $m\in\{1,3,5\}$,
+$B\in\{1,2,3,4\}$ and $r\in\{1,2\}$, and nine prime cases
+with $3\le p\le17$. The complete parameter lists are in the
+accompanying results file. These checks use $a=mDL+1$ to keep
+the arithmetic small; decay is checked separately at the claimed
+endpoints.
 \begin{center}
 \begin{tabular}{@{}lr@{}}
 \toprule
 Exact check&Number passed\\
 \midrule
-Differentiated-kernel evaluations&120\\
-Gram entries, residues versus moments&90\\
-Positive leading principal minors&30\\
-Integer seed-vector identities&12\\
-Selected-pole congruences&800\\
-Other-pole valuation bounds&6800\\
-Constant congruences&14\\
-Grouped integrality, seed and prime indices&6564\\
+Differentiated-kernel evaluations&57\\
+Gram entries, residues versus moments&49\\
+Positive leading principal minors&19\\
+Integer seed-vector identities&9\\
+Rational-function reconstructions&54\\
+Reflection identities&1308\\
+Differentiated grid zeros&332\\
+Grouped integrality&4516\\
+Selected-pole congruences&404\\
+Other-pole valuation bounds&1940\\
+Constant congruences&19\\
+Beta-coefficient valuation bounds&202\\
+\midrule
+Total&8909\\
 \bottomrule
 \end{tabular}
 \end{center}
 
-Run \path{checks/checks.py} for these calculations and the rational
-inequalities in Section~\ref{sec:endpoints}.
-Run \path{checks/endpoints.py} for the five individual intervals
-and a direct all-$m$ check at $B=1$, $S=67m$.
-Both programs use only the Python standard library and should be
-run without \texttt{-O}, since their assertions perform the checks.
+Run \path{checks/checks.py} for these identities.
+Run \path{checks/endpoints.py} for the $21$ individual interval
+certificates, the six uniform parameter choices recorded in its
+output, and the rational comparisons in
+Section~\ref{sec:endpoints} and Appendix~\ref{app:optimization}.
+Floating point locates rational trial values of $u$; the inequalities
+are then checked exactly over $\Q$.
+The separate program \path{checks/worked_example.py} checks the
+two-grid example in Section~\ref{sec:worked-gram}.
+All three programs use only the Python standard library and should
+be run without \texttt{-O}, since their assertions perform the checks.
 
 \subsection{Independent audit}
 
-An independent mathematical audit reported on 5 November 2026
-found no substantive mathematical error or gap in the underlying
-plain-text proof, identified by its hash in the accompanying
-audit record. The audit covered the general arguments for arbitrary
-allowed parameters and independently reproduced the finite checks
-without running or importing the supplied programs. It also checked
-a prime dilation with seed index $\ell=3$, prime $17$ and index
-$n=51$.
-The audit was not formal verification or certification of priority.
+An independent mathematical audit reported on 6 November 2026
+found no substantive gap in the underlying plain-text proof,
+identified by its hash in the accompanying audit record.
+The audit covered the general Gram construction, denominator
+clearing, decay, prime dilation, coefficient elimination and
+uniform endpoints. It independently reproduced all $8909$
+structural checks, all $21$ endpoint certificates, the six uniform
+parameter records and the seven integer-$r$ comparisons in
+Appendix~\ref{app:optimization}, without running or importing
+the supplied programs.
+
+The audit concerns the underlying proof and its certificates.
+The subsequent typeset exposition, including the worked example,
+was checked separately. The audit was not formal verification.

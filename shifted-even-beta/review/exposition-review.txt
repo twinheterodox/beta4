@@ -1,152 +1,165 @@
-EXPOSITION REVIEW FOR HUMAN READERS
-5 November 2026
+EXPOSITION REVIEW OF VERSION 2
+6 November 2026
 
-Applied mathematical-exposition.txt to readers familiar with elementary
-number theory, partial fractions, residues and basic asymptotic estimates.
+Audience and review method
+  Read the full manuscript for a human reader familiar with elementary
+  number theory and complex analysis. Applied the project's
+  mathematical-exposition.txt, including the separate rules for
+  abstract content, method attribution and audit recommendations.
+  Followed the reader's local goal and available notation, rather than
+  treating the ability to reconstruct the proof as evidence of clarity.
 
-The opening states the shifted interval and its linear endpoint before
-introducing the construction. The introduction explains why deleting
-early values from the earlier count costs an endpoint of order m² log m,
-and gives the actual parameter conditions in Sorokin and Huttner's
-results. Section 1.1 now explicitly contrasts quadratic growth, with
-an additional logarithmic factor, against linear growth. It explains
-the loss of (m-1)/2 possible irrational values when discarding and why
-inverting the square-root count leads to m² log m. The worked example
-at β(20) and the four-row comparison table make the difference concrete.
-Sorokin and Huttner's m log m bounds are distinguished from this
-discarding argument. Krisman's endpoint 36 is compared explicitly
-with the earlier count's endpoint 160 and the general theorem's endpoint
-200 at the same starting index.
-The finite theorem table stays with the main statements.
+Introduction
+  The abstract contains the results, with no proof sketch.
+  Its original displayed-list opening is restored with endpoint
+  19m-1, retaining the specific count examples through 70, 186 and 360.
+  The introduction motivates counting even values, states the two
+  uniform theorems, and distinguishes their endpoints from specific
+  parameter choices.
+  The one-value result now precedes the general formula. The table's
+  uniform column uses that formula consistently for all counts.
+  Both literature-comparison tables now include an explicit
+  Endpoint from [10] column alongside the count paper [9] and
+  the present construction. The shifted table distinguishes v1's
+  specific bounds from its 67m-1 formula. The finite-count table uses
+  v1 Theorem 1.1 at m=1 and explains why those general bounds are
+  weaker here than the specific estimates from [9]. All nine new
+  entries were checked; the five ceiling calculations used exact
+  rational logarithm enclosures.
+  Sorokin/Huttner and Krisman are stated in comparable
+  ranges, including Krisman's shorter beta(4) endpoint.
+  The comparison table's explanation states the four earlier bounds
+  explicitly and explains why discarding the preceding even beta
+  values still leaves an irrational member, restoring the v1 wording.
+  Before those statements, the introduction now identifies the earlier
+  result as a previous version of this paper, cites its bibliography
+  entry [10], and explains why it is being recalled. The heading
+  [10, Theorem 1.1] identifies the reproduced theorem by its source;
+  the current result remains Theorem 1.2.
+  The transition now explicitly identifies the headline improvement:
+  the earlier paper proved Theorem 1.1 with 67 in place of 19. It then
+  introduces the comparison of the general bounds for B values.
+  The proof outline identifies s as the even upper index and states
+  that q_b(n) and rho_nu(n) are rational. It explains the sequences,
+  fixed cancellation weights, and why nonzero integers tending to zero
+  give a contradiction. Before invoking the Gram representation, it
+  explains that B candidate multipliers produce B vectors of seed
+  constants, which become the columns of the matrix.
+  The second-derivative example explains how the starting index moves.
+  Method sources and the changes to the earlier construction are
+  identified; prerequisites are stated.
+  The v1 general theorem is reproduced immediately before the current
+  general theorem, with both together on page 2. Their endpoint
+  constants use matching notation C_B^(1) and C_B and their formulas
+  are displayed in the same order. The following paragraph compares
+  the multipliers for B=1,2,3 and explains the odd grids and pole spacing
+  change. The opening one-value theorem remains first.
 
-The proof overview distinguishes m and B, which are fixed, from n,
-which tends to infinity. It describes B sequences of forms, the fixed
-integer combination and why nonzero integers tending to zero create
-a contradiction. Second differentiation provides a small example
-before the arbitrary derivative order and repeated zeros are introduced.
+Construction and rank
+  Odd grids and pole spacing 2 are introduced through their common
+  alternating sign. The roles of a, r and the normalization are stated.
+  The normalization is now kappa_n throughout, including kappa_1 and
+  kappa_p; the endpoint constants retain C_B. The former ambiguity
+  between the normalization C_1 and the endpoint C_1=19 is removed.
+  Before defining the multiplier, Section 2 explains that it adjusts
+  rational constants while preserving grid zeros and reflection;
+  homogeneity will control scaling at prime indices.
+  The endpoint criterion explains what u and U measure.
+  The seed target has a purpose before the matrix construction.
+  The worked B=2,m=1 example gives the kernels, two polynomials, common
+  positive weight, moment matrix and the actual seed-producing
+  combination before the general formula.
+  The example now explains the midpoint line's fixed signs and how
+  substituting -(t+1)^2 makes the multiplier reproduce h_j on that line.
+  The general proof separates moving derivatives, independence,
+  homogenization and positivity. It explains why the central powers
+  cancel and where the contour sign comes from.
 
-The linear forms and their constants are defined before the seed Gram
-argument. The kernel section explains why moving derivatives onto H_b
-helps and why kernel numerators are useful multiplier polynomials.
-The contour orientation, sign and degree bound are explicit. The
-multiplier coefficients prescribing the seed are distinguished from
-the later weights canceling possible irrational values.
+Arithmetic, analysis and nonvanishing
+  The numerator-block lemma is introduced as the divisibility needed
+  in pole expansions.
+  The grouped denominator proof explains why termwise clearing may
+  fail and why the grid zeros repair it.
+  The decay section first states the denominator cost, then separates
+  the bounded scaled range, differentiation and infinite tail.
+  The explanation of uniform Stirling error includes bounded gamma
+  arguments when t/n tends to zero.
+  The tail estimate explicitly enlarges the odd summation grid of
+  spacing 2/b to the denser grid of spacing 1/b for its upper bound.
+  The prime section states its nonvanishing purpose, distinguishes
+  tau from the clearing exponent, and spells out the coefficient
+  scaling before and after differentiation.
+  A single-grid example identifies the selected factors explicitly
+  and shows their product is p^L P_1(t), before fraction classes enter.
+  The final contradiction reconnects fixed cancellation, rationality,
+  integrality, decay and nonvanishing.
 
-The denominator section explains the prime-power loss, the grouped
-cancellation and the reason differentiation adds k to the common
-clearing exponent. The analytic section explains why a fixed-order
-derivative only costs a polynomial factor, including the first nonzero
-grid point and the infinite tail. The dilation section states its
-nonvanishing purpose before the local congruences.
+Endpoints and supporting material
+  The endpoint coefficients are tied to the growth costs they pay.
+  Section 8.1 explains that the numerator contribution and derivative
+  denominator cost grow linearly in m; choosing a=m a_B gives the
+  claimed linear endpoint scale.
+  The finite table provides the exact rational u through an integer
+  numerator and labels the U column as approximate.
+  Appendix B retains the sharper 18.58 statement and its proof,
+  followed by the limiting profile. Its numerical transition and
+  exact certificates are distinguished.
+  The exact identity a+k+Phi(2y)=m Psi_r(a/m,y)-1 explains the
+  finite-m correction and why the other integer r choices fail even
+  with that correction.
+  The audit note gives outcome and scope without recounting advice.
+  Historical review records are marked as version 1 in review/README.txt.
 
-The abstract states results only. It contains no proof steps or
-construction details. Subsections are numbered, the title has no
-manual line break, and all references are cited in the text.
+Comparison with the submitted version 1
+  Compared the current exposition with the actual submitted 17-page v1,
+  identified by its PDF hash in the comparison revision record.
+  The v2 Gram example, single-grid dilation example and coefficient
+  scaling are clearer and have been retained.
+  Restored the count-to-interval walkthrough in Section 1.1, including
+  the reduction from the earlier endpoint 3828 to 352.
+  Section 2.1 now explains the two jobs of grid zeros before the products.
+  The centered interval, spacing 2 and Ln factors per class explain the
+  numerator's shape. Section 2.2 displays both partial-fraction
+  expansions, and Section 2.3 defines the target vector explicitly.
+  Section 5.2 restores the factor bound 1+epsilon/c and its product cost,
+  then identifies the powers of n that cancel in the tail.
+  Section 7 distinguishes the coefficients fixing the multiplier and
+  seed from the weights subsequently canceling irrational values.
+  Section 8.1 explains the choices 80/9 and 18 and the resulting
+  coefficients inside the even ceiling.
+  These restore explanations compressed during the v2 rewrite.
+  The mathematical claims, abstract and endpoint tables are unchanged.
 
-The mathematical argument and the exposition were checked separately.
-The independent audit covers the underlying argument; it is not used
-as evidence that the subsequent typesetting or presentation is clear.
+Layout
+  Numbered subsections and a title without a forced line break retained.
+  Rendered pages, equation spacing, tables, references and page
+  transitions checked; final details and PDF hash are in
+  assembly-review.json.
 
-The subsequent clarity pass defines I(s) before stating its bound,
-explains the discarded-value cost before the threshold, and names
-all nine earlier values by their count in the beta(20) example.
-The table header identifies the earlier source explicitly. Repeated
-comparisons and the general preface to Krisman's fixed interval were
-removed. All mathematical claims, examples and conditions are retained.
-Only Section 1.1 was edited; the abstract and proof are unchanged.
+Result
+  The initial five gaps identified in the targeted review are addressed.
+  The revised passages explain the choices needed to follow the
+  construction, the dilation mechanism and the endpoint estimates.
+  The subsequent headline revision uses 19m-1, restores the abstract's
+  original opening style and keeps the sharper results in Appendix B
+  and the specific examples. The revisions and validation scopes are
+  recorded in v2-exposition-revision-2026-11-06.json and
+  v2-headline-revision-2026-11-06.json.
+  The later comparison with v1 identified five further explanatory
+  repairs and a clearer introductory example. All six are implemented
+  and recorded in v2-v1-comparison-revision-2026-11-06.json.
+  The subsequent direct theorem comparison puts v1 before v2 using
+  matching endpoint constants. Section 8 explicitly sets a_B=C_B-1.
+  Its notation checks, numerical examples and final 20-page visual
+  review are in v2-theorem-comparison-2026-11-06.json.
+  The context revision identifies the earlier result and cites v1 as
+  reference [10]. Its scope and final PDF validation are recorded in
+  assembly-review.json under context_revision.
 
-6 November 2026: initial-segment comparison
-
-Before the Krisman comparison, Section 1.1 now explains that earlier
-one-irrational initial blocks through beta(10) are subsumed by the
-irrationality of beta(2). This makes the reason for discussing intervals
-starting at beta(4) explicit. The Lai-Zhou and OpenAI statements have
-references and source reading records. Only Section 1.1 and the
-bibliography changed in the manuscript; the proof is unchanged. The
-16-page rebuild has no unresolved references or box warnings. All pages
-were rendered; changed pages 2, 3 and 16 were inspected, with the remaining
-13 pages pixel-identical to the preceding reviewed rendering.
-
-6 November 2026: first-table comparison
-
-The first table now places the sharper endpoints beside those obtained
-from Theorem 1.1, so the reader can see the gain from choosing parameters
-for each interval. The headings are First index, Last index (grouping
-Specific parameters and Theorem 1.1), and # irrational values (at least).
-The generic endpoints 334, 468, 3742 and 8796 were checked using exact
-rational logarithm enclosures. The enlarged table changes pagination;
-all 16 rebuilt pages were rendered and visually inspected. Compilation
-has no unresolved references or box warnings. The core proof and exact
-checker files remain unchanged.
-
-6 November 2026: first-table headings
-
-Restored First even index and Last even index to make explicit that
-the tabulated endpoints are even beta indices. Numerical entries and
-proof are unchanged. The clean 16-page rebuild changes only rendered
-page 2, which was visually checked; all other pages are pixel-identical.
-
-6 November 2026: include the first even index 4
-
-Added the first-table row 4,198,200,1 and its Section 8 parameter row.
-The later comparison table consistently uses 198 and explains that
-the rows beginning at 4 and 6 use specific parameters. The example
-with m=19,B=2 is identified by its parameters, rather than its changing
-row number. All five exact endpoint checks pass. All 16 PDF pages
-were rendered and the nine changed pages visually inspected; the
-remaining seven are pixel-identical to the preceding reviewed version.
-
-6 November 2026: audit recommendations
-
-Removed the sentence recounting the requested prime-exclusion wording
-change from the manuscript. The audit note now reports its outcome and
-scope without revision history. The original audit report and review
-records retain the recommendation. This preference was also added to
-the project exposition guidance. The 16-page PDF rebuilt without box
-warnings or unresolved references; only rendered page 16 changed, and
-was visually checked. Mathematical content and checkers are unchanged.
-
-6 November 2026: proof-method attribution
-
-Section 1.2 now identifies the count paper as the immediate starting
-point and names the earlier rational-grid and coefficient-elimination
-methods of Lai-Yu and their real-character adaptation by Kumar-Tosi.
-The passage explains that the multiplier, grouped-denominator and
-prime-dilation arguments are extended to differentiated functions.
-Local citations identify the corresponding steps in Sections 2, 3,
-4, 6 and 7; Section 6 credits the Lai-Sprang auxiliary-prime criterion.
-The method paragraph follows the explanation of the proof, so the
-reader has already met the ideas being attributed. All nine references
-are cited. The clean 16-page rebuild has no box warnings or unresolved
-references. Eleven changed pages were visually inspected; five others
-are pixel-identical to the preceding reviewed rendering.
-
-6 November 2026: motivation before the calculations
-
-Applied all six recommendations from the full-paper exposition review.
-The opening construction explains the roles of zeros, pole spacing and
-the multiplier. A B=2 cancellation example motivates the seed constants;
-the Gram section now explains the matrix columns and how they produce
-one common multiplier. The denominator section states the obstruction
-to termwise integrality. The endpoint section presents the governing
-estimate before its certificates and explains the coefficients 66 and
-45 and the choice S=m*S_0. The two smaller changes identify e_0 as an
-upper bound for e and name R_(ell p) in the nonselected-pole argument.
-
-The abstract and introduction are unchanged. The revised explanations
-were read in sequence, including the distinction between the constant
-coefficient and the value of a whole form. The 17-page PDF compiles
-without unresolved references or box warnings. Pages 3-17 were visually
-inspected; pages 1-2 are pixel-identical to the preceding version.
-
-6 November 2026: final reading
-
-Read the complete current 17-page PDF after the table-heading edit.
-The new seed example, Gram-matrix preview, denominator motivation and
-endpoint-cost explanation address the previously identified obstacles.
-The abstract, comparisons, attribution and proof transitions are clear
-for the intended mathematical audience. No further substantive exposition
-changes are recommended. The current U(approx) heading was preserved.
-All pages were rendered; page 15 was visually inspected and all other
-pages are pixel-identical to the preceding reviewed rendering. No
-manuscript source or PDF was changed by this final reading.
+Final reading after the table revisions
+  Read the full manuscript after the normalization and overview
+  refinements and the addition of the cited comparison columns.
+  The final consistency change uses The column from [10] below both
+  tables, preserving the user's simplified headings. The references
+  to the earlier paper's Section 8.2 and Theorem 1.1 remain explicit.
+  No further substantive exposition changes are recommended.

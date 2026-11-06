@@ -1,133 +1,139 @@
 \section{Prime dilation and nonvanishing}\label{sec:dilation}
 
-The previous section makes the forms small after their denominators
-are cleared. To obtain a contradiction, we must also ensure that
-the eventual rational combination is nonzero infinitely often.
-At indices divisible by a large prime, the constant coefficient
-and the beta coefficients have different valuations. The seed
-constant survives a common scaling while the beta coefficients
-vanish modulo the prime. This separation is the principle behind
-the auxiliary-prime criterion of Lai and Sprang~\cite[Lemma~2.3]{LS25}.
-We obtain it by extending the prime-dilation calculation
-of~\cite[Section~6]{Tcount} to the differentiated functions.
+The forms now tend to zero after denominator clearing. We must
+ensure that the final rational combination is nonzero infinitely
+often. At prime indices, its constant coefficient will survive
+a scaling modulo the prime while all beta coefficients vanish.
+This is the principle of Lai and Sprang's auxiliary-prime
+criterion~\cite[Lemma~2.3]{LS25}; we adapt the dilation calculation
+of~\cite[Section~6]{Tcount} to the present odd grids.
 
-Write $\Zp=\{a/b\in\Q:p\nmid b\}$ and let $v_p$ be the
-usual prime valuation. Recall $\tau_0=S-m-E$ and
-$\tau=\tau_0+k=S-1-E>k$ from \eqref{eq:taus}.
+Put
+\[
+ \tau_0=a-E>0,\qquad \tau=\tau_0+k>k.
+\]
+These exponents describe scaling at prime indices; the common
+denominator exponent remains $a+k$.
 
 \begin{proposition}\label{prop:dilation}
-Fix a positive odd integer $\ell$. For all sufficiently large
-primes $p$,
+For every sufficiently large odd prime $p$,
 \begin{align}
- p^\tau\rho_\nu(\ell p)&\in p^\nu\Zp,
-                                      \label{eq:rho-dilation}\\
- p^\tau q_b(\ell p)&\equiv
-     \ch(p)(\ell+1)^{-S}q_b(\ell)\pmod p.
-                                      \label{eq:q-dilation}
+ p^\tau\rho_\nu(p)&\in p^\nu\Zp,\label{eq:rho-dilation}\\
+ p^\tau q_b(p)&\equiv\ch(p)q_b(1)\pmod p
+                    \qquad(b=1,3,\ldots,M).\label{eq:q-dilation}
 \end{align}
+Here $\Zp$ consists of rationals with denominator prime to $p$.
 \end{proposition}
 
-\subsection{The undifferentiated function}
+\subsection{The rational-function congruence}
 
-Take $p$ large enough in terms of the fixed parameters and $\ell$;
-in particular, it divides none of their denominators and
-$p>\ell+1$. Both $(\ell p)!$ and $(\ell p+1)!$ have
-$p$-valuation $\ell$. After removing $p^\ell$, their units
-reduce to $(-1)^\ell\ell!$, by Wilson's theorem.
-Fermat's theorem treats the fixed powers of $4$ and $K$.
-Thus $C_{\ell p}$ has valuation $(S-mDL)\ell$, and its unit is
-congruent to
-\begin{equation}\label{eq:C-unit}
- (-1)^{\ell(S-mDL)}\frac{C_\ell}{(\ell+1)^S}.
-\end{equation}
-
-In a numerator block of fraction class $v/d$, a factor of
-$P_{\ell p}(pz)$ is selected by $p$ when $dj+v\equiv0\pmod p$.
-After division by $p$, its fraction class becomes $v'/d$, where
-$pv'\equiv v\pmod d$. This permutes the reduced classes for
-each denominator, and hence permutes $\Theta$.
-Each block has $L\ell$ selected factors. Together with the
-extra factor $p(z-r\ell)$, they give
-$p^{DL\ell+1}P_\ell(z)$. The unselected numerator units
-contribute $(-1)^{DL\ell}$, since each complete block of nonzero
-residues has product $-1$. For $P_{\ell p}^m$, raise both
-contributions to the $m$th power.
-
-The selected denominator indices are $h=py$, $0\le y\le\ell$.
-They give
+The factors divisible by $p$ will reproduce the seed at $n=1$
+after rescaling; the remaining factors contribute units modulo $p$.
+For a single grid, $B=1$ and $\Theta=\{1\}$, so
 \[
- p^{S(\ell+1)}\prod_{y=0}^\ell(z+4y)^S,
+ P_p(pt)=\prod_{j=0}^{Lp-1}\bigl(p(t-2r)+2j+1\bigr).
 \]
-and the unselected denominator unit is $(-1)^{S\ell}$.
-The signs cancel, while the net valuation is
+For an odd prime $p$, the selected indices are exactly
+$j=(p-1)/2+\ell p$, $0\le\ell<L$. At these indices,
 \[
- (S-mDL)\ell+m(DL\ell+1)-S(\ell+1)=m-S.
+ p(t-2r)+2j+1=p(t-2r+2\ell+1),
 \]
-Using homogeneity \eqref{eq:homogeneity}, we obtain
+so their product is $p^LP_1(t)$. With several grids, division
+by $p$ can change the fraction class. The set $\Theta$ contains
+all the classes needed to keep the same mechanism valid.
+
+Now take $p>M$ and larger than the fixed denominator primes.
+In a block of $P_p(pt)$ with class $v/d$, a factor is selected
+by $p$ when $2dj+v\equiv0\pmod p$. After division by $p$,
+its new class $v'/d$ satisfies
+\[
+ pv'\equiv v\pmod{2d}.
+\]
+Multiplication by $p$ permutes the odd reduced classes modulo
+$2d$. Each block has $L$ selected factors, and together they
+give $p^{DL}P_1(t)$. The unselected factors in each block cover
+every nonzero residue $L$ times. Wilson's theorem therefore
+gives their total unit as $(-1)^{DL}=-1$.
+
+The normalization $\kappa_p$ has valuation $a-mDL$.
+Using Wilson's theorem for $(p-1)!$ and Fermat's theorem for
+the fixed factors, its unit is
+\[
+ \kappa_p/p^{a-mDL}\equiv(-1)^{a-mDL}\kappa_1=-\kappa_1\pmod p.
+\]
+Raising the numerator to odd $m$ cancels the two minus signs.
+The selected denominator indices are $h=0,p$, contributing
+$p^{2a}[t(t+2)]^a$; the remaining denominator unit is
+$(-1)^a=1$. The net valuation is $-a$, so
 \begin{equation}\label{eq:T-dilation}
- p^{\tau_0}T_{\ell p}(pz)
-                       \equiv(\ell+1)^{-S}T_\ell(z)\pmod p.
+ p^aR_p(pt)\equiv R_1(t),\qquad
+ p^{a-E}T_p(pt)\equiv T_1(t)\pmod p.
 \end{equation}
+The second congruence uses $W_p(pt)=p^E W_1(t)$.
 
 \subsection{Local coefficient extraction}
 
-To extract coefficients from \eqref{eq:T-dilation}, we need
-reduction modulo $p$ to commute with the local series expansion.
-At a selected pole $h=py$, put $z=-4y+u$. The factorization above
-gives
-\begin{equation}\label{eq:local-p-integral}
- u^S p^{\tau_0}T_{\ell p}(p(u-4y))\in\Zp[[u]].
-\end{equation}
-After the displayed powers are removed, every other denominator
-factor has a unit constant term. Its inverse has $p$-integral
-series coefficients, and reduction commutes with Taylor extraction.
-The coefficient of $u^{S-i}$ in \eqref{eq:local-p-integral} is
-$p^{\tau_0-i}a_{i,py}(\ell p)$, so
-\begin{equation}\label{eq:a-dilation}
- p^{\tau_0-i}a_{i,py}(\ell p)
-                   \equiv(\ell+1)^{-S}a_{i,y}(\ell)\pmod p.
-\end{equation}
-Now use the integer binomial coefficient in
-\eqref{eq:derivative-coefficients}. With $\nu=i+k$ and
-$\tau=\tau_0+k$, this gives
-\begin{equation}\label{eq:selected-coefficients}
- p^{\tau-\nu}A_{\nu,py}(\ell p)
-                   \equiv(\ell+1)^{-S}A_{\nu,y}(\ell)\pmod p.
-\end{equation}
-Thus the passage to differentiated coefficients is made after
-the justified local extraction.
+To extract coefficients, reduction must commute with the local
+series expansion. At a selected pole put $t=-2y+z$, where
+$y=0,1$. Removing the pole gives
+\[
+ z^a p^{a-E}T_p(p(-2y+z))\in\Zp[[z]].
+\]
+After the displayed powers are canceled, every remaining
+denominator factor has a unit constant term. Its inverse has
+integral series coefficients in $\Zp$, so reduction commutes
+with Taylor extraction.
 
-Consider next a pole $h=x+py$ with $1\le x<p$, and substitute
-$t=pz-4x$. The extra numerator factor is a unit, the numerator
-blocks have $DL\ell$ selected factors, and the denominator has
-$\ell$ selected factors, each of order $S$. Including $C_{\ell p}$,
-the net valuation is zero. Local expansion of $R_{\ell p}$ at
-$-4h$ shows that its partial-fraction coefficient of order $i$
-has valuation at least $i$.
-Multiplication by $W_{\ell p}$ preserves this inequality: its
-$j$th Taylor coefficient is an integer and multiplies a
-coefficient of $R_{\ell p}$ of order $i+j$. Differentiation then gives
-\begin{equation}\label{eq:other-coefficients}
- v_p\bigl(A_{\nu,h}(\ell p)\bigr)\ge\nu-k
-                                  \qquad(p\nmid h).
+The order-$i$ term from the selected pole is
+\[
+ \frac{c_{i,py}(p)}{(p(-2y+z)+2py)^i}
+                  =p^{-i}c_{i,py}(p)z^{-i}.
+\]
+After multiplication by $z^ap^{a-E}$, its coefficient of
+$z^{a-i}$ is $p^{a-E-i}c_{i,py}(p)$.
+Terms from other poles are analytic at $z=0$; after multiplication
+by $z^a$ they start at degree $a$ and cannot contribute, since
+$i\ge1$. Comparing coefficients in \eqref{eq:T-dilation} gives
+\[
+ p^{a-E-i}c_{i,py}(p)\equiv c_{i,y}(1)\pmod p.
+\]
+Now multiply both sides by the integer $\binom{i+k-1}{k}$.
+With $\nu=i+k$ and $\tau=a-E+k$, we have
+$a-E-i=\tau-\nu$. Thus
+\begin{equation}\label{eq:selected-coefficients}
+ p^{\tau-\nu}A_{\nu,py}(p)\equiv A_{\nu,y}(1)\pmod p.
 \end{equation}
-This weaker bound suffices because $\tau>k$. Combining
-\eqref{eq:selected-coefficients} and \eqref{eq:other-coefficients}
-over all poles proves \eqref{eq:rho-dilation}.
+
+At a nonselected pole $-2h$, $1\le h\le p-1$, all other
+denominator factors are units. The numerator contains $mDL$
+constant factors divisible by $p$, so its degree-$j$
+coefficient has valuation at least $mDL-j$.
+Multiplication by $\kappa_p$ adds $a-mDL$. The remaining denominator
+series has integral coefficients, so the order-$i$ coefficient
+of $R_p$ has valuation at least $i$.
+Multiplication by the integer polynomial $W_p$ preserves this
+bound: its degree-$j$ Taylor coefficient multiplies an
+order-$(i+j)$ coefficient. Differentiation gives
+\begin{equation}\label{eq:other-coefficients}
+ v_p(A_{\nu,h}(p))\ge\nu-k\qquad(1\le h\le p-1).
+\end{equation}
+The estimate for a numerator coefficient remains valid when
+$j>mDL$, when its lower bound is negative.
+Equations~\eqref{eq:selected-coefficients}--\eqref{eq:other-coefficients}
+imply \eqref{eq:rho-dilation}.
 
 \subsection{The surviving rational constant}
 
-Use \eqref{eq:q}, taking $p>4B\ell$ as well. Then every
-$j\le4b\ell p$ is less than $p^2$, so $v_p(j)\le1$.
-At a nonselected pole, multiplication by $p^\tau$ leaves
-valuation at least $\tau-k>0$, even if $p\mid j$.
-At a selected pole, a term with $p\nmid j$ has valuation
-at least $\nu>0$, by \eqref{eq:selected-coefficients}.
+Multiply \eqref{eq:q} at $n=p$ by $p^\tau$ and take $p>2M$.
+Every finite-sum denominator $j<2bp$ is less than $p^2$.
+At nonselected poles, even the terms with $p\mid j$ have
+valuation at least $\tau-k>0$.
+At selected poles, \eqref{eq:selected-coefficients} gives valuation
+at least $\nu>0$ whenever $p\nmid j$.
 
-Only the terms with $h=py$ and $j=pj'$ survive. Their upper
-limit becomes $j'\le4by$, and
-$\ch(pj')=\ch(p)\ch(j')$. Equation~\eqref{eq:selected-coefficients}
-therefore turns the surviving sum into
-$\ch(p)(\ell+1)^{-S}$ times the constant formula at index
-$\ell$. This is \eqref{eq:q-dilation}, completing the proof
-of Proposition~\ref{prop:dilation}.
+Only $h=p$ and $j=pj'$ survive, with $1\le j'<2b$ odd.
+The pole $h=0$ has an empty finite sum. Since $p$ is odd,
+$(-1)^p=-1$ and $\ch(pj')=\ch(p)\ch(j')$.
+Using \eqref{eq:selected-coefficients}, the surviving sum is
+$\ch(p)$ times the seed constant formula.
+This proves \eqref{eq:q-dilation} and Proposition~\ref{prop:dilation}.

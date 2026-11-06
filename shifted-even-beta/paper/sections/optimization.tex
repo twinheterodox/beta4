@@ -1,0 +1,118 @@
+\section{The one-value endpoint multiplier}\label{app:optimization}
+
+The endpoint $19m-1$ can be sharpened slightly. We first give
+an explicit refinement and then compare its multiplier with
+the transition of the decay estimate.
+
+\subsection{A sharper uniform bound}
+
+\begin{proposition}\label{prop:one-sharp}
+For every positive odd integer $m$, put
+\begin{equation}\label{eq:one-endpoint}
+ s(m)=m-1+2\left\lceil\frac{879m-50}{100}\right\rceil<18.58m.
+\end{equation}
+At least one of $\beta(m+1),\beta(m+3),\ldots,\beta(s(m))$
+is irrational.
+\end{proposition}
+
+\begin{proof}
+For $B=1$, put
+\[
+ a=2\left\lceil\frac{879m-50}{100}\right\rceil.
+\]
+Then $a\ge(879/50)m-1$ and $a/m\ge52/3$.
+Indeed, $m=1$ gives $a=18$, $m=3$ gives $a=52$, and
+$m\ge5$ gives $a/m\ge879/50-1/5>52/3$.
+With $r=2$ and $u=1/100$, the comparison
+\begin{equation}\label{eq:f-sharp}
+ 1001^3\left(\frac{401}{601}\right)^{52}<1
+\end{equation}
+implies $f(u)<1$ for every $m$.
+
+With $e_*$ as in \eqref{eq:e-tight}, put
+$A_*=\log(27/(4e_*))$ and $C=5\log(20.02)$.
+Then
+\begin{align*}
+ \frac12\log U
+ &=mC-A_*a+(m-1)\log e_*\\
+ &\le m\left(C+\log e_*-\frac{879}{50}A_*\right)
+                                      +A_*-\log e_*.
+\end{align*}
+Both terms on the last line are negative. For the first,
+take logarithms of the exact rational comparison
+\begin{equation}\label{eq:sharp-U}
+ e_*^{929}2^{250}
+       \left(\frac{1001}{100}\right)^{250}
+       \left(\frac4{27}\right)^{879}<1.
+\end{equation}
+For the second, use $27/4<(163/60)^2<e_*^2$.
+The criterion gives the stated interval. Finally,
+$\lceil x\rceil<x+1$ gives $s(m)<18.58m$.
+\end{proof}
+
+\subsection{The limiting multiplier}
+
+The multiplier $18.58$ comes from a rational estimate close
+to the transition of the decay bound. The limiting profile
+also explains the choice $r=2$.
+
+For $B=1$, write $\mu=a/m$ and $y=x/2$. Since $D=1$,
+$K=2^L$ and $k=m-1$, the profile in \eqref{eq:Phi} satisfies
+the exact identity
+\begin{equation}\label{eq:finite-profile}
+ a+k+\Phi(2y)=m\Psi_r(\mu,y)-1,
+\end{equation}
+where
+\begin{equation}\label{eq:limiting-profile}
+ \begin{split}
+ \Psi_r(\mu,y)={}&\mu+1+2L\log2
+       +(y+L)\log(y+L)-y\log y\\
+ &-\mu\bigl((y+r+1)\log(y+r+1)
+                         -(y+r)\log(y+r)\bigr),
+ \qquad L=2r+1.
+ \end{split}
+\end{equation}
+The constant $+1$ in $\Psi_r$ comes from the additional denominator cost of
+$m-1$ derivatives; the final $-1$ in \eqref{eq:finite-profile}
+accounts for the difference between $m-1$ and $m$.
+Taking the maximum gives
+$\log(\ep^{a+k}G)=m\max_{y\ge0}\Psi_r(\mu,y)-1$.
+After division by $m$, the correction is $-1/m$ and vanishes
+in the limit. Decay in the limiting profile corresponds to
+$\max_{y\ge0}\Psi_r(\mu,y)<0$.
+For $r=2$, numerical solution of
+$\Psi_r=0$ and $\partial\Psi_r/\partial y=0$ gives
+\[
+ \mu\approx17.5722528999,\qquad y\approx0.004075478609.
+\]
+Since the endpoint is $a+m-1$, the corresponding limiting
+multiplier is approximately $18.5722528999$.
+These decimals locate the transition; Proposition~\ref{prop:one-sharp}
+proves the uniform bound $18.58$.
+
+The choice $r=2$ can also be justified against every other
+integer $r$ within these estimates. For
+$r=1,3,4,5,6,7,8$, the exact comparisons
+\begin{equation}\label{eq:r-exclusion}
+ \left(\frac{163}{60}\right)^{18}
+ 2^{2L}L^L
+ \left(\frac{r^r}{(r+1)^{r+1}}\right)^{18}>1
+\end{equation}
+give $\Psi_r(18,0)>1$, since $163/60<\ep$. Thus, at $a=18m$,
+the logarithmic bound already satisfies
+\[
+ m\Psi_r(18,0)-1>m-1\ge0.
+\]
+It cannot give decay, even with the finite-$m$ saving of $1$.
+It also fails for smaller $a$, because the coefficient of $a$
+in that profile is
+$1+\log(r^r/(r+1)^{r+1})<0$.
+For $r\ge9$, the degree condition $a>m(2r+1)\ge19m$
+itself excludes $a\le18m$.
+
+Thus $r=2$ is the only integer choice that can
+reach this scale with the present factorial normalization
+and absolute-value decay estimate. The program
+\path{checks/optimization.py} reproduces the numerical
+transition; \path{checks/endpoints.py} proves
+\eqref{eq:r-exclusion} over $\Q$.

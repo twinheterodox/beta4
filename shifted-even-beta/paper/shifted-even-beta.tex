@@ -11,6 +11,7 @@
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
+\newtheorem*{previousversion}{\cite[Theorem~1.1]{TshiftV1}}
 \theoremstyle{remark}
 \newtheorem{example}[theorem]{Example}
 \numberwithin{equation}{section}
@@ -24,19 +25,21 @@
 \DeclareMathOperator{\Res}{Res}
 \title{\Large Irrational even beta values in shifted intervals}
 \author{twinheterodox\\[2pt]\normalsize Prepared with Codex}
-\date{5 November 2026}
+\date{6 November 2026 \quad Version 2}
 \begin{document}
 \maketitle
 \begin{abstract}
 For every positive odd integer $m$, we prove that at least one of
 \[
- \beta(m+1),\beta(m+3),\ldots,\beta(67m-1)
+ \beta(m+1),\beta(m+3),\ldots,\beta(19m-1)
 \]
 is irrational, where $\beta$ is the Dirichlet beta function.
 More generally, for each positive integer $B$ we give an explicit
 constant $C_B$ such that at least $B$ even beta values with indices
 between $m+1$ and $C_Bm-1$ are irrational, for every positive odd $m$.
-We also give sharper endpoints for particular intervals.
+Specific parameter choices give at least two irrational values among
+$\beta(2),\beta(4),\ldots,\beta(70)$, at least three through
+$\beta(186)$, and at least four through $\beta(360)$.
 \end{abstract}
 \input{paper/sections/introduction}
 \input{paper/sections/construction}
@@ -48,5 +51,6 @@ We also give sharper endpoints for particular intervals.
 \input{paper/sections/endpoints}
 \appendix
 \input{paper/sections/checks}
+\input{paper/sections/optimization}
 \input{paper/references}
 \end{document}

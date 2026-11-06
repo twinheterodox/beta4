@@ -63,9 +63,20 @@
       "local_pdf_location": "../even-beta-counts/output/pdf/even-beta-counts.pdf",
       "pdf_sha256": "f6848fa9304693f1b96a12ca9c2268511f350eb7c3e607054ddb0d4d3fe0c2a5",
       "actual_read_scope": "Main theorem, construction, Gram, arithmetic, decay, dilation, contradiction and endpoint sections read during the shifted-interval investigation; full adaptation independently audited in its plain-text form. Cited for construction provenance and comparison; the present proof is self-contained apart from standard classical inputs.",
-      "bibliographic_link_note": "The public Hexagon beta search on 5 November did not expose a record for this title; the confirmed public GitHub manuscript location is cited.",
+      "bibliographic_link_note": "The v2 bibliography uses the confirmed Hexagon 2611.00139v1 publication. The earlier GitHub location and source hash remain recorded above.",
       "section_1_1_revision_read_scope": "Introduction, finite count table, general endpoint theorem and Section 8 endpoints.",
-      "method_attribution_read_scope": "Introduction method paragraph and Sections 2, 3, 4, 6 and 7 checked against the shifted construction: rational functions, homogeneous polynomial multipliers, Gram representation, grouped denominator cancellation, prime dilation and final elimination. Section numbers verified against the source assembly order."
+      "method_attribution_read_scope": "Introduction method paragraph and Sections 2, 3, 4, 6 and 7 checked against the shifted construction: rational functions, homogeneous polynomial multipliers, Gram representation, grouped denominator cancellation, prime dilation and final elimination. Section numbers verified against the source assembly order.",
+      "published_version": {
+        "version": "Hexagon 2611.00139v1",
+        "source_url": "https://hexagonmath.org/2611.00139v1",
+        "pdf_url": "https://hexagonmath.org/pdf/2611.00139v1",
+        "publication_date": "2026-11-06",
+        "retrieved_at_utc": "2026-11-06T18:27:12.675733+00:00",
+        "local_pdf_filename": "Explicit-lower-bounds-for-the-number-of-irrational-even-beta-values_hexagon-2611.00139v1.pdf",
+        "pdf_sha256": "126ac901b8d8fee1af67fa37b5d99a611cf90550f7a0325c55b97c6d379a3862",
+        "comparison": "Extracted PDF text agrees with the previously read canonical 20-page manuscript after removing the added Hexagon identifier stamp and normalizing whitespace.",
+        "reading_scope": "Reused the argument and comparison reading recorded above. Checked publication metadata and full text identity apart from the identifier stamp; no fresh proof audit."
+      }
     },
     {
       "citation_key": "LZ22",
@@ -157,7 +168,30 @@
       "role": "Attribution for auxiliary-prime nonvanishing. The elementary contradiction is proved explicitly in the manuscript.",
       "reused_existing_pdf": true,
       "local_pdf_hash_rechecked_on": "2026-11-06"
+    },
+    {
+      "citation_key": "TshiftV1",
+      "title": "Irrational even beta values in shifted intervals",
+      "authors": "twinheterodox",
+      "version": "Hexagon 2611.00160v1",
+      "source_url": "https://hexagonmath.org/2611.00160v1",
+      "repository_commit": "a3f56ac5865736555fb0379b94a712038efcf99f",
+      "repository_pdf_path": "shifted-even-beta/output/pdf/shifted-even-beta.pdf",
+      "pdf_sha256": "9f2157cc8fd9c910fb47f65d5283f83fcc1a7ce4b012823c4ed3688122dbd1f9",
+      "local_copy_status": "Existing submitted v1 PDF retained in repository history and local records; no new PDF download.",
+      "pdf_hash_scope": "The submitted 17-page PDF, not a checksum of a subsequently stamped public download.",
+      "bibliographic_metadata_checked_on": "2026-11-06",
+      "landing_page_check": "HTTP 200; title and identifier match the supplied Hexagon citation metadata.",
+      "actual_read_scope": "The submitted v1 source and PDF were read during the exposition comparison. The general theorem, totient sum and ceiling formula were checked for the restatement. This update verifies citation identity and adds the bibliography entry; it is not a new independent proof audit.",
+      "reused_existing_pdf": true,
+      "role": "Historical comparison with the earlier version of the same paper; no proof proposition is imported."
     }
   ],
-  "updated_on": "2026-11-06"
+  "updated_on": "2026-11-06",
+  "v2_assembly": {
+    "date": "2026-11-06",
+    "scope": "Retained the v1 source-reading scopes. Updated the count-paper citation to confirmed Hexagon 2611.00139v1 metadata; its published PDF text matches the previously read manuscript apart from the identifier stamp. No fresh literature search or independent audit of cited papers was undertaken.",
+    "proof_source": "Independently audited v2 argument identified in review/independent-audit-2026-11-06.json.",
+    "method_attribution": "Odd-grid construction and parity choice; differentiation; Gram multipliers; grouped denominator clearing; prime dilation and coefficient elimination are attributed in the introduction and beside the relevant proof steps."
+  }
 }

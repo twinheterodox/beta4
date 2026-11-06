@@ -1,0 +1,91 @@
+{
+  "date": "2026-11-06",
+  "version": 2,
+  "scope": "Constructing-assistant exposition revision following comparison with submitted v1; not a new independent mathematical audit.",
+  "previous_pdf_sha256": "4a663a9d1bca6ba74365f58c6ef12c210d0dae99a7ee3432b437847e361f2812",
+  "previous_pages": 19,
+  "comparison_version": {
+    "version": 1,
+    "pages": 17,
+    "pdf_sha256": "9f2157cc8fd9c910fb47f65d5283f83fcc1a7ce4b012823c4ed3688122dbd1f9"
+  },
+  "pdf": "output/pdf/shifted-even-beta.pdf",
+  "pdf_sha256": "f16481fac6ea412474a18cdabbe2d5e2792b7ab9a3a732eeb94ac4f4572d54b9",
+  "pages": 20,
+  "changes": [
+    {
+      "section": "1.1",
+      "change": "Restored the count-to-interval walkthrough: ten irrational values through 3828, at most nine below index 20, and the present endpoint 352."
+    },
+    {
+      "section": "2.1",
+      "change": "Explained the two purposes of grid zeros before the products and the centered interval, spacing 2 and Ln factors per class; introduced the pole order before its formula."
+    },
+    {
+      "section": "2.2 and 2.3",
+      "change": "Displayed the V_n partial-fraction expansion and defined the B-coordinate target vector e_B."
+    },
+    {
+      "section": "5.2",
+      "change": "Restored the single-factor Cauchy bound and its product estimate, and cancellation of powers of n in the tail."
+    },
+    {
+      "section": "7",
+      "change": "Distinguished the coefficients already fixing W_n and the seed from the weights subsequently combining the forms."
+    },
+    {
+      "section": "8.1",
+      "change": "Explained how 80/9 cancels the logarithmic cost, how 18 leaves the derivative margin, and how these yield the coefficients inside the even ceiling."
+    }
+  ],
+  "validation": {
+    "changed_source_files": [
+      "paper/sections/construction.tex",
+      "paper/sections/decay.tex",
+      "paper/sections/endpoints.tex",
+      "paper/sections/contradiction.tex",
+      "paper/sections/introduction.tex"
+    ],
+    "theorem_statements_unchanged": true,
+    "abstract_and_main_source_unchanged": true,
+    "introduction_and_endpoint_tables_unchanged": true,
+    "checker_sources_and_results_unchanged": true,
+    "full_checkers_rerun_for_this_revision": false,
+    "direct_review": "The V_n expansion agrees with normalized differentiation of T_n. The zero interval has length 2Ln and spacing 2 in each class. The restored Cauchy and tail steps explain existing estimates. The identities (9/10)(80/9)=8 and (9/10)18-15=6/5 explain the existing parameter choice.",
+    "scope": "Source comparison, direct algebraic reading of the explanatory additions, compilation and visual inspection; no new independent mathematical audit."
+  },
+  "source_files": {
+    "paper/references.tex": "303847c51a5f1da3f0585f729a6b0c612f860836985aa848fdc42bb34dc003a0",
+    "paper/sections/arithmetic.tex": "0e5ed3473aa9d679f69e9dee47b6ddeadfb778e4a8025f728b605be3da2e5220",
+    "paper/sections/checks.tex": "ea52b293e874e2371040523a670dc4415d056d5d3353a1b208c8d85ccbca0624",
+    "paper/sections/construction.tex": "f8d941762cbb0d0bae0f972328edbb9adf89d1c246114d56904920cf2642a043",
+    "paper/sections/contradiction.tex": "2162e0ba6f2c85496d7fe13dc1a6d58548d2ef8f6f7deb1c272edc1ae66d1ed4",
+    "paper/sections/decay.tex": "2cb0020231bdaec5b0fa487f92ff71b547159e8a5f2fe3e026789ac6faa5351d",
+    "paper/sections/dilation.tex": "e718aea0ed0f20d3dd17cf3f847507b8f0eb9c9523d2c0b7adfca3f67fbf8946",
+    "paper/sections/endpoints.tex": "aa30a71b8215f39b146d4fe73336243ed2dc322cc619babc26818a42a764d4c2",
+    "paper/sections/gram.tex": "81d3276134d1a16a7b40163f3a450649f6377634c477559531e3322c57405051",
+    "paper/sections/introduction.tex": "aabc25513956bd597c9e8cec2e7c78241b742e5662402f2e3c8f1e043fad6276",
+    "paper/sections/optimization.tex": "f421b3a85669f3bc096344008ebee2a946cb679837160c6640bff486c02dab45",
+    "paper/shifted-even-beta.tex": "cb0b70470ae62b6f54d9b5c8f7b9715606f213acebb5c62b7f8c057b51e1f252"
+  },
+  "compilation": {
+    "command": "python3 -B tools/build_paper.py",
+    "passes": 3,
+    "unresolved_references": false,
+    "overfull_boxes": false,
+    "underfull_warnings": []
+  },
+  "visual_review": {
+    "renderer": "Poppler pdftoppm, 100 dpi",
+    "pages": 20,
+    "all_pages_reviewed": true,
+    "method": "All 20 pages were rendered and visually inspected. A final paragraph-order adjustment changed only page 16, which was inspected again; the remaining pages are pixel-identical to the reviewed render.",
+    "final_revision_changed_pages": [
+      16
+    ],
+    "result": "No clipped text, broken formulas, table collisions or page-layout defects found."
+  },
+  "independent_audit_record": "review/independent-audit-2026-11-06.json",
+  "independent_audit_scope_unchanged": true,
+  "publication_status": "Local revision; no commit, push or Hexagon submission made for this revision."
+}

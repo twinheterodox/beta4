@@ -1,121 +1,132 @@
 {
-  "review_date": "2026-11-05",
-  "status": "Mathematical assembly review, exact checks and final visual inspection passed.",
-  "reviewer": "Constructing assistant; self-review, distinct from the independent audit of the underlying proof.",
-  "independent_audit_record": "review/independent-audit-2026-11-05.json",
-  "audited_plain_text_sha256": "c7197fc5cd341c3cb71ab30515be836f2cea0156b1252284229bd8d059cdf258",
-  "audit_scope": "The independent audit covers the underlying plain-text proof and separately reproduced finite checks. The later LaTeX assembly is covered by this self-review, not by that audit.",
+  "date": "2026-11-06",
+  "version": 2,
+  "status": "Typeset v2 with final exposition review complete and table-source wording aligned with the user's simplified headings; compilation and affected-page visual review passed.",
   "pdf": "output/pdf/shifted-even-beta.pdf",
-  "pdf_sha256": "9f2157cc8fd9c910fb47f65d5283f83fcc1a7ce4b012823c4ed3688122dbd1f9",
-  "pages": 17,
+  "pdf_sha256": "acb04d7ea754bb108db03c06d40cc73e790596daf453abd5f57498e524538f36",
+  "pages": 20,
   "source_files": {
-    "paper/references.tex": "c5df2fd07766b25b439a756a5041af4253321d3420997b000def746d15dd9d31",
-    "paper/sections/arithmetic.tex": "52054b9c2fd437113dd1d42ed658e9b2e6f190a06642dae7940685701bbeface",
-    "paper/sections/checks.tex": "c91621c1d2b075baad02155fcb896c44d75c211f3e3f0a1622ce40de0c85b7a4",
-    "paper/sections/construction.tex": "aa7866d82ba97c765e80a3ed4d078d9a12ef23a120abfcbd6ec2a706655a1631",
-    "paper/sections/contradiction.tex": "0e81b5c7ac72e11a8e1902dfca17ccc0ecd944c8035abb6e29516bad0a925d44",
-    "paper/sections/decay.tex": "f4cda7cec04dadce442144512b4c0bf1be33bf2aeac158bdc09b558bea8310f7",
-    "paper/sections/dilation.tex": "a452574dfc8e4ea0ca1c1f6fc9b1646713842415edd3098c87ded4b1e6538513",
-    "paper/sections/endpoints.tex": "c991e8dbcb918079b0440a4a0cac4fb805d438d15fc69ff55f18d675647973c9",
-    "paper/sections/gram.tex": "eb7bd0dcb16b0981d8933e2732762f1693bfb9ebc10761696f4269f878f51a9b",
-    "paper/sections/introduction.tex": "4df9b78d4a09054cb867447ff749f6d76465aad5be0a3d4e50b25e27854d5194",
-    "paper/shifted-even-beta.tex": "7ef025accdd9fb8ef7395904551706bbab844ecd54428f71506742327c4977c7"
+    "paper/references.tex": "f0f3327d1053c45e2be3a1bbff5a23f0a519a7637769ad9bc027c760375c9cde",
+    "paper/sections/arithmetic.tex": "78af9b7805ac9292d4a08065a1171a8b2f89445e29f8250e6c866e5e1f2dd2fe",
+    "paper/sections/checks.tex": "a16a548224bbd1c70856c43872de81ed3d36a77145bb72c624c3c5928c5b6f7a",
+    "paper/sections/construction.tex": "ffeeb15dd029eab4a674a4c6126c7380f2541064489e2bfeb4565dacfc6e02bd",
+    "paper/sections/contradiction.tex": "2162e0ba6f2c85496d7fe13dc1a6d58548d2ef8f6f7deb1c272edc1ae66d1ed4",
+    "paper/sections/decay.tex": "4e03981d38afcad6a30dccef404a676a8d661cdf566fdd142a40123559ae4476",
+    "paper/sections/dilation.tex": "5a15be562b7692647645ad3c4a32c196f217c80f74f93c88f6db42f241f1f367",
+    "paper/sections/endpoints.tex": "8f514a229f28097d89f150cc3da716b5faec507a5bc983d2aa8b3f60a3c2a70c",
+    "paper/sections/gram.tex": "3aa5ce431b1200624ba493bda81b84e13d427a524cd0e21a514a8949394de9fe",
+    "paper/sections/introduction.tex": "00a43de22b3daa8dcbb6ba31c2f533372d8292129f3101b3070e43a0d3f8d82c",
+    "paper/sections/optimization.tex": "f421b3a85669f3bc096344008ebee2a946cb679837160c6640bff486c02dab45",
+    "paper/shifted-even-beta.tex": "107f25106696b0b7a76685f0ef99940d82b0b564f8f450f52e74f085c5de75f7"
   },
+  "independent_audit_record": "review/independent-audit-2026-11-06.json",
+  "audited_plain_text_sha256": "603211b50609dc4a4f6646815e7192b61bb8d264c93868d39921f1e0843454e7",
+  "independent_audit_scope": "Underlying general argument and recorded certificates. The subsequent typeset exposition and worked example were reviewed separately; the independent report is not an audit of this PDF.",
   "mathematical_review": "review/mathematical-review.txt",
   "exposition_review": "review/exposition-review.txt",
   "proof_correspondence": [
     {
       "manuscript": "Section 1",
-      "audited_proof": "Sections 1 and 9",
-      "content": "Result, comparisons and proof purpose; earlier-source reading scopes retained."
+      "audited_proof": "Theorems A and B; Sections 6 and 7",
+      "content": "The 19m-1 result and current general family are unchanged mathematically, with endpoint notation C_B=a_B+1. The historical v1 theorem is reproduced separately for comparison, and specific endpoints and literature comparisons are retained."
     },
     {
       "manuscript": "Section 2",
-      "audited_proof": "Sections 2 and 4",
-      "content": "General criterion and rational-function construction; linear forms introduced before the Gram argument."
+      "audited_proof": "Section 1",
+      "content": "Odd grids, normalization, differentiation, forms and endpoint criterion."
     },
     {
       "manuscript": "Section 3",
-      "audited_proof": "Section 3",
-      "content": "Differentiated kernels, positive Gram matrix and integer homogeneous multiplier."
+      "audited_proof": "Section 2",
+      "content": "Differentiated kernels, independent integer polynomials, homogeneous multipliers and positive Gram matrix. The worked example was added after the audit."
     },
     {
       "manuscript": "Section 4",
-      "audited_proof": "Section 4",
-      "content": "Coefficient denominators and grouped integrality of rational constants."
+      "audited_proof": "Section 3",
+      "content": "Progression divisibility, pole coefficients and grouped integrality."
     },
     {
       "manuscript": "Section 5",
-      "audited_proof": "Section 5",
-      "content": "Uniform Stirling estimate, Cauchy derivative bound, tail control and rational decay criterion."
+      "audited_proof": "Section 4",
+      "content": "Uniform Stirling profile, Cauchy estimate, infinite tail and rational decay criterion."
     },
     {
       "manuscript": "Section 6",
-      "audited_proof": "Section 6",
-      "content": "Prime dilation and local coefficient extraction, including the weaker other-pole estimate."
+      "audited_proof": "Section 5",
+      "content": "Prime dilation, coefficient extraction and the surviving character factor. A single-grid example motivates the dilation, and the coefficient scaling is spelled out."
     },
     {
       "manuscript": "Section 7",
-      "audited_proof": "Section 7",
-      "content": "Vandermonde cancellation and infinitely many nonzero cleared integers. The requested prime-exclusion wording correction is included."
+      "audited_proof": "Section 5",
+      "content": "Vandermonde cancellation and infinitely many nonzero cleared integers."
     },
     {
       "manuscript": "Section 8",
-      "audited_proof": "Section 8",
-      "content": "Uniform endpoint and four audited finite certificates; the beta(4) through beta(198) certificate was subsequently added by exact application of the same general criterion."
+      "audited_proof": "Sections 6 and 7.1; endpoint certificates",
+      "content": "General uniform family, including the 19m-1 one-value case, and 12 displayed individual certificates. The sharper one-value formula is now in Appendix B."
     },
     {
       "manuscript": "Appendix A",
-      "audited_proof": "Section 9 and accompanying checkers",
-      "content": "Reproduction scope, counts and an explicit standard beta-integral moment identity explaining the existing checker."
+      "audited_proof": "Section 8",
+      "content": "Moment identity, finite-check scope and independent audit note."
+    },
+    {
+      "manuscript": "Appendix B",
+      "audited_proof": "Sections 7.1 and 7.2",
+      "content": "Sharper uniform one-value formula below 18.58m, numerical limiting multiplier, and exact exclusions for other integer zero-range parameters. The finite-m profile identity and its correction are explicit."
     }
   ],
   "exact_checks": {
     "commands": [
       "python3 -B checks/checks.py",
-      "python3 -B checks/endpoints.py"
+      "python3 -B checks/endpoints.py",
+      "python3 -B checks/worked_example.py"
     ],
-    "result": "The original core-check run passed and its code/output remain byte-identical. The updated endpoints.py run on 6 November passed all five finite cases and the all-m certificate.",
-    "counts": {
-      "rational_kernel_evaluations": 120,
-      "exact_Gram_entries": 90,
-      "positive_principal_minors": 30,
-      "integer_seed_vectors": 12,
-      "selected_pole_congruences": 800,
-      "other_pole_bounds": 6800,
-      "constant_congruences": 14,
-      "grouped_integrality": 6564,
-      "uniform_rational_inequalities": 5,
-      "displayed_endpoint_certificates": 5,
-      "direct_all_m_single_value_certificate": 1
+    "result": "All passed.",
+    "structural_counts": {
+      "kernel_evaluations": 57,
+      "gram_entries": 49,
+      "positive_principal_minors": 19,
+      "seed_targets": 9,
+      "reconstructions": 54,
+      "reflection_coefficients": 1308,
+      "differentiated_grid_zeros": 332,
+      "grouped_integrality": 4516,
+      "selected_pole_congruences": 404,
+      "other_pole_bounds": 1940,
+      "constant_congruences": 19,
+      "beta_coefficient_bounds": 202
     },
-    "code_and_outputs_byte_identical_to_audited_research_versions": false,
+    "structural_total": 8909,
+    "endpoint_certificates": 21,
+    "uniform_parameter_records": 6,
+    "integer_r_exclusions": 7,
+    "all_12_typeset_parameter_rows_match_results": true,
+    "worked_example": "checks/worked_example.json",
+    "audited_checker_sources_and_outputs_byte_identical": {
+      "checks.py": true,
+      "checks.json": true,
+      "endpoints.py": true,
+      "endpoints.json": true,
+      "optimization.py": true,
+      "optimization.json": true
+    },
     "file_sha256": {
-      "checks/checks.json": "eb6904ef6aced97035c03181fe3a2990168a9ee1f2ec5e8ef99e171ee154b50c",
-      "checks/checks.py": "4b9294a1fac277da4920bb3dac91592cb89955f3693951048ac6d0e195bfca56",
-      "checks/endpoints.json": "3aaea6b49203c68641308818a1450f352f6c0c4e2d85ca8bba943237fe44ca6c",
-      "checks/endpoints.py": "8d11c896eff0e08bf029e04337808d8fc2e74ef3474b0416f0662cabad832169"
+      "checks/checks.json": "521a335da27bd06946e032b06536129c09e0595d054e140c96e29b93386d4f97",
+      "checks/checks.py": "98095881df253cc815ad1758ea372ce49c7e5153c16b29c869891ab66f45205f",
+      "checks/endpoints.json": "977b324f352ea43e680f9aafce95d99f56850e81639ca1a1b7e1fc2936d39d4d",
+      "checks/endpoints.py": "1a4a6395f887c1aca0b2887aed4c7a5619a99e24c2bd5521f27fa77b73e15a9f",
+      "checks/optimization.json": "cff0f17479f70663911407e769bcad019c4da46aea7be18c46cb183231771cc0",
+      "checks/optimization.py": "1377723dd4c9be3e40ad2076dd07871d7ac38968c51e44646a055000185744a4",
+      "checks/worked_example.json": "01b514b0cd21690388172c1702dd183f2e10155697b4f263582123e1ddac5604",
+      "checks/worked_example.py": "42007aa4b8bd7fc8c5184539303141e54d4060c9a8be0801be5b38949dba322d"
     },
-    "audited_file_sha256": {
-      "checks/checks.json": "eb6904ef6aced97035c03181fe3a2990168a9ee1f2ec5e8ef99e171ee154b50c",
-      "checks/checks.py": "4b9294a1fac277da4920bb3dac91592cb89955f3693951048ac6d0e195bfca56",
-      "checks/endpoints.json": "abc45e29cfd15dc30bc4897157d7d74f0a72570980736e8184d3b94be91078a0",
-      "checks/endpoints.py": "393d0a9c938bb7af824c3d35945c492bb203e46d6026dea51a95fdf0e1023442"
-    },
-    "unchanged_core_checker_and_results": true,
-    "original_four_endpoint_cases_and_all_m_certificate_unchanged": true,
-    "additional_case": {
-      "a": 2,
-      "B": 1,
-      "s": 198,
-      "r": 7,
-      "u": "21/2000",
-      "f_lt_1": true,
-      "U_lt_1": true,
-      "f_illustrative": 0.625872937626246,
-      "U_illustrative": 0.002752327579530298
-    },
-    "additional_case_review_scope": "Constructing-assistant exact rational check using the independently audited general criterion; not an extension of the 5 November independent audit report."
+    "replay_scope": "Replayed during the initial v2 assembly. Checker sources and results remained byte-identical through the subsequent exposition and headline revisions; full replays were not repeated. During publication preparation, the worked-example checker was rerun after removing a trailing blank line; it passed with identical output. Added explanatory identities and later formula, table and source comparisons are recorded in the v2 revision records."
+  },
+  "numerical_exploration": {
+    "command": "python3 -B checks/optimization.py",
+    "result": "Reproduced the limiting multiplier 18.57225289992264 in double precision.",
+    "scope": "Numerical exploration only; exact theorem bounds are checked separately."
   },
   "compilation": {
     "command": "python3 -B tools/build_paper.py",
@@ -126,116 +137,232 @@
     "record": "paper/build-record.json"
   },
   "visual_review": {
-    "renderer": "Poppler pdftoppm, 90 dpi",
+    "renderer": "Poppler pdftoppm, 100 dpi",
+    "pages": 20,
     "all_pages_reviewed": true,
+    "method": "Page 3 was visually inspected after the final table-source wording change. The other 19 pages are pixel-identical to the user-edited 20-page PDF checked during the final exposition review.",
     "final_revision_changed_pages": [
-      15
+      3
     ],
-    "final_revision_method": "All 17 pages rendered. The shortened table heading and table layout on page 15 were visually checked. All other pages are pixel-identical to the preceding reviewed rendering.",
-    "result": "The abbreviated table heading fits cleanly; the remaining reviewed layout is unchanged."
+    "result": "No clipped text, broken formulas, table collisions or page-layout defects found."
   },
   "identity_review": {
-    "scope": "New public manuscript files, extracted PDF text and PDF metadata.",
+    "scope": "Changed and new public files, extracted canonical PDF text and PDF metadata.",
     "pdf_author": "twinheterodox",
-    "identifying_home_paths_or_private_identity_found": false,
+    "private_identity_or_identifying_home_paths_found": false,
     "private_audited_snapshot_published": false,
     "third_party_pdfs_redistributed": false
   },
   "earlier_pdfs_unchanged": {
-    "even-beta-counts": "f6848fa9304693f1b96a12ca9c2268511f350eb7c3e607054ddb0d4d3fe0c2a5",
-    "finite-even-beta": "8fe8cef9a6e1a5644892881dd9b784cf9eedac7ffc4a506e37e741ab478c0312",
-    "even-beta-independence": "83fff93aebeff3b79fb2f316df94518321a7b7dab815c7ab37d8ebf0b5cc5fe8"
+    "even-beta-independence/output/pdf/even-beta-independence.pdf": "83fff93aebeff3b79fb2f316df94518321a7b7dab815c7ab37d8ebf0b5cc5fe8",
+    "output/pdf/beta4-determinant-obstructions.pdf": "cdb528bc1836aed5a7c4ad6105ac3165ce57fb56d06763ea69a4b3676c3fe40a",
+    "output/pdf/beta4-investigations.pdf": "828f7a5cbe20343ad67c230c1eca0d94d39c88120fbda1ca5ef7092d07b8b3f0",
+    "finite-even-beta/output/pdf/finite-even-beta.pdf": "8fe8cef9a6e1a5644892881dd9b784cf9eedac7ffc4a506e37e741ab478c0312",
+    "even-beta-counts/output/pdf/even-beta-counts.pdf": "f6848fa9304693f1b96a12ca9c2268511f350eb7c3e607054ddb0d4d3fe0c2a5"
   },
-  "separate_optimization": "The later factor-limit investigation remains in local research records and is not included in this manuscript.",
-  "publication_status": "Prepared locally; not committed or pushed in this assembly task.",
-  "comparison_revision": {
-    "record": "review/comparison-review-2026-11-05.json",
-    "previous_pdf_sha256": "213972152d8cf28ecbc90bd7c8b8c8a7c5fd19ea5b6a10632e4888ea9cc12f08",
-    "scope": "Only Section 1.1 of the mathematical manuscript changed. Proof and exact checker code remain unchanged. Prior assembly and review records preserved privately."
+  "historical_review_scope": "Dated records other than independent-audit-2026-11-06 and the v2-prefixed revision records describe v1. See review/README.txt. Prior versions of tracked review files remain in Git history.",
+  "publication_status": "Version 2 is preserved in the Git revision containing this record, tagged shifted-even-beta-v2. Version 1 is preserved at shifted-even-beta-v1.",
+  "formal_verification_claimed": false,
+  "bibliography_update": {
+    "citation_key": "Tcount",
+    "published_version": "Hexagon 2611.00139v1",
+    "url": "https://hexagonmath.org/2611.00139v1",
+    "verification": "Official citation metadata confirms the title, author and publication. The downloaded 20-page PDF has text identical to the previously read count paper apart from the added Hexagon identifier stamp.",
+    "source_record": "sources/reading-record.json"
   },
-  "clarity_revision": {
+  "latest_exposition_revision": "review/v2-theorem-comparison-2026-11-06.json",
+  "preceding_exposition_revision": "review/v2-v1-comparison-revision-2026-11-06.json",
+  "latest_wording_revision": {
+    "date": "2026-11-06",
     "section": "1.1",
-    "previous_pdf_sha256": "7d6139660d8d07c4614a2c96e3451f95f2b8a042082c23d154b805e791e1cd80",
+    "change": "Restored the v1 paragraph stating the four earlier I(s) bounds and explaining why discarding the first 1, 2, 9 and 49 even beta values leaves an irrational member in each interval.",
+    "previous_pdf_sha256": "cb5c3caa1b02d4c27d26790bf4b2b88512335d49d08cad618a1bcc3ddf7b95a8",
+    "mathematical_content_unchanged": true,
+    "validation": "The restored paragraph matches v1 verbatim; the current endpoints are unchanged. No mathematical tests rerun for this prose-only change."
+  },
+  "version_comparison_note": {
+    "date": "2026-11-06",
+    "location": "Page 2, after the opening one-value theorem",
+    "change": "The comparison now identifies and cites the earlier version before reproducing its general theorem. Matching endpoint formulas and numerical multipliers are retained; the headings are Earlier bound and Theorem 1.2.",
+    "previous_pdf_sha256": "f16481fac6ea412474a18cdabbe2d5e2792b7ab9a3a732eeb94ac4f4572d54b9",
+    "mathematical_claims_unchanged": true,
+    "validation_record": "review/v2-theorem-comparison-2026-11-06.json"
+  },
+  "context_revision": {
+    "date": "2026-11-06",
+    "previous_pdf_sha256": "877bf973e7e73ea20358a96233155850f723c95f3c8533899ebde4eeaddde43e",
+    "change": "Introduces the earlier result as a prior version of this paper, states why it is recalled, cites bibliography entry [10], and uses the headings Earlier bound and Theorem 1.2.",
+    "validation": {
+      "mathematical_displays_unchanged": true,
+      "abstract_unchanged": true,
+      "historical_statement_unchanged": true,
+      "current_statement_unchanged": true,
+      "checker_sources_and_results_unchanged": true,
+      "citation_key": "TshiftV1",
+      "bibliography_number": 10,
+      "bibliographic_metadata": "Uses the supplied Hexagon 2611.00160v1 citation metadata; the public landing page returned HTTP 200 with the matching title.",
+      "full_mathematical_checkers_rerun": false
+    },
+    "independent_audit_scope_unchanged": true
+  },
+  "opening_comparison_revision": {
+    "date": "2026-11-06",
+    "previous_pdf_sha256": "d95d89e47b3b39f64dc375641c98b58b2161e20ecf7f2e785db15b0ade07f3d4",
+    "change": "The transition explicitly states that the earlier paper [10] proved Theorem 1.1 with 67 in place of 19, before introducing the comparison of the general bounds.",
+    "mathematical_content_unchanged": true,
+    "validation": "Only the introductory transition changed in the manuscript. Recompiled in three passes with no unresolved references or box warnings; inspected both changed pages. Mathematical checkers were not rerun for this prose-only change.",
+    "independent_audit_scope_unchanged": true,
+    "wording_clarification": "Replaced 'More generally, it' with 'More generally, that paper' to make the reference explicit. Only page 2 changed; compilation and visual review passed."
+  },
+  "cited_heading_revision": {
+    "date": "2026-11-06",
+    "previous_pdf_sha256": "9f30a55825e45f1f52c3327f8999eabfaff63913865cf5b83d9beb992a5cce19",
+    "change": "Replaced the heading Earlier bound with a citation to TshiftV1, Theorem 1.1, rendered as [10, Theorem 1.1].",
+    "validation": "Checked the theorem number and statement in the submitted v1 PDF and its repository source. Only the unnumbered theorem heading changed in the manuscript; compilation and visual review passed. Mathematical checkers were not rerun.",
+    "mathematical_content_unchanged": true,
+    "independent_audit_scope_unchanged": true
+  },
+  "four_exposition_refinements": {
+    "date": "2026-11-06",
+    "previous_pdf_sha256": "c72c9fe90466e7593a7d6c1826e43b3f6e84cfa241446825796fc4e83fa22c50",
     "changes": [
-      "Define I(s) before its bound.",
-      "Explain the discarded values before giving the required count.",
-      "State the nine-value loss in the beta(20) example.",
-      "Identify the source in the endpoint table header.",
-      "Consolidate the growth comparisons and shorten the fixed-starting-index comparison."
+      "Renamed the normalization C_n, including its prime and seed specializations, to kappa_n. Endpoint constants remain C_B.",
+      "Explained in the proof overview that B candidate polynomial multipliers produce B seed vectors, which form the columns of the matrix.",
+      "Defined s as the even upper index and stated that q_b(n) and rho_nu(n) are rational before explaining the irrationality contradiction.",
+      "Stated that the odd summation grid has spacing 2/b and that the tail estimate uses the denser grid of spacing 1/b."
     ],
-    "claims_and_numbers_unchanged": true,
-    "other_manuscript_text_unchanged": true
+    "validation": {
+      "displayed_formulas_unchanged_after_notation_and_grid_label_normalization": true,
+      "abstract_and_main_theorems_unchanged": true,
+      "sole_remaining_C1_is_endpoint_constant_19": true,
+      "pages": 20,
+      "unresolved_references": false,
+      "overfull_boxes": false,
+      "underfull_warnings": [],
+      "changed_pages_visually_reviewed": [
+        3,
+        4,
+        5,
+        9,
+        11,
+        12,
+        14,
+        15,
+        18
+      ],
+      "full_mathematical_checkers_rerun": false,
+      "checker_sources_and_results_unchanged": true
+    },
+    "independent_audit_scope_unchanged": true,
+    "mathematical_claims_unchanged": true
   },
-  "wording_revision": {
+  "endpoint_table_citation": {
     "date": "2026-11-06",
-    "previous_pdf_sha256": "ac4e24e2eb2118dfad6f2cab8b06b2b538d571f450615c04dab19022a8cabcc2",
-    "scope": "Replaced the phrase fixed requested count in the paragraph following Theorem 1.1 with an explicit statement that the multiplier depends only on B. All other source text present at the start of this revision was preserved."
+    "previous_pdf_sha256": "9db2889aa6798c0dc126958349fd601ab5437c9f68ff609532d61ae51a5cada7",
+    "change": "Replaced Earlier endpoint with Endpoint from [9], using the Tcount bibliography citation, consistently with the preceding comparison table.",
+    "validation": "Only the table heading changed in the manuscript. Compilation passed without reference or box warnings; page 3 was visually checked. No mathematical checker replay was needed."
   },
-  "parameter_wording_revision": {
+  "v1_endpoint_table_comparison": {
     "date": "2026-11-06",
-    "previous_pdf_sha256": "be024e69ce1a3ca96b9db268a32eff3089dc30c9e8f8f49d71e2e6f2f4c0fc46",
-    "scope": "The paragraph after Theorem 1.1 now attributes the smaller endpoints to choosing construction parameters for specific starting indices and counts. Removed the redundant sentence describing the uniform formula as one choice for every B. No mathematical claim or example changed."
-  },
-  "table_explanation_revision": {
-    "date": "2026-11-06",
-    "previous_pdf_sha256": "6fb89d1f1be3106309d9df6e1c77dd8dea68ce8f2dc3a5aaa217303b932e795a",
-    "scope": "Explained the middle column using I(364)>=3, I(3828)>=10 and I(187340)>=50 and the removal of 2, 9 and 49 earlier even values. Explained the final column separately using the individual endpoint 330 and the theorem at m=19 and 99. Removed the distracting s_50 formula reference. No mathematical claim or number changed."
-  },
-  "beta4_comparison_revision": {
-    "date": "2026-11-06",
-    "previous_pdf_sha256": "3d34cbbd3aadbb58cb21c8b27edcf754bb484232eae51f1580c1ab01edcf7fc8",
-    "scope": "Added the comparison-table row starting at beta(4): earlier count endpoint 160 and current general theorem endpoint 200. The deduction uses I(160)>=2 and removes at most one irrational value. Retained Krisman endpoint 36 in the adjacent text and updated the column explanations."
-  },
-  "updated_on": "2026-11-06",
-  "initial_segment_context_revision": {
-    "date": "2026-11-06",
-    "previous_pdf_sha256": "4dbe2cfc251332596e358c2f8edafe1902688685e48f4e301148928c4165822c",
-    "scope": "Section 1.1 now explains that the earlier one-irrational initial blocks, through beta(10) in Lai-Zhou, are subsumed by the irrationality of beta(2). Added Lai-Zhou and OpenAI references and source reading records. Core proof and exact checks unchanged.",
-    "source_keys_added": [
-      "LZ22",
-      "OAI26"
+    "previous_pdf_sha256": "e815623ef1425bab23b38461da621234d8548f19b0d2d4d35f08b6969b64f7df",
+    "source_citation": "TshiftV1, Hexagon 2611.00160v1",
+    "source_git_commit": "a3f56ac5865736555fb0379b94a712038efcf99f",
+    "source_pdf_sha256": "9f2157cc8fd9c910fb47f65d5283f83fcc1a7ce4b012823c4ed3688122dbd1f9",
+    "shifted_interval_entries": [
+      {
+        "first_index": 4,
+        "m": 3,
+        "endpoint": 198,
+        "source": "Section 8.2, specific choice"
+      },
+      {
+        "first_index": 6,
+        "m": 5,
+        "endpoint": 330,
+        "source": "Section 8.2, specific choice"
+      },
+      {
+        "first_index": 20,
+        "m": 19,
+        "endpoint": 1272,
+        "source": "Theorem 1.1, B=1"
+      },
+      {
+        "first_index": 100,
+        "m": 99,
+        "endpoint": 6632,
+        "source": "Theorem 1.1, B=1"
+      }
     ],
+    "finite_count_entries": [
+      {
+        "B": 2,
+        "D_v1": 2,
+        "inner_illustrative": "97.1916231251975389237754454656",
+        "ceiling_lower": 98,
+        "ceiling_upper": 98,
+        "endpoint": 196
+      },
+      {
+        "B": 3,
+        "D_v1": 4,
+        "inner_illustrative": "230.875105980129872225572071323",
+        "ceiling_lower": 231,
+        "ceiling_upper": 231,
+        "endpoint": 462
+      },
+      {
+        "B": 4,
+        "D_v1": 6,
+        "inner_illustrative": "385.149738751185233542652672794",
+        "ceiling_lower": 386,
+        "ceiling_upper": 386,
+        "endpoint": 772
+      },
+      {
+        "B": 5,
+        "D_v1": 10,
+        "inner_illustrative": "692.123530297672584285170849976",
+        "ceiling_lower": 693,
+        "ceiling_upper": 693,
+        "endpoint": 1386
+      },
+      {
+        "B": 10,
+        "D_v1": 32,
+        "inner_illustrative": "2713.86126695571264664679132803",
+        "ceiling_lower": 2714,
+        "ceiling_upper": 2714,
+        "endpoint": 5428
+      }
+    ],
+    "finite_count_formula": "At m=1, s_B=2 ceil(D_B^(1)*(33+(45/2)*log B)), D_B^(1)=sum_{d=1}^B phi(d).",
+    "ceiling_validation": "For z=(B-1)/(B+1), sum 80 terms of 2*sum z^(2j+1)/(2j+1); bound the positive remainder by 2*z^161/(161*(1-z^2)). Exact rational arithmetic gives the same ceiling at both ends.",
+    "explanation": "The shifted table uses v1 Section 8.2 at first indices 4 and 6, and its 67m-1 bound at 20 and 100. The finite-count table specializes v1 Theorem 1.1 to m=1 and explicitly notes that these general bounds are weaker than the specific estimates from the count paper.",
+    "validation": {
+      "existing_endpoint_columns_unchanged": true,
+      "all_nine_v1_entries_checked": true,
+      "first_uniform_comparison_table_unchanged": true,
+      "theorem_statements_and_proof_unchanged": true,
+      "pages": 20,
+      "unresolved_references": false,
+      "overfull_boxes": false,
+      "underfull_warnings": [],
+      "changed_pages_visually_reviewed": [
+        3
+      ],
+      "checker_sources_and_results_unchanged": true,
+      "full_mathematical_checkers_rerun": false
+    },
     "independent_audit_scope_unchanged": true
   },
-  "first_table_comparison_revision": {
+  "final_table_source_wording": {
     "date": "2026-11-06",
-    "previous_pdf_sha256": "d072402ed9ade686a166a665fe65db3dbe4c5e4361984e51d22f1ecbfffc55c6",
-    "scope": "Added endpoints 334, 468, 3742 and 8796 from Theorem 1.1 beside the four sharper endpoints. Shortened table headings and retained the lower-bound qualifier for the count. No theorem or proof changes.",
-    "arithmetic_record": "review/first-table-comparison-2026-11-06.json",
+    "previous_pdf_sha256": "e9263346ef5d4e736cb95b2948e3bd644bb9a8aa30974c4069e002840cfba120",
+    "change": "Both comparison notes now begin The column from [10]. References to Section 8.2 and Theorem 1.1 explicitly refer to that earlier paper. The user's removal of (v1) from both table headings is preserved.",
+    "validation": "Only explanatory prose changed. All table entries, formulas and theorem statements are unchanged. Compilation is clean and the PDF remains 20 pages.",
+    "final_exposition_assessment": "The final full-manuscript review found no further substantive exposition changes needed. Its remaining table-label consistency recommendation is now resolved.",
+    "mathematical_checkers_rerun": false,
     "independent_audit_scope_unchanged": true
-  },
-  "even_index_heading_revision": {
-    "date": "2026-11-06",
-    "previous_pdf_sha256": "c0a73291dbf6c35c2503e4d12d0c8f369e0dd0f662a6805f8c6fd5ee37d54d55",
-    "scope": "Restored First even index and Last even index in the first table. All numerical entries and proof text are unchanged."
-  },
-  "beta4_specific_example_revision": {
-    "date": "2026-11-06",
-    "previous_pdf_sha256": "32af6ea85852c5b390bfa2e0c263a756a576e1ae12cb03a644e0919f19d5592d",
-    "scope": "Added beta(4) through beta(198), with its parameter choice and exact rational certificate. The opening table compares 198 with the generic endpoint 200; the later comparison table now uses 198. General theorem and proof unchanged.",
-    "parameter_record": "review/beta4-example-2026-11-06.json",
-    "independent_audit_scope_unchanged": true
-  },
-  "audit_note_revision": {
-    "date": "2026-11-06",
-    "previous_pdf_sha256": "0e6710e3d36a66a0f7f9907fcb5d99e9cc941442f4936c5db464b0af0648ca87",
-    "scope": "Removed the sentence recounting the auditor-requested wording clarification from Appendix A.2. Audit outcome and scope remain; the source audit report and review history are preserved. Mathematics and checkers unchanged."
-  },
-  "method_attribution_revision": {
-    "date": "2026-11-06",
-    "record": "review/method-attribution-2026-11-06.json",
-    "previous_pdf_sha256": "e5da5d67d7b3c738862a7698dd6aefcaf969ea3eaf0adf8571f534215f8a0436",
-    "scope": "Proof-method attribution and bibliography only; no change to the mathematical argument or endpoint claims."
-  },
-  "exposition_bridges_revision": {
-    "date": "2026-11-06",
-    "record": "review/exposition-bridges-2026-11-06.json",
-    "previous_pdf_sha256": "ba044c07c33f7f61702858259313fbb7c895ad3a1f15c47038778e0737227220",
-    "scope": "The six exposition improvements requested after the full-paper review. The theorem, parameter choices and proof estimates are unchanged."
-  },
-  "final_reading": {
-    "date": "2026-11-06",
-    "record": "review/final-reading-2026-11-06.json",
-    "result": "No further substantive exposition changes recommended."
   }
 }

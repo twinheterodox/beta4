@@ -1,0 +1,76 @@
+INDEPENDENT AUDIT REPORT FOR THE V2 ARGUMENT
+Received 6 November 2026
+
+Auditor identity/model and a separate audit date were not supplied.
+The report below is reproduced from the user with line wrapping and
+local-file references normalized. Section and line references refer to
+the audited plain-text proof, whose full hash and scope are recorded in
+independent-audit-2026-11-06.json. They are not references to the PDF.
+
+--- Begin supplied report ---
+
+I found no substantive gap in the general proof, and independently
+reproduced all the recorded exact certificates. Theorems A and B pass
+this audit.
+
+I did not run or import the supplied checkers. I inspected their source
+to identify the advertised coverage, then derived fresh calculations
+from the mathematical definitions.
+
+The general argument checks out:
+
+• Gram construction: the differentiated kernel, clockwise-contour sign,
+  cancellation at the central zero, and positive weight are consistent.
+  The largest-distance pole establishes kernel independence, so the seed
+  matrix is nonsingular. §2, proof.txt:151.
+
+• Denominator clearing: the grouped cancellation works for rational grid
+  points, including primes dividing the grid denominator. It establishes
+  the required exponent δₙᵃ⁺ᵏ. §3, proof.txt:265.
+
+• Decay: the Stirling estimate remains valid as t/n→0; the Cauchy circles
+  are safe; the separate tail estimate handles unbounded t/n. The
+  stationary-point calculation and criterion U<1 are correct.
+  §4, proof.txt:315.
+
+• Prime dilation and elimination: the two Wilson signs cancel, the
+  surviving constant acquires exactly χ(p), and the exponent is correctly
+  τ=a-E+k. The nonzero last Vandermonde minor preserves the seed after
+  eliminating any B-1 possible irrational values. The resulting integer
+  contradiction is valid. §5, proof.txt:384.
+
+The independent finite calculations reproduced:
+
+• All 8,909 recorded structural checks, with every category count
+  matching—including all 49 Gram entries, 4,516 grouped-integrality
+  checks, 404 selected-pole congruences, and 19 constant congruences.
+• All 21 endpoint certificates, using exact rational enclosures for
+  logarithms.
+• All six uniform parameter records, the uniform inequalities, and all
+  seven integer-r exclusions.
+
+For independence, I reconstructed kernels by rational interpolation
+from direct kernel evaluations, extracted pole coefficients using a
+logarithmic-derivative Taylor recurrence, and evaluated Gram integrals
+through a separate moment recurrence.
+
+The tightest listed endpoint certificate also passes:
+B=10, m=3, a=8382, U≈0.991303468061.
+I separately reproduced the numerical limiting endpoint multiplier
+18.5722528999226532907….
+
+For human readability, I recommend adding a worked B=2,m=1 Gram example
+and spelling out the coefficient scaling between (5.2) and (5.3).
+These are exposition improvements; I found no mathematical repair
+necessary.
+
+The audited proof has SHA-256 beginning 603211b50609dc4a.
+
+--- End supplied report ---
+
+The two exposition recommendations are incorporated in the subsequent
+v2 manuscript. The worked example has an additional exact self-check,
+recorded in checks/worked_example.json. This is not an extension of the
+independent audit. The report is a mathematical audit, not formal
+verification or a certification of priority. The typeset assembly and
+its review are recorded separately in review/assembly-review.json.

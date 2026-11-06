@@ -1,41 +1,62 @@
 IRRATIONAL EVEN BETA VALUES IN SHIFTED INTERVALS
+Version 2, 6 November 2026
 
-This separate 17-page paper proves that, for every positive odd m,
-at least one of β(m+1),β(m+3),...,β(67m-1) is irrational.
+For every positive odd m, this paper proves that at least one of
 
-More generally, for every B≥1 it gives at least B irrational values
-from β(m+1) through β(m(s_B+1)-1), where
+  beta(m+1), beta(m+3), ..., beta(19m-1)
 
-  s_B=2 ceil[D_B(33+(45/2)log B)],  D_B=Σ_{d≤B}φ(d).
+is irrational, where beta is the Dirichlet beta function.
+This improves the v1 endpoint 67m-1.
 
-For each fixed count B, the upper endpoint grows linearly with the
-starting index. Discarding the early values from the previous uniform
-count would give an endpoint of order m² log m. Section 1.1 explains
-this quadratic-versus-linear comparison and gives examples starting
-at β(4), β(6), β(20) and β(100). It distinguishes Sorokin and Huttner's
-direct shifted-block bounds of order m log m, and compares Krisman's
-specific interval β(4) through β(36).
+More generally, for every B>=1 it gives at least B irrational values
+from beta(m+1) through beta(C_B m-1), where
 
-The parameter criterion gives these sharper examples:
+  D_B = sum of phi(d) over odd d with 1<=d<=2B-1,
+  C_B = 1+2 ceil[D_B(9+(40/9)log(2B-1))].
 
-  β(4),...,β(198): at least one irrational value;
-  β(6),...,β(330): at least one irrational value;
-  β(8),...,β(462): at least one;
-  β(20),...,β(3080): at least two;
-  β(20),...,β(6950): at least three.
+The introduction reproduces the v1 general theorem immediately before
+v2, using matching endpoint notation. For B=1,2,3 the multipliers
+improve from 67,197,463 to 19,85,229. In the proof, a_B=C_B-1
+sets the pole order a=m a_B.
+
+For each count B, the upper endpoint grows linearly with the starting
+index. Discarding the early values from the previous uniform count
+would give an endpoint of order m^2 log m. Section 1.1 gives concrete
+comparisons with that count, Sorokin and Huttner's shifted bounds, and
+Krisman's shorter interval beta(4) through beta(36).
+
+Individual parameter choices give, for example:
+
+  beta(4),...,beta(54): at least one irrational value;
+  beta(6),...,beta(92): at least one;
+  beta(8),...,beta(128): at least one;
+  beta(20),...,beta(352): at least one;
+  beta(20),...,beta(1344): at least two;
+  beta(20),...,beta(3538): at least three;
+  beta(100),...,beta(1838): at least one.
+
+Starting at beta(2), the construction gives counts 2, 3, 4, 5 and 10
+through indices 70, 186, 360, 554 and 2794, respectively.
 
 Canonical files
 
   paper/shifted-even-beta.tex
   output/pdf/shifted-even-beta.pdf
 
-The proof uses even derivatives to remove low-index values and repeated
-numerator zeros to retain the grouped denominator cancellation. The
-differentiated seed kernels form a positive Gram matrix. Prime dilation
-propagates the prescribed seed constant and makes the final rational
-combination nonzero infinitely often. After clearing denominators it
-would give nonzero integers tending to zero, contradicting the assumption
-that the interval contains fewer than B irrational values.
+The proof uses odd numerator grids and poles spaced by 2. Even
+derivatives remove the low-index beta values; repeated numerator zeros
+retain the grouped denominator cancellation. A positive Gram matrix
+supplies an integer polynomial multiplier with a prescribed seed vector.
+Prime dilation propagates its nonzero last constant. If the interval
+contained fewer than B irrational values, a fixed combination of the
+form sequences would give infinitely many nonzero integers tending
+to zero.
+
+Section 3.1 works through the two-grid example giving two irrational
+values through beta(70). Section 6.2 spells out the local coefficient
+scaling. Appendix B retains the sharper uniform endpoint
+s(m)=m-1+2 ceil[(879m-50)/100]<18.58m and explains its multiplier
+and the choice r=2.
 
 The argument is self-contained apart from standard classical inputs:
 Stirling's formula, the prime number theorem, Wilson's and Fermat's
@@ -47,7 +68,12 @@ Reproduce from this directory
 
   python3 -B checks/checks.py
   python3 -B checks/endpoints.py
+  python3 -B checks/worked_example.py
   python3 -B tools/build_paper.py
+
+For the numerical transition in Appendix B:
+
+  python3 -B checks/optimization.py
 
 The checkers use only the Python standard library. Run without -O:
 assertions perform the checks. The build uses pdflatex and Poppler's
@@ -55,32 +81,22 @@ pdfinfo. Intermediate files are in the Git-ignored build/ directory.
 
 Review scope
 
-An independent audit supplied by the user on 5 November 2026 found no
-substantive mathematical error or gap in the complete underlying
-plain-text proof. The auditor checked arbitrary allowed parameters and
-independently reproduced the finite calculations without running or
-importing the supplied checkers. An additional dilation at seed index
-l=3, prime 17 and n=51 also passed.
+An independent audit supplied on 6 November 2026 found no substantive
+gap in the v2 argument. It covered the general proof and independently
+reproduced all 8,909 recorded structural checks, all 21 endpoint
+certificates, six uniform parameter records and seven integer-r
+comparisons. The auditor inspected the supplied checkers for coverage
+but did not run or import them.
 
-The audit identifies its input by SHA-256 prefix c7197fc5cd341c3c.
-review/independent-audit-2026-11-05.json records the full hash and scope;
-the accompanying text preserves the user-supplied report with local
-filesystem references normalized. Auditor identity and model were not
-specified. This is not formal verification or certification of priority.
+The audit identifies its input by SHA-256 prefix 603211b50609dc4a.
+review/independent-audit-2026-11-06.json records the full hash and scope;
+the accompanying text preserves the supplied report with local-file
+references normalized. Auditor identity/model and a separate audit
+date were not specified. The audit is not formal verification or a
+certification of priority.
 
-The PDF is a subsequent exposition of that audited argument. The sole
-requested wording correction, naming q_w(1) in the prime exclusion,
-is included. review/assembly-review.json records the source and PDF
-hashes, correspondence with the audited proof, reproduced checks and
-visual inspection. The mathematical and exposition self-reviews are
-recorded separately. The abstract contains results only, the title has
-no manual line break, and subsections are numbered.
-
-The beta(4) through beta(198) example was added on 6 November and
-checked by exact rational arithmetic using the audited general criterion.
-It was not among the four examples in the 5 November audit.
-
-sources/reading-record.json records versions, hashes and reading scopes
-for the cited sources. Third-party PDFs are not redistributed.
-
-Prepared with Codex under the research pseudonym twinheterodox.
+The PDF is a subsequent exposition of the audited argument.
+review/assembly-review.json records the source correspondence, exact
+replays and visual inspection. The worked example has a separate
+post-audit exact check. Historical v1 reviews retain their original
+scope; see review/README.txt.

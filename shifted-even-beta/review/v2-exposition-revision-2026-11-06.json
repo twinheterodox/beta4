@@ -1,0 +1,83 @@
+{
+  "date": "2026-11-06",
+  "version": 2,
+  "scope": "Constructing-assistant exposition revision and checks; not a new independent mathematical audit.",
+  "previous_pdf_sha256": "5719e5459fa309b0b86517a0ecfc89733f7e64a72097131a2d11d2843269ff84",
+  "previous_pages": 18,
+  "pdf": "output/pdf/shifted-even-beta.pdf",
+  "pdf_sha256": "e08d21f7fab8a5296a683764f61173accdbab9d99ca3805c08259b8efc78312e",
+  "pages": 19,
+  "changes": [
+    {
+      "section": "2.1",
+      "purpose": "Explain the integer multiplier before defining it: adjust rational constants, preserve grid zeros and reflection, and use homogeneity for prime scaling."
+    },
+    {
+      "section": "3.1",
+      "purpose": "Motivate the midpoint line through the fixed signs of symmetric factors and explain how substituting -(t+1)^2 produces the required multipliers."
+    },
+    {
+      "section": "6.1",
+      "purpose": "Show the selected factors and their product p^L P_1(t) for a single grid before introducing the permutation of fraction classes."
+    },
+    {
+      "section": "8.1",
+      "purpose": "Explain why numerator and derivative costs grow linearly in m and why a=m a_B gives a linear endpoint."
+    },
+    {
+      "section": "Appendix B",
+      "purpose": "State a+k+Phi(2y)=m Psi_r(a/m,y)-1, explain its finite-m correction and apply that correction explicitly in excluding other integer r."
+    }
+  ],
+  "additional_layout_edit": "Rephrased the selected-pole valuation sentence in Section 6.3 to remove an isolated symbol on its own line.",
+  "mathematical_checks": {
+    "scope": "Checks of the added explanatory example and profile identity; not an independent audit.",
+    "selected_factor_polynomial_cases": 20,
+    "exact_log_coefficient_profile_cases": 48,
+    "result": "All passed.",
+    "general_derivation": "Selected factors follow by substituting j=(p-1)/2+ell*p. The profile identity follows from D=1, K=2^L, k=m-1 and log(2z)=log(2)+log(z). The finite checks supplement these direct identities."
+  },
+  "existing_checkers_and_results_unchanged": true,
+  "existing_full_checkers_rerun_for_this_revision": false,
+  "theorem_statements_abstract_and_introduction_unchanged": true,
+  "other_pdfs_unchanged": {
+    "even-beta-independence/output/pdf/even-beta-independence.pdf": "83fff93aebeff3b79fb2f316df94518321a7b7dab815c7ab37d8ebf0b5cc5fe8",
+    "output/pdf/beta4-determinant-obstructions.pdf": "cdb528bc1836aed5a7c4ad6105ac3165ce57fb56d06763ea69a4b3676c3fe40a",
+    "output/pdf/beta4-investigations.pdf": "828f7a5cbe20343ad67c230c1eca0d94d39c88120fbda1ca5ef7092d07b8b3f0",
+    "finite-even-beta/output/pdf/finite-even-beta.pdf": "8fe8cef9a6e1a5644892881dd9b784cf9eedac7ffc4a506e37e741ab478c0312",
+    "even-beta-counts/output/pdf/even-beta-counts.pdf": "f6848fa9304693f1b96a12ca9c2268511f350eb7c3e607054ddb0d4d3fe0c2a5"
+  },
+  "source_files": {
+    "paper/references.tex": "303847c51a5f1da3f0585f729a6b0c612f860836985aa848fdc42bb34dc003a0",
+    "paper/sections/arithmetic.tex": "0e5ed3473aa9d679f69e9dee47b6ddeadfb778e4a8025f728b605be3da2e5220",
+    "paper/sections/checks.tex": "ea52b293e874e2371040523a670dc4415d056d5d3353a1b208c8d85ccbca0624",
+    "paper/sections/construction.tex": "807d49a3df8a122937080ddeafabea1779700151c5e26d935d6f479f46e903ff",
+    "paper/sections/contradiction.tex": "3885a5614645cc8b8c370530675d90ed534d73bdabee3814b27cc5716ffe0202",
+    "paper/sections/decay.tex": "538ecccadd152a5f570650b84607d78255b958cdcaac2b29acdf724fb78708d7",
+    "paper/sections/dilation.tex": "e718aea0ed0f20d3dd17cf3f847507b8f0eb9c9523d2c0b7adfca3f67fbf8946",
+    "paper/sections/endpoints.tex": "ad14848bda4e92c4cd70d331070658bcf0272c0195f2e692c8ac7a751a4b086d",
+    "paper/sections/gram.tex": "81d3276134d1a16a7b40163f3a450649f6377634c477559531e3322c57405051",
+    "paper/sections/introduction.tex": "c838bd3d6364355cede3e54f58589dd065db1a64d9526a3960af7fedb7dc04ac",
+    "paper/sections/optimization.tex": "999f4b9ac3cc546f860fc4d238fc7cb8ba78399f51b0d69f843fbcaa07fc04a8",
+    "paper/shifted-even-beta.tex": "e77e1cf4bbe847af319eaac851ad9aef902e1d6671da862af4de37865a33282f"
+  },
+  "compilation": {
+    "command": "python3 -B tools/build_paper.py",
+    "unresolved_references": false,
+    "overfull_boxes": false,
+    "underfull_warnings": []
+  },
+  "visual_review": {
+    "renderer": "Poppler pdftoppm, 100 dpi",
+    "all_pages_reviewed": true,
+    "pages": 19,
+    "method": "Pages 1-3 are pixel-identical to the previously reviewed v2 PDF. All pages 4-19 were visually inspected after the explanatory revisions. The final line-break correction changed only page 14; it was rendered and inspected again.",
+    "final_revision_changed_pages": [
+      14
+    ],
+    "result": "No clipped text, broken formulas, table collisions or page-layout defects found."
+  },
+  "independent_audit_record": "review/independent-audit-2026-11-06.json",
+  "independent_audit_scope_unchanged": true,
+  "publication_status": "Local revision; no commit, push or Hexagon submission made for this revision."
+}

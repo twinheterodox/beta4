@@ -1,5 +1,15 @@
 # Changelog
 
+## 6 November 2026 — Shifted intervals, version 2
+
+- Replaced the endpoint 67m−1 by 19m−1 for every positive odd m, and strengthened the general family for every irrationality count B. Appendix B retains the sharper endpoint m−1 + 2 ceil((879m−50)/100) < 18.58m.
+- Reworked the construction around odd numerator grids and poles spaced by 2. The individual intervals include one irrational value from β(20) through β(352), two through β(1344), and three through β(3538).
+- Improved the finite counts starting at β(2): counts 2, 3, 4, 5 and 10 through indices 70, 186, 360, 554 and 2794.
+- Recorded the independent audit of the v2 argument, including all 8,909 structural checks and 21 endpoint certificates. Added the worked two-grid Gram example and explicit coefficient scaling in the typeset exposition, with a separate exact check of the example.
+- Explained the multiplier's purpose, the midpoint line and multiplier choice in the Gram example, the prime dilation on a single grid, and the costs behind linear endpoint growth. Appendix B now relates the finite-m decay profile to its limit explicitly. The revised PDF has 20 pages.
+- Updated the checkers, guides and comparison tables. Appendix B explains the endpoint multiplier and the choice of integer zero range. Historical v1 reviews retain their original scope; the earlier papers are unchanged.
+- Preserved both versions under the tags `shifted-even-beta-v1` and `shifted-even-beta-v2`, with direct README links to the v1 PDF, sources and checks.
+
 ## 6 November 2026 — Shifted-interval comparisons and exposition
 
 - Added the interval β(4), …, β(198), its explicit parameter choice and exact rational decay check. It improves the general theorem's endpoint 200; the earlier count's endpoint 160 and Krisman's endpoint 36 remain shorter.

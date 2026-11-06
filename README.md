@@ -10,53 +10,59 @@ The papers below give explicit counts of irrational even beta values in initial 
 
 | Document | Result and contents | Source and checks |
 | --- | --- | --- |
-| **[Irrational even beta values in shifted intervals (17 pages)](shifted-even-beta/output/pdf/shifted-even-beta.pdf)** | For every positive odd m, an irrational value among β(m+1), …, β(67m−1). More generally, any prescribed count in an interval whose upper endpoint grows linearly with its starting index. | [Paper guide](shifted-even-beta/README.txt) · [LaTeX](shifted-even-beta/paper/shifted-even-beta.tex) · [Checks](shifted-even-beta/checks/README.txt) |
+| **[Irrational even beta values in shifted intervals (v2, 20 pages)](shifted-even-beta/output/pdf/shifted-even-beta.pdf)** | For every positive odd m, an irrational even beta value with index from m+1 through 19m−1. More generally, any prescribed count with an upper endpoint linear in its starting index; improved finite counts from β(2). | [Paper guide](shifted-even-beta/README.txt) · [LaTeX](shifted-even-beta/paper/shifted-even-beta.tex) · [Checks](shifted-even-beta/checks/README.txt) |
 | **[Explicit lower bounds for the number of irrational even beta values (20 pages)](even-beta-counts/output/pdf/even-beta-counts.pdf)** | At least $\lfloor\pi\sqrt{2/135}\sqrt{s/\log s}\rfloor$ irrational even beta values through β(s), for every even s ≥ 160, with sharper finite endpoints. | [Paper guide](even-beta-counts/README.txt) · [LaTeX](even-beta-counts/paper/even-beta-counts.tex) · [Checks](even-beta-counts/checks/README.txt) |
 | **[At least three of β(2), β(4), …, β(364) are irrational. (16 pages)](finite-even-beta/output/pdf/finite-even-beta.pdf)** | At least three of β(2), β(4), …, β(364) are irrational. Complete proof and exact seed certificate. | [Paper guide](finite-even-beta/README.txt) · [LaTeX](finite-even-beta/paper/finite-even-beta.tex) · [Checks](finite-even-beta/checks/README.txt) |
 | **[Even beta values: linear independence (19 pages)](even-beta-independence/output/pdf/even-beta-independence.pdf)** | A lower bound of $0.21\sqrt{s/\log s}$ for the rational span of β(2), β(4), …, β(s), for every sufficiently large even s. Full proof of the half-integer adaptation of Fischler's method. | [Paper guide](even-beta-independence/README.md) · [LaTeX](even-beta-independence/paper/even-beta-independence.tex) · [Checks](even-beta-independence/checks/README.txt) |
 | **[Determinant obstructions (21 pages)](output/pdf/beta4-determinant-obstructions.pdf)** | Two positive determinant families fail the intended irrationality test, even after all common coefficient factors are removed. Includes complete proofs and a worked arithmetic example. | [LaTeX](paper/beta4-determinant-obstructions.tex) · [Checks](checks/README.md) · [Final reading](planning/final-reading-2026-11-02.txt) |
 | **[Determinant investigation supplement (67 pages)](output/pdf/beta4-investigations.pdf)** | Self-contained case studies with constructions, proofs, remaining questions and standalone certificates; a catalog covers all 57 grouped records. | [Source guide](supplement/README.md) · [Checks](checks/SUPPLEMENT.md) · [Final reading](planning/supplement-final-reading-2026-11-02.txt) |
 
-**Review status:** an [independent audit of the shifted-interval proof](shifted-even-beta/review/independent-audit-2026-11-05.json), reported on 5 November 2026, found no substantive mathematical error or gap in the general theorem and independently reproduced its finite checks. The PDF is a subsequent exposition of that audited plain-text proof. A separate [independent audit of the count paper](even-beta-counts/review/independent-audit-2026-11-05.json), also reported on 5 November, found no substantive mathematical error or gap and independently reproduced the finite calculations. The [earlier linear-independence paper](even-beta-independence/review/independent-model-review-2026-11-03.json) received a separate model proof audit reported on 3 November 2026; its [full report](even-beta-independence/review/independent-model-review-2026-11-03.txt) records the proof checks and additional computations. The [determinant papers and accompanying code](planning/independent-model-review-2026-11-02.json) passed a separately reported model cross-check. Each report identifies its own scope; these audits are not formal verification.
+**Review status:** an [independent audit of the v2 shifted-interval proof](shifted-even-beta/review/independent-audit-2026-11-06.json), reported on 6 November 2026, found no substantive gap in the general argument and independently reproduced all 8,909 structural checks and 21 endpoint certificates. The PDF is a subsequent exposition of that audited plain-text proof; its assembly and additional worked-example check are [recorded separately](shifted-even-beta/review/assembly-review.json). A separate [independent audit of the count paper](even-beta-counts/review/independent-audit-2026-11-05.json), also reported on 5 November, found no substantive mathematical error or gap and independently reproduced the finite calculations. The [earlier linear-independence paper](even-beta-independence/review/independent-model-review-2026-11-03.json) received a separate model proof audit reported on 3 November 2026; its [full report](even-beta-independence/review/independent-model-review-2026-11-03.txt) records the proof checks and additional computations. The [determinant papers and accompanying code](planning/independent-model-review-2026-11-02.json) passed a separately reported model cross-check. Each report identifies its own scope; these audits are not formal verification.
 
 See the [changelog](CHANGELOG.md) for repository updates.
 
 ## Irrational values in shifted intervals
 
-The [shifted-interval paper](shifted-even-beta/output/pdf/shifted-even-beta.pdf) proves that, for every positive odd integer m, at least one of
+**Versions:** v2 (current): [PDF](shifted-even-beta/output/pdf/shifted-even-beta.pdf) · [sources and checks](shifted-even-beta/) | v1: [PDF](https://github.com/twinheterodox/beta4/blob/shifted-even-beta-v1/shifted-even-beta/output/pdf/shifted-even-beta.pdf) · [sources and checks](https://github.com/twinheterodox/beta4/tree/shifted-even-beta-v1/shifted-even-beta).
+
+Version 2 of the [shifted-interval paper](shifted-even-beta/output/pdf/shifted-even-beta.pdf) proves that, for every positive odd integer m, at least one of
 
 $$
-\beta(m+1),\beta(m+3),\ldots,\beta(67m-1)
+\beta(m+1),\beta(m+3),\ldots,\beta(19m-1)
 $$
 
-is irrational. For example, at least one of β(20), β(22), …, β(1272) is irrational.
+is irrational. Specific parameter choices give shorter intervals: for example, at least one of β(20), β(22), …, β(352) is irrational. The v1 endpoint was 67m−1, giving 1272 in this example.
 
 More generally, for any integer B ≥ 1, the paper guarantees at least B irrational values among
 
 $$
-\beta(m+1),\beta(m+3),\ldots,\beta\bigl(m(s_B+1)-1\bigr),
+\beta(m+1),\beta(m+3),\ldots,\beta(C_Bm-1),
 $$
 
 where
 
 $$
-D_B=\sum_{d=1}^B\varphi(d),\qquad
-s_B=2\left\lceil D_B\left(33+\frac{45}{2}\log B\right)\right\rceil.
+D_B=\sum_{\substack{1\le d\le2B-1\\d\ {\rm odd}}}\varphi(d),\qquad
+C_B=1+2\left\lceil D_B\left(9+\frac{40}{9}\log(2B-1)\right)\right\rceil.
 $$
 
-Here φ is Euler's totient function and log is the natural logarithm. For any fixed count B, the upper endpoint grows linearly with the starting index. Obtaining the same count by discarding initial values from the [earlier count paper's](even-beta-counts/output/pdf/even-beta-counts.pdf) square-root bound requires an endpoint of order m² log m. At the starting index 20, that paper's sharper finite count gives an endpoint of 3828, compared with 1272 above.
+Here φ is Euler's totient function and log is the natural logarithm. For each count B, the upper endpoint grows linearly with the starting index. Obtaining the same count by discarding initial values from the [earlier count paper's](even-beta-counts/output/pdf/even-beta-counts.pdf) square-root bound requires an endpoint of order m² log m. At the starting index 20, that paper's sharper finite count gives an endpoint of 3828, compared with 352 here.
 
-Choosing the construction's parameters for specific starting indices and counts gives smaller endpoints than the general formula:
+The construction also gives individual parameter choices. The uniform column below uses the general formula above, which gives 19m−1 when B = 1.
 
-| First even index | Last even index: specific parameters | Last even index: general formula | Irrational values (at least) |
+| First even index | Last even index: specific parameters | Last even index: uniform bound | Irrational values (at least) |
 | ---: | ---: | ---: | ---: |
-| 4 | 198 | 200 | 1 |
-| 6 | 330 | 334 | 1 |
-| 8 | 462 | 468 | 1 |
-| 20 | 3080 | 3742 | 2 |
-| 20 | 6950 | 8796 | 3 |
+| 4 | 54 | 56 | 1 |
+| 6 | 92 | 94 | 1 |
+| 8 | 128 | 132 | 1 |
+| 20 | 352 | 360 | 1 |
+| 20 | 1344 | 1614 | 2 |
+| 20 | 3538 | 4350 | 3 |
+| 100 | 1838 | 1880 | 1 |
 
-The proof extends the count paper's construction by differentiation to remove the unwanted early beta values. A positive Gram matrix supplies the required rank for every starting index and count.
+Starting at β(2), the new construction gives counts 2, 3, 4, 5 and 10 through indices 70, 186, 360, 554 and 2794, respectively. At the fixed starting index 4, Krisman's earlier endpoint 36 remains shorter than 54.
+
+The proof combines odd numerator grids and poles spaced by 2 with differentiation to remove the unwanted early beta values. A positive Gram matrix supplies the required rank for every starting index and count. The manuscript includes a worked two-grid example and explicit local coefficient scaling. Appendix B gives the sharper uniform multiplier 18.58 and explains its proximity to the limiting decay estimate.
 
 ## A uniform count from s = 160
 
@@ -138,6 +144,7 @@ For the shifted-interval paper, from the repository root:
 ```sh
 python3 -B shifted-even-beta/checks/checks.py
 python3 -B shifted-even-beta/checks/endpoints.py
+python3 -B shifted-even-beta/checks/worked_example.py
 python3 -B shifted-even-beta/tools/build_paper.py
 ```
 

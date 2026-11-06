@@ -1,0 +1,25 @@
+{
+  "scope": "Exact self-check of the post-audit exposition example; not an independent audit.",
+  "parameters": {
+    "B": 2,
+    "m": 1,
+    "r": 2,
+    "a": 70
+  },
+  "h1": [
+    -4,
+    -9
+  ],
+  "h3": [
+    4,
+    -9
+  ],
+  "normalization": "C_1=2^85*3^16; weight=C_1/(18*pi)*product of six factors/(1+y^2)^70.",
+  "gram_matrix_matches_seed_partial_fractions": true,
+  "determinant_identity": true,
+  "rational_combination_has_seed": [
+    0,
+    "det(N)>0"
+  ],
+  "integer_combination_has_nonzero_last_seed_only": true
+}
