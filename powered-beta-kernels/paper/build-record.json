@@ -1,0 +1,14 @@
+{
+  "status": "compiled; visual and mathematical reviews recorded separately",
+  "pages": 13,
+  "source_files": {
+    "paper/powered-beta-kernels.tex": "4287b99d7368773e171975277cb462f782b05f08b361ed4cc2f80e9dfa6ea475"
+  },
+  "pdf": "output/pdf/powered-beta-kernels.pdf",
+  "pdf_sha256": "c05153bfddc64052c457f5c33193209a5547946d293a96ddb3c7ef5a7d8da770",
+  "unresolved_references": false,
+  "overfull_boxes": false,
+  "underfull_warnings": [],
+  "independent_audit_record": "review/independent-audit-2026-11-11.json",
+  "review_scope": "Compilation only. The independent audit applies to the earlier manuscript identified in its record; later exposition and attribution revisions are documented separately. Not formal verification."
+}

@@ -1,0 +1,12 @@
+{
+  "original_checks": {
+    "python": "3.14.4",
+    "python-flint": "0.9.0"
+  },
+  "standard_library_checks": [
+    "check_power_seed.py",
+    "check_krisman_budget.py"
+  ],
+  "optional_audit_budget_compiler": "C++17 compiler",
+  "scope": "Versions used for the original checks; no host identity or installation paths."
+}

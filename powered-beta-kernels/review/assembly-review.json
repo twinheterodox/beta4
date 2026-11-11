@@ -1,0 +1,257 @@
+{
+  "date": "2026-11-11",
+  "status": "passed",
+  "scope": "Public packaging of the reviewed manuscript, portability checks, exact computational replays and PDF comparison; not a new independent proof audit.",
+  "manuscript": {
+    "source": "paper/powered-beta-kernels.tex",
+    "source_sha256": "4287b99d7368773e171975277cb462f782b05f08b361ed4cc2f80e9dfa6ea475",
+    "source_byte_identical_to_reviewed_working_version": true,
+    "pdf": "output/pdf/powered-beta-kernels.pdf",
+    "pdf_sha256": "c05153bfddc64052c457f5c33193209a5547946d293a96ddb3c7ef5a7d8da770",
+    "pages": 13
+  },
+  "independent_audit_record": "review/independent-audit-2026-11-11.json",
+  "post_audit_changes": "Exposition and attribution revisions, author and Codex credit, audit presentation and explicit citations. Mathematical claims and certificates are preserved; audit input hashes identify the earlier version.",
+  "public_imports": [
+    {
+      "file": "paper/powered-beta-kernels.tex",
+      "original_sha256": "4287b99d7368773e171975277cb462f782b05f08b361ed4cc2f80e9dfa6ea475",
+      "public_sha256": "4287b99d7368773e171975277cb462f782b05f08b361ed4cc2f80e9dfa6ea475",
+      "change": "none"
+    },
+    {
+      "file": "checks/power_kernel_seed.py",
+      "original_sha256": "f368a9ca263394a1ad39b47e1a4c251f2bf7a15f08e11b4f0fe25c8080ad5e92",
+      "public_sha256": "f368a9ca263394a1ad39b47e1a4c251f2bf7a15f08e11b4f0fe25c8080ad5e92",
+      "change": "none"
+    },
+    {
+      "file": "checks/check_power_seed.py",
+      "original_sha256": "f965d7fb4d4a1453edb23cdbeea99e48457d0d0c37492efeae55bb991fae84d6",
+      "public_sha256": "f965d7fb4d4a1453edb23cdbeea99e48457d0d0c37492efeae55bb991fae84d6",
+      "change": "none"
+    },
+    {
+      "file": "checks/check_prime_dilation.py",
+      "original_sha256": "716dfbdfbd615ae41570a319727fa7a39039631d920514449a4862c83d81a7e2",
+      "public_sha256": "716dfbdfbd615ae41570a319727fa7a39039631d920514449a4862c83d81a7e2",
+      "change": "none"
+    },
+    {
+      "file": "checks/check_krisman_budget.py",
+      "original_sha256": "e97645aa6103ce6db1dc88ced95297b169d9f12fd6f2751786ccc5a0d64b9c67",
+      "public_sha256": "e97645aa6103ce6db1dc88ced95297b169d9f12fd6f2751786ccc5a0d64b9c67",
+      "change": "none"
+    },
+    {
+      "file": "checks/beta_determinants.py",
+      "original_sha256": "d61de5ae72dced7874e023a2445e84a53ec974973ebb9ce22d16285f08383348",
+      "public_sha256": "b0fe9a5846e8a83808d547803cc8608a6c539b12336d390d642bec22e54478ef",
+      "change": "Only profile and truncated_product retained; both function definitions byte-identical"
+    },
+    {
+      "file": "checks/results/power_seed_k1_p10007.json",
+      "original_sha256": "c0353b35b9146ddcec6e31e40d87cf5da23eef9a226dde88d183c166a30e1811",
+      "public_sha256": "c0353b35b9146ddcec6e31e40d87cf5da23eef9a226dde88d183c166a30e1811",
+      "change": "none"
+    },
+    {
+      "file": "checks/results/power_seed_k2_p10007.json",
+      "original_sha256": "9af17ad694ebc0bd3b524bd750d38c2bb10402e4b5a0b0dbb64321b1be3c88b6",
+      "public_sha256": "9af17ad694ebc0bd3b524bd750d38c2bb10402e4b5a0b0dbb64321b1be3c88b6",
+      "change": "none"
+    },
+    {
+      "file": "checks/results/power_seed_k2_p10009.json",
+      "original_sha256": "021eee150d50c2dfe4c731b29d036cd9a3396ca8bb90da3879529e972a22add2",
+      "public_sha256": "021eee150d50c2dfe4c731b29d036cd9a3396ca8bb90da3879529e972a22add2",
+      "change": "none"
+    },
+    {
+      "file": "checks/results/power_seed_k3_p10007.json",
+      "original_sha256": "dc51866f00d508a6e33ef018855f34cb180109c48e620b8ec286578a19a2fdf7",
+      "public_sha256": "dc51866f00d508a6e33ef018855f34cb180109c48e620b8ec286578a19a2fdf7",
+      "change": "none"
+    },
+    {
+      "file": "checks/results/power_seed_k3_p10009.json",
+      "original_sha256": "46d5aec34c08dd62ced4d4148b1a910e29c497a7f39644e77590b95323ed5b90",
+      "public_sha256": "46d5aec34c08dd62ced4d4148b1a910e29c497a7f39644e77590b95323ed5b90",
+      "change": "none"
+    },
+    {
+      "file": "checks/PRIME_DILATION_VALIDATION.json",
+      "original_sha256": "a4b6dafe38ca73faee63ff38c6e9504fb6f5183d60b0c905070303e58990c7b4",
+      "public_sha256": "a4b6dafe38ca73faee63ff38c6e9504fb6f5183d60b0c905070303e58990c7b4",
+      "change": "none"
+    },
+    {
+      "file": "checks/KRISMAN_BUDGET_VALIDATION.json",
+      "original_sha256": "b75405ee7e23347f3a10b714b21e62a68749da26c662ac064e1dbbae42c15fc7",
+      "public_sha256": "b75405ee7e23347f3a10b714b21e62a68749da26c662ac064e1dbbae42c15fc7",
+      "change": "none"
+    },
+    {
+      "file": "checks/POWER_SEED_VALIDATION.json",
+      "original_sha256": "01764d54a10e61a03842f8b650ff65c0b9cc821d4e8b7b17a94fc26731675b0b",
+      "public_sha256": "a6e9ce0882c6596fffed66aaca8b855f8eed42248d7c29d632a4ed56ce64017e",
+      "change": "documented portability or redaction change"
+    },
+    {
+      "file": "checks/audit/fresh_seeds.py",
+      "original_sha256": "34b05d36746910cb96a5827d9d5be354bdfd36cd2f6e0a387f75fbf7d3409aff",
+      "public_sha256": "317f3fc25cacd1f4e7d9aa9bb58da78397eb57910baf4f8ca41b96691448f49a",
+      "change": "documented portability or redaction change"
+    },
+    {
+      "file": "checks/audit/fresh_budget.py",
+      "original_sha256": "7723ef948830b98e404a01c362e85bf3e26259f08f64eb49556e5c96cf64fb04",
+      "public_sha256": "7069e8c2b2d804ee1e89afa97ceae71eb083f694d1bec744ab7b425eeeb55da2",
+      "change": "documented portability or redaction change"
+    },
+    {
+      "file": "checks/audit/fresh_rational.py",
+      "original_sha256": "25fe6e7523a3cfed6df221fcee7f9fc7c3e832ac0493d39fa6cfab4d92cd976f",
+      "public_sha256": "7ff33777d89950eec995bd17109f851137130017297f544ec2b2a002b1b9a043",
+      "change": "documented portability or redaction change"
+    },
+    {
+      "file": "checks/audit/direct_estars.cpp",
+      "original_sha256": "2279d64c377a17b5f7f04c725fdc34625e75134ebd81441ce9ef9dfbae327d24",
+      "public_sha256": "2279d64c377a17b5f7f04c725fdc34625e75134ebd81441ce9ef9dfbae327d24",
+      "change": "documented portability or redaction change"
+    },
+    {
+      "file": "checks/audit/fresh-seeds.json",
+      "original_sha256": "89f6347e56679c97453a886ff384b016967124be2ef8938d175dfcc7cc0dacdf",
+      "public_sha256": "89f6347e56679c97453a886ff384b016967124be2ef8938d175dfcc7cc0dacdf",
+      "change": "none"
+    },
+    {
+      "file": "checks/audit/fresh-budget.json",
+      "original_sha256": "4bbfb2186038a97a61c866a09b0fbabaf30eae5212bbeeb42e23d869c428e061",
+      "public_sha256": "4bbfb2186038a97a61c866a09b0fbabaf30eae5212bbeeb42e23d869c428e061",
+      "change": "none"
+    },
+    {
+      "file": "checks/audit/fresh-rational.json",
+      "original_sha256": "89efc1a957149be923629ea8bcadc3463ee7a2bd79f44246367a9ca2bdd75886",
+      "public_sha256": "89efc1a957149be923629ea8bcadc3463ee7a2bd79f44246367a9ca2bdd75886",
+      "change": "none"
+    }
+  ],
+  "portable_changes": [
+    "The two imported helper definitions are byte-identical; the rest of the unrelated determinant-pilot module is omitted.",
+    "The audit seed script locates comparison records by a relative path. Other audit-script edits only replace private-workspace descriptions in comments.",
+    "Local paths in the audit report are replaced by document descriptions and portable commands; reported mathematical findings, counts and audited hashes are retained."
+  ],
+  "supplied_checks_replay": {
+    "status": "passed",
+    "checks": [
+      {
+        "check": "standard_library_seed_checker",
+        "status": "passed",
+        "seconds": 1.165882072004024
+      },
+      {
+        "check": "standard_library_budget",
+        "status": "passed",
+        "seconds": 5.195969212014461
+      },
+      {
+        "check": "supplied_rational_dilation",
+        "status": "passed",
+        "seconds": 0.9056669070268981
+      },
+      {
+        "check": "primary_seed_q1_p10007",
+        "status": "passed",
+        "seconds": 0.4539972759957891
+      },
+      {
+        "check": "primary_seed_q2_p10007",
+        "status": "passed",
+        "seconds": 0.78002092501265
+      },
+      {
+        "check": "primary_seed_q2_p10009",
+        "status": "passed",
+        "seconds": 0.772716384002706
+      },
+      {
+        "check": "primary_seed_q3_p10007",
+        "status": "passed",
+        "seconds": 1.3299949649954215
+      },
+      {
+        "check": "primary_seed_q3_p10009",
+        "status": "passed",
+        "seconds": 1.2742060059972573
+      }
+    ],
+    "all_mathematical_fields_match": true
+  },
+  "independent_implementation_replay": {
+    "status": "passed",
+    "checks": [
+      {
+        "check": "audit_seeds",
+        "status": "passed",
+        "seconds": 3.6400467719940934
+      },
+      {
+        "check": "audit_cpp_build",
+        "status": "passed",
+        "seconds": 0.3638787360105198
+      },
+      {
+        "check": "audit_budget",
+        "status": "passed",
+        "seconds": 2.5632722699956503
+      },
+      {
+        "check": "audit_rational",
+        "status": "passed",
+        "seconds": 91.67025872899103
+      }
+    ],
+    "all_mathematical_fields_match": true,
+    "scope": "Replay of the existing independent auditor's implementations, not a new independent audit."
+  },
+  "pdf_review": {
+    "pages": 13,
+    "render_dpi": 100,
+    "all_pages_pixel_identical_to_previous_pdf": true,
+    "pixel_identical_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "source_byte_identical": true,
+    "visually_inspected_pages_this_assembly": [
+      1,
+      13
+    ],
+    "all_other_pages_identical_to_previously_reviewed_pages": true,
+    "layout_issues": []
+  },
+  "privacy_review": {
+    "new_public_files_passed": true,
+    "repository_files_scanned": 556,
+    "pdfs_scanned": 8,
+    "identifying_paths_or_credentials_found": false,
+    "generic_historical_placeholders_reviewed": true,
+    "commits_ahead_of_origin_main": 0
+  },
+  "publication_status": "Prepared locally; not committed, pushed or submitted to Hexagon by this packaging step."
+}

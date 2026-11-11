@@ -1,0 +1,62 @@
+[
+  {
+    "status": "passed",
+    "n": 480,
+    "power": 1,
+    "prime": 10007,
+    "constant_mod_prime": 6332,
+    "checked_all_even_coefficients": true,
+    "computed_each_pole_without_reflection": true,
+    "method": "pure Python logarithmic-derivative recurrence and prefix sums",
+    "seconds": 0.08722153599956073,
+    "source": "checks/results/power_seed_k1_p10007.json"
+  },
+  {
+    "status": "passed",
+    "n": 480,
+    "power": 2,
+    "prime": 10007,
+    "constant_mod_prime": 3182,
+    "checked_all_even_coefficients": true,
+    "computed_each_pole_without_reflection": true,
+    "method": "pure Python logarithmic-derivative recurrence and prefix sums",
+    "seconds": 0.17805069801397622,
+    "source": "checks/results/power_seed_k2_p10007.json"
+  },
+  {
+    "status": "passed",
+    "n": 480,
+    "power": 2,
+    "prime": 10009,
+    "constant_mod_prime": 5359,
+    "checked_all_even_coefficients": true,
+    "computed_each_pole_without_reflection": true,
+    "method": "pure Python logarithmic-derivative recurrence and prefix sums",
+    "seconds": 0.1786059279984329,
+    "source": "checks/results/power_seed_k2_p10009.json"
+  },
+  {
+    "status": "passed",
+    "n": 480,
+    "power": 3,
+    "prime": 10007,
+    "constant_mod_prime": 3335,
+    "checked_all_even_coefficients": true,
+    "computed_each_pole_without_reflection": true,
+    "method": "pure Python logarithmic-derivative recurrence and prefix sums",
+    "seconds": 0.2773250899917912,
+    "source": "checks/results/power_seed_k3_p10007.json"
+  },
+  {
+    "status": "passed",
+    "n": 480,
+    "power": 3,
+    "prime": 10009,
+    "constant_mod_prime": 6971,
+    "checked_all_even_coefficients": true,
+    "computed_each_pole_without_reflection": true,
+    "method": "pure Python logarithmic-derivative recurrence and prefix sums",
+    "seconds": 0.30314352599089034,
+    "source": "checks/results/power_seed_k3_p10009.json"
+  }
+]

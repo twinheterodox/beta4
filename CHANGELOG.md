@@ -1,5 +1,11 @@
 # Changelog
 
+## 11 November 2026 — Powered hypergeometric kernels
+
+- Added the 13-page paper *Irrational even beta values from powered hypergeometric kernels*, proving an irrational member of β(6), …, β(74) and of β(8), …, β(110). These improve the earlier endpoints 92 and 128 through a different kernel construction.
+- Included the canonical LaTeX source and PDF, exact seed records, portable arithmetic and prime-dilation checkers, and direct source attributions.
+- Preserved the separate AI audit's scope and manuscript hashes, and included its independently written implementations and numerical records. The public assembly records the later exposition revisions and portable replays separately.
+
 ## 10 November 2026 — Further investigation supplement
 
 - Added a separate technical supplement covering all 29 later records on polynomial isolation, real Padé forms, mixed Catalan moments, integer corrections and small beta sets.

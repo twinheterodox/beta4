@@ -1,0 +1,72 @@
+{
+  "date": "2026-11-11",
+  "scope": "Primary sources actually used; no third-party PDF redistributed. Source reading and certificate replay do not amount to formal verification or an exhaustive priority assessment.",
+  "sources": [
+    {
+      "citation_key": "krisman",
+      "title": "One of beta(4), beta(6), ..., beta(36) is irrational",
+      "authors": "Shawn Krisman",
+      "version": "hexagon:2610.00285v2",
+      "source_url": "https://hexagonmath.org/pdf/2610.00285v2",
+      "retrieved_at_utc": "2026-11-11T01:07:31.951209+00:00",
+      "pdf_sha256": "4ac2ff67f77637f70fe9db664773d1d45795acd7fbd605714ab751b64b95d65b",
+      "read_scope": "Sections 2--6: kernel, Lemma 4.3 and proof of Corollary 4.4, Lemma 4.6, Corollary 5.9 and Propositions 6.4--6.5. Quantitative estimates used; exact certificates independently reproduced. Lean project not rebuilt.",
+      "reused_existing_copy": true
+    },
+    {
+      "citation_key": "shifted",
+      "title": "Irrational even beta values in shifted intervals",
+      "authors": "twinheterodox",
+      "version": "hexagon:2611.00160v2",
+      "source_url": "https://hexagonmath.org/pdf/2611.00160v2",
+      "retrieved_at_utc": "2026-11-11T01:07:32.710527+00:00",
+      "pdf_sha256": "628a2a4bc6b06789fa41e18469b8aa07decc26cdda3454c34af24fbb61555acc",
+      "read_scope": "Theorem 1.2, Section 8.2 endpoint table, Proposition B.1, and Section 6 prime dilation. Dilation strategy adapted and rederived for the present kernel.",
+      "reused_existing_copy": true
+    },
+    {
+      "citation_key": "rivoal",
+      "title": "Irrationalite d'au moins un des neuf nombres zeta(5),zeta(7),...,zeta(21)",
+      "authors": "Tanguy Rivoal",
+      "version": "math/0104221v2",
+      "source_url": "https://arxiv.org/abs/math/0104221v2",
+      "retrieved_at_utc": "2026-11-11T01:06:49.298763+00:00",
+      "pdf_sha256": "860aecfe4f643d769dfa5d7e7ba44b9091e237080621468c093522b55ce3e254",
+      "read_scope": "Section 2, Lemma 1 and its construction: differentiation removes the lowest odd zeta value. Method attribution; not an imported quantitative estimate.",
+      "reused_existing_copy": true
+    },
+    {
+      "citation_key": "laisprang",
+      "title": "Many $p$-adic odd zeta values are irrational",
+      "authors": "Li Lai; Johannes Sprang",
+      "version": "2306.10393v2",
+      "source_url": "https://arxiv.org/abs/2306.10393v2",
+      "retrieved_at_utc": "2026-11-11T01:06:49.421756+00:00",
+      "pdf_sha256": "240092a619e23b666ed61a363e45bd4940ed0a4326c916526df84504c03b3941",
+      "read_scope": "Lemma 2.3 and proof: Archimedean auxiliary-prime criterion. Method attribution; the manuscript gives the required nonvanishing argument.",
+      "reused_existing_copy": true
+    },
+    {
+      "citation_key": "zudilin",
+      "title": "Arithmetic of Catalan's constant and its relatives",
+      "authors": "Wadim Zudilin",
+      "version": "1804.09922v2",
+      "source_url": "https://arxiv.org/abs/1804.09922v2",
+      "retrieved_at_utc": "2026-11-11T01:06:49.412203+00:00",
+      "pdf_sha256": "1e1d70a09730c05b5aa17eb39b56373053c84fa158556cbd105815c2e50446eb",
+      "read_scope": "Proof of Lemma 1: zeros through the pole region control rational constants. Method attribution; precise arithmetic estimates are taken from Krisman.",
+      "reused_existing_copy": true
+    },
+    {
+      "citation_key": "sorokin",
+      "title": "On the Zudilin-Rivoal Theorem (Russian original)",
+      "authors": "V. N. Sorokin",
+      "version": "2007",
+      "source_url": "https://www.mathnet.ru/php/getFT.phtml?jrnid=mzm&option_lang=eng&paperid=3742&what=fullt",
+      "retrieved_at_utc": "2026-11-11T01:09:58.917881+00:00",
+      "pdf_sha256": "a1d4353f0e5e03b0f7dfb550b3fe65fc229ea3e0a3a1719480dbf51bd2987914",
+      "read_scope": "Theorem S in the Russian original: sufficiently large odd m and even h>100m log m. Historical statement comparison; no full independent proof audit.",
+      "reused_existing_copy": true
+    }
+  ]
+}

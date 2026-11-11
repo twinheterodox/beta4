@@ -1,0 +1,240 @@
+PUBLIC COPY OF THE INDEPENDENT AUDIT
+
+Local filesystem references have been replaced by document descriptions
+or portable commands. The outcome, mathematical findings, input hashes
+and reported check counts are preserved. Path changes to the public
+implementations are recorded in assembly-review.json.
+
+Mathematical audit of the powered-kernel result
+11 November 2026
+
+I found no substantive mathematical error or gap in the current proof.
+Both assertions of Theorem 1 pass this audit:
+
+  - At least one of beta(6), beta(8), ..., beta(74) is irrational.
+  - At least one of beta(8), beta(10), ..., beta(110) is irrational.
+
+The proof's general power criterion is also valid with its stated
+nonzero-seed hypothesis. The manuscript verifies that hypothesis for
+q = 1, 2, 3; it does not establish it for every q. The two asserted
+irrational members need not be distinct.
+
+The audited manuscript is the 13-page draft dated 10 November 2026:
+
+  Original powered_beta_proof.tex (audited snapshot)
+  SHA-256:
+  0db642938a7a6d3fae930b50d104dc2e4a7554a4046acf87da4bbdf60279ebeb
+
+  Original powered_beta_proof.pdf (audited snapshot)
+  SHA-256:
+  21aca68e2f5987dada1ab7af644020feb371fd13a307decb58746bb3494f8ff9
+
+This audit combines a check of the general arguments with independently
+written exact calculations. In the preceding preliminary review I had
+inspected and replayed the supplied checkers. The calculations for this
+audit were written afresh and did not run or import those checkers.
+This is therefore a fresh mathematical audit and computational
+reconstruction, but not a blind review conducted without prior exposure
+to the authors' implementations. Standard arithmetic libraries were
+used as described below.
+
+1. Construction and target beta values
+
+The block endpoints are integral when n is a multiple of 480. The
+numerator and denominator counts give
+
+  3 #Lambda_n = 10n + 6,
+  sum_j B_j(n) = (279/10)n + 35,
+  deg R_n = -(179/10)n - 28.
+
+The reflection identity is correct, including the sign contributed by
+the central linear factor. Keeping the nominal central pole order and
+allowing its top coefficient to vanish is legitimate.
+
+Raising R_n to the qth power gives zeros of order 3q. Differentiating
+2q times therefore preserves the integer zeros needed both to remove
+the initial summands and to control the rational constant. The
+partial-fraction expansion and alternating summation are valid; all
+the differentiated series converge absolutely. Reflection cancels the
+odd beta indices. The remaining indices run from 2q+2 to the largest
+even integer not exceeding 37q. Thus q = 2 and q = 3 give precisely
+the two claimed intervals, containing 35 and 52 values respectively.
+
+2. Denominator transfer
+
+The essential convolution argument is valid for the full local series:
+if its degree-h coefficient has valuation at least nu-lambda*h, its
+qth power has valuation at least q*nu-lambda*h. The slope does not
+acquire an extra factor q. Combining this with the harmonic denominator
+of exponent i+2q produces exactly q times the original valuation cost.
+
+I checked all four prime ranges. For small odd primes, the required
+whole-series estimate follows from the local-factor argument in
+Krisman's Lemma 4.3, underlying Corollary 4.4. At 2, the harmonic
+denominators are odd and the displayed power of 2 introduces no loss.
+For odd primes greater than n, the grouped cancellation at the negative
+integer zeros supplies the integrality of the rational constant: a
+prime cannot divide denominators in both complementary groups because
+their pole addresses differ by less than that prime.
+
+Some E_p(n) can be negative. This causes no problem: the multiplier
+D_n is a positive rational number, and the proof establishes the
+integrality of the resulting coefficients, which is the property the
+contradiction needs. It does not require D_n itself to be an integer.
+
+3. Inherited arithmetic cost and real decay
+
+I read and checked the relevant arguments in Sections 2--6 of the
+pinned Krisman paper, including the passage from the prime-counting
+certificate to the bound on log D_n. The source files used were:
+
+  Krisman, Hexagon 2610.00285v2 (PDF)
+  Text extracted from that PDF
+
+The finite arithmetic partition accounts for the discontinuities of
+the defining counts. The treatment of its endpoints and small primes
+has sublinear logarithmic cost; the tail estimate and the
+prime-number-theorem passage give the stated constant A.
+
+The real product estimate is uniform over t >= rn+1, including the
+unbounded tail. In particular, the residual logarithmic terms in
+Krisman's Proposition 6.4 admit the stated uniform bound. The phase
+and tail bounds used by the manuscript are valid. The logarithmic derivative
+estimate introduces only a polynomial factor for each fixed q, and
+the separate tail sum converges with the stated bound. All parameters
+other than n are fixed when n tends to infinity.
+
+Fresh exact arithmetic gives
+
+  A = 12507029707866288048422972493354331
+      / 790300921079786767495600904601600,
+
+  Q = -744/25 + A + 20 log 2
+    = -0.07140140819199213756... < -0.0714.
+
+Consequently |D_n^q L_{q,n}| <= exp(qnQ + o(n)) for every fixed q.
+Taking a power preserves the strict margin between denominator cost
+and real decay.
+
+4. Prime dilation and nonvanishing
+
+The change of variables and its normalization are correct:
+
+  R_n(t) = 2^(Gn+29) F_n(2t+n+1),
+  L_{q,n} = 2^[q(Gn+29)+2q] ell_{q,n}.
+
+At n = 480p, the selected numerator zeros reduce to the trimmed seed
+with endpoints +/-1599, not the untrimmed endpoints +/-1601. The
+selected-factor counts give A_0 = 8626. The unselected numerator and
+denominator units give the sign -1 in the rational-function congruence.
+
+The coefficient extraction has the necessary local-series
+justification. After removing the selected pole and applying the
+normalization, the series lies in Z_(p)[[z]]; its remaining denominator
+factors have unit constant terms. Reduction therefore commutes with
+coefficient extraction, giving the stated scaling p^(qA_0-i).
+
+The bound for nonselected coefficients is also correct. Combined with
+the harmonic denominators and tau_q = 8628q, it leaves positive
+valuation q(S-1) in the nonselected constant contributions. At selected
+poles, the surviving odd harmonic denominators supply precisely
+chi_4(p). Thus the constant congruence has the stated factor
+(-1)^q chi_4(p), while every scaled beta coefficient vanishes modulo p.
+
+Under joint rationality, exclude the finitely many primes dividing the
+fixed common denominator or the numerator or denominator of the
+nonzero seed constant. The congruence then makes the forms nonzero for
+every sufficiently large remaining prime. Together with integrality
+and decay, this yields infinitely many nonzero integers tending to
+zero. The argument does not require an irrationality claim for
+Catalan's constant or Krisman's own nonvanishing argument.
+
+5. Fresh finite calculations
+
+For the actual n = 480 seed, I constructed its full numerator and
+denominator polynomials over each finite field. Their degrees are
+4801 and 13427. I Taylor-shifted these global polynomials at every
+pole and recovered the local coefficients by series inversion. This
+uses neither the reflection shortcut nor the supplied logarithmic-
+derivative/factorial algorithm. Reflection was checked afterwards.
+
+The independently reconstructed seed constants are:
+
+  q                 modulo 10007       modulo 10009
+  1 (control)              6332               9058
+  2                        3182               5359
+  3                        3335               6971
+
+Both moduli were checked prime by trial division. All five residues
+reported in the manuscript agree; q = 1 modulo 10009 is an additional
+control calculation. All 191 even-beta coefficients in the five
+supplied records also agree. There were 161,124 coefficient reflection
+checks and 18 full rational-function reconstruction checks over these
+fields. These residues prove the required rational seed constants
+nonzero, because every inverted denominator is a unit at the chosen
+prime.
+
+For the arithmetic budget, a separate evaluator directly counted the
+defining closed intervals and odd integers at every discontinuity in
+the auxiliary variable and in every intervening open cell. This
+differs from the supplied accumulated-jump algorithm. It independently
+reconstructed all 62,132 event points and 62,131 interval maxima,
+including the exact upward-rounded sum
+
+  1243345293752876677540040193981
+
+at scale 2^96. The resulting constant A agrees exactly. Rational
+logarithm enclosures, using 70 terms of the elementary atanh series,
+verified the curvature, tangent, monotonicity and tail inequalities
+and the strict bound on Q.
+
+For rational dilation tests, I used full integer polynomials, Hasse
+derivatives, explicit rational long division and Cauchy products.
+These tests covered q = 1, 2, 3 in four dilation geometries, including
+uniform and nonuniform blocks and both odd residue classes modulo 4.
+The additional seed n = 6, rn = 7 and prime 29 gives n = 174 and uses
+the manuscript's ratio r = 7/6. Every test passed:
+
+  Selected coefficient congruences                         1,644
+  Other-pole coefficient valuation bounds                 24,552
+  Constant congruences                                        12
+  Scaled beta coefficient slots checked                      468
+  Cleared coefficient/constant slots checked                 360
+  Grouped zero identities                                     36
+  Exact rational-function reconstructions                     90
+  Exact rational coefficient reflection checks             28,872
+
+The slot counts include zero or unused beta entries. The smaller
+geometries test the formulas; they do not substitute for the general
+prime-dilation and denominator arguments checked above.
+
+6. Scope, preservation and reproduction
+
+No mathematical correction is required by this audit. It is a
+mathematical and computational review, not formal verification or a
+certification of priority. I accepted standard classical inputs,
+including the prime number theorem, Wilson's and Fermat's theorems,
+and elementary formal-series and asymptotic facts. I did not rebuild
+the cited Lean project. The separate determinant pilot and other
+other research projects are outside this audit.
+
+I did not edit the research workspace. All 71 pinned input files retained their original
+SHA-256 hashes. The public audit implementations and numerical records are in:
+
+  checks/audit/
+
+The machine-readable summary is review/independent-audit-2026-11-11.json. The detailed
+outputs are fresh-seeds.json, fresh-budget.json and fresh-rational.json.
+The complete local input inventory and preservation comparison are retained
+privately; the audited manuscript hashes are recorded above.
+
+Portable reproduction commands (run from the paper directory with
+python-flint installed; no manuscript checker is imported):
+
+  python3 -B checks/audit/fresh_seeds.py
+
+  g++ -O2 -std=c++17 checks/audit/direct_estars.cpp -o checks/audit/direct_estars
+
+  python3 -B checks/audit/fresh_budget.py
+
+  python3 -B checks/audit/fresh_rational.py

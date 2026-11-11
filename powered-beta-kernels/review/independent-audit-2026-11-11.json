@@ -1,0 +1,69 @@
+{
+  "audited_tex": "Original powered_beta_proof.tex, identified by tex_sha256",
+  "tex_sha256": "0db642938a7a6d3fae930b50d104dc2e4a7554a4046acf87da4bbdf60279ebeb",
+  "audited_pdf": "Original powered_beta_proof.pdf, identified by pdf_sha256",
+  "pdf_sha256": "21aca68e2f5987dada1ab7af644020feb371fd13a307decb58746bb3494f8ff9",
+  "pinned_files_unchanged": 71,
+  "seed_residues": [
+    {
+      "q": 1,
+      "p": 10007,
+      "rho": 6332,
+      "compared_with_supplied_record": true
+    },
+    {
+      "q": 2,
+      "p": 10007,
+      "rho": 3182,
+      "compared_with_supplied_record": true
+    },
+    {
+      "q": 3,
+      "p": 10007,
+      "rho": 3335,
+      "compared_with_supplied_record": true
+    },
+    {
+      "q": 1,
+      "p": 10009,
+      "rho": 9058,
+      "compared_with_supplied_record": false
+    },
+    {
+      "q": 2,
+      "p": 10009,
+      "rho": 5359,
+      "compared_with_supplied_record": true
+    },
+    {
+      "q": 3,
+      "p": 10009,
+      "rho": 6971,
+      "compared_with_supplied_record": true
+    }
+  ],
+  "supplied_seed_records_matched": 5,
+  "reported_even_beta_coefficients_matched": 191,
+  "seed_reflection_coefficients_checked": 161124,
+  "seed_global_reconstruction_checks": 18,
+  "arithmetic_events": 62132,
+  "arithmetic_intervals": 62131,
+  "Q_enclosure": [
+    "-71401408191992137560869636282540846043634536289925741372140752585549/1000000000000000000000000000000000000000000000000000000000000000000000",
+    "-17850352047998034390217409070635211510908634072481435343035188146383/250000000000000000000000000000000000000000000000000000000000000000000"
+  ],
+  "rational_dilation_cases": 12,
+  "selected_coefficient_congruences": 1644,
+  "other_pole_valuation_bounds": 24552,
+  "constant_congruences": 12,
+  "scaled_beta_valuation_checks_including_zero_slots": 468,
+  "cleared_coefficient_slots_including_zero_slots_and_constants": 360,
+  "grouped_zero_identities": 36,
+  "exact_rational_function_reconstructions": 90,
+  "exact_rational_reflection_coefficients": 28872,
+  "date_reported": "2026-11-11",
+  "reviewer": "Separate AI proof-audit session",
+  "result": "No substantive mathematical error or gap identified",
+  "scope": "General arguments and independently reconstructed finite certificates; prior preliminary inspection and replay of supplied checkers; not a blind review or formal verification; Lean project not rebuilt.",
+  "current_version": "Subsequent exposition and attribution revision; correspondence is recorded in assembly-review.json."
+}

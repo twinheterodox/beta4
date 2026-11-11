@@ -1,0 +1,107 @@
+{
+  "checks": [
+    {
+      "status": "passed",
+      "seed_n": 2,
+      "seed_rn": 2,
+      "blocks": [
+        [
+          0,
+          2,
+          17
+        ]
+      ],
+      "power": 1,
+      "prime": 11,
+      "A": 32,
+      "tau": 34,
+      "unit_mod_prime": 10,
+      "seed_constant_mod_prime": 10,
+      "scaled_dilated_constant_mod_prime": 10,
+      "selected_coefficients_checked": 51,
+      "nonselected_coefficient_bounds_checked": 340,
+      "all_scaled_beta_coefficients_vanish": true,
+      "full_partial_fraction_spot_checks": 4,
+      "seconds": 0.01884945301571861
+    },
+    {
+      "status": "passed",
+      "seed_n": 2,
+      "seed_rn": 2,
+      "blocks": [
+        [
+          0,
+          2,
+          17
+        ]
+      ],
+      "power": 2,
+      "prime": 11,
+      "A": 32,
+      "tau": 68,
+      "unit_mod_prime": 10,
+      "seed_constant_mod_prime": 8,
+      "scaled_dilated_constant_mod_prime": 3,
+      "selected_coefficients_checked": 102,
+      "nonselected_coefficient_bounds_checked": 680,
+      "all_scaled_beta_coefficients_vanish": true,
+      "full_partial_fraction_spot_checks": 4,
+      "seconds": 0.06525602901820093
+    },
+    {
+      "status": "passed",
+      "seed_n": 2,
+      "seed_rn": 2,
+      "blocks": [
+        [
+          0,
+          2,
+          17
+        ]
+      ],
+      "power": 2,
+      "prime": 13,
+      "A": 32,
+      "tau": 68,
+      "unit_mod_prime": 12,
+      "seed_constant_mod_prime": 8,
+      "scaled_dilated_constant_mod_prime": 8,
+      "selected_coefficients_checked": 102,
+      "nonselected_coefficient_bounds_checked": 816,
+      "all_scaled_beta_coefficients_vanish": true,
+      "full_partial_fraction_spot_checks": 4,
+      "seconds": 0.09814059000927955
+    },
+    {
+      "status": "passed",
+      "seed_n": 4,
+      "seed_rn": 4,
+      "blocks": [
+        [
+          0,
+          4,
+          9
+        ],
+        [
+          1,
+          3,
+          8
+        ]
+      ],
+      "power": 2,
+      "prime": 19,
+      "A": 32,
+      "tau": 68,
+      "unit_mod_prime": 18,
+      "seed_constant_mod_prime": 12,
+      "scaled_dilated_constant_mod_prime": 7,
+      "selected_coefficients_checked": 138,
+      "nonselected_coefficient_bounds_checked": 1872,
+      "all_scaled_beta_coefficients_vanish": true,
+      "full_partial_fraction_spot_checks": 4,
+      "seconds": 0.6773721690115053
+    }
+  ],
+  "script_sha256": "716dfbdfbd615ae41570a319727fa7a39039631d920514449a4862c83d81a7e2",
+  "scope": "Finite exact rational checks, not a proof of the all-prime assertion."
+}
