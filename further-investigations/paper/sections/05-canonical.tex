@@ -1,0 +1,533 @@
+\section{A certified decay estimate for the canonical determinant}\label{sec:canonical}
+
+\subsection{What the estimate supplies}
+
+Let $\Delta_N=\det M_N(\theta)$, where $\theta=G+\pi^2$ and the
+canonical completion is \eqref{eq:completion-basis}. The analytic
+investigations \rec{R07}, \rec{R14}, \rec{R18}--\rec{R20} and
+\rec{R23} culminate in the following bound.
+
+\begin{theorem}\label{thm:canonical}
+For $n=48N$,
+\[
+ \limsup_{N\to\infty}\frac{\log|\Delta_N|}{n^2}
+ \le-1.87063289244902359295.
+\]
+This decay constant exceeds $A_{\rm arith}$ in
+Theorem~\ref{thm:arithmetic-cost} by more than $0.00001888937116500327$.
+\end{theorem}
+
+The canonical completion retains the endpoint zero. It does not impose
+the integer congruences of Theorem~\ref{thm:arithmetic-cost}. The theorem
+therefore closes one analytic gap: it gives enough decay before those
+additional corrections are made. Section~\ref{subsec:remaining-estimate}
+states the estimate still needed to complete the contradiction.
+
+The small margin makes the treatment of volume important. Separate
+row norms lose too much information about near dependence. We retain
+Gram determinants, first for the main rows and then for their endpoint
+repair. A Gram determinant measures the squared volume spanned by the
+vectors, and thus records this dependence.
+
+The proof has three quantitative parts. Gram Cauchy--Schwarz bounds
+$|\Delta_N|$ by the square root of the product of the row and column
+Gram determinants. The row estimate splits into the main rows and the
+repair required by the endpoint zero. Thus the bound for
+$n^{-2}\log|\Delta_N|$ is half the sum of the first three contributions
+below; changing its sign gives the decay constant.
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+Main row logarithmic rate&$-0.19795874093499631465\ldots$\\
+Endpoint repair, rounded upper bound&$0.00498$\\
+Column logarithmic rate&$-3.54828704396305087125\ldots$\\
+\midrule
+Canonical decay, lower bound&$1.87063289244902359295\ldots$\\
+Arithmetic cost, upper bound&$1.87061400307785858968\ldots$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The resulting margin is about $1.89\times10^{-5}$ on the $n^2$ scale.
+The next four subsections derive the volume decomposition and its three
+bounds. The final subsection measures how much of this margin the later
+integer corrections may consume.
+
+\subsection{Separate the row and column volumes}
+
+Put
+\[
+ d\nu(t)=\frac{\dd t}{\pi\sqrt{1-t^2}}\quad(-1<t<1),\qquad
+ d\sigma(t)=\frac{\sqrt{1-t^2}}\pi\dd t\quad(0<t<1),
+\]
+and write $w(t)=t^b(1-t)^h$, $R_r=P_r/w$, $S_r=D_r/w$,
+$V_r^{\rm comp}=E_r/w$. For a column polynomial $Q$, set
+$\mathcal KQ(t)=\int_0^1Q(s)/(1-ts)\dd s$. The actual mixed entry is
+the inner product $\pi\langle\mathcal A_r,Y_j\rangle_\nu$, where
+\begin{align*}
+ \mathcal A_r(t)&=|t|R_r(t)+\mathbf1_{t>0}\sqrt{1-t^2}
+                 \bigl(-\tfrac32S_r(t)+24V_r^{\rm comp}(t)\bigr),\\
+ Y_j(t)&=w(t)\mathcal KQ_j(t).
+\end{align*}
+Gram Cauchy--Schwarz consequently gives
+\begin{equation}\label{eq:gram-bound}
+ |\Delta_N|\le\pi^n\sqrt{\det G_{\mathcal A}\det G_Y}.
+\end{equation}
+
+The polynomial-part operation has a useful norm bound. Chebyshev
+orthogonality on the full semicircle gives
+$\|\Omega(R)\|_\sigma\le\|R\|_\nu$; restricting to the positive
+half can only decrease the norm. Multiplication by $(1-t)^h$ does not
+commute with $\Omega$, however. If $a_s(R)=\int x^sR(x)\dd\nu(x)$,
+the exact defect is
+\begin{equation}\label{eq:commutator}
+ \Omega((1-t)^hR)=(1-t)^h\Omega(R)+J_h(R),\qquad
+ J_h(R)=\sum_{\ell=1}^h(-1)^\ell\binom h\ell
+                         \sum_{s=1}^\ell a_s(R)t^{\ell-s}.
+\end{equation}
+For $h=2$, the defect is $(a_2-2a_1)+a_1t$. Thus its dimension is
+only $h$, even though the original row degrees grow much faster.
+
+Let $\ell=56N-1$, $M=52N$, and define
+\begin{align*}
+ R_r(t)&=t^\ell T_{|r-g|}(1/t),\\
+ V_r(t)&=\sgn(r-g)t^{\ell-1}U_{|r-g|-1}(1/t),\qquad V_g=0,\\
+ C_k(t)&=\sum_{j=k}^{M-1}\binom{h+j-k-1}{j-k}t^j,\qquad 0\le k<h,\\
+ a_k(x)&=\sum_{a=k+1}^h(-1)^a\binom ha x^{a-k}.
+\end{align*}
+Let $H_N$ be the Gram matrix of $(R_r,V_r)$ in
+$L^2(\nu)\oplus L^2(\sigma)$, let $J_{rk}=\langle R_r,a_k\rangle_\nu$,
+and let $B^{\rm rep}$ be the Gram matrix of the $C_k$ in $L^2(\sigma)$.
+The kernel of the repair is $\sum_k a_k(x)C_k(t)$. Formula
+\eqref{eq:commutator} makes its role explicit: since
+$J_{rk}=[t^k]J_h(R_r)$ and
+$C_k=[t^k/(1-t)^h]_{<M}$, take
+\[
+ \widehat E_r=w\left(\Omega(R_r)+\sum_{k=0}^{h-1}J_{rk}C_k\right).
+\]
+This completion agrees with $\Omega(P_r)$ in degrees $b,\ldots,L-1$,
+is divisible by $w$, and has degree at most $H-1$.
+Proposition~\ref{prop:completion-invariance} therefore allows us to
+replace $E_r$ by $\widehat E_r$ without changing $\Delta_N$.
+Since $S_r=tV_r$, the resulting row function is
+\begin{align*}
+ \widehat{\mathcal A}_r(t)
+ &=|t|R_r(t)+24\mathbf1_{t>0}\sqrt{1-t^2}\,\Omega(R_r)(t)\\
+ &\quad-\tfrac32\mathbf1_{t>0}\sqrt{1-t^2}\,tV_r(t)\\
+ &\quad+24\mathbf1_{t>0}\sqrt{1-t^2}
+                    \sum_{k=0}^{h-1}J_{rk}C_k(t).
+\end{align*}
+Use these rows in \eqref{eq:gram-bound}, with
+$G_{\widehat{\mathcal A}}$ in place of $G_{\mathcal A}$.
+The first line defines the bulk map from $R_r$; its norm is at most
+$1+24=25$ by the contraction bound above. The maps in the next two
+lines have norms at most $3/2$ and $24$, respectively.
+The input triples $(R_r,V_r,\sum_kJ_{rk}C_k)$, in
+$L^2(\nu)\oplus L^2(\sigma)\oplus L^2(\sigma)$, have Gram matrix
+\[
+ K_N=H_N+JB^{\rm rep}J^{\mathsf T},
+\]
+so the squared norm of the combined map is at most
+$25^2+(3/2)^2+24^2=4813/4$. Consequently,
+\begin{equation}\label{eq:row-repair-reduction}
+ \det G_{\widehat{\mathcal A}}\le(4813/4)^n\det K_N,
+ \qquad J^{\mathsf T}H_N^{-1}J\le
+             (\langle a_i,a_j\rangle_\nu)_{i,j<h}.
+\end{equation}
+The second inequality is the contraction of an orthogonal projection.
+The paired rows and their distinct lowest powers show that $H_N$ is
+positive definite. All constant factors raised to $n$ disappear after
+division of logarithms by $n^2$.
+
+\subsection{The main rows: retain the spectrum of the row operator}
+
+The paired rows split the main volume into an explicit Jacobi volume
+and the extra volume contributed by a single operator. Put
+$a=12N$, $m=44N$, and
+\[
+ \mathcal E=t^{\ell-g}\R[t]_{<g},\qquad
+ \mathcal F=t^a\R[t]_{<m}.
+\]
+On the basis $R_d=t^\ell T_d(1/t)$, $0\le d<m$, define
+$\mathcal L R_d=t^{\ell-1}U_{d-1}(1/t)$, with $\mathcal LR_0=0$.
+Let $P_{\mathcal E}$ be orthogonal projection in $L^2(\sigma)$ and
+$\mathcal T=(I-P_{\mathcal E})\mathcal L$. Subtracting the paired
+rows gives $(0,-2V_d)$, $1\le d\le g$. Taking their Schur complement
+therefore yields
+\begin{equation}\label{eq:main-volume}
+ \det H_N=4^g\det Z_N\det A_N^{\rm row}
+                        \det(I+\mathcal T^*\mathcal T),
+\end{equation}
+where $Z_N$ and $A_N^{\rm row}$ are the Gram matrices of these $V_d$
+and of $R_0,\ldots,R_{m-1}$, respectively.
+
+The first two factors can be evaluated through monic Jacobi norms.
+For weight $x^u(1-x)^v$ on $[0,1]$, that norm is
+\[
+ \frac{j!\,\Gamma(j+u+1)\Gamma(j+v+1)\Gamma(j+u+v+1)}
+ {(2j+u+v+1)\Gamma(2j+u+v+1)^2}.
+\]
+The triangular leading coefficients of the Chebyshev bases contribute
+$2^{(m-1)(m-2)}$ and $2^{g(g-1)}$. Replacing the remaining bounded
+weight factors changes the logarithm by $O(n)$. Stirling's formula
+then gives the limiting base contribution
+\begin{align*}
+ b_0&=\tfrac{61}{72}\log2+2\mathcal I(1/4,0,11/24)
+                         +\mathcal I(13/6,0,1/12)\\
+ &=-0.243039538134996314659\ldots,\\
+ \mathcal I(u,v,T)&=\int_0^T
+ \{f(t)+f(t+u)+f(t+v)+f(t+u+v)-2f(2t+u+v)\}\dd t,
+\end{align*}
+Here $f(x)=x\log x$, with $f(0)=0$.
+
+We still need the last factor in \eqref{eq:main-volume}. If
+$s_1\ge\cdots\ge s_m\ge0$ are the singular values of $\mathcal T$, then
+\[
+ \log\det(I+\mathcal T^*\mathcal T)
+                =\sum_{j=1}^m\log(1+s_j^2).
+\]
+Bounding every $s_j$ by $s_1$ would charge the worst direction $m$ times.
+Instead, we approximate $\mathcal T$ by operators of successively larger
+rank. The error after a rank-$l$ approximation bounds $s_{l+1}$, allowing
+the later, smaller directions to contribute less to this sum.
+
+For $R\in\mathcal F$,
+put $q_R(x)=x^\ell R(1/x)$. The useful exact representation is
+\[
+ \mathcal LR(t)=\left[\frac{R(t)}{\sqrt{1-t^2}}\right]_{<\ell}
+ =\frac{R(t)}{\sqrt{1-t^2}}
+   -t^\ell\int\frac{q_R(x)}{1-xt}\dd\nu(x).
+\]
+The first term is a contraction from $L^2(\nu)$ to $L^2(\sigma)$.
+Approximate the second term by rational functions. Choose $g+l$ zeros
+$z_i\in(0,1)$ and $l$ poles $y_j\in(-1,1)$, and set
+\[
+ P(t)=\prod_i(t-z_i),\quad Q(t)=\prod_j(1-y_jt),\quad
+ W_*(t)=t^{\ell-g}P(t)/Q(t),\quad
+ B_*(x)=\frac{\prod_j(x-y_j)}{\prod_i(1-z_ix)}.
+\]
+Polynomial division gives
+\[
+ \frac{t^\ell}{1-xt}
+ =\frac{t^{\ell-g}v_x(t)}{Q(t)}
+       +\frac{W_*(t)B_*(x)}{1-xt},\qquad \deg v_x<g+l.
+\]
+The first space contains $\mathcal E$, so it has rank at most $l$
+after projection. This converts a uniform bound on the second term
+into a bound on the $(l+1)$st singular value.
+
+The necessary evaluation estimate is
+\[
+ |q_R(x)|\le C_N e^{n\mathcal E_0(x)}\|R\|_\nu,
+ \qquad C_N=O(n),
+\]
+where, with $\tau=11/24$ and $\alpha=1/4$,
+\[
+ \mathcal E_0(x)=\inf_{u>0}
+ \{\tau\log(1+u)+(\tau+\alpha)\log(1+(1-x^2)u)-\tau\log u\}.
+\]
+At $x=\pm1$ its value is zero. To obtain the estimate, expand in the
+orthonormal Jacobi basis and use the positive coefficient sum
+$\sum_i\binom K i\binom{K+a}i(1-x^2)^i$, $K=22N$.
+It is the coefficient of $u^K$ in
+$(1+u)^K(1+(1-x^2)u)^{K+a}$; bounding that coefficient at positive
+$u$ and minimizing gives the displayed field. The evaluation norms
+supply, for example, $C_N=\sqrt{\pi m(2K+a+2)}$.
+
+For $l/n\to r$, describe the zeros and poles by positive measures
+$p,q$ of masses $1/12+r,r$. The two potentials to bound are
+\begin{align*}
+ \mathcal U(t)&=\tfrac{13}{12}\log t
+       +\int\log|t-z|\dd p(z)-\int\log(1-yt)\dd q(y),\\
+ \mathcal V(x)&=\mathcal E_0(x)
+       +\int\log|x-y|\dd q(y)-\int\log(1-zx)\dd p(z).
+\end{align*}
+If their upper bounds sum to $e(r)\ge0$, the singular-value estimate
+is $s_{l+1}(\mathcal T)\le1+\exp(n(e(r)+o(1)))$.
+The accompanying rational atomic measures certify the following values.
+\begin{center}\small
+\begin{tabular}{rrrrrrr}
+\toprule
+$r$&0&.02&.04&.06&.08&.10\\
+$e(r)$&.43055090&.32535779&.24085716&.16822647&.10576227&.05324220\\
+\midrule
+$r$&.12&.14&.16&.18&.20&.22\\
+$e(r)$&.01233031&.00066131&.00029828&.00023083&.00019427&.00015768\\
+\midrule
+$r$&.24&&&&&\\
+$e(r)$&.00012891&&&&&\\
+\bottomrule
+\end{tabular}
+\end{center}
+Convex interpolation of the measures proves the linear interpolant is
+an upper bound between nodes. After $.24$, adding equal masses at
+$1/2$ to both measures cannot increase either potential, since
+$|(x-1/2)/(1-x/2)|\le1$ on $[-1,1]$. This extends the final bound
+to $r=11/12$. Rational masses can be rounded to integer multiplicities
+with only $O(1)$ residual nodes. Upper bounds for the logarithmic
+potentials persist in this passage; zeros make the potential smaller,
+not larger. At an index $j$ with $j/n\approx r$, the contribution
+$\log(1+s_j^2)$ is bounded on the leading scale by $2ne(r)$.
+Summing these contributions over the $m=11n/12$ singular values gives
+the integral $2\int_0^{11/12}e(r)\dd r$ after division by $n^2$.
+Together with the Jacobi contribution in \eqref{eq:main-volume}, this gives
+\begin{equation}\label{eq:main-row-bound}
+ \limsup\frac{\log\det H_N}{n^2}
+ \le b_0+2\int_0^{11/12}e(r)\dd r
+ =b_0+\frac{112701993}{2500000000}
+ =-0.19795874093499631465\ldots.
+\end{equation}
+The certificate uses $192$-bit interval arithmetic and a global
+curvature bound on each subinterval; it checks both potentials at all
+13 nodes, rather than sampling their maxima.
+
+\subsection{The repair: keep the negative interaction between degrees}
+
+The repair in \eqref{eq:commutator} is already part of the canonical
+matrix. It is distinct from the later arithmetic correction $UW$.
+The kernel simplifies to
+\[
+ K(x,t)=-x\sum_{j=0}^{h-1}(1-x)^j
+                       \sum_{r=0}^{M-1}\binom{r+j}{j}t^r.
+\]
+Let $A_{ij}=\langle-x(1-x)^i,-x(1-x)^j\rangle_\nu$ and
+$B_{ij}=\sum_{r=0}^{M-1}\binom{r+i}i\binom{r+j}j$.
+The elementary bound $\|\sum c_rt^r\|_\sigma^2\le M\sum c_r^2$
+and \eqref{eq:row-repair-reduction} give
+\[
+ \det K_N/\det H_N\le\det(I_h+MAB).
+\]
+For a $k$-element set $I$, let $A_I$ denote its principal minor.
+Cauchy--Binet and Gram Cauchy--Schwarz imply
+\begin{equation}\label{eq:compound-bound}
+ e_k(AB)\le\binom hk^2\max_{|I|=k}\det A_I\det B_I.
+\end{equation}
+Here $e_k(AB)$ is the $k$th elementary symmetric function of the
+eigenvalues of $AB$, so $\det(I_h+MAB)=\sum_{k=0}^h M^k e_k(AB)$.
+This keeps the interaction between the selected degrees. Replacing
+the minors by separate vector norms would discard that saving.
+
+Put $L_*=M+h=27h$ and $\mathcal H_I=(1/(i+j+1))_{i,j\in I}$.
+The two comparisons needed are
+\begin{equation}\label{eq:repair-minors}
+ \det A_I\le h^{2k}2^{2\sum_I j}\det\mathcal H_I,\qquad
+ \det B_I\le(Mh^2)^k
+       \frac{L_*^{2\sum_I j}}{\prod_I j!^2}\det\mathcal H_I.
+\end{equation}
+For the first, change variables $y=1-x$ and use $x^2\le1$.
+The polynomial evaluation inequality
+$\sup_{[0,L_0]}|f|^2\le(h^2/L_0)\int_0^{L_0}|f|^2$
+for $\deg f<h$, obtained from shifted Legendre polynomials, bounds
+the arcsine Gram by the uniform Gram on $[0,2]$.
+
+For the second comparison, the factorial Schur tableau identity
+\cite[Theorem~2 and (7)--(8), (14)]{BMN} gives, for increasing
+nonnegative $r_a$ and increasing $j_b<h$,
+\[
+ 0\le\det\left[\prod_{v=1}^{j_b}(r_a+v)\right]
+       \le\det[(r_a+h)^{j_b}].
+\]
+Indeed, divide by the Vandermonde and use the partition
+$\lambda_i=j_{k+1-i}-k+i$. Every tableau factor has shift between
+$1$ and $j_k<h$, so replacing it by $h$ increases every nonnegative
+summand. Multiplication by the Vandermonde proves the comparison.
+Apply it to each evaluation minor of $B_I$, divide column $j$ by
+$j!$, and then use the polynomial evaluation inequality on $[0,L_*]$.
+This proves \eqref{eq:repair-minors}. The binomial comparison is a
+comparison of determinants; no entrywise matrix ordering is asserted.
+
+The saving from these minors is visible with just two degrees. For
+$I=\{0,1\}$,
+\[
+ \mathcal H_I=\begin{pmatrix}1&1/2\\1/2&1/3\end{pmatrix},\qquad
+ \det\mathcal H_I=\frac1{12},\qquad
+ (\mathcal H_I)_{00}(\mathcal H_I)_{11}=\frac13.
+\]
+The determinant is four times smaller than the product of the separate
+squared norms. For general $i<j$, the corresponding ratio is
+\[
+ \frac{\det\mathcal H_{\{i,j\}}}
+      {(\mathcal H_{\{i,j\}})_{ii}(\mathcal H_{\{i,j\}})_{jj}}
+       =\left(\frac{j-i}{i+j+1}\right)^2.
+\]
+Nearby powers are nearly dependent, and their joint volume records this.
+Both comparisons in \eqref{eq:repair-minors} contain the same Cauchy
+minor, so their product contributes the factor
+$((j-i)/(i+j+1))^4$. These factors reduce the bound; their logarithms
+give the negative interactions retained below.
+
+The Cauchy determinant formula now gives
+\begin{align*}
+ \det K_N/\det H_N&\le(4M^2h^4)^h\max_{I\subset\{0,\ldots,h-1\}}\mathcal W_I,\\
+ \mathcal W_I&=\prod_{j\in I}\left(\frac{(2L_*)^j}{j!}\right)^2
+     \prod_{i<j\in I}\left|\frac{i-j}{i+j+1}\right|^4.
+\end{align*}
+Use the midpoint lattice $x_j=(j+1/2)/h$. Stirling's formula turns
+the first product into the field
+$w_0(x)=2x(\log(54/x)+1)$. The pair interaction is
+$G_0(x,y)=\log|(x-y)/(x+y)|$.
+
+Its Chebyshev expansion is
+$G_0=-4\sum_{k\ge1,\ k\ \mathrm{odd}}T_k(x)T_k(y)/k$.
+To make the passage to a uniform bound legitimate, damp by $\rho^k$,
+$0<\rho<1$. The damped kernel is
+\[
+ G_\rho(x,y)=\tfrac12\log\frac{D_0-D_1}{D_0+D_1},\quad
+ D_0=(1-\rho^2)^2+4\rho^2(x^2+y^2),\quad
+ D_1=4\rho(1+\rho^2)xy.
+\]
+On $[0,1]^2$, $G_0\le G_\rho$. After cross multiplication the
+required difference is
+$4xy(1-\rho)^2((1+\rho)^2-2\rho(x^2+y^2))\ge0$.
+To expose the squares in this interaction, define the averaged moments
+\[
+ m_k(I)=\frac1h\sum_{j\in I}T_k(x_j),\qquad k\ge1\text{ odd}.
+\]
+The field contribution is at most $h\sum_{j\in I}w_0(x_j)$, using
+$j!\ge(j/e)^j$ and the monotonicity of $w_0$ on $[0,1]$.
+Replacing $G_0$ by $G_\rho$ and inserting the diagonal in the pair
+sum gives
+\[
+ \frac{\log\mathcal W_I}{h^2}
+ \le\frac1h\sum_{j\in I}w_0(x_j)
+       -8\sum_{k\ {\rm odd}}\frac{\rho^km_k(I)^2}{k}
+       +\frac4h\log\frac{1+\rho}{1-\rho}.
+\]
+Here the last term removes the inserted diagonal:
+$G_\rho(x,x)\ge-2\log((1+\rho)/(1-\rho))$.
+It tends to zero for fixed $\rho$ as $h\to\infty$.
+
+Choose any finitely supported real sequence $v_k$ on the positive
+odd indices. The elementary inequality
+\[
+ -m_k(I)^2\le v_k^2-2v_km_k(I)
+\]
+replaces each negative square by a term linear in the moments.
+After substituting their definition, site $x_j$ contributes the field
+$w_0(x_j)-16\sum_{k\ {\rm odd}}\rho^kv_kT_k(x_j)/k$ if it belongs
+to $I$, and zero otherwise. Its contribution is therefore at most
+the positive part of this field. Summing over all sites removes the
+dependence on $I$. First let $h\to\infty$, so the full lattice sum
+becomes an integral, and then let $\rho\uparrow1$. Since $n=24h$,
+the resulting bound is
+\begin{equation}\label{eq:repair-dual}
+ \limsup\frac{\log(\det K_N/\det H_N)}{n^2}
+ \le\frac1{576}\left\{
+ 8\sum_{k\ \mathrm{odd}}\frac{v_k^2}{k}
+ +\int_0^1\left(w_0(x)-16\sum_{k\ \mathrm{odd}}\frac{v_kT_k(x)}k\right)_+\dd x
+ \right\}.
+\end{equation}
+This order of limits avoids using an undamped logarithmic series on
+the diagonal. It also retains the occupancy restriction on $I$.
+
+The supplied trial uses odd indices through $79$ and rational
+coefficients with denominator $10^{12}$. A $512$-bit calculation on
+$16384$ intervals bounds the positive-part integral by
+$0.85979724477769159413$. On each interval the polynomial's second
+derivative is bounded by
+$\frac{16}{3}\sum |v_k|k(k^2-1)$; the field's second derivative is
+negative. An affine upper bound, with this quadratic error added,
+can be integrated exactly even where it crosses zero. The result is
+\begin{equation}\label{eq:repair-rate}
+ \limsup\frac{\log(\det K_N/\det H_N)}{n^2}
+ \le0.004978210597652675202<0.00498.
+\end{equation}
+
+\subsection{The columns: an energy bound with certified maxima}
+
+Expanding the column Gram determinant twice with the Cauchy determinant
+formula expresses it as a positive integral:
+\[
+ \det G_Y=\frac1{(n!)^3}\int
+ \frac{V(t)^2V(s)^2V(u)^2
+       \prod_i w(t_i)^2s_i^b(1-s_i)^qu_i^b(1-u_i)^q}
+      {\prod_{i,j}(1-t_is_j)(1-t_iu_j)}
+ \prod_i\dd\nu(t_i)\dd s_i\dd u_i,
+\]
+where $V$ denotes the Vandermonde, $t_i\in(-1,1)$ and $s_i,u_i\in(0,1)$.
+This positivity permits a uniform bound on the integrand.
+Make the substitution $t=2x/(1+x^2)$, and put
+\[
+ \beta=7/48,\quad\eta=1/24,\quad\gamma=1/12,
+\]
+\[
+ W_0(x)=\beta\log|x|+2\eta\log(1-x)-(\beta+\eta)\log(1+x^2),
+ \qquad Z_0(s)=\beta\log s+\gamma\log(1-s).
+\]
+For any finite sequences $p_k,v_k$, the energy calculation gives
+\begin{align}\label{eq:column-dual}
+ \limsup\frac{\log\det G_Y}{2n^2}
+ \le{}&(\beta-1)\log2+\sum_k\frac{p_k^2}{k}
+                         +\frac12\sum_k\frac{v_k^2}{k}\nonumber\\
+ &+\sup_{-1\le x\le1}\left(W_0(x)-2\sum_k\frac{p_kT_k(x)}k
+                                      -\sum_k\frac{v_kx^k}k\right)\nonumber\\
+ &+\sup_{0\le s\le1}\left(Z_0(s)+2\sum_k\frac{v_kT_k(s)}k\right).
+\end{align}
+
+For completeness, the square completion behind this estimate keeps
+three empirical measures, one each for $x,s,u$. Let $A_k$ be the
+Chebyshev moments of the first, $B_k$ its power moments, and $C_k,D_k$
+the Chebyshev moments of the other two. The interaction, apart from
+its constant, is
+\[
+ -\sum_k\frac{A_k^2}{k}
+ -\frac14\sum_k\frac{(B_k-2C_k)^2+(B_k-2D_k)^2}{k}.
+\]
+Applying $-a^2\le p^2-2pa$ gives \eqref{eq:column-dual}.
+To justify the expansion uniformly at endpoints and repeated points,
+use dampings $\tau=1-\varepsilon$ for the $x$ Chebyshev terms,
+$\rho(x)=1-\varepsilon(1-x)$ for its power terms, and
+$\sigma(s)=1-\varepsilon\sqrt{1-s}$ for the $s,u$ terms.
+The kernel comparison costs $O(\varepsilon)$ on the $n^2$ scale;
+diagonal errors are $O_\varepsilon(n)$, and the endpoint logarithms
+are absorbed by the positive exponents $\beta,\eta,\gamma$.
+Let $n\to\infty$ first, then $\varepsilon\downarrow0$. This yields
+the displayed bound for the full integral, not just its interior.
+
+For the rational degree-$200$ trial, the two maxima are bounded by
+\[
+ -\frac{1798431303}{5000000000},\qquad
+ -\frac{7455295417}{5000000000},
+\]
+respectively. Clearing the denominators in the derivatives gives exact
+polynomials. Sturm counts give $96$ roots on $(-1,0)$, $89$ on $(0,1)$
+for the first function, and $103$ on $(0,1)$ for the second.
+The certificate encloses all $288$ roots, evaluates every critical
+value and the regular endpoint $x=-1$, and handles the other endpoints
+by their logarithmic limits. It proves
+\begin{equation}\label{eq:column-rate}
+ \limsup\frac{\log\det G_Y}{n^2}
+ \le-3.54828704396305087125.
+\end{equation}
+
+\subsection{The margin and the estimate still missing}\label{subsec:remaining-estimate}
+
+Combining \eqref{eq:gram-bound}, \eqref{eq:row-repair-reduction},
+\eqref{eq:main-row-bound}, \eqref{eq:repair-rate} and
+\eqref{eq:column-rate} proves Theorem~\ref{thm:canonical}.
+Taking half the sum of the three contributions listed at the start of
+the section gives the stated decay bound.
+The unrounded repair bound gives a decay constant of
+$1.87063378715019725535\ldots$. Its margin over the arithmetic cost is
+$0.00001978407233866567\ldots$.
+
+Where $M_N(\theta)$ is invertible, the determinant lemma writes the
+effect of a later integer correction as
+\[
+ P_{N,U}(\theta)=\Delta_N
+              \det(I_b+WM_N(\theta)^{-1}U).
+\]
+For example, with the induced maximum-row-sum norm, it would suffice
+to choose admissible corrections along the prime scales such that
+\begin{equation}\label{eq:missing-correction-bound}
+ \limsup\frac1n\log\bigl(1+\|WM_N(\theta)^{-1}U\|_\infty\bigr)
+ <0.00012952711656002246.
+\end{equation}
+Indeed, the logarithm of the extra determinant is at most $b$ times
+this logarithm, and $b/n=7/48$. The unrounded repair allows the slightly
+larger threshold $0.00013566221032227892$. These are sufficient
+conditions, not estimates that have been proved. One could also bound
+the corrected determinant directly and avoid the inverse.
+
+Appendix~\ref{app:audit} records the independent audit's scope.
+The next section examines ways to obtain the missing correction estimate
+and the limitations established for those approaches.

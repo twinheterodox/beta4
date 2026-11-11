@@ -1,0 +1,116 @@
+{
+  "n": 1,
+  "pole_order": 4,
+  "grid_length_ratio": 1,
+  "zero_multiplicity": 3,
+  "numerator_degree": 3,
+  "degree_excess": 1,
+  "tail_first_odd_integer": 1,
+  "scalar_normalization": "2",
+  "support": [
+    4,
+    6
+  ],
+  "partial_fraction_coefficients": [
+    [
+      "0",
+      "0",
+      "-1/16",
+      "1/8",
+      "1/8"
+    ],
+    [
+      "0",
+      "0",
+      "1/16",
+      "1/8",
+      "-1/8"
+    ]
+  ],
+  "reflection_identities": 8,
+  "exact_value_and_second_derivative_checks": 6,
+  "exact_prefix_derivative_checks": 0,
+  "rational_boundary_difference": "0",
+  "full_sum": {
+    "constant": "-5/16",
+    "beta_coefficients": {
+      "4": "-3/8",
+      "6": "5/2"
+    },
+    "period_content": "1/8",
+    "primitive_period_vector": [
+      "-3",
+      "20"
+    ],
+    "normalized_constant": "-5/2",
+    "boundary_denominator": "2",
+    "primitive_vector": [
+      "-5",
+      "-6",
+      "40"
+    ],
+    "primitive_multiplier": "16",
+    "precision_bits": 582,
+    "primitive_value": "[29.01374157829089340101349571503799505924 +/- 5.84e-40]",
+    "primitive_value_certified_nonzero": true,
+    "primitive_abs_less_than_one": false,
+    "log_abs_primitive_per_n": "[3.367769565283458625677802442277846065622 +/- 3.50e-40]",
+    "raw_log_abs_per_n": "[0.5951808430436773880088739564451397933197 +/- 4.98e-41]",
+    "multiplier_log_per_n": "[2.772588722239781237668928485832706272302 +/- 5.5e-43]",
+    "boundary_log_per_n": "[0.6931471805599453094172321214581765680755 +/- 1.36e-43]",
+    "max_primitive_coefficient_bits": 6,
+    "prime_profile": {
+      "factored_through": 4,
+      "valuations": [
+        {
+          "prime": 2,
+          "exponent": 4
+        }
+      ],
+      "residual_numerator": "1",
+      "residual_denominator": "1"
+    }
+  },
+  "tail_sum": {
+    "constant": "-5/16",
+    "beta_coefficients": {
+      "4": "-3/8",
+      "6": "5/2"
+    },
+    "period_content": "1/8",
+    "primitive_period_vector": [
+      "-3",
+      "20"
+    ],
+    "normalized_constant": "-5/2",
+    "boundary_denominator": "2",
+    "primitive_vector": [
+      "-5",
+      "-6",
+      "40"
+    ],
+    "primitive_multiplier": "16",
+    "precision_bits": 582,
+    "primitive_value": "[29.01374157829089340101349571503799505924 +/- 5.84e-40]",
+    "primitive_value_certified_nonzero": true,
+    "primitive_abs_less_than_one": false,
+    "log_abs_primitive_per_n": "[3.367769565283458625677802442277846065622 +/- 3.50e-40]",
+    "raw_log_abs_per_n": "[0.5951808430436773880088739564451397933197 +/- 4.98e-41]",
+    "multiplier_log_per_n": "[2.772588722239781237668928485832706272302 +/- 5.5e-43]",
+    "boundary_log_per_n": "[0.6931471805599453094172321214581765680755 +/- 1.36e-43]",
+    "max_primitive_coefficient_bits": 6,
+    "prime_profile": {
+      "factored_through": 4,
+      "valuations": [
+        {
+          "prime": 2,
+          "exponent": 4
+        }
+      ],
+      "residual_numerator": "1",
+      "residual_denominator": "1"
+    }
+  },
+  "extra_boundary_log_cost_per_n": "0",
+  "seconds": 0.002151333959773183
+}

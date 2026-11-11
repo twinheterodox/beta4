@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "scope": "Finite computational replay; not an independent proof audit.",
+  "suites": {
+    "isolation": [
+      {
+        "script": "verify.py",
+        "passed": true,
+        "seconds": 0.326
+      },
+      {
+        "script": "check_dilation.py",
+        "passed": true,
+        "seconds": 0.485
+      },
+      {
+        "script": "polynomial_gate.py",
+        "passed": true,
+        "seconds": 0.177
+      }
+    ]
+  },
+  "work_directory": "build/checks/replay-s4vqvsj3"
+}

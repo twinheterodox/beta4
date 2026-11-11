@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "scope": "Finite computational replay; not an independent proof audit.",
+  "suites": {
+    "small": [
+      {
+        "script": "verify.py",
+        "passed": true,
+        "seconds": 0.337
+      }
+    ]
+  },
+  "work_directory": "build/checks/replay-zshsf2gw"
+}

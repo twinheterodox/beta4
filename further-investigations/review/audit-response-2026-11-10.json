@@ -1,0 +1,62 @@
+{
+  "date": "2026-11-10",
+  "scope": "Response by the assembling assistant to the supplied independent audit; not an independent re-audit of the revised artifact.",
+  "audit_report": "review/independent-audit-2026-11-10.txt",
+  "audited_pdf_sha256": "685db02e02d0f0fa77d32a6ade4c06d5519567a311343738615af4a7f025070e",
+  "revised_pdf": "output/pdf/further-investigations.pdf",
+  "revised_pdf_sha256": "8f8b8e46d1cf74d75203d877531249dd168c49610054b8db2c9c36fdb6a96a06",
+  "revised_pdf_pages": 41,
+  "corrections": [
+    "Section 6.5 explicitly assumes a common positive integer multiplier clearing every corrected determinant polynomial throughout the lattice; Theorem 4.2 and R08 Section 4 supply it for the scalar and enlarged admissible classes.",
+    "Section 6.2 uses zero is unattainable in both statements requiring that hypothesis.",
+    "Section 6.4 defines the Gram--Schmidt covariance upper bound Sigma and distinguishes it from actual rounding covariance."
+  ],
+  "mathematical_response_check": "Compared the added clearing hypothesis with Theorem 4.2 and R08 Section 4.1, and the covariance formulation with R22 Section 4. The canonical estimate and certificate data are unchanged.",
+  "verification": {
+    "latex_passes": 3,
+    "unresolved_references": false,
+    "overfull_or_underfull_boxes": false,
+    "pages_rendered": 41,
+    "changed_pages_visually_reviewed": [
+      2,
+      4,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41
+    ],
+    "full_page_inspection": [
+      30,
+      31,
+      41
+    ],
+    "clipping_collisions_or_broken_tables_found": false,
+    "original_research_files_unchanged": 760,
+    "evidence_and_checker_files_unchanged": 88,
+    "evidence_manifest_hashes_passed": 85,
+    "prior_assistant_replay_suites_passed": 6,
+    "prior_assistant_replay_scripts_passed": 13,
+    "certificate_suites_rerun_during_this_response": false,
+    "certificate_replay_reason": "No checker or evidence input changed. The prior assembling-assistant replay and the new independent audit replay retain their separate recorded scopes."
+  },
+  "publication_tree_review": {
+    "files_checked": 524,
+    "pdfs_checked": 7,
+    "archives_found": 0,
+    "private_identifiers_found": false,
+    "unexpected_email_addresses_found": false,
+    "existing_internal_readme_alias_verified": true,
+    "evidence_manifest_hashes_checked": 85
+  },
+  "independent_reaudit_of_revised_artifact": false
+}

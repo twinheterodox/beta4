@@ -1,0 +1,84 @@
+Independent audit of the further-investigations supplement
+Reported 10 November 2026
+
+Provenance and audited artifact
+  This is a public summary of the independent audit supplied by the author.
+  The auditor's identity and model were not specified. Results below are
+  attributed to that report; they are not a new replay by the assembling
+  assistant.
+
+  Title: Further investigations of irrationality constructions for Dirichlet beta values
+  Audited PDF: output/pdf/further-investigations.pdf, 41 pages, 10 November 2026.
+  Audited SHA-256:
+    685db02e02d0f0fa77d32a6ade4c06d5519567a311343738615af4a7f025070e
+  This hash identifies the pre-response PDF, not the revised publication PDF.
+
+Outcome
+  The audit identified one missing hypothesis in Section 6.5. The canonical
+  determinant bound in Theorem 5.1 survives: its decay rate is at least
+  1.87063289244902359295, exceeding the arithmetic leading cost by more than
+  0.00001888937116500327 on the n^2 scale. Uniform control of the required
+  integer corrections remains open. No irrationality or independence
+  theorem follows from this audit.
+
+Mathematical finding
+  Equation (6.9) holds for the general lattice U=U_0+Z Gamma under the
+  polynomial left-inverse hypothesis. The inference a_N C_E in Z_{>0}
+  additionally requires a_N P_{N,U}(0) to be integral for every correction
+  in that lattice. Integrality and invertibility of Gamma do not supply
+  this property. Theorem 4.2 supplies it for the scalar congruence class;
+  Section 4 of R08 supplies it for the specific enlarged admissible class.
+  With that hypothesis, the obstruction follows for both classes.
+
+Exposition findings
+  Section 6.2: "If zero is unattainable" is the intended hypothesis.
+  "If zero is excluded" could mean discarding an attainable zero; when
+  c=1, the least nonzero absolute value is delta.
+
+  Section 6.4: define Sigma and distinguish the Gram--Schmidt covariance
+  upper bounds from actual rounding covariances, which depend on the
+  fractional parts. The triangular-minor comparison concerns the bounds.
+
+Independent verification scope
+  General arguments checked:
+    - Polynomial isolation and prime dilation.
+    - The real Pade integral and rate.
+    - Determinant progressions and rounding.
+    - The small-set residue formula.
+    - Digamma nonvanishing.
+
+  Mixed-moment arithmetic, prime-scale nonvanishing and the canonical Gram
+  estimate were checked against the pinned 8 November independent audit.
+  That earlier audit independently reconstructed the degree-200 column
+  certificate and checked all 288 critical points. Its scope is preserved
+  separately in independent-audit-summary.txt.
+
+  All 13 packaged checks passed in a scratch copy. Fresh independent code:
+    - Checked 240 Pade clearing cases.
+    - Compared 18 product integrals with their linear forms.
+    - Reproduced both degree-25 small-set tables.
+    - Reproduced the stated prime-valuation examples.
+  The larger digamma table was checked against its saved enclosures.
+  The remaining historical experiments were outside the independent replay.
+
+  The cited Kawashima--Poels theorems and classical factorial Schur identity
+  were accepted inputs. This is a mathematical audit, not formal verification
+  or a new audit of every literature dependency.
+
+Response by the assembling assistant
+  Section 6.5 now explicitly assumes a positive integer multiplier a_N
+  with a_N P_{N,U_0+Z Gamma}(X) in Z[X] for every integer correction Z.
+  This provides integrality at zero and the later rational-evaluation
+  clearing factor. Theorem 4.2 and R08, Section 4, are cited for the scalar
+  and enlarged admissible classes, respectively. The general lattice
+  estimate (6.9) remains separate from this additional arithmetic hypothesis.
+
+  Both ambiguous references to zero being "excluded" were corrected.
+  The rounding comparison now defines Sigma from the Gram--Schmidt input
+  vectors and explicitly distinguishes the bound from actual covariance.
+  The introduction, audit appendix and repository guides record the new
+  audit without treating the revised artifact as independently re-audited.
+
+  Subsequent build, layout, preservation and publication checks are recorded
+  in audit-response-2026-11-10.json. Current source and PDF hashes appear in
+  build.json. These assistant checks are separate from the independent audit.

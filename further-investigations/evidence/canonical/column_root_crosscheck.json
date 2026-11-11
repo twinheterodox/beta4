@@ -1,0 +1,17 @@
+{
+  "x": {
+    "root_counts": [
+      96,
+      89
+    ],
+    "sign_change_brackets": 185
+  },
+  "s": {
+    "root_counts": [
+      103
+    ],
+    "sign_change_brackets": 103
+  },
+  "seconds": 8.928394667978864,
+  "scope": "Independent exact Sturm counts match the complete Bernstein--Descartes isolation; every recorded bracket is disjoint and has a sign change."
+}

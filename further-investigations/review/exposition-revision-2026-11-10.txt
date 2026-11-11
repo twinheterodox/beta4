@@ -1,0 +1,85 @@
+Exposition revision
+10 November 2026
+
+Artifact
+  Further investigations of irrationality constructions for Dirichlet beta values
+  41-page snapshot before the independent audit reported on 10 November.
+  PDF SHA-256: 685db02e02d0f0fa77d32a6ade4c06d5519567a311343738615af4a7f025070e
+  Revises the original 37-page assembly; its review retains its original scope.
+  The later audit and response are recorded in independent-audit-2026-11-10.txt.
+  Current source and PDF hashes are recorded in build.json.
+
+Changes
+  1. Defined the mixed matrix and determinant before discussing completion
+     invariance. Explained the column band, the free low coefficients, endpoint
+     zeros, paired rows, degree cutoffs and fixed parameter proportions.
+     Distinguished canonical completion from the later arithmetic corrections.
+  2. Moved the row/repair/column contribution table to the start of the decay
+     proof. Connected singular values to the logarithmic determinant sum.
+     Added a worked two-degree Gram minor and its general interaction factor.
+  3. Corrected the closing statement about coefficient bounds: what is needed
+     is uniform control of attainable determinants. Coefficient-size bounds
+     are one possible route, not an arithmetic requirement.
+  4. Defined the alternating sum producing the isolation forms, the source
+     2-adic scalar polynomial and its coefficient matrix, the digamma function,
+     and the row and column node sets. Made the formal matrix parameter and
+     the rational target explicit.
+  5. Rewrote the abstract around the targets, established outcomes and remaining
+     correction estimate. Removed the record-count detail from the abstract.
+  6. Added retained beta values to the small-set table, explained the five-value
+     comparison, and defined the multipliers, signs and normalizations in the
+     digamma table and rounding comparison.
+  7. Moved the complete record catalog to Appendix A and consolidated the full
+     independent-audit and reproduction account in Appendix B. Updated guides,
+     cross-references and catalog locations.
+  8. Made the zero-residue choice in the first large-prime range explicit.
+     At N=p>260, this explains why every admissible arithmetic correction is
+     divisible by p^2, as required by the nonvanishing proposition.
+  9. Displayed the determinant-preserving completion and its three row terms.
+     Distinguished the Gram matrix of the replaced rows from the original one,
+     and derived 4813/4 from the three operator bounds 25, 3/2 and 24.
+  10. Defined the averaged Chebyshev moments and displayed their negative-square
+      contribution. Explained the elementary square inequality, the resulting
+      site contributions and the passage to the positive-part integral.
+      Restored the source argument's finite diagonal-error bound 4h log(...),
+      replacing the earlier 2h log(...). This term vanishes on the h^2 scale,
+      so the limiting estimate and all certified constants are unchanged.
+      Repaired three pre-existing malformed odd-index labels in the sums.
+  11. Kept the actual ratio r_n=N/n in the Pade product estimate with its
+      O(log n) error. Used joint continuity of the profile to pass uniformly
+      to the limiting ratio r after division by n. This removes an implicit
+      convergence-rate assumption; the stated theorem and constants are unchanged.
+
+Validation
+  Read the changes against mathematical-exposition.txt. The abstract states
+  results and scope without a detailed argument. The original mathematical
+  conclusions, hypotheses and certified numerical bounds are retained.
+  Checked the new two-degree example by exact rational arithmetic and its
+  general ratio by symbolic simplification. Checked the new matrix definition
+  and comparison normalizations against records R01, R04, R15 and R22.
+  All 89 pre-existing checker, evidence and source-ledger files are unchanged.
+  The six earlier successful certificate suites were not rerun for these
+  exposition edits. Their inputs and code remain the same.
+  The three-pass LaTeX build has no unresolved or multiply defined references,
+  overfull boxes or underfull boxes. All 29 record labels occur exactly once.
+  The first revision was visually checked at 40 pages. The follow-up additions
+  were checked against the arguments in records R01, R04, R18 and R19.
+  Fresh rational arithmetic verified the replacement completion's band and
+  degree conditions for all 48 actual rows at N=1 and the norm constant 4813/4.
+  The diagonal-error coefficient follows from converting the pair sum to the
+  full double sum; the general linearization is the displayed square inequality.
+  Visually inspected all 41 rendered pages of the follow-up revision, with
+  detailed inspection of the added passages. After the sum-label repairs,
+  re-rendered every page and reinspected the only changed pages (24 and 25).
+  The final Pade-ratio correction was checked directly from the integral
+  formula, including continuity at u=0 and r=1/2. Rebuilt and rendered all
+  41 pages; the only changed pages were 11--17, which were visually checked.
+  No numerical certificate inputs or checkers changed in this correction.
+  No clipping, collisions or broken tables were observed.
+
+Scope
+  This is an exposition and layout revision, not a new independent proof audit.
+  The canonical estimate still does not supply the missing uniform control of
+  integer corrections. No new irrationality or independence result is asserted.
+  Original research records and earlier papers remain unchanged.
+  No commit, push or external submission was made.

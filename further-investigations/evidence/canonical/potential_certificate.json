@@ -1,0 +1,243 @@
+{
+  "records": [
+    {
+      "r": "0",
+      "output": {
+        "kind": "output",
+        "upper": "-35792419/100000000",
+        "leaves": 252,
+        "interval_evaluations": 472,
+        "max_depth": 7
+      },
+      "input": {
+        "kind": "input",
+        "upper": "78847509/100000000",
+        "leaves": 27,
+        "interval_evaluations": 53,
+        "max_depth": 11
+      },
+      "envelope_upper": "4305509/10000000"
+    },
+    {
+      "r": "1/50",
+      "output": {
+        "kind": "output",
+        "upper": "-2616033/6250000",
+        "leaves": 286,
+        "interval_evaluations": 537,
+        "max_depth": 7
+      },
+      "input": {
+        "kind": "input",
+        "upper": "74392307/100000000",
+        "leaves": 404,
+        "interval_evaluations": 759,
+        "max_depth": 10
+      },
+      "envelope_upper": "32535779/100000000"
+    },
+    {
+      "r": "1/25",
+      "output": {
+        "kind": "output",
+        "upper": "-9467559/20000000",
+        "leaves": 307,
+        "interval_evaluations": 576,
+        "max_depth": 7
+      },
+      "input": {
+        "kind": "input",
+        "upper": "71423511/100000000",
+        "leaves": 574,
+        "interval_evaluations": 1078,
+        "max_depth": 9
+      },
+      "envelope_upper": "6021429/25000000"
+    },
+    {
+      "r": "3/50",
+      "output": {
+        "kind": "output",
+        "upper": "-52270329/100000000",
+        "leaves": 318,
+        "interval_evaluations": 596,
+        "max_depth": 9
+      },
+      "input": {
+        "kind": "input",
+        "upper": "4318311/6250000",
+        "leaves": 640,
+        "interval_evaluations": 1193,
+        "max_depth": 9
+      },
+      "envelope_upper": "16822647/100000000"
+    },
+    {
+      "r": "2/25",
+      "output": {
+        "kind": "output",
+        "upper": "-56650279/100000000",
+        "leaves": 317,
+        "interval_evaluations": 592,
+        "max_depth": 9
+      },
+      "input": {
+        "kind": "input",
+        "upper": "33613253/50000000",
+        "leaves": 820,
+        "interval_evaluations": 1536,
+        "max_depth": 9
+      },
+      "envelope_upper": "10576227/100000000"
+    },
+    {
+      "r": "1/10",
+      "output": {
+        "kind": "output",
+        "upper": "-30214503/50000000",
+        "leaves": 317,
+        "interval_evaluations": 590,
+        "max_depth": 7
+      },
+      "input": {
+        "kind": "input",
+        "upper": "32876613/50000000",
+        "leaves": 883,
+        "interval_evaluations": 1646,
+        "max_depth": 9
+      },
+      "envelope_upper": "266211/5000000"
+    },
+    {
+      "r": "3/25",
+      "output": {
+        "kind": "output",
+        "upper": "-7930211/12500000",
+        "leaves": 351,
+        "interval_evaluations": 657,
+        "max_depth": 6
+      },
+      "input": {
+        "kind": "input",
+        "upper": "64674719/100000000",
+        "leaves": 1030,
+        "interval_evaluations": 1919,
+        "max_depth": 7
+      },
+      "envelope_upper": "1233031/100000000"
+    },
+    {
+      "r": "7/50",
+      "output": {
+        "kind": "output",
+        "upper": "-8039199/12500000",
+        "leaves": 337,
+        "interval_evaluations": 628,
+        "max_depth": 7
+      },
+      "input": {
+        "kind": "input",
+        "upper": "64379723/100000000",
+        "leaves": 562,
+        "interval_evaluations": 970,
+        "max_depth": 8
+      },
+      "envelope_upper": "66131/100000000"
+    },
+    {
+      "r": "4/25",
+      "output": {
+        "kind": "output",
+        "upper": "-514733/800000",
+        "leaves": 354,
+        "interval_evaluations": 663,
+        "max_depth": 7
+      },
+      "input": {
+        "kind": "input",
+        "upper": "64371453/100000000",
+        "leaves": 442,
+        "interval_evaluations": 730,
+        "max_depth": 10
+      },
+      "envelope_upper": "7457/25000000"
+    },
+    {
+      "r": "9/50",
+      "output": {
+        "kind": "output",
+        "upper": "-16086163/25000000",
+        "leaves": 393,
+        "interval_evaluations": 741,
+        "max_depth": 7
+      },
+      "input": {
+        "kind": "input",
+        "upper": "12873547/20000000",
+        "leaves": 738,
+        "interval_evaluations": 1322,
+        "max_depth": 8
+      },
+      "envelope_upper": "23083/100000000"
+    },
+    {
+      "r": "1/5",
+      "output": {
+        "kind": "output",
+        "upper": "-64347429/100000000",
+        "leaves": 389,
+        "interval_evaluations": 733,
+        "max_depth": 7
+      },
+      "input": {
+        "kind": "input",
+        "upper": "8045857/12500000",
+        "leaves": 604,
+        "interval_evaluations": 1054,
+        "max_depth": 9
+      },
+      "envelope_upper": "19427/100000000"
+    },
+    {
+      "r": "11/50",
+      "output": {
+        "kind": "output",
+        "upper": "-64350211/100000000",
+        "leaves": 392,
+        "interval_evaluations": 739,
+        "max_depth": 7
+      },
+      "input": {
+        "kind": "input",
+        "upper": "64365979/100000000",
+        "leaves": 554,
+        "interval_evaluations": 954,
+        "max_depth": 10
+      },
+      "envelope_upper": "1971/12500000"
+    },
+    {
+      "r": "6/25",
+      "output": {
+        "kind": "output",
+        "upper": "-32176481/50000000",
+        "leaves": 388,
+        "interval_evaluations": 732,
+        "max_depth": 7
+      },
+      "input": {
+        "kind": "input",
+        "upper": "64365853/100000000",
+        "leaves": 433,
+        "interval_evaluations": 712,
+        "max_depth": 13
+      },
+      "envelope_upper": "12891/100000000"
+    }
+  ],
+  "extra_logdet_upper_rational": "112701993/2500000000",
+  "extra_logdet_upper": "[0.045080797200000000000000000000000000 +/- 3e-41]",
+  "precision_bits": 192,
+  "seconds": 5.273153854999691,
+  "scope": "Global upper bounds using concavity and Arb subdivision. Operator and asymptotic passage are proved separately."
+}

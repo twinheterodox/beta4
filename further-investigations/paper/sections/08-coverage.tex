@@ -1,0 +1,140 @@
+\section{Other tested variants}\label{sec:variants}
+
+\subsection{The three-shift digamma construction}
+
+Before the mixed moments, \rec{R15} adapted Litsey's divided-difference
+construction and rational-antidifference argument
+\cite[Sections~3--6]{Litsey}. It gives an all-slope nonvanishing result,
+although the arithmetic and real estimates did not close in the tests.
+Let $\psi=\Gamma'/\Gamma$ be the digamma function. For rational
+$\lambda$, put
+\[
+ F(z)=\psi(z+1/4)+(24\lambda-5/2)\psi(z+1/2)
+                       +(3/2-24\lambda)\psi(z+1).
+\]
+The weights sum to zero, and $F'(0)=8(G+\lambda\pi^2)$. Its increment
+\[
+ \Delta(z)=F(z+1)-F(z)=\frac1{z+1/4}
+ +\frac{24\lambda-5/2}{z+1/2}+
+ \frac{3/2-24\lambda}{z+1}
+\]
+is rational. At nonnegative integer nodes define
+$f_t=\sum_{j=0}^{t-1}\Delta(j)$ and
+$d_t=\sum_{j=0}^{t-1}\Delta'(j)$. Choose a row-node set $R$ and a
+column-node set $C$, each of size $N=r+m$, whose union is
+$\{0,\ldots,r+2m-1\}$ and whose intersection is a consecutive block
+of $r\ge1$ nodes. The matrix entries, for $t\in R$ and $u\in C$, are
+\[
+ M(t,u;X)=\frac{f_u-f_t}{u-t}\quad(t\ne u),\qquad
+ M(t,t;X)=X+d_t.
+\]
+At $X=F'(0)=8(G+\lambda\pi^2)$, these entries are the divided
+differences of $F$, with $F'(t)$ on a common-node diagonal.
+The determinant is a rational polynomial in this single target.
+The following proposition supplies nonvanishing for the determinant
+together with its common-node cofactors.
+
+\begin{proposition}\label{prop:digamma-rank}
+For every complex $X$, this square matrix has corank at most one.
+If it is singular, some common-node diagonal cofactor is nonzero.
+Thus the determinant and these cofactors have no common complex zero.
+\end{proposition}
+\begin{proof}
+Let $Q_C(z)=\prod_{u\in C}(z-u)$. A right kernel vector corresponds to
+polynomials $U,W$ of degree below $N$ through
+\[
+ U=Q_C\sum_{u\in C}\frac{v_u}{z-u},\qquad
+ W=Q_C\sum_{u\in C}\frac{v_uf_u}{z-u}.
+\]
+The kernel equations are precisely $W(t)=f_tU(t)$ at every union
+node and $W'(t)=f_tU'(t)+(X+d_t)U(t)$ at each common node.
+The transpose has the same interpolation conditions.
+
+For two such pairs, $W_1U_2-W_2U_1$ has $2N$ zeros counted with
+multiplicity and degree at most $2N-2$, so it vanishes. All pairs
+therefore have the same reduced ratio. If the kernel dimension is
+$d$, canceling the highest $d-1$ coefficients of their polynomial
+multipliers gives a pair of maximum degree at most $N-d$.
+Write $\Delta=n_\Delta/d_\Delta$ in lowest terms, with denominator
+degree $q\le3$. The zero sum of the weights gives
+$\deg n_\Delta\le q-2$. For a pair of maximum degree $D$, form
+\[
+ T(z)=d_\Delta(z)\{W(z+1)U(z)-W(z)U(z+1)\}
+                         -n_\Delta(z)U(z)U(z+1).
+\]
+Its degree is at most $2D+q-2$. It vanishes at every adjacent pair
+of union nodes and has a double zero at each adjacent pair of common
+nodes, giving $2N-2$ zeros. If $d\ge2$, its degree is at most
+$2N-3$, so $T=0$. This would make $W/U$ a rational antidifference
+of $\Delta$. But a rational difference has residue sum zero in each
+pole class modulo $\Z$, whereas the class of $-1/4$ contains one
+pole of $\Delta$ with residue one. Hence $d\le1$.
+
+If $U$ vanished at all common nodes, so would $W$. Dividing by their
+common-node product leaves degrees at most $m-1$ and preserves the
+value conditions at all union nodes. If $m=0$, the reduced pair is
+already zero. For $m\ge1$, the analogous polynomial $T$ has degree at most $2m-1$ but at least $r+2m-1\ge2m$ zeros,
+again impossible. Some common node therefore has $U(t)\ne0$.
+Both the left and right kernel coordinates there are nonzero,
+so the corresponding diagonal adjugate entry is nonzero.
+\end{proof}
+
+For $\lambda=1$ and border ratio $2m/r=1/5$, put
+$P(X)=\det M(X)$ and $\xi=8(G+\pi^2)$. Let
+$K=1/\cont(P)>0$, so $KP$ is the complete primitive integer polynomial.
+The following values are rounded from certified finite enclosures;
+every logarithm is divided by $r^2$:
+\begin{center}
+\begin{tabular}{rrrr}
+\toprule
+$r$&Multiplier cost&Raw decay&Primitive growth\\
+&$\log K/r^2$&$-\log|P(\xi)|/r^2$&$\log|KP(\xi)|/r^2$\\
+\midrule
+20&3.384060&3.168234&.215826\\
+40&3.675448&3.417346&.258102\\
+80&3.771926&3.541927&.229999\\
+160&3.813989&3.604388&.209601\\
+\bottomrule
+\end{tabular}
+\end{center}
+The last column is the first minus the second. Its positive entries
+mean that the primitive values have absolute value greater than one at
+these sizes, after including the full coefficient gcd.
+The slope $\lambda=1/16$ is a warning against
+extrapolation: its primitive rates are negative at $r=20,40,80$,
+but positive at $r=160$. Litsey's special slopes serve as controls;
+their arithmetic cancellation cannot be assumed at every rational slope.
+
+\subsection{Two further Pad\'e variants}
+
+The reassessment \rec{R28} tested two changes to the family of
+Section~\ref{sec:pade}. First, writing $X=t(t-1)$ converts powers
+$X^j$ into the even factorial basis through
+\[
+ X^j=\sum_\ell S(j,\ell)T_{2\ell}(t),\qquad
+ S(j+1,\ell)=S(j,\ell-1)+\ell(\ell+1)S(j,\ell).
+\]
+The first nontrivial Hankel determinant of the resulting remainders is
+$E_0(E_2+2E_1)-E_1^2$. Nine tests constructed the entire polynomial
+in $\beta(4)$ and reduced it to primitive integer coefficients.
+At seed index $n=12$, determinant sizes $1,2,4,6$ gave logarithms
+of absolute primitive values approximately $78.77,164.19,324.32,508.39$.
+The coefficient calculations are exact; these decimal evaluations
+were exploratory. No estimate uniform in growing determinant size
+was obtained.
+
+Second, lowering the numerator multiplicity and retaining the crossed
+rational residues gives the real integral
+\[
+ J_{n,m}=\frac2{(n!)^{m-2}}\int_0^\infty
+ \frac{y\mu'''(y)\prod_{j=1}^{n/2}(y^2+(j-1/2)^2)^m}
+      {\prod_{j=0}^n(y^2+j^2)}\dd y,
+ \qquad \mu(y)=\frac1{2\cosh\pi y}.
+\]
+Partial fractions express it in $\Q+\Q\beta(4)$. The $m=5$ case
+agrees exactly with the earlier construction at the four comparison
+indices. For $m=3,n=2$, its primitive form is
+$90\beta(4)-89$, of absolute value about $.00501$. At $n=4,8,12,20$,
+the corresponding logarithms are approximately $12.50,37.93,61.43,121.56$.
+Lower multiplicity reduces a cost, but these tests supply no favorable
+asymptotic comparison.

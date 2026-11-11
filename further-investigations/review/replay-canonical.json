@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "scope": "Finite computational replay; not an independent proof audit.",
+  "suites": {
+    "canonical": [
+      {
+        "script": "potential_certify.py",
+        "passed": true,
+        "seconds": 5.306
+      },
+      {
+        "script": "energy_certify.py",
+        "passed": true,
+        "seconds": 0.224
+      },
+      {
+        "script": "column_certify_fast.py",
+        "passed": true,
+        "seconds": 4.594
+      },
+      {
+        "script": "column_crosscheck.py",
+        "passed": true,
+        "seconds": 8.782
+      },
+      {
+        "script": "slope-certificate.py",
+        "passed": true,
+        "seconds": 0.088
+      },
+      {
+        "script": "combine.py",
+        "passed": true,
+        "seconds": 0.032
+      }
+    ]
+  },
+  "work_directory": "build/checks/replay-fuiy97bu"
+}

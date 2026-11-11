@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "scope": "Finite computational replay; not an independent proof audit.",
+  "suites": {
+    "algebra": [
+      {
+        "script": "verify.py",
+        "passed": true,
+        "seconds": 0.083
+      }
+    ]
+  },
+  "work_directory": "build/checks/replay-b3uvi770"
+}

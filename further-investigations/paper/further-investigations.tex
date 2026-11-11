@@ -1,0 +1,65 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype,booktabs,longtable,array,enumitem,xcolor}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,
+ urlcolor=blue!45!black,pdftitle={Further investigations of irrationality constructions for Dirichlet beta values},pdfauthor={twinheterodox}}
+\urlstyle{same}
+\setlength{\emergencystretch}{2em}
+\setlist{nosep}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+\newcommand{\Q}{\mathbb Q}\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\G}{\beta(2)}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\cont}{\operatorname{cont}_{\Q}}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\adj}{adj}
+\newcommand{\rec}[1]{\textnormal{\hyperref[record-#1]{[#1]}}}
+\title{Further investigations of irrationality constructions for Dirichlet beta values}
+\author{twinheterodox}
+\date{10 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+This supplement examines attempts to prove irrationality of $\beta(4)$,
+of at least one value in a small set of even Dirichlet beta values,
+and of combinations of Catalan's constant with $\pi^2$. It gives
+restrictions on canceling unwanted beta coefficients by polynomial
+multipliers and determines the real error rates of a Pad\'e family.
+For a determinant associated with $\beta(2)+\pi^2$, a certified decay
+estimate exceeds the available denominator cost. The effect of the
+integer adjustments required to obtain that cost remains uncontrolled.
+Further results describe the attainable determinant values and explain
+why several proposed bounds for those adjustments fall short. Exact
+computations identify additional denominator and cancellation costs
+for small beta sets. These results do not establish a new irrationality
+or linear-independence theorem.
+\end{abstract}
+\tableofcontents
+\input{paper/sections/01-introduction.tex}
+\input{paper/sections/02-isolation.tex}
+\input{paper/sections/03-pade.tex}
+\input{paper/sections/04-moments.tex}
+\input{paper/sections/05-canonical.tex}
+\input{paper/sections/06-corrections.tex}
+\input{paper/sections/07-small-sets.tex}
+\input{paper/sections/08-coverage.tex}
+\appendix
+\input{paper/sections/09-appendices.tex}
+\input{paper/references.tex}
+\end{document}

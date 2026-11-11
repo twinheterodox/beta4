@@ -1,0 +1,6 @@
+{
+  "status": "Finite exact checks; all-size proof is separate.",
+  "cases": 168,
+  "determinant_polynomials": 714,
+  "extra_evaluation_checks": 1428
+}

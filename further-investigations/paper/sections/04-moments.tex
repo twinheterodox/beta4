@@ -1,0 +1,376 @@
+\section{Mixed moments for Catalan's constant and \texorpdfstring{$\pi^2$}{pi squared}}\label{sec:moments}
+
+\subsection{Keep the two periods in a prescribed ratio}
+
+A rational relation between $1$, $G=\beta(2)$ and $\pi^2$, with a
+nonzero coefficient of $G$, would make $G+\lambda\pi^2$ rational for
+some rational $\lambda$. This suggests retaining the two periods in a
+fixed ratio inside each matrix entry, before taking a determinant.
+Since $\pi^2$ is irrational, proving that $G+\lambda\pi^2$ is
+irrational for every rational $\lambda$ would establish independence
+of $1,G,\pi^2$. The detailed decay calculation below treats the single
+test case $\lambda=1$.
+The moments of OpenAI~\cite[Section~2]{OpenAI} make that operation
+particularly direct. The adaptation below is from \rec{R11}.
+
+Put $c_j=4^{-j}\binom{2j}{j}$ for nonnegative integers $j$, and $c_j=0$
+otherwise. For a polynomial $P(t)=\sum P_it^i$, define
+\[
+ A_j(P)=\sum_iP_i c_{(j-i-1)/2},\qquad
+ B_j(P)=\sum_iP_i c_{(i-j)/2}.
+\]
+Thus $A_j(P)$ is the coefficient of $t^j$ in
+$tP(t)/\sqrt{1-t^2}$ at zero, whereas $B_j(P)$ is the coefficient of
+$t^j$ in the polynomial part at infinity
+\[
+ \Omega(P)=\left[\frac{P(t)}{\sqrt{1-t^{-2}}}\right]_+.
+\]
+The square roots are expanded with constant term one. Define the moments
+\begin{align*}
+ M(P,j)&=\int_{-1}^1\int_0^1
+  \frac{|t|P(t)s^j}{\sqrt{1-t^2}(1-ts)}\dd s\dd t,\\
+ Z(D,j)&=\int_0^1\int_0^1\frac{D(t)s^j}{1-ts}\dd s\dd t
+\end{align*}
+and, for $Q(s)=\sum Q_js^j$, write
+$M(P,Q)=\sum Q_jM(P,j)$ and $Z(D,Q)=\sum Q_jZ(D,j)$.
+Their period coefficients are
+\begin{equation}\label{eq:moment-periods}
+ M(P,j)=M^0(P,j)+4B_j(P)G+\tfrac32A_j(P)\zeta(2),\qquad
+ Z(D,j)=Z^0(D,j)+D_j\zeta(2),
+\end{equation}
+where the superscript $0$ denotes the rational part. These are the
+moment identities in \cite[(17)]{OpenAI}.
+
+Suppose $D_0$ has coefficient $A_j(P)$ in every column being used,
+and $E(P)$ has coefficient $B_j(P)$ there. Replace $D_0$ by
+\[
+ D_\lambda=D_0-16\lambda E(P).
+\]
+Then $M(P,j)-\tfrac32Z(D_\lambda,j)$ has the form
+\begin{equation}\label{eq:mixed-entry}
+ \text{rational}+4B_j(P)(G+\lambda\pi^2).
+\end{equation}
+The factor $16$ supplies $24\lambda B_j\zeta(2)=4\lambda B_j\pi^2$.
+For example, $P=t^2$ gives $\Omega(P)=t^2+\tfrac12$. In columns
+$0\le j<4$, take $D_0=t^3$ and $E=t^2+\tfrac12$. The new polynomial
+is $t^3-16\lambda t^2-8\lambda$, and the coefficients of
+$G+\lambda\pi^2$ are $2,0,4,0$.
+
+\subsection{Rows, columns and the canonical matrix}
+
+We now assemble $n$ matched rows and $n$ column polynomials into a square
+matrix. Each entry will be rational plus a rational multiple of
+$\theta_\lambda=G+\lambda\pi^2$. Replacing $\theta_\lambda$ by a variable
+$X$ makes its determinant a rational polynomial of degree at most $n$.
+Our goal is to make the value at $\theta_\lambda$ small enough to survive
+clearing the polynomial's denominators.
+
+The columns use powers $s^i$ in a band $b\le i<L$. Matching the period
+coefficients in this band fixes the target; the $b$ lower powers remain
+available for arithmetic corrections. Zeros of orders $h$ at $t=1$ and
+$q$ at $s=1$ improve the real estimates. A further parameter $g$ counts
+pairs of rows that will supply fixed rational rows.
+
+The cutoffs are related by $L=n+b+q$, $C=L+g$ and $H=C+h$.
+Here $L$ is the first unused column degree, $C-1$ is the common power
+of $t$ in the row formulas, and $H-1$ bounds the row degrees. We use
+the following fixed proportions throughout
+Sections~\ref{sec:moments}--\ref{sec:corrections}:
+\begin{equation}\label{eq:moment-scale}
+ \begin{aligned}
+ n&=48N,& b&=7N,& q=g&=4N,& h&=2N,\\
+ L&=59N,& C&=63N,& H&=65N.&&
+ \end{aligned}
+\end{equation}
+Only $N$ tends to infinity. This choice leaves room for the corrections
+while balancing the denominator cost against endpoint vanishing; the
+comparison of the two rates will be made in Section~\ref{sec:canonical}.
+The rows and columns inherited from~\cite{OpenAI} are
+\begin{align}
+ P_r(t)&=(1-t)^h t^{C-1}T_{|r-g|}(1/t),\nonumber\\
+ D_r(t)&=\sgn(r-g)(1-t)^h t^{C-1}U_{|r-g|-1}(1/t),\label{eq:moment-rows}\\
+ Q_j(s)&=s^{b+j}(1-s)^q \qquad(0\le r,j<n),\nonumber
+\end{align}
+with $D_g=0$. Here $T_d,U_d$ are Chebyshev polynomials. The contact
+identity of \cite[(5)]{OpenAI} is
+\[
+ tP_r(t)/\sqrt{1-t^2}-D_r(t)=O(t^L).
+\]
+Since the column polynomials use only the raw powers $s^i$ with
+$b\le i<L$, this supplies exactly the coefficient matching required
+in \eqref{eq:mixed-entry}.
+
+The factor $(1-t)^h$ is useful analytically and should survive the
+period matching. Simply truncating $\Omega(P_r)$ to the required band
+would lose this factor. Instead, replace each monomial by a polynomial
+with the same low coefficients and the required zero at $t=1$:
+\begin{equation}\label{eq:completion-basis}
+ F_i(t)=(1-t)^h\left[\frac{t^i}{(1-t)^h}\right]_{<L}
+ \quad(0\le i<L),\qquad
+ E_r=\sum_{i=b}^{L-1}B_i(P_r)F_i.
+\end{equation}
+Here $[\ ]_{<L}$ means Taylor truncation. Each $F_i$ agrees with $t^i$
+below degree $L$ and is divisible by $(1-t)^h$. Thus $E_r$ has the
+right coefficients and retains the endpoint zero. We call this choice
+of $E_r$ the \emph{canonical completion}.
+
+The actual entries are now explicit:
+\begin{align*}
+ \mathcal M_{rj}(\lambda)
+ &=M(P_r,Q_j)-\tfrac32Z(D_r,Q_j)+24\lambda Z(E_r,Q_j)\\
+ &=a_{rj}(\lambda)+b_{rj}\theta_\lambda,
+\end{align*}
+where $a_{rj}(\lambda)$ is the rational part and
+\[
+ b_{rj}=4\sum_{i=b}^{L-1}[s^i]Q_j(s)\,B_i(P_r).
+\]
+Define $M_{N,\lambda}(X)=(a_{rj}(\lambda)+b_{rj}X)_{r,j<n}$.
+Its determinant is the canonical determinant polynomial. The endpoint
+zeros are already built into this matrix; the integer adjustments
+needed for the denominator estimate are introduced next.
+
+\subsection{High completions and low arithmetic corrections}
+
+There are two different freedoms in completing these coefficients.
+Changing the terms above degree $L-1$ under the same degree and endpoint
+conditions has no effect on the determinant. Changing terms below
+degree $b$ can change it, and will be needed for the arithmetic estimate.
+The following proposition explains the first assertion.
+
+\begin{proposition}\label{prop:completion-invariance}
+Let $E_1,E_2$ be linear functions of $P$, each divisible by
+$t^b(1-t)^h$, of degree at most $H-1$, and agreeing with $\Omega(P)$
+in degrees $b,\ldots,L-1$. Their mixed determinants are identical,
+as polynomials in the target and in $\lambda$.
+\end{proposition}
+\begin{proof}
+The difference belongs to
+$V=t^L(1-t)^h\Q[t]_{<g}$. Pair rows $r$ and $2g-r$ for $0\le r<g$.
+Their $P$ polynomials agree and their $D$ polynomials have opposite
+signs. Subtracting the rows leaves the rational row
+$3Z(D_{2g-r},Q_j)$, independent of the target and of the completion.
+The polynomials $D_{2g-r}$ form a basis of $V$: after removing
+$(1-t)^h$, their distinct lowest degrees are $L,\ldots,C-1$.
+Every change of completion therefore adds a combination of these fixed
+rows to the remaining rows. All these row operations preserve the
+determinant.
+\end{proof}
+
+For the second freedom, set $\lambda=1$ and $\theta=G+\pi^2$.
+Abbreviate $M_{N,1}(X)$ to $M_N(X)=A_N+XB_N$. Replace $E_r$ by
+\[
+ E_r+\sum_{i=0}^{b-1}U_{ri}F_i,\qquad U\in\Z^{n\times b}.
+\]
+The added moments are rational, because the low $F_i$ have zero
+coefficients in the column band. With
+\begin{equation}\label{eq:corrected-pencil}
+ W_{ij}=24Z(F_i,Q_j),\qquad
+ P_{N,U}(X)=\det(M_N(X)+UW),
+\end{equation}
+we obtain a polynomial of degree at most $n$ with rational coefficients.
+The entries of $U$ will vary independently; Proposition~\ref{prop:completion-invariance}
+does not make these low corrections disappear.
+Thus two changes have different jobs. The canonical completion restores
+the endpoint zero while matching the target. The additional matrix $UW$
+changes only the rational parts of the entries, allowing us to impose
+prime divisibility conditions. Its real effect on the determinant is
+the unresolved part of the argument.
+
+\subsection{One arithmetic bound for an entire congruence class}
+
+It is useful to impose the denominator savings first and leave a whole
+congruence class of corrections available for the real estimate.
+The following result is the uniform conclusion of \rec{R01}.
+
+\begin{theorem}\label{thm:arithmetic-cost}
+There are integer matrices $U_N^0$ and positive integers $a_N$ such that,
+with
+\[
+ m_N=2^C\prod_{2\sqrt H<p\le H,\ p\text{ odd}}p^2,
+\]
+every $U=U_N^0+m_N Z$, $Z\in\Z^{n\times b}$, has entries divisible
+by $2^C$ and satisfies $a_NP_{N,U}(X)\in\Z[X]$. Moreover
+\begin{align}
+ \log a_N&\le (A_{\rm arith}+o(1))n^2,\label{eq:arithmetic-rate}\\
+ A_{\rm arith}&=\frac{33079}{18432}+\frac{505}{4608}\log2
+ =1.87061400307785858968\ldots,\nonumber\\
+ \log m_N&\le\left(\frac{63\log2+130}{48}+o(1)\right)n.\nonumber
+\end{align}
+The same $a_N$ works for every integer $Z$, regardless of its size.
+One may choose $|U^0_{ri}|\le m_N/2$.
+\end{theorem}
+
+Here are the valuation arguments behind the constant. They also identify
+which parts are inherited from the moment construction.
+At $2$, the smoothing identities of \cite[(22)--(27)]{OpenAI} split
+each raw column into a term with valuation $C-O(\log H)$, a multiple
+of its polynomial-part coefficient column, and a $D$ term. Denote that
+multiple by $e_1(X)$: it is the source's fixed degree-one polynomial
+over the $2$-adic numbers, whose coefficient valuations are bounded below
+independently of $N$. Only this valuation bound is needed here.
+
+To keep the column indices visible, let
+$\boldsymbol\Omega=(B_i(P_r))_{0\le r<n,\ b\le i<L}$ be the
+$n$ by $(L-b)$ coefficient matrix of the polynomial parts. Multiplying
+it on the right combines these coefficient columns. For the mixed
+construction, its original
+contribution and the canonical completion combine as
+\[
+ \boldsymbol\Omega\bigl(e_1(X)I+24Z_F\bigr),\qquad
+ (Z_F)_{ij}=Z^0(F_i,j),\quad b\le i,j<L.
+\]
+All entries of $Z_F$ have valuation at least $-2\lfloor\log_2H\rfloor$.
+The low correction, being divisible by $2^C$, joins the smoothed term.
+This grouping retains the coefficient-band index when the determinant
+is expanded.
+
+Write the coefficients of $P_r/(1-t)^h$ and $D_r/(1-t)^h$ in descending
+degrees as vectors $p_u,d_u$. The Chebyshev recurrence gives their
+entry valuations at least $u-1$. The scalar coefficient multiplying
+$p_u$ in band position $i$ of $\boldsymbol\Omega$ has valuation at least
+$u+i-H+1$. If a determinant term uses $v$ columns from the $\boldsymbol\Omega$
+group and $w$ from the $D$ group, alternation forces distinct band
+indices and distinct indices within each coefficient family. Summing
+their least possible values gives
+\[
+ v_2(P_{N,U})\ge
+ \min_{v,w}\left\{-(H-b)v+\tfrac32v^2+\tfrac12w^2
+                   +C(n-v-w)\right\}-O(n\log H).
+\]
+The minimum is over integers $v,w\ge0$ with $v+w\le n$ and has
+$w=n-v$. With $(H-b-n)/n=5/24$, it is
+$-505n^2/4608-O(n\log n)$. The two alternations are responsible for
+the quadratic saving.
+
+For odd $p>2\sqrt H$, the moment reductions in \cite[Section~3]{OpenAI}
+have at most two denominator layers. Multiplying the low moment matrix
+by $p^2$ exposes a unit minor. If that minor has rank $r$, solving for
+the low coefficients modulo $p^2$ kills $r$ columns and leaves cost at
+most $2(n-r)$. The monomial part of $F_i$ supplies the minor; its
+endpoint tail has rank at most $h$. This gives ranks $b-h$ for
+$11N<p\le H/2$ and $b$ for $H/2<p\le145N/4$.
+
+For $145N/4<p\le52N$, use the $b$ raw columns
+$j=p,\ldots,p+b-1$. Their low block reduces to $24I_b$ after
+multiplication by $p^2$. Put $K=L-p$, $J=H-p$. After killing this
+block, $K+J-2b$ columns retain double poles, and the remaining
+simple-pole residues span at most $b$ dimensions. The cost is therefore
+$2(K+J-2b)+b=227N-4p$. For $p>52N$ no correction is required;
+the same residue count is
+\[
+ 2\bigl(K_++(J-b)_+\bigr)
+ +(\min(b,J)-\max(0,K))_+.
+\]
+These calculations give the following piecewise cost $Nd(p/N)$.
+The entry $96N$ includes the range where no useful rank saving is used.
+For $2\sqrt H<p\le11N$, choose the zero correction modulo $p^2$.
+This incurs the full cost $2n=96N$ and will also supply the divisibility
+needed for nonvanishing.
+\begin{center}
+\begin{tabular}{c r@{\qquad}c r}
+\toprule
+$x=p/N$&$d(x)$&$x=p/N$&$d(x)$\\
+\midrule
+$(0,11]$&96&$(145/4,52]$&$227-4x$\\
+$(11,65/2]$&86&$(52,58]$&$182-3x$\\
+$(65/2,145/4]$&82&$(58,59]$&$124-2x$\\
+&&$(59,65]$&$65-x$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The integral of $d$ is $33079/8$. The prime number theorem, followed by
+division by $n^2=2304N^2$, gives $33079/18432$. Small odd primes cost
+$O(n\sqrt H\log H)=o(n^2)$; primes above $H$ cost nothing. The Chinese
+remainder theorem combines the local choices with divisibility by
+$2^C$. This proves Theorem~\ref{thm:arithmetic-cost}, using the stated
+moment reductions. Their exact finite checks are indexed in
+Appendix~\ref{app:audit}.
+
+\subsection{Nonvanishing under a rationality assumption}
+
+The arithmetic congruences also permit an independent nonvanishing
+argument. This matters because a sequence of zero integers gives no
+contradiction, however good its upper bound.
+At a prime scale $N=p>260$, we have $H=65p$ and
+$2\sqrt{65p}<p\le11p$. Thus $p$ lies in the range where the prescribed
+correction is zero modulo $p^2$. Since $p^2\mid m_N$, every matrix
+$U=U_N^0+m_NZ$ in the arithmetic class satisfies $p^2\mid U$.
+This is the hypothesis used in the following proposition.
+
+\begin{proposition}\label{prop:moment-nonvanishing}
+Fix rational $\lambda$. Outside a finite set of primes, at scale $N=p$
+the mixed determinant
+$P_{N,\lambda,U}(X)=\det(M_{N,\lambda}(X)+UW)$ with $p^2\mid U$ satisfies
+\[
+ p^{96p}P_{p,\lambda,U}(X)\in\Z_{(p)}[X],
+ \qquad p^{96p}P_{p,\lambda,U}(X)\bmod p
+       \text{ is a nonzero constant}.
+\]
+Consequently, for every fixed rational $x$, these determinants are
+nonzero at $x$ for all sufficiently large primes. For $\lambda=1$,
+every correction in Theorem~\ref{thm:arithmetic-cost} is allowed.
+\end{proposition}
+
+The proof in \rec{R04} reduces the unbounded sizes to three polynomial
+seed determinants. To specify them, take the scale $N=1$, allow the
+extra row $r=48$, and form the $49$ by $48$ rational matrix
+\[
+ T_\eta(r,k)=\sum_{j=0}^4(-1)^j\binom4j
+ \left\{M^0(P_r,7+k+j)-\tfrac32Z^0(D_r,7+k+j)
+                  +24\eta Z^0(E_r,7+k+j)\right\}.
+\]
+Let $T_{\eta,0}$ use rows $0,\ldots,47$ and $T_{\eta,1}$ rows
+$1,\ldots,48$, and set
+$F_\sigma(Y)=\det(T_{Y,0}+\sigma T_{Y,1})$ for $\sigma=0,1,-1$.
+The paired rows remove four powers of $Y$, so each degree is at most
+$44$. Exact finite-field calculations give
+\begin{center}
+\begin{tabular}{rrrr}
+\toprule
+$\sigma$&Prime&Degree / leading coefficient&Number of roots\\
+\midrule
+0&103&44 / 82&0\\
+1&107&44 / 57&0\\
+$-1$&103&44 / 5&0\\
+\bottomrule
+\end{tabular}
+\end{center}
+This excludes every rational root. If its denominator is prime to the
+listed prime, reduction gives a finite-field root. If the denominator
+is divisible by that prime, homogenization to degree $44$ leaves the
+nonzero leading term. The degree bound is needed for this second case.
+
+To see why these are the correct seeds, put
+$\epsilon=(-1)^{(p-1)/2}$ and $K_p(t)=(1-t^2)^{(p-1)/2}$. The
+Frobenius identity
+\[
+ (1-t^{-2})^{-1/2}
+ =\epsilon t^{1-p}K_p(t)(1-t^{-2p})^{-1/2}\pmod p
+\]
+transfers the coefficient matching and its endpoint completion from
+scale $p$ to scale one. The source moment digit reductions then give
+a block matrix
+\[
+ A_*^{\mathsf T}\otimes T_{\epsilon\lambda,0}
+ +B_*^{\mathsf T}\otimes T_{\epsilon\lambda,1},
+ \qquad B_*=A_*\Pi,
+\]
+where $A_*$ is invertible and $\Pi e_0=0$, $\Pi e_i=e_{p-i}$ for
+$1\le i<p$. Thus its determinant, up to a unit and a sign, is
+\[
+ F_0(\epsilon\lambda)
+ F_1(\epsilon\lambda)^{(p-1)/2}
+ F_{-1}(\epsilon\lambda)^{(p-1)/2}.
+\]
+The target coefficient and the correction vanish in this reduction:
+the former is integral before scaling, and $p^2\mid U$ while
+$v_p(W_{ij})\ge-2$. Excluding the finitely many numerator and denominator
+primes of the six specialized seed values proves the proposition.
+
+Under the hypothesis $\theta=a/d\in\Q$, we now have nonzero integers
+\[
+ d^n a_NP_{N,U}(\theta)
+\]
+along large prime scales, for every admissible correction. The remaining
+task is analytic: choose those corrections so that their determinants
+decay faster than $\exp(-A_{\rm arith}n^2)$.

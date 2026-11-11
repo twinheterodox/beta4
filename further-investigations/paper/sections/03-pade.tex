@@ -1,0 +1,362 @@
+\section{Real remainders from a simultaneous Pad\'e construction}\label{sec:pade}
+The preceding construction begins with many beta values and tries to
+remove some of them. The present family has a remainder involving
+$\beta(4)$ alone from the start. It comes from the $m=5$ construction
+of Kawashima--Po\"els~\cite{KP}, which approximates two formal functions
+with a common denominator polynomial. The two remainders are separate;
+simultaneous approximation does not introduce a $\beta(2)$ term into
+the weight-four remainder.
+
+The first task is to give that formal remainder an actual real meaning.
+The second is to estimate it when both the degree and evaluation point
+grow. Formal order of approximation at a fixed degree does not answer
+the latter question.
+
+\subsection{Functions and polynomials}
+For $s=2,4$ and $\Re z>0$, set
+\[
+ F_s(z)=(s-1)!\sum_{j\ge0}\frac{(-1)^j}{(z+j)^s}
+       =\int_0^\infty\frac{u^{s-1}e^{-zu}}{1+e^{-u}}\dd u.
+\]
+The shift identity $F_s(z)+F_s(z+1)=(s-1)!z^{-s}$ determines its
+formal asymptotic Laurent coefficients $c_{s,j}$ by
+\begin{equation}\label{eq:pade-moments}
+ 2c_{s,j}=(s-1)!\,[j=s-1]
+              -\sum_{v<j}(-1)^{j-v}\binom jv c_{s,v}.
+\end{equation}
+The indexing convention is $F_s(z)\sim\sum_{j\ge0}c_{s,j}z^{-j-1}$;
+call the corresponding formal series $\Theta_s$. In
+\eqref{eq:pade-moments}, $[j=s-1]$ is one when $j=s-1$ and zero otherwise.
+A finite Taylor expansion of the integrand near zero, with a separate
+exponentially small tail, proves that these are the asymptotic
+coefficients of $F_s$. No convergence of the Laurent series at a
+finite real point is required.
+
+Write $(x)_k=x(x+1)\cdots(x+k-1)$, $T_k(z)=(z-k/2)_k$, and
+\[
+ \mathcal R H(z)=\frac{H(z+1/2)+H(z-1/2)}{2z-1}.
+\]
+For positive even $n$ and $\ell=0,1,2$, let
+\[
+ H_{n,\ell}(z)=\frac{T_n(z)^5T_{2\ell}(z)}{(n!)^4},\qquad
+ P_{n,\ell}=\mathcal R^nH_{n,\ell}.
+\]
+The exact divisibility in these operations, reflection
+$P_{n,\ell}(1-z)=P_{n,\ell}(z)$, and degree $4n+2\ell$ are
+the specialization of~\cite[Lemma 6.5]{KP}. Define a rational
+functional by $\varphi_s(t^j)=c_{s,j}$ and put
+\[
+ Q_{n,s,\ell}(z)=\varphi_s\left(
+                  \frac{P_{n,\ell}(z)-P_{n,\ell}(t)}{z-t}\right).
+\]
+This is the polynomial part of the formal product $P_{n,\ell}\Theta_s$.
+The source's approximation theorem gives a remainder of order
+$O(z^{-2n-2})$, with its constant depending on $n$.
+
+Two other source inputs will be used explicitly. Its integer-basis
+theorem~\cite[Theorem 8.1]{KP} writes $P_{n,\ell}$ as an integer
+combination of $(z)_j(1-z)_j/(j!)^2$, $j\le2n+2$. Its rank
+theorem~\cite[Theorem 7.1]{KP} says that the three columns
+\[
+       (P_{n,\ell},Q_{n,2,\ell},Q_{n,4,\ell})^T,
+                       \qquad \ell=0,1,2,
+\]
+have a nonzero rational constant determinant. These are polynomial
+statements; they do not require a $p$-adic evaluation.
+
+\subsection{From a formal remainder to a real integral}
+Put $\mu(y)=(2\cosh\pi y)^{-1}$ and $t_y=1/2+iy$. The Fourier
+identity
+\[
+ \int_\R\mu(y)e^{iuy}\dd y=(2\cosh(u/2))^{-1}
+\]
+can be proved by a rectangular contour of height $i$; it is also the
+Euler-moment identity used in Rivoal's real construction~\cite{Rivoal06}.
+Fubini's theorem gives, for $\Re z>1/2$,
+\[
+ F_s(z)=(s-1)!\int_\R\frac{\mu(y)}{(z-t_y)^s}\dd y,
+ \qquad
+ \varphi_s(A)=\int_\R\mu(y)A^{(s-1)}(t_y)\dd y.
+\]
+For the first interchange an absolute majorant is
+$u^{s-1}e^{-(\Re z-1/2)u}\mu(y)$. For the second identity compare
+exponential moment generating functions and then coefficients.
+Subtracting the polynomial part yields the exact remainder
+\begin{align}
+ E_{n,s,\ell}(z)&=P_{n,\ell}(z)F_s(z)-Q_{n,s,\ell}(z)\notag\\
+ &=i^{s-1}\int_\R\mu^{(s-1)}(y)
+                    \frac{P_{n,\ell}(t_y)}{z-t_y}\dd y.\label{eq:cauchy-remainder}
+\end{align}
+Integration by parts proves the last expression; exponential decay
+of the weight kills every boundary term.
+
+For an integer $N\ge1$, define $S_N(4)=\sum_{j<N}(-1)^j/(2j+1)^4$.
+Splitting the defining beta series at $N$ gives
+\[
+ F_4(N+\tfrac12)=96(-1)^N\{\beta(4)-S_N(4)\}.
+\]
+Consequently $E_{n,4,\ell}(N+1/2)=b+a\beta(4)$, where
+\begin{equation}\label{eq:pade-coefficients}
+ a=96(-1)^NP_{n,\ell}(N+\tfrac12),\qquad
+ b=-aS_N(4)-Q_{n,4,\ell}(N+\tfrac12).
+\end{equation}
+The rational tail in $b$ is part of the construction and must be cleared.
+The rank theorem above ensures that at least one of these three forms
+is nonzero at every such $n,N$: otherwise the last row of the constant
+determinant would be $F_4(N+1/2)$ times the first.
+
+For example, at $n=2,\ell=0,N=1$,
+\[
+ P(3/2)=31681/4096,\quad Q_4(3/2)=2223/256,
+ \quad E(3/2)=-\frac{39}{256}\{4874\beta(4)-4817\}.
+\]
+The primitive integer form has absolute value about $3.12$. The small
+prefactor in the displayed raw form provides no arithmetic saving.
+
+\subsection{Transfer the difference operators to the kernel}
+Estimating the large polynomial $P$ term by term loses its cancellations.
+Moving its difference operators to the Cauchy kernel gives products with
+a much clearer asymptotic balance. Define
+\begin{align*}
+ A_n(y)&=\prod_{j=1}^{n/2}\{y^2+(j-\tfrac12)^2\},\\
+ B_\ell(y)&=\prod_{j=1}^{\ell}\{y^2+(j-\tfrac12)^2\},\\
+ D_{n,N}(y)&=\prod_{j=0}^{n}\{(N-n/2+j)^2+y^2\}.
+\end{align*}
+An empty product is one.
+
+\begin{proposition}\label{prop:product-integral}
+For real $N\ge n/2$,
+\[
+ E_{n,4,\ell}(N+\tfrac12)
+ =\frac{2(-1)^\ell}{(n!)^3}
+   \int_0^\infty\frac{y\mu'''(y)A_n(y)^5B_\ell(y)}{D_{n,N}(y)}\dd y.
+\]
+At $N=n/2$ the integrand is interpreted continuously at $y=0$.
+\end{proposition}
+\begin{proof}
+On the upward line $\Re t=1/2$, let $w_j(t)$ be the third derivative
+of $\csc\pi(t+j/2)$. Oddness of $w_0$ about $1/2$ allows replacement
+of the Cauchy kernel by its odd part. With
+\[
+ K_j(t,z)=\frac{j!(2t-1)}{(z-t-j/2)_{j+1}(z+t-1-j/2)_{j+1}},
+\]
+equation~\eqref{eq:cauchy-remainder} becomes
+$E(z)=-(4i)^{-1}\int w_0(t)P(t)K_0(t,z)\dd t$.
+Moving one difference operator from $P$ replaces $K_j$ by
+\[
+ \frac{K_j(t+1/2,z)}{2t}-\frac{K_j(t-1/2,z)}{2t-2}=K_{j+1}(t,z).
+\]
+For a direct check, put $a=z-t-(j+1)/2$ and
+$b=z+t-(j+3)/2$. The numerator after taking a common denominator
+is $j!\{(a+j+1)b-a(b+j+1)\}=(j+1)!(2t-1)$.
+
+After $j$ transfers the remaining polynomial is divisible by $T_j^5$
+by the source divisibility lemma. In the next transfer the vertical
+lines shift to real parts zero and one. The poles of $w_{j+1}$ in
+the crossed strips have order at most four and are canceled by zeros
+of $T_{j+1}^5$. The apparent factors $2t$ and $2t-2$ have canceled
+in the kernels. For $N>n/2$ the remaining kernel poles lie outside
+the respective crossed strips. Exponential decay kills the horizontal
+closing segments, so no residue is lost.
+
+After $n$ transfers, put $t=1/2+iy$. Then
+\[
+ w_n=(-1)^{n/2}2i\mu'''(y),\quad
+ T_n=(-1)^{n/2}A_n(y),\quad T_{2\ell}=(-1)^\ell B_\ell(y),
+ \quad K_n=2iy n!/D_{n,N}(y).
+\]
+Substitution and pairing $y$ with $-y$ give the claimed normalization
+and sign. As $N\downarrow n/2$, $\mu'''(y)=O(y)$ cancels the only
+new zero denominator: $y^2/((N-n/2)^2+y^2)\le1$. The other factors
+supply an integrable majorant near zero and infinity. Dominated
+convergence gives the endpoint.
+\end{proof}
+
+\subsection{The actual exponential rate}
+For $r\ge1/2$ define
+\[
+ \Phi_r(u)=3-\pi u+5\int_0^{1/2}\log(u^2+x^2)\dd x
+                -\int_{r-1/2}^{r+1/2}\log(u^2+x^2)\dd x.
+\]
+The constant $3$ comes from $(n!)^{-3}$, the term $-\pi u$ from
+the hyperbolic weight, and the two integrals from the numerator and
+denominator products after setting $y=nu$. All powers of $n$ cancel.
+
+\begin{theorem}\label{thm:pade-rate}
+The function $\Phi_r$ has a unique maximum at $u_r>1/2$. Put
+$\Lambda(r)=\Phi_r(u_r)$. If $n$ is even, $N\ge n/2$ is integral,
+and $N/n\to r\ge1/2$, then for each $\ell=0,1,2$,
+\[
+ \lim\frac1n\log|E_{n,4,\ell}(N+\tfrac12)|=\Lambda(r).
+\]
+Its sign is eventually $(-1)^{\ell+1}$.
+\end{theorem}
+\begin{proof}
+For $u>0$,
+\begin{align*}
+ \Phi_r'(u)&=-\pi+10\arctan(1/(2u))
+             -2\arctan((r+1/2)/u)+2\arctan((r-1/2)/u),\\
+ \Phi_r''(u)&=-\frac5{u^2+1/4}
+       +\frac{2(u^2-ab)}{(u^2+a^2)(u^2+b^2)}
+       \le-\frac3{u^2+1/4}<0,
+\end{align*}
+where $a=r-1/2$, $b=r+1/2$. The derivative is positive at $1/2$
+and tends to $-\pi$ at infinity. This proves the unique maximum.
+
+The sign issue in the integral is localized:
+\[
+ \mu'''(y)=\frac{\pi^3}{2}\sech(\pi y)\tanh(\pi y)
+                         \{6\sech^2(\pi y)-1\}.
+\]
+It is positive up to the fixed value
+$y_0=\operatorname{arcosh}(\sqrt6)/\pi$ and negative afterwards.
+All the product factors are positive. The saddle region $y\sim nu_r$
+therefore has one sign and is separated from the bounded region where
+the sign is opposite.
+
+Put $r_n=N/n$. On compact positive $u$ intervals, product Riemann
+sums and Stirling's formula give $n\Phi_{r_n}(u)+O(\log n)$, uniformly
+for $r_n$ in a fixed compact subset of $[1/2,\infty)$.
+The product estimates retain this logarithmic error down to
+$u=y_0/n$ on bounded intervals: bracket each
+monotone Riemann sum by its endpoint sums, whose difference is
+$O(\log n)$. The integral formula for $\Phi_r(u)$ is jointly continuous
+for $r\ge1/2$ and $u\ge0$. Hence $r_n\to r$ gives
+$\Phi_{r_n}\to\Phi_r$ uniformly on bounded $u$ intervals. After
+division by $n$, the limiting profile is therefore $\Phi_r$;
+no rate of convergence of $r_n$ is needed.
+
+To bound $0\le y\le y_0$ separately, use
+$A_n(y)\le C A_n(0)$, which follows from $\log(1+x)\le x$ and
+the convergent sum of $(j-1/2)^{-2}$. Put $k=N-n/2$. For $k\ge1$
+this part is at most
+\[
+ \frac{C A_n(0)^5}{(n!)^3(k)_{n+1}^2},
+\]
+and for $k=0$, after canceling $y^2$, at most $C A_n(0)^5/(n!)^5$.
+The gamma identities for these products give upper rate $\Phi_r(0)$
+uniformly even when $k/n\to0$. This is strictly below $\Phi_r(u_r)$.
+
+For the infinite tail, use
+$A_n(nu)\le n^n(u^2+1/4)^{n/2}$,
+$D_{n,N}(nu)\ge(nu)^{2n+2}$ and $n!\ge(n/e)^n$.
+Apart from polynomial factors, the tail is bounded by
+\[
+ \exp\{n[3-\pi u+\tfrac52\log(u^2+1/4)-2\log u]\}.
+\]
+For sufficiently large $u$ the bracket is at most $-\pi u/2$.
+Laplace's estimate near the strict maximum now supplies the claimed
+rate. The opposite-sign part has smaller rate, so cannot cancel it.
+\end{proof}
+
+The saddle and rate admit exact rational certification. If $w_r=u_r^2$,
+then $w_r$ is the unique root greater than $1/4$ of
+\[
+ 64w^3+(64r^2-16)w^2-(160r^2+20)w+20r^2-3=0.
+\]
+This follows by taking the real part of
+$(u+i/2)^5(u+i(r-1/2))(u-i(r+1/2))$ in the saddle equation.
+Descartes' rule and the signs at zero and $1/4$ select the larger
+positive root. The arctangent terms cancel at the saddle, giving
+\begin{align*}
+ \Lambda(r)={}&\tfrac52\log(w_r+1/4)
+ -(r+1/2)\log(w_r+(r+1/2)^2)\\
+ &+(r-1/2)\log(w_r+(r-1/2)^2).
+\end{align*}
+For example $w_2=7/4$ and $\Lambda(2)=-2\log2$ exactly.
+
+\subsection{Intersect two denominator bounds}
+Let $d_j=\lcm(1,\ldots,j)$ and let a superscript ``odd'' mean the
+odd part. Put
+\[
+ J=2n+2,\quad R_n^{\rm ar}=\gcd(n!,d_J)^{\rm odd},\quad
+ L_{n,N}=\lcm(R_n^{\rm ar},d_{2N-1}^{\rm odd}).
+\]
+\begin{proposition}\label{prop:pade-clearing}
+Both coefficients in~\eqref{eq:pade-coefficients} become integral after
+multiplication by
+\[
+ M_{n,\ell,N}=2^{4n+2\ell-4+4v_2(n!)}L_{n,N}^4.
+\]
+For $N/n\to r\ge1/2$, its logarithmic rate is $8\log2+8r$.
+\end{proposition}
+\begin{proof}
+First $(n!)^4P_{n,\ell}\in\Z[z]$. Expand the monic integer seed
+$T_n^5T_{2\ell}$ in the monic basis $T_{n+2j}$ by successive leading
+terms. Reflection preserves the even degrees and divisibility by $T_n$
+forces the final remainder to vanish. The identity
+$\mathcal R T_k=T_{k-1}$ proves the assertion. Recurrence
+\eqref{eq:pade-moments} gives
+$c_{4,0}=c_{4,1}=c_{4,2}=0$ and $2^{j-3}c_{4,j}\in\Z$ for $j\ge3$.
+Thus the odd denominator of $Q_{n,4,\ell}(N+1/2)$ divides the odd
+part of $(n!)^4$.
+
+The factorial-basis calculation of~\cite[Sections 5 and 9]{KP}
+gives a second bound. To state the needed arithmetic explicitly, its
+coefficients satisfy, for $j\ge1$,
+\[
+ 2b_j=\sum_{u+v=j-1}\frac{u!^2v!^2}{(u+1)(2u+1)!(2v+1)!},
+ \qquad
+ \Theta_4(z)=\sum_{j\ge1}\frac{b_j(2j+1)!}{(z)_{j+1}(1-z)_{j+1}}.
+\]
+One has $2d_j^2(2j+1)!b_j/(j!)^2\in\Z$: a summand multiplied by
+$(2j+1)!/(j!)^2$ is
+$2\binom{2j+1}{2u+2}(u!v!/j!)^2$, and $j!/(u!v!)$ divides $d_j$.
+At each prime power its valuation contribution is zero or one because
+$u+v=j-1$. Likewise $(j+1)\binom{k}{j+1}$ divides $d_k$.
+Canceling the factorials against an integer basis term of $P$ shows
+that the odd denominator of $Q(N+1/2)$ divides $(d_J^{\rm odd})^4$.
+Half-integer factorial evaluations introduce no other odd primes;
+indeed $2^{2k}(x)_k/k!\in\Z$ for half-integral $x$.
+Intersecting the two bounds gives $(R_n^{\rm ar})^4$.
+
+The polynomial $P$ has no odd denominator at a half-integer, by its
+integer factorial basis. The finite tail $S_N(4)$ therefore adds
+only $(d_{2N-1}^{\rm odd})^4$. Taking their lcm gives $L_{n,N}^4$.
+
+For powers of two let $D=4n+2\ell$. A term $P_dc_{4,j}z^{d-j-1}$
+of the polynomial part has valuation at least
+$-4v_2(n!)-(j-3)-(d-j-1)\ge-4v_2(n!)-D+4$.
+The coefficient of $\beta(4)$ includes $96$, with valuation five;
+$S_N(4)$ has odd denominator. The stated power of two clears both.
+
+Finally $d_n^{\rm odd}\mid R_n^{\rm ar}$, and any additional prime
+power over $d_n$ has base at most $\sqrt J$. Its total logarithmic
+cost is $O(\sqrt n\log n)$. Hence
+$\log L_{n,N}=\log d_{\max(n,2N-1)}^{\rm odd}+O(\sqrt n\log n)$.
+The prime number theorem and $v_2(n!)=n+O(\log n)$ prove the rate.
+\end{proof}
+
+\subsection{The gap that remains}
+Combine the two proved rates and write
+$\mathcal G(r)=8\log2+8r+\Lambda(r)$.
+This is the logarithmic rate of the cleared forms; a negative value
+would make them tend to zero.
+\begin{center}
+\begin{tabular}{@{}rrrr@{}}
+\toprule
+$r$ & Remainder rate & Clearing cost & Sum $\mathcal G(r)$\\
+\midrule
+$1/2$ & $-0.21025504$ & $9.54517744$ & $9.33492240$\\
+$1$ & $-0.61293790$ & $13.54517744$ & $12.93223954$\\
+$2$ & $-1.38629436$ & $21.54517744$ & $20.15888308$\\
+\bottomrule
+\end{tabular}
+\end{center}
+This is an asymptotic comparison for the explicit multiplier, not a fit
+to finite values. Differentiation at the unique maximum gives
+\[
+ \Lambda'(r)=\log\frac{u_r^2+(r-1/2)^2}{u_r^2+(r+1/2)^2}.
+\]
+Its negative is $\int_{r-1/2}^{r+1/2}2x/(u_r^2+x^2)\dd x
+\le1/u_r<2$. Therefore $\mathcal G'(r)>6$: moving the evaluation
+point farther right makes this balance worse. The minimum is
+$\mathcal G(1/2)=9.33492239999\ldots$.
+
+This does not lower-bound the primitive forms. If the two cleared
+coefficients have gcd $g_n$, their primitive value is $|M E|/g_n$.
+Decay would require $\liminf n^{-1}\log g_n\ge\mathcal G(r)$.
+No upper bound excluding that saving has been proved. Evaluation below
+$N=n/2$, combinations of the three forms and modified seeds are also
+outside this rate theorem. The finite tests and their precise ranges
+are recorded in~\rec{R26}--\rec{R27}.

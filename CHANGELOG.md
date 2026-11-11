@@ -1,5 +1,14 @@
 # Changelog
 
+## 10 November 2026 — Further investigation supplement
+
+- Added a separate technical supplement covering all 29 later records on polynomial isolation, real Padé forms, mixed Catalan moments, integer corrections and small beta sets.
+- Distinguished the independently audited positive canonical decay margin from the unresolved real effect of the required integer corrections. The exact progression and row-lattice results, rounding criterion and kernel-inverse limitations are developed separately.
+- Added portable certificate suites, a source-reading ledger, a complete coverage catalog and an audit scope summary. Preserved the original research records and earlier papers.
+- Revised the exposition to introduce the mixed matrix before its parameters, explain the three contributions to canonical decay, and work through a two-degree Gram example. Defined the numerical comparison scales, corrected the statement about coefficient-size bounds, and moved the catalog and audit account to appendices.
+- Explained why the arithmetic corrections meet the nonvanishing hypothesis, displayed the determinant-preserving row decomposition, and expanded the moment-square estimate. Corrected the vanishing diagonal-error term and three sum-index labels. The revised supplement has 41 pages; its limiting bounds and mathematical conclusions are unchanged.
+- Recorded the 10 November independent audit of that 41-page PDF, including its 13 packaged checks and fresh calculations. Added the missing uniform integrality hypothesis in Section 6.5, with the arithmetic justification for both correction classes, and clarified unattainability of zero and the covariance upper bound. The audit's canonical decay margin is unchanged; uniform control of integer corrections remains open.
+
 ## 6 November 2026 — Shifted intervals, version 2
 
 - Replaced the endpoint 67m−1 by 19m−1 for every positive odd m, and strengthened the general family for every irrationality count B. Appendix B retains the sharper endpoint m−1 + 2 ceil((879m−50)/100) < 18.58m.

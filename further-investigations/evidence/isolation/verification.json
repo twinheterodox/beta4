@@ -1,0 +1,22 @@
+{
+  "status": "All exact cross-checks passed.",
+  "scope": "Constructing-assistant checks; not an independent audit or formal verification.",
+  "parameter_triples": 9,
+  "exact_target_isolations": 27,
+  "rational_function_reconstructions": 81,
+  "positive_weight_moment_identities": 147,
+  "exceptional_case_harmonic_identities": 6,
+  "exceptional_case_matrix": [
+    [
+      -5,
+      9
+    ],
+    [
+      4713857,
+      89181
+    ]
+  ],
+  "exceptional_case_determinant": -42870618,
+  "exploration_sha256": "fe57076427a934938c25db6c7c5c993830b16e6338fe8abd01b55871b61e9c75",
+  "checker_sha256": "594395f89a8e3a06f9f8e4598c172b7a6ea2c460c70f4cf0d9e73da4c6e927a0"
+}

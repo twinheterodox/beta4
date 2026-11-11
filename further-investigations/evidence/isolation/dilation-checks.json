@@ -1,0 +1,392 @@
+{
+  "status": "All exact general-seed coefficient congruences passed.",
+  "scope": "48 finite checks supporting the all-parameter proof; not an independent audit.",
+  "count": 48,
+  "checks": [
+    {
+      "polynomial": 0,
+      "minimum_degree": 0,
+      "seed": 1,
+      "prime": 7,
+      "beta_index": 2,
+      "residue": 2
+    },
+    {
+      "polynomial": 0,
+      "minimum_degree": 0,
+      "seed": 1,
+      "prime": 7,
+      "beta_index": 4,
+      "residue": 1
+    },
+    {
+      "polynomial": 0,
+      "minimum_degree": 0,
+      "seed": 1,
+      "prime": 11,
+      "beta_index": 2,
+      "residue": 4
+    },
+    {
+      "polynomial": 0,
+      "minimum_degree": 0,
+      "seed": 1,
+      "prime": 11,
+      "beta_index": 4,
+      "residue": 7
+    },
+    {
+      "polynomial": 0,
+      "minimum_degree": 0,
+      "seed": 1,
+      "prime": 17,
+      "beta_index": 2,
+      "residue": 11
+    },
+    {
+      "polynomial": 0,
+      "minimum_degree": 0,
+      "seed": 1,
+      "prime": 17,
+      "beta_index": 4,
+      "residue": 3
+    },
+    {
+      "polynomial": 0,
+      "minimum_degree": 0,
+      "seed": 3,
+      "prime": 7,
+      "beta_index": 2,
+      "residue": 5
+    },
+    {
+      "polynomial": 0,
+      "minimum_degree": 0,
+      "seed": 3,
+      "prime": 7,
+      "beta_index": 4,
+      "residue": 0
+    },
+    {
+      "polynomial": 0,
+      "minimum_degree": 0,
+      "seed": 3,
+      "prime": 11,
+      "beta_index": 2,
+      "residue": 3
+    },
+    {
+      "polynomial": 0,
+      "minimum_degree": 0,
+      "seed": 3,
+      "prime": 11,
+      "beta_index": 4,
+      "residue": 5
+    },
+    {
+      "polynomial": 0,
+      "minimum_degree": 0,
+      "seed": 3,
+      "prime": 17,
+      "beta_index": 2,
+      "residue": 14
+    },
+    {
+      "polynomial": 0,
+      "minimum_degree": 0,
+      "seed": 3,
+      "prime": 17,
+      "beta_index": 4,
+      "residue": 0
+    },
+    {
+      "polynomial": 1,
+      "minimum_degree": 2,
+      "seed": 1,
+      "prime": 7,
+      "beta_index": 2,
+      "residue": 6
+    },
+    {
+      "polynomial": 1,
+      "minimum_degree": 2,
+      "seed": 1,
+      "prime": 7,
+      "beta_index": 4,
+      "residue": 3
+    },
+    {
+      "polynomial": 1,
+      "minimum_degree": 2,
+      "seed": 1,
+      "prime": 11,
+      "beta_index": 2,
+      "residue": 5
+    },
+    {
+      "polynomial": 1,
+      "minimum_degree": 2,
+      "seed": 1,
+      "prime": 11,
+      "beta_index": 4,
+      "residue": 10
+    },
+    {
+      "polynomial": 1,
+      "minimum_degree": 2,
+      "seed": 1,
+      "prime": 17,
+      "beta_index": 2,
+      "residue": 2
+    },
+    {
+      "polynomial": 1,
+      "minimum_degree": 2,
+      "seed": 1,
+      "prime": 17,
+      "beta_index": 4,
+      "residue": 9
+    },
+    {
+      "polynomial": 1,
+      "minimum_degree": 2,
+      "seed": 3,
+      "prime": 7,
+      "beta_index": 2,
+      "residue": 2
+    },
+    {
+      "polynomial": 1,
+      "minimum_degree": 2,
+      "seed": 3,
+      "prime": 7,
+      "beta_index": 4,
+      "residue": 0
+    },
+    {
+      "polynomial": 1,
+      "minimum_degree": 2,
+      "seed": 3,
+      "prime": 11,
+      "beta_index": 2,
+      "residue": 2
+    },
+    {
+      "polynomial": 1,
+      "minimum_degree": 2,
+      "seed": 3,
+      "prime": 11,
+      "beta_index": 4,
+      "residue": 0
+    },
+    {
+      "polynomial": 1,
+      "minimum_degree": 2,
+      "seed": 3,
+      "prime": 17,
+      "beta_index": 2,
+      "residue": 3
+    },
+    {
+      "polynomial": 1,
+      "minimum_degree": 2,
+      "seed": 3,
+      "prime": 17,
+      "beta_index": 4,
+      "residue": 6
+    },
+    {
+      "polynomial": 2,
+      "minimum_degree": 1,
+      "seed": 1,
+      "prime": 7,
+      "beta_index": 2,
+      "residue": 2
+    },
+    {
+      "polynomial": 2,
+      "minimum_degree": 1,
+      "seed": 1,
+      "prime": 7,
+      "beta_index": 4,
+      "residue": 1
+    },
+    {
+      "polynomial": 2,
+      "minimum_degree": 1,
+      "seed": 1,
+      "prime": 11,
+      "beta_index": 2,
+      "residue": 4
+    },
+    {
+      "polynomial": 2,
+      "minimum_degree": 1,
+      "seed": 1,
+      "prime": 11,
+      "beta_index": 4,
+      "residue": 7
+    },
+    {
+      "polynomial": 2,
+      "minimum_degree": 1,
+      "seed": 1,
+      "prime": 17,
+      "beta_index": 2,
+      "residue": 11
+    },
+    {
+      "polynomial": 2,
+      "minimum_degree": 1,
+      "seed": 1,
+      "prime": 17,
+      "beta_index": 4,
+      "residue": 3
+    },
+    {
+      "polynomial": 2,
+      "minimum_degree": 1,
+      "seed": 3,
+      "prime": 7,
+      "beta_index": 2,
+      "residue": 1
+    },
+    {
+      "polynomial": 2,
+      "minimum_degree": 1,
+      "seed": 3,
+      "prime": 7,
+      "beta_index": 4,
+      "residue": 0
+    },
+    {
+      "polynomial": 2,
+      "minimum_degree": 1,
+      "seed": 3,
+      "prime": 11,
+      "beta_index": 2,
+      "residue": 9
+    },
+    {
+      "polynomial": 2,
+      "minimum_degree": 1,
+      "seed": 3,
+      "prime": 11,
+      "beta_index": 4,
+      "residue": 4
+    },
+    {
+      "polynomial": 2,
+      "minimum_degree": 1,
+      "seed": 3,
+      "prime": 17,
+      "beta_index": 2,
+      "residue": 8
+    },
+    {
+      "polynomial": 2,
+      "minimum_degree": 1,
+      "seed": 3,
+      "prime": 17,
+      "beta_index": 4,
+      "residue": 0
+    },
+    {
+      "polynomial": 3,
+      "minimum_degree": 3,
+      "seed": 1,
+      "prime": 7,
+      "beta_index": 2,
+      "residue": 4
+    },
+    {
+      "polynomial": 3,
+      "minimum_degree": 3,
+      "seed": 1,
+      "prime": 7,
+      "beta_index": 4,
+      "residue": 2
+    },
+    {
+      "polynomial": 3,
+      "minimum_degree": 3,
+      "seed": 1,
+      "prime": 11,
+      "beta_index": 2,
+      "residue": 10
+    },
+    {
+      "polynomial": 3,
+      "minimum_degree": 3,
+      "seed": 1,
+      "prime": 11,
+      "beta_index": 4,
+      "residue": 3
+    },
+    {
+      "polynomial": 3,
+      "minimum_degree": 3,
+      "seed": 1,
+      "prime": 17,
+      "beta_index": 2,
+      "residue": 15
+    },
+    {
+      "polynomial": 3,
+      "minimum_degree": 3,
+      "seed": 1,
+      "prime": 17,
+      "beta_index": 4,
+      "residue": 6
+    },
+    {
+      "polynomial": 3,
+      "minimum_degree": 3,
+      "seed": 3,
+      "prime": 7,
+      "beta_index": 2,
+      "residue": 4
+    },
+    {
+      "polynomial": 3,
+      "minimum_degree": 3,
+      "seed": 3,
+      "prime": 7,
+      "beta_index": 4,
+      "residue": 0
+    },
+    {
+      "polynomial": 3,
+      "minimum_degree": 3,
+      "seed": 3,
+      "prime": 11,
+      "beta_index": 2,
+      "residue": 5
+    },
+    {
+      "polynomial": 3,
+      "minimum_degree": 3,
+      "seed": 3,
+      "prime": 11,
+      "beta_index": 4,
+      "residue": 7
+    },
+    {
+      "polynomial": 3,
+      "minimum_degree": 3,
+      "seed": 3,
+      "prime": 17,
+      "beta_index": 2,
+      "residue": 15
+    },
+    {
+      "polynomial": 3,
+      "minimum_degree": 3,
+      "seed": 3,
+      "prime": 17,
+      "beta_index": 4,
+      "residue": 9
+    }
+  ],
+  "checker_sha256": "40daa8b72b401325f33eb17e90a0e8b84d3ff7ea901eef98ca07a21d9ae913d3"
+}

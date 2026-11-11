@@ -1,0 +1,133 @@
+\section{The arithmetic question behind the experiments}
+For $s>1$, Dirichlet's beta function is
+\[
+ \beta(s)=\sum_{j=0}^{\infty}\frac{(-1)^j}{(2j+1)^s}.
+\]
+Its positive odd values are nonzero rational multiples of powers of
+$\pi$. Individual even values are much harder to study. Write
+$G=\beta(2)$ for Catalan's constant. This supplement concerns attempts
+to prove irrationality of $\beta(4)$, of a member of a very small set
+of even beta values, or of combinations $G+\lambda\pi^2$ with rational
+$\lambda$.
+
+The earlier investigation supplement~\cite{firstsupp} treats the first
+collection of determinant and integral approaches. The present document
+covers all 29 subsequent research records from 6--8 November 2026.
+The finite-count and
+shifted-interval theorems~\cite{count,shifted} provide context, but their
+proofs are not repeated here. The question now is whether their techniques,
+or other rational approximations, can reach a specified individual value
+or a much smaller set.
+
+The intended reader is familiar with partial fractions, prime valuations,
+basic complex analysis and finite-dimensional linear algebra. The Gram
+and lattice arguments are introduced through the particular quantity
+they must control. The first two constructions can be read without the
+longer mixed-moment analysis.
+
+\subsection{What would prove irrationality?}
+Suppose a fixed finite set of real numbers $\alpha_1,\ldots,\alpha_k$
+were rational. A common denominator $D$ would make
+\[
+ D\bigl(a_0+a_1\alpha_1+\cdots+a_k\alpha_k\bigr)\in\Z
+ \qquad(a_0,\ldots,a_k\in\Z).
+\]
+Thus nonzero integer-coefficient forms tending to zero would contradict
+that assumption. This elementary observation puts three requirements
+on a construction: the right support, enough smallness after the
+coefficients are made integral, and nonvanishing along an unbounded
+sequence.
+
+A small approximation error can conceal the second requirement.
+For example, $|\beta(4)-p/q|$ must be multiplied by $q$ before it becomes
+the value of the integer form $q\beta(4)-p$. A spectacularly accurate
+fraction can still give a large integer form. Several experiments below
+improve the approximation while falling short at precisely this step.
+
+\begin{definition}
+For a nonzero rational vector $v$, its rational content $\cont(v)>0$
+is the positive rational number for which $v/\cont(v)$ is a primitive
+integer vector. For a rational polynomial, apply this definition to
+its coefficient vector. Its primitive normalization divides by this
+content, with no change of sign.
+\end{definition}
+
+\begin{lemma}[Separate the rational constant's cost]\label{lem:constant-cost}
+Let $q+\sum_j\rho_j\alpha_j$ have some $\rho_j\ne0$. Put
+$g=\cont((\rho_j)_j)$, $A_j=\rho_j/g$, and write $q/g=a/d$ in lowest
+terms with $d>0$. The full primitive vector is
+\[
+             (a,dA_1,\ldots,dA_k),
+\]
+and its multiplier relative to the original form is $d/g$.
+\end{lemma}
+\begin{proof}
+The integer vector $(A_j)$ has gcd one, so $(dA_j)$ has gcd $d$.
+Since $\gcd(a,d)=1$, adjoining $a$ leaves gcd one.
+\end{proof}
+
+The lemma will explain a concrete failure in Section~\ref{sec:small}:
+two expressions have identical beta coefficients but different rational
+constants. Removing a finite prefix improves the real size, yet the new
+constant has a larger denominator after normalization by $g$.
+
+For determinant polynomials the same principle applies to every
+coefficient, rather than just a pair. If $P_n\in\Z[X]$, $\deg P_n=O(n)$,
+and $\theta=a/d$ is a fixed rational number, then
+$d^{\deg P_n}P_n(\theta)$ is integral. On a logarithmic $n^2$ scale,
+this fixed-denominator cost is $O(n)$ and is negligible. Allowing $d$
+to grow with $n$ destroys that argument. This distinction matters in
+the rational test evaluations of Section~\ref{sec:corrections}.
+
+\subsection{How to read the results}
+The main lines of investigation are summarized below. A limitation of
+one specified estimate is not a limitation of every estimate for the
+same construction.
+\begin{center}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{.22\textwidth}>{\raggedright\arraybackslash}p{.37\textwidth}>{\raggedright\arraybackslash}p{.34\textwidth}@{}}
+\toprule
+Construction & Established result & Remaining issue \\
+\midrule
+Odd-grid isolation & Fixed polynomial multipliers cannot isolate
+$\beta(4)$ under the stated degree condition. & Other multipliers,
+families or nonvanishing mechanisms. \\[3pt]
+Real Pad\'e forms & Exact real remainders and their exponential rates. &
+Further common coefficient factors or different evaluation regimes. \\[3pt]
+Mixed moments & Proved decay is sufficient before integer corrections. &
+Integer corrections that preserve enough of that decay. \\[3pt]
+Small beta sets & Complete forms and an exact large-prime residue formula. &
+A useful arithmetic balance beyond the finite tests. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Sections~\ref{sec:isolation} and~\ref{sec:pade} can be read independently.
+Sections~\ref{sec:moments}--\ref{sec:corrections} develop the mixed-moment
+problem in order: form a matrix whose entries are linear in $G+\pi^2$,
+bound its determinant, then identify what the integer corrections
+must accomplish.
+Section~\ref{sec:small} returns to the two- and three-value targets.
+Section~\ref{sec:variants} treats other tested variants. The catalog in
+Appendix~\ref{app:catalog} records the shorter investigations and
+superseded intermediate bounds, with an outcome for each source record.
+
+\subsection{Sources, certificates and review scope}
+The odd-grid construction is inherited from~\cite{shifted}, with the
+rational-function lineage described there. The real Pad\'e construction
+comes from Kawashima--Po\"els~\cite{KP}; its real interpretation follows
+the Cauchy-transform viewpoint of Rivoal~\cite{Rivoal06}. The mixed
+moments and Chebyshev rows come from OpenAI~\cite{OpenAI}. The small-set
+derivative construction follows the approach of Krisman~\cite{Krisman},
+including his use of triple zeros for grouped denominator cancellation.
+Precise attributions are repeated at the relevant proof steps.
+
+The accompanying files give the selected calculations and a complete
+record catalog. Classical inputs and imported construction lemmas are
+identified in the text. Rational and interval computations have distinct
+roles: an exact coefficient identity, a certified finite inequality and
+a limiting theorem are separate assertions.
+
+The underlying canonical decay estimate and this supplement received
+separate independent mathematical audits. Appendix~\ref{app:audit} gives
+their scopes, records the missing hypothesis identified in the correction
+argument, and describes the accompanying checks.

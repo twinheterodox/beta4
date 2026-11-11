@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "scope": "Finite computational replay; not an independent proof audit.",
+  "suites": {
+    "digamma": [
+      {
+        "script": "nonvanishing_checks.py",
+        "passed": true,
+        "seconds": 0.663
+      }
+    ]
+  },
+  "work_directory": "build/checks/replay-zo13rq3s"
+}

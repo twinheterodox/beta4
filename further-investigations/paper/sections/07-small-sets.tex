@@ -1,0 +1,213 @@
+\section{Two direct constructions for small beta sets}\label{sec:small}
+
+\subsection{Saving zeros by allowing more than one value}
+
+To prove that at least one of $\beta(4),\beta(6)$ is irrational, it
+would suffice to construct nonzero integer linear forms in these two
+values tending to zero. Under joint rationality, a single fixed
+denominator would make all these forms integers. There is no need to
+cancel either retained coefficient. The same applies to the three-value
+set $\{\beta(4),\beta(6),\beta(8)\}$.
+
+The differentiated rational-function method, as used by
+Krisman~\cite[Sections~2--4, especially Lemma~4.6]{Krisman}, provides
+a natural test. Differentiating twice shifts the first even period
+from $\beta(2)$ to $\beta(4)$. Its usual numerator zeros have
+multiplicity at least three, so they survive the differentiation.
+Could simple zeros save enough numerator degree to compensate for
+the rational boundary terms they leave? This is the question tested
+in \rec{R29}, following \rec{R28}.
+
+Let $n,r,v$ be positive odd integers, and let $A>rv$ be even. Define
+\begin{equation}\label{eq:small-rational}
+ R_n(t)=(2^nn!)^{A-rv}
+ \frac{\displaystyle\prod_{j=0}^{rn-1}
+               (t-(r-1)n+2j+1)^v}
+      {\displaystyle\prod_{h=0}^n(t+2h)^A}.
+\end{equation}
+The factorial normalization cancels the $n\log n$ terms in Stirling
+estimates. It does not change the primitive integer form, except
+possibly its sign. Reflection gives $R_n(-2n-t)=-R_n(t)$. If
+\[
+ R_n(t)=\sum_{h=0}^n\sum_{i=1}^A\frac{a_{i,h}}{(t+2h)^i},
+\]
+then $a_{i,n-h}=(-1)^{i+1}a_{i,h}$ and
+$\sum_h(-1)^ha_{i,h}=0$ for odd $i$.
+
+Put $u=(r-1)n/2$ and $S_K(s)=\sum_{j=0}^{K-1}(-1)^j/(2j+1)^s$.
+The full sum and its tail are
+\[
+ F_n=\sum_{j\ge0}(-1)^jR_n''(2j+1)/2,\qquad
+ T_n=\sum_{j\ge u}(-1)^jR_n''(2j+1)/2.
+\]
+Partial fractions give
+\begin{align}\label{eq:small-form}
+ T_n&=q_u+\sum_{s=4,6,\ldots,A+2}\rho_s\beta(s),\nonumber\\
+ \rho_{i+2}&=\binom{i+1}2\sum_h(-1)^ha_{i,h},\qquad
+ q_u=-\sum_{h,i}(-1)^h\binom{i+1}2a_{i,h}S_{u+h}(i+2).
+\end{align}
+The constant sum includes \emph{all} $i$, including odd $i$. Their
+aggregate beta coefficients vanish, but their rational finite sums
+need not. Setting $u=0$ gives the full sum and $q_0$, so
+\begin{equation}\label{eq:small-prefix}
+ q_0-q_u=\sum_{j=0}^{u-1}(-1)^jR_n''(2j+1)/2.
+\end{equation}
+For $v\ge3$ this prefix is zero. For $v=1$ it generally is not.
+
+\subsection{The zeros remove large denominator primes by grouping}
+
+The zeros serve an arithmetic purpose as well as making terms vanish.
+Suppose a proper rational function
+$V(t)=\sum_{h,i}c_{i,h}(t+2h)^{-i}$ has $p$-integral coefficients
+and vanishes at each negative odd integer from $-2n+1$ to $-1$,
+where $p>n$ is odd. In the rational constant of its alternating sum,
+group terms by that negative odd integer $x$. The group is
+\[
+ -\chi(x)\sum_{h:x+2h>0}\sum_i\frac{c_{i,h}}{(x+2h)^i},
+ \qquad \chi(x)=(-1)^{(x-1)/2}.
+\]
+The sum over all $h$ is $V(x)=0$, so the complementary range
+$x+2h<0$ represents the same group with the opposite sign.
+A denominator divisible by $p$ cannot occur in both ranges, since
+that would give $p\mid2(h-h')$ with $0<|h-h'|\le n<p$.
+At least one representation is therefore $p$-integral.
+
+For \eqref{eq:small-rational}, the coefficients are $p$-integral for
+odd $p>n$: local expansion only divides by differences $2(k-h)$.
+The required zeros survive for $V=R_n''/2$ when $v\ge3$, and for
+$V=WR_n$ without differentiation when $W$ is an integer polynomial
+and the product is proper. These constructions have no odd denominator
+primes above $n$ in their rational constants. The simple-zero derivative
+does not enjoy this cancellation.
+
+\subsection{An exact residue formula for the extra cost}
+
+Take $v=1$ and an odd prime satisfying
+\[
+ \max(rn,A+2)<p\le(r+1)n-1,\qquad
+ t=\frac{(r+1)n-1-p}{2}.
+\]
+In the finite sums for $q_u$, the only positive denominator divisible
+by $p$ is $p$ itself. It occurs at poles $h=n-t+j$, $0\le j\le t$.
+At such a pole exactly one numerator factor is $-p$. If $K_h$ is
+the product of the other factors divided by the other pole factors,
+local expansion gives
+$a_{A,h}/p\equiv-K_h$ and $a_{A-1,h}\equiv K_h\pmod p$.
+After multiplying $q_u$ by $p^{A+1}$, all lower orders vanish.
+The two surviving binomial coefficients differ by $A$, and direct
+factorial evaluation gives
+\begin{equation}\label{eq:tail-residue}
+ p^{A+1}q_u\equiv
+ \frac A2\chi(p)(-1)^{n-t}(n!)^{A-r}
+ \sum_{j=0}^t\frac{j!(rn-1-j)!}
+ {((n-t+j)!)^A((t-j)!)^A}\pmod p.
+\end{equation}
+Every factorial here has argument below $p$. This proves
+$v_p(q_u)\ge-(A+1)$, with equality whenever the residue is nonzero.
+Since all beta coefficients are $p$-integral, equality forces
+$p^{A+1}$ into the full primitive multiplier.
+
+For $r\ge3$, the full constant $q_0$ is $p$-integral because its
+finite denominators are at most $2n-1<p$. Thus these primes are a
+new cost of removing the prefix. For example, at $n=25,A=4,r=3$,
+each of $79,83,89,97$ occurs to exponent five in the primitive tail
+multiplier and is absent from the full-sum cost. The nonvanishing
+qualification in \eqref{eq:tail-residue} matters: among the $67$
+recorded comparisons, one residue vanishes. At $n=9,A=2,r=1,p=11$,
+the actual constant valuation is $-2$, rather than $-3$.
+
+\subsection{Keep the zeros and cancel \texorpdfstring{$\beta(2)$}{beta(2)} instead}
+
+A second test avoids differentiation. Form the full sums of $R_n$
+and $(t+n)^2R_n$, with $v=1$. Both have periods through $\beta(A)$,
+starting at $\beta(2)$, and their constants have the grouped
+cancellation just proved. Multiplication at a pole gives
+\[
+ a^{(2)}_{i,h}=(n-2h)^2a_{i,h}
+          +2(n-2h)a_{i+1,h}+a_{i+2,h}.
+\]
+Call the two complete forms $U_0,U_2$, and their $\beta(2)$
+coefficients $b_0,b_2$. With $g_2=\cont(b_0,b_2)$, the combination
+\[
+ H_n=(b_2/g_2)U_0-(b_0/g_2)U_2
+\]
+uses primitive integer weights and cancels $\beta(2)$ exactly.
+For $A=6$ it retains $\beta(4),\beta(6)$; for $A=8$ it retains the
+three-value set. Its complete coefficient vector is then reduced to
+primitive form once more. The weights depend on $n$, so the fixed
+multiplier theorem of Section~\ref{sec:isolation} does not apply.
+
+\subsection{The finite comparisons}
+
+The differentiated tests use $n=1,3,5,9,17,25$. At $n=25$, the
+natural logarithms of absolute values, divided by $n$, are as follows.
+The primitive columns include the rational constant and the complete
+coefficient gcd, as in Lemma~\ref{lem:constant-cost}.
+\begin{center}
+\begin{tabular}{@{}lrrrrrr@{}}
+\toprule
+Retained values&$A$&$r$&$v$&Raw tail&\shortstack{Primitive\\tail}&\shortstack{Primitive\\full sum}\\
+\midrule
+$\beta(4)$&2&1&1&$-.06$&7.48&7.48\\
+$\beta(4),\beta(6)$&4&1&1&$-.13$&11.28&11.28\\
+$\beta(4),\beta(6)$&4&3&1&$-2.85$&18.15&13.37\\
+$\beta(4),\beta(6)$&4&1&3&$-.18$&8.96&8.96\\
+$\beta(4),\beta(6),\beta(8)$&6&3&1&$-5.80$&22.79&17.35\\
+$\beta(4),\beta(6),\beta(8)$&6&5&1&$-4.48$&37.78&20.36\\
+$\beta(4),\beta(6),\beta(8)$&6&1&3&$-.26$&10.87&10.87\\
+$\beta(4),\ldots,\beta(12)$&10&3&3&$-5.44$&15.69&15.69\\
+\bottomrule
+\end{tabular}
+\end{center}
+For $A=4,r=3$, removing the prefix saves about $3.81$ in raw size
+but adds about $8.59$ in constant-denominator cost, in this normalization.
+The resulting primitive form is larger. These are finite values, not
+claimed limiting exponents.
+The last row keeps five even values: with $r=v=3$, the degree condition
+$A>rv$ requires $A\ge10$. It shows the larger support needed to retain
+triple zeros on that longer numerator block.
+
+The cancellation alternative gives the following primitive values.
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+Retained support&$A$&$r$&$\log|\text{primitive }H_{25}|/25$\\
+\midrule
+$\beta(4)$&4&3&10.88\\
+$\beta(4),\beta(6)$&6&1&12.39\\
+$\beta(4),\beta(6)$&6&3&13.13\\
+$\beta(4),\beta(6)$&6&5&20.53\\
+$\beta(4),\beta(6),\beta(8)$&8&3&15.36\\
+$\beta(4),\beta(6),\beta(8)$&8&5&22.03\\
+$\beta(4),\beta(6),\beta(8)$&8&7&32.61\\
+\bottomrule
+\end{tabular}
+\end{center}
+For $A=6,r=3$, the two primitive input forms have rates about
+$3.13$ and $3.10$. Eliminating $\beta(2)$ raises the result to $13.13$;
+the primitive cancellation weights have up to $429$ bits. The $A=4$
+control is the earlier adaptive-isolation family, up to scalar and sign.
+
+All $115$ final primitive forms at the tested $n\ge3$ have absolute
+value greater than one. Some first-index forms are small: the
+$A=6,r=3,n=1$ cancellation gives
+$731-182\beta(4)-552\beta(6)$. Its isolated smallness gives no
+sequence tending to zero. The tests identify costs of these two
+changes; they do not rule out a different small-set construction.
+In particular, Krisman's shorter finite-set theorem uses a specifically
+balanced rational function and its arithmetic savings. Testing the
+simple families above does not test every choice in that method.
+
+The checks reconstruct all partial fractions by a second algorithm,
+retain every constant term, and compare all $222$ complete forms,
+including intermediate ones. Numerical signs and sizes are enclosed
+both through Arb Hurwitz zeta values and through an Euler-transformed
+alternating series. The latter has positive differences
+\[
+ \Delta^jf_s(0)=\frac{4^j(j!)^2}{(2j+1)!}
+ h_{s-1}\left(1,\tfrac13,\ldots,\tfrac1{2j+1}\right),
+ \qquad f_s(k)=(2k+1)^{-s},
+\]
+where $h_d$ is the complete homogeneous symmetric polynomial.
+Summing $2^{-j-1}\Delta^jf_s(0)$ and bounding its remaining positive
+tail supplies an independent numerical enclosure.

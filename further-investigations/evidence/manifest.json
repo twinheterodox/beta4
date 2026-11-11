@@ -1,0 +1,679 @@
+{
+  "scope": "Selected computational dependencies, not a copy of the private archive.",
+  "files": [
+    {
+      "path": "evidence/canonical/potential_trials.json",
+      "source_record": "R20",
+      "source_file": "potential_trials.json",
+      "source_sha256": "7fa14665e6b1a5c8647e2de6ed33256bf936d63b0951aa866e773fc1dd0f951b",
+      "sha256": "7fa14665e6b1a5c8647e2de6ed33256bf936d63b0951aa866e773fc1dd0f951b",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/canonical/potential_certificate.json",
+      "source_record": "R20",
+      "source_file": "potential_certificate.json",
+      "source_sha256": "3c36b2f6d3d3e914d90112a4c7d11ddd69410162e8e36770ebab7d34686dd984",
+      "sha256": "3c36b2f6d3d3e914d90112a4c7d11ddd69410162e8e36770ebab7d34686dd984",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "checks/canonical/potential_certify.py",
+      "source_record": "R20",
+      "source_file": "potential_certify.py",
+      "source_sha256": "25f20b98dd836b962b5afede8848dba56f272aa9737b81cd718e7ed57a7f9f27",
+      "sha256": "25f20b98dd836b962b5afede8848dba56f272aa9737b81cd718e7ed57a7f9f27",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/canonical/energy_opt_d40.json",
+      "source_record": "R19",
+      "source_file": "energy_opt_d40.json",
+      "source_sha256": "dbd3a89823fc55b5a86184c5a44bd073b43eb03dd71075b58a9f68369e86bf34",
+      "sha256": "dbd3a89823fc55b5a86184c5a44bd073b43eb03dd71075b58a9f68369e86bf34",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/canonical/energy_certificate_d40.json",
+      "source_record": "R19",
+      "source_file": "energy_certificate_d40.json",
+      "source_sha256": "38594870c96b18f9d746e86ae3b1e3d86d4d4fbb876844e6e06dcf6b6de96c54",
+      "sha256": "38594870c96b18f9d746e86ae3b1e3d86d4d4fbb876844e6e06dcf6b6de96c54",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/canonical/column_opt_d200.json",
+      "source_record": "R19",
+      "source_file": "column_opt_d200.json",
+      "source_sha256": "9163b5902dd7d32fb8373b6ec8a57fb29b0560592535234122870ac6863817df",
+      "sha256": "9163b5902dd7d32fb8373b6ec8a57fb29b0560592535234122870ac6863817df",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/canonical/column_certificate_d200.json",
+      "source_record": "R19",
+      "source_file": "column_certificate_d200.json",
+      "source_sha256": "d2262a88383e61a2034c61acd50e63bac45afdff57acc635d389794b64e799ad",
+      "sha256": "d2262a88383e61a2034c61acd50e63bac45afdff57acc635d389794b64e799ad",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/canonical/column_root_crosscheck.json",
+      "source_record": "R19",
+      "source_file": "column_root_crosscheck.json",
+      "source_sha256": "6198f2246134e3e53b35ab941280c2787067c803c5a7002e677658b7a2685598",
+      "sha256": "6198f2246134e3e53b35ab941280c2787067c803c5a7002e677658b7a2685598",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "checks/canonical/energy_certify.py",
+      "source_record": "R19",
+      "source_file": "energy_certify.py",
+      "source_sha256": "724fd2a8fc297ca0054af31ef0454ba5afc8f511057bad0cd4aa731ef252dc2a",
+      "sha256": "724fd2a8fc297ca0054af31ef0454ba5afc8f511057bad0cd4aa731ef252dc2a",
+      "adaptation": "Paths/metadata or selected-function extraction only; arithmetic retained."
+    },
+    {
+      "path": "checks/canonical/column_certify_fast.py",
+      "source_record": "R19",
+      "source_file": "column_certify_fast.py",
+      "source_sha256": "f700dd6c80265e2d4b969dc4e06637a2fab127f24b330d715e47b3bd46d6841b",
+      "sha256": "d0a7a8f161cbcd5e7670508fc34dd0daa64a5b83b7a5b43a7f75a35ff143f7c3",
+      "adaptation": "Paths/metadata or selected-function extraction only; arithmetic retained."
+    },
+    {
+      "path": "checks/canonical/column_crosscheck.py",
+      "source_record": "R19",
+      "source_file": "column_crosscheck.py",
+      "source_sha256": "3ffae6930580bd7a8e7fd28b5d592ae33593911e0ffa39f70d806846c7018ed9",
+      "sha256": "fd55583b9fa46b6da5027e795e9f25120aa01dc2cb0d0f68244ce91b411c4333",
+      "adaptation": "Paths/metadata or selected-function extraction only; arithmetic retained."
+    },
+    {
+      "path": "checks/canonical/column_certify.py",
+      "source_record": "R07",
+      "source_file": "column_certify.py",
+      "source_sha256": "65b139e3aa38faab0b32a7a19565d8c42066f674ba3052f4273ac7403ff86ba5",
+      "sha256": "65b139e3aa38faab0b32a7a19565d8c42066f674ba3052f4273ac7403ff86ba5",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/canonical/nonvanishing-seeds.json",
+      "source_record": "R04",
+      "source_file": "nonvanishing-seeds.json",
+      "source_sha256": "7ee88070bae42801d4169d7ff1cbbf723df93bc699e2aaccf25a78e38538d096",
+      "sha256": "7ee88070bae42801d4169d7ff1cbbf723df93bc699e2aaccf25a78e38538d096",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/canonical/slope-certificate.json",
+      "source_record": "R04",
+      "source_file": "slope-certificate.json",
+      "source_sha256": "2be65e65f4e2417d67211ae9da90abeae90f9442e0aa4b802d18d9e20b42bdf6",
+      "sha256": "2be65e65f4e2417d67211ae9da90abeae90f9442e0aa4b802d18d9e20b42bdf6",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "checks/canonical/slope-certificate.py",
+      "source_record": "R04",
+      "source_file": "slope-certificate.py",
+      "source_sha256": "5aa9efbddce1015e7c52244ced7e8a36eba6d6f87c5cf4abdb07252c30087a19",
+      "sha256": "5aa9efbddce1015e7c52244ced7e8a36eba6d6f87c5cf4abdb07252c30087a19",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/cases.json",
+      "source_record": "R29",
+      "source_file": "cases.json",
+      "source_sha256": "17c8674129fd4e2332f2ea2bdc0e3ce426d095753f04d5d66603e6aa2a38ea73",
+      "sha256": "17c8674129fd4e2332f2ea2bdc0e3ce426d095753f04d5d66603e6aa2a38ea73",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/elimination.json",
+      "source_record": "R29",
+      "source_file": "elimination.json",
+      "source_sha256": "eddaca15faae3194be6772b32bcbd6764370d4007d541084058e72dd96cc9888",
+      "sha256": "eddaca15faae3194be6772b32bcbd6764370d4007d541084058e72dd96cc9888",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/checks.json",
+      "source_record": "R29",
+      "source_file": "checks.json",
+      "source_sha256": "c9362abca5d6a5d34451206e309ea3243c1317c4db6e8eb12c7a207424ff991c",
+      "sha256": "c9362abca5d6a5d34451206e309ea3243c1317c4db6e8eb12c7a207424ff991c",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A2_r1_v1_n1.json",
+      "source_record": "R29",
+      "source_file": "case_A2_r1_v1_n1.json",
+      "source_sha256": "885e3ae781c11afedb4e3aaefb53a7dbcd7fb67ea8ff56280938bdb14a0856c9",
+      "sha256": "885e3ae781c11afedb4e3aaefb53a7dbcd7fb67ea8ff56280938bdb14a0856c9",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A2_r1_v1_n3.json",
+      "source_record": "R29",
+      "source_file": "case_A2_r1_v1_n3.json",
+      "source_sha256": "d8771709a4da7362ac2e123dc3a78ec37cced6178970bb27faec9ec605080621",
+      "sha256": "d8771709a4da7362ac2e123dc3a78ec37cced6178970bb27faec9ec605080621",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A2_r1_v1_n5.json",
+      "source_record": "R29",
+      "source_file": "case_A2_r1_v1_n5.json",
+      "source_sha256": "5d505973c7bbbe231ce21955bb82f15e53b589f9bdfff8e97cf773efe1de0c93",
+      "sha256": "5d505973c7bbbe231ce21955bb82f15e53b589f9bdfff8e97cf773efe1de0c93",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A2_r1_v1_n9.json",
+      "source_record": "R29",
+      "source_file": "case_A2_r1_v1_n9.json",
+      "source_sha256": "58b7aee0c5aaf18bee4f68cd04d9fc79af01b240170745df4093dd414f9689e9",
+      "sha256": "58b7aee0c5aaf18bee4f68cd04d9fc79af01b240170745df4093dd414f9689e9",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A2_r1_v1_n17.json",
+      "source_record": "R29",
+      "source_file": "case_A2_r1_v1_n17.json",
+      "source_sha256": "74089edf32c8910c90510fb26dca32175ce1afd01b839b88f49f1e5ccf4ab520",
+      "sha256": "74089edf32c8910c90510fb26dca32175ce1afd01b839b88f49f1e5ccf4ab520",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A2_r1_v1_n25.json",
+      "source_record": "R29",
+      "source_file": "case_A2_r1_v1_n25.json",
+      "source_sha256": "5d2bdacb555b83f6a0b83019415b5c09ea77de46c9f53cf164ccc15744568aa0",
+      "sha256": "5d2bdacb555b83f6a0b83019415b5c09ea77de46c9f53cf164ccc15744568aa0",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A4_r1_v1_n1.json",
+      "source_record": "R29",
+      "source_file": "case_A4_r1_v1_n1.json",
+      "source_sha256": "96167d5e703c50708d55ae371fe8efe51feb234e60fc60057d8afef38f3b39fc",
+      "sha256": "96167d5e703c50708d55ae371fe8efe51feb234e60fc60057d8afef38f3b39fc",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A4_r1_v1_n3.json",
+      "source_record": "R29",
+      "source_file": "case_A4_r1_v1_n3.json",
+      "source_sha256": "cf9edb59345c1558fbe58419a8e8230a65b475041c3bbdc24ee12cef776b1c63",
+      "sha256": "cf9edb59345c1558fbe58419a8e8230a65b475041c3bbdc24ee12cef776b1c63",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A4_r1_v1_n5.json",
+      "source_record": "R29",
+      "source_file": "case_A4_r1_v1_n5.json",
+      "source_sha256": "e98bd44847ab40f6ddc9e34dfaeb5a109a7c24aa8f9451d08552d8fcd3e304f8",
+      "sha256": "e98bd44847ab40f6ddc9e34dfaeb5a109a7c24aa8f9451d08552d8fcd3e304f8",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A4_r1_v1_n9.json",
+      "source_record": "R29",
+      "source_file": "case_A4_r1_v1_n9.json",
+      "source_sha256": "a6b5e2332208bffc6c79b6034ec4460431c82f9f1d4e41bb56aa7229dee7a94e",
+      "sha256": "a6b5e2332208bffc6c79b6034ec4460431c82f9f1d4e41bb56aa7229dee7a94e",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A4_r1_v1_n17.json",
+      "source_record": "R29",
+      "source_file": "case_A4_r1_v1_n17.json",
+      "source_sha256": "84bd6913cfca5d0583e3aa4805a0b7497c4e65caa34f35ca27553cfb6b87da44",
+      "sha256": "84bd6913cfca5d0583e3aa4805a0b7497c4e65caa34f35ca27553cfb6b87da44",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A4_r1_v1_n25.json",
+      "source_record": "R29",
+      "source_file": "case_A4_r1_v1_n25.json",
+      "source_sha256": "dc58344c350400d2b72d4e285f1bc54b05ee79b1de1d45c201d94d4cb5630d7c",
+      "sha256": "dc58344c350400d2b72d4e285f1bc54b05ee79b1de1d45c201d94d4cb5630d7c",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A4_r3_v1_n1.json",
+      "source_record": "R29",
+      "source_file": "case_A4_r3_v1_n1.json",
+      "source_sha256": "dac6c1043a62022ec0bd6c5286a579b48a5c002a0e5832662d10d827b5a49454",
+      "sha256": "dac6c1043a62022ec0bd6c5286a579b48a5c002a0e5832662d10d827b5a49454",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A4_r3_v1_n3.json",
+      "source_record": "R29",
+      "source_file": "case_A4_r3_v1_n3.json",
+      "source_sha256": "c85ef7cfad96dba22ad4d8dae17280674df0c2ca0a241948dd03f23dd1ee767c",
+      "sha256": "c85ef7cfad96dba22ad4d8dae17280674df0c2ca0a241948dd03f23dd1ee767c",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A4_r3_v1_n5.json",
+      "source_record": "R29",
+      "source_file": "case_A4_r3_v1_n5.json",
+      "source_sha256": "3cbf9ec4da25414fb8c75d14f4a17ea656f7b5f9fa66c4d71336def3c6f4821f",
+      "sha256": "3cbf9ec4da25414fb8c75d14f4a17ea656f7b5f9fa66c4d71336def3c6f4821f",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A4_r3_v1_n9.json",
+      "source_record": "R29",
+      "source_file": "case_A4_r3_v1_n9.json",
+      "source_sha256": "be5f67f6b6fc69a9d4a3d6dfc0f00050e075aaeb4d1f1c6d55eab537e73700a1",
+      "sha256": "be5f67f6b6fc69a9d4a3d6dfc0f00050e075aaeb4d1f1c6d55eab537e73700a1",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A4_r3_v1_n17.json",
+      "source_record": "R29",
+      "source_file": "case_A4_r3_v1_n17.json",
+      "source_sha256": "cdc50a2f994cfb75060aa71335c49bfc18932449e6bb4b77e9c2d10afdf5aebf",
+      "sha256": "cdc50a2f994cfb75060aa71335c49bfc18932449e6bb4b77e9c2d10afdf5aebf",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A4_r3_v1_n25.json",
+      "source_record": "R29",
+      "source_file": "case_A4_r3_v1_n25.json",
+      "source_sha256": "32bee3bfa767d53750055c41fe076d38a5172a08e0f21cf6f51a712468cdabdb",
+      "sha256": "32bee3bfa767d53750055c41fe076d38a5172a08e0f21cf6f51a712468cdabdb",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A4_r1_v3_n1.json",
+      "source_record": "R29",
+      "source_file": "case_A4_r1_v3_n1.json",
+      "source_sha256": "d9b043c58a2276b14eb3b1514016494ecbeee9e63b3f09b0d9c5d8704a2f9292",
+      "sha256": "d9b043c58a2276b14eb3b1514016494ecbeee9e63b3f09b0d9c5d8704a2f9292",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A4_r1_v3_n3.json",
+      "source_record": "R29",
+      "source_file": "case_A4_r1_v3_n3.json",
+      "source_sha256": "b030c8e41b2e1eaeb8863417f81fd2a06642983579153aaf7fe42413dca58760",
+      "sha256": "b030c8e41b2e1eaeb8863417f81fd2a06642983579153aaf7fe42413dca58760",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A4_r1_v3_n5.json",
+      "source_record": "R29",
+      "source_file": "case_A4_r1_v3_n5.json",
+      "source_sha256": "956e13f389eee679a405362dffb223837eb0cbf0297d4dea39ad9872d8834398",
+      "sha256": "956e13f389eee679a405362dffb223837eb0cbf0297d4dea39ad9872d8834398",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A4_r1_v3_n9.json",
+      "source_record": "R29",
+      "source_file": "case_A4_r1_v3_n9.json",
+      "source_sha256": "81c5ec151ee5bc7a9e36bda9c92338c37457f46fb63d31f7e2fe4dbe9f33d2d9",
+      "sha256": "81c5ec151ee5bc7a9e36bda9c92338c37457f46fb63d31f7e2fe4dbe9f33d2d9",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A4_r1_v3_n17.json",
+      "source_record": "R29",
+      "source_file": "case_A4_r1_v3_n17.json",
+      "source_sha256": "b5a429efeb9a865285bbda19590be7246a6f90a05ff6c8b0fb17b7d114d2f312",
+      "sha256": "b5a429efeb9a865285bbda19590be7246a6f90a05ff6c8b0fb17b7d114d2f312",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A4_r1_v3_n25.json",
+      "source_record": "R29",
+      "source_file": "case_A4_r1_v3_n25.json",
+      "source_sha256": "8ef4c9fb637c2009d704d3cbf6785cdec1d5e1ad186cc86ff6a53b47d4c79c15",
+      "sha256": "8ef4c9fb637c2009d704d3cbf6785cdec1d5e1ad186cc86ff6a53b47d4c79c15",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A6_r3_v1_n1.json",
+      "source_record": "R29",
+      "source_file": "case_A6_r3_v1_n1.json",
+      "source_sha256": "047669dba7e918030a6a9d26211ea8330ede3df7140f6954bd50f42fc57fd2bc",
+      "sha256": "047669dba7e918030a6a9d26211ea8330ede3df7140f6954bd50f42fc57fd2bc",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A6_r3_v1_n3.json",
+      "source_record": "R29",
+      "source_file": "case_A6_r3_v1_n3.json",
+      "source_sha256": "ed0c94237f188e3dce90f9e3c18d1aa1574304677a956da00fb6a253c20e8da5",
+      "sha256": "ed0c94237f188e3dce90f9e3c18d1aa1574304677a956da00fb6a253c20e8da5",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A6_r3_v1_n5.json",
+      "source_record": "R29",
+      "source_file": "case_A6_r3_v1_n5.json",
+      "source_sha256": "7ee49d36b775dc3113883716c9f4cdd6c2c34dcab88639ac72284d93a5a33ced",
+      "sha256": "7ee49d36b775dc3113883716c9f4cdd6c2c34dcab88639ac72284d93a5a33ced",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A6_r3_v1_n9.json",
+      "source_record": "R29",
+      "source_file": "case_A6_r3_v1_n9.json",
+      "source_sha256": "dc76b08479892e2e64049ad868c7e3b2bd1f3edc535c1600b5b3ba3a76328f47",
+      "sha256": "dc76b08479892e2e64049ad868c7e3b2bd1f3edc535c1600b5b3ba3a76328f47",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A6_r3_v1_n17.json",
+      "source_record": "R29",
+      "source_file": "case_A6_r3_v1_n17.json",
+      "source_sha256": "0797de7e20eb06dba33cc2d2e231dc8e991acead88c565c971ddc9e6f3766e27",
+      "sha256": "0797de7e20eb06dba33cc2d2e231dc8e991acead88c565c971ddc9e6f3766e27",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A6_r3_v1_n25.json",
+      "source_record": "R29",
+      "source_file": "case_A6_r3_v1_n25.json",
+      "source_sha256": "bc837b791b6f6a02650b754ed9491887b15f153bf6c9012dfc672c948ca63772",
+      "sha256": "bc837b791b6f6a02650b754ed9491887b15f153bf6c9012dfc672c948ca63772",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A6_r5_v1_n1.json",
+      "source_record": "R29",
+      "source_file": "case_A6_r5_v1_n1.json",
+      "source_sha256": "05b744f1bd74501885bff9d41faa38777275cb48063175387c48fa5f39cf28d2",
+      "sha256": "05b744f1bd74501885bff9d41faa38777275cb48063175387c48fa5f39cf28d2",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A6_r5_v1_n3.json",
+      "source_record": "R29",
+      "source_file": "case_A6_r5_v1_n3.json",
+      "source_sha256": "a57d73b7e84e3764e282de0278d3216c3d43383f69394405b2eab7565ca8ace4",
+      "sha256": "a57d73b7e84e3764e282de0278d3216c3d43383f69394405b2eab7565ca8ace4",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A6_r5_v1_n5.json",
+      "source_record": "R29",
+      "source_file": "case_A6_r5_v1_n5.json",
+      "source_sha256": "3a77a1986a4f1de3660efd1bc5113a76926be027143e126e96b7e490e6c06fd4",
+      "sha256": "3a77a1986a4f1de3660efd1bc5113a76926be027143e126e96b7e490e6c06fd4",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A6_r5_v1_n9.json",
+      "source_record": "R29",
+      "source_file": "case_A6_r5_v1_n9.json",
+      "source_sha256": "feff4a11bc57ddabb9ca04dc1ae0a052cbcae82bbf54633e7f4684017ef0b08c",
+      "sha256": "feff4a11bc57ddabb9ca04dc1ae0a052cbcae82bbf54633e7f4684017ef0b08c",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A6_r5_v1_n17.json",
+      "source_record": "R29",
+      "source_file": "case_A6_r5_v1_n17.json",
+      "source_sha256": "3ef3a4bf645f0f42b6b2977e5f05acde3a0e80754ccf1ff221cd4277f0e46aef",
+      "sha256": "3ef3a4bf645f0f42b6b2977e5f05acde3a0e80754ccf1ff221cd4277f0e46aef",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A6_r5_v1_n25.json",
+      "source_record": "R29",
+      "source_file": "case_A6_r5_v1_n25.json",
+      "source_sha256": "3b787a628365fb1af582130026d990a1cd5d33f578a1cda6b03265be3fd8d076",
+      "sha256": "3b787a628365fb1af582130026d990a1cd5d33f578a1cda6b03265be3fd8d076",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A6_r1_v3_n1.json",
+      "source_record": "R29",
+      "source_file": "case_A6_r1_v3_n1.json",
+      "source_sha256": "92e7a31245d760d98cab72e150570ccf04e663126caee48a7cf216ad67e97c35",
+      "sha256": "92e7a31245d760d98cab72e150570ccf04e663126caee48a7cf216ad67e97c35",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A6_r1_v3_n3.json",
+      "source_record": "R29",
+      "source_file": "case_A6_r1_v3_n3.json",
+      "source_sha256": "a1ae4aa737a22ea61ba97eb372c96335d0a6f714681445c3d1374f71b77ee1ed",
+      "sha256": "a1ae4aa737a22ea61ba97eb372c96335d0a6f714681445c3d1374f71b77ee1ed",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A6_r1_v3_n5.json",
+      "source_record": "R29",
+      "source_file": "case_A6_r1_v3_n5.json",
+      "source_sha256": "3841fb09b0e927b2ae9b9882bac4d6e7351972fd740af118793fb19c9a50d4c1",
+      "sha256": "3841fb09b0e927b2ae9b9882bac4d6e7351972fd740af118793fb19c9a50d4c1",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A6_r1_v3_n9.json",
+      "source_record": "R29",
+      "source_file": "case_A6_r1_v3_n9.json",
+      "source_sha256": "e6fe833044f7b7b2e6866a88938e5d8f462e45ef678560ba8fb873098c51d635",
+      "sha256": "e6fe833044f7b7b2e6866a88938e5d8f462e45ef678560ba8fb873098c51d635",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A6_r1_v3_n17.json",
+      "source_record": "R29",
+      "source_file": "case_A6_r1_v3_n17.json",
+      "source_sha256": "acf3f64a23bb50fca7a138d3da73d8947e6ccef4bc7b807b6eefe42c0d9d8329",
+      "sha256": "acf3f64a23bb50fca7a138d3da73d8947e6ccef4bc7b807b6eefe42c0d9d8329",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A6_r1_v3_n25.json",
+      "source_record": "R29",
+      "source_file": "case_A6_r1_v3_n25.json",
+      "source_sha256": "a0376eb5cf65652263ccedb1f2ea0993777e28f38240fb9a85f96446acdb165f",
+      "sha256": "a0376eb5cf65652263ccedb1f2ea0993777e28f38240fb9a85f96446acdb165f",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A10_r3_v3_n1.json",
+      "source_record": "R29",
+      "source_file": "case_A10_r3_v3_n1.json",
+      "source_sha256": "28d9f0a31308a060164bccb978b268bccf0b7acec0aee67b26b076c9be919de2",
+      "sha256": "28d9f0a31308a060164bccb978b268bccf0b7acec0aee67b26b076c9be919de2",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A10_r3_v3_n3.json",
+      "source_record": "R29",
+      "source_file": "case_A10_r3_v3_n3.json",
+      "source_sha256": "3df54f05d1f3cd6eb253a019d5b5793807cb84077321d0fef66cb574ff0a801c",
+      "sha256": "3df54f05d1f3cd6eb253a019d5b5793807cb84077321d0fef66cb574ff0a801c",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A10_r3_v3_n5.json",
+      "source_record": "R29",
+      "source_file": "case_A10_r3_v3_n5.json",
+      "source_sha256": "24f3db1e412b26e702468e4659f40d086d80c15b17798557bb7d08de04b9f0dc",
+      "sha256": "24f3db1e412b26e702468e4659f40d086d80c15b17798557bb7d08de04b9f0dc",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A10_r3_v3_n9.json",
+      "source_record": "R29",
+      "source_file": "case_A10_r3_v3_n9.json",
+      "source_sha256": "5801a2f838e2ebc6c037cfb8cedf248f43e6a1deecf935946db2e4538838a0fd",
+      "sha256": "5801a2f838e2ebc6c037cfb8cedf248f43e6a1deecf935946db2e4538838a0fd",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A10_r3_v3_n17.json",
+      "source_record": "R29",
+      "source_file": "case_A10_r3_v3_n17.json",
+      "source_sha256": "435c655715761245bb981cad3eb65e2bec259c11f17395751b0cb7108cdff535",
+      "sha256": "435c655715761245bb981cad3eb65e2bec259c11f17395751b0cb7108cdff535",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/small/case_A10_r3_v3_n25.json",
+      "source_record": "R29",
+      "source_file": "case_A10_r3_v3_n25.json",
+      "source_sha256": "f9c16cd74e7d6a912aef2a3bc88ebbf7de09aabcddb5bef5b68457ab0da7693e",
+      "sha256": "f9c16cd74e7d6a912aef2a3bc88ebbf7de09aabcddb5bef5b68457ab0da7693e",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "checks/small/verify.py",
+      "source_record": "R29",
+      "source_file": "verify.py",
+      "source_sha256": "2ec34a532c04860fb9e16e01e6af2cfee8b35665ab07665aa90f267f74f84744",
+      "sha256": "2ec34a532c04860fb9e16e01e6af2cfee8b35665ab07665aa90f267f74f84744",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "checks/isolation/explore.py",
+      "source_record": "R25",
+      "source_file": "explore.py",
+      "source_sha256": "6f94e0258e902fa183a4f181ec8e8a89f68437a3edccfc1d60729405010dea16",
+      "sha256": "6f94e0258e902fa183a4f181ec8e8a89f68437a3edccfc1d60729405010dea16",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "checks/isolation/verify.py",
+      "source_record": "R25",
+      "source_file": "verify.py",
+      "source_sha256": "594395f89a8e3a06f9f8e4598c172b7a6ea2c460c70f4cf0d9e73da4c6e927a0",
+      "sha256": "594395f89a8e3a06f9f8e4598c172b7a6ea2c460c70f4cf0d9e73da4c6e927a0",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "checks/isolation/check_dilation.py",
+      "source_record": "R25",
+      "source_file": "check_dilation.py",
+      "source_sha256": "40daa8b72b401325f33eb17e90a0e8b84d3ff7ea901eef98ca07a21d9ae913d3",
+      "sha256": "40daa8b72b401325f33eb17e90a0e8b84d3ff7ea901eef98ca07a21d9ae913d3",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "checks/isolation/polynomial_gate.py",
+      "source_record": "R25",
+      "source_file": "polynomial_gate.py",
+      "source_sha256": "d022ca3fa0463423cb6cdb76ccdf5440427bc22aa36221531ba9ae38b487e943",
+      "sha256": "d022ca3fa0463423cb6cdb76ccdf5440427bc22aa36221531ba9ae38b487e943",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/isolation/explore.json",
+      "source_record": "R25",
+      "source_file": "explore.json",
+      "source_sha256": "fe57076427a934938c25db6c7c5c993830b16e6338fe8abd01b55871b61e9c75",
+      "sha256": "fe57076427a934938c25db6c7c5c993830b16e6338fe8abd01b55871b61e9c75",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/isolation/verification.json",
+      "source_record": "R25",
+      "source_file": "verification.json",
+      "source_sha256": "f1f093576cff1a5c5522c48b5aac557b2be641b1b163d6d54fc1709bcb1a25b0",
+      "sha256": "f1f093576cff1a5c5522c48b5aac557b2be641b1b163d6d54fc1709bcb1a25b0",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/isolation/dilation-checks.json",
+      "source_record": "R25",
+      "source_file": "dilation-checks.json",
+      "source_sha256": "f7b4ce6972785776806e07101840d8ea19fdae3b852939b0bdef255e11b9c8fd",
+      "sha256": "f7b4ce6972785776806e07101840d8ea19fdae3b852939b0bdef255e11b9c8fd",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/isolation/polynomial-gate.json",
+      "source_record": "R25",
+      "source_file": "polynomial-gate.json",
+      "source_sha256": "75792e26181e89923a01115ec703be0feb13c31ba8934d4a0ee2b1eed812df0f",
+      "sha256": "75792e26181e89923a01115ec703be0feb13c31ba8934d4a0ee2b1eed812df0f",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "checks/pade/explore.py",
+      "source_record": "R26",
+      "source_file": "explore.py",
+      "source_sha256": "633224c2b60b6bdb5b9b92b2118d8d9df2eb5d8dd2b1871cdaa1845cc9f3fc9a",
+      "sha256": "633224c2b60b6bdb5b9b92b2118d8d9df2eb5d8dd2b1871cdaa1845cc9f3fc9a",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "evidence/pade/exploration.json",
+      "source_record": "R26",
+      "source_file": "exploration.json",
+      "source_sha256": "aae2e6a17d44b425712b282a2d00a4991c00dc6e3a9a06a0c3d9e6e15dc2692d",
+      "sha256": "aae2e6a17d44b425712b282a2d00a4991c00dc6e3a9a06a0c3d9e6e15dc2692d",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "checks/pade/verify.py",
+      "source_record": "R27",
+      "source_file": "verify.py",
+      "source_sha256": "7a34ae8d3aecc004018fe7038dfe6370d3613d0a15802f28cedae5b119312c0f",
+      "sha256": "591be34afe9f8fc1f370e881d5a74b82766b054046f32deb8caf3df87931cedf",
+      "adaptation": "Paths/metadata or selected-function extraction only; arithmetic retained."
+    },
+    {
+      "path": "evidence/pade/verification.json",
+      "source_record": "R27",
+      "source_file": "verification.json",
+      "source_sha256": "37419a09456847cee0b5a3b0dbd48b3033d0d72142e4813838fc32dcb062a0c2",
+      "sha256": "37419a09456847cee0b5a3b0dbd48b3033d0d72142e4813838fc32dcb062a0c2",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "checks/digamma/loewner.py",
+      "source_record": "R15",
+      "source_file": "loewner.py",
+      "source_sha256": "c27961a3ca1a4c0e11d3af40ca6c0b6f38add525af5809b0e792a472416b1868",
+      "sha256": "e90bc046543dc10c408beb6a81c8255d72d437eac692ffd0383fe6c953eaf310",
+      "adaptation": "Paths/metadata or selected-function extraction only; arithmetic retained."
+    },
+    {
+      "path": "checks/digamma/nonvanishing_checks.py",
+      "source_record": "R15",
+      "source_file": "nonvanishing_checks.py",
+      "source_sha256": "629a86d7854c6fa8c7733e21fb5bfb0da979fa27a3f188b499d6835107672172",
+      "sha256": "8a6c59784cfb99ce33d6ca3d417c4e0448330f6998c0f06837a23a06f30f90d5",
+      "adaptation": "Paths/metadata or selected-function extraction only; arithmetic retained."
+    },
+    {
+      "path": "evidence/digamma/nonvanishing_checks.json",
+      "source_record": "R15",
+      "source_file": "nonvanishing_checks.json",
+      "source_sha256": "10d5f6cb2cd69407c19a30896daac7ecefec76b3d2f4ba5da5d955a485c09890",
+      "sha256": "10d5f6cb2cd69407c19a30896daac7ecefec76b3d2f4ba5da5d955a485c09890",
+      "adaptation": "Verbatim selected scientific file."
+    },
+    {
+      "path": "checks/algebra/verify.py",
+      "source_record": "assembly",
+      "sha256": "63d1168fa3a8d00f955df9985e5f379d0ab7db98068bce67a0b75882e1c27e6d",
+      "adaptation": "Written for this supplement."
+    },
+    {
+      "path": "checks/canonical/combine.py",
+      "source_record": "assembly",
+      "sha256": "38fffcb9f68d0b8292ac6368bcd582a36117d78a994bba95121ad8e292a6f4eb",
+      "adaptation": "Written for this supplement."
+    },
+    {
+      "path": "checks/replay.py",
+      "source_record": "assembly",
+      "sha256": "01fc052ba85ed6fde37054bb033a6fe35d5a4c5a60bad57f8b7c15a774ef9e20",
+      "adaptation": "Written for this supplement."
+    }
+  ]
+}

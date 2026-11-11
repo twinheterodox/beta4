@@ -1,0 +1,59 @@
+{
+  "status": "compiled",
+  "pages": 41,
+  "source_files": [
+    {
+      "path": "paper/further-investigations.tex",
+      "sha256": "23cd75992382a06acd7ec9548f98f406ca7198fab338d20dc011b238c95273ae"
+    },
+    {
+      "path": "paper/references.tex",
+      "sha256": "b9396b2ace8e00c0d0c7e12581075fb3f74897689783320ade67fffeddb7ca34"
+    },
+    {
+      "path": "paper/sections/01-introduction.tex",
+      "sha256": "e14aa5ddd1a7803c6c9a1072a64941a2d2b2b7b17ae49aa68ff16a010fa28d33"
+    },
+    {
+      "path": "paper/sections/02-isolation.tex",
+      "sha256": "8fa9c0e5cfc6cca0042cbf045d1a8b5d6a4529765e298e141f1514ff300c07b8"
+    },
+    {
+      "path": "paper/sections/03-pade.tex",
+      "sha256": "20b6666aa49f0623c2295882709c6c6144ba7aa1f6c4201c1186b47a5cab5c76"
+    },
+    {
+      "path": "paper/sections/04-moments.tex",
+      "sha256": "e4633af74a0ac1fdcd44da3ebae5318c516699e99bf94aa4c9116046046c1d7f"
+    },
+    {
+      "path": "paper/sections/05-canonical.tex",
+      "sha256": "f96de6a939fe6ce76e6f99ed89f99610723e77deedda8fe1370f6f86256a9f77"
+    },
+    {
+      "path": "paper/sections/06-corrections.tex",
+      "sha256": "ec83440ddfc3afce7806325953f8f12c26cd2898b39f95090060fb3ffaac8985"
+    },
+    {
+      "path": "paper/sections/07-small-sets.tex",
+      "sha256": "8938f3d72894d36ce2e0a0b42b3aa38d7c138e6467ec0aadd380ddfe79b92bd9"
+    },
+    {
+      "path": "paper/sections/08-coverage.tex",
+      "sha256": "b0315422a4ebb5eeb48b3c0966e71580a751563ee75759973e353cd94c389bb1"
+    },
+    {
+      "path": "paper/sections/09-appendices.tex",
+      "sha256": "9afd74b261be16abf9d502e94dcba37cc1814f7dcc327abe33f3900ac475d074"
+    },
+    {
+      "path": "paper/sections/record-catalog.tex",
+      "sha256": "8a1d93d6e1da02a81f2b6112d1fa9f16b394c07fe80f682fb75ee7274a34c70e"
+    }
+  ],
+  "pdf": "output/pdf/further-investigations.pdf",
+  "pdf_sha256": "8f8b8e46d1cf74d75203d877531249dd168c49610054b8db2c9c36fdb6a96a06",
+  "unresolved_references": false,
+  "overfull_or_underfull_boxes": false,
+  "scope": "Build and log checks; mathematical and visual reviews recorded separately."
+}

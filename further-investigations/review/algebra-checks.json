@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "counts": {
+    "Smith_progression_attainments": 1680,
+    "chain_left_inverse_and_null_row": 30,
+    "factorial_alternant_comparisons": 684,
+    "rounding_determinant_outcomes": 530,
+    "prime_cost_integral": 1
+  },
+  "scope": "Finite algebraic checks of the displayed mechanisms; general proofs are in the manuscript."
+}

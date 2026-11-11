@@ -1,0 +1,69 @@
+Original assembly and exposition review
+10 November 2026
+
+Artifact
+  Further investigations of irrationality constructions for Dirichlet beta values
+  The original assembly had 37 pages. The subsequent exposition revision is
+  recorded in exposition-revision-2026-11-10.txt. Current PDF and source hashes
+  are in build.json and integrity.json.
+
+Coverage
+  All 29 later records are represented in the catalog and coverage.json.
+  The main text consolidates successive versions of the moment estimates.
+  Shorter variants and superseded bounds retain their scope in the catalog.
+  The earlier supplement and previously published result papers are separate.
+
+Mathematical scope review
+  The isolation theorems retain their fixed-multiplier and least-degree
+  hypotheses. Finite adaptive kernels are not promoted to all-size results.
+  The Pade gap concerns the explicit proved multiplier, not every possible
+  primitive normalization. The signed real saddle and rational tail are
+  included on the same normalization.
+  The mixed construction distinguishes canonical endpoint repair from the
+  later integer correction required by the arithmetic theorem. The audited
+  canonical margin is not asserted to prove irrationality.
+  The rank hypotheses for the lattice reductions are linked explicitly to
+  the large-prime low-moment rank bound and prime-scale nonvanishing.
+  Exact determinant attainment is distinguished from a height bound for a
+  correction. The polynomial-left-inverse obstruction concerns that bound,
+  and the chain example does not assert an obstruction for all moment data.
+  Conditional density is not used as an input to an irrationality proof.
+  Small-set forms retain all rational constants. The large-prime residue
+  formula includes its possible vanishing and the recorded exception.
+
+Exposition review
+  Applied mathematical-exposition.txt. The introduction explains the integer
+  contradiction, complete primitive normalization and intended prerequisites.
+  Each construction begins with its purpose and cost. Worked examples show
+  the period match, commutator, determinant progression and row-lattice scale.
+  The source of the canonical margin is exposed in separate row, repair and
+  column estimates, followed by the precise estimate still missing.
+  Methods are attributed beside their use. The abstract states outcomes and
+  scope without a detailed argument. Subsections are numbered; the title has
+  no forced line break. Audit recommendations are not repeated in the paper.
+
+Computational review
+  All six selected suites passed; verification.json records the scripts,
+  result hashes and coverage. These runs are assembling-assistant checks,
+  distinct from the independent canonical audit.
+  The initial Pade replay lacked SymPy in its interpreter environment. Using
+  the existing system SymPy package resolved the import; its full suite then
+  passed. No mathematical assertion failed in these runs.
+  All 760 source-record files pinned at the beginning of assembly retain
+  their hashes. The portable package contains selected scientific data and
+  checker dependencies, not an unredacted copy of the private archive.
+
+Presentation and identity review
+  Three-pass pdflatex build: no undefined or multiply defined references,
+  no overfull or underfull boxes. All 37 rendered pages were visually
+  inspected, including the revised affected pages after the final edit.
+  Tables, long equations, page endings, contents and bibliography have no
+  observed clipping or overlap. PDF text extraction contains no unresolved
+  reference markers. The final output uses the pseudonym twinheterodox.
+  New distributable text and PDF metadata were checked for identifying local
+  paths and the user's private name. None was found.
+
+Status
+  Complete local manuscript and selected reproducibility package.
+  This is not a fresh independent proof audit or formal verification.
+  No commit, push or submission was made in preparing this supplement.

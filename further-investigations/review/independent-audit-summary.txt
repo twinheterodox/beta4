@@ -1,0 +1,54 @@
+Independent audit of the underlying canonical determinant estimate
+Reported 8 November 2026
+
+The independent auditor reported no mathematical error or missing step
+affecting the uniform asymptotic canonical determinant estimate. The
+auditor wrote fresh exact and interval arithmetic and did not execute or
+import the supplied checkers.
+
+Pinned main proof SHA-256:
+51fb5d3c3f6751c08392e6f4b4bdeb4d1562caf2629547193d7d14c3f5a37b86
+
+Independently reproduced bounds
+  Canonical decay, rounded repair: at least 1.87063289244902359296
+  Arithmetic leading cost:         at most  1.87061400307785858968
+  Positive margin:                 at least 0.00001888937116500328
+  Margin with unrounded repair:    at least 0.00001978407233866568
+
+Scope
+  General Gram reduction, compound-matrix expansion, mixed-minor
+  Cauchy--Schwarz, factorial Schur specialization, both determinant
+  comparisons, Cauchy products and normalization factors.
+
+  Uniform limiting passage, midpoint lattice, exact damping inequality,
+  diagonal correction, occupancy restriction and order of limits.
+
+  Main-row paired decomposition, Jacobi volume, rational approximation of
+  the row operator, uniform evaluation bound and rank integration. Fresh
+  arithmetic verified all 26 potential bounds.
+
+  Degree-200 column certificate: reconstructed derivative polynomials,
+  exact Sturm counts 96, 89 and 103, all 288 root brackets, completeness,
+  every maximum enclosure and the regular endpoint.
+
+  Arithmetic and nonvanishing dependencies: general prime-cost arguments
+  and reductions, 878,800 moment congruences, local corrections in 70 prime
+  cases, all 313 seed-determinant evaluations and 2,880 Frobenius identities.
+
+  The repair integral was reproduced; a separate finer mesh also passed.
+
+Accepted external inputs
+  The classical factorial Schur tableau identity, including checking its
+  source statement and the required specialization, but without a fresh
+  proof of its complete literature dependency chain. Standard inputs such
+  as Stirling's formula and the prime number theorem were also accepted.
+
+The original Catalan irrationality claim and its published decay constant
+were not used. The audit is not formal verification. It establishes no
+irrationality or independence theorem: the later admissible integer
+adjustments remain uncontrolled uniformly. It does not cover the present
+expository assembly or all subsequent correction investigations.
+
+This is a publication-suitable scope summary of the auditor's report.
+Personal/local filesystem references and editorial recommendations are
+not included. The original report remains preserved separately.

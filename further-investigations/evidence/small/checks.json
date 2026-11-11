@@ -1,0 +1,634 @@
+{
+  "all_checks_passed": true,
+  "counts": {
+    "rational_functions_reconstructed_by_product_division": 72,
+    "recorded_partial_fraction_coefficients": 2772,
+    "complete_forms_and_primitive_vectors": 222,
+    "constant_denominators_supported_at_2_and_primes_at_most_n": 120,
+    "undifferentiated_full_tail_identities": 84,
+    "beta2_eliminations": 42,
+    "primitive_values_checked_by_independent_Euler_formula": 222,
+    "final_forms_at_indices_at_least_three_exceed_one": 115,
+    "large_prime_residue_formula": 67,
+    "nonzero_large_prime_residues": 66
+  },
+  "Euler_terms": 2009,
+  "Euler_precision_bits": 2361,
+  "large_prime_records": [
+    {
+      "n": 3,
+      "A": 2,
+      "r": 1,
+      "prime": 5,
+      "residue": 3,
+      "constant_valuation": -3,
+      "primitive_multiplier_valuation": 3
+    },
+    {
+      "n": 5,
+      "A": 2,
+      "r": 1,
+      "prime": 7,
+      "residue": 3,
+      "constant_valuation": -3,
+      "primitive_multiplier_valuation": 3
+    },
+    {
+      "n": 9,
+      "A": 2,
+      "r": 1,
+      "prime": 11,
+      "residue": 0,
+      "constant_valuation": -2,
+      "primitive_multiplier_valuation": 2
+    },
+    {
+      "n": 9,
+      "A": 2,
+      "r": 1,
+      "prime": 13,
+      "residue": 11,
+      "constant_valuation": -3,
+      "primitive_multiplier_valuation": 3
+    },
+    {
+      "n": 9,
+      "A": 2,
+      "r": 1,
+      "prime": 17,
+      "residue": 15,
+      "constant_valuation": -3,
+      "primitive_multiplier_valuation": 3
+    },
+    {
+      "n": 17,
+      "A": 2,
+      "r": 1,
+      "prime": 19,
+      "residue": 16,
+      "constant_valuation": -3,
+      "primitive_multiplier_valuation": 3
+    },
+    {
+      "n": 17,
+      "A": 2,
+      "r": 1,
+      "prime": 23,
+      "residue": 7,
+      "constant_valuation": -3,
+      "primitive_multiplier_valuation": 3
+    },
+    {
+      "n": 17,
+      "A": 2,
+      "r": 1,
+      "prime": 29,
+      "residue": 19,
+      "constant_valuation": -3,
+      "primitive_multiplier_valuation": 3
+    },
+    {
+      "n": 17,
+      "A": 2,
+      "r": 1,
+      "prime": 31,
+      "residue": 23,
+      "constant_valuation": -3,
+      "primitive_multiplier_valuation": 3
+    },
+    {
+      "n": 25,
+      "A": 2,
+      "r": 1,
+      "prime": 29,
+      "residue": 26,
+      "constant_valuation": -3,
+      "primitive_multiplier_valuation": 3
+    },
+    {
+      "n": 25,
+      "A": 2,
+      "r": 1,
+      "prime": 31,
+      "residue": 18,
+      "constant_valuation": -3,
+      "primitive_multiplier_valuation": 3
+    },
+    {
+      "n": 25,
+      "A": 2,
+      "r": 1,
+      "prime": 37,
+      "residue": 20,
+      "constant_valuation": -3,
+      "primitive_multiplier_valuation": 3
+    },
+    {
+      "n": 25,
+      "A": 2,
+      "r": 1,
+      "prime": 41,
+      "residue": 32,
+      "constant_valuation": -3,
+      "primitive_multiplier_valuation": 3
+    },
+    {
+      "n": 25,
+      "A": 2,
+      "r": 1,
+      "prime": 43,
+      "residue": 30,
+      "constant_valuation": -3,
+      "primitive_multiplier_valuation": 3
+    },
+    {
+      "n": 25,
+      "A": 2,
+      "r": 1,
+      "prime": 47,
+      "residue": 5,
+      "constant_valuation": -3,
+      "primitive_multiplier_valuation": 3
+    },
+    {
+      "n": 5,
+      "A": 4,
+      "r": 1,
+      "prime": 7,
+      "residue": 4,
+      "constant_valuation": -5,
+      "primitive_multiplier_valuation": 5
+    },
+    {
+      "n": 9,
+      "A": 4,
+      "r": 1,
+      "prime": 11,
+      "residue": 9,
+      "constant_valuation": -5,
+      "primitive_multiplier_valuation": 5
+    },
+    {
+      "n": 9,
+      "A": 4,
+      "r": 1,
+      "prime": 13,
+      "residue": 8,
+      "constant_valuation": -5,
+      "primitive_multiplier_valuation": 5
+    },
+    {
+      "n": 9,
+      "A": 4,
+      "r": 1,
+      "prime": 17,
+      "residue": 13,
+      "constant_valuation": -5,
+      "primitive_multiplier_valuation": 5
+    },
+    {
+      "n": 17,
+      "A": 4,
+      "r": 1,
+      "prime": 19,
+      "residue": 4,
+      "constant_valuation": -5,
+      "primitive_multiplier_valuation": 5
+    },
+    {
+      "n": 17,
+      "A": 4,
+      "r": 1,
+      "prime": 23,
+      "residue": 13,
+      "constant_valuation": -5,
+      "primitive_multiplier_valuation": 5
+    },
+    {
+      "n": 17,
+      "A": 4,
+      "r": 1,
+      "prime": 29,
+      "residue": 13,
+      "constant_valuation": -5,
+      "primitive_multiplier_valuation": 5
+    },
+    {
+      "n": 17,
+      "A": 4,
+      "r": 1,
+      "prime": 31,
+      "residue": 19,
+      "constant_valuation": -5,
+      "primitive_multiplier_valuation": 5
+    },
+    {
+      "n": 25,
+      "A": 4,
+      "r": 1,
+      "prime": 29,
+      "residue": 1,
+      "constant_valuation": -5,
+      "primitive_multiplier_valuation": 5
+    },
+    {
+      "n": 25,
+      "A": 4,
+      "r": 1,
+      "prime": 31,
+      "residue": 9,
+      "constant_valuation": -5,
+      "primitive_multiplier_valuation": 5
+    },
+    {
+      "n": 25,
+      "A": 4,
+      "r": 1,
+      "prime": 37,
+      "residue": 16,
+      "constant_valuation": -5,
+      "primitive_multiplier_valuation": 5
+    },
+    {
+      "n": 25,
+      "A": 4,
+      "r": 1,
+      "prime": 41,
+      "residue": 17,
+      "constant_valuation": -5,
+      "primitive_multiplier_valuation": 5
+    },
+    {
+      "n": 25,
+      "A": 4,
+      "r": 1,
+      "prime": 43,
+      "residue": 35,
+      "constant_valuation": -5,
+      "primitive_multiplier_valuation": 5
+    },
+    {
+      "n": 25,
+      "A": 4,
+      "r": 1,
+      "prime": 47,
+      "residue": 18,
+      "constant_valuation": -5,
+      "primitive_multiplier_valuation": 5
+    },
+    {
+      "n": 3,
+      "A": 4,
+      "r": 3,
+      "prime": 11,
+      "residue": 3,
+      "constant_valuation": -5,
+      "primitive_multiplier_valuation": 5
+    },
+    {
+      "n": 5,
+      "A": 4,
+      "r": 3,
+      "prime": 17,
+      "residue": 10,
+      "constant_valuation": -5,
+      "primitive_multiplier_valuation": 5
+    },
+    {
+      "n": 5,
+      "A": 4,
+      "r": 3,
+      "prime": 19,
+      "residue": 7,
+      "constant_valuation": -5,
+      "primitive_multiplier_valuation": 5
+    },
+    {
+      "n": 9,
+      "A": 4,
+      "r": 3,
+      "prime": 29,
+      "residue": 14,
+      "constant_valuation": -5,
+      "primitive_multiplier_valuation": 5
+    },
+    {
+      "n": 9,
+      "A": 4,
+      "r": 3,
+      "prime": 31,
+      "residue": 13,
+      "constant_valuation": -5,
+      "primitive_multiplier_valuation": 5
+    },
+    {
+      "n": 17,
+      "A": 4,
+      "r": 3,
+      "prime": 53,
+      "residue": 7,
+      "constant_valuation": -5,
+      "primitive_multiplier_valuation": 5
+    },
+    {
+      "n": 17,
+      "A": 4,
+      "r": 3,
+      "prime": 59,
+      "residue": 52,
+      "constant_valuation": -5,
+      "primitive_multiplier_valuation": 5
+    },
+    {
+      "n": 17,
+      "A": 4,
+      "r": 3,
+      "prime": 61,
+      "residue": 54,
+      "constant_valuation": -5,
+      "primitive_multiplier_valuation": 5
+    },
+    {
+      "n": 17,
+      "A": 4,
+      "r": 3,
+      "prime": 67,
+      "residue": 40,
+      "constant_valuation": -5,
+      "primitive_multiplier_valuation": 5
+    },
+    {
+      "n": 25,
+      "A": 4,
+      "r": 3,
+      "prime": 79,
+      "residue": 17,
+      "constant_valuation": -5,
+      "primitive_multiplier_valuation": 5
+    },
+    {
+      "n": 25,
+      "A": 4,
+      "r": 3,
+      "prime": 83,
+      "residue": 50,
+      "constant_valuation": -5,
+      "primitive_multiplier_valuation": 5
+    },
+    {
+      "n": 25,
+      "A": 4,
+      "r": 3,
+      "prime": 89,
+      "residue": 11,
+      "constant_valuation": -5,
+      "primitive_multiplier_valuation": 5
+    },
+    {
+      "n": 25,
+      "A": 4,
+      "r": 3,
+      "prime": 97,
+      "residue": 63,
+      "constant_valuation": -5,
+      "primitive_multiplier_valuation": 5
+    },
+    {
+      "n": 3,
+      "A": 6,
+      "r": 3,
+      "prime": 11,
+      "residue": 10,
+      "constant_valuation": -7,
+      "primitive_multiplier_valuation": 7
+    },
+    {
+      "n": 5,
+      "A": 6,
+      "r": 3,
+      "prime": 17,
+      "residue": 6,
+      "constant_valuation": -7,
+      "primitive_multiplier_valuation": 7
+    },
+    {
+      "n": 5,
+      "A": 6,
+      "r": 3,
+      "prime": 19,
+      "residue": 1,
+      "constant_valuation": -7,
+      "primitive_multiplier_valuation": 7
+    },
+    {
+      "n": 9,
+      "A": 6,
+      "r": 3,
+      "prime": 29,
+      "residue": 11,
+      "constant_valuation": -7,
+      "primitive_multiplier_valuation": 7
+    },
+    {
+      "n": 9,
+      "A": 6,
+      "r": 3,
+      "prime": 31,
+      "residue": 29,
+      "constant_valuation": -7,
+      "primitive_multiplier_valuation": 7
+    },
+    {
+      "n": 17,
+      "A": 6,
+      "r": 3,
+      "prime": 53,
+      "residue": 36,
+      "constant_valuation": -7,
+      "primitive_multiplier_valuation": 7
+    },
+    {
+      "n": 17,
+      "A": 6,
+      "r": 3,
+      "prime": 59,
+      "residue": 39,
+      "constant_valuation": -7,
+      "primitive_multiplier_valuation": 7
+    },
+    {
+      "n": 17,
+      "A": 6,
+      "r": 3,
+      "prime": 61,
+      "residue": 53,
+      "constant_valuation": -7,
+      "primitive_multiplier_valuation": 7
+    },
+    {
+      "n": 17,
+      "A": 6,
+      "r": 3,
+      "prime": 67,
+      "residue": 60,
+      "constant_valuation": -7,
+      "primitive_multiplier_valuation": 7
+    },
+    {
+      "n": 25,
+      "A": 6,
+      "r": 3,
+      "prime": 79,
+      "residue": 56,
+      "constant_valuation": -7,
+      "primitive_multiplier_valuation": 7
+    },
+    {
+      "n": 25,
+      "A": 6,
+      "r": 3,
+      "prime": 83,
+      "residue": 61,
+      "constant_valuation": -7,
+      "primitive_multiplier_valuation": 7
+    },
+    {
+      "n": 25,
+      "A": 6,
+      "r": 3,
+      "prime": 89,
+      "residue": 47,
+      "constant_valuation": -7,
+      "primitive_multiplier_valuation": 7
+    },
+    {
+      "n": 25,
+      "A": 6,
+      "r": 3,
+      "prime": 97,
+      "residue": 96,
+      "constant_valuation": -7,
+      "primitive_multiplier_valuation": 7
+    },
+    {
+      "n": 3,
+      "A": 6,
+      "r": 5,
+      "prime": 17,
+      "residue": 16,
+      "constant_valuation": -7,
+      "primitive_multiplier_valuation": 7
+    },
+    {
+      "n": 5,
+      "A": 6,
+      "r": 5,
+      "prime": 29,
+      "residue": 27,
+      "constant_valuation": -7,
+      "primitive_multiplier_valuation": 7
+    },
+    {
+      "n": 9,
+      "A": 6,
+      "r": 5,
+      "prime": 47,
+      "residue": 26,
+      "constant_valuation": -7,
+      "primitive_multiplier_valuation": 7
+    },
+    {
+      "n": 9,
+      "A": 6,
+      "r": 5,
+      "prime": 53,
+      "residue": 14,
+      "constant_valuation": -7,
+      "primitive_multiplier_valuation": 7
+    },
+    {
+      "n": 17,
+      "A": 6,
+      "r": 5,
+      "prime": 89,
+      "residue": 56,
+      "constant_valuation": -7,
+      "primitive_multiplier_valuation": 7
+    },
+    {
+      "n": 17,
+      "A": 6,
+      "r": 5,
+      "prime": 97,
+      "residue": 22,
+      "constant_valuation": -7,
+      "primitive_multiplier_valuation": 7
+    },
+    {
+      "n": 17,
+      "A": 6,
+      "r": 5,
+      "prime": 101,
+      "residue": 34,
+      "constant_valuation": -7,
+      "primitive_multiplier_valuation": 7
+    },
+    {
+      "n": 25,
+      "A": 6,
+      "r": 5,
+      "prime": 127,
+      "residue": 98,
+      "constant_valuation": -7,
+      "primitive_multiplier_valuation": 7
+    },
+    {
+      "n": 25,
+      "A": 6,
+      "r": 5,
+      "prime": 131,
+      "residue": 36,
+      "constant_valuation": -7,
+      "primitive_multiplier_valuation": 7
+    },
+    {
+      "n": 25,
+      "A": 6,
+      "r": 5,
+      "prime": 137,
+      "residue": 77,
+      "constant_valuation": -7,
+      "primitive_multiplier_valuation": 7
+    },
+    {
+      "n": 25,
+      "A": 6,
+      "r": 5,
+      "prime": 139,
+      "residue": 47,
+      "constant_valuation": -7,
+      "primitive_multiplier_valuation": 7
+    },
+    {
+      "n": 25,
+      "A": 6,
+      "r": 5,
+      "prime": 149,
+      "residue": 75,
+      "constant_valuation": -7,
+      "primitive_multiplier_valuation": 7
+    }
+  ],
+  "zero_residue_cases": [
+    {
+      "n": 9,
+      "A": 2,
+      "r": 1,
+      "prime": 11,
+      "residue": 0,
+      "constant_valuation": -2,
+      "primitive_multiplier_valuation": 2
+    }
+  ],
+  "scope": "Same-session alternative computations, not an independent audit. No asymptotic or irrationality conclusion."
+}

@@ -1,0 +1,11 @@
+{
+  "date": "2026-11-10",
+  "pdf_sha256": "8f8b8e46d1cf74d75203d877531249dd168c49610054b8db2c9c36fdb6a96a06",
+  "pdf_pages": 41,
+  "source_records": 29,
+  "source_record_files_preserved": 760,
+  "public_identity": "twinheterodox",
+  "private_identifiers_found": false,
+  "public_tree_privacy_check_passed": true,
+  "audit_response": "review/audit-response-2026-11-10.json"
+}

@@ -1,0 +1,176 @@
+{
+  "date": "2026-11-10",
+  "status": "passed",
+  "scope": "Selected certificate replay by the assembling assistant; not an independent proof audit.",
+  "suites": {
+    "isolation": {
+      "status": "passed",
+      "scripts": [
+        {
+          "script": "verify.py",
+          "passed": true,
+          "seconds": 0.326
+        },
+        {
+          "script": "check_dilation.py",
+          "passed": true,
+          "seconds": 0.485
+        },
+        {
+          "script": "polynomial_gate.py",
+          "passed": true,
+          "seconds": 0.177
+        }
+      ],
+      "result_hashes": [
+        {
+          "file": "dilation-checks.json",
+          "sha256": "f7b4ce6972785776806e07101840d8ea19fdae3b852939b0bdef255e11b9c8fd"
+        },
+        {
+          "file": "polynomial-gate.json",
+          "sha256": "75792e26181e89923a01115ec703be0feb13c31ba8934d4a0ee2b1eed812df0f"
+        },
+        {
+          "file": "verification.json",
+          "sha256": "f1f093576cff1a5c5522c48b5aac557b2be641b1b163d6d54fc1709bcb1a25b0"
+        }
+      ]
+    },
+    "pade": {
+      "status": "passed",
+      "scripts": [
+        {
+          "script": "verify.py",
+          "passed": true,
+          "seconds": 0.994
+        }
+      ],
+      "result_hashes": [
+        {
+          "file": "verification.json",
+          "sha256": "3a3de19675c6ac60ce6de0f658a13ff7c44a94a664a7e77fbe23393a796b332b"
+        }
+      ]
+    },
+    "digamma": {
+      "status": "passed",
+      "scripts": [
+        {
+          "script": "nonvanishing_checks.py",
+          "passed": true,
+          "seconds": 0.663
+        }
+      ],
+      "result_hashes": [
+        {
+          "file": "nonvanishing_checks.json",
+          "sha256": "10d5f6cb2cd69407c19a30896daac7ecefec76b3d2f4ba5da5d955a485c09890"
+        }
+      ]
+    },
+    "canonical": {
+      "status": "passed",
+      "scripts": [
+        {
+          "script": "potential_certify.py",
+          "passed": true,
+          "seconds": 5.306
+        },
+        {
+          "script": "energy_certify.py",
+          "passed": true,
+          "seconds": 0.224
+        },
+        {
+          "script": "column_certify_fast.py",
+          "passed": true,
+          "seconds": 4.594
+        },
+        {
+          "script": "column_crosscheck.py",
+          "passed": true,
+          "seconds": 8.782
+        },
+        {
+          "script": "slope-certificate.py",
+          "passed": true,
+          "seconds": 0.088
+        },
+        {
+          "script": "combine.py",
+          "passed": true,
+          "seconds": 0.032
+        }
+      ],
+      "result_hashes": [
+        {
+          "file": "column_certificate_d200.json",
+          "sha256": "014c9cd504c1d00f466aaaec44c7c1ebefdfeba57f553461a8a2810db84986f9"
+        },
+        {
+          "file": "column_root_crosscheck.json",
+          "sha256": "5b6d9389f8e41041941353136de2c9c9fcd1b98bb3c6a3a60e32682293630ba2"
+        },
+        {
+          "file": "combined-replay.json",
+          "sha256": "51356e0458013738609a952c945471abc2bc6ae499f92cd7ba4633c268919e16"
+        },
+        {
+          "file": "energy_certificate_d40.json",
+          "sha256": "95b3c861daca037dbb99429694c4f186c3417b698ab549c7c7e7d85917ae3342"
+        },
+        {
+          "file": "potential_certificate.json",
+          "sha256": "d726e01366b4936c66c99199d74604a536d7e48f727a27a80bf7fd2e1e866fa8"
+        },
+        {
+          "file": "slope-certificate.json",
+          "sha256": "b17a85160217e3432af1d0068f1971e83d2f0fe2fef8a2267cd78d464b775a23"
+        }
+      ]
+    },
+    "small": {
+      "status": "passed",
+      "scripts": [
+        {
+          "script": "verify.py",
+          "passed": true,
+          "seconds": 0.337
+        }
+      ],
+      "result_hashes": [
+        {
+          "file": "checks.json",
+          "sha256": "c9362abca5d6a5d34451206e309ea3243c1317c4db6e8eb12c7a207424ff991c"
+        }
+      ]
+    },
+    "algebra": {
+      "status": "passed",
+      "scripts": [
+        {
+          "script": "verify.py",
+          "passed": true,
+          "seconds": 0.083
+        }
+      ],
+      "result_hashes": [
+        {
+          "file": "checks.json",
+          "sha256": "4cf94ee2c70a1c8ef8f2bba9ec821b3b18695cd66a16753a850b8f98b8b3aa06"
+        }
+      ]
+    }
+  },
+  "evidence_files_checked": 85,
+  "source_records_covered": 29,
+  "protected_original_files_checked": 760,
+  "protected_original_files_changed": 0,
+  "environment": {
+    "python": "3.14.4",
+    "python_flint": "0.9.0",
+    "sympy": "1.14.0"
+  },
+  "environment_note": "The Pad\u00e9 suite used the existing system SymPy package on the Python import path. No source mathematical check failed; the initial missing-package import was resolved before its successful replay."
+}

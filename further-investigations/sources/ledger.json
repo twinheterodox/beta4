@@ -1,0 +1,117 @@
+{
+  "date": "2026-11-10",
+  "scope": "Selected cited versions and actual inherited reading scope. Source PDFs are cached locally, not redistributed here. No fresh priority assessment.",
+  "sources": [
+    {
+      "bibliography_key": "KP",
+      "title": "A linear independence criterion for $p$-adic Hurwitz zeta values at odd integers",
+      "authors": "Makoto Kawashima; Anthony Poëls",
+      "version": "2610.15525v1",
+      "url": "https://arxiv.org/abs/2610.15525v1",
+      "retrieved_at_utc": "2026-11-02T21:20:43.627921+00:00",
+      "pdf_sha256": "224b193f4ef07628e0e44879bbabc80a9e5d53c6843e641950a9ce066ff3c3e6",
+      "cached_pdf_filename": "Linear-independence-criterion-for-p-adic-Hurwitz-zeta_Kawashima-Poels_2610.15525v1.pdf",
+      "recorded_reading_scope": {
+        "reading_scope_this_pass": "Read/revisited Definition 4.4 and Lemmas 4.5--4.9; Section 5.1--5.2 factorial-basis proofs; Section 6 construction, operator argument and formal approximation proof; full Section 7 rank proof; odd-m coefficient/product identities in 8.1, odd-m shift reduction 8.3 and 8.4; denominator statements and proofs in 9.3. The new calculations check the m=5 definitions directly. The complete p-adic estimates, value theorems, even-m families and recurrence appendix were not audited."
+      },
+      "reading_record_date": "2026-11-06",
+      "assembly_use": "Reused the pinned source and recorded selected reading; no new broad literature search or full source audit."
+    },
+    {
+      "bibliography_key": "Rivoal06",
+      "title": "Nombres dEuler approximants de Pade et constante de Catalan",
+      "authors": "Tanguy Rivoal",
+      "version": null,
+      "url": "https://rivoal.perso.math.cnrs.fr/articles/gnew6.pdf",
+      "retrieved_at_utc": "2026-10-30T17:11:43.183830+00:00",
+      "pdf_sha256": "813d9788187fac66ed7e77fcfa1f4a673ac1ad5847c8856ce5f45eaae08e4487",
+      "cached_pdf_filename": "Nombres-dEuler-approximants-de-Pade-et-constante-de-Catalan_rivoal-2006.pdf",
+      "recorded_reading_scope": {
+        "reading_scope_this_pass": "Revisited introduction, Sections 1.3--1.4 real Cauchy transform, Euler moments and branch distinction. Earlier full-text reading with unread dependencies remains as catalogued. Its real Catalan asymptotic estimates are not imported for the new weight-four family."
+      },
+      "reading_record_date": "2026-11-06",
+      "assembly_use": "Reused the pinned source and recorded selected reading; no new broad literature search or full source audit."
+    },
+    {
+      "bibliography_key": "OpenAI",
+      "title": "Catalans constant is irrational - OpenAI",
+      "authors": "OpenAI",
+      "version": "September 24 2026 PDF; Git commit adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Catalans-constant-is-irrational-September-24-2026/paper.pdf",
+      "retrieved_at_utc": "2026-10-30T17:11:44.759270+00:00",
+      "pdf_sha256": "4023d0344abceb79dc46a16380dac3a662193f9d4f23e6c340b2162068b04c0e",
+      "cached_pdf_filename": "Catalans-constant-is-irrational-OpenAI_openai-catalan-2026.pdf",
+      "recorded_reading_scope": {
+        "reading_scope_this_pass": "The original Catalan paper was not reread or freshly audited. The construction and preceding constants are inherited through the pinned local records. The preceding repair and row-spectrum arguments, the column theorem and checker, and the relevant covering-growth and uniform-real reductions were read. No published Catalan decay constant is transferred to the mixed problem."
+      },
+      "reading_record_date": "2026-11-08",
+      "assembly_use": "Reused the pinned source and recorded selected reading; no new broad literature search or full source audit."
+    },
+    {
+      "bibliography_key": "BMN",
+      "title": "Factorial Schur functions and the Yang-Baxter equation",
+      "authors": "Daniel Bump, Peter J. McNamara, Maki Nakasuji",
+      "version": "arXiv:1108.3087v3",
+      "url": "https://arxiv.org/pdf/1108.3087v3",
+      "retrieved_at_utc": "2026-11-08T13:48:18.620438+00:00",
+      "pdf_sha256": "522d10f58ac5e82a20730b20dbf9ccf85ebd877c6fd66074643bfe3db3b54ab7",
+      "cached_pdf_filename": "Factorial-Schur-functions-and-the-Yang-Baxter-equation_Bump-McNamara-Nakasuji_arXiv-1108.3087v3.pdf",
+      "recorded_reading_scope": {
+        "reading_scope_this_pass": "Read the extracted text of Sections 1--5, focusing on the factorial alternant definitions (7)--(8), Theorem 2 and equation (14), its proof using Theorem 1, and the stated Yang--Baxter and tableau dependencies in Sections 2--4. The tableau identity is imported as a classical result. This was not an independent audit of every source dependency or diagram. The BBF paper cited by the source for its Yang--Baxter relation was not retrieved. The new specialization and shift comparison are proved locally."
+      },
+      "reading_record_date": "2026-11-08",
+      "assembly_use": "Reused the pinned source and recorded selected reading; no new broad literature search or full source audit."
+    },
+    {
+      "bibliography_key": "Litsey",
+      "title": "Irrationality measures for differences of trigamma values",
+      "authors": "Sean Litsey",
+      "version": "Git commit 329d74f52a0319af0886726271707a818022e1e0",
+      "url": "https://raw.githubusercontent.com/slitsey/catalan-irrationality-measure/329d74f52a0319af0886726271707a818022e1e0/paper-trigamma/trigamma-irrationality.pdf",
+      "retrieved_at_utc": "2026-11-02T20:53:22.562421+00:00",
+      "pdf_sha256": "f3041901e629af4a7c61dd19236cb3c8def2e04c4376a1217bb4b5861194c034",
+      "cached_pdf_filename": "Irrationality-measures-for-differences-of-trigamma-values_2026-11-02_git-329d74f52a03.pdf",
+      "recorded_reading_scope": {
+        "reading_scope_this_review": "Re-read construction, local denominator bounds, Section 5.1 selection argument, and analytic energy/certificate sections. Derived the explicit one-deletion refinement locally. The source-specific chi_-3 arithmetic is not imported for generic slopes. No Lean build or full certificate replay."
+      },
+      "reading_record_date": "2026-11-07",
+      "assembly_use": "Reused the pinned source and recorded selected reading; no new broad literature search or full source audit."
+    },
+    {
+      "bibliography_key": "Krisman",
+      "title": "One of beta 4 beta 6 through beta 36 is irrational",
+      "authors": "Shawn Krisman",
+      "version": "2610.00285v2",
+      "url": "https://hexagonmath.org/pdf/2610.00285v2",
+      "retrieved_at_utc": "2026-10-30T17:18:01.250398+00:00",
+      "pdf_sha256": "4ac2ff67f77637f70fe9db664773d1d45795acd7fbd605714ab751b64b95d65b",
+      "cached_pdf_filename": "One-of-beta-4-beta-6-through-beta-36-is-irrational_krisman-even-beta-2026.pdf",
+      "recorded_reading_scope": {
+        "reading_scope_this_review": "Re-read introduction and Sections 1.2-2, including parameters and derivative construction; consulted earlier complete-paper reading of denominators and nonvanishing. No new independent check of the large certificates."
+      },
+      "reading_record_date": "2026-11-07",
+      "assembly_use": "Reused the pinned source and recorded selected reading; no new broad literature search or full source audit."
+    },
+    {
+      "bibliography_key": "firstsupp",
+      "url": "https://github.com/twinheterodox/beta4/blob/main/output/pdf/beta4-investigations.pdf",
+      "repository_pdf": "output/pdf/beta4-investigations.pdf",
+      "pdf_sha256": "828f7a5cbe20343ad67c230c1eca0d94d39c88120fbda1ca5ef7092d07b8b3f0",
+      "assembly_use": "Prior project manuscript: context or explicitly identified construction; proof not freshly audited."
+    },
+    {
+      "bibliography_key": "count",
+      "url": "https://hexagonmath.org/2611.00139v1",
+      "repository_pdf": "even-beta-counts/output/pdf/even-beta-counts.pdf",
+      "pdf_sha256": "f6848fa9304693f1b96a12ca9c2268511f350eb7c3e607054ddb0d4d3fe0c2a5",
+      "assembly_use": "Prior project manuscript: context or explicitly identified construction; proof not freshly audited."
+    },
+    {
+      "bibliography_key": "shifted",
+      "url": "https://github.com/twinheterodox/beta4/tree/shifted-even-beta-v2/shifted-even-beta",
+      "repository_pdf": "shifted-even-beta/output/pdf/shifted-even-beta.pdf",
+      "pdf_sha256": "acb04d7ea754bb108db03c06d40cc73e790596daf453abd5f57498e524538f36",
+      "assembly_use": "Prior project manuscript: context or explicitly identified construction; proof not freshly audited."
+    }
+  ]
+}
