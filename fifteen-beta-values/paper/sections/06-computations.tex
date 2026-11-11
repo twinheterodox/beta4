@@ -1,0 +1,55 @@
+\section{Computational certificates and review}\label{sec:computations}
+The proof uses finite calculations at three points: the arithmetic
+integral, the maximum of the real phase, and the nonzero seed.
+Each is performed with exact integer or rational arithmetic. Decimal
+values in the text are illustrations of the certified bounds.
+
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Calculation & Size & Certified conclusion \\
+\midrule
+Arithmetic partition & $38\,371$ intervals & $A_{\rm cert}<41/5$ \\
+Critical polynomial & degree $33$ & $\max\Phi<-18.83$ \\
+Seed coefficients & $2077$ at each of two primes & $\widetilde q\ne0$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The program \texttt{certify\_fifteen.py} generates the rational event
+partition and computes its maxima by sweeping the jumps in $y$.
+A separate C++ program, \texttt{verify\_fifteen\_arithmetic.cpp},
+recomputes every supplied midpoint maximum by direct floor evaluation
+on the cells. Thus the second calculation checks the maxima; completeness
+of the event partition follows from the affine-offset argument in
+Section~\ref{sec:decay} and its explicit enumeration in the first program.
+
+The polynomial calculation in \texttt{certify\_phase\_polynomial.py}
+multiplies the factors in \eqref{eq:critical-polynomial}, checks every
+coefficient sign, brackets its positive root, and encloses the logarithms
+used in \eqref{eq:phase-certificate}. The arithmetic program also
+checks the weaker phase bound $-18.83$ by a separate concavity argument.
+
+For the seed, \texttt{seed\_fifteen.py} uses truncated products over
+finite fields. The separate calculation
+\texttt{verify\_fifteen\_seed.py} uses the Taylor recurrence described
+after \eqref{eq:seed-residues}. It computes all coefficients before
+comparing them with the saved product calculation. Both give the
+residues in \eqref{eq:seed-residues}. The scripts, certificate data,
+and reproduction commands accompany the source in \texttt{checks/}.
+
+The work was prepared with OpenAI Codex using GPT-6-Astra max.
+The isolated-pole refinement and the fifteen-value conclusion were
+obtained separately in two research sessions using the same public
+sources, without access to each other's unpublished work. This paper
+combines the subsequent comparison into one proof. The supplied
+calculations have been replayed for this manuscript.
+
+An independent mathematical audit of the complete fourteen-page version,
+reported on 11 November 2026, found no mathematical error or gap affecting
+Theorem~\ref{thm:main}. It checked the general arguments and independently
+reproduced the arithmetic integral, the phase bound, and all $2077$ seed
+coefficients at both primes. The audit accepts the stated classical inputs,
+including Stirling's formula and the prime number theorem; it is not
+formal verification. The accompanying audit record identifies the
+reviewed version and the verification scope.

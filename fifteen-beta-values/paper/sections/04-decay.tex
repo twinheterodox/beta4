@@ -1,0 +1,265 @@
+\section{Decay after clearing denominators}\label{sec:decay}
+To prove that $D_nL_n\to0$, we compare denominator growth with decay
+of the forms. The factorial growth of $D_n$ is matched by the factorial
+decay of $L_n$. After these contributions cancel, we will bound the
+remaining denominator growth rate by $8.2+15\log2$ and the decay rate
+from below by $18.83$. Since
+\[
+ 8.2+15\log2-18.83<-0.23,
+\]
+the cleared forms will tend to zero exponentially. The two denominator
+terms come from the large odd primes and from $2$, respectively.
+The small odd primes contribute only $o(n)$ after factorial normalization.
+
+\subsection{The arithmetic envelope}
+For a large prime write $x=n/p$. If $1<x<2$, a repeated address
+class has its least representative between $0$ and $n-p$. Dividing
+by $p$ restricts the corresponding variable $y$ to $[0,x-1]$.
+For $x\ge2$, every residue class is repeated and we use a full period.
+
+For real $x\ge1$, define
+\begin{align*}
+ N_j(x,y)&=\#\{h\in\Z:\delta_jx\le y+h\le(1-\delta_j)x\},\\
+ C(x,y)&=\lfloor y+rx+\tfrac12\rfloor
+                         -\lfloor y-(1+r)x+\tfrac12\rfloor,\\
+ f(x,y)&=2+\sum_{j=0}^{30}N_j(x,y)-3C(x,y),\\
+ J_x&=\begin{cases}[0,x-1],&1\le x<2,\\ {}[0,1],&x\ge2,\end{cases}
+ \qquad
+ e(x)=\max\left(0,\max_{y\in J_x}f(x,y)\right)-G\lfloor x\rfloor.
+\end{align*}
+The subtraction $G\lfloor x\rfloor$ removes the factorial contribution:
+for $x=n/p$ and $p^2>7n$, Legendre's formula gives
+$Gv_p(n!)=G\lfloor n/p\rfloor$.
+At $x=n/p$ and $y=a/p$, $N_j(x,y)=N_{p,j}(a)$. Since $p$ is odd
+and the interval endpoints are integers, $C(x,y)$ counts the
+$\ell\in[-(1+r)n,rn-1]\cap\Z$ for which $p\mid2a+1+2\ell$.
+Thus $3C(x,y)$ omits the two endpoint contributions and the prefactor indicator
+from $c_p(a)$. Hence
+Proposition~\ref{prop:isolated} gives
+\begin{equation}\label{eq:prime-envelope}
+ e_p-G\lfloor n/p\rfloor\le e(n/p).
+\end{equation}
+The restriction to $J_x$ for $x<2$ is where isolated pole classes
+lower the estimate.
+
+The interval defining $N_j$ is closed, so its exact expression is
+\[
+ N_j(x,y)=\lfloor y-\delta_jx\rfloor
+               -\lceil y-(1-\delta_j)x\rceil+1.
+\]
+It is at most $(1-2\delta_j)x+1$, while $C(x,y)\ge(1+2r)x-1$.
+Consequently
+\begin{equation}\label{eq:envelope-tail}
+ e(x)\le36+G\{x\},\qquad \{x\}=x-\lfloor x\rfloor.
+\end{equation}
+This bound also holds after replacing $e(x)$ by $\max(e(x),0)$.
+
+\subsection{A finite partition and the prime sum}
+To turn the prime costs into an exponential bound for $D_n$, we use
+the prime number theorem. For fixed $1\le a<b$, it gives
+\[
+ \sum_{a<n/p<b}\log p=n(1/a-1/b)+o(n).
+\]
+The factor $1/a-1/b=\int_a^b dx/x^2$ explains why the total prime
+cost is controlled by $\int_1^\infty e(x)\,dx/x^2$.
+We compute the integral on $[1,400]$ by a finite partition and bound
+the remaining tail.
+
+The dependence on $y$ changes only at the affine offsets
+\begin{equation}\label{eq:offsets}
+ \delta_jx,\quad(1-\delta_j)x\quad(0\le j\le30),
+ \qquad -rx-\tfrac12,\quad(1+r)x-\tfrac12,
+\end{equation}
+taken modulo one. On $[1,400]$, include every integer and every
+point at which two distinct offsets coincide modulo one. For offsets
+$sx+t$ and $s'x+t'$ with $s\ne s'$, these points are
+$(t'-t+h)/(s-s')$, $h\in\Z$, whenever they lie in that interval.
+There are $38\,372$ distinct event points.
+
+Between consecutive events, the offsets keep their order, and
+$\lfloor x\rfloor$ is unchanged. The moving boundary $x-1$ for
+$x<2$ is itself the offset $x$ modulo one. Thus $e$ is constant on
+each open event interval. At a non-event $x$, a breakpoint value
+in $y$ equals one of its neighbouring cell values. At $y=0$ the
+outer pole block takes its right-hand value; at $y=x-1$ it takes
+its left-hand value. Checking the open cells inside $J_x$ therefore
+also captures its boundary maxima.
+
+For each event interval $(a,b)$, its contribution to
+$\int_1^{400}e(x)\,dx/x^2$ is
+$e((a+b)/2)(1/a-1/b)$. Exact rational computation, rounding each
+contribution upwards to a multiple of $2^{-64}$, gives
+\begin{equation}\label{eq:body-certificate}
+ A_{\rm body}\le
+ \frac{73794151590486879261}{9223372036854775808}.
+\end{equation}
+The rounding is upwards also for negative contributions.
+For an integer $X\ge2$, \eqref{eq:envelope-tail} gives
+\begin{align*}
+ \int_X^\infty\frac{\max(e(x),0)}{x^2}\,dx
+ &\le\frac{36}{X}+\frac G2\sum_{h=X}^\infty\frac1{h^2}\\
+ &\le\frac{36}{X}+\frac{G}{2(X-1)}.
+\end{align*}
+At $X=400$ this is $34253/319200$. Together with
+\eqref{eq:body-certificate}, the certified upper bound is
+\begin{equation}\label{eq:A-certificate}
+ A_{\rm cert}
+ =\frac{745969417189431202995707}{92003136067626388684800}
+ =8.10808684435616\ldots<\frac{41}{5}.
+\end{equation}
+The exact partition and two calculations of its cell maxima are
+supplied with the paper; Section~\ref{sec:computations} describes them.
+
+\begin{proposition}\label{prop:D-size}
+As $n\to\infty$ through positive multiples of $96$,
+\begin{equation}\label{eq:D-size}
+ \log D_n\le G\log(n!)+n\left(\frac{41}{5}+15\log2+o(1)\right).
+\end{equation}
+\end{proposition}
+\begin{proof}
+The prime-number-theorem estimate above, summed over the finite
+partition, yields its integral contribution.
+Each event point can equal $n/p$ for at most one prime; by
+\eqref{eq:envelope-tail}, all such primes together cost $O(\log n)$.
+
+For the tail replace $e$ by $\max(e,0)$ on $[400,\infty)$.
+The omitted small primes eventually lie there and may now be inserted
+in an upper bound. On a fixed interval $[400,M]$, finite partitions
+and the prime number theorem give the integral estimate. The remaining
+primes $p\le n/M$ contribute at most
+$(36+G)\vartheta(n/M)=O(n/M)$ by Chebyshev's bound, where
+$\vartheta(u)=\sum_{p\le u}\log p$. Letting $M$ tend to infinity proves
+\[
+ \sum_{\substack{p\le n\\p^2>7n}}
+     (e_p-G\lfloor n/p\rfloor)\log p
+ \le n(A_{\rm cert}+o(1)).
+\]
+Add \eqref{eq:small-cost} and \eqref{eq:two-cost}. The small odd
+primes cost $o(n)$, and $2$ costs at most $15n\log2+o(n)$.
+Finally use $A_{\rm cert}<41/5$.
+\end{proof}
+
+\subsection{The real phase and its maximum}
+Write $H(u)=u\log u$ for $u>0$, with $H(0)=0$, and set
+\begin{equation}\label{eq:phase}
+ \Phi(x)=3\bigl(H(x+1+r)-H(x-r)\bigr)
+ -\sum_{j=0}^{30}\bigl(H(x+1-\delta_j)-H(x+\delta_j)\bigr),
+ \quad x\ge r.
+\end{equation}
+This phase records the exponential size of the numerator and pole
+products after their factorial normalization.
+
+\begin{lemma}\label{lem:phase}
+For $x\ge r$, $\Phi(x)<-18.83$. For $x\ge3$,
+$\Phi'(x)\le-3/x$.
+\end{lemma}
+\begin{proof}
+For $x>r$, the sign of $\Phi'(x)$ is the sign of
+\[
+ (x+1+r)^3\prod_{j=0}^{30}(x+\delta_j)
+                  -(x-r)^3\prod_{j=0}^{30}(x+1-\delta_j).
+\]
+Put $x=r+z$ and clear positive denominators. The resulting polynomial
+can be taken as
+\begin{equation}\label{eq:critical-polynomial}
+ P(z)=(2z+5)^3\prod_{j=0}^{30}(96z+72+j)
+                       -8z^3\prod_{j=0}^{30}(96z+168-j).
+\end{equation}
+Its degree is $33$. Exact multiplication shows that its coefficients
+in degrees $0,1,2$ are positive and all remaining coefficients are
+negative. Descartes' rule of signs, together with $P(0)>0$ and its
+negative leading coefficient, therefore gives exactly one positive
+zero. Thus $\Phi$ increases to a unique global maximum and then
+decreases.
+
+Exact evaluations of $P$ bracket the maximum point $x_*$ by
+\[
+ \frac{378667493}{500000000}<x_*<\frac{757334987}{1000000000}.
+\]
+Rational logarithm enclosures on this interval give
+\begin{equation}\label{eq:phase-certificate}
+ \Phi(x_*)\le-\frac{18835112315041}{10^{12}}<-18.83.
+\end{equation}
+These finite checks are reproducible directly from
+\eqref{eq:critical-polynomial}. For the logarithms, reduce the
+argument to $1\le y\le2$ and use
+\[
+ \log y=2\sum_{j=0}^{47}\frac{w^{2j+1}}{2j+1}+R,
+ \qquad w=\frac{y-1}{y+1},\qquad
+ 0\le R\le\frac{2w^{97}}{97(1-w^2)}.
+\]
+The same enclosure supplies $\log2$ when rescaling the argument.
+
+To control the infinite tail, use $\log(1+u)\le u$ and
+\[
+ \log\frac{x+1-\delta_j}{x+\delta_j}
+ =\int_{x+\delta_j}^{x+1-\delta_j}\frac{dt}{t}
+ \ge\frac{1-2\delta_j}{x+1}.
+\]
+For $x\ge3$ these give
+\[
+ x\Phi'(x)\le3(1+2r)\frac{3}{3-r}-\frac{3\gamma}{4}
+                  =-\frac{383}{64}<-3.
+\]
+\end{proof}
+
+\subsection{Uniform estimates and the infinite sum}
+For real $t\ge rn+1$, every factor of $R_n(t)$ is positive. Its
+gamma-product expression is
+\[
+ R_n(t)=(2t+n+1)
+ \left(\frac{\Gamma(t+(1+r)n+2)}{\Gamma(t-rn)}\right)^3
+ \prod_{j=0}^{30}
+ \frac{\Gamma(t+\delta_jn+\tfrac12)}
+      {\Gamma(t+(1-\delta_j)n+\tfrac32)}.
+\]
+Stirling's formula, uniformly for real arguments at least one, yields
+\begin{equation}\label{eq:stirling}
+ \log R_n(t)=-G\log(n!)+n\Phi(t/n)+O(\log(n+t)).
+\end{equation}
+The potentially small argument $t-rn$ is still at least one, even
+when $(t-rn)/n\to0$. Its Stirling remainder and the logarithmic
+term omitted from $u\log u-u$ are therefore $O(\log(n+t))$.
+Every other argument is bounded below by a positive multiple of $n$.
+The $n\log n$ and linear terms give $-G\log(n!)$, up to $O(\log n)$.
+This explains the uniformity of \eqref{eq:stirling} down to $t=rn+1$.
+
+Differentiation costs only a power of $\log n$. Indeed,
+\[
+ \frac{R_n'(t)}{R_n(t)}
+ =\frac{2}{2t+n+1}+3\sum_{\ell\in\Lambda_n}\frac1{t-\ell}
+                       -\sum_{a=0}^{n}\frac{B_a}{t+a+\tfrac12}.
+\]
+The reciprocals of the consecutive zero distances sum to $O(\log n)$,
+and their squares sum to $O(1)$, uniformly for $t\ge rn+1$.
+The corresponding pole sums are bounded since $r>0$. Differentiating
+this identity gives
+\begin{equation}\label{eq:derivative-size}
+ |R_n''(t)|\le C(1+\log n)^2R_n(t)
+\end{equation}
+for a fixed $C$.
+
+Only terms $t\ge rn+1$ remain in $L_n$ by \eqref{eq:zeros}.
+For $t\le3n$, equations \eqref{eq:stirling}--\eqref{eq:derivative-size}
+and Lemma~\ref{lem:phase} bound the $O(n)$ terms by a polynomial
+in $n$ times $(n!)^{-G}e^{-18.83n}$. For $t>3n$, the derivative
+bound for $\Phi$ gives
+\[
+ \Phi(t/n)\le\Phi(3)-3\log(t/(3n)).
+\]
+The resulting power tail dominates the fixed factor $(1+t/n)^C$
+from the error in \eqref{eq:stirling}; its sum adds only a polynomial
+factor in $n$. We obtain
+\begin{equation}\label{eq:L-size}
+ |L_n|\le(n!)^{-G}\exp\bigl(n(-18.83+o(1))\bigr).
+\end{equation}
+Combining this with Proposition~\ref{prop:D-size},
+\begin{equation}\label{eq:cleared-decay}
+ \limsup_{\substack{n\to\infty\\96\mid n}}
+       \frac1n\log|D_nL_n|
+ \le\frac{41}{5}+15\log2-\frac{1883}{100}
+ =-0.2327922916\ldots<-0.23.
+\end{equation}
+Thus the forms tend to zero after their coefficient denominators are
+cleared. It remains to ensure that infinitely many are nonzero under
+the rationality hypothesis.

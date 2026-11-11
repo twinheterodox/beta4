@@ -1,0 +1,76 @@
+\section{The result and the denominator improvement}\label{sec:introduction}
+For $s>1$, let
+\[
+ \beta(s)=\sum_{t=0}^{\infty}\frac{(-1)^t}{(2t+1)^s}
+\]
+be the Dirichlet beta function. Its values at positive odd integers are
+nonzero rational multiples of powers of $\pi$. The arithmetic of its
+even values is much less understood. We prove the following finite-set
+result.
+
+\begin{theorem}\label{thm:main}
+At least one of $\beta(4),\beta(6),\ldots,\beta(32)$ is irrational.
+\end{theorem}
+
+Krisman \cite[Theorem 1.1]{krisman} proves the corresponding assertion
+through $\beta(36)$, with seventeen candidate values. We reduce the
+number of candidates to fifteen by improving the denominator estimate
+in his construction and then choosing new parameters.
+
+We construct a sequence of linear forms in
+$1,\beta(4),\beta(6),\ldots,\beta(32)$ with rational coefficients.
+If all fifteen beta values were rational, one fixed integer would
+clear their denominators. Multiplying the forms by that integer and
+by factors clearing their coefficients would produce a sequence of
+integers. We show that this sequence tends to zero but has infinitely
+many nonzero terms, which is impossible.
+
+\subsection{Where the saving occurs}
+Krisman's rational functions have integer zeros and half-integer poles.
+Their second derivatives produce sequences of linear forms in even
+beta values beginning at $\beta(4)$. The denominator-clearing factors
+must be small enough for the cleared forms still to tend to zero.
+
+We call the integer $a$ the address of the pole $-a-\tfrac12$.
+At an odd prime $p$, a local denominator comes from differences between
+addresses that agree modulo $p$. If an address is alone in its residue
+class, none of its principal-part coefficients has a denominator divisible
+by $p$.
+The rational constant of the linear form also contains evaluation
+denominators. At a fixed evaluation point, however, only one residue
+class can have a denominator divisible by $p$. A zero identity expresses
+the same contribution using poles on either side of that point. When
+the troublesome class contains just one pole, we choose the side that
+avoids it.
+
+Thus only classes containing at least two pole addresses enter the
+large-prime cost. Krisman's argument already removes primes larger
+than the pole span \cite[Section 4.3]{krisman}; retaining this information
+also for smaller primes provides the saving used here. A related
+exceptional-group cancellation appears in
+\cite[Section 3.2]{finite}. The refinement here is the use of isolated
+pole classes in the explicit denominator estimate.
+
+\subsection{Construction, nonvanishing, and sources}
+The rational kernel and its local valuation framework follow
+\cite[Sections 2--6]{krisman}. The second-derivative device adapts
+Rivoal's construction for odd zeta values \cite[Section 2]{rivoal}.
+The role of zeros throughout the pole region in controlling rational
+constants is also present in Zudilin's work
+\cite[proof of Lemma 1]{zudilin}.
+
+Smallness of the forms does not ensure that they are nonzero.
+We use the prime-dilation argument of \cite[Section 4]{powered},
+which implements the auxiliary-prime principle of Lai and Sprang
+\cite[Lemma 2.3]{laisprang}. At indices equal to a fixed base index
+times a large prime, a rescaling makes every beta coefficient vanish
+modulo that prime while the rational constant reduces to a fixed,
+nonzero seed constant. Section~\ref{sec:nonvanishing} gives the
+calculation for the present parameters.
+
+We use $v_p$ for the valuation on $\Q$ normalized by $v_p(p)=1$,
+with $v_p(0)=+\infty$. A rational number is \emph{integral at $p$}
+if its denominator is prime to $p$, and is a \emph{unit at $p$} if
+its numerator is also prime to $p$. Congruences are taken in the ring
+$\Z_{(p)}$ of rationals integral at $p$. The proof otherwise uses
+partial fractions, Stirling's formula, and the prime number theorem.

@@ -1,0 +1,194 @@
+\section{A nonzero seed and prime dilation}\label{sec:nonvanishing}
+\subsection{The seed that survives dilation}
+We follow \cite[Section 4]{powered}: at indices $n=Np$, with fixed
+$N=96$ and $p$ an increasing prime, a rescaling will separate the
+rational constant from all beta coefficients modulo $p$.
+The half-integer poles are easier to count in the centred coordinate
+$x=2t+n+1$. Define
+\[
+ F_n(x)=\frac{x\prod_{\substack{v\text{ odd}\\|v|\le(1+2r)n+1}}(x-v)^3}
+                  {\prod_{a=0}^{n}(x-n+2a)^{B_a(n)}}.
+\]
+Counting factors of two gives
+\begin{equation}\label{eq:coordinate-change}
+ R_n(t)=2^{Gn+25}F_n(2t+n+1),\qquad
+ L_n=2^{Gn+27}\ell_n,
+\end{equation}
+where $\ell_n$ is the alternating sum of $F_n''(2t+n+1)$.
+Write
+\[
+ F_n(x)=\sum_{a=0}^{n}\sum_{i=1}^{B_a(n)}
+                      \frac{c_{n;a,i}}{(x-n+2a)^i}.
+\]
+The corresponding coefficient of $R_n$ is
+$a_{i,a}=2^{Gn+25-i}c_{n;a,i}$. In these coordinates the beta expansion is
+\begin{equation}
+ \ell_n=\sum_{a,i}(-1)^a(i)_2c_{n;a,i}
+                          \bigl(\beta(i+2)-\sigma_a(i+2)\bigr),
+                                                       \label{eq:ell}
+\end{equation}
+with rational constant
+\begin{equation}
+ q_n=-\sum_{a,i}(-1)^a(i)_2c_{n;a,i}\sigma_a(i+2).       \label{eq:q}
+\end{equation}
+Odd beta coefficients vanish by the same
+reflection as before.
+
+At the base index put
+\begin{equation}\label{eq:seed-parameters}
+ L=(1+2r)N=240,\quad W=\gamma N=2046,\quad GN=1326.
+\end{equation}
+Take an odd prime $p>337=N+L+1$. In $F_{Np}(pu)$, a numerator
+zero divisible by $p$ is $pv$ with $v$ odd and $|pv|\le Lp+1$.
+Since $L$ is even, this leaves $|v|\le L-1=239$. The selected pole
+addresses are $pa$, and $B_{pa}(Np)=B_a(N)$. The resulting seed is
+\begin{equation}\label{eq:seed}
+ \widetilde F(u)=
+ \frac{u\prod_{\substack{v\text{ odd}\\|v|\le239}}(u-v)^3}
+      {\prod_{a=0}^{96}(u-96+2a)^{B_a(96)}}.
+\end{equation}
+In particular, its last zero is $239$, rather than the untrimmed
+endpoint $241$. The two outer zeros are lost when the divisible
+factors are selected.
+
+The selected prefactor, zeros, and poles contribute respectively
+$1$, $3L$, and $-(W+31)$ to the exponent of $p$. This determines
+\begin{equation}\label{eq:A0}
+ A_0=W-3L+30=1356,\qquad \tau=A_0+2=1358.
+\end{equation}
+The extra two in $\tau$ will match the two differentiations.
+
+\subsection{Selected and nonselected coefficients}
+A block $[pa,pb]\cap\Z$ contains $b-a$ representatives of each
+nonzero residue modulo $p$, and $b-a+1$ representatives of zero.
+Our blocks have $a=j$ and $b=96-j$. Summing over the $31$ blocks
+therefore gives weighted counts $W$ for every nonzero residue and
+$W+31$ for zero. These different counts account for the valuation
+separation between selected and nonselected poles.
+
+Let $\widetilde c_{a,i}$ be the principal-part coefficients of
+$\widetilde F$.
+
+\begin{lemma}\label{lem:dilation}
+For all sufficiently large odd primes $p$,
+\begin{align}
+ p^{A_0-i}c_{Np;pa,i}&\equiv-\widetilde c_{a,i}\pmod p,
+                                                       \label{eq:selected}\\
+ v_p(c_{Np;a,i})&\ge-GN+i\qquad(p\nmid a).              \label{eq:other}
+\end{align}
+The scaled coefficients in \eqref{eq:selected} are integral at $p$.
+\end{lemma}
+\begin{proof}
+After the selected factors are removed from $F_{Np}(pu)$, all remaining
+factors are units whose reductions are independent of $u$. Their
+combined unit is $-1$. To see the sign, the $Lp$ odd numbers from
+$-Lp+1$ to $Lp-1$ contain each residue class $L$ times. Wilson's
+theorem gives nonzero product $(-1)^L=1$. The extra endpoints
+$\pm(Lp+1)$ contribute $-1$, also after cubing. In the denominator,
+Fermat's theorem removes the factors $2^{p-1}$, and the total
+denominator unit is $(-1)^W=1$. Thus
+\begin{equation}\label{eq:function-congruence}
+ p^{A_0}F_{Np}(pu)\equiv-\widetilde F(u)\pmod p.
+\end{equation}
+
+For coefficient extraction, put $u=96-2a+w$ and remove the nominal
+pole by multiplying by $w^{B_a(96)}$. The local series after scaling
+lies in $\Z_{(p)}[[w]]$: the other selected pole differences
+$2(b-a)$ are units, and every unselected denominator has a unit
+constant term and an integral geometric-series inverse. Reduction
+therefore commutes with extraction of degree $B_a-i$. That coefficient
+is $p^{A_0-i}c_{Np;pa,i}$, proving \eqref{eq:selected}.
+Terms analytic at this pole begin in degree $B_a$ after pole removal,
+so they do not affect the extraction.
+
+At a nonselected pole address $a$, the prefactor is a $p$-unit.
+Each numerator residue class contains at least $L$ zeros before
+cubing, whereas a nonzero pole-address class has weighted count $W$.
+After removing its pole of order $B_a$, the local series has bound
+$(3L-W+B_a,1)$ in the terminology of Lemma~\ref{lem:local}.
+All nonzero differences have absolute value below $p^2$ since
+$p>337$. Extracting degree $B_a-i$ yields
+$v_p(c_{Np;a,i})\ge3L-W+i=-GN+i$.
+\end{proof}
+
+\subsection{Why the rational constant remains}
+Define the seed constant
+\begin{equation}\label{eq:seed-constant}
+ \widetilde q=-\sum_{a=0}^{96}\sum_i(-1)^a(i)_2
+                          \widetilde c_{a,i}\sigma_a(i+2).
+\end{equation}
+
+\begin{proposition}\label{prop:surviving}
+Every beta coefficient of $p^\tau\ell_{Np}$ is divisible by $p$,
+and
+\begin{equation}\label{eq:surviving}
+ p^\tau q_{Np}\equiv-\chi_4(p)\widetilde q\pmod p,
+ \qquad \chi_4(p)=(-1)^{(p-1)/2}.
+\end{equation}
+All scaled quantities reduced here are integral at $p$.
+\end{proposition}
+\begin{proof}
+Write $s=i+2$. At a selected pole, $\tau-s=A_0-i$, so
+\eqref{eq:selected} says that the scaled coefficient
+$p^\tau(i)_2c_{Np;pa,i}$ has valuation at least $s>0$.
+Thus this contribution to the beta coefficient vanishes modulo $p$,
+while leaving enough powers of $p$ to cancel a harmonic denominator
+of exponent $s$.
+At a nonselected pole, \eqref{eq:other} gives valuation at least
+$\tau-GN+i=32+i>0$ for the beta coefficient.
+
+Every denominator $2h+1$ with $h<Np$ is below $2Np<p^2$.
+Nonselected terms in the rational constant therefore have scaled
+valuation at least $\tau-GN+i-(i+2)=30>0$. At a selected address
+$pa$, the surviving terms in $p^s\sigma_{pa}(s)$ satisfy
+$2h+1=p(2v+1)$, so
+\[
+ h=pv+(p-1)/2,\quad 0\le v<a,\qquad
+ p^s\sigma_{pa}(s)\equiv\chi_4(p)\sigma_a(s)\pmod p.
+\]
+Combining this with $(-1)^{pa}=(-1)^a$ and
+\eqref{eq:selected} in \eqref{eq:q} proves \eqref{eq:surviving}.
+\end{proof}
+
+\subsection{A finite nonzero seed}
+We need only one nonzero reduction of $\widetilde q$. At
+$u_a=96-2a$, form the truncated local product
+\begin{equation}\label{eq:seed-jet}
+ J_a(w)=(u_a+w)\prod_{\substack{v\text{ odd}\\|v|\le239}}
+ (u_a-v+w)^3\prod_{b\ne a}(2(b-a)+w)^{-B_b(96)}
+                         \pmod{w^{B_a(96)}}.
+\end{equation}
+Then $\widetilde c_{a,i}=[w^{B_a-i}]J_a(w)$. There are
+$W+31=2077$ coefficients. Two exact calculations give
+\begin{equation}\label{eq:seed-residues}
+ \widetilde q\equiv3738\pmod{10007},\qquad
+ \widetilde q\equiv5333\pmod{10009}.
+\end{equation}
+Both moduli are prime by trial division. Pole differences have
+absolute value at most $192$, and harmonic denominators at most
+$191$, so these are legitimate reductions of a rational number.
+Either residue proves $\widetilde q\ne0$.
+
+One calculation multiplies the truncated products in
+\eqref{eq:seed-jet}. The other expands their logarithmic derivatives
+and recovers Taylor coefficients recursively. At the central pole,
+its factor $w$ is removed before inversion and restored afterwards.
+The second method inverts only nonzero numerator differences of
+absolute value at most $335$ and Taylor indices below $31$.
+Both methods agree on all $2077$ coefficients at both primes.
+
+\subsection{Proof of Theorem~\ref{thm:main}}
+Suppose all fifteen beta values are rational, and let $T$ be a
+positive integer clearing their denominators. By \eqref{eq:Dn},
+$TD_nL_n$ is an integer for every positive multiple $n$ of $96$.
+Equation~\eqref{eq:cleared-decay} makes these integers tend to zero.
+
+The fixed rational $\widetilde q$ is nonzero by
+\eqref{eq:seed-residues}. For every sufficiently large prime $p$
+outside the finite set dividing $T$ or the numerator or denominator
+of $\widetilde q$, the beta values are integral at $p$.
+Proposition~\ref{prop:surviving} makes their coefficients in
+$p^\tau\ell_{Np}$ divisible by $p$, while its constant is a unit.
+Thus $\ell_{Np}\ne0$, and \eqref{eq:coordinate-change} gives
+$L_{Np}\ne0$. Infinitely many nonzero integers $TD_{Np}L_{Np}$
+therefore tend to zero, a contradiction.\qed

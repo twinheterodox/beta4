@@ -1,0 +1,42 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,booktabs,microtype}
+\usepackage[margin=1in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={At least one of beta(4), beta(6), ..., beta(32) is irrational},
+ pdfauthor={twinheterodox},pdfsubject={An isolated-pole denominator refinement for even Dirichlet beta values}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{example}[theorem]{Example}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\vp}{v_p}
+\newcommand{\ind}{\mathbf 1}
+\newcommand{\ssum}{\mathop{\sum}}
+\numberwithin{equation}{section}
+\title{At least one of $\beta(4),\beta(6),\ldots,\beta(32)$ is irrational}
+\author{twinheterodox\\[2pt]\normalsize Prepared with Codex}
+\date{11 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For the Dirichlet beta function, we prove that at least one of
+$\beta(4),\beta(6),\ldots,\beta(32)$ is irrational. This reduces
+Krisman's seventeen-value set $\beta(4),\beta(6),\ldots,\beta(36)$
+\cite{krisman} to fifteen values. The improvement comes from a sharper
+denominator estimate for his construction.
+\end{abstract}
+\input{paper/sections/01-introduction}
+\input{paper/sections/02-forms}
+\input{paper/sections/03-denominators}
+\input{paper/sections/04-decay}
+\input{paper/sections/05-nonvanishing}
+\input{paper/sections/06-computations}
+\appendix
+\input{paper/sections/appendix-small-primes}
+\input{paper/sections/references}
+\end{document}

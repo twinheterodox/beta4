@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "prime": 10007,
+  "base_index": 96,
+  "trimmed_zero_endpoint": 239,
+  "seed_constant_residue": 3738,
+  "beta_residues": {
+    "4": 4150,
+    "6": 4082,
+    "8": 2556,
+    "10": 5982,
+    "12": 8333,
+    "14": 9004,
+    "16": 7483,
+    "18": 2557,
+    "20": 4797,
+    "22": 3601,
+    "24": 3441,
+    "26": 4778,
+    "28": 3863,
+    "30": 702,
+    "32": 256
+  },
+  "rational_reconstruction_checks": [
+    {
+      "point": 338,
+      "value": 508
+    },
+    {
+      "point": 340,
+      "value": 9595
+    },
+    {
+      "point": 344,
+      "value": 9587
+    }
+  ],
+  "coefficient_count": 2077,
+  "rows_sha256": "fae2a1c3b7176572f31e11e2b917a0f4d422cfca4f7c7ceb4e1bb711f1d55ad8",
+  "seconds": 0.005540344980545342
+}

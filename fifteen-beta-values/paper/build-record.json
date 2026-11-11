@@ -1,0 +1,22 @@
+{
+  "status": "compiled; correctness and visual reviews recorded separately",
+  "pages": 15,
+  "source_files": {
+    "paper/fifteen-beta-values.tex": "162fde556d4604e59e94e13c4eea9b9f90425bc7ec69336d47f899d736dd623a",
+    "paper/sections/01-introduction.tex": "5bfcb21791f78a203ebfbe7f803cc63fe181c67ac4aa7a099310781829310787",
+    "paper/sections/02-forms.tex": "1db369248f1053b951c11d86a9ba488c470640e782e1c613f44fb830226cc252",
+    "paper/sections/03-denominators.tex": "730c3d998bd222640cb36833f4317450968e111948721e4cb660080df22baa2d",
+    "paper/sections/04-decay.tex": "9877b49278179a5dd1b8a3c86f6bf8a80d34ebcf0389a199afb3b9753770328b",
+    "paper/sections/05-nonvanishing.tex": "31ed9e7c58a8bbf00259091a2db2ebc154883f9863432f30d6d7cacbb9588da0",
+    "paper/sections/06-computations.tex": "1e43177e18560e42048fd65dbfbaf476200285ede68ca47a5291f6ae8ebcee79",
+    "paper/sections/appendix-small-primes.tex": "012a705fcb691af93abf7f29f275e9db53a16ea4c992d97b84fefb6b1c4dc745",
+    "paper/sections/references.tex": "8f2f416deaa0e6a237992230c6fe39560337fa5f9d7b0426ec2aa4e75526f1dd"
+  },
+  "pdf": "output/pdf/fifteen-beta-values.pdf",
+  "pdf_sha256": "9dd2620177a1b4ed14cd9bc0f21c81e34fe3d1ec3e083950d02641267299b934",
+  "unresolved_references": false,
+  "overfull_boxes": false,
+  "underfull_warnings": [],
+  "independent_audit_record": "review/independent-audit-2026-11-11.json",
+  "review_scope": "Compilation only. The independent audit identifies the preceding 14-page PDF; subsequent changes are recorded in review/audit-response-2026-11-11.json, review/exposition-update-2026-11-11.json and review/publication-preparation-2026-11-11.json."
+}

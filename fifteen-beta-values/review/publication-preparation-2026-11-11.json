@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-11",
+  "status": "passed",
+  "preceding_revision": "review/exposition-update-2026-11-11.json",
+  "preceding_pdf_sha256": "08f03f808651cbf65e7cb4b6caadc55230f7811de99744cbb06cf0b653f90851",
+  "current_pdf": "output/pdf/fifteen-beta-values.pdf",
+  "current_pdf_sha256": "9dd2620177a1b4ed14cd9bc0f21c81e34fe3d1ec3e083950d02641267299b934",
+  "pages": 15,
+  "source_cleanup": "Removed one trailing blank line at EOF from each of four TeX sections for a clean Git whitespace check. No mathematical or expository content changed.",
+  "changed_source_files": [
+    {
+      "path": "paper/sections/01-introduction.tex",
+      "preceding_sha256": "7d9247ef34f94c16f72a08a211308a43cc4b1a08760b5dfac4ec426656f2b86b",
+      "current_sha256": "5bfcb21791f78a203ebfbe7f803cc63fe181c67ac4aa7a099310781829310787"
+    },
+    {
+      "path": "paper/sections/02-forms.tex",
+      "preceding_sha256": "5564daf8d9702d1ed95d093c105b3d59cfafe16a6c1c46dac1dd993264cf8505",
+      "current_sha256": "1db369248f1053b951c11d86a9ba488c470640e782e1c613f44fb830226cc252"
+    },
+    {
+      "path": "paper/sections/04-decay.tex",
+      "preceding_sha256": "b230831fd777022f686c40912d120f5e963427b75c1a0f8735a9e72c4b1e32f2",
+      "current_sha256": "9877b49278179a5dd1b8a3c86f6bf8a80d34ebcf0389a199afb3b9753770328b"
+    },
+    {
+      "path": "paper/sections/05-nonvanishing.tex",
+      "preceding_sha256": "d10ececfed0df96afca037bad693f597e31455d3656f43d598612434c8e9bd6d",
+      "current_sha256": "31ed9e7c58a8bbf00259091a2db2ebc154883f9863432f30d6d7cacbb9588da0"
+    }
+  ],
+  "compilation_record": "paper/build-record.json",
+  "unresolved_references": false,
+  "overfull_boxes": false,
+  "visual_check": "All 15 rendered pages are pixel-identical to the preceding reviewed PDF.",
+  "page_sha256": {
+    "1": "deb4832c725364c04baaecc4aa25a9221cc71a23ec0e378edf9ff52d9c69fcd1",
+    "2": "d8f55fdce1e7f09ba222d3450f37695ce5e46b40f143c4d449ac107165ea3a22",
+    "3": "4dc508f8fa7f370d0db62d9860864fe2446fb47552d344f80eabd766b4eb8180",
+    "4": "a7456e39eed64dc7d9d30c039f6687926449b28ba2bcff4d6fa0e546756d4cea",
+    "5": "ee769c54abefe6d96d210b0d719ef5ba7d0ef589ad5591cde8138dd543dfb471",
+    "6": "6b726f59e1e30bb02b7e5c68c3aff796f8c49aa8dcdc2900b7c25104c69a60b5",
+    "7": "e68d900b9e21634eff3a4d01f124c968b3037a4d0811c8e1fcf5283bd8a3136f",
+    "8": "59647b17915c7dc14cd8533f2d53e46b841524d9aa4b687e955774dff0b64067",
+    "9": "594cea257daa1dd0583c8416b57084c786cbaca896c77cd111aa78e11ef2a984",
+    "10": "ba824ed5e4ca0b6df97ffc97ad02e0d51e81b743ea1037a39b58ec65bae4975e",
+    "11": "b654d8c73bb7a2c7ea6fef51bf904c5c36ffb036d10d6cb1acac950f2653bfb7",
+    "12": "3047683ff07e20e1342d5429048e1c2736074d3bffbf86011aceb9c4cf508ddb",
+    "13": "714890e33ca22cc2988a30c168f3a8b6efa2c45d62e5177a5c74ca95611ed8f6",
+    "14": "db93bd65eb5d8859bc1e259d0727983610f23ae4af13fcd88d40228629367441",
+    "15": "d697d9b0aea4aa23d5db983a3af81d267e9cc125a90e018052dc0b8ab035eead"
+  },
+  "audit_scope": "The independent audit and subsequent exposition reviews retain their original hashes and scope; this record checks only publication preparation."
+}

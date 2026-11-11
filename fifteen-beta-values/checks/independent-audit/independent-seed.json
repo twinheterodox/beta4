@@ -1,0 +1,12 @@
+[
+  {
+    "prime": 10007,
+    "coefficients": 2077,
+    "residue": 3738
+  },
+  {
+    "prime": 10009,
+    "coefficients": 2077,
+    "residue": 5333
+  }
+]

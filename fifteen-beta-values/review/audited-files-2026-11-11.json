@@ -1,0 +1,114 @@
+[
+  {
+    "path": "paper/fifteen-beta-values.tex",
+    "sha256": "162fde556d4604e59e94e13c4eea9b9f90425bc7ec69336d47f899d736dd623a"
+  },
+  {
+    "path": "paper/sections/01-introduction.tex",
+    "sha256": "52176cf4af54cc5739e9166e82ec2ecc6cb379f14d2f1f690b0d274c7831a101"
+  },
+  {
+    "path": "paper/sections/02-forms.tex",
+    "sha256": "5564daf8d9702d1ed95d093c105b3d59cfafe16a6c1c46dac1dd993264cf8505"
+  },
+  {
+    "path": "paper/sections/03-denominators.tex",
+    "sha256": "730c3d998bd222640cb36833f4317450968e111948721e4cb660080df22baa2d"
+  },
+  {
+    "path": "paper/sections/04-decay.tex",
+    "sha256": "44612e75a369a4efe309c659124a5d545644ff50ef3744a3e055aa2f0a5fe6d8"
+  },
+  {
+    "path": "paper/sections/05-nonvanishing.tex",
+    "sha256": "be8028540d527ce4a1d3b5cd4d95eb636d89ba22c1d27e637f0d5f5fb3b0c21b"
+  },
+  {
+    "path": "paper/sections/06-computations.tex",
+    "sha256": "75c2e2586d1f8ff958cbcba52df3916c157cfe64f9ca91bcca9c0ccac7ad4090"
+  },
+  {
+    "path": "paper/sections/appendix-small-primes.tex",
+    "sha256": "8b397c030101d109e00a412bc80c8dd3fb06fa6bca131b702f0544afcc536543"
+  },
+  {
+    "path": "paper/sections/references.tex",
+    "sha256": "470cf462bbecbc1f1623c067be0170fd580c6a4234bcf7d5d36d2974c74b4257"
+  },
+  {
+    "path": "output/pdf/fifteen-beta-values.pdf",
+    "sha256": "2635118a4d725bfe9b1667c4df6873fa1f13f692e8ea42be73e76939b3572724"
+  },
+  {
+    "path": "checks/README.txt",
+    "sha256": "7c309b375fbe05ccfcb9ff8ffa271a7d73b73f7d01008c15c55e68a79fb2fca1"
+  },
+  {
+    "path": "checks/certify_fifteen.py",
+    "sha256": "1f06b260b2cb06126941bf28233b05a76411f0aaa33f049a696844381507e486"
+  },
+  {
+    "path": "checks/certify_phase_polynomial.py",
+    "sha256": "e9c00c50b739939be595d54dfb030b3ed304f14f142bd31214666fc5a8140fc7"
+  },
+  {
+    "path": "checks/check-report.json",
+    "sha256": "4837cf4615d39b99f705cb914a7b299451e6c37e901e71196ae8fc0761fc5f0e"
+  },
+  {
+    "path": "checks/fifteen-arithmetic-midpoints.tsv",
+    "sha256": "89597b896a7893528a630e8577e95aed18418b31deb7602d56cca598246ebca6"
+  },
+  {
+    "path": "checks/fifteen-arithmetic-second-check.json",
+    "sha256": "b026bb67e60b4c6ec8fd0982308e66c1f86a08680a2a9544c79b5a9b2e7a0245"
+  },
+  {
+    "path": "checks/fifteen-certificate.json",
+    "sha256": "07d47be3299c18cb5a0eb106331681578f6ce90b8f50cf017cb31a693b84ed12"
+  },
+  {
+    "path": "checks/fifteen-seed-p10007.json",
+    "sha256": "8bf20884e4a044c7ee593e1c47a834a516f66bedcc32742d76fa55d0feb72368"
+  },
+  {
+    "path": "checks/fifteen-seed-p10009.json",
+    "sha256": "f8b1a3395006842eb46c8c54f88a36c30e27b36d82f76a8b038ef585ee5ec706"
+  },
+  {
+    "path": "checks/fifteen-seed-rows-p10007.json",
+    "sha256": "5763340804af063634f75a88677471dcde1b2c81282228b0cedfc24ff62b71e6"
+  },
+  {
+    "path": "checks/fifteen-seed-rows-p10009.json",
+    "sha256": "05a1c6e5cbf90b2c5c1c824b51df161f8247d628f408727bf0b32f9c64d6c78e"
+  },
+  {
+    "path": "checks/fifteen-seed-second-check.json",
+    "sha256": "e3a3bfd1d533c5f58c3de84228a2a32102c7541cba4996d35309ce1cce522920"
+  },
+  {
+    "path": "checks/phase-polynomial-certificate.json",
+    "sha256": "f13c2a1d276ec9db353c88f00bc5dda9ddcb2585e9a87c8269eb426b9ee47ab3"
+  },
+  {
+    "path": "checks/requirements-optional.txt",
+    "sha256": "4cef508304e84c21f73cf412712165dc26e40978cb784bc08a876948b559d90d"
+  },
+  {
+    "path": "checks/run_checks.py",
+    "sha256": "5b52df1f1f60f6a975205da42a9fc8194f3b3111d537bc038d13dbb614b14a68"
+  },
+  {
+    "path": "checks/seed_fifteen.py",
+    "sha256": "bd87b21b551f10d73759fcc1cee6cdbe4d1bc3510e388de66ed6aef9c57e5378"
+  },
+  {
+    "path": "checks/verify_fifteen_arithmetic.cpp",
+    "sha256": "fd30dc765322c827fd55eedb49d43d498703233609a041679c6c724fa42cacad"
+  },
+  {
+    "path": "checks/verify_fifteen_seed.py",
+    "sha256": "dd439ccf48bc8a3c5b155d1a9999cfbb69c73d42267cdce9c9f6390fcea09bb4"
+  }
+]

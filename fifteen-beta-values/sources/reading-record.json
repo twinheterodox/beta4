@@ -1,0 +1,90 @@
+{
+  "date": "2026-11-11",
+  "scope": "Primary sources used for this manuscript. Local copies were reused and their hashes checked. Source reading, finite certificate replay and external mathematical audit are different activities. No third-party PDF is redistributed.",
+  "accepted_classical_inputs": [
+    "Partial fractions and convergent geometric series",
+    "Legendre, Wilson and Fermat formulas",
+    "Stirling formula with its real remainder bound",
+    "Prime number theorem and Chebyshev bound",
+    "Descartes rule of signs"
+  ],
+  "unread_dependencies": "The full literature dependency chains and the Lean formalisation in Krisman are not audited. No conclusion of that formalisation is used to certify the present paper.",
+  "sources": [
+    {
+      "citation_key": "krisman",
+      "title": "One of beta(4), beta(6), ..., beta(36) is irrational",
+      "authors": "Shawn Krisman",
+      "version": "hexagon:2610.00285v2",
+      "source_url": "https://hexagonmath.org/pdf/2610.00285v2",
+      "retrieved_at_utc": "2026-11-11T01:07:31.951209+00:00",
+      "pdf_sha256": "4ac2ff67f77637f70fe9db664773d1d45795acd7fbd605714ab751b64b95d65b",
+      "read_scope": "Sections 2--6: kernel, local-series estimates, complement identity, small-prime bounds, arithmetic envelope and real decay. These arguments are adapted and proved for the new parameters in the manuscript. The source formalisation is not rebuilt or relied on as verification of this adaptation.",
+      "reused_existing_copy": true,
+      "last_read_for_this_manuscript": "2026-11-11",
+      "local_copy_filename": "One-of-beta-4-beta-6-through-beta-36-is-irrational_krisman-even-beta-2026.pdf"
+    },
+    {
+      "citation_key": "rivoal",
+      "title": "Irrationalite d'au moins un des neuf nombres zeta(5),zeta(7),...,zeta(21)",
+      "authors": "Tanguy Rivoal",
+      "version": "math/0104221v2",
+      "source_url": "https://arxiv.org/abs/math/0104221v2",
+      "retrieved_at_utc": "2026-11-11T01:06:49.298763+00:00",
+      "pdf_sha256": "860aecfe4f643d769dfa5d7e7ba44b9091e237080621468c093522b55ce3e254",
+      "read_scope": "Section 2, Lemma 1 and construction: differentiation removes the lowest zeta value. Method attribution; no quantitative estimate is imported.",
+      "reused_existing_copy": true,
+      "last_read_for_this_manuscript": "2026-11-11",
+      "local_copy_filename": "Irrationalite-d-au-moins-un-des-neuf-nombres-zeta-5-zeta-7-zeta-21_math-0104221v2.pdf"
+    },
+    {
+      "citation_key": "laisprang",
+      "title": "Many $p$-adic odd zeta values are irrational",
+      "authors": "Li Lai; Johannes Sprang",
+      "version": "2306.10393v2",
+      "source_url": "https://arxiv.org/abs/2306.10393v2",
+      "retrieved_at_utc": "2026-11-11T01:06:49.421756+00:00",
+      "pdf_sha256": "240092a619e23b666ed61a363e45bd4940ed0a4326c916526df84504c03b3941",
+      "read_scope": "Lemma 2.3 and its proof: the Archimedean auxiliary-prime irrationality principle. Method attribution; the present prime-dilation and nonvanishing arguments are given in full.",
+      "reused_existing_copy": true,
+      "last_read_for_this_manuscript": "2026-11-11",
+      "local_copy_filename": "Many-p-adic-odd-zeta-values-are-irrational_Lai-Sprang_2306.10393v2.pdf"
+    },
+    {
+      "citation_key": "zudilin",
+      "title": "Arithmetic of Catalan's constant and its relatives",
+      "authors": "Wadim Zudilin",
+      "version": "1804.09922v2",
+      "source_url": "https://arxiv.org/abs/1804.09922v2",
+      "retrieved_at_utc": "2026-11-11T01:06:49.412203+00:00",
+      "pdf_sha256": "1e1d70a09730c05b5aa17eb39b56373053c84fa158556cbd105815c2e50446eb",
+      "read_scope": "Proof of Lemma 1: numerator zeros through the pole region control rational constants. Method attribution, read in conjunction with Krisman; no quantitative theorem is imported.",
+      "reused_existing_copy": true,
+      "last_read_for_this_manuscript": "2026-11-11",
+      "local_copy_filename": "Arithmetic-of-Catalans-constant-and-its-relatives_1804.09922v2.pdf"
+    },
+    {
+      "citation_key": "finite",
+      "title": "At least three of beta(2), beta(4), ..., beta(364) are irrational",
+      "authors": "twinheterodox",
+      "version": "GitHub commit 94cf59dad9ebb2ff0ee666238a28abb14eca0466",
+      "source_url": "https://github.com/twinheterodox/beta4/tree/94cf59dad9ebb2ff0ee666238a28abb14eca0466/finite-even-beta",
+      "local_copy_filename": "finite-even-beta/output/pdf/finite-even-beta.pdf",
+      "local_copy_checked_at": "2026-11-11",
+      "pdf_sha256": "8fe8cef9a6e1a5644892881dd9b784cf9eedac7ffc4a506e37e741ab478c0312",
+      "read_scope": "Section 3.2, clearing rational correction terms by the exceptional-group zero identity. Method attribution; the present isolated-class refinement is proved separately.",
+      "reused_existing_copy": true
+    },
+    {
+      "citation_key": "powered",
+      "title": "Irrational even beta values from powered hypergeometric kernels",
+      "authors": "twinheterodox",
+      "version": "GitHub commit 94cf59dad9ebb2ff0ee666238a28abb14eca0466",
+      "source_url": "https://github.com/twinheterodox/beta4/tree/94cf59dad9ebb2ff0ee666238a28abb14eca0466/powered-beta-kernels",
+      "local_copy_filename": "powered-beta-kernels/output/pdf/powered-beta-kernels.pdf",
+      "local_copy_checked_at": "2026-11-11",
+      "pdf_sha256": "c05153bfddc64052c457f5c33193209a5547946d293a96ddb3c7ef5a7d8da770",
+      "read_scope": "Sections 4--6: prime dilation, selected and nonselected pole estimates, seed coefficients, rational-constant congruence and irrationality contradiction. Adapted and rederived with base index 96 and the present pole profile.",
+      "reused_existing_copy": true
+    }
+  ]
+}

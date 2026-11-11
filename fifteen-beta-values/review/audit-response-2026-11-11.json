@@ -1,0 +1,123 @@
+{
+  "date": "2026-11-11",
+  "status": "audit recorded; explanatory additions and packaging checked internally",
+  "independent_audit": "review/independent-audit-2026-11-11.json",
+  "audited_pdf_sha256": "2635118a4d725bfe9b1667c4df6873fa1f13f692e8ea42be73e76939b3572724",
+  "audited_pages": 14,
+  "current_pdf": "output/pdf/fifteen-beta-values.pdf",
+  "current_pdf_sha256": "4b3e7d1cc7b4a842876f673647bde287f9f262060ec56ac27a43daa7473e163d",
+  "current_pages": 15,
+  "changes": [
+    {
+      "location": "Section 5.2",
+      "change": "Spelled out the b-a and b-a+1 residue counts in a closed block [pa,pb], and their totals W and W+31. Removed the now-redundant shorter count in the following proof."
+    },
+    {
+      "location": "Appendix A.2",
+      "change": "Defined A_-=(1+r)n-a+1 and A_+=a+rn+1, identified the absolute odd products, and explained their total length and triple multiplicities."
+    },
+    {
+      "location": "Section 6",
+      "change": "Replaced the pending-audit statement with the successful audit outcome and its scope. Recommendations remain in the review records."
+    },
+    {
+      "location": "References",
+      "change": "Kept the bibliography together on the final page."
+    },
+    {
+      "location": "README, build guide and changelog",
+      "change": "Updated current audit status and linked the original report, preserved computations and subsequent revision record."
+    }
+  ],
+  "mathematical_scope": "No theorem, parameter, numerical certificate or logical step was changed. The two added counting explanations were checked directly against the definitions; they explain steps already covered by the independent audit.",
+  "changed_audited_files": [
+    {
+      "path": "paper/sections/05-nonvanishing.tex",
+      "audited_sha256": "be8028540d527ce4a1d3b5cd4d95eb636d89ba22c1d27e637f0d5f5fb3b0c21b",
+      "current_sha256": "6ea9afde95ad9cb2163cfde9910587464b046442e63db76901da3a43b240435f"
+    },
+    {
+      "path": "paper/sections/06-computations.tex",
+      "audited_sha256": "75c2e2586d1f8ff958cbcba52df3916c157cfe64f9ca91bcca9c0ccac7ad4090",
+      "current_sha256": "1e43177e18560e42048fd65dbfbaf476200285ede68ca47a5291f6ae8ebcee79"
+    },
+    {
+      "path": "paper/sections/appendix-small-primes.tex",
+      "audited_sha256": "8b397c030101d109e00a412bc80c8dd3fb06fa6bca131b702f0544afcc536543",
+      "current_sha256": "012a705fcb691af93abf7f29f275e9db53a16ea4c992d97b84fefb6b1c4dc745"
+    },
+    {
+      "path": "paper/sections/references.tex",
+      "audited_sha256": "470cf462bbecbc1f1623c067be0170fd580c6a4234bcf7d5d36d2974c74b4257",
+      "current_sha256": "8f2f416deaa0e6a237992230c6fe39560337fa5f9d7b0426ec2aa4e75526f1dd"
+    },
+    {
+      "path": "output/pdf/fifteen-beta-values.pdf",
+      "audited_sha256": "2635118a4d725bfe9b1667c4df6873fa1f13f692e8ea42be73e76939b3572724",
+      "current_sha256": "4b3e7d1cc7b4a842876f673647bde287f9f262060ec56ac27a43daa7473e163d"
+    },
+    {
+      "path": "checks/README.txt",
+      "audited_sha256": "7c309b375fbe05ccfcb9ff8ffa271a7d73b73f7d01008c15c55e68a79fb2fca1",
+      "current_sha256": "390a614a1b02c21f75f0bbcdd412c9b93587e73dcafc5b11a1595987f24cafcc"
+    }
+  ],
+  "unchanged_audited_files": [
+    "paper/fifteen-beta-values.tex",
+    "paper/sections/01-introduction.tex",
+    "paper/sections/02-forms.tex",
+    "paper/sections/03-denominators.tex",
+    "paper/sections/04-decay.tex",
+    "checks/certify_fifteen.py",
+    "checks/certify_phase_polynomial.py",
+    "checks/check-report.json",
+    "checks/fifteen-arithmetic-midpoints.tsv",
+    "checks/fifteen-arithmetic-second-check.json",
+    "checks/fifteen-certificate.json",
+    "checks/fifteen-seed-p10007.json",
+    "checks/fifteen-seed-p10009.json",
+    "checks/fifteen-seed-rows-p10007.json",
+    "checks/fifteen-seed-rows-p10009.json",
+    "checks/fifteen-seed-second-check.json",
+    "checks/phase-polynomial-certificate.json",
+    "checks/requirements-optional.txt",
+    "checks/run_checks.py",
+    "checks/seed_fifteen.py",
+    "checks/verify_fifteen_arithmetic.cpp",
+    "checks/verify_fifteen_seed.py"
+  ],
+  "compilation": {
+    "record": "paper/build-record.json",
+    "unresolved_references": false,
+    "overfull_boxes": false
+  },
+  "computational_validation": {
+    "record": "checks/independent-audit-replay.json",
+    "record_sha256": "8b7f9242ec0af4f1b79ff4eac831a7574e4f53a51e8cbfccce1758f3192f65a4",
+    "result": "All four independently written calculations replayed successfully and reproduced the saved audit results exactly. Original auditor programs and JSON outputs were preserved unchanged.",
+    "scope": "A packaging replay, not a new mathematical audit."
+  },
+  "visual_review": {
+    "method": "Rendered all 15 pages at 110 dpi; pages 1--9 match the previously inspected original exactly. Inspected pages 10--15, then rechecked the final two pages after the final layout adjustment.",
+    "result": "No clipping, overlaps, unresolved references or missing glyphs observed.",
+    "page_sha256": {
+      "1": "de3868478347b0861f4cb683ea1a5ccb8cd0f6c46ac80e84ece93937cce93917",
+      "2": "6b046c640720fe74b81534c834bd4a03e55bb95a163969570b27f88b196d8ba2",
+      "3": "6853affb7d8323b79bec35dee0e6296d7f03a292b076026e0eb629c1116c8c09",
+      "4": "dab876373f9cf202d17e8aeb38ad954ce0ceddb5e0749ff83cfdc913ce9b8f93",
+      "5": "115ab93978f91f6d9868fc8efdbda6baa38c9c685954a60dc6b0670668924345",
+      "6": "b815cd0a5ad6c343e2a113ee762f49fba617567737d00521ed94bb419327a482",
+      "7": "8547a92621eadd4353c1e382bc3d4e3f00db880515a64beafd21de317531ad4d",
+      "8": "42c2fff70bb8f3105d4ad3662747d5e8fd115f6ebe4a53cb8b1019cacc9b8560",
+      "9": "e4ac49ac3b2f1b925ca17dbc1bdff2b134114a13bc20d4b93cd2d914af8445bd",
+      "10": "cec893f0f45561612b392cd96e3283126f0af95b17290e6637991dca2aefba8f",
+      "11": "fc9008b27f8851c5338e2f859e123d2fe54c8abb9a5fc1a70b36d1b9ecd6bbdb",
+      "12": "003ef6414e71b8094d76a9806f10ee7e1c8d4116f782017ea7ffde9e6ba810ba",
+      "13": "fbf04d31a10dc92e3c57c99c00eae789cb5fc98ab70e71f11e804a5bc174c8c5",
+      "14": "0f00521c166f7bcf0bc54a33b1a560c5075afffb9ec1ace4f27cc687bf28b189",
+      "15": "d697d9b0aea4aa23d5db983a3af81d267e9cc125a90e018052dc0b8ab035eead"
+    }
+  },
+  "preservation": "The original assembly review retains its historical scope. The complete audited PDF, source snapshot and raw audit were preserved outside Git. Public copies use relative paths and do not expose private filesystem identities.",
+  "review_scope": "The independent audit applies to its recorded 14-page hash. These subsequent explanatory additions, audit note and layout edits were checked in the preparing session."
+}

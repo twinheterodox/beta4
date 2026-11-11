@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "scope": "Packaging replay of the auditor's preserved programs; not a new mathematical audit.",
+  "all_four_results_equal_the_original_audit_results": true,
+  "auditor_programs_sha256": {
+    "independent_arithmetic.py": "3d44c9f8c5bbfeb56ca208c5c17bbb806adcdb6c4a92de834e0012e05bb1f9cd",
+    "independent_floor.cpp": "0f8a05e3de2c6bcfe3559234e4b9af0bca4f39a127dd538b9debe90d908f426d",
+    "independent_local_bounds.py": "c648a8789f4716bb1d25d37ceefa13860f0773361fb5198a6c9b1efcb00bfcb9",
+    "independent_phase.py": "e84d1ebb0af807aeb56255f3dfbaecb62e70ff044610f264988f6dc586e5041a",
+    "independent_seed.py": "224b237112cd3091b7b00542467eb9fbc715b4a5cbecdc5c163d43bd66b903a2"
+  },
+  "result_files_sha256": {
+    "independent-arithmetic.json": "a0ef37c29ab1415c91acceeba83809272195cb851b5c9f64d7f86e19b61e85d0",
+    "independent-phase.json": "1fc704a8eab2acbd2074a47fa98c37e5000607a47a026b3051cbb92f21141dd8",
+    "independent-seed.json": "ebbedbf9060b60b8b71939583dafe3966e31714fd27948e9b56ec4baf604787d",
+    "independent-local-bounds.json": "11e6eca7b7345100558b95d85809546a7f09d90c5b6f7b9a3fe9680b983bf2cb"
+  },
+  "runner_sha256": "7a1f7c4d775ed82662fda47bdee0b2420f20414107a3377916a479d6ae2e846d"
+}

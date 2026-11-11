@@ -1,0 +1,146 @@
+\section{Only repeated pole classes contribute}\label{sec:denominators}
+\subsection{Two expressions for each rational correction}
+The finite harmonic sums in \eqref{eq:constant} introduce denominators
+larger than the distances between poles. Bounding their terms separately
+would lose useful cancellation. We first group them at the integer
+zeros from \eqref{eq:zeros}.
+
+For $1\le\ell\le n$, put
+\[
+ T(\ell,a)=\sum_i(i)_2a_{i,a}
+                         (a-\ell+\tfrac12)^{-i-2}.
+\]
+Changing variables from $h$ to $\ell=a-h$ in \eqref{eq:constant}
+gives
+\begin{equation}\label{eq:groups}
+ \rho_n=-\sum_{\ell=1}^{n}(-1)^\ell
+                               \sum_{a\ge\ell}T(\ell,a).
+\end{equation}
+On the other hand, $R_n''(-\ell)=0$ says
+\begin{equation}\label{eq:complement}
+ \sum_{a\ge\ell}T(\ell,a)=-\sum_{a<\ell}T(\ell,a).
+\end{equation}
+Thus each group in \eqref{eq:groups} can be represented using poles
+on either side of $-\ell$.
+
+Fix an odd prime $p$. An evaluation denominator is divisible by $p$
+exactly when $2(a-\ell)+1\equiv0\pmod p$. The troublesome addresses
+therefore form one residue class. If this class contains only one
+address, one side of \eqref{eq:complement} avoids it entirely.
+
+\begin{example}\label{ex:isolated}
+Consider addresses $0,\ldots,12$ modulo $11$. The only repeated
+classes are $\{0,11\}$ and $\{1,12\}$; addresses $2,\ldots,10$
+are isolated. For $\ell=3$, the evaluation denominator is divisible
+by $11$ only at $a=8$. Choosing the side $a<3$ in
+\eqref{eq:complement} removes that denominator. To make this useful,
+we must also control the coefficients of the terms that remain.
+\end{example}
+
+\subsection{Local coefficients at isolated and repeated poles}
+Let $p$ be odd and $p^2>7n$. For an address $a$, define
+\begin{align*}
+ N_{p,j}(a)&=\#\{b\in I_j(n):b\equiv a\pmod p\},\\
+ c_p(a)&=3\#\{\ell\in\Lambda_n:p\mid2a+1+2\ell\}
+                              +\ind_{p\mid n-2a},\\
+ F_p(a)&=\sum_{j=0}^{30}N_{p,j}(a)-c_p(a).
+\end{align*}
+The value of $F_p(a)$ depends only on the residue class of $a$.
+
+\begin{lemma}\label{lem:local}
+For $1\le i\le B_a$,
+\begin{equation}\label{eq:local-bound}
+ v_p(a_{i,a})\ge i-F_p(a).
+\end{equation}
+If $a$ is the only address in its class modulo $p$, every $a_{i,a}$
+is integral at $p$. This latter assertion holds for every odd $p$.
+\end{lemma}
+\begin{proof}
+At $t=-a-\tfrac12+u$, remove the nominal pole. The remaining series is
+\begin{equation}\label{eq:local-series}
+ (n-2a+2u)\prod_{\ell\in\Lambda_n}(-a-\tfrac12-\ell+u)^3
+                  \prod_{b\ne a}(b-a+u)^{-B_b}.
+\end{equation}
+Its coefficient of $u^{B_a-i}$ is $a_{i,a}$.
+
+Say a series has bound $(e,\lambda)$ at $p$ if its degree-$d$
+coefficient has valuation at least $e-d\lambda$. Products add the
+first parameters. A linear numerator factor divisible by $p$ has
+bound $(1,1)$; a reciprocal factor whose constant term has valuation
+one has bound $(-1,1)$. Unit denominator factors have integral
+series. These are the local-series estimates of
+\cite[Section 4.1]{krisman}, directly from the geometric series.
+
+All nonzero integer differences involved have absolute value below
+$7n<p^2$. The numerator in \eqref{eq:local-series} contributes
+$c_p(a)$, and the other poles contribute
+$-\sum_jN_{p,j}(a)+B_a$. Extraction of degree $B_a-i$ then gives
+\eqref{eq:local-bound}. At the central pole the prefactor has zero
+constant term; the bound $(1,1)$ remains valid since its linear
+coefficient is a $p$-unit.
+
+If $a$ is isolated, every difference $b-a$ with $b\ne a$ is a
+$p$-unit. All factors in \eqref{eq:local-series} then have integral
+series at $p$, since $p$ is odd. No Taylor-degree loss is needed.
+\end{proof}
+
+\begin{proposition}[The isolated-pole refinement]\label{prop:isolated}
+For an odd prime $p\le n$ with $p^2>7n$, let $M_p$ be the maximum
+of $F_p(a)$ over addresses in residue classes containing at least
+two addresses. Set
+\begin{equation}\label{eq:large-exponent}
+ e_p=\max(0,M_p+2).
+\end{equation}
+Then $p^{e_p}\rho_n$ and every $p^{e_p}\tau_{i,n}$ are integral
+at $p$. For every prime $p>n$, these coefficients are integral at
+$p$ without a multiplier.
+\end{proposition}
+\begin{proof}
+At a repeated class, Lemma~\ref{lem:local} bounds a coefficient
+below by $1-M_p$; at an isolated class it is integral. This already
+controls the beta coefficients.
+
+In a group \eqref{eq:complement}, terms with unit evaluation
+denominators have valuation at least $\min(0,1-M_p)\ge-e_p$.
+If the troublesome class is isolated, choose the side that avoids
+its address. If it is repeated, its evaluation denominators have
+valuation one, so each corresponding term has valuation at least
+\[
+ i-F_p(a)-(i+2)\ge-M_p-2\ge-e_p.
+\]
+In either case the group has valuation at least $-e_p$. Summing
+\eqref{eq:groups} proves the assertion for $\rho_n$.
+
+If $p>n$, all pole classes are isolated. Their coefficients are
+integral, and at least one side of \eqref{eq:complement} has only
+unit evaluation denominators. This proves the last assertion even
+when a denominator on the other side has higher valuation.
+\end{proof}
+
+The complement identity is already used for $p>n$ in
+\cite[Lemma 4.6]{krisman}. The extra information in
+Lemma~\ref{lem:local} allows the same reasoning to discard isolated
+classes when $p\le n$. In the important range $n/2<p<n$, only
+classes with least representative at most $n-p$ are repeated.
+
+\subsection{A common clearing factor}
+Appendix~\ref{app:small} defines clearing exponents at the remaining
+primes, namely $2$ and the odd primes with $p^2\le7n$. Together with
+\eqref{eq:large-exponent}, and $e_p=0$ for $p>n$, they give a
+positive integer
+\begin{equation}\label{eq:Dn}
+ D_n=\prod_{p\le n}p^{e_p},\qquad
+ D_n\rho_n,\ D_n\tau_{i,n}\in\Z.
+\end{equation}
+The estimates proved there are
+\begin{align}
+ e_p-Gv_p(n!)&\le128(\lambda_p+1),
+ &\lambda_p&=\lfloor\log_p(7n)\rfloor
+ &&(p\text{ odd},\ p^2\le7n),                 \label{eq:small-cost}\\
+ e_2-Gv_2(n!)&\le15n+36+107(\lambda_2+1),
+ &\lambda_2&=\lfloor\log_2n\rfloor.           \label{eq:two-cost}
+\end{align}
+The small odd primes therefore cost $O(\sqrt n\log n)=o(n)$ in
+$\log D_n-G\log(n!)$, while $2$ contributes at most
+$15n\log2+o(n)$. The next section estimates the large primes and
+compares the total cost with the decay of $L_n$.

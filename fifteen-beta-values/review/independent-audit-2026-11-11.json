@@ -1,0 +1,96 @@
+{
+  "reported_date": "2026-11-11",
+  "outcome": "No mathematical error or gap affecting the claim that at least one of beta(4), beta(6), ..., beta(32) is irrational.",
+  "audited_pdf": "output/pdf/fifteen-beta-values.pdf",
+  "audited_pdf_sha256": "2635118a4d725bfe9b1667c4df6873fa1f13f692e8ea42be73e76939b3572724",
+  "audited_pages": 14,
+  "audit_report": "review/independent-audit-2026-11-11.txt",
+  "audited_files": "review/audited-files-2026-11-11.json",
+  "all_28_recorded_hashes_matched_before_revision": true,
+  "reviewer_identity": "Not specified in the supplied report.",
+  "reviewer_model": "Not specified in the supplied report.",
+  "mathematical_scope": [
+    "Complete argument in Sections 1--5 and Appendix A.",
+    "Isolated-pole refinement, small-prime and dyadic costs.",
+    "Arithmetic envelope, event partition and limiting prime sums.",
+    "Uniform real decay and infinite-tail control.",
+    "Prime dilation, local coefficient extraction and the final irrationality contradiction."
+  ],
+  "independent_computations": {
+    "arithmetic_intervals": 38371,
+    "arithmetic_upper": "3203914250644786841689526785574147/395150460539893383747800452300800",
+    "polynomial_degree": 33,
+    "phase_enclosure": "[-18.8351123668081936003718677400690 +/- 7.31e-32]",
+    "seed_method": "Complete polynomial numerator and denominator with Bezout inverses modulo the powers of the pole factors.",
+    "seed_coefficients_per_prime": 2077,
+    "seed_residues": {
+      "10007": 3738,
+      "10009": 5333
+    },
+    "small_prime_spot_checks": 56,
+    "large_prime_spot_checks": 222,
+    "repeated_residue_classes_checked": 32722,
+    "supplied_checker_replay": "The complete supplied runner including --with-product passed separately in the auditor's scratch copy."
+  },
+  "accepted_inputs": [
+    "Partial fractions and elementary local series",
+    "Legendre, Wilson and Fermat formulas",
+    "Descartes rule of signs",
+    "Uniform real Stirling estimates",
+    "Prime number theorem and Chebyshev bound",
+    "Ordinary convergence estimates",
+    "Exact finite-field arithmetic and outward-rounded Arb interval arithmetic"
+  ],
+  "excluded_scope": [
+    "Formal verification",
+    "Full literature dependency audit",
+    "Priority assessment",
+    "Discovery-session independence",
+    "External Lean formalizations"
+  ],
+  "publication_copy_changes": "Only the private manuscript prefix in the report and file manifest was replaced by package-relative paths; a public-copy notice was added. Auditor programs and numerical outputs are unchanged.",
+  "original_report_sha256": "245cfef66f66531721d9e6cae3ca0fca9c8ec1202d50b70d74df353779b365db",
+  "original_manifest_sha256": "6c1e5cc25a30911ff3e94abd59df840e422000b8c97606d086431135293b0710",
+  "public_report_sha256": "cea71005e10868cee242991d2ce2df186728560192a0ac325c700f685bc11f67",
+  "public_manifest_sha256": "110c730c97274c625b3f9cc11d45a4aa468de643e269a023fdae2a20d750487e",
+  "auditor_files": [
+    {
+      "path": "checks/independent-audit/independent-arithmetic.json",
+      "sha256": "a0ef37c29ab1415c91acceeba83809272195cb851b5c9f64d7f86e19b61e85d0"
+    },
+    {
+      "path": "checks/independent-audit/independent-local-bounds.json",
+      "sha256": "11e6eca7b7345100558b95d85809546a7f09d90c5b6f7b9a3fe9680b983bf2cb"
+    },
+    {
+      "path": "checks/independent-audit/independent-phase.json",
+      "sha256": "1fc704a8eab2acbd2074a47fa98c37e5000607a47a026b3051cbb92f21141dd8"
+    },
+    {
+      "path": "checks/independent-audit/independent-seed.json",
+      "sha256": "ebbedbf9060b60b8b71939583dafe3966e31714fd27948e9b56ec4baf604787d"
+    },
+    {
+      "path": "checks/independent-audit/independent_arithmetic.py",
+      "sha256": "3d44c9f8c5bbfeb56ca208c5c17bbb806adcdb6c4a92de834e0012e05bb1f9cd"
+    },
+    {
+      "path": "checks/independent-audit/independent_floor.cpp",
+      "sha256": "0f8a05e3de2c6bcfe3559234e4b9af0bca4f39a127dd538b9debe90d908f426d"
+    },
+    {
+      "path": "checks/independent-audit/independent_local_bounds.py",
+      "sha256": "c648a8789f4716bb1d25d37ceefa13860f0773361fb5198a6c9b1efcb00bfcb9"
+    },
+    {
+      "path": "checks/independent-audit/independent_phase.py",
+      "sha256": "e84d1ebb0af807aeb56255f3dfbaecb62e70ff044610f264988f6dc586e5041a"
+    },
+    {
+      "path": "checks/independent-audit/independent_seed.py",
+      "sha256": "224b237112cd3091b7b00542467eb9fbc715b4a5cbecdc5c163d43bd66b903a2"
+    }
+  ],
+  "subsequent_revision": "review/audit-response-2026-11-11.json",
+  "scope_note": "The audited hash identifies the version reviewed. The current PDF adds the audit note and two explanatory passages; those later edits are recorded separately."
+}

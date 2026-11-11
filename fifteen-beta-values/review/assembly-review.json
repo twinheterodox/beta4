@@ -1,0 +1,103 @@
+{
+  "date": "2026-11-11",
+  "status": "complete internal assembly review; external mathematical audit pending",
+  "manuscript_pdf": "output/pdf/fifteen-beta-values.pdf",
+  "pdf_sha256": "2635118a4d725bfe9b1667c4df6873fa1f13f692e8ea42be73e76939b3572724",
+  "pages": 14,
+  "source_sha256": {
+    "paper/fifteen-beta-values.tex": "162fde556d4604e59e94e13c4eea9b9f90425bc7ec69336d47f899d736dd623a",
+    "paper/sections/01-introduction.tex": "52176cf4af54cc5739e9166e82ec2ecc6cb379f14d2f1f690b0d274c7831a101",
+    "paper/sections/02-forms.tex": "5564daf8d9702d1ed95d093c105b3d59cfafe16a6c1c46dac1dd993264cf8505",
+    "paper/sections/03-denominators.tex": "730c3d998bd222640cb36833f4317450968e111948721e4cb660080df22baa2d",
+    "paper/sections/04-decay.tex": "44612e75a369a4efe309c659124a5d545644ff50ef3744a3e055aa2f0a5fe6d8",
+    "paper/sections/05-nonvanishing.tex": "be8028540d527ce4a1d3b5cd4d95eb636d89ba22c1d27e637f0d5f5fb3b0c21b",
+    "paper/sections/06-computations.tex": "75c2e2586d1f8ff958cbcba52df3916c157cfe64f9ca91bcca9c0ccac7ad4090",
+    "paper/sections/appendix-small-primes.tex": "8b397c030101d109e00a412bc80c8dd3fb06fa6bca131b702f0544afcc536543",
+    "paper/sections/references.tex": "470cf462bbecbc1f1623c067be0170fd580c6a4234bcf7d5d36d2974c74b4257"
+  },
+  "correctness_review": {
+    "reviewer": "preparing Codex session",
+    "scope": "Internal mathematical review, distinct from the finite computations and from external audit.",
+    "checked": [
+      "Degree and reflection for every positive multiple of 96; beta expansion and cancellation of odd indices.",
+      "Local coefficient estimates, isolated-class integrality, both sides of the zero identity and all prime ranges.",
+      "Floor-count correspondence, completeness of the event partition, exceptional event primes and prime-number-theorem tail passage.",
+      "Descartes sign test, logarithm enclosures, uniform real Stirling estimate, logarithmic derivative bound and infinite tail.",
+      "Coordinate and coefficient powers of two, trimmed seed, Wilson unit, local-series coefficient extraction, nonselected estimates and constant congruence.",
+      "Final contradiction under the rationality hypothesis, including the fixed finite exceptional prime set.",
+      "Small-prime and dyadic clearing estimates in Appendix A; cited section and lemma locations."
+    ],
+    "outcome": "No unresolved mathematical issue identified in this internal review. This is not a separate independent audit or formal verification."
+  },
+  "exposition_review": {
+    "scope": "Separate sequential reading for a human familiar with partial fractions, valuations and classical asymptotics.",
+    "choices": [
+      "Abstract states the theorem and nature of the improvement without a proof sketch.",
+      "Introduction explains pole addresses, the isolated-class saving, the integer contradiction and inherited methods.",
+      "Parameter discussion explains why pole order 31 leaves endpoint 32; the nested-block example is given at base index 96.",
+      "The residue example with addresses 0 through 12 modulo 11 precedes the general denominator lemma.",
+      "The arithmetic, analytic and nonvanishing sections each state the immediate purpose before the calculations.",
+      "The prime-dilation section explicitly gives both the coordinate and coefficient normalization and justifies local coefficient extraction.",
+      "Routine small-prime estimates are in an appendix. Computation, discovery and audit scopes are distinguished."
+    ],
+    "outcome": "Applied the mathematical-exposition instructions and completed the final prose pass."
+  },
+  "finite_verification": {
+    "record": "checks/check-report.json",
+    "record_sha256": "4837cf4615d39b99f705cb914a7b299451e6c37e901e71196ae8fc0761fc5f0e",
+    "all_checks_passed": true,
+    "arithmetic_intervals": 38371,
+    "seed_coefficients_per_prime": 2077,
+    "seed_primes": [
+      10007,
+      10009
+    ],
+    "seed_residues": [
+      3738,
+      5333
+    ],
+    "both_seed_algorithms_replayed": true,
+    "two_phase_certificates": true
+  },
+  "visual_review": {
+    "method": "pdftoppm at 110 dpi; every rendered page inspected after the final manuscript build.",
+    "pages_inspected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "result": "No clipping, overlapping elements, missing glyphs, unresolved references or overfull lines observed.",
+    "rendered_page_sha256": {
+      "1": "de3868478347b0861f4cb683ea1a5ccb8cd0f6c46ac80e84ece93937cce93917",
+      "2": "6b046c640720fe74b81534c834bd4a03e55bb95a163969570b27f88b196d8ba2",
+      "3": "6853affb7d8323b79bec35dee0e6296d7f03a292b076026e0eb629c1116c8c09",
+      "4": "dab876373f9cf202d17e8aeb38ad954ce0ceddb5e0749ff83cfdc913ce9b8f93",
+      "5": "115ab93978f91f6d9868fc8efdbda6baa38c9c685954a60dc6b0670668924345",
+      "6": "b815cd0a5ad6c343e2a113ee762f49fba617567737d00521ed94bb419327a482",
+      "7": "8547a92621eadd4353c1e382bc3d4e3f00db880515a64beafd21de317531ad4d",
+      "8": "42c2fff70bb8f3105d4ad3662747d5e8fd115f6ebe4a53cb8b1019cacc9b8560",
+      "9": "e4ac49ac3b2f1b925ca17dbc1bdff2b134114a13bc20d4b93cd2d914af8445bd",
+      "10": "2621eafafc539820834c0c2b3e9e5c9e9d97d79ce43c7bc16c0156b035b3209a",
+      "11": "78eeab0093a1ce46aa2400ed4c1270dbf8b9bc8f255fcace52c107288f7fdfb3",
+      "12": "38dd67c665e7145a4c37bf79327053b44ec69623131070b2416e200f7538d26c",
+      "13": "8690420922c25205aead21f83aff6dd603bb1f13d1d47138589bd61c2938943e",
+      "14": "db289e55aef386011cd404a509cfbc1316d7acdb837be46313d250bb98f5ddb1"
+    }
+  },
+  "identity_check": {
+    "pdf_author": "twinheterodox",
+    "scan": "New publication files, extracted PDF text and PDF metadata checked for personal identity strings and private filesystem paths; none found."
+  },
+  "external_audit": "Pending. Earlier papers' audits and the separate discovery do not constitute an audit of this manuscript."
+}

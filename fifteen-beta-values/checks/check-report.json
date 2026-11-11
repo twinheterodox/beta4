@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "steps": [
+    "arithmetic_and_concavity",
+    "phase_polynomial",
+    "compile_direct_floor_checker",
+    "direct_floor_cells",
+    "seed_product_10007",
+    "seed_product_10009",
+    "seed_recurrence"
+  ],
+  "product_calculation_replayed": true,
+  "arithmetic_intervals": 38371,
+  "seed_coefficients_compared": 4154,
+  "seed_residues": {
+    "10007": 3738,
+    "10009": 5333
+  },
+  "scope": "Finite certificate replay. General arguments remain mathematical proofs in the manuscript; no external audit or formal verification is asserted.",
+  "file_sha256": {
+    "certify_fifteen.py": "1f06b260b2cb06126941bf28233b05a76411f0aaa33f049a696844381507e486",
+    "certify_phase_polynomial.py": "e9c00c50b739939be595d54dfb030b3ed304f14f142bd31214666fc5a8140fc7",
+    "fifteen-arithmetic-midpoints.tsv": "89597b896a7893528a630e8577e95aed18418b31deb7602d56cca598246ebca6",
+    "fifteen-arithmetic-second-check.json": "b026bb67e60b4c6ec8fd0982308e66c1f86a08680a2a9544c79b5a9b2e7a0245",
+    "fifteen-certificate.json": "07d47be3299c18cb5a0eb106331681578f6ce90b8f50cf017cb31a693b84ed12",
+    "fifteen-seed-p10007.json": "8bf20884e4a044c7ee593e1c47a834a516f66bedcc32742d76fa55d0feb72368",
+    "fifteen-seed-p10009.json": "f8b1a3395006842eb46c8c54f88a36c30e27b36d82f76a8b038ef585ee5ec706",
+    "fifteen-seed-rows-p10007.json": "5763340804af063634f75a88677471dcde1b2c81282228b0cedfc24ff62b71e6",
+    "fifteen-seed-rows-p10009.json": "05a1c6e5cbf90b2c5c1c824b51df161f8247d628f408727bf0b32f9c64d6c78e",
+    "fifteen-seed-second-check.json": "e3a3bfd1d533c5f58c3de84228a2a32102c7541cba4996d35309ce1cce522920",
+    "phase-polynomial-certificate.json": "f13c2a1d276ec9db353c88f00bc5dda9ddcb2585e9a87c8269eb426b9ee47ab3",
+    "run_checks.py": "5b52df1f1f60f6a975205da42a9fc8194f3b3111d537bc038d13dbb614b14a68",
+    "seed_fifteen.py": "bd87b21b551f10d73759fcc1cee6cdbe4d1bc3510e388de66ed6aef9c57e5378",
+    "verify_fifteen_arithmetic.cpp": "fd30dc765322c827fd55eedb49d43d498703233609a041679c6c724fa42cacad",
+    "verify_fifteen_seed.py": "dd439ccf48bc8a3c5b155d1a9999cfbb69c73d42267cdce9c9f6390fcea09bb4"
+  }
+}

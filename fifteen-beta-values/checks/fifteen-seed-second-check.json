@@ -1,0 +1,54 @@
+{
+  "status": "passed",
+  "algorithm": "logarithmic-derivative recurrence",
+  "results": [
+    {
+      "prime": 10007,
+      "seed_constant_residue": 3738,
+      "coefficient_comparisons": 2077,
+      "beta_residues": {
+        "4": 4150,
+        "6": 4082,
+        "8": 2556,
+        "10": 5982,
+        "12": 8333,
+        "14": 9004,
+        "16": 7483,
+        "18": 2557,
+        "20": 4797,
+        "22": 3601,
+        "24": 3441,
+        "26": 4778,
+        "28": 3863,
+        "30": 702,
+        "32": 256
+      },
+      "rows_sha256": "fae2a1c3b7176572f31e11e2b917a0f4d422cfca4f7c7ceb4e1bb711f1d55ad8",
+      "seconds": 0.05157239001709968
+    },
+    {
+      "prime": 10009,
+      "seed_constant_residue": 5333,
+      "coefficient_comparisons": 2077,
+      "beta_residues": {
+        "4": 5053,
+        "6": 6511,
+        "8": 4552,
+        "10": 8747,
+        "12": 5568,
+        "14": 2540,
+        "16": 9523,
+        "18": 7395,
+        "20": 4214,
+        "22": 2160,
+        "24": 7633,
+        "26": 5813,
+        "28": 3745,
+        "30": 766,
+        "32": 7122
+      },
+      "rows_sha256": "e75d22df7c1820275a3624c580500ebfe6d0defa66f60d7571c3cdc05022cfcb",
+      "seconds": 0.05041077799978666
+    }
+  ]
+}

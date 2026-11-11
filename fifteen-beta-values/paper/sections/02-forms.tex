@@ -1,0 +1,95 @@
+\section{A sequence of linear forms}\label{sec:forms}
+\subsection{Zeros, poles, and the choice of parameters}
+The integer zeros have two tasks: they remove initial terms from the
+infinite sum and give identities for the rational correction terms.
+The half-integer poles produce beta values. Varying their orders
+across the pole interval improves the balance between denominator
+growth and analytic decay.
+
+Two differentiations raise each partial-fraction exponent by two.
+Reflection will remove the odd beta indices, so a largest pole order
+of $31$ leaves $32$ as the largest even index. The other parameters
+below are chosen so that the decay exceeds the denominator cost,
+as verified in Section~\ref{sec:decay}.
+
+Fix
+\begin{equation}\label{eq:parameters}
+ S=31,\qquad r=\frac34,\qquad N=96,\qquad
+ \delta_j=\frac{j}{96}\quad(0\le j\le30),
+\end{equation}
+and let $n$ range over positive multiples of $N$. Define the blocks
+and their combined pole orders by
+\[
+ I_j(n)=[\delta_jn,(1-\delta_j)n]\cap\Z,\qquad
+ B_a(n)=\#\{j:a\in I_j(n)\}\quad(0\le a\le n).
+\]
+The block $I_0(n)$ contains every address. At $n=96$, the successive
+blocks are $[0,96],[1,95],\ldots,[30,66]$, so the orders rise from
+one at the ends to $31$ in the middle. The base $N=96$ makes these
+endpoints and $rn$ integral. We often suppress $n$ in $B_a(n)$.
+
+Put
+\[
+ \Lambda_n=[-(1+r)n-1,rn]\cap\Z,
+ \qquad
+ R_n(t)=\frac{(2t+n+1)\prod_{\ell\in\Lambda_n}(t-\ell)^3}
+ {\prod_{a=0}^{n}(t+a+\tfrac12)^{B_a}}.
+\]
+Two degree parameters will track the factorial normalization:
+\begin{equation}\label{eq:degree-parameters}
+ \gamma=\sum_{j=0}^{30}(1-2\delta_j)=\frac{341}{16},
+ \qquad G=\gamma-3(1+2r)=\frac{221}{16}.
+\end{equation}
+There are $\gamma n+31$ denominator factors and
+$3\#\Lambda_n=\tfrac{15}{2}n+6$ integer zero factors, counted with
+multiplicity. Including the linear prefactor gives
+$\deg R_n=-Gn-24$, so $R_n$ is proper and decays rapidly at infinity.
+The prefactor cancels one order at the central pole; nominal pole
+orders remain convenient, with the corresponding leading coefficient
+equal to zero.
+
+Reflection about $-(n+1)/2$ permutes the zeros and the pole blocks.
+Since $\gamma n$ and $3\#\Lambda_n$ are even, the prefactor and
+denominator both change sign. Hence
+\begin{equation}\label{eq:reflection}
+ R_n(-n-1-t)=R_n(t).
+\end{equation}
+
+\subsection{The beta expansion}
+Write the partial fractions as
+\[
+ R_n(t)=\sum_{a=0}^{n}\sum_{i=1}^{B_a}
+                   \frac{a_{i,a}}{(t+a+\tfrac12)^i},
+\]
+and set absent coefficients to zero. Let
+\[
+ (i)_2=i(i+1),\qquad
+ \sigma_a(s)=\sum_{h=0}^{a-1}\frac{(-1)^h}{(2h+1)^s}.
+\]
+Differentiating twice and shifting each beta series gives
+\begin{align}
+ L_n&=\sum_{t=0}^{\infty}(-1)^tR_n''(t)
+       =\rho_n+\sum_{i=1}^{31}\tau_{i,n}\beta(i+2),
+                                                \label{eq:forms}\\
+ \tau_{i,n}&=2^{i+2}(i)_2\sum_{a=0}^{n}(-1)^a a_{i,a},
+                                                \label{eq:beta-coeff}\\
+ \rho_n&=-\sum_{a=0}^{n}\sum_{i=1}^{B_a}
+              (-1)^a2^{i+2}(i)_2a_{i,a}\sigma_a(i+2).
+                                                \label{eq:constant}
+\end{align}
+All exponents in the shifted series are at least three, so the
+rearrangements are absolutely convergent. Uniqueness of partial
+fractions in \eqref{eq:reflection} gives
+$a_{i,n-a}=(-1)^ia_{i,a}$. Since $n$ is even, every $\tau_{i,n}$
+with odd $i$ vanishes. Thus
+\begin{equation}\label{eq:target-span}
+ L_n\in\Q+\Q\beta(4)+\Q\beta(6)+\cdots+\Q\beta(32).
+\end{equation}
+
+The triple zeros give two identities we shall use separately:
+\begin{equation}\label{eq:zeros}
+ R_n''(t)=0\quad(0\le t\le rn),\qquad
+ R_n''(-\ell)=0\quad(1\le\ell\le n),
+\end{equation}
+where the arguments are integers. The first starts the analytic sum
+beyond $rn$. The second controls the denominators of $\rho_n$.

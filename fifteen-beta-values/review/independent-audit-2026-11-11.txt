@@ -1,0 +1,225 @@
+Public copy of the independent audit report. The manuscript path below
+is package-relative; the private absolute path has been removed.
+The auditor's programs and numerical results are preserved without
+changes in checks/independent-audit/.
+
+MATHEMATICAL AUDIT OF THE FIFTEEN-VALUE EVEN-BETA PAPER
+11 November 2026
+
+Audited PDF
+output/pdf/fifteen-beta-values.pdf
+SHA-256 2635118a4d725bfe9b1667c4df6873fa1f13f692e8ea42be73e76939b3572724
+Fourteen pages. Source and PDF hashes agree with paper/build-record.json.
+The individual source and certificate hashes are in audited-files.json.
+
+Verdict
+
+I found no mathematical error or gap affecting Theorem 1.1, which asserts
+that at least one of beta(4), beta(6), ..., beta(32) is irrational.
+I checked the complete argument in Sections 1--5 and Appendix A and
+independently reproduced the finite arithmetic, phase and nonzero-seed
+inputs. The proof provides both decay after clearing coefficients and
+nonvanishing along infinitely many prime-dilated indices under the joint
+rationality hypothesis.
+
+The conservative cleared-form upper exponent is
+
+  41/5 + 15 log(2) - 18.83
+    = -0.2327922916008203587415181781273514788...
+
+Thus the quantitative comparison has a substantial strict margin.
+
+1. General mathematical arguments checked
+
+Construction and support
+
+The nested blocks have gamma*n+31 denominator factors, with
+gamma=341/16. The numerator has 15*n/2+6 zero factors including
+multiplicity, and one additional linear factor. Consequently
+G=221/16 and deg R_n=-G*n-24. Reflection gives R_n(-n-1-t)=R_n(t)
+for every positive multiple of 96. It induces a_(i,n-a)=(-1)^i a_(i,a).
+The alternating sum therefore retains only even i. Twice differentiating
+leaves exactly the candidate set beta(4), ..., beta(32). I checked the
+factors of two, i(i+1), finite harmonic corrections and absolute
+convergence of the beta expansion.
+
+The isolated-pole estimate
+
+I checked the local-series estimate v_p(a_(i,a)) >= i-F_p(a), including
+the zero constant term of the central prefactor. For p^2>7n every
+nonzero divisible integer factor involved has valuation exactly one.
+An isolated address has p-unit differences from every other pole, so
+its entire principal part is p-integral for every odd p.
+
+Regrouping the rational constant at the integer zeros gives the two
+complementary sums in (3.2). For each evaluation only one address class
+has p-divisible denominators. A singleton can be avoided by taking the
+opposite side, and every remaining coefficient has the required bound.
+For a repeated class, the valuation loss i+2 in evaluation cancels
+the i in the local coefficient bound. This proves the stated exponent
+max(0,M_p+2). The same argument gives integrality for p>n, including
+evaluation denominators of higher valuation.
+
+Small primes and dyadic cost
+
+I checked the definitions of nu_p, the common Taylor-degree losses and
+the exponents in Appendix A. The negative and positive odd numerator
+products each start at 1, permitting their expression as (2A)!/(2^A A!).
+The Legendre bounds give the displayed 128(lambda_p+1) small odd-prime
+cost and 15n+36+107(lambda_2+1) dyadic cost after subtracting G v_p(n!).
+These contribute o(n) and at most 15n log(2)+o(n), respectively.
+
+Arithmetic envelope and passage from primes
+
+I checked the closed-interval count N_j, the half-shift in C, and the
+fact that C omits the two endpoint zeros and the prefactor. Those
+omissions only increase the envelope. Repeated classes have y<=x-1
+when 1<x<2. Every class is repeated for x>=2.
+
+On each open interval between affine-offset collisions and integer
+events, the residue-cell ordering and all floor counts are constant.
+At a non-event x only one offset jumps at an interior cell boundary.
+Its exact value agrees with a neighboring cell. At 0 and x-1 the
+outer pole block has the indicated one-sided value. Thus the cell
+maxima include the closed-boundary maxima. Event values of n/p
+contribute O(log n) for the fixed finite partition.
+
+The bound e(x)<=36+G*{x} follows from the interval lengths. The
+positive-part tail integral is at most 36/X+G/(2(X-1)). PNT on each
+finite partition, followed by the Chebyshev bound beyond a fixed M
+and then M tending to infinity, proves the claimed asymptotic prime
+sum. Negative body contributions are retained with their correct sign.
+
+Real estimate
+
+I checked the gamma product and the uniform Stirling estimate down to
+t-rn=1. Its O(log(n+t)) error becomes only a fixed polynomial factor.
+The logarithmic derivative and its derivative give the uniform
+O((1+log n)^2) cost for R_n''. The critical polynomial has exactly
+one positive root by its coefficient signs. The tail inequality
+x Phi'(x)<=-383/64 for x>=3 suffices to sum the infinite tail while
+absorbing the polynomial factor. These estimates give the printed
+uniform bound for L_n, rather than a finite-index extrapolation.
+
+Prime dilation and final contradiction
+
+I checked R_n(t)=2^(Gn+25) F_n(2t+n+1) and the two further powers
+of two from differentiation. Selecting p-divisible zero factors gives
+the trimmed seed with odd roots through 239, rather than through 241.
+There are 3L selected zero factors, W+31 selected denominator factors
+and one selected prefactor. Thus A_0=1356 and tau=1358.
+
+Wilson's theorem gives the stated combined unit -1. Coefficient
+extraction after pole removal is legitimate in the local integral
+power series. A nonzero address class contains W weighted poles and
+at least L numerator roots before cubing. Its resulting bound is
+v_p(c_(Np;a,i))>=-GN+i. After scaling, the beta coefficients vanish
+modulo p. Nonselected rational-constant terms have valuation at least
+30. The selected harmonic denominators give the character chi_4(p),
+yielding p^tau q_(Np)=-chi_4(p)*q_tilde modulo p.
+
+The seed residues below prove q_tilde is a nonzero rational number.
+Under joint rationality of the fifteen beta values, excluding the
+finite set of denominator and seed-numerator primes supplies infinitely
+many nonzero L_(Np). Combining this with integrality and decay of
+T D_(Np) L_(Np) gives the stated contradiction.
+
+2. Independently reproduced finite inputs
+
+Fresh programs in this scratch directory import none of the supplied
+checkers. Supplied results are compared only after the calculations.
+
+Arithmetic certificate
+
+independent_arithmetic.py enumerates affine crossings by reducing their
+numerators to arithmetic progressions. independent_floor.cpp evaluates
+the closed boundary points and all open residue cells directly using
+integer floor and ceiling formulas. This gives 38,372 event points and
+38,371 intervals, agreeing with every supplied midpoint and maximum.
+There are 23 cells with negative envelope value. Upward rounding at
+96 bits gives the total bound
+
+  3203914250644786841689526785574147 /
+  395150460539893383747800452300800
+    = 8.108086844356158... < 41/5.
+
+The independently calculated bound agrees with the manuscript's
+64-bit upward-rounded bound to the displayed precision.
+
+Phase certificate
+
+independent_phase.py constructs the derivative numerator directly from
+the rational parameters. It checks degree 33, positive coefficients
+in degrees 0,1,2 and negative coefficients in degrees 3 through 33.
+It verifies the printed root bracket and bisects it further. 512-bit
+Arb arithmetic gives
+
+  max Phi = -18.8351123668081936003718677400690 +/- 7.31e-32,
+
+which is strictly below the printed rational upper bound
+-18835112315041/10^12 and the simpler bound -18.83.
+The full independent arithmetic and phase enclosures together yield
+a cleared exponent at most -0.3298178140528555490509126132735.
+The manuscript uses the weaker conservative exponent above.
+
+Seed certificate
+
+independent_seed.py constructs the complete seed numerator and
+denominator over each finite field. For each pole it uses a polynomial
+Bezout inverse modulo the power of its pole factor, followed by
+binomial translation of the polynomial residue. This provides a third
+method alongside the supplied product and logarithmic-derivative
+calculations. It reproduces all 2,077 coefficients at both primes,
+all odd-index cancellations and the constant residues
+
+  q_tilde = 3738 mod 10007,
+  q_tilde = 5333 mod 10009.
+
+Both moduli are checked prime by trial division.
+
+Local arithmetic spot checks
+
+independent_local_bounds.py also verifies the exact small-prime cost
+bounds in 56 cases and the large-prime residue/envelope correspondence
+in 222 cases at n=96,192,384,768. It checks 32,722 repeated residue
+classes, including the half-shift and omitted endpoints in C.
+These finite checks supplement the general proofs above.
+
+Packaged checks
+
+The complete supplied runner, including --with-product, passed in a
+scratch copy. Its report is replay/checks/check-report.json. This replay
+is additional to the independently written calculations.
+
+3. Mathematical errors and exposition
+
+No mathematical errors or gaps were found affecting the conclusion.
+
+Two optional exposition improvements would make the prime-dilation and
+small-prime counts quicker for a human reader to verify.
+
+At Section 5.2, explicitly state that a block [p a,p b] contains b-a
+representatives of every nonzero residue and b-a+1 representatives of
+zero. Summing gives W and W+31. This exposes the source of the
+selected/nonselected valuation separation.
+
+In Appendix A, give the two odd-product lengths explicitly as
+A_minus=(1+r)n-a+1 and A_plus=a+rn+1. This makes the double-factorial
+estimate and its six logarithmic error terms immediately visible.
+
+4. Accepted inputs and scope
+
+Accepted classical inputs are partial fractions, elementary local
+power-series arithmetic, Legendre's formula, Wilson's and Fermat's
+theorems, Descartes' rule of signs, uniform real Stirling estimates,
+the prime number theorem, the Chebyshev bound and ordinary convergence
+estimates. Computational results use exact integer/finite-field
+arithmetic and outward-rounded Arb interval arithmetic.
+
+The quantitative lemmas needed for the theorem were checked as proved
+in this manuscript. Krisman's cached v2 PDF was checked for the claimed
+seventeen-value comparison and construction context. Full literature
+dependency audits, priority claims, discovery-session independence and
+external Lean formalizations are outside this audit's scope. The
+verification method is mathematical reasoning with independently
+implemented finite computations.

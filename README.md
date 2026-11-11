@@ -10,6 +10,7 @@ The papers below give explicit counts of irrational even beta values in initial 
 
 | Document | Result and contents | Source and checks |
 | --- | --- | --- |
+| **[At least one of β(4), β(6), …, β(32) is irrational (15 pages)](fifteen-beta-values/output/pdf/fifteen-beta-values.pdf)** | A fifteen-value set, improving Krisman's seventeen-value set through β(36) by an isolated-pole denominator refinement. | [Paper guide](fifteen-beta-values/README.txt) · [LaTeX](fifteen-beta-values/paper/fifteen-beta-values.tex) · [Checks](fifteen-beta-values/checks/README.txt) |
 | **[Irrational even beta values from powered hypergeometric kernels (13 pages)](powered-beta-kernels/output/pdf/powered-beta-kernels.pdf)** | An irrational member of β(6), β(8), …, β(74), and of β(8), β(10), …, β(110), improving the earlier endpoints 92 and 128. | [Paper guide](powered-beta-kernels/README.txt) · [LaTeX](powered-beta-kernels/paper/powered-beta-kernels.tex) · [Checks](powered-beta-kernels/checks/README.txt) |
 | **[Irrational even beta values in shifted intervals (v2, 20 pages)](shifted-even-beta/output/pdf/shifted-even-beta.pdf)** | For every positive odd m, an irrational even beta value with index from m+1 through 19m−1. More generally, any prescribed count with an upper endpoint linear in its starting index; improved finite counts from β(2). | [Paper guide](shifted-even-beta/README.txt) · [LaTeX](shifted-even-beta/paper/shifted-even-beta.tex) · [Checks](shifted-even-beta/checks/README.txt) |
 | **[Explicit lower bounds for the number of irrational even beta values (20 pages)](even-beta-counts/output/pdf/even-beta-counts.pdf)** | At least $\lfloor\pi\sqrt{2/135}\sqrt{s/\log s}\rfloor$ irrational even beta values through β(s), for every even s ≥ 160, with sharper finite endpoints. | [Paper guide](even-beta-counts/README.txt) · [LaTeX](even-beta-counts/paper/even-beta-counts.tex) · [Checks](even-beta-counts/checks/README.txt) |
@@ -22,6 +23,14 @@ The papers below give explicit counts of irrational even beta values in initial 
 **Review status:** an [independent audit of the v2 shifted-interval proof](shifted-even-beta/review/independent-audit-2026-11-06.json), reported on 6 November 2026, found no substantive gap in the general argument and independently reproduced all 8,909 structural checks and 21 endpoint certificates. The PDF is a subsequent exposition of that audited plain-text proof; its assembly and additional worked-example check are [recorded separately](shifted-even-beta/review/assembly-review.json). A separate [independent audit of the count paper](even-beta-counts/review/independent-audit-2026-11-05.json), also reported on 5 November, found no substantive mathematical error or gap and independently reproduced the finite calculations. The [earlier linear-independence paper](even-beta-independence/review/independent-model-review-2026-11-03.json) received a separate model proof audit reported on 3 November 2026; its [full report](even-beta-independence/review/independent-model-review-2026-11-03.txt) records the proof checks and additional computations. The [determinant papers and accompanying code](planning/independent-model-review-2026-11-02.json) passed a separately reported model cross-check. Each report identifies its own scope; these audits are not formal verification.
 
 See the [changelog](CHANGELOG.md) for repository updates.
+
+## An irrational member of fifteen even beta values
+
+The [fifteen-value paper](fifteen-beta-values/output/pdf/fifteen-beta-values.pdf) proves that at least one of β(4), β(6), …, β(32) is irrational. Krisman's result gives seventeen candidates through β(36). The improvement comes from retaining more information in his denominator estimate: a pole alone in its residue class has integral principal parts, and a zero identity avoids the possible denominator in the corresponding rational correction. Only repeated pole classes contribute to the large-prime cost.
+
+The proof includes a small example of that cancellation, a certified decay estimate after clearing denominators, and a prime-dilation argument based on a nonzero finite seed. Two research sessions independently found the denominator refinement and the fifteen-value conclusion; this manuscript gives one combined proof.
+
+An [independent mathematical audit](fifteen-beta-values/review/independent-audit-2026-11-11.txt), reported on 11 November 2026, found no mathematical error or gap affecting the theorem. Fresh implementations reproduced all 38,371 arithmetic interval maxima, the real-phase bound, and all 2,077 seed coefficients at each of two primes. The [audit record](fifteen-beta-values/review/independent-audit-2026-11-11.json) identifies the reviewed 14-page version and its scope. The current 15-page PDF includes an audit note and subsequent explanatory revisions, documented in the [audit response](fifteen-beta-values/review/audit-response-2026-11-11.json) and [exposition update](fifteen-beta-values/review/exposition-update-2026-11-11.json). The auditor's [unchanged programs and results](fifteen-beta-values/checks/independent-audit/README.txt) accompany the paper. The audit accepts the stated classical inputs and is not formal verification or a priority assessment.
 
 ## Smaller shifted intervals from powered kernels
 
@@ -76,7 +85,7 @@ The construction also gives individual parameter choices. The uniform column bel
 | 20 | 3538 | 4350 | 3 |
 | 100 | 1838 | 1880 | 1 |
 
-Starting at β(2), the new construction gives counts 2, 3, 4, 5 and 10 through indices 70, 186, 360, 554 and 2794, respectively. At the fixed starting index 4, Krisman's earlier endpoint 36 remains shorter than 54.
+Starting at β(2), the shifted-interval construction gives counts 2, 3, 4, 5 and 10 through indices 70, 186, 360, 554 and 2794, respectively. At the fixed starting index 4, Krisman's endpoint 36 is shorter than 54; the subsequent [isolated-pole refinement](fifteen-beta-values/output/pdf/fifteen-beta-values.pdf) gives 32.
 
 The proof combines odd numerator grids and poles spaced by 2 with differentiation to remove the unwanted early beta values. A positive Gram matrix supplies the required rank for every starting index and count. The manuscript includes a worked two-grid example and explicit local coefficient scaling. Appendix B gives the sharper uniform multiplier 18.58 and explains its proximity to the limiting decay estimate.
 
@@ -154,6 +163,15 @@ The main determinant results are a uniform primitive-growth obstruction for shif
 The work was prepared with Codex. Reported proof audits, model cross-checks, exact rational calculations, interval calculations and source reading are recorded separately with their respective scopes. No proof-assistant verification is claimed.
 
 ## Reproducing the results
+
+For the fifteen-value paper, with Python and a C++17 compiler installed:
+
+```sh
+python3 -B fifteen-beta-values/checks/run_checks.py
+python3 -B fifteen-beta-values/tools/build_paper.py
+```
+
+The [check guide](fifteen-beta-values/checks/README.txt) also gives the optional command to regenerate the seed by the second algorithm.
 
 For the shifted-interval paper, from the repository root:
 

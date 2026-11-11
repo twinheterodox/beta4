@@ -1,5 +1,14 @@
 # Changelog
 
+## 11 November 2026 — Fifteen even beta values
+
+- Added the paper *At least one of β(4), β(6), …, β(32) is irrational*, reducing Krisman's seventeen candidates to fifteen through an isolated-pole denominator refinement.
+- Included the complete argument, a small residue-class example, the small-prime appendix, exact arithmetic and phase certificates, and two finite-field seed calculations. Replayed all 38,371 arithmetic intervals and all 2,077 seed coefficients at each of two primes.
+- Combined the two independent discoveries into one exposition, with method attribution and separate internal correctness, exposition and visual reviews.
+- Recorded the independent audit of the 14-page version: no mathematical error or gap affecting the theorem, with all three computational inputs reproduced independently. Preserved the report, audited-file hashes, and the auditor's unchanged programs and numerical results.
+- Added the audit note and explicit explanations of the pole-block residue counts and the two odd-product lengths. The revised PDF has 15 pages; the audited version and subsequent edits are identified separately.
+- Brought the integer contradiction and decay target forward, explained the prime-integral weight before the computation, and clarified coefficient reductions and notation.
+
 ## 11 November 2026 — Powered hypergeometric kernels
 
 - Added the 13-page paper *Irrational even beta values from powered hypergeometric kernels*, proving an irrational member of β(6), …, β(74) and of β(8), …, β(110). These improve the earlier endpoints 92 and 128 through a different kernel construction.

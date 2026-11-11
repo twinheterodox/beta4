@@ -1,0 +1,11 @@
+{
+  "small_prime_cases": 56,
+  "large_prime_cases": 222,
+  "residue_classes": 32722,
+  "sample_sizes": [
+    96,
+    192,
+    384,
+    768
+  ]
+}
