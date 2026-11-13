@@ -1,0 +1,143 @@
+\section{A limitation of one-sided zeta substitution}\label{sec:substitution}
+An upper rational approximation to $\zet$ increases a positive
+$\zet$-coefficient matrix. It therefore solves the nonvanishing problem
+without a perturbation or conditioning estimate. We now compare this
+advantage with the necessary arithmetic cost just proved.
+
+\subsection{A lower bound for the actual determinant}
+Let $S=S_K$ and normalize the actual positive matrix as
+\[
+ T_K=C_S^{-1/2}M_K(\bet,\zet)_SC_S^{-1/2}>0.
+\]
+The bounds $4^n/(2n+1)\leq\binom{2n}{n}\leq4^n$ in
+\eqref{eq:cpositive} give
+\[
+ \frac{7m}{256}\leq C_{mm}
+ \leq\frac{7m(2K-2m+1)(2K+2m+1)}{256}.
+\]
+Hence $|\log\det C_S|=O(K\log K)$; it does not change a quadratic
+logarithmic rate.
+
+\begin{lemma}\label{lem:gramlower}
+With
+\begin{equation}\label{eq:Dstar}
+ D_*=-\log2+\tfrac12\log(5/2)+\arctan(1/2)
+                  +\tfrac14\arctan2+\tfrac\pi8,
+\end{equation}
+one has $\log\det T_K\geq-D_*K^2+o(K^2)$.
+Here $D_*=0.8981320555\ldots$.
+\end{lemma}
+\begin{proof}
+Only one fixed integration region is needed. If $t=\pi y$ and
+$r=e^{-2t}$, direct differentiation gives
+\[
+ w(y)e^t=\frac{t^4}{3\pi}
+ \frac{1+23r+23r^2+r^3}{(1-r)^4}\geq\frac1{48\pi},
+\]
+using $1-r\leq2t$. Also $J(4y^2)/O(4y^2)\geq1$. With $m_i=2i$,
+\[
+ (M_S)_{ij}=\frac1{16}\int_0^\infty
+ \frac{J(4y^2)}{O(4y^2)}
+ \frac{w(y)}{(y^2+m_i^2)(y^2+m_j^2)}\dd y.
+\]
+Expanding two determinants and applying Fubini (Andr\'eief's identity)
+expresses $\det M_S$ as $16^{-d}/d!$ times an integral of the squared
+Cauchy determinant and the $d$ weights. The squared determinant is
+\begin{equation}\label{eq:cauchy-square}
+ \frac{\prod_{i<j}(m_j^2-m_i^2)^2(y_j^2-y_i^2)^2}
+      {\prod_{i,j}(m_i^2+y_j^2)^2}.
+\end{equation}
+Restrict the positive integral to the ordered boxes
+\[
+ \frac{sK(i-3/4)}d\leq y_i\leq\frac{sK(i-1/4)}d,
+ \qquad 1\leq i\leq d,\qquad s=\tfrac12.
+\]
+Their volume and all scalar prefactors cost only $O(K\log K)$ in
+the logarithm. The scaled pole and free coordinates approach uniform
+distributions on $[0,1]$ and $[0,s]$ respectively, with mass
+$\alpha=d/K\longrightarrow1/2$.
+
+The logarithmic sums converge uniformly throughout these boxes.
+Here are details at the singularities, where ordinary continuity
+does not suffice. Scaled successive coordinates have separation at
+least $c/d$, and the $i$th coordinate is at least $ci/d$.
+A strip $|i-j|\leq\varepsilon d$ for the difference kernel contributes
+at most
+\[
+ \frac{C}{d}\sum_{h\leq\varepsilon d}\log(Cd/h)
+ =O\bigl(\varepsilon(1+|\log\varepsilon|)\bigr)+o(1)
+\]
+after division by $d^2$. At the origin use the lower bounds
+$c(i+j)/d$ for a sum and $c_s(i^2+j^2)/d^2$ for the mixed squared
+sum. The corner contribution is
+$O(\varepsilon^2(1+|\log\varepsilon|))+o(1)$.
+On the remaining compact regions the kernels are uniformly continuous.
+First letting $d$ grow and then $\varepsilon$ decrease proves the
+required convergence, including the missing Vandermonde diagonals.
+
+The elementary integrals are
+\begin{align*}
+ I&=\int_{[0,1]^2}\log|x^2-v^2|\dd x\dd v=2\log2-3,\\
+ J(s)&=\int_{[0,1]^2}\log(x^2+s^2v^2)\dd x\dd v\\
+ &=\log(1+s^2)-3+\frac{\arctan s}{s}+s\arctan(1/s).
+\end{align*}
+For $I$, split into $\log|x-v|$ and $\log(x+v)$; for $J$, integrate
+in each variable. Formula \eqref{eq:cauchy-square} and the weight
+bound give
+\[
+ \liminf K^{-2}\log\det M_S
+ \geq\alpha^2\{2I+2\log s-2J(s)\}-\frac{\pi\alpha s}{2}.
+\]
+The powers of $K$ in the products cancel up to $O(K\log K)$.
+Substituting $\alpha=s=1/2$ gives $-D_*$. The normalization by
+$\det C_S$ has lower-order logarithm, as observed above.
+\end{proof}
+
+\subsection{The certificate and its obstruction}
+Suppose $0<p/q-\zet\leq q^{-2}$ and write $\epsilon=p/q-\zet$.
+At the actual beta value the normalized matrix becomes
+$T_K+\epsilon I$, which remains positive. Under the hypothetical
+rationality $\bet=a/b$, the quantity
+\[
+ A_Kb^dq^dP_K(a/b,p/q)
+\]
+is a positive integer: each variable of $P_K$ has degree at most $d$.
+Using only $\epsilon\leq q^{-2}$ gives the upper certificate
+\begin{equation}\label{eq:envelope}
+ \mathcal E_K(q;b)=A_Kb^d\det(qT_K+q^{-1}I).
+\end{equation}
+The global polynomial clearer $A_K$ is chosen before specializing $X$.
+To obtain the proposed contradiction, this certificate would have to
+tend to zero.
+
+\begin{theorem}\label{thm:proxy}
+For every fixed positive integer $b$,
+\begin{equation}\label{eq:proxy-rate}
+ \liminf_{K\to\infty}\frac1{K^2}
+       \log\inf_{q>0}\mathcal E_K(q;b)
+ \geq\gamma=\log2-D_*/2=0.2440811527\ldots>0.
+\end{equation}
+Thus the certificate \eqref{eq:envelope} cannot tend to zero for any
+choice of positive $q=q_K$.
+\end{theorem}
+\begin{proof}
+For every eigenvalue $\lambda_i>0$ of $T_K$,
+$q\lambda_i+q^{-1}\geq2\sqrt{\lambda_i}$. Hence
+\[
+ \det(qT_K+q^{-1}I)\geq2^d\sqrt{\det T_K}
+\]
+uniformly in $q>0$. Combine this with \eqref{eq:necessaryA} and
+Lemma~\ref{lem:gramlower}. The factor $b^d$ has logarithm $O_b(K)$.
+The positive sign does not require a numerical certificate:
+$\log2>2/3$, $\log(5/2)<1$, $\arctan(1/2)<1/2$,
+$\arctan2<\pi/2$ and $\pi<22/7$ give $D_*<47/42$ and
+$\gamma>3/28$.
+\end{proof}
+
+This conclusion concerns the displayed upper certificate. A lower
+bound for an upper bound is not a lower bound for the actual integer
+candidate. Exceptionally accurate approximations, cancellation after
+specializing $X$ to a hypothetical rational value, and different
+positive subspaces are not excluded. The theorem closes the specified
+global-monic, standard-error argument; it does not close the
+irrationality problem for $\bet$.

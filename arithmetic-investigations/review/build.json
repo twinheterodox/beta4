@@ -1,0 +1,19 @@
+{
+  "pdf_sha256": "52cb98cb3d4346aa7a8837d6b899f0daaf7358b45fbeb9f1f125f5723f5d9018",
+  "pages": 31,
+  "warnings": [],
+  "source_sha256": {
+    "paper/arithmetic-investigations.tex": "6b64d8535acdb1d13d61b8b4b83dfa476e6878a989282f1ea8f22626fd34f4ca",
+    "paper/references.tex": "409823f3136d9d21ed14954532aa15401e6373f4d9829ed75997740822a55272",
+    "paper/sections/01-introduction.tex": "44ea40d69d1ab9f6ddad23e3837db085e31c1d2a79ba8d0b24db14fe06957696",
+    "paper/sections/02-moments.tex": "490fc6ff3848eff54514fd8d0c100c48dabcad9fd62c3ffbe1fcceee8a138804",
+    "paper/sections/03-valuations.tex": "c03ab714127e70c9a3985c26527055cff87d660eb02cf315235212098ff763bf",
+    "paper/sections/04-substitution.tex": "cc86a94e4cbf5698febde3322e819b6df7e583580d988f9f2d0d69879140d2b2",
+    "paper/sections/05-compression.tex": "bf6538014fdaaa2b55a02e890ea1b54a5a74762da4468f7eda9969f4d55c8ce9",
+    "paper/sections/06-content.tex": "86a34163ca8103224cd98472f72baf43aa502a52dd2eb2bb8feb0238a078b36b",
+    "paper/sections/07-gram.tex": "3c778a433d5b331804ebe42a5fb22231e01132cce3912d1d8c2720b9370c8b79",
+    "paper/sections/08-linear.tex": "22fbe48195f17cb4a84b695d479282243c5d54878e0c8bef5ac2e71d849edbe7",
+    "paper/sections/09-conclusions.tex": "cdda1df036b64a662bbc984582a1ec27f0c705eca9ea84c84230485e4cb678aa",
+    "paper/sections/10-appendix.tex": "85e666d60c752829e0d28a7eae3456b2357fc95717ad3a69803ce0e595f801ad"
+  }
+}

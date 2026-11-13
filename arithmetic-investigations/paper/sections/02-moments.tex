@@ -1,0 +1,101 @@
+\section{One positive functional, two periods}\label{sec:moments}
+To put both periods in the same positive matrix, use Carreira's
+functional \cite[Definition~24 and Lemma~25]{Carreira}, before restricting
+its resolvent to half-integers. Set
+\begin{equation}\label{eq:functional}
+ g(y)=\frac1{\sinh(\pi y)},\qquad
+ w(y)=-\frac{y^4}{6}g'''(y),\qquad
+ \nu(f)=\int_0^\infty f(4y^2)w(y)\dd y.
+\end{equation}
+The series $g(y)=2\sum_{j\geq0}e^{-(2j+1)\pi y}$ shows that $w>0$.
+The weight is bounded near zero and decays exponentially times a
+polynomial at infinity. All the integrals below converge.
+
+\subsection{The resolvent, including its rational correction}
+For every $a>0$, the inherited identity is
+\begin{equation}\label{eq:resolvent}
+ \int_0^\infty\frac{w(y)}{y^2+a^2}\dd y
+ =a^3\sum_{k\geq0}\frac{(-1)^k}{(k+a)^4}-\frac1{2a}.
+\end{equation}
+We include its proof because the final rational correction is important
+in the later prime calculations. Put $f(y)=y^4/(y^2+a^2)$. Three
+integrations by parts, using
+$f'''(y)=6a^3\operatorname{Im}(a-iy)^{-4}$, give the left side as
+$a^3\int_0^\infty\operatorname{Im}(a-iy)^{-4}g(y)\dd y$.
+At zero the three boundary terms are $O(y)$; at infinity they vanish
+exponentially. Now use
+\[
+ \operatorname{Im}(a-iy)^{-4}
+ =\frac16\int_0^\infty x^3e^{-ax}\sin(xy)\dd x,
+ \qquad
+ \int_0^\infty\sin(xy)g(y)\dd y=\frac12\tanh(x/2).
+\]
+The second formula follows from the exponential series for $g$ and
+the logarithmic derivative of Euler's product for $\cosh(x/2)$.
+The double integral is absolutely convergent, using $|\sin(xy)|\leq xy$
+near zero. Expanding $\tanh(x/2)=1+2\sum_{k\geq1}(-1)^ke^{-kx}$
+and integrating proves \eqref{eq:resolvent}.
+
+Write $X$ and $Z$ for indeterminates representing $\bet$ and $\zet$.
+For odd $l=2j+1$ and for $m\geq1$, define
+\begin{align}
+ b_l&=\frac{(-1)^jl^3}{2},&
+ r_l^o&=-b_l\sum_{v=0}^{j-1}\frac{(-1)^v}{(2v+1)^4}-\frac1{4l},\label{eq:oddcoeff}\\
+ c_m&=\frac{7(-1)^{m-1}m^3}{32},&
+ r_m^e&=-\frac{(-1)^{m-1}m^3}{4}
+       \sum_{v=1}^{m-1}\frac{(-1)^{v-1}}{v^4}-\frac1{8m}.
+       \label{eq:evencoeff}
+\end{align}
+Empty sums are zero. The change of variable in \eqref{eq:functional}
+and \eqref{eq:resolvent} give the formal evaluations
+\begin{equation}\label{eq:formal-resolvents}
+ \nu\bigl((u+l^2)^{-1}\bigr)=b_lX+r_l^o,\qquad
+ \nu\bigl((u+4m^2)^{-1}\bigr)=c_mZ+r_m^e.
+\end{equation}
+They become genuine integral identities at the actual periods.
+
+\subsection{A fixed cofactor normalization}
+For $K\geq1$, put
+\begin{gather*}
+ a_m=4m^2,\qquad J(u)=\prod_{m=1}^K(u+a_m),\qquad
+ O(u)=\prod_{j=0}^{K-1}(u+(2j+1)^2),\\
+ D(u)=J(u)O(u),\qquad J_m(u)=\frac{J(u)}{u+a_m}.
+\end{gather*}
+Here $O$ is a polynomial, not an order symbol. Define the symmetric pencil
+\begin{equation}\label{eq:pencil}
+ M_K(X,Z)=R_K+XB_K+ZC_K,
+ \qquad (M_K)_{mn}=\nu(J_mJ_n/D).
+\end{equation}
+The right side is evaluated formally by \eqref{eq:formal-resolvents}.
+At $(X,Z)=(\bet,\zet)$ it is a positive definite Gram matrix: the
+functions $J_m/\sqrt D$ are independent and the measure is positive.
+
+The complete coefficients have a particularly useful form. With $l$
+running over the odd integers from $1$ to $2K-1$, set
+\begin{align}
+ e_m&=\frac{J'(-a_m)}{O(-a_m)}
+ =-\frac{4^{2K-1}}
+ {2m^2\binom{2K-2m}{K-m}\binom{2K+2m}{K+m}},\label{eq:e}\\
+ \rho_l&=\frac{J(-l^2)}{O'(-l^2)},\qquad V_{ml}=\frac1{a_m-l^2}.
+ \nonumber
+\end{align}
+Partial fractions give
+\begin{equation}\label{eq:coeffmatrices}
+ C_K=\diag(e_mc_m),\quad
+ B_K=V\diag(\rho_lb_l)V^T,\quad
+ R_K=\diag(e_mr_m^e)+V\diag(\rho_lr_l^o)V^T.
+\end{equation}
+An even pole contributes only to its corresponding diagonal entry;
+an odd pole contributes the rank-one residue $\rho_lV_{\cdot l}V_{\cdot l}^T$.
+There is no polynomial quotient here, since the numerator degree is
+$2K-2$ and the denominator degree is $2K$.
+
+For even $m$,
+\begin{equation}\label{eq:cpositive}
+ (C_K)_{mm}=
+ \frac{7\,2^{4K-8}m}
+ {\binom{2K-2m}{K-m}\binom{2K+2m}{K+m}}>0.
+\end{equation}
+Thus the even-coordinate principal subspace permits an upper rational
+substitution for $\zet$ without losing positivity. We will first
+determine its arithmetic exactly.

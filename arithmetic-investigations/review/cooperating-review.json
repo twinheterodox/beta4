@@ -1,0 +1,64 @@
+{
+  "date": "2026-11-13",
+  "reviewer": "cooperating Math1 session",
+  "outcome": "PASS within stated scope; all required source corrections resolved",
+  "original_report_sha256": {
+    "correctness-review.txt": "52b28e5b8ad657dd23046935855086de1ae36651c8e0c58defad2ce559e35636",
+    "exposition-review.txt": "7c28812dc6828cf3d850217699545cea170da7dde56ed29a6d7ac8e53a6c0b1c",
+    "final-source-review.txt": "2b1a537ea22459e47ad8493e8da8bc63f10decd01fe227845a9c7264d6b295dc",
+    "appendix-d-replay.json": "af4b133aa738c587c549192ec4c3744b8ba88cb38f2397b3bc81ce0d41c8cb30"
+  },
+  "reviewed_source_sha256": {
+    "paper/arithmetic-investigations.tex": "6b64d8535acdb1d13d61b8b4b83dfa476e6878a989282f1ea8f22626fd34f4ca",
+    "paper/references.tex": "409823f3136d9d21ed14954532aa15401e6373f4d9829ed75997740822a55272",
+    "paper/sections/01-introduction.tex": "3e3f3f2ea9f9908ea33d0c732b1630252c843d0c1ac70029fdbf48731f52e6bb",
+    "paper/sections/02-moments.tex": "490fc6ff3848eff54514fd8d0c100c48dabcad9fd62c3ffbe1fcceee8a138804",
+    "paper/sections/03-valuations.tex": "c03ab714127e70c9a3985c26527055cff87d660eb02cf315235212098ff763bf",
+    "paper/sections/04-substitution.tex": "cc86a94e4cbf5698febde3322e819b6df7e583580d988f9f2d0d69879140d2b2",
+    "paper/sections/05-compression.tex": "b727d47d4c88c2791fbadf8ae04212e4cdcddf43885829ea81c7fc39d7dd87ce",
+    "paper/sections/06-content.tex": "86a34163ca8103224cd98472f72baf43aa502a52dd2eb2bb8feb0238a078b36b",
+    "paper/sections/07-gram.tex": "3c778a433d5b331804ebe42a5fb22231e01132cce3912d1d8c2720b9370c8b79",
+    "paper/sections/08-linear.tex": "f7fe09f04287d08534e5bc69a5b03bc20b4061804903e858f38fc339b1277818",
+    "paper/sections/09-conclusions.tex": "22ff082782d4b07eb5030f928b2eb51cc533d2c2f2edec4a1757a818bda3dbf8",
+    "paper/sections/10-appendix.tex": "85e666d60c752829e0d28a7eae3456b2357fc95717ad3a69803ce0e595f801ad"
+  },
+  "final_source_sha256": {
+    "paper/arithmetic-investigations.tex": "6b64d8535acdb1d13d61b8b4b83dfa476e6878a989282f1ea8f22626fd34f4ca",
+    "paper/references.tex": "409823f3136d9d21ed14954532aa15401e6373f4d9829ed75997740822a55272",
+    "paper/sections/01-introduction.tex": "44ea40d69d1ab9f6ddad23e3837db085e31c1d2a79ba8d0b24db14fe06957696",
+    "paper/sections/02-moments.tex": "490fc6ff3848eff54514fd8d0c100c48dabcad9fd62c3ffbe1fcceee8a138804",
+    "paper/sections/03-valuations.tex": "c03ab714127e70c9a3985c26527055cff87d660eb02cf315235212098ff763bf",
+    "paper/sections/04-substitution.tex": "cc86a94e4cbf5698febde3322e819b6df7e583580d988f9f2d0d69879140d2b2",
+    "paper/sections/05-compression.tex": "bf6538014fdaaa2b55a02e890ea1b54a5a74762da4468f7eda9969f4d55c8ce9",
+    "paper/sections/06-content.tex": "86a34163ca8103224cd98472f72baf43aa502a52dd2eb2bb8feb0238a078b36b",
+    "paper/sections/07-gram.tex": "3c778a433d5b331804ebe42a5fb22231e01132cce3912d1d8c2720b9370c8b79",
+    "paper/sections/08-linear.tex": "22fbe48195f17cb4a84b695d479282243c5d54878e0c8bef5ac2e71d849edbe7",
+    "paper/sections/09-conclusions.tex": "cdda1df036b64a662bbc984582a1ec27f0c705eca9ea84c84230485e4cb678aa",
+    "paper/sections/10-appendix.tex": "85e666d60c752829e0d28a7eae3456b2357fc95717ad3a69803ce0e595f801ad"
+  },
+  "finite_review_scope": "Read-only replay of inherited Appendix D checker functions; not an independent finite implementation or a replay of all historical computations.",
+  "publication_note": "This is a drafting-session summary of the preserved cooperating-session reports. Private provenance and filesystem paths are not included.",
+  "post_review_changes": [
+    {
+      "file": "paper/sections/09-conclusions.tex",
+      "description": "The brief Verification paragraph records the completed review."
+    },
+    {
+      "file": "paper/sections/01-introduction.tex",
+      "description": "Define K as the number of poles on each of the two grids before its first growth formula."
+    },
+    {
+      "file": "paper/sections/05-compression.tex",
+      "description": "Correct squared logarithm to the logarithm of its square."
+    },
+    {
+      "file": "paper/sections/08-linear.tex",
+      "description": "Qualify the covolume limitation as a limitation of the available bound."
+    },
+    {
+      "file": "paper/sections/09-conclusions.tex",
+      "description": "Define psi as the digamma function Gamma-prime/Gamma."
+    }
+  ],
+  "post_review_scope": "Final author exposition corrections only; no construction, bound, theorem constant, or checker changed. No fresh cooperating-session review of this small final diff is claimed."
+}

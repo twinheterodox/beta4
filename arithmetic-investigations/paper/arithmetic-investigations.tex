@@ -1,0 +1,62 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype,booktabs,longtable,array,enumitem,xcolor,hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,
+ urlcolor=blue!45!black,pdftitle={Linear forms, moment determinants, and arithmetic constraints for even beta values},pdfauthor={twinheterodox}}
+\urlstyle{same}
+\setlength{\emergencystretch}{2em}
+\setlist{nosep}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+\newcommand{\Q}{\mathbb Q}\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}
+\newcommand{\dd}{\,\mathrm d}\newcommand{\E}{\mathbb E}
+\newcommand{\bet}{\beta(4)}\newcommand{\zet}{\zeta(4)}
+\DeclareMathOperator{\rank}{rank}\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\lcm}{lcm}\DeclareMathOperator{\cont}{cont}
+\DeclareMathOperator{\Span}{span}
+\title{Linear forms, moment determinants, and arithmetic constraints for even beta values}
+\author{twinheterodox}
+\date{13 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+This supplement studies arithmetic constraints in attempts to prove
+irrationality of an individual even Dirichlet beta value or of a member
+of a small explicit set. For a positive moment construction involving
+$\beta(4)$ and $\zeta(4)$, we determine the exact power of two in every
+principal minor of its beta-coefficient matrix. The resulting necessary
+denominator growth rules out a specified certificate based on one-sided
+rational approximation to $\zeta(4)$. We also give controlled rational
+elimination of the unwanted period, uniform divisibility results for
+compressed determinants, and a two-sided estimate for the residual decay
+of a thirteen-value Gram construction. A separate linear-form construction
+provides eleven independent, uniformly small integer forms in fourteen
+candidate beta values, with nonvanishing still unresolved. These results
+identify usable mechanisms and precise remaining obstacles; they do not
+establish a new irrationality theorem.
+\end{abstract}
+\setcounter{tocdepth}{1}
+\begingroup\small
+\tableofcontents
+\endgroup
+\clearpage
+\input{paper/sections/01-introduction.tex}
+\input{paper/sections/02-moments.tex}
+\input{paper/sections/03-valuations.tex}
+\input{paper/sections/04-substitution.tex}
+\input{paper/sections/05-compression.tex}
+\input{paper/sections/06-content.tex}
+\input{paper/sections/07-gram.tex}
+\input{paper/sections/08-linear.tex}
+\input{paper/sections/09-conclusions.tex}
+\appendix
+\input{paper/sections/10-appendix.tex}
+\input{paper/references.tex}
+\end{document}

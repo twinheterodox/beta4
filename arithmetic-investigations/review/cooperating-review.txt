@@ -1,0 +1,73 @@
+Cooperating-session manuscript review
+====================================
+13 November 2026
+
+Outcome: PASS within the stated scope. All required source corrections
+were resolved; the final source review requested no further correction.
+
+This summary was prepared by the drafting session from the separate
+Math1 correctness, exposition and final-source reports. Their checksums,
+the reviewed source hashes and the final source hashes are recorded in
+cooperating-review.json. The original reports are preserved separately.
+
+Mathematical review
+-------------------
+The reviewer read the complete manuscript and compared the constructions
+with their underlying records. The review covered the moment functional,
+the exact all-subset dyadic valuation, the monic approximation-certificate
+obstruction, the controlled isotropic lifts, the compatible content
+estimates, the residual Gram bounds, and the rank/height/decay argument
+giving eleven independent small integer forms. It also checked the
+fidelity and limited scope of the remaining comparisons.
+
+Required repairs concerned mathematical transcription, explicit parameter
+hypotheses, the contour description, Legendre normalization, the pole
+profile, and intermediate arithmetic counts. The final source review
+confirmed all repairs. No construction or main constant changed.
+
+The review preserves the distinction between a necessary denominator
+cost, an upper clearing allowance, and achieved or bounded decay.
+It does not reinterpret the inconclusive comparisons as impossibility
+theorems. The supplement proves no new irrationality theorem.
+
+Separate exposition review
+---------------------------
+The reviewer assessed the manuscript against the mathematical-exposition
+instructions. The main improvements restore evaluation coordinates,
+the purpose of the pole profile, prime-power counts, and local root
+conventions. A scalar Gram example illustrates primitive normalization.
+Subsequence scope and the reader's prerequisites are now explicit.
+The final source review found these connections adequate.
+
+Computational scope
+--------------------
+The reviewer replayed the existing Appendix D checker functions read-only:
+13,091 inherited envelope cells, 389,105 rounded terms, 582 local-pattern
+intervals, 464 template equalities, and 74 functionals. The replay
+confirmed S=62795/199056 and the constants supporting the eleven-row
+height and cleared-decay bounds. The detailed output is preserved in
+cooperating-appendix-d-replay.json.
+
+This was a replay of existing software, not a fresh independent finite
+implementation. It did not reconstruct every historical computation,
+rerun the large complete linear bases, or perform a new novelty search.
+The drafting session separately reran the packaged checks described in
+assembly-review.txt and checks/README.txt.
+
+Final-version scope
+--------------------
+The reviewer inspected the complete source revision after the initial
+review. The short Verification paragraph was subsequently updated to
+record completion. A final author reading then made four small edits:
+defined K before its first growth estimate, corrected "squared logarithm"
+to "the logarithm of its square", restricted the covolume limitation to
+the available bound, and defined the digamma function. The constructions,
+estimates and theorem constants are unchanged. The exact reviewed and
+publication source hashes are distinguished in cooperating-review.json.
+Final PDF rendering and layout inspection were performed by the drafting
+session and are recorded in final-qa.json.
+
+The two sessions cooperated in developing the underlying research.
+This is a separate manuscript review, not an external peer review or
+formal verification. Classical inputs and the limits of finite checks
+retain their stated scope.

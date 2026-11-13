@@ -1,0 +1,78 @@
+\section{Other tests and the remaining questions}\label{sec:conclusions}
+\subsection{A recurrence can preserve too much}
+The finite complete bases in Section~\ref{sec:linear} suggested
+transporting them between neighboring indices. There is an elementary
+test that such a proposal must pass before estimating transition
+matrices. Suppose fixed rational rows $v_1,\ldots,v_r$ span
+$(1,0,\ldots,0)$, and every nonzero integer row $c_{i,n}$ is proportional
+to its corresponding $v_i$. Replace each $v_i$ by its primitive integer
+representative $u_i$. Then $c_{i,n}=k_{i,n}u_i$ with nonzero integral
+$k_{i,n}$. For $\theta=(1,\theta_1,\ldots)$, at least one fixed
+$u_i\theta$ is nonzero, and
+\[
+ |c_{i,n}\theta|\geq|u_i\theta|>0.
+\]
+Such transport cannot make all the values tend to zero. The proposed
+neighboring-index update preserved precisely these individual
+coefficient directions. A recurrence that supplies new combinations
+or an additional quantitative constraint is not excluded; merely
+propagating the same rational lines cannot solve the height problem.
+
+\subsection{A Loewner specialization with an inconclusive cost comparison}
+We also considered the divided-difference construction of Litsey
+\cite{Litsey}, specialized to
+\[
+ F(z)=\frac{\psi''(z+1/4)-\psi''(z+3/4)}{1536},
+ \qquad F'(0)=\bet.
+\]
+Here $\psi=\Gamma'/\Gamma$ is the digamma function.
+The two cubic pole classes of $F$ give a degree-six difference equation.
+The specialization of the cited nonvanishing argument applies for
+$r\geq4$, $m\geq0$ and every rational evaluation point: some minor
+deleting at most three common nodes is nonzero. The opposite signs
+of the two pole classes do not invalidate that argument.
+
+One fixed geometry, $r=200k$, $m=13k$, was assessed on the vertical
+contour $\Re z=-1/8$, between the nonnegative nodes and the negative
+poles. It avoids enclosed-pole terms. The
+moving-contour and deletion errors are uniform lower-order terms,
+including every position of the at most three deletions. On the
+$r^2$ scale the certified lower decay rate was greater than $2.488$,
+while the selected common clearer had upper rate $19.2552$.
+These bounds establish no useful comparison. Neither is asserted to
+be optimal or necessary; the outcome is inconclusive. This assessment
+is retained in the record catalog rather than promoted to a failure
+theorem for the Loewner construction.
+
+\subsection{What would change the conclusions}
+The results leave three different kinds of question.
+For the linear forms, uniform formal rank is established and eleven
+directions have sufficient height control; the missing condition is a
+complete useful collection, or nonvanishing for the same small forms.
+For the thirteen-value Gram construction, the residual analytic scale
+is known, and the missing input is its primitive arithmetic.
+For the low-degree mixed-pole determinants, genuine uniform content
+savings are known, but the true arithmetic and achieved decay have not
+been compared sharply enough.
+
+The final substitution result is different. Its necessary dyadic cost
+and the uniform lower bound for its error envelope prove that the
+specified certificate fails. Improving a convenient entry clearer
+cannot evade that theorem. A successful modification would have to
+change an assumption of the certificate, such as use of the global
+polynomial clearer or the generic $q^{-2}$ error envelope, and then
+establish the corresponding new arithmetic and approximation estimates.
+
+These distinctions explain the value of retaining both successful
+lemmas and unsuccessful constructions. They identify which parts can
+be reused and which estimates would actually move the argument forward.
+
+\subsection{Prepared with Codex}
+Prepared with OpenAI Codex, using GPT-6-Astra at maximum reasoning effort.
+The cooperating sessions developed and cross-checked the underlying
+records; this manuscript assembles their mathematical results.
+
+\subsection{Verification}
+The manuscript passed a separate cooperating-session mathematical and
+exposition review. The accompanying records state the review and finite
+checks' scope; neither constitutes formal verification.

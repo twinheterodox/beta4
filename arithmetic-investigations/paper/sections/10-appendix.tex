@@ -1,0 +1,444 @@
+\section{Larger fixed isotropic blocks}\label{app:fixedL}
+Fix an odd $L\geq5$ before letting $K$ grow. In a block of length $L$,
+\eqref{eq:Blocal} contains $2L-2$ factors, so the quadratic coefficients
+are bounded by $H=K(4K)^{2L-2}$. The alternating diagonal form has
+balanced signature. We need a bound for a whole isotropic collection,
+rather than repeated applications of a bound for one vector without
+tracking the intervening basis changes.
+
+For a nonsingular integral symmetric $N$-by-$N$ matrix of balanced
+signature, odd $N\geq5$, with entries bounded by $H\geq1$, set
+\[
+ V_N=(3N^2H)^{(N-1)/2},\quad F_N=8N^2H^2V_N^2,
+ \quad H'_N=N^2HF_N^2.
+\]
+Define $T_5(H)=V_5$ and
+$T_N(H)=\max(V_N,NF_NT_{N-2}(H'_N))$. For fixed $N$ this is
+polynomial in $H$. We claim that $(N-3)/2$ independent mutually
+orthogonal integral isotropic vectors can be chosen with sup norm at
+most $T_N(H)$.
+
+For $N=5$ this is Meyer and Cassels. In higher dimension choose a
+nonzero isotropic $v$ with norm at most $V_N$, and a coordinate $j$
+such that $b=v^TAe_j\ne0$. Put $w=2be_j-A_{jj}v$. Then
+$w^TAw=0$ and $v^TAw=2b^2$, so $v,w$ split a rational hyperbolic
+plane. The integral vectors
+\[
+ f_i=2b^2e_i-(e_i^TAw)v-(e_i^TAv)w
+\]
+span its orthogonal complement and have coordinates bounded by
+$(6N^2+2N)H^2V_N^2\leq F_N$. Select $N-2$ independent columns to
+form $F$. The induced matrix $F^TAF$ is nonsingular, balanced, and
+bounded by $H'_N$. Apply induction there and lift back by $F$,
+retaining $v$ as the first isotropic vector. This proves the claimed
+recursion and controls the entire collection.
+
+Applying this construction in the fixed $L$-blocks and then using
+\eqref{eq:full-lift} gives integral cofactor coordinates of size
+$K^{O_L(1)}$. Hadamard bounds $\det(\mathcal U^T\mathcal U)$ even
+when supports overlap within a block. Cauchy--Binet and
+$\sum_I|\det\mathcal U_I|\leq
+\sqrt{\binom{2K}{h}\det(\mathcal U^T\mathcal U)}$
+give $O_L(K\log K)$ logarithmic transfer cost. The resulting dimension
+is $K+(L-3)\lfloor K/L\rfloor/2$. No uniformity for growing $L$
+is asserted.
+
+\section{The normalized-decay ceiling}\label{app:ceiling}
+Let $P$ be any real polynomial of degree below $K$, with
+\[
+ G(P)=\int_0^\infty\frac{P(4y^2)^2w(y)}{D(4y^2)}\dd y,
+ \qquad
+ B(P,P)=\sum_{l\ \mathrm{odd}}\frac{b_lP(-l^2)^2}{D'(-l^2)}.
+\]
+The weight bound in Lemma~\ref{lem:gramlower} gives
+$w(y)\geq c_0e^{-\pi y}$ with $c_0=1/(48\pi)$.
+Put $p(t)=P(K^2t)$. Restriction to $0\leq y\leq K/2$ yields
+\[
+ G(P)\geq\frac{c_0K e^{-\pi K/2}}{2D(K^2)}
+                         \int_0^1p(x^2)^2\dd x.
+\]
+Let $\mathsf P_j$ be the standard Legendre polynomial, normalized by
+$\mathsf P_j(1)=1$. The shifted functions
+$\phi_j(t)=\sqrt{2j+1}\mathsf P_j(2t-1)$ are orthonormal for Lebesgue
+measure on $[0,1]$. The classical integral formula at $x>1$
+\cite[14.12.7]{DLMF}, together with parity and continuity, gives
+$|\mathsf P_j(-1-2a^2)|\leq(9+\sqrt{80})^j$ for $0\leq a\leq2$.
+Also $\int_0^1p(t)^2\dd t\leq2\int_0^1p(x^2)^2\dd x$.
+Since $\sum_{j=0}^{K-1}(2j+1)=K^2$, Cauchy--Schwarz in this
+orthonormal basis gives
+\[
+ |P(-l^2)|^2\leq\frac{4K}{c_0}e^{\pi K/2}D(K^2)
+       (2+\sqrt5)^{4K-4}G(P).
+\]
+Let $N=2K$. Formula \eqref{eq:Dprime} implies
+$\min_l|D'(-l^2)|\geq(N!)^2/(2N^2)$. The increasing function
+$\log(1/4+x^2)$ has right-sum error at most $\log5$. Since its
+integral on $[0,1]$ is $\log(5/4)-2+\arctan2$ and
+$N!\geq(N/e)^N$,
+\[
+ \frac{D(K^2)}{\min_l|D'(-l^2)|}
+ \leq40K^2e^{2K(\log(5/4)+\arctan2)}.
+\]
+Finally $\sum_{l\ \mathrm{odd}}|b_l|\leq4K^4$. Thus
+\[
+ |B(P,P)|\leq30720\pi K^7e^{C_{1/2}K}G(P),\quad
+ C_{1/2}=\pi/2+2\log(5/4)+2\arctan2+4\log(2+\sqrt5).
+\]
+
+For any compressed positive matrix $G$ and beta coefficient $B_U$,
+the symmetric operator $G^{-1/2}B_UG^{-1/2}$ has eigenvalues bounded
+in absolute value by this same quantity. If its nonzero eigenvalues
+are $\lambda_1,\ldots,\lambda_h$, then
+\[
+ D_U(X)=D_U(\bet)\prod_{i=1}^h(1+(X-\bet)\lambda_i),\qquad
+ \delta_U=\prod_{i=1}^h|\lambda_i|^{-1}.
+\]
+This proves $\deg D_U=\rank B_U=h$, rather than assuming full rank.
+For $h=0$ the normalized value is one. For $h\leq K/5$ the operator
+bound gives \eqref{eq:ceiling}. Its strict separation from
+\eqref{eq:arith-rate} can be checked without decimals:
+$C_{1/2}/5<289/140$ using $\pi<22/7$, $\log(5/4)<1/4$,
+$\arctan2<9/8$, $\log(2+\sqrt5)<3/2$, while
+$(197+192\log2)/150>13/6$ using $\log2>2/3$.
+
+\section{Evaluation in repeated-exponent spaces}\label{app:evaluation}
+This is the repeated-exponent form of M\"untz--Laplace orthogonalization;
+see \cite[Section~2]{BEZ} for the underlying orthogonal-system method.
+We give the needed norm estimate explicitly.
+For $\lambda>0$, define
+\[
+ T_\lambda f(u)=f(u)-2\lambda\int_0^ue^{-\lambda(u-v)}f(v)\dd v.
+\]
+On decaying exponential polynomials it is an $L^2(0,\infty)$ isometry.
+Indeed, with $h=e^{-\lambda u}*f$, the two functions are
+$h'+\lambda h$ and $h'-\lambda h$; their squared-norm difference is
+$-2\lambda[|h|^2]_0^\infty=0$. Its range is orthogonal to
+$e^{-\lambda u}$ by direct integration.
+
+For positive rates $\lambda_1,\ldots,\lambda_N$, allowing repetitions,
+the functions
+\[
+ e_k=T_{\lambda_1}\cdots T_{\lambda_{k-1}}
+                         (\sqrt{2\lambda_k}e^{-\lambda_ku})
+\]
+are orthonormal. Their Laplace transforms are
+$\sqrt{2\lambda_k}(s+\lambda_k)^{-1}
+\prod_{i<k}(s-\lambda_i)/(s+\lambda_i)$, so they belong to the
+exponential-polynomial space with these rates and multiplicities.
+Dimension then makes them a basis. Put $\Lambda=\max\lambda_i$
+and $\sigma=\sum\lambda_i$. Expanding the finite convolution product
+at a complex point $w$, each term with $m$ convolutions costs at most
+$|w|^m e^{\Lambda\max(0,-\Re w)}/m!$. Its scalar coefficients sum
+to at most $(2\sigma)^m/m!$. Since
+$\sum_{m\geq0}a^m/(m!)^2\leq e^{2\sqrt a}$,
+Cauchy--Schwarz gives
+\begin{equation}\label{eq:complexeval}
+ |H(w)|^2\leq2\sigma
+ e^{2\Lambda\max(0,-\Re w)+4\sqrt{2\sigma|w|}}\|H\|_2^2.
+\end{equation}
+
+For Section~\ref{sec:gram}, take $H(u)=e^{-u/2}F(1+u)$.
+There are thirteen copies of each rate $2j+1/2$, $0\leq j<r$.
+Thus $\Lambda<2r$ and $\sigma=13r^2-13r/2\leq13r^2$.
+Restriction of the original norm to $y\geq1$ gives
+$\|H\|_2^2\leq2e\|F\|_\mu^2$.
+At $w_l=z_l-1$ the return to $F(z_l)$ contributes the squared
+factor $e^{-1}$. In \eqref{eq:complexeval}, $\Re w_l=-1$ and
+$|w_l|\leq M_0$. Consequently
+$|F(z_l)|^2\leq52r^2e^{(4+4\sqrt{26M_0})r}\|F\|_\mu^2$,
+which is the estimate used in Theorem~\ref{thm:residual}.
+
+\section{Quantitative inputs for the eleven linear forms}\label{app:linear-inputs}
+This appendix proves Lemma~\ref{lem:linear-inputs}. We distinguish the
+coefficient-column clearer used for lattice height from the full
+clearer used for the resulting linear forms.
+
+\subsection{Local counts and the arithmetic envelope}
+At the pole $t=-a-1/2$, let $c_{i,a}$ be the principal-part coefficients
+of $P(2t+n+1)R_n(t)$. For odd $p$ with $p^2>7n$, define
+\[
+ F_p(a)=\sum_{j=0}^{28}\#\{v:d_j\leq v\leq n-d_j,\ v\equiv a\pmod p\}
+ -2\#\{\ell:-2n-1\leq\ell\leq n,\ p\mid2a+1+2\ell\}.
+\]
+Taylor coefficient extraction gives $v_p(c_{i,a})\geq i-F_p(a)$:
+each nonunit numerator factor supplies a power of $p$, every nonunit
+denominator factor costs one, and each extracted Taylor degree can
+cost at most one more. All nonzero differences have size below $7n<p^2$.
+The integer multiplier has integral local coefficients and cannot
+worsen the estimate. Isolated pole classes have integral principal
+parts without any extraction loss.
+
+If $M_p$ is the maximum of $F_p$ over repeated classes,
+$\max(0,M_p+1)$ clears the complete form. For the rational constant,
+group the finite tails at the negative integers $-\ell$. The identity
+$(PR_n)'(-\ell)=0$ permits either side of $-\ell$ to represent the
+same group. If the nonunit class is isolated choose the other side;
+otherwise a differentiated evaluation costs $i+1$ powers, leaving
+valuation at least $-F_p-1$. In particular no odd prime $p>n$ is
+needed. For odd $p^2\leq7n$, put
+$\lambda_p=\lfloor\log_p(7n)\rfloor$. At level $p^k$, the excess
+of denominator factors over numerator factors is at most
+$(16n+25)/p^k+31$: the twenty-nine pole blocks contribute $22n+29$
+terms, and the double zero interval removes $6n+4$.
+Consequently the constant local coefficient costs at most
+\[
+ \sum_{k=1}^{\lambda_p}\left(\frac{16n+25}{p^k}+31\right)
+ \leq16v_p(n!)+72\lambda_p.
+\]
+Taylor extraction adds at most $28\lambda_p$, and the finite-tail
+evaluation adds at most $30\lambda_p$. The sufficient exponent is
+\[
+ 16v_p(n!)+130\lfloor\log_p(7n)\rfloor.
+\]
+These excesses sum to $o(n)$. At two, the squared
+half-integer numerator factors cost $6n+4$, the other pole factors
+at most $22n+29+29\lfloor\log_2n\rfloor$, and extraction at most
+$28\lfloor\log_2n\rfloor$. Therefore
+$16v_2(n!)+12n+80(\lfloor\log_2n\rfloor+1)$ suffices.
+
+Put $\delta_j=j/116$. For $x\geq1$, use $0\leq y\leq x-1$
+when $x<2$, and $0\leq y\leq1$ otherwise. Define
+\begin{align*}
+ N_j(x,y)&=\#\{h\in\Z:\delta_jx\leq y+h\leq(1-\delta_j)x\},\\
+ C(x,y)&=\lfloor y+x+1/2\rfloor-\lfloor y-2x+1/2\rfloor,\\
+ M(x)&=\max_y\left(\sum_jN_j(x,y)-2C(x,y)\right),\\
+ e(x)&=\max(0,M(x)+1)-16\lfloor x\rfloor.
+\end{align*}
+This majorizes the excess prime exponent at $x=n/p$.
+The elementary counts give $e(x)\leq32+16\{x\}$.
+For $x\geq2$, increasing $x$ by $116$ increases the pole count by
+$2552$ and twice the zero count by $696$. Since $M(x)\geq16x-31\geq1$,
+the positive part causes no change and $e(x+116)=e(x)$.
+
+The ordering, modulo one, of the finitely many affine endpoints
+$\delta_jx,(1-\delta_j)x,-x-1/2,2x-1/2$ changes only at rational
+pairwise crossings or integer crossings. On each intervening open
+interval the envelope is constant. The supplied certificate enumerates
+all such cells: $125$ in $[1,2]$ and $12966$ in $[2,118]$.
+Summing thirty periods with upward rational rounding and bounding the
+tail after $3482$ by $32/3482+8/3481$ gives
+\begin{equation}\label{eq:arithA}
+ \int_1^\infty e(x)x^{-2}\dd x\leq
+ A=\frac{36699777236396068587597012755199}
+         {3663299712317355278800988930048}.
+\end{equation}
+The checks enumerate the defining endpoints and maxima, not just
+selected numerical values. For the asymptotic prime sum, apply the
+prime number theorem first on a fixed partition. Event points cost
+$O(\log n)$; the remote tail is controlled by the displayed majorant
+and Chebyshev's bound before the cutoff tends to infinity.
+
+\subsection{Cancellation improves the full clearer}
+For a repeated pole class, choose its least address $0\leq a<p$.
+Put $x=n/p$, $r=a/p$ and $k=\lfloor x-r\rfloor$, so its addresses
+are $a,a+p,\ldots,a+kp$. When $x<2$, repetition requires $r\leq x-1$.
+Define the fixed local rational function
+\[
+ H_{x,r}(u)=\frac{\prod_{h\in\Z+1/2,\ r-2x\leq h\leq r+x}(u-h)^2}
+ {\prod_{l=0}^k(u+l)^{b_l}},\qquad
+ b_l=\#\{j:\delta_jx\leq r+l\leq(1-\delta_j)x\},
+\]
+and its net order $F=\sum b_l-2\#\{h\}$. After scaling, the actual
+half-integer numerator roots lie in
+\[
+ [r-2x-1/(2p),\,r+x+1/(2p)]\cap(\Z+1/2).
+\]
+This contains the ideal interval used in $H_{x,r}$. Each additional
+root supplies $p^2$, so it can only remove a surviving local term
+when the intended improvement uses at most two powers of $p$.
+For a proper rational function $T$ with these poles and principal
+parts $T_l$, put
+\[
+ \mathcal B(T)=\sum_{l=0}^k(-1)^l\operatorname{res}_{-l}T,
+ \qquad
+ \mathcal Q(T)=\sum_{v=0}^{k-1}(-1)^v\sum_{l=v+1}^kT_l'(-v-1/2).
+\]
+On a cell where $M=\max F$, suppose $g\in\{1,2\}$, $M\geq g+1$,
+and one rational $\kappa$ satisfies
+\begin{equation}\label{eq:localcriterion}
+ \mathcal Q(u^hH_{x,r})=\kappa\mathcal B(u^hH_{x,r})
+ \quad\text{for all }F\geq M-g+1,\quad 0\leq h<g-(M-F).
+\end{equation}
+Then $g$ powers of $p$ can be removed from the old clearing exponent
+for every beta-two-canceling multiplier, apart from the fixed primes
+in the denominator of $\kappa$.
+
+Here is the local-to-global justification. Substitute
+$t=-a-1/2+pu$ and multiply by $p^M$. Unit-factor inverses have
+Taylor coefficients divisible by the appropriate powers of $p$.
+Extra numerator zeros cost $p^2$. Modulo $p^g$, the surviving terms
+are therefore
+\[
+ \sum_{0\leq h<g-(M-F)}c_{a,h}p^{M-F+h}u^hH_{x,r}(u),
+ \qquad c_{a,h}\in\Z_{(p)}.
+\]
+For bounded $x$, all local pole differences and half-integer evaluation
+distances are units when $p$ is large. Principal-part extraction
+commutes with this reduction. The beta-two coefficient is $-4$ times
+the sum of the signed local $\mathcal B$ values, scaled by $p^{1-M}$.
+The rational constant has the exact grouped formula
+\[
+ q(P)=-\sum_{\ell=1}^n(-1)^\ell\sum_{a\geq\ell}f_a'(-\ell),
+ \qquad f=PR_n,
+\]
+and either side of $-\ell$ may be used. The nonunit evaluation between
+addresses $a+vp,a+(v+1)p$ is at
+$\ell=a+(p+1)/2+vp$, corresponding to $u=-v-1/2$.
+It gives, up to a common sign, the signed sum of local $\mathcal Q$
+values scaled by $p^{-M-1}$. Unit-denominator terms have at least two
+powers after this scaling. Thus \eqref{eq:localcriterion} and exact
+beta-two cancellation give $g$ powers in the cleared rational constant.
+The remaining beta coefficients, of indices at least four, already
+have enough powers. This proves the claimed improvement for the same
+forms, including their rational constants.
+
+For example, in $n/2<p<15n/29$ the maximal local function is
+\[
+ H(u)=\frac{\prod_{h=-5/2,-3/2,-1/2,1/2,3/2}(u-h)^2}
+                    {u^{29}(u+1)^{29}}.
+\]
+Reflection makes both functionals vanish on $H(u)(u+1/2)$.
+Exact evaluation gives $\mathcal Q(H)/\mathcal B(H)
+=-15010513046/139778381$, so $g=2$ works outside its fixed denominator
+primes. The broader certificate checks \eqref{eq:localcriterion}
+on every relevant pattern in $582$ open cells of $[1,6]$ and obtains
+\begin{equation}\label{eq:savingS}
+ S=\int_1^6g(x)x^{-2}\dd x=\frac{62795}{199056}.
+\end{equation}
+Event points and fixed exceptional primes receive no saving. It follows
+that a common full clearer satisfies
+\begin{equation}\label{eq:fullclearlinear}
+ \log D_n^*\leq16\log(n!)+(A+12\log2-S+o(1))n.
+\end{equation}
+
+\subsection{Uniform analytic decay}
+Let $H(v)=v\log v$ for $v>0$, with $H(0)=0$, and for $u\geq1$ put
+\[
+ \Phi(u)=2[H(u+2)-H(u-1)]
+       -\sum_{j=0}^{28}[H(u+1-\delta_j)-H(u+\delta_j)].
+\]
+The exact gamma product for $R_n$ gives, uniformly for $t\geq n+1$,
+\[
+ \log R_n(t)=-16\log(n!)+n\Phi(t/n)+O(\log(n+t)).
+\]
+Uniformity includes $t=n+1$: the smallest gamma argument is one,
+and $\log\Gamma(v)=v\log v-v+O(\log(v+2))$ is uniform for $v\geq1$.
+The finite reciprocal-factor sum bounds the logarithmic derivative
+by $O(1+\log(n+t))$. Moreover the multiplier and its derivative
+are bounded by $C h_n(P)(1+t/n)^{30}$ and
+$C h_n(P)n^{-1}(1+t/n)^{29}$.
+
+The phase has a unique maximum near $1.00165$. One verifies
+$\Phi''<0$ on $(1,11/10]$ by the rational upper bound
+\[
+ 2/3-20+\sum_j\bigl((1+\delta_j)^{-1}-(21/10-\delta_j)^{-1}\bigr)<0.
+\]
+For $u\geq11/10$, $\Phi'(u)\leq
+2\log((u+2)/(u-1))-22/(u+1)<0$: the negative of this bound has
+no interior minimum, is positive at $11/10$, and tends to zero.
+For $u\geq4$, the stronger $u\Phi'(u)<-9$ controls the infinite
+tail. Rational log enclosures and a bracket for the critical point
+give the supplied upper bound
+\[
+ \Phi_*\leq
+ -\frac{4093415547496757252324770508326269837463}
+        {170141183460469231731687303715884105728}
+ =-24.0589342582\ldots.
+\]
+The checker independently encloses the maximum with a tangent on the
+concave interval. All summands through $t=n$ vanish; the tail bound
+absorbs the multiplier's fixed degree. Thus
+\[
+ |\mathcal J_n(P)|\leq h_n(P)(n!)^{-16}
+                       e^{(\Phi_*+o(1))n}.
+\]
+Combining with \eqref{eq:fullclearlinear} proves the second part of
+Lemma~\ref{lem:linear-inputs}, with
+$C_*=-A-12\log2-\Phi_*+S>6.0384$.
+
+\subsection{The cheaper column clearer}
+The beta-two coefficient is $-4\sum_a(-1)^ac_{1,a}$. At odd large
+primes it needs only $\max(0,M_p-1)$ instead of $\max(0,M_p+1)$.
+The envelope saving equals two for $x\geq2$. On $[1,2]$ the exact
+partition gives integral $107/116$, so the total saving is $223/116$.
+At two, put $z=t+1/2$. Multiplication by $2^{6n+4}$ makes the
+numerator integral. The even-address and odd-address denominator
+products reduce to powers of $z$ and $z+1$. Their resultant is odd,
+so partial fractions by these two groups have numerators in
+$\Z_{(2)}[z]$. Each group's residue sum is the coefficient of $z^{-1}$
+at infinity and is integral at two. The total residue sum is zero
+by proper decay, so the alternating sum is twice one group sum.
+Consequently the beta-two coefficients have valuation at least
+$-6n-1$, uniformly in the multiplier.
+
+A column clearer $E_n$ therefore satisfies
+\[
+ \log E_n\leq16\log(n!)+(A-223/116-10\log2+o(1))n.
+\]
+The coefficient estimate uses a different profile from the positive
+tail phase $\Phi$. Put $\mathcal H(v)=v\log|v|$ for $v\ne0$,
+$\mathcal H(0)=0$, and define, for $0\leq x\leq1$,
+\[
+ \Psi(x)=2[\mathcal H(1+x)+\mathcal H(2-x)]
+ -\sum_{j=0}^{28}
+       [\mathcal H(1-\delta_j-x)+\mathcal H(x-\delta_j)].
+\]
+On the radius-$1/4$ circle about the pole $-a-1/2$, split each product
+at its closest integer. Summing changes $\log(1+O(1/|k|))$ costs
+$O(\log n)$ per block. Stirling's formula therefore gives, uniformly
+in the address $a$ including endpoints,
+\[
+ \log|R_n(t)|=-16\log(n!)+n\Psi(a/n)+O(\log n).
+\]
+The profile is symmetric about $1/2$. Away from its finitely many
+cusp points,
+\[
+ \Psi'(x)=2\log\frac{1+x}{2-x}
+ +\sum_{j=0}^{28}\log\frac{|1-\delta_j-x|}{|x-\delta_j|}.
+\]
+On $0<x<1/2$, every $j>0$ term is positive, and the $j=0$ term
+dominates the negative numerator contribution because
+$(1-x)(1+x)^2-x(2-x)^2=(1-2x)(x^2-x+1)>0$.
+Continuity across the cusps gives the midpoint maximum
+\[
+ \Psi_*=\Psi(1/2)=6\log(3/2)-2\sum_{j=0}^{28}
+                  (1/2-\delta_j)\log(1/2-\delta_j).
+\]
+Cauchy's residue formula then bounds the coefficient column by
+$(n!)^{-16}e^{(\Psi_*+o(1))n}$. Clearing and removing its integer gcd
+can only improve this estimate. Thus
+\[
+ H_*=A-223/116-10\log2+\Psi_*
+ =24.5217727858\ldots<24.522,
+\]
+proving the first part of Lemma~\ref{lem:linear-inputs}.
+
+\section{Record coverage and reproducibility}\label{app:records}
+The accompanying guide maps the manuscript to its supporting records
+and identifies which checks are recomputations, certificate replays,
+or retained finite observations. The mathematical claims are separated
+as follows.
+\begin{center}\small
+\begin{tabular}{p{0.29\linewidth}p{0.61\linewidth}}
+\toprule
+Construction&Conclusion and remaining condition\\\midrule
+Monic zeta substitution&Exact all-subset valuation; the globally cleared
+$q^{-2}$ certificate is excluded.\\
+Full-radical compression&Integral period elimination with $o(K^2)$
+relative-height cost; compatible determinant arithmetic and decay open.\\
+Low-degree compression&Uniform prime and dyadic content bounds; true
+primitive cost versus achieved decay unresolved.\\
+Thirteen-value Gram system&Exact rational-block removal and linear-scale
+residual decay; primitive arithmetic unresolved.\\
+Fourteen-value linear forms&Formal rank, classified identities, and
+eleven uniformly small independent rows; collective nonvanishing open.\\
+Fixed-direction transport&Cannot shrink a complete collection while
+preserving each individual rational coefficient line.\\
+Loewner specialization&Nonvanishing hypotheses checked; one compatible
+coarse cost comparison inconclusive.\\\bottomrule
+\end{tabular}
+\end{center}
+The final content bounds supersede the weaker intermediate allowances;
+the latter are not separate factors to be multiplied into the result.
+Finite tables are retained to document the evidence that motivated
+the general questions, not as substitutes for their missing limits.

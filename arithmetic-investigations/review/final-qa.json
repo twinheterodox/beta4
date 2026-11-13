@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-13",
+  "pdf": "output/pdf/arithmetic-investigations.pdf",
+  "pdf_sha256": "52cb98cb3d4346aa7a8837d6b899f0daaf7358b45fbeb9f1f125f5723f5d9018",
+  "pages": 31,
+  "source_manifest": "review/source-hashes.json",
+  "build_warnings": [],
+  "visual_inspection": {
+    "all_pages": "All 31 pages were inspected during the final review before the four authorized wording edits.",
+    "publication_comparison": "The four edits change rendered pages 2, 12, 22 and 23 only; all four were inspected individually after rebuilding. Page 23 was rechecked after replacing the pronoun with the explicit function F.",
+    "detailed_pages": [
+      2,
+      12,
+      22,
+      23
+    ],
+    "result": "PASS: no clipping, overlap, failed formulas, or unintended page-break changes observed."
+  },
+  "source_control_characters": "PASS: TeX sources contain no control characters except tabs and newlines.",
+  "privacy": "PASS: publication files, PDF text and metadata contain no identifying local paths, personal identity strings or credential-file references from the workspace.",
+  "pdf_author": "twinheterodox",
+  "review_status": "Cooperating-session manuscript review passed on the identified source. The final author reading supplied four small exposition corrections; reviewed and publication hashes and change scope are distinguished in cooperating-review.json.",
+  "finite_checks": [
+    "review/monic-checks.json",
+    "review/linear-checks.json",
+    "review/gram-checks.json",
+    "review/loewner-checks.json"
+  ],
+  "scope": "Final assembly and layout check, not an additional mathematical audit. Historical observations retain the coverage limits stated in evidence/coverage.json.",
+  "finite_check_scope": "All packaged checks passed during manuscript assembly. Checkers and mathematical data are unchanged by the final wording corrections, so no redundant replay was performed.",
+  "publication_identity_check": "Repository-local Git identity set to twinheterodox; publication file scan covers 656 tracked/intended files and all ten PDFs. The five path-pattern hits were the already anonymized /home/research placeholder, not identifying paths."
+}

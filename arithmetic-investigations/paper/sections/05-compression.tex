@@ -1,0 +1,185 @@
+\section{Eliminating a period at controlled height}\label{sec:compression}
+Instead of approximating $\zet$, we can cancel its coefficient exactly.
+For a symmetric pencil $R+XB+ZC$, restriction by a rational matrix $U$
+eliminates $Z$ when $U^TCU=0$. Such a subspace is called totally
+isotropic for $C$. If $U$ has independent columns, the actual compressed
+Gram matrix remains positive definite. The issue is constructing enough
+directions without paying an excessive height cost.
+
+\subsection{A larger cofactor space and the local cancellation}
+For this construction use the full basis
+\[
+ E_l(u)=\frac{D(u)}{u+l^2},\quad 1\leq l\leq2K,
+ \qquad \mathcal G_{lk}(X,Z)=\nu(E_lE_k/D).
+\]
+It is important to include polynomial parts in this matrix. For $l\ne k$,
+$E_lE_k/D$ is an integer polynomial. On the diagonal, monic division
+gives
+\begin{equation}\label{eq:quotient}
+ E_l^2/D=Q_l(u)+D'(-l^2)/(u+l^2),\qquad Q_l\in\Z[u],
+\end{equation}
+where
+\begin{equation}\label{eq:Dprime}
+ D'(-l^2)=\frac{(-1)^{l-1}(2K-l)!(2K+l)!}{2l^2}.
+\end{equation}
+Integration by parts in \eqref{eq:functional} gives
+\begin{equation}\label{eq:moments}
+ \nu(u^e)=\tfrac14\binom{2e+4}{3}T_{2e+1},
+ \qquad \tan z=\sum_{e\geq0}T_{2e+1}\frac{z^{2e+1}}{(2e+1)!}.
+\end{equation}
+For example the first moments are $1,10,224$. One derivation expands
+$g$ in exponentials after transferring three derivatives to $y^{2e+4}$;
+the resulting odd-power sum is the classical tangent-number formula.
+The tangent numbers are integers, also directly from
+$(\tan z)'=1+\tan^2z$. Thus all polynomial moments have denominator
+dividing four. Equations \eqref{eq:formal-resolvents} and
+\eqref{eq:quotient} show that $32\lcm(1,\ldots,2K)^4$ clears every
+coefficient of $\mathcal G$.
+
+Both period-coefficient matrices of $\mathcal G$ are diagonal. The
+$Z$ coefficient vanishes exactly on the $K$ odd coordinates, and on
+the even coordinates it equals
+\begin{equation}\label{eq:fullC}
+ \mathcal C_{2m,2m}
+ =\frac7{256}(-1)^m m(2K-2m)!(2K+2m)!.
+\end{equation}
+To choose an isotropic direction, first prescribe polynomial values
+rather than cofactor coefficients. For $\deg P<2K$, put
+$\xi_m=m^2P(-4m^2)$. Partial fractions and \eqref{eq:Dprime} give
+\[
+ [Z]\nu(P^2/D)=\frac7{4(4K)!}
+ \sum_{m=1}^K(-1)^m m\binom{4K}{2K-2m}\xi_m^2.
+\]
+We will construct a zero of this quadratic form on each five-node block,
+then lift a proportional evaluation vector to an integral polynomial.
+Alternating signs permit cancellation, but real indefiniteness alone
+does not ensure a rational zero. We use the classical Meyer theorem
+in dimension five, followed by Cassels' quantitative small-zero bound
+\cite[Introduction and Theorem~1.1]{Fukshansky}.
+
+Take five consecutive indices $a\leq m\leq b=a+4\leq K$ and set
+\begin{equation}\label{eq:Blocal}
+ B_m^{\rm loc}=
+ \frac{(2K-2a)!}{(2K-2m)!}
+ \frac{(2K+2b)!}{(2K+2m)!}.
+\end{equation}
+These are products of exactly eight positive integers at most $4K$.
+The integral diagonal form
+\[
+ \sum_{m=a}^b(-1)^m mB_m^{\rm loc}z_m^2
+\]
+is nonsingular and indefinite. Meyer supplies a rational zero, and
+Cassels supplies a nonzero integer zero satisfying
+\begin{equation}\label{eq:Zheight}
+ \max_m|z_m|\leq[15K(4K)^8]^2=:Z_K.
+\end{equation}
+The useful step is removal of a common factor before applying this
+bound. In evaluation coordinates the coefficients are proportional to
+$(-1)^m m\binom{4K}{2K-2m}$. Within the block their common positive
+rational factor is
+$(4K)!/((2K-2a)!(2K+2b)!)$. Dividing by it leaves precisely the
+polynomial-size coefficients in \eqref{eq:Blocal}. An estimate using
+the binomial coefficients themselves would miss this saving.
+
+For illustration, at $K=5$ the primitive equation is
+\[
+ -25194z_1^2+15504z_2^2-2907z_3^2+152z_4^2-z_5^2=0.
+\]
+The vector $(-42,57,136,561,0)$ is an exact zero. The general
+existence and height statement comes from Meyer and Cassels, not from
+extrapolating this example.
+
+\subsection{An integral lift and its determinant cost}
+Lift a block zero to the polynomial
+\begin{equation}\label{eq:full-lift}
+ P_z(u)=\sum_{m=a}^b z_mB_m^{\rm loc}E_{2m}(u).
+\end{equation}
+It vanishes at every odd node and at every even node outside its block.
+At an even node in the block, \eqref{eq:Dprime} gives
+\[
+ m^2P_z(-4m^2)
+ =-\tfrac18(2K-2a)!(2K+2b)!z_m.
+\]
+Equivalently, substituting \eqref{eq:fullC} gives its $Z$ coefficient as
+$\tfrac7{256}(2K-2a)!(2K+2b)!\sum_m(-1)^m mB_m^{\rm loc}z_m^2=0$.
+The cofactor coefficients are integers bounded by
+\begin{equation}\label{eq:Wfull}
+ W_K^{\rm full}=225K^2(4K)^{24}.
+\end{equation}
+
+\begin{theorem}\label{thm:compression}
+For every $K\geq5$, there is an integral cofactor-coordinate matrix
+$\mathcal U$ of rank $h=K+\lfloor K/5\rfloor$ such that
+$\mathcal U^T\mathcal C\mathcal U=0$ and
+\[
+ \det(\mathcal U^T\mathcal U)
+ \leq\bigl(5(W_K^{\rm full})^2\bigr)^{\lfloor K/5\rfloor}.
+\]
+Its compressed matrix is positive definite at $\bet$ and has only
+rational and $\bet$ entries. Its determinant polynomial has degree
+exactly $K$.
+\end{theorem}
+\begin{proof}
+Adjoin the $K$ odd coordinate vectors to one lift
+\eqref{eq:full-lift} from each of the disjoint blocks
+$[5i+1,5i+5]$. Their supports are disjoint. They are independent,
+mutually $\mathcal C$-orthogonal, and isotropic. The volume bound is
+the product of their squared lengths. Positivity follows by restriction
+of the actual Gram matrix. The beta-coefficient matrix is nonsingular
+on the odd coordinates and zero on the added coordinates, so its rank
+is exactly $K$. The degree assertion also follows from the block
+factorization below.
+\end{proof}
+
+This is a height statement in the declared cofactor basis. The large
+monomial coefficients of the cofactors have not been bounded by a
+power of $K$. To see the precise transfer, let $I$ range over the
+possibly nonzero row minors of $\mathcal U$: all odd coordinates and
+one even coordinate from each block. Cauchy--Binet and Gram
+Cauchy--Schwarz give
+\begin{equation}\label{eq:transfer}
+ 0<\det(\mathcal U^T\mathcal G\mathcal U)(\bet)
+ \leq \max_I\det\mathcal G_{I,I}(\bet,\zet)
+              \bigl(25(W_K^{\rm full})^2\bigr)^{\lfloor K/5\rfloor}.
+\end{equation}
+Indeed the sum of the absolute row minors is the product of the
+five-entry $\ell^1$ norms. The logarithm of its square is $O(K\log K)$.
+If a multiplier clears every coefficient of the same mixed minors
+$\det\mathcal G_{I,J}(X,Z)$, it clears the compressed polynomial too.
+Thus the projection adds no leading $K^2$ height cost to a comparison
+made in this same basis. It does not by itself supply that comparison.
+
+For every fixed odd block length $L\geq5$, the extension in
+Appendix~\ref{app:fixedL} retains $(L-3)/2$ independent isotropic
+directions per block. The dimension becomes
+$K+(L-3)\lfloor K/L\rfloor/2$, still with $O_L(K\log K)$
+logarithmic height cost. Fixing $L$ before $K\to\infty$ is essential.
+
+\subsection{The rational block and what survives it}
+Order the odd coordinates first. The compressed matrix has the form
+\begin{equation}\label{eq:compression-schur}
+ \begin{pmatrix}L_0+XB_0&T_0\\T_0^T&E_0\end{pmatrix},
+ \qquad
+ \det=\det E_0\,
+       \det(L_0+XB_0-T_0E_0^{-1}T_0^T).
+\end{equation}
+Here $T_0,E_0$ are rational, $E_0>0$, and $B_0$ is nonsingular.
+The primitive polynomial therefore has degree $K$, not the full
+matrix dimension. The rational factor $\det E_0$ disappears, whereas
+the rational correction inside the Schur complement remains.
+Consequently this reduction does not show that all benefit of the
+integer poles disappears.
+
+This also explains a useful invariance. Adding an element of the
+full $Z$-radical to an extra lift is a determinant-one basis shear;
+it leaves the determinant polynomial exactly unchanged. More generally,
+rational changes of basis multiply it by a rational square and leave
+its primitive polynomial unchanged. Denominators introduced by a
+particular interpolation of the same subspace are not automatically
+an intrinsic determinant cost.
+
+At the two checked indices $K=5,10$, the logarithms of the primitive
+values are respectively $101.17\ldots$ and $475.49\ldots$, compared
+with $94.29\ldots$ and $444.32\ldots$ for the radical alone. These
+finite comparisons motivate the lower-degree variant below; they do
+not establish an asymptotic failure theorem.

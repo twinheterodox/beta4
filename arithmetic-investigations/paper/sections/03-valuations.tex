@@ -1,0 +1,167 @@
+\section{An exact dyadic determinant formula}\label{sec:valuation}
+Individual residues in \eqref{eq:coeffmatrices} can have large dyadic
+denominators. Adding their valuations cannot determine the denominator
+of their sum. We instead express the whole coefficient matrix through
+one finite orthogonal system. This identifies the cancellation exactly.
+
+\subsection{Replacing residues by a finite binomial average}
+Let $N=2K-1$ and let $L$ be the sum of $N$ independent variables taking
+the values $1$ and $-1$ with equal weights. Expectations below are finite
+rational sums. At an odd point $l=2j+1$,
+\[
+ O'(-l^2)=\frac{(-1)^j4^{K-1}(K-1-j)!(K+j)!}{l},\qquad
+ \Pr(L=l)=\frac{N!}{2^N(K-1-j)!(K+j)!}.
+\]
+Pairing $l$ and $-l$ gives
+\begin{equation}\label{eq:binomial}
+ (B_K)_{mn}=\frac1{2N!}\E\left[
+ \frac{L^4J(-L^2)}{(a_m-L^2)(a_n-L^2)}\right].
+\end{equation}
+Every denominator inside the expectation is odd and nonzero. Off the
+diagonal the two denominator factors cancel factors of $J$; on the
+diagonal a rational remainder survives. The argument below handles
+both together.
+
+\subsection{The finite orthogonal basis}
+Define the monic Krawtchouk polynomials by
+\begin{equation}\label{eq:krawgen}
+ \sum_{n\geq0}p_n(L)\frac{z^n}{n!}
+ =(1+z)^{(N+L)/2}(1-z)^{(N-L)/2}.
+\end{equation}
+At each support point, the right side is the product of $N$ factors
+$1+z\varepsilon_i$. The expectation of the product of two such
+generating functions is $(1+zs)^N$. Comparing coefficients and then
+differentiating \eqref{eq:krawgen} gives
+\begin{align}
+ \E[p_np_r]&=\begin{cases}n!N!/(N-n)!,&n=r\leq N,\\0,&n\ne r,
+ \end{cases}\label{eq:krawnorm}\\
+ Lp_n&=p_{n+1}+n(N-n+1)p_{n-1},\qquad p_0=1,\ p_1=L.
+ \label{eq:krawrec}
+\end{align}
+In particular $p_n$ is integral and has the parity of $n$.
+Put $t=L^2$ and $q_j(t)=p_{2j}(L)$. The $K$ monic polynomials
+$q_0,\ldots,q_{K-1}$ are orthogonal, with norms
+\begin{equation}\label{eq:h}
+ h_j=(2j)!N!/(N-2j)!.
+\end{equation}
+There are exactly $K$ distinct support points for $t$. The polynomial
+$q_K=p_{N+1}$ vanishes at all of them, since the evaluated generating
+function has degree $N$. Multiplication by $t$ is therefore represented
+exactly by a finite $K$-by-$K$ matrix $T$ in this basis.
+
+Applying \eqref{eq:krawrec} twice gives
+\begin{align}
+ tq_j&=q_{j+1}+\tau_jq_j+u_jq_{j-1},\label{eq:Trec}\\
+ \tau_j&=(4j+1)N-8j^2,\qquad
+ u_j=(2j)(2j-1)(N-2j+1)(N-2j+2).\nonumber
+\end{align}
+Terms outside the basis are omitted on the support. Every $\tau_j$ is
+odd and every $u_j$ is divisible by four. Thus $T$ is triangular modulo
+two with diagonal one. This supplies more than invertibility: it will
+make every leading principal block of the relevant multiplier a unit.
+
+\subsection{Valuation and nonvanishing for every subset}
+For nonzero rational $r$, let $v_2(r)$ denote its exponent of two.
+Write $\Z_{(2)}$ for the rationals with odd denominator. An odd
+determinant is a unit in this ring.
+
+\begin{theorem}\label{thm:valuation}
+For every nonempty $S\subseteq\{1,\ldots,K\}$, with $d=|S|$, set
+$\Delta_S=\prod_{m<n,\,m,n\in S}(4n^2-4m^2)$. Then
+$\det(B_K)_S\ne0$ and
+\begin{equation}\label{eq:valuation}
+ v_2\bigl(\det(B_K)_S\bigr)
+ =2v_2(\Delta_S)-d+
+ \sum_{j=0}^{d-1}\left(v_2((2j)!)-v_2((2K-1-2j)!)\right).
+\end{equation}
+\end{theorem}
+\begin{proof}
+The purpose of the first change of basis is to replace the rational
+functions in \eqref{eq:binomial} by polynomials of degree below $d$.
+Put
+\[
+ W_S(t)=\prod_{m\in S}(a_m-t),\qquad
+ F_S(t)=\frac{t^2J(-t)}{W_S(t)^2},\qquad
+ r_m(t)=\frac{W_S(t)}{a_m-t}.
+\]
+Then $(B_K)_S$ is $(2N!)^{-1}$ times the Gram matrix
+$\E[F_Sr_mr_n]$. The coefficient determinant of the $r_m$ in the
+monomial basis is $\pm\Delta_S$: evaluate at the $a_m$ to obtain a
+diagonal matrix and divide by the evaluation Vandermonde. Passing to
+the monic basis $q_0,\ldots,q_{d-1}$ changes no further determinant.
+
+Every $a_mI-T$ is invertible over $\Z_{(2)}$. Consequently
+\[
+ F_S(T)=T^2J(-T)W_S(T)^{-2}
+\]
+is defined over that ring and reduces to $T^{K+2-2d}$ modulo two.
+Negative exponents are allowed because $T$ is invertible. This
+reduction is triangular with diagonal one, so its leading $d$-by-$d$
+block has odd determinant.
+
+The functional calculus is finite: multiplication by $t$ acts on the
+$K$ support points and $W_S$ vanishes at none of them. Orthogonality
+therefore gives
+\[
+ \bigl(\E[q_iF_Sq_j]\bigr)_{i,j<d}
+ =\diag(h_0,\ldots,h_{d-1})[F_S(T)]_{i,j<d}.
+\]
+The last determinant is a unit, hence nonzero. Including the basis
+factor and the scalar $(2N!)^{-d}$ gives
+$2v_2(\Delta_S)-d(1+v_2(N!))+\sum_{j<d}v_2(h_j)$.
+Substitution of \eqref{eq:h} proves the formula.
+\end{proof}
+
+For example, $K=2$ and $S=\{2\}$ give
+$B_{22}=-167/140$ and $C_{22}=1/5$. The theorem gives
+$v_2(B_{22})=-2$. After making the pencil monic in $Z$, its $X$
+coefficient is $-167/28$, again of valuation $-2$. The example
+illustrates why the coefficient normalization must accompany the
+matrix calculation.
+
+\subsection{The denominator forced by the positive restriction}
+From now on let
+\begin{equation}\label{eq:selected}
+ S_K=\{2,4,\ldots,2d\},\qquad d=\lfloor K/2\rfloor,\quad K\geq2,
+\end{equation}
+and define the polynomial monic in $Z$ and its integer clearer by
+\begin{equation}\label{eq:monic}
+ P_K(X,Z)=\det\bigl(C_S^{-1}(R_S+XB_S)+ZI_d\bigr),\qquad
+ A_K=\min\{A\in\Z_{>0}:AP_K\in\Z[X,Z]\}.
+\end{equation}
+Since $P_K$ is monic, $A_KP_K$ is primitive. Its nonzero coefficient
+of $X^d$ is $\det(C_S^{-1}B_S)$, so the reduced denominator of this
+one coefficient must divide $A_K$.
+
+Write $s_2(n)$ for the binary digit sum. The elementary factorial
+formula $v_2(n!)=n-s_2(n)$ gives
+$v_2\binom{2n}{n}=s_2(n)$. The selected Vandermonde is
+\[
+ \Delta_S=2^{2d(d-1)}\prod_{j=1}^d\frac{(2j-1)!}{j},
+ \qquad v_2(\Delta_S)=3d^2+O(d\log(d+1)).
+\]
+Theorem~\ref{thm:valuation} and \eqref{eq:cpositive} now yield
+\begin{align*}
+ v_2(\det B_S)&=8d^2-2Kd+O(K\log K),\\
+ v_2(C_{mm})&=4K-8+v_2(m)-s_2(K-m)-s_2(K+m),\\
+ v_2(\det(C_S^{-1}B_S))&=8d^2-6Kd+O(K\log K)
+ =-K^2+O(K\log K).
+\end{align*}
+We have proved the necessary bound
+\begin{equation}\label{eq:necessaryA}
+ \log A_K\geq(\log2)K^2-O(K\log K).
+\end{equation}
+
+The restriction matters. On the full coordinate space there is instead
+the identity
+\begin{equation}\label{eq:fullidentity}
+ \det(C_K^{-1}B_K)=(-1)^K(2/7)^K\binom{2K}{K}^3.
+\end{equation}
+Indeed $J/O=1+\sum_l\rho_l/(u+l^2)$ implies, by divided differences
+at $u=-a_m$ and the diagonal derivative,
+$V\diag(\rho_l)V^T=-\diag(e_m)$. Taking determinants in
+\eqref{eq:coeffmatrices} gives $(-1)^K\prod_l b_l/\prod_m c_m$,
+which simplifies to \eqref{eq:fullidentity}. That full-space
+coefficient has no dyadic denominator, but $C_K$ is indefinite.
+Thus the necessary cost in \eqref{eq:necessaryA} belongs to the
+particular positive restriction, not to every use of the functional.

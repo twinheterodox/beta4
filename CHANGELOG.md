@@ -1,5 +1,13 @@
 # Changelog
 
+## 13 November 2026 — Arithmetic investigation supplement
+
+- Added the 31-page supplement *Linear forms, moment determinants, and arithmetic constraints for even beta values*, with its own README section, complete source and reproducible build.
+- Proved an exact dyadic valuation formula for all principal beta-coefficient minors and used its necessary denominator cost to exclude the specified globally monic-cleared rational-approximation certificate.
+- Collected controlled period elimination, uniform determinant-content savings, the residual Gram decay theorem, and eleven independent small integer forms in fourteen candidate beta values. The remaining arithmetic and nonvanishing conditions are stated separately; no new irrationality theorem is claimed.
+- Included portable checks, finite certificates, retained-observation labels, source records, and the scope of the separate cooperating-session manuscript review.
+- Applied the final exposition corrections, rebuilt and inspected the PDF, and preserved the distinction between the reviewed source and the final publication wording.
+
 ## 11 November 2026 — Fifteen even beta values
 
 - Added the paper *At least one of β(4), β(6), …, β(32) is irrational*, reducing Krisman's seventeen candidates to fifteen through an isolated-pole denominator refinement.

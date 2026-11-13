@@ -1,0 +1,101 @@
+{
+  "date": "2026-11-13",
+  "scope": "Selected supporting mathematics extracted for this manuscript; private notebooks and environment histories are not included.",
+  "cases": [
+    {
+      "case": "Exact dyadic valuation and monic substitution",
+      "manuscript_sections": "2-4",
+      "mathematical_status": "All-subset exact valuation theorem and uniform obstruction to the specified globally monic-cleared q^-2 envelope.",
+      "underlying_proof_sha256": "ebef93c0e54d35575d18204053d5410231680bb677394901efa78eac3971d890",
+      "packaged_finite_checks": {
+        "script": "checks/monic.py",
+        "result": "review/monic-checks.json",
+        "checks": 2980
+      },
+      "scope_limit": "Not an obstruction to actual unusually good convergents, post-specialization common factors, other positive subspaces, or irrationality itself."
+    },
+    {
+      "case": "Controlled full-radical compression",
+      "manuscript_sections": "5 and Appendix A",
+      "mathematical_status": "Integral isotropic lifts, dimension and height control for every K and fixed odd block length.",
+      "underlying_proof_sha256": "2ee150cbdaca30cc0028275b16e97281aa8ccf53fe4b373988a5c07fb8272ad5",
+      "packaged_finite_checks": {
+        "scope": "K=5 worked zero is displayed; general existence uses classical Meyer and Cassels. No finite search is used to infer the theorem.",
+        "input": "evidence/mixed-pole-observations.json"
+      },
+      "scope_limit": "No compatible primitive-arithmetic/decay margin proved. Cofactor height is not ordinary monomial height."
+    },
+    {
+      "case": "Low-degree determinant arithmetic",
+      "manuscript_sections": "6",
+      "mathematical_status": "Uniform common clearer, exact-rank and dyadic content, and the combined two-layer saving.",
+      "underlying_proof_sha256": "53ad77459240bb2c84e32dab42b3c8e456c85fcec36570c5bccab52f168aa5a2",
+      "packaged_finite_checks": {
+        "scope": "General valuation arguments reproduced in the manuscript. No new finite K determinant sweep."
+      },
+      "scope_limit": "The 2.20056 allowance is an upper bound on arithmetic cost, not its necessary rate; the comparison is not a true primitive-value obstruction."
+    },
+    {
+      "case": "Thirteen-value Gram family",
+      "manuscript_sections": "7 and Appendix C",
+      "mathematical_status": "Exact rational-block removal and two-sided residual estimate log(det S)=-Theta(r).",
+      "underlying_proof_sha256": "01849d0a5f4a475d2ad3f415895ab2b7f3ca9db228a724188de1ec02e58db845",
+      "packaged_finite_checks": {
+        "script": "checks/gram.py",
+        "result": "review/gram-checks.json",
+        "input": "evidence/gram/",
+        "range": "r=1,...,6 and scalar r=2 control",
+        "method": "Exact complete polynomial and full coefficient gcd; Arb value enclosures."
+      },
+      "scope_limit": "The finite values exceed one, but do not prove asymptotic primitive growth. Earlier separate Fraction/dictionary r=2 reconstruction is an independent implementation; this assembly replay is not a new external audit."
+    },
+    {
+      "case": "Formal rank and zero multipliers",
+      "manuscript_sections": "8",
+      "mathematical_status": "Uniform formal rank and complete classification of proper zero multipliers, with integral additive degree reduction.",
+      "underlying_proof_sha256": "727a89913b6eca46a5b2443c8eaa4cd80fde0a2950b19b82abc9a7e34d4a8bb9",
+      "packaged_finite_checks": {
+        "input": "evidence/linear/retained-basis-observations.json",
+        "scope": "Previously certified finite complete bases at n=116,232,464 are reported observations, not replayed by the packaged linear checker."
+      },
+      "scope_limit": "Neither a complete uniformly short basis nor nonvanishing for the same small collection follows."
+    },
+    {
+      "case": "Eleven controlled directions",
+      "manuscript_sections": "8 and Appendix D",
+      "mathematical_status": "Eleven independent integer coefficient rows with uniform exp(-1.12n) values for sufficiently large n divisible by 116.",
+      "underlying_proof_sha256": "060c921f794a0a2df93f2cf7b1f2650e4d6e44129a703ced178648e677e57e8f",
+      "packaged_finite_checks": {
+        "script": "checks/linear.py",
+        "result": "review/linear-checks.json",
+        "input": "evidence/linear/",
+        "envelope_cells": 13091,
+        "profile_cells": 582,
+        "template_equalities": 464
+      },
+      "scope_limit": "Rank eleven in fifteen coefficient directions does not ensure a nonzero value. Finite arithmetic supports the constants; the general estimates and lattice argument are separately proved."
+    },
+    {
+      "case": "Fixed-direction transport",
+      "manuscript_sections": "9.1",
+      "mathematical_status": "Elementary obstruction when the same rational coefficient lines are preserved and span the constant direction.",
+      "underlying_proof_sha256": "cc207b1fbd0a944314259b9b5a54155fccb71665e7d58d9b2b0a4b36ef5090d0",
+      "packaged_finite_checks": {
+        "scope": "No computation required."
+      },
+      "scope_limit": "Recurrences mixing new directions or supplying a new quantitative constraint are not excluded."
+    },
+    {
+      "case": "Loewner assessment",
+      "manuscript_sections": "9.2",
+      "mathematical_status": "Checked applicability/nonvanishing and one inconclusive compatible cost comparison.",
+      "underlying_proof_sha256": "4a99c74ce532eddd2f4307abff874be51591d22ee822d76222c67c39e30395ab",
+      "packaged_finite_checks": {
+        "script": "checks/loewner.py",
+        "result": "review/loewner-checks.json",
+        "potential_cells": 200
+      },
+      "scope_limit": "The potential replay does not audit the imported nonvanishing proof or moving-contour/deletion estimates. No impossibility result follows from these selected bounds."
+    }
+  ]
+}

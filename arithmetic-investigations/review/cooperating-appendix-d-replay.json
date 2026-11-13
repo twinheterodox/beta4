@@ -1,0 +1,28 @@
+{
+  "checker": "inherited verify_round5.py (identified by checksum)",
+  "checker_sha256": "4a49c6f27f0085549197b18c065f905e1e91ab418f0d2d476776fa39101ab897",
+  "periodic_check": {
+    "cells_matched_to_frozen_certificate": 13091,
+    "rounded_terms": 389105,
+    "integral_upper": "36699777236396068587597012755199/3663299712317355278800988930048"
+  },
+  "profile_check": {
+    "intervals": 582,
+    "template_equalities": 464,
+    "distinct_functionals": 74,
+    "gain_cells": {
+      "0": 426,
+      "1": 60,
+      "2": 96
+    },
+    "saving": "62795/199056"
+  },
+  "bounds_check": {
+    "H_enclosure": "[24.5217727858696115749917226479765413123045926972131291661147703852275676365 +/- 3.99e-74]",
+    "C_enclosure": "[6.038402583991318513664101582224560524375247673685915173214353992786424701533 +/- 8.02e-76]",
+    "eleven_height_rate": "4.91",
+    "cleared_decay_rate": "1.12"
+  },
+  "elapsed_seconds": 3.6554864940117113,
+  "scope": "Read-only replay of existing checker functions: periodic rounded sum against inherited trace, local pattern/functionals, scalar bounds. No generator imported; no original files modified. This does not freshly reconstruct the inherited 13091-cell envelope certificate or large finite coefficient rows."
+}

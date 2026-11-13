@@ -1,0 +1,325 @@
+\section{Divisibility of the low-degree determinants}\label{sec:content}
+The full radical in Section~\ref{sec:compression} forces degree $K$.
+We now omit it and retain only the added low-degree directions. Their
+number is $d=\lfloor K/5\rfloor$. This changes both the determinant and
+its arithmetic; savings for the former full matrix cannot simply be
+transferred to this one.
+
+\subsection{The fixed lift and the statement}
+Use the $J_m$ basis of Section~\ref{sec:moments}. For the same block
+zero $z$ from \eqref{eq:Zheight}, define
+\begin{equation}\label{eq:low-lift}
+ U_{mi}=(-1)^{m-1}
+ \frac{(K-a)!}{(K-m)!}\frac{(K+b)!}{(K+m)!}z_m,
+ \quad a=5i+1,\ b=a+4,
+\end{equation}
+and set the other entries of column $i$ to zero. The factorial ratios
+contain four factors, each at most $2K$. Thus
+\begin{equation}\label{eq:Wlow}
+ |U_{mi}|\leq W_K=(2K)^4[15K(4K)^8]^2.
+\end{equation}
+For $P_i=\sum_mU_{mi}J_m$, direct evaluation gives
+\[
+ m^2P_i(-4m^2)=\tfrac12\,4^{K-1}(K-a)!(K+b)!z_m
+\]
+on its block. The same isotropic equation therefore gives $U^TC_KU=0$.
+The columns are independent and integral. Set
+\[
+ G_U(X)=U^T(R_K+XB_K)U,\quad D_U(X)=\det G_U(X),
+ \quad F_U=q_UD_U,\quad A_U=q_U|\ell_U|,
+\]
+where $F_U$ is primitive and $\ell_U$ is the highest nonzero coefficient.
+The actual matrix is positive. We do not assume that $\deg D_U=d$.
+
+\begin{theorem}\label{thm:content}
+Uniformly over the block choices satisfying
+\eqref{eq:Zheight}--\eqref{eq:low-lift},
+\begin{equation}\label{eq:arith-rate}
+ \limsup_{K\to\infty}\frac{\log A_U}{K^2}
+ \leq c_{\rm ar}=\frac{197+192\log2}{150}
+ =2.2005617244\ldots.
+\end{equation}
+The proof gives a finite coefficient-content divisor and an effective
+bound before taking this limit.
+\end{theorem}
+The argument has three distinct content gains. We describe them
+separately before combining them, so overlapping prime factors are
+not counted twice.
+
+\subsection{A global entry clearer, with the tails retained}
+The useful explicit odd residue is
+\begin{equation}\label{eq:rhoformula}
+ \rho_{2j+1}=
+ \frac{2(K-j)(K+j+1)}{4^{2K}}
+ \binom{2K-2j}{K-j}\binom{2K+2j+2}{K+j+1}.
+\end{equation}
+In particular it has no odd-prime denominator. Write
+$T_l=\rho_lV_{\cdot l}V_{\cdot l}^T$.
+
+For $p>2K$, collisions of the nodes $1,\ldots,2K$ occur only in
+even--odd pairs with sum $p$, if they occur at all. Pairing their
+residues gives, over the localized rationals at $p$,
+\begin{equation}\label{eq:largep}
+ pM_K(X,Z)\equiv
+ \left(4\chi X-\frac7{32}Z+\frac14
+ \sum_{v=1}^{(p-1)/2}\frac{(-1)^{v-1}}{v^4}\right)N_p\pmod p,
+ \qquad \chi=(-1)^{(p-1)/2}.
+\end{equation}
+To check the common scalar, put $j=(p-1)/2-m$ in an even--odd pair.
+The rational part of the resolvent difference, after removing its
+common signed cubic factor, is
+\[
+ \tfrac14\sum_{v=1}^{m}\frac{(-1)^{v-1}}{v^4}
+       -4\chi\sum_{v=0}^{j-1}\frac{(-1)^v}{(2v+1)^4}.
+\]
+Adjacent values agree modulo $p$, since the two new denominators
+are opposite up to a factor two; at $m=(p-1)/2$ it is the sum in
+\eqref{eq:largep}. The two rational endpoint corrections in the
+resolvents are what extend the even sum through $m$.
+All these tail denominators are below $p$. At paired roots, the
+two values $p/D'$ are negatives modulo $p$, while the numerators
+agree. This proves \eqref{eq:largep}. Its $Z$ coefficient is a
+$p$-unit. Exact isotropy forces $U^TN_pU=0$ modulo $p$, so every
+coefficient of $G_U$ is $p$-integral. This conclusion applies after
+cancellation, not to arbitrary raw mixed minors.
+
+For $K<p\leq2K$, set
+\[
+ Y_p=\sum_{p<l<2K,\ l\ \mathrm{odd}}b_lT_l,
+ \qquad R_K=R_{0,p}-\chi p^{-4}Y_p.
+\]
+The decomposition removes the only $p$-divisible denominator in
+each affected odd tail. The matrices $p^2R_{0,p}$, $p^2B_K$,
+$p^2Y_p$ and $p^2C_K/7$ are $p$-integral, and
+\begin{equation}\label{eq:pwindow}
+ p^2Y_p\equiv64\chi\,p^2C_K/7\pmod p.
+\end{equation}
+Here division by seven is performed over $\Q$ before reduction, so
+the formula includes $p=7$.
+For completeness, a possible upper odd node is $p+2v$. Its class
+contains $2v,p-2v,p+2v$, with a fourth node $2p-2v$ when $v\geq p-K$.
+Four-node classes have residue valuation at least $-1$. In a
+three-node class only the entry $(v,v)$ can have valuation $-2$.
+The two local root-difference products, divided by $p^2$, are
+$-16v^2$ at $2v$ and $32v^2$ at $p+2v$. Their residue ratio is
+$-1/2$. Moreover $b_{p+2v}\equiv4\chi(-1)^vv^3$ and
+$c_v/7=(-1)^{v-1}v^3/32$, giving \eqref{eq:pwindow}.
+All other residues disappear in this reduction. Compressing and using
+isotropy shows that $pY_{p,U}$, $p^5R_U$ and $p^2B_U$ are integral
+at $p$.
+
+For the remaining sufficiently large odd primes, $p^2>4K$, six powers
+suffice even before compression:
+\begin{equation}\label{eq:p6}
+ p^6R_K,\quad p^2B_K,\quad p^2C_K
+ \quad\hbox{are $p$-integral}.
+\end{equation}
+Every central binomial in \eqref{eq:e} has valuation at most one,
+and every tail has valuation at least $-4$. If $p\nmid m$, this
+gives $v_p(e_m)\geq-2$, $v_p(r_m^e)\geq-4$. If $p\mid m$,
+the bounds are $-4$ and $-1$: the cubic numerator pays three tail
+powers and the endpoint costs one. For an odd node $l$ with
+$p\nmid l$, each gap $(2m-l)(2m+l)$ costs at most one power, giving
+$v_p(T_l)\geq-2$. If $p\mid l$, two powers per gap are possible,
+but $v_p(b_l)=3$ and $v_p(r_l^o)\geq-1$. These four cases prove
+\eqref{eq:p6}, including the endpoint terms.
+
+Put $k_p=\lfloor\log_p(4K)\rfloor$ and
+\begin{equation}\label{eq:Qclear}
+ Q_K=2^{4K+4+8k_2}
+ \prod_{\substack{3\leq p\leq K\\p^2\leq4K}}p^{8k_p}
+ \prod_{\substack{3\leq p\leq K\\p^2>4K}}p^6
+ \prod_{K<p\leq2K}p^5,
+\end{equation}
+with products over primes. Then $Q_KR_U,Q_KB_U$ are integral.
+For small odd primes, each of the two binomial valuations and each
+linear gap costs at most $k_p$; the tails cost at most $4k_p$.
+Thus $8k_p$ suffices. At two the odd gaps are units, the denominator
+of $\rho_l$ costs at most $4K-1$, and the finite tails and even
+terms are covered by $4+8k_2$. This proves the remaining factors.
+The prime number theorem gives
+\begin{equation}\label{eq:Qrate}
+ \log Q_K=(11+4\log2+o(1))K.
+\end{equation}
+The small primes cost $O(\sqrt K\log K)$; the two large-prime ranges
+have weights six and five.
+
+\subsection{Exact tail rank gives three powers per missing direction}
+For $K<p\leq2K$, the number of terms in $Y_p$ is
+$t_p=K-(p+1)/2$. They are rank one over $\Q$. The exact identity
+\[
+ p^5G_U(X)=-\chi A_p+p^3S_p(X),\qquad
+ A_p=pY_{p,U},\quad S_p=p^2(R_{0,p,U}+XB_U)
+\]
+has $p$-integral entries and $\rank A_p\leq t_p$ over $\Q$.
+In the column expansion of the determinant, more than $t_p$ columns
+from $A_p$ give zero identically. Every surviving term therefore
+contains at least $(d-t_p)_+$ columns from $p^3S_p$. It follows that
+\begin{equation}\label{eq:tailcontent}
+ \mathcal T_K=\prod_{K<p\leq2K}p^{3(d-t_p)_+}
+ \quad\hbox{divides }\cont(Q_K^dD_U),\qquad
+ \log\mathcal T_K=(3/25+o(1))K^2.
+\end{equation}
+The rate is $3\int_{8/5}^2(x/2-4/5)\dd x=3/25$.
+Rank only modulo $p$ would not justify three powers per direction;
+the exact rational rank is what makes that conclusion possible.
+
+\subsection{A common dyadic factor}
+Set $\eta_0=\eta_1=0$ and
+\begin{equation}\label{eq:eta}
+ \eta_s=\sum_{j=1}^{s-1}(8j-1-2s_2(j)),\qquad s\geq2.
+\end{equation}
+Every $s$-minor of $V_{ml}=(4m^2-l^2)^{-1}$ has dyadic valuation
+at least $\eta_s$. The Cauchy determinant denominator is odd.
+For its numerator use, for $j\geq1$, the integer-valued polynomials
+\[
+ \frac{\prod_{i=0}^{j-1}(t-i^2)}{j(2j-1)!},\qquad
+ \frac{\prod_{i=0}^{j-1}(t-(2i+1)^2)}{4^j(2j)!}.
+\]
+Take the degree-zero member of each sequence to be $1$.
+At $t=m^2$ and $t=(2k+1)^2$ their values are respectively
+$\binom{m+j}{2j}+\binom{m+j-1}{2j}$ and $\binom{k+j}{2j}$.
+Evaluation determinants therefore divide the even and odd
+Vandermondes by the factors
+$\prod_{j=1}^{s-1}4^j j(2j-1)!$ and
+$\prod_{j=1}^{s-1}4^j(2j)!$.
+Their total dyadic valuation is \eqref{eq:eta}.
+
+Cauchy--Binet preserves this bound in $U^TV$. Write the pencil
+scaled by $2^{4K+4+8k_2}$ as the sum of its odd-residue Gram part
+and its even rational part. The first has integral diagonal weights,
+and every $s$-minor is divisible coefficientwise by $2^{2\eta_s}$.
+The formulas \eqref{eq:e}, \eqref{eq:evencoeff}, and
+$v_2\binom{2n}{n}=s_2(n)$ show that every entry of the even part
+has valuation at least $8K-2$. Since $d\leq K/5$,
+\[
+ 2(\eta_d-\eta_s)\leq16(d-1)(d-s)\leq(8K-2)(d-s).
+\]
+The complementary-minor expansion consequently proves
+\begin{equation}\label{eq:dyadiccontent}
+ 2^{2\eta_d}\mid\cont(Q_K^dD_U),\qquad
+ 2\eta_d\log2=(8\log2/25+o(1))K^2.
+\end{equation}
+This applies to every coefficient, not just the leading one.
+
+\subsection{Two valuation layers below the pole cutoff}
+Fix an odd prime $p\leq K$ with $p^2>4K$. In a nonzero square
+class of nodes $l^2\bmod p$, let $e,o$ count even and odd nodes,
+and let $\epsilon_m$ indicate whether $2m$ belongs to the class.
+Every root difference within that class has valuation exactly one.
+Counting factors in $J_mJ_n/D'$ gives the residue valuations
+\begin{equation}\label{eq:classval}
+ e-o+1-\epsilon_m-\epsilon_n
+ \quad\hbox{at odd nodes},\qquad
+ e-o-1\quad\hbox{at an even diagonal node}.
+\end{equation}
+
+Write $n=\lfloor2K/p\rfloor$, $s=2K-np$ and $a=\min(s,p-s-1)$.
+Represent a nonzero class by $1\leq r<p/2$. Its $2n$ base nodes
+$r+jp,p-r+jp$ ($0\leq j<n$) are balanced in parity. Exactly one
+extra node occurs precisely for $1\leq r\leq a$; its parity is
+that of $n+r$. Let $I_p$ be the even cofactor indices in
+odd-majority classes and $Z_p$ those in even-majority classes.
+Zero-class indices belong to neither set. If $N_I,N_Z$ count the
+two parities of $r$, then
+\[
+ |I_p|=nN_I,\quad |Z_p|=(n+1)N_Z,\quad
+ N_I+N_Z=a,\quad |N_I-N_Z|\leq1.
+\]
+The sets are unions of at most $n$ and $n+1$ integer intervals.
+For example, in $2K/3<p\leq K$ a class first has four balanced
+nodes; a fifth makes it unbalanced and a sixth restores balance.
+Only odd-majority classes contribute the worst rational layer.
+
+Finite tails cost at most four powers. Formula \eqref{eq:classval}
+therefore gives $v_p(R_{mn})\geq-6$ everywhere, at least $-5$ if
+one index is outside $I_p$, and at least $-4$ if one index is in
+$Z_p$ and the other is outside $I_p$. The zero class needs a separate
+check: it consists of $p,2p,\ldots,np$, with squared differences
+of valuation two. Double the counts in \eqref{eq:classval}; the
+cubic resolvent factor pays three tail powers. All its rational
+contributions are at least $-5$, and those involving a $Z_p$ index
+are at least $-3$. Thus they respect the stated bounds. The beta
+matrix has valuation at least $-2$ and does not weaken them.
+
+Let $b_p$ count fixed five-node blocks meeting $I_p$, let $z_p$ count
+blocks wholly in $Z_p$, and put $c_p=d-b_p-z_p$. After compression,
+the coefficientwise lower valuation table of $p^6G_U$ is
+\[
+ \begin{array}{c|ccc}
+ &I&\text{remaining}&Z\\\hline
+ I&0&1&1\\
+ \text{remaining}&1&1&2\\
+ Z&1&2&2
+ \end{array}.
+\]
+Divide every $Z$ row and column by $p$, and then every remaining
+row by $p$. The result is still integral at $p$. Hence
+\begin{equation}\label{eq:Gamma}
+ \Gamma_K=\prod_{\substack{p\leq K,\ p\ \mathrm{odd}\\p^2>4K}}
+       p^{d-b_p+z_p}\quad\hbox{divides }\cont(Q_K^dD_U).
+\end{equation}
+This exponent already includes the first-layer rank defect $d-b_p$;
+that factor must not be multiplied in again.
+
+Interval counting gives, uniformly,
+\[
+ d-b_p+z_p=K/5+a/10+O(K/p).
+\]
+The weighted error sums to $o(K^2)$. For $x=p/K$, the continuous
+version of $a/K$ is
+$f(x)=\min(2-nx,(n+1)x-2)$ with $n=\lfloor2/x\rfloor$.
+Its graph on $2/(n+1)<x\leq2/n$ is a triangle. Therefore
+\begin{align}
+ \lim K^{-2}\log\Gamma_K
+ &=\frac15+\frac1{10}\int_0^1f(x)\dd x\nonumber\\
+ &=\frac15+\frac1{10}\sum_{n=2}^{\infty}
+                       \frac2{n(n+1)(2n+1)}
+ =\frac{23}{30}-\frac45\log2.\label{eq:Gammarate}
+\end{align}
+Partial summation uses the prime number theorem on
+$\varepsilon K<p\leq K$; the omitted content is at most
+$2d\vartheta(\varepsilon K)$, so $\varepsilon\downarrow0$ justifies
+the endpoint. The series follows by partial fractions and harmonic
+number differences.
+
+\subsection{Primitive arithmetic and the compatible comparison}
+The three content factors \eqref{eq:tailcontent},
+\eqref{eq:dyadiccontent}, and \eqref{eq:Gamma} have disjoint prime
+supports. To bound coefficient sizes, use \eqref{eq:rhoformula} and
+$\binom{2n}{n}\leq4^n$ to get $\rho_l\leq8K(K+1)\leq16K^2$.
+The alternating finite tails have absolute value at most one, so
+$|b_l|\leq4K^3$ and $|r_l^o|\leq5K^3$. Since every gap has magnitude
+at least one, the total odd contribution is at most $64K^6$ in $B_K$
+and $80K^6$ in $R_K$. The reverse binomial bound gives
+\[
+ |e_m|\leq\frac{(2K+1)^2}{8m^2},\qquad
+ |r_m^e|\leq\frac{3m^3}{8},
+\]
+so the even contribution is at most $K^3$. Therefore
+$|R_{mn}|,|B_{mn}|\leq81K^6$, and every
+compressed entry has magnitude at most
+$M_K=2025W_K^2K^6$, and every determinant coefficient is bounded by
+$2^dd!M_K^d$. It follows that
+\begin{equation}\label{eq:finalfinite}
+ A_U\leq
+ \frac{Q_K^d\,2^dd!M_K^d}{\mathcal T_K\,2^{2\eta_d}\Gamma_K}.
+\end{equation}
+This includes primes from the numerator of $\ell_U$, regardless of
+its degree. Combining the rates proves Theorem~\ref{thm:content}.
+
+To interpret it, put $\delta_U=D_U(\bet)/|\ell_U|$. An
+irrationality argument would follow from $A_U\delta_U\leq
+e^{-\varepsilon K^2}$ along an unbounded sequence. The available
+analytic restriction is
+\begin{equation}\label{eq:ceiling}
+ \limsup\frac{-\log\delta_U}{K^2}
+ \leq\frac{\pi/2+2\log(5/4)+2\arctan2+4\log(2+\sqrt5)}5
+ =2.0011845531\ldots.
+\end{equation}
+Appendix~\ref{app:ceiling} proves it for every degree-below-$K$
+subspace of dimension at most $K/5$, without a beta-rank assumption.
+The arithmetic upper bound $2.20056\ldots$ is above this ceiling.
+Thus these particular estimates cannot establish the desired
+comparison. They do not supply a necessary arithmetic cost, so they
+do not prove that the primitive determinants themselves fail.

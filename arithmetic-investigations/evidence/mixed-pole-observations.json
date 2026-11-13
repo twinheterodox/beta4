@@ -1,0 +1,52 @@
+{
+  "scope": "Retained K=5,10 observations, not new computations or asymptotic evidence. The general lift and height theorem is proved separately.",
+  "original_certificate_sha256": "09a8fee5d59689b976236259fbf7ed37ffb1e780a75f6c5e96ea3c701839b9bf",
+  "examples": [
+    {
+      "K": 5,
+      "dimension": 6,
+      "q": "1/3540971521271344305213458719250791701204172800000",
+      "compressed": {
+        "primitive_value": "[8.6798656402497548199887356698315223e+43 +/- 3.30e+8]",
+        "log_primitive_value": "[101.17216504806251942294268149770585 +/- 6.89e-34]",
+        "log_residual_det": "[127.82717247000425941548883354132197 +/- 7.72e-34]",
+        "above_one": true,
+        "below_one": false,
+        "bits": 2048
+      },
+      "radical_only": {
+        "primitive_value": "[8.9088654853663987952657723624048952e+40 +/- 3.72e+5]",
+        "log_primitive_value": "[94.290450622650955722806879536392158 +/- 1.85e-34]",
+        "log_residual_det": "[138.90741035956274022867092753324862 +/- 5.53e-34]",
+        "above_one": true,
+        "below_one": false,
+        "bits": 2048
+      },
+      "all_periods_cancelled_except_beta4": true,
+      "exact_polynomial_checks": 3
+    },
+    {
+      "K": 10,
+      "dimension": 12,
+      "q": "11/3933274970723794300243463071636853938354620074678701136624906512269229876827014610684687980610407573699922291720292812860869418666486589477009839711251234489057875545955142920067878326366061446291445396296171520000000000000000000000000000000000000000000000000000",
+      "compressed": {
+        "primitive_value": "[3.1743174567850295068297198258478698e+206 +/- 3.88e+171]",
+        "log_primitive_value": "[475.48762179176685602146482275332053 +/- 3.14e-33]",
+        "log_residual_det": "[741.80380343152365727062361450384927 +/- 4.15e-33]",
+        "above_one": true,
+        "below_one": false,
+        "bits": 2048
+      },
+      "radical_only": {
+        "primitive_value": "[9.2476758294354290220924002087996084e+192 +/- 2.92e+157]",
+        "log_primitive_value": "[444.32071011312694366565295406820728 +/- 1.20e-33]",
+        "log_residual_det": "[796.72401792606057483484378969343429 +/- 1.22e-33]",
+        "above_one": true,
+        "below_one": false,
+        "bits": 2048
+      },
+      "all_periods_cancelled_except_beta4": true,
+      "exact_polynomial_checks": 3
+    }
+  ]
+}

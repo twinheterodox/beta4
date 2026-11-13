@@ -1,0 +1,117 @@
+\section{What a small determinant must accomplish}
+For $s>1$, the Dirichlet beta function is
+\[
+ \beta(s)=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^s}.
+\]
+Its values at positive odd integers are nonzero rational multiples of
+powers of $\pi$. For even arguments, explicit irrationality results
+remain much harder to obtain. Our earlier work proves that at least one
+of $\beta(4),\beta(6),\ldots,\beta(32)$ is irrational
+\cite{fifteen}, refining the construction of Krisman \cite{Krisman}.
+The investigations here sought a smaller set, or the individual value
+$\beta(4)$.
+
+The recurring difficulty is easy to state. A rational-coefficient
+polynomial can be very small at the target constants because all of
+its coefficients share a very small rational factor. That factor has
+no bearing on irrationality. What matters is the value after the
+coefficients have been made relatively prime integers. Positivity can
+prove that this value is nonzero, but cannot make its arithmetic cost
+disappear.
+
+\subsection{The exact denominator result}
+Our main result concerns a positive moment functional introduced by
+Carreira \cite[Section~11]{Carreira}. For a positive integer $K$,
+interlacing $K$ integer and $K$ half-integer poles gives matrices
+whose entries are rational combinations
+of $1$, $\beta(4)$, and $\zeta(4)$. One possible strategy is to retain
+a subspace on which the $\zeta(4)$ coefficient is positive, then replace
+$\zeta(4)$ by an upper rational approximation. Positivity supplies
+nonvanishing automatically. The question becomes whether the resulting
+determinant remains small after clearing its denominators.
+
+Sections~\ref{sec:moments}--\ref{sec:substitution} answer that question
+for a precise certificate. Theorem~\ref{thm:valuation} determines the
+exact dyadic valuation of every principal minor of the beta-coefficient
+matrix. On the positive subspace under consideration it forces a
+denominator of size at least
+\[
+ \exp\bigl((\log 2)K^2-O(K\log K)\bigr).
+\]
+This is a necessary cost of the whole polynomial, rather than the cost
+of a convenient way of clearing its entries. Theorem~\ref{thm:proxy}
+shows that the usual error bound $q^{-2}$ for a rational approximation
+cannot pay that cost in the specified certificate, for any choice of
+its denominator $q$. The distinction between this certificate and the
+actual approximants is essential and is made explicit there.
+
+The arithmetic mechanism may be useful separately from this application.
+A finite binomial average replaces a residue sum with substantial
+cancellation. In its Krawtchouk basis, multiplication has a triangular
+reduction modulo two. Known orthogonal norms then account for the
+entire determinant valuation. All properties of that basis used here
+are derived from its generating function.
+
+\subsection{Other constructions and what they establish}
+There is another way to remove $\zeta(4)$: restrict the coefficient
+quadratic form to a rational subspace on which it vanishes.
+Section~\ref{sec:compression} constructs such subspaces with controlled
+height. A local factorial cancellation reduces an apparently exponential
+vector-height cost to a polynomial one. Meyer and Cassels provide the
+classical existence and small-zero inputs; the local cancellation and
+integral lift supply the quantitative adaptation.
+
+Section~\ref{sec:content} develops arithmetic savings for the version
+that keeps only the added low-degree directions. It combines pole
+collisions, exact low-rank terms, and dyadic Cauchy-minor divisibility.
+The resulting upper bound for primitive arithmetic remains insufficient
+for the available decay comparison. An insufficient upper bound does
+not prove that the actual primitive values fail.
+
+Section~\ref{sec:gram} treats a different positive Gram system involving
+$\beta(4),\ldots,\beta(28)$. Removing a rational block leaves a
+seven-by-seven determinant. We prove that its logarithm has linear,
+rather than quadratic, scale in the family index. Its primitive
+arithmetic remains unresolved. Section~\ref{sec:linear} returns to
+linear forms: formal rank and integral removal of zero multipliers
+lead to eleven controlled independent directions, but do not establish
+nonvanishing at the actual constants.
+
+These are later investigations than those collected in
+\cite{firstsupp,furthersupp}. Positive determinant criteria and their
+arithmetic are established methods \cite{Zudilin}; our contribution
+lies in the particular reductions, constructions, and estimates proved
+here. The separate constructions are presented as case studies, each
+with its conclusion and missing input. A reader principally interested
+in the exact valuation and its application can read
+Sections~\ref{sec:moments}--\ref{sec:substitution} independently.
+The prerequisites are elementary $p$-adic valuations, Gram and
+Schur-complement linear algebra, and lattice reduction. The finite
+orthogonal-polynomial identities needed for the main theorem are
+derived below.
+
+\subsection{Primitive normalization and growing degree}
+For a nonzero rational polynomial $D$, let $q_D>0$ be the unique rational
+number such that $q_DD$ has integer coefficients with gcd one. We retain
+the sign of $D$; whenever $D$ is a positive Gram determinant, its primitive
+value is positive. A nonzero rational factor in $D$ has no separate
+effect on this primitive polynomial, apart from sign.
+
+If $D$ has degree at most $h$ and a target number equals $a/b$, then
+$b^h q_DD(a/b)$ is an integer. For fixed $h$, a positive primitive value
+tending to zero gives an irrationality contradiction. When $h=O(K)$,
+one must also beat every fixed factor $b^h$; a bound
+$q_DD(\bet)\leq\exp(-\varepsilon K^2)$ suffices. We will keep this
+degree cost visible in each comparison.
+
+For a univariate determinant with leading nonzero coefficient $\ell_D$,
+it is often useful to separate the invariant quantities
+\begin{equation}\label{eq:invariant}
+ A_D=q_D|\ell_D|,\qquad
+ \delta_D=\frac{D(\bet)}{|\ell_D|},\qquad
+ q_DD(\bet)=A_D\delta_D.
+\end{equation}
+Here $A_D$ is the absolute leading coefficient of the primitive polynomial.
+Both quantities are unchanged by multiplying $D$ by a positive rational
+number. This prevents an arbitrary matrix scale from being counted as
+either arithmetic improvement or analytic decay.

@@ -1,0 +1,103 @@
+Assembly review, 13 November 2026
+================================
+
+This is the drafting session's review, not an independent audit.
+The separate cooperating-session manuscript review passed after the
+source and exposition corrections listed below. Its scope is recorded
+in cooperating-review.txt and its source hashes in cooperating-review.json.
+
+Correctness review
+------------------
+The manuscript was assembled from the completed mathematical records,
+with the following distinctions preserved:
+
+* The all-subset dyadic formula is an equality, not a termwise lower
+  estimate. Its finite orthogonal system, support closure, unit
+  multiplier and basis determinant are all included.
+* The necessary monic denominator applies before specializing the beta
+  variable. The final obstruction concerns the q^-2 upper envelope,
+  uniformly over q, and is not a lower bound for actual approximants.
+* Both cofactor normalizations are declared. Full-radical compression
+  retains degree K; the rational added block can be removed, but its
+  Schur correction remains. The height cost is relative to the same
+  cofactor basis and is not a monomial coefficient bound.
+* The three low-degree content factors have disjoint prime supports.
+  The two-layer factor replaces its first-layer part. Exact rational
+  rank, rather than rank only modulo p, supplies the three-power gain
+  in the tail window. Rank-deficient beta coefficients are allowed.
+* The thirteen-value Gram polynomial is normalized after rational-block
+  removal. Its two-sided residual estimate is separate from unresolved
+  primitive arithmetic; the six finite cases prove no growth law.
+* Formal rank and the classification of zero multipliers are separate
+  from actual nonvanishing. The eleven-row result uses the same full
+  clearer and controlled multipliers; column clearing is used only
+  for lattice height. The complete fifteen-row target is still open.
+* The fixed-direction observation and Loewner screen retain their
+  specific hypotheses. The latter is an inconclusive cost comparison.
+
+Reproduction
+------------
+The packaged monic checker passed all 2,980 counted exact checks.
+The linear checker rebuilt 13,091 envelope cells, 582 local-pattern
+cells and the phase/constants. The Gram checker regenerated every
+coefficient and its full gcd for r = 1,...,6, plus the scalar control.
+The Loewner checker replayed its 200 cells, tail and energy comparisons.
+These are assembly replays/recomputations within the drafting session,
+not fresh external audits. The large finite complete linear bases
+remain explicitly labeled retained observations.
+
+Exposition review
+-----------------
+The introduction first explains why primitive normalization matters,
+then identifies the exact denominator theorem and the separate partial
+contributions. Each construction gives its purpose before its formulas.
+The main proof includes the small K = 2 normalization example; the
+compression section includes the K = 5 isotropic zero.
+
+The abstract states results and significance without a detailed proof
+sketch. Method attribution is given both in the introduction and beside
+the imported functional, isotropy, orthogonalization and lattice inputs.
+Necessary costs, upper allowances, achieved decay and analytic ceilings
+are not interchanged. Detailed estimates are placed in appendices.
+The manuscript verification paragraph remains short; review history is
+kept here and in the separate review record.
+
+Assembly corrections
+--------------------
+Corrected missing TeX spacing commands found in the rendered pages,
+including the products in the finite content bound; made the integer
+parameter b and positive odd integer S explicit; compacted the contents
+to fit on the title page. The cooperating reviewer caught a reversed
+contour direction in the Loewner summary. It now states the line
+Re z = -1/8 explicitly, between the nonnegative nodes and negative
+poles. The underlying contour argument is unchanged.
+
+The full review also prompted restoration of the evaluation-coordinate
+quadratic form, the actual pole profile and its derivative, the
+prime-power count behind the small-prime constants, and the exact
+address/root convention for local cancellation. The standard and
+orthonormal Legendre normalizations are now separated. The raw-entry
+bound includes its intermediate estimates, and the integer-valued
+polynomial sequences explicitly begin at degree one with degree-zero
+member 1. Four literal carriage-return bytes in odd-node qualifiers
+were replaced by explicit roman math qualifiers.
+
+The one-label Gram example now shows the primitive polynomial
+82 beta(4) - 81 directly. The arithmetic limiting conditions explicitly
+refer to the chosen unbounded index sequence. These changes make the
+existing arguments self-contained without changing the constructions
+or their numerical constants.
+
+Final build, source hashes, visual inspection and review status are
+recorded separately. No new mathematical search was undertaken during
+assembly.
+
+Final author reading
+--------------------
+The subsequent final reading requested four small changes, all applied
+before publication: introduce K before the first denominator-growth
+formula; write "the logarithm of its square"; make the covolume limitation
+refer to the available bound; and define psi as the digamma function.
+No construction, estimate, theorem constant or checker changed. The
+reviewed-source and publication-source hashes remain separate, and the
+PDF was rebuilt and inspected after these edits.

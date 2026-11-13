@@ -1,0 +1,192 @@
+\section{Thirteen beta values and a rational Gram block}\label{sec:gram}
+This construction has a different advantage: its polynomial degree stays
+bounded while its matrix size grows. It involves precisely
+$\beta(4),\beta(6),\ldots,\beta(28)$. The question is whether the growing
+matrix supplies useful decay after its rational part has been removed.
+The one-label antecedent is the ordinary-moment Schur construction in
+\cite[Section~8]{firstsupp}; we add seven logarithmic labels.
+
+\subsection{The seven boundary functions}
+On $0<x<1$, put $L=-\log x$, $t=x^2$, and
+$\dd\mu=L^3\dd x/(1+x^2)$. For $r\geq1$, take the Gram matrix of
+\[
+ t^jL^{2a},\qquad 0\leq a\leq6,\quad0\leq j<r.
+\]
+These functions are independent, as is seen by substituting $x=e^{-y}$
+and using independence of exponential polynomials. The matrix is positive
+definite. For $s=4+2a+2b$, its entries are
+\[
+ (s-1)!(-1)^{j+k}\left(\beta(s)-
+          \sum_{v=0}^{j+k-1}\frac{(-1)^v}{(2v+1)^s}\right).
+\]
+The formula follows by a finite geometric identity and integration
+of $x^m(-\log x)^{s-1}$.
+
+For each logarithmic label replace
+$1,t,\ldots,t^{r-1}$ by $1,(1+t),(1+t)t,\ldots,(1+t)t^{r-2}$.
+This change has determinant one. Grouping the seven boundary functions
+$L^{2a}$ first gives
+\begin{equation}\label{eq:seven-schur}
+ \begin{pmatrix}A&C\\C^T&B\end{pmatrix},\qquad
+ S_r=A-CB^{-1}C^T,\qquad \det G_r=\det B\det S_r.
+\end{equation}
+Write $X_k$ for $\beta(4+2k)$, $0\leq k\leq12$. The blocks are
+\begin{align*}
+ A_{ab}&=(3+2a+2b)!X_{a+b},\\
+ C_{a,(b,j)}&=\frac{(3+2a+2b)!}{(2j+1)^{4+2a+2b}},\\
+ B_{(a,i),(b,j)}&=(3+2a+2b)!\left(
+ (2i+2j+1)^{-4-2a-2b}+(2i+2j+3)^{-4-2a-2b}\right),
+\end{align*}
+where $0\leq i,j\leq r-2$. For $r=1$ the bulk is empty.
+$B$ is rational positive definite, so the primitive polynomial associated
+with $\det G_r$ is that associated with
+$P_r(X)=\det S_r(X)$. The rational factor $\det B$ supplies no separate
+gain. This exact reduction alone does not determine the residual decay.
+
+The one-label case at $r=2$ makes the normalization visible:
+$A=6\bet$, $C=6$, and $B=164/27$, so
+\[
+ S=6\bet-\frac{243}{41}
+   =\frac3{41}(82\bet-81).
+\]
+The primitive polynomial is $82X-81$. The factor from the rational
+bulk cannot make its primitive value smaller.
+
+\subsection{The residual decays on a linear scale}
+Let $\rho=3+\sqrt8$ and let $T_j$ denote the Chebyshev polynomial.
+Define
+\[
+ H_0=\prod_{a=0}^6(3+4a)!,\quad
+ V_0=\pi^{84}\left(\prod_{j=1}^6(2j)!\right)^2,
+ \quad M_0=\sqrt{1+(13\pi/2)^2},\quad
+ \Gamma=28+28\sqrt{26M_0}<700.
+\]
+\begin{theorem}\label{thm:residual}
+At the actual beta values, for every $r\geq1$,
+\begin{equation}\label{eq:residualbounds}
+ \frac{V_0e^{-\Gamma r}}{(52r^2)^7}
+ \leq P_r(\beta)
+ \leq\frac{H_0}{T_{r-1}(3)^{14}}
+ \leq2^{14}H_0\rho^{-14(r-1)}.
+\end{equation}
+In particular $\log P_r(\beta)=-\Theta(r)$ and
+$r^{-2}\log P_r(\beta)\longrightarrow0$.
+\end{theorem}
+\begin{proof}
+The Schur complement expresses projection onto the orthogonal complement
+of the bulk. For any real $v=(v_a)$,
+\[
+ v^TS_rv=\min_{p_a(-1)=v_a,\ \deg p_a<r}
+       \int_0^1\left|\sum_{a=0}^6p_a(x^2)L^{2a}\right|^2\dd\mu.
+\]
+The constraint says exactly that $p_a(t)=v_a-(1+t)Q_a(t)$ for a bulk
+polynomial $Q_a$. Choose
+$p_a(t)=v_aT_{r-1}(2t-1)/T_{r-1}(-3)$.
+Its common factor is at most $1/T_{r-1}(3)$ on $[0,1]$. Hence
+$0<S_r\leq A/T_{r-1}(3)^2$ in matrix order. Take determinants,
+apply Hadamard to $A$, and use $\beta(s)<1$ to obtain the upper bound.
+The formula $T_j(3)=(\rho^j+\rho^{-j})/2$ gives the final inequality.
+
+For the lower bound, write $y=-\log x$. Every residual lies in
+\[
+ \mathcal E_r=\Span\{y^he^{-2jy}:0\leq j<r,\ 0\leq h\leq12\},
+ \quad
+ \|F\|_\mu^2=\int_0^\infty
+       |F(y)|^2\frac{y^3e^{-y}}{1+e^{-2y}}\dd y.
+\]
+At the seven points $z_l=i\pi(l+1/2)$, the bulk factor $1+e^{-2z_l}$
+vanishes. The residual $R_a$ of the boundary function $y^{2a}$
+therefore satisfies $R_a(z_l)=z_l^{2a}$, and
+\begin{equation}\label{eq:boundaryV}
+ |\det(R_a(z_l))_{l,a=0}^6|^2=V_0.
+\end{equation}
+This is a Vandermonde identity: $\prod_{i<j}(j-i)(j+i+1)=
+\prod_{j=1}^6(2j)!$.
+
+The repeated-exponent evaluation estimate proved in
+Appendix~\ref{app:evaluation} gives, for $F\in\mathcal E_r$,
+\[
+ |F(z_l)|^2\leq52r^2e^{\Gamma r/7}\|F\|_\mu^2.
+\]
+Orthonormalize the seven residuals. Each row of their evaluation matrix
+has squared length at most this evaluation-norm bound. Hadamard bounds
+its squared determinant by the seventh power. Undoing the basis change
+and using \eqref{eq:boundaryV} gives the lower bound in
+\eqref{eq:residualbounds}.
+\end{proof}
+
+\subsection{The arithmetic question left by this reduction}
+Let $q_r>0$ make $q_rP_r$ primitive integral. Its total degree is seven.
+The coefficient of $X_6^7$ is $-(15!)^7$: only the reversing permutation
+$a\mapsto6-a$ contributes. Thus $q_r\geq1/(15!)^7$.
+Under joint rationality of the thirteen values, a fixed common
+denominator raised to the seventh power would make every positive
+$q_rP_r(\beta)$ an integer. It is therefore sufficient to prove
+$q_rP_r(\beta)\to0$ on an unbounded subsequence.
+
+There are useful exact bounds in both directions. Let $\ell(m)$ be
+the lcm of the positive odd integers at most $m$. For $r\geq2$, put
+\[
+ H_{aa}=\ell(2r-3)^{2+2a},\qquad
+ E_{(a,i),(a,i)}=\ell(2i+2r-1)^{2+2a}.
+\]
+The matrices $M=EBE$, $N=HCE$ and $HA(X)H$ are integral: split each
+denominator exponent $4+2a+2b$ between its two indices. The block
+determinant
+\[
+ \det\begin{pmatrix}HAH&N\\N^T&M\end{pmatrix}
+       =U_rP_r(X),\qquad U_r=(\det H)^2\det M\in\Z_{>0}
+\]
+therefore gives $q_r\leq U_r$. Hadamard and
+$\sum_{a=0}^6(2+2a)=56$ imply
+\[
+ U_r\leq C_0^{r-1}
+ \left(\ell(2r-3)\prod_{i=0}^{r-2}\ell(2i+2r-1)\right)^{112},
+ \quad C_0=\prod_{a=0}^6 2(3+4a)!.
+\]
+The prime number theorem gives $\log q_r\leq336r^2+o(r^2)$.
+This upper bound is too large for the linear-scale sufficient condition,
+but says nothing about whether the true cost is quadratic.
+
+For a necessary condition, put $R_r=CB^{-1}C^T$ and
+$F_7=\prod_{a=1}^6(3+4a)!$. The degree-six coefficient
+\begin{equation}\label{eq:R00}
+ [X_2X_4X_6X_8X_{10}X_{12}]P_r=-F_7(R_r)_{00}
+\end{equation}
+isolates one rational entry. Give $X_k$ weight $k$. The cofactor of
+entry $(i,j)$ of $A$ has weight $42-i-j$; only $(0,0)$ can contribute
+to the displayed weight $42$. In that cofactor the successively
+smallest variables force the diagonal, proving \eqref{eq:R00}.
+If $b_r$ is the reduced denominator of $(R_r)_{00}$ and
+$c_7=(15!)^7$, then integrality of both coefficients gives
+\[
+ q_r\geq\frac{b_r}{c_7\gcd(b_r,F_7)}.
+\]
+A superlinear lower bound for $\log b_r$ would rule out successful
+shrinking on that sequence. None has been proved here.
+
+Along any chosen unbounded sequence of indices,
+Theorem~\ref{thm:residual} gives the sufficient condition
+$\limsup\log q_r/r<14\log\rho=24.67846\ldots$, whereas convergence
+of the primitive values to zero requires
+$\limsup\log q_r/r\leq\Gamma$. Neither arithmetic bound decides
+this comparison.
+
+\begin{center}
+\begin{tabular}{rrrr}
+\toprule
+$r$&$\log q_r$&$\log P_r(\beta)$&$\log(q_rP_r(\beta))$\\
+\midrule
+1&$-152.01$&194.93&42.92\\
+2&14.04&$-3.33$&10.71\\
+3&655.17&$-119.25$&535.92\\
+4&1586.31&$-254.99$&1331.32\\
+5&3103.65&$-402.44$&2701.21\\
+6&4842.52&$-545.27$&4297.25\\
+\bottomrule
+\end{tabular}
+\end{center}
+These certified finite values all exceed one after primitive
+normalization. They illustrate the arithmetic issue, but do not prove
+growth along every unbounded subsequence. The general conclusion is
+the residual scale theorem, with primitive arithmetic unresolved.

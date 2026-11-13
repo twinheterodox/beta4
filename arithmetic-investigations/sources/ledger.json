@@ -1,0 +1,126 @@
+{
+  "date": "2026-11-13",
+  "scope": "Cited sources and actual selected reading. Existing copies reused; null retrieval dates mean the original date was not re-established. No fresh exhaustive priority survey.",
+  "sources": [
+    {
+      "bibliography_key": "BEZ",
+      "url": "https://people.tamu.edu/~terdelyi/papers-online/BEZmuntz.pdf",
+      "version": "1994 published paper, author-hosted copy",
+      "cached_filename": "Muntz-systems-and-orthogonal-Muntz-Legendre-polynomials_Borwein-Erdelyi-Zhang-1994.pdf",
+      "sha256": "4e02843d2c8e128e58e73d93ae90f523697e412016865627841deefd7bf43db3",
+      "original_retrieval_date": null,
+      "copy_verified_on": "2026-11-13",
+      "access": "Existing local copy reused; not redistributed.",
+      "reading_scope": "Cooperating-session reading of Section 2 on repeated exponents; historical attribution. The needed convolution isometry and complex evaluation estimate are proved in Appendix C."
+    },
+    {
+      "bibliography_key": "Carreira",
+      "url": "https://doi.org/10.5281/zenodo.23326647",
+      "version": "9 October 2026; repository commit 974a6e6c7b4bce67538aa1b9bf5883b931789d1f",
+      "cached_filename": "Determinant-constructions-for-the-Dirichlet-beta-value-at-four_carreira-beta4-2026.pdf",
+      "sha256": "a2e673cf9243fdb578ec7f2798a50da1ef004fd6059df49210ded5c004edb163",
+      "original_retrieval_date": "2026-10-30T17:18:02.288251+00:00",
+      "copy_verified_on": "2026-11-13",
+      "access": "Existing local copy reused; not redistributed.",
+      "reading_scope": "Section 11, Definition 24 and Lemma 25, including its general positive-a resolvent proof; earlier full-paper reading is not promoted to a new whole-paper audit. The needed functional formula is reproduced in Section 2."
+    },
+    {
+      "bibliography_key": "Fukshansky",
+      "url": "https://www1.cmc.edu/pages/faculty/lenny/papers/cassels.pdf",
+      "version": "author-hosted survey",
+      "cached_filename": "Heights-and-quadratic-forms-Cassels-theorem-and-its-generalizations_Fukshansky.pdf",
+      "sha256": "c97aac80b9ad3e49c7af433fdd1537718d75b79b753408d6f4f66b6fb94badd2",
+      "original_retrieval_date": null,
+      "copy_verified_on": "2026-11-13",
+      "access": "Existing local copy reused; not redistributed.",
+      "reading_scope": "Introduction and Theorem 1.1: Meyer isotropy and the stated Cassels bound. These classical results are accepted inputs; their complete external dependency chains are not re-audited."
+    },
+    {
+      "bibliography_key": "Krisman",
+      "url": "https://hexagonmath.org/2610.00285v2",
+      "version": "2610.00285v2",
+      "cached_filename": "One-of-beta-4-beta-6-through-beta-36-is-irrational_krisman-even-beta-2026.pdf",
+      "sha256": "4ac2ff67f77637f70fe9db664773d1d45795acd7fbd605714ab751b64b95d65b",
+      "original_retrieval_date": "2026-10-30T17:18:01.250398+00:00",
+      "copy_verified_on": "2026-11-13",
+      "access": "Existing local copy reused; not redistributed.",
+      "reading_scope": "Inherited full-paper reading; Section 1.2 and the derivative construction are methodological antecedents. No fresh replay of its large certificates."
+    },
+    {
+      "bibliography_key": "LLL",
+      "url": "https://doi.org/10.1007/BF01457454",
+      "version": "Math. Ann. 261 (1982), 515-534",
+      "cached_filename": "lenstra-lenstra-lovasz-1982-factoring-polynomials.pdf",
+      "sha256": "dabefb8bcfb5dbb8b36a43745081f8ab6f18aadc85b1e252fd7c85abefc5f704",
+      "original_retrieval_date": null,
+      "copy_verified_on": "2026-11-13",
+      "access": "Existing local copy reused; not redistributed.",
+      "reading_scope": "Reduced-basis definitions and Proposition 1.6 product estimate, as read for the eleven-direction result. Section 8 recalls the exact inequality used; no new lattice-reduction theorem claimed."
+    },
+    {
+      "bibliography_key": "Litsey",
+      "url": "https://github.com/slitsey/catalan-irrationality-measure/tree/1afb01bed3b3cc15af87dd75456210b39711f364/paper-trigamma",
+      "version": "commit 1afb01bed3b3cc15af87dd75456210b39711f364",
+      "cached_filename": "litsey-irrationality-measures-loewner-determinants-2026-11-10-1afb01bed3b3.pdf",
+      "sha256": "885da330beefefd5fdcbd4d43917bf5be626e99d1da116806fc60d3e508c7cec",
+      "original_retrieval_date": null,
+      "copy_verified_on": "2026-11-13",
+      "access": "Existing local copy reused; not redistributed.",
+      "reading_scope": "Construction, geometry, Gram representation, conditional positive definiteness, node removal and multiple-pole comparison. Nonvanishing specialization separately checked in the cooperating session. No whole-paper audit or transfer of the single-shift arithmetic certificate."
+    },
+    {
+      "bibliography_key": "Zudilin",
+      "url": "https://arxiv.org/abs/1507.05697v2",
+      "version": "v2, 2 February 2016; published 2017",
+      "cached_filename": "A-determinantal-approach-to-irrationality_1507.05697v2.pdf",
+      "sha256": "5b9ce0da2370473eff453a436dcf2901ed886e58fd9521db01e5c1818166788c",
+      "original_retrieval_date": "2026-10-27T21:41:50.979930+00:00",
+      "copy_verified_on": "2026-11-13",
+      "access": "Existing local copy reused; not redistributed.",
+      "reading_scope": "Sections 1-2, determinant-polynomial criterion and its arithmetic role; earlier full reading retained as context. No quantitative estimate is imported for the new constructions."
+    },
+    {
+      "bibliography_key": "firstsupp",
+      "url": "https://github.com/twinheterodox/beta4/tree/b610898398fda69f93b87d48adae57fcd62bad36/supplement",
+      "version": "1 November 2026 supplement",
+      "cached_filename": "beta4-investigations.pdf",
+      "sha256": "828f7a5cbe20343ad67c230c1eca0d94d39c88120fbda1ca5ef7092d07b8b3f0",
+      "original_retrieval_date": null,
+      "copy_verified_on": "2026-11-13",
+      "access": "Existing local copy reused; not redistributed.",
+      "reading_scope": "Earlier investigations; Section 8 ordinary-moment Schur construction read as the one-label antecedent."
+    },
+    {
+      "bibliography_key": "furthersupp",
+      "url": "https://github.com/twinheterodox/beta4/tree/b610898398fda69f93b87d48adae57fcd62bad36/further-investigations",
+      "version": "10 November 2026 manuscript, with subsequent audit response",
+      "cached_filename": "further-investigations.pdf",
+      "sha256": "8f8b8e46d1cf74d75203d877531249dd168c49610054b8db2c9c36fdb6a96a06",
+      "original_retrieval_date": null,
+      "copy_verified_on": "2026-11-13",
+      "access": "Existing local copy reused; not redistributed.",
+      "reading_scope": "Earlier investigation scope and period-elimination context; no new whole-paper audit."
+    },
+    {
+      "bibliography_key": "fifteen",
+      "url": "https://hexagonmath.org/2611.00346v1",
+      "version": "2611.00346v1 and corresponding repository exposition",
+      "cached_filename": "fifteen-beta-values.pdf",
+      "sha256": "9dd2620177a1b4ed14cd9bc0f21c81e34fe3d1ec3e083950d02641267299b934",
+      "original_retrieval_date": null,
+      "copy_verified_on": "2026-11-13",
+      "access": "Existing local copy reused; not redistributed.",
+      "reading_scope": "Published fifteen-value baseline and inherited denominator method. The changed constants and rank arguments are established separately here."
+    },
+    {
+      "bibliography_key": "DLMF",
+      "urls": [
+        "https://dlmf.nist.gov/14.12.E7",
+        "https://dlmf.nist.gov/18.3"
+      ],
+      "version": "Online formulas consulted 13 November 2026",
+      "reading_scope": "Legendre integral representation at order zero and the shifted orthogonality/norm; these are the classical inputs to Appendix B. No whole-site verification.",
+      "original_retrieval_date": null
+    }
+  ]
+}

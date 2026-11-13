@@ -1,0 +1,221 @@
+\section{Complete cancellation collections for fourteen values}\label{sec:linear}
+We now return to linear forms. The target set is
+$\{\beta(4),\beta(6),\ldots,\beta(30)\}$, with fourteen members.
+Fifteen independent forms on these constants together with $1$ cannot
+all vanish. This collective nonvanishing route avoids having to identify
+one particular form that remains nonzero. Its unresolved cost is the
+height of the entire collection.
+
+The rational-function construction adapts Krisman's hypergeometric
+method \cite{Krisman} and the isolated-pole refinement in
+\cite{fifteen}. We use twenty-nine nested pole blocks, double integer
+zeros, and one derivative. These choices differ from the thirty-one
+blocks, triple zeros, and two derivatives in the fifteen-value result.
+
+\subsection{Formal rank from a rational antidifference}
+It is convenient to prove rank for general nested blocks. Let $n>0$
+be even, let $b$ be a nonnegative integer, and let $S$ be a positive
+odd integer. Choose integers $0\leq d_j\leq n/2$ for $1\leq j\leq S$.
+Put $L=n+2b$ and
+\[
+ N(t)=\prod_{\ell=-n-b-1}^{b}(t-\ell)^2,\quad
+ Q(t)=\prod_{j=1}^S\prod_{a=d_j}^{n-d_j}(t+a+\tfrac12),
+ \quad R(t)=N(t)/Q(t).
+\]
+For a polynomial invariant under $t\mapsto-n-1-t$, with $PR$ proper,
+define
+\[
+ \mathcal J(P)=\sum_{t\geq0}(-1)^t(PR)'(t).
+\]
+The differentiated series converges absolutely. Partial fractions
+give rational formal coefficients on $1,\beta(2),\ldots,\beta(S+1)$.
+A \emph{formal zero} means that all these coefficients vanish, without
+making any assumption about relations among the actual constants.
+
+\begin{theorem}\label{thm:rank}
+If $\deg P\leq S+1$, a formal zero forces $P=0$. More generally,
+subject to properness, all formal-zero symmetric polynomials are
+\begin{equation}\label{eq:telescopers}
+ P(t)=g(t)B(t-1)+g(t+1)A(t),\qquad g(-n-t)=-g(t),
+\end{equation}
+where
+\[
+ A(t)=(t+n+b+2)^2\prod_j(t+d_j+\tfrac12),\quad
+ B(t)=(t-b)^2\prod_j(t+n-d_j+\tfrac32).
+\]
+The first possible nonzero formal identity has degree $S+3$.
+\end{theorem}
+\begin{proof}
+Write $F=PR=\sum_{a,i}c_{i,a}(t+a+1/2)^{-i}$, with pole orders
+$B_a=\#\{j:d_j\leq a\leq n-d_j\}$. Reflection gives
+$c_{i,n-a}=(-1)^{i+1}c_{i,a}$. The coefficient of $\beta(i+1)$ is
+$-i2^{i+1}\sum_a(-1)^ac_{i,a}$. Reflection already makes this sum
+zero for even $i$. If the other beta coefficients vanish too, all
+alternating residue sums vanish.
+
+Define $h_{i,-1}=0$, $h_{i,a}=c_{i,a}-h_{i,a-1}$. Then $h_{i,n}=0$,
+and matching principal parts gives the unique proper rational function
+\[
+ H(t)=\sum_{a=0}^{n-1}\sum_i\frac{h_{i,a}}{(t+a+1/2)^i},
+ \qquad F(t)=H(t)+H(t+1).
+\]
+Uniqueness follows because a nonzero rational solution of
+$H(t)+H(t+1)=0$ would have infinitely many translated poles, or would
+be a polynomial whose leading terms cannot cancel.
+
+The forward and backward recurrences bound the pole order at $-a-1/2$
+by $\min(B_a,B_{a+1})$, since the orders are unimodal. Thus
+\[
+ H=V/Q_H,\quad
+ Q_H=\prod_j\prod_{a=d_j}^{n-d_j-1}(t+a+1/2),\quad
+ \deg Q_H=\deg Q-S.
+\]
+This loss of one factor per block is the rank mechanism. A nonzero
+$H$ has the same degree at infinity as $F$, because its leading term
+doubles when shifted and added. Consequently
+$\deg V=2L+4+\deg P-S$.
+
+Uniqueness and reflection imply $H(-n-t)=-H(t)$, so $H(-n/2)=0$.
+The double zeros of $F$ imply the two recurrences
+$H(\ell)+H(\ell+1)=0$ and $H'(\ell)+H'(\ell+1)=0$ on the
+integer-zero interval. The first propagates from the center to every
+integer $-n-b-1,\ldots,b+1$. The second needs the rational constant:
+telescoping gives $\mathcal J(P)=H'(0)$, so a formal zero gives
+$H'(0)=0$ and the same propagation for derivatives. Thus $V$ has
+$L+3$ double zeros, total degree at least $2L+6$. If $\deg P\leq S+1$,
+its degree is at most $2L+5$, a contradiction unless $P=0$.
+
+In general those double zeros give
+$H=g(t)(t-b-1)^2N(t)/Q_H(t)=g(t)B(t-1)R(t)$.
+Reflection makes $g$ odd about $-n/2$, and
+$R(t+1)/R(t)=A(t)/B(t)$ gives \eqref{eq:telescopers}. Conversely that
+formula yields $PR=H+H(t+1)$; properness makes $H$ proper, the
+alternating residue sums vanish, and $H'(0)=0$ because of its double
+zero there. Hence every formal coefficient vanishes. Finally the
+leading terms in \eqref{eq:telescopers} add, giving
+$\deg P=\deg g+S+2\geq S+3$.
+\end{proof}
+
+\subsection{The sixteen coefficient directions and integral reduction}
+Specialize to $116\mid n$, $b=n$, $S=29$, and offsets
+$d_j=jn/116$ for $0\leq j\leq28$. Then $\deg N=6n+4$ and
+$\deg Q=22n+29$. Put $x=2t+n+1$. The sixteen multipliers
+$1,x^2,\ldots,x^{30}$ give an invertible rational coefficient matrix
+on $1,\beta(2),\ldots,\beta(30)$ by Theorem~\ref{thm:rank}.
+The beta-two cancellation space has dimension fifteen, and every
+independent collection of fifteen cancellations gives an invertible
+matrix on $1,\beta(4),\ldots,\beta(30)$.
+
+Higher degrees add known identities rather than new coefficient
+directions. Write $X_n=3n+3$ and let $E_h(x)$ be the even part of
+\[
+ (x-1)^{2h+1}(x-X_n)^2\prod_{j=0}^{28}(x+n-2d_j),\qquad h\geq0.
+\]
+Taking an even part just discards odd coefficients. Thus $E_h$ is
+monic in $\Z[x^2]$, of degree $h+16$ in $x^2$. Formula
+\eqref{eq:telescopers} shows that it is a formal zero whenever the
+product is proper. Subtracting integer multiples of these monic
+identities reduces every integer even polynomial of degree $2D\leq2n$
+uniquely to degree at most thirty, with the same coefficient vector.
+This is an additive quotient; multiplying an arbitrary identity by
+$x^2$ need not preserve it.
+
+For the weighted coefficient norm $\|P\|_{X_n}=\sum_k|[x^k]P|X_n^k$,
+\[
+ \|E_h\|_{X_n}/X_n^{2h+32}
+ \leq4(1+1/X_n)^{2h+1}(1+n/X_n)^{29}<40000
+\]
+in this range. Successive monic elimination therefore gives
+$\|P_{\rm red}\|_{X_n}\leq40001^{\max(0,D-15)}\|P\|_{X_n}$.
+For $D=o(n)$ this costs only $\exp(o(n))$, and introduces no
+denominators. It does not ensure that short vectors have independent
+nonzero reductions.
+
+\subsection{Eleven directions with uniform height and decay}
+For $P(x)=\sum_{j=0}^{15}w_jx^{2j}$ put
+$h_n(P)=\sum_j|w_j|(3n+3)^{2j}$, and let $\Lambda_n\subset\Z^{16}$
+be the lattice canceling the beta-two coefficient. Its rank is fifteen.
+The following two quantitative estimates use different clearing integers:
+one bounds the primitive normal to this lattice, the other clears
+the actual forms.
+
+\begin{lemma}\label{lem:linear-inputs}
+Let $a_n$ be the primitive integer normal to $\Lambda_n$. There is
+a constant $H_*<24.522$ such that
+\[
+ \log\|a_n\|_\infty\leq(H_*+o(1))n.
+\]
+There are common positive integers $D_n^*$ clearing every coefficient
+of every allowed beta-two-canceling form, for which
+\[
+ |D_n^*\mathcal J_n(P)|
+ \leq h_n(P)\exp((-C_*+o(1))n),\qquad C_*>6.0384.
+\]
+The error terms are uniform in the multiplier coefficients.
+\end{lemma}
+Appendix~\ref{app:linear-inputs} gives the arithmetic and analytic
+estimates, including the finite rational certificate defining these
+constants. The parity grouping used for $a_n$ is especially useful:
+the even-address and odd-address denominator products are coprime
+modulo two, so their grouped residue sums have much better dyadic
+integrality than individual residues.
+
+\begin{theorem}\label{thm:eleven}
+For every sufficiently large positive multiple $n$ of $116$, there
+is an integer matrix $C_n$ with eleven rows and fifteen columns such
+that, for $\theta=(1,\beta(4),\beta(6),\ldots,\beta(30))^T$,
+\[
+ \rank_{\Q}C_n=11,\qquad \|C_n\theta\|_\infty\leq e^{-1.12n}.
+\]
+Its rows come from eleven independent beta-two-canceling multipliers
+of weighted height at most $e^{4.91n}$.
+\end{theorem}
+\begin{proof}
+The lattice with primitive normal $a_n$ has Euclidean covolume
+$\|a_n\|_2$. After applying
+$T=\diag(1,X_n^2,\ldots,X_n^{30})$, its covolume is
+\[
+ \det T\,\|T^{-1}a_n\|_2\leq4X_n^{240}\|a_n\|_\infty.
+\]
+The classical LLL product estimate \cite[Proposition~1.6]{LLL} gives
+a basis whose product of lengths is at most
+$2^{15\cdot14/4}$ times this covolume. To recall the relevant estimate,
+size reduction gives $|\mu_{ij}|\leq1/2$ and the reduction condition
+gives $\|b_i^*\|^2\geq\|b_{i-1}^*\|^2/2$. Expanding the basis
+vectors in their orthogonal components and multiplying yields the
+stated product bound.
+
+Order its lengths as $s_1\leq\cdots\leq s_{15}$. Each is at least
+one since the weighted lattice is integral, and
+$s_k^{16-k}\leq\prod_i s_i$. Weighted $\ell^1$ height is at most
+four times Euclidean length. Thus the $k$th weighted successive
+minimum satisfies
+\[
+ \limsup n^{-1}\log\lambda_k(n)\leq H_* /(16-k).
+\]
+At $k=11$ this is below $4.905$, so eleven independent vectors have
+height at most $e^{4.91n}$ for all sufficiently large admissible $n$.
+Apply the \emph{same} $D_n^*$ from Lemma~\ref{lem:linear-inputs} to
+their forms. Since $6.0384-4.91>1.12$, their values satisfy the claimed
+bound. The invertible formal coefficient map preserves their
+independence after cancellation and common clearing.
+\end{proof}
+
+An eleven-by-fifteen matrix can annihilate $\theta$ exactly, so
+Theorem~\ref{thm:eleven} does not establish irrationality. Fifteen
+independent small rows would exclude that possibility. The product
+argument above gives only the twelfth-minimum upper rate
+$H_*/4=6.13044\ldots$, already above $C_*$. This is the limitation
+of this height estimate, not a lower bound on the true twelfth or
+fifteenth minimum.
+
+At $n=116,232,464$, exact finite computations do give complete
+fifteen-row collections, with largest primitive values below
+$10^{-236}$, $3.68\times10^{-470}$, and $6.04\times10^{-890}$,
+respectively. These are the same kind of objects needed for the
+contradiction. The unproved step is their uniform height or decay
+along an unbounded sequence. A bound for one shortest vector is
+insufficient, and the available covolume bound does not give the
+required rate: the kernel of
+$(1,M,0,\ldots,0)$ has many unit directions while its last direction
+must still have size comparable to $M$.
