@@ -1,0 +1,259 @@
+{
+  "status": "PASS",
+  "constant_enclosure": [
+    "16098018249961/10000000000000",
+    "8049009124981/5000000000000"
+  ],
+  "scalar_method": "Exact Machin and telescoping zeta(3) tail bounds.",
+  "grid_checks": {
+    "2": {
+      "denominators": [
+        4
+      ],
+      "fractions": [
+        "1/4",
+        "3/4"
+      ]
+    },
+    "4": {
+      "denominators": [
+        4,
+        8,
+        12
+      ],
+      "fractions": [
+        "1/12",
+        "1/8",
+        "1/4",
+        "3/8",
+        "5/12",
+        "7/12",
+        "5/8",
+        "3/4",
+        "7/8",
+        "11/12"
+      ]
+    }
+  },
+  "kernels": [
+    {
+      "B": 2,
+      "n": 2,
+      "s": 8,
+      "A1": 16,
+      "A2": 4,
+      "basis_products": [
+        {
+          "basis_product": [
+            0,
+            0
+          ],
+          "scaled_constant": "-15147694080",
+          "scaled_period_coefficients": {
+            "2": "-37250543616",
+            "4": "-114240651264",
+            "6": "-171983241216",
+            "8": "337423368192"
+          }
+        },
+        {
+          "basis_product": [
+            0,
+            1
+          ],
+          "scaled_constant": "0",
+          "scaled_period_coefficients": {
+            "2": "0",
+            "4": "0",
+            "6": "0",
+            "8": "0"
+          }
+        },
+        {
+          "basis_product": [
+            0,
+            2
+          ],
+          "scaled_constant": "-2231079936",
+          "scaled_period_coefficients": {
+            "2": "-6020990976",
+            "4": "-13563002880",
+            "6": "9714008064",
+            "8": "14092861440"
+          }
+        },
+        {
+          "basis_product": [
+            1,
+            1
+          ],
+          "scaled_constant": "-4462159872",
+          "scaled_period_coefficients": {
+            "2": "-12041981952",
+            "4": "-27126005760",
+            "6": "19428016128",
+            "8": "28185722880"
+          }
+        },
+        {
+          "basis_product": [
+            1,
+            2
+          ],
+          "scaled_constant": "-2231079936",
+          "scaled_period_coefficients": {
+            "2": "-6020990976",
+            "4": "-13563002880",
+            "6": "9714008064",
+            "8": "14092861440"
+          }
+        },
+        {
+          "basis_product": [
+            2,
+            2
+          ],
+          "scaled_constant": "-1358483456",
+          "scaled_period_coefficients": {
+            "2": "-3616284672",
+            "4": "-8558149632",
+            "6": "2420113408",
+            "8": "14092861440"
+          }
+        }
+      ],
+      "grouped_tail_witness": {
+        "pair": [
+          0,
+          0
+        ],
+        "theta": "1/4",
+        "pole": 2,
+        "ell": 1,
+        "term_denominators": [
+          5,
+          5,
+          125,
+          625,
+          625,
+          15625,
+          78125,
+          78125
+        ],
+        "grouped_sum": "-1333519872"
+      },
+      "recurrence_and_transitions": "PASS"
+    },
+    {
+      "B": 2,
+      "n": 4,
+      "s": 8,
+      "A1": 16,
+      "A2": 4,
+      "basis_products": [
+        {
+          "basis_product": [
+            0,
+            0
+          ],
+          "scaled_constant": "-30650741965984385064960",
+          "scaled_period_coefficients": {
+            "2": "-76925239602550213754880",
+            "4": "-221555198938653508239360",
+            "6": "-246339420749462450995200",
+            "8": "566323401513512667709440"
+          }
+        },
+        {
+          "basis_product": [
+            0,
+            1
+          ],
+          "scaled_constant": "0",
+          "scaled_period_coefficients": {
+            "2": "0",
+            "4": "0",
+            "6": "0",
+            "8": "0"
+          }
+        },
+        {
+          "basis_product": [
+            0,
+            2
+          ],
+          "scaled_constant": "-4441187971858982584320",
+          "scaled_period_coefficients": {
+            "2": "-11580896715246064926720",
+            "4": "-29426261914636234260480",
+            "6": "-7233286657183580160000",
+            "8": "51395206681253872926720"
+          }
+        },
+        {
+          "basis_product": [
+            1,
+            1
+          ],
+          "scaled_constant": "-8882375943717965168640",
+          "scaled_period_coefficients": {
+            "2": "-23161793430492129853440",
+            "4": "-58852523829272468520960",
+            "6": "-14466573314367160320000",
+            "8": "102790413362507745853440"
+          }
+        },
+        {
+          "basis_product": [
+            1,
+            2
+          ],
+          "scaled_constant": "-4441187971858982584320",
+          "scaled_period_coefficients": {
+            "2": "-11580896715246064926720",
+            "4": "-29426261914636234260480",
+            "6": "-7233286657183580160000",
+            "8": "51395206681253872926720"
+          }
+        },
+        {
+          "basis_product": [
+            2,
+            2
+          ],
+          "scaled_constant": "-3005952128534308331520",
+          "scaled_period_coefficients": {
+            "2": "-7599177049494443212800",
+            "4": "-21389619820441444024320",
+            "6": "-20557337034651756134400",
+            "8": "51699847246116311531520"
+          }
+        }
+      ],
+      "grouped_tail_witness": {
+        "pair": [
+          0,
+          0
+        ],
+        "theta": "1/4",
+        "pole": 2,
+        "ell": 1,
+        "term_denominators": [
+          1,
+          25,
+          1,
+          625,
+          1,
+          15625,
+          1,
+          15625
+        ],
+        "grouped_sum": "-1979813827600529227776"
+      },
+      "recurrence_and_transitions": "PASS"
+    }
+  ],
+  "sympy_version": "1.14.0",
+  "scope": "Finite algebra and decimal enclosure. The large-parameter result uses the proof.",
+  "script_sha256": "57542c21ffcd49ab9b71874b0b27b7a523d6b1ab0ca3d7ee8514caaf2e90d094"
+}

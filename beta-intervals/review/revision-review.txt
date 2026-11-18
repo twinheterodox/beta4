@@ -1,0 +1,74 @@
+Independent AI review of the revised interval paper
+18 November 2026
+
+This public edition retains the mathematical checks on the revisions after
+the first audit. The reviewer examined the changed passages, their
+surrounding proofs, the source differences and the cited results, and
+found no further correction necessary.
+SHA-256 of the reviewed TeX
+baf18993cc36b84790d3e182f20516018264b1950f98ef8c5792bc086f4031d6
+SHA-256 of the seed checker
+2020c965993ed05c267ca1550575e20c8dcbf8842f0d26ce3466056ad23acee0
+
+Decay with the published normalization
+
+In the fifteen-value paper the fifth numbered equation of Section 4,
+(4.5), gives the certified upper bound
+
+    A = 745969417189431202995707 / 92003136067626388684800.
+
+The proof following (4.6) bounds the normalized large-prime contribution
+by n(A+o(1)) for precisely the isolated-pole exponents used in the
+revised manuscript. Rounding A upward gives 8.10809. After subtracting
+G log(n!), the small odd primes contribute o(n) to the upper bound
+and 2 contributes at most 15n log 2+o(n). The global clearer for the
+powered form is D_n^q. Thus each of these terms enters the logarithm
+with a factor of q.
+
+Equation (4.9) bounds the global maximum of the same phase by
+-18835112315041/10^12 = -18.835112315041. The revised -18.83511
+rounds upward. The derivative estimate for x>=3 in the same source
+gives the claimed tail factor (3n/t)^(3qn). For fixed q this absorbs
+the fixed polynomial from the Stirling error on t>3n. On the finite
+range the derivative bound contributes only a polynomial factor.
+The (n!)^(-qG) exactly cancels the factorial contribution from D_n^q.
+
+Writing x=6931472/10000000, I checked with exact rational arithmetic
+that sum(x^j/j!, 0<=j<=9)>2. Since x>0, this implies log 2<x. Then
+8.10809+15x-18.83511 = -82453/250000 = -0.329812, strictly below
+-0.3298. This proves the revised rate for each fixed positive integer q.
+
+Local scaling and nonvanishing
+
+Put s=i+2q. At a selected address pa the local lemma gives an integral
+p^(1356q-i)c_(q,96p;pa,i). Multiplication of c by p^(1358q) therefore
+leaves at least s powers of p in the beta contribution. At an unselected
+address the valuation bound i-1326q gives at least i+32q=s+30q after
+scaling. The rising factorial (i)_(2q) is integral in each case.
+Since 2h+1<192p<p^2, a harmonic term can cost at most s powers.
+Unselected terms still vanish modulo p. At a selected address the
+surviving denominators are p(2v+1), 0<=v<a, with 2v+1<=191<p.
+The sign from h=pv+(p-1)/2 is chi_4(p), giving exactly the revised
+constant congruence with the selected-pole factor (-1)^q.
+
+For fixed q and a nonzero seed k_q, infinitely many primes avoid
+the denominators of the hypothetical rational beta values and the
+numerator and denominator of k_q. The centered form is nonzero on
+n=96p at each such sufficiently large prime. Its explicit nonzero
+power-of-two prefactor gives nonvanishing of L_(q,96p). The real
+integer tending to zero is T D_n^q L_(q,n). The proof uses p^(1358q)
+only to test nonvanishing on the indicated subsequence.
+
+Finite table and provenance
+
+I verified the two supplied diffs exactly against the archived source
+and checker. The checker adds the third prime to the existing loop
+and the expected q=1 residue. Its other arithmetic routines are
+unchanged. For 10037 the revised table, the independent audit and
+both stored checker outputs give 938, 5660 and 4500 for q=1,2,3.
+The q=2 row proves k_2 is nonzero and the q=3 row proves k_3 is
+nonzero. One nonzero residue in each row suffices. The original two
+residues for q=1 are correctly attributed. I checked source and
+output correspondence.
+The computational replay is documented in checks/README.txt. The exact
+repository sources for (4.5) and (4.9) are in sources/repository-inputs.json.

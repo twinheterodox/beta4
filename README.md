@@ -10,6 +10,8 @@ The papers below give explicit counts of irrational even beta values in initial 
 
 | Document | Result and contents | Source and checks |
 | --- | --- | --- |
+| **[An asymptotic lower bound for the number of irrational even beta values (13 pages)](asymptotic-even-beta-counts/output/pdf/asymptotic-even-beta-counts.pdf)** | An asymptotic lower bound for the count through β(s), on the scale $\sqrt{s\log\log s/\log s}$ with leading constant approximately 1.6098018250. | [Paper guide](asymptotic-even-beta-counts/README.txt) · [LaTeX](asymptotic-even-beta-counts/paper/asymptotic-even-beta-counts.tex) · [Checks](asymptotic-even-beta-counts/checks/README.txt) |
+| **[Two shorter intervals of even Dirichlet beta values (9 pages)](beta-intervals/output/pdf/beta-intervals.pdf)** | An irrational member of β(6), β(8), …, β(66), and an irrational member of β(8), β(10), …, β(98). The earlier upper endpoints were 74 and 110. | [Paper guide](beta-intervals/README.txt) · [LaTeX](beta-intervals/paper/beta-intervals.tex) · [Checks](beta-intervals/checks/README.txt) |
 | **[At least one of β(4), β(6), …, β(32) is irrational (15 pages)](fifteen-beta-values/output/pdf/fifteen-beta-values.pdf)** | A fifteen-value set, improving Krisman's seventeen-value set through β(36) by an isolated-pole denominator refinement. | [Paper guide](fifteen-beta-values/README.txt) · [LaTeX](fifteen-beta-values/paper/fifteen-beta-values.tex) · [Checks](fifteen-beta-values/checks/README.txt) |
 | **[Irrational even beta values from powered hypergeometric kernels (13 pages)](powered-beta-kernels/output/pdf/powered-beta-kernels.pdf)** | An irrational member of β(6), β(8), …, β(74), and of β(8), β(10), …, β(110), improving the earlier endpoints 92 and 128. | [Paper guide](powered-beta-kernels/README.txt) · [LaTeX](powered-beta-kernels/paper/powered-beta-kernels.tex) · [Checks](powered-beta-kernels/checks/README.txt) |
 | **[Irrational even beta values in shifted intervals (v2, 20 pages)](shifted-even-beta/output/pdf/shifted-even-beta.pdf)** | For every positive odd m, an irrational even beta value with index from m+1 through 19m−1. More generally, any prescribed count with an upper endpoint linear in its starting index; improved finite counts from β(2). | [Paper guide](shifted-even-beta/README.txt) · [LaTeX](shifted-even-beta/paper/shifted-even-beta.tex) · [Checks](shifted-even-beta/checks/README.txt) |
@@ -174,6 +176,15 @@ The main determinant results are a uniform primitive-growth obstruction for shif
 The work was prepared with Codex. Reported proof audits, model cross-checks, exact rational calculations, interval calculations and source reading are recorded separately with their respective scopes. No proof-assistant verification is claimed.
 
 ## Reproducing the results
+
+For the asymptotic count and the two shorter intervals, run from the repository root
+
+```sh
+python3 -B asymptotic-even-beta-counts/checks/verify_count_examples.py
+python3 -B beta-intervals/checks/interval_seeds.py
+```
+
+The [count check guide](asymptotic-even-beta-counts/checks/README.txt) describes the exact examples. The [interval check guide](beta-intervals/checks/README.txt) includes the independent audit programs and the optional direct-product seed calculation.
 
 For the fifteen-value paper, with Python and a C++17 compiler installed:
 

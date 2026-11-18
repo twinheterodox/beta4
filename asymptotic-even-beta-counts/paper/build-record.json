@@ -1,0 +1,10 @@
+{
+  "source": "paper/asymptotic-even-beta-counts.tex",
+  "source_sha256": "ad2311edc5c2c4a0d30f07c3da7f9b02c0dd8e0b60908eeb8a90054b7607b80b",
+  "pdf": "output/pdf/asymptotic-even-beta-counts.pdf",
+  "pdf_sha256": "112c40c5a55f46d0a18f3d705b5f60a15a3956ef7469e820468009369d96485c",
+  "pages": 13,
+  "latex_engine": "pdfTeX 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian)",
+  "unresolved_references": false,
+  "overfull_boxes": false
+}

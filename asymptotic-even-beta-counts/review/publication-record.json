@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-18",
+  "reviewed_mathematical_source_sha256": "328a134c8f998a73e698abbd15e427953162fd3d8a7656b698f1c9829fbdd6bb",
+  "before_packaging_source_sha256": "c385960103bd7b00dcc906f102a1a52667d327874bc4da6f839a7addba6ea598",
+  "before_packaging_pdf_sha256": "1170d9317ec7edf6e7d113c87ea1a607a90978a000ae23abae2973a9cf8a31c8",
+  "publication_source_sha256": "ad2311edc5c2c4a0d30f07c3da7f9b02c0dd8e0b60908eeb8a90054b7607b80b",
+  "publication_pdf_sha256": "112c40c5a55f46d0a18f3d705b5f60a15a3956ef7469e820468009369d96485c",
+  "publication_edits": "Updated the paper title and PDF title, and named the new project directory and checker beside the finite-tail example.",
+  "independent_audit_scope": "The audit of the earlier full-grid proof and the independent review of the strengthened restricted-grid proof are reported separately.",
+  "pages_rendered": 13,
+  "pages_visually_changed_since_packaging_input": [
+    1,
+    6
+  ],
+  "working_github_citations_in_pdf": 2,
+  "checks": "The exact enclosure, restricted grids, twelve basis products and both grouped-tail witnesses agree with the original checker. Only the result filename and the script digest changed."
+}

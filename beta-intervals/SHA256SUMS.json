@@ -1,0 +1,25 @@
+{
+  "algorithm": "SHA-256",
+  "files": {
+    "README.txt": "178520002b937c6ff032bcfae73cbee9b3592013cbe7dcc77661ffb673148454",
+    "checks/README.txt": "255460c4cc2c30501c107132d734b024eb8a7a54573a4b2a5a0dab80f67ff62e",
+    "checks/cross-check-results.json": "871ab59135d5cd0ed1149e5a9b48a3d8303dd1b5b3921ab959e9f4856b5f0a7f",
+    "checks/independent-audit/density_max.cpp": "e7968ab80fa37466bb11539dc5f36962b47c2aa0a4c0dc2af25fa7dc6d785e8e",
+    "checks/independent-audit/density_recheck.py": "4a9a44fc52c53ffe5a2f07776c7ca5209e4d964702df95cc91a30aa4cff8f3de",
+    "checks/independent-audit/dilation_recheck.py": "7a56f359d2fb0c49952b3cfa3633220c356461bc1320bdec8d60a6970001ef58",
+    "checks/independent-audit/phase_recheck.py": "a97c50c38d480a18afcb8abc80cb2d6defa76b300cca3b262c004106e1ddb282",
+    "checks/independent-audit/results.txt": "625a03f28549ac1f7ec76486ec4ebf707e3f004a3b360034e53e6ecb322f94d4",
+    "checks/independent-audit/run_checks.py": "14ee6d549c3803a1015eb4c3164a2ee2c4f41f87e159056c386e118f5b9a6fbb",
+    "checks/independent-audit/seed_recheck.py": "33d6e22816f74ab07a5effe0b30c6f19b5cb6b3b9678ca1b9f45cb43c54f328b",
+    "checks/interval_seeds.py": "2020c965993ed05c267ca1550575e20c8dcbf8842f0d26ce3466056ad23acee0",
+    "checks/recurrence-results.json": "676877fdbe05726e6d6771142e46f9135981f7793133aa0e0576c584f4623ce2",
+    "output/pdf/beta-intervals.pdf": "d1ee6b174594daae528b299fcd2f11303e4e41a19f94ef64c1271face16d1bce",
+    "paper/beta-intervals.tex": "e8fcf84ab30f668853c62b0fae1006858ceea10cff52f3e8e59d71bf97ac4837",
+    "paper/build-record.json": "2e372345d7a9ca4544fd18c46e747f5dd553d8f230af2a33472268f69c1f1ff4",
+    "review/independent-audit-2026-11-17.txt": "0151c38a7acb18653924cfda50d4eb61898829c6f1e4e69f9d39d60b2add9af8",
+    "review/publication-record.json": "533c7dab8d99c6b3ddfa187b723237f56197d463bf072aa8ab47c7473780e202",
+    "review/revision-review.txt": "5065f4c9ec6e0646143ce84c2c410a5bba8aab9d1d3a71d8140394fd070411f3",
+    "sources/repository-inputs.json": "dba7e85c175a808d4c823c651cfc97e01d2389b316e9f6f2988d82812b880c89",
+    "tools/build_paper.py": "d40010ffae08b16fa06145dcb9c39a4240863ddee9a42a4ce3b26eeeee764785"
+  }
+}

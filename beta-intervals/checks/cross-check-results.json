@@ -1,0 +1,59 @@
+{
+  "direct_products_checked": true,
+  "seeds": [
+    {
+      "power": 1,
+      "prime": 10007,
+      "seed_residue": 3738,
+      "coefficients": 2077
+    },
+    {
+      "power": 1,
+      "prime": 10009,
+      "seed_residue": 5333,
+      "coefficients": 2077
+    },
+    {
+      "power": 1,
+      "prime": 10037,
+      "seed_residue": 938,
+      "coefficients": 2077
+    },
+    {
+      "power": 2,
+      "prime": 10007,
+      "seed_residue": 8279,
+      "coefficients": 4154
+    },
+    {
+      "power": 2,
+      "prime": 10009,
+      "seed_residue": 5481,
+      "coefficients": 4154
+    },
+    {
+      "power": 2,
+      "prime": 10037,
+      "seed_residue": 5660,
+      "coefficients": 4154
+    },
+    {
+      "power": 3,
+      "prime": 10007,
+      "seed_residue": 9978,
+      "coefficients": 6231
+    },
+    {
+      "power": 3,
+      "prime": 10009,
+      "seed_residue": 6289,
+      "coefficients": 6231
+    },
+    {
+      "power": 3,
+      "prime": 10037,
+      "seed_residue": 4500,
+      "coefficients": 6231
+    }
+  ]
+}

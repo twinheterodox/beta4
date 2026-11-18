@@ -1,0 +1,872 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={An asymptotic lower bound for the number of irrational even beta values},pdfauthor={twinheterodox},pdfsubject={Irrationality counts for even Dirichlet beta values}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Lcal}{\mathcal L}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\Res}{\operatorname{Res}}
+\newcommand{\dd}{\,\mathrm d}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\Span}{Span}
+\numberwithin{equation}{section}
+\title{\Large An asymptotic lower bound for the number of irrational even beta values}
+\author{twinheterodox}
+\date{November 17, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+For even $s$, let $I(s)$ count the irrational values among
+$\beta(2),\beta(4),\ldots,\beta(s)$. We prove
+\[
+ \liminf_{\substack{s\to\infty\\2\mid s}}
+ \frac{I(s)}{\sqrt{s\log\log s/\log s}}
+ \geq 2\sqrt{\frac{\zeta(2)\zeta(3)}{3\zeta(6)}}
+ \approx 1.6098018250 .
+\]
+Here $\beta$ denotes the Dirichlet beta function and $\zeta$ the Riemann
+zeta function. The bound improves
+the growth rate in our earlier
+counting result by a factor $\sqrt{\log\log s}$. It has the same growth
+rate as the recent theorem of Fischler, Lai, Sprang and Zudilin for
+irrational odd zeta values, with $1/\sqrt3$ of their leading constant.
+The conclusion remains valid after any fixed initial set of even beta
+values is omitted.
+\end{abstract}
+
+\section{The counting problem and the character twist}
+The Dirichlet beta function is
+\[
+ \beta(u)=\sum_{v=0}^{\infty}\frac{(-1)^v}{(2v+1)^u}
+         =L(u,\chi_4),\qquad
+ \chi_4(j)=
+ \begin{cases}
+  0,&2\mid j,\\
+  1,&j\equiv1\pmod4,\\
+ -1,&j\equiv3\pmod4.
+ \end{cases}
+\]
+Its positive odd integer values are nonzero rational multiples of powers
+of $\pi$. The even values have a different arithmetic character. Our aim
+is to count how many of them must be irrational, without specifying
+which ones.
+
+Write
+\[
+ I(s)=\#\{i:2\leq i\leq s,\ 2\mid i,\ \beta(i)\notin\Q\},\qquad
+ \kappa=\frac{\zeta(2)\zeta(3)}{\zeta(6)},\qquad
+ Y(s)=\sqrt{\frac{s\log\log s}{\log s}}.
+\]
+Here and throughout, $s$ denotes the largest allowed index, rather than
+the number of entries in the list.
+
+\begin{theorem}\label{thm:main}
+For every $\varepsilon>0$, all sufficiently large even integers $s$ satisfy
+\[
+ I(s)\geq\left(2\sqrt{\frac{\kappa}{3}}-\varepsilon\right)Y(s).
+\]
+\end{theorem}
+
+Deleting finitely many indices changes $I(s)$ by a bounded amount, whereas
+$Y(s)\to\infty$. Thus the same lower limit holds if, for example, the list
+starts with $\beta(4)$. The theorem gives neither a numerical threshold for
+$s$ nor a lower bound for the dimension of the span of these values.
+
+Our earlier explicit counting theorem \cite[Theorem~1.1]{THcount} gives
+\[
+ I(s)\geq\left\lfloor\pi\sqrt{\frac{2}{135}}
+                      \sqrt{\frac{s}{\log s}}\right\rfloor
+ \qquad(s\geq160,\quad 2\mid s).
+\]
+Theorem~\ref{thm:main} improves the growth rate by a factor
+$\sqrt{\log\log s}$. Its starting endpoint depends on $\varepsilon$
+and is not computed here, whereas the earlier bound has the stated
+explicit range. The endpoint certificates for that range are in the
+\texttt{even-beta-counts/checks} directory of the project repository~\cite{beta4repo}.
+
+Fischler, Lai, Sprang and Zudilin \cite[Theorem~1.1]{FLSZ} prove the
+corresponding odd-zeta counting theorem with leading constant
+$2\sqrt\kappa$. Their proof combines elimination of presumed irrational
+values, the rational functions of Lai and Yu \cite{LY}, and a Hankel
+determinant argument for signed discrete measures. Kumar and Tosi
+\cite[Theorem~1]{KT} state a counting bound of order $\sqrt{s/\log s}$
+for the noncritical values of a real Dirichlet character, including
+$\chi_4$. Their stated constant at conductor four is
+\[
+ c(4)=\left(\frac{\kappa}{2}
+  \log\frac{\sqrt{4e^2+16}+4}{\sqrt{4e^2+16}-4}\right)^{1/2}.
+\]
+The proof below does not use that theorem or its denominator estimates.
+
+Our construction is a character twist of \cite[Sections~2--6]{FLSZ}.
+On a grid whose denominator is divisible by four, the signs $\chi_4(j)$
+combine Hurwitz zeta values into beta values. Only odd $j$ contribute.
+We therefore put zeros in the numerator only at the fractions used by
+the character and their integer translates. This retains every elimination
+weight and reduces the leading logarithmic cost of the numerator by a
+factor of three. We can consequently use a grid cutoff larger by a
+factor of $\sqrt3$. Together with the density $1/3$ of usable denominators,
+this explains the ratio $1/\sqrt3$ between the two leading constants.
+
+An even pole order selects the even indices under reflection. The
+combined grid weights are odd, so we also check that the reflected
+measure has the opposite residues needed for nonvanishing. The
+arithmetic normalization, analytic test polynomials and signed-measure
+criterion follow \cite{FLSZ} with the restricted numerator.
+
+The argument assumes familiarity with elementary prime valuations,
+polynomial linear algebra and residues of meromorphic functions. We give
+the signed-measure criterion in full before applying it to the character
+weights.
+
+\section{The available grids}\label{sec:grids}
+The grid family is chosen to supply many elimination weights while
+keeping the rational function's numerator cost under control. For $B>1$,
+let
+\begin{align*}
+ \Psi_B&=\{b\in\Z_{>0}:\varphi(b)\leq B\},\\
+ \mathcal Q_B&=\{q\in\Psi_B:4\mid q\},\\
+ \Theta_B&=\left\{\frac aq:q\in\mathcal Q_B,\ 1\leq a<q,\ (a,q)=1\right\},
+\end{align*}
+where $\varphi$ is Euler's totient function, and put $h_B=|\Theta_B|$.
+If $q\in\mathcal Q_B$, $1\leq j<q$ and $\chi_4(j)\ne0$, reducing $j/q$ cancels
+only an odd divisor. Its reduced denominator $b$ is still divisible
+by four, and $\varphi(b)\leq\varphi(q)$ because $b\mid q$. Thus
+$j/q$ and $1-j/q$ both belong to $\Theta_B$. Conversely, each reduced
+fraction in $\Theta_B$ occurs with nonzero character weight on its
+own grid. For example, on the $q=12$ grid, $3/12$ and its reflection
+reduce to $1/4$ and $3/4$, while $2/12$ carries weight zero.
+
+Using these same denominators, put
+\[
+ A_1(B)=\prod_{q\in\mathcal Q_B}q^{\varphi(q)},\qquad
+ A_2(B)=\prod_{q\in\mathcal Q_B}\prod_{p\mid q}p^{\varphi(q)/(p-1)},\qquad
+ A(B)=A_1(B)A_2(B).
+\]
+These are integers since $p-1$ divides $\varphi(q)$ for $p\mid q$.
+Our starting point is the inverse-totient estimate of
+\cite[Proposition~2.2]{LY}, also recorded in \cite[Lemma~2.1]{FLSZ},
+\begin{equation}\label{eq:totient-count}
+ |\Psi_B|=(\kappa+o(1))B .
+\end{equation}
+
+\begin{lemma}\label{lem:grid-count}
+The usable denominators satisfy
+\[
+ |\mathcal Q_B|=\left(\frac\kappa3+o(1)\right)B
+ \qquad(B\to\infty).
+\]
+\end{lemma}
+\begin{proof}
+For real $x>0$, let $F(x)$ count all positive integers $b$ with
+$\varphi(b)\leq x$, let $g(x)$ count the odd such integers, and let $T(x)$
+count those divisible by four. Separating the power of two in $b$ gives
+\[
+ F(x)=2g(x)+T(x),\qquad
+ T(x)=\sum_{j\geq1}g(x/2^j).
+\]
+The two copies of $g$ correspond to $b$ odd and $b$ twice an odd integer;
+in both cases the totient is unchanged. It follows that
+\[
+ 2T(x)=F(x/2)+T(x/2),\qquad
+ T(x)=\sum_{j\geq1}2^{-j}F(x/2^j).
+\]
+These sums are finite for fixed $x$, since $F(y)=0$ for $y<1$.
+By \eqref{eq:totient-count}, $F(y)/y\to\kappa$ and $F(y)\leq Cy$ for
+$y\geq1$, with an absolute constant $C$. Dividing the last sum by $x$
+and applying dominated convergence with majorant $C4^{-j}$ yields
+$T(x)/x\to\kappa\sum_{j\geq1}4^{-j}=\kappa/3$.
+\end{proof}
+
+The same count determines how many numerator factors we pay for. Each
+usable denominator contributes exactly $\varphi(q)$ reduced fractions.
+Writing $T(t)$ for the count in Lemma~\ref{lem:grid-count}, partial
+summation in the totient variable gives
+\begin{equation}\label{eq:grid-size}
+ h_B=\sum_{q\in\mathcal Q_B}\varphi(q)
+     =B T(B)-\int_0^B T(t)\dd t
+     =\left(\frac{\kappa}{6}+o(1)\right)B^2 .
+\end{equation}
+In particular $h_B+1\leq B^2$ for all sufficiently large $B$, since
+$\kappa<6$. Every $q\in\Psi_B$ satisfies $q\ll B\log\log B$
+\cite[(2.2)]{LY}. Hence $\log A_1(B)\leq h_B(1+o(1))\log B$.
+For the reverse bound discard the denominators with $\varphi(q)<B/\log B$.
+By \eqref{eq:grid-size} they contribute $o(B^2)$ to $h_B$, and every
+remaining $q$ satisfies $\log q\geq\log B-\log\log B$. Thus
+\begin{equation}\label{eq:A1}
+ \log A_1(B)=\left(\frac{\kappa}{6}+o(1)\right)B^2\log B .
+\end{equation}
+The corresponding coefficient for the full product is $\kappa/2$
+\cite[Lemma~2.2]{FLSZ}. For $A_2$ the full product is an upper bound, so
+\cite[Lemma~2.2]{FLSZ} gives, for all sufficiently large $B$,
+\begin{equation}\label{eq:A2}
+ \log A_2(B)\leq 10 B^2(\log\log B)^2 .
+\end{equation}
+
+\section{The twisted functional}
+\label{sec:functional}
+Fix a sufficiently large even integer $s$, and take $B$ sufficiently large
+with $B^2<s/100$. We shall eventually choose $B$ in terms of $s$.
+Until Section~\ref{sec:finish}, these two parameters remain fixed and
+$n$ tends to infinity through positive even integers. Write $\Theta=\Theta_B$,
+$h=h_B$ and $A=A(B)$.
+
+For $(t)_k=t(t+1)\cdots(t+k-1)$, define
+\begin{equation}\label{eq:kernel}
+ R_n(t)=A^n(n!)^{s-h}
+        \frac{\prod_{\theta\in\Theta}(t+\theta)_n}{(t)_{n+1}^{s}}.
+\end{equation}
+This uses the kernel of \cite[(2.1)]{FLSZ} with even $s$ and the
+restricted numerator grid $\Theta$. It is positive
+for $t>0$, has degree $nh-(n+1)s$, and satisfies
+\begin{equation}\label{eq:reflection}
+ R_n(-n-t)=R_n(t).
+\end{equation}
+Indeed, reflection pairs $\theta$ with $1-\theta$ in the numerator;
+$n$ is even, and the sign from the denominator disappears because $s$
+is even.
+
+Suppose, for a contradiction, that $I(s)<|\mathcal Q_B|$. There are then
+integers $w_q$, not all zero, such that
+\begin{equation}\label{eq:elimination}
+ \sum_{q\in\mathcal Q_B}w_q q^i=0
+ \quad\text{whenever }2\leq i\leq s,\quad2\mid i,\quad\beta(i)\notin\Q.
+\end{equation}
+This homogeneous rational system has fewer equations than unknowns; clearing
+denominators gives integral weights. Choose a positive integer $A_0$ clearing
+the denominators of the remaining, rational, beta values in the same range.
+Both $A_0$ and the $w_q$ are fixed as $n$ varies.
+
+Writing $\zeta(i,\theta)=\sum_{v\geq0}(v+\theta)^{-i}$ for the Hurwitz
+zeta function, the character identity underlying the construction is,
+for $i>1$ and $4\mid q$,
+\begin{equation}\label{eq:character}
+ \sum_{j=1}^q\chi_4(j)\zeta(i,j/q)=q^i\beta(i).
+\end{equation}
+For example, the grid $q=4$ gives
+$\zeta(i,1/4)-\zeta(i,3/4)=4^i\beta(i)$.
+In general, the integers in the Hurwitz sums are $qv+j$, and
+$\chi_4(qv+j)=\chi_4(j)$; this proves \eqref{eq:character} by absolutely
+convergent summation.
+
+For a polynomial $P$, set
+\begin{equation}\label{eq:functional}
+ \Lcal_n(P)=A_0\sum_{q\in\mathcal Q_B}w_q\sum_{j=1}^q\chi_4(j)
+  \sum_{v=0}^{\infty}
+  R_n(v+j/q)
+  \left[P(v+j/q+n/2)+P(-v-j/q-n/2)\right].
+\end{equation}
+We call $P$ admissible if
+\begin{equation}\label{eq:admissible}
+ \deg P\leq(n+1)s-nh-2.
+\end{equation}
+This condition makes the summand $O(v^{-2})$ and guarantees absolute
+convergence. The proof uses the same moment matrix in two bases. The
+first makes its scaled determinant an integer. The second bounds the
+absolute value of that integer by a number less than one. To obtain a
+contradiction, we allow the size $m$ to vary and prove that at least one
+permitted size has nonzero determinant. We write
+\begin{equation}\label{eq:det}
+ \Delta_{n,m}=\det\bigl(\Lcal_n(t^{i+j})\bigr)_{0\leq i,j<m},
+ \qquad 2m\leq(n+1)s-nh.
+\end{equation}
+
+\section{Arithmetic normalization}\label{sec:arithmetic}
+Let $d_n=\lcm(1,\ldots,n)$. The role of the numerator zeros is more than
+analytic: they cancel the possible extra denominators in the finite
+Hurwitz tails. We spell out this step because twisting the grids must not
+silently change the integerizer.
+
+\subsection{The elementary derivative bounds}
+The following facts are the building blocks used in
+\cite[Section~3]{FLSZ}. A direct proof also shows why their arithmetic
+does not depend on the parity of $s$.
+
+\begin{lemma}\label{lem:blocks}
+For a fixed positive integer $n$, each of the following functions $F$
+satisfies $d_n^\ell F^{(\ell)}(k)/\ell!\in\Z$ for all $\ell\geq0$
+at the indicated integer evaluation points:
+\begin{enumerate}
+\item $(t+a)_r/r!$, with $a\in\Z$ and $0\leq r\leq n$, at every $k\in\Z$;
+\item $b^n\prod_{p\mid b}p^{\lfloor n/(p-1)\rfloor}(t+a/b)_n/n!$,
+      with $(a,b)=1$ and $b>1$, at every $k\in\Z$;
+\item $n!(t+j)/(t)_{n+1}$, with $0\leq j\leq n$, at $k=-j$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+The case $r=0$ and Taylor orders above the degree are immediate.
+For the first assertion with $r\geq1$, a Taylor coefficient of order $\ell\leq r$
+is a sum of products obtained by deleting $\ell$ factors from $r$
+consecutive integers, divided by $r!$. For any prime $p$ and integer
+$v\geq1$, the original progression has at least $\lfloor r/p^v\rfloor$
+factors divisible by $p^v$. Deleting $\ell$ factors loses at most $\ell$
+of them. Hence each product has valuation at least
+\[
+ v_p(r!)-\ell\lfloor\log_p r\rfloor
+ \geq v_p(r!)-\ell v_p(d_n).
+\]
+This proves integrality after multiplication by $d_n^\ell$.
+
+For the second assertion, write its numerator as
+$\prod_{i=0}^{n-1}(bt+a+bi)$. If $p\nmid b$, this arithmetic progression
+has at least $\lfloor n/p^v\rfloor$ multiples of each $p^v$; the same
+deletion argument applies, and the extra factors $b^\ell$ are integral.
+If $p\mid b$, the prefactor $p^{\lfloor n/(p-1)\rfloor}$ alone clears
+$n!$, since $v_p(n!)\leq\lfloor n/(p-1)\rfloor$. All the numerator
+coefficients are integers, proving the assertion at these primes too.
+
+For the last assertion set $t=-j+u$. The constant coefficient is
+$(-1)^j\binom nj$, and the remaining factor is
+\[
+ \prod_{\substack{0\leq k\leq n\\k\ne j}}
+     \left(1+\frac{u}{k-j}\right)^{-1}.
+\]
+Each Taylor coefficient of order $\ell$ is a sum of products of $\ell$
+reciprocals of nonzero integers of absolute value at most $n$.
+Multiplication by $d_n^\ell$ clears them.
+\end{proof}
+
+\subsection{The coefficients and the finite tails}
+
+\begin{lemma}\label{lem:arithmetic}
+If an admissible $U\in\Q[t]$ satisfies
+\begin{equation}\label{eq:derivative-integrality}
+ \frac{d_n^\ell}{\ell!}U^{(\ell)}(k)\in\Z
+ \qquad(k\in\Z,\ \ell\geq0),
+\end{equation}
+then $d_n^s\Lcal_n(U)\in\Z$.
+\end{lemma}
+\begin{proof}
+Write
+\[
+ \widetilde R_n(t)=R_n(t)\left[U(t+n/2)+U(-t-n/2)\right]
+   =\sum_{k=0}^n\sum_{i=1}^s\frac{a_{i,k}}{(t+k)^i}.
+\]
+The decomposition has no polynomial part by admissibility. The arithmetic
+building-block argument of \cite[(3.5)--(3.6)]{FLSZ} gives
+\begin{equation}\label{eq:coeff-int}
+ d_n^{s-i}a_{i,k}\in\Z\qquad(1\leq i\leq s,\ 0\leq k\leq n).
+\end{equation}
+For clarity, $(t+k)^s\widetilde R_n(t)$ factors into $s$ copies of
+$n!(t+k)/(t)_{n+1}$, the blocks
+\[
+ b^n\prod_{p\mid b}p^{\lfloor n/(p-1)\rfloor}
+       \frac{(t+a/b)_n}{n!}
+ \quad(b\in\mathcal Q_B,\ 1\leq a<b,\ (a,b)=1),
+\]
+and $U(t+n/2)+U(-t-n/2)$, together with an integer factor.
+Lemma~\ref{lem:blocks} and the hypothesis on $U$ give
+$d_n^\ell F^{(\ell)}(-k)/\ell!\in\Z$ for each factor.
+The leftover constant is integral because
+$n\varphi(b)/(p-1)\geq\varphi(b)\lfloor n/(p-1)\rfloor$ for every
+$p\mid b$. Applying the product rule
+to the Taylor coefficient of order $s-i$ proves \eqref{eq:coeff-int}.
+Neither this calculation nor its building-block estimates require $s$ to
+be odd. The shifts of $U$ are integral because $n$ is even.
+
+Reflection now has the opposite parity to the odd-zeta construction:
+\[
+ a_{i,n-k}=(-1)^i a_{i,k}.
+\]
+Consequently $\rho_i=\sum_{k=0}^n a_{i,k}$ vanishes for every odd $i$.
+For $0<\theta<1$, summing the partial fractions therefore gives
+\begin{equation}\label{eq:hurwitz-expansion}
+ \sum_{v\geq0}\widetilde R_n(v+\theta)
+ =\rho_{0,\theta}+\sum_{\substack{2\leq i\leq s\\2\mid i}}
+       \rho_i\zeta(i,\theta),\qquad
+ \rho_{0,\theta}=-\sum_{k=1}^n\sum_{l=0}^{k-1}
+                    \sum_{i=1}^s\frac{a_{i,k}}{(l+\theta)^i}.
+\end{equation}
+The $i=1$ terms are combined in finite sums before taking their limit.
+Their common harmonic divergence has coefficient $\rho_1=0$, and the
+remaining shifted endpoint terms tend to zero. Thus no value
+$\zeta(1,\theta)$ is introduced.
+
+We claim $d_n^s\rho_{0,\theta}\in\Z$ for each $\theta=j/q$ with
+$q\in\mathcal Q_B$ and $\chi_4(j)\ne0$. Such $\theta$ and $1-\theta$
+belong to $\Theta$. Fix $0\leq l<k\leq n$ and a prime $p$, and put
+$e=v_p(d_n)$. If $v_p(l+\theta)\leq e$, each term
+$d_n^s a_{i,k}/(l+\theta)^i$ is $p$-integral by \eqref{eq:coeff-int}.
+Otherwise, evaluate the partial fractions at
+$t_0=-k+l+\theta$. This is a numerator zero: the block
+$(t+1-\theta)_n$ vanishes there, since
+$1\leq k-l\leq n$. Hence
+\[
+ \sum_{i=1}^s\frac{d_n^s a_{i,k}}{(l+\theta)^i}
+ =-\sum_{\substack{0\leq k'\leq n\\k'\ne k}}\sum_{i=1}^s
+       \frac{d_n^s a_{i,k'}}{(l+\theta+k'-k)^i}.
+\]
+Since $v_p(k'-k)\leq e<v_p(l+\theta)$, the denominator
+$(l+\theta+k'-k)^i$ has valuation $i\,v_p(k'-k)\leq ie$.
+Equation~\eqref{eq:coeff-int} gives $v_p(d_n^s a_{i,k'})\geq ie$,
+so every term on the right is $p$-integral. This proves the claim
+prime by prime, after summing the finite tails.
+
+Finally apply \eqref{eq:character} to \eqref{eq:hurwitz-expansion} and
+sum with weights $w_q$. The irrational beta terms disappear by
+\eqref{eq:elimination}; the rational ones are cleared by $A_0$, while
+\eqref{eq:coeff-int} clears their coefficients after multiplication by
+$d_n^s$. The finite tails have just been cleared by the same multiplier.
+\end{proof}
+
+The command \mbox{\texttt{python3 checks/verify\_count\_examples.py}} reproduces
+the finite-tail cancellations for $B=2$, $s=8$ and $n=2,4$. Run it from
+\texttt{asymptotic-even-beta-counts/} in the project repository~\cite{beta4repo}.
+
+\begin{proposition}\label{prop:integerizer}
+For $i\geq0$, define
+\[
+ E_{n,i}=(n!)^{\lfloor i/n\rfloor}(i-n\lfloor i/n\rfloor)!,\qquad
+ H_{n,m}=\frac{d_n^{sm}}{\prod_{i=0}^{m-1}E_{n,i}^2}.
+\]
+For every $m$ allowed in \eqref{eq:det}, $H_{n,m}\Delta_{n,m}\in\Z$.
+\end{proposition}
+\begin{proof}
+Use $U_i(t)=(t)_i/E_{n,i}$ as a basis of polynomials of degree below $m$.
+It is a product of normalized Pochhammer polynomials of degrees at most
+$n$: divide the $i$ factors into blocks of $n$ and a final shorter block.
+Lemma~\ref{lem:blocks} and the product rule, as in
+\cite[Proposition~3.2]{FLSZ}, give \eqref{eq:derivative-integrality} for
+each product $U_iU_j$. Lemma~\ref{lem:arithmetic} shows that all entries of
+$(d_n^s\Lcal_n(U_iU_j))$ are integers. The triangular change of basis
+has determinant $\prod_{i<m}E_{n,i}^{-1}$. Applying it to the rows and
+columns gives
+\[
+ \det\bigl(d_n^s\Lcal_n(U_iU_j)\bigr)_{i,j<m}
+   =d_n^{sm}\left(\prod_{i<m}E_{n,i}^{-1}\right)^2\Delta_{n,m}
+   =H_{n,m}\Delta_{n,m}.
+\]
+\end{proof}
+
+\section{Smallness with this same normalization}\label{sec:size}
+The analytic gain comes from using a different polynomial basis to estimate
+the determinant. Its first zeros remove the earliest atoms of the measure.
+The signs of the character do not affect this argument, which bounds
+absolute weights.
+
+\begin{proposition}\label{prop:size}
+There is a constant $C_0>0$, independent of $n$ and $m$, such that, whenever
+\begin{equation}\label{eq:size-range}
+ 2m\leq(s-B^2-10)n,
+\end{equation}
+we have
+\begin{equation}\label{eq:size-bound}
+ H_{n,m}|\Delta_{n,m}|
+ \leq (C_0m)^m A^{mn}e^{m^2+(2s+10B^2)mn}
+       \left(\frac{10B^2 n}{m}\right)^{(s-B^2)mn-2m^2}.
+\end{equation}
+The constant may depend on the fixed parameters $s,B,A_0$ and $w_q$.
+\end{proposition}
+\begin{proof}
+We give the estimate of \cite[Proposition~4.1]{FLSZ} with the character
+weights included. Put $\nu_i=\lfloor i/(2h+2)\rfloor$ and take the monic
+polynomials
+\[
+ V_i(z)=z^{i-(2h+2)\nu_i}
+       \prod_{\theta\in\Theta\cup\{1\}}\prod_{v=0}^{\nu_i-1}
+        \left(z^2-(v+\theta+n/2)^2\right).
+\]
+They have degree $i$, so $\Delta_{n,m}=\det(\Lcal_n(V_iV_j))$.
+At every contributing point $t=v+j/q$ we have $\chi_4(j)\ne0$ and
+$j/q\in\Theta$. Thus both $V_i(t+n/2)$ and $V_i(-t-n/2)$ vanish if
+$v<\nu_i$. For $v\geq\nu_i$, all their roots in absolute value
+are no larger than $t+n/2$, which gives
+\[
+ |V_i(t+n/2)|=|V_i(-t-n/2)|\leq(t+n)^i.
+\]
+Let $S_i$ be the sum defining $\Lcal_n(V_i^2)$ with every weight
+$w_q\chi_4(j)$ replaced by its absolute value. Cauchy--Schwarz and the
+determinant expansion give
+\begin{equation}\label{eq:det-majorant}
+ |\Lcal_n(V_iV_j)|\leq\sqrt{S_iS_j},\qquad
+ |\Delta_{n,m}|\leq m!\prod_{i<m}S_i\leq m^m\prod_{i<m}S_i.
+\end{equation}
+
+Write $B_0=1+\max\mathcal Q_B$. All contributing points satisfy $t\geq1/(B_0-1)$.
+The inequalities
+\[
+ (t)_{n+1}\geq\frac{n!}{B_0}(1+t/n)^{n+1},\qquad
+ (t+\theta)_n\leq(t+n)^n,\qquad n!\geq(n/e)^n
+\]
+imply
+\[
+ R_n(t)\leq B_0^s A^n e^{hn}
+             \left(\frac{n}{t+n}\right)^{(n+1)s-nh}.
+\]
+For $e_i=(n+1)s-nh-2i$, condition \eqref{eq:size-range} gives
+$e_i-1>10n$. An integral comparison therefore yields
+\[
+ \sum_{v\geq\nu_i}\left(\frac{n}{v+j/q+n}\right)^{e_i}
+ \leq\frac{2}{(1+\nu_i/n)^{e_i-1}}.
+\]
+Since $h+1\leq B^2$ and $n\geq2$, we also have
+$1+\nu_i/n>(i+1)/(2B^2n)$. Set $E=(s-B^2)n-2m>0$.
+When $2B^2n/(i+1)<1$ the preceding inequalities allow the exponent to
+be reduced to $E$; when that ratio is at least one, the same bound follows
+by first using $(1+\nu_i/n)^{-(e_i-1)}\leq1$. Thus
+\[
+ S_i\leq C_0 A^n e^{B^2n}n^{2i}
+                 \left(\frac{2B^2n}{i+1}\right)^E,
+ \qquad C_0=4A_0B_0^s\sum_{q\in\mathcal Q_B}q|w_q|.
+\]
+We used only $|\chi_4(j)|\leq1$. Combining with
+\eqref{eq:det-majorant} and $m!\geq(m/e)^m$ gives
+\begin{equation}\label{eq:raw-det-bound}
+ |\Delta_{n,m}|\leq(C_0m)^m A^{mn}e^{B^2mn}n^{m(m-1)}
+                \left(\frac{2eB^2n}{m}\right)^{Em}.
+\end{equation}
+Finally, the elementary bounds $d_n\leq e^{2n}$ and
+\[
+ \log E_{n,i}\geq i\log n-i-n
+\]
+give
+\[
+ H_{n,m}\leq n^{-m(m-1)}e^{m^2+2(s+1)mn}.
+\]
+Multiply this by \eqref{eq:raw-det-bound}, use $2e<10$ and
+$B^2+2\leq10B^2$, and obtain \eqref{eq:size-bound}.
+\end{proof}
+
+\section{Nonvanishing for the signed character measure}\label{sec:nonvanishing}
+The weights in \eqref{eq:functional} can change sign, so positivity of
+individual entries or of their determinant is unavailable. Instead we use
+the signed-measure criterion of \cite[Proposition~5.4]{FLSZ}. We include
+its argument to expose exactly which nonvanishing hypothesis the character
+twist must satisfy.
+
+\subsection{A signed-measure criterion}
+Let $X\subset\R$ be closed and discrete, and let $\mu=\sum_{x\in X}a_x\delta_x$
+be a real signed measure. Suppose, for some positive integer $D$, that
+\begin{equation}\label{eq:growth}
+ \sum_{x\in X}|a_x|(1+|x|)^{D-1}<\infty.
+\end{equation}
+Extend $a_x$ by zero outside $X$. Its Cauchy transform and moments are
+\[
+ f(z)=\sum_{x\in X}\frac{a_x}{z-x},\qquad
+ \mu_k=\sum_{x\in X}a_x x^k\quad(0\leq k<D).
+\]
+The series for $f$ is locally uniformly convergent off $X$, and its residue
+at $x$ is $a_x$.
+
+\begin{proposition}[Fischler--Lai--Sprang--Zudilin]\label{prop:signed}
+Assume \eqref{eq:growth} and
+\begin{equation}\label{eq:weight-recurrence}
+ \mathfrak A(x)a_{x+1}=\mathfrak B(x)a_x\quad(x\in\R),
+\end{equation}
+where $\mathfrak A,\mathfrak B\in\C[z]$ and
+$1\leq d=\max(\deg\mathfrak A,\deg\mathfrak B)\leq D$. Put
+\begin{equation}\label{eq:C-polynomial}
+ \mathfrak C(z)=\sum_{x\in X}a_x
+ \left(\frac{\mathfrak A(z)-\mathfrak A(x-1)}{z-(x-1)}
+       -\frac{\mathfrak B(z)-\mathfrak B(x)}{z-x}\right).
+\end{equation}
+If
+\begin{equation}\label{eq:rational-equation}
+ \mathfrak A(z)r(z+1)-\mathfrak B(z)r(z)=\mathfrak C(z)
+\end{equation}
+has no solution $r\in\C(z)$, then for every integer $M\geq1$ with
+$2(M+d-1)-2<D$ there is an $m\in[M,M+d-1]$ such that
+$\det(\mu_{i+j})_{0\leq i,j<m}\ne0$.
+\end{proposition}
+\begin{proof}
+All summands in \eqref{eq:C-polynomial} are polynomials of degree at most
+$d-1$, and \eqref{eq:growth} makes their coefficients absolutely summable.
+Subtract the polynomial divided differences from
+$\mathfrak A(z)f(z+1)-\mathfrak B(z)f(z)$. The remaining partial fractions
+cancel by \eqref{eq:weight-recurrence}. Consequently
+\begin{equation}\label{eq:f-equation}
+ \mathfrak A(z)f(z+1)-\mathfrak B(z)f(z)=\mathfrak C(z).
+\end{equation}
+
+Set $N=M+d-1$. We first show that the $N\times M$ Hankel matrix
+$(\mu_{i+j})_{0\leq i<N,\,0\leq j<M}$ has rank $M$. Otherwise there
+is a nonzero polynomial $Q$ of degree at most $M-1$ such that
+\[
+ \sum_{x\in X}a_x Q(x)x^i=0\qquad(0\leq i<N).
+\]
+The polynomial
+\[
+ P(z)=\sum_{x\in X}a_x\frac{Q(z)-Q(x)}{z-x}
+\]
+has degree at most $M-2$ (and is zero if $M=1$). Expanding $1/(z-x)$
+to order $N$ and using the vanishing moments gives
+\[
+ Q(z)f(z)-P(z)=\frac1{z^N}\sum_{x\in X}
+                     a_x Q(x)x^{N-1}\frac{x}{z-x}.
+\]
+The absolute sum of $a_xQ(x)x^{N-1}$ is finite, since
+$\deg Q+N-1\leq2N-2<D$. On each line $z=iy$ and $z=1+iy$ with
+$y\geq1$, the last quotient is bounded in absolute value by $2$ and
+tends to zero for each fixed $x$. Dominated convergence yields
+\begin{equation}\label{eq:good-rational}
+ Q(z)f(z)-P(z)=o(y^{-N})\qquad(y\to\infty)
+\end{equation}
+on both lines. The polynomial
+\[
+ \mathfrak A(z)P(z+1)Q(z)-\mathfrak B(z)P(z)Q(z+1)
+       -\mathfrak C(z)Q(z)Q(z+1)
+\]
+is therefore $o(1)$ on the imaginary axis, by \eqref{eq:f-equation},
+\eqref{eq:good-rational} and $N\geq d+\deg Q$. It vanishes identically.
+Dividing by $Q(z)Q(z+1)$ makes $P/Q$ a solution of
+\eqref{eq:rational-equation}, a contradiction.
+
+It remains to pass from this rectangular rank to a principal determinant.
+Here is the elementary Hankel fact used in \cite[Lemma~5.3]{FLSZ}. In
+the $N\times N$ Hankel matrix, let $m$ be the largest number of linearly
+independent initial columns. We have $m\geq M$. If $m=N$, we are done.
+Otherwise the next column supplies a recurrence
+\[
+ \mu_{i+m}+\sum_{j=0}^{m-1}c_j\mu_{i+j}=0\qquad(0\leq i<N).
+\]
+For the row vectors of the first $m$ columns, this recurrence expresses
+each row from index $m$ onward as a combination of the preceding $m$
+rows. The indices needed in each coordinate lie within the displayed
+recurrence. Thus the first $m$ rows span all these rows. Since their
+column rank is $m$, their first $m\times m$ block is invertible. This
+is the required principal determinant.
+\end{proof}
+
+\subsection{The two tails of the character measure}
+Let $X=\Z+(\Theta\cup\{1\})$. On $X$, define the combined grid weight
+\[
+ w(x)=\sum_{\substack{q\in\mathcal Q_B\\qx\in\Z}}w_q\chi_4(qx),
+ \qquad \widehat R_n(x)=R_n(x-n/2).
+\]
+Because each $q$ is divisible by four,
+\begin{equation}\label{eq:w-parity}
+ w(x+1)=w(x),\qquad w(-x)=-w(x),\qquad w(k)=0\ (k\in\Z).
+\end{equation}
+Equation~\eqref{eq:reflection} says that $\widehat R_n$ is even.
+The moments in \eqref{eq:functional} are those of the signed measure with
+masses
+\begin{equation}\label{eq:mass}
+ a_x=
+ \begin{cases}
+  A_0\sgn(x)w(x)\widehat R_n(x),&x\in X,\ |x|>n/2,\\
+  0,&\text{otherwise}.
+ \end{cases}
+\end{equation}
+On the positive tail this follows by putting $x=v+j/q+n/2$; $n/2$ is
+an integer. On the negative tail, the oddness of $w$ and the extra factor
+$\sgn(x)$ make the reflected mass equal to the positive one, just as the
+two evaluations of $P$ in \eqref{eq:functional} require. The sign factor
+cannot be dropped. The measure is even, but its individual masses can
+have either sign.
+
+The ratio of consecutive kernel values is
+\begin{equation}\label{eq:kernel-ratio}
+ \frac{\widehat R_n(z+1)}{\widehat R_n(z)}
+   =\frac{\mathcal B_n(z)}{\mathcal A_n(z)},
+\end{equation}
+where
+\begin{align}
+ \mathcal A_n(z)&=(z+1+n/2)^{s+1}(z-n/2)
+                    \prod_{\theta\in\Theta}(z+\theta-n/2),\label{eq:A-rec}\\
+ \mathcal B_n(z)&=(z-n/2)^{s+1}(z+1+n/2)
+                    \prod_{\theta\in\Theta}(z+\theta+n/2).\label{eq:B-rec}
+\end{align}
+These are the coefficients of \cite[(5.11)]{FLSZ} with the products
+taken over our $\Theta$. Both have degree
+\[
+ d=s+h+2.
+\]
+Away from the central gap, \eqref{eq:kernel-ratio} and periodicity give
+$\mathcal A_n(x)a_{x+1}=\mathcal B_n(x)a_x$.
+At a transition into the positive tail, write
+$x=n/2-1+\theta$, where $0<\theta<1$ is a grid fraction. The factor
+indexed by $1-\theta$ in $\mathcal A_n(x)$ vanishes. At a transition out
+of the negative tail, $x=-n/2-\theta$, and the factor indexed by $\theta$
+in $\mathcal B_n(x)$ vanishes. Integral endpoints carry no mass by
+\eqref{eq:w-parity}. Points outside $X$ remain outside $X$ after an
+integer shift. Thus the recurrence holds for the extension by zero at
+every real $x$.
+
+Since $\deg R_n=nh-(n+1)s$, condition \eqref{eq:growth} holds with
+\begin{equation}\label{eq:moment-D}
+ D=(n+1)s-nh-1.
+\end{equation}
+Indeed the summands at infinity are $O(|x|^{-2})$, and $X$ is a finite
+union of translates of $\Z$.
+
+\begin{lemma}\label{lem:no-rational}
+For this measure and the polynomials \eqref{eq:A-rec}--\eqref{eq:B-rec},
+the rational equation in Proposition~\ref{prop:signed} has no solution.
+\end{lemma}
+\begin{proof}
+Suppose $r\in\C(z)$ solves it. The Cauchy transform $f$ solves the same
+equation. Subtracting and using \eqref{eq:kernel-ratio}, we find that
+\[
+ g(z)=\frac{f(z)-r(z)}{\widehat R_n(z)}
+ \quad\text{satisfies}\quad g(z+1)=g(z)
+\]
+as a meromorphic identity.
+
+Choose the largest denominator with a nonzero elimination weight,
+$q_* =\max\{q:w_q\ne0\}$, and set $\theta_*=1/q_*$. At either point
+$x=\pm T+\theta_*$, with integral $T$, a grid denominator $q$ contributes
+only if $q_*\mid q$. Maximality leaves just $q=q_*$ among the nonzero
+weights. Moreover $\chi_4(q_*(\pm T)+1)=1$, so
+\[
+ w(T+\theta_*)=w(-T+\theta_*)=w_{q_*}\ne0.
+\]
+Reflection pairs $T+\theta_*$ with $-T-\theta_*$, where the masses
+agree. Periodicity pairs $T+\theta_*$ with $-T+\theta_*$, where
+the grid weight is the same and the sign of $x$ changes.
+Choose $T$ large enough that these latter points lie outside the central gap
+and avoid the finitely many poles of $r/\widehat R_n$ and all zeros
+or poles of $\widehat R_n$. From \eqref{eq:mass}, the residues of $g$
+at these two points are respectively
+\[
+ A_0w_{q_*}\quad\text{and}\quad -A_0w_{q_*}.
+\]
+But the points differ by the integer $2T$, so a one-periodic meromorphic
+function must have equal residues there. This is a contradiction.
+\end{proof}
+
+\begin{corollary}\label{cor:nonzero}
+Let $M\in\Z_{\geq1}$. If $d\leq D$ and $2(M+d-1)-2<D$, then some integer
+$m\in[M,M+d-1]$ satisfies $\Delta_{n,m}\ne0$.
+\end{corollary}
+\begin{proof}
+Apply Proposition~\ref{prop:signed} to \eqref{eq:mass}, using
+Lemma~\ref{lem:no-rational}. Its moments are exactly those defining
+$\Delta_{n,m}$.
+\end{proof}
+\section{The asymptotic comparison}\label{sec:finish}
+We now choose the parameters. The number of usable grids grows linearly
+with $B$, while $\log A(B)$ grows like $B^2\log B$. The determinant
+estimate permits $B$ to be larger by a factor $\sqrt{\log\log s}$ than
+the earlier single-form scale. The following calculation makes the gain
+and the order of limits explicit.
+
+Fix
+\[
+ 0<\lambda<\sqrt{\frac{12}{\kappa}},\qquad
+ B=\lambda Y(s),\qquad C=\frac{s}{\log\log s}.
+\]
+For all sufficiently large even $s$, the hypotheses on $B$ and $s$ in
+Sections~\ref{sec:functional}--\ref{sec:size} hold, and
+\[
+ 2C<s-B^2-10.
+\]
+Fix one such $s$. As $n$ tends to infinity through even integers, take
+$M=\lceil Cn\rceil$. The degree conditions in Corollary~\ref{cor:nonzero}
+hold for all sufficiently large $n$, since $h\leq B^2-1$ and
+$2C<s-B^2-10$. Consequently we may choose
+\[
+ M\leq m=m(n)\leq M+d-1,
+ \qquad\Delta_{n,m}\ne0,
+ \qquad\frac{m}{n}\longrightarrow C.
+\]
+The same strict inequality ensures \eqref{eq:size-range} for these $m$,
+once $n$ is large. Proposition~\ref{prop:integerizer} then gives nonzero
+integers
+\[
+ J_n=H_{n,m(n)}\Delta_{n,m(n)},\qquad |J_n|\geq1.
+\]
+We will contradict this using Proposition~\ref{prop:size}.
+
+Take logarithms in \eqref{eq:size-bound}, divide by $mn$, and first let
+$n\to\infty$ with $s,B,C$ fixed. The term $\log(C_0m)/n$ disappears,
+regardless of the size of the fixed elimination weights or $A_0$. We obtain
+\begin{equation}\label{eq:rate}
+ \limsup_{\substack{n\to\infty\\2\mid n}}
+ \frac{\log|J_n|}{m(n)n}
+ \leq \log A+C+2s+10B^2
+        +(s-B^2-2C)\log\frac{10B^2}{C}.
+\end{equation}
+The right-hand side is now an expression in $s$. As $s\to\infty$,
+\eqref{eq:A1}--\eqref{eq:A2} and $\log B\sim\frac12\log s$ give
+\begin{equation}\label{eq:arithmetic-rate}
+ \log A\leq
+ \left(\frac{\kappa\lambda^2}{12}+o(1)\right)s\log\log s.
+\end{equation}
+For example, the $A_2$ contribution is
+$O(s(\log\log s)^3/\log s)=o(s\log\log s)$, so it does not affect
+the leading constant. On the analytic side,
+\begin{align*}
+ \log\frac{10B^2}{C}
+ &=-\log\log s+2\log\log\log s+\log(10\lambda^2),\\
+ s-B^2-2C&=s(1-o(1)).
+\end{align*}
+Inserting these into \eqref{eq:rate} gives
+\[
+ \limsup_{\substack{n\to\infty\\2\mid n}}
+ \frac{\log|J_n|}{m(n)n}
+ \leq\left(\frac{\kappa\lambda^2}{12}-1+o(1)\right)s\log\log s.
+\]
+The coefficient is negative for every sufficiently large $s$, by the
+choice of $\lambda$. For each such fixed $s$, we therefore obtain
+$|J_n|<1$ for all sufficiently large even $n$, contradicting
+$J_n\in\Z\setminus\{0\}$.
+
+The contradiction disproves the assumption $I(s)<|\mathcal Q_B|$.
+Lemma~\ref{lem:grid-count} now implies
+\[
+ \liminf_{\substack{s\to\infty\\2\mid s}}\frac{I(s)}{Y(s)}
+ \geq\frac{\lambda\kappa}{3}.
+\]
+Letting $\lambda$ increase to $\sqrt{12/\kappa}$ gives
+$(\kappa/3)\sqrt{12/\kappa}=2\sqrt{\kappa/3}$, proving Theorem~\ref{thm:main}.
+
+\begin{remark}
+The proof concerns growing intervals and uses no explicit threshold for
+$s$. In particular, it does not by itself give an irrationality statement
+for a short prescribed list or for an individual even beta value. Both
+the character-dependent nonvanishing argument and the fixed-$s$ order of
+limits are essential to the conclusion above.
+\end{remark}
+
+\paragraph{Verification.}
+Independent AI models audited the mathematics and exposition of the original and
+revised proofs. The first proposed the restricted grid.
+
+\begin{thebibliography}{9}
+
+\bibitem{FLSZ}
+S.~Fischler, L.~Lai, J.~Sprang and W.~Zudilin,
+\emph{Many more odd zeta values are irrational},
+arXiv:2611.16156v1, 12 November 2026.
+\url{https://arxiv.org/abs/2611.16156v1}.
+
+\bibitem{KT}
+V.~Kumar and R.~Tosi,
+\emph{Irrationality of values of $L$-functions for real Dirichlet characters},
+arXiv:2610.41458v1, 30 October 2026.
+\url{https://arxiv.org/abs/2610.41458v1}.
+
+\bibitem{LY}
+L.~Lai and P.~Yu,
+\emph{A note on the number of irrational odd zeta values},
+Compositio Mathematica \textbf{156} (2020), no.~8, 1699--1717.
+\url{https://arxiv.org/abs/1911.08458v2}.
+
+\bibitem{THcount}
+twinheterodox,
+\emph{Explicit lower bounds for the number of irrational even beta values},
+Hexagon 2611.00139v1, 4 November 2026.
+\url{https://hexagonmath.org/2611.00139v1}.
+
+\bibitem{beta4repo}
+twinheterodox, \emph{Irrationality and linear independence of Dirichlet beta values},
+GitHub repository, 2026. \url{https://github.com/twinheterodox/beta4}.
+
+\end{thebibliography}
+\end{document}

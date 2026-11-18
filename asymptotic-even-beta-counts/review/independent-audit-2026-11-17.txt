@@ -1,0 +1,36 @@
+Summary of the independent AI audit of the earlier full-grid manuscript
+17 November 2026
+
+Reviewed PDF SHA-256
+458ba986eea1c5ca68ed7fb41f80a6e58c07e61311b8afbf120f7ff03c1e7fa1
+Associated source SHA-256
+bc52c515385acc5e2c7dd3bb4e1483170b703ecd26f04e0d7ddf4ba3d6592b4d
+
+The auditor reviewed all 12 pages of the full-grid paper and found no gap in Theorem 1.1
+with leading constant (2/3)sqrt(kappa). The review covered the grid count,
+elimination, integrality of the finite Hurwitz tails, both basis changes,
+the absolute estimate, the Hankel rank argument, the opposite residues, and
+the order of the limits. Exact rational examples at n=2,4 were independently
+calculated. The cited inverse-totient results were treated as literature
+inputs, with their statements compared with the cited texts.
+
+The auditor also supplied a strengthening. For any contributing j/q, only
+an odd common factor can cancel. The reduced denominator remains divisible
+by four and has totient at most B. Reflection preserves that denominator.
+The auditor proposed using only these fractions in the numerator and
+arithmetic factors, and identified the retained finite-tail and transition
+zeros, witness 1/q_*, bound h+1 <= B^2, and totient mass (kappa/6+o(1)) B^2.
+The resulting coefficient in the final rate is kappa lambda^2/12 - 1.
+The strengthened constant is 2 sqrt(kappa/3). The suggested decimal is
+correct when rounded to ten places.
+
+The auditor also identified the factor i in the valuation in Lemma 4.2,
+the referent of the determinant in Proposition 4.3, and the positive
+integer hypothesis on M in Corollary 6.3. Two exposition changes were
+suggested, one explaining the two bases and variable size before (3.7),
+the other distinguishing reflection and periodicity in Lemma 6.2.
+
+The independent audit was of the full-grid PDF. The later revised
+source and PDF incorporate the auditor's mathematical suggestion and
+are covered separately in restricted-grid-correctness.txt and
+restricted-grid-exposition.txt.

@@ -1,0 +1,161 @@
+Independent AI review of the strengthened counting theorem
+17 November 2026
+
+This public edition retains the mathematical checks of the revised proof.
+The reviewer read the full source, then checked the two final text changes
+(the decimal approximation sign and the explicit range 1 <= j < q).
+SHA-256 of the reviewed TeX
+328a134c8f998a73e698abbd15e427953162fd3d8a7656b698f1c9829fbdd6bb
+
+The reviewer found no mathematical gap. The finite numerical examples
+and the typesetting were checked separately.
+
+1. The restricted grid retains exactly the character fractions needed
+--------------------------------------------------------------------
+For q divisible by four and 1 <= j < q with chi_4(j) nonzero, j is odd.
+Thus gcd(j,q) is odd. Reducing j/q leaves a denominator b divisible by
+four, with b | q and phi(b) <= phi(q) <= B. Consequently j/q lies in the
+restricted Theta_B. Its reflection has the same reduced denominator and
+is also retained. Conversely the reduced numerators for a denominator
+divisible by four are odd, so their character values are nonzero.
+
+This assertion concerns the individual character grids; it does not presume
+that all combined elimination weights are nonzero. Arbitrary cancellation
+between the integral w_q remains permitted. The q=12 example is correct.
+All finite tails and all nonzero summands of the analytic majorant therefore
+still have their required zeros. No unused full-grid atom is required later.
+
+2. Count and both sides of the new arithmetic asymptotic
+-------------------------------------------------------
+The decompositions F=2g+T and T(x)=sum_{j>=1} g(x/2^j) correctly separate
+the two-adic part of a denominator. They imply
+  T(x)=sum_{j>=1} 2^(-j) F(x/2^j).
+The bound F(y)<=Cy for y>=1, together with F(y)=0 for y<1, gives the
+summable majorant C*4^(-j) after division by x. Hence the imported
+F(x)~kappa*x yields T(x)~kappa*x/3.
+
+Each reduced fraction has a unique denominator, so
+  h_B=sum_{q in Q_B} phi(q)=B*T(B)-integral_0^B T(t) dt
+     =(kappa/6+o(1))*B^2.
+The inclusive upper endpoint in T creates no error in this identity.
+The weak bound h_B+1<=B^2 used later follows for sufficiently large B.
+
+For the upper bound on log A1, the uniform inverse-totient denominator
+bound q << B*log log B gives
+  log A1 <= h_B*(1+o(1))*log B.
+I located and read Lai--Yu v2 equation (2.2): it explicitly states the
+stronger q <= (exp(gamma)+o(1))*B*log log B for every q in Psi_B.
+The citation supports the precise uniform bound used here.
+
+For the lower bound, denominators with phi(q)<B/log B contribute at most
+  h_(B/log B)=O(B^2/(log B)^2)=o(B^2)
+to h_B. On the remaining denominators,
+  log q >= log phi(q) >= log B-log log B.
+All contributions to log A1 are nonnegative. These facts give the matching
+lower bound and therefore
+  log A1=(kappa/6+o(1))*B^2*log B.
+The restricted A2 is bounded above by the full product with the same
+positive exponents, so the previously imported full-product estimate
+log A2<=10 B^2(log log B)^2 remains usable.
+
+3. Arithmetic normalization and the finite-tail correction
+---------------------------------------------------------
+The derivative-integrality lemma works for the restricted blocks without
+change. The product has h blocks, each carrying 1/n!, against s reciprocal
+pole blocks, each carrying n!. This gives exactly (n!)^(s-h), the current
+kernel's normalization. The leftover factors from A2 are integers because
+n*phi(b)/(p-1) >= phi(b)*floor(n/(p-1)). No factorial cost was dropped.
+
+Since n is even, the shifts of U are integral. Reflection removes all odd
+rho_i, including rho_1, and the finite-sum treatment of the i=1 terms
+correctly avoids introducing a divergent Hurwitz value. The character
+identity uses 4|q to identify chi_4(qv+j) with chi_4(j).
+
+For an exceptional finite-tail denominator with v_p(l+theta)>e=v_p(d_n),
+the retained reflected zero at -k+l+theta gives the stated partial-fraction
+cancellation. The corrected text now compares the actual denominator power:
+  v_p((l+theta+k'-k)^i)=i*v_p(k'-k)<=i*e,
+whereas v_p(d_n^s*a_(i,k'))>=i*e. Thus the whole exceptional sum is
+p-integral. This proof needs theta and 1-theta only for nonzero character
+atoms, exactly as established in Section 2.
+
+The products U_i U_j satisfy the derivative condition by splitting into
+Pochhammer blocks of degree at most n. The basis determinant is
+product E_(n,i)^(-1). Applying the change on both sides and multiplying
+each Gram entry by d_n^s gives exactly H_(n,m)*Delta_(n,m), as now displayed.
+The old ambiguity between the basis determinant and Gram determinant is
+removed. The arithmetic and analytic sections concern this same scalar.
+
+4. The absolute-weight estimate survives the restriction
+--------------------------------------------------------
+The V_i are monic of degree i. Their roots at the early contributing
+character atoms give precisely the claimed cutoff, because those atoms
+are in the restricted Theta. Retaining 1 in Theta union {1} causes no
+problem and leaves the convenient count h+1. Cauchy--Schwarz is applied
+only to absolute weights; no positivity of the signed determinant is used.
+
+I checked the kernel majorant, the decreasing-tail integral comparison,
+the two cases for 2*B^2*n/(i+1), the product of S_i, and the multiplication
+by H. The powers of n cancel, and the estimates retain the announced
+constants. In particular, only the weak h+1<=B^2 is used analytically;
+the sharper asymptotic for h_B does not silently alter an analytic cost.
+
+5. Signed recurrence and rational nonvanishing
+--------------------------------------------
+I read the entire signed-measure criterion, including the Cauchy-transform
+difference equation, the rectangular rank proof, and passage to a leading
+principal minor. The available moments cover all sums and matrix entries.
+The o(y^(-N)) remainder on both vertical lines is justified by dominated
+convergence. Its resulting polynomial identity gives the forbidden rational
+solution. The Hankel recurrence supplies the leading principal minor of
+some size m in [M,M+d-1], without a definiteness assumption.
+
+For the character measure, w is 1-periodic and odd. The factor sign(x)
+therefore makes the reflected masses agree, as the functional requires.
+The displayed A_n,B_n have degree d=s+h+2 and their quotient is exactly
+Rhat_n(z+1)/Rhat_n(z). The zero at 1-theta in A_n kills the positive-gap
+transition x=n/2-1+theta. The zero at theta in B_n kills the negative-gap
+transition x=-n/2-theta. Integral points have zero mass, and X is invariant
+under integer shifts. Thus the recurrence holds on all real x after
+extension by zero, including the central gap.
+
+The growth condition holds with D=(n+1)s-nh-1: the weighted summands
+at infinity are O(|x|^-2). The explicit M>=1 condition in the corollary
+now agrees with the criterion's hypothesis.
+
+Choosing the largest q_* with w_(q_*) nonzero isolates that coefficient at
+both T+1/q_* and -T+1/q_*. These points belong to the same integer-translate
+class and have equal grid weights, but opposite signs of x. For sufficiently
+large integral T, the residues of (f-r)/Rhat are therefore opposite and
+nonzero, contrary to its 1-periodicity. The new exposition correctly
+distinguishes this pair from the reflection pair T+theta and -T-theta.
+
+6. The final constant and order of limits
+----------------------------------------
+For fixed lambda<sqrt(12/kappa), B=lambda*Y(s) and C=s/log log s,
+the restricted log A1 gives
+  log A <= (kappa*lambda^2/12+o(1))*s*log log s.
+The A2 term is smaller order. The analytic logarithm contributes
+  -(1+o(1))*s*log log s,
+and C+2s+10B^2 is also smaller order on this scale.
+
+First fixing sufficiently large even s makes all elimination weights and
+A0 constants. Then n tends through even integers, with M=ceil(Cn) and
+M<=m<=M+d-1. Since d is fixed at this stage, m/n->C. The strict size and
+moment inequalities hold eventually. Thus the very same nonzero integer
+H*Delta has absolute value tending below one when lambda<sqrt(12/kappa).
+
+The resulting count is at least |Q_B|~kappa*lambda*Y(s)/3. Letting lambda
+increase to sqrt(12/kappa) yields 2*sqrt(kappa/3). Its ratio to the imported
+FLSZ constant 2*sqrt(kappa) is 1/sqrt(3), and its ratio to this manuscript's
+previous constant 2*sqrt(kappa)/3 is sqrt(3). The theorem concerns a liminf
+and sufficiently large s; it does not supply an explicit starting endpoint.
+
+Imported inputs and limitations
+-------------------------------
+The general inverse-totient asymptotic and totient lower bound are imported
+from the cited literature; I checked their stated forms, not their original
+proofs. The full-product A2 estimate and earlier comparative statements
+retain the prior review's source scope. Kumar--Tosi is only a cited statement
+and is not an input to this proof. The present review does not certify that
+paper, literature priority, or a finite beta index.

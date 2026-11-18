@@ -1,0 +1,144 @@
+Independent AI audit. Publication copy with reproduction paths updated.
+The verdict and calculations below concern the original audited version.
+
+Audit of Two shorter intervals of even Dirichlet beta values
+Manuscript dated 17 November 2026
+
+Verdict
+
+I found no mathematical error or unproved step affecting Theorem 1. Each of the
+two lists, beta(6), beta(8), ..., beta(66) and beta(8), beta(10), ..., beta(98),
+contains an irrational value. They have 31 and 46 entries. A single irrational
+value in their overlap would satisfy both assertions. The earlier powered-kernel
+paper gives endpoints 74 and 110 for those same starting indices.
+
+Mathematical checks
+
+1. Formation of the linear forms. Counting multiplicities gives gamma = 341/16,
+G = 221/16 and degree -Gn-24. Reflection preserves R_n and pairs the order-i
+principal parts with sign (-1)^i. Because n is even, this eliminates every
+odd i in the aggregate beta coefficients. The prefactor removes one nominal
+order at the central pole. The derivative of order 2q at every required
+integer zero vanishes, since that zero has multiplicity 3q. Differentiating
+and shifting the half-integer fractions gives the rising factorial, power
+of two and alternating sign in (2.6)-(2.8). The even exponents range from
+2q+2 through the largest even integer at most 33q.
+
+2. Integer coefficients. For a local series with coefficient valuations at
+least v-lambda*h in degree h, the qth power has valuations at least
+qv-lambda*h. Applying the rule before extracting degree qB_a-i gives
+(3.5) and (3.6), also at the central pole. At small odd primes the harmonic
+denominator costs at most (i+2q)*lambda, leaving q times the original bound.
+At 2, all harmonic denominators are odd. For a repeated large-prime class
+the bound i-qF_p(a) loses at most i+2q powers at a bad denominator. For an
+isolated class the change of variable ell=a-h rewrites the rational constant
+as (3.7). The zero identity at -ell lets one take the side that omits the
+sole bad address. This also handles primes larger than n. These calculations
+give the very same D_n raised to q.
+
+3. Growth and decay. I checked the Legendre estimates for the small primes
+in the fifteen-value paper's Appendix A. After subtracting G*log(n!), the
+small odd primes contribute o(n) to the upper bound and the prime 2 costs at
+most 15*n*log(2)+o(n). For large odd primes I checked the real envelope,
+including the restricted domain 0 <= y <= x-1 for 1 <= x < 2, the endpoint
+convention, the prime-number-theorem integration, and the tail estimate.
+My code generated the partition from affine-offset coincidences. It computed
+each maximum directly at every eligible y-breakpoint and just to its right.
+On 38,371 open intervals, the sum rounded upwards cell by cell reproduced
+
+    body = 73794151590486879261 / 9223372036854775808
+    tail upper bound = 34253 / 319200
+    total upper bound = 8.10808684435616...
+
+I checked the uniform Stirling estimate including t=rn+1, the fixed-order
+derivative bound, and summability on t>3n. The critical polynomial has
+degree 33 and one sign change. Exact rational bisection and outward interval
+logarithms put its maximum point at x = 0.757334986669258889... and the
+phase there at -18.835112366808193600.... For x >= 3 the elementary
+derivative estimate gives x*Phi'(x) <= -383/64. Proposition 3's coefficient
+per q is consequently at most -0.2327922916008203... using its stated
+constants. Using the verified density and phase bounds directly gives the
+stronger upper bound -0.3298 per q.
+
+4. Prime dilation and the final inference. At n=96p the selected zeros are
+the odd multiples of p up to 239p in absolute value, with the prefactor
+accounted for separately. The zero address class has total pole count
+2077 and the other classes have count 2046. Accounting for the prefactor
+and 720 selected zero factors gives excess 1356 in the selected class.
+The two extra endpoints give the unit -1. At an unselected pole the
+corresponding deficit is at most 1326. These counts give the local
+principal-part estimates of Lemma 4. After multiplying by p^(1358q)
+every beta coefficient is divisible by p. The harmonic denominators cost
+at most i+2q at an ith principal part, leaving at least 30q powers of p in
+each unselected constant contribution. For a selected address the surviving
+terms have h=pv+(p-1)/2, giving the sign chi_4(p). I also tested the actual
+large kernel at n=96p for p=347 and p=349, checking the local counts, the
+scalar reduction at all unit residue classes away from the selected poles
+and zeros, and the normalized harmonic sums for all 97 selected addresses
+and exponents through 99. These finite checks supplement the general proof.
+
+If all the beta values in the indicated list were rational, one fixed T
+would clear them. For all sufficiently large primes p avoiding the
+numerators and denominators in the nonvanishing argument, the scaled
+constant is a p-adic unit while every other surviving term is divisible
+by p. This proves nonvanishing on n=96p. The real numbers T D_n^q L_{q,n}
+are then nonzero integers on that subsequence and tend to zero, giving
+the contradiction for each q separately.
+
+5. Independent calculation of the finite constants. I constructed the global
+numerator P and denominator Q of the trimmed seed over each finite field.
+I translated these global polynomials to each of the 97 pole centers with
+binomial coefficients, divided the resulting series after removing the
+nominal pole, and computed the powered principal parts. I reconstructed
+the full rational function at q*2077 distinct regular field points for
+each q and each modulus. This establishes the full identity in each case,
+since multiplying its difference by Q^q gives a polynomial of degree
+strictly less than q*2077. I also checked reflection and odd-coefficient
+cancellation and then evaluated the finite harmonic sums.
+
+    q      k_q mod 10007    k_q mod 10009    k_q mod 10037
+    1           3738             5333              938
+    2           8279             5481             5660
+    3           9978             6289             4500
+
+The first two columns reproduce all six printed residues, covering 24,924
+nominal principal-part coefficients. The last column uses an additional
+prime. I wrote the verification programs separately from the supplied
+checkers, and used the prime number theorem, Chebyshev's upper bound,
+Stirling's formula, Legendre's formula, Wilson's theorem and Descartes'
+rule of signs as standard inputs. I checked the earlier powered-kernel
+result for the comparison endpoints. The proof here needs only q=2 and 3.
+
+Exposition
+
+On pages 7-8, introduce 1358q as 1356q+2q at its definition. A selected
+coefficient of pole order i then carries i+2q powers of p, exactly the
+amount the harmonic sum can consume. An unselected contribution has a
+surplus of at least (1356-1326)q=30q. This explains why the normalization
+preserves precisely the part of the constant the finite calculation detects.
+
+On page 8, replace “Either nonzero residue in either of the last two rows”
+with “Each of the last two rows has a nonzero entry, proving respectively
+that k_2 and k_3 are nonzero.” One prime per row is sufficient. In the final
+proof, it would also help to recall that D_n^q clears the form globally,
+while the power of p tests nonvanishing on the selected subsequence.
+
+Reproduction
+
+From the beta-intervals project directory, run
+  python3 -B checks/independent-audit/run_checks.py
+The programs
+require Python 3.9 or later, NumPy, mpmath and a C++17 compiler named g++.
+Run Python with assertions enabled. The package includes the output of a
+full run.
+
+SHA-256 of the earlier audited manuscript and the repository inputs
+
+cd267aeb201f9157184e44d5cbc4e2cd8f9322c5403f5d4f837a4c8629fa6344  audited PDF (before revision)
+455099e972bf887373b0c95e6d571d1d67f3d363efafb413e9754de4e662519c  audited LaTeX (before revision)
+1db369248f1053b951c11d86a9ba488c470640e782e1c613f44fb830226cc252  fifteen-beta-values/paper/sections/02-forms.tex
+730c3d998bd222640cb36833f4317450968e111948721e4cb660080df22baa2d  fifteen-beta-values/paper/sections/03-denominators.tex
+9877b49278179a5dd1b8a3c86f6bf8a80d34ebcf0389a199afb3b9753770328b  fifteen-beta-values/paper/sections/04-decay.tex
+31ed9e7c58a8bbf00259091a2db2ebc154883f9863432f30d6d7cacbb9588da0  fifteen-beta-values/paper/sections/05-nonvanishing.tex
+012a705fcb691af93abf7f29f275e9db53a16ea4c992d97b84fefb6b1c4dc745  fifteen-beta-values/paper/sections/appendix-small-primes.tex
+4287b99d7368773e171975277cb462f782b05f08b361ed4cc2f80e9dfa6ea475  powered-beta-kernels/paper/powered-beta-kernels.tex

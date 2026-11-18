@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-17",
+  "papers": [
+    {
+      "url": "https://arxiv.org/abs/2611.16156v1",
+      "pdf_sha256": "7cc92106416e6347820130c02140ea695b0b0f6a0b3b8ec12c0cf5256729bfd9",
+      "scope": "Full paper, including derivative arithmetic, determinant normalization and size, the signed-measure criterion, and asymptotic comparison. The inverse-totient asymptotics are cited inputs."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.41458v1",
+      "pdf_sha256": "ee3d7849086a2cdd9f9cb7515565564a60ca7c3edf809242702f2896e2ec096b",
+      "scope": "Introduction and Theorem 1. The comparison specializes the stated bound to conductor four. The proof in this paper is independent of that bound."
+    },
+    {
+      "url": "https://arxiv.org/abs/1911.08458v2",
+      "pdf_sha256": "4df3e0fed2d792d72f55007bb5d5e04495d672de79167765577c07513d224878",
+      "scope": "Proposition 2.2 and Lemma 2.4, including the inverse-totient estimates and the derivative building blocks."
+    },
+    {
+      "url": "https://hexagonmath.org/2611.00139v1",
+      "pdf_sha256": "126ac901b8d8fee1af67fa37b5d99a611cf90550f7a0325c55b97c6d379a3862",
+      "scope": "Abstract, Theorem 1.1 and the surrounding discussion on the first page. The earlier explicit lower bound applies for even s at least 160."
+    }
+  ],
+  "restricted_grid_inputs": [
+    {
+      "url": "https://arxiv.org/abs/2611.16156v1",
+      "pdf_sha256": "7cc92106416e6347820130c02140ea695b0b0f6a0b3b8ec12c0cf5256729bfd9",
+      "checked": "Section 2, Lemmas 2.1 and 2.2, including the full-grid arithmetic estimates (2.5) and (2.6)."
+    },
+    {
+      "url": "https://arxiv.org/abs/1911.08458v2",
+      "pdf_sha256": "4df3e0fed2d792d72f55007bb5d5e04495d672de79167765577c07513d224878",
+      "checked": "Proposition 2.2 and (2.2) in the proof of Lemma 2.4, which bounds every q with totient at most B."
+    }
+  ]
+}

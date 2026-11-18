@@ -1,0 +1,691 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Two shorter intervals of even Dirichlet beta values},
+ pdfauthor={twinheterodox}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\ind}{\mathbf1}
+\newcommand{\vp}{v_p}
+\DeclareMathOperator{\lcm}{lcm}
+\numberwithin{equation}{section}
+\title{\fontsize{16}{20}\selectfont
+ \mbox{Two shorter intervals of even Dirichlet beta values}}
+\author{twinheterodox}
+\date{17 November 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove that each of the sets
+$\{\beta(6),\beta(8),\ldots,\beta(66)\}$ and
+$\{\beta(8),\beta(10),\ldots,\beta(98)\}$ contains an irrational number.
+These sets contain $31$ and $46$ values, respectively, improving the
+previous intervals with the same lower endpoints, which contained
+$35$ and $52$ values. The two conclusions concern overlapping sets;
+they do not assert that the irrational values are distinct.
+\end{abstract}
+
+\section{The results and their source}
+
+For real $s>0$, the Dirichlet beta function is
+\[
+ \beta(s)=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k+1)^s}.
+\]
+An irrationality statement about a finite set of its even values
+locates an irrational value without identifying which member it is.
+The lower endpoint matters: a result for a set containing $\beta(4)$
+does not locate an irrational value beyond $\beta(4)$.
+
+\begin{theorem}\label{thm:main}
+Each of the following sets contains an irrational number:
+\[
+ \{\beta(6),\beta(8),\ldots,\beta(66)\},\qquad
+ \{\beta(8),\beta(10),\ldots,\beta(98)\}.
+\]
+\end{theorem}
+
+The powered-kernel construction of \cite[Theorem~1]{powered} gives
+the corresponding upper endpoints $74$ and $110$. The comparison is
+\begin{center}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Lower endpoint & Previous interval & Present interval\\
+\midrule
+$\beta(6)$ & $6,8,\ldots,74$: $35$ values
+           & $6,8,\ldots,66$: $31$ values\\
+$\beta(8)$ & $8,10,\ldots,110$: $52$ values
+           & $8,10,\ldots,98$: $46$ values\\
+\bottomrule
+\end{tabular}
+\end{center}
+Here the displayed integers are the arguments of $\beta$.
+Neither conclusion follows just by deleting the first value from
+the fifteen-value result for $\beta(4),\ldots,\beta(32)$ in
+\cite{fifteen}. Similarly, the first conclusion of
+Theorem~\ref{thm:main} does not imply the second: its irrational
+member could be $\beta(6)$.
+
+The proof combines two existing constructions. We use the
+order-$31$ rational kernel and its isolated-pole denominator estimate
+from \cite[Sections~2--4 and Appendix~A]{fifteen}, in place of the
+order-$35$ kernel in \cite{powered}. We then apply the powering and
+differentiation procedure of \cite[Sections~2--4]{powered}.
+Squaring the kernel and differentiating four times leaves the even
+indices $6,\ldots,66$; cubing it and differentiating six times leaves
+$8,\ldots,98$.
+
+Two points must be checked for this combination. First, the
+denominator saving at an isolated pole must remain available after
+powering. Second, the finite rational constant used to prove
+nonvanishing must be nonzero for each new power. We prove the first
+point by retaining the identities at the integer zeros, and certify
+the second by exact arithmetic at the fixed base index $96$.
+The prime-density and phase bounds come from \cite{fifteen}. Their certificates
+are in the \texttt{fifteen-beta-values/checks} directory of the project
+repository~\cite{beta4repo}.
+
+The underlying half-integer-pole construction and its local
+valuation estimates come from Krisman \cite[Sections~1.2 and~4]{krisman}.
+Differentiation to remove lower values follows the strategy discussed
+in \cite{rivoal}; our direct source for its powered form is
+\cite{powered}. The auxiliary-prime nonvanishing argument follows
+\cite[Section~5]{fifteen} and \cite[Section~4]{powered}, which adapt
+the prime-dilation strategy of Lai and Sprang
+\cite[Lemma~2.3]{laisprang}.
+The intended prerequisites are partial fractions, elementary
+$p$-adic valuations, and asymptotic estimates for factorials.
+
+\section{Why powers move the interval}\label{sec:forms}
+
+The integer zeros of the kernel will do two jobs: they suppress the
+early terms of the analytic sum and allow cancellation in its rational
+constant. Its half-integer poles produce beta values. Increasing the
+order of differentiation raises the first possible beta index, while
+the pole orders determine the last.
+
+Fix
+\[
+ N=96,\qquad r=\frac34,\qquad \delta_j=\frac{j}{96}
+ \quad(0\le j\le30),
+\]
+and let $n$ range over positive multiples of $N$. Set
+\[
+ I_j(n)=[\delta_j n,(1-\delta_j)n]\cap\Z,\qquad
+ B_a(n)=\#\{j:a\in I_j(n)\}\quad(0\le a\le n).
+\]
+We usually write $B_a$ for $B_a(n)$. At $n=96$, the blocks are
+$[0,96],[1,95],\ldots,[30,66]$, and
+$B_a(96)=1+\min(a,96-a,30)$. Thus the pole orders rise from $1$
+at either end to $31$ in the middle. Define
+\begin{equation}\label{eq:kernel}
+ \Lambda_n=[-(1+r)n-1,rn]\cap\Z,\qquad
+ R_n(t)=
+ \frac{(2t+n+1)\prod_{\ell\in\Lambda_n}(t-\ell)^3}
+ {\prod_{a=0}^n(t+a+\tfrac12)^{B_a}}.
+\end{equation}
+The two degree parameters we need are
+\begin{equation}\label{eq:G}
+ \gamma=\sum_{j=0}^{30}(1-2\delta_j)=\frac{341}{16},
+ \qquad G=\gamma-3(1+2r)=\frac{221}{16}.
+\end{equation}
+There are $\gamma n+31$ denominator factors and
+$3\#\Lambda_n=15n/2+6$ integer-zero factors. Consequently
+$\deg R_n=-Gn-24$. The linear prefactor cancels one order at the
+central pole; keeping the nominal orders $B_a$ simply gives a zero
+leading partial-fraction coefficient there.
+
+The kernel satisfies
+\begin{equation}\label{eq:symmetry}
+ R_n(-n-1-t)=R_n(t).
+\end{equation}
+Indeed, reflection permutes the integer zeros and the pole blocks.
+The numerator product has even degree, whereas the prefactor and
+the denominator both change sign.
+
+Fix a positive integer $q$, and put
+\begin{equation}\label{eq:L}
+ L_{q,n}=\sum_{t=0}^{\infty}(-1)^t
+                  \left(\frac{d}{dt}\right)^{2q}R_n(t)^q.
+\end{equation}
+Each integer zero now has order $3q>2q$. At integer arguments,
+\begin{equation}\label{eq:integerzeros}
+ (R_n^q)^{(2q)}(t)=0\quad(0\le t\le rn),\qquad
+ (R_n^q)^{(2q)}(-\ell)=0\quad(1\le\ell\le n)
+\end{equation}
+
+Write
+\[
+ R_n(t)^q=\sum_{a=0}^n\sum_{i=1}^{qB_a}
+               \frac{a_{q,n;a,i}}{(t+a+\tfrac12)^i},
+ \qquad
+ \sigma_a(s)=\sum_{h=0}^{a-1}\frac{(-1)^h}{(2h+1)^s}.
+\]
+Absent coefficients are set to zero, and
+$(i)_d=i(i+1)\cdots(i+d-1)$ denotes the rising factorial.
+Termwise differentiation and a shift of the beta series give
+\begin{align}
+ L_{q,n}&=\rho_{q,n}+\sum_{i=1}^{31q}\tau_{q,n;i}\beta(i+2q),
+                                                       \label{eq:betaform}\\
+ \tau_{q,n;i}&=2^{i+2q}(i)_{2q}
+                         \sum_{a=0}^n(-1)^a a_{q,n;a,i},
+                                                       \label{eq:tau}\\
+ \rho_{q,n}&=-\sum_{a,i}(-1)^a2^{i+2q}(i)_{2q}
+                         a_{q,n;a,i}\sigma_a(i+2q).     \label{eq:rho}
+\end{align}
+All series converge absolutely. Reflection
+\eqref{eq:symmetry} gives
+$a_{q,n;n-a,i}=(-1)^i a_{q,n;a,i}$.
+Since $n$ is even, the terms with odd $i$ cancel in
+\eqref{eq:tau}. Thus
+\begin{equation}\label{eq:range}
+ L_{q,n}\in\Q+\sum_{\substack{2q+2\le s\le 33q\\s\ {\rm even}}}
+                                     \Q\beta(s).
+\end{equation}
+For $q=2$ the upper endpoint is $66$; for $q=3$ the nominal
+endpoint $99$ is odd and disappears, leaving $98$.
+
+\section{The same clearing factor works after powering}
+\label{sec:arithmetic}
+
+The denominator estimate in \cite{fifteen} discards an isolated
+pole whenever it is the only source of a bad evaluation denominator.
+We show that powering preserves this choice. This is essential:
+a larger denominator estimate would need a new comparison with
+analytic decay.
+
+\subsection{The inherited integer}
+
+We specify the integer $D_n$ of \cite[Section~3 and Appendix~A]{fifteen},
+so that the arithmetic and analytic bounds refer to the same
+normalization. Write $v_p(p)=1$ and $v_p(0)=+\infty$.
+For an odd prime set
+\[
+ \lambda_p=\lfloor\log_p(7n)\rfloor,\qquad
+ \nu_p(a)=3\sum_{\ell\in\Lambda_n}v_p(2a+1+2\ell)
+                   -\sum_{b\ne a}B_bv_p(b-a).
+\]
+At $2$, put $Z=3\#\Lambda_n$ and
+\[
+ \lambda_2=\lfloor\log_2 n\rfloor,\qquad
+ \nu_2(a)=1-Z-\sum_{b\ne a}B_bv_2(b-a).
+\]
+The small-prime exponents are
+\begin{align}
+ e_p&=\max\{0,\max_a(-\nu_p(a)+33\lambda_p)\}
+                     &&(p\text{ odd},\ p^2\le7n),       \label{eq:esmall}\\
+ e_2&=\max\{0,\max_a(-\nu_2(a)+31\lambda_2)\}.            \label{eq:e2}
+\end{align}
+
+For an odd prime $p\le n$ with $p^2>7n$, define
+\begin{align*}
+ N_{p,j}(a)&=\#\{b\in I_j(n):b\equiv a\pmod p\},\\
+ c_p(a)&=3\#\{\ell\in\Lambda_n:p\mid2a+1+2\ell\}
+                                  +\ind_{p\mid n-2a},\\
+ F_p(a)&=\sum_{j=0}^{30}N_{p,j}(a)-c_p(a).
+\end{align*}
+A pole-address class is \emph{repeated} if it contains at least two
+addresses in $\{0,\ldots,n\}$, and \emph{isolated} otherwise.
+Let $M_p$ be the maximum of $F_p(a)$ over repeated classes, and put
+\begin{equation}\label{eq:elarge}
+ e_p=\max(0,M_p+2),\qquad
+ D_n=\prod_{p\le n}p^{e_p}.
+\end{equation}
+For $p>n$ the exponent is zero.
+
+\begin{proposition}\label{prop:clear}
+For each fixed positive integer $q$, all the coefficients
+$D_n^q\rho_{q,n}$ and $D_n^q\tau_{q,n;i}$ are integers.
+\end{proposition}
+
+\subsection{Local series and the small primes}
+
+A convenient way to keep track of powering is the following elementary
+rule. Say that a series has bound $(v,\lambda)$ at $p$ if its
+degree-$h$ coefficient has valuation at least $v-\lambda h$.
+Products add the first parameters and preserve a common slope
+$\lambda$. Hence its $q$th power has bound $(qv,\lambda)$:
+every summand in a coefficient of total degree $h$ has valuation
+at least $qv-\lambda h$.
+
+At $t=-a-\tfrac12+u$, remove the nominal pole of $R_n$. The remaining
+series is
+\begin{equation}\label{eq:local}
+ H_a(u)=(n-2a+2u)
+ \prod_{\ell\in\Lambda_n}(-a-\tfrac12-\ell+u)^3
+ \prod_{b\ne a}(b-a+u)^{-B_b}.
+\end{equation}
+The coefficient $a_{q,n;a,i}$ is
+$[u^{qB_a-i}]H_a(u)^q$.
+The local estimates of \cite[Appendix~A]{fifteen}, obtained by
+expanding the reciprocal linear factors, give the bounds
+$(\nu_p(a),\lambda_p)$ and $(\nu_2(a),\lambda_2)$ for $H_a$.
+Therefore
+\begin{equation}\label{eq:poweredlocal}
+ v_p(a_{q,n;a,i})\ge q\nu_p(a)-\lambda_p(qB_a-i).
+\end{equation}
+At an odd prime, a finite harmonic sum of exponent $i+2q$
+costs at most $(i+2q)\lambda_p$. The combined lower bound is
+\[
+ q\nu_p(a)-\lambda_p(qB_a-i)-(i+2q)\lambda_p
+ =q\{\nu_p(a)-(B_a+2)\lambda_p\}\ge-qe_p.
+\]
+At $2$, the harmonic denominators are odd, so no such cost occurs;
+$B_a\le31$ and \eqref{eq:e2} suffice. The powers of two and the
+integer rising factorial in \eqref{eq:tau}--\eqref{eq:rho}
+only improve these bounds.
+
+\subsection{Why an isolated pole remains harmless}
+
+For odd $p$ with $p^2>7n$, the local calculation in
+\cite[Section~3, local-coefficient lemma]{fifteen} gives $H_a$
+bound $(B_a-F_p(a),1)$. Indeed, each nonunit linear factor has
+valuation one, every nonzero difference is smaller than $p^2$,
+and the central factor $2u$ also has bound $(1,1)$.
+Consequently
+\begin{equation}\label{eq:repeated}
+ v_p(a_{q,n;a,i})\ge i-qF_p(a).
+\end{equation}
+If $a$ is isolated, every denominator factor in \eqref{eq:local}
+has unit constant term, and the whole local series is integral at
+$p$. This last assertion holds for every odd prime, regardless
+of its size.
+
+It remains to handle the rational correction. For $1\le\ell\le n$ set
+\[
+ T_q(\ell,a)=\sum_i(i)_{2q}a_{q,n;a,i}
+                       (a-\ell+\tfrac12)^{-i-2q}.
+\]
+Reindexing the finite harmonic sums in \eqref{eq:rho}, and then
+using \eqref{eq:integerzeros}, gives
+\begin{equation}\label{eq:complement}
+ \rho_{q,n}=-\sum_{\ell=1}^n(-1)^\ell
+                      \sum_{a\ge\ell}T_q(\ell,a),
+ \qquad
+ \sum_{a\ge\ell}T_q(\ell,a)
+             =-\sum_{a<\ell}T_q(\ell,a).
+\end{equation}
+The second identity lets us choose either side of $-\ell$.
+For a fixed $\ell$, an evaluation denominator is divisible by
+$p$ only in the single class $2(a-\ell)+1\equiv0\pmod p$.
+If this class is isolated, choose the side of
+\eqref{eq:complement} that does not contain its address.
+
+For example, among addresses $0,\ldots,12$ modulo $11$ the class
+of $8$ is isolated. At $\ell=3$ it is the only class with a bad
+evaluation denominator. The sum over $a<3$ avoids it. The identity
+making this possible still holds after powering because the
+integer zero has order $3q$, greater than the derivative order $2q$.
+
+If the bad class is repeated and $p^2>7n$, its evaluation
+denominators have valuation one. Equation~\eqref{eq:repeated}
+then gives
+\[
+ v_p\bigl((i)_{2q}a_{q,n;a,i}
+                    (a-\ell+\tfrac12)^{-i-2q}\bigr)
+ \ge i-qF_p(a)-(i+2q)
+ \ge-q(M_p+2)\ge-qe_p.
+\]
+Terms with unit evaluation denominators, and the beta coefficients,
+are covered by the same exponent; isolated coefficients are integral.
+For $p>n$ all classes are isolated, so the complementary choice avoids
+the bad class entirely, even if its denominators have higher
+valuation. Together with the small-prime argument this proves
+Proposition~\ref{prop:clear}.
+
+\section{Decay with this normalization}\label{sec:decay}
+
+The importance of Proposition~\ref{prop:clear} is that its integer is
+the $q$th power of the original one. Both the main arithmetic cost
+and the analytic decay are therefore multiplied by $q$.
+
+In $\log D_n-G\log(n!)$, the large-prime contribution is at most
+$(8.10809+o(1))n$ by the certificate \cite[(4.5)]{fifteen} for
+the isolated-pole exponents \eqref{eq:elarge}. The small odd primes
+contribute $o(n)$ and the prime $2$ contributes at most $15n\log2+o(n)$
+\cite[Section~4 and Appendix~A]{fifteen}. Hence
+\begin{equation}\label{eq:Dsize}
+ \log D_n\le G\log(n!)
+                +\left(8.10809+15\log2+o(1)\right)n.
+\end{equation}
+Put $H(u)=u\log u$ for $u>0$. For $x>r$, define
+\[
+ \Phi(x)=3\{H(x+1+r)-H(x-r)\}
+          -\sum_{j=0}^{30}\{H(x+1-\delta_j)-H(x+\delta_j)\}.
+\]
+The uniform Stirling estimate of \cite[Section~4]{fifteen} gives,
+for $t\ge rn+1$,
+\begin{equation}\label{eq:stirling}
+ \log R_n(t)=-G\log(n!)+n\Phi(t/n)+O(\log(n+t)).
+\end{equation}
+The global maximum of $\Phi$ is bounded in \cite[(4.9)]{fifteen},
+and the derivative estimate in the same proof controls the tail. Thus
+\begin{equation}\label{eq:phase}
+ \Phi(x)\le-18.83511\quad(x>r),\qquad
+ \Phi(x)\le\Phi(3)-3\log(x/3)\quad(x\ge3).
+\end{equation}
+
+\begin{proposition}\label{prop:decay}
+For each fixed positive integer $q$,
+\[
+ \limsup_{\substack{n\to\infty\\96\mid n}}
+       \frac1n\log|D_n^qL_{q,n}|
+ \le q\bigl(8.10809+15\log2-18.83511\bigr)<-0.3298q,
+\]
+where $\log0=-\infty$.
+\end{proposition}
+\begin{proof}
+For $t\ge rn+1$ every linear factor is bounded away from zero
+and there are $O(n)$ factors, counted with multiplicity.
+Each logarithmic derivative of fixed positive order of $R_n$
+is therefore $O_q(n)$ on this range. The formula for a derivative
+of an exponential gives
+\[
+ |(R_n^q)^{(2q)}(t)|\le C_q n^{2q}R_n(t)^q.
+\]
+The first identity in \eqref{eq:integerzeros} removes all preceding
+integer terms.
+
+For $rn+1\le t\le3n$, equations
+\eqref{eq:stirling}--\eqref{eq:phase} bound the sum by a polynomial
+in $n$ times $(n!)^{-qG}\exp(-18.83511qn)$.
+For $t>3n$, the second bound in \eqref{eq:phase} supplies
+$(3n/t)^{3qn}$. Its sum absorbs the fixed polynomial in $n+t$
+coming from the Stirling error and again costs only a polynomial
+in $n$. Combining with \eqref{eq:Dsize} cancels the factorial
+terms and proves the assertion. The strict numerical inequality
+follows from $\log2<0.6931472$, since
+$\sum_{j=0}^9(0.6931472)^j/j!>2$.
+\end{proof}
+
+\section{A seed that prevents vanishing}\label{sec:seed}
+
+Small integral forms give a contradiction only when they are
+nonzero. We use a different increasing prime for each form.
+After dilation, all beta coefficients will vanish modulo that prime,
+while a fixed rational seed constant survives. This permits us
+to avoid the finitely many primes dividing any hypothetical common
+denominator of the beta values.
+
+\subsection{Centering and the trimmed seed}
+
+The change of variable $x=2t+n+1$ makes the poles integers.
+Put
+\[
+ F_n(x)=
+ \frac{x\prod_{\substack{v\ {\rm odd}\\|v|\le(5/2)n+1}}(x-v)^3}
+      {\prod_{a=0}^n(x-n+2a)^{B_a}},
+ \qquad
+ F_n(x)^q=\sum_{a,i}\frac{c_{q,n;a,i}}{(x-n+2a)^i}.
+\]
+Counting powers of two gives
+\begin{equation}\label{eq:center}
+ R_n(t)=2^{Gn+25}F_n(2t+n+1),\qquad
+ L_{q,n}=2^{q(Gn+25)+2q}\ell_{q,n},
+\end{equation}
+where the centered form has expansion
+\begin{equation}\label{eq:centerform}
+ \ell_{q,n}=\sum_{a,i}(-1)^a(i)_{2q}c_{q,n;a,i}
+                         \{\beta(i+2q)-\sigma_a(i+2q)\}.
+\end{equation}
+Denote its rational constant by $\kappa_{q,n}$.
+
+Take $n=Np=96p$, where $p>337$ is prime. The zeros divisible by
+$p$ in $F_{Np}(pu)$ are $pv$ with $v$ odd and
+$|pv|\le240p+1$. Thus $|v|\le239$.
+The selected pole addresses are $pa$, $0\le a\le96$, and
+$B_{pa}(Np)=B_a(96)$. They give the fixed rational function
+\begin{equation}\label{eq:seedfunction}
+ f(u)=
+ \frac{u\prod_{\substack{v\ {\rm odd}\\|v|\le239}}(u-v)^3}
+      {\prod_{a=0}^{96}(u-96+2a)^{B_a(96)}}.
+\end{equation}
+The endpoint $239$ is important: this is not $F_{96}$, whose
+last positive zero is $241$.
+
+For clarity, the factor counts are
+\[
+ W=\gamma N=2046,\qquad GN=1326,\qquad
+ A_0=(W+31)-1-3\cdot240=1356.
+\]
+The last count says that $p^{A_0}F_{Np}(pu)$ has a nonzero
+reduction after the selected factors have been extracted.
+
+\begin{lemma}\label{lem:dilate}
+Write
+\[
+ f(u)^q=\sum_{a=0}^{96}\sum_{i=1}^{qB_a(96)}
+             \frac{\widetilde c_{q;a,i}}{(u-96+2a)^i}.
+\]
+For every prime $p>337$,
+\begin{align}
+ p^{1356q-i}c_{q,Np;pa,i}
+       &\equiv(-1)^q\widetilde c_{q;a,i}\pmod p,
+                                                     \label{eq:selected}\\
+ v_p(c_{q,Np;a,i})&\ge i-1326q\qquad(p\nmid a).
+                                                     \label{eq:unselected}
+\end{align}
+The quantities reduced in \eqref{eq:selected} are integral at $p$.
+\end{lemma}
+\begin{proof}
+We include the counts from \cite[Section~5]{fifteen} to explain
+why they pass to powers. In each block $[pj,p(96-j)]$, every
+nonzero address class occurs $96-2j$ times and the zero class
+occurs once more. Hence the weighted pole counts are $W$ for
+each nonzero class and $W+31$ for zero.
+
+After extracting the selected factors from $F_{Np}(pu)$, all
+remaining factors reduce to constants. Their combined unit is $-1$.
+Indeed, the $240p$ odd numbers from $-240p+1$ to $240p-1$
+contain each residue $240$ times. Their nonzero residue product
+is $1$ by Wilson's theorem. The two extra endpoints
+$\pm(240p+1)$ contribute $-1$, also after cubing.
+In the denominator, each complete nonzero residue block contributes
+$-1$, while powers of $2^{p-1}$ are $1$; the total sign is
+$(-1)^W=1$. Thus, locally away from the other selected poles,
+\begin{equation}\label{eq:functionreduction}
+ p^{1356}F_{Np}(pu)\equiv-f(u)\pmod p.
+\end{equation}
+At the pole $u=96-2a$, multiply by its nominal pole-removing
+power. The other selected differences $2(b-a)$ are units, as
+are the constant terms of unselected denominator factors after
+their factors of $p$ have been separated. The resulting local
+series is in $\Z_{(p)}[[w]]$.
+Raising it to the $q$th power and extracting the coefficient
+of degree $qB_a(96)-i$ proves \eqref{eq:selected}.
+
+At a nonselected address the prefactor is a unit, the numerator
+has at least $240$ zeros in each residue class before cubing,
+and its pole-address class has weighted count $W$. Removing
+the nominal pole gives a local bound
+$(B_a+720-W,1)=(B_a-1326,1)$.
+All nonzero differences have valuation at most one: their
+absolute values are below $337p<p^2$.
+The power rule and extraction of degree $qB_a-i$ now give
+\eqref{eq:unselected}.
+\end{proof}
+
+\subsection{Separating the constant from the beta coefficients}
+
+Define the rational seed constant
+\begin{equation}\label{eq:kq}
+ k_q=-\sum_{a=0}^{96}\sum_i(-1)^a(i)_{2q}
+                    \widetilde c_{q;a,i}\sigma_a(i+2q),
+ \qquad \tau_q=(1356+2)q=1358q.
+\end{equation}
+The two parts of $\tau_q$ match the pole and the derivative. At a
+selected address $pa$, multiplying the term of order $i$ by $p^{\tau_q}$
+gives $p^{i+2q}$ times the $p$-integral quantity on the left of
+\eqref{eq:selected}. A harmonic denominator of exponent $i+2q$ can
+consume exactly that power. At an unselected address,
+\eqref{eq:unselected} leaves at least $(1356-1326)q=30q$ further
+powers of $p$ after the same loss. This is why only the selected
+addresses can contribute to the seed.
+
+\begin{proposition}\label{prop:unit}
+Every beta coefficient of $p^{\tau_q}\ell_{q,Np}$ is divisible
+by $p$, and all its coefficients are integral at $p$. Its rational
+constant satisfies
+\begin{equation}\label{eq:constantreduction}
+ p^{\tau_q}\kappa_{q,Np}
+             \equiv(-1)^q\chi_4(p)k_q\pmod p,
+ \qquad \chi_4(p)=(-1)^{(p-1)/2}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Put $s=i+2q$. The scaled beta coefficients have valuation at least
+$s$ by the preceding bounds and the integrality of $(i)_{2q}$.
+Every $2h+1$ with $h<Np$ is below $2Np<p^2$, so a harmonic term
+costs at most $s$ powers of $p$. This proves integrality of the
+scaled constant and makes its unselected terms zero modulo $p$.
+For a selected address $pa$, only denominators divisible by $p$
+survive in $p^s\sigma_{pa}(s)$. Writing
+$2h+1=p(2v+1)$ gives
+\[
+ h=pv+\frac{p-1}{2},\quad 0\le v<a,\qquad
+ p^s\sigma_{pa}(s)\equiv\chi_4(p)\sigma_a(s)\pmod p.
+\]
+There is no further $p$ in $2v+1$, since $p>337>191$.
+Combining this identity, $(-1)^{pa}=(-1)^a$, and
+\eqref{eq:selected} with the constant part of
+\eqref{eq:centerform} proves \eqref{eq:constantreduction}.
+\end{proof}
+
+\section{Exact finite certificates and the conclusion}
+\label{sec:certificate}
+
+It remains to prove $k_2\ne0$ and $k_3\ne0$. This is a calculation
+on the fixed function \eqref{eq:seedfunction}, not on an increasing
+sequence of kernels. At $u_a=96-2a$, form
+\[
+ J_a(w)=(u_a+w)
+ \prod_{\substack{v\ {\rm odd}\\|v|\le239}}(u_a-v+w)^3
+ \prod_{\substack{0\le b\le96\\b\ne a}}
+                       (2(b-a)+w)^{-B_b(96)}.
+\]
+Then
+\[
+ \widetilde c_{q;a,i}=[w^{qB_a(96)-i}]J_a(w)^q.
+\]
+The exact reductions of \eqref{eq:kq} are
+\begin{center}
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+$q$ & $k_q\bmod10007$ & $k_q\bmod10009$ & $k_q\bmod10037$
+    & Coefficients per prime\\
+\midrule
+$1$ & $3738$ & $5333$ & $938$ & $2077$\\
+$2$ & $8279$ & $5481$ & $5660$ & $4154$\\
+$3$ & $9978$ & $6289$ & $4500$ & $6231$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The first two residues at $q=1$ reproduce \cite[Section~5]{fifteen}.
+The column for $10037$ comes from an independent reconstruction.
+Each of the last two rows contains a nonzero residue, proving
+$k_2\ne0$ and $k_3\ne0$, respectively.
+
+Here is a reproducible specification of the calculation.
+One route multiplies the truncated factors in $J_a^q$ directly.
+The other writes its unit part as $g(w)=\prod_\nu(v_\nu+w)^{e_\nu}$,
+with integer exponents, and uses
+\[
+ \frac{g'(w)}{g(w)}
+  =\sum_{j\ge0}\left(\sum_\nu
+                  e_\nu\frac{(-1)^j}{v_\nu^{j+1}}\right)w^j.
+\]
+If the coefficient in parentheses is $d_j$ and
+$g(w)=\sum_{k\ge0}g_kw^k$, then
+\[
+ g_0=\prod_\nu v_\nu^{e_\nu},\qquad
+ g_k=\frac1k\sum_{j=0}^{k-1}d_jg_{k-1-j}.
+\]
+At the central pole, remove the factor $w^q$ before this
+recurrence and restore it afterwards.
+All three moduli are prime by trial division. Pole differences
+are at most $192$, nonzero numerator differences at most $335$,
+harmonic denominators at most $191$, and the recurrence indices
+are below $93$. All inversions used above are therefore legitimate.
+
+The two methods agree on every coefficient. The seed checker also verifies
+reflection and the vanishing odd beta coefficients and computes the constant
+in two summation orders. From the \texttt{beta-intervals/} directory of the project
+repository~\cite{beta4repo}, run
+\begin{verbatim}
+python3 -B checks/interval_seeds.py
+python3 -B checks/interval_seeds.py --cross-check
+\end{verbatim}
+The second command requires \texttt{python-flint}; the first uses
+only the Python standard library.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Fix $q=2$ or $q=3$, and suppose that all beta values in
+\eqref{eq:range} are rational. One positive integer $T$ clears
+their denominators. Proposition~\ref{prop:clear} gives
+\[
+ T D_n^qL_{q,n}\in\Z\qquad(96\mid n),
+\]
+and Proposition~\ref{prop:decay} makes these integers tend to zero.
+
+To show that infinitely many of these integers are nonzero, we use
+$p^{\tau_q}$ at the single prime $p$ on the subsequence $n=96p$.
+The corresponding seed $k_q$ is a nonzero rational number.
+For every sufficiently large prime outside the finite set dividing
+$T$ or the numerator or denominator of $k_q$, all the beta values
+are integral at $p$. Proposition~\ref{prop:unit} makes their
+coefficients in $p^{\tau_q}\ell_{q,96p}$ divisible by $p$ and
+its constant a unit. Thus $\ell_{q,96p}\ne0$, and
+\eqref{eq:center} gives $L_{q,96p}\ne0$. Infinitely many
+nonzero integers $T D_{96p}^qL_{q,96p}$ would tend to zero,
+a contradiction.
+\end{proof}
+
+The argument up to the finite calculation applies to every fixed
+$q$ for which $k_q\ne0$. The two assertions above use only the
+separately certified cases $q=2,3$.
+
+\paragraph{Verification.}
+A second AI model independently audited the original proof and exposition of
+Theorem~\ref{thm:main} and reproduced the seeds and decay bounds.
+
+\begin{thebibliography}{9}
+\bibitem{fifteen}
+twinheterodox,
+\emph{At least one of $\beta(4),\beta(6),\ldots,\beta(32)$ is irrational},
+2026, \href{https://hexagonmath.org/2611.00346v1}{Hexagon 2611.00346v1}.
+
+\bibitem{powered}
+twinheterodox,
+\emph{Irrational even beta values from powered hypergeometric kernels},
+2026, \href{https://hexagonmath.org/2611.00336v1}{Hexagon 2611.00336v1}.
+
+\bibitem{krisman}
+S.~Krisman,
+\emph{One of $\beta(4),\beta(6),\ldots,\beta(36)$ is irrational},
+2026, \href{https://hexagonmath.org/2610.00285v2}{Hexagon 2610.00285v2}.
+
+\bibitem{laisprang}
+L.~Lai and J.~Sprang,
+\emph{Many $p$-adic odd zeta values are irrational},
+2025, \href{https://arxiv.org/abs/2306.10393v2}{arXiv:2306.10393v2}.
+
+\bibitem{rivoal}
+T.~Rivoal,
+\emph{Irrationalit\'e d'au moins un des neuf nombres
+$\zeta(5),\zeta(7),\ldots,\zeta(21)$},
+Acta Arith. \textbf{103} (2002), 157--167,
+\href{https://doi.org/10.4064/aa103-2-5}{doi:10.4064/aa103-2-5}.
+
+\bibitem{beta4repo}
+twinheterodox, \emph{Irrationality and linear independence of Dirichlet beta values},
+GitHub repository, 2026. \url{https://github.com/twinheterodox/beta4}.
+\end{thebibliography}
+\end{document}

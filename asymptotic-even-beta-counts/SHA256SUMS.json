@@ -1,0 +1,18 @@
+{
+  "algorithm": "SHA-256",
+  "files": {
+    "README.txt": "43ca84c767ccda35aa1fb136c6ce90f1d2bc748743d3eb3e1ffcf9dbf1f68cd9",
+    "checks/README.txt": "eee34d2061e40206b5ac68f06114e98e286e3d88e22b79c4e303b9b348667fec",
+    "checks/count-examples.json": "477b109bbe3c6a66cb1fa7ce917636943a98c126d3132110dea618303d9678c5",
+    "checks/verify_count_examples.py": "57542c21ffcd49ab9b71874b0b27b7a523d6b1ab0ca3d7ee8514caaf2e90d094",
+    "output/pdf/asymptotic-even-beta-counts.pdf": "112c40c5a55f46d0a18f3d705b5f60a15a3956ef7469e820468009369d96485c",
+    "paper/asymptotic-even-beta-counts.tex": "ad2311edc5c2c4a0d30f07c3da7f9b02c0dd8e0b60908eeb8a90054b7607b80b",
+    "paper/build-record.json": "286bfb299498ac5905a597ccde6e0bd13138dd010e7e53ea518a465f2ce4ca29",
+    "review/independent-audit-2026-11-17.txt": "45836dff3230fa0afa90043f74b5511ac031961ec0f356cf538c07a1acf0e18a",
+    "review/publication-record.json": "8c5f99f1563626a80d3c11fd52457de03274f6fd079cc9e8af95620014b290fb",
+    "review/restricted-grid-correctness.txt": "be680f1948b2315e25f9a3a136d87cdc93aeabe1a4ad13918f46a21e0b5cd3b9",
+    "review/restricted-grid-exposition.txt": "e288a2aad2167b30f9be34f1bf92ae4a0e40c0bf952c5c3a576235ade6c4044f",
+    "sources/reading-record.json": "749a00458cbef824790c740d5c3508addcb2abc225c56fd12fd03267ba113502",
+    "tools/build_paper.py": "b572084621179eb4316a64eee79773e0c1abce15ff772f96d057510c2bb15914"
+  }
+}

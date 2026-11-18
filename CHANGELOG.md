@@ -1,5 +1,10 @@
 # Changelog
 
+## 18 November 2026 — Asymptotic counts and two shorter intervals
+
+- Added *An asymptotic lower bound for the number of irrational even beta values* with the restricted-grid bound, exact finite examples and the independent proof and exposition reviews.
+- Added *Two shorter intervals of even Dirichlet beta values* with new upper endpoints 66 and 98, both seed calculations, the independent audit programs, and their results.
+
 ## 13 November 2026 — Arithmetic investigation supplement
 
 - Added the 31-page supplement *Linear forms, moment determinants, and arithmetic constraints for even beta values*, with its own README section, complete source and reproducible build.

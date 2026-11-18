@@ -1,0 +1,72 @@
+Independent AI exposition review of the strengthened counting theorem
+17 November 2026
+
+This public edition records the assessment for research mathematicians
+familiar with prime valuations, polynomial linear algebra and residues.
+SHA-256 of the reviewed TeX
+328a134c8f998a73e698abbd15e427953162fd3d8a7656b698f1c9829fbdd6bb
+
+Outcome
+-------
+The restricted-grid revision is suitable for the stated audience. Its
+motivation, gain and remaining constraints are explained in reading order.
+No substantial exposition revision is required. The local precision
+suggestion sent during review is now incorporated: 1<=j<q appears in the
+first support statement of Section 2. This makes the fraction range explicit
+before the later sums introduce it formally. It does not affect any use
+in the proof.
+
+Abstract
+--------
+The abstract uses a liminf and names the beta and Riemann zeta functions. The abstract states the
+counting problem, improved result, comparison with earlier work and fixed
+initial-set consequence. It contains no construction details or proof
+sketch. The ratio 1/sqrt(3) to the FLSZ leading constant matches the proof.
+The decimal now uses an approximation sign, so it does not assert an
+incorrect truncation. I did not independently rerun its numerical enclosure.
+
+What the new explanation supplies
+--------------------------------
+The introduction now explains that only odd numerators have nonzero character
+weight, that reducing them preserves divisibility of the denominator by four,
+and why the resulting cost reduction permits a larger cutoff. This connects
+the new numerator to the improved constant before the machinery is defined.
+Section 2's q=12 example makes the distinction between contributing and
+unused fractions concrete.
+
+The new h_B and A1 discussion is sequential: grid count, partial summation,
+uniform bound on denominators, removal of a negligible small-totient part,
+then the matching asymptotic. The two inequalities are both visible. A reader
+does not have to reconstruct why merely knowing the number of grids also
+controls their weighted numerator cost.
+
+Before defining the determinants, the manuscript explains the common
+integer/small/nonzero contradiction and why two bases and a variable
+determinant size are used. This addresses the requested purpose-before-
+machinery improvement without putting a proof sketch into the abstract.
+
+The arithmetic section now explicitly carries the exponent i in the local
+valuation comparison. The basis-change paragraph separately identifies
+the triangular basis determinant and the integer Gram determinant, making
+the normalization readable without silently repairing an ambiguous sentence.
+
+The signed-measure section explains why even reflected masses can coexist
+with the opposite residues used in the contradiction. Its new distinction
+between the reflection pair and the integer-translation pair is the exact
+connection a reader otherwise has to supply. The proof visibly treats both
+central-gap boundaries before invoking the abstract criterion.
+
+The asymptotic section states what remains fixed while n grows. It explains
+why the potentially large rationality-clearing factor and elimination weights
+disappear from the rate, and only then sends s to infinity. The theorem's
+non-explicit threshold and its distinction from a dimension bound are clear.
+
+Attribution and verification scope
+----------------------------------
+The proof identifies FLSZ as the methodological source at the construction,
+arithmetic, analytic and signed-measure steps, and Lai--Yu at the arithmetic
+inputs. The introduction explains what is adapted and the new restriction.
+The acknowledgment credits the independent reader's suggestion. It does not
+reproduce review correspondence inside the manuscript.
+The scope of this review is the exposition. The finite checks have their
+own reproduction guide in checks/README.txt.
