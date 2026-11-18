@@ -1,0 +1,10 @@
+{
+  "source": "paper/uniform-even-beta-intervals.tex",
+  "source_sha256": "63398809a4ed5ef714c3d592540224ae7c92926ba603c0f67dc9163b03c20035",
+  "pdf": "output/pdf/uniform-even-beta-intervals.pdf",
+  "pdf_sha256": "4ffa086a142785c4ff44651c2f85d8ce679776d632da301cce7f33b5fdfca045",
+  "pages": 10,
+  "latex_engine": "pdfTeX 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian)",
+  "unresolved_references": false,
+  "overfull_boxes": false
+}

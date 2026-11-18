@@ -1,0 +1,55 @@
+Inputs for Uniform intervals for irrational even beta values
+
+Reflection selects the parity of the zeta values in Ball and Rivoal,
+Invent. Math. 146 (2001), §1. For the alternating sum over half-integer
+poles, see Rivoal and Zudilin, Math. Ann. 326 (2003), Lemma 2.
+  https://doi.org/10.1007/s002220100168
+  https://doi.org/10.1007/s00208-003-0420-2
+Removing the lowest zeta value by differentiation is the step in
+Rivoal, Acta Arith. 103 (2002), §2, Lemma 1. Its adaptation to beta(2)
+and the use of triple zeros are explained by Krisman in §1.2. His
+Lemmas 4.3 and 4.6 supply the local coefficient estimate and two
+complementary sums for the rational term.
+  https://doi.org/10.4064/aa103-2-5
+  https://hexagonmath.org/2610.00285v2
+
+For consecutive pole blocks, factorwise denominator estimates and
+shifting a sum at integer zeros, see Zudilin, Abh. Math. Semin. Univ.
+Hambg. 89 (2019), §3 and the proofs of Lemmas 1, 4 and 5. Lai and
+Zhou vary the block parameters and normalization in §6, Theorem 6.1.
+  https://doi.org/10.1007/s12188-019-00203-w
+  https://doi.org/10.5486/PMD.2022.9252
+
+Order-31 kernel, local pole estimates, arithmetic and phase certificates,
+and original seed. Sections 3–5 and Appendix A of
+  twinheterodox, At least one of beta(4), beta(6), ..., beta(32) is irrational.
+  https://hexagonmath.org/2611.00346v1
+
+Fixed powers and prime dilation. Sections 2–4 of
+  twinheterodox, Irrational even beta values from powered hypergeometric kernels.
+  https://hexagonmath.org/2611.00336v1
+The order-31 specialization and local coefficient algorithms used here
+are in Sections 2–6 and the checks of
+  twinheterodox, Two shorter intervals of even Dirichlet beta values (2026).
+  https://hexagonmath.org/2611.00601v1
+  https://github.com/twinheterodox/beta4/tree/main/beta-intervals
+
+Earlier all-starting-points result. Theorem 1.1 and Proposition B.1 of
+  twinheterodox, Irrational even beta values in shifted intervals.
+  https://hexagonmath.org/2611.00160v2
+
+Auxiliary-prime nonvanishing criterion. Lai and Sprang, Lemma 2.3.
+The kernel-specific dilation is in the powered-kernel papers above.
+  https://arxiv.org/abs/2306.10393v2
+
+Passage from algebraic generating functions to coefficient recurrences.
+Stanley, Differentiably finite power series, Theorems 1.5 and 2.1.
+  https://doi.org/10.1016/S0195-6698(80)80051-5
+
+Explicit prime distribution. Theorem 5.2 on p. 4, row k=2, eta=0.2, of
+  P. Dusart, Estimates of some functions over primes without R.H.
+  https://arxiv.org/abs/1002.0442v1
+
+The analytic and density estimates and Dusart's theorem enter as
+literature results. The five reference tables in checks/ come from the
+17 November 2026 proof records and can be rebuilt from this package.

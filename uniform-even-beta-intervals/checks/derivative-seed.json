@@ -1,0 +1,21 @@
+{
+  "local_products_replayed": true,
+  "checks": [
+    {
+      "power": 9,
+      "derivative": 20,
+      "prime": 10007,
+      "normalized_seed": 1491,
+      "seed": 3058,
+      "local_coefficients": 18693
+    },
+    {
+      "power": 9,
+      "derivative": 20,
+      "prime": 10009,
+      "normalized_seed": 7947,
+      "seed": 4140,
+      "local_coefficients": 18693
+    }
+  ]
+}

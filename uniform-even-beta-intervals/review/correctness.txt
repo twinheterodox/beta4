@@ -1,0 +1,45 @@
+Mathematical review of the 18 November 2026 manuscript
+
+The manuscript was compared with the four proof records of 17 November
+for the bounded gaps, derivative estimates, explicit thresholds and
+finite cover. The following points were checked in the assembled proof.
+
+1. Both fixed families satisfy d < 3A. The same zeros remove the
+   initial analytic terms and allow the complementary sum at each
+   negative integer evaluation. The extra odd-prime denominator
+   factor is H_n^(d-2A). Its rate is 2j in the (9j,20j) family,
+   within the margin from nine copies of the original estimate.
+2. The centered pole and derivative scales give P^(1356A+d). At a
+   selected address the harmonic denominator can consume i+d powers.
+   Other addresses retain at least 30A. The fixed rational constant
+   includes the factorial d!, which is restored before excluding the
+   finitely many exceptional dilation primes.
+3. The change of summation order gives y_l-u_a = 2h+1 and the sign
+   (-1)^l. Both families have positive zero order at y_l and at
+   infinity. The root residues are bounded there. Algebraicity and
+   nonpolynomiality give a fixed recurrence and prevent arbitrarily
+   long runs of zeros. Only the normalized seeds enter the Frobenius
+   congruence. The exponent prime and dilation prime are chosen at
+   different stages of the argument.
+4. The exceptional-prime bound, Dusart's stated hypothesis, both
+   prime bands, the parity rounding and both overlaps were checked.
+   The finite tables cover all of the initial range. The explicit
+   endpoint 15m and the endpoint (299/20)m+C have different
+   effectiveness statements in the abstract and the body.
+5. All five certificate outputs reproduced using the bundled programs
+   and matched the reference JSON. The companion Laurent routines used
+   here agree with the original routines. The 89 seeds split 45 and 44
+   between the two families. The 135 bridge residues are nonzero, and
+   the intervals join. The second calculation uses 100003 for the
+   initial seeds and redoes the bridge one prime at a time.
+
+Scope of independent review
+---------------------------
+Separate AI reviewers examined the 17 November mathematical records.
+One reviewed bounded gaps, the derivative estimate and the complete
+finite coverage, including program replays. Another checked the
+explicit thresholds, the local height bound, the quoted Dusart
+theorem and the exposition of that threshold argument. The assembled
+manuscript received the author's separate mathematical and exposition
+checks. The inherited order-31 phase and prime-density bounds and
+Dusart's prime-distribution estimate are cited inputs.

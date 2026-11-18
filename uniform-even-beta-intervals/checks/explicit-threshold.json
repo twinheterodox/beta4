@@ -1,0 +1,16 @@
+{
+  "height_upper_bound_bits": 256201,
+  "common_denominator_bits": 201439,
+  "bands": [
+    {
+      "start": 4000000,
+      "relative_width": "1/10",
+      "theta_difference_exceeds": "2740000/7"
+    },
+    {
+      "start": 200000000,
+      "relative_width": "3/1000",
+      "theta_difference_exceeds": "28570000/81"
+    }
+  ]
+}

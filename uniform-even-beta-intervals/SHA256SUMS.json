@@ -1,0 +1,26 @@
+{
+  "algorithm": "SHA-256",
+  "files": {
+    "README.txt": "7b17dfb3780116571e1a5506c7e9d05533ef571f273ed61fe6a8a68b34d638c2",
+    "checks/README.txt": "a8d51bf7c0c5581ca9318d93905487cf9dd64703c9498b8fd354559ad4016c75",
+    "checks/derivative-seed.json": "a47c6efcb9cb1979f1c094dc8e4f57578bfb9f0bc1f13d9b9858f1ae619762cf",
+    "checks/derivative_seed.py": "d60f40b189663780847d78d1766b2b17748960aa4544e4e29a5e296791dd0688",
+    "checks/explicit-threshold.json": "2b13932d521c56441434d3946fa265c00a50b111d569029a4161921490542a9c",
+    "checks/explicit_threshold.py": "3e4fd70f38c4336ae409e26a680389b4db11b54f19f422b511b60341eba09b62",
+    "checks/initial-intervals.json": "ab00ea0d8248da17b592d82c092a676058d00aa5f700255937ad814a90f0128d",
+    "checks/initial_intervals.py": "764153c2a00d27cedbc17aade07d109e37c3fb3bbb6258de6467676c8d7bc8b9",
+    "checks/interval-replay.json": "312de2b6f1c17870cb4e0d07dc28a380e1786b8f1fd2da6578b4b771a3757a4c",
+    "checks/interval_replay.py": "c7a78db76949cd15d6cdeb817c0a5007cd78922f4ad92bd21d1da13a8238e2b2",
+    "checks/kernel_coefficients.py": "54d554316038331d39f0904965aeec7887e320d7532e6a7df07250206a0a05dc",
+    "checks/prime-bridge.json": "c292d02424738dd590b75649ff37e69992a37f4bc80644e7ad3d3324c518611e",
+    "checks/prime_bridge.py": "5c7ee60ff19ffc76c850345a8c4bb4cc35c2844f77fdb336d8880e3877497f23",
+    "checks/verify.py": "a57efd91bedab7e9c25d9380c320cf5affe496d5ca618dd24729df6177fc71c0",
+    "output/pdf/uniform-even-beta-intervals.pdf": "4ffa086a142785c4ff44651c2f85d8ce679776d632da301cce7f33b5fdfca045",
+    "paper/build-record.json": "60d5b1dd3b3863f55fd58ad9e3bfa315f6c1bb591714e0260a7560bd3df88658",
+    "paper/uniform-even-beta-intervals.tex": "63398809a4ed5ef714c3d592540224ae7c92926ba603c0f67dc9163b03c20035",
+    "review/correctness.txt": "5b24efb77c3cda8759b9567301fb31c16d17d7d5d7f41d5ec2e5c8a092777eba",
+    "review/exposition.txt": "422ac6374071966cc2f3aecdc90eb8a10d7a2e2840e134eb64f8182351893136",
+    "sources/inputs.txt": "0af2dcff320ed6a848aa2573dafb2ed846bdbadc432edc96e7255fdd1c4319bf",
+    "tools/build_paper.py": "a485653cc0bf1bc74cc2a83c24542799258dda43e0c8d763c5cc3709bc05de1d"
+  }
+}

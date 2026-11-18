@@ -1,0 +1,32 @@
+Exposition review of the 18 November 2026 manuscript
+
+The intended reader knows partial fractions, elementary valuations,
+residues and basic facts about algebraic functions. The introduction
+starts with a prescribed lower index. It gives the exact theorem,
+then compares the asymptotic endpoint with the earlier published
+bound in the same odd variable m. The ninth power at q=10 illustrates
+why a successful exponent serves a requested interval.
+
+The fixed-power argument separates the number of derivatives from the
+kernel power. It explains the origin of the extra denominator cost
+before comparing it with decay. The algebraic-function argument first
+introduces a fixed residue integrand, then shows why the behavior at
+infinity matters for the gaps. The prime argument explains why one
+needs a bound on the total size of the exceptional primes. The final
+two ranges and their endpoints can be checked directly against the
+infinite range on a single line.
+
+The abstract states the results and their significance. Code references
+in the body identify the source directory. A short verification
+paragraph identifies the version and scope of independent review.
+The public bibliography links to primary versions and the project
+repository. The paper distinguishes irrationality somewhere in an
+interval from nonvanishing of an individual original seed.
+
+The attribution review traced the intermediate beta papers to the
+original arguments for reflection, alternating half-integer sums,
+differentiation, and the arithmetic use of integer zeros. The revised
+proof distinguishes Lai and Sprang's auxiliary-prime criterion from
+the later dilation for this kernel. It also cites Stanley at the
+passage from an algebraic generating function to a coefficient
+recurrence. The precise sources and sections are in sources/inputs.txt.

@@ -1,0 +1,720 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hmargin=1in,vmargin=0.94in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Uniform intervals for irrational even beta values},pdfauthor={twinheterodox}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\numberwithin{equation}{section}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\lcm}{lcm}
+\title{\fontsize{17}{21}\selectfont\mbox{Uniform intervals for irrational even beta values}}
+\author{twinheterodox}
+\date{18 November 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+For every positive integer \(q\), at least one of the Dirichlet beta values
+\(\beta(2q+2),\beta(2q+4),\ldots,\beta(2\lfloor33q/2\rfloor)\) is irrational.
+This gives an explicit interval from every even starting index at least four.
+For every positive odd \(m\), some even \(s\) with \(m+1\le s\le(299/20)m+C\)
+has \(\beta(s)\) irrational, where \(C\) is absolute. This reduces the
+previous upper-endpoint multiplier \(18.58\) to \(14.95\) up to a bounded
+additive term. For every odd \(m\ge4{,}000{,}000{,}001\), the explicit
+endpoint \(s<15m\) suffices.
+\end{abstract}
+
+\section{Locating the next irrational value}
+
+Write \(\beta(s)=\sum_{h\ge0}(-1)^h/(2h+1)^s\) for \(s>0\).
+Given an even starting index, how far along the list of even beta values
+must one go to encounter an irrational number? Knowing that one of
+\(\beta(4),\beta(6),\ldots,\beta(32)\) is irrational leaves open the
+possibility that \(\beta(4)\) is the only irrational member of that
+list. To answer the question starting at \(\beta(10)\), or at a
+starting index chosen arbitrarily far out, one needs control of both
+ends of the interval.
+
+\begin{theorem}\label{th:all}
+For every integer \(q\ge1\), some even integer \(s\) satisfies
+\[
+             2q+2\le s\le 2\lfloor 33q/2\rfloor,
+             \qquad \beta(s)\ \text{is irrational}.
+\]
+\end{theorem}
+
+The first three upper endpoints are \(32,66,98\), at starting indices
+\(4,6,8\), respectively. The first is known from \cite{fifteen}, and
+the next two from \cite{two}. Starting at \(10\) gives the list
+\(\beta(10),\beta(12),\ldots,\beta(132)\). The theorem gives an endpoint
+for each subsequent starting index as well.
+
+\begin{theorem}\label{th:slope}
+There is an absolute constant \(C\) such that for every positive odd
+integer \(m\) there is an even \(s\) with
+\[
+         m+1\le s\le \frac{299}{20}m+C,\qquad
+         \beta(s)\ \text{irrational}.
+\]
+For every odd \(m\ge4{,}000{,}000{,}001\), one can take \(m+1\le s<15m\).
+\end{theorem}
+
+The earlier uniform result gives the explicit upper endpoint
+\(m-1+2\lceil(879m-50)/100\rceil<18.58m\) for every positive odd \(m\)
+\cite[Proposition B.1]{shifted}. Theorem~\ref{th:all} gives an
+asymptotic multiplier \(16.5\) on writing \(m=2q+1\).
+The first assertion of Theorem~\ref{th:slope} improves this to \(14.95\),
+and the second gives a specified range for a multiplier of \(15\).
+
+Ball and Rivoal used reflection in a rational function to isolate odd
+zeta values \cite[Section~1]{ballrivoal}. For even beta values,
+Rivoal and Zudilin used half-integer poles and an alternating sum
+\cite[Lemma~2]{rzbeta}. Rivoal used a second derivative to remove
+\(\zeta(3)\) from odd-zeta forms \cite[Section~2, Lemma~1]{rivoal}.
+Krisman adapted that step to remove \(\beta(2)\), giving the integer
+zeros multiplicity three so that they survive differentiation
+\cite[Section~1.2]{krisman}. We use the order-\(31\) denominator
+refinement of \cite{fifteen}. Taking a power before differentiating
+makes the starting index adjustable \cite{powered,two}.
+Section~\ref{sec:fixed} treats two choices of derivative order. In each
+case irrationality in the interval follows from the nonvanishing of
+a particular rational number, which we call its \emph{seed}.
+
+Two observations let finitely many computations control infinitely many
+intervals. First, a successful power can serve several starting points.
+For example, the ninth power with twenty derivatives gives the interval
+from \(22\) to \(298\). It fits inside the interval from \(22\) to
+\(330\) requested at \(q=10\). Its multiples have lower and upper
+indices \(20j+2\) and \(299j\), which explains the ratio \(299/20\).
+Second, the normalized seeds are coefficients of an algebraic function.
+Its behavior at infinity forces bounded gaps between nonzero
+coefficients. Reduction modulo primes lets a single rational seed
+certify almost every prime exponent. We use bounded gaps for the
+sharpest slope and primes for the explicit ranges.
+
+\section{From a rational seed to an irrational value}\label{sec:fixed}
+
+The denominators consist of blocks of consecutive poles of different
+lengths. Zudilin used such blocks for even beta values
+\cite[Section~3]{zudbeta}. Lai and Zhou changed their lengths and
+factorial normalization to reach the interval from \(\beta(2)\) to
+\(\beta(10)\) \cite[Theorem~6.1]{laizhou}. Here we take the \(31\)
+blocks specified in \cite[Section~2]{fifteen}.
+
+Let \(96\mid n\), \(n>0\). For \(0\le h\le30\) put
+\(I_h=[hn/96,(1-h/96)n]\cap\Z\), and let \(B_a(n)\) count the
+sets \(I_h\) containing \(a\). With
+\(\Lambda_n=[-7n/4-1,3n/4]\cap\Z\), the kernel is
+\[
+ R_n(t)=\frac{(2t+n+1)\prod_{v\in\Lambda_n}(t-v)^3}
+                {\prod_{a=0}^{n}(t+a+\tfrac12)^{B_a(n)}} .
+\]
+Its symmetry is \(R_n(-n-1-t)=R_n(t)\). For fixed \(A\ge1\) and even
+\(d\ge2\) we use the form
+\[
+       L_n(A,d)=\sum_{t\ge0}(-1)^t (R_n^A)^{(d)}(t).
+\]
+The two pairs throughout the proof are
+\begin{equation}\label{eq:pairs}
+                  (A,d)=(j,2j)\quad\text{or}\quad(9j,20j),
+                  \qquad j\in\Z_{\ge1}.
+\end{equation}
+At a pole of order \(i\), differentiation raises the order to \(i+d\).
+Reflection cancels the odd \(i\) in the beta coefficients.
+Consequently the even beta indices range from \(d+2\) to at most
+\(31A+d\). In both pairs \(d<3A\), so the derivative still vanishes
+at each integer zero. This inequality will also be needed to clear
+denominators.
+
+The seed is computed at just 97 pole addresses. Set
+\[
+ u_a=96-2a,\quad B_a=B_a(96)=1+\min(a,96-a,30)\quad(0\le a\le96),
+ \qquad \sigma_a(s)=\sum_{h=0}^{a-1}\frac{(-1)^h}{(2h+1)^s}.
+\]
+Define the even rational function \(f\) and its polar coefficients by
+\begin{equation}\label{eq:f}
+ f(z)=\frac{z\prod_{\substack{|v|\le239\\v\ {\rm odd}}}(z-v)^3}
+                     {\prod_{a=0}^{96}(z-u_a)^{B_a}},
+ \qquad f(z)^A=\sum_{a=0}^{96}\sum_{i=1}^{A B_a}\frac{c_{A,a,i}}{(z-u_a)^i}.
+\end{equation}
+The cutoff \(239\) comes from the zeros divisible by the dilation prime,
+as in \cite[Section 5]{fifteen}. A nominal coefficient can vanish at the
+central pole because the numerator contains \(z\). The normalized seed is
+\begin{equation}\label{eq:seed}
+ b(A,d)=-\sum_{a=0}^{96}(-1)^a\sum_{i=1}^{A B_a}
+       \binom{i+d-1}{d}\,c_{A,a,i}\,\sigma_a(i+d).
+\end{equation}
+Multiplying by \(d!\) restores the rising factorial
+\((i)_d=i(i+1)\cdots(i+d-1)\) from differentiation.
+
+\begin{proposition}\label{prop:fixed}
+For either pair in \eqref{eq:pairs}, if \(b(A,d)\ne0\), some even
+\(s\in[d+2,31A+d]\) has \(\beta(s)\) irrational.
+\end{proposition}
+
+Zudilin bounded the polar coefficients by differentiating the
+individual factors \cite[proof of Lemma~4]{zudbeta}. Krisman's
+valuation bound for the series at each pole \cite[Lemma~4.3]{krisman}
+is the starting point for the isolated-pole estimate for these \(31\)
+blocks. We use that estimate and the real phase bounds from
+\cite[Sections~3--5 and Appendix~A]{fifteen}. The case \(d=2A\)
+after powering is proved in \cite[Sections~3--5]{two}.
+
+\subsection{The cost of the extra derivatives}
+
+Write \(D_n=\prod_{p\le n}p^{e_p}\) for the integer of
+\cite[Section 3 and Appendix A]{fifteen}, and put
+\[
+ \lambda_p=\lfloor\log_p(7n)\rfloor\quad(p\text{ odd}),\qquad
+ H_n=\prod_{\substack{p\le n\\p\ {\rm odd\ prime}}}p^{\lambda_p}.
+\]
+We claim that the rational coefficients of \(L_n(A,d)\), including
+its constant term, are integers after multiplication by
+\begin{equation}\label{eq:clear}
+                          D_n^A H_n^{\,d-2A}.
+\end{equation}
+To see where the extra cost enters, write \(a_{n,A;a,i}\) for
+the coefficient of \((t+a+\tfrac12)^{-i}\) in \(R_n(t)^A\).
+Partial fractions express the form as
+\[
+ L_n(A,d)=\sum_{a,i}(-1)^a 2^{i+d}(i)_d\,a_{n,A;a,i}
+                       \{\beta(i+d)-\sigma_a(i+d)\}.
+\]
+The coefficients at \(a\) and \(n-a\) differ by the factor \((-1)^i\).
+This proves the parity and endpoint assertions above. All the
+shifts and differentiations involve absolutely convergent series.
+
+At an odd \(p\) with \(p^2\le7n\), write
+\[
+ \nu_p(a)=3\sum_{v\in\Lambda_n}v_p(2a+1+2v)
+             -\sum_{b\ne a} B_b(n)v_p(b-a).
+\]
+By \cite[Appendix A]{fifteen}, the degree-\(h\) coefficient of the
+series obtained by removing the nominal pole of \(R_n\)
+has valuation at least \(\nu_p(a)-h\lambda_p\), and
+\(e_p\ge-\nu_p(a)+33\lambda_p\). Multiplication of series gives
+\[
+  v_p(a_{n,A;a,i})\ge A\nu_p(a)-\lambda_p(AB_a(n)-i).
+\]
+A harmonic denominator costs at most \((i+d)\lambda_p\). Since
+\(B_a(n)\le31\), the combined loss is at most \(Ae_p+(d-2A)\lambda_p\).
+Such primes are at most \(n\). At \(2\) all harmonic denominators are
+odd, so the inherited local bound and \(D_n^A\) already suffice.
+
+For odd \(p\le n\) with \(p^2>7n\), addresses are grouped by their
+residue modulo \(p\). In a repeated class the local estimate is
+\(v_p(a_{n,A;a,i})\ge i-AF_p(a)\), where the local pole excess is
+\[
+ F_p(a)=\sum_{\substack{0\le b\le n\\b\equiv a\bmod p}} B_b(n)
+        -3\#\{v\in\Lambda_n:p\mid 2a+1+2v\}-\mathbf 1_{p\mid n-2a}.
+\]
+If \(M_p\) is its maximum over the repeated classes, then
+\(e_p=\max(0,M_p+2)\) \cite[Section 3]{fifteen}.
+An evaluation denominator divisible by \(p\) costs \(i+d\) powers,
+so the total valuation is at least \(-AM_p-d\). This is covered by
+\(Ae_p+d-2A\), and here \(\lambda_p=1\). In a class with only one
+address the local coefficients are \(p\)-integral.
+
+For the last assertion to help with the harmonic denominators, group
+the constant term by its evaluation point \(-\ell\), \(1\le\ell\le n\).
+The term at this point uses addresses \(a\ge\ell\) with denominators
+\((a-\ell+\tfrac12)^{i+d}\). Summing over \emph{all} addresses gives
+\((R_n^A)^{(d)}(-\ell)=0\), since \(d<3A\). Thus the sum over
+\(a\ge\ell\) equals the negative of the sum over \(a<\ell\).
+Zudilin used zeros in the pole interval to shift the summation limit
+in the rational term \cite[proofs of Lemmas~1 and~5]{zudbeta}.
+Krisman obtained the two complementary sums after two derivatives
+\cite[Lemma~4.6]{krisman}. Here \(d<3A\) preserves the same choice
+for the powered kernel.
+Only the class \(2(a-\ell)+1\equiv0\pmod p\) can have a bad
+denominator. If it has just one address, choose the side which omits
+that address. All other terms then have unit denominators and the
+stated local coefficient bounds apply. For \(p>n\) every class has at
+most one address. This finishes the proof of \eqref{eq:clear}.
+
+First powers contribute \(\sum_{2<p\le n}\log p\) to \(\log H_n\),
+and higher powers contribute \(O(\sqrt n\log n)\). Thus
+\(\log H_n=(1+o(1))n\) by the prime number theorem. We compare this cost with the decay of the
+same form. The first nonzero summand can occur only at \(t>3n/4\).
+On these integers logarithmic differentiation gives
+\(\lvert(R_n^A)^{(d)}(t)\rvert\le C_{A,d}n^d R_n(t)^A\), since all the
+linear factors have distance at least one from their zeros or poles
+and there are \(O(n)\) factors counted with multiplicity.
+The Stirling and prime-density estimates of \cite[Section 4]{fifteen}
+give the following upper bound with \(\delta=41/5+15\log2-18.83<-0.23\):
+\begin{equation}\label{eq:decay}
+ \limsup_{\substack{n\to\infty\\96\mid n}}\frac1n
+ \log\bigl|D_n^A H_n^{d-2A}L_n(A,d)\bigr|
+                 \ \le\ A\delta+(d-2A)<0 .
+\end{equation}
+Indeed the \(G\log(n!)\) term in \(\log D_n\), \(G=221/16\),
+cancels the corresponding term from the kernel. The remaining
+denominator cost is at most \(41/5+15\log2+o(1)\) per \(n\), and the
+real phase is at most \(-18.83\). Beyond \(t=3n\) its additional
+bound \((3n/t)^{3An}\) absorbs the polynomial factors from Stirling's
+formula and differentiation. All these estimates take \(A,d\) fixed.
+For the ninth-power family the two extra derivatives per \(j\) cost
+\(2j\), leaving \(9j\delta+2j<-0.07j\).
+
+\subsection{How the seed prevents vanishing}
+
+Lai and Sprang's real auxiliary-prime criterion singles out the
+constant coefficient by its strictly smaller valuation at primes
+tending to infinity \cite[Lemma~2.3]{laisprang}. For this kernel,
+the dilation developed in \cite[Section~4]{powered} and used in
+\cite[Section~5]{fifteen,two} produces that separation.
+Set \(n=96P\) with \(P>337\) prime and
+use the centered variable \(x=2t+n+1\). In this variable the kernel,
+up to the factor \(2^{Gn+25}\), is
+\[
+ F_n(x)=\frac{x\prod_{v\ {\rm odd},\,|v|\le5n/2+1}(x-v)^3}
+                    {\prod_{a=0}^n(x-n+2a)^{B_a(n)}} .
+\]
+Write \(\gamma_{n,A;a,i}\) for the polar coefficient of \(F_n^A\)
+at address \(a\). After removal of the common nonzero factor
+\(2^{A(Gn+25)+d}\), the form \(L_n(A,d)\) is
+\[
+ \sum_{a,i}(-1)^a(i)_d\,\gamma_{n,A;a,i}
+                          \{\beta(i+d)-\sigma_a(i+d)\}.
+\]
+The dilation lemma of \cite[Section 5]{two} applies directly to the
+undifferentiated power. It gives
+\[
+ P^{1356A-i}\gamma_{96P,A;Pa,i}\equiv(-1)^A c_{A,a,i}\pmod P,\qquad
+ v_P(\gamma_{96P,A;b,i})\ge i-1326A\quad(P\nmid b).
+\]
+The first congruence includes integrality at \(P\).
+Multiply the centered form by \(P^{1356A+d}\). At a selected address
+\(Pa\), the order-\(i\) term has \(i+d\) powers of \(P\) available.
+Its beta coefficient vanishes modulo \(P\). In its harmonic correction
+only the terms \(2h+1=P(2v+1)\) survive, giving
+\[
+        P^{i+d}\sigma_{Pa}(i+d)\equiv
+        (-1)^{(P-1)/2}\sigma_a(i+d)\pmod P .
+\]
+For \(b\) outside the selected addresses, each harmonic denominator
+contains at most one factor \(P\), since \(2n<P^2\).
+Even after this loss at least \(30A\) further powers remain. Thus
+the scaled rational constant reduces to
+\((-1)^{A+(P-1)/2}d!\,b(A,d)\), and every scaled beta coefficient
+is divisible by \(P\).
+
+\begin{proof}[Conclusion of Proposition~\ref{prop:fixed}]
+Suppose that the beta values in the indicated interval are rational
+with common denominator \(T\). If \(b(A,d)\ne0\), every sufficiently
+large prime \(P\) avoiding \(T\) and the numerator and denominator of
+\(d!\,b(A,d)\) gives a nonzero form at \(n=96P\). Indeed its scaled
+constant is a unit at \(P\) while every other scaled term vanishes
+modulo \(P\). By \eqref{eq:clear} and \eqref{eq:decay}, the numbers
+\(T D_n^A H_n^{d-2A}L_n(A,d)\) along that subsequence are nonzero
+integers tending to zero. This contradiction proves the proposition.
+\end{proof}
+
+\section{Why the successful powers have bounded gaps}\label{sec:gaps}
+
+We use the same argument for both derivative orders. Fix
+\((k,r)=(1,2)\) or \((9,20)\), and set \(b_j=b(kj,rj)\) for \(j\ge1\)
+and \(b_0=0\). The first term is nonzero in each case. For the first
+sequence \(2!\,b(1,2)\equiv3738\pmod{10007}\)
+\cite[Section 5]{fifteen}. For the second the following finite-field
+calculations use the normalization in \eqref{eq:seed}.
+\begin{center}
+\begin{tabular}{@{}rrr@{}}\toprule
+Prime & \(b(9,20)\) & \(20!\,b(9,20)\)\\\midrule
+\(10007\)&\(1491\)&\(3058\)\\
+\(10009\)&\(7947\)&\(4140\)\\\bottomrule
+\end{tabular}
+\end{center}
+At each prime we compute the \(9\sum_a B_a=18{,}693\) nominal polar
+coefficients both by multiplying truncated local factors and by the
+logarithmic derivative recurrence of \cite[Section 6]{two}. We then
+sum \eqref{eq:seed} in its original order and in the order used
+in \eqref{eq:residues} below. All inversions occur below the
+characteristic or at unit pole differences. The program
+\texttt{checks/derivative\_seed.py} in the accompanying
+\texttt{uniform-even-beta-intervals} source directory reproduces
+the table with the option \texttt{--cross-check}. The same directory
+convention is used for the other programs below. The original kernel
+certificates are in the project repository \cite{repo}.
+
+\begin{theorem}\label{th:seeds}
+For each of the two sequences there is an integer \(L\ge1\) such that
+every \(L\) consecutive positive indices contain a \(j\) with \(b_j\ne0\).
+Moreover, for every prime \(p>192\) and every \(j\ge1\),
+\[
+                         b_{pj}\equiv b_j\pmod p
+                         \qquad\text{in }\Z_{(p)}.
+\]
+In particular, if \(b_j\ne0\), then for all but finitely many primes
+\(p\) all coefficients \(b_{jp^e}\), \(e\ge0\), are nonzero.
+\end{theorem}
+
+\subsection{A residue representation with a fixed rational function}
+
+The difficulty with \(b_j\) in \eqref{eq:seed} is that both the order of
+the pole and the order of differentiation grow with \(j\).
+The normalization by \((rj)!\) allows us to put both changes in
+one ordinary power. For \(1\le\ell\le96\) define
+\[
+                    y_\ell=97-2\ell,\qquad
+                    g_\ell(z)=\frac{f(z)^k}{(y_\ell-z)^r}.
+\]
+In \eqref{eq:seed}, change the harmonic summation index \(h\) to
+\(\ell=a-h\). Then \(y_\ell-u_a=2h+1\) and
+\((-1)^{a+h}=(-1)^\ell\). Expanding \((y_\ell-z)^{-rj-1}\) around \(u_a\)
+gives, as its coefficient of \((z-u_a)^{i-1}\),
+\(\binom{i+rj-1}{rj}(y_\ell-u_a)^{-i-rj}\). Thus
+\begin{equation}\label{eq:residues}
+ b_j=-\sum_{\ell=1}^{96}(-1)^\ell
+                 \sum_{a=\ell}^{96}
+                 \Res_{z=u_a}\frac{g_\ell(z)^j}{y_\ell-z}\,dz .
+\end{equation}
+This holds also at \(j=0\), when every residue is zero. Each \(y_\ell\)
+is a triple zero of \(f\). Thus \(g_\ell\) has a zero there of order
+\(3k-r>0\). Its other finite poles are among the \(u_a\). At infinity
+\(f\) has a zero of order \(1356\), by counting the factors of
+\eqref{eq:f}. Consequently \(g_\ell\) has a zero at infinity of
+order \(1356k+r\).
+
+\subsection{Algebraicity and propagation of zeros}
+
+Consider \(B(T)=\sum_{j\ge0}b_jT^j\). For each \(\ell\), take disjoint
+small circles around the \(u_a\) occurring in \eqref{eq:residues},
+with \(y_\ell\) outside. For \(|T|\) sufficiently small the geometric
+series converges uniformly on all the circles. Summing under their
+integrals replaces the differential in \eqref{eq:residues} by
+\[
+                    \frac{dz}{(y_\ell-z)(1-Tg_\ell(z))}.
+\]
+For a generic nonzero \(T\) near zero the original poles \(u_a\)
+are regular points of this differential. The poles now enclosed
+are the simple roots \(\xi\) of \(g_\ell(\xi)=1/T\) tending to the
+chosen centers. Indeed, writing \(g_\ell=P/Q\) in lowest terms,
+Rouch\'e's theorem on each circle counts the roots of \(Q-TP\)
+there with their multiplicities. The critical parameter values form
+a finite set. The residue at such a simple root is
+\begin{equation}\label{eq:rootres}
+ h_\ell(\xi)=\frac{g_\ell(\xi)}
+                      {(\xi-y_\ell)g_\ell'(\xi)}.
+\end{equation}
+Thus \(B(T)\) is a finite signed sum of algebraic functions over
+\(\Q(T)\), and is itself algebraic.
+
+To show that the series has infinitely many nonzero coefficients,
+follow the roots to large \(|T|\).
+They approach zeros of \(g_\ell\) on the Riemann sphere. At a finite
+zero \(v\) of order \(e\), we have \(g_\ell/g_\ell'=(\xi-v)/e+
+O((\xi-v)^2)\). The residue \eqref{eq:rootres} tends to \(1/e\) if
+\(v=y_\ell\), and to zero for every other finite zero. At infinity
+it tends to \(-1/(1356k+r)\). Since every root lies near one of
+these zeros for sufficiently large \(|T|\), all branches of the sum
+are bounded there. A polynomial \(B(T)\) would therefore be constant.
+Its linear coefficient \(b_1\) is nonzero, so its coefficients cannot
+eventually vanish.
+
+The coefficients of an algebraic power series satisfy a recurrence with
+polynomial coefficients \cite[Theorems~1.5 and~2.1]{stanley}. We recall
+the argument to see why a run of zero coefficients propagates.
+The finite extension \(\Q(T,B)\) is closed under differentiation.
+For a minimal polynomial \(A(T,X)\), implicit differentiation gives
+\(B'=-A_T(T,B)/A_X(T,B)\), since characteristic zero gives separability.
+The derivatives of \(B\) are therefore linearly dependent over
+\(\Q(T)\). Clearing denominators and comparing coefficients gives a
+recurrence, after translating the index by a fixed amount,
+\begin{equation}\label{eq:rec}
+       \sum_{i=0}^{L}P_i(j)b_{j+i}=0\quad(j\text{ sufficiently large}),
+       \qquad P_i\in\Q[j],\quad P_L\ne0.
+\end{equation}
+Indeed, the terms \(T^v B^{(u)}\) of the differential equation
+contribute shift \(u-v\). Among terms of any fixed shift, the term
+of highest derivative order has strictly highest polynomial degree
+in \(j\). Thus some coefficient polynomial survives. The case \(L=0\)
+would force eventual vanishing. Beyond the last integer root of
+\(P_L\), a run of \(L\) zeros propagates forwards by \eqref{eq:rec}
+and would also force eventual vanishing. Enlarging \(L\) covers the
+finite initial segment. This proves the bounded-gap assertion.
+
+\subsection{Prime exponents}
+
+Fix \(p>192\). Distinct pole positions differ by at most \(192\), and
+\(y_\ell-u_a\) is a nonzero odd integer of absolute value at most
+\(191\). Consequently the Laurent expansion of \(g_\ell^j\) at
+\(w=z-u_a\) has \(p\)-integral coefficients. Write its negative
+part as \(\sum_{i\ge1}a_{-i}w^{-i}\), a finite sum. In characteristic
+\(p\), taking the \(p\)th power sends \(w\) to \(w^p\) and fixes the
+reduced coefficients. With \(v=y_\ell-u_a\), the two residues after
+division by \(y_\ell-z=v-w\) reduce respectively to
+\[
+                  \sum_{i\ge1}a_{-i}v^{-i},
+                  \qquad \sum_{i\ge1}a_{-i}v^{-pi}.
+\]
+They agree by Fermat's theorem. Summing \eqref{eq:residues} proves the
+congruence and hence Theorem~\ref{th:seeds}. For any fixed nonzero
+rational \(b_j\), every sufficiently large prime is a unit prime for
+\(b_j\), so the congruence can be iterated at that same prime for all
+\(e\). The corresponding unnormalized seed \((rjp^e)!\,b_{jp^e}\)
+is nonzero over \(\Q\).
+
+\begin{proof}[Proof of the first assertion of Theorem~\ref{th:slope}]
+Take \(L\) for the family \((9,20)\). Given a positive odd \(m\), set
+\(J=\max(1,\lceil(m-1)/20\rceil)\). There is a successful
+\(J\le j\le J+L-1\). Proposition~\ref{prop:fixed} gives an irrational
+beta value at an even index between \(20j+2\) and \(299j\).
+The first endpoint is at least \(m+1\). We can take \(C=299L\), since
+\[
+            299j\le \frac{299}{20}(m-1)+299L .\qedhere
+\]
+\end{proof}
+
+For the original family \(k_j=(2j)!\,b(j,2j)\), Theorem~\ref{th:seeds}
+also supplies bounded gaps and all powers of every sufficiently large
+prime. Whether \(k_j\ne0\) at every sufficiently large \(j\) remains
+open. Covering a prescribed interval leaves us free to use any
+successful pair whose two endpoints fit inside it.
+
+\section{An effective supply of prime exponents}\label{sec:effective}
+
+The bounded-gap argument gives no numerical value for \(L\). We can
+obtain explicit endpoints by choosing the exponent \(j\) to be a
+prime. Write \(B_*=b(9,20)\). For every prime \(p>192\) at which
+\(B_*\) is a unit, Theorem~\ref{th:seeds} supplies the interval
+\([20p+2,299p]\). To find such a prime in a prescribed range, we
+compare the logarithmic weight of \emph{all} possible exceptional
+primes with the weight of the primes in the range.
+
+\begin{lemma}\label{lem:height}
+There is a nonzero integer \(M\) with \(\log|M|<180{,}000\) divisible
+by every prime \(p>192\) at which \(B_*\) is not a unit.
+\end{lemma}
+\begin{proof}
+Put \(D=\lcm(1,\dots,192)\) and
+\[
+ D_a=\prod_{b\ne a}|u_a-u_b|^{9B_b},\qquad
+ Q=D^{299}\lcm_{0\le a\le96}D_a .
+\]
+Then \(M=QB_*\) is a nonzero integer. Indeed, expand
+\(w^{9B_a}f(u_a+w)^9\). In degree \(h\), the other pole factors
+introduce denominators dividing \(D_aD^h\), by the integral binomial
+expansion of each inverse linear factor. For the pole coefficient of
+order \(i\) we take \(h=9B_a-i\). Each accompanying harmonic
+denominator divides \(D^{i+20}\), and \(h+i+20\le299\). This proves
+integrality. All prime divisors of \(Q\) are at most \(192\).
+
+On \(|w|=1\), every other pole factor has modulus at least one.
+The bounds \(|u_a+w|\le97\) and \(|u_a+w-v|\le336\) show by Cauchy's
+coefficient estimate that \(|c_{9,a,i}|\le97^9 336^{6480}\).
+Each of the \(18{,}693\) terms has harmonic sum of magnitude at most
+\(96\) and binomial factor at most \(2^{299}\). Hence
+\[
+      1\le |M|\le Q\cdot18{,}693\cdot96\cdot2^{299}97^9 336^{6480}.
+\]
+This upper bound is an explicitly specified integer of bit length
+\(256{,}201\), as reproduced by \texttt{checks/explicit\_threshold.py}.
+Since \(\log2<7/10\), its logarithm is less than \(180{,}000\).
+\end{proof}
+
+\begin{proposition}\label{prop:bands}
+For \(x\ge4{,}000{,}000\), the interval \((x,11x/10]\) contains a
+prime \(p\) with \(b(9p,20p)\ne0\). For \(x\ge200{,}000{,}000\)
+the same holds in \((x,1003x/1000]\).
+\end{proposition}
+\begin{proof}
+Let \(\vartheta(x)=\sum_{p\le x}\log p\). Dusart's estimate
+\cite[Theorem 5.2, table on p.~4]{dusart} gives
+\[
+       |\vartheta(x)-x|\le\frac{x}{5\log^2 x}
+                  \qquad(x>3{,}594{,}641).
+\]
+If \(x\ge x_0\) and \(\log x_0>t\), subtracting the two estimates
+at \(x\) and \((1+u)x\) gives a strict lower bound
+\(x[u-(2+u)/(5t^2)]\) for the logarithmic weight in the interval.
+In the two cases its value at \(x_0\) is as follows.
+\begin{center}
+\begin{tabular}{@{}rrrr@{}}\toprule
+\(x_0\) & \(t\) & \(u\) & \(x_0[u-(2+u)/(5t^2)]\)\\\midrule
+\(4{,}000{,}000\)&14&\(1/10\)&\(2{,}740{,}000/7\)\\
+\(200{,}000{,}000\)&18&\(3/1000\)&\(28{,}570{,}000/81\)\\\bottomrule
+\end{tabular}
+\end{center}
+The comparisons \((11/4)^t<x_0\) and \(e<11/4\) verify the log
+hypotheses. Both lower bounds exceed \(180{,}000\). By
+Lemma~\ref{lem:height}, some prime \(p\) in each such interval does
+not divide \(M\). At that prime \(b(9p,20p)\equiv B_*\ne0\pmod p\).
+\end{proof}
+
+\begin{proof}[Explicit endpoints for large starting indices]
+For \(q\ge40{,}000{,}000\) take \(x=q/10\) in the first prime interval.
+Its successful exponent \(p\) satisfies
+\[
+       20p+2>2q+2,\qquad 299p\le(299\cdot11/100)q<33q .
+\]
+The even index supplied by Proposition~\ref{prop:fixed} is at most
+\(2\lfloor33q/2\rfloor\). For odd \(m\ge4{,}000{,}000{,}001\), take
+\(x=(m-1)/20\) in the second interval. Now \(20p+2>m+1\) and
+\(299p\le(299\cdot1003/20000)(m-1)<15m\). This proves the second
+assertion of Theorem~\ref{th:slope}. In both applications the exponent
+prime \(p\) has been fixed before the dilation prime \(P\) in
+Proposition~\ref{prop:fixed} tends to infinity.
+\end{proof}
+
+\section{Covering the finite initial range}\label{sec:finite}
+
+It remains to prove Theorem~\ref{th:all} below \(q=40{,}000{,}000\).
+One successful pair \((9j,20j)\) works for every \(q\) satisfying
+\begin{equation}\label{eq:cover}
+                 \left\lceil\frac{299j}{33}\right\rceil
+                          \le q\le 10j .
+\end{equation}
+Indeed, these inequalities place \([20j+2,299j]\) inside
+\([2q+2,33q]\), and rounding both upper endpoints down to even integers
+preserves containment. This is why forty million starting points can be
+covered by a short list of certificates. We describe the selection
+rules and the exact arithmetic verifying them. All step-by-step
+residues and endpoints accompany the programs in \texttt{checks/}.
+
+\paragraph{The middle range.}
+Start with the prime \(193\). Given the last prime \(p\), append the
+largest prime at most \(\lfloor27p/25\rfloor\), stopping when
+\(10p\ge40{,}000{,}000\). For each entry test the same rational
+number \(B_*=b(9,20)\) modulo that prime. The computation
+\texttt{prime\_bridge.py} verifies primality by trial division and
+strict increase. It evaluates \(B_*\) modulo the product of the
+distinct primes and the two reference primes \(10007,10009\).
+The denominator factors inverted in the truncated products are units
+in every component, since all primes exceed \(192\). The binomial
+coefficients in \eqref{eq:seed} are formed as integers before
+reduction. Thus the product calculation gives the individual residues
+exactly, even for primes smaller than \(299\).
+
+\begin{center}
+\begin{tabular}{@{}lrrr@{}}\toprule
+& Exponent \(p\)& \(B_*\bmod p\)& Range in \(q\) from \eqref{eq:cover}\\\midrule
+First & \(193\)&\(27\)& \(1749\) to \(1930\)\\
+Last & \(4{,}047{,}157\)&\(660{,}746\)&
+ \(36{,}669{,}696\) to \(40{,}471{,}570\)\\\bottomrule
+\end{tabular}
+\end{center}
+All \(135\) residues are nonzero. The recorded neighboring intervals
+satisfy \(\mathrm{left}_{i+1}\le\mathrm{right}_i+1\).
+Theorem~\ref{th:seeds} therefore gives complete coverage from \(1749\)
+through \(40{,}471{,}570\).
+
+\paragraph{The first starting points.}
+Begin with \(q=1\), and always take the first uncovered \(q\).
+Set \(j=\lfloor33q/299\rfloor\). If \(j\ge1\) and \(q\le10j\),
+test \(b(9j,20j)\) and cover through \(10j\). Otherwise test
+\(b(q,2q)\) and cover \(q\) itself. Stop once the next uncovered
+\(q\) is at least \(1749\). The resulting list consists of \(89\)
+seeds, \(45\) of the original type and \(44\) of the ninth-power
+type. Every residue is nonzero modulo \(65537\), and the intervals
+cover \(1\) through \(1890\). The largest \(31A+d\) used is \(56{,}511\).
+
+To certify these Taylor coefficients, first extract the central zero.
+At \(u_a\) the remaining products \(P,Q\) of linear factors from
+\eqref{eq:f} have unit constant terms modulo \(65537\). Thus
+\[
+ w^{B_a}f(u_a+w)=w^\epsilon P(w)/Q(w),
+ \qquad \epsilon=\mathbf 1_{u_a=0}.
+\]
+For \(A\) in the list put \(l=A(B_a-\epsilon)\). The
+coefficients of \(Y=(P/Q)^A\) through degree \(l-1\) are uniquely
+determined in the field by
+\[
+  Y(0)=(P(0)/Q(0))^A,\qquad
+  P Q\,Y'=A(P'Q-PQ')Y \pmod{w^{\,l-1}} .
+\]
+In degree \(h-1\) the new coefficient of \(Y\) is multiplied by
+\(hP(0)Q(0)\), a unit for \(1\le h<l<65537\).
+The polar coefficient of order \(i\) is \([w^{\,l-i}]Y\) for
+\(1\le i\le l\), and is zero for \(l<i\le AB_a\).
+The program \texttt{initial\_intervals.py} verifies these identities
+on \(21{,}187{,}413\) coefficients before using the symmetry
+\(c_{A,96-a,i}=(-1)^i c_{A,a,i}\) for the remaining addresses.
+It evaluates \eqref{eq:seed} with the finite harmonic sums.
+
+As a check on the computation, \texttt{interval\_replay.py} computes
+all \(89\) seeds modulo a second prime, \(100003\), expanding every
+contributing pole directly and summing the harmonic correction in
+reverse order. All \(89\) are again nonzero. It also checks the \(135\)
+prime residues one field at a time. The accompanying tables can be
+recomputed together with \texttt{python3 -B checks/verify.py} from the
+\texttt{uniform-even-beta-intervals} directory, using Python and
+\texttt{python-flint}.
+
+\begin{proof}[Conclusion of Theorem~\ref{th:all}]
+The two finite ranges \([1,1890]\) and \([1749,40{,}471{,}570]\)
+overlap. The latter overlaps the range \(q\ge40{,}000{,}000\)
+proved in Section~\ref{sec:effective}. Hence every positive integer
+\(q\) has a successful pair in \eqref{eq:pairs} whose interval fits
+inside the prescribed one. Proposition~\ref{prop:fixed} supplies an
+irrational beta value there.
+\end{proof}
+
+\paragraph{Verification.}
+Independent AI reviewers checked the mathematical arguments in the
+17 November 2026 proof records and reproduced the seed, coverage and
+threshold checks. The effective-threshold argument also received a
+separate review of its exposition.
+
+\begin{thebibliography}{99}
+\small
+\bibitem{shifted}
+twinheterodox, \emph{Irrational even beta values in shifted intervals},
+2026, \href{https://hexagonmath.org/2611.00160v2}{Hexagon 2611.00160v2}.
+\bibitem{fifteen}
+twinheterodox, \emph{At least one of \(\beta(4),\beta(6),\ldots,\beta(32)\)
+is irrational}, 2026,
+\href{https://hexagonmath.org/2611.00346v1}{Hexagon 2611.00346v1}.
+\bibitem{two}
+twinheterodox, \emph{Two shorter intervals of even Dirichlet beta values},
+2026, \href{https://hexagonmath.org/2611.00601v1}{Hexagon 2611.00601v1}
+(\href{https://github.com/twinheterodox/beta4/tree/main/beta-intervals}{manuscript and certificates}).
+\bibitem{ballrivoal}
+K.~Ball and T.~Rivoal, \emph{Irrationalit\'e d'une infinit\'e de valeurs de la
+fonction z\^eta aux entiers impairs}, Invent. Math. \textbf{146} (2001),
+193--207, \href{https://doi.org/10.1007/s002220100168}{doi:10.1007/s002220100168}.
+\bibitem{rzbeta}
+T.~Rivoal and W.~Zudilin, \emph{Diophantine properties of numbers related to
+Catalan's constant}, Math. Ann. \textbf{326} (2003), 705--721,
+\href{https://doi.org/10.1007/s00208-003-0420-2}{doi:10.1007/s00208-003-0420-2}.
+\bibitem{krisman}
+S.~Krisman, \emph{One of \(\beta(4),\beta(6),\ldots,\beta(36)\) is irrational},
+2026, \href{https://hexagonmath.org/2610.00285v2}{Hexagon 2610.00285v2}.
+\bibitem{rivoal}
+T.~Rivoal, \emph{Irrationalit\'e d'au moins un des neuf nombres
+\(\zeta(5),\zeta(7),\ldots,\zeta(21)\)}, Acta Arith. \textbf{103}
+(2002), 157--167, \href{https://doi.org/10.4064/aa103-2-5}{doi:10.4064/aa103-2-5}.
+\bibitem{powered}
+twinheterodox, \emph{Irrational even beta values from powered hypergeometric
+kernels}, 2026, \href{https://hexagonmath.org/2611.00336v1}{Hexagon 2611.00336v1}.
+\bibitem{zudbeta}
+W.~Zudilin, \emph{Arithmetic of Catalan's constant and its relatives},
+Abh. Math. Semin. Univ. Hambg. \textbf{89} (2019), 45--53,
+\href{https://doi.org/10.1007/s12188-019-00203-w}{doi:10.1007/s12188-019-00203-w}.
+\bibitem{laizhou}
+L.~Lai and L.~Zhou, \emph{At least two of \(\zeta(5),\zeta(7),\ldots,\zeta(35)\)
+are irrational}, Publ. Math. Debrecen \textbf{101} (2022), 353--372,
+\href{https://doi.org/10.5486/PMD.2022.9252}{doi:10.5486/PMD.2022.9252}.
+\bibitem{laisprang}
+L.~Lai and J.~Sprang, \emph{Many \(p\)-adic odd zeta values are irrational},
+2025, \href{https://arxiv.org/abs/2306.10393v2}{arXiv:2306.10393v2}.
+\bibitem{stanley}
+R.~P.~Stanley, \emph{Differentiably finite power series}, European J. Combin.
+\textbf{1} (1980), 175--188,
+\href{https://doi.org/10.1016/S0195-6698(80)80051-5}{doi:10.1016/S0195-6698(80)80051-5}.
+\bibitem{dusart}
+P.~Dusart, \emph{Estimates of some functions over primes without R.H.},
+2010, \href{https://arxiv.org/abs/1002.0442v1}{arXiv:1002.0442v1}.
+\bibitem{repo}
+twinheterodox, \emph{Irrationality and linear independence of Dirichlet beta
+values}, GitHub repository, \url{https://github.com/twinheterodox/beta4}.
+\end{thebibliography}
+\end{document}
