@@ -1,16 +1,16 @@
 {
   "date": "2026-11-18",
-  "reviewed_mathematical_source_sha256": "baf18993cc36b84790d3e182f20516018264b1950f98ef8c5792bc086f4031d6",
-  "before_packaging_source_sha256": "c53d00c3a75dd4eb5736b70d8ade2a3fc984f6f130e03821e1be8dc90643fca5",
-  "before_packaging_pdf_sha256": "3c4491e391cbbe6f5b542ab286afa58c37265b8197d4cdf6ac1998a0ff241bf6",
-  "publication_source_sha256": "e8fcf84ab30f668853c62b0fae1006858ceea10cff52f3e8e59d71bf97ac4837",
-  "publication_pdf_sha256": "d1ee6b174594daae528b299fcd2f11303e4e41a19f94ef64c1271face16d1bce",
-  "publication_edits": "Named the project directory beside the seed-reproduction commands.",
+  "pages": 10,
+  "publication_edits": "Shortened the abstract and added direct citations for the alternating forms, differentiation, pole-interval zeros and auxiliary-prime criterion.",
   "independent_audit_scope": "The full audit applies to the earlier manuscript. A subsequent independent review checked the revised decay estimate, seed table and exposition.",
-  "pages_rendered": 9,
-  "pages_visually_changed_since_packaging_input": [
-    9
-  ],
-  "working_github_citations_in_pdf": 2,
-  "checks": "The standard recurrence, python-flint direct-product comparison and independent auditor programs reproduced their stored output."
+  "earlier_nine_page_publication_checks": {
+    "date": "2026-11-18",
+    "publication_edits": "Named the project directory beside the seed-reproduction commands.",
+    "pages_rendered": 9,
+    "pages_visually_changed_since_packaging_input": [
+      9
+    ],
+    "working_github_citations_in_pdf": 2,
+    "checks": "The standard recurrence, python-flint direct-product comparison and independent auditor programs reproduced their stored output."
+  }
 }

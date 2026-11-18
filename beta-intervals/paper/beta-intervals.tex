@@ -30,8 +30,7 @@ $\{\beta(6),\beta(8),\ldots,\beta(66)\}$ and
 $\{\beta(8),\beta(10),\ldots,\beta(98)\}$ contains an irrational number.
 These sets contain $31$ and $46$ values, respectively, improving the
 previous intervals with the same lower endpoints, which contained
-$35$ and $52$ values. The two conclusions concern overlapping sets;
-they do not assert that the irrational values are distinct.
+$35$ and $52$ values.
 \end{abstract}
 
 \section{The results and their source}
@@ -93,14 +92,19 @@ The prime-density and phase bounds come from \cite{fifteen}. Their certificates
 are in the \texttt{fifteen-beta-values/checks} directory of the project
 repository~\cite{beta4repo}.
 
-The underlying half-integer-pole construction and its local
-valuation estimates come from Krisman \cite[Sections~1.2 and~4]{krisman}.
-Differentiation to remove lower values follows the strategy discussed
-in \cite{rivoal}; our direct source for its powered form is
-\cite{powered}. The auxiliary-prime nonvanishing argument follows
-\cite[Section~5]{fifteen} and \cite[Section~4]{powered}, which adapt
-the prime-dilation strategy of Lai and Sprang
-\cite[Lemma~2.3]{laisprang}.
+The half-integer poles belong to a family of alternating hypergeometric
+forms that Rivoal and Zudilin used for even beta values
+\cite[Lemma~2]{rzbeta}, following the odd-zeta construction of
+Ball and Rivoal \cite{ballrivoal}. Zudilin placed zeros throughout the
+pole interval \cite[proof of Lemma~1 and Section~3]{zudbeta}.
+With different block parameters and normalization, Lai and Zhou proved
+that at least one of $\beta(2),\ldots,\beta(10)$ is irrational
+\cite[Theorem~6.1]{laizhou}.
+To remove $\beta(2)$, Krisman \cite[Sections~1.2 and~4]{krisman}
+combined this geometry with the second derivative that Rivoal had used
+to remove $\zeta(3)$ \cite[Section~2, Lemma~1]{rivoal}. Krisman's
+triple zeros survive two differentiations. The powers in \cite{powered}
+let us retain those zeros while removing further low indices.
 The intended prerequisites are partial fractions, elementary
 $p$-adic valuations, and asymptotic estimates for factorials.
 
@@ -314,6 +318,9 @@ using \eqref{eq:integerzeros}, gives
              =-\sum_{a<\ell}T_q(\ell,a).
 \end{equation}
 The second identity lets us choose either side of $-\ell$.
+Zudilin used zeros in the pole interval to shift the summation limit
+in the rational term \cite[proof of Lemma~1]{zudbeta}. Krisman's
+derivative version \cite[Lemma~4.6]{krisman} gives this choice at $q=1$.
 For a fixed $\ell$, an evaluation denominator is divisible by
 $p$ only in the single class $2(a-\ell)+1\equiv0\pmod p$.
 If this class is isolated, choose the side of
@@ -409,7 +416,9 @@ $\sum_{j=0}^9(0.6931472)^j/j!>2$.
 \section{A seed that prevents vanishing}\label{sec:seed}
 
 Small integral forms give a contradiction only when they are
-nonzero. We use a different increasing prime for each form.
+nonzero. We use the auxiliary-prime criterion of Lai and Sprang
+\cite[Lemma~2.3]{laisprang}, in the prime-dilation form developed in
+\cite[Section~4]{powered} and \cite[Section~5]{fifteen}.
 After dilation, all beta coefficients will vanish modulo that prime,
 while a fixed rational seed constant survives. This permits us
 to avoid the finitely many primes dividing any hypothetical common
@@ -656,7 +665,8 @@ separately certified cases $q=2,3$.
 A second AI model independently audited the original proof and exposition of
 Theorem~\ref{thm:main} and reproduced the seeds and decay bounds.
 
-\begin{thebibliography}{9}
+\clearpage
+\begin{thebibliography}{10}
 \bibitem{fifteen}
 twinheterodox,
 \emph{At least one of $\beta(4),\beta(6),\ldots,\beta(32)$ is irrational},
@@ -671,6 +681,27 @@ twinheterodox,
 S.~Krisman,
 \emph{One of $\beta(4),\beta(6),\ldots,\beta(36)$ is irrational},
 2026, \href{https://hexagonmath.org/2610.00285v2}{Hexagon 2610.00285v2}.
+
+\bibitem{ballrivoal}
+K.~Ball and T.~Rivoal, \emph{Irrationalit\'e d'une infinit\'e de valeurs
+de la fonction z\^eta aux entiers impairs}, Invent. Math.
+\textbf{146} (2001), 193--207.
+\href{https://doi.org/10.1007/s002220100168}{doi:10.1007/s002220100168}.
+
+\bibitem{rzbeta}
+T.~Rivoal and W.~Zudilin, \emph{Diophantine properties of numbers related
+to Catalan's constant}, Math. Ann. \textbf{326} (2003), 705--721.
+\href{https://doi.org/10.1007/s00208-003-0420-2}{doi:10.1007/s00208-003-0420-2}.
+
+\bibitem{zudbeta}
+W.~Zudilin, \emph{Arithmetic of Catalan's constant and its relatives},
+Abh. Math. Semin. Univ. Hambg. \textbf{89} (2019), 45--53.
+\href{https://doi.org/10.1007/s12188-019-00203-w}{doi:10.1007/s12188-019-00203-w}.
+
+\bibitem{laizhou}
+L.~Lai and L.~Zhou, \emph{At least two of $\zeta(5),\zeta(7),\ldots,
+\zeta(35)$ are irrational}, Publ. Math. Debrecen \textbf{101} (2022),
+353--372. \href{https://doi.org/10.5486/PMD.2022.9252}{doi:10.5486/PMD.2022.9252}.
 
 \bibitem{laisprang}
 L.~Lai and J.~Sprang,

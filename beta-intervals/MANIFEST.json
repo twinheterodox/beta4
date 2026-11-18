@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.txt",
+    "checks/README.txt",
+    "checks/cross-check-results.json",
+    "checks/independent-audit/density_max.cpp",
+    "checks/independent-audit/density_recheck.py",
+    "checks/independent-audit/dilation_recheck.py",
+    "checks/independent-audit/phase_recheck.py",
+    "checks/independent-audit/results.txt",
+    "checks/independent-audit/run_checks.py",
+    "checks/independent-audit/seed_recheck.py",
+    "checks/interval_seeds.py",
+    "checks/recurrence-results.json",
+    "output/pdf/beta-intervals.pdf",
+    "paper/beta-intervals.tex",
+    "paper/build-record.json",
+    "review/independent-audit-2026-11-17.txt",
+    "review/publication-record.json",
+    "review/revision-review.txt",
+    "sources/repository-inputs.json",
+    "tools/build_paper.py"
+  ]
+}

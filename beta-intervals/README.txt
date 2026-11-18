@@ -30,9 +30,9 @@ Supporting records
   checks/recurrence-results.json             Seed residues from the recurrence
   checks/cross-check-results.json            Direct-product coefficient comparison
   checks/independent-audit/                  Independent code and recorded output
-  sources/repository-inputs.json             Locations and hashes of earlier inputs
+  sources/repository-inputs.json             Sources used for the construction and estimates
   review/independent-audit-2026-11-17.txt    Full audit of the original manuscript
   review/revision-review.txt                 Review of the revised decay and seed proof
   review/publication-record.json             Audit versions and publication checks
   paper/build-record.json                    Source, PDF and build information
-  SHA256SUMS.json                            Checksums of the publication files
+  MANIFEST.json                             Files in the paper project

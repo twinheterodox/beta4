@@ -131,14 +131,3 @@ The programs
 require Python 3.9 or later, NumPy, mpmath and a C++17 compiler named g++.
 Run Python with assertions enabled. The package includes the output of a
 full run.
-
-SHA-256 of the earlier audited manuscript and the repository inputs
-
-cd267aeb201f9157184e44d5cbc4e2cd8f9322c5403f5d4f837a4c8629fa6344  audited PDF (before revision)
-455099e972bf887373b0c95e6d571d1d67f3d363efafb413e9754de4e662519c  audited LaTeX (before revision)
-1db369248f1053b951c11d86a9ba488c470640e782e1c613f44fb830226cc252  fifteen-beta-values/paper/sections/02-forms.tex
-730c3d998bd222640cb36833f4317450968e111948721e4cb660080df22baa2d  fifteen-beta-values/paper/sections/03-denominators.tex
-9877b49278179a5dd1b8a3c86f6bf8a80d34ebcf0389a199afb3b9753770328b  fifteen-beta-values/paper/sections/04-decay.tex
-31ed9e7c58a8bbf00259091a2db2ebc154883f9863432f30d6d7cacbb9588da0  fifteen-beta-values/paper/sections/05-nonvanishing.tex
-012a705fcb691af93abf7f29f275e9db53a16ea4c992d97b84fefb6b1c4dc745  fifteen-beta-values/paper/sections/appendix-small-primes.tex
-4287b99d7368773e171975277cb462f782b05f08b361ed4cc2f80e9dfa6ea475  powered-beta-kernels/paper/powered-beta-kernels.tex

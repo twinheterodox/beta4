@@ -1,9 +1,7 @@
 {
   "source": "paper/beta-intervals.tex",
-  "source_sha256": "e8fcf84ab30f668853c62b0fae1006858ceea10cff52f3e8e59d71bf97ac4837",
   "pdf": "output/pdf/beta-intervals.pdf",
-  "pdf_sha256": "d1ee6b174594daae528b299fcd2f11303e4e41a19f94ef64c1271face16d1bce",
-  "pages": 9,
+  "pages": 10,
   "latex_engine": "pdfTeX 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian)",
   "unresolved_references": false,
   "overfull_boxes": false

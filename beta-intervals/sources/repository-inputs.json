@@ -1,6 +1,5 @@
 {
   "repository": "https://github.com/twinheterodox/beta4",
-  "commit": "47c6178ae35b960791e1f90a1bce7c63da7b79bf",
   "papers": [
     {
       "url": "https://hexagonmath.org/2611.00346v1",
@@ -11,12 +10,21 @@
       "scope": "Sections 2–4. Powered kernels, prime dilation, and the earlier upper endpoints 74 and 110."
     }
   ],
-  "source_sha256": {
-    "fifteen-beta-values/paper/sections/02-forms.tex": "1db369248f1053b951c11d86a9ba488c470640e782e1c613f44fb830226cc252",
-    "fifteen-beta-values/paper/sections/03-denominators.tex": "730c3d998bd222640cb36833f4317450968e111948721e4cb660080df22baa2d",
-    "fifteen-beta-values/paper/sections/04-decay.tex": "9877b49278179a5dd1b8a3c86f6bf8a80d34ebcf0389a199afb3b9753770328b",
-    "fifteen-beta-values/paper/sections/05-nonvanishing.tex": "31ed9e7c58a8bbf00259091a2db2ebc154883f9863432f30d6d7cacbb9588da0",
-    "fifteen-beta-values/paper/sections/appendix-small-primes.tex": "012a705fcb691af93abf7f29f275e9db53a16ea4c992d97b84fefb6b1c4dc745",
-    "powered-beta-kernels/paper/powered-beta-kernels.tex": "4287b99d7368773e171975277cb462f782b05f08b361ed4cc2f80e9dfa6ea475"
+  "source_files": [
+    "https://github.com/twinheterodox/beta4/blob/main/fifteen-beta-values/paper/sections/02-forms.tex",
+    "https://github.com/twinheterodox/beta4/blob/main/fifteen-beta-values/paper/sections/03-denominators.tex",
+    "https://github.com/twinheterodox/beta4/blob/main/fifteen-beta-values/paper/sections/04-decay.tex",
+    "https://github.com/twinheterodox/beta4/blob/main/fifteen-beta-values/paper/sections/05-nonvanishing.tex",
+    "https://github.com/twinheterodox/beta4/blob/main/fifteen-beta-values/paper/sections/appendix-small-primes.tex",
+    "https://github.com/twinheterodox/beta4/blob/main/powered-beta-kernels/paper/powered-beta-kernels.tex"
+  ],
+  "citation_review": {
+    "date": "2026-11-18",
+    "locations_checked": {
+      "ballrivoal, rzbeta": "Ball and Rivoal's odd-zeta linear forms and Rivoal and Zudilin's Lemma 2 on alternating half-integer sums for even beta values.",
+      "zudbeta, laizhou": "Zudilin's proof of Lemma 1 and Section 3 use zeros in the pole interval. Lai and Zhou, Theorem 6.1, specify the changed block parameters and normalization for the interval ending at beta(10).",
+      "rivoal, krisman": "Rivoal, Section 2, Lemma 1, removes zeta(3) by a second derivative. Krisman, Sections 1.2 and 4 and Lemma 4.6, adapts differentiation and the use of zeros to even beta values.",
+      "laisprang, powered, fifteen": "Lai and Sprang, Lemma 2.3, supplies the auxiliary-prime nonvanishing criterion. The prime-dilation formulas are in Section 4 of the powered-kernel paper and Section 5 of the fifteen-value paper."
+    }
   }
 }

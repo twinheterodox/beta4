@@ -1,6 +1,5 @@
 """Build the paper and check the final LaTeX log for reference and layout errors."""
 from pathlib import Path
-import hashlib
 import json
 import os
 import re
@@ -36,9 +35,7 @@ shutil.copyfile(ROOT / build / output.name, ROOT / output)
 info = subprocess.check_output(["pdfinfo", output.as_posix()], cwd=ROOT, text=True)
 record = {
     "source": source.as_posix(),
-    "source_sha256": hashlib.sha256((ROOT / source).read_bytes()).hexdigest(),
     "pdf": output.as_posix(),
-    "pdf_sha256": hashlib.sha256((ROOT / output).read_bytes()).hexdigest(),
     "pages": int(re.search(r"^Pages:\s+(\d+)", info, re.M).group(1)),
     "latex_engine": subprocess.check_output(["pdflatex", "--version"], text=True).splitlines()[0],
     "unresolved_references": False,

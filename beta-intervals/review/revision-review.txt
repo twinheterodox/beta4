@@ -5,10 +5,6 @@ This public edition retains the mathematical checks on the revisions after
 the first audit. The reviewer examined the changed passages, their
 surrounding proofs, the source differences and the cited results, and
 found no further correction necessary.
-SHA-256 of the reviewed TeX
-baf18993cc36b84790d3e182f20516018264b1950f98ef8c5792bc086f4031d6
-SHA-256 of the seed checker
-2020c965993ed05c267ca1550575e20c8dcbf8842f0d26ce3466056ad23acee0
 
 Decay with the published normalization
 
